@@ -291,16 +291,15 @@ class PerchAdmin extends Perch
 
     public function event($event)
     {
-        if (isset($this->event_listeners[$event]) && count($this->event_listeners[$event])) {
+        if ((isset($this->event_listeners[$event]) && count($this->event_listeners[$event])) || isset($this->event_listeners['*'])) {
 
-            $args = func_get_args();
-            array_shift($args);
+            $Event = new PerchSystemEvent(func_get_args());
 
-            $Event = new PerchSystemEvent($args);
-
-            foreach($this->event_listeners[$event] as $callback) {
-                if (is_callable($callback)) {
-                    call_user_func($callback, $Event);
+            if (isset($this->event_listeners[$event]) && count($this->event_listeners[$event])) {
+                foreach($this->event_listeners[$event] as $callback) {
+                    if (is_callable($callback)) {
+                        call_user_func($callback, $Event);
+                    }
                 }
             }
 

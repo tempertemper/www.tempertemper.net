@@ -105,6 +105,32 @@ class PerchContent_Items extends PerchFactory
         return $this->db->get_count($sql);
 	}
 
+    /**
+     * Get a list of item revisions for the given region - used by Revision History
+     * @param  [type] $regionID [description]
+     * @return [type]           [description]
+     */
+    public function get_revisions_for_region($regionID)
+    {
+        $sql = 'SELECT itemRev, itemUpdated, itemUpdatedBy FROM '.$this->table.'
+                WHERE regionID='.$this->db->pdb($regionID).'
+                GROUP BY itemRev
+                ORDER BY itemRev DESC';
+        return $this->db->get_rows($sql);
+    }
+
+    /**
+     * Get the revision number of the oldest revision we currently have.
+     * @param  [type] $regionID [description]
+     * @return [type]           [description]
+     */
+    public function get_oldest_rev($regionID)
+    {
+        $sql = 'SELECT MIN(itemRev) FROM '.$this->table.'
+                WHERE regionID='.$this->db->pdb($regionID);
+        return $this->db->get_value($sql);
+    }
+
     
     /**
      * Duplicate all the region items with a new revision number
@@ -119,8 +145,11 @@ class PerchContent_Items extends PerchFactory
     public function create_new_revision($regionID, $old_rev, $new_rev, $copy_resources=false)
     {
 
-        $sql = 'INSERT INTO '.$this->table.' (itemID, regionID, pageID, itemRev, itemOrder, itemJSON, itemSearch)
-                    SELECT itemID, regionID, pageID, '.$this->db->pdb($new_rev).' AS itemRev, itemOrder, itemJSON, itemSearch
+        $Users          = new PerchUsers;
+        $CurrentUser    = $Users->get_current_user();
+
+        $sql = 'INSERT INTO '.$this->table.' (itemID, regionID, pageID, itemRev, itemOrder, itemJSON, itemSearch, itemUpdatedBy)
+                    SELECT itemID, regionID, pageID, '.$this->db->pdb($new_rev).' AS itemRev, itemOrder, itemJSON, itemSearch, '.$this->db->pdb($CurrentUser->id()).' AS itemUpdatedBy
                     FROM '.$this->table.'
                     WHERE regionID='.$this->db->pdb($regionID).' AND itemRev='.$this->db->pdb($old_rev).'
                     ORDER BY itemOrder ASC';
@@ -148,7 +177,10 @@ class PerchContent_Items extends PerchFactory
      */
     public function delete_old_revisions($regionID, $number_remaining)
     {
-        $sql = 'DELETE FROM '.$this->table.' WHERE regionID='.$this->db->pdb($regionID).' AND itemRev IN 
+        $sql = 'SELECT regionRev FROM '.PERCH_DB_PREFIX.'content_regions WHERE regionID='.$this->db->pdb($regionID);
+        $live_rev = $this->db->get_value($sql);
+
+        $sql = 'DELETE FROM '.$this->table.' WHERE regionID='.$this->db->pdb($regionID).' AND itemRev!='.$live_rev.' AND itemRev IN 
                     (SELECT itemRev FROM (SELECT DISTINCT itemRev FROM '.$this->table.' 
                                             WHERE regionID='.$this->db->pdb($regionID).'
                                             ORDER BY itemRev DESC
@@ -279,6 +311,19 @@ class PerchContent_Items extends PerchFactory
     {
         $sql = 'DELETE FROM '.$this->table.'
                 WHERE regionID='.$this->db->pdb($regionID).' AND itemRev='.(int)$rev;
+        return $this->db->execute($sql);
+    }
+
+    /**
+     * When performing a rollback, we need to delete the newer revisions
+     * @param  [type] $regionID [description]
+     * @param  [type] $rev      [description]
+     * @return [type]           [description]
+     */
+    public function delete_revisions_newer_than($regionID, $rev)
+    {
+        $sql = 'DELETE FROM '.$this->table.'
+                WHERE regionID='.$this->db->pdb($regionID).' AND itemRev>'.(int)$rev;
         return $this->db->execute($sql);
     }
     

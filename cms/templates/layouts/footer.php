@@ -1,10 +1,10 @@
 <footer role="contentinfo">
 
-  <aside>
+  <aside class="keep-in-touch">
 
     <h1>Keep in Touch</h1>
 
-    <ul class="keep-in-touch">
+    <ul>
 
       <li>
         <a href="/mailing-list/subscribe" class="mailing-list icon" title="Subscribe to mailing list">

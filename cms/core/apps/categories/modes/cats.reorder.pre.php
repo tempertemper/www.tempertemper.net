@@ -41,6 +41,8 @@
 	                        $sort_orders[$parentID]++;
 	                    }
 	                    
+	                    
+
 	                    $order = $sort_orders[$parentID];
 	                    
 	                    $Category = $Categories->find($catID);

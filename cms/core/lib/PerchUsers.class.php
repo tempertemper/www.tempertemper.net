@@ -167,7 +167,13 @@ class PerchUsers extends PerchFactory
         return false;
     }
     
-    
+    public function get_user_display_name($userID)
+    {
+        if (is_numeric($userID)) {
+            $sql = 'SELECT CONCAT(userGivenName, " ", userFamilyName) AS n FROM '.$this->table.' WHERE userID='.$this->db->pdb($userID);
+            return $this->db->get_value($sql);
+        }
+    }
 }
 
 ?>

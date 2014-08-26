@@ -71,10 +71,12 @@
             <?php echo $Form->label('pagePath', 'Path'); ?>
             <?php echo $Form->text('pagePath', $Form->get($details, 'pagePath')); ?>
 
+            <?php if (!PERCH_RUNWAY) { ?>
             <div class="checkbox supplemental">
                 <?php echo $Form->checkbox('move', '1', 0); ?>
                 <?php echo $Form->label('move', 'Move the page to this location'); ?>
             </div>
+            <?php } // not Runway ?>
         </div>
 
         <div class="field">
@@ -106,6 +108,34 @@
                 echo $Form->select('pageParentID', $opts, $Form->get($details, 'pageParentID')); 
             ?>
         </div>
+        <?php
+            if (PERCH_RUNWAY) { 
+
+                echo '<h2>'.PerchLang::get('URL Patterns').'</h2>';
+         
+
+                if (PerchUtil::count($routes)) {
+
+                    foreach($routes as $Route) {
+
+                        echo '<div class="field">';
+                            $id = 'routePattern_'.$Route->id();
+                            echo $Form->label($id, 'URL pattern');
+                            echo $Form->text($id, $Form->get($details, $id, $Route->routePattern()));
+                        echo '</div>';
+                    }
+                }
+
+                echo '<div class="field">';
+                    echo $Form->label('new_pattern', 'URL pattern');
+                    echo $Form->text('new_pattern', $Form->get($details, 'new_pattern'));
+                echo '</div>';
+
+       
+            }
+
+        ?>
+
         
         <h2><?php echo PerchLang::get('Details'); ?></h2>
 

@@ -17,7 +17,7 @@ class PerchCategories_Categories extends PerchFactory
 	public function create($data)
 	{
 		$Category = parent::create($data);
-		$Category->update_meta();
+		$Category->update_tree_position();
 		return $Category;
 	}
 
