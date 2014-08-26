@@ -1010,7 +1010,13 @@ class PerchForm
     	$this->messages	= array();
     	$this->error	= false;
 	}
-	
+
+	public function reset_field($id)
+	{
+    	if (isset($_POST[$id])) {
+    		$_POST[$id] = '';
+    	}
+	}
 }
 
 

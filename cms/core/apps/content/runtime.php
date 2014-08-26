@@ -60,13 +60,18 @@
         
         if (isset($_GET[PERCH_PREVIEW_ARG])) {
 
-            if ($_GET[PERCH_PREVIEW_ARG] == 'all') {
-                $contentID = 'all';
-            }else{
-                $contentID  = (int)$_GET[PERCH_PREVIEW_ARG];
-            }
-            
+            $contentID   = 'all';
             $rev         = false;
+
+            if ($_GET[PERCH_PREVIEW_ARG] != 'all') {
+                $rev  = $_GET[PERCH_PREVIEW_ARG];
+                if (strpos($rev, 'r')) {
+                    $parts = explode('r', $rev);
+                    $contentID = (int) $parts[0];
+                    $rev       = (int) $parts[1];
+                }
+            }
+
             $Users       = new PerchUsers;
             $CurrentUser = $Users->get_current_user();
             

@@ -92,6 +92,9 @@ class PerchAuthenticatedUser extends PerchBase
                     // Set cookie for front-end might-be-authed checked
                     PerchUtil::setcookie('cmsa', 1, strtotime('+30 days'), '/');
 
+                    $Perch = Perch::fetch();
+                    $Perch->event('user.login', $this);
+
                     return true;
                 }
             }
