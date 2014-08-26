@@ -1333,10 +1333,6 @@ a img {
     border-bottom: none;
   }
 }
-.ie9 label {
-  display: block;
-}
-
 .ie8 [role="banner"],
 .ie8 [role="main"],
 .ie8 [role="complementary"] {
