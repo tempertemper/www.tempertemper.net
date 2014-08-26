@@ -1,0 +1,38 @@
+@mixin textLink {
+  transition: all .2s ease;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:link,
+  &:visited {
+    color: $colour-primary;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: black;
+  }
+}
+
+a {
+  @include textLink;
+}
+
+a > img {
+  display: block;
+  border: 3px solid $colour-primary;
+
+  &:visited {
+    border-color: $colour-primary-darker;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: black;
+  }
+}

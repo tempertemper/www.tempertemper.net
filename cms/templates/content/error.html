@@ -1,0 +1,19 @@
+<perch:content id="first-paragraph" type="textarea" label="First paragraph" size="m" markdown="true" html="true" />
+
+<perch:form id="error_form" method="post" app="perch_forms">
+
+  <perch:label for="page_from">Which page did you come from?</perch:label>
+  <perch:input type="text" id="page_from" label="Page from" />
+
+  <perch:label for="page_to">Which page were you looking for?</perch:label>
+  <perch:input type="text" id="page_to" label="Page to" />
+
+  <perch:input type="submit" value="Send" />
+
+  <perch:success>
+    <perch:content id="success" type="textarea" label="Success Text" markdown="true" size="xs" />
+  </perch:success>
+
+</perch:form>
+
+<perch:content id="last-paragraph" type="textarea" label="Last paragraph" size="s" markdown="true" html="true" />

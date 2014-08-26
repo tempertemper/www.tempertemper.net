@@ -1,0 +1,35 @@
+// BREAKPOINTS //
+
+$xs: 25em;
+$s: 31em;
+$m: 50em;
+$l: 60em;
+$xl: 72em;
+
+
+// COLOURS //
+
+// Primary (blue)
+
+$colour-primary: #0097DB; // normal
+$colour-primary-lighter: lighten($colour-primary, 5%);
+$colour-primary-light: lighten($colour-primary, 53%);
+$colour-primary-darker: darken($colour-primary, 5%);
+
+// Secondary (black)
+
+$colour-secondary-lighter: lighten(black, 60%);
+$colour-secondary-light: lighten(black, 95%);
+
+// Social
+
+$colour-facebook: #3b579d;
+$colour-dribbble: #DC3D7B;
+$colour-twitter: #00ACED;
+$colour-linkedin: #00659B;
+
+
+// STYLE
+
+$border-radius-default: 5px;
+$divider: 3px solid black;

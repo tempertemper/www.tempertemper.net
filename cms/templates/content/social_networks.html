@@ -1,0 +1,75 @@
+<perch:if exists="header"><h1></perch:if><perch:content id="header" type="text" label="Header" html="false" /><perch:if exists="header"></h1></perch:if>
+
+<ul class="social">
+
+  <perch:if id="mailing-list" value="1">
+
+  <li class="mailing-list">
+
+    <perch:content type="checkbox" id="mailing-list" label="Show Mailing list" suppress="true" />
+
+    <h2><a href="/mailing-list/subscribe">Mailing list</a></h2>
+
+    <p>Subscribe to the mailing list for all sorts of useful information on how to improve your business via your website, apps and </p>
+
+  </li>
+
+  </perch:if>
+
+  <perch:if id="twitter" value="1">
+
+  <li class="twitter">
+
+    <perch:content type="checkbox" id="twitter" label="Show Twitter" suppress="true" />
+
+    <h2><a href="http://twitter.com/tempertemper">Twitter</a></h2>
+
+    <p>I like getting to know new people and <a href="http://twitter.com/tempertemper">Twitter</a>'s my favourite social network! I tweet about all sorts of things&ndash; family stuff, web stuff&hellip;</p>
+
+  </li>
+
+  </perch:if>
+
+  <perch:if id="linkedin" value="1">
+
+  <li class="linkedin">
+
+    <perch:content type="checkbox" id="linkedin" label="Show LinkedIn" suppress="true" />
+
+    <h2><a href="http://uk.linkedin.com/in/tempertemper">LinkedIn</a></h2>
+
+    <p>If we've met in a professional capacity, why not <a href="http://uk.linkedin.com/in/tempertemper">link in</a> with me? I'm always happy to provide a recommendation for anyone I've enjoyed doing business with!</p>
+
+  </li>
+
+  </perch:if>
+
+  <perch:if id="dribbble" value="1">
+
+  <li class="dribbble">
+
+    <perch:content type="checkbox" id="dribbble" label="Show Dribbble" suppress="true" />
+
+    <h2><a href="http://dribbble.com/tempertemper">Dribbble</a></h2>
+
+    <p>Have a look at my 'shots' on Dribbble, a great little place for designers to showcase their work. Works in progress, snippets of work I've done&ndash; <a href="http://dribbble.com/tempertemper">check it out</a>!</p>
+
+  </li>
+
+  </perch:if>
+
+  <perch:if id="facebook" value="1">
+
+  <li class="facebook">
+
+    <perch:content type="checkbox" id="facebook" label="Show Facebook" suppress="true" />
+
+    <h2><a href="http://www.facebook.com/tempertemperwebdesign">Facebook</a></h2>
+
+    <p>Why not 'Like' my <a href="http://facebook.com/tempertemperwebdesign">Facebook</a> page? It's a great way to keep up with my newest <a href="/blog/">blog</a> posts, general web news that could affect your business– all nice and informal, just how I like it!</p>
+
+  </li>
+
+  </perch:if>
+
+</ul>
