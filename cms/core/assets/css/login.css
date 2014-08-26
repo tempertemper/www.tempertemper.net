@@ -1,0 +1,301 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/* fonts */
+
+body {
+	font:13px/1.22 arial,helvetica,clean,sans-serif;
+}
+
+table {
+	font-size:inherit;
+}
+
+pre,code,kbd,samp,tt{
+	font-family: monospace;
+	line-height: 99%;
+}
+
+.topbar {
+	background-color: rgb(246, 246, 246);
+}
+
+.icon,
+.alert:before {
+	background-image: url(../img/sprites@2x.png);
+	background-size: 33px 3000px;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+
+.button {
+	font-family: Arial, Helvetica, clean, sans-serif;
+	background-color: rgba(0, 0, 0, 0.1);
+	color: rgb(75, 110, 100);
+	color: rgba(0, 0, 0, 0.75);
+	display: inline-block;
+	border-radius: 5px;
+	border: 1px solid rgb(187,187,187);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	padding: 4px 10px 4px 10px;
+	font-size: 0.846em;
+	min-width: 40px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 #fff;
+
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #C9D4D3 100%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #C9D4D3 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #C9D4D3));
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #C9D4D3 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #C9D4D3 100%);
+}
+
+body {
+	color: #000;
+	background-color: rgb(246, 246, 246);
+}
+
+.logo {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.logo img {
+	max-width: 420px;
+}
+
+a img {
+	border: 0;
+}
+
+.logincont,
+#content {
+	width: 420px;
+	margin: 80px auto;
+}
+
+#login {
+	font-size: 110%;
+	box-shadow: 0px 0px 10px rgb(214, 214, 214);
+	margin-bottom: 20px;
+}
+
+#login .bd {
+	color: rgb(127, 127, 127);
+	background-color: #fff;
+	padding: 10px;
+	padding-bottom: 20px;
+}
+
+h1 {
+	margin: 0;
+	padding: 15px 20px;
+	font-weight: normal;
+	color: rgba(0, 0, 0, 0.3);
+	font-family: Helvetica, Arial, clean, sans-serif;
+	font-size: 1.538em;
+	font-weight: 100;
+}
+
+.dark h1 {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+#login form p.alert-failure {
+	position: relative;
+	background-color: #eccfcf;
+	color: #b34040;
+	padding: 6px 5px 5px 40px;
+	margin: 0 0 20px 0;
+}
+
+#login form p.alert-failure a:link,
+#login form p.alert-failure a:visited {
+	color: #834040;
+}
+
+#login form p.alert-failure:before {
+	content: '';
+	background-position: 15px -705px;
+	width: 40px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+form label {
+	width: 90px;
+	margin-right: 10px;
+	display: inline-block;
+	text-align: right;
+}
+
+form .text {
+	width: 280px;
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+	font-size: 1em;
+	padding: 4px 5px;
+	box-shadow: inset 0 4px 3px -3px rgba(0,0,0,0.2);
+	margin-top: -2px;
+}
+
+form div {
+	border-bottom: 1px dotted rgb(229, 229, 229);
+	padding: 0 0 5px 0;
+	margin: 0 0 10px 0;
+}
+
+form p.submit {
+	margin-left: 100px;
+}
+
+form p.submit a:link,
+form p.submit a:visited {
+	text-decoration: none;
+	color: #486660;
+	border-bottom: 1px solid #486660;
+}
+
+form div.error {
+	background-color: #eccfcf;
+	padding-top: 10px;
+	border-bottom: none;
+}
+
+form div.error label {
+	color: #b34040;
+}
+
+form div.error span.error {
+	font-size: 80%;
+	color: #b34040;
+	text-align: right;
+	display: block;
+	margin: 5px 10px 0 0;
+}
+
+form div.error .text {
+	width: 275px;
+}
+
+.instructions {
+	margin-bottom: 20px;
+}
+
+.instructions a:link,
+.instructions a:visited {
+	text-decoration: none;
+	color: #486660;
+	border-bottom: 1px solid #486660;
+}
+
+.footer:after,
+#footer:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.footer a:link,
+.footer a:visited,
+#footer a:link,
+#footer a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+.footer img,
+#footer img {
+	margin: 0px 2px 0 0;
+	border: 0;
+	padding: 0;
+	vertical-align: center;
+	display: inline-block;
+}
+
+.footer .credit,
+#footer .credit {
+	text-align: center;
+	opacity: 0.3;
+	transition: opacity .25s ease-in-out;
+}
+
+.footer .credit:hover {
+	opacity: 0.8;
+}
+
+.button,
+.compact-button {
+	display: inline-block;
+	padding: .4em 1.5em;
+	text-decoration: none;
+	color: #333;
+	font-size: 93%;
+	cursor: pointer;
+	border-radius: 0.5em;	
+}
+
+#login .bd div.cont p {
+	margin-bottom: 1em;
+	padding: 0 15px;
+}
+
+#login .bd div.cont p.error {
+	background-position: 15px -705px;
+	background-color: #eccfcf;
+	color: #b34040;
+	padding: 6px 5px 5px 40px;
+	margin: 0 0 10px 0;
+	text-align: left;
+}
+
+code.sql {
+	color: navy;
+}
