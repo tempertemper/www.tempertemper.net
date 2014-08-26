@@ -15,39 +15,40 @@ class PerchCategories_Category extends PerchBase
     	return $r; 	
     }
 
-    public function update_tree_position($parentID, $order=false)
+    public function update_tree_position($parentID=false, $order=false)
     {
-        $data = array(
-            'catParentID' => $parentID
-            );
+        //PerchUtil::debug(sprintf('Update catID %s to parentID %s and order %s', $this->id(), $parentID, $order), 'notice');
+
+        $data = array();
+
+        if ($parentID) {
+            $data['catParentID'] = $parentID;
+        }else{
+            $data['catParentID'] = $this->catParentID();
+        }
 
         if ($order) {
             $data['catOrder'] = $order;
+        }else{
+            $data['catOrder'] = $this->find_next_child_order($data['catParentID']);    
         }
-        $this->update($data);
-        $this->update_meta();
+
+        if (count($data)) $this->update($data);
     }
 
     public function update_meta()
     {
     	$data = array();
     	if ($this->catParentID()!=='0' && $this->catParentID()!=='null') {
-    		$Categories = new PerchCategories_Categories;
-    		$ParentCat  = $Categories->find($this->catParentID());
-            if (!$ParentCat) {
-                PerchUtil::output_debug();
-                die(print_r($this->details, true));
-            }
-    		$data['catPath'] = $ParentCat->catPath().$this->catSlug().'/';
-
-    		$data['catOrder'] = $ParentCat->find_next_child_order();
-    		$data['catTreePosition'] = $ParentCat->catTreePosition().'-'.str_pad($data['catOrder'], 3, '0', STR_PAD_LEFT);
+            $Categories              = new PerchCategories_Categories;
+            $ParentCat               = $Categories->find($this->catParentID());
+            $data['catPath']         = $ParentCat->catPath().$this->catSlug().'/';
+            $data['catTreePosition'] = $ParentCat->catTreePosition().'-'.str_pad($this->catOrder(), 3, '0', STR_PAD_LEFT);
     	}else{
-            $Sets = new PerchCategories_Sets;
-            $Set = $Sets->find($this->setID());
-    		$data['catPath'] = $Set->setSlug().'/'.$this->catSlug().'/';
-    		$data['catOrder'] = $this->find_next_child_order(0);
-    		$data['catTreePosition'] = str_pad($this->setID(), 3, '0', STR_PAD_LEFT).'-'.str_pad($data['catOrder'], 3, '0', STR_PAD_LEFT);
+            $Sets                    = new PerchCategories_Sets;
+            $Set                     = $Sets->find($this->setID());
+            $data['catPath']         = $Set->setSlug().'/'.$this->catSlug().'/';           
+            $data['catTreePosition'] = str_pad($this->setID(), 3, '0', STR_PAD_LEFT).'-'.str_pad($this->catOrder(), 3, '0', STR_PAD_LEFT);
     	}
 
         $data['catDisplayPath'] = $this->get_display_path();
@@ -56,7 +57,7 @@ class PerchCategories_Category extends PerchBase
     		parent::update($data);
 
             $Perch = Perch::fetch();
-            $Perch->event($this->event_prefix.'.update');
+            $Perch->event($this->event_prefix.'.update', $this);
     	}
     }
 

@@ -821,9 +821,16 @@ pre, code {
 	display: block;
 }
 
-.smartbar .fin .undo {
-	padding-left: 38px;
+.smartbar .fin .undo,
+.smartbar .fin .undo:link,
+.smartbar .fin .undo:visited {
+	padding-left: 36px;
 	background-position: 8px -1216px;
+}
+
+.smartbar .selected .undo:link,
+.smartbar .selected .undo:visited {
+	background-position: 8px -1212px;	
 }
 
 .smartbar .filter {
@@ -2014,18 +2021,18 @@ ul.reorder input {
 a.action,
 a.delete,
 span.delete,
-.preview {
+.preview,
+.positive {
 	background-color: rgba(0, 0, 0, 0.2);
 	color: #fff;
 	display: inline-block;
 	border-radius: 5px;
 	padding: 2px 5px 2px 5px;
 	font-size: 0.923em;
-	min-width: 40px;
 	text-align: center;
 	text-decoration: none;
 	min-width: 45px;
-	
+	white-space: nowrap;
 }
 
 a.delete,
@@ -2036,7 +2043,8 @@ span.delete {
 a.action:hover,
 a.delete:hover,
 span.delete,
-.preview:hover {
+.preview:hover,
+.positive:hover {
 	text-decoration: none;
 	background-color: rgb(0, 0, 0);
 }
@@ -2306,8 +2314,15 @@ tr td a.delete:hover {
 	color: rgb(0, 120, 0);
 }
 
-.alert.success a.action {
+.alert.success a.action,
+a.positive {
 	background-color: rgb(0,120,0);
+	color: #fff;
+}
+
+.alert.success a.action:hover,
+a.positive:hover {
+	background-color: rgb(0,95,0);
 	color: #fff;
 }
 
@@ -2560,6 +2575,17 @@ ol.sortable li.ui-sortable-helper {
 	background-image: linear-gradient(to bottom, #FFFFFF 0%, #B94A48 100%);
 }
 
+#confirm-dialogue.confirm a.ok:link,
+#confirm-dialogue.confirm a.ok:visited {
+	color: rgb(84, 81, 76);
+	background-color: #40b340;
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #4AB948 100%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #4AB948 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #4AB948));
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #4AB948 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #4AB948 100%);
+}
+
 #confirm-dialogue a.cancel:link,
 #confirm-dialogue a.cancel:visited {
 	color: rgb(84, 81, 76);
@@ -2727,6 +2753,12 @@ ul.importables li.warning {
 
 .diagmarker {
 	color: transparent;
+}
+
+.minor-note {
+	color: rgba(0,0,0,0.45);
+	-webkit-text-stroke: 1px rgba(0,0,0,0.1);
+	font-style: italic;
 }
 
 /* footer */

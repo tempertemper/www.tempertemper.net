@@ -99,7 +99,13 @@ class PerchContent extends PerchApp
             $sql    = 'SELECT regionID, regionTemplate, regionPage';
         
             if ($this->preview){ 
-                $sql .= ', regionLatestRev AS rev';
+
+                if ($this->preview_rev!==false && $this->preview_contentID!='all') {
+                    $sql .= ', IF(regionID='.(int)$this->preview_contentID.', '.(int)$this->preview_rev.', regionLatestRev) AS rev';
+                }else{
+                    $sql .= ', regionLatestRev AS rev';    
+                }
+                
             }else{
                 $sql .= ', regionRev AS rev';
             }
@@ -841,11 +847,7 @@ class PerchContent extends PerchApp
     private function _populate_cache_with_page_content()
     {
         if ($this->preview) {
-            if ($this->preview_contentID != 'all') {
-                $this->cache = $this->get_content_latest_revision();
-            }else{
-                $this->cache = $this->get_content_latest_revision();
-            }
+            $this->cache = $this->get_content_latest_revision();
         }else{
             $this->cache = $this->_get_content();
         }
@@ -896,7 +898,12 @@ class PerchContent extends PerchApp
         if (PerchUtil::count($regions)) {
             $out  = array();
             foreach($regions as $Region) {
-                $out[$Region->regionKey()] = $Region->render();
+                if ($this->preview && $Region->id()==$this->preview_contentID && $this->preview_rev!=false) {
+                    $out[$Region->regionKey()] = $Region->render($this->preview_rev);
+                }else{
+                    $out[$Region->regionKey()] = $Region->render();    
+                }
+                
             }
             return $out;
         }else{
@@ -904,6 +911,7 @@ class PerchContent extends PerchApp
         }
     }
     
+
     private function _get_page_finding_where($page=false)
     {
         $db     = PerchDB::fetch();

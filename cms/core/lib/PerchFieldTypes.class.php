@@ -1016,6 +1016,10 @@ class PerchFieldType_image extends PerchFieldType
         }
         
 
+        if (isset($_POST[$item_id.'_remove'])) {
+            $store = array();
+        }
+
         // If a file isn't uploaded...
         if (!$asset_reference_used && (!isset($_FILES[$item_id]) || (int) $_FILES[$item_id]['size'] == 0)) {
             // If remove is checked, remove it.
@@ -1946,7 +1950,7 @@ class PerchFieldType_category extends PerchFieldType
             foreach($raw as $key=>$val) {
                 if (!is_array($val)) {
                     $Cat = $Categories->find($val);
-                    $out[] = array('key'=>'_category', 'value'=>$Cat->catPath());
+                    if (is_object($Cat)) $out[] = array('key'=>'_category', 'value'=>$Cat->catPath());
                 }
             }
             

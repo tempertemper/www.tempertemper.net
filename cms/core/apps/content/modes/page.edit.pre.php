@@ -6,6 +6,10 @@
 
     $NavGroups  = new PerchContent_NavGroups;
 
+    if (PERCH_RUNWAY) {
+        $PageRoutes = new PerchPageRoutes();
+    }
+
     // Find the page
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $id = (int) $_GET['id'];
@@ -32,6 +36,8 @@
     
     if ($Form->posted() && $Form->validate()) {
     	$postvars = array('pagePath', 'pageSubpagePath', 'pageHidden', 'pageAccessTags', 'pageAttributeTemplate');
+
+
     	$data = $Form->receive($postvars);
     	
     	if (!isset($data['pageHidden'])) $data['pageHidden'] = '0';
@@ -40,7 +46,6 @@
     	$_POST['pageSubpagePath'] = $data['pageSubpagePath'];
 
         $data['pageModified'] = date('Y-m-d H:i:s');
-
     	
     	if (isset($_POST['subpage_roles']) && PerchUtil::count($_POST['subpage_roles'])) {
     	    $roles = $_POST['subpage_roles'];
@@ -114,6 +119,42 @@
                 $Page->remove_from_navgroups();
             }
        	
+
+            if (PERCH_RUNWAY) {
+
+                // routes
+                $routes = $Form->find_items('routePattern_');
+                if (count($routes)) {
+                    foreach($routes as $routeID=>$pattern) {
+                        $PageRoute = $PageRoutes->find($routeID);
+
+                        if (!is_object($PageRoute)) continue;
+
+                        if (trim($pattern)!='') {
+                            $PageRoute->update(['routePattern'=>$pattern]);
+                        }else{
+                            $PageRoute->delete();
+                        }
+                    }
+                } 
+
+                $new_routes = $Form->receive(['new_pattern']);
+                if (count($new_routes)) {
+                    foreach($new_routes as $pattern) {
+                        if (trim($pattern)!='') {
+                            $PageRoute = $PageRoutes->create([
+                                'pageID'=>$Page->id(),
+                                'routePattern' => $pattern
+                                ]);
+                        }
+                        
+                    }
+                }
+                $Form->reset_field('new_pattern');
+
+            }
+
+
         	
         	$Alert->set('success', PerchLang::get('Successfully updated'));
         }
@@ -133,4 +174,7 @@
     $details = $Page->to_array();
 
     $navgroups = $NavGroups->all();
-?>
+
+    if (PERCH_RUNWAY) {
+        $routes = $PageRoutes->get_routes_for_page($Page->id());    
+    }

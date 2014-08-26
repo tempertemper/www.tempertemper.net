@@ -14,7 +14,9 @@
 						'core/apps/content/denied',
 						'core/apps/content/republish',
 						'core/apps/content/reorder',
-						'core/apps/content/reorder/region'
+						'core/apps/content/reorder/region',
+						'core/apps/content/revisions',
+						'core/apps/content/revisions/revert'
 						), 
 				'label'=>'Add/Edit'),
 		array('page'=>array(
@@ -28,7 +30,13 @@
 						'core/apps/content/navigation/pages',
 						'core/apps/content/navigation/reorder',
 						'core/apps/content/navigation/delete'), 
-				'label'=>'Navigation groups', 'priv'=>'content.navgroups.configure')
+				'label'=>'Navigation groups', 'priv'=>'content.navgroups.configure'),
+		array('page'=>array(
+						'core/apps/content/routes',
+						'core/apps/content/routes/edit',
+						'core/apps/content/routes/delete'), 
+				'label'=>'Routes', 'runway'=>true),
+
 	));
 
 ?>

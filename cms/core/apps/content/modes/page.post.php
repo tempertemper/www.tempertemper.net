@@ -57,6 +57,9 @@
 				<th><?php echo PerchLang::get('Region'); ?></th>
 				<th><?php echo PerchLang::get('Type'); ?></th>
 				<th><?php echo PerchLang::get('Items'); ?></th>
+				<?php if (PERCH_RUNWAY) { ?>
+				<th><?php echo PerchLang::get('Last Updated'); ?></th>
+				<?php } ?>
 				<th class="action"></th>
 				<th class="action"></th>
 			</tr>
@@ -91,6 +94,18 @@
 								// Item count
 								echo '<td>'.$Region->get_item_count().'</td>';
 							
+
+								// Updated date
+								if (PERCH_RUNWAY) {
+									echo '<td>';
+									if ($Region->regionUpdated()!='0000-00-00 00:00:00') {
+										echo strftime(PERCH_DATE_SHORT .' '.PERCH_TIME_SHORT, strtotime($Region->regionUpdated()));	
+									}else{
+										echo '&dash;';
+									}
+									
+									echo '</td>';
+								}
 							
 								// Draft preview
 								echo '<td>';						

@@ -37,6 +37,7 @@ Perch.UI.Global	= function()
 		initCheckboxSets();
 		initFieldHelpers();
 		if (!oldIE) initDeleteButtons();
+		if (!oldIE) initConfirmButtons();
 		initDashboard();
 		initKeepAlive();
 	};
@@ -220,20 +221,22 @@ Perch.UI.Global	= function()
 		
 		head.ready(['lang'], function(){
 			$('.topbar').append($('<a href="#" id="sidebar-toggle" class="icon"><span>'+Perch.Lang.get('Toggle sidebar')+'</span></a>'));
+
+			var tog = $('#sidebar-toggle');
+			tog.on('click', function(e){
+				e.preventDefault();
+				body.toggleClass('sidebar-closed').toggleClass('sidebar-open');
+				if (body.hasClass('sidebar-closed')) {
+					$.cookie(sidebarCoookie, 1, { path: '/' });
+				}else{
+					$.cookie(sidebarCoookie, 0, { path: '/' });
+				}
+				autowidthForms();
+				$(window).trigger('perch.sidebar-toggle');
+			});
 		});
 		
-		var tog = $('#sidebar-toggle');
-		tog.on('click', function(e){
-			e.preventDefault();
-			body.toggleClass('sidebar-closed').toggleClass('sidebar-open');
-			if (body.hasClass('sidebar-closed')) {
-				$.cookie(sidebarCoookie, 1, { path: '/' });
-			}else{
-				$.cookie(sidebarCoookie, 0, { path: '/' });
-			}
-			autowidthForms();
-			$(window).trigger('perch.sidebar-toggle');
-		});
+
 	}
 	
 	
@@ -288,15 +291,34 @@ Perch.UI.Global	= function()
 			}, function(){
 				// cancel
 				closeConfirmDialogue();
-			});
+			}, 'delete');
+		});
+	};
+
+	var initConfirmButtons = function() {
+		$('a.inline-confirm').click(function(e){
+			e.preventDefault();
+			var self = $(this);
+			var message = Perch.Lang.get('Are you sure?');
+			if (self.attr('data-msg')) message = self.attr('data-msg');
+			openConfirmDialogue(e, message, function(){
+				// ok
+				$.post(self.attr('href'), {'_perch_ajax':1, 'formaction':'confirm', 'token':Perch.token}, function(r){
+					window.location = r;
+				});
+		
+			}, function(){
+				// cancel
+				closeConfirmDialogue();
+			}, 'confirm');
 		});
 	};
 	
-	var openConfirmDialogue = function(event, message, ok_function, cancel_function) {
+	var openConfirmDialogue = function(event, message, ok_function, cancel_function, display_class) {
 		if (confirmDialogue) closeConfirmDialogue();
 		var target = $(event.target);
 
-		confirmDialogue = $('<div id="confirm-dialogue"><p>'+message+'</p><a href="#" class="ok">'+Perch.Lang.get('Yes')+'</a><a href="#" class="cancel">'+Perch.Lang.get('No')+'</a><span class="speak"></span></div>');
+		confirmDialogue = $('<div id="confirm-dialogue" class="'+display_class+'"><p>'+message+'</p><a href="#" class="ok">'+Perch.Lang.get('Yes')+'</a><a href="#" class="cancel">'+Perch.Lang.get('No')+'</a><span class="speak"></span></div>');
 		$('.main').append(confirmDialogue);
 		confirmDialogue.css({
 			top: target.offset().top-(confirmDialogue.outerHeight()+10),

@@ -2,6 +2,7 @@
 
 class PerchSystemEvent
 {
+	public $event   = false;
 	public $subject = false;
 	public $user 	= false;
 	public $args 	= array();
@@ -9,6 +10,7 @@ class PerchSystemEvent
 	public function __construct($args)
 	{
 		if (PerchUtil::count($args)) {
+			$this->event   = array_shift($args);
 			$this->subject = array_shift($args);
 			$this->args    = $args;
 					
