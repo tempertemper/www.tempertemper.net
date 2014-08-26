@@ -1,0 +1,29 @@
+div.debug {
+	margin: 20px 275px 20px 40px;
+	font-family: Courier, "Courier New", courier, fixed;
+	font-size: 100%;
+	text-align: left;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #000;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	clear: both;
+}
+
+div.debug pre {
+	line-height: .6;
+}
+
+table.showall {
+	border-collapse: collapse;
+}
+
+table.showall th {
+	font-weight: bold;
+}
+
+table.showall th,
+table.showall td {
+	border: 1px solid #ccc;
+	padding: 2px 5px;
+}
