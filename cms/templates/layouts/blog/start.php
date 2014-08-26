@@ -42,7 +42,6 @@
   <script src="/assets/components/html5shiv/dist/html5shiv.min.js"></script>
 
   <?php perch_get_css(); ?>
-  <link href="/assets/css/print.css" rel="stylesheet" media="print" />
 
 </head>
 
