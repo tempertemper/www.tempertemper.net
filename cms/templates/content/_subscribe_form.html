@@ -1,0 +1,17 @@
+<perch:form id="subscribe" method="post" app="perch_forms" action="http://email.tempertemper.net/t/t/s/yduddd/">
+
+  <perch:error for="subscriber_name" type="required"><span class="error"></perch:error>
+    <perch:label for="subscriber_name">Name:</perch:label>
+    <perch:input type="text" id="subscriber_name" required="true" name="cm-name" label="Name" />
+  <perch:error for="subscriber_name" type="required"></span></perch:error>
+
+  <perch:error for="subscriber_email" type="required"><span class="error"></perch:error>
+  <perch:error for="subscriber_email" type="format"><span class="error"></perch:error>
+    <perch:label for="subscriber_email">Email address:</perch:label>
+    <perch:input type="email" id="subscriber_email" required="true" name="cm-yduddd-yduddd" label="Email" />
+  <perch:error for="subscriber_email" type="required"></span></perch:error>
+  <perch:error for="subscriber_email" type="format"></span></perch:error>
+
+  <perch:input type="submit" value="<perch:content id="button_text" type="text" label="Button text" required="true" size="m" />" />
+
+</perch:form>

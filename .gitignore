@@ -1,0 +1,12 @@
+.DS_Store
+/.sass-cache/
+/.htaccess
+/robots.txt
+/cms/config/config.php
+/cms/addons/feathers/tempertemper/css/style.css.map
+/node_modules/
+/assets/images/
+/assets/fonts/
+/cms/addons/feathers/tempertemper/img/
+/cms/addons/feathers/tempertemper/fonts/
+/cms/resources/

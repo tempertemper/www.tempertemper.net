@@ -1,0 +1,21 @@
+<address class="adr">
+
+  <span class="org">tempertemper Web Design</span>,
+
+  <perch:if exists="house-name">
+    <span class="extended-address"><perch:content divider-before="Address" id="house-name" type="text" label="House name" html="false" /></span>,
+  </perch:if>
+
+  <span class="street-address"><perch:content id="street-address" type="text" label="Street address" html="false" required="true" /></span>,
+
+  <span class="locality"><perch:content id="locality" type="text" label="Town/city" html="false" required="true" /></span>,
+
+  <perch:if exists="region">
+    <span class="region"><perch:content id="region" type="text" label="County" html="false" /></span>,
+  </perch:if>
+
+  <span class="postal-code"><perch:content id="county" type="text" label="Postcode" html="false" required="true" /></span>,
+
+  <span class="country-name"><perch:content id="country" type="text" label="Country" html="false" /></span>.
+
+</address>

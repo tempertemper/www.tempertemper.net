@@ -1,0 +1,86 @@
+@mixin link-marker {
+
+  &:hover,
+  &:active,
+  &:focus {
+
+    &:after {
+      text-decoration: none;
+    }
+  }
+
+  &:after {
+    content: "\00a0\203A";
+    display: inline-block;
+  }
+}
+
+@mixin reverse-link-marker {
+
+  &:hover,
+  &:active,
+  &:focus {
+
+    &:before {
+      text-decoration: none;
+    }
+  }
+
+  &:before {
+    content: "\2039";
+    margin-right: 0.25em;
+    display: inline-block;
+  }
+}
+
+@mixin link-marker-reset {
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:after,
+  &:before {
+    position: absolute;
+  }
+}
+
+@mixin button {
+  text-align: center;
+  display: block;
+  width: 100%;
+  border-radius: $border-radius-default;
+  padding: 0.8em 1em;
+  @include font-bold;
+  border-style: solid;
+  border-width: 3px;
+  color: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background-color: $colour-primary;
+  border-color: $colour-primary;
+  transition: all .3s ease;
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-style: solid;
+    border-width: 3px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border-color: black;
+  }
+}
+
+@mixin top-divider {
+  margin-top: 4em;
+  border-top: $divider;
+}
