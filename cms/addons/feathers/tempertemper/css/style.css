@@ -1318,10 +1318,19 @@ a img {
     width: 500px;
     margin-right: auto;
     margin-left: auto;
+    font-size: 10pt !important;
   }
 
   .nav-toggle,
-  [role="search"] {
+  [role="search"],
+  .useful-links,
+  .copyright ul,
+  .keep-in-touch,
+  form,
+  .go-to,
+  .button,
+  .subscribe,
+  .paging {
     display: none;
   }
 
@@ -1331,6 +1340,44 @@ a img {
 
   [role="contentinfo"] {
     border-bottom: none;
+  }
+
+  .logo {
+    width: 240px !important;
+    padding-left: 0 !important;
+  }
+
+  a:link, a:visited {
+    color: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+
+  ul,
+  img,
+  blockquote,
+  pre {
+    page-break-inside: avoid;
+  }
+
+  p a[href^=http],
+  ul a[href^=http],
+  ol a[href^=http] {
+    font-family: "FS Me Bold", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+  }
+  p a[href^=http]:after,
+  ul a[href^=http]:after,
+  ol a[href^=http]:after {
+    content: " <" attr(href) "> ";
   }
 }
 .ie8 [role="banner"],
