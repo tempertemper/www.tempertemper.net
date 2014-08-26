@@ -1313,6 +1313,26 @@ a img {
   padding-left: 0;
 }
 
+@media print {
+  body {
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .nav-toggle,
+  [role="search"] {
+    display: none;
+  }
+
+  [role="banner"] {
+    border-top: none;
+  }
+
+  [role="contentinfo"] {
+    border-bottom: none;
+  }
+}
 .ie9 label {
   display: block;
 }
