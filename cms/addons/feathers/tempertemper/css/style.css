@@ -756,7 +756,7 @@ textarea {
   height: 10em;
 }
 
-[type="submit"] {
+input[type="submit"] {
   text-align: center;
   display: block;
   width: 100%;
@@ -775,10 +775,10 @@ textarea {
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
-[type="submit"]:link, [type="submit"]:visited {
+input[type="submit"]:link, input[type="submit"]:visited {
   color: white;
 }
-[type="submit"]:hover, [type="submit"]:focus, [type="submit"]:active {
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {
   border-style: solid;
   border-width: 3px;
   color: white;
@@ -1317,46 +1317,10 @@ a img {
   display: block;
 }
 
-.ie8 .content {
+.ie8 [role="banner"],
+.ie8 [role="main"],
+.ie8 [role="complementary"] {
   width: 600px;
-}
-.ie8 label {
-  display: block;
-}
-.ie8 [role="navigation"] ul {
-  float: left;
-}
-.ie8 [role="navigation"] li {
-  display: block;
-  float: left;
-  margin-right: 0.3em;
-}
-.ie8 [role="navigation"] li:before {
-  content: "\2022";
-  color: white;
-  margin-right: 0.3em;
-  line-height: 1;
-}
-.ie8 [role="navigation"] li:first-child:before {
-  content: "";
-  position: absolute;
-}
-.ie8 #nav-toggle {
-  display: none;
-}
-.ie8 #nav.closed {
-  position: static !important;
-  display: block !important;
-  max-height: 1.5em !important;
-}
-.ie8 [type="search"] {
-  padding-left: 1em;
-  background-color: white;
-  background-image: none;
-}
-.ie8 [type="search"]:focus {
-  color: #0097db;
-  background-image: none;
 }
 
 /*# sourceMappingURL=style.css.map */
