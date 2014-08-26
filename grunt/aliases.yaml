@@ -1,0 +1,19 @@
+default:
+  - 'sass'
+  - 'autoprefixer'
+
+css:
+  - 'sass'
+  - 'autoprefixer'
+
+js:
+  - 'concat'
+  - 'uglify'
+
+files:
+  - 'copy'
+  - 'imagemin'
+
+up:
+  - 'browserSync'
+  - 'watch'

@@ -1,0 +1,21 @@
+{
+  "name": "modular-scale",
+  "version": "2.0.5",
+  "main": "stylesheets/_modular-scale.scss",
+  "ignore": [
+    "lib",
+    "test-compass",
+    "test-node-sass"
+  ],
+  "homepage": "https://github.com/Team-Sass/modular-scale",
+  "_release": "2.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.5",
+    "commit": "6443dd210c0baf695af812360cdffd208d7141ae"
+  },
+  "_source": "git://github.com/Team-Sass/modular-scale.git",
+  "_target": "~2.0.5",
+  "_originalSource": "modular-scale",
+  "_direct": true
+}

@@ -1,0 +1,60 @@
+.ie8 {
+
+  .content {
+    width: 600px;
+  }
+
+  label {
+    display: block;
+  }
+
+  [role="navigation"] {
+
+    ul {
+      float: left;
+    }
+
+    li {
+
+      display: block;
+      float: left;
+      margin-right: 0.3em;
+
+      &:before {
+        content: "\2022";
+        color: white;
+        margin-right: 0.3em;
+        line-height: 1;
+      }
+
+      &:first-child {
+
+        &:before {
+          content: "";
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  #nav-toggle {
+    display: none;
+  }
+
+  #nav.closed {
+    position: static !important;
+    display: block !important;
+    max-height: 1.5em !important;
+  }
+
+  [type="search"] {
+    padding-left: 1em;
+    background-color: white;
+    background-image: none;
+
+    &:focus {
+      color: $colour-primary;
+      background-image: none;
+    }
+  }
+}

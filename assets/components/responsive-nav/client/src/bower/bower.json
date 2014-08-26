@@ -1,0 +1,11 @@
+{
+  "name": "@@name",
+  "version": "@@version",
+  "main": [
+    "@@name.css",
+    "@@name.js"
+  ],
+  "ignore": [
+    "demos/"
+  ]
+}
