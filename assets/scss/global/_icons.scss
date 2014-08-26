@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Icons";
+  src: url("../fonts/icons-Regular.eot");
+  src: url("../fonts/icons-Regular.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/icons-Regular.woff") format("woff"),
+       url("../fonts/icons-Regular.ttf") format("truetype");
+}
+
+@mixin icons {
+  font-family: Icons;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  display: inline-block; // Fix for clickability issue in WebKit
+}
+
+[data-icon]:before {
+  @include icons;
+  content: attr(data-icon);
+  speak: none;
+}
+
+.screen-reader-text {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
