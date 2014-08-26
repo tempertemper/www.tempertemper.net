@@ -35,8 +35,10 @@ Perch.UI.Assets	= function()
 		init_tag_fields();
 	};
 
-	var init_asset_badge = function() {
-		$('.asset-badge').on('change', 'input[type=checkbox]', function(e){
+	var init_asset_badge = function(badge) {
+		if (!badge) var badge = $('.asset-badge');
+
+		badge.on('change', 'input[type=checkbox]', function(e){
 			var self = $(this);
 			var cont = self.parents('.asset-badge').find('.asset-badge-thumb');
 			if (self.is(':checked')) {
@@ -265,7 +267,6 @@ Perch.UI.Assets	= function()
 					if (load_progress==100) {
 						close_asset_drop();
 						reload_assets();
-						console.log(x);
 					}
 				},
 				fallback: function(){
@@ -438,7 +439,9 @@ Perch.UI.Assets	= function()
 		data.input_id 	 = target_group_id;
 
 		var template = Handlebars.templates['asset-badge'];
- 		$('.asset-badge[data-for='+target_field+']').replaceWith(template(data));
+		$('.asset-badge[data-for='+target_field+']').replaceWith(template(data));
+		init_asset_badge($('.asset-badge[data-for='+target_field+']'));
+		
 	};
 
 	var init_tag_fields = function() {

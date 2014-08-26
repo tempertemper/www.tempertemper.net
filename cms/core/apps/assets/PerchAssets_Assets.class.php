@@ -87,6 +87,7 @@ class PerchAssets_Assets extends PerchFactory
     	$sql = 'SELECT DISTINCT resourceBucket FROM '.$this->table.' 
     			WHERE resourceAWOL=0 AND resourceType !="" ORDER BY resourceType ASC';
     	$list = $this->db->get_rows_flat($sql);
+        if (!$list) $list = array();
 
         $bucket_list_file = PerchUtil::file_path(PERCH_PATH.'/config/buckets.php');
         if (file_exists($bucket_list_file)) {

@@ -687,6 +687,11 @@ class PerchUtil
 			$s .= '<ul class="subnav">';
 			
 			foreach($pages as $page) {
+
+				// Runway?
+				if (isset($page['runway']) && $page['runway']==true && !PERCH_RUNWAY) {
+					continue;
+				}
 				
 				if ((isset($page['priv']) && $CurrentUser->has_priv($page['priv'])) || !isset($page['priv'])) {
 					if (is_array($page['page'])) {

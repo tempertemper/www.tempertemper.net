@@ -58,6 +58,17 @@ class PerchContent_Region extends PerchBase
         return $Items->get_for_region($this->id(), $this->regionLatestRev(), $item_id);
     }
 
+    /**
+     * Get a list of revisions for the item, for showing the Revision History
+     * @return [type]           [description]
+     */
+    public function get_revisions()
+    {
+        $Items = new PerchContent_Items;
+        return $Items->get_revisions_for_region($this->id());
+    }
+
+
 	/**
 	 * Get a count of the number of items for this rev of the region
 	 *
@@ -404,7 +415,7 @@ class PerchContent_Region extends PerchBase
      * @return void
      * @author Drew McLellan
      */
-    public function publish($rev=false)
+    public function publish($rev=false, $change_latest=true)
     {
         if ($rev===false) $rev = $this->regionLatestRev();
         
@@ -413,7 +424,10 @@ class PerchContent_Region extends PerchBase
         $data = array();
         $data['regionHTML']      = $html;
         $data['regionRev']       = $rev;
-        $data['regionLatestRev'] = $rev;
+        
+        if ($change_latest) {
+            $data['regionLatestRev'] = $rev;
+        }
         
         $this->update($data);
 
@@ -459,13 +473,13 @@ class PerchContent_Region extends PerchBase
     {
         if ($rev===false) $rev = $this->regionLatestRev();
 
+        $Items = new PerchContent_Items();
+
         // clear out old items
         $sql = 'DELETE FROM '.PERCH_DB_PREFIX.'content_index 
-                WHERE regionID='.$this->db->pdb($this->id()).' AND itemRev<'.$this->db->pdb($this->regionRev());
+                WHERE regionID='.$this->db->pdb($this->id()).' AND itemRev<'.$this->db->pdb($Items->get_oldest_rev($this->id()));
         $this->db->execute($sql);
 
-
-        $Items = new PerchContent_Items();
         $items  = $Items->get_for_region($this->id(), $rev);
 
         if (PerchUtil::count($items)) {
@@ -562,8 +576,6 @@ class PerchContent_Region extends PerchBase
 
         }
 
-
-
         // optimize index 
         $sql = 'OPTIMIZE TABLE '.PERCH_DB_PREFIX.'content_index';
         $this->db->get_row($sql);
@@ -598,6 +610,32 @@ class PerchContent_Region extends PerchBase
         }
         
         return false;
+    }
+
+    /**
+     * Roll back to a specific revision (Runway)
+     * @param  [type] $rev [description]
+     * @return [type]      [description]
+     */
+    public function roll_back($rev)
+    {
+        if (!PERCH_RUNWAY) return false;
+
+        if ($this->regionRev()<$this->regionLatestRev()) {
+            $this->publish($rev, false);    
+        }else{
+            
+            $this->publish($rev, true);
+
+            $Items = new PerchContent_Items();
+            $Items->delete_revisions_newer_than($this->id(), $rev);
+        }
+
+        
+        $Perch = Perch::fetch();
+        $Perch->event('region.rollback', $this);
+
+        return true;
     }
     
     public function get_lowest_item_order()
@@ -653,8 +691,6 @@ class PerchContent_Region extends PerchBase
 
                 $Tag = $Template->find_tag($col, $output);
 
-
-
                 if (is_object($Tag)) {
                     $label = $col;
                     if ($Tag->label()) {
@@ -678,9 +714,7 @@ class PerchContent_Region extends PerchBase
                                 'Tag'=>false,
                             );
                 }
-
             }
-
             return $out;
         }
 

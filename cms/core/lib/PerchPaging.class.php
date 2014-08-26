@@ -186,7 +186,7 @@ class PerchPaging
         if (strpos($request_uri, $qs_char)!==false) $qs_char = '&amp;';
         
         $out    = array();
-        $out['paging']          = true;
+        $out['paging']          = ($this->number_of_pages() > 1 ? true : false);
         $out['total']           = $this->total();
         $out['number_of_pages'] = $this->number_of_pages();
         $out['total_pages']     = $this->number_of_pages();
