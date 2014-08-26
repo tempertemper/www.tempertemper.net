@@ -1,0 +1,59 @@
+.subnav,
+.smartbar,
+.smartbar .filter ul.open,
+.widget {
+	height: 1%;
+}
+
+.subnav li {
+	display: block;
+	float: left;
+}
+
+h1 {
+	clear: left;
+}
+
+.alert {
+	position: relative;
+	z-index: 2;
+	height: 1%;
+}
+
+.smartbar .filter ul.open {
+	height: 1%;
+}
+
+.smartbar .filter ul.open li {
+	position: relative;
+	z-index: 50;
+}
+
+.inner {
+	z-index: 1;
+}
+
+#appmenu.menucont .add {
+	display: none;
+}
+
+form p.submit .button {
+	width: 10em;
+}
+
+.mainnav {
+	width: 50%;
+}
+
+.dash .widget {
+	margin-right: 1%;
+	width: 48%;
+}
+
+.dash .widget h2 {
+	height: 1%;
+}
+
+.dash .widget h2 .button {
+	margin-top: -25px;
+}
