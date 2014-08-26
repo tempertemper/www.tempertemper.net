@@ -21,7 +21,7 @@ textarea {
   height: 10em;
 }
 
-[type="submit"] {
+input[type="submit"] {
   @include button;
 }
 
