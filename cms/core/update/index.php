@@ -14,7 +14,13 @@
 
     // Done allow this to be run twice.
     if ($Settings->get('update_'.$Perch->version)->val()) {
-    	PerchUtil::redirect(PERCH_LOGINPATH);
+
+    	if (isset($_GET['force']) && $_GET['force']=='update') {
+    		// skip checks
+    	}else{
+    		PerchUtil::redirect(PERCH_LOGINPATH);	
+    	}
+   	
     }
 
     if (isset($_GET['force']) && $_GET['force']=='accept') {

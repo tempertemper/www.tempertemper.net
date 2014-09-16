@@ -139,6 +139,34 @@
         
         <h2><?php echo PerchLang::get('Details'); ?></h2>
 
+        <?php
+            if (PERCH_RUNWAY) {
+                echo '<div class="field">';
+                    echo $Form->label('pageTemplate', 'Master page');
+                    
+                    $opts = array();
+                    $templates = $PageTemplates->get_templates();
+
+                    if (PerchUtil::count($templates)) {
+                        $opts = array();
+
+                        foreach($templates as $group_name=>$group) {
+                            $tmp = array();
+                            $group = PerchUtil::array_sort($group, 'label');
+                            foreach($group as $file) {
+                                $tmp[] = array('label'=>$file['label'], 'value'=>$file['path']);
+                            }
+                            $opts[$group_name] = $tmp;
+                        }
+                        $opts[PerchLang::get('General')][] = array('label'=>PerchLang::get('Local file'), 'path'=>'', 'filename'=>'', 'value'=>'');
+                    }
+
+                    echo $Form->grouped_select('pageTemplate', $opts, $Form->get($details, 'pageTemplate'));
+                    
+                echo '</div>';
+            }
+        ?>
+
         <div class="field">
             <?php echo $Form->label('pageAttributeTemplate', 'Attribute template'); ?>
             <?php 

@@ -15,6 +15,9 @@ class PerchImage
 
     // Sharpening
     private $sharpening = 4;
+
+    // Progressive JPEGs
+    private $progressive_jpeg = true;
     
     private $box_constrain = true;
     
@@ -29,6 +32,10 @@ class PerchImage
         if (strtolower(PERCH_IMAGE_LIB)=='gd' && extension_loaded('gd')) {
             $this->mode = 'gd';
         }   
+
+        if (!defined('PERCH_PROGRESSIVE_JPEG')) define('PERCH_PROGRESSIVE_JPEG', true);
+
+        $this->progressive_jpeg = PERCH_PROGRESSIVE_JPEG;
     }
 
     public function reset_defaults()
@@ -503,6 +510,12 @@ class PerchImage
                 if ($this->sharpening) {
                     $new_image = $this->sharpen_with_gd($new_image, $this->sharpening);
                 }
+
+                // progressive jpg?
+                if ($this->progressive_jpeg) {
+                    imageinterlace($new_image, 1);    
+                }
+                
                 
                 if ($crop) {
                     imagecopy($crop_image, $new_image, 0, 0, $crop_x, $crop_y, $new_w, $new_h);
@@ -695,6 +708,11 @@ class PerchImage
         
         $mime = 'image/'.$Image->getImageFormat();
 
+        // progressive jpg?
+        if (strtolower($mime) == 'image/jpeg' && $this->progressive_jpeg) {
+            $Image->setInterlaceScheme(Imagick::INTERLACE_PLANE);
+        }
+
         $Image->writeImage($save_as);
         $Image->destroy();        
         return $mime;    
@@ -716,6 +734,12 @@ class PerchImage
             if ($this->sharpening) {
                 ///$Image->unsharpMaskImage(0, $this->sharpening/10, $this->sharpening/2, 0.05);
             }
+
+            // progressive jpg?
+            if ($this->progressive_jpeg) {
+                $Image->setInterlaceScheme(Imagick::INTERLACE_PLANE);
+            }
+
             $Image->writeImage($save_as);
             
 

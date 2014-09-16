@@ -72,6 +72,10 @@
 
         if ($Asset) {
 
+            if ($data['resourceInLibrary']=='1') {
+                $Asset->mark_as_library();
+            }
+
             $Asset->update($data);
     		$Asset->reindex();
 

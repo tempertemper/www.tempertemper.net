@@ -234,10 +234,18 @@ class PerchAPI_HTML
 		return PerchUtil::subnav($CurrentUser, $opts, $this->Lang);
 	}
 
-    public function listing($rows, $headings, $values, $edit_path='edit', $delete_path='delete')
+    public function listing($rows, $headings, $values, $paths, $privs)
     {
         $s = '';
         if (PerchUtil::count($rows)) {
+
+            $CurrentUser = $privs['user'];
+            $edit_link   = false;
+            if ($privs['edit']===false || ($CurrentUser && $CurrentUser->has_priv($privs['edit']))) {
+                $edit_link = true;
+            }
+
+
             $s .= '<table class="d">
                     <thead>
                         <tr>';
@@ -260,9 +268,9 @@ class PerchAPI_HTML
                 foreach($values as $val) {
                     if ($i==0) {
                         $s .= '<td class="primary">';
-                        $s .= '<a href="'.$edit_path.'/?id='.$row->id().'">';
+                        if ($edit_link) $s .= '<a href="'.$paths['edit'].'/?id='.$row->id().'">';
                         $s .= $row->$val();
-                        $s .= '</a>';
+                        if ($edit_link) $s .= '</a>';
                         $s .= '</td>';
                     }else{
                         $s .= '<td>';
@@ -272,7 +280,12 @@ class PerchAPI_HTML
 
                     $i++;
                 }
-                $s .= '<td><a href="'.$delete_path.'/?id='.$row->id().'" class="delete inline-delete">'.$this->Lang->get('Delete').'</a></td>';
+
+                if ($privs['delete']===false || ($CurrentUser && $CurrentUser->has_priv($privs['delete']))) {
+                    $s .= '<td><a href="'.$paths['delete'].'/?id='.$row->id().'" class="delete inline-delete">'.$this->Lang->get('Delete').'</a></td>';
+                }else{
+                    $s .= '<td></td>';
+                }
                 $s .= '</tr>';               
             }
 

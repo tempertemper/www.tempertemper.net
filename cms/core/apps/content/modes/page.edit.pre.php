@@ -5,6 +5,7 @@
     $Page  = false;
 
     $NavGroups  = new PerchContent_NavGroups;
+    $PageTemplates  = new PerchContent_PageTemplates;
 
     if (PERCH_RUNWAY) {
         $PageRoutes = new PerchPageRoutes();
@@ -36,6 +37,10 @@
     
     if ($Form->posted() && $Form->validate()) {
     	$postvars = array('pagePath', 'pageSubpagePath', 'pageHidden', 'pageAccessTags', 'pageAttributeTemplate');
+
+        if (PERCH_RUNWAY) {
+            $postvars[] = 'pageTemplate';
+        }
 
 
     	$data = $Form->receive($postvars);
@@ -131,21 +136,21 @@
                         if (!is_object($PageRoute)) continue;
 
                         if (trim($pattern)!='') {
-                            $PageRoute->update(['routePattern'=>$pattern]);
+                            $PageRoute->update(array('routePattern'=>$pattern));
                         }else{
                             $PageRoute->delete();
                         }
                     }
                 } 
 
-                $new_routes = $Form->receive(['new_pattern']);
+                $new_routes = $Form->receive(array('new_pattern'));
                 if (count($new_routes)) {
                     foreach($new_routes as $pattern) {
                         if (trim($pattern)!='') {
-                            $PageRoute = $PageRoutes->create([
+                            $PageRoute = $PageRoutes->create(array(
                                 'pageID'=>$Page->id(),
                                 'routePattern' => $pattern
-                                ]);
+                                ));
                         }
                         
                     }

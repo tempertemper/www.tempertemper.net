@@ -2,15 +2,23 @@
 
 class PerchSystem
 {
-    private static $search_handlers           = array();
-    private static $template_vars             = array();
-    private static $feathers                  = array();
-    private static $template_handlers         = array();
+    private static $search_handlers   = array();
+    private static $template_vars     = array();
+    private static $feathers          = array();
+    private static $template_handlers = array();
+    private static $RoutedPage        = false;
     
     public static function set_page($page)
     {
         $Perch = Perch::fetch();
-        $Perch->set_page($page);
+
+        if (PERCH_RUNWAY && $page instanceof PerchRoutedPage) {
+            $Perch->set_page($page->path);
+            self::$RoutedPage = $page;
+        }else{
+            $Perch->set_page($page);    
+        }
+        
         $Content = PerchContent::fetch();
         $Content->clear_cache();
     }
@@ -87,6 +95,15 @@ class PerchSystem
     {
         self::$template_vars['perch_page_path'] = self::get_page();
         return self::$template_vars;
+    }
+
+
+    public static function get_url_var($var)
+    {
+        if (self::$RoutedPage && isset(self::$RoutedPage->args[$var])) {
+            return self::$RoutedPage->args[$var];
+        }
+        return false;
     }
 
     public static function get_helper_js()

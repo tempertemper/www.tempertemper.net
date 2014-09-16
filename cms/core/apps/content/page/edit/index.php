@@ -18,6 +18,8 @@
     include($app_path.'/PerchContent_Regions.class.php');
     include($app_path.'/PerchContent_NavGroup.class.php');
     include($app_path.'/PerchContent_NavGroups.class.php');
+    include($app_path.'/PerchContent_PageTemplates.class.php');
+    include($app_path.'/PerchContent_PageTemplate.class.php');
     
         
     include($app_path.'/modes/page.edit.pre.php');

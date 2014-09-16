@@ -27,11 +27,16 @@ class PerchAPI_Template
 
         $this->namespace = $namespace;
         
-        $local_file = PerchUtil::file_path(PERCH_PATH.'/addons/apps/'.$this->app_id.'/templates/'.$file);
-		$user_file = PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/'.$file);
+        if (strpos($file, '~')!==false) {
+            $local_file = PerchUtil::file_path(PERCH_PATH.'/addons/apps/'.substr($file, strpos($file, '~')+1));
+            $user_file  = PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/'.substr($file, strpos($file, 'templates')+9));
+        }else{
+            $local_file = PerchUtil::file_path(PERCH_PATH.'/addons/apps/'.$this->app_id.'/templates/'.$file);
+            $user_file  = PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/'.$file);
+        }
 
         if (file_exists($user_file)) {
-            $template_file= $user_file;
+            $template_file = $user_file;
         }else{
             $template_file = $local_file;
         }
@@ -104,5 +109,3 @@ class PerchAPI_Template
     }
 
 }
-
-?>

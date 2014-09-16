@@ -123,5 +123,3 @@ class PerchAPI_Lang
     }
     
 }
-
-?>
