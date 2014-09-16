@@ -19,8 +19,16 @@
     echo $HTML->listing($sets, 
     		array('Title', 'Slug'), 
     		array('setTitle', 'setSlug'), 
-    		'sets',
-            'delete/set');
+            array(
+                    'edit' => 'sets',
+                    'delete' => 'delete/set',
+                ),
+            array(
+                'user' => $CurrentUser,
+                'edit' => 'categories.manage',
+                'delete' => 'categories.sets.delete',
+                )
+            );
     ?>
 
 <?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>

@@ -34,7 +34,7 @@
                     }else{
                         echo PERCH_LOGINPATH . '/core/apps/content/page/?id='.PerchUtil::html($Region->pageID());
                     }
-                ?>">Regions</a> 
+                ?>"><?php echo PerchLang::get('Regions'); ?></a> 
 				<span class="sep icon"></span> 
 				<a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/edit/?id='.PerchUtil::html($id);?>"><?php echo PerchUtil::html($Region->regionKey()); ?></a>
 				</span>
@@ -46,7 +46,7 @@
 
                 if ($Region->regionMultiple()) {
                     echo '<li class="fin">';
-                    echo '<a href="'.PERCH_LOGINPATH . '/core/apps/content/reorder/region/?id='.PerchUtil::html($Region->id()).'" class="icon reorder">Reorder</a>';
+                    echo '<a href="'.PERCH_LOGINPATH . '/core/apps/content/reorder/region/?id='.PerchUtil::html($Region->id()).'" class="icon reorder">'.PerchLang::get('Reorder').'</a>';
                     echo '</li>';
                 }
 			?>

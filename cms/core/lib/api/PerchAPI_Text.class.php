@@ -68,5 +68,3 @@ class PerchAPI_Text
 		return $value;
     }
 }
-
-?>

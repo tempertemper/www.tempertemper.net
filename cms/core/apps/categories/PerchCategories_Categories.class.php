@@ -17,8 +17,39 @@ class PerchCategories_Categories extends PerchFactory
 	public function create($data)
 	{
 		$Category = parent::create($data);
-		$Category->update_tree_position();
+		if (is_object($Category)) {
+			$Category->update_tree_position();	
+		}
 		return $Category;
+	}
+
+	public function find_or_create($catPath, $label=false)
+	{
+		$Cat = $this->get_one_by('catPath', $catPath);
+
+		if (is_object($Cat)) return $Cat;
+
+		$path_parts = explode('/', $catPath);
+		$setSlug = array_shift($path_parts);
+		$catSlug = array_pop($path_parts);
+
+		$Sets = new PerchCategories_Sets($this->api);
+		$Set = $Sets->get_one_by('setSlug', $setSlug);
+
+		if (is_object($Set)) {
+			$data = array(
+				'setID'       => $Set->id(),
+				'catTitle'    => $label,
+				'catSlug'     => $catSlug,
+				'catPath'     => $catPath,
+				'catParentID' => 0,
+				);	
+			$Cat = $this->create($data);
+
+			return $Cat;
+		}
+
+		return false;
 	}
 
 	public function get_tree($setID)
@@ -87,11 +118,15 @@ class PerchCategories_Categories extends PerchFactory
 
 	}
 
-	public function get_custom($opts)
+	public function get_custom($opts, $api=false)
 	{
+		if ($api) $this->api = $api;
+
 		$opts['template'] = 'categories/'.$opts['template'];
 
-		$where_callback = function(PerchQuery $Query) use ($opts) {
+		$db = $this->db;
+
+		$where_callback = function(PerchQuery $Query) use ($opts, $db) {
 
 			// set
 			if (isset($opts['set'])) {
@@ -99,13 +134,25 @@ class PerchCategories_Categories extends PerchFactory
 			    if (is_numeric($opts['set'])) {
 			        $setID = $opts['set'];
 			    }else{
-			    	$set_sql = 'SELECT setID FROM '.PERCH_DB_PREFIX.'category_sets WHERE setSlug='.$this->db->pdb($opts['set']).' LIMIT 1';
-			        $setID = $this->db->get_value($set_sql);
+			    	$set_sql = 'SELECT setID FROM '.PERCH_DB_PREFIX.'category_sets WHERE setSlug='.$db->pdb($opts['set']).' LIMIT 1';
+			        $setID = $db->get_value($set_sql);
 			    }
 
 			    if ($setID) {
-			        $Query->where[] = ' setID='.$this->db->pdb($setID);
+			        $Query->where[] = ' setID='.$db->pdb($setID);
 			    }
+			}
+
+			// count
+			if (isset($opts['count-type'])) {
+
+				$Query->select .= ', cc.countValue AS  `count.'.$opts['count-type'].'` ';
+				$Query->from   .= ', '.PERCH_DB_PREFIX.'category_counts cc ';
+				$Query->where[] = 'cc.catID=main.catID AND cc.countType='.$db->pdb($opts['count-type']);
+
+				if (isset($opts['include-empty']) && $opts['include-empty']==false) {
+					$Query->where[] = 'cc.countValue > 0';
+				} 
 			}
 
 			return $Query;

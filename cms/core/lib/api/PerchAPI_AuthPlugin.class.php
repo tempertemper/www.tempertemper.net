@@ -125,5 +125,3 @@ class PerchAPI_AuthPlugin extends PerchBase
     }
 
 }
-
-?>

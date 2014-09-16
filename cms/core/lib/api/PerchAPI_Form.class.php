@@ -229,8 +229,11 @@ class PerchAPI_Form extends PerchForm
     
     public function checkbox_set($id, $label, $options, $values=array(), $class='', $limit=false, $container_class='')
     {
-        $out = $this->field_start($id);
+        $out = '';
+        if ($label!==false) $out = $this->field_start($id);
         
+        if (!$values) $values = array();
+
         $out .= '<fieldset class="checkboxes '.$container_class.'"><strong>'.PerchUtil::html($this->Lang->get($label)).'</strong>';
         $i = 0;
         
@@ -258,7 +261,7 @@ class PerchAPI_Form extends PerchForm
         
         
         $out .= '</fieldset>';
-        $out .= $this->field_end($id);
+        if ($label!==false) $out .= $this->field_end($id);
         
         return $out;
     }
@@ -387,9 +390,14 @@ class PerchAPI_Form extends PerchForm
         }
     }
     
-    public function fields_from_template($Template, $details=array(), $seen_tags=array())
+    public function fields_from_template($Template, $details=array(), $seen_tags=array(), $include_repeaters=true)
     {    
-        $tags   = $Template->find_all_tags();
+        if ($include_repeaters) {
+            $tags   = $Template->find_all_tags_and_repeaters();    
+        }else{
+            $tags   = $Template->find_all_tags();
+        }
+        
         
         $Form = $this;
         
@@ -456,7 +464,7 @@ class PerchAPI_Form extends PerchForm
     
     public function receive_from_template_fields($Template, $previous_values, $perch_only=true, $fixed_fields=false)
     {
-        $tags   = $Template->find_all_tags();
+        $tags   = $Template->find_all_tags_and_repeaters();
         
         $Form = $this;
         
