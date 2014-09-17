@@ -2,24 +2,10 @@
 
 class PerchBlog_Author extends PerchAPI_Base
 {
-	protected $table  = 'blog_authors';
-    protected $pk     = 'authorID';
+    protected $table        = 'blog_authors';
+    protected $pk           = 'authorID';
+    protected $index_table  = 'blog_index';
+    protected $namespace    = 'blog';
+    protected $event_prefix = 'blog.author';
 
-    public function to_array()
-    {
-    	$out = parent::to_array();
-
-    	if ($out['authorDynamicFields'] != '') {
-            $dynamic_fields = PerchUtil::json_safe_decode($out['authorDynamicFields'], true);
-            if (PerchUtil::count($dynamic_fields)) {
-                foreach($dynamic_fields as $key=>$value) {
-                    $out['perch_'.$key] = $value;
-                }
-            }
-            $out = array_merge($dynamic_fields, $out);
-        }
-
-        return $out;
-    }
 }
-

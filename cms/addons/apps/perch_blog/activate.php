@@ -96,7 +96,18 @@
       KEY `idx_slug` (`sectionSlug`)
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
-
+    CREATE TABLE IF NOT EXISTS `__PREFIX__blog_index` (
+      `indexID` int(10) NOT NULL AUTO_INCREMENT,
+      `itemKey` char(64) NOT NULL DEFAULT '-',
+      `itemID` int(10) NOT NULL DEFAULT '0',
+      `indexKey` char(64) NOT NULL DEFAULT '-',
+      `indexValue` char(255) NOT NULL DEFAULT '',
+      PRIMARY KEY (`indexID`),
+      KEY `idx_fk` (`itemKey`,`itemID`),
+      KEY `idx_key` (`indexKey`),
+      KEY `idx_key_val` (`indexKey`,`indexValue`),
+      KEY `idx_keys` (`itemKey`,`indexKey`)
+    ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
     ";
     
@@ -117,13 +128,24 @@
     $UserPrivileges->create_privilege('perch_blog.post.publish', 'Publish posts');
     $UserPrivileges->create_privilege('perch_blog.comments.moderate', 'Moderate comments');
     $UserPrivileges->create_privilege('perch_blog.comments.enable', 'Enable comments on a post');
-    $UserPrivileges->create_privilege('perch_blog.categories.manage', 'Manage categories');
     $UserPrivileges->create_privilege('perch_blog.import', 'Import data');
     $UserPrivileges->create_privilege('perch_blog.authors.manage', 'Manage authors');
     
     $sql = "INSERT INTO `".PERCH_DB_PREFIX."blog_sections` (sectionID, sectionTitle, sectionSlug, sectionPostCount, sectionDynamicFields) VALUES ('1', 'Posts', 'posts', 0, '')";
         $this->db->execute($sql);
 
+    $Core_CategorySets = new PerchCategories_Sets();
+    $Core_Categories   = new PerchCategories_Categories();
+    $Set = $Core_CategorySets->get_by('setSlug', 'blog');
+    if (!$Set) {
+        $Set = $Core_CategorySets->create(array(
+                'setTitle'         => PerchLang::get('Blog'),
+                'setSlug'          => 'blog',
+                'setTemplate'      => '~/perch_blog/templates/blog/category_set.html',
+                'setCatTemplate'   => '~/perch_blog/templates/blog/category.html',
+                'setDynamicFields' => '[]'
+            ));
+    }
 
     $sql = 'SHOW TABLES LIKE "'.$this->table.'"';
     $result = $this->db->get_value($sql);
