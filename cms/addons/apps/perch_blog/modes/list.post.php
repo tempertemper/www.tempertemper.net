@@ -44,10 +44,10 @@
                 $items = array();
                 foreach($categories as $Category) {
                     $items[] = array(
-                            'arg'=>'category',
-                            'val'=>$Category->categorySlug(),
-                            'label'=>$Category->categoryTitle(),
-                            'path'=>$API->app_path()
+                            'arg'   => 'category',
+                            'val'   => $Category->catPath(),
+                            'label' => $Category->catTitle(),
+                            'path'  => $API->app_path()
                         );
                 }
 
@@ -59,10 +59,10 @@
                 $items = array();
                 foreach($sections as $Section) {
                     $items[] = array(
-                            'arg'=>'section',
-                            'val'=>$Section->sectionSlug(),
-                            'label'=>$Section->sectionTitle(),
-                            'path'=>$API->app_path()
+                            'arg'   => 'section',
+                            'val'   => $Section->sectionSlug(),
+                            'label' => $Section->sectionTitle(),
+                            'path'  => $API->app_path()
                         );
                 }
 
@@ -111,9 +111,9 @@
                         echo $Lang->get('Will publish on date');
                     }else{
                         if ($Post->postStatus()=='Draft') {
-                            echo '<span class="special">'.$HTML->encode($Post->postStatus()).'</span>';
+                            echo '<span class="special">'.$HTML->encode($Lang->get($Post->postStatus())).'</span>';
                         }else{
-                            echo $HTML->encode($Post->postStatus()); 
+                            echo $HTML->encode($Lang->get($Post->postStatus())); 
                         }
                         
                     }

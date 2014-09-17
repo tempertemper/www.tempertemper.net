@@ -25,7 +25,6 @@
     $Template->set('blog/author.html', 'blog');
     $tags = $Template->find_all_tags();
 
-
     
     $Form->require_field('authorGivenName', 'Required');
     $Form->require_field('authorEmail', 'Required');
@@ -46,6 +45,8 @@
         $data['authorDynamicFields'] = PerchUtil::json_safe_encode($dynamic_fields);
     	
         $Author->update($data);
+
+        $Author->index($Template);
     	
         if (is_object($Author)) {
             $message = $HTML->success_message('The author has been successfully edited. Return to %sauthor listing%s', '<a href="'.$API->app_path() .'/authors">', '</a>');
@@ -63,4 +64,3 @@
         $message = $HTML->success_message('The author has been successfully created. Return to %sauthor listing%s', '<a href="'.$API->app_path() .'/authors">', '</a>');
     }
 
-?>
