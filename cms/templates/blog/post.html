@@ -1,5 +1,13 @@
-<perch:blog id="postTitle" type="text" label="Title" required="true" suppress="true" size="xl autowidth" order="1" />
+<perch:blog id="postTitle" type="smarttext" label="Title" required="true" suppress="true" size="xl autowidth" order="1" />
 
-<perch:blog id="postDescHTML" encode="false" type="textarea" editor="markitup" order="2" size="xxl" markdown="true" textile="false" html="true" />
+<perch:blog id="postDescHTML" encode="false" type="textarea" editor="markitup" order="2" label="Post" size="xxl" markdown="true" textile="false" html="true" />
 
 <perch:blog id="excerpt" type="textarea" label="Excerpt" order="3" suppress="true" size="xs" />
+
+<perch:blog id="postDateTime" type="date" label="Date" time="true" format="jS F Y" divider-before="Meta information" />
+
+<perch:categories id="categories" set="blog" label="Categories" display-as="checkboxes">
+  <a href="archive.php?cat=<perch:category id="catSlug" type="slug" />">
+    <perch:category id="catTitle" type="text" />
+  </a>
+</perch:categories>

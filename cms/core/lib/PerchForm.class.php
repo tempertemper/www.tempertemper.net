@@ -692,8 +692,14 @@ class PerchForm
 		return $s;
 	}
 	
-	public function checkbox_set($id, $label=false, $options, $values=false, $container_class=false)
+	public function checkbox_set($id, $label=false, $options, $values=array(), $class='', $limit=false, $container_class=false)
     {
+    	/* 
+    	Note:
+    		$class and $limit aren't used. They exist to maintain argument consistancy 
+    		between this and the older PerchAPI_Form::checkbox_set method
+    	*/
+
         $out = '';
         
         $out .= '<fieldset class="checkboxes '.($container_class ? ' '.$container_class: '').'">';

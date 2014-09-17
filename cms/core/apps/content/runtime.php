@@ -418,6 +418,12 @@
         if (isset($_GET[$var]) && $_GET[$var]!='') {
             return $_GET[$var];
         }
+
+        if (PERCH_RUNWAY) {
+            $r = PerchSystem::get_url_var($var);
+            if ($r) return $r;
+        }
+
         return $default;
     }
 

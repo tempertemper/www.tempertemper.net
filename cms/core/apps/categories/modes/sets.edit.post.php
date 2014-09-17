@@ -67,7 +67,7 @@
     $details = array();
     if (is_object($Set)) $details = $Set->to_array();
     
-    echo $Form->fields_from_template($Template, $details);
+    echo $Form->fields_from_template($Template, $details, array(), false);
 
     $opts = array();
     $templates = $Sets->get_templates();

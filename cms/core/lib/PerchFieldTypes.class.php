@@ -1847,7 +1847,6 @@ class PerchFieldType_category extends PerchFieldType
         
         $Perch->add_javascript(PERCH_LOGINPATH.'/core/assets/js/chosen.jquery.min.js');
         $Perch->add_javascript(PERCH_LOGINPATH.'/core/assets/js/categories.js');
-        //$Perch->add_css(PERCH_LOGINPATH.'/core/assets/css/chosen.min.css');
     }
 
     public function render_inputs($details=array())
@@ -1892,7 +1891,7 @@ class PerchFieldType_category extends PerchFieldType
         $multicol = 'fieldtype';
         if (PerchUtil::count($opts) > 4) $multicol .= ' multi-col';
 
-        return $this->Form->checkbox_set($this->Tag->input_id(), false, $opts, $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), $multicol);
+        return $this->Form->checkbox_set($this->Tag->input_id(), false, $opts, $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), false, false, $multicol);
         
     }
 

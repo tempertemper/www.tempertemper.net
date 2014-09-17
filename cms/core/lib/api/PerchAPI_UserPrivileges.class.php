@@ -24,5 +24,3 @@ class PerchAPI_UserPrivileges extends PerchUserPrivileges
 		return parent::create($data);
 	}
 }
-
-?>

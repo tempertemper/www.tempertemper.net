@@ -12,7 +12,7 @@ class PerchCategories_Set extends PerchBase
         $Categories = new PerchCategories_Categories();
         $categories = $Categories->get_by('setID', $this->id());
 
-        if (count($categories)) {
+        if (PerchUtil::count($categories)) {
             foreach($categories as $Category) {
                 $Category->delete();
             }

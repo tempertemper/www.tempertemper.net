@@ -5,25 +5,23 @@
     $API  = new PerchAPI(1.0, 'perch_blog');
     $Lang = $API->get('Lang');
 
-    if (!$CurrentUser->has_priv('perch_blog.categories.manage')) {
-        PerchUtil::redirect($API->app_path());
-    }
-
     # include your class files
-    include('../PerchBlog_Categories.class.php');
-    include('../PerchBlog_Category.class.php');
+    include('../PerchBlog_Posts.class.php');
+    include('../PerchBlog_Post.class.php');
     include('../PerchBlog_Sections.class.php');
     include('../PerchBlog_Section.class.php');
     include('../PerchBlog_Cache.class.php');
     include('../PerchBlog_Comments.class.php');
     include('../PerchBlog_Comment.class.php');
+    include('../PerchBlog_Authors.class.php');
+    include('../PerchBlog_Author.class.php');
 
     # Set the page title
-    $Perch->page_title = $Lang->get('Manage Blog Categories');
+    $Perch->page_title = $Lang->get('Update Blog');
 
 
     # Do anything you want to do before output is started
-    include('../modes/category.list.pre.php');
+    include('../modes/update.pre.php');
     
     
     # Top layout
@@ -31,7 +29,7 @@
 
     
     # Display your page
-    include('../modes/category.list.post.php');
+    include('../modes/update.post.php');
     
     
     # Bottom layout

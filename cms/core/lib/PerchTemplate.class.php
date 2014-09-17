@@ -24,7 +24,7 @@ class PerchTemplate
     	$this->current_file = $file;
 		
 		$this->namespace = $namespace;
-	
+
 		if ($file && $relative_path) {
 			$file = PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/'.$file);
 		}
@@ -173,7 +173,7 @@ class PerchTemplate
 						if (isset($content_vars[$key])) {
 							$value = $content_vars[$key];
 						}else{
-							$contents = str_replace($match, '', $contents);
+							$contents = str_replace($match, '', $contents);						    							
 							continue;
 						}
 
@@ -215,7 +215,8 @@ class PerchTemplate
 					    if ($tag->urlify) {
 					        $modified_value = PerchUtil::urlify($modified_value);
 					    }
-					        					    
+
+
                         
 				        // Trim by chars
                         if ($tag->chars) {
@@ -1045,6 +1046,10 @@ class PerchTemplate
 	{
 		$Tag = new PerchXMLTag($opening_tag);
 		$out = '';
+
+		if ($Tag->suppress()) {
+			return str_replace($exact_match, '', $template_contents);
+		}
 
 		if (is_array($content_vars) && isset($content_vars[$Tag->id()]) && PerchUtil::count($content_vars[$Tag->id()])) {
 		

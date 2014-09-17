@@ -16,5 +16,3 @@ class PerchAPI_Paging extends PerchPaging
         parent::__construct();
     }
 }
-
-?>

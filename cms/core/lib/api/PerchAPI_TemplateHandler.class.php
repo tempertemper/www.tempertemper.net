@@ -14,5 +14,3 @@ class PerchAPI_TemplateHandler
 		return $html;
 	}
 }
-
-?>

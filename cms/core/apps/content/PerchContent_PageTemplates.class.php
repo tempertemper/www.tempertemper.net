@@ -34,6 +34,37 @@ class PerchContent_PageTemplates extends PerchFactory
         }
     }
     
+    public function get_templates($path=false, $include_hidden=false, $initial_path=false)
+    {
+        $Perch = Perch::fetch();
+        
+        if ($path===false) $path = PERCH_TEMPLATE_PATH.'/pages';
+        if ($initial_path===false) $initial_path = $path;
+        $a = array();
+        if (is_dir($path)) {
+            if ($dh = opendir($path)) {
+                while (($file = readdir($dh)) !== false) {
+                    if(substr($file, 0, 1) != '.' && $file!='attributes' && ($include_hidden || substr($file, 0, 1) != '_') && !preg_match($Perch->ignore_pattern, $file)) {
+                        $extension = PerchUtil::file_extension($file);
+                        if ($extension == 'php') {
+                            $p = str_replace($initial_path, '', $path);
+                            if (!$p) {
+                                $a[PerchLang::get('General')][] = array('filename'=>$file, 'path'=>$file, 'label'=>$this->template_display_name($file));
+                            }else{
+                                $a[] = array('filename'=>$file, 'path'=>ltrim($p, '/').'/'.$file, 'label'=>$this->template_display_name($file));
+                            }
+                        }else{
+                            $a[$this->template_display_name($file)] = $this->get_templates($path.'/'.$file, $include_hidden, $initial_path);
+                        }
+                    }
+                }
+                closedir($dh);
+            }
+            if (PerchUtil::count($a)) $a = PerchUtil::array_sort($a, 'label');
+        }
+        return $a;
+    }
+
     
     private function get_template_files()
     {

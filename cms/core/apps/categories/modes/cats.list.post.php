@@ -4,9 +4,9 @@
 <?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
 <?php include ('_subnav.php'); ?>
    
-<?php if ($CurrentUser->has_priv('categories.manage')) { ?>
+<?php if ($CurrentUser->has_priv('categories.create')) { ?>
 <a class="add button" href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/categories/edit/?sid='.$Set->id()); ?>"><?php echo PerchLang::get('Add category'); ?></a>
-<?php } // categories.manage ?>
+<?php } // categories.create ?>
 
 
     <h1><?php echo PerchLang::get('Listing categories in ‘%s’ set', $Set->setTitle()); ?></h1>

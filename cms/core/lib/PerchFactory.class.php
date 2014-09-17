@@ -9,6 +9,9 @@ class PerchFactory
     protected $namespace = 'content';
     protected $index_table = false;
 
+    protected $bypass_categories = false;
+    protected $bypass_tags = false;
+
     protected $default_sort_direction = 'ASC';
 
     public $dynamic_fields_column = false;
@@ -492,23 +495,27 @@ class PerchFactory
                 }
             }
             
-            $sql = $Paging->select_sql() . ' p.* FROM '.$this->table.' p ';
+            $select  = $Paging->select_sql() . ' main.* ';
+            $from    = 'FROM '.$this->table.' main ';
 
             if (is_callable($where_callback)) {
                 
                 // load up Query object
                 $Query         = new PerchQuery();
-                $Query->select = $sql;
+                $Query->select = $select;
+                $Query->from   = $from;
                 $Query->where  = $where;
                 
                 // do callback
                 $Query         = $where_callback($Query);
 
                 // retrieve
-                $sql           = $Query->select;
+                $select        = $Query->select;
+                $from          = $Query->from;
                 $where         = $Query->where;
             }
 
+            $sql = $select.$from;
             
             $sql .= ' WHERE 1=1 ';  
             
@@ -980,14 +987,23 @@ class PerchFactory
             }
 
             // Pagination
-            if (isset($opts['paginate'])) {
-                if (isset($opts['pagination-var'])) {
-                    $Paging = new PerchPaging($opts['pagination-var']);
+            if (isset($opts['paginate']) && $opts['paginate']) {
+
+                if (is_object($opts['paginate'])) {
+
+                    $Paging = $opts['paginate'];
+
                 }else{
-                    $Paging = new PerchPaging();
+
+                    if (isset($opts['pagination-var'])) {
+                        $Paging = new PerchPaging($opts['pagination-var']);
+                    }else{
+                        $Paging = new PerchPaging();
+                    }
+                    
+                    $Paging->set_per_page(isset($opts['count'])?(int)$opts['count']:10);
                 }
-                
-                $Paging->set_per_page(isset($opts['count'])?(int)$opts['count']:10);
+
                 
                 $opts['count'] = $Paging->per_page();
                 $opts['start'] = $Paging->lower_bound()+1;
@@ -1028,6 +1044,10 @@ class PerchFactory
                 $total_count = $this->db->get_value($Paging->total_count_sql());
                 $Paging->set_total($total_count);
             }
+        }
+
+        if (isset($opts['return-objects']) && $opts['return-objects']) {
+            return $items;
         }
 
 

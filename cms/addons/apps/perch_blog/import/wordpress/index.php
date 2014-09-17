@@ -8,8 +8,6 @@
     # include your class files
     include('../../PerchBlog_Posts.class.php');
     include('../../PerchBlog_Post.class.php');
-    include('../../PerchBlog_Categories.class.php');
-    include('../../PerchBlog_Category.class.php');
     include('../../PerchBlog_Sections.class.php');
     include('../../PerchBlog_Section.class.php');
     include('../../PerchBlog_Tags.class.php');

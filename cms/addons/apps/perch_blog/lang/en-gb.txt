@@ -205,5 +205,9 @@
     "Creating a New Section": "Creating a New Section",
     "Your section has been successfully created. Return to %ssection listing%s": "Your section has been successfully created. Return to %ssection listing%s",
     "Draft:": "Draft:",
-    "Manage sections": "Manage sections"
+    "Manage sections": "Manage sections",
+    "Published": "Published",
+    "Draft": "Draft",
+    "": "",
+    "Update Blog": "Update Blog"
 }

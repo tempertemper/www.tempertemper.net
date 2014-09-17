@@ -11,7 +11,6 @@ class PerchBlog_Sections extends PerchAPI_Factory
 	public $static_fields   = array('sectionTitle', 'sectionSlug', 'sectionPostCount');
 
 	
-
     public function find_by_given($id_or_slug)
     {
         if (is_numeric($id_or_slug)) {
@@ -43,8 +42,7 @@ class PerchBlog_Sections extends PerchAPI_Factory
         
         return false;
     }
-    
-	
+    	
 	/**
 	 * 
 	 * retrieves all sections used by blog posts along with a count of number of posts for each section.

@@ -49,7 +49,7 @@
 
     ";
 
-    if (PerchUtil::count($DB->get_rows('SHOW TABLES LIKE \''.PERCH_DB_PREFIX.'content_resources\''))) {
+    if (PerchUtil::count($DB->get_rows('SHOW TABLES LIKE \''.PERCH_DB_PREFIX.'resource_log\''))==0) {
 
             $sql .= "
 

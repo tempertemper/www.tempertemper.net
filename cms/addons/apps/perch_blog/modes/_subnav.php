@@ -10,11 +10,6 @@
 					'perch_blog/edit'
 			), 'label'=>'Add/Edit'),
 		array('page'=>array(
-					'perch_blog/categories',
-					'perch_blog/categories/edit',
-					'perch_blog/categories/delete',
-			), 'label'=>'Categories', 'priv'=>'perch_blog.categories.manage'),
-		array('page'=>array(
 					'perch_blog/comments',
 					'perch_blog/comments/edit'
 
