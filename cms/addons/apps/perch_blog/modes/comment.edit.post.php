@@ -30,10 +30,10 @@
 
     		$opts = array();
     		$opts[] = array('label'=>'', 'value'=>'');
-    		$opts[] = array('label'=>'Live', 'value'=>'LIVE');
-    		$opts[] = array('label'=>'Spam', 'value'=>'SPAM');
-    		$opts[] = array('label'=>'Rejected', 'value'=>'REJECTED');
-    		$opts[] = array('label'=>'Pending', 'value'=>'PENDING');
+    		$opts[] = array('label'=>$Lang->get('Live'), 'value'=>'LIVE');
+    		$opts[] = array('label'=>$Lang->get('Spam'), 'value'=>'SPAM');
+    		$opts[] = array('label'=>$Lang->get('Rejected'), 'value'=>'REJECTED');
+    		$opts[] = array('label'=>$Lang->get('Pending'), 'value'=>'PENDING');
     		    		
     		echo $Form->select_field('commentStatus', 'Status', $opts, isset($details['commentStatus'])?$details['commentStatus']:false);
 		

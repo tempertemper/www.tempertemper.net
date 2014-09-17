@@ -1,8 +1,6 @@
 <?php
     $Blog = new PerchBlog_Posts($API);
     $message = false;
-    $Categories = new PerchBlog_Categories($API);
-    $categories = $Categories->all();
 
     $Authors = new PerchBlog_Authors;
     $Author = $Authors->find_or_create($CurrentUser);
@@ -17,10 +15,10 @@
     }
 
     if (isset($_GET['id']) && $_GET['id']!='') {
-        $postID = (int) $_GET['id'];    
-        $Post = $Blog->find($postID, true);
-        $details = $Post->to_array();
-        
+        $postID   = (int) $_GET['id'];    
+        $Post     = $Blog->find($postID, true);
+        $details  = $Post->to_array();
+        PerchUtil::debug($details, 'notice');
         $template = $Post->postTemplate();
             
     }else{
@@ -49,18 +47,25 @@
     $result = false;
 
     $Form = $API->get('Form');
+
    
     $Form->set_required_fields_from_template($Template);
 
     if ($Form->submitted()) {
     	        
-        $postvars = array('cat_ids','postTags','postStatus', 'postAllowComments', 'postTemplate', 'authorID', 'sectionID');
+
+        $postvars = array('postTags','postStatus', 'postAllowComments', 'postTemplate', 'authorID', 'sectionID');
 		
     	$data = $Form->receive($postvars);
 
         if (!isset($data['postAllowComments'])) {
             $data['postAllowComments']  = '0';
         }
+
+        /*
+            Don't copy this, or try to upgrade it.
+            Legacy, legacy, legacy, legacy, mushroom, mushroom.
+         */
 
         $prev = false;
 
@@ -69,7 +74,7 @@
         }
     	
     	$dynamic_fields = $Form->receive_from_template_fields($Template, $prev);
-        
+       
 
         // fetch out static fields
         if (isset($dynamic_fields['postDescHTML']) && is_array($dynamic_fields['postDescHTML'])) {
@@ -98,12 +103,9 @@
 
     	$data['postDynamicFields'] = PerchUtil::json_safe_encode($dynamic_fields);
     	
-
         if (!$CurrentUser->has_priv('perch_blog.post.publish')) {
             $data['postStatus'] = 'Draft';
         }
-
-
 
 
     	if (is_object($Post)) {
@@ -115,7 +117,7 @@
     	    $Post->Template = $Template;
     	    $result = $Post->update($data);
 
-
+            $Post->index($Template);
 
     	}else{
 
@@ -137,10 +139,11 @@
     	        $result = true;
 
                 PerchBlog_Cache::expire_all();
-                $Categories->update_post_counts();
+                $Blog->update_category_counts();
                 $Authors->update_post_counts();
                 $Sections->update_post_counts();
 
+                $Post->index($Template);
  
 
     	        PerchUtil::redirect($API->app_path() .'/edit/?id='.$NewPost->id().'&created=1');
@@ -167,7 +170,7 @@
 
 
         // update category post counts;
-        $Categories->update_post_counts();
+        $Blog->update_category_counts();
         $Authors->update_post_counts();
         $Sections->update_post_counts();
 
@@ -209,5 +212,3 @@
 
 
     $post_templates = PerchUtil::get_dir_contents(PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/blog/posts'), false);
-
-?>
