@@ -5,12 +5,15 @@ class PerchBlog_Post extends PerchAPI_Base
     protected $table  = 'blog_posts';
     protected $pk     = 'postID';
 
+    protected $index_table = 'blog_index';
+    protected $event_prefix = 'blog.post';
+
     public $Template = false;
 
     private $tmp_slug_vars = array();
-    private $tmp_url_vars = array();
+    private $tmp_url_vars  = array();
 
-    private $Author = false;
+    private $Author  = false;
     private $Section = false;
 
     public function __call($method, $arguments)
@@ -81,7 +84,6 @@ class PerchBlog_Post extends PerchAPI_Base
             $data['postSlug'] = strtolower(strftime($slug, strtotime($data['postDateTime'])));
             parent::update($data);
         }
-
 
 
         if ($do_cats) {
@@ -165,31 +167,6 @@ class PerchBlog_Post extends PerchAPI_Base
                 $out = array_merge($out, $this->Section->to_array());
             }
         } 
-
-
-        if (PerchUtil::count($template_ids) && (in_array('category_slugs', $template_ids) || in_array('category_names', $template_ids))) {
-
-            $Categories = new PerchBlog_Categories();
-            $cats   = $Categories->get_for_post($this->id());
-            
-            $out['category_slugs'] = '';
-            $out['category_names'] = '';
-            
-            if (PerchUtil::count($cats)) {
-                $slugs = array();
-                $names = array();
-                foreach($cats as $Category) {
-                    $slugs[] = $Category->categorySlug();
-                    $names[] = $Category->categoryTitle();
-                    
-                    // for template
-                    $out[$Category->categorySlug()] = true;
-                }
-                
-                $out['category_slugs'] = implode(' ', $slugs);
-                $out['category_names'] = implode(', ', $names);
-            }
-        }
        
         if ($out['postDynamicFields'] != '') {
             $dynamic_fields = PerchUtil::json_safe_decode($out['postDynamicFields'], true);
@@ -236,7 +213,58 @@ class PerchBlog_Post extends PerchAPI_Base
     }
 
 
+    public function index($Template=false)
+    {
+        if ($Template===false) {
+            $Template = $this->api->get('Template');
+            $Template->set('blog/'.$this->postTemplate(), 'blog');
+        }
 
+        return parent::index($Template);
+    }
+
+    public function import_legacy_categories()
+    {
+        $sql = 'SELECT c.categoryCoreID AS newID 
+                FROM '.PERCH_DB_PREFIX.'blog_posts_to_categories p2c, '.PERCH_DB_PREFIX.'blog_categories c
+                WHERE p2c.categoryID=c.categoryID AND p2c.postID='.$this->db->pdb($this->id());
+        $catIDs = $this->db->get_rows_flat($sql);
+
+        if (PerchUtil::count($catIDs)) {
+            $json = PerchUtil::json_safe_decode($this->postDynamicFields(), true);
+            if ($json) {
+                $json['categories'] = $catIDs;
+            }else{
+                $json = array('categories'=>$catIDs);
+            }
+            $this->update(array(
+                'postDynamicFields' => PerchUtil::json_safe_encode($json),
+                ), false, false);
+        }
+    }
+
+    public function get_categories()
+    {
+        $cats = $this->get_field('categories');
+        if (PerchUtil::count($cats)) {
+            $Categories = new PerchCategories_Categories();
+            $out = array();
+            foreach($cats as $catID) {
+                $out[] = $Categories->find($catID);
+            }
+            return $out;
+        }
+        return false;
+    }    
+
+    public function get_field($field)
+    {
+        $data = $this->to_array(array($field));
+        if (isset($data[$field])) {
+            return $data[$field];
+        }
+        return false;
+    }
 
     private function substitute_slug_vars($matches)
     {

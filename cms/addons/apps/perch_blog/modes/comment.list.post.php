@@ -38,22 +38,22 @@
             $items = array();
 
             $items[] = array(
-                    'arg'=>'status',
-                    'val'=>'live',
-                    'label'=>'Live',
-                    'path'=>$API->app_path().'/comments/'
+                    'arg'   => 'status',
+                    'val'   => 'live',
+                    'label' => $Lang->get('Live'),
+                    'path'  => $API->app_path().'/comments/'
                 );
             $items[] = array(
-                    'arg'=>'status',
-                    'val'=>'rejected',
-                    'label'=>'Rejected',
-                    'path'=>$API->app_path().'/comments/'
+                    'arg'   => 'status',
+                    'val'   => 'rejected',
+                    'label' => $Lang->get('Rejected'),
+                    'path'  => $API->app_path().'/comments/'
                 );
             $items[] = array(
-                    'arg'=>'status',
-                    'val'=>'spam',
-                    'label'=>'Spam',
-                    'path'=>$API->app_path().'/comments/'
+                    'arg'   => 'status',
+                    'val'   => 'spam',
+                    'label' => $Lang->get('Spam'),
+                    'path'  => $API->app_path().'/comments/'
                 );
             
            
