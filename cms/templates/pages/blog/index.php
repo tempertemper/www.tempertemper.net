@@ -5,18 +5,13 @@
 
 <div role="main">
 
-  <?php perch_blog_custom(array(
-    'template'    =>  'post_in_list.html',
-    'sort'        =>  'postDateTime',
-    'sort-order'  =>  'DESC',
-    'each'        =>  function($item) {
-                        $item['categories'] = perch_blog_post_categories($item['postID'], array(
-                          'template'=>'category_only.html'
-                        ), true);
-                        return $item;
-                      },
-    'paginate'    =>  true,
-    'count'       =>  10,
+  <?php
+    perch_blog_custom(array(
+      'template'    =>  'post_in_list.html',
+      'sort'        =>  'postDateTime',
+      'sort-order'  =>  'DESC',
+      'paginate'    =>  true,
+      'count'       =>  10,
     ));
   ?>
 

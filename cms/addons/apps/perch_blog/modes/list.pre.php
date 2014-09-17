@@ -3,15 +3,20 @@
     $HTML = $API->get('HTML');
     
     // Try to update
-    if (file_exists('update.php')) include('update.php');
-    
+    $Settings = $API->get('Settings');
+
+    if ($Settings->get('perch_blog_update')->val()!='5.0') {
+        PerchUtil::redirect($API->app_path().'/update/');
+    }
+
+        
     $Blog = new PerchBlog_Posts($API);
     
     $Paging = $API->get('Paging');
     $Paging->set_per_page(15);
     
-    $Categories = new PerchBlog_Categories($API);
-    $categories = $Categories->all();
+    $Categories   = new PerchCategories_Categories();
+    $categories = $Categories->get_for_set('blog');
 
     $Sections = new PerchBlog_Sections($API);
     $sections = $Sections->all();

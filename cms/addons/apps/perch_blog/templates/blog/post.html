@@ -1,24 +1,32 @@
-<div class="hentry">
+<article class="h-entry">
 	<h1>
-        <a href="<perch:blog id="postURL" type="hidden" />" rel="bookmark" class="entry-title">
+        <a href="<perch:blog id="postURL" type="hidden" />" rel="bookmark" class="p-name">
             <perch:blog id="postTitle" type="text" label="Title" required="true" size="xl autowidth" order="1" />
         </a>
     </h1>
-	<p class="entry-published date">
-        <perch:blog id="postDateTime" type="date" label="Date" time="true" format="%d %B %Y" divider-before="Meta information" /> 
+	<p class="meta">
+        <time class="dt-published" datetime="<perch:blog id="postDateTime" type="date" label="Date" time="true" format="Y-m-d H:i:s" divider-before="Meta information" />">
+            <perch:blog id="postDateTime" type="date" time="true" format="%d %B %Y" /> 
+        </time>
 		<perch:if exists="authorGivenName">
-            by <perch:blog id="authorGivenName" type="hidden" /> <perch:blog id="authorFamilyName" type="hidden" />
-        </perch:if>
+            by <span class="p-author h-card"><perch:blog id="authorGivenName" type="hidden" /> <perch:blog id="authorFamilyName" type="hidden" /></span>
+        </perch:if>    
+        <perch:categories id="categories" set="blog" label="Categories" display-as="checkboxes">
+            <a href="archive.php?cat=<perch:category id="catSlug" type="slug" />" class="p-category">
+                <perch:category id="catTitle" type="text" />
+            </a>
+        </perch:categories>
+    
 	</p>
     <perch:if exists="image">
         <div>
             <img src="<perch:blog id="image" type="image" width="320" height="240" crop="true" label="Image" order="4" />" alt="<perch:blog id="postTitle" />" />
         </div>
     </perch:if>
-    <div class="description entry-content">
-    	<perch:blog id="postDescHTML" type="textarea" label="Post" order="2" editor="markitup" textile="true" size="xxl autowidth" required="true" />
+    <div class="description e-content">
+    	<perch:blog id="postDescHTML" type="textarea" label="Post" order="2" editor="markitup" markdown="true" size="xxl autowidth" required="true" />
     </div>
-</div>
+</article>
 
-<perch:blog id="excerpt" type="textarea" label="Excerpt" textile="true" order="3" suppress="true" size="s" />
+<perch:blog id="excerpt" type="textarea" label="Excerpt" markdown="true" order="3" suppress="true" size="s" />
 <perch:blog id="image" type="image" width="50" height="50" crop="true" suppress="true" />

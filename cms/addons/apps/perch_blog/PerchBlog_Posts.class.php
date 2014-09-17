@@ -5,14 +5,21 @@ class PerchBlog_Posts extends PerchAPI_Factory
     protected $table     = 'blog_posts';
 	protected $pk        = 'postID';
 	protected $singular_classname = 'PerchBlog_Post';
+
+    protected $index_table = 'blog_index';
+    protected $namespace = 'blog';
 	
+    protected $event_prefix = 'blog.post';
+
 	protected $default_sort_column = 'postDateTime';
     protected $created_date_column = 'postDateTime';
 	
 	public $static_fields   = array('postTitle', 'postSlug', 'postDateTime', 'postDescRaw', 'postDescHTML', 'postTags', 'postStatus', 
-                                        'authorID', 'authorGivenName', 'authorFamilyName', 'authorEmail', 'authorSlug', 'postURL', 'postAllowComments', 'sectionID', 'sectionSlug');
+                                        'authorID', 'authorGivenName', 'authorFamilyName', 'authorEmail', 'authorSlug', 'postURL', 'postAllowComments', 'sectionID', 'sectionSlug', 'postTemplate');
 
     public static $preview_mode = false;
+
+    protected $bypass_tags = true;
 	
     function __construct($api=false) 
     {
@@ -21,6 +28,13 @@ class PerchBlog_Posts extends PerchAPI_Factory
 
         if (self::$preview_mode) {
             PerchBlog_Cache::disable();
+        }
+
+        if (!class_exists('PerchCategories_Categories')) {
+            include_once(PERCH_CORE.'/apps/categories/PerchCategories_Categories.class.php');
+            include_once(PERCH_CORE.'/apps/categories/PerchCategories_Category.class.php');
+            include_once(PERCH_CORE.'/apps/categories/PerchCategories_Sets.class.php');
+            include_once(PERCH_CORE.'/apps/categories/PerchCategories_Set.class.php');
         }
     }
     
@@ -72,7 +86,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
             $row = $this->db->get_row($sql);
 
             if(is_array($row)) {
-                $sql = 'SELECT categoryID FROM '.PERCH_DB_PREFIX.'blog_posts_to_categories WHERE postID = '.$this->db->pdb($postID);
+                $sql = 'SELECT categoryID FROM '.PERCH_DB_PREFIX.'blog_posts_to_categories WHERE postID='.$this->db->pdb($postID);
                 $result = $this->db->get_rows($sql);
                 $a = array();
                 if(is_array($result)) {
@@ -213,8 +227,54 @@ class PerchBlog_Posts extends PerchAPI_Factory
 		}				
         return false;
 	}
-      
+
+
+
     public function get_custom($opts)
+    {
+
+        // category mirgation
+        if (isset($opts['category'])) {
+            if (!is_array($opts['category'])) {
+                $opts['category'] = array($opts['category']);
+            }
+
+            if (PerchUtil::count($opts['category'])) {
+                foreach($opts['category'] as &$cat) {
+                    if (strpos($cat, '/')===false) {
+                        if (substr($cat, 0, 1)=='!') {
+                            $cat = '!blog/'.substr($cat, 1).'/';
+                        }else{
+                            $cat = 'blog/'.$cat.'/';    
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        $where_callback = $this->_standard_where_callback($opts);
+
+        $set_template = $opts['template'];
+        $opts['template'] = function($items) use ($set_template) {
+            if (isset($set_template) && $set_template!=false) {
+                $template = 'blog/'.str_replace('blog/', '', $set_template);
+            }else{
+                if (PerchUtil::count($items)==1) {
+                    $template = 'blog/'.$items[0]->postTemplate();
+                }else{
+                    $template = 'blog/post.html';    
+                }
+            }
+            return $template;
+        };
+
+
+        return $this->get_filtered_listing($opts, $where_callback);
+    }
+
+      
+    public function old_get_custom($opts)
     {
         $posts       = array();
         $Post        = false;
@@ -263,7 +323,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
                         break;
                     case 'contains':
                         $v = str_replace('/', '\/', $raw_value);
-                        $where[] = $key." REGEXP '[[:<:]]'.$v.'[[:>:]]'";
+                        $where[] = $key." REGEXP '[[:<:]]".$v."[[:>:]]'";
                         break;
                     case 'regex':
                     case 'regexp':
@@ -291,13 +351,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
                         $vals  = explode(',', $raw_value);
                         $tmp = array();
                         if (PerchUtil::count($vals)) {
-                            foreach($vals as $value) {
-                                if ($item[$key]==trim($value)) {
-                                    $tmp[] = $item;
-                                    break;
-                                }
-                            }
-                            $where[] = $key.' IN '.$this->implode_for_sql_in($tmp);
+                            $where[] = $key.' IN ('.$this->db->implode_for_sql_in($vals).')';
                         }
                         break;
                 }
@@ -411,13 +465,13 @@ class PerchBlog_Posts extends PerchAPI_Factory
                     
 
                     if (PerchUtil::count($do_cat)) {
-                        $where[] = ' categorySlug IN ('.$this->implode_for_sql_in($do_cat).') ';
+                        $where[] = ' categorySlug IN ('.$this->db->implode_for_sql_in($do_cat).') ';
                     }
 
                     if (PerchUtil::count($do_not_cat)) {
                         $where[] = ' p.postID NOT IN (
                                 SELECT p2.postID FROM '.$this->table.' p2, '.PERCH_DB_PREFIX.'blog_posts_to_categories p2c2, '.PERCH_DB_PREFIX.'blog_categories c2 
-                                    WHERE p2.postID=p2c2.postID  AND p2c2.categoryID=c2.categoryID AND c2.categorySlug IN ('.$this->implode_for_sql_in($do_not_cat).') 
+                                    WHERE p2.postID=p2c2.postID  AND p2c2.categoryID=c2.categoryID AND c2.categorySlug IN ('.$this->db->implode_for_sql_in($do_not_cat).') 
                                 )';
                     }
                    
@@ -448,13 +502,13 @@ class PerchBlog_Posts extends PerchAPI_Factory
                     
 
                     if (PerchUtil::count($do_tag)) {
-                        $where[] = ' tagSlug IN ('.$this->implode_for_sql_in($do_tag).') ';
+                        $where[] = ' tagSlug IN ('.$this->db->implode_for_sql_in($do_tag).') ';
                     }
 
                     if (PerchUtil::count($do_not_tag)) {
                         $where[] = ' p.postID NOT IN (
                                 SELECT p2.postID FROM '.$this->table.' p2, '.PERCH_DB_PREFIX.'blog_posts_to_tags p2t2, '.PERCH_DB_PREFIX.'blog_tags t2 
-                                    WHERE p2.postID=p2t2.postID  AND p2t2.tagID=t2.tagID AND t2.tagSlug IN ('.$this->implode_for_sql_in($do_not_tag).') 
+                                    WHERE p2.postID=p2t2.postID  AND p2t2.tagID=t2.tagID AND t2.tagSlug IN ('.$this->db->implode_for_sql_in($do_not_tag).') 
                                 )';
                     }
 
@@ -563,41 +617,33 @@ class PerchBlog_Posts extends PerchAPI_Factory
      */
     public function get_by_category_slug($slug, $sectionID=false)
     {
-        $sql = 'SELECT p.*
-                FROM '.$this->table.' p, '.PERCH_DB_PREFIX.'blog_categories c, '.PERCH_DB_PREFIX.'blog_posts_to_categories p2c
-                WHERE p.postID=p2c.postID AND p2c.categoryID=c.categoryID
-                    AND c.categorySlug='.$this->db->pdb($slug).'
-                    AND p.postStatus=\'Published\'
-                    AND p.postDateTime<='.$this->db->pdb(date('Y-m-d H:i:00'));
 
-        if ($sectionID) $sql .= ' AND p.sectionID='.$this->db->pdb($sectionID);
+        $opts = array(
+            'category' => $slug,
+            'return-objects' => true,
+            );
 
-        $sql .= ' ORDER BY '.$this->default_sort_column.' DESC';
+        if ($sectionID) {
+            $opts['section'] = $sectionID;
+        }
 
-        $rows   = $this->db->get_rows($sql);
+        return $this->get_filtered_listing($opts, $this->_standard_where_callback($opts));
 
-        return $this->return_instances($rows);
     }
  
     public function get_by_category_slug_for_admin_listing($slug, $Paging)
     {
-        $sql = $Paging->select_sql(). ' p.*
-                FROM '.$this->table.' p, '.PERCH_DB_PREFIX.'blog_categories c, '.PERCH_DB_PREFIX.'blog_posts_to_categories p2c
-                WHERE p.postID=p2c.postID AND p2c.categoryID=c.categoryID
-                    AND c.categorySlug='.$this->db->pdb($slug).'
-                ORDER BY '.$this->default_sort_column.' DESC';
 
-        if ($Paging && $Paging->enabled()) {
-            $sql .=  ' '.$Paging->limit_sql();
-        }
-        
-        $rows = $this->db->get_rows($sql);
-        
-        if ($Paging && $Paging->enabled()) {
-            $Paging->set_total($this->db->get_count($Paging->total_count_sql()));
-        }
+        $opts = array(
+            'category' => $slug,
+            'paginate' => $Paging,
+            'admin' => true,
+            'return-objects' => true,
+            );
 
-        return $this->return_instances($rows);
+
+        return $this->get_filtered_listing($opts, $this->_standard_where_callback($opts));
+
     }
 
 
@@ -662,16 +708,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
 
         return $this->return_instances($rows);
     }
-
-    private function implode_for_sql_in($rows)
-    {
-        foreach($rows as &$item) {
-            $item = $this->db->pdb($item);
-        }
-        
-        return implode(', ', $rows);
-    }
-    
+  
     public function get_years($sectionID=false) 
     {
         $Cache = PerchBlog_Cache::fetch();
@@ -735,5 +772,118 @@ class PerchBlog_Posts extends PerchAPI_Factory
     	
     	return $rows;
     }
-    
+
+    public function update_category_counts()
+    {
+        $sql = 'SELECT COUNT(*) AS qty, c.catID
+                FROM '.PERCH_DB_PREFIX.$this->index_table.' i, '.PERCH_DB_PREFIX.'categories c
+                WHERE i.indexValue=c.catPath AND i.indexKey=\'_category\' AND i.itemKey=\'postID\'
+                GROUP BY i.indexValue';
+        $rows = $this->db->get_rows($sql);
+
+        if (PerchUtil::count($rows)) {
+            $Categories = new PerchCategories_Categories();
+            foreach($rows as $row) {
+                $Category = $Categories->find($row['catID']);
+                if ($Category) {
+                    $Category->update_count('blog.post', $row['qty']);
+                }
+            }
+        }
+    }
+
+    private function _standard_where_callback($opts) 
+    {
+
+        $preview_mode = self::$preview_mode;
+        $db = $this->db;
+
+        return function(PerchQuery $Query) use ($opts, $preview_mode, $db) {
+
+            
+            // section
+            if (isset($opts['section'])) {
+                $Sections = new PerchBlog_Sections;
+
+                if (is_numeric($opts['section'])) {
+                    $Section = $Sections->find($opts['section']);
+                }else{
+                    $Section = $Sections->find_by_slug($opts['section']);
+                }
+
+                if (is_object($Section)) {
+                    $Query->where[] = ' sectionID='.$db->pdb($Section->id());
+                }else{
+                    $Query->where[] = ' sectionID IS NULL ';
+                }
+            }
+
+
+            // author
+            if (isset($opts['author'])) {
+                $Authors = new PerchBlog_Authors;
+
+                if (is_numeric($opts['author'])) {
+                    $Author = $Authors->find($opts['author']);
+                }else{
+                    $Author = $Authors->find_by_slug($opts['author']);
+                }
+
+                if (is_object($Author)) {
+                    $Query->where[] = ' authorID='.$db->pdb($Author->id());
+                }else{
+                    $Query->where[] = ' authorID IS NULL ';
+                }
+            }
+
+
+            // tags
+            if (isset($opts['tag'])) {
+                $tags = $opts['tag'];
+                if (!is_array($tags)) $tags = array($tags);
+
+                $do_tag = array();
+                $do_not_tag = array();
+
+                foreach($tags as $tag) {
+                    if (substr($tag, 0, 1)=='!') {
+                        $do_not_tag[] = ltrim($tag, '!');
+                    }else{
+                        $do_tag[] = $tag;
+                    }
+                }
+
+            
+                if (is_array($tags)) {
+
+
+                    $Query->select .= ' LEFT JOIN '.PERCH_DB_PREFIX.'blog_posts_to_tags p2t ON tbl.postID=p2t.postID LEFT JOIN '.PERCH_DB_PREFIX.'blog_tags t ON p2t.tagID=t.tagID ';
+                    
+
+                    if (PerchUtil::count($do_tag)) {
+                        $Query->where[] = ' tagSlug IN ('.$db->implode_for_sql_in($do_tag).') ';
+                    }
+
+                    if (PerchUtil::count($do_not_tag)) {
+                        $Query->where[] = ' tbl.postID NOT IN (
+                                SELECT p2.postID FROM '.$this->table.' p2, '.PERCH_DB_PREFIX.'blog_posts_to_tags p2t2, '.PERCH_DB_PREFIX.'blog_tags t2 
+                                    WHERE p2.postID=p2t2.postID  AND p2t2.tagID=t2.tagID AND t2.tagSlug IN ('.$db->implode_for_sql_in($do_not_tag).') 
+                                )';
+                    }
+
+                }
+            }
+            
+            if ($preview_mode || (isset($opts['admin']) && $opts['admin'])) {
+                // nothing
+            }else{
+                $Query->where[] = 'postStatus=\'Published\' AND postDateTime<='.$db->pdb(date('Y-m-d H:i:00')).' ';  
+            }
+
+            return $Query;
+
+        };
+
+
+    }     
 }
