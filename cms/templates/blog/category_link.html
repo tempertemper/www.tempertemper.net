@@ -1,13 +1,14 @@
-<perch:before><div class="cats">
-
+<perch:before>
+<div class="cats">
   <h2>Categories</h2>
+  <ul>
+</perch:before>
 
-  <ul></perch:before>
+    <li>
+      <a href="/blog/category/<perch:category id="catSlug" />"><perch:category id="catTitle" /></a>
+    </li>
 
-      <li>
-        <a href="/blog/category/<perch:blog id="categorySlug" />"><perch:blog id="categoryTitle" /></a>
-      </li>
-
-  <perch:after></ul>
-
-</div></perch:after>
+<perch:after>
+  </ul>
+</div>
+</perch:after>

@@ -679,5 +679,7 @@
     "Listing Page Routes": "Listing Page Routes",
     "Pattern": "Pattern",
     "Page": "Page",
-    "Order": "Order"
+    "Order": "Order",
+    "Local file": "Local file",
+    "Roll back regions": "Roll back regions"
 }

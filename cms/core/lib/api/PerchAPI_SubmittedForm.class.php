@@ -477,6 +477,3 @@ class PerchAPI_SubmittedForm
         return $out;
     }
 }
-
-
-?>

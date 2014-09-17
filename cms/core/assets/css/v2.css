@@ -2849,6 +2849,7 @@ ul.importables li.warning {
 
 .headroom {
 	-webkit-transition: transform 200ms linear;
+	-webkit-transition: -webkit-transform 200ms linear;
 	-moz-transition: transform 200ms linear;
 	-ms-transition: transform 200ms linear;
 	-o-transition: transform 200ms linear;

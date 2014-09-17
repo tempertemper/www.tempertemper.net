@@ -288,6 +288,12 @@ class PerchAssets_Assets extends PerchFactory
 
         } 
     }
+
+    public function mark_children_as_library($assetID)
+    {
+        $sql = 'UPDATE '.$this->table.' SET resourceInLibrary="1" WHERE resourceParentID='.$this->db->pdb($assetID);
+        $this->db->execute($sql);
+    }
 }
   
     

@@ -43,5 +43,3 @@ class PerchAPI_Factory extends PerchFactory
     }
     
 }
-
-?>

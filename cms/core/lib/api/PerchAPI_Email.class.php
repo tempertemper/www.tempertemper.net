@@ -18,5 +18,3 @@ class PerchAPI_Email extends PerchEmail
     }
    
 }
-
-?>

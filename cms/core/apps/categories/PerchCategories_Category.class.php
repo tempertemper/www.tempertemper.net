@@ -104,14 +104,42 @@ class PerchCategories_Category extends PerchBase
         return $this->get_display_path($Cat->catParentID(), $s);
 
     }
+
     public function to_array()
     {
         $r = parent::to_array();
 
         $r['catDepth'] = $this->catDepth();
-
+        
         return $r;
     }
 
+    public function get_counts()
+    {
+        $sql = 'SELECT * FROM '.PERCH_DB_PREFIX.'category_counts 
+                WHERE catID='.$this->id();
+        $rows = $this->db->get_rows($sql);
+
+        $out = array();
+
+        if (PerchUtil::count($rows)) {
+            foreach($rows as $row) {
+                $out[$row['countType']] = (int)$row['countValue'];
+            }
+        }
+
+        return $out;
+    }
+
+    public function update_count($countType, $value=0)
+    {
+        $this->db->execute('DELETE FROM '.PERCH_DB_PREFIX.'category_counts WHERE catID='.$this->id().' AND countType='.$this->db->pdb($countType));
+
+        $this->db->insert(PERCH_DB_PREFIX.'category_counts', array(
+            'countType'=>$countType,
+            'countValue'=>(int)$value,
+            'catID'=>$this->id(),
+        ));
+    }
 
 }

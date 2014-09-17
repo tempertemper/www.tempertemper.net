@@ -4,8 +4,6 @@
 
     require('PerchBlog_Posts.class.php');
     require('PerchBlog_Post.class.php');
-    require('PerchBlog_Categories.class.php');
-    require('PerchBlog_Category.class.php');
     require('PerchBlog_Sections.class.php');
     require('PerchBlog_Section.class.php');
     require('PerchBlog_Comments.class.php');
@@ -34,10 +32,10 @@
     function perch_blog_recent_posts($count=10, $return=false) 
     {
         $opts = array(
-                'count'=>$count,
-                'template'=>'post_in_list.html',
-                'sort'=>'postDateTime',
-                'sort-order'=>'DESC',
+                'count'      => $count,
+                'template'   => 'post_in_list.html',
+                'sort'       => 'postDateTime',
+                'sort-order' => 'DESC',
             );
 
         $r = perch_blog_custom($opts, $return);
@@ -50,7 +48,7 @@
         $id_or_slug = rtrim($id_or_slug, '/');
 
         $opts = array(
-            'template'=>false
+            'template'=>false,
             );
 
         if (is_numeric($id_or_slug)) {
@@ -104,7 +102,6 @@
                 $postID = $Post->id();
             }
         }
-
 
         $Comments = new PerchBlog_Comments($API);
 
@@ -185,30 +182,12 @@
         if ($field=='postDescHTML') $encode = false;
 
         if (is_object($Post)) {
-            $field = $Post->$field();
-            if (is_array($field)) {
-                if (isset($field['processed'])) {
-                    $r = $field['processed'];
-                    $encode = false;
-                }elseif (isset($field['_default'])) {
-                    $r = $field['_default'];
-                }else{
-                    $r = $field;
-                }
-            }else{
-                $r = $field;
-            }
+            $r = $Post->get_field($field);
         }
         
         if ($return) return $r;
         
-        if ($encode) {
-            $HTML = $API->get('HTML');
-            echo $HTML->encode($r);
-        }else{
-            echo $r;
-        }
-        
+        echo $r;
     }
 	
     /**
@@ -242,6 +221,9 @@
             $return = true;
         }
 
+        $opts['template'] = '~perch_blog/templates/blog/'.str_replace('blog/', '', $opts['template']);
+
+
         $cache = false;
         $template = $opts['template'];
 
@@ -267,6 +249,7 @@
         
         if (is_numeric($id_or_slug)) {
             $postID = intval($id_or_slug); 
+            $Post = $BlogPosts->find($postID);
         }else{
             $Post = $BlogPosts->find_by_slug($id_or_slug);
             if (is_object($Post)) {
@@ -274,15 +257,17 @@
             }
         }
         
-        if ($postID!==false) {
-            $Categories = new PerchBlog_Categories();
-            $cats   = $Categories->get_for_post($postID);
+        if (is_object($Post)) {
+            $cats   = $Post->get_categories();
             
             if ($opts['skip-template']) {
 
                 $out = array();
-                foreach($cats as $Cat) {
-                    $out[] = $Cat->to_array();
+
+                if (PerchUtil::count($cats)) {
+                    foreach($cats as $Cat) {
+                        $out[] = $Cat->to_array();
+                    }
                 }
 
                 if ($opts['cache']) {
@@ -294,7 +279,7 @@
             }
 
             $Template = $API->get('Template');
-            $Template->set('blog/'.$template, 'blog');
+            $Template->set($template, 'category');
 
             $r = $Template->render_group($cats, true);
 
@@ -417,6 +402,7 @@
         if (isset($opts['tag']) && !is_array($opts['tag'])) $opts['tag'] = rtrim($opts['tag'], '/');
         if (isset($opts['pagination_var'])) $opts['pagination-var'] = $opts['pagination_var']; 
         
+ 
         $r = $BlogPosts->get_custom($opts);
         
     	if ($return) return $r;
@@ -436,9 +422,11 @@
             'template'             => 'category_link.html',
             'skip-template'        => false,
             'cache'                => true,
+            'count-type'           => 'blog.post',
             'include-empty'        => false,
             'filter'               => false,
             'section'              => false,
+            'set'                  => 'blog',
         );
 
         if (!is_array($opts)) {
@@ -450,6 +438,8 @@
         }else{
             $opts = $default_opts;
         }
+
+        $opts['template'] = '~perch_blog/templates/blog/'.str_replace('blog/', '', $opts['template']);
 
         if ($opts['skip-template']) $return = true;
 
@@ -470,8 +460,8 @@
         $API  = new PerchAPI(1.0, 'perch_blog');
         $BlogPosts = new PerchBlog_Posts($API);
         
-        $Categories = new PerchBlog_Categories();
-        $r      = $Categories->get_custom($opts);
+        $Categories = new PerchCategories_Categories();
+        $r      = $Categories->get_custom($opts, $API);
 
         if ($r!='' && $opts['cache']) PerchBlog_Cache::save_static($cache_key, $r);
         
@@ -492,7 +482,7 @@
     function perch_blog_category($categorySlug, $return=false)
     {
         $categorySlug = rtrim($categorySlug, '/');
-        
+       
         $cache_key = 'perch_blog_category'.md5($categorySlug);
         $cache = PerchBlog_Cache::get_static($cache_key, 10);
 
@@ -501,13 +491,11 @@
             echo PerchUtil::html($cache);  return '';
         }
 
-        $API  = new PerchAPI(1.0, 'perch_blog');
-        $Categories = new PerchBlog_Categories($API);
-        
-        $Category = $Categories->find_by_slug($categorySlug);
-        
+        $Categories = new PerchCategories_Categories();
+        $Category = $Categories->get_one_by('catPath', 'blog/'.$categorySlug.'/');    
+
         if (is_object($Category)){
-            $r = $Category->categoryTitle();
+            $r = $Category->catTitle();
 
             if ($r!='') PerchBlog_Cache::save_static($cache_key, $r);
 

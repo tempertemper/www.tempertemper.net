@@ -16,7 +16,7 @@ class PerchAssets_Asset extends PerchBase
     public static function get_type_map()
     {
         return array(
-            'img' => array('label'=>PerchLang::get('Images'), 'exts'=>self::$image_types),
+            'img'   => array('label'=>PerchLang::get('Images'), 'exts'=>self::$image_types),
             'doc'   => array('label'=>PerchLang::get('Documents'), 'exts'=>self::$doc_types),
             'sheet' => array('label'=>PerchLang::get('Spreadsheets'), 'exts'=>self::$sheet_types),
             'audio' => array('label'=>PerchLang::get('Audio'), 'exts'=>self::$audio_types),
@@ -152,6 +152,15 @@ class PerchAssets_Asset extends PerchBase
             ));
 
         return true;
+    }
+
+    public function mark_as_library()
+    {
+        $this->update(array('resourceInLibrary'=>'1'));
+
+        // children
+        $Assets = new PerchAssets_Assets($this->api);
+        $Assets->mark_children_as_library($this->id());
     }
 
     /**
