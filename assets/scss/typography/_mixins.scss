@@ -48,3 +48,12 @@
     font-size: ms($n, 1.3em, $fourth);
   }
 }
+
+@mixin remove-list-styling {
+  list-style: none;
+  padding-left: 0;
+
+  ul {
+    list-style-type: disc;
+  }
+}
