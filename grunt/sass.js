@@ -2,8 +2,6 @@ module.exports = {
   dist: {
     options: {
       style: 'expanded',
-      sourcemap: true,
-      // debugInfo: true,
       require: 'susy'
     },
     files: {
