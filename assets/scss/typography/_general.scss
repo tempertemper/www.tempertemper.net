@@ -51,11 +51,6 @@ code {
   font-family: menlo, monaco, "Lucida Console", monospace;
 }
 
-@mixin remove-list-styling {
-  list-style: none;
-  padding-left: 0;
-}
-
 .portfolio-teaser,
 .search [role="main"] {
 
