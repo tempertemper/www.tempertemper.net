@@ -136,7 +136,6 @@ textarea {
     -webkit-transform: translateY(-20px);
     transform: translateY(-20px);
   }
-
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -150,7 +149,6 @@ textarea {
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
   }
-
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -314,6 +312,11 @@ code {
   list-style: none;
   padding-left: 0;
 }
+.portfolio-teaser > ul ul, .portfolio-teaser > ol ul,
+.search [role="main"] > ul ul,
+.search [role="main"] > ol ul {
+  list-style-type: disc;
+}
 
 .portfolio-list,
 .hfeed,
@@ -325,6 +328,16 @@ code {
 [role="contentinfo"] ul {
   list-style: none;
   padding-left: 0;
+}
+.portfolio-list ul,
+.hfeed ul,
+.social ul,
+.downloads-list ul,
+.comments ul,
+.search-results ul,
+.testimonial-list ul,
+[role="contentinfo"] ul ul {
+  list-style-type: disc;
 }
 
 h1,
@@ -692,7 +705,7 @@ a:link, a:visited {
   text-decoration: none;
 }
 a:link, a:visited {
-  color: #0097db;
+  color: #0097DB;
 }
 a:hover, a:active, a:focus {
   color: black;
@@ -700,7 +713,7 @@ a:hover, a:active, a:focus {
 
 a > img {
   display: block;
-  border: 3px solid #0097db;
+  border: 3px solid #0097DB;
 }
 a > img:visited {
   border-color: #0085c2;
@@ -733,14 +746,14 @@ a > img:hover, a > img:active, a > img:focus {
 }
 
 label {
-  color: #0097db;
+  color: #0097DB;
 }
 
 input,
 textarea {
   display: block;
   width: 100%;
-  border: 3px solid #0097db;
+  border: 3px solid #0097DB;
   border-radius: 5px;
   padding: 0.8em 1em;
   margin-bottom: 1em;
@@ -770,8 +783,8 @@ input[type="submit"] {
   color: white;
   margin-top: 1em;
   margin-bottom: 1em;
-  background-color: #0097db;
-  border-color: #0097db;
+  background-color: #0097DB;
+  border-color: #0097DB;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
@@ -798,17 +811,17 @@ body {
 }
 
 ::-moz-selection {
-  background: #0097db;
+  background: #0097DB;
   color: white;
 }
 
 ::selection {
-  background: #0097db;
+  background: #0097DB;
   color: white;
 }
 
 ::-moz-selection {
-  background: #0097db;
+  background: #0097DB;
   color: white;
 }
 
@@ -860,8 +873,8 @@ img {
   color: white;
   margin-top: 1em;
   margin-bottom: 1em;
-  background-color: #0097db;
-  border-color: #0097db;
+  background-color: #0097DB;
+  border-color: #0097DB;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
@@ -959,11 +972,11 @@ a img {
 }
 .social .linkedin h2 a:before {
   content: "\0069";
-  color: #00659b;
+  color: #00659B;
 }
 .social .twitter h2 a:before {
   content: "\0074";
-  color: #00aced;
+  color: #00ACED;
 }
 .social .facebook h2 a:before {
   content: "\0066";
@@ -971,7 +984,7 @@ a img {
 }
 .social .mailing-list h2 a:before {
   content: "\007D";
-  color: #0097db;
+  color: #0097DB;
 }
 
 [role="banner"] {
@@ -1125,7 +1138,7 @@ a img {
   cursor: pointer;
 }
 .nav-toggle:before {
-  color: #0097db;
+  color: #0097DB;
   font-family: Icons;
   font-weight: normal;
   font-style: normal;
@@ -1158,7 +1171,7 @@ a img {
   font-family: Icons;
   font-weight: normal;
   font-style: normal;
-  color: #0097db;
+  color: #0097DB;
   font-size: 1.25em;
   position: absolute;
   padding: 0.5em 0.75em 0.4em;
