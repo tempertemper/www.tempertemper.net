@@ -2,11 +2,9 @@
 /.sass-cache/
 /.htaccess
 /robots.txt
-/cms/config/config.php
 /node_modules/
 /assets/images/
 /assets/fonts/
 /cms/addons/feathers/tempertemper/img/
 /cms/addons/feathers/tempertemper/fonts/
 /cms/resources/
-/cms/core/.gitignore
