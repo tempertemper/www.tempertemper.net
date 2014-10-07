@@ -45,16 +45,7 @@ a:focus {
 
 a img,
 img,
-iframe {
-  border: none;
-}
-
-form,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
+iframe,
 fieldset {
   border: none;
 }
@@ -127,6 +118,6 @@ nav a.selected {
 
 textarea {
   overflow-y: auto;
-  resize:none;
+  resize: none;
 }
 
