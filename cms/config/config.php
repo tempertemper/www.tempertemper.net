@@ -9,7 +9,6 @@
   case('tempertemper.local') :
     define("PERCH_DB_USERNAME", 'admin');
     define("PERCH_DB_PASSWORD", 'Carmen28');
-    define("PERCH_DB_SERVER", "localhost");
     define("PERCH_DB_DATABASE", "tempertemper");
     define('PERCH_PRODUCTION_MODE', PERCH_DEVELOPMENT);
    break;
@@ -18,13 +17,14 @@
     define("PERCH_DB_USERNAME", 'tempertemper');
     define("PERCH_DB_PASSWORD", '***REMOVED***');
     define("PERCH_DB_DATABASE", "tempertemper");
-    define('PERCH_SSL', true);
     define('PERCH_PRODUCTION_MODE', PERCH_PRODUCTION);
     break;
   }
 
   define("PERCH_DB_SERVER", "localhost");
   define("PERCH_DB_PREFIX", "perch2_");
+
+  define('PERCH_TZ', 'UTC');
 
   define('PERCH_EMAIL_METHOD', 'smtp');
   define('PERCH_EMAIL_FROM', 'hello@tempertemper.net');
