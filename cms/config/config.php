@@ -13,6 +13,13 @@
     define('PERCH_PRODUCTION_MODE', PERCH_DEVELOPMENT);
    break;
 
+  case('staging.tempertemper.net') :
+    define("PERCH_DB_USERNAME", 'tempertemper');
+    define("PERCH_DB_PASSWORD", '***REMOVED***');
+    define("PERCH_DB_DATABASE", "tempertemper-staging");
+    define('PERCH_PRODUCTION_MODE', PERCH_DEVELOPMENT);
+   break;
+
   default :
     define("PERCH_DB_USERNAME", 'tempertemper');
     define("PERCH_DB_PASSWORD", '***REMOVED***');
