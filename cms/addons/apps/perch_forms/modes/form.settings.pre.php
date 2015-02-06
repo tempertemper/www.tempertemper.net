@@ -11,9 +11,9 @@
     
     
     if (isset($_GET['id']) && $_GET['id']!='') {
-        $formID = (int) $_GET['id'];    
+        $formID   = (int) $_GET['id'];    
         $ThisForm = $Forms->find($formID);
-        $details = $ThisForm->to_array();
+        $details  = $ThisForm->to_array();
         $settings = $ThisForm->get_settings();
     }else{
         $message = $HTML->failure_message('Sorry, that form could not be updated.');
@@ -26,7 +26,25 @@
 		$postvars = array('formTitle');
     	$data = $Form->receive($postvars);
     	
-    	$settingvars = array('store','fileLocation', 'email', 'emailAddress', 'adminEmailMessage', 'adminEmailSubject', 'adminEmailFromName', 'adminEmailFromAddress', 'akismet', 'akismetAPIKey', 'successURL');
+    	$settingvars = array(
+                            'store',
+                            'fileLocation', 
+                            'email', 
+                            'emailAddress', 
+                            'adminEmailMessage', 
+                            'adminEmailTemplate',
+                            'adminEmailSubject', 
+                            'adminEmailFromName', 
+                            'adminEmailFromAddress', 
+                            'akismet', 
+                            'akismetAPIKey', 
+                            'successURL',
+                            'responseEmailSubject', 
+                            'responseEmailMessage', 
+                            'formEmailFieldID',
+                            'sendAutoResponse',
+                            'autoresponseTemplate'
+                            );
     	$settingdata = $Form->receive($settingvars);
     	
         if (isset($settingdata['successURL']) && trim($settingdata['successURL'])=='') {
@@ -56,4 +74,3 @@
     }
 
     $filter = 'options';
-?>
