@@ -28,4 +28,3 @@
     
     # Bottom layout
     include(PERCH_CORE . '/inc/btm.php');
-?>

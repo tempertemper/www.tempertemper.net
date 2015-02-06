@@ -37,7 +37,10 @@
 		'Dimensions',
 		'Size',
 		'Add a tag',
-		'Are you sure?'
+		'Are you sure?',
+		'Yes',
+		'No',
+		'Bucket',
 	);
 
 	echo "Perch.Lang.init({\n\t";

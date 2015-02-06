@@ -6,31 +6,44 @@ class PerchPaging
     
     private $qs_param = 'page';
     
-    private $per_page       = 10;
-    private $start_position = 0;
-    private $total          = 0;
-    private $current_page   = 1;
+    private $per_page         = 10;
+    private $start_position   = 0;
+    private $total            = 0;
+    private $current_page     = 1;
     
-    private $offset         = 0;
+    private $offset           = 0;
+    
+    private $base_url         = '';
+    private $qs_char          = '';
+    private $page_pattern     = '';
+    private $page_replacement = '';
+    private $use_qs           = true;
 
-    private $base_url       = '';
-    private $qs_char        = '';
-    
     function __construct($qs_param=false)
     {
-    	if ($qs_param) $this->qs_param = $qs_param;
-    	
-    	if(isset($_GET[$this->qs_param]) && $_GET[$this->qs_param]!='') {
-    		$this->current_page = (int)$_GET[$this->qs_param];
-    	}
+        $this->set_qs_param($qs_param);
     }    
 
     public function set_qs_param($qs_param)
     {
         if ($qs_param) $this->qs_param = $qs_param;
         
-        if(isset($_GET[$this->qs_param]) && $_GET[$this->qs_param]!='') {
-            $this->current_page = (int)$_GET[$this->qs_param];
+        $Perch = Perch::fetch();
+
+        $this->page_pattern     = '\b'.$this->qs_param.'=[0-9]+\b';
+        $this->page_replacement = $this->qs_param.'=%d';
+
+        if (!$Perch->admin && PERCH_RUNWAY) {
+            $paging_conf = PerchConfig::get('paging');
+            if ($paging_conf && isset($paging_conf['pattern']) && isset($paging_conf['replacement'])) {
+                $this->page_pattern     = $paging_conf['pattern'];
+                $this->page_replacement = $paging_conf['replacement'];
+                $this->use_qs = false;
+            }
+        }
+
+        if (PerchUtil::get($this->qs_param)) {
+            $this->current_page = (int)PerchUtil::get($this->qs_param);
         }
     }
     
@@ -162,7 +175,10 @@ class PerchPaging
     public function to_array($opts=false)
     {
         $Perch = Perch::fetch();
+
         $request_uri = PerchUtil::html($Perch->get_page(1));
+
+        //PerchUtil::debug('Pagination base url: '.$request_uri);
         
         if (is_array($opts)) {
             if (isset($opts['hide-extensions']) && $opts['hide-extensions']==true) {
@@ -180,10 +196,10 @@ class PerchPaging
                 
             }
         }
-        
-        
+
         $qs_char = '?';
         if (strpos($request_uri, $qs_char)!==false) $qs_char = '&amp;';
+        if (!$this->use_qs) $qs_char = '';
         
         $out    = array();
         $out['paging']          = ($this->number_of_pages() > 1 ? true : false);
@@ -208,11 +224,13 @@ class PerchPaging
             
         if (!$this->is_first_page()) {
 
-            if (($this->current_page()-1)==1) {
+            $prev_page_number = ($this->current_page()-1);
+
+            if ($prev_page_number==1) {
                 // page 1, so don't include page=1
-                $out['prev_url']    = preg_replace('/'.$this->qs_param.'=[0-9]+/', '', $request_uri);
-            }else{
-                $out['prev_url']    = preg_replace('/'.$this->qs_param.'=[0-9]+/', $this->qs_param.'='.($this->current_page()-1), $request_uri);
+                $out['prev_url']    = preg_replace('#'.$this->page_pattern.'#', '', $request_uri);
+            }else{             
+                $out['prev_url']    = preg_replace('#'.$this->page_pattern.'#', sprintf($this->page_replacement, $prev_page_number), $request_uri);
             }
 
             // remove any trailing '?'
@@ -223,19 +241,22 @@ class PerchPaging
                 $out['prev_url'] = substr($out['prev_url'], 0, strlen($out['prev_url'])-5);
             }
 
-
             $out['not_first_page'] = true;
-            $out['prev_page_number'] = ($this->current_page()-1);
+            $out['prev_page_number'] = $prev_page_number;
         }
         
         if (!$this->is_last_page()) {
-            if (strpos($request_uri, $this->qs_param.'=') !== false) {
-                $out['next_url']    = preg_replace('/'.$this->qs_param.'=[0-9]+/', $this->qs_param.'='.($this->current_page()+1), $request_uri);
-                $out['next_page_number'] = ($this->current_page()+1);
+
+            $next_page_number = ($this->current_page()+1);
+
+            if (preg_match('#'.$this->page_pattern.'#', $request_uri)) {
+                $out['next_url']    = preg_replace('#'.$this->page_pattern.'#', sprintf($this->page_replacement, $next_page_number), $request_uri);
+                $out['next_page_number'] = $next_page_number;
             }else{
-                $out['next_url']    = rtrim($request_uri) . $qs_char.$this->qs_param.'=2';
-                $out['next_page_number'] = '2';
+                $out['next_url']    = rtrim($request_uri) . $qs_char. sprintf($this->page_replacement, $next_page_number);
+                $out['next_page_number'] = $next_page_number;
             }
+
             $out['not_last_page'] = true;
         }
 
@@ -262,9 +283,7 @@ class PerchPaging
                 $Template = new PerchTemplate('pagination/'.$template, 'pages');
                 $out['page_links'] = $Template->render_group($page_links, true);
             }
-        }
-
-        
+        }    
        
         return $out;
     }
@@ -330,10 +349,11 @@ class PerchPaging
         $out = array();
         $request_uri = $this->base_url;
 
-        if (strpos($request_uri, $this->qs_param.'=')===false) {
-            $request_uri = rtrim($request_uri, '/').$this->qs_char.$this->qs_param.'=0';
+        if (preg_match('#'.$this->page_pattern.'#', $request_uri)==false) {
+            $request_uri = rtrim($request_uri) . $this->qs_char. sprintf($this->page_replacement, '0');
         }
-        $request_uri = preg_replace('/'.$this->qs_param.'=[0-9]+/', $this->qs_param.'='.($page_number), $request_uri);
+
+        $request_uri = preg_replace('#'.$this->page_pattern.'#', sprintf($this->page_replacement, $page_number), $request_uri);
         
         $out['url'] = $request_uri;
         $out['page_number'] = $page_number;
@@ -356,5 +376,3 @@ class PerchPaging
     }
 
 }
-
-?>

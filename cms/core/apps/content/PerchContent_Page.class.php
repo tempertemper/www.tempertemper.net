@@ -88,7 +88,7 @@ class PerchContent_Page extends PerchBase
             $parentID = $this->id();
         }
         
-        $sql = 'SELECT MAX(pageOrder) FROM '.$this->table.' WHERE pageParentID='.$this->db->pdb($parentID);
+        $sql = 'SELECT MAX(pageOrder) FROM '.$this->table.' WHERE pageParentID='.$this->db->pdb((int)$parentID);
         $max = $this->db->get_count($sql);
         
         return $max+1;
@@ -136,7 +136,7 @@ class PerchContent_Page extends PerchBase
         $site_path = $Pages->find_site_path();
 
         $file = PerchUtil::file_path($site_path.'/'.$this->pagePath());
-        if (!$this->pageNavOnly() && file_exists($file)) {
+        if (!PERCH_RUNWAY && !$this->pageNavOnly() && file_exists($file)) {
             if (defined('PERCH_DONT_DELETE_FILES') && PERCH_DONT_DELETE_FILES==true) {
                 // don't delete files!
             }else{
@@ -153,7 +153,7 @@ class PerchContent_Page extends PerchBase
     public function get_navgroup_ids()
     {
         $sql = 'SELECT DISTINCT groupID FROM '.PERCH_DB_PREFIX.'navigation_pages
-                WHERE pageID='.$this->db->pdb($this->id());
+                WHERE pageID='.$this->db->pdb((int)$this->id());
         return $this->db->get_rows_flat($sql);
     }
 
@@ -168,7 +168,7 @@ class PerchContent_Page extends PerchBase
 
             // remove any not in this set
             $sql = 'DELETE FROM '.PERCH_DB_PREFIX.'navigation_pages
-                    WHERE pageID='.$this->db->pdb($this->id()).' AND groupID NOT IN ('.$this->db->implode_for_sql_in($groupIDs).')';
+                    WHERE pageID='.$this->db->pdb((int)$this->id()).' AND groupID NOT IN ('.$this->db->implode_for_sql_in($groupIDs, true).')';
             $this->db->execute($sql);
 
             $existing = $this->get_navgroup_ids();
@@ -227,6 +227,8 @@ class PerchContent_Page extends PerchBase
             $out = array_merge($dynamic_fields, $out);
         }
 
+        $out = array_merge($out, PerchSystem::get_attr_vars());
+
         return $out;
     }
 
@@ -238,6 +240,8 @@ class PerchContent_Page extends PerchBase
 
     public function template_attribute($id, $opts)
     {
+        $attr_vars = PerchSystem::get_attr_vars();
+        if (isset($attr_vars[$id])) return $attr_vars[$id];
 
         if ($id=='pageTitle' || $id=='pageNavText') {
             return $this->details[$id]; 
@@ -349,6 +353,30 @@ class PerchContent_Page extends PerchBase
             return array(true, false);
         }
     }
-}
 
-?>
+    public function log_resources()
+    {
+        $Resources   = new PerchResources();
+        $resourceIDs = $Resources->get_logged_ids();
+
+        if (PerchUtil::count($resourceIDs) && $this->api) {
+
+            $app_id = $this->api->app_id;
+
+            
+            $sql = 'DELETE FROM '.PERCH_DB_PREFIX.'resource_log WHERE appID='.$this->db->pdb($app_id).' AND itemFK='.$this->db->pdb($this->pk).' AND itemRowID='.$this->db->pdb((int)$this->id());
+            $this->db->execute($sql);
+            
+            $sql    = 'INSERT IGNORE INTO '.PERCH_DB_PREFIX.'resource_log(`appID`, `itemFK`, `itemRowID`, `resourceID`) VALUES';      
+            $vals   = array();
+            
+            foreach($resourceIDs as $id) {
+                $vals[] = '('.$this->db->pdb($app_id).','.$this->db->pdb($this->pk).','.(int)$this->id().','.(int)$id.')';
+            }
+
+            $sql .= implode(',', $vals);
+
+            $this->db->execute($sql);
+        }
+    }   
+}

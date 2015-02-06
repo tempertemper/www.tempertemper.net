@@ -16,6 +16,8 @@
 
 		$r = $Categories->get_custom($opts);
 
+		if ($opts['skip-template']) $return = true;
+
 		if ($return) return $r;
 
 		echo $r;
@@ -37,6 +39,8 @@
 		$Categories = new PerchCategories_Categories();
 
 		$r = $Categories->get_custom($opts);
+
+		if ($opts['skip-template']) $return = true;
 
 		if ($return) return $r;
 

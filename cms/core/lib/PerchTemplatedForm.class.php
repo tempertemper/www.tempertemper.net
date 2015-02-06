@@ -137,6 +137,7 @@ class PerchTemplatedForm
 	    $attrs['action'] = $OpeningTag->action();
 	    $attrs['method'] = $OpeningTag->method();
 	    $attrs['role']   = $OpeningTag->role();
+	    $attrs['name']   = $OpeningTag->name();
 
 	    $aria = $OpeningTag->search_attributes_for('aria-');
         if (PerchUtil::count($aria)) {
@@ -340,6 +341,15 @@ class PerchTemplatedForm
     {
         $attrs = $this->_copy_standard_attributes($Tag);
         $opts = explode(',', $Tag->options());
+
+        // Allow empty?
+        if ($Tag->allowempty()) {
+        	$s = '';
+        	if ($Tag->placeholder()) {
+        		$s .= $Tag->placeholder().'|';
+        	}
+        	array_unshift($opts, $s);
+        }
         
         $value    = $attrs['value'];
         
@@ -363,7 +373,7 @@ class PerchTemplatedForm
                 if (trim($val) == $value) $attrs['selected'] = 'selected';
                 $attrs['value'] = trim($val);
                 
-                $new_tag .= PerchXMLTag::create('option', 'opening', $attrs);
+                $new_tag .= PerchXMLTag::create('option', 'opening', $attrs, array(), array('value'));
                 $new_tag .= PerchUtil::html(trim($text));
                 $new_tag .= PerchXMLTag::create('option', 'closing');
                 
@@ -398,6 +408,10 @@ class PerchTemplatedForm
             }else{
                 $wraptag_open   = PerchXMLTag::create($Tag->wrap(), 'opening');
                 $wraptag_close  = PerchXMLTag::create($Tag->wrap(), 'closing');
+            }
+
+            if (isset($attrs['wrap'])) {
+            	unset($attrs['wrap']);
             }
         }
         
@@ -437,7 +451,7 @@ class PerchTemplatedForm
     
     private function _replace_textarea_field($match, $Tag, $template)
     {
-        $attrs = $this->_copy_standard_attributes($Tag);
+        $attrs  = $this->_copy_standard_attributes($Tag);
         $val    = $attrs['value'];
         unset($attrs['value']);
         unset($attrs['type']);
@@ -491,19 +505,32 @@ class PerchTemplatedForm
 	    
 	    if ($Tag->name()) $attrs['name']  = $Tag->name();
 	    
-	    $attrs['class']     = $Tag->class();
-	    $attrs['value']     = $Tag->value();
-	    $attrs['rel']       = $Tag->rel();
-	    $attrs['rev']       = $Tag->rev();
-	    $attrs['cols']      = $Tag->cols();
-        $attrs['rows']      = $Tag->rows();
-        $attrs['size']      = $Tag->size();
-        $attrs['maxlength'] = $Tag->maxlength();
-        $attrs['title']     = $Tag->title();
-        $attrs['tabindex']  = $Tag->tabindex();
-        $attrs['height']    = $Tag->height();
-        $attrs['width']     = $Tag->width();
-        
+	    $standard_attributes = array(
+	    	'accesskey',
+	    	'autocapitalize',
+	    	'autocorrect',
+	    	'class',    
+	    	'cols',     
+	    	'height',   
+	    	'incremental',
+	    	'maxlength',
+	    	'rel',      
+	    	'rev',      
+	    	'rows',     
+	    	'size',     
+	    	'tabindex', 
+	    	'title',    
+	    	'value',    
+	    	'width',
+	    	);
+
+	    foreach($standard_attributes as $att) {
+	    	if (isset($Tag->attributes[$att])) {
+	    		$attrs[$att] = $Tag->attributes[$att];
+	    	}else{
+    			$attrs[$att] = false;
+    		}
+	    }
 
         $aria = $Tag->search_attributes_for('aria-');
         if (PerchUtil::count($aria)) {
@@ -516,30 +543,59 @@ class PerchTemplatedForm
         }
 
 	    
-	    if ($Tag->disabled()) $attrs['disabled'] = 'disabled';
-	    if ($Tag->checked()) $attrs['checked'] = 'checked';
+		if ($Tag->disabled()) $attrs['disabled'] = 'disabled';
+		if ($Tag->checked())  $attrs['checked']  = 'checked';
 	    
 	    if (PERCH_HTML5) {
-			$attrs['type']           = $Tag->type();    
-			$attrs['placeholder']    = $Tag->placeholder();
-			$attrs['list']           = $Tag->list();
-			$attrs['min']            = $Tag->min();
-			$attrs['max']            = $Tag->max();
-			$attrs['step']           = $Tag->step();
-			$attrs['pattern']        = $Tag->pattern();
-			$attrs['formaction']     = $Tag->formaction();
-			$attrs['formenctype']    = $Tag->formenctype();
-			$attrs['formmethod']     = $Tag->formmethod();
-			$attrs['formnovalidate'] = $Tag->formnovalidate();
-			$attrs['formtarget']     = $Tag->formtarget();
-			$attrs['role']           = $Tag->role();
 
-    	    if ($Tag->required())       $attrs['required']      = 'required';
-    	    if ($Tag->autocomplete())   $attrs['autocomplete']  = 'autocomplete';
-            if ($Tag->autofocus())      $attrs['autofocus']     = 'autofocus';
-            if ($Tag->multiple())       $attrs['multiple']      = 'multiple';
-            if ($Tag->novalidate())     $attrs['novalidate']    = 'novalidate';
-            if ($Tag->readonly())     	$attrs['readonly']    	= 'readonly';
+	    	$standard_attributes = array(
+	    		'accept',
+	    		'autocomplete',
+	    		'autofocus',
+	    		'autosave',
+	    		'formaction',     
+	    		'formenctype',    
+	    		'formmethod',     
+	    		'formnovalidate', 
+	    		'formtarget',     
+	    		'inputmode',
+	    		'list',    
+	    		'max',            
+	    		'min',            
+	    		'minlength',
+	    		'pattern',        
+	    		'placeholder',    
+	    		'role',          
+	    		'selectionDirection',
+	    		'spellcheck',
+	    		'step',           
+	    		'type',    
+	    		'wrap',       
+	    		);
+
+	    	foreach($standard_attributes as $att) {
+	    		if (isset($Tag->attributes[$att])) {
+	    			$attrs[$att] = $Tag->attributes[$att];
+	    		}else{
+	    			$attrs[$att] = false;
+	    		}
+	    	}
+
+	    	$boolean_attributes = array(
+    			//'autocomplete',
+    			'autofocus',   
+    			'multiple',    
+    			'novalidate',  
+    			'readonly',    
+    			'required',    
+	    		);
+
+	    	foreach($boolean_attributes as $att) {
+	    		if (isset($Tag->attributes[$att])) {
+	    			$attrs[$att] = $att;
+	    		}
+	    	}
+
 
 	    }else{
 	        switch($Tag->type()) {

@@ -3,18 +3,21 @@
 class PerchFactory
 {
     protected $db;
-    protected $cache = false;
-    protected $api = false;
-
-    protected $namespace = 'content';
-    protected $index_table = false;
-
-    protected $bypass_categories = false;
-    protected $bypass_tags = false;
-
+    protected $cache                  = false;
+    protected $api                    = false;
+    
+    protected $namespace              = 'content';
+    protected $index_table            = false;
+    
+    protected $bypass_categories      = false;
+    protected $bypass_tags            = false;
+    
     protected $default_sort_direction = 'ASC';
-
-    public $dynamic_fields_column = false;
+    
+    public $dynamic_fields_column     = false;
+    
+    private $cats_cache               = array();
+    private $Categories               = false;
     
     function __construct($api=false) 
     {
@@ -426,7 +429,7 @@ class PerchFactory
                             $vals  = explode(',', $raw_value);
                             $tmp = array();
                             if (PerchUtil::count($vals)) {
-                                $where[] = $key.' IN ('.$this->implode_for_sql_in($vals).')';
+                                $where[] = $key.' IN ('.$this->db->implode_for_sql_in($vals).')';
                             }
                             break;
                         case '!in':
@@ -434,7 +437,7 @@ class PerchFactory
                             $vals  = explode(',', $raw_value);
                             $tmp = array();
                             if (PerchUtil::count($vals)) {
-                                $where[] = $key.' NOT IN ('.$this->implode_for_sql_in($vals).')';
+                                $where[] = $key.' NOT IN ('.$this->db->implode_for_sql_in($vals).')';
                             }
                             break;
                     }
@@ -555,6 +558,24 @@ class PerchFactory
         }
  
 
+        // template       
+        
+        if (is_callable($opts['template'])) {
+            $callback = $opts['template'];
+            $template = $callback($items);
+        }else{
+            $template = $opts['template'];
+        }
+
+        if (is_object($this->api)) {
+            $Template = $this->api->get('Template');
+            $Template->set($template,$this->namespace);
+        }else{
+            $Template = new PerchTemplate($template, $this->namespace);    
+        }
+
+
+
         $render_html = true;
 
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
@@ -575,22 +596,6 @@ class PerchFactory
                         }
                     }
                 }
-            }
-            
-            // template       
-            
-            if (is_callable($opts['template'])) {
-                $callback = $opts['template'];
-                $template = $callback($items);
-            }else{
-                $template = $opts['template'];
-            }
-
-            if (is_object($this->api)) {
-                $Template = $this->api->get('Template');
-                $Template->set($template,$this->namespace);
-            }else{
-                $Template = new PerchTemplate($template, $this->namespace);    
             }
             
             
@@ -614,10 +619,17 @@ class PerchFactory
                 }
             }
 
+            $category_field_ids    = $Template->find_all_tag_ids('categories');
+
             if (PerchUtil::count($processed_vars)) {
                 foreach($processed_vars as &$item) {
                     if (PerchUtil::count($item)) {
-                        foreach($item as &$field) {
+                        foreach($item as $key => &$field) {
+
+                            if (in_array($key, $category_field_ids)) {
+                                $field = $this->_process_category_field($field);
+                            }
+
                             if (is_array($field) && isset($field['processed'])) {
                                 $field = $field['processed'];
                             }
@@ -917,6 +929,7 @@ class PerchFactory
             if (PerchUtil::count($where)) $sql .= ' AND ('.implode($where, ' OR ').') ';
 
             $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemKey=idx2.itemKey
+                        GROUP BY idx.itemID
                     ) as tbl ';
 
             $where = array();
@@ -1038,12 +1051,24 @@ class PerchFactory
             }
         
             $rows = $this->db->get_rows($sql);
-            $items = $this->return_instances($rows);
 
             if (is_object($Paging)) {
                 $total_count = $this->db->get_value($Paging->total_count_sql());
                 $Paging->set_total($total_count);
             }
+
+            // each 
+            if (PerchUtil::count($rows) && isset($opts['each']) && is_callable($opts['each'])) {
+                $content = array();
+                foreach($rows as $item) {
+                    $tmp = $opts['each']($item); 
+                    $content[] = $tmp;
+                }
+                $rows = $content;
+            }
+
+            $items = $this->return_instances($rows);
+            
         }
 
         if (isset($opts['return-objects']) && $opts['return-objects']) {
@@ -1060,22 +1085,25 @@ class PerchFactory
             }
         }
 
+
+        // template       
+        if (is_callable($opts['template'])) {
+            $callback = $opts['template'];
+            $template = $callback($items);
+        }else{
+            $template = $opts['template'];
+        }
+
+        if (is_object($this->api)) {
+            $Template = $this->api->get('Template');
+            $Template->set($template,$this->namespace);
+        }else{
+            $Template = new PerchTemplate($template, $this->namespace);    
+        }
+
+
         if ($render_html) {
 
-            // template       
-            if (is_callable($opts['template'])) {
-                $callback = $opts['template'];
-                $template = $callback($items);
-            }else{
-                $template = $opts['template'];
-            }
-
-            if (is_object($this->api)) {
-                $Template = $this->api->get('Template');
-                $Template->set($template,$this->namespace);
-            }else{
-                $Template = new PerchTemplate($template, $this->namespace);    
-            }
 
             if (isset($Paging) && is_object($Paging) && $Paging->enabled()) {
                 $paging_array = $Paging->to_array($opts);
@@ -1090,7 +1118,13 @@ class PerchFactory
             }
             
             if (PerchUtil::count($items)) {
-                $html = $Template->render_group($items, true);
+
+                if (isset($opts['split-items']) && $opts['split-items']) {
+                    $html = $Template->render_group($items, false);
+                }else{
+                    $html = $Template->render_group($items, true);    
+                }
+                
             }else{
                 $Template->use_noresults();
                 $html = $Template->render(array());
@@ -1111,9 +1145,16 @@ class PerchFactory
             }
 
             if (PerchUtil::count($processed_vars)) {
+
+                $category_field_ids    = $Template->find_all_tag_ids('categories');
+                PerchUtil::debug($category_field_ids, 'notice');
+
                 foreach($processed_vars as &$item) {
                     if (PerchUtil::count($item)) {
-                        foreach($item as &$field) {
+                        foreach($item as $key => &$field) {
+                            if (in_array($key, $category_field_ids)) {
+                                $field = $this->_process_category_field($field);
+                            }
                             if (is_array($field) && isset($field['processed'])) {
                                 $field = $field['processed'];
                             }
@@ -1132,10 +1173,22 @@ class PerchFactory
             return $processed_vars; 
         }
    
-        if (strpos($html, '<perch:')!==false) {
-            $Template = new PerchTemplate();
-            $html        = $Template->apply_runtime_post_processing($html);
-        }
+        if (is_array($html)) {
+            // split-items
+            if (PerchUtil::count($html)) {
+                $Template = new PerchTemplate();
+                foreach($html as &$html_item) {
+                    if (strpos($html_item, '<perch:')!==false) {
+                        $html_item = $Template->apply_runtime_post_processing($html_item);
+                    }
+                }
+            }
+        }else{
+            if (strpos($html, '<perch:')!==false) {
+                $Template = new PerchTemplate();
+                $html     = $Template->apply_runtime_post_processing($html);
+            }    
+        }      
 
         return $html;        
     }
@@ -1172,6 +1225,36 @@ class PerchFactory
         }
 
         return '';
+    }
+
+    private function _process_category_field($items)
+    {
+        if (PerchUtil::count($items)) {
+            $out = array();
+
+            if (!$this->cats_cache) {
+                $Categories = $this->_get_Categories();
+                $this->cats_cache = $Categories->get_cat_paths_by_id_runtime();
+            }
+
+            foreach($items as $catID) {
+                $catID = (int)$catID;
+                if (isset($this->cats_cache[$catID])) {
+                    $out[] = $this->cats_cache[$catID];
+                }
+            }    
+            return $out;
+        }
+        return $items;
+    }
+
+    private function _get_Categories()
+    {
+        if (!$this->Categories) {
+            $this->Categories = new PerchCategories_Categories();    
+        }
+        
+        return $this->Categories;
     }
 
 }

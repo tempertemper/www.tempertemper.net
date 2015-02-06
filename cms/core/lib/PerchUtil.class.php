@@ -21,6 +21,81 @@ class PerchUtil
 
 		if ($encode) $msg = PerchUtil::html($msg);
 
+		if (isset($msg) && (is_array($msg) || is_object($msg))){
+			$msg	= '<pre>'.print_r($msg, 1).'</pre>';
+		}
+
+		$Perch->debug_items[] = array(
+				'time' => microtime(true),
+				'type' => $type,
+				'msg'  => $msg,
+			);
+
+	}
+
+	public static function output_debug($return_value=false, $time=false)
+	{
+		$Perch  = Perch::fetch();
+		
+		if (!$Perch->debug){
+			return false;
+		}
+
+		if ($Perch->debug == true){
+			$out = '';
+		    $err = error_get_last();
+		    if ($err) PerchUtil::debug($err, 'error');
+
+		    $messages = $Perch->debug_items;
+
+		    $dev = false;
+		    if (PERCH_PRODUCTION_MODE < PERCH_PRODUCTION) {
+		    	$dev = true;
+		    }
+
+		    if(PerchUtil::count($messages)) {
+
+		    	if ($time==false) $time = (isset($_SERVER['REQUEST_TIME_FLOAT']) ? $_SERVER['REQUEST_TIME_FLOAT'] : time());
+
+		    	$prev_time = $messages[0]['time'];
+
+		    	$out = '<table class="perch-debug">';
+		    	$out .= ' <tr>';
+		    	if ($dev) $out .= ' 	<th>Time</th>';
+		    	if ($dev) $out .= ' 	<th>Δ</th>';
+		    	$out .= ' 	<th>Debug Message</th>';
+		    	$out .= ' </tr>';
+		    	foreach($messages as $msg) {
+
+		    		$out .= '<tr>';
+		    		if ($dev) $out .= 	'<td>'.round($msg['time'] - $time, 4).'</td>';
+		    		if ($dev) $out .= 	'<td>'.round($msg['time'] - $prev_time, 4).'</td>';
+		    		$out .= 	'<td class="'.$msg['type'].'">'.$msg['msg'].'</td>';
+		    		$out .= '</tr>';
+		    		$prev_time = $msg['time'];
+		    	}
+		    	$out .= '</table>';
+		    	$out .= '<link rel="stylesheet" href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/assets/css/debug.css" />';
+		    }
+
+	        if ($return_value) {
+	            return $out;
+	        }else{
+	            echo $out;
+	        }
+		}
+	}
+
+	static function old_debug($msg, $type='log', $encode=false)
+	{
+		$Perch  = Perch::fetch();
+
+		if (!$Perch->debug){
+			return false;
+		}
+
+		if ($encode) $msg = PerchUtil::html($msg);
+
 	    $message_styles	= array();
 		$message_styles['error']	= 'color: red; font-weight: bold;';
 		$message_styles['notice']	= 'color: orange; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid orange; display: block;';
@@ -29,6 +104,7 @@ class PerchUtil
 		$message_styles['post']		= 'color: brown; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid silver; display: block;';
 		$message_styles['xmlrpc']	= 'color: navy;';
 		$message_styles['stats']    = 'color: teal;';
+		$message_styles['marker']   = 'color: white; background-color: cyan;';
 		$message_styles['template'] = 'color: black; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid silver; display: block;';
 		$message_styles['auth'] 	= 'color: olivedrab; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid silver; display: block;';
 
@@ -47,8 +123,13 @@ class PerchUtil
 		
 		$Perch->debug_output	.= $debug_messages;
 	}
+
+	public static function mark($msg)
+	{
+		PerchUtil::debug(str_repeat('-', 30).' '.$msg.' '.str_repeat('-', 30), 'marker');
+	}
 	
-	public static function output_debug($return_value=false)
+	public static function old_output_debug($return_value=false)
 	{
 		$Perch  = Perch::fetch();
 		
@@ -490,9 +571,9 @@ class PerchUtil
     public static function get_dir_contents($dir, $include_dirs=true)
     {
         $Perch = Perch::fetch();
-        
+       
         $a = array();
-        if (is_dir($dir)) {
+        if (is_dir($dir)) {	
             if ($dh = opendir($dir)) {
                 while (($file = readdir($dh)) !== false) {
                     if(substr($file, 0, 1) != '.' && !preg_match($Perch->ignore_pattern, $file)) {
@@ -551,10 +632,12 @@ class PerchUtil
         return false;
     }
     
-    public static function urlify($string)
+    public static function urlify($string, $spacer='-')
     {   
     	$string = trim($string);
     	$string = strip_tags($string);
+    	$string = str_replace(array('$', '£', '€'), array('', 'GBP ', 'EUR '), $string);
+    	$string = preg_replace('#(\d)\.(\d)#', '$1 $2', $string); // make sure numbers with decimals don't mislead, e.g. 2.5 -> 25
 
     	if (function_exists('transliterator_transliterate')) {
     		$string = str_replace('-', ' ', $string);
@@ -565,7 +648,7 @@ class PerchUtil
     		$s  = preg_replace('/[^a-z0-9\-\s]/', '', $s);
     	}    
                 
-        $s  = preg_replace('/[\s\-]+/', '-', $s);
+        $s  = preg_replace('/[\s\-]+/', $spacer, $s);
            
         if (strlen($s)>0){
             return $s;
@@ -995,6 +1078,12 @@ class PerchUtil
 	    if (isset($_GET[$var]) && $_GET[$var]!='') {
 	        return $_GET[$var];
 	    }
+
+	    if (PERCH_RUNWAY && class_exists('PerchSystem')) {
+	        $r = PerchSystem::get_url_var($var);
+	        if ($r) return $r;
+	    }
+
 	    return $default;
 	}
 
@@ -1008,4 +1097,46 @@ class PerchUtil
 
 		return $opts;
 	}
+
+	static function debug_error_handler($errno, $errstr, $errfile=false, $errline=false)
+	{
+		PerchUtil::debug('Error '.$errno.' in '.$errfile.' on line '.$errline, 'error');
+		PerchUtil::debug($errstr, 'error');
+	}
+
+	static function get_client_ip() 
+	{
+	    $ipaddress = '';
+	    if (array_key_exists('HTTP_CLIENT_IP', $_SERVER))
+	        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+	    else if(array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER))
+	        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	    else if(array_key_exists('HTTP_X_FORWARDED', $_SERVER))
+	        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+	    else if(array_key_exists('HTTP_FORWARDED_FOR', $_SERVER))
+	        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+	    else if(array_key_exists('HTTP_FORWARDED', $_SERVER))
+	        $ipaddress = $_SERVER['HTTP_FORWARDED'];
+	    else if(array_key_exists('REMOTE_ADDR', $_SERVER))
+	        $ipaddress = $_SERVER['REMOTE_ADDR'];
+	    else
+	        $ipaddress = 'UNKNOWN';
+	    return $ipaddress;
+	}
+
+	static function safe_stripslashes($str)
+	{
+		$strip = false;
+		if (PERCH_STRIPSLASHES)			$strip = true;
+		if (get_magic_quotes_gpc()) 	$strip = true;
+		if (get_magic_quotes_runtime()) $strip = true;
+		if ($strip) return stripslashes($str);
+		return $str;
+	}
+
+	static function flush_output()
+	{
+		if (PERCH_PROGRESSIVE_FLUSH) flush();
+	}
+
 }

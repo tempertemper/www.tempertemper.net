@@ -19,7 +19,7 @@ class PerchAuthenticatedUser extends PerchBase
         if ($this->activate()) {
 
             $sql     = 'SELECT u.*, r.* FROM ' . $this->table . ' u, '.PERCH_DB_PREFIX.'user_roles r
-                        WHERE u.roleID=r.roleID AND u.userEnabled=\'1\' AND userUsername=' . $this->db->pdb($username) . ' LIMIT 1';
+                        WHERE u.roleID=r.roleID AND u.userEnabled=1 AND userUsername=' . $this->db->pdb($username) . ' LIMIT 1';
 
             $result = $this->db->get_row($sql);
             if (is_array($result)) {
@@ -99,6 +99,8 @@ class PerchAuthenticatedUser extends PerchBase
                 }
             }
         }
+
+        syslog(LOG_INFO, "Authentication failure for $username from ".PerchUtil::get_client_ip());
         
         return false;
     }
@@ -107,7 +109,7 @@ class PerchAuthenticatedUser extends PerchBase
     {    
         if (PerchSession::is_set('userID')) {
             $sql     = 'SELECT u.*, r.* FROM ' . $this->table . ' u, '.PERCH_DB_PREFIX.'user_roles r
-                        WHERE u.roleID=r.roleID AND u.userEnabled=\'1\' AND u.userID=' . $this->db->pdb((int)PerchSession::get('userID')) . ' AND u.userHash=' . $this->db->pdb(PerchSession::get('userHash')) . '
+                        WHERE u.roleID=r.roleID AND u.userEnabled=1 AND u.userID=' . $this->db->pdb((int)PerchSession::get('userID')) . ' AND u.userHash=' . $this->db->pdb(PerchSession::get('userHash')) . '
                         LIMIT 1';
             $result = $this->db->get_row($sql);
             if (is_array($result)) {
@@ -258,7 +260,7 @@ class PerchAuthenticatedUser extends PerchBase
             $sql = 'SELECT p.privKey FROM '.PERCH_DB_PREFIX.'user_privileges p';
         }else{
             $sql = 'SELECT p.privKey FROM '.PERCH_DB_PREFIX.'users u, '.PERCH_DB_PREFIX.'user_role_privileges rp, '.PERCH_DB_PREFIX.'user_privileges p
-                    WHERE u.roleID=rp.roleID AND rp.privID=p.privID AND u.userID='.$this->db->pdb($this->id());    
+                    WHERE u.roleID=rp.roleID AND rp.privID=p.privID AND u.userID='.$this->db->pdb((int)$this->id());    
         }
 	    
 	    $rows = $this->db->get_rows($sql);
@@ -271,5 +273,3 @@ class PerchAuthenticatedUser extends PerchBase
 	    }
 	}
 }
-
-?>

@@ -5,7 +5,7 @@ class PerchAssets_Asset extends PerchBase
     protected $table  = 'resources';
     protected $pk     = 'resourceID';
 
-    private $bucket = false;
+    private $Bucket = false;
     private static $image_types  = array('jpg', 'png', 'gif', 'svg', 'jpeg', 'webp');
     private static $doc_types    = array('doc', 'docx', 'pdf', 'odt', 'fodt', 'epub', 'mobi', 'docm', 'rtf', 'txt', 'uof', 'wpd', 'wri');
     private static $sheet_types  = array('xls', 'csv', 'ods', 'fods', 'xlsx');
@@ -29,15 +29,13 @@ class PerchAssets_Asset extends PerchBase
     public function thumb_url()
     {
     	if ($this->thumb()) {
-    		$Perch = Perch::fetch();
-    		$bucket = $Perch->get_resource_bucket($this->resourceBucket());
-    		return $bucket['web_path'].'/'.$this->thumb();
+            $Bucket = PerchResourceBuckets::get($this->resourceBucket());
+    		return $Bucket->get_web_path().'/'.$this->thumb();
     	}
 
         if ($this->is_svg()) {
-            $Perch = Perch::fetch();
-            $bucket = $Perch->get_resource_bucket($this->resourceBucket());
-            return $bucket['web_path'].'/'.$this->resourceFile();
+            $Bucket = PerchResourceBuckets::get($this->resourceBucket());
+            return $Bucket->get_web_path().'/'.$this->resourceFile();
         }
     }
 
@@ -171,6 +169,9 @@ class PerchAssets_Asset extends PerchBase
      */
     protected function exists() 
     {
+        $Bucket = $this->get_bucket();
+        if ($Bucket->is_remote()) return true;
+        
         return file_exists($this->file_path());
     }
 
@@ -180,8 +181,8 @@ class PerchAssets_Asset extends PerchBase
      */
     public function file_path()
     {
-        $bucket = $this->get_bucket();
-        return PerchUtil::file_path($bucket['file_path'].'/'.$this->resourceFile());
+        $Bucket = $this->get_bucket();
+        return PerchUtil::file_path($Bucket->get_file_path().'/'.$this->resourceFile());
     }
 
     /**
@@ -190,8 +191,8 @@ class PerchAssets_Asset extends PerchBase
      */
     public function web_path()
     {
-        $bucket = $this->get_bucket();
-        return $bucket['web_path'].'/'.$this->resourceFile();
+        $Bucket = $this->get_bucket();
+        return $Bucket->get_web_path().'/'.$this->resourceFile();
     }
 
     /**
@@ -200,12 +201,11 @@ class PerchAssets_Asset extends PerchBase
      */
     public function get_bucket()
     {
-        if ($this->bucket) return $this->bucket;
+        if ($this->Bucket) return $this->Bucket;
 
-        $Perch  = Perch::fetch();
-        $this->bucket = $Perch->get_resource_bucket($this->resourceBucket());
+        $this->Bucket = PerchResourceBuckets::get($this->resourceBucket());
 
-        return $this->bucket;
+        return $this->Bucket;
     }
 
     /**
@@ -227,7 +227,11 @@ class PerchAssets_Asset extends PerchBase
     {
         $file_path = $this->file_path();
         $out = array();
-        $out['resourceFileSize'] = filesize($file_path);
+        $out['resourceFileSize'] = 0;
+        
+        if (file_exists($file_path)) {
+            $out['resourceFileSize'] = filesize($file_path);
+        }
 
         if ($this->is_image() && $out['resourceFileSize']>0) {
             $Image = new PerchImage;
@@ -277,7 +281,7 @@ class PerchAssets_Asset extends PerchBase
                 }
             }
         }else{
-            $out['resourceMimeType'] = $this->get_mime_type();
+            $out['resourceMimeType'] = PerchUtil::get_mime_type($this->file_path());
         }
 
         if (isset($out['resourceWidth']))  $out['resourceWidth']  = (int)$out['resourceWidth'];
@@ -321,8 +325,13 @@ class PerchAssets_Asset extends PerchBase
         $out['thumbwidth']  = $this->thumb_display_width();
         $out['thumbheight'] = $this->thumb_display_height();
 
-        $out['has_thumb'] = ($out['thumb']? true : false);
-       
+        //$out['has_thumb'] = ($out['thumb']? true : false);
+        $out['has_thumb'] = ($this->is_image()? true : false);
+
+        $out['orientation'] = 'landscape';
+
+        if ($out['thumbwidth']<$out['thumbheight']) $out['orientation'] = 'portrait';
+        if ($out['thumbwidth']==$out['thumbheight']) $out['orientation'] = 'square';
 
         $out['display_filesize'] = $this->file_size();
 

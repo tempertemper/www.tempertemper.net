@@ -29,7 +29,7 @@ class PerchContent_Item extends PerchBase
     public function log_resources($resourceIDs)
     {
     	if (PerchUtil::count($resourceIDs)) {
-    		$sql = 'INSERT INTO '.PERCH_DB_PREFIX.'resource_log(`appID`, `itemFK`, `itemRowID`, `resourceID`) VALUES';
+    		$sql = 'INSERT IGNORE INTO '.PERCH_DB_PREFIX.'resource_log(`appID`, `itemFK`, `itemRowID`, `resourceID`) VALUES';
     		
     		$vals = array();
 

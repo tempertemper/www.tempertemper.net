@@ -6,6 +6,7 @@ if (typeof(Perch) == 'undefined') {
 
 Perch.UI.Global	= function()
 {
+	var sidebarCoookie = 'cmssb';
 	var doresize = false;
 	var confirmDialogue = false;
 	var keepAlivePoll = 5*60*1000; // 5mins
@@ -40,6 +41,7 @@ Perch.UI.Global	= function()
 		if (!oldIE) initConfirmButtons();
 		initDashboard();
 		initKeepAlive();
+		initSearch();
 	};
 
 	var initPopups = function() {
@@ -73,6 +75,8 @@ Perch.UI.Global	= function()
 		
 		fixCSS();
 		saveOnCmdS();
+		routesHelpers();
+		editHelpers();
 	};
 
 	var saveOnCmdS = function() {
@@ -86,6 +90,41 @@ Perch.UI.Global	= function()
 				  }
 				}, false);
 			}
+		}
+	};
+
+	var routesHelpers = function() {
+		var spare = $('.routes-spare');
+		var existing = $('.field.routes');
+		if (spare.length && existing.length) {
+			spare.addClass('hidden');
+			spare.parent().find('.routes:last').append('<a href="#" class="icon plusone add">'+Perch.Lang.get('Add another')+'</a>');
+			$('.routes').on('click', '.plusone', function(e){
+				e.preventDefault();
+				spare.removeClass('hidden').find('input').focus();
+				$(this).selfHealingRemove();
+			});
+		}
+	};
+
+	var editHelpers = function() {
+		var inputs = $('[data-count]');
+		inputs.on('keyup', function(){
+			countCharacters(this);
+		});
+		inputs.each(function(i, o){
+			countCharacters(o);
+		})
+	};
+
+	var countCharacters = function(el) {
+		var self = $(el);
+		var cont = $('#'+self.attr('data-count-container'));
+
+		if (self.attr('data-count')=='words') {
+			cont.html(self.val().match(/\S+/g).length);
+		}else{
+			cont.html(self.val().length);	
 		}
 	};
 	
@@ -211,8 +250,7 @@ Perch.UI.Global	= function()
 		}
 	}
 	
-	var initSidebar = function() {
-		var sidebarCoookie = 'cmssb';
+	var initSidebar = function() {	
 		var body = $('body');
 		
 		if ($.cookie(sidebarCoookie)==1) {
@@ -225,19 +263,24 @@ Perch.UI.Global	= function()
 			var tog = $('#sidebar-toggle');
 			tog.on('click', function(e){
 				e.preventDefault();
-				body.toggleClass('sidebar-closed').toggleClass('sidebar-open');
-				if (body.hasClass('sidebar-closed')) {
-					$.cookie(sidebarCoookie, 1, { path: '/' });
-				}else{
-					$.cookie(sidebarCoookie, 0, { path: '/' });
-				}
-				autowidthForms();
-				$(window).trigger('perch.sidebar-toggle');
+				toggleSidebar();				
 			});
 		});
-		
+	};
 
-	}
+	var toggleSidebar = function(cb) {
+		var body = $('body');
+		body.toggleClass('sidebar-closed').toggleClass('sidebar-open');
+		if (body.hasClass('sidebar-closed')) {
+			$.cookie(sidebarCoookie, 1, { path: '/' });
+		}else{
+			$.cookie(sidebarCoookie, 0, { path: '/' });
+		}
+		autowidthForms();
+		$(window).trigger('perch.sidebar-toggle');
+
+		if (cb) cb();
+	};
 	
 	
 	var initAppMenu = function() {
@@ -377,13 +420,9 @@ Perch.UI.Global	= function()
 				var self = $(this);
 				var target = $('#'+self.attr('data-urlify'));
 				if (target.length) {
-					var out = self.val();
-					out = out.replace(/[^\w-\s]/gi, '');
-					out = out.replace(/\s/gi, '-');
-					out = out.replace(/-{2,}/gi, '-');
-					out = out.replace(/-$/, '');
-					out = out.toLowerCase();
-					target.val(out);
+					$.get(Perch.path+'/core/async/urlify.php?s='+encodeURIComponent(self.val()), function(r){
+						target.val(r);
+					});
 				}
 			});
 		}
@@ -420,6 +459,18 @@ Perch.UI.Global	= function()
 	        });
 		}
 	}
+
+	var initSearch = function() {
+		var cont = $('.sidebar .searchbox');
+		if (cont.length) {
+			$('.metanav').on('click', 'a.search', function(e){
+				e.preventDefault();
+				toggleSidebar(function(){
+					$('.sidebar .searchbox').addClass('focus').find('input').focus();
+				});
+			});
+		}
+	}
 	
 	return {
 		init: init,
@@ -440,12 +491,16 @@ Perch.Apps.Content = function() {
 	};
 
 	var initRegionReordering = function() {
+		// NB: routes too
 		var list = $('ul.reorder');
 		if (list.length) {
+			var base = 1000;
+			var data_start = list.attr('data-start');
+			if (data_start) base = parseInt(data_start);
 			list.sortable({
 				stop: function() {
 					list.find('input').each(function(i,o) {
-						$(o).val(i+1000);
+						$(o).val(i+base);
 					});
 				}
 			});

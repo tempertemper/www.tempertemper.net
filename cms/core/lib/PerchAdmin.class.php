@@ -10,11 +10,14 @@ class PerchAdmin extends Perch
     private $css              = array();
     private $head_content     = '';
     private $foot_content     = '';
-    
+    private $nav_section      = false;
+
     public $section           = '';
     public $admin             = true;
     
     public $core_apps         = array('content', 'assets', 'categories');
+
+
 
     public $event_listeners   = array();
 
@@ -66,7 +69,9 @@ class PerchAdmin extends Perch
     public function find_installed_apps($CurrentUser)
     {
         $this->apps = array();
-        
+     
+        if (!$CurrentUser->logged_in()) return;
+
         $a = array();
 
         foreach($this->core_apps as $core_app) {
@@ -76,7 +81,7 @@ class PerchAdmin extends Perch
         if (is_dir(PerchUtil::file_path(PERCH_PATH.'/addons/apps'))) {
             if ($dh = opendir(PerchUtil::file_path(PERCH_PATH.'/addons/apps'))) {
                 while (($file = readdir($dh)) !== false) {
-                    if(substr($file, 0, 1) != '.' && !preg_match($this->ignore_pattern, $file)) {
+                    if(substr($file, 0, 1) != '.' && !preg_match($this->ignore_pattern, $file) && substr($file, 0, 1)!='_') {
                         if (is_dir(PerchUtil::file_path(PERCH_PATH.'/addons/apps/'.$file))) {
                             $a[] = array('filename'=>$file, 'path'=>PerchUtil::file_path(PERCH_PATH.'/addons/apps/'.$file));
                         }
@@ -95,11 +100,19 @@ class PerchAdmin extends Perch
             }
         }
         
+        if (PERCH_RUNWAY) {
+            $Runway = PerchRunway::fetch();
+            $collections = $Runway->find_collections_for_app_menu();
+        }
+
+
         $this->apps = PerchUtil::super_sort($this->apps, 'priority', 'label');
     }
     
     public function get_section()
     {
+        if ($this->nav_section!==false) return $this->nav_section;
+
         $page = $this->get_page();        
         $page = trim(str_replace(PERCH_LOGINPATH.'/', '/', $page), '/');
         
@@ -199,6 +212,31 @@ class PerchAdmin extends Perch
     {
         return $this->foot_content;
     }  
+
+    public function set_section($section)
+    {
+        $this->nav_section = $section;
+    }
+
+
+    public function register_collection_as_app($label, $id)
+    {
+        $app              = array();
+        $app['id']        = 'collection_'.$id;
+        $app['version']   = $this->version;
+        $app['label']     = $label;
+        $app['path']      = PERCH_LOGINPATH . '/core/apps/content/collections/?id=' . $id;
+        $app['priority']  = 2;
+        $app['desc']      = $label.' Collection';
+        $app['active']    = true;
+        $app['dashboard'] = false;
+        $app['section']   = 'collection:'.$label;
+        $app['hidden']    = false;
+
+        $this->apps[]   = $app;
+
+        $this->add_create_page('collection_'.$id, '&add=1');
+    }
     
     private function register_app($app_id, $label, $priority=10, $desc='', $version=false, $hidden=false)
     {

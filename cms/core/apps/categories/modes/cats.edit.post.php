@@ -14,7 +14,7 @@
  
     // Main heading - different if new vs edit mode
     if ($Category) {
-        echo $HTML->heading1('Editing ‘%s’ Category', $Category->catTitle());
+        echo $HTML->heading1('Editing ‘%s’ Category', $HTML->encode($Category->catTitle()));
     }else{
         echo $HTML->heading1('Adding a New Category');         
     }

@@ -27,6 +27,8 @@ class PerchEmail
     private $body = false;
 
     private $html = false;
+
+    private $template_method = 'dollar';
     
     public $errors = '';
     
@@ -104,6 +106,7 @@ class PerchEmail
         }
         
         $this->subject = $str;
+        $this->vars['email_subject'] = $str;
     }
     
     public function senderName($str=false)
@@ -178,6 +181,15 @@ class PerchEmail
             }
             
         }
+    }
+
+    public function template_method($method=false)
+    {
+        if ($method) {
+            $this->template_method = $method;
+        }
+
+        return $this->template_method;
     }
     
     public function attachFile($name, $path, $mimetype)
@@ -264,45 +276,58 @@ class PerchEmail
 
 
     }
-    
-    
-
-    
+            
     
     private function build_message()
     {
-        $path		= $this->template_path;
+        if ($this->template_method=='perch') {
+            return $this->build_message_with_perch();
+        }
+
+        return $this->build_message_with_dollar();
+    }
+
+    private function build_message_with_perch()
+    {
+        $Template = new PerchTemplate($this->template, 'email');
+        $html = $Template->render($this->vars);
+        return $html;
+    }
+
+    private function build_message_with_dollar()
+    {
+        $path       = $this->template_path;
         $template   = $this->template;
         $data       = $this->vars;
-		
+        
         if (!$template) {
             return $this->body;
         }
 
 
-		// test for data
-		if (!is_array($data)){
-			PerchUtil::debug('No data sent to email templating engine.', 'notice');
-			return false;
-		}
-				
-			
-		// check if template is cached
-		if (isset($this->cache[$template])){
-			// use cached copy
-			$contents	= $this->cache[$template];		
-		}else{
-			// read and cache		
-			if (file_exists($path)){
-				$contents 	= file_get_contents($path);
-				$this->cache[$template]	= addslashes($contents);
-			}
-		}
-		
-		if (isset($contents)){
-			$this->template_data 	= $data;
-			$contents			    = preg_replace_callback('/\$(\w+)/', array($this, "substitute_vars"), $contents);
-			$this->template_data 	= '';
+        // test for data
+        if (!is_array($data)){
+            PerchUtil::debug('No data sent to email templating engine.', 'notice');
+            return false;
+        }
+                
+            
+        // check if template is cached
+        if (isset($this->cache[$template])){
+            // use cached copy
+            $contents   = $this->cache[$template];      
+        }else{
+            // read and cache       
+            if (file_exists($path)){
+                $contents   = file_get_contents($path);
+                $this->cache[$template] = addslashes($contents);
+            }
+        }
+        
+        if (isset($contents)){
+            $this->template_data    = $data;
+            $contents               = preg_replace_callback('/\$(\w+)/', array($this, "substitute_vars"), $contents);
+            $this->template_data    = '';
 
             if ($this->html) {
                 $s = '/<title>(.*?)<\/title>/';
@@ -312,12 +337,12 @@ class PerchEmail
                     }
                 }
             }
-			
-			return stripslashes($contents);
-		}else{
-			PerchUtil::debug('Template does not exist: '. $template, 'error');
-			return false;
-		}
+            
+            return stripslashes($contents);
+        }else{
+            PerchUtil::debug('Template does not exist: '. $template, 'error');
+            return false;
+        }
     }
     
     private function substitute_vars($matches)
@@ -333,4 +358,3 @@ class PerchEmail
     
 
 }
-?>

@@ -6,6 +6,13 @@
     include(PERCH_CORE.'/apps/content/PerchContent_Pages.class.php');
     include(PERCH_CORE.'/apps/content/PerchContent_Page.class.php');
     include(PERCH_CORE.'/apps/content/PerchContent.class.php');
+    include(PERCH_CORE.'/apps/content/PerchContent_SearchHandler.class.php');
+
+    PerchSystem::register_search_handler('PerchContent_SearchHandler');
+
+    if (PERCH_RUNWAY) {
+        include(PERCH_CORE.'/runway/apps/content/runtime.php');
+    }
 
     perch_content_check_preview();
 
@@ -26,6 +33,7 @@
 		        
         if ($return) return $out;
         echo $out;
+        PerchUtil::flush_output();
     }
         
     function perch_content_custom($key=false, $opts=false, $return=false)
@@ -39,19 +47,38 @@
             $postpro = true;
         }
 
+        if (isset($opts['split-items']) && $opts['split-items']==true) {
+            $return  = true;
+        }
+
         if (isset($opts['pagination_var']))    $opts['pagination-var'] = $opts['pagination_var'];
 
         $Content = PerchContent::fetch();    
-        $out = $Content->get_custom($key, $opts);
+        $out     = $Content->get_custom($key, $opts);
 
-        // Post processing - if there are still <perch:x /> tags
-        if ($postpro && !is_array($out) && strpos($out, '<perch:')!==false) {
-            $Template   = new PerchTemplate();
-            $out        = $Template->apply_runtime_post_processing($out);
+        // Post processing - if there are still <perch:x /> tags      
+        if ($postpro) {
+            if (is_array($out)) {
+                // split-items
+                if (PerchUtil::count($out)) {
+                    $Template = new PerchTemplate();
+                    foreach($out as &$html_item) {
+                        if (strpos($html_item, '<perch:')!==false) {
+                            $html_item        = $Template->apply_runtime_post_processing($html_item);
+                        }
+                    }
+                }
+            }else{
+                if (strpos($out, '<perch:')!==false) {
+                    $Template = new PerchTemplate();
+                    $out     = $Template->apply_runtime_post_processing($out);
+                } 
+            }
         }
 
         if ($return) return $out;
         echo $out;
+        PerchUtil::flush_output();
     }
     
     function perch_content_check_preview()
@@ -122,6 +149,7 @@
         
         if ($return) return $out;
         echo $out;
+        PerchUtil::flush_output();
     }
 
     function perch_search_form($opts=false, $return=false)
@@ -143,6 +171,7 @@
         
         if ($return) return $html;
         echo $html;
+        PerchUtil::flush_output();
     }
 
     function perch_page_title($return=false) 
@@ -154,10 +183,23 @@
 
     function perch_pages_title($return=false)
     {
-        $Pages = new PerchContent_Pages;
-        $Perch = Perch::fetch();
-        
-        $Page = $Pages->find_by_path($Perch->get_page());
+        $attr_vars = PerchSystem::get_attr_vars();
+        if (isset($attr_vars['pageTitle'])) {
+            if ($return) return $attr_vars['pageTitle'];
+            echo PerchUtil::html($attr_vars['pageTitle']);
+            return;
+        } 
+
+        $Page = PerchSystem::get_page_object();
+
+        if (!$Page) {
+            $Pages = new PerchContent_Pages;
+            $Perch = Perch::fetch();
+            $Page = $Pages->find_by_path($Perch->get_page());
+            if ($Page instanceof PerchContent_Page) {
+                PerchSystem::set_page_object($Page);
+            }
+        }
         
         $r = '';
         
@@ -172,10 +214,23 @@
     
     function perch_pages_navigation_text($return=false)
     {
-        $Pages = new PerchContent_Pages;
-        $Perch = Perch::fetch();
-        
-        $Page = $Pages->find_by_path($Perch->get_page());
+        $attr_vars = PerchSystem::get_attr_vars();
+        if (isset($attr_vars['pageNavText'])) {
+            if ($return) return $attr_vars['pageNavText'];
+            echo PerchUtil::html($attr_vars['pageNavText']);
+            return;
+        } 
+
+        $Page = PerchSystem::get_page_object();
+
+        if (!$Page) {
+            $Pages = new PerchContent_Pages;
+            $Perch = Perch::fetch();
+            $Page = $Pages->find_by_path($Perch->get_page());
+            if ($Page instanceof PerchContent_Page) {
+                PerchSystem::set_page_object($Page);
+            }
+        }
         
         $r = '';
         
@@ -342,6 +397,7 @@
         if ($return) return $r;
         
         echo $r;
+        PerchUtil::flush_output();
     }
 
     function perch_pages_breadcrumbs($opts=array(), $return=false)
@@ -377,6 +433,7 @@
         if ($return) return $r;
         
         echo $r;
+        PerchUtil::flush_output();
     }
 
     function perch_content_create($key=false, $opts=false)
@@ -416,7 +473,7 @@
     function perch_get($var, $default=false)
     {
         if (isset($_GET[$var]) && $_GET[$var]!='') {
-            return $_GET[$var];
+            return rawurldecode($_GET[$var]);
         }
 
         if (PERCH_RUNWAY) {
@@ -451,6 +508,7 @@
         if ($return) {
             return ob_get_clean();
         }
+        PerchUtil::flush_output();
     }
 
     function perch_layout_var($var, $return=false)
@@ -461,6 +519,14 @@
         if ($return) return $var;
 
         echo PerchUtil::html($var);
+    }
+
+    function perch_layout_has($var)
+    {
+        $Perch = Perch::fetch();
+        $var = $Perch->get_layout_var($var);
+        if ($var) return true;
+        return false;
     }
 
     function perch_template($tpl, $vars=array(), $return=false)
@@ -486,6 +552,7 @@
         
         if ($return) return $html;
         echo $html;
+        PerchUtil::flush_output();
     }
 
     function perch_page_attributes($opts=array(), $return=false)
@@ -565,6 +632,11 @@
         return false;
     }
 
+    function perch_page_attributes_extend($attrs) 
+    {
+        PerchSystem::set_attr_vars($attrs);
+    }
+
     function perch_page_modified($opts=array(), $return=false)
     {
         $Content = PerchContent::fetch();
@@ -612,5 +684,3 @@
         
         echo PerchUtil::html($r);
     }
-
-?>

@@ -1,8 +1,8 @@
 <?php
-    $auth_page = true;
-    $done = false;
-
-    $errors = false;
+	$auth_page = true;
+	$done      = false;
+	
+	$errors    = false;
 
     include('../inc/pre_config.php');
     include('../../config/config.php');
@@ -67,8 +67,6 @@
 
 					$DB = PerchDB::fetch();
 
-
-
 					if (PerchUtil::count($files)) {
 						foreach($files as $file) {
 							if (PerchUtil::file_extension($file) == 'php') {
@@ -101,7 +99,6 @@
     	PerchUtil::debug('Queries: '. PerchDB_MySQL::$queries);
     	PerchUtil::output_debug(); 
     }
-
 ?>
 </body>
 </html>

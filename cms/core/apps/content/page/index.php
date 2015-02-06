@@ -17,6 +17,13 @@
     include($app_path.'/PerchContent_Region.class.php');
     include($app_path.'/PerchContent_Regions.class.php');
     
+    if (PERCH_RUNWAY) {
+        include(PERCH_CORE.'/runway/apps/content/PerchContent_Collections.class.php');
+        include(PERCH_CORE.'/runway/apps/content/PerchContent_Collection.class.php');
+        include(PERCH_CORE.'/runway/apps/content/PerchContent_CollectionItems.class.php');
+        include(PERCH_CORE.'/runway/apps/content/PerchContent_CollectionItem.class.php');
+    }
+
         
     include($app_path.'/modes/page.pre.php');
     

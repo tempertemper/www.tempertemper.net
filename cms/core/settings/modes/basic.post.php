@@ -52,8 +52,8 @@
         </div>
         
         <div class="field">
-            <?php echo $Form->label('logo', 'Upload a logo'); ?>
-            <?php echo $Form->image('logo');
+            <?php echo $Form->label('customlogo', 'Upload a logo'); ?>
+            <?php echo $Form->image('customlogo');
 
                 $logo = $Settings->get('logoPath')->settingValue();
                 if ($logo) {

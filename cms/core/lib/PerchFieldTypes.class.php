@@ -10,11 +10,22 @@ class PerchFieldTypes
         
         if (!$type) {
             $tag_name = $Tag->tag_name();
-            if ($tag_name=='perch:categories') {
-                $type = 'category';
-            }else{
-                $type = 'text';
+
+            switch($tag_name) {
+
+                case 'perch:categories' :
+                    $type = 'category';
+                    break;
+
+                case 'perch:related' :
+                    $type = 'related';
+                    break;
+
+                default:
+                    $type = 'text';
+                    break;
             }
+
         }
 
         $classname = 'PerchFieldType_'.$type;
@@ -106,6 +117,32 @@ class PerchFieldType_email extends PerchFieldType
     }
 }
 
+/* ------------ NUMBER ------------ */
+
+class PerchFieldType_number extends PerchFieldType
+{
+    public function render_inputs($details=array())
+    {
+        $attributes = '';
+        $attrs = array();
+        $search = array('min', 'max', 'step');
+
+        foreach($search as $s) {
+            if ($this->Tag->is_set($s)) $attrs[] = $s.'='.$this->Tag->$s;    
+        }
+
+        $attributes = implode(' ', $attrs);
+        
+
+        return $this->Form->text($this->Tag->input_id(), 
+                                $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), 
+                                $this->Tag->size(), 
+                                $this->Tag->maxlength(), 
+                                'number',
+                                $attributes);
+    }
+}
+
 /* ------------ SEARCH ------------ */
 
 class PerchFieldType_search extends PerchFieldType
@@ -167,7 +204,7 @@ class PerchFieldType_date extends PerchFieldType
             }
             
             if (isset($post[$id])) {
-                $raw = trim(stripslashes($post[$id]));
+                $raw = trim(PerchUtil::safe_stripslashes($post[$id]));
                 $this->raw_item = date('Y-m-d H:i:s', strtotime($raw));
             }
 
@@ -238,6 +275,7 @@ class PerchFieldType_slug extends PerchFieldType
 
                 if ($this->Tag->for()) {
                     $parts = $this->break_for_string($this->Tag->for());
+
                     $tmp = array();
                     if (PerchUtil::count($parts)) {
                         foreach($parts as $field) {
@@ -246,10 +284,11 @@ class PerchFieldType_slug extends PerchFieldType
                     }
 
                     if (!$value) $attrs .= 'data-slug-for="'.PerchUtil::html(implode(' ',$tmp), true).'"';
+
                 }
 
             }          
-
+            
             $s = $this->Form->text($this->Tag->input_id(), $value, $this->Tag->size(), $this->Tag->maxlength(), 'text', $attrs);
                     
             return $s;
@@ -269,7 +308,7 @@ class PerchFieldType_slug extends PerchFieldType
         
         $id = $this->Tag->id();
         if (isset($post[$id])) {
-            $this->raw_item = trim(stripslashes($post[$id]));
+            $this->raw_item = trim(PerchUtil::safe_stripslashes($post[$id]));
             $value = $this->raw_item;
         }
 
@@ -308,14 +347,14 @@ class PerchFieldType_slug extends PerchFieldType
                 $str = array();
                 foreach($parts as $part) {
                     if (isset($post[$part])) {
-                        $str[] = trim(stripslashes($post[$part]));
+                        $str[] = trim(PerchUtil::safe_stripslashes($post[$part]));
                     }
                 }
                 return PerchUtil::urlify(implode(' ', $str));
             }
 
             if (isset($post[$this->Tag->for()])) {
-                return PerchUtil::urlify(trim(stripslashes($post[$this->Tag->for()])));
+                return PerchUtil::urlify(trim(PerchUtil::safe_stripslashes($post[$this->Tag->for()])));
             }
         }
         
@@ -401,6 +440,12 @@ class PerchFieldType_textarea extends PerchFieldType
         if ($this->Tag->imagedensity())         $data_atrs['density'] = $this->Tag->imagedensity();
         if ($this->Tag->bucket())               $data_atrs['bucket']  = $this->Tag->bucket();
 
+        if ($this->Tag->count()) {
+            if ($this->Tag->count()=='chars') $data_atrs['count'] = 'chars';
+            if ($this->Tag->count()=='words') $data_atrs['count'] = 'words';
+            $data_atrs['count-container'] = $this->Tag->input_id().'__count';
+        }
+
         if ($this->Tag->editor_config())  $data_atrs['editor-config'] = $this->Tag->editor_config();        
         
         if (isset($details[$this->Tag->input_id()]) && $details[$this->Tag->input_id()]!='') {
@@ -412,6 +457,9 @@ class PerchFieldType_textarea extends PerchFieldType
     
         $s = $this->Form->textarea($this->Tag->input_id(), $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), $classname, $data_atrs);
         $s .= '<div class="clear"></div>';
+        if ($this->Tag->count()) {
+            $s .= '<div class="counter textarea" id="'.$this->Tag->input_id().'__count"></div>';
+        }
         
         return $s;
     }
@@ -426,7 +474,7 @@ class PerchFieldType_textarea extends PerchFieldType
         if (isset($post[$id])) {
             $raw = trim($post[$id]);
             
-            $raw = stripslashes($raw);
+            $raw = PerchUtil::safe_stripslashes($raw);
             $value = $raw;
             
             $formatting_language_used = false;
@@ -570,6 +618,19 @@ class PerchFieldType_textarea extends PerchFieldType
         
         return $raw;
     }
+
+    public function get_index($raw=false)
+    {
+        if ($raw===false) $raw = $this->get_raw();
+        
+        $id = $this->Tag->id();
+
+        $out = array();
+
+        $out[] = array('key'=>$id, 'value'=>trim($this->get_search_text($raw)));
+
+        return $out;
+    }
 }
 
 /* ------------ CHECKBOX ------------ */
@@ -607,6 +668,23 @@ class PerchFieldType_select extends PerchFieldType
             }
         }
         return $this->Form->select($this->Tag->input_id(), $opts, $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()));
+    }
+
+    public function render_admin_listing($raw=false)
+    {
+        $opts_str = $this->Tag->options();
+        $opts = explode(',', $opts_str);
+        if (PerchUtil::count($opts)) {
+            foreach($opts as $opt) {
+                $parts = explode('|', $opt);
+                if (PerchUtil::count($parts)) {
+                    if (trim($parts[1])==$raw) {
+                        return trim($parts[0]);
+                    }
+                }
+            }
+        }
+        return PerchUtil::html($this->get_processed($raw));
     }
 }
 
@@ -654,7 +732,7 @@ class PerchFieldType_image extends PerchFieldType
     public function render_inputs($details=array())
     {
         $Perch = Perch::fetch();
-        $bucket = $Perch->get_resource_bucket($this->Tag->bucket());
+        $Bucket = PerchResourceBuckets::get($this->Tag->bucket());
 
         $PerchImage = new PerchImage;
         $s = $this->Form->image($this->Tag->input_id());
@@ -667,13 +745,13 @@ class PerchFieldType_image extends PerchFieldType
             $assetID = $details[$this->Tag->input_id()]['assetID'];
         }
 
-        $s .= $this->Form->hidden($asset_field, $this->Form->get(array(), $asset_field, ''));      
-       
+        //$s .= $this->Form->hidden($asset_field, $this->Form->get(array(), $asset_field, ''));      
+        $s .= $this->Form->hidden($asset_field, $assetID);
 
-        PerchUtil::initialise_resource_bucket($bucket);
+        $Bucket->initialise();
 
-        if (!is_writable($bucket['file_path'])) {
-            $s .= $this->Form->hint(PerchLang::get('Your resources folder is not writable. Make this folder (') . PerchUtil::html($bucket['web_path']) . PerchLang::get(') writable to upload images.'), 'error');
+        if (!$Bucket->ready_to_write()) {
+            $s .= $this->Form->hint(PerchLang::get('Your resources folder is not writable. Make this folder (') . PerchUtil::html($Bucket->get_web_path()) . PerchLang::get(') writable to upload images.'), 'error');
         }  
 
 
@@ -683,7 +761,7 @@ class PerchFieldType_image extends PerchFieldType
             //PerchUtil::debug($json);
 
             if (isset($json['bucket'])) {
-                $bucket = $Perch->get_resource_bucket($json['bucket']);
+                $Bucket = PerchResourceBuckets::get($json['bucket']);
             }    
 
             if (isset($json['sizes']['thumb'])) {
@@ -706,10 +784,10 @@ class PerchFieldType_image extends PerchFieldType
             }
           
             $image_path = false;
-            if ($image_src) $image_path = PerchUtil::file_path($bucket['file_path'].'/'.$image_src);
+        
+            if ($image_src) {
 
-
-            if (file_exists($image_path)) {
+                $image_path = PerchUtil::file_path($Bucket->get_file_path().'/'.$image_src);
 
                 $s .= '<div class="asset-badge" data-for="'.$asset_field.'">';
 
@@ -718,7 +796,7 @@ class PerchFieldType_image extends PerchFieldType
                 $variant = (isset($json['sizes'][$variant_key]) ? $json['sizes'][$variant_key] : false);
 
                 $s .= '<div class="asset-badge-thumb">';
-                $s .= '<img src="'.PerchUtil::html($bucket['web_path'].'/'.$image_src).'" width="'.$image_w.'" height="'.$image_h.'" alt="Preview" />';
+                $s .= '<img src="'.PerchUtil::html($Bucket->get_web_path().'/'.$image_src).'" width="'.$image_w.'" height="'.$image_h.'" alt="Preview" />';
                 $s .= '</div>';
 
                 $s .= '<div class="asset-badge-meta">';
@@ -732,8 +810,9 @@ class PerchFieldType_image extends PerchFieldType
                     if ($variant) {
                         $s .= '<ul class="meta">';
                         $s .= '<li class="title">'.(isset($json['title']) ? $json['title'] : $variant['path']).'</li>';
-                        $s .= '<li>'.ucfirst(str_replace('/', ' / ', $variant['mime'])).'</li>';
-                        
+                        if (isset($variant['mime'])) {
+                            $s .= '<li>'.ucfirst(str_replace('/', ' / ', $variant['mime'])).'</li>';
+                        }
                         
                         $size     = floatval($variant['size']);
 
@@ -777,12 +856,12 @@ class PerchFieldType_image extends PerchFieldType
         }
 
         
-        if (isset($image_path) && file_exists($image_path)) $s .= $this->Form->hidden($this->Tag->input_id().'_populated', '1');
+        if (isset($image_path) && !empty($image_path)) $s .= $this->Form->hidden($this->Tag->input_id().'_populated', '1');
 
         $type = 'img';
         if ($this->Tag->file_type()) $type = $this->Tag->file_type();
         
-        $s .= ' <span class="ft-choose-asset'.($this->Tag->disable_asset_panel() ? ' assets-disabled' : '').'" data-type="'.$type.'" data-field="'.$asset_field.'" data-input="'.$this->Tag->input_id().'" data-app="'.$this->app_id.'" data-app-uid="'.$this->unique_id.'" data-bucket="'.PerchUtil::html($bucket['name'], true).'"></span>';
+        $s .= ' <span class="ft-choose-asset'.($this->Tag->disable_asset_panel() ? ' assets-disabled' : '').'" data-type="'.$type.'" data-field="'.$asset_field.'" data-input="'.$this->Tag->input_id().'" data-app="'.$this->app_id.'" data-app-uid="'.$this->unique_id.'" data-bucket="'.PerchUtil::html($Bucket->get_name(), true).'"></span>';
         return $s;
     }
     
@@ -791,25 +870,28 @@ class PerchFieldType_image extends PerchFieldType
         $store = array();
 
         $Perch = Perch::fetch();
-        $bucket = $Perch->get_resource_bucket($this->Tag->bucket());
+        $Bucket = PerchResourceBuckets::get($this->Tag->bucket());
         
-        $image_folder_writable = is_writable($bucket['file_path']);
+        $image_folder_writable = $Bucket->ready_to_write();
         
         $item_id = $this->Tag->input_id();
         $asset_reference_used = false;
 
-        $target = false;
+        $target   = false;
+        $filesize = false;
+
+        if (!class_exists('PerchAssets_Assets', false)) {
+            include_once(PERCH_CORE.'/apps/assets/PerchAssets_Assets.class.php');
+            include_once(PERCH_CORE.'/apps/assets/PerchAssets_Asset.class.php');
+        }
+
+        $Assets = new PerchAssets_Assets;
+        $AssetMeta = false;
 
         // Asset ID?
         if (isset($post[$this->Tag->id().'_assetID']) && $post[$this->Tag->id().'_assetID']!='') {
             $new_assetID = $post[$this->Tag->id().'_assetID'];
-
-            if (!class_exists('PerchAssets_Assets', false)) {
-                include_once(PERCH_CORE.'/apps/assets/PerchAssets_Assets.class.php');
-                include_once(PERCH_CORE.'/apps/assets/PerchAssets_Asset.class.php');
-            }
-
-            $Assets = new PerchAssets_Assets;
+           
             $Asset = $Assets->find($new_assetID);
 
             if (is_object($Asset)) {
@@ -821,8 +903,8 @@ class PerchFieldType_image extends PerchFieldType
                 $store['_default'] = $Asset->web_path();
                 $store['bucket']   = $Asset->resourceBucket();
 
-                if ($store['bucket']!=$bucket) {
-                    $bucket = $Perch->get_resource_bucket($store['bucket']);
+                if ($store['bucket']!=$Bucket->get_name()) {
+                    $Bucket = PerchResourceBuckets::get($store['bucket']);
                 }
 
                 $asset_reference_used = true;
@@ -833,38 +915,26 @@ class PerchFieldType_image extends PerchFieldType
                        
             if (!isset(self::$file_paths[$this->Tag->id()])) {
             
-                $filename = PerchUtil::tidy_file_name($_FILES[$item_id]['name']);
-                if (strpos($filename, '.php')!==false) $filename .= '.txt'; // diffuse PHP files              
+                // We do this before writing to the bucket, as it performs better for remote buckets.
+                $AssetMeta = $Assets->get_meta_data($_FILES[$item_id]['tmp_name'], $_FILES[$item_id]['name']);
 
-                $target = PerchUtil::file_path($bucket['file_path'].DIRECTORY_SEPARATOR.$filename);
-                if (file_exists($target)) {                                        
-                    $dot = strrpos($filename, '.');
-                    $filename_a = substr($filename, 0, $dot);
-                    $filename_b = substr($filename, $dot);
+                $result   = $Bucket->write_file($_FILES[$item_id]['tmp_name'], $_FILES[$item_id]['name']);
+                
+                $target   = $result['path'];
+                $filename = $result['name'];
+                $filesize = (int)$_FILES[$item_id]['size'];
 
-                    $count = 1;
-                    while (file_exists($bucket['file_path'].DIRECTORY_SEPARATOR.PerchUtil::tidy_file_name($filename_a.'-'.$count.$filename_b))) {
-                        $count++;
-                    }
-
-                    $filename = PerchUtil::tidy_file_name($filename_a . '-' . $count . $filename_b);
-                    $target = $bucket['file_path'].DIRECTORY_SEPARATOR.$filename;
-            
-                }
-                                    
-                PerchUtil::move_uploaded_file($_FILES[$item_id]['tmp_name'], $target);
-                $store['_default'] = rtrim($bucket['web_path'], '/').'/'.$filename;
+                $store['_default'] = rtrim($Bucket->get_web_path(), '/').'/'.$filename;
             }
         }
 
         if ($target && $filename && is_file($target)) {
 
             self::$file_paths[$this->Tag->id()] = $target;     
-                
-            
-            $store['path'] = $filename;
-            $store['size'] = filesize($target);
-            $store['bucket'] = $bucket['name'];
+                            
+            $store['path']   = $filename;
+            $store['size']   = $filesize ?: filesize($target);
+            $store['bucket'] = $Bucket->get_name();
 
             // Is this an SVG? 
             $svg = false;
@@ -927,6 +997,10 @@ class PerchFieldType_image extends PerchFieldType
                     $tmp['path']     = $result['file_name'];
                     $tmp['size']     = filesize($result['file_path']);
                     $tmp['mime']     = (isset($result['mime']) ? $result['mime'] : '');   
+
+                    if ($result && isset($result['_resourceID'])) {
+                        $tmp['assetID'] = $result['_resourceID'];
+                    }
                                             
                     $store['sizes'][$variant_key] = $tmp;
                 }
@@ -951,6 +1025,10 @@ class PerchFieldType_image extends PerchFieldType
                     $tmp['path']     = $result['file_name'];
                     $tmp['size']     = filesize($result['file_path']);
                     $tmp['mime']     = (isset($result['mime']) ? $result['mime'] : '');   
+
+                    if ($result && isset($result['_resourceID'])) {
+                        $tmp['assetID'] = $result['_resourceID'];
+                    }
                     
                     $store['sizes'][$variant_key] = $tmp;
                 }
@@ -1000,7 +1078,11 @@ class PerchFieldType_image extends PerchFieldType
                                 $tmp['density']  = ($Tag->density() ? $Tag->density() : '1');
                                 $tmp['path']     = $result['file_name'];
                                 $tmp['size']     = filesize($result['file_path']);
-                                $tmp['mime']     = (isset($result['mime']) ? $result['mime'] : '');    
+                                $tmp['mime']     = (isset($result['mime']) ? $result['mime'] : '');  
+
+                                if ($result && isset($result['_resourceID'])) {
+                                    $tmp['assetID'] = $result['_resourceID'];
+                                }  
 
                                 $store['sizes'][$variant_key] = $tmp;
 
@@ -1063,12 +1145,12 @@ class PerchFieldType_image extends PerchFieldType
             $Resources = new PerchResources;
 
             // Main image
-            $parentID = $Resources->log($this->app_id, $store['bucket'], $store['path'], 0, 'orig', false, $store);
+            $parentID = $Resources->log($this->app_id, $store['bucket'], $store['path'], 0, 'orig', false, $store, $AssetMeta);
 
             // variants
             if (isset($store['sizes']) && PerchUtil::count($store['sizes'])) {
                 foreach($store['sizes'] as $key=>$size) {
-                    $Resources->log($this->app_id, $store['bucket'], $size['path'], $parentID, $key, false, $size); 
+                    $Resources->log($this->app_id, $store['bucket'], $size['path'], $parentID, $key, false, $size, $AssetMeta); 
                 }
             }
 
@@ -1084,6 +1166,12 @@ class PerchFieldType_image extends PerchFieldType
         
         self::$file_paths = array();
         
+
+        // Check it's not an empty array
+        if (is_array($store) && count($store)===0) {
+            return null;
+        }
+
         return $store;
     }
     
@@ -1200,14 +1288,11 @@ class PerchFieldType_image extends PerchFieldType
                 return $this->get_processed($details);
             }
 
-            $Perch = Perch::fetch();
-            $bucket = $Perch->get_resource_bucket($this->Tag->bucket());
-
             $PerchImage = new PerchImage;          
             
             $json = $details;
 
-            $bucket = $Perch->get_resource_bucket($json['bucket']);
+            $Bucket = PerchResourceBuckets::get($json['bucket']);
 
             if (isset($json['sizes']['thumb'])) {
                 $image_src  = $json['sizes']['thumb']['path'];
@@ -1215,10 +1300,10 @@ class PerchFieldType_image extends PerchFieldType
                 $image_h    = $json['sizes']['thumb']['h'];
             }
             
-            $image_path = PerchUtil::file_path($bucket['file_path'].'/'.$image_src);
+            $image_path = PerchUtil::file_path($Bucket->get_file_path().'/'.$image_src);
 
             if (file_exists($image_path)) {
-                $s .= '<img src="'.PerchUtil::html($bucket['web_path'].'/'.$image_src).'" width="'.($image_w/2).'" height="'.($image_h/2).'" alt="Preview" />';
+                $s .= '<img src="'.PerchUtil::html($Bucket->get_web_path().'/'.$image_src).'" width="'.($image_w/2).'" height="'.($image_h/2).'" alt="Preview" />';
             }
         }
             
@@ -1229,28 +1314,47 @@ class PerchFieldType_image extends PerchFieldType
     {
         if (!isset($item['path'])) return false;
         
-        $Perch = Perch::fetch();
-
         if (isset($orig_item['bucket'])) {
-            $bucket = $Perch->get_resource_bucket($orig_item['bucket']);
+            $Bucket = PerchResourceBuckets::get($orig_item['bucket']);
         }else{
-            $bucket = $Perch->get_resource_bucket($this->Tag->bucket());
+            $Bucket = PerchResourceBuckets::get($this->Tag->bucket());
         }                      
         
-        return $bucket['web_path'].'/'.str_replace($bucket['web_path'].'/', '', $item['path']);
+        return $Bucket->get_web_path().'/'.str_replace($Bucket->get_web_path().'/', '', $item['path']);
     }
 
     private function _get_image_file($orig_item, $item)
     {
-        $Perch = Perch::fetch();
 
         if (isset($orig_item['bucket'])) {
-            $bucket = $Perch->get_resource_bucket($orig_item['bucket']);
+            $Bucket = PerchResourceBuckets::get($orig_item['bucket']);
         }else{
-            $bucket = $Perch->get_resource_bucket($this->Tag->bucket());
-        }                      
+            $Bucket = PerchResourceBuckets::get($this->Tag->bucket());
+        }                     
         
-        return PerchUtil::file_path($bucket['file_path'].'/'.str_replace($bucket['file_path'].'/', '', $item['path']));
+        return PerchUtil::file_path($Bucket->get_file_path().'/'.str_replace($Bucket->get_file_path().'/', '', $item['path']));
+    }
+
+    public function get_index($raw=false)
+    {
+        if ($raw===false) $raw = $this->get_raw();
+        
+        $id = $this->Tag->id();
+
+        $out = array();
+
+        if (is_array($raw)) {
+
+            if (isset($raw['_default'])) {
+                $out[] = array('key'=>$id, 'value'=>trim($raw['_default']));
+            }
+
+        }else{
+            $out[] = array('key'=>$id, 'value'=>trim($raw));
+        }
+
+
+        return $out;
     }
 }
 
@@ -1262,7 +1366,7 @@ class PerchFieldType_file extends PerchFieldType_image
     public function render_inputs($details=array())
     {
         $Perch = Perch::fetch();
-        $bucket = $Perch->get_resource_bucket($this->Tag->bucket());
+        $Bucket = PerchResourceBuckets::get($this->Tag->bucket());
 
         if (!class_exists('PerchAssets_Assets', false)) {
             include_once(PERCH_CORE.'/apps/assets/PerchAssets_Assets.class.php');
@@ -1281,10 +1385,10 @@ class PerchFieldType_file extends PerchFieldType_image
 
         $s .= $this->Form->hidden($asset_field, '');    
 
-        PerchUtil::initialise_resource_bucket($bucket);
+        $Bucket->initialise();
 
-        if (!is_writable($bucket['file_path'])) {
-            $s .= $this->Form->hint(PerchLang::get('Your resources folder is not writable. Make this folder (') . PerchUtil::html($bucket['web_path']) . PerchLang::get(') writable to upload files.'), 'error');
+        if (!$Bucket->ready_to_write()) {
+            $s .= $this->Form->hint(PerchLang::get('Your resources folder is not writable. Make this folder (') . PerchUtil::html($Bucket->get_web_path()) . PerchLang::get(') writable to upload files.'), 'error');
         }  
  
         if (isset($details[$this->Tag->input_id()]) && $details[$this->Tag->input_id()]!='') {
@@ -1293,7 +1397,7 @@ class PerchFieldType_file extends PerchFieldType_image
             //PerchUtil::debug($json);
 
             if (isset($json['bucket'])) {
-                $bucket = $Perch->get_resource_bucket($json['bucket']);
+                $Bucket = PerchResourceBuckets::get($json['bucket']);
             }  
 
             if (is_array($json) && isset($json['path'])) {
@@ -1306,7 +1410,7 @@ class PerchFieldType_file extends PerchFieldType_image
                 }
             }
 
-            $file_path = PerchUtil::file_path($bucket['file_path'].'/'.$path);
+            $file_path = PerchUtil::file_path($Bucket->get_file_path().'/'.$path);
 
             if (!file_exists($file_path) && $assetID) {
                 $Assets    = new PerchAssets_Assets;
@@ -1323,7 +1427,7 @@ class PerchFieldType_file extends PerchFieldType_image
                 $image_src  = $json['sizes']['thumb']['path'];
                 $image_w    = $json['sizes']['thumb']['w'];
                 $image_h    = $json['sizes']['thumb']['h'];
-                $image_path = PerchUtil::file_path($bucket['file_path'].'/'.$image_src);
+                $image_path = PerchUtil::file_path($Bucket->get_file_path().'/'.$image_src);
                 $thumb = true;
             }else{
                 $thumb = false;
@@ -1338,7 +1442,7 @@ class PerchFieldType_file extends PerchFieldType_image
 
                 $s .= '<div class="asset-badge-thumb asset-icon icon asset-'.$type.'">';
                 if ($thumb) {
-                    $s .= '<img src="'.PerchUtil::html($bucket['web_path'].'/'.$image_src).'" width="'.$image_w.'" height="'.$image_h.'" alt="Preview" />';
+                    $s .= '<img src="'.PerchUtil::html($Bucket->get_web_path().'/'.$image_src).'" width="'.$image_w.'" height="'.$image_h.'" alt="Preview" />';
                 }
                 
                 $s .= '</div><div class="asset-badge-meta">';
@@ -1395,7 +1499,7 @@ class PerchFieldType_file extends PerchFieldType_image
             $type = 'doc';
             if ($this->Tag->file_type()) $type = $this->Tag->file_type();
             
-            $s .= ' <span class="ft-choose-asset ft-file '.($this->Tag->disable_asset_panel() ? ' assets-disabled' : '').'" data-type="'.$type.'" data-field="'.$asset_field.'" data-bucket="'.PerchUtil::html($bucket['name'], true).'" data-input="'.$this->Tag->input_id().'"></span>';
+            $s .= ' <span class="ft-choose-asset ft-file '.($this->Tag->disable_asset_panel() ? ' assets-disabled' : '').'" data-type="'.$type.'" data-field="'.$asset_field.'" data-bucket="'.PerchUtil::html($Bucket->get_name(), true).'" data-input="'.$this->Tag->input_id().'"></span>';
         
         
         return $s;
@@ -1454,7 +1558,7 @@ class PerchFieldType_map extends PerchFieldType
         $var = '';
         if (isset($post[$this->Tag->id().'_adr']) && $post[$this->Tag->id().'_adr']!='') {
             $tmp = array();
-            $tmp['adr'] = stripslashes(trim($post[$this->Tag->id().'_adr']));
+            $tmp['adr'] = PerchUtil::safe_stripslashes(trim($post[$this->Tag->id().'_adr']));
         
             $map_fields = array('lat', 'lng', 'clat', 'clng', 'type', 'zoom');
             foreach($map_fields as $map_field) {
@@ -1636,8 +1740,8 @@ class PerchFieldType_dataselect extends PerchFieldType
             $page = $Perch->get_page();
         }
 
-        $region = $this->Tag->region();
-        $field_id = $this->Tag->options();
+        $region    = $this->Tag->region();
+        $field_id  = $this->Tag->options();
         $values_id = $this->Tag->values();
 
         if (!class_exists('PerchContent_Regions', false)) {
@@ -1679,7 +1783,7 @@ class PerchFieldType_composite extends PerchFieldType
             foreach($fields as $field) {
                 $field = trim($field);
                 if (isset($post[$field]) && $post[$field]!='') {
-                    $out[] = trim(stripslashes($post[$field]));
+                    $out[] = trim(PerchUtil::safe_stripslashes($post[$field]));
                 }
             }
             //PerchUtil::debug($_POST);
@@ -1757,7 +1861,7 @@ class PerchFieldType_smarttext extends PerchFieldType
         if (isset($post[$id])) {
             $raw = trim($post[$id]);
             
-            $value = stripslashes($raw);
+            $value = PerchUtil::safe_stripslashes($raw);
 
             // Strip HTML by default
             if (!is_array($value) && PerchUtil::bool_val($this->Tag->html()) == false) {
@@ -1883,13 +1987,18 @@ class PerchFieldType_category extends PerchFieldType
 
     private function render_select($details, $opts)
     {
-        return $this->Form->select($this->Tag->input_id(), $opts, $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), 'categories', true);
+        $attributes = $this->Tag->get_data_attribute_string();
+        return $this->Form->select($this->Tag->input_id(), $opts, $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), 'categories', true, $attributes);
     }
 
     private function render_checkboxes($details, $opts)
     {
         $multicol = 'fieldtype';
-        if (PerchUtil::count($opts) > 4) $multicol .= ' multi-col';
+        if (PerchUtil::count($opts) > 4) {
+            $multicol .= ' multi-col';
+        }else{
+            $multicol .= ' uni-col';
+        }
 
         return $this->Form->checkbox_set($this->Tag->input_id(), false, $opts, $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), false, false, $multicol);
         
@@ -1919,7 +2028,7 @@ class PerchFieldType_category extends PerchFieldType
             $out = array();
             $Categories = new PerchCategories_Categories();
             foreach($raw as $catID) {
-                $Cat = $Categories->find($catID);
+                $Cat = $Categories->find((int)$catID);
                 $out[] = $Cat->catTitle();
             }
 
@@ -1930,7 +2039,7 @@ class PerchFieldType_category extends PerchFieldType
     }
 
     public function render_admin_listing($raw=false)
-    {
+    {   
         return PerchUtil::html($this->get_search_text($raw));
     }
 
@@ -1948,10 +2057,150 @@ class PerchFieldType_category extends PerchFieldType
 
             foreach($raw as $key=>$val) {
                 if (!is_array($val)) {
-                    $Cat = $Categories->find($val);
+                    $Cat = $Categories->find((int)$val);
                     if (is_object($Cat)) $out[] = array('key'=>'_category', 'value'=>$Cat->catPath());
                 }
             }
+            
+        }
+
+
+        return $out;
+    }
+
+}
+
+/* ------------ RELATED ------------ */
+
+class PerchFieldType_related extends PerchFieldType
+{
+    public function add_class_dependancies()
+    {
+        if (PERCH_RUNWAY && !class_exists('PerchContent_Collections', false)) {
+            include_once(PERCH_CORE.'/runway/apps/content/PerchContent_Collections.class.php');
+            include_once(PERCH_CORE.'/runway/apps/content/PerchContent_Collection.class.php');
+            include_once(PERCH_CORE.'/runway/apps/content/PerchContent_CollectionItems.class.php');
+            include_once(PERCH_CORE.'/runway/apps/content/PerchContent_CollectionItem.class.php');
+        }
+    }
+
+    public function add_page_resources()
+    {
+        $Perch = Perch::fetch();
+        
+        $Perch->add_javascript(PERCH_LOGINPATH.'/core/assets/js/chosen.jquery.min.js');
+        $Perch->add_javascript(PERCH_LOGINPATH.'/core/assets/js/categories.js');
+    }
+
+    public function render_inputs($details=array())
+    {
+        if (!PERCH_RUNWAY) return;
+
+        $mode = 'select';
+
+        if ($this->Tag->display_as() && $this->Tag->display_as()=='checkboxes') {
+            $mode = 'checkboxes';
+        }
+
+        $collectionKey = $this->Tag->collection();
+        if (!$collectionKey) return 'No collection specified';
+
+        $Collections = new PerchContent_Collections();
+        $Collection  = $Collections->get_one_by('collectionKey', $collectionKey);
+        
+        $items = $Collection->get_items();
+
+        $opts = array();
+        if (PerchUtil::count($items)) {
+            foreach($items as $Item) {
+                $opts[] = array('label'=>$Item->get_field('_title'), 'value'=>$Item->itemID());
+            }
+        }           
+
+        switch ($mode) {
+            case 'checkboxes':
+                return $this->render_checkboxes($details, $opts);
+                break;
+            default: 
+                return $this->render_select($details, $opts);
+                break;
+        }        
+    }
+
+    private function render_select($details, $opts)
+    {
+        $attributes = $this->Tag->get_data_attribute_string();
+        return $this->Form->select($this->Tag->input_id(), $opts, $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), 'categories', true, $attributes);
+    }
+
+    private function render_checkboxes($details, $opts)
+    {
+        $multicol = 'fieldtype';
+        if (PerchUtil::count($opts) > 4) {
+            $multicol .= ' multi-col';
+        }else{
+            $multicol .= ' uni-col';
+        }
+
+        return $this->Form->checkbox_set($this->Tag->input_id(), false, $opts, $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), false, false, $multicol);
+        
+    }
+
+    public function get_raw($post=false, $Item=false)
+    {
+        if ($post===false) {
+            $post = $_POST;
+        }
+        
+        $id = $this->Tag->id();
+        if (isset($post[$id])) {
+
+            $this->raw_item = $post[$id];
+            return $this->raw_item;
+        }
+        
+        return null;
+    }
+
+    public function get_search_text($raw=false)
+    {
+        if ($raw===false) $raw = $this->get_raw();
+        
+        return null;
+
+        if (is_array($raw) && count($raw)) {
+            $out = array();
+            $Collections = new PerchContent_Collections();
+            $Collection  = $Collections->get_one_by('collectionKey', $this->Tag->collection());
+            foreach($raw as $itemID) {
+                $Cat = $Categories->find((int)$itemID);
+                $out[] = $Cat->catTitle();
+            }
+
+            return implode(', ', $out);
+        }
+
+        return $raw;
+    }
+
+    public function render_admin_listing($raw=false)
+    {
+        return PerchUtil::html($this->get_search_text($raw));
+    }
+
+    public function get_index($raw=false)
+    {
+
+        if ($raw===false) $raw = $this->get_raw();
+        
+        $id = $this->Tag->id();
+
+        $out = array();
+
+        if (is_array($raw)) {
+
+            $Collections = new PerchContent_Collections();
+            $out = $Collections->get_indexed_from_ids($this->Tag->collection(), $raw, $id);
             
         }
 

@@ -143,7 +143,7 @@ class PerchFieldType
         
         $id = $this->Tag->id();
         if (isset($post[$id])) {
-            $this->raw_item = trim(stripslashes($post[$id]));
+            $this->raw_item = trim(PerchUtil::safe_stripslashes($post[$id]));
             return $this->raw_item;
         }
         

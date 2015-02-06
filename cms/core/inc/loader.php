@@ -23,14 +23,20 @@
         date_default_timezone_set('UTC');
     }
 
+    if (get_magic_quotes_runtime()) {
+        set_magic_quotes_runtime(false);
+    }
+
     if (defined('PERCH_LICENSE_KEY')) {
+
+        if (defined('PERCH_RUNWAY')) die();
 
         $perch_key = PERCH_LICENSE_KEY;
         if ($perch_key[0]=='R') {
             define('PERCH_RUNWAY', true);
 
             if (version_compare(PHP_VERSION, '5.4.0', '<')) {
-                die('Perch Runway requires PHP 5.4. This server is running version ' . PHP_VERSION);
+                die('Perch Runway requires at least PHP 5.4. This server is running version ' . PHP_VERSION);
             }
 
             include(PERCH_PATH.'/core/runway/inc/loader.php');
@@ -38,15 +44,13 @@
             define('PERCH_RUNWAY', false);
 
             if (version_compare(PHP_VERSION, '5.3.0', '<')) {
-                die('Perch requires PHP 5.3. This server is running version ' . PHP_VERSION);
+                die('Perch requires at least PHP 5.3. This server is running version ' . PHP_VERSION);
             }
         }
 
     }
-    
 
     if (!defined('PERCH_ERROR_MODE'))  define('PERCH_ERROR_MODE', 'DIE');
-
     if (!defined('PERCH_DATE_LONG'))   define('PERCH_DATE_LONG', '%d %B %Y');
     if (!defined('PERCH_DATE_SHORT'))  define('PERCH_DATE_SHORT', '%d %b %Y');
     if (!defined('PERCH_TIME_SHORT'))  define('PERCH_TIME_SHORT', '%H:%M');

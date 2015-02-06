@@ -14,7 +14,7 @@ class PerchAPI_Lang
     {
         $Settings = PerchSettings::fetch();
         if (defined('PERCH_DB_DATABASE')) {
-            $this->lang     = $Settings->get('lang')->settingValue();
+            $this->lang = $Settings->get('lang')->settingValue();
         }
         
         if (!$this->lang) {
@@ -25,13 +25,12 @@ class PerchAPI_Lang
         
         if (!$app_id) {
             $current_app = PerchUtil::get_current_app();
-            $path = $current_app['section'];
+            $path        = $current_app['section'];
         }else{
-            $path = 'addons'.$ds.'apps'.$ds.$app_id;
-        }
+            $path        = 'addons'.$ds.'apps'.$ds.$app_id;
+        }        
         
-        
-        $this->lang_dir = PERCH_PATH . $ds . $path . $ds . 'lang';
+        $this->lang_dir  = PERCH_PATH . $ds . $path . $ds . 'lang';
         $this->lang_file = $this->lang_dir . $ds . $this->lang . '.txt';
     }
     
@@ -45,6 +44,7 @@ class PerchAPI_Lang
     
     public function get($string, $values=false)
     {
+
         $string = $this->get_translated_string($string);
         
         if (func_num_args()>1) {
