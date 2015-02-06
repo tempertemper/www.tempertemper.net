@@ -21,7 +21,7 @@ class PerchContent_Items extends PerchFactory
     public function find_item($regionID, $itemID, $rev)
     {
         $sql = 'SELECT * FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb($regionID).' AND itemRev='.$this->db->pdb($rev).' AND itemID='.$this->db->pdb($itemID);
+                WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev='.$this->db->pdb((int)$rev).' AND itemID='.$this->db->pdb((int)$itemID);
         
         $row =  $this->db->get_row($sql);
         
@@ -41,10 +41,10 @@ class PerchContent_Items extends PerchFactory
     public function get_flat_for_region($regionID, $rev, $item_id=false, $limit=false)
     {
         $sql = 'SELECT * FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb($regionID).' AND itemRev='.$this->db->pdb($rev);
+                WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev='.$this->db->pdb((int)$rev);
                 
         if ($item_id!==false) {
-            $sql .= ' AND itemID='.$this->db->pdb($item_id);
+            $sql .= ' AND itemID='.$this->db->pdb((int)$item_id);
         }
         
         $sql .= ' ORDER BY itemOrder ASC';
@@ -77,10 +77,10 @@ class PerchContent_Items extends PerchFactory
     public function get_for_region($regionID, $rev, $item_id=false)
     {
         $sql = 'SELECT * FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb($regionID).' AND itemRev='.$this->db->pdb($rev);
+                WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev='.$this->db->pdb((int)$rev);
                 
         if ($item_id!==false) {
-            $sql .= ' AND itemID='.$this->db->pdb($item_id);
+            $sql .= ' AND itemID='.$this->db->pdb((int)$item_id);
         }
         
         $sql .= ' ORDER BY itemOrder ASC';
@@ -100,7 +100,7 @@ class PerchContent_Items extends PerchFactory
 	public function get_count_for_region($regionID, $rev)
 	{
 		$sql = 'SELECT COUNT(*) FROM '.$this->table.'
-                WHERE itemJSON!=\'\' AND regionID='.$this->db->pdb($regionID).' AND itemRev='.$this->db->pdb($rev);
+                WHERE itemJSON!=\'\' AND regionID='.$this->db->pdb((int)$regionID).' AND itemRev='.$this->db->pdb((int)$rev);
         
         return $this->db->get_count($sql);
 	}
@@ -113,7 +113,7 @@ class PerchContent_Items extends PerchFactory
     public function get_revisions_for_region($regionID)
     {
         $sql = 'SELECT itemRev, itemUpdated, itemUpdatedBy FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb($regionID).'
+                WHERE regionID='.$this->db->pdb((int)$regionID).'
                 GROUP BY itemRev
                 ORDER BY itemRev DESC';
         return $this->db->get_rows($sql);
@@ -127,7 +127,7 @@ class PerchContent_Items extends PerchFactory
     public function get_oldest_rev($regionID)
     {
         $sql = 'SELECT MIN(itemRev) FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb($regionID);
+                WHERE regionID='.$this->db->pdb((int)$regionID);
         return $this->db->get_value($sql);
     }
 
@@ -151,7 +151,7 @@ class PerchContent_Items extends PerchFactory
         $sql = 'INSERT INTO '.$this->table.' (itemID, regionID, pageID, itemRev, itemOrder, itemJSON, itemSearch, itemUpdatedBy)
                     SELECT itemID, regionID, pageID, '.$this->db->pdb($new_rev).' AS itemRev, itemOrder, itemJSON, itemSearch, '.$this->db->pdb($CurrentUser->id()).' AS itemUpdatedBy
                     FROM '.$this->table.'
-                    WHERE regionID='.$this->db->pdb($regionID).' AND itemRev='.$this->db->pdb($old_rev).'
+                    WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev='.$this->db->pdb((int)$old_rev).'
                     ORDER BY itemOrder ASC';
         $this->db->execute($sql);
 
@@ -160,9 +160,9 @@ class PerchContent_Items extends PerchFactory
             $sql = 'REPLACE INTO '.PERCH_DB_PREFIX.'resource_log (appID, itemFK, itemRowID, resourceID)
                     SELECT cr.appID, cr.itemFK, c2.itemRowID, cr.resourceID 
                     FROM '.PERCH_DB_PREFIX.'resource_log cr, '.PERCH_DB_PREFIX.'content_items c1, '.PERCH_DB_PREFIX.'content_items c2
-                    WHERE  cr.appID='.$this->db->pdb('content').' AND cr.itemFK='.$this->db->pdb('itemRowID').' AND cr.itemRowID=c1.itemRowID AND c1.itemID = c2.itemID AND c1.regionID='.$this->db->pdb($regionID).' AND c2.regionID='.$this->db->pdb($regionID).'
-                       AND c1.itemRev = '.$this->db->pdb($old_rev).'
-                       AND c2.itemRev = '.$this->db->pdb($new_rev);
+                    WHERE  cr.appID='.$this->db->pdb('content').' AND cr.itemFK='.$this->db->pdb('itemRowID').' AND cr.itemRowID=c1.itemRowID AND c1.itemID = c2.itemID AND c1.regionID='.$this->db->pdb((int)$regionID).' AND c2.regionID='.$this->db->pdb((int)$regionID).'
+                       AND c1.itemRev = '.$this->db->pdb((int)$old_rev).'
+                       AND c2.itemRev = '.$this->db->pdb((int)$new_rev);
             $this->db->execute($sql);
         }
         
@@ -177,12 +177,12 @@ class PerchContent_Items extends PerchFactory
      */
     public function delete_old_revisions($regionID, $number_remaining)
     {
-        $sql = 'SELECT regionRev FROM '.PERCH_DB_PREFIX.'content_regions WHERE regionID='.$this->db->pdb($regionID);
+        $sql = 'SELECT regionRev FROM '.PERCH_DB_PREFIX.'content_regions WHERE regionID='.$this->db->pdb((int)$regionID);
         $live_rev = $this->db->get_value($sql);
 
-        $sql = 'DELETE FROM '.$this->table.' WHERE regionID='.$this->db->pdb($regionID).' AND itemRev!='.$live_rev.' AND itemRev IN 
+        $sql = 'DELETE FROM '.$this->table.' WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev!='.$live_rev.' AND itemRev IN 
                     (SELECT itemRev FROM (SELECT DISTINCT itemRev FROM '.$this->table.' 
-                                            WHERE regionID='.$this->db->pdb($regionID).'
+                                            WHERE regionID='.$this->db->pdb((int)$regionID).'
                                             ORDER BY itemRev DESC
                                             LIMIT '.$number_remaining.', 99999) AS t2)';
         
@@ -205,7 +205,7 @@ class PerchContent_Items extends PerchFactory
     public function renumber_items($regionID, $rev)
     {
         $sql = 'SELECT itemRowID FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb($regionID).' AND itemRev='.$this->db->pdb($rev).'
+                WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev='.$this->db->pdb((int)$rev).'
                 ORDER BY itemOrder ASC';
         $rows = $this->db->get_rows($sql);
         
@@ -234,7 +234,7 @@ class PerchContent_Items extends PerchFactory
     public function get_order_bound($regionID, $rev, $lowest=false)
     {
         $sql = 'SELECT itemOrder FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb($regionID).' AND itemRev='.$this->db->pdb($rev);
+                WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev='.$this->db->pdb((int)$rev);
                 
         if ($lowest) {
             $sql .= ' ORDER BY itemOrder ASC ';
@@ -271,7 +271,7 @@ class PerchContent_Items extends PerchFactory
             $i = 0;
             
             foreach($sorted as $item) {
-                $sql = 'UPDATE '.$this->table.' SET itemOrder='.(1000+$i).' WHERE itemID='.$this->db->pdb($item['itemID']).' AND itemRev='.$this->db->pdb($rev).' LIMIT 1';
+                $sql = 'UPDATE '.$this->table.' SET itemOrder='.(1000+$i).' WHERE itemID='.$this->db->pdb((int)$item['itemID']).' AND itemRev='.$this->db->pdb((int)$rev).' LIMIT 1';
                 $this->db->execute($sql);
                 $i++;
             }
@@ -293,7 +293,7 @@ class PerchContent_Items extends PerchFactory
     public function get_previous_revision_number($regionID, $rev)
     {
         $sql = 'SELECT itemRev FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb($regionID).' AND itemRev<'.(int)$rev.'
+                WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev<'.(int)$rev.'
                 ORDER BY itemRev DESC LIMIT 1';
         return $this->db->get_value($sql);
     }
@@ -310,7 +310,7 @@ class PerchContent_Items extends PerchFactory
     public function delete_revision($regionID, $rev)
     {
         $sql = 'DELETE FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb($regionID).' AND itemRev='.(int)$rev;
+                WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev='.(int)$rev;
         return $this->db->execute($sql);
     }
 
@@ -323,7 +323,7 @@ class PerchContent_Items extends PerchFactory
     public function delete_revisions_newer_than($regionID, $rev)
     {
         $sql = 'DELETE FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb($regionID).' AND itemRev>'.(int)$rev;
+                WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev>'.(int)$rev;
         return $this->db->execute($sql);
     }
     
@@ -342,7 +342,7 @@ class PerchContent_Items extends PerchFactory
                 WHERE itemRowID IN 
                     (SELECT itemRowID FROM 
                         (SELECT itemRowID FROM '.$this->table.'
-                        WHERE regionID='.$this->db->pdb($regionID).' AND itemRev='.(int)$rev.'
+                        WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev='.(int)$rev.'
                         ORDER BY itemOrder ASC
                         LIMIT '.$resulting_item_count.', 99999999 
                         ) AS t2

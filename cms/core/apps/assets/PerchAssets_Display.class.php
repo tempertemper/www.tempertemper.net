@@ -38,12 +38,20 @@ class PerchAssets_Display
 
 	static public function thumbnail($Asset)
 	{
+		$w = $Asset->thumb_display_width();
+		$h = $Asset->thumb_display_height();
+		$mode = 'landscape';
+
+		if ($h>$w) $mode = 'portrait';
+
+		if ($h==$w) $mode = 'square';
+
 		return PerchXMLTag::create('img', 'single', array(
 			'src'    => $Asset->thumb_url(),
-			'width'  => $Asset->thumb_display_width(),
-			'height' => $Asset->thumb_display_height(),
+			//'width'  => $w,
+			//'height' => $h,
 			'alt'	 => $Asset->resourceTitle(),
-			'class'  => 'thumb',
+			'class'  => 'thumb '.$mode,
 			));
 	}
 }

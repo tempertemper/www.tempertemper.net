@@ -10,5 +10,3 @@ class PerchContent_NavGroups extends PerchFactory
     
     
 }
-
-?>

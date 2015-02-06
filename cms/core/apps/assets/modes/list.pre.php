@@ -1,7 +1,7 @@
 <?php
 
 	$Paging = new PerchPaging();
-	$Paging->set_per_page(24);
+	$Paging->set_per_page(30);
 
 	$API  = new PerchAPI(1.0, 'assets');
 	$HTML = $API->get('HTML');
@@ -44,7 +44,7 @@
 
 	if (isset($_GET['q']) && $_GET['q']!='') {
 	    $term = $_GET['q'];
-
+	    
 	    $assets = $Assets->search($term, $filters);
 	}else{
 	    $assets = $Assets->get_filtered_for_admin($Paging, $filters); 

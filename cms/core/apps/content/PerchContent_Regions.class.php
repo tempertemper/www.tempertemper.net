@@ -68,7 +68,7 @@ class PerchContent_Regions extends PerchFactory
             }
         }
         
-        $sql = 'SELECT * FROM '.$this->table.' WHERE pageID='.$this->db->pdb($pageID);
+        $sql = 'SELECT * FROM '.$this->table.' WHERE pageID='.$this->db->pdb((int)$pageID);
         
         if (!$include_shared) {
             $sql .= ' AND regionPage!='.$this->db->pdb('*');
@@ -99,7 +99,7 @@ class PerchContent_Regions extends PerchFactory
     public function find_for_page_by_key($pageID, $regionKey)
     {
         $sql = 'SELECT * FROM '.$this->table.'
-                WHERE pageID='.$this->db->pdb($pageID).'
+                WHERE pageID='.$this->db->pdb((int)$pageID).'
                         AND regionKey='.$this->db->pdb($regionKey).'
                 LIMIT 1';
         $row = $this->db->get_row($sql);
@@ -178,7 +178,9 @@ class PerchContent_Regions extends PerchFactory
         
         if ($path===false) $path = PERCH_TEMPLATE_PATH.'/content';
         if ($initial_path===false) $initial_path = $path;
-        $a = array();
+        $a      = array();
+        $groups = array();
+        $p      = false;
         if (is_dir($path)) {
             if ($dh = opendir($path)) {
                 while (($file = readdir($dh)) !== false) {
@@ -187,20 +189,37 @@ class PerchContent_Regions extends PerchFactory
                         if ($extension == 'html' || $extension == 'htm') {
                             $p = str_replace($initial_path, '', $path);
                             if (!$p) {
-                                $a[PerchLang::get('General')][] = array('filename'=>$file, 'path'=>$file, 'label'=>$this->template_display_name($file));
+                                $a[PerchLang::get('General')][] = array('filename'=>$file, 'value'=>$file, 'path'=>$file, 'label'=>$this->template_display_name($file));
                             }else{
-                                $a[] = array('filename'=>$file, 'path'=>ltrim($p, '/').'/'.$file, 'label'=>$this->template_display_name($file));
+                                $a[] = array('filename'=>$file, 'value'=>ltrim($p, '/').'/'.$file, 'path'=>ltrim($p, '/').'/'.$file, 'label'=>$this->template_display_name($file));
                             }
                         }else{
-                            $a[$this->template_display_name($file)] = $this->get_templates($path.'/'.$file, $include_hidden, $initial_path);
+                            // Use this one of infinite recursive nesting. Group stuff below normalised for HTML select optgroups that only do one level
+                            //$a[$this->template_display_name($file)] = $this->get_templates($path.'/'.$file, $include_hidden, $initial_path);
+                            
+                            if ($p) {
+                                $group_name = $this->template_display_name(trim($p, '/\\').'/'.$file);
+                            }else{
+                                $group_name = $this->template_display_name($file);
+                            }
+                            
+                            $groups[$group_name] = $this->get_templates($path.'/'.$file, $include_hidden, $initial_path);
                         }
                     }
                 }
                 closedir($dh);
             }
-            if (PerchUtil::count($a)) $a = PerchUtil::array_sort($a, 'label');
+            //PerchUtil::debug($a, 'notice');
+            if (PerchUtil::count($a)) {
+                if (isset($a[PerchLang::get('General')])) {
+                    $a[PerchLang::get('General')] = PerchUtil::array_sort($a[PerchLang::get('General')], 'label'); 
+                }else{
+                    $a = PerchUtil::array_sort($a, 'label');     
+                }
+                
+            }
         }
-        return $a;
+        return $a+$groups;
     }
     
     /**

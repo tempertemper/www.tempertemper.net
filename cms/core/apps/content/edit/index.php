@@ -16,6 +16,7 @@
     include($app_path.'/PerchContent_Pages.class.php');
     include($app_path.'/PerchContent_Region.class.php');
     include($app_path.'/PerchContent_Regions.class.php');
+    include($app_path.'/PerchContent_Util.class.php');
     
         
     include($app_path.'/modes/edit.pre.php');

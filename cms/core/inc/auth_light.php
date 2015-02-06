@@ -12,5 +12,7 @@
 
     $Users  = new PerchUsers;
     $CurrentUser   = $Users->get_current_user();
+    if (!$CurrentUser->logged_in()) die();
     
     $Alert = new PerchAlert;
+

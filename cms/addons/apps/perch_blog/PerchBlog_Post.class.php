@@ -2,19 +2,19 @@
 
 class PerchBlog_Post extends PerchAPI_Base
 {
-    protected $table  = 'blog_posts';
-    protected $pk     = 'postID';
-
-    protected $index_table = 'blog_index';
+    protected $table        = 'blog_posts';
+    protected $pk           = 'postID';
+    
+    protected $index_table  = 'blog_index';
     protected $event_prefix = 'blog.post';
-
-    public $Template = false;
-
-    private $tmp_slug_vars = array();
-    private $tmp_url_vars  = array();
-
-    private $Author  = false;
-    private $Section = false;
+    
+    public $Template        = false;
+    
+    private $tmp_slug_vars  = array();
+    private $tmp_url_vars   = array();
+    
+    private $Author         = false;
+    private $Section        = false;
 
     public function __call($method, $arguments)
 	{
@@ -84,23 +84,7 @@ class PerchBlog_Post extends PerchAPI_Base
             $data['postSlug'] = strtolower(strftime($slug, strtotime($data['postDateTime'])));
             parent::update($data);
         }
-
-
-        if ($do_cats) {
-            // Delete existing categories
-            $this->db->delete(PERCH_DB_PREFIX.'blog_posts_to_categories', $this->pk, $this->id());
-
-     		// Add new categories
-     		if (is_array($catIDs)) {
-     			for($i=0; $i<sizeOf($catIDs); $i++) {
-     			    $tmp = array();
-     			    $tmp['postID'] = $this->id();
-     			    $tmp['categoryID'] = $catIDs[$i];
-     			    $this->db->insert(PERCH_DB_PREFIX.'blog_posts_to_categories', $tmp);
-     			}
-     		}
-        }
-        
+       
         
         if ($do_tags) {
     		// Delete existing tags
@@ -141,7 +125,6 @@ class PerchBlog_Post extends PerchAPI_Base
     public function delete()
     {
         parent::delete();
-        $this->db->delete(PERCH_DB_PREFIX.'blog_posts_to_categories', $this->pk, $this->id());
         $this->db->delete(PERCH_DB_PREFIX.'blog_comments', $this->pk, $this->id());
     }
     
@@ -181,7 +164,7 @@ class PerchBlog_Post extends PerchAPI_Base
         if (PerchUtil::count($template_ids) && in_array('postURL', $template_ids)) {
             $out['postURL'] = $this->postURL();
         }
-        
+
         return $out;
     }
 
@@ -245,7 +228,7 @@ class PerchBlog_Post extends PerchAPI_Base
 
     public function get_categories()
     {
-        $cats = $this->get_field('categories');
+        $cats = $this->get_field('categories', false);
         if (PerchUtil::count($cats)) {
             $Categories = new PerchCategories_Categories();
             $out = array();
@@ -257,10 +240,23 @@ class PerchBlog_Post extends PerchAPI_Base
         return false;
     }    
 
-    public function get_field($field)
+    public function get_field($field, $use_template=true)
     {
         $data = $this->to_array(array($field));
         if (isset($data[$field])) {
+
+            if ($use_template) {
+                $Template = $this->api->get('Template');
+                $Template->set('blog/'.$this->postTemplate(), 'blog');
+                $Tag = $Template->find_tag($field);
+                if ($Tag) {
+                    if ($Tag->is_set('suppress')) {
+                        $Tag->set('suppress', false);
+                    }
+                    $Template->set_from_string(PerchXMLTag::create('perch:blog', 'single', $Tag->get_attributes()), 'blog');
+                    return $Template->render($data);
+                }
+            }
             return $data[$field];
         }
         return false;

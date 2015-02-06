@@ -28,7 +28,6 @@ class PerchAPI_Base extends PerchBase
 	    	$sql = 'DELETE FROM '.PERCH_DB_PREFIX.'resource_log WHERE appID='.$this->db->pdb($app_id).' AND itemFK='.$this->db->pdb($this->pk).' AND itemRowID='.$this->db->pdb((int)$this->id());
 	    	$this->db->execute($sql);
 	    	
-
 			$sql    = 'INSERT IGNORE INTO '.PERCH_DB_PREFIX.'resource_log(`appID`, `itemFK`, `itemRowID`, `resourceID`) VALUES';      
 			$vals   = array();
 			

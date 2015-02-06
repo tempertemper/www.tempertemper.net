@@ -3,6 +3,7 @@
 class PerchXMLTag
 {
 	public $attributes = array();
+	public $data_attributes = array();
 	private $tag;
 	
 	function __construct($tag) {
@@ -25,6 +26,7 @@ class PerchXMLTag
 				$key = str_replace('-', '_', $match[1]);
 				
 				$this->attributes[$key] = $val;
+				if (substr($match[1], 0, 5)=='data-') $this->data_attributes[$match[1]] = $val;
 			}
 		}
 	}
@@ -34,6 +36,18 @@ class PerchXMLTag
 		return $this->attributes;
 	}
 	
+	function get_data_attribute_string()
+	{
+		if (PerchUtil::count($this->data_attributes)) {
+			$out = array();
+			foreach($this->data_attributes as $key=>$val) {
+				$out[] = $key.'="'.PerchUtil::html($val, true).'"';	
+			}
+			if (count($out)) return implode(' ', $out);
+		}
+		return false;
+	}
+
 	function __get($property) {
 		if (isset($this->attributes[$property])) {
 			return $this->attributes[$property];
@@ -88,18 +102,17 @@ class PerchXMLTag
 		return $out;
 	}
 
-    public static function create($name, $type, $attrs=array(), $dont_escape=array())
+    public static function create($name, $type, $attrs=array(), $dont_escape=array(), $allow_empty=array())
     {    
         if ($type!='closing' && PerchUtil::count($attrs)) {
             $attpairs = array();
             foreach($attrs as $key=>$val) {
-                if ($val!='') {
+                if (in_array($key, $allow_empty) || $val!='') {
                 	if (in_array($key, $dont_escape)) {
                 		$attpairs[] = PerchUtil::html($key).'="'.$val.'"';
                 	}else{
                 		$attpairs[] = PerchUtil::html($key).'="'.PerchUtil::html($val, true).'"';
                 	}
-                    
                 } 
             }
             $attstring = ' '.implode(' ', $attpairs);

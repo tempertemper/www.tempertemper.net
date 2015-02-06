@@ -13,7 +13,7 @@
     include(__DIR__.'/../PerchAssets_Tag.class.php');
 
     $Paging = new PerchPaging();
-    $Paging->set_per_page(24);
+    $Paging->set_per_page(32);
 
     $Assets = new PerchAssets_Assets;
 

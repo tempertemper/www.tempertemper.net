@@ -49,11 +49,14 @@
 
         $data['pageAttributes'] = PerchUtil::json_safe_encode($dynamic_fields);
 
+
         $Page->update($data);
-    	
+
+        // log resources
+        $Page->api($API);
+    	$Page->log_resources();
+
     	$Alert->set('success', PerchLang::get('Successfully updated'));
     }
 
     $details = $Page->to_array();
-
-?>

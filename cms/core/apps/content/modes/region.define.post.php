@@ -7,9 +7,6 @@
 <?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
 <?php include ('_subnav.php'); ?>
 
-
-
-
     <h1><?php 
             printf(PerchLang::get('Editing %s Region'),' &#8216;' . PerchUtil::html($Region->regionKey()) . '&#8217; '); 
         ?></h1>
@@ -25,23 +22,7 @@
             <div class="field">
                 <?php echo $fTemplate->label('regionTemplate', 'Template'); ?>
                 <?php         
-                    $opts = array();
-                    $templates = $Regions->get_templates();
-
-                    if (PerchUtil::count($templates)) {
-                        $opts = array();
-                        foreach($templates as $group_name=>$group) {
-                            $tmp = array();
-                            $group = PerchUtil::array_sort($group, 'label');
-                            foreach($group as $file) {
-                                $tmp[] = array('label'=>$file['label'], 'value'=>$file['path']);
-                            }
-                            $opts[$group_name] = $tmp;
-                        }
-                    }
-
-                    echo $fTemplate->grouped_select('regionTemplate', $opts, $fTemplate->get('contentTemplate', false));
-                    
+                    echo $fTemplate->grouped_select('regionTemplate', $Regions->get_templates(), $fTemplate->get('contentTemplate', false));                    
                 ?>
             </div>
     

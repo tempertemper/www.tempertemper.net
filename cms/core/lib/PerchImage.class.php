@@ -313,7 +313,6 @@ class PerchImage
         $file_ex = '.'.PerchUtil::file_extension($image_path);
         return str_replace($file_ex, $suffix.$file_ex, $image_path);
         
-        //return preg_replace('/(\.jpg|\.jpeg|\.gif|.png)\b/', $suffix.'$1', $image_path);
     }
     
     public function set_quality($quality)
@@ -495,6 +494,11 @@ class PerchImage
             if ($crop) $crop_image = imagecreate($crop_w, $crop_h);
         }
         
+        //PerchUtil::debug('Image is true colour? '. (imageistruecolor($new_image) ? 'YES' : 'NO'), 'notice');
+
+        $real_save_as = $save_as;
+        $save_as = tempnam(PERCH_RESFILEPATH, '_gd_tmp_');
+
         
         switch ($mime) {
             case 'image/jpeg':
@@ -626,6 +630,9 @@ class PerchImage
         if (isset($orig_image)) unset($orig_image);
         if (isset($new_image))  unset($new_image);
         if (isset($crop_image)) unset($crop_image);
+
+        copy($save_as, $real_save_as);
+        unlink($save_as);
         
         return $mime;
         
@@ -693,6 +700,9 @@ class PerchImage
         $crop    = false;
         if ($crop_w != 0 && $crop_h != 0) $crop = true;
         
+        $real_save_as = $save_as;
+        $save_as = tempnam(PERCH_RESFILEPATH, '_im_tmp_');
+
         $Image = new Imagick();
         $Image->readImage($image_path);
         $Image->thumbnailImage($new_w, $new_h);
@@ -715,14 +725,25 @@ class PerchImage
 
         $Image->writeImage($save_as);
         $Image->destroy();        
+
+        copy($save_as, $real_save_as);
+        unlink($save_as);
+
+
         return $mime;    
     }
 
     private function thumbnail_file_with_imagick($file_path, $save_as, $w=0, $h=0)
     {
         try {
-            PerchUtil::debug('File: '.$file_path);
-            PerchUtil::debug('Save as: '.$save_as);
+            //PerchUtil::debug('File: '.$file_path);
+            //PerchUtil::debug('Real save as: '.$save_as);
+
+            $real_save_as = $save_as;
+            $save_as = tempnam(PERCH_RESFILEPATH, '_im_tmp_');
+
+            //PerchUtil::debug('Temp save as: '.$save_as);
+
             $Image = new Imagick($file_path.'[0]');
             $Image->setImageFormat('jpg');
 
@@ -742,6 +763,9 @@ class PerchImage
 
             $Image->writeImage($save_as);
             
+            copy($save_as, $real_save_as);
+            unlink($save_as);
+            $save_as = $real_save_as;
 
             $out = array();
             $out['w']         = (int) $Image->getImageWidth()/$this->density;
@@ -754,6 +778,8 @@ class PerchImage
             $out['mime']      = 'image/'.$Image->getImageFormat();
 
             $Image->destroy(); 
+
+            
 
             return $out;
         }catch(Exception $e) {

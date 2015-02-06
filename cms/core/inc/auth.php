@@ -10,8 +10,8 @@
         define('PERCH_AUTH_PLUGIN', false);
     }
 
-    $Users  = new PerchUsers;
-    $CurrentUser   = $Users->get_current_user();
+    $Users       = new PerchUsers;
+    $CurrentUser = $Users->get_current_user();
     
     /* Check for incoming login form and attempt login */
     $username = false;
@@ -23,10 +23,12 @@
     }
     
     if ($username!=false && $password!=false) {
-        $CurrentUser->authenticate($username, $password);
+        $auth_succeeded = $CurrentUser->authenticate($username, $password);
+        if (!$auth_succeeded) {
+            header("HTTP/1.0 403 Forbidden", true, 403);
+        }
     }
-    
-    
+
     if (!isset($auth_page)) {
         $auth_page = false;
     }
@@ -38,10 +40,13 @@
     }else{
         $Settings   = PerchSettings::fetch();
         $Settings->set_user($CurrentUser);
-        
         $Perch->find_installed_apps($CurrentUser);
     }
     
+    if (!$CurrentUser->logged_in() && $auth_page) {
+        header("HTTP/1.0 403 Forbidden", true, 403);
+    }
+
 
     $Alert = new PerchAlert;
     

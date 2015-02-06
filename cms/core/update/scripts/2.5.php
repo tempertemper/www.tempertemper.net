@@ -51,6 +51,8 @@
 
     if (PerchUtil::count($DB->get_rows('SHOW TABLES LIKE \''.PERCH_DB_PREFIX.'resource_log\''))==0) {
 
+      if (PerchUtil::count($DB->get_rows('SHOW TABLES LIKE \''.PERCH_DB_PREFIX.'content_resources\''))==1) {
+
             $sql .= "
 
             RENAME TABLE `__PREFIX__content_resources` TO `__PREFIX__resource_log`;
@@ -65,9 +67,11 @@
 
             ALTER TABLE `__PREFIX__resource_log` ADD INDEX `idx_fk` (`itemFK`, `itemRowID`);
 
-            ALTER TABLE `__PREFIX__resource_log` ADD UNIQUE INDEX `idx_uni` (`appID`, `itemFK`, `itemRowID`, `resourceID`);
+            ALTER IGNORE TABLE `__PREFIX__resource_log` ADD UNIQUE INDEX `idx_uni` (`appID`, `itemFK`, `itemRowID`, `resourceID`);
 
             ";
+
+        }
 
     }
 
@@ -83,7 +87,7 @@
       PRIMARY KEY (`logID`),
       KEY `idx_resource` (`resourceID`),
       KEY `idx_fk` (`itemFK`,`itemRowID`),
-      KEY `idx_uni` (`appID`,`itemFK`,`itemRowID`,`resourceID`)
+      UNIQUE KEY `idx_uni` (`appID`,`itemFK`,`itemRowID`,`resourceID`)
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
@@ -98,7 +102,7 @@
       `catTitle` char(64) NOT NULL DEFAULT '',
       `catSlug` char(64) NOT NULL DEFAULT '',
       `catPath` char(255) NOT NULL DEFAULT '',
-      `catDisplayPath` char(255) NOT NULL,
+      `catDisplayPath` char(255) NOT NULL DEFAULT '',
       `catOrder` int(10) unsigned NOT NULL DEFAULT '0',
       `catTreePosition` char(255) NOT NULL DEFAULT '000',
       `catDynamicFields` text NOT NULL,
@@ -134,9 +138,6 @@
     VALUES ('categories.sets.delete','Delete category sets',5);
 
     ";
-
-
-
 
 	$sql = str_replace('__PREFIX__', PERCH_DB_PREFIX, $sql);
 	$queries = explode(';', $sql);

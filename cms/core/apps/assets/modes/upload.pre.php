@@ -1,5 +1,5 @@
 <?php
-    
+    header('Content-Type: application/json');
     $FieldTag = new PerchXMLTag('<perch:content id="file" type="image" disable-asset-panel="true" detect-type="true" />');
     $FieldTag->set('input_id', 'file');
 
@@ -32,9 +32,9 @@
 
         if (PerchUtil::count($var)) {
             
-            $ids = $Resources->get_logged_ids();
+            $ids     = $Resources->get_logged_ids();
             $assetID = $ids[0];
-            $Asset = $Assets->find($assetID);
+            $Asset   = $Assets->find($assetID);
             $Asset->reindex();
 
             //PerchUtil::debug($ids);
@@ -55,12 +55,12 @@
                 }
                 PerchSession::set('resourceIDs', $logged_ids);
             }
-           
-            
+            $type = $Asset->get_type();
+            if ($type=='image') $type = 'img';
+            echo json_encode(array('type'=>$type));
             
         }
    		$Alert->set('success', PerchLang::get('Successfully updated'));
     }
 
   	
-?>

@@ -41,7 +41,7 @@
                 echo $Form->select('optionsPageID', $opts, $Form->get($details, 'optionsPageID')); 
             ?>
         </div>
-        
+        <?php if (!PERCH_RUNWAY) { ?>
         <div class="field">
             <?php echo $Form->label('templateReference', 'New pages should'); ?>
             <?php 
@@ -51,6 +51,7 @@
                 echo $Form->select('templateReference', $opts, $Form->get($details, 'templateReference')); 
             ?>
         </div>
+        <?php }// Runway ?>
 
 <?php
     if (PerchUtil::count($navgroups)) {

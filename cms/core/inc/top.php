@@ -51,6 +51,9 @@
 	<!--[if IE 6]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/ie6.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->	
 <?php }else{ ?>
 	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/login.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" />   
+	<?php if (PERCH_RUNWAY) { ?>
+	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/runway/assets/css/runway_login.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" />
+	<?php } // runway ?>
 <?php }
     if (PERCH_DEBUG) { ?><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/debug.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><?php  }
 
@@ -78,18 +81,33 @@
     }
 
 	if (!$Settings->get('hideBranding')->settingValue()) {
-		echo '<link rel="shortcut icon" href="'.PERCH_LOGINPATH.'/core/assets/img/favicon.ico" />';
+		if (PERCH_RUNWAY) {
+			echo '<link rel="shortcut icon" href="'.PERCH_LOGINPATH.'/core/runway/assets/img/favicon.ico" />';
+		}else{
+			echo '<link rel="shortcut icon" href="'.PERCH_LOGINPATH.'/core/assets/img/favicon.ico" />';	
+		}
+		
 	}
 ?>
 </head>
 <?php
+	flush();
+
     if ($CurrentUser->logged_in()) {
 ?>
 <body class="<?php
-	if (isset($_COOKIE['cmssb']) && $_COOKIE['cmssb']=='1') {
-		echo 'sidebar-closed ';
+	if (isset($_COOKIE['cmssb'])) {
+		if ($_COOKIE['cmssb']=='1') {
+			echo 'sidebar-closed ';
+		}else{
+			echo 'sidebar-open ';
+		}	
 	}else{
-		echo 'sidebar-open ';
+		if (PERCH_RUNWAY) {
+			echo 'sidebar-closed ';
+		}else{
+			echo 'sidebar-open ';
+		}
 	}
 ?>">
 <?php

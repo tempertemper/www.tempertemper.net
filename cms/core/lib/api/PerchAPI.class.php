@@ -51,9 +51,10 @@ class PerchAPI
         return false;
     }
     
-    public function app_path()
+    public function app_path($app_id=false)
     {
-        return PERCH_LOGINPATH.'/addons/apps/'.$this->app_id;
+        if (!$app_id) $app_id = $this->app_id;
+        return PERCH_LOGINPATH.'/addons/apps/'.$app_id;
     }
 
     public function on($event, $callback)

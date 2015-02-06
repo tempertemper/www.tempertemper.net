@@ -33,6 +33,7 @@ Perch.UI.Assets	= function()
 		init_asset_badge();
 		init_asset_chooser();
 		init_tag_fields();
+		init_static_drop();
 	};
 
 	var init_asset_badge = function(badge) {
@@ -188,8 +189,6 @@ Perch.UI.Assets	= function()
 			close_asset_chooser();
 		});
 
-
-
 		$.getScript(Perch.path+'/core/assets/js/dropzone.js');
 		$.getScript(Perch.path+'/core/assets/js/spin.min.js');
 
@@ -245,7 +244,7 @@ Perch.UI.Assets	= function()
 		reload_assets();
 	}
 
-	var open_asset_drop = function() {
+	var open_asset_drop = function(staticdrop) {
 		var drop = $('.asset-drop');
 		var form = drop.find('form');
 		drop.animate({height: '220px'}).addClass('open');
@@ -254,19 +253,32 @@ Perch.UI.Assets	= function()
 		var load_progress = 0;
 
 		if (!drop.is('.dropzone')) {
+			var reload_done = false;
 			drop.addClass('dropzone');
 			form.addClass('dropzone');
 			form.dropzone({
 				clickable: true, 
-				dictDefaultMessage: Perch.Lang.get('Drop files here or click to upload'),
+				dictDefaultMessage: Perch.Lang.get('Drop files here or click to upload')
+									+'<small>'+Perch.Lang.get('Bucket')+': '+target_bucket.charAt(0).toUpperCase() + target_bucket.slice(1)+'</small>',
 				uploadMultiple: false,
+				maxFilesize: 2048,
 				totaluploadprogress: function(p) {
 					load_progress = p;
 				},
-				success: function(y, x) {
+				success: function(y, serverResponse) {
 					if (load_progress==100) {
 						close_asset_drop();
-						reload_assets();
+
+						if (staticdrop) {
+							document.location.reload(true);
+						}else{
+							if (serverResponse.type) current_opts.type = serverResponse.type;	
+							if (!reload_done){
+								reload_done = true;
+								reload_assets();
+							}	
+						}
+						
 					}
 				},
 				fallback: function(){
@@ -286,6 +298,9 @@ Perch.UI.Assets	= function()
 				},
 				sending: function(file, xhr, formData){
 					formData.append('bucket', target_bucket);
+				},
+				complete: function(file){
+				  this.removeFile(file);
 				},
 				//forceFallback: true, // useful for testing!
 			});
@@ -472,10 +487,44 @@ Perch.UI.Assets	= function()
 		});	
 	};
 
+	var init_static_drop = function() {
+		var add_button = $('#staticdrop');
+		if (add_button.length) {
+
+			head.ready(['lang', 'privs'], function(){
+				load_templates(function(){
+							var template = Handlebars.templates['asset-static-drop'];
+					 		$('h1').after(template({
+					 			upload_url: Perch.path+'/core/apps/assets/upload/'
+					 		})); 
+
+							$.getScript(Perch.path+'/core/assets/js/dropzone.js');
+							$.getScript(Perch.path+'/core/assets/js/spin.min.js');
+				});	
+			});
+
+
+			add_button.on('click', function(e) {
+				e.preventDefault();
+
+				if ($('.asset-drop').is('.open')) {
+					close_asset_drop();
+				}else{
+					open_asset_drop(true);
+				}
+			});
+		}
+	}
+
+	var set_target_bucket = function(bucket) {
+		target_bucket = bucket;
+		return 'Bucket set to '+bucket;
+	}
 
 	
 	return {
-		init: init
+		init: init,
+		setTargetBucket: set_target_bucket
 	};
 	
 }();

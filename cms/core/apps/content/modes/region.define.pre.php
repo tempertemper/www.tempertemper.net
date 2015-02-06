@@ -26,6 +26,3 @@
             $Region->set_option('edit_mode', 'listdetail');
         }
     }
-
-
-?>

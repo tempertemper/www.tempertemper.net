@@ -39,6 +39,11 @@ class PerchUsers extends PerchFactory
         
     }
     
+    public function get_mock_user()
+    {
+        return new PerchAuthenticatedUser(array('userID'=>1));       
+    }
+
     public function create($data, $send_welcome_email=true)
     {
         
@@ -148,7 +153,7 @@ class PerchUsers extends PerchFactory
      */
     public function get_by_role($roleID)
     {
-        $sql = 'SELECT * FROM '.$this->table.' WHERE roleID='.$this->db->pdb($roleID);
+        $sql = 'SELECT * FROM '.$this->table.' WHERE roleID='.$this->db->pdb((int)$roleID);
         $rows = $this->db->get_rows($sql);
         
         return $this->return_instances($rows);
@@ -170,10 +175,8 @@ class PerchUsers extends PerchFactory
     public function get_user_display_name($userID)
     {
         if (is_numeric($userID)) {
-            $sql = 'SELECT CONCAT(userGivenName, " ", userFamilyName) AS n FROM '.$this->table.' WHERE userID='.$this->db->pdb($userID);
+            $sql = 'SELECT CONCAT(userGivenName, " ", userFamilyName) AS n FROM '.$this->table.' WHERE userID='.$this->db->pdb((int)$userID);
             return $this->db->get_value($sql);
         }
     }
 }
-
-?>
