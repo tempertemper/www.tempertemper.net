@@ -14,6 +14,7 @@
     <perch:if exists="paging">
         <div class="paging">
             Page <perch:blog id="current_page" /> of <perch:blog id="number_of_pages" />
+            <perch:blog id="page_links" encode="false" />
             <perch:if exists="not_first_page">
                 <a href="<perch:blog id="prev_url" encode="false" />">Previous</a>
             </perch:if>
