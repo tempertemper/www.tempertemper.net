@@ -14,12 +14,12 @@ class PerchContent_NavGroup extends PerchBase
     public function page_parent($pageID)
     {
     	$sql = 'SELECT pageParentID FROM '.PERCH_DB_PREFIX.'navigation_pages
-    			WHERE groupID='.$this->db->pdb($this->id()).' AND pageID='.$this->db->pdb($pageID).'
+    			WHERE groupID='.$this->db->pdb((int)$this->id()).' AND pageID='.$this->db->pdb((int)$pageID).'
     			LIMIT 1';
     	$parentID = $this->db->get_value($sql);
 
     	$sql = 'SELECT * FROM '.PERCH_DB_PREFIX.'navigation_pages
-    			WHERE groupID='.$this->db->pdb($this->id()).' AND pageID='.$this->db->pdb($parentID).'
+    			WHERE groupID='.$this->db->pdb((int)$this->id()).' AND pageID='.$this->db->pdb((int)$parentID).'
     			LIMIT 1';
     	return $this->db->get_row($sql);
     }
@@ -30,7 +30,7 @@ class PerchContent_NavGroup extends PerchBase
         PerchUtil::debug('updating tree position');
         
         $sql = 'SELECT * FROM '.PERCH_DB_PREFIX.'navigation_pages
-    			WHERE groupID='.$this->db->pdb($this->id()).' AND pageID='.$this->db->pdb($parentID).'
+    			WHERE groupID='.$this->db->pdb((int)$this->id()).' AND pageID='.$this->db->pdb((int)$parentID).'
     			LIMIT 1';
     	$parentPage = $this->db->get_row($sql);
         
@@ -39,7 +39,7 @@ class PerchContent_NavGroup extends PerchBase
         
         if ($order===false) {
             if (is_array($parentPage)) {
-                $sql = 'SELECT MAX(pageOrder) FROM '.PERCH_DB_PREFIX.'navigation_pages WHERE pageParentID='.$this->db->pdb($parentID);
+                $sql = 'SELECT MAX(pageOrder) FROM '.PERCH_DB_PREFIX.'navigation_pages WHERE pageParentID='.$this->db->pdb((int)$parentID);
             }else{
                 $sql = 'SELECT MAX(pageOrder) FROM '.PERCH_DB_PREFIX.'navigation_pages WHERE pageParentID=0';
             }
@@ -63,7 +63,7 @@ class PerchContent_NavGroup extends PerchBase
         }
         
         $sql = 'SELECT navpageID FROM '.PERCH_DB_PREFIX.'navigation_pages 
-        		WHERE groupID='.$this->db->pdb($this->id()).' AND pageID='.$this->db->pdb($pageID).'
+        		WHERE groupID='.$this->db->pdb((int)$this->id()).' AND pageID='.$this->db->pdb((int)$pageID).'
         		LIMIT 1';
         $pk = $this->db->get_value($sql); 
 
@@ -72,5 +72,3 @@ class PerchContent_NavGroup extends PerchBase
 
     }
 }
-
-?>

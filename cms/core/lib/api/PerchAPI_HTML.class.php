@@ -224,9 +224,9 @@ class PerchAPI_HTML
     
     
     
-    public function encode($string)
+    public function encode($string, $quotes=false, $double_encode=false)
     {
-        return PerchUtil::html($string);
+        return PerchUtil::html($string, $quotes, $double_encode);
     }
 
 	public function subnav($CurrentUser, $opts) 
@@ -282,7 +282,12 @@ class PerchAPI_HTML
                 }
 
                 if ($privs['delete']===false || ($CurrentUser && $CurrentUser->has_priv($privs['delete']))) {
-                    $s .= '<td><a href="'.$paths['delete'].'/?id='.$row->id().'" class="delete inline-delete">'.$this->Lang->get('Delete').'</a></td>';
+                    if (isset($privs['not-inline'])) {
+                        $s .= '<td><a href="'.$paths['delete'].'/?id='.$row->id().'" class="delete">'.$this->Lang->get('Delete').'</a></td>';
+                    }else{
+                        $s .= '<td><a href="'.$paths['delete'].'/?id='.$row->id().'" class="delete inline-delete">'.$this->Lang->get('Delete').'</a></td>';    
+                    }
+                    
                 }else{
                     $s .= '<td></td>';
                 }
@@ -335,7 +340,7 @@ class PerchAPI_HTML
                 }
 
                 $link .= ' href="'.PerchUtil::html($item['link'], true).'">';
-                $link .= $item['label'];
+                $link .= PerchUtil::html($item['label']);
                 $link .= '</a>';
 
                 $links[] = $link;
@@ -371,7 +376,7 @@ class PerchAPI_HTML
         }
 
         $s .= 'href="'.PerchUtil::html($item['link'], true).'">';
-        $s .= $item['label'];
+        $s .= PerchUtil::html($item['label']);
         $s .= '</a>';
 
         $s .= '</li>';

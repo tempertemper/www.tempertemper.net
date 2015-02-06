@@ -477,7 +477,7 @@ class PerchContent_Region extends PerchBase
 
         // clear out old items
         $sql = 'DELETE FROM '.PERCH_DB_PREFIX.'content_index 
-                WHERE regionID='.$this->db->pdb($this->id()).' AND itemRev<'.$this->db->pdb($Items->get_oldest_rev($this->id()));
+                WHERE regionID='.$this->db->pdb((int)$this->id()).' AND itemRev<'.$this->db->pdb((int)$Items->get_oldest_rev($this->id()));
         $this->db->execute($sql);
 
         $items  = $Items->get_for_region($this->id(), $rev);
@@ -485,7 +485,7 @@ class PerchContent_Region extends PerchBase
         if (PerchUtil::count($items)) {
 
             $sql = 'DELETE FROM '.PERCH_DB_PREFIX.'content_index 
-                    WHERE regionID='.$this->db->pdb($this->id()).' AND itemRev='.$this->db->pdb($rev);
+                    WHERE regionID='.$this->db->pdb((int)$this->id()).' AND itemRev='.$this->db->pdb((int)$rev);
             $this->db->execute($sql);
         
 
@@ -503,6 +503,7 @@ class PerchContent_Region extends PerchBase
 
 
             foreach($items as $Item) {
+
                 $fields = PerchUtil::json_safe_decode($Item->itemJSON(), true);
                 
                 $sql = 'INSERT INTO '.PERCH_DB_PREFIX.'content_index (itemID, regionID, pageID, itemRev, indexKey, indexValue) VALUES ';
@@ -514,6 +515,10 @@ class PerchContent_Region extends PerchBase
                     foreach($fields as $key=>$value) { 
                         if (isset($tag_index[$key])) {
                             $tag = $tag_index[$key];
+
+                            if ($tag->no_index()) {
+                                continue;
+                            }
 
                             if ($tag->type()=='PerchRepeater') {
                                 $index_value = $tag->get_index($value);

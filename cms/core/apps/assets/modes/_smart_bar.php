@@ -70,3 +70,8 @@
         </li>
     </ul>
     <?php echo $Alert->output(); ?>
+    <?php
+        if (isset($filters) && isset($filters['bucket'])) {
+            echo '<script>head.ready(function(){Perch.UI.Assets.setTargetBucket("'.PerchUtil::html($filters['bucket'], true).'");});</script>';
+        }
+    ?>

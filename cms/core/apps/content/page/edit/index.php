@@ -21,6 +21,13 @@
     include($app_path.'/PerchContent_PageTemplates.class.php');
     include($app_path.'/PerchContent_PageTemplate.class.php');
     
+    if (PERCH_RUNWAY) {
+        include(PERCH_CORE.'/runway/apps/content/PerchContent_Collections.class.php');
+        include(PERCH_CORE.'/runway/apps/content/PerchContent_Collection.class.php');
+        include(PERCH_CORE.'/runway/apps/content/PerchContent_CollectionItems.class.php');
+        include(PERCH_CORE.'/runway/apps/content/PerchContent_CollectionItem.class.php');
+    }
+
         
     include($app_path.'/modes/page.edit.pre.php');
     

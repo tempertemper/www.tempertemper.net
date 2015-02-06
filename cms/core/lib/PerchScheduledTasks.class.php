@@ -77,27 +77,26 @@ class PerchScheduledTasks extends PerchFactory
     					$Task = $this->create($data);
 
     					// call the task
-    					$result = call_user_func($task['func'], $last_run);
+    					$result = call_user_func($task['func'], $last_run, $task['taskKey']);
 
-    					// if we didn't get a result, log this as a warning
-    					if (!isset($result['result'])) $result['result'] = 'WARNING';
-    					if (!isset($result['message'])) $result['message'] = 'Task did not return a result.';
-    					
-    					// get the end time
-    					$end_time = date('Y-m-d H:i:s');
+                        // if we didn't get a result, log this as a warning
+                        if (!isset($result['result'])) $result['result'] = 'WARNING';
+                        if (!isset($result['message'])) $result['message'] = 'Task did not return a result.';
+                        
+                        // get the end time
+                        $end_time = date('Y-m-d H:i:s');
 
-    					// update the task result
-    					$data = array(
-    						'taskApp'=>$app,
-    						'taskKey'=>$task['taskKey'],
-    						'taskStartTime'=>$start_time,
-    						'taskEndTime'=>$end_time,
-    						'taskResult'=>strtoupper($result['result']),
-    						'taskMessage'=>$result['message']
-    					);
+                        // update the task result
+                        $data = array(
+                            'taskApp'=>$app,
+                            'taskKey'=>$task['taskKey'],
+                            'taskStartTime'=>$start_time,
+                            'taskEndTime'=>$end_time,
+                            'taskResult'=>strtoupper($result['result']),
+                            'taskMessage'=>$result['message']
+                        );
 
-    					$Task->update($data);
-
+                        $Task->update($data);	
     				}
     			}
     		}
@@ -152,6 +151,11 @@ class PerchScheduledTasks extends PerchFactory
     		}
     	}
 
+        if (PERCH_RUNWAY) {
+            include(PERCH_CORE.'/runway/scheduled_tasks.php');
+            
+        }
+
     	return $out;
     }
 
@@ -165,7 +169,7 @@ class PerchScheduledTasks extends PerchFactory
     		$out = array();
 
     		foreach($rows as $row) {
-    			$out[$row['taskApp']][$row['taskKey']] = $row['t'];
+    			$out[$row['taskApp']][$row['taskKey']] = date('Y-m-d H:i:00', strtotime($row['t']));
     		}
 
     		return $out;
@@ -219,5 +223,3 @@ class PerchScheduledTasks extends PerchFactory
     }
 
 }
-
-?>

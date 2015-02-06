@@ -28,6 +28,7 @@
         if ($CurrentUser->logged_in()) {
                         
             $nav   = $Perch->get_apps(true);
+
 			$app_count = PerchUtil::count($nav);
 
             if (is_array($nav)) {
@@ -52,11 +53,21 @@
                 // others   
 				if ($app_count>2) {
 	                echo '<li id="appmenu" class="apps">';
+
+        				if (PerchUtil::count($nav)>1) echo '<script type="text/javascript">document.getElementById(\'appmenu\').parentNode.style.display=\'none\';</script>';
+
+
 	                    echo '<ul class="appmenu">';
 	                            foreach($nav as $item) {
 	                                echo ($item['section'] == $section ? '<li class="selected">' : '<li>');
 	                                if (isset($item['create_page'])) {
-	                                	echo '<a href="'.PerchUtil::html($item['path'].'/'.$item['create_page']).'/" class="add">+</a>';
+	                                	if (substr($item['create_page'], 0, 1)=='&') {
+	                                		echo '<a href="'.PerchUtil::html($item['path'].$item['create_page']).'" class="add">+</a>';
+	                                	}else{
+	                                		echo '<a href="'.PerchUtil::html($item['path'].'/'.$item['create_page']).'/" class="add">+</a>';
+	                                	}
+
+	                                	
 	                                }
 
 	                                echo '<a href="'.PerchUtil::html($item['path']).'">'.PerchUtil::html($item['label']).'</a>';
@@ -75,11 +86,12 @@
                 }
                 
                 echo '</ul>';
-				if (PerchUtil::count($nav)>1) echo '<script type="text/javascript">document.getElementById(\'appmenu\').parentNode.style.display=\'none\';</script>';
+				
 			    
             }
         }
     ?>
 </div>
+<?php flush(); ?>
 <div class="body">
 	<div class="inner">

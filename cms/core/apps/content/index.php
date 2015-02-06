@@ -16,6 +16,8 @@
     include(__DIR__.'/PerchContent_Pages.class.php');
     include(__DIR__.'/PerchContent_Region.class.php');
     include(__DIR__.'/PerchContent_Regions.class.php');
+    include(__DIR__.'/PerchContent_PageTemplates.class.php');
+    include(__DIR__.'/PerchContent_PageTemplate.class.php');
             
     include(__DIR__.'/modes/list.pre.php');
     

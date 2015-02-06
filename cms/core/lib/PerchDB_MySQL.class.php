@@ -17,6 +17,7 @@ class PerchDB_MySQL
 	public $errored   = false;
 	public $error_msg = false;
 
+	public $dsn = '';
 	
 	static public $queries    = 0;
 	
@@ -47,6 +48,8 @@ class PerchDB_MySQL
 		foreach($dsn_opts as $key=>$val) {
 			$dsn .= "$key=$val;";
 		}
+
+		$this->dsn = $dsn;
 
 		$opts = NULL;
 
@@ -354,7 +357,7 @@ class PerchDB_MySQL
 	{
 		// Stripslashes
 		if (get_magic_quotes_runtime()) {
-			$value = stripslashes($value);
+			$value = PerchUtil::safe_stripslashes($value);
 		}
 		
 		$link = $this->get_link();
@@ -405,9 +408,10 @@ class PerchDB_MySQL
 		
 	}
 	
-	public function implode_for_sql_in($rows)
+	public function implode_for_sql_in($rows, $force_int=false)
     {
         foreach($rows as &$item) {
+        	if ($force_int) $item = (int)$item;
             $item = $this->pdb($item);
         }
         

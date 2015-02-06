@@ -30,7 +30,7 @@ class PerchUser extends PerchBase
     
     public function reset_pwd_and_notify()
     {
-        $new_password  = $this->generate_password();
+        $new_password  = PerchUser::generate_password();
         
         $data   = array();
 
@@ -65,7 +65,8 @@ class PerchUser extends PerchBase
 
     }
     
-    private function generate_password($length=8)
+
+    public static function generate_password($length=8)
     {
         $vals = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         $pwd = '';
@@ -75,5 +76,3 @@ class PerchUser extends PerchBase
         return $pwd;
     }
 }
-
-?>

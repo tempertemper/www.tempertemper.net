@@ -2,7 +2,7 @@
 	$default_fields = '<perch:categories id="setTitle" type="smarttext" label="Title" required="true" />
 					   <perch:categories id="setSlug" type="slug" for="setTitle" />';
 
-	$API = new PerchAPI('categories', 1.0);
+	$API = new PerchAPI(1.0, 'categories');
 	$HTML = $API->get('HTML');
 
 	$Sets 		= new PerchCategories_Sets;
@@ -30,7 +30,7 @@
 
     if ($Form->submitted()) {		
     	
-    	$data = $Form->get_posted_content($Template, $Sets, $Set);
+    	$data = $Form->get_posted_content($Template, $Sets, $Set, false);
 
         if (!is_object($Set)) {
 

@@ -50,6 +50,27 @@
     
     echo '</table>';
 
+    $page_details = $Response->page();
+
+    if (is_object($page_details)) {
+
+        echo $HTML->heading2('Page');
+
+        echo '<table class="d factsheet">';
+
+        echo '<tr>';
+            echo '<th>'.$Lang->get('Title').'</th>';
+            echo '<td><a href="'.PERCH_LOGINPATH.'/core/apps/content/page/?id='.$page_details->id.'">'.$HTML->encode($page_details->title).'</a></td>';
+        echo '</tr>';
+
+        echo '<tr>';
+            echo '<th>'.$Lang->get('Path').'</th>';
+            echo '<td>'.$HTML->encode($page_details->path).'</td>';
+        echo '</tr>';
+
+        echo '</table>';
+    }
+
 
         echo $Form->form_start(false, 'bulk-edit');
             echo '<div class="controls">';

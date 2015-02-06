@@ -59,9 +59,9 @@
                     }
                 }
 
-                if (version_compare(PHP_VERSION, '5.3', '<')) {
+                if (version_compare(PHP_VERSION, '5.4', '<')) {
                     $messages[] = array('type'=>'warning', 'text'=>PerchLang::get('%sPHP %s is very out of date.%s %sMore info%s', '<strong>', PHP_VERSION, '</strong>', '<a href="http://docs.grabaperch.com/docs/installing-perch/php" class="action">', '</a>'));
-                }else if (version_compare(PHP_VERSION, '5.4', '<')){
+                }else if (version_compare(PHP_VERSION, '5.5', '<')){
                     $messages[] = array('type'=>'success', 'text'=>PerchLang::get('%sPHP %s version is okay, but a little out of date.%s Consider updating soon.', '<strong>', PHP_VERSION, '</strong>'));
                 }else{
                     $messages[] = array('type'=>'success', 'text'=>PerchLang::get('%sPHP %s is up to date%s', '<strong>', PHP_VERSION, '</strong>'));
@@ -101,6 +101,18 @@
                     $messages[] = array('type'=>'warning', 'text'=>PerchLang::get('%sMemory limit is low.%s Memory use is limited to %sM, which could cause problems manipulating large images.', '<strong>', '</strong>', $memory_limit));
                 }
 
+
+                if (PERCH_RUNWAY) {
+
+                    $env_config = PerchConfig::get('env');
+
+                    if (!isset($env_config['temp_folder']) || !is_writable($env_config['temp_folder'])) {
+                        $messages[] = array('type'=>'warning', 'text'=>PerchLang::get('%sTemp folder is not writable.%s Check the path to your temp folder in your %srunway.php%s file and check permissions are set for PHP to write to it.', '<strong>', '</strong>','<code>', '</code>'));
+                        $Alert->set('notice', PerchLang::get('Your backup temp folder is not set, or is not writable.'));
+                        $errors = true;
+                    }
+
+                }
 
 
 

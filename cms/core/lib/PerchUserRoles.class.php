@@ -8,5 +8,3 @@ class PerchUserRoles extends PerchFactory
 
     protected $default_sort_column  = 'roleTitle';  
 }
-
-?>
