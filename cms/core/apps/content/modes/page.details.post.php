@@ -48,7 +48,6 @@
             <?php echo $Form->label('pageNavText', 'Navigation text'); ?>
             <?php echo $Form->text('pageNavText', $Form->get($details, 'pageNavText')); ?>
         </div>
-
         <?php
             echo $Form->fields_from_template($Template, $details, array('pageTitle', 'pageNavText'));
         ?>

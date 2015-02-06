@@ -34,10 +34,7 @@
             }else{
                 $view_page_url = rtrim($Settings->get('siteURL')->val(), '/').$Region->regionPage();
             }
-
-
-
-            
+           
             echo '<p>' . PerchLang::get('This region is only available within') . ':</p><p><code><a href="' . PerchUtil::html($view_page_url) . '">' . PerchUtil::html($Region->regionPage()) . '</a></code></p>';
         }
 
@@ -207,6 +204,10 @@
                     if ($tag->type()=='PerchRepeater') {
                         $repeater_id = $id.'_'.$tag->id();
 
+                        if ($tag->divider_before()) {
+                            echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
+                        }
+
                         echo '<h3 class="label repeater-heading">'.$tag->label().'</h3>';
                         echo '<div class="repeater" data-prefix="perch_'.PerchUtil::html($repeater_id).'"';
                         if ($tag->max()) echo ' data-max="'.PerchUtil::html($tag->max()).'"';
@@ -270,6 +271,10 @@
                             
                             
                         echo '</div>';
+
+                        if ($tag->divider_after()) {
+                            echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
+                        }  
                     }else{
 
                         if ($tag->divider_before()) {

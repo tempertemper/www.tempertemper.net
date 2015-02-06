@@ -19,11 +19,11 @@
     include($app_path.'/PerchContent_Regions.class.php');
     
         
-    include($app_path.'/modes/region.revert.pre.php');
+    include(PERCH_CORE.'/runway/apps/content/modes/region.revert.pre.php');
     
     include(PERCH_CORE . '/inc/top.php');
 
-    include($app_path.'/modes/region.revert.post.php');
+    include(PERCH_CORE.'/runway/apps/content/modes/region.revert.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
 ?>

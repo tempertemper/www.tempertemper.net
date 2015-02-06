@@ -11,9 +11,17 @@
 		<div class="credit">
 	        <?php
 	            if (!$Settings->get('hideBranding')->settingValue()) {
-	        ?>
-			<p><a href="http://grabaperch.com"><img src="<?php echo PERCH_LOGINPATH; ?>/core/assets/img/perch.png" width="35" height="12" alt="Perch" /></a>
-			<?php echo PerchUtil::html(PerchLang::get('by')); ?> <a href="http://edgeofmyseat.com">edgeofmyseat.com</a></p>
+	        
+		           	if (PERCH_RUNWAY) {
+		        ?>
+		        <p><a href="http://grabaperch.com"><img src="<?php echo PERCH_LOGINPATH; ?>/core/runway/assets/img/runway.png" width="90" height="15" alt="Perch Runway" /></a>
+		        <?php
+		            }else{
+		        ?>
+		        <p><a href="http://grabaperch.com"><img src="<?php echo PERCH_LOGINPATH; ?>/core/assets/img/perch.png" width="35" height="12" alt="Perch" /></a>
+		        <?php
+		            }
+		    echo PerchUtil::html(PerchLang::get('by')); ?> <a href="http://edgeofmyseat.com">edgeofmyseat.com</a></p>
 	        <?php
 	            }else{
 	                echo '&nbsp;';
@@ -25,7 +33,7 @@
 <?php
 	if ($CurrentUser->logged_in()) {
 ?>
-<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-1.11.1.min.js"></script>
+<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-1.11.2.min.js"></script>
 <script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-ui.js?v=<?php echo PerchUtil::html($Perch->version); ?>"></script>
 <script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/perch.js?v=<?php echo PerchUtil::html($Perch->version); ?>"></script>
 <script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/assets.js?v=<?php echo PerchUtil::html($Perch->version); ?>" ></script>
@@ -55,4 +63,5 @@
     }
 ?>
 </body>
-</html>
+</html><?php
+flush();

@@ -52,7 +52,11 @@
             if ($logo) {
                 echo '<img src="'.PerchUtil::html($logo).'" alt="" />';
             }else{
-                echo '<img src="'.PERCH_LOGINPATH.'/core/assets/img/logo.png" width="110" alt="Perch" />';
+                if (PERCH_RUNWAY) {
+                    echo '<img src="'.PERCH_LOGINPATH.'/core/runway/assets/img/logo.png" width="180" alt="Perch Runway" />';
+                }else{
+                    echo '<img src="'.PERCH_LOGINPATH.'/core/assets/img/logo.png" width="110" class="logo" alt="Perch" />';
+                }
             }
         ?>
     </div>

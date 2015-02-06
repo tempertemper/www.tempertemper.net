@@ -17,7 +17,7 @@ class PerchUserPrivileges extends PerchFactory
      */
     public function get_for_edit()
     {
-        $sql = 'SELECT *, SUBSTRING_INDEX(privKey, \'.\', 1) AS app 
+        $sql = 'SELECT DISTINCT *, SUBSTRING_INDEX(privKey, \'.\', 1) AS app 
                 FROM '.$this->table.'
                 ORDER BY app=\'perch\' DESC, app ASC, privOrder ASC';
         return $this->return_instances($this->db->get_rows($sql));
@@ -39,7 +39,7 @@ class PerchUserPrivileges extends PerchFactory
             $sql = 'SELECT privID FROM '.$this->table;
         }else{
             $sql = 'SELECT privID FROM '.PERCH_DB_PREFIX.'user_role_privileges
-                WHERE roleID='.$this->db->pdb($roleID);
+                WHERE roleID='.$this->db->pdb((int)$roleID);
         }
 
         
@@ -55,5 +55,3 @@ class PerchUserPrivileges extends PerchFactory
     }
 
 }
-
-?>

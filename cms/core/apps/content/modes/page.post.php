@@ -15,6 +15,13 @@
 <?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
 <?php include ('_subnav.php'); ?>
 
+	<?php
+		 if ($CurrentUser->has_priv('content.pages.create') && $Page->role_may_create_subpages($CurrentUser) && $Page->pagePath()!='*') {
+                echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/page/add/?pid='.$Page->id()).'" class="add button">'.PerchLang::get('Add subpage').'</a>';
+         }
+	?>
+
+
 	<h1><?php 
 		if ($Page->pagePath()=='*') {
 			printf(PerchLang::get('Editing Shared Regions')); 
@@ -120,6 +127,53 @@
 		                        if ($CurrentUser->has_priv('content.regions.delete') || ($CurrentUser->has_priv('content.pages.delete.own') && $Page->pageCreatorID()==$CurrentUser->id())) {
 		                            echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/delete/?id=' . PerchUtil::html($Region->id()) . '" class="delete inline-delete">'.PerchLang::get('Delete').'</a>';
 		                        }
+		                        echo '</td>';
+					
+					
+						echo '</tr>';
+					}
+				}
+			}
+			if (PERCH_RUNWAY && PerchUtil::count($collections)) {
+				foreach($collections as $Collection) {
+					if ($Collection->role_may_view($CurrentUser, $Settings)) {
+						echo '<tr>';
+					
+								// Region name / edit link
+								echo '<td class="primary">';
+							
+								if ($Collection->role_may_edit($CurrentUser)) {
+		                            echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/collections/?id=' . PerchUtil::html($Collection->id()) . '" class="edit">' . PerchUtil::html($Collection->collectionKey()) . '</a>';
+		                        }else{
+		                            echo '<span class="denied">'.PerchUtil::html($Collection->collectionKey()).'</span>';
+		                        }
+							
+								echo '</td>';
+							
+								// Region type
+		                        echo '<td class="type">' . PerchUtil::html($Regions->template_display_name($Collection->collectionTemplate())) . '</td>';
+							
+													
+								// Item count
+								echo '<td>'.$Collection->get_item_count().'</td>';
+							
+
+								// Updated date
+								echo '<td>';
+								if ($Collection->collectionUpdated()!='0000-00-00 00:00:00') {
+									echo strftime(PERCH_DATE_SHORT .' '.PERCH_TIME_SHORT, strtotime($Collection->collectionUpdated()));	
+								}else{
+									echo '&dash;';
+								}
+								
+								echo '</td>';
+							
+								// Draft preview
+								echo '<td>';						
+								echo '</td>';
+							
+								// Delete
+								echo '<td>';
 		                        echo '</td>';
 					
 					

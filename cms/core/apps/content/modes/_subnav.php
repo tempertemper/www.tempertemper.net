@@ -16,9 +16,22 @@
 						'core/apps/content/reorder',
 						'core/apps/content/reorder/region',
 						'core/apps/content/revisions',
-						'core/apps/content/revisions/revert'
+						'core/apps/content/revisions/revert',	
+						'core/apps/content/collections',
+						'core/apps/content/collections/edit',
+						'core/apps/content/collections/edit/options',
+						'core/apps/content/collections/options',
+						'core/apps/content/collections/import',
+						'core/apps/content/delete/collection/item',				
 						), 
 				'label'=>'Add/Edit'),
+		array('page'=>array(
+						'core/apps/content/manage/collections',
+						'core/apps/content/manage/collections/edit',
+						'core/apps/content/manage/collections/delete',
+						'core/apps/content/manage/collections/import',
+						), 
+				'label'=>'Collections', 'runway'=>true, 'priv'=>'content.collections.manage'),
 		array('page'=>array(
 						'core/apps/content/page/templates',
 						'core/apps/content/page/templates/edit',
@@ -33,10 +46,8 @@
 				'label'=>'Navigation groups', 'priv'=>'content.navgroups.configure'),
 		array('page'=>array(
 						'core/apps/content/routes',
-						'core/apps/content/routes/edit',
+						'core/apps/content/routes/reorder',
 						'core/apps/content/routes/delete'), 
-				'label'=>'Routes', 'runway'=>true),
+				'label'=>'Routes', 'runway'=>true, 'priv'=>'content.routes.manage'),
 
 	));
-
-?>

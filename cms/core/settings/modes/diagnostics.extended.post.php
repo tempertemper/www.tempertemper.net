@@ -127,7 +127,7 @@
             ?>
 			<?php
                 $constants = get_defined_constants(true);
-                $ignore = array('PERCH_LICENSE_KEY', 'PERCH_DB_PASSWORD');
+                $ignore = array('PERCH_LICENSE_KEY', 'PERCH_DB_PASSWORD', 'PERCH_EMAIL_PASSWORD');
                 if (PerchUtil::count($constants['user'])) {
                     foreach($constants['user'] as $key=>$val) {
                         if (!in_array($key, $ignore) && substr($key, 0, 5)=='PERCH') echo '<li>'.PerchUtil::html($key.': '.$val).'</li>';

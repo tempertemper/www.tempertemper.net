@@ -30,7 +30,7 @@ class PerchSettings extends PerchFactory
  
     public function set($settingID, $settingValue, $userID=0)
     {
-        $sql = 'DELETE FROM '.$this->table.' WHERE settingID='.$this->db->pdb($settingID).' AND userID='.$this->db->pdb($userID).' LIMIT 1';
+        $sql = 'DELETE FROM '.$this->table.' WHERE settingID='.$this->db->pdb($settingID).' AND userID='.$this->db->pdb((int)$userID).' LIMIT 1';
         $this->db->execute($sql);
         
         $data   = array();
@@ -48,7 +48,7 @@ class PerchSettings extends PerchFactory
             $CurrentUser = $this->CurrentUser;
             
             if (is_object($CurrentUser) && $CurrentUser->logged_in()) {
-                $sql = 'SELECT * FROM (SELECT DISTINCT settingID, settingValue FROM ' . $this->table .' WHERE userID='.$this->db->pdb($CurrentUser->id()).' OR userID=0 ORDER BY userID DESC) AS settings GROUP BY settingID';
+                $sql = 'SELECT * FROM (SELECT DISTINCT settingID, settingValue FROM ' . $this->table .' WHERE userID='.$this->db->pdb((int)$CurrentUser->id()).' OR userID=0 ORDER BY userID DESC) AS settings GROUP BY settingID';
             }else{
                 $sql = 'SELECT DISTINCT settingID, settingValue FROM ' . $this->table .' WHERE userID=0';
             }
@@ -77,7 +77,7 @@ class PerchSettings extends PerchFactory
         $CurrentUser = $this->CurrentUser;
         
         if ($user_specific && $CurrentUser->logged_in()) {
-            $sql = 'SELECT * FROM (SELECT DISTINCT settingID, settingValue FROM ' . $this->table .' WHERE userID='.$this->db->pdb($CurrentUser->id()).' OR userID=0 ORDER BY userID DESC) AS settings GROUP BY settingID';
+            $sql = 'SELECT * FROM (SELECT DISTINCT settingID, settingValue FROM ' . $this->table .' WHERE userID='.$this->db->pdb((int)$CurrentUser->id()).' OR userID=0 ORDER BY userID DESC) AS settings GROUP BY settingID';
         }else{
             $sql = 'SELECT DISTINCT settingID, settingValue FROM ' . $this->table .' WHERE userID=0';
         }

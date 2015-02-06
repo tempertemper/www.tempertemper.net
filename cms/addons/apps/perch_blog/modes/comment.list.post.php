@@ -95,7 +95,9 @@
 					<?php echo strftime(str_replace(' ', '&nbsp;', PERCH_DATE_SHORT), strtotime($Comment->commentDateTime())); ?>
 					</a>
 				</td>
-                <td><?php echo $HTML->encode($Comment->postTitle()); ?></td>
+                <td title="<?php 
+                    echo PerchUtil::html(PerchUtil::excerpt_char($Comment->commentHTML(), 500));
+                ?>"><?php echo $HTML->encode($Comment->postTitle()); ?></td>
 				<td><?php echo $HTML->encode($Comment->commentName()); ?></td>
 				
                 <td><?php echo $HTML->encode($Comment->commentEmail()); ?></td>

@@ -105,8 +105,8 @@ strong {
 .alert:before,
 .button.add:before,
 .icon.add:before,
-.button.paging-next:before,
-.button.paging-prev:before,
+.paging-next:before,
+.paging-prev:before,
 ol.sortable li div:after {
 	background-image: url(../img/sprites@1x.png);
 	background-size: 33px 3000px;
@@ -250,6 +250,19 @@ ol.sortable li div:after {
 	background-position: 0 -2264px;
 }
 
+.metanav .search {
+	background-position: 0 -2528px;
+}
+
+.metanav .search:hover {
+	background-position: 0 -2576px;
+}
+
+.sidebar-open .metanav .search {
+	display: none;
+}
+
+
 a.logout:link,
 a.logout:visited {
 	background-color: #999999;
@@ -307,9 +320,62 @@ a.logout:active {
 	}
 }
 
+#logo {
+	width: 235px;
+	/*text-align: center;*/
+	display: block;
+}
+
 .logo {
-	margin: 20px 0;
+	margin: 20px auto;
 	max-width: 235px;
+	display: inline-block;
+}
+
+.sidebar-closed .sidebar .searchbox {
+	display: none;
+}
+
+.sidebar .searchbox {
+	border-top: 1px dashed rgb(234, 234, 234);
+	padding: 20px 0;
+	/*font-size: 0.923em;*/
+	color: #9B9B9B;
+}
+
+.sidebar .searchbox .text {
+	width: 195px;
+	margin-left: 25px;
+	background-color: transparent;
+
+}
+
+.sidebar .searchbox .text:focus,
+.sidebar .searchbox.focus .text {
+	background-color: #fff;
+	outline: none;
+}
+
+.sidebar .searchbox .icon.search {
+	background-position: 0 -2525px;
+}
+
+.sidebar .searchbox.focus .icon.search {
+	background-position: 0 -2620px;
+}
+
+.sidebar .searchbox .results {
+	padding-top: 20px;
+	font-size: 0.923em;
+}
+
+.sidebar .searchbox .results a:link,
+.sidebar .searchbox .results a:visited {
+	text-decoration: none;
+}
+
+.sidebar .searchbox .results li {
+	margin-bottom: 1em;
 }
 
 .helptext {
@@ -907,6 +973,7 @@ pre, code {
 	color: rgb(31, 102, 145);
 	padding: 10px 12px;
 	min-height: 0;
+	max-width: 200px;
 }
 
 .smartbar form.search input.search:focus {
@@ -974,6 +1041,10 @@ table a:focus {
 
 th.action {
 	width: 40px;
+}
+
+th.compact {
+	width: 120px;
 }
 
 th.kindofabigdeal {
@@ -1253,11 +1324,12 @@ tr:hover .category {
 #appmenu .dumb a:visited {
 	background-color: #FDFDFD;
 	border-right: 1px solid #D4D4D4;
-	padding: 0 10px 0px 9px;
+	padding: 5px 10px 0px 9px;
 	display: inline-block;
 	color: #3D524D;
-	margin-left: 0;
+	margin-left: -1px;
 	border-top: 0;
+	margin-top: -5px;
 }
 
 /* Forms */
@@ -1352,7 +1424,14 @@ form .checkboxes.labelless div.supplemental {
 	margin-top: 6px;
 }
 
-form fieldset.checkboxes.multi-col {
+form fieldset.checkboxes.fieldtype,
+form .checkboxes.fieldtype,
+form .checkboxes.fieldtype.uni-col  {
+	margin-top: 14px;
+}
+
+form fieldset.checkboxes.multi-col,
+form .checkboxes.multi-col {
    -moz-column-count: auto;
    -moz-column-width: 200px;
    -moz-column-gap: 20px;
@@ -1364,6 +1443,11 @@ form fieldset.checkboxes.multi-col {
    column-gap: 20px;
    margin-left: 230px;
    margin-bottom: 0;
+   margin-top: 0;
+}
+
+form .checkboxes.wrapped {
+	margin: 0;
 }
 
 form .checkboxes.multi-col div.checkbox {
@@ -1384,7 +1468,8 @@ fieldset.checkboxes+h2 {
 	margin-top: 30px;
 }
 
-form .text {
+form .text,
+form .number {
 	width: 280px;
 	border: 1px solid #DDDDDD;
 	border-radius: 3px;
@@ -1430,6 +1515,36 @@ form p.submit a:visited {
 	border-bottom: 1px solid #000;
 }
 
+form .prevnext {
+	float: right;
+	margin-top: 4px;
+}
+
+form .stuck .prevnext  {
+	margin-right: 20px;
+}
+
+form .prevnext .paging-next:before {
+	content: "";
+	width: 14px;
+	height: 14px;
+	margin-right: -2px;
+	display: block;
+	float: right;
+	background-position: 5px -2068px;
+}
+
+form .prevnext .paging-prev:before {
+	content: "";
+	width: 14px;
+	height: 14px;
+	margin-left: -2px;
+	display: block;
+	float: left;
+	background-position: 5px -2300px;
+}
+
+
 input {
 	font-family: Arial, Helvetica, clean, sans-serif;
 	font-size: 1em;
@@ -1451,6 +1566,19 @@ form .hint {
 
 form .hint.error {
 	color: rgb(198, 93, 90);
+}
+
+form .counter {
+	display: block;
+	text-align: right;
+	margin-top: 5px;
+	margin-left: 230px;
+	margin-right: 8px;
+	font-size: 0.923em;
+	color: rgba(0,0,0,0.45);
+	-webkit-text-stroke: 1px rgba(0,0,0,0.1);
+	clear: left;
+	float: right;
 }
 
 form .hidden {
@@ -1757,6 +1885,11 @@ form p.stuck a:visited {
 		margin-left: 0;
 	}
 
+	form div.field .preview,
+	form div.field .remove {
+		margin-left: 0;
+	}
+
 }
 
 .bulk-edit .controls {
@@ -2022,11 +2155,12 @@ a.action,
 a.delete,
 span.delete,
 .preview,
-.positive {
+.positive,
+.caution {
 	background-color: rgba(0, 0, 0, 0.2);
 	color: #fff;
 	display: inline-block;
-	border-radius: 5px;
+	border-radius: 4px;
 	padding: 2px 5px 2px 5px;
 	font-size: 0.923em;
 	text-align: center;
@@ -2044,7 +2178,8 @@ a.action:hover,
 a.delete:hover,
 span.delete,
 .preview:hover,
-.positive:hover {
+.positive:hover,
+.caution:hover {
 	text-decoration: none;
 	background-color: rgb(0, 0, 0);
 }
@@ -2242,14 +2377,16 @@ h2+.alert {
 
 .alert.draft a.action,
 .alert.notice a.action,
-a.preview {
+a.preview,
+a.caution {
 	color: #fff;
 	background-color: rgb(192,152,83);
 }
 
 .alert.draft a.action:hover,
 .alert.notice a.action:hover,
-a.preview:hover {
+a.preview:hover,
+a.caution:hover {
 	background-color: rgb(168,121,55);
 }
 
@@ -2761,6 +2898,29 @@ ul.importables li.warning {
 	font-style: italic;
 }
 
+.routes .plusone {
+	font-size: 0.846em;
+	color: rgb(61, 61, 61);
+	text-decoration: none;
+	display: inline-block;
+	text-shadow: 1px 1px 0 #fff;
+	padding-left: 20px;
+}
+
+.routes .plusone:hover {
+	color: rgb(0,0,0);
+}
+
+.routes .add:before {
+	content: "";
+	width: 14px;
+	height: 14px;
+	margin-left: -4px;
+	display: block;
+	float: left;
+	background-position: 0 -790px;
+}
+
 /* footer */
 
 .footer {
@@ -2834,7 +2994,8 @@ ul.importables li.warning {
 
 	th.kindofabigdeal,
 	th.alsoran,
-	th.action {
+	th.action,
+	th.compact {
 		min-width: 0;
 		width: auto;
 	}
@@ -2842,6 +3003,10 @@ ul.importables li.warning {
 	th.region,
 	td.region {
 		display: none;
+	}
+
+	th.compact {
+		white-space: nowrap;
 	}
 }
 
