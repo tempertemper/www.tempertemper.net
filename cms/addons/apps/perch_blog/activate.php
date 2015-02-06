@@ -16,16 +16,6 @@
       PRIMARY KEY (`authorID`)
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-    CREATE TABLE IF NOT EXISTS `__PREFIX__blog_categories` (
-      `categoryID` int(11) NOT NULL AUTO_INCREMENT,
-      `categoryTitle` varchar(255) NOT NULL DEFAULT '',
-      `categorySlug` varchar(255) NOT NULL DEFAULT '',
-      `categoryPostCount` int(10) unsigned NOT NULL DEFAULT '0',
-      `categoryDynamicFields` text,
-      PRIMARY KEY (`categoryID`),
-      KEY `idx_slug` (`categorySlug`)
-    ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-
     CREATE TABLE IF NOT EXISTS `__PREFIX__blog_comments` (
       `commentID` int(10) unsigned NOT NULL AUTO_INCREMENT,
       `postID` int(10) unsigned NOT NULL,
@@ -63,11 +53,6 @@
       FULLTEXT KEY `idx_search` (`postTitle`,`postDescRaw`,`postTags`)
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
-    CREATE TABLE IF NOT EXISTS `__PREFIX__blog_posts_to_categories` (
-      `postID` int(11) NOT NULL DEFAULT '0',
-      `categoryID` int(11) NOT NULL DEFAULT '0',
-      PRIMARY KEY (`postID`,`categoryID`)
-    ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED;
 
     CREATE TABLE IF NOT EXISTS `__PREFIX__blog_posts_to_tags` (
       `postID` int(11) NOT NULL DEFAULT '0',

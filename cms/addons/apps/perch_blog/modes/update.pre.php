@@ -5,6 +5,14 @@
 	include(PERCH_PATH.'/core/apps/categories/PerchCategories_Categories.class.php');
 	include(PERCH_PATH.'/core/apps/categories/PerchCategories_Category.class.php');
 
+	$Posts = new PerchBlog_Posts($API);
+	$posts = $Posts->all();
+	if (PerchUtil::count($posts)==false) {
+		$Settings->set('perch_blog_update', '5.0');
+		PerchUtil::redirect($API->app_path());
+	}
+
+
 	$Paging = $API->get('Paging');
 	$Paging->set_per_page(10);
 

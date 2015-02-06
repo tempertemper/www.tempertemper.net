@@ -49,5 +49,3 @@
     $result = $this->db->get_value($sql);
     
     return $result;
-
-?>

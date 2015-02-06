@@ -36,6 +36,7 @@
                 'template'   => 'post_in_list.html',
                 'sort'       => 'postDateTime',
                 'sort-order' => 'DESC',
+                'paginate'   => true,
             );
 
         $r = perch_blog_custom($opts, $return);
@@ -127,7 +128,6 @@
             $opts = $defaults;
         }
 
-
         $postID = false;
 
         $BlogPosts = new PerchBlog_Posts($API);
@@ -143,7 +143,6 @@
 
         $Post = $BlogPosts->find($postID);
 
-
         $Template = $API->get('Template');
         $Template->set('blog/'.$opts['template'], 'blog');
         $html = $Template->render($Post);
@@ -151,8 +150,6 @@
         
         if ($return) return $html;
         echo $html;
-
-
     }
 
     /**
@@ -204,6 +201,7 @@
         $default_opts = array(
             'template'             => 'post_category_link.html',
             'skip-template'        => false,
+            'split-items'          => false,
             'cache'                => true,
         );
 
@@ -217,12 +215,11 @@
             $opts = $default_opts;
         }
 
-        if ($opts['skip-template']) {
+        if ($opts['skip-template'] || $opts['split-items']) {
             $return = true;
         }
 
         $opts['template'] = '~perch_blog/templates/blog/'.str_replace('blog/', '', $opts['template']);
-
 
         $cache = false;
         $template = $opts['template'];
@@ -231,7 +228,7 @@
             $cache_key = 'perch_blog_post_categories'.md5($id_or_slug.serialize($opts));
             $cache = PerchBlog_Cache::get_static($cache_key, 10);
 
-            if ($opts['skip-template']) {
+            if ($opts['skip-template'] || $opts['split-items']) {
                 $cache = unserialize($cache);
             }
         }
@@ -240,7 +237,6 @@
             if ($return) return $cache;
             echo $cache; return '';
         }
-
 
         $API  = new PerchAPI(1.0, 'perch_blog');
         $BlogPosts = new PerchBlog_Posts($API);
@@ -306,6 +302,7 @@
         $default_opts = array(
             'template'             => 'post_tag_link.html',
             'skip-template'        => false,
+            'split-items'          => false,
             'cache'                => true,
         );
 
@@ -319,7 +316,7 @@
             $opts = $default_opts;
         }
 
-        if ($opts['skip-template']) {
+        if ($opts['skip-template'] || $opts['split-items']) {
             $return = true;
         }
 
@@ -330,12 +327,10 @@
             $cache_key = 'perch_blog_post_tags'.md5($id_or_slug.serialize($opts));
             $cache = PerchBlog_Cache::get_static($cache_key, 10);
 
-            if ($opts['skip-template']) {
+            if ($opts['skip-template'] || $opts['split-items']) {
                 $cache = unserialize($cache);
             }
-        }
-
-        
+        }    
 
         if ($cache) {
             if ($return) return $cache;
@@ -370,9 +365,7 @@
                 if ($opts['cache']) {
                     PerchBlog_Cache::save_static($cache_key, serialize($out)); 
                 }
-
                 return $out;
-
             }
             
             $Template = $API->get('Template');
@@ -390,8 +383,22 @@
     }
     
     function perch_blog_custom($opts=false, $return=false)
-    {        
-        if (isset($opts['skip-template']) && $opts['skip-template']==true) $return = true; 
+    {       
+        $default_opts = array(
+            'skip-template'        => false,
+            'split-items'          => false,
+            'filter'               => false,
+            'paginate'             => true,
+        );
+
+        if (is_array($opts)) {
+            $opts = array_merge($default_opts, $opts);
+        }else{
+            $opts = $default_opts;
+        }
+
+
+        if ($opts['skip-template'] || $opts['split-items']) $return = true; 
         
         $API  = new PerchAPI(1.0, 'perch_blog');
         
@@ -421,6 +428,7 @@
         $default_opts = array(
             'template'             => 'category_link.html',
             'skip-template'        => false,
+            'split-items'          => false,
             'cache'                => true,
             'count-type'           => 'blog.post',
             'include-empty'        => false,
@@ -441,7 +449,7 @@
 
         $opts['template'] = '~perch_blog/templates/blog/'.str_replace('blog/', '', $opts['template']);
 
-        if ($opts['skip-template']) $return = true;
+        if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         if (isset($opts['pagination_var'])) $opts['pagination-var'] = $opts['pagination_var']; 
 
@@ -517,6 +525,7 @@
         $default_opts = array(
             'template'             => 'tag_link.html',
             'skip-template'        => false,
+            'split-items'          => false,
             'cache'                => true,
             'include-empty'        => false,
             'filter'               => false,
@@ -533,7 +542,7 @@
             $opts = $default_opts;
         }
 
-        if ($opts['skip-template']) $return = true;
+        if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         if (isset($opts['pagination_var'])) $opts['pagination-var'] = $opts['pagination_var']; 
 
@@ -616,6 +625,7 @@
         $default_opts = array(
             'template'             => 'year_link.html',
             'skip-template'        => false,
+            'split-items'          => false,
             'cache'                => true,
             'section'              => false,
         );
@@ -630,7 +640,7 @@
             $opts = $default_opts;
         }
 
-        if ($opts['skip-template']) {
+        if ($opts['skip-template'] || $opts['split-items']) {
             $return = true;
         }
 
@@ -641,7 +651,7 @@
             $cache_key = 'perch_blog_date_archive_years'.md5(serialize($opts));
             $cache = PerchBlog_Cache::get_static($cache_key, 10);
 
-            if ($opts['skip-template']) $cache = unserialize($cache);
+            if ($opts['skip-template'] || $opts['split-items']) $cache = unserialize($cache);
         }
         
 
@@ -667,7 +677,7 @@
 
         
 
-        if ($opts['skip-template']) {
+        if ($opts['skip-template'] || $opts['split-items']) {
             if ($opts['cache']) PerchBlog_Cache::save_static($cache_key, serialize($years));
             return $years;
         }
@@ -754,6 +764,7 @@
         $default_opts = array(
             'template'             => 'author_list.html',
             'skip-template'        => false,
+            'split-items'          => false,
             'cache'                => true,
             'include-empty'        => false,
             'filter'               => false,
@@ -765,7 +776,7 @@
             $opts = $default_opts;
         }
 
-        if ($opts['skip-template']) $return = true;
+        if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         if (isset($opts['pagination_var'])) $opts['pagination-var'] = $opts['pagination_var']; 
 
@@ -801,6 +812,7 @@
         $default_opts = array(
             'template'             => 'author.html',
             'skip-template'        => false,
+            'split-items'          => false,
             'cache'                => true,
         );
 
@@ -810,7 +822,7 @@
             $opts = $default_opts;
         }
 
-        if ($opts['skip-template']) $return = true;
+        if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         $cache = false;
 
@@ -861,6 +873,7 @@
         $default_opts = array(
             'template'             => 'author.html',
             'skip-template'        => false,
+            'split-items'          => false,
             'cache'                => true,
         );
 
@@ -870,7 +883,7 @@
             $opts = $default_opts;
         }
 
-        if ($opts['skip-template']) $return = true;
+        if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         $cache = false;
 
@@ -930,6 +943,7 @@
         $default_opts = array(
             'template'             => 'section_list.html',
             'skip-template'        => false,
+            'split-items'          => false,
             'cache'                => true,
             'include-empty'        => false,
             'filter'               => false,
@@ -941,7 +955,7 @@
             $opts = $default_opts;
         }
 
-        if ($opts['skip-template']) $return = true;
+        if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         if (isset($opts['pagination_var'])) $opts['pagination-var'] = $opts['pagination_var']; 
 
@@ -977,6 +991,7 @@
         $default_opts = array(
             'template'             => 'section.html',
             'skip-template'        => false,
+            'split-items'          => false,
             'cache'                => true,
         );
 
@@ -986,7 +1001,7 @@
             $opts = $default_opts;
         }
 
-        if ($opts['skip-template']) $return = true;
+        if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         $cache = false;
 
