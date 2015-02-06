@@ -21,13 +21,6 @@
     }
   ?>
 
-  <?php
-    if (!perch_get('cat')) {
-      echo('hello2');
-    }
-  ?>
-
-
 </main>
 
 <?php perch_layout('footer'); ?>
