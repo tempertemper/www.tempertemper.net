@@ -141,7 +141,7 @@ class PerchContent_Pages extends PerchFactory
      */
     public function find_child_page_ids($pageID)
     {
-        $sql = 'SELECT pageTreePosition FROM '.$this->table.' WHERE pageID='.$this->db->pdb($pageID).' LIMIT 1';
+        $sql = 'SELECT pageTreePosition FROM '.$this->table.' WHERE pageID='.$this->db->pdb((int)$pageID).' LIMIT 1';
         $pageTreePosition = $this->db->get_value($sql);
         
         if ($pageTreePosition) {
@@ -168,7 +168,7 @@ class PerchContent_Pages extends PerchFactory
      */
     public function find_parent_page_ids($pageID)
     {
-        $sql = 'SELECT pageTreePosition FROM '.$this->table.' WHERE pageID='.$this->db->pdb($pageID).' LIMIT 1';
+        $sql = 'SELECT pageTreePosition FROM '.$this->table.' WHERE pageID='.$this->db->pdb((int)$pageID).' LIMIT 1';
         $pageTreePosition = $this->db->get_value($sql);
         
         if ($pageTreePosition) {
@@ -204,8 +204,8 @@ class PerchContent_Pages extends PerchFactory
     {
         if ($groupID!==false) {
             $table = PERCH_DB_PREFIX.'navigation_pages';
-            $where = 'groupID='.$this->db->pdb($groupID).' AND ';
-            $sql = 'SELECT np.pageTreePosition FROM '.$this->table.' p, '.PERCH_DB_PREFIX.'navigation_pages np WHERE np.pageID=p.pageID AND np.groupID='.$this->db->pdb($groupID).' AND p.pagePath='.$this->db->pdb($pagePath).' LIMIT 1';
+            $where = 'groupID='.$this->db->pdb((int)$groupID).' AND ';
+            $sql = 'SELECT np.pageTreePosition FROM '.$this->table.' p, '.PERCH_DB_PREFIX.'navigation_pages np WHERE np.pageID=p.pageID AND np.groupID='.$this->db->pdb((int)$groupID).' AND p.pagePath='.$this->db->pdb($pagePath).' LIMIT 1';
         }else{
             $table = $this->table;
             $where = '';
@@ -249,12 +249,12 @@ class PerchContent_Pages extends PerchFactory
     {
         if ($navgroupID===false) {
             $sql = 'SELECT * FROM '.$this->table.'
-                    WHERE pageParentID='.$this->db->pdb($parentID).'
+                    WHERE pageParentID='.$this->db->pdb((int)$parentID).'
                     ORDER BY pageTreePosition ASC'; 
 
         }else{
             $sql = 'SELECT np.*, p.pageTitle FROM '.PERCH_DB_PREFIX.'navigation_pages np, '.$this->table.' p
-                    WHERE np.pageID=p.pageID AND np.pageParentID='.$this->db->pdb($parentID).' 
+                    WHERE np.pageID=p.pageID AND np.pageParentID='.$this->db->pdb((int)$parentID).' 
                         AND np.groupID='.$this->db->pdb((int)$navgroupID).' 
                     ORDER BY np.pageTreePosition ASC';
         }
@@ -291,24 +291,30 @@ class PerchContent_Pages extends PerchFactory
     {
         $page = array();
         
-        $page['pageID']           = '-1';       
-        $page['pageParentID']     = '0'; 
-        $page['pagePath']         = '*';     
-        $page['pageTitle']        = PerchLang::get('Shared');    
-        $page['pageNavText']      = PerchLang::get('Shared');  
-        $page['pageNew']          = '0';      
-        $page['pageOrder']        = '0';    
-        $page['pageDepth']        = '1';    
-        $page['pageSortPath']     = '/'; 
-        $page['pageTreePosition'] = '000';       
-        $page['pageSubpageRoles'] = '';       
-        $page['pageSubpagePath']  = '';
-        $page['pageHidden']       = '0';     
-        $page['pageNavOnly']      = '0';    
-        $page['subpages']         = false;    
-        $page['pageAccessTags']   = '';
-        $page['pageCreatorID']    = '0';
-        
+        $page['pageID']                = '-1';       
+        $page['pageParentID']          = '0'; 
+        $page['pagePath']              = '*';     
+        $page['pageTitle']             = PerchLang::get('Shared');    
+        $page['pageNavText']           = PerchLang::get('Shared');  
+        $page['pageNew']               = '0';      
+        $page['pageOrder']             = '0';    
+        $page['pageDepth']             = '1';    
+        $page['pageSortPath']          = '/'; 
+        $page['pageTreePosition']      = '000';       
+        $page['pageSubpageRoles']      = '';       
+        $page['pageSubpagePath']       = '';
+        $page['pageHidden']            = '0';     
+        $page['pageNavOnly']           = '0';    
+        $page['subpages']              = false;    
+        $page['pageAccessTags']        = '';
+        $page['pageCreatorID']         = '0';
+        $page['pageModified']          = date('Y-m-d H:i:s');
+        $page['pageAttributes']        = '';
+        $page['pageAttributeTemplate'] = 'default.html';
+        $page['pageTemplate']          = '';
+        $page['templateID']            = '0';
+        $page['pageSubpageTemplates']  = '';
+
         return $this->return_instance($page);        
         
     }
@@ -377,13 +383,13 @@ class PerchContent_Pages extends PerchFactory
                     }
                 }else{
                     $data['pageParentID'] = $Page->pageParentID();
-                    $sql = 'SELECT pageID, pageDepth, pageTreePosition FROM '.$this->table.' WHERE pageID='.$Page->pageParentID().' LIMIT 1';
+                    $sql = 'SELECT pageID, pageDepth, pageTreePosition FROM '.$this->table.' WHERE pageID='.$this->db->pdb((int)$Page->pageParentID()).' LIMIT 1';
                     $parent = $this->db->get_row($sql);
                 }
                 
                 if (!isset($data['pageParentID'])) {
                     $data['pageParentID'] = $Page->pageParentID();
-                    $sql = 'SELECT pageID, pageTreePosition FROM '.$this->table.' WHERE pageID='.$Page->pageParentID();
+                    $sql = 'SELECT pageID, pageTreePosition FROM '.$this->table.' WHERE pageID='.$this->db->pdb((int)$Page->pageParentID());
                     $parent = $this->db->get_row($sql);
                     
                     // no parent, so reset depth to show at top of tree.
@@ -393,7 +399,7 @@ class PerchContent_Pages extends PerchFactory
                 
                 if (isset($data['pageParentID'])) {
                     // order
-                    $sql = 'SELECT COUNT(*) FROM '.$this->table.' WHERE pageNew=0 AND pageParentID='.$this->db->pdb($data['pageParentID']);
+                    $sql = 'SELECT COUNT(*) FROM '.$this->table.' WHERE pageNew=0 AND pageParentID='.$this->db->pdb((int)$data['pageParentID']);
                     $data['pageOrder'] = $this->db->get_count($sql)+1;
                     
                                         
@@ -479,15 +485,22 @@ class PerchContent_Pages extends PerchFactory
                 $parentPageID = $ParentPage->id();
 
                 $data['pageDepth']    = $ParentPage->pageDepth() + 1;
+
+                // Copy subpage info
+                $data['pageSubpageRoles']     = $ParentPage->pageSubpageRoles();
+                $data['pageSubpageTemplates'] = $ParentPage->pageSubpageTemplates();
                 
             }else{
                 $pageSection = '/';
                 $parentPageID = 0;
                 $data['pageParentID'] = '0';
                 $data['pageDepth']    = '1';
+
+                $data['pageSubpageRoles']     = '';
+                $data['pageSubpageTemplates'] = '';
             }
             
-            
+
                             
             
             $dir = PerchUtil::file_path(PERCH_SITEPATH.$pageSection);
@@ -603,14 +616,14 @@ class PerchContent_Pages extends PerchFactory
                                             regionEditRoles,
                                             regionOptions
                                         FROM '.PERCH_DB_PREFIX.'content_regions
-                                        WHERE regionPage!='.$this->db->pdb('*').' AND pageID='.$this->db->pdb($CopyPage->id());
+                                        WHERE regionPage!='.$this->db->pdb('*').' AND pageID='.$this->db->pdb((int)$CopyPage->id());
                                 
                                     $this->db->execute($sql);
                                 
                                     // Nullify resources list in options
                                     $sql = 'SELECT regionID, regionOptions
                                             FROM '.PERCH_DB_PREFIX.'content_regions 
-                                            WHERE pageID='.$this->db->pdb($Page->id());
+                                            WHERE pageID='.$this->db->pdb((int)$Page->id());
                                     $rows = $this->db->get_rows($sql);
                                     if (PerchUtil::count($rows)) {
                                         foreach($rows as $row) {
@@ -668,7 +681,6 @@ class PerchContent_Pages extends PerchFactory
      */
     public function create_without_file($data)
     {
-        if (isset($data['templateID'])) unset($data['templateID']);
                 
         $link_only = false;     
         
@@ -716,11 +728,21 @@ class PerchContent_Pages extends PerchFactory
             $ParentPage = $this->find($data['pageParentID']);
 
             if (is_object($ParentPage)) {
-                if ($ParentPage->pageSubpagePath()) {
-                    $pageSection = $ParentPage->pageSubpagePath();
+
+                if (PERCH_RUNWAY) {
+                    $pageSection = $ParentPage->pageSortPath();
                 }else{
-                    $pageSection = PerchUtil::strip_file_name($ParentPage->pagePath());
+                    if ($ParentPage->pageSubpagePath()) {
+                        $pageSection = $ParentPage->pageSubpagePath();
+                    }else{
+                        $pageSection = PerchUtil::strip_file_name($ParentPage->pagePath());
+                    }
                 }
+
+                // Copy subpage info
+                $data['pageSubpageRoles']     = $ParentPage->pageSubpageRoles();
+                $data['pageSubpageTemplates'] = $ParentPage->pageSubpageTemplates();
+                
                 
                 $parentPageID = $ParentPage->id();
 
@@ -740,7 +762,7 @@ class PerchContent_Pages extends PerchFactory
             // Get the new file path
             $new_url = $pageSection.'/'.str_replace($dir, '', $file_name);
             $r = str_replace(DIRECTORY_SEPARATOR, '/', $new_url);
-            $r = str_replace('//', '/', $r);
+            while(strpos($r, '//')!==false) $r = str_replace('//', '/', $r);
             $data['pagePath'] = $r; 
             
             // Insert into the DB
@@ -871,7 +893,7 @@ class PerchContent_Pages extends PerchFactory
             $groupID = $this->db->get_value('SELECT groupID FROM '.PERCH_DB_PREFIX.'navigation WHERE groupSlug='.$this->db->pdb($navgroup).' LIMIT 1');
             
             $sql = 'SELECT np.pageTreePosition FROM '.PERCH_DB_PREFIX.'navigation_pages np, '.$this->table.' p 
-                    WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb($groupID).' AND (p.pagePath='.$this->db->pdb($from_path).' OR p.pageSortPath='.$this->db->pdb($from_path).') LIMIT 1';
+                    WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb((int)$groupID).' AND (p.pagePath='.$this->db->pdb($from_path).' OR p.pageSortPath='.$this->db->pdb($from_path).') LIMIT 1';
         }else{
             $sql = 'SELECT pageTreePosition FROM '.$this->table.' WHERE pagePath='.$this->db->pdb($from_path).' OR pageSortPath='.$this->db->pdb($from_path).' LIMIT 1';
         }
@@ -889,7 +911,7 @@ class PerchContent_Pages extends PerchFactory
             
             if ($navgroup) {
                 $sql = 'SELECT p.*, np.* FROM '.PERCH_DB_PREFIX.'navigation_pages np, '.$this->table.' p  
-                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb($groupID).' AND p.pageNew=0 AND np.pageTreePosition IN ('.$this->db->implode_for_sql_in($values).') ORDER BY np.pageTreePosition';
+                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb((int)$groupID).' AND p.pageNew=0 AND np.pageTreePosition IN ('.$this->db->implode_for_sql_in($values).') ORDER BY np.pageTreePosition';
             }else{
                 $sql = 'SELECT * FROM '.$this->table.' WHERE ';
                 
@@ -1004,7 +1026,7 @@ class PerchContent_Pages extends PerchFactory
                 $groupID = $this->db->get_value('SELECT groupID FROM '.PERCH_DB_PREFIX.'navigation WHERE groupSlug='.$this->db->pdb($navgroup).' LIMIT 1');
 
                 $sql = 'SELECT np.pageID, np.pageParentID, np.pageDepth, np.pageTreePosition FROM '.PERCH_DB_PREFIX.'navigation_pages np, '.$this->table.' p 
-                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb($groupID).' AND (p.pagePath='.$this->db->pdb($from_path).' OR p.pageSortPath='.$this->db->pdb($from_path).') LIMIT 1';
+                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb((int)$groupID).' AND (p.pagePath='.$this->db->pdb($from_path).' OR p.pageSortPath='.$this->db->pdb($from_path).') LIMIT 1';
             }else{
                 $sql = 'SELECT pageID, pageParentID, pageDepth, pageTreePosition FROM '.$this->table.' WHERE pagePath='.$this->db->pdb($from_path).' OR pageSortPath='.$this->db->pdb($from_path).' LIMIT 1';
             }
@@ -1016,7 +1038,7 @@ class PerchContent_Pages extends PerchFactory
 
                 if ($navgroup) {
                     $sql = 'SELECT p.*, np.* FROM '.PERCH_DB_PREFIX.'navigation_pages np, '.$this->table.' p
-                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb($groupID).' AND np.pageParentID='.$this->db->pdb($root['pageParentID']).' AND np.pageDepth='.$this->db->pdb($root['pageDepth']).' 
+                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb((int)$groupID).' AND np.pageParentID='.$this->db->pdb((int)$root['pageParentID']).' AND np.pageDepth='.$this->db->pdb($root['pageDepth']).' 
                             AND np.pageTreePosition '.($type=='prev' ? '<' : '>').' '.$this->db->pdb($root['pageTreePosition']).'
                         ORDER BY np.pageTreePosition '.($type=='prev' ? 'DESC' : 'ASC').'
                         LIMIT 1';
@@ -1027,7 +1049,7 @@ class PerchContent_Pages extends PerchFactory
                         $sql .= 'pageHidden=0 AND ';
                     }
 
-                    $sql .='pageParentID='.$this->db->pdb($root['pageParentID']).' AND pageDepth='.$this->db->pdb($root['pageDepth']).' 
+                    $sql .='pageParentID='.$this->db->pdb((int)$root['pageParentID']).' AND pageDepth='.$this->db->pdb($root['pageDepth']).' 
                             AND pageTreePosition '.($type=='prev' ? '<' : '>').' '.$this->db->pdb($root['pageTreePosition']).'
                         ORDER BY pageTreePosition '.($type=='prev' ? 'DESC' : 'ASC').'
                         LIMIT 1';
@@ -1101,7 +1123,7 @@ class PerchContent_Pages extends PerchFactory
                 $groupID = $this->db->get_value('SELECT groupID FROM '.PERCH_DB_PREFIX.'navigation WHERE groupSlug='.$this->db->pdb($navgroup).' LIMIT 1');
 
                 $sql = 'SELECT np.pageID, np.pageParentID, np.pageDepth, np.pageTreePosition FROM '.PERCH_DB_PREFIX.'navigation_pages np, '.$this->table.' p 
-                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb($groupID).' AND (p.pagePath='.$this->db->pdb($from_path).' OR p.pageSortPath='.$this->db->pdb($from_path).') LIMIT 1';
+                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb((int)$groupID).' AND (p.pagePath='.$this->db->pdb($from_path).' OR p.pageSortPath='.$this->db->pdb($from_path).') LIMIT 1';
             }else{
                 $sql = 'SELECT pageID, pageParentID, pageDepth, pageTreePosition FROM '.$this->table.' WHERE pagePath='.$this->db->pdb($from_path).' OR pageSortPath='.$this->db->pdb($from_path).' LIMIT 1';
             }
@@ -1112,9 +1134,9 @@ class PerchContent_Pages extends PerchFactory
 
                 if ($navgroup) {
                     $sql = 'SELECT p.*, np.* FROM '.PERCH_DB_PREFIX.'navigation_pages np, '.$this->table.' p
-                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb($groupID).' AND np.pageParentID='.$this->db->pdb($root['pageParentID']).' LIMIT 1';
+                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb((int)$groupID).' AND np.pageParentID='.$this->db->pdb((int)$root['pageParentID']).' LIMIT 1';
                 }else{
-                    $sql = 'SELECT * FROM '.$this->table.' WHERE pageID='.$this->db->pdb($root['pageParentID']).' LIMIT 1';
+                    $sql = 'SELECT * FROM '.$this->table.' WHERE pageID='.$this->db->pdb((int)$root['pageParentID']).' LIMIT 1';
                 }
 
 
@@ -1205,7 +1227,7 @@ class PerchContent_Pages extends PerchFactory
             if ($navgroup) {
                 $sql = 'SELECT np.pageID, np.pageParentID, np.pageDepth, np.pageTreePosition 
                         FROM '.PERCH_DB_PREFIX.'navigation_pages np, '.$this->table.' p 
-                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb($groupID).' AND (p.pagePath='.$this->db->pdb($from_path).' OR p.pageSortPath='.$this->db->pdb($from_path).') LIMIT 1';
+                        WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb((int)$groupID).' AND (p.pagePath='.$this->db->pdb($from_path).' OR p.pageSortPath='.$this->db->pdb($from_path).') LIMIT 1';
             }else{
                 $sql = 'SELECT pageID, pageParentID, pageDepth, pageTreePosition FROM '.$this->table.' WHERE pagePath='.$this->db->pdb($from_path).' OR pageSortPath='.$this->db->pdb($from_path).' LIMIT 1';    
             }
@@ -1216,9 +1238,9 @@ class PerchContent_Pages extends PerchFactory
             if ($siblings) {
                 // show siblings, so we actually want to select the parent page
                 if ($navgroup) {
-                    $sql = 'SELECT pageID, pageParentID, pageDepth, pageTreePosition FROM '.PERCH_DB_PREFIX.'navigation_pages WHERE groupID='.$this->db->pdb($groupID).' AND pageID='.$this->db->pdb($root['pageParentID']).' LIMIT 1';
+                    $sql = 'SELECT pageID, pageParentID, pageDepth, pageTreePosition FROM '.PERCH_DB_PREFIX.'navigation_pages WHERE groupID='.$this->db->pdb((int)$groupID).' AND pageID='.$this->db->pdb((int)$root['pageParentID']).' LIMIT 1';
                 }else{
-                    $sql = 'SELECT pageID, pageParentID, pageDepth, pageTreePosition FROM '.$this->table.' WHERE pageID='.$this->db->pdb($root['pageParentID']).' LIMIT 1';    
+                    $sql = 'SELECT pageID, pageParentID, pageDepth, pageTreePosition FROM '.$this->table.' WHERE pageID='.$this->db->pdb((int)$root['pageParentID']).' LIMIT 1';    
                 }
                 
                 $root = $this->db->get_row($sql);
@@ -1231,7 +1253,7 @@ class PerchContent_Pages extends PerchFactory
                     
                     if ($new_root_tree_position) {
                         if ($navgroup) {
-                            $sql = 'SELECT pageID, pageParentID, pageDepth, pageTreePosition FROM '.PERCH_DB_PREFIX.'navigation_pages WHERE groupID='.$this->db->pdb($groupID).' AND pageTreePosition='.$this->db->pdb($new_root_tree_position).' LIMIT 1';
+                            $sql = 'SELECT pageID, pageParentID, pageDepth, pageTreePosition FROM '.PERCH_DB_PREFIX.'navigation_pages WHERE groupID='.$this->db->pdb((int)$groupID).' AND pageTreePosition='.$this->db->pdb($new_root_tree_position).' LIMIT 1';
                         }else{
                             $sql = 'SELECT pageID, pageParentID, pageDepth, pageTreePosition FROM '.$this->table.' WHERE pageTreePosition='.$this->db->pdb($new_root_tree_position).' LIMIT 1';    
                         }
@@ -1256,7 +1278,7 @@ class PerchContent_Pages extends PerchFactory
         // cache page list
         if ($navgroup) {
             $sql = 'SELECT np.pageID, np.pageParentID, p.pagePath, p.pageTitle, p.pageNavText, p.pageNew, p.pageOrder, np.pageDepth, p.pageSortPath, np.pageTreePosition, p.pageAccessTags, p.pageAttributes
-                    FROM '.PERCH_DB_PREFIX.'navigation_pages np, '.$this->table.' p WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb($groupID).' AND p.pageNew=0 ';
+                    FROM '.PERCH_DB_PREFIX.'navigation_pages np, '.$this->table.' p WHERE p.pageID=np.pageID AND np.groupID='.$this->db->pdb((int)$groupID).' AND p.pageNew=0 ';
 
             // if from path is set
             if ($root) {
@@ -1363,6 +1385,16 @@ class PerchContent_Pages extends PerchFactory
                         }
                         
                     }
+
+                    if ($expand_attributes && isset($row['pageAttributes']) && $row['pageAttributes']!='') {
+                        $dynamic_fields = PerchUtil::json_safe_decode($row['pageAttributes'], true);
+                        if (PerchUtil::count($dynamic_fields)) {
+                            foreach($dynamic_fields as $key=>$value) {
+                                $row[$key] = $value;
+                            }
+                        }
+                        $row = array_merge($dynamic_fields, $row);
+                    }
                 }
                 
                 if ($skip_template) {
@@ -1462,6 +1494,76 @@ class PerchContent_Pages extends PerchFactory
             }
         }
     }
+
+    /**
+     * If there are no pages, set up the basic home page and error pages etc
+     * @return [type] [description]
+     */
+    public function create_defaults($CurrentUser)
+    {
+        $PageTemplates = new PerchContent_PageTemplates();
+        $PageTemplates->find_and_add_new_templates();
+
+
+        // Create home page
+        $DefaultTemplate = $PageTemplates->get_one_by('templatePath', 'home.php');
+        if ($DefaultTemplate) {
+            $data = array(
+                    'pageTitle'      => PerchLang::get('Home page'), 
+                    'pageNavText'    => PerchLang::get('Home page'), 
+                    'file_name'      => '', 
+                    'pageParentID'   => '0', 
+                    'templateID'     => $DefaultTemplate->id(), 
+                    'pageNew'        => 1,
+                    'pageCreatorID'  => $CurrentUser->id(),
+                    'pageModified'   => date('Y-m-d H:i:s'),
+                    'pageAttributes' => '',
+                    'pageTemplate'   => $DefaultTemplate->templatePath(),
+                    );
+
+            $this->create_without_file($data);
+        }
+             
+
+        // Create error pages
+        $ErrorTemplate = $PageTemplates->get_one_by('templatePath', 'errors/404.php');
+        if ($ErrorTemplate) {
+            $data = array(
+                    'pageTitle'      => PerchLang::get('Errors'), 
+                    'pageNavText'    => PerchLang::get('Errors'), 
+                    'file_name'      => '/errors', 
+                    'pageParentID'   => '0', 
+                    'templateID'     => $ErrorTemplate->id(), 
+                    'pageNew'        => 1,
+                    'pageCreatorID'  => $CurrentUser->id(),
+                    'pageModified'   => date('Y-m-d H:i:s'),
+                    'pageAttributes' => '',
+                    'pageTemplate'   => $ErrorTemplate->templatePath(),
+                    'pageHidden'     => '1',
+                    );
+
+            $ErrorsPage = $this->create_without_file($data);
+
+            $data = array(
+                    'pageTitle'      => '404', 
+                    'pageNavText'    => '404', 
+                    'file_name'      => '/errors/404', 
+                    'pageParentID'   => $ErrorsPage->id(), 
+                    'templateID'     => $ErrorTemplate->id(), 
+                    'pageNew'        => 1,
+                    'pageCreatorID'  => $CurrentUser->id(),
+                    'pageModified'   => date('Y-m-d H:i:s'),
+                    'pageAttributes' => '',
+                    'pageTemplate'   => $ErrorTemplate->templatePath(),
+                    'pageHidden'     => '1',
+                    );
+
+            $ErrorsPage = $this->create_without_file($data);
+        }
+   
+
+    }
+
 
 
     private function _template_nav($templates, $selected_ids, $parentID=0, $level=0, $Template=false, $only_expand_selected=false, $expand_attributes=false)

@@ -24,7 +24,17 @@
     foreach($templates as $Template) {
 ?>
             <tr>
-                <td class="primary"><a href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/apps/content/page/templates/edit/?id=<?php echo PerchUtil::html(urlencode($Template->id())); ?>"><?php echo PerchUtil::html($Template->templateTitle())?></a></td>
+                <td class="primary">
+                    <?php 
+                        if (strpos($Template->templatePath(), '/')!==false) {
+                            $segments = explode('/', $Template->templatePath());
+                            array_pop($segments);
+                            echo PerchUtil::filename(implode('/', $segments)).' → ';
+                        }
+                    ?>
+                    <a href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/apps/content/page/templates/edit/?id=<?php echo PerchUtil::html(urlencode($Template->id())); ?>"><?php echo PerchUtil::html($Template->templateTitle())?></a>
+
+                </td>
                 <td><?php echo PerchUtil::html($Template->templatePath())?></td>  
                 <td>
                     <?php if ($CurrentUser->has_priv('content.templates.delete')) { ?>

@@ -73,7 +73,7 @@ class PerchCategories_Category extends PerchBase
             $parentID = $this->id();
         }
         
-        $sql = 'SELECT MAX(catOrder) FROM '.$this->table.' WHERE catParentID='.$this->db->pdb($parentID);
+        $sql = 'SELECT MAX(catOrder) FROM '.$this->table.' WHERE catParentID='.$this->db->pdb((int)$parentID);
         $max = $this->db->get_count($sql);
         
         return $max+1;

@@ -39,10 +39,10 @@ class PerchAPI_SubmittedForm
         $this->formID       = $formID;
         $this->id           = $formID;
         $this->templatePath = $templatePath;
-        
+
         if (PerchUtil::count($data)) {
             foreach($data as &$datum) {
-                $datum = stripslashes($datum);
+                $datum = PerchUtil::safe_stripslashes($datum);
             }
         }
         
@@ -60,7 +60,7 @@ class PerchAPI_SubmittedForm
     {
         $valid = true;
         
-        if (file_exists(PERCH_PATH.$this->templatePath)){
+        if (file_exists(PerchUtil::file_path(PERCH_PATH.$this->templatePath))){
 		    
             $template = $this->_get_template_content();
        
@@ -313,7 +313,7 @@ class PerchAPI_SubmittedForm
         
         $antispam = array();
         
-        if (file_exists(PERCH_PATH.$this->templatePath)){
+        if (file_exists(PerchUtil::file_path(PERCH_PATH.$this->templatePath))){
 			$template = $this->_get_template_content();
 			$TemplatedForm = new PerchTemplatedForm($template);
 			

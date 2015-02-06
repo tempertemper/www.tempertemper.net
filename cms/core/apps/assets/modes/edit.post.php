@@ -50,6 +50,7 @@
         ?>
         </div>
 
+        <?php if (!$Asset) { ?>
         <div class="field">
         <?php
             echo $Form->label('resourceBucket', 'Save in bucket');
@@ -65,6 +66,8 @@
             echo $Form->select('resourceBucket', $opts, $Form->get($details, 'resourceBucket'));
         ?>
         </div>
+        <?php } // if !Asset ?>
+
 <?php } // assets.create ?>
 
         <div class="field">

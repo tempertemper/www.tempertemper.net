@@ -161,7 +161,11 @@ class PerchForm
 			case 'password':
 				$r	= $this->check_password($id, $args);
 			break;
-					
+				
+			case 'licensekey':
+				$r	= $this->check_license_key($id, $args);
+			break;
+
 			default:
 				# code...
 			break;
@@ -231,6 +235,18 @@ class PerchForm
 		return true;
 	}
 	
+	private function check_license_key($id, $args)
+	{   
+		$str 	= $_POST[$id];
+
+		$pattern = '#^(P|R)[0-9]{5}(-[A-Z]{3}[0-9]{3}){4}$#';
+		
+		if (preg_match($pattern, $str)){
+			return true;
+		}
+		return false;
+	}
+
 	private function check_email($id, $args)
 	{
 		$email 	= $_POST[$id];
@@ -411,14 +427,14 @@ class PerchForm
 	}
 
 
-	public function select($id, $array, $value, $class='', $multiple=false)
+	public function select($id, $array, $value, $class='', $multiple=false, $attributes=false)
 	{
 		if ($multiple) $id .= '[]';
 			
 		$this->fields[] = $id;
 		if ($this->display_only && trim($value)=='') return 'No selection';
 		
-		$s	= '<select id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" class="'.$this->html($class, true).'"'.($multiple ? 'multiple="multiple"':'').'>';
+		$s	= '<select id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" class="'.$this->html($class, true).'"'.($multiple ? 'multiple="multiple"':'').($attributes ? ' '.$attributes:'').'>';
 		
 		for ($i=0; $i<PerchUtil::count($array); $i++){
 			$s .= '<option value="'.$this->html($array[$i]['value'], true).'"';
@@ -456,7 +472,7 @@ class PerchForm
 	}
 	
 	
-	function grouped_select($id, $groups, $value, $class='')
+	function old_grouped_select($id, $groups, $value, $class='')
 	{
 			
 		$this->fields[] = $id;
@@ -494,6 +510,52 @@ class PerchForm
 		return $s;
 	}
 	
+
+	function grouped_select($id, $groups, $value, $class='')
+	{
+			
+		$this->fields[] = $id;
+		if ($this->display_only && trim($value)=='') return 'No selection';
+		
+		$s	= '<select id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" class="'.$this->html($class, true).'">';
+		
+		foreach($groups as $group_name=>$array) {
+			$s .= $this->_render_select_options($group_name, $array, $value);
+		}
+				
+		$s	.= '</select>';
+		
+		if ($this->required($id)){
+			$s	.= $this->message($id, $value);
+		}
+	
+		return $s;
+	}
+
+	private function _render_select_options($key, $array, $value, $level=1)
+	{
+		$s = '';
+
+		if (!is_numeric($key)) {
+			$s .= '<optgroup label="'.$this->html($key, true).'">';
+
+			foreach($array as $group_name=>$array2) {
+				$s .= $this->_render_select_options($group_name, $array2, $value, $level+1);
+			}
+
+			$s .= '</optgroup>'.PHP_EOL;
+		}else{
+			$s .= '<option value="'.$this->html($array['value'], true).'"';
+			
+			if ($array['value'] == $this->value($value)){
+				$s .= ' selected="selected"';
+			}
+			
+			$s .='>'.$this->html($array['label']).'</option>'.PHP_EOL;
+		}
+		
+		return $s;
+	}
 	
 	
 	
@@ -702,7 +764,8 @@ class PerchForm
 
         $out = '';
         
-        $out .= '<fieldset class="checkboxes '.($container_class ? ' '.$container_class: '').'">';
+        $out .= '<fieldset>';
+        $out .= '<div class="wrapped checkboxes '.($container_class ? ' '.$container_class: ' ').'">';
         if ($label!==false) $out .= '<strong>'.$this->html(PerchLang::get($label)).'</strong>';
         
         $i = 0;
@@ -710,7 +773,7 @@ class PerchForm
         foreach($options as $option) {
             $boxid = $id.'_'.$i;
             $checked_value = false;
-            if (in_array($option['value'], $values)){
+            if (is_array($values) && in_array($option['value'], $values)){
                 $checked_value = $option['value'];
             }
             if (PerchUtil::count($_POST)) {
@@ -734,6 +797,7 @@ class PerchForm
         }
         
         
+        $out .= '</div>';
         $out .= '</fieldset>';
         
         return $out;
@@ -922,7 +986,7 @@ class PerchForm
 	{
 		if ($this->force_clear) return '';
 		if (is_array($value)) return $value;
-		return stripslashes($value);
+		return PerchUtil::safe_stripslashes($value);
 	}
 	
 	public function scaffold($DB, $table, $prefix)

@@ -53,9 +53,33 @@ class PerchAssets_Tags extends PerchFactory
 
 			$this->update_counts();
 		}
+	}
 
 
+	public function assign_tag_array($resourceID, $tag_array, $replace_existing=true)
+	{
+		if ($replace_existing) $this->delete_for_asset($resourceID);
+		
+		$tag_ids = array();
+		if (PerchUtil::count($tag_array)) {
+			foreach($tag_array as $tag) {
+				$Tag = $this->find_or_create(PerchUtil::urlify($tag), $tag);
+				if ($Tag) {
+					$tag_ids[] = $Tag->id();
+				}	
+			}
+		}
 
+		if (PerchUtil::count($tag_ids)) {
+			foreach($tag_ids as $id) {
+				$this->db->insert(PERCH_DB_PREFIX.'resources_to_tags', array(
+					'resourceID'=>$resourceID,
+					'tagID'=>$id,
+					));
+			}
+
+			$this->update_counts();
+		}
 	}
 
 	public function delete_for_asset($resourceID)
@@ -230,5 +254,3 @@ class PerchAssets_Tags extends PerchFactory
 
     
 }
-
-?>

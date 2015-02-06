@@ -4,7 +4,7 @@ class Perch
 {
     static protected $instance;
 	
-    public $version = '2.6.5';
+    public $version = '2.7.10';
     
     public $admin           = false;
     private $page           = false;
@@ -13,6 +13,7 @@ class Perch
 
     public $debug           = false;
     public $debug_output    = '';
+    public $debug_items     = array();
     public $page_title      = 'Welcome';
     public $help_html       = '';
     public $form_count      = 0;
@@ -25,16 +26,18 @@ class Perch
     
     function __construct()
     {
-        if (!defined('PERCH_DEBUG'))            define('PERCH_DEBUG', false);
-        if (!defined('PERCH_PREVIEW_ARG'))      define('PERCH_PREVIEW_ARG', 'preview');
-        if (!defined('PERCH_TEMPLATE_PATH'))    define('PERCH_TEMPLATE_PATH', PerchUtil::file_path(PERCH_PATH.'/templates'));
-        if (!defined('PERCH_DEFAULT_DOC'))      define('PERCH_DEFAULT_DOC', 'index.php');
-        if (!defined('PERCH_DEFAULT_EXT'))      define('PERCH_DEFAULT_EXT', '.php');
-        if (!defined('PERCH_PRODUCTION_MODE'))  define('PERCH_PRODUCTION_MODE', 100);
-        if (!defined('PERCH_HTML5'))            define('PERCH_HTML5', false);
-        if (!defined('PERCH_RWD'))              define('PERCH_RWD', false);
-        if (!defined('PERCH_HTML_ENTITIES'))    define('PERCH_HTML_ENTITIES', false);
-        if (!defined('PERCH_SSL'))              define('PERCH_SSL', false);
+        if (!defined('PERCH_DEBUG'))             define('PERCH_DEBUG', false);
+        if (!defined('PERCH_PREVIEW_ARG'))       define('PERCH_PREVIEW_ARG', 'preview');
+        if (!defined('PERCH_TEMPLATE_PATH'))     define('PERCH_TEMPLATE_PATH', PerchUtil::file_path(PERCH_PATH.'/templates'));
+        if (!defined('PERCH_DEFAULT_DOC'))       define('PERCH_DEFAULT_DOC', 'index.php');
+        if (!defined('PERCH_DEFAULT_EXT'))       define('PERCH_DEFAULT_EXT', '.php');
+        if (!defined('PERCH_PRODUCTION_MODE'))   define('PERCH_PRODUCTION_MODE', 100);
+        if (!defined('PERCH_HTML5'))             define('PERCH_HTML5', false);
+        if (!defined('PERCH_RWD'))               define('PERCH_RWD', false);
+        if (!defined('PERCH_HTML_ENTITIES'))     define('PERCH_HTML_ENTITIES', false);
+        if (!defined('PERCH_SSL'))               define('PERCH_SSL', false);
+        if (!defined('PERCH_STRIPSLASHES'))      define('PERCH_STRIPSLASHES', false);
+        if (!defined('PERCH_PROGRESSIVE_FLUSH')) define('PERCH_PROGRESSIVE_FLUSH', true);
         
         if (PERCH_DEBUG) $this->debug = true;
     }
@@ -52,11 +55,19 @@ class Perch
     public function get_page($request_uri=false, $hide_default_doc=false)
     {
         if ($request_uri) {
-            $out = str_replace(PERCH_DEFAULT_DOC, '', strtolower($_SERVER['SCRIPT_NAME']));
-            if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']!='') {
-                $out .= '?'.$_SERVER['QUERY_STRING'];
+
+            if (PERCH_RUNWAY && $this->admin==false) {
+                $Runway = PerchRunway::fetch();
+                $out = $Runway->get_page(true);
+            }else{
+                $out = str_replace(PERCH_DEFAULT_DOC, '', strtolower($_SERVER['SCRIPT_NAME']));
+                if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']!='') {
+                    $out .= '?'.$_SERVER['QUERY_STRING'];
+                }
+                $out = preg_replace('/(\/)\\1+/', '/', $out);  
             }
-            $out = preg_replace('/(\/)\\1+/', '/', $out);           
+
+                     
             return $out;
         }
         
@@ -137,6 +148,7 @@ class Perch
 
         // hardwire default, most common case
         $bucket['name']      = 'default';
+        $bucket['type']      = 'file';
         $bucket['web_path']  = PERCH_RESPATH;
         $bucket['file_path'] = PERCH_RESFILEPATH;
 

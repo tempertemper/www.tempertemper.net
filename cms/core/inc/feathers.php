@@ -20,6 +20,7 @@
 		}
 		if ($return) return $out;
 		echo $out;
+		PerchUtil::flush_output();
 	}
 
 	function perch_get_javascript($opts=false, $return=false)
@@ -48,6 +49,7 @@
 
 		if ($return) return $out;
 		echo $out;
+		PerchUtil::flush_output();
 	}
 
 	function perch_path($file, $opts=false, $return=false)
