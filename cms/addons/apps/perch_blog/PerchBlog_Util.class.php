@@ -368,7 +368,8 @@ class PerchBlog_Util extends PerchAPI_Factory
 	                        break;
 	                        
 	                    case 'category':
-	                        $Category = $Categories->find_or_create('blog/'.$slug, $label);
+	                    	PerchUtil::debug("Find or create $slug", 'notice');
+	                        $Category = $Categories->find_or_create('blog/'.$slug.'/', $label);
 	                        if (is_object($Category)) {
 	                            $cat_ids[] = $Category->id();
 
@@ -387,7 +388,8 @@ class PerchBlog_Util extends PerchAPI_Factory
 	            }
 
 	            if (PerchUtil::count($cat_ids)) {
-	            	$post['categories'] = $cat_ids;
+	            	$fields['categories'] = $cat_ids;
+	            	$post['postDynamicFields'] = PerchUtil::json_safe_encode($fields);
 	            }
 
 	            $Post->Template = $Template;
