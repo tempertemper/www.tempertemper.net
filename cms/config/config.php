@@ -7,9 +7,9 @@
   {
 
   case('tempertemper.local') :
-    define("PERCH_DB_USERNAME", 'admin');
-    define("PERCH_DB_PASSWORD", 'Carmen28');
-    define("PERCH_DB_DATABASE", "tempertemper");
+    define("PERCH_DB_USERNAME", 'root');
+    define("PERCH_DB_PASSWORD", 'root');
+    define("PERCH_DB_DATABASE", "tempertemper-local");
     define('PERCH_PRODUCTION_MODE', PERCH_DEVELOPMENT);
    break;
 
