@@ -18,7 +18,7 @@
         $postID   = (int) $_GET['id'];    
         $Post     = $Blog->find($postID, true);
         $details  = $Post->to_array();
-        PerchUtil::debug($details, 'notice');
+        //PerchUtil::debug($details, 'notice');
         $template = $Post->postTemplate();
             
     }else{
@@ -83,6 +83,10 @@
             unset($dynamic_fields['postDescHTML']);
         }
 
+        if (isset($dynamic_fields['postURL'])) {
+            unset($dynamic_fields['postURL']);
+        }
+
         foreach($Blog->static_fields as $field) {
             if (isset($dynamic_fields[$field])) {
 
@@ -143,7 +147,7 @@
                 $Authors->update_post_counts();
                 $Sections->update_post_counts();
 
-                $Post->index($Template);
+                $NewPost->index($Template);
  
 
     	        PerchUtil::redirect($API->app_path() .'/edit/?id='.$NewPost->id().'&created=1');
