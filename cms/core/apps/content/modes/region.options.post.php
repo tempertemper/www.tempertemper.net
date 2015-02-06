@@ -251,22 +251,7 @@
         <div class="field">
             <?php echo $Form->label('regionTemplate', 'Template'); ?>
             <?php         
-                $opts = array();
-                $templates = $Regions->get_templates(false, true);
-
-                if (PerchUtil::count($templates)) {
-                    $opts = array();
-                    foreach($templates as $group_name=>$group) {
-                        $tmp = array();
-                        $group = PerchUtil::array_sort($group, 'label');
-                        foreach($group as $file) {
-                            $tmp[] = array('label'=>$file['label'], 'value'=>$file['path']);
-                        }
-                        $opts[$group_name] = $tmp;
-                    }
-                }
-
-                echo $Form->grouped_select('regionTemplate', $opts, $Form->get(array('regionTemplate'=>$Region->regionTemplate()), 'regionTemplate', 0));
+                echo $Form->grouped_select('regionTemplate', $Regions->get_templates(false, true), $Form->get(array('regionTemplate'=>$Region->regionTemplate()), 'regionTemplate', 0));
                 
             ?>
         </div>

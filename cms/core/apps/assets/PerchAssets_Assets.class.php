@@ -170,7 +170,7 @@ class PerchAssets_Assets extends PerchFactory
         $Tags = new PerchAssets_Tags();
         $Tag  = $Tags->get_one_by('tagSlug', $tag);
 
-        $sql = '';
+        $sql = 'SELECT * FROM (';
         $filter_sql = '';
 
         if (PerchUtil::count($filters)) {
@@ -224,6 +224,8 @@ class PerchAssets_Assets extends PerchFactory
                 ORDER BY score DESC, resourceUpdated DESC';
 
 
+        $sql .= ') AS t GROUP BY resourceID';
+
         return $this->return_instances($this->db->get_rows($sql));
        
     }
@@ -264,7 +266,7 @@ class PerchAssets_Assets extends PerchFactory
                             'itemFK'     => 'albumID',
                             'itemRowID'  => $orig['albumID'],
                             'resourceID' => $parentID,
-                            ));
+                            ), true);
 
 
                         $sql = "SELECT i.imageID, i.imageBucket AS bucket, i.albumID, iv.versionPath AS file, i.imageAlt AS title, iv.versionWidth AS width, iv.versionHeight AS height
@@ -294,6 +296,32 @@ class PerchAssets_Assets extends PerchFactory
         $sql = 'UPDATE '.$this->table.' SET resourceInLibrary="1" WHERE resourceParentID='.$this->db->pdb($assetID);
         $this->db->execute($sql);
     }
+
+
+    public function get_meta_data($file_path, $name)
+    {
+        if (!class_exists('PerchAssets_MetaData')) {
+            include_once(__DIR__.'/PerchAssets_MetaData.class.php');    
+        }
+        
+        $MetaData = new PerchAssets_MetaData();
+
+        if (is_callable('iptcparse') && is_callable('getimagesize')) {
+            $info = array();
+            getimagesize($file_path); // once
+            getimagesize($file_path, $info); // twice for luck (aka bugs);
+            if(isset($info['APP13'])) {
+                $iptc = iptcparse($info['APP13']);
+                $MetaData->store_iptc($iptc);
+            }
+        }
+
+        if (!$MetaData->get_title()) {
+            $title = PerchUtil::filename(PerchUtil::strip_file_extension($name), false);
+            $MetaData->set_title($title);
+        }
+
+        return $MetaData;
+    }
+
 }
-  
-    

@@ -39,17 +39,17 @@
     	$Alert->set('success', PerchLang::get("Your settings have been updated."));
     	
     	// image upload
-    	if (isset($_FILES['logo']) &&  (int) $_FILES['logo']['size'] > 0) {
+    	if (isset($_FILES['customlogo']) &&  (int) $_FILES['customlogo']['size'] > 0) {
     	    
-    	    $filename = $_FILES['logo']['name'];
+    	    $filename = $_FILES['customlogo']['name'];
             if (strpos($filename, '.php')!==false) $filename .= '.txt'; // diffuse PHP files  
             $target = PERCH_RESFILEPATH.'/'.$filename;
             if (file_exists($target)) {
-                $filename = time().'_'.$_FILES['logo']['name'];
+                $filename = time().'_'.$_FILES['customlogo']['name'];
                 $target = PERCH_RESFILEPATH.'/'.$filename;
             }
             
-            PerchUtil::move_uploaded_file($_FILES['logo']['tmp_name'], $target);
+            PerchUtil::move_uploaded_file($_FILES['customlogo']['tmp_name'], $target);
             
             $Settings->set('logoPath', PERCH_RESPATH . '/' . $filename);
     	}

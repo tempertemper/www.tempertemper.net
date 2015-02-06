@@ -113,7 +113,7 @@ class PerchAPI_AuthPlugin extends PerchBase
 	private function _load_privileges($roleID)
     {
         $sql = 'SELECT p.privKey FROM '.PERCH_DB_PREFIX.'user_role_privileges rp, '.PERCH_DB_PREFIX.'user_privileges p
-                WHERE rp.privID=p.privID AND rp.roleID='.$this->db->pdb($roleID);
+                WHERE rp.privID=p.privID AND rp.roleID='.$this->db->pdb((int)$roleID);
         $rows = $this->db->get_rows($sql);
         if (PerchUtil::count($rows)) {
             $privs = array();

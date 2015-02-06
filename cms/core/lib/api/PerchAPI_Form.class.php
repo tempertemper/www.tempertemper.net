@@ -76,7 +76,7 @@ class PerchAPI_Form extends PerchForm
 	    foreach($postvars as $val){
 	        if (isset($_POST[$val])) {
 	            if (!is_array($_POST[$val])){
-	                $data[$val]	= trim(stripslashes($_POST[$val]));
+	                $data[$val]	= trim(PerchUtil::safe_stripslashes($_POST[$val]));
 	            }else{
 	                $data[$val]	= $_POST[$val];
 	            }
@@ -234,7 +234,8 @@ class PerchAPI_Form extends PerchForm
         
         if (!$values) $values = array();
 
-        $out .= '<fieldset class="checkboxes '.$container_class.'"><strong>'.PerchUtil::html($this->Lang->get($label)).'</strong>';
+        $out .= '<fieldset>';
+        $out .= '<div class="wrapped checkboxes '.$container_class.'"><strong>'.PerchUtil::html($this->Lang->get($label)).'</strong>';
         $i = 0;
         
         foreach($options as $option) {
@@ -260,6 +261,7 @@ class PerchAPI_Form extends PerchForm
         }
         
         
+        $out .= '</div>';
         $out .= '</fieldset>';
         if ($label!==false) $out .= $this->field_end($id);
         
@@ -462,9 +464,13 @@ class PerchAPI_Form extends PerchForm
         return $out;
     }
     
-    public function receive_from_template_fields($Template, $previous_values, $perch_only=true, $fixed_fields=false)
+    public function receive_from_template_fields($Template, $previous_values, $perch_only=true, $fixed_fields=false, $include_repeaters=true)
     {
-        $tags   = $Template->find_all_tags_and_repeaters();
+        if ($include_repeaters) {
+            $tags   = $Template->find_all_tags_and_repeaters();    
+        }else{
+            $tags   = $Template->find_all_tags();
+        }
         
         $Form = $this;
         
@@ -503,7 +509,7 @@ class PerchAPI_Form extends PerchForm
                     
                     $var = $FieldType->get_raw($postitems, $previous_values);
             
-                    if ($var) {
+                    if (true || $var) {
                        
                         $form_vars[$tag->id()] = $var;
                         
@@ -538,21 +544,20 @@ class PerchAPI_Form extends PerchForm
         return $form_vars;
     }
 
-    public function get_posted_content($Template, $Factory, $Item=false)
+    public function get_posted_content($Template, $Factory, $Item=false, $include_repeaters=true, $json_encode=true)
     {
         $data = array();
 
         $prev = false;
         if ($Item) $prev = $Item->to_array();
         
-        $dynamic_fields = $this->receive_from_template_fields($Template, $prev);
+        $dynamic_fields = $this->receive_from_template_fields($Template, $prev, $perch_only=true, $fixed_fields=false, $include_repeaters);
 
         $static_fields = array();
 
         // fetch out static fields
         foreach($Factory->static_fields as $field) {
-            if (isset($dynamic_fields[$field])) {
-
+            if (array_key_exists($field, $dynamic_fields)) { //($dynamic_fields[$field])) {
                 if (is_array($dynamic_fields[$field])) {
                     if (isset($dynamic_fields[$field]['_default'])) {
                         $data[$field] = trim($dynamic_fields[$field]['_default']);
@@ -568,7 +573,7 @@ class PerchAPI_Form extends PerchForm
             }else{
                 if (isset($_POST[$field])) {
                     if (!is_array($_POST[$field])){
-                        $data[$field] = trim(stripslashes($_POST[$field]));
+                        $data[$field] = trim(PerchUtil::safe_stripslashes($_POST[$field]));
                     }else{
                         $data[$field] = $_POST[$field];
                     }
@@ -576,6 +581,8 @@ class PerchAPI_Form extends PerchForm
             }
         }
 
+        if (!$json_encode) return $dynamic_fields;
+        
         $data[$Factory->dynamic_fields_column] = PerchUtil::json_safe_encode($dynamic_fields);
 
         return $data;

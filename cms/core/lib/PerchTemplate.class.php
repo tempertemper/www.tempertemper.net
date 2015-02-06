@@ -11,6 +11,8 @@ class PerchTemplate
 	public    $status                = 0;
 	public    $apply_post_processing = false;
 	public    $current_file          = false;
+
+	private   $layout_renderer	 	 = 'perch_layout';
 	
 	private   $_previous_item        = array();
 	private   $sub_vars              = array();
@@ -43,6 +45,11 @@ class PerchTemplate
 		$this->mb_fallback();
 	}
 	
+	public function set_template($template)
+	{
+		$this->template = $template;
+	}
+
 	public function render_group($content_vars, $return_string=false, $limit=false)
 	{
 		$r	= array();
@@ -116,6 +123,9 @@ class PerchTemplate
 
 		// REPEATERS
 		$contents 	= $this->parse_repeaters($contents, $content_vars);
+
+		// RELATED
+		$contents   = $this->parse_related($contents, $content_vars);	
 		
 		// CATEGORIES
 		$contents 	= $this->parse_categories($contents, $content_vars);
@@ -215,8 +225,6 @@ class PerchTemplate
 					    if ($tag->urlify) {
 					        $modified_value = PerchUtil::urlify($modified_value);
 					    }
-
-
                         
 				        // Trim by chars
                         if ($tag->chars) {
@@ -260,7 +268,7 @@ class PerchTemplate
 				        }
 					    
 					    if ($tag->urlencode) {
-				            $modified_value = urlencode($modified_value);
+				            $modified_value = rawurlencode($modified_value);
 				        }
 
 				        if ($tag->escape) {
@@ -275,6 +283,11 @@ class PerchTemplate
 				                	$modified_value = PerchUtil::html($modified_value);
 					        	}
 					    	}
+					    }
+
+					    // JSON encoding
+					    if ($tag->jsonencode) {
+					    	$modified_value = json_encode($modified_value);
 					    }
 				    
 						$contents = str_replace($match, $modified_value, $contents);
@@ -377,74 +390,84 @@ class PerchTemplate
 		$contents	= $this->load();
 
 		$out = array();
+
+		$tag_pairs_to_process = array('repeater');
+		if (PERCH_RUNWAY) {
+			$tag_pairs_to_process[] = 'related';
+		}
 		
-		// parse out repeater tags
-		$tag_type      = 'repeater';
-		$empty_opener  = false;
-		$close_tag     = '</perch:'.$tag_type.'>';
-		$close_tag_len = mb_strlen($close_tag);
-		$open_tag      = '<perch:'.$tag_type.($empty_opener ? '' : ' ');
+		foreach($tag_pairs_to_process as $tag_type) {
+			// parse out repeater tags
+			
+			//$tag_type      = 'repeater';
+			$empty_opener  = false;
+			$close_tag     = '</perch:'.$tag_type.'>';
+			$close_tag_len = mb_strlen($close_tag);
+			$open_tag      = '<perch:'.$tag_type.($empty_opener ? '' : ' ');
 
-		$order = 1;
+			$order = 1;
 
-		// escape hatch
-		$i = 0;
-		$max_loops = 100;
+			// escape hatch
+			$i = 0;
+			$max_loops = 100;
 
-		// loop through while we have closing tags
-    	while($close_pos = mb_strpos($contents, $close_tag)) {
+			// loop through while we have closing tags
+	    	while($close_pos = mb_strpos($contents, $close_tag)) {
 
 
-    		// we always have to go from the start, as the string length changes,
-    		// but stop at the closing tag
-    		$chunk = mb_substr($contents, 0, $close_pos);
+	    		// we always have to go from the start, as the string length changes,
+	    		// but stop at the closing tag
+	    		$chunk = mb_substr($contents, 0, $close_pos);
 
-    		// search from the back of the chunk for the opening tag
-    		$open_pos = mb_strrpos($chunk, $open_tag);
+	    		// search from the back of the chunk for the opening tag
+	    		$open_pos = mb_strrpos($chunk, $open_tag);
 
-    		// get the pair html chunk
-    		$len = ($close_pos+$close_tag_len)-$open_pos;
-    		$pair_html = mb_substr($contents, $open_pos, $len);
+	    		// get the pair html chunk
+	    		$len = ($close_pos+$close_tag_len)-$open_pos;
+	    		$pair_html = mb_substr($contents, $open_pos, $len);
 
-    		// find the opening tag - it's right at the start
-    		$opening_tag_end_pos = mb_strpos($pair_html, '>')+1;
-    		$opening_tag = mb_substr($pair_html, 0, $opening_tag_end_pos);
+	    		// find the opening tag - it's right at the start
+	    		$opening_tag_end_pos = mb_strpos($pair_html, '>')+1;
+	    		$opening_tag = mb_substr($pair_html, 0, $opening_tag_end_pos);
 
-    		// condition contents
-    		$condition_contents = mb_substr($pair_html, $opening_tag_end_pos, 0-$close_tag_len);
+	    		// condition contents
+	    		$condition_contents = mb_substr($pair_html, $opening_tag_end_pos, 0-$close_tag_len);
 
-    		// Do the business
-    		$OpeningTag = new PerchXMLTag($opening_tag);
+	    		// Do the business
+	    		$OpeningTag = new PerchXMLTag($opening_tag);
 
-    		$Repeater = new PerchRepeater($OpeningTag->attributes);
-    		$Repeater->set('id', $OpeningTag->id());
-    		$Repeater->tags = $this->find_all_tags($type, $condition_contents);
+	    		$tmp = array();
 
-    		$tmp = array();
-    		$tmp['tag'] = $Repeater;
-   		
+	    		if ($tag_type=='repeater') {
+	    			$Repeater = new PerchRepeater($OpeningTag->attributes);
+	    			$Repeater->set('id', $OpeningTag->id());
+	    			$Repeater->tags = $this->find_all_tags($type, $condition_contents);
 
-    		if ($OpeningTag->order()) {
-                $tmp['order'] = (int) $OpeningTag->order();
-            }else{
-                $tmp['order'] = $open_pos;
-            }
+	    			$tmp['tag'] = $Repeater;
+	    		}else{
+	    			$tmp['tag'] = $OpeningTag;
+	    		}
 
-            $out[] = $tmp;
 
-			// Remove the pair so we can parse the next one
-			$contents = str_replace($pair_html, '', $contents);
+	    		if ($OpeningTag->order()) {
+	                $tmp['order'] = (int) $OpeningTag->order();
+	            }else{
+	                $tmp['order'] = $open_pos;
+	            }
 
-    		// escape hatch counter
-    		$i++;
-    		if ($i > $max_loops) return $contents;
-    	}
+	            $out[] = $tmp;
 
+				// Remove the pair so we can parse the next one
+				$contents = str_replace($pair_html, '', $contents);
+
+	    		// escape hatch counter
+	    		$i++;
+	    		if ($i > $max_loops) return $contents;
+	    	}
+		}
 
 		$s = '/<perch:('.$type.'|categories)[^>]*>/';
-		$count	= preg_match_all($s, $contents, $matches);
-
-		
+		$count	= preg_match_all($s, $contents, $matches);	
 		
 		if ($count > 0) {
 		    $i = 100;
@@ -457,6 +480,10 @@ class PerchTemplate
 						$tmp['tag']->set('type', 'category');
 					}
 		            
+		            if ($tmp['tag']->tag_name()=='perch:related') {
+						$tmp['tag']->set('type', 'related');
+					}
+
 		            if ($tmp['tag']->type()!='repeater') {
 		            	if ($tmp['tag']->order()) {
 			                $tmp['order'] = (int) $tmp['tag']->order();
@@ -552,7 +579,7 @@ class PerchTemplate
     		}
     	}
 
-		$s 			.= 'setting|url))[^>]*>/';
+		$s 			.= 'setting|url|layout))[^>]*>/';
 
 		$contents	= preg_replace($s, '', $contents);
 
@@ -711,6 +738,7 @@ class PerchTemplate
 		        	}
 
 	        	}else{
+
 		            if (array_key_exists($tag->exists(), $content_vars) && $this->_resolve_to_value($content_vars[$tag->exists()]) != '') {
 	    	            $template_contents  = str_replace($exact_match, $positive, $template_contents);
 	    	        }else{
@@ -773,6 +801,8 @@ class PerchTemplate
 	            	$sideB = str_replace(array('{', '}'), '', $sideB);
 	            	if (isset($content_vars[$sideB])) {
 	            		$sideB = $this->_resolve_to_value($content_vars[$sideB]);
+	            	}else{
+	            		$sideB = false;
 	            	}
 
 	            	if ($tag->format() && $tag->format_both()) $sideB = $this->_format($tag, $sideB);
@@ -1096,6 +1126,71 @@ class PerchTemplate
 		return str_replace($exact_match, $out, $template_contents);
 	}
 
+	protected function parse_related($contents, $content_vars)
+	{
+		if (PERCH_RUNWAY) {
+			return $this->parse_paired_tags('related', false, $contents, $content_vars, false, 'render_related');
+		}
+
+		return $contents;
+	}
+
+	protected function render_related($type, $opening_tag, $condition_contents, $exact_match, $template_contents, $content_vars, $index_in_group)
+	{
+		$Tag = new PerchXMLTag($opening_tag);
+		$out = '';
+
+		if ($Tag->suppress()) {
+			return str_replace($exact_match, '', $template_contents);
+		}
+
+		if (is_array($content_vars) && isset($content_vars[$Tag->id()]) && PerchUtil::count($content_vars[$Tag->id()])) {
+		
+			if (!class_exists('PerchContent_Collections', false)) {
+			    include_once(PERCH_CORE.'/runway/apps/content/PerchContent_Collections.class.php');
+			    include_once(PERCH_CORE.'/runway/apps/content/PerchContent_Collection.class.php');
+			    include_once(PERCH_CORE.'/runway/apps/content/PerchContent_CollectionItems.class.php');
+			    include_once(PERCH_CORE.'/runway/apps/content/PerchContent_CollectionItem.class.php');
+			}
+
+			$Collections = $this->_get_cached_object('PerchContent_Collections');
+			$value 		 = $Collections->get_data_from_ids_runtime($Tag->collection(), $content_vars[$Tag->id()], $Tag->sort());
+
+			$RelatedTemplate = new PerchTemplate(false, $this->namespace);
+			$RelatedTemplate->load($condition_contents);
+
+			if (PerchUtil::bool_val($Tag->scope_parent())) {
+				$vars_for_cat = array();
+				if (PerchUtil::count($content_vars)) {
+					foreach($content_vars as $key => $val) {
+						if ($key!=$Tag->id() && $key!='itemJSON') {
+							$vars_for_cat['parent.'.$key] = $val;	
+						}
+					}
+				}
+				$vars_for_cat = array_merge($vars_for_cat, $content_vars[$Tag->id()]);
+
+				foreach($value as &$item) {
+					$item = array_merge($item, $vars_for_cat);
+				}
+			}
+
+			$out = $RelatedTemplate->render_group($value, true);
+		}else{
+			if (strpos($condition_contents, 'perch:noresults')) {
+		        $s = '/<perch:noresults[^>]*>(.*?)<\/perch:noresults>/s';
+		        $count	= preg_match_all($s, $condition_contents, $matches, PREG_SET_ORDER);
+			    
+				if ($count > 0) {
+					foreach($matches as $match) {
+					    $out .= $match[1];
+					}	
+				}	
+			}	
+		}
+		return str_replace($exact_match, $out, $template_contents);
+	}
+
 
 	public function enable_encoding()
 	{
@@ -1115,6 +1210,7 @@ class PerchTemplate
 
         $html = $this->render_settings($html);
         $html = $this->render_forms($html, $vars);
+        $html = $this->render_layouts($html, $vars);
                 
         return $html;
     }
@@ -1146,9 +1242,45 @@ class PerchTemplate
         return $html;
     }
 
+    public function render_layouts($html, $vars=array())
+    {
+    	if (strpos($html, 'perch:layout')!==false) {
+			$s = '/<perch:layout[^>]*>/';
+			$count	= preg_match_all($s, $html, $matches);
+
+			$renderer = $this->layout_renderer;
+
+			if ($count > 0) {
+			    if (is_array($matches[0])){
+			        foreach($matches[0] as $match) {			            
+			            $Tag = new PerchXMLTag($match);
+			            
+			            $attrs = $Tag->get_attributes();
+			            if (is_array($vars)) {
+			            	$vars = array_merge($vars, $attrs);
+			            }else{
+			            	$vars = $attrs;
+			            }
+
+			            $out = $renderer($Tag->path(), $vars, true);
+
+			            $html = str_replace($match, $out, $html);
+			        }
+			    }
+    	    }
+    	}
+    	
+    	return $html;
+    }
+
     public function format_value($tag, $value) 
     {
     	return $this->_format($tag, $value);
+    }
+
+    public function set_layout_renderer($renderer)
+    {
+    	$this->layout_renderer = $renderer;
     }
 
     private function _resolve_to_value($val)
@@ -1158,6 +1290,11 @@ class PerchTemplate
     	}
 
     	if (is_array($val)) {
+
+    		if (count($val)==0) {
+    			return '';
+    		}
+
     		if (isset($val['_default'])) {
     			return trim($val['_default']);
     		}

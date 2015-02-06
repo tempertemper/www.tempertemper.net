@@ -16,6 +16,9 @@ class PerchCategories_Categories extends PerchFactory
 
 	public function create($data)
 	{
+		if (!isset($data['catDisplayPath'])) {
+			$data['catDisplayPath'] = '';
+		}
 		$Category = parent::create($data);
 		if (is_object($Category)) {
 			$Category->update_tree_position();	
@@ -31,6 +34,7 @@ class PerchCategories_Categories extends PerchFactory
 
 		$path_parts = explode('/', $catPath);
 		$setSlug = array_shift($path_parts);
+		array_pop($path_parts);
 		$catSlug = array_pop($path_parts);
 
 		$Sets = new PerchCategories_Sets($this->api);
@@ -38,11 +42,12 @@ class PerchCategories_Categories extends PerchFactory
 
 		if (is_object($Set)) {
 			$data = array(
-				'setID'       => $Set->id(),
-				'catTitle'    => $label,
-				'catSlug'     => $catSlug,
-				'catPath'     => $catPath,
-				'catParentID' => 0,
+				'setID'          => $Set->id(),
+				'catTitle'       => $label,
+				'catSlug'        => $catSlug,
+				'catPath'        => $catPath,
+				'catDisplayPath' => '',
+				'catParentID'    => 0,
 				);	
 			$Cat = $this->create($data);
 
@@ -56,7 +61,7 @@ class PerchCategories_Categories extends PerchFactory
 	{
 	    $sql = 'SELECT c.*, (SELECT COUNT(*) FROM '.$this->table.' WHERE catParentID=c.catID) AS subcats 
 	            FROM '.$this->table.' c
-	            WHERE setID='.$this->db->pdb($setID).'
+	            WHERE setID='.$this->db->pdb((int)$setID).'
 	            ORDER BY catTreePosition ASC';
 	    $rows   = $this->db->get_rows($sql);
 	    
@@ -66,8 +71,8 @@ class PerchCategories_Categories extends PerchFactory
 	public function get_by_parent($parentID, $setID)
 	{
 	    $sql = 'SELECT * FROM '.$this->table.'
-	            WHERE catParentID='.$this->db->pdb($parentID).'
-	            		AND setID='.$this->db->pdb($setID).'
+	            WHERE catParentID='.$this->db->pdb((int)$parentID).'
+	            		AND setID='.$this->db->pdb((int)$setID).'
 	            ORDER BY catTreePosition ASC'; 
 		        
 		$rows   = $this->db->get_rows($sql);	
@@ -118,6 +123,19 @@ class PerchCategories_Categories extends PerchFactory
 
 	}
 
+	public function get_cat_paths_by_id_runtime()
+	{
+		$sql  = 'SELECT catID, catPath FROM '.$this->table;
+		$rows = $this->db->get_rows($sql);
+		$out  = array();
+		if (PerchUtil::count($rows)) {
+			foreach($rows as $row) {
+				$out[$row['catID']] = $row['catPath'];
+			}
+		}
+		return $out;
+	}
+
 	public function get_custom($opts, $api=false)
 	{
 		if ($api) $this->api = $api;
@@ -146,9 +164,19 @@ class PerchCategories_Categories extends PerchFactory
 			// count
 			if (isset($opts['count-type'])) {
 
+				/*
 				$Query->select .= ', cc.countValue AS  `count.'.$opts['count-type'].'` ';
 				$Query->from   .= ', '.PERCH_DB_PREFIX.'category_counts cc ';
 				$Query->where[] = 'cc.catID=main.catID AND cc.countType='.$db->pdb($opts['count-type']);
+
+				if (isset($opts['include-empty']) && $opts['include-empty']==false) {
+					$Query->where[] = 'cc.countValue > 0';
+				} 
+				 */
+
+				$Query->select .= ', COALESCE(cc.countValue,0) AS `count.'.$opts['count-type'].'` ';
+				$Query->from   .= ' LEFT OUTER JOIN '.PERCH_DB_PREFIX.'category_counts cc ON  cc.catID=main.catID';
+				$Query->where[] = ' (cc.countType='.$db->pdb($opts['count-type']).' OR cc.countType IS NULL)';
 
 				if (isset($opts['include-empty']) && $opts['include-empty']==false) {
 					$Query->where[] = 'cc.countValue > 0';

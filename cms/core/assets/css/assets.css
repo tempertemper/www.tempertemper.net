@@ -26,6 +26,7 @@
 	-webkit-align-items: center;
 	align-items: center;
 	background-color: #fff;
+	overflow: hidden;
 }
 
 .grid-asset .thumb {
@@ -59,6 +60,14 @@ a:visited .grid-asset .asset-meta {
 	display: none;
 }
 
+
+.grid-asset .asset-meta,
+a:link .grid-asset .asset-meta,
+a:visited .grid-asset .asset-meta {
+	background-color: rgba(255, 255, 255, 0.9);
+	padding-bottom: 6px;
+}
+
 .grid-asset:hover .asset-meta,
 a:link .grid-asset:hover .asset-meta,
 a:visited .grid-asset:hover .asset-meta {
@@ -74,33 +83,42 @@ a:visited .grid-asset:hover .asset-meta {
 	white-space: normal;
 }
 
+.asset-badge-thumb img,
+.grid-asset.asset-image img {
+	background-color: #eee;
+	background-image: linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white), 
+	linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white);
+	background-size: 30px 30px;
+	background-position: 0 0, 15px 15px
+}
+
 .asset-meta .title {
 	display: inline-block;
 	padding: 0px 6px 1px 0px;
 }
 
 .asset-icon.asset-image {
-	background-position: 50% 60px;
+	background-position: 50% 80px;
 }
 
 .asset-icon.asset-doc {
-	background-position: 50% -70px;
+	background-position: 50% -90px;
 }
 
 .asset-icon.asset-video {
-	background-position: 50% -444px;
+	background-position: 50% -464px;
 }
 
 .asset-icon.asset-audio {
-	background-position: 50% -319px;
+	background-position: 50% -339px;
 }
 
 .asset-icon.asset-sheet {
-	background-position: 50% -194px;
+	background-position: 50% -214px;
 }
 
 .asset-icon.asset-pres {
-	background-position: 50% -569px;
+	background-position: 50% -589px;
 }
 
 .asset-icon-cell {
@@ -426,6 +444,14 @@ a:visited .grid-asset:hover .asset-meta {
 	border-bottom: 1px solid rgb(234, 233, 233);
 }
 
+.asset-drop.static {
+	border: 0;
+	position: relative;
+	width: auto;
+	top: 0;
+	left: 0;
+}
+
 .asset-drop form {
 	position: absolute;
 	top: 0px;
@@ -436,6 +462,12 @@ a:visited .grid-asset:hover .asset-meta {
 	border: 1px dashed rgb(211, 211, 211);
 	padding: 20px;
 	color: rgb(142, 142, 142);
+	overflow: hidden;
+	background-color: rgb(248, 248, 248);
+}
+
+.asset-drop.static form {
+	margin: 0;
 }
 
 .asset-filter {
@@ -496,7 +528,24 @@ a:visited .grid-asset:hover .asset-meta {
   opacity: 1;
   -ms-filter: none;
   filter: none;
+  font-size: 22px;
+  margin-top: 50px;
+  text-align: center;
 }
+
+.static .dropzone .dz-message {
+	margin-top: 70px;
+}
+
+.dropzone .dz-message small {
+	display: block;
+	font-size: 14px;
+	font-style: italic;
+	color: #aaa;
+	font-weight: normal;
+	margin-top: .5em;
+}
+
 .dropzone.dz-drag-hover {
   border-color: rgba(0,0,0,0.15);
   background: rgba(0,0,0,0.04);
@@ -625,3 +674,40 @@ a:visited .grid-asset:hover .asset-meta {
 }
 
 
+
+/* experimental */
+
+.grid-asset {
+	width: 132px;
+	height: 132px;
+	padding: 0;
+}
+
+.grid-asset .thumb {
+	-webkit-flex: none;
+	flex: none;
+}
+
+.grid-asset .thumb.landscape {
+	min-height: 132px;
+	max-height: 132px;
+}
+
+.grid-asset .thumb.portrait {
+	min-width: 132px;
+	max-width: 132px;
+}
+
+.grid-asset .thumb.square {
+	min-width: 132px;
+	max-width: 132px;
+	min-height: 132px;
+	max-height: 132px;
+}
+
+.grid-asset .asset-meta,
+a:link .grid-asset .asset-meta,
+a:visited .grid-asset .asset-meta {
+	width: 114px;
+	max-height: 114px;
+}

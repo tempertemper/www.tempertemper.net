@@ -25,4 +25,3 @@
     include($app_path.'/modes/region.reorder.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-?>

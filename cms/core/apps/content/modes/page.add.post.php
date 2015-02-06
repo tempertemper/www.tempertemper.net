@@ -3,6 +3,7 @@
     <p>
         <?php echo PerchLang::get('These are the options for this page. Each page has a title, and navigation text which can be different from the title. The navigation text is used in menus and is often shorter than the main page title. '); ?>
     </p>
+    <?php if (!PERCH_RUNWAY) { ?>
     <p>
         <?php echo PerchLang::get('If creating a page from a Master Page, the file extension (e.g. .php) will be added automatically based on the Master Page.'); ?>
     </p>
@@ -15,6 +16,7 @@
     <p>
         <?php echo PerchLang::get('If you check the box to indicate that the page will have more pages below it, a new folder will be created rather than just a single file.'); ?>
     </p>
+    <?php } ?>
 
 
 <?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
@@ -46,11 +48,20 @@
         </div>
 
         <div class="field">
+        <?php if (PERCH_RUNWAY) { ?>
+        
+            <?php echo $Form->label('file_name', 'URL segment'); ?>
+            <?php echo $Form->text('file_name', $Form->get($details, 'file_name')); ?>
+        
+        <?php  } else { ?>
+        
             <?php echo $Form->label('file_name', 'File name'); ?>
             <?php echo $Form->text('file_name', $Form->get($details, 'file_name')); ?>
             <?php echo $Form->hint('The file extension will be added automatically. Can be a full URL to create just a link.'); ?>
+        
+        <?php } // runway ?>
         </div>
-
+        
         <div class="field">
             <?php echo $Form->label('pageParentID', 'Parent page'); ?>
             <?php 
@@ -80,26 +91,67 @@
         <div class="field">
             <?php echo $Form->label('templateID', 'Master page'); ?>
             <?php
-                $templates = $Templates->all();
-                $opts = array();
-                if (PerchUtil::count($templates)) {
-                    foreach($templates as $Template) {
-                        $opts[] = array('label'=>$Template->templateTitle(), 'value'=>$Template->id());
+                if (PERCH_RUNWAY) {
+                                        
+                    $opts = array();
+                    if ($ParentPage) {
+                        $templates = $PageTemplates->get_templates($ParentPage->pageSubpageTemplates());
+                    }else{
+                        $templates = $PageTemplates->get_templates();
                     }
-                    $opts[] = array('label'=>PerchLang::get('Page already exists, or is a link only'), 'value'=>'');
-                    echo $Form->select('templateID', $opts, $Form->get($details, 'templateID')); 
+                    
+
+                    if (PerchUtil::count($templates)) {
+                        $opts = array();
+
+                        foreach($templates as $group_name=>$group) {
+                            $tmp = array();
+                            $group = PerchUtil::array_sort($group, 'label');
+                            foreach($group as $file) {
+                                $tmp[] = array('label'=>$file['label'], 'value'=>$file['id']);
+                            }
+                            $opts[$group_name] = $tmp;
+                        }
+                        //$opts[PerchLang::get('General')][] = array('label'=>PerchLang::get('Local file'), 'value'=>'');
+
+                        echo $Form->grouped_select('templateID', $opts, $Form->get($details, 'templateID'));
+                    }else{
+                        echo '<a href="'.PERCH_LOGINPATH.'/core/apps/content/page/templates/">'.PerchLang::get('Manage templates').'</a>';
+                    }
+               
+                    
+
                 }else{
-                    echo '<a href="'.PERCH_LOGINPATH.'/core/apps/content/page/templates/">'.PerchLang::get('Manage templates').'</a>';
-                }             
+
+                    $templates = $Templates->all();
+                    $opts = array();
+                    if (PerchUtil::count($templates)) {
+                        foreach($templates as $Template) {
+                            $opts[] = array('label'=>$Template->templateTitle(), 'value'=>$Template->id());
+                        }
+                        $opts[] = array('label'=>PerchLang::get('Page already exists, or is a link only'), 'value'=>'');
+                        echo $Form->select('templateID', $opts, $Form->get($details, 'templateID')); 
+                    }else{
+                        echo '<a href="'.PERCH_LOGINPATH.'/core/apps/content/page/templates/">'.PerchLang::get('Manage templates').'</a>';
+                    }  
+
+                }
+                  
+
+
+
+
+
             ?>
         </div>
-
+        <?php if (!PERCH_RUNWAY) { ?>
         <div class="field checkboxes labelless">
             <div class="checkbox">
                 <?php echo $Form->checkbox('create_folder', '1', $Form->get($details, 'create_folder')); ?>
                 <?php echo $Form->label('create_folder', 'This page will have more pages below it'); ?>
             </div>
         </div>
+        <?php } ?>
         
 
         <p class="submit">

@@ -125,37 +125,46 @@
             $Category = $Categories->create($data);
 
 
-            // Add another mode? If so, redirect to a refreshed edit page
-            if ($Form->submitted_with_add_another()) {
-            	PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/edit/?sid='.$Set->id().'&created=1');
-            }
+            if ($Category) {
 
-            // Redirect into edit mode to make sure the ID is on the query string for subsequent edits.
-            // Makes things much cleaner and eliminates heaps of potential bugs.
-            PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/edit/?id='.$Category->id().'&created=1');
+	            // Add another mode? If so, redirect to a refreshed edit page
+	            if ($Form->submitted_with_add_another()) {
+	            	PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/edit/?sid='.$Set->id().'&created=1');
+	            }
+
+	            // Redirect into edit mode to make sure the ID is on the query string for subsequent edits.
+	            // Makes things much cleaner and eliminates heaps of potential bugs.
+	            PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/edit/?id='.$Category->id().'&created=1');
+
+	        }else{
+
+	        	$message = $HTML->failure_message('Sorry, that category could not be created.');
+
+	        }
         }
 
 
+        if (is_object($Category)) {
 
+	        /*
+	        	If this is an existing category, update it.
+	         */
+	        $Category->update($data);
+	    	
 
-        /*
-        	If this is an existing category, update it.
-         */
-        $Category->update($data);
-    	
+	    	/*
+	    		Update the entire set    	
+	    	 */
+	    	$Set->update_all_in_set();
 
-    	/*
-    		Update the entire set    	
-    	 */
-    	$Set->update_all_in_set();
+	        /*
+	        	Add another?        
+	         */
+	        if ($Form->submitted_with_add_another()) {
+	        	PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/edit/?sid='.$Set->id().'&edited=1');
+	        }
 
-        /*
-        	Add another?        
-         */
-        if ($Form->submitted_with_add_another()) {
-        	PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/edit/?sid='.$Set->id().'&edited=1');
-        }
-
+	    }
 
 
         /*

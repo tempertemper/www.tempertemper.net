@@ -12,7 +12,7 @@ class PerchAPI_Template
     private $Template = false;
     
     public $namespace = false;
-    
+
     function __construct($version=1.0, $app_id, $Lang)
     {
         $this->app_id  = $app_id;
@@ -29,7 +29,7 @@ class PerchAPI_Template
         
         if (strpos($file, '~')!==false) {
             $local_file = PerchUtil::file_path(PERCH_PATH.'/addons/apps/'.substr($file, strpos($file, '~')+1));
-            $user_file  = PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/'.substr($file, strpos($file, 'templates')+9));
+            $user_file  = PerchUtil::file_path(PERCH_TEMPLATE_PATH.substr($file, strpos($file, 'templates')+9));
         }else{
             $local_file = PerchUtil::file_path(PERCH_PATH.'/addons/apps/'.$this->app_id.'/templates/'.$file);
             $user_file  = PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/'.$file);
@@ -54,6 +54,24 @@ class PerchAPI_Template
         return $this->Template->status;
     }
     
+    public function set_from_string($str_template, $namespace)
+    {    
+        $Perch = Perch::fetch(); // called to make sure constants are defined.
+
+        $this->namespace = $namespace;
+        
+        
+        $this->Template = new PerchTemplate(false, $namespace, $relative_path=false);    
+        $this->Template->set_template('__STRING__');
+        $this->Template->load($str_template);
+        $this->Template->enable_encoding();
+        $this->Template->apply_post_processing = true;
+
+        $this->file = $this->Template->file;
+
+        return $this->Template->status;
+    }
+
     public function render($data)
     {
         return $this->Template->render($data);
@@ -73,6 +91,15 @@ class PerchAPI_Template
         return $this->Template->find_all_tags($namespace);
     }
     
+    public function find_all_tag_ids($namespace=false)
+    {
+        if ($namespace==false) {
+            $namespace = $this->namespace;
+        }
+        
+        return $this->Template->find_all_tag_ids($namespace);
+    }
+
     public function find_tag($tag)
 	{
 		return $this->Template->find_tag($tag);

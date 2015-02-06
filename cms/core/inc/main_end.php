@@ -1,2 +1,3 @@
 	</div> 
 </div>
+<?php flush();

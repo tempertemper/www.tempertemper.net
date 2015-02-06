@@ -45,5 +45,7 @@
     include(PERCH_CORE.'/lib/PerchFieldType.class.php');
     include(PERCH_CORE.'/lib/PerchFieldTypes.class.php');
     include(PERCH_CORE.'/lib/PerchXMLTag.class.php');
+    include(PERCH_CORE.'/lib/PerchResourceBuckets.class.php');
+    include(PERCH_CORE.'/lib/PerchResourceBucket.class.php');
 
     if (PERCH_RUNWAY) include(PERCH_CORE.'/runway/runtime.php');

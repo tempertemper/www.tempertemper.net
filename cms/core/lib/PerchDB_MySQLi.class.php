@@ -294,7 +294,7 @@ class PerchDB_MySQLi
 	{
 		// Stripslashes
 		if (get_magic_quotes_runtime()) {
-			$value = stripslashes($value);
+			$value = PerchUtil::safe_stripslashes($value);
 		}
 		
 		$link = $this->get_link();

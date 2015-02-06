@@ -20,12 +20,9 @@ Perch.UI.Slugs	= function()
 				}
 				out = out.join(' ');
 				if (out.length) {
-					out = out.replace(/[^\w-\s]/gi, '');
-					out = out.replace(/\s/gi, '-');
-					out = out.replace(/-{2,}/gi, '-');
-					out = out.replace(/-$/, '');
-					out = out.toLowerCase();
-					field.val(out);
+					$.get(Perch.path+'/core/async/urlify.php?s='+encodeURIComponent(out), function(r){
+						field.val(r);
+					});
 				}
 			});
 		});
