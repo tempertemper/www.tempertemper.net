@@ -21,15 +21,21 @@
 
     // Page attributes
     $API = new PerchAPI(1.0, 'perch_pages');
+    $Page->api($API);
     $Template = $API->get('Template');
     $status = $Template->set('pages/attributes/'.$Page->pageAttributeTemplate(), 'pages');
-    
+
+
     if ($status == 404) {
         $Alert->set('notice', PerchLang::get('The page attribute template (%s) could not be found.', '<code>templates/pages/attributes/'.$Page->pageAttributeTemplate().'</code>'));
     }
 
+    $details = $Page->to_array();
+
     $Form = $API->get('Form');
 
+    $Form->handle_empty_block_generation($Template);
+    
     
     $req = array();
     $req['pageTitle']   = "Required";
@@ -37,7 +43,7 @@
     
     $Form->set_required($req);
 
-    $Form->set_required_fields_from_template($Template, array('pageTitle', 'pageNavText'));
+    $Form->set_required_fields_from_template($Template, $details, array('pageTitle', 'pageNavText'));
     
     if ($Form->posted() && $Form->validate()) {
     	$postvars = array('pageTitle', 'pageNavText');
@@ -45,7 +51,7 @@
     	   
         $existing = PerchUtil::json_safe_decode($Page->pageAttributes(), true);
 
-    	$dynamic_fields = $Form->receive_from_template_fields($Template, $existing, $postvars);
+    	$dynamic_fields = $Form->receive_from_template_fields($Template, $existing, $Pages, $Page);
 
         $data['pageAttributes'] = PerchUtil::json_safe_encode($dynamic_fields);
 
@@ -53,10 +59,12 @@
         $Page->update($data);
 
         // log resources
-        $Page->api($API);
+        
     	$Page->log_resources();
 
     	$Alert->set('success', PerchLang::get('Successfully updated'));
+
+        $details = $Page->to_array();
     }
 
-    $details = $Page->to_array();
+    

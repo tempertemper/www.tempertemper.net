@@ -411,16 +411,16 @@ class PerchForm
 		return $s;
 	}
 	
-	public function hidden($id, $value='', $skip_id=false)
+	public function hidden($id, $value='', $skip_id=false, $class=false)
 	{
 		$this->fields[] = $id;
 		
 		if ($this->display_only) return '';
 		
 		if ($skip_id) {
-		    $s	= '<input type="hidden" name="'.$this->html($id, true).'" value="'.$this->html($value, true).'" />';
+		    $s	= '<input type="hidden" name="'.$this->html($id, true).'" value="'.$this->html($value, true).'" class="'.$this->html($class, true).'" />';
 		}else{
-		    $s	= '<input type="hidden" id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" value="'.$this->html($value, true).'" />';
+		    $s	= '<input type="hidden" id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" value="'.$this->html($value, true).'" class="'.$this->html($class, true).'" />';
 		}
 
 		return $s;
@@ -1089,5 +1089,3 @@ class PerchForm
 	}
 }
 
-
-?>

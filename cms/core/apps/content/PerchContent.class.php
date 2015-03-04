@@ -713,7 +713,7 @@ class PerchContent extends PerchApp
             if ($Paging->enabled()) {
                 $sql .= ' '.$Paging->limit_sql();
             }        
-                
+
             $rows = $this->db->get_rows($sql);
         
             if (PerchUtil::count($rows)==0) {
@@ -748,6 +748,7 @@ class PerchContent extends PerchApp
                     $sql .= ' '.$Paging->limit_sql();
                 }        
 
+
                 $rows = $this->db->get_rows($sql);
             }
         
@@ -768,12 +769,13 @@ class PerchContent extends PerchApp
                         $r['source'] = str_replace('_SearchHandler', '', $row['source']);
 
                         // duplicate vals
-                        foreach($r as $k=>$val) {
+                        foreach($r as $k=>$val) {    
                             $r['result_'.$k] = $val;
                             if ($opts['no-conflict']) {
-                                unset($r[$k]);
+                                //unset($r[$k]);
                             }
                         }
+
                           
                         $r['search_key'] = $key;
                         if (!$opts['no-conflict']) {
@@ -822,6 +824,7 @@ class PerchContent extends PerchApp
                 // compat
                 if (!$opts['no-conflict']) {
                     $row['url'] = $row['result_url'];
+                    if (isset($row['result_result_url'])) $row['result_url'] = $row['result_result_url'];
                 }
             }
 

@@ -129,10 +129,20 @@ class PerchAPI_Template
         return $this->Template->append($string, $parse_includes);
     }
 
-    public function find_all_tags_and_repeaters($type=false)
+    public function find_all_tags_and_repeaters($type=false, $contents=false)
     {
         if ($type==false) $type = $this->namespace;
-        return $this->Template->find_all_tags_and_repeaters($type);
+        return $this->Template->find_all_tags_and_repeaters($type, $contents);
+    }
+
+    public function get_block_tags($type)
+    {
+        return $this->Template->get_block_tags($type);
+    }
+
+    public function disable_feature($feature)
+    {
+        return $this->Template->disable_feature($feature);
     }
 
 }

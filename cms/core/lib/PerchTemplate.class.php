@@ -3,39 +3,38 @@
 class PerchTemplate
 {
 	public $namespace;
+	public $file;
+	public $status                = 0;
+	public $apply_post_processing = false;
+	public $current_file          = false;
+	
 	protected $template;
-	protected $cache                 = array();
-	protected $autoencode            = true;
+	protected $cache             = array();
+	protected $autoencode        = true;
 	
-	public 	  $file;
-	public    $status                = 0;
-	public    $apply_post_processing = false;
-	public    $current_file          = false;
-
-	private   $layout_renderer	 	 = 'perch_layout';
+	private $layout_renderer     = 'perch_layout';
+	private $_previous_item      = array();
+	private $cached_objects      = array();
+	private $blocks              = array();
 	
-	private   $_previous_item        = array();
-	private   $sub_vars              = array();
-
-	private $cached_objects 		 = array();
+	protected $disabled_features = array();
 	
 	function __construct($file=false, $namespace='content', $relative_path=true)
 	{
 		$Perch = Perch::fetch(); // required to define constants
 
-    	$this->current_file = $file;
-		
-		$this->namespace = $namespace;
+		$this->current_file = $file;
+		$this->namespace    = $namespace;
 
 		if ($file && $relative_path) {
 			$file = PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/'.$file);
 		}
 	
 		if ($file!=false && file_exists($file)) {
-		    $this->file		= $file;
-			$this->template	= $file;
+			$this->file     = $file;
+			$this->template = $file;
 			PerchUtil::debug('Using template: '.str_replace(PERCH_PATH, '', $file), 'template');
-			$this->status = 200;
+			$this->status   = 200;
 		}else{
 		    if ($file!=false) PerchUtil::debug('Template file not found: ' . $file, 'template');
 			$this->status = 404;
@@ -50,11 +49,18 @@ class PerchTemplate
 		$this->template = $template;
 	}
 
+	public function disable_feature($feature)
+	{
+		if (!in_array($feature, $this->disabled_features)) {
+			$this->disabled_features[] = $feature;
+		}
+	}
+
 	public function render_group($content_vars, $return_string=false, $limit=false)
 	{
-		$r	= array();
+		$r     = array();
 		$count = PerchUtil::count($content_vars);
-
+		
 		if ($count){
 
 			if ($limit===false) {
@@ -67,7 +73,9 @@ class PerchTemplate
 		    $this->_previous_item = array();
 
 		    for($i=0; $i<$count && $i<$limit; $i++) {
+
                 if (isset($content_vars[$i])) {
+
                     $item = $content_vars[$i];
                 		    
     			    if (is_object($item)) {
@@ -80,16 +88,29 @@ class PerchTemplate
     			    if ($i==0) 			$item['perch_item_first'] = true;
     			    if ($i==($count-1)) $item['perch_item_last']  = true;
 
-    			    $item['perch_item_zero_index'] = (string)$i;
-    			    $item['perch_item_index'] = $i+1;
-    			    $item['perch_item_odd']   = ($i % 2 == 0 ? '' : 'odd');
-    			    $item['perch_item_count'] = $count;
+					$item['perch_item_zero_index']     = (string)$i;
+					$item['perch_item_index']          = $i+1;
+					$item['perch_item_rev_index']      = (string)($count - $i);
+					$item['perch_item_rev_zero_index'] = (string)($count - ($i+1));
+					$item['perch_item_odd']            = ($i % 2 == 0 ? '' : 'odd');
+					$item['perch_item_count']          = $count;
     				
     				$r[] = $this->render($item, $i+1);
 
     				$this->_previous_item = $item;
+
+    				/*
+    				PerchUtil::debug('Resetting blocks');
+    				foreach($this->blocks as $key=>$val) {
+    					PerchUtil::debug($key.':', 'success');
+    					PerchUtil::debug($val, 'notice', true);
+    				}
+    				*/
+    				$this->blocks = array();
     			}
 			}
+
+			$this->_previous_item = null;
 		}
 		
 		if ($return_string) {
@@ -119,7 +140,13 @@ class PerchTemplate
 		$template	= str_replace(PERCH_PATH, '', $this->template);
 		$path		= $this->file;
 		
-		$contents	= $this->load();	
+		$contents	= $this->load();
+
+		// BLOCKS
+		$contents   = $this->parse_blocks($contents, $content_vars);
+
+		// SINGLE BLOCK
+		$contents 	= $this->render_block($contents, $content_vars);
 
 		// REPEATERS
 		$contents 	= $this->parse_repeaters($contents, $content_vars);
@@ -131,7 +158,7 @@ class PerchTemplate
 		$contents 	= $this->parse_categories($contents, $content_vars);
 
 		// FORMS
-		$contents 	= str_replace('<perch:form', '<perch:form template="'.$template.'"', $contents);
+		$contents 	= str_replace('<perch:form ', '<perch:form template="'.$template.'" ', $contents);
 		
 		// BEFORE
 		$contents 	= $this->parse_paired_tags('before', true,  $contents, $content_vars, $index_in_group, 'parse_conditional');
@@ -161,6 +188,44 @@ class PerchTemplate
 		$contents 	= $this->remove_unmatched_tags($contents);
 		
     	return $contents;
+	}
+
+	public function parse_blocks($contents, $content_vars)
+	{
+		if (strpos($contents, 'perch:blocks')>0) {
+			if (count($this->blocks)==0) {
+				$contents = $this->parse_paired_tags('block', false, $contents, array(), false, '_cache_block_template_variation');	
+				$contents = $this->parse_paired_tags('blocks', true, ' '.$contents, $content_vars, false, 'render_blocks');	
+			}
+		}
+		return $contents;
+	}
+
+	public function render_blocks($type, $opening_tag, $condition_contents, $exact_match, $template_contents, $content_vars, $index_in_group=false)
+	{
+		if (count($this->blocks)) {
+			foreach($this->blocks as $key=>$val) {
+				$this->blocks[$key] = str_replace('<BLOCKS />', $val, $condition_contents);
+			}
+		}
+
+		if (isset($content_vars['_blocks'])) {
+			$blocks = $content_vars['_blocks'];
+			$out = $this->render_group($blocks, true);
+			return str_replace($exact_match, $out, $template_contents);
+		}
+		return str_replace($exact_match, '', $template_contents);
+	}
+
+	public function render_block($content, $content_vars)
+	{
+		if (isset($content_vars['_block_type'])) {
+			if (isset($this->blocks[$content_vars['_block_type']])) {
+				return $this->blocks[$content_vars['_block_type']];
+			}
+		}
+
+		return $content;
 	}
 
 	public function replace_content_tags($namespace, $content_vars, $contents)
@@ -292,12 +357,13 @@ class PerchTemplate
 				    
 						$contents = str_replace($match, $modified_value, $contents);
 					}
+
+
 				}
 			}		
 		}
 		return $contents;
 	}
-
 
 	/**
 	 * Find tag by ID. Optionally also ID with a given output="" attribute
@@ -307,13 +373,11 @@ class PerchTemplate
 	{ 
 		$template	= $this->template;
 		$path		= $this->file;
-		
 		$contents	= $this->load();
 		
 		$s = '/<perch:[^>]*id="'.$tag.'"[^>]*>/';
 
 		if ($output) {
-
 			$count	= preg_match_all($s, $contents, $matches, PREG_SET_ORDER);
 
 			if ($count) {
@@ -324,9 +388,7 @@ class PerchTemplate
 					}
 				}
 			}
-
 		}else{
-			
 			$count	= preg_match($s, $contents, $match);
 
 			if ($count == 1){
@@ -382,25 +444,34 @@ class PerchTemplate
 		return false;
 	}
 
-	public function find_all_tags_and_repeaters($type='content')
+	public function find_all_tags_and_repeaters($type='content', $contents=false)
 	{
 	    $template	= $this->template;
 		$path		= $this->file;
 		
-		$contents	= $this->load();
+		if ($contents===false) $contents = $this->load();
 
 		$out = array();
 
-		$tag_pairs_to_process = array('repeater');
+		// Excluded tags are discarded
+		$tag_pairs_to_exclude         = array();
+
+		$tag_pairs_with_empty_openers = array('blocks');
+		
+		//	List of tags to process. Blocks needs to come before others, as blocks can contain e.g. repeaters.
+		$tag_pairs_to_process         = array('blocks', 'repeater');
+
 		if (PERCH_RUNWAY) {
-			$tag_pairs_to_process[] = 'related';
+			$tag_pairs_to_process[]   = 'related';
 		}
+
+		// Add excluded tags so they can be discarded.
+		$tag_pairs_to_process = array_merge($tag_pairs_to_process, $tag_pairs_to_exclude);
 		
 		foreach($tag_pairs_to_process as $tag_type) {
-			// parse out repeater tags
+			// parse out tag pairs
 			
-			//$tag_type      = 'repeater';
-			$empty_opener  = false;
+			$empty_opener  = in_array($tag_type, $tag_pairs_with_empty_openers);
 			$close_tag     = '</perch:'.$tag_type.'>';
 			$close_tag_len = mb_strlen($close_tag);
 			$open_tag      = '<perch:'.$tag_type.($empty_opener ? '' : ' ');
@@ -413,7 +484,6 @@ class PerchTemplate
 
 			// loop through while we have closing tags
 	    	while($close_pos = mb_strpos($contents, $close_tag)) {
-
 
 	    		// we always have to go from the start, as the string length changes,
 	    		// but stop at the closing tag
@@ -444,10 +514,13 @@ class PerchTemplate
 	    			$Repeater->tags = $this->find_all_tags($type, $condition_contents);
 
 	    			$tmp['tag'] = $Repeater;
+	    		}elseif ($tag_type=='blocks'){
+	    			$OpeningTag->set('id', '_blocks');
+	    			$OpeningTag->set('type', 'PerchBlocks');
+	    			$tmp['tag'] = $OpeningTag;
 	    		}else{
 	    			$tmp['tag'] = $OpeningTag;
 	    		}
-
 
 	    		if ($OpeningTag->order()) {
 	                $tmp['order'] = (int) $OpeningTag->order();
@@ -455,7 +528,11 @@ class PerchTemplate
 	                $tmp['order'] = $open_pos;
 	            }
 
-	            $out[] = $tmp;
+	            // If the tag isn't one to strip/exclude, add it to the list.
+	            if (!in_array($tag_type, $tag_pairs_to_exclude)) {
+	            	$out[] = $tmp;		
+	            }
+            
 
 				// Remove the pair so we can parse the next one
 				$contents = str_replace($pair_html, '', $contents);
@@ -476,9 +553,11 @@ class PerchTemplate
 		            $tmp = array();
 		            $tmp['tag'] = new PerchXMLTag($match);
 
-		            if ($tmp['tag']->tag_name()=='perch:categories') {
-						$tmp['tag']->set('type', 'category');
-					}
+		            if (!in_array('categories', $this->disabled_features)) {
+	    	            if ($tmp['tag']->tag_name()=='perch:categories') {
+	    					$tmp['tag']->set('type', 'category');
+	    				}	
+		            }
 		            
 		            if ($tmp['tag']->tag_name()=='perch:related') {
 						$tmp['tag']->set('type', 'related');
@@ -493,13 +572,11 @@ class PerchTemplate
 			            }
 	                    $out[] = $tmp;
 		            }
-		            
 		        }
 		    }
 		    
 		    // sort tags using 'order' attribute
 		    $out = PerchUtil::array_sort($out, 'order');
-		    
 		}
 
 		if (PerchUtil::count($out)) {
@@ -563,7 +640,6 @@ class PerchTemplate
 		}
 
 		return $contents;
-		
 	}
 
 	public function remove_unmatched_tags($contents)
@@ -629,8 +705,9 @@ class PerchTemplate
 		$contents	= '';
 		
 		if ($template_string!==false) {
-		    $contents = $template_string;
+		    $contents = $this->_strip_comments($template_string);
 		    $this->cache[$this->template]	= $contents;
+		    $this->blocks = array();
 		}else{
 		    // check if template is cached
     		if (isset($this->cache[$this->template])){
@@ -640,7 +717,9 @@ class PerchTemplate
     			// read and cache		
     			if (file_exists($this->file)){
     				$contents 	= file_get_contents($this->file);
+    				$contents 	= $this->_strip_comments($contents);
     				$this->cache[$this->template]	= $contents;
+    				$this->blocks = array();
     			}
     		}
 		}
@@ -655,6 +734,7 @@ class PerchTemplate
 	    			    $file = PERCH_TEMPLATE_PATH.DIRECTORY_SEPARATOR.$match[1];
 	    			    if (file_exists($file)) {
 	    			        $subtemplate = file_get_contents($file);
+	    			        $subtemplate = $this->_strip_comments($subtemplate);
 
 	    			        // rescope?
 	    			        if($this->namespace!='content' && strpos($match[0], 'rescope=')) {
@@ -667,10 +747,11 @@ class PerchTemplate
 	    			    }
 	    			}
 	    			$this->cache[$this->template]	= $contents;	
+	    			$this->blocks = array();
 	    		}
 	    	}
 		}
-		
+
 		return $contents;
 	}
 
@@ -685,7 +766,6 @@ class PerchTemplate
 	
 	protected function parse_conditional($type, $opening_tag, $condition_contents, $exact_match, $template_contents, $content_vars, $index_in_group=false)
 	{
-	    
 	    // IF
 	    if ($type == 'if') {
 	        $tag = new PerchXMLTag($opening_tag);
@@ -747,7 +827,6 @@ class PerchTemplate
 
 	    	        return $template_contents;
 	        	}
-
 	            
 	        }
 
@@ -808,7 +887,6 @@ class PerchTemplate
 	            	if ($tag->format() && $tag->format_both()) $sideB = $this->_format($tag, $sideB);
 	            }
 	                      
-	                      
 	            switch($comparison) {
 	                case 'eq': 
                     case 'is': 
@@ -865,9 +943,7 @@ class PerchTemplate
                             }
                         }
                         break;
-                    
 	            }          
-	                      
 	            
 	            if ($matched) {
 	                $template_contents  = str_replace($exact_match, $positive, $template_contents);
@@ -920,9 +996,7 @@ class PerchTemplate
                 $negative = $parts[1];
             }
         }
-
-
-	    
+    
 	    if ($tag->count()) {
 	        $count = (int) $tag->count();
             $offset = 0;
@@ -1069,6 +1143,10 @@ class PerchTemplate
 
 	protected function parse_categories($contents, $content_vars)
 	{
+		if (in_array('categories', $this->disabled_features)) {
+			return $contents;
+		}
+
 		return $this->parse_paired_tags('categories', false, $contents, $content_vars, false, 'render_categories');
 	}
 
@@ -1191,7 +1269,6 @@ class PerchTemplate
 		return str_replace($exact_match, $out, $template_contents);
 	}
 
-
 	public function enable_encoding()
 	{
 	    $this->autoencode = true;
@@ -1203,8 +1280,8 @@ class PerchTemplate
 
     	if (PerchUtil::count($handlers)) {
     		foreach($handlers as $handlerClass) {
-    			$Handler = new $handlerClass;
-    			$html = $Handler->render_runtime($html, $this);
+				$Handler = new $handlerClass;
+				$html    = $Handler->render_runtime($html, $this);
     		}
     	}
 
@@ -1217,7 +1294,7 @@ class PerchTemplate
     
     public function render_forms($html, $vars=array())
     {
-        if (strpos($html, 'perch:form')!==false) {
+        if (strpos($html, 'perch:form ')!==false) {
             $Form = new PerchTemplatedForm($html);
             $html = $Form->render($vars);
         }
@@ -1281,6 +1358,18 @@ class PerchTemplate
     public function set_layout_renderer($renderer)
     {
     	$this->layout_renderer = $renderer;
+    }
+
+    public function get_block_tags($type)
+    {
+    	if (count($this->blocks)==0) {
+    		$template = $this->load();
+    		$this->parse_blocks($template, array());
+    	}	
+
+    	if (isset($this->blocks[$type])) {
+    		return $this->find_all_tags_and_repeaters($this->namespace, $this->blocks[$type]);
+    	}
     }
 
     private function _resolve_to_value($val)
@@ -1377,8 +1466,7 @@ class PerchTemplate
                 	$modified_value = round($modified_value/1024, 0).'KB';
                 }else{
                 	$modified_value = round($modified_value/1024/1024, 0).'MB';
-                }
-                
+                }             
                 break;
 
             case 'UC':
@@ -1448,14 +1536,6 @@ class PerchTemplate
     	}
  
     	return $value;
-    }
-
-    private function substitute_vars($matches)
-    {
-        $sub_vars = $this->sub_vars;
-        if (isset($sub_vars[$matches[1]])){
-            return $sub_vars[$matches[1]];
-        }
     }
 
     private function parse_paired_tags($type, $empty_opener=false, $contents, $content_vars, $index_in_group=false, $callback='parse_conditional')
@@ -1546,6 +1626,26 @@ class PerchTemplate
     	}
 
     	return false;
+    }
+
+    private function _strip_comments($str)
+    {
+    	if (strpos($str, '<!--*')!==false) {
+    		$pattern = '#\s*\Q<!--*\E([\w\W]*?)\Q*-->\E\s*#';
+    		return preg_replace($pattern, '', $str);	
+    	}
+    	return $str;
+    }
+
+    private function _cache_block_template_variation($type, $opening_tag, $condition_contents, $exact_match, $template_contents, $content_vars, $index_in_group=false)
+    {
+    	$OpeningTag = new PerchXMLTag($opening_tag);
+    	$block_index = count($this->blocks);
+    	$this->blocks[$OpeningTag->type()] = $condition_contents;
+    	
+    	$replacement = '';
+    	if ($block_index==0) $replacement = '<BLOCKS />';
+    	return str_replace($exact_match, $replacement, $template_contents);
     }
 
 }

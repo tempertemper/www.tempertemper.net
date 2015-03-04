@@ -44,6 +44,7 @@
         <thead>
             <tr>
                 <th class="kindofabigdeal"><?php echo PerchLang::get('Category'); ?></th>
+                <th><?php echo PerchLang::get('Path'); ?></th>
                 <th class="action"></th>
             </tr>
         </thead>
@@ -62,6 +63,8 @@
                     }
 
                     echo'</td>';
+
+                    echo '<td>'.PerchUtil::html($Cat->catPath()).'</td>';
                         
                     // Delete
                     echo '<td>';
