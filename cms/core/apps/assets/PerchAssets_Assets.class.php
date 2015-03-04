@@ -61,7 +61,7 @@ class PerchAssets_Assets extends PerchFactory
 
 
 
-		$sql .= ' ORDER BY r1.resourceUpdated DESC, r1.resourceCreated DESC ';
+		$sql .= ' ORDER BY r1.resourceUpdated DESC, r1.resourceID DESC ';
 
 
 		$sql .= $Paging->limit_sql();

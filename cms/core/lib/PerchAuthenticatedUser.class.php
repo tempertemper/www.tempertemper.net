@@ -16,6 +16,9 @@ class PerchAuthenticatedUser extends PerchBase
         // Passwords should never be longer than 72 characters
         if (strlen($password) > 72) return false;
         
+        $username = filter_var($username, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+        $password = filter_var($password, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+
         if ($this->activate()) {
 
             $sql     = 'SELECT u.*, r.* FROM ' . $this->table . ' u, '.PERCH_DB_PREFIX.'user_roles r
@@ -100,7 +103,9 @@ class PerchAuthenticatedUser extends PerchBase
             }
         }
 
-        syslog(LOG_INFO, "Authentication failure for $username from ".PerchUtil::get_client_ip());
+        PerchUtil::debug('Writing auth fail to log.');
+        $username = escapeshellcmd(stripslashes($username));
+        syslog(LOG_INFO, 'Authentication failure for '.$username.' from '.PerchUtil::get_client_ip());
         
         return false;
     }

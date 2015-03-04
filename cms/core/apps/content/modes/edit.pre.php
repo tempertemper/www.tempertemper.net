@@ -58,11 +58,6 @@
             $item_id = (int) $_GET['itm'];
             $mode = 'edit.form'; 
         }
-        
+
         include __DIR__.'/'.$mode.'.pre.php';
     }
-
-
-
-    
-?>

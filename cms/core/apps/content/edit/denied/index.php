@@ -25,4 +25,3 @@
     include($app_path.'/modes/edit.denied.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-?>

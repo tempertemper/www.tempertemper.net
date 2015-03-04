@@ -86,6 +86,17 @@ class PerchFieldType_hidden extends PerchFieldType
     }
 }
 
+/* ------------ EDIT CONTROL (INTERNAL) ------------ */
+
+class PerchFieldType_editcontrol extends PerchFieldType
+{
+    public function render_inputs($details=array())
+    {
+        return $this->Form->hidden($this->Tag->input_id(), $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), false, $this->Tag->class());
+
+    }
+}
+
 /* ------------ URL ------------ */
 
 class PerchFieldType_url extends PerchFieldType
@@ -454,7 +465,7 @@ class PerchFieldType_textarea extends PerchFieldType
                 $details = array($this->Tag->id()=>$data['raw']);
             }   
         }
-    
+
         $s = $this->Form->textarea($this->Tag->input_id(), $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), $classname, $data_atrs);
         $s .= '<div class="clear"></div>';
         if ($this->Tag->count()) {

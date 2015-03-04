@@ -5,14 +5,14 @@
     $image_folder_writable = is_writable(PERCH_RESFILEPATH);
 
     // set the current user
-	$Region->set_current_user($CurrentUser->id());    
+    $Region->set_current_user($CurrentUser->id());    
 
     // get options
     $options = $Region->get_options();
 
-	// get Page
-	$Pages = new PerchContent_Pages;
-	$Page = $Pages->find($Region->pageID());
+    // get Page
+    $Pages = new PerchContent_Pages;
+    $Page = $Pages->find($Region->pageID());
 
     if (!is_object($Page)) {
         $Page = $Pages->get_mock_shared_page();
@@ -48,7 +48,7 @@
         $fUndo = new PerchForm('undo');
 
         if ($fUndo->posted()) {
-        	if ($Region->revert_most_recent()) {
+            if ($Region->revert_most_recent()) {
                 
                 $Region->index();
 
@@ -59,11 +59,11 @@
                 }
 
                 $Perch->event('page.publish', $Page);
-        	    
-        	    $Alert->set('success', PerchLang::get('Your most recent change has been reverted.'));
-        	}else{
-        	    $Alert->set('error', PerchLang::get('There was nothing to undo.'));
-        	}
+                
+                $Alert->set('success', PerchLang::get('Your most recent change has been reverted.'));
+            }else{
+                $Alert->set('error', PerchLang::get('There was nothing to undo.'));
+            }
             
         }   
     }
@@ -80,19 +80,19 @@
 
         $Template = new PerchTemplate('content/'.$Region->regionTemplate(), 'content');
 
-		if ($Template->status==404) {
-			$Alert->set('error', PerchLang::get('The template for this region (%s) cannot be found.', '<code>'.$Region->regionTemplate().'</code>'));
-		}
+        if ($Template->status==404) {
+            $Alert->set('error', PerchLang::get('The template for this region (%s) cannot be found.', '<code>'.$Region->regionTemplate().'</code>'));
+        }
 
         $tags   = $Template->find_all_tags_and_repeaters('content');
 
-                
+        //PerchUtil::debug($tags, 'db');
+        
         $template_help_html = $Template->find_help();
         
         $Form = new PerchForm('edit');
         
-        $req = array();
-        
+        $req = array();    
 
         // initialise field types (add head javascript)
         $all_tags = $Template->find_all_tags('content');
@@ -102,18 +102,15 @@
             }
         }
         
-
-
         // Check for required content
         if (is_array($tags)) {
             foreach($details as $item) {
                 $id = $item['itemID'];
-                PerchContent_Util::set_required_fields($Form, $id, $item, $tags);
+                PerchContent_Util::set_required_fields($Form, $id, $item, $tags, $Template);
             }        
         }
 
-        
-        
+       
         if ($Form->posted() && $Form->validate()) {
             
             // New rev
@@ -141,21 +138,27 @@
                         
                         $form_vars      = array();
                         $file_paths     = array();
-                    	
-                    	$search_text    = ' ';
-                    	
-                    	$form_vars['_id'] = $id;
+                        
+                        $search_text    = ' ';
+                        
+                        $form_vars['_id'] = $id;
                     
                         $postitems = $Form->find_items('perch_'.$id.'_');
 
                         $subprefix = '';
                                             
-                        list($form_vars, $search_text) = PerchContent_Util::read_items_from_post($Item, $tags, $subprefix, $form_vars, $postitems, $Form, $search_text, $options, $Resources);
+                        list($form_vars, $search_text) = PerchContent_Util::read_items_from_post($Item, $tags, $subprefix, $form_vars, $postitems, $Form, $search_text, $options, $Resources, false, $Template);
+
+                        if (isset($form_vars['_blocks'])) {
+                            $form_vars['_blocks'] = PerchUtil::array_sort($form_vars['_blocks'], '_block_index');
+                        }
 
                         $data = array();
                         $data['itemJSON']   = PerchUtil::json_safe_encode($form_vars);
                         $data['itemSearch'] = $search_text;
                         
+                        //PerchUtil::debug($form_vars, 'success');
+
                         $Item->update($data);
 
                         $edited_items[] = $id;
@@ -176,18 +179,18 @@
             }
                       
             
-	        // Alert any file upload errors
-        	if ($_FILES) { 
-        	    foreach($_FILES as $file) {
-        	        if ($file['error']!=UPLOAD_ERR_NO_FILE && $file['error']!=UPLOAD_ERR_OK) {
-        	            $Alert->set('error', PerchLang::get('File failed to upload'));
-        	        }
-        	    }
-        	}
+            // Alert any file upload errors
+            if ($_FILES) { 
+                foreach($_FILES as $file) {
+                    if ($file['error']!=UPLOAD_ERR_NO_FILE && $file['error']!=UPLOAD_ERR_OK) {
+                        $Alert->set('error', PerchLang::get('File failed to upload'));
+                    }
+                }
+            }
 
             
-        	// delete unused resource files.
-        	$Region->clean_up_resources();
+            // delete unused resource files.
+            $Region->clean_up_resources();
                     
             
             // Index the region
@@ -210,7 +213,10 @@
                 
             }
             
+            // Clear values from Post (for reordering of blocks etc)
+            $_POST = array();
             
+
             if (isset($item_id) && $item_id) {
                 $details    = $Region->get_items_for_editing($item_id);
             }else{
@@ -221,7 +227,7 @@
             if (is_array($tags)) {
                 foreach($details as $item) {
                     $id = $item['itemID'];
-                    PerchContent_Util::set_required_fields($Form, $id, $item, $tags);
+                    PerchContent_Util::set_required_fields($Form, $id, $item, $tags, $Template);
                 }
             }
 
@@ -273,12 +279,12 @@
     }
     
 
-	if (isset($_GET['created'])) {
+    if (isset($_GET['created'])) {
         $Alert->set('success', PerchLang::get('Content successfully updated and a new item added.'));
     }
 
-    $Perch->add_javascript(PERCH_LOGINPATH.'/core/assets/js/repeaters.js?v='.$Perch->version);
-    $Perch->add_css(PERCH_LOGINPATH.'/core/assets/css/repeaters.css?v='.$Perch->version);
+    //$Perch->add_javascript(PERCH_LOGINPATH.'/core/assets/js/repeaters.js?v='.$Perch->version);
+    //$Perch->add_css(PERCH_LOGINPATH.'/core/assets/css/repeaters.css?v='.$Perch->version);
     
     
     if (PerchUtil::count($details)) {

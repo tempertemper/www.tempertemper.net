@@ -6,7 +6,8 @@ class PerchXMLTag
 	public $data_attributes = array();
 	private $tag;
 	
-	function __construct($tag) {
+	function __construct($tag) 
+	{
 		$this->tag	= $tag;
 		$this->parse();
 	}

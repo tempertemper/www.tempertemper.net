@@ -5,6 +5,8 @@ class PerchContent_Item extends PerchBase
     protected $table  = 'content_items';
     protected $pk     = 'itemRowID';
 
+    public $app_id = 'content';
+
     public function delete()
     {
     	$sql = 'DELETE FROM '.PERCH_DB_PREFIX.'content_index WHERE itemID='.$this->db->pdb($this->id());
@@ -34,7 +36,7 @@ class PerchContent_Item extends PerchBase
     		$vals = array();
 
     		foreach($resourceIDs as $id) {
-    			$vals[] = '('."'content','itemRowID',".(int)$this->itemRowID().','.(int)$id.')';
+    			$vals[] = '('."'".$this->app_id."','itemRowID',".(int)$this->itemRowID().','.(int)$id.')';
     		}
 
     		$sql .= implode(',', $vals);

@@ -10,12 +10,14 @@
 	$setID   = false;
 	$Set     = false;
 	$message = false;
+	$details = array();
 	$template = 'set.html';
 
 	if (PerchUtil::get('id')) {
 		$setID    = (int) PerchUtil::get('id');
 		$Set      = $Sets->find($setID);
 		$template = $Set->setTemplate();
+		$details  = $Set->to_array();
 	}
 
 	if (!$CurrentUser->has_priv('categories.manage')) {
@@ -24,16 +26,17 @@
 
 	$Template   = $API->get('Template');
 	$Template->set('categories/'.$template, 'categories', $default_fields);
+	$Template->disable_feature('categories');
 
 	$Form = $API->get('Form');
-    $Form->set_required_fields_from_template($Template);
+	$Form->handle_empty_block_generation($Template);
+    $Form->set_required_fields_from_template($Template, $details);
 
     if ($Form->submitted()) {		
     	
-    	$data = $Form->get_posted_content($Template, $Sets, $Set, false);
+    	$data = $Form->get_posted_content($Template, $Sets, $Set);
 
         if (!is_object($Set)) {
-
             $Set = $Sets->create($data);
             PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/sets/edit/?id='.$Set->id().'&created=1');
         }
