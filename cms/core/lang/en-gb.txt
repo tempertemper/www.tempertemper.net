@@ -776,5 +776,6 @@
     "Previous": "Previous",
     "Failed": "Failed",
     "Editing Item Options": "Editing Item Options",
-    "Item Options": "Item Options"
+    "Item Options": "Item Options",
+    "Add a block": "Add a block"
 }

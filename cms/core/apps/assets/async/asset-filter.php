@@ -5,6 +5,9 @@
     $Perch  = PerchAdmin::fetch();
     include(PERCH_CORE . '/inc/auth_light.php');
     
+    header('X-Perch: '.$Perch->version);
+    header('Content-Type: text/html; charset=utf-8');
+    
     include(__DIR__.'/../PerchAssets_Asset.class.php');
     include(__DIR__.'/../PerchAssets_Assets.class.php');
 

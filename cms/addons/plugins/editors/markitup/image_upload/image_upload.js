@@ -16,8 +16,8 @@ miu.ImageUpload = function()
 			}
 			
 			form.css({
-				'top': textarea.position().top+80,
-				'left': textarea.closest('.markItUpContainer').find('li.'+button_class).position().left-277
+				'top': textarea.position().top+55,
+				'left': textarea.closest('.markItUpContainer').find('li.'+button_class).position().left-270
 			});
 			
 			

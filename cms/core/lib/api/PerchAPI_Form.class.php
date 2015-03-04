@@ -14,6 +14,7 @@ class PerchAPI_Form extends PerchForm
     private $hint = false;
 
     public $add_another = false;
+    private $submitted_with_add_another = false;
     
     function __construct($version=1.0, $app_id, $Lang)
     {
@@ -63,9 +64,9 @@ class PerchAPI_Form extends PerchForm
         $details = array();
         if (is_object($Item)) $details = $Item->to_array();
 
-        $s .= $this->form_start();
-        $s .= $this->fields_from_template($Template, $details);
-        $s .= $this->form_end(true);
+        echo $this->form_start();
+        echo $this->fields_from_template($Template, $details);
+        echo $this->form_end(true);
 
         return $s;
     }
@@ -93,16 +94,16 @@ class PerchAPI_Form extends PerchForm
     
     public function submitted()
     {
+        if (isset($_POST['add_another']) && $_POST['add_another']!='') {
+            $this->submitted_with_add_another = true;
+        }
+
         return $this->posted() && $this->validate();
     }
     
     public function submitted_with_add_another()
     {
-        if (isset($_POST['add_another']) && $_POST['add_another']!='') {
-            return true;
-        }
-
-        return false;
+        return $this->submitted_with_add_another;
     }
 
     public function text_field($id, $label, $value='', $class='', $limit=false, $attributes='')
@@ -363,7 +364,153 @@ class PerchAPI_Form extends PerchForm
         return $this->get($array, $id, $value);
     }
     
-    public function set_required_fields_from_template($Template, $seen_tags=array())
+    public function set_required_fields_from_template($Template, $details=array(), $seen_tags=array())
+    {   
+        $tags       = $Template->find_all_tags_and_repeaters();
+        
+        if (is_array($tags)) {           
+            PerchContent_Util::set_required_fields($this, null, $details, $tags, $Template);
+        }
+    }
+ 
+    public function fields_from_template($Template, $details=array(), $seen_tags=array(), $include_repeaters=true)
+    {    
+        if ($include_repeaters) {
+            $tags   = $Template->find_all_tags_and_repeaters();    
+        }else{
+            $tags   = $Template->find_all_tags();
+        }
+                
+        $Form = $this;
+        
+        $out = '';        
+        
+        if (PerchUtil::count($tags)) {
+            PerchContent_Util::display_item_fields($tags, null, $details, false, $Form, $Template, array('PerchAPI_Form', 'get_block_link'), $seen_tags);
+        }
+        
+        return $out;
+    }
+
+    public static function get_block_link($qs)
+    {
+        return '?'.http_build_query($qs);
+    }
+    
+    public function receive_from_template_fields($Template, $previous_values, $Factory=false, $Item=false, $clear_post=true, $strip_static=true)
+    {
+        $tags   = $Template->find_all_tags_and_repeaters();    
+
+        if (is_object($Item)) {
+            $Item->squirrel('itemID', '');
+            $Item->squirrel('itemRowID', '');    
+        }else{
+            $Item = $Factory->return_instance(array(
+                    'itemID' => '',
+                    'itemRowID' => '',
+                ));
+            $Item->set_null_id();
+        }
+
+        $Item->squirrel('itemJSON', PerchUtil::json_safe_encode($previous_values));
+        
+        $subprefix   = '';
+        $postitems   = $this->find_items('perch_');
+        $form_vars   = array();
+        $options     = array();
+        $search_text = ' ';
+
+        $API = new PerchAPI(1.0, $this->app_id);
+        $Resources = $API->get('Resources');
+
+        list($form_vars, $search_text) = PerchContent_Util::read_items_from_post($Item, $tags, $subprefix, $form_vars, $postitems, $this, $search_text, $options, $Resources, false, $Template);
+
+        if (isset($form_vars['_blocks'])) {
+            $form_vars['_blocks'] = PerchUtil::array_sort($form_vars['_blocks'], '_block_index');
+        }
+
+        $out = array();
+        if ($strip_static) {
+            if (PerchUtil::count($form_vars)) {
+                foreach($form_vars as $key=>$val) {
+                    if (!in_array($key, $Factory->static_fields)) {
+                        $out[$key]=$val;
+                    }
+                }
+            }    
+        }else{
+            $out = $form_vars;
+        }
+        
+        
+        // Clear values from Post (for reordering of blocks etc)
+        if ($clear_post) $_POST = array();
+
+        return $out;
+    }
+
+    public function get_posted_content($Template, $Factory, $Item=false, $include_repeaters=true, $json_encode=true)
+    {
+        $data = array();
+
+        $prev = false;
+        if ($Item) $prev = $Item->to_array();
+        
+        $dynamic_fields = $this->receive_from_template_fields($Template, $prev, $Factory, $Item, true, false);
+
+        $static_fields = array();
+
+        // fetch out static fields
+        foreach($Factory->static_fields as $field) {
+            if (array_key_exists($field, $dynamic_fields)) { //($dynamic_fields[$field])) {
+                if (is_array($dynamic_fields[$field])) {
+                    if (isset($dynamic_fields[$field]['_default'])) {
+                        $data[$field] = trim($dynamic_fields[$field]['_default']);
+                    }
+
+                    if (isset($dynamic_fields[$field]['processed'])) {
+                        $data[$field] = trim($dynamic_fields[$field]['processed']);
+                    }
+                }
+
+                if (!isset($data[$field])) $data[$field] = $dynamic_fields[$field];
+                unset($dynamic_fields[$field]);
+            }else{
+                if (isset($_POST[$field])) {
+                    if (!is_array($_POST[$field])){
+                        $data[$field] = trim(PerchUtil::safe_stripslashes($_POST[$field]));
+                    }else{
+                        $data[$field] = $_POST[$field];
+                    }
+                }
+            }
+        }
+
+        if (!$json_encode) return $dynamic_fields;
+        
+        $data[$Factory->dynamic_fields_column] = PerchUtil::json_safe_encode($dynamic_fields);
+
+        return $data;
+    }
+    
+    public function post_process_field($tag, $value)
+    {
+        $out = array();
+
+        $out[$tag->id()] = $value;
+        
+        return $out;
+    }
+
+    public function handle_empty_block_generation($Template)
+    {
+        if (PerchUtil::post('add-block')) {
+            echo PerchContent_Util::get_empty_block(null, PerchUtil::post('add-block'), (int)PerchUtil::post('count'), false, $Template, $this);
+            exit;
+        }
+    }
+
+    public function old_set_required_fields_from_template($Template, $seen_tags=array())
     {   
         $tags       = $Template->find_all_tags();
         
@@ -391,8 +538,8 @@ class PerchAPI_Form extends PerchForm
             }
         }
     }
-    
-    public function fields_from_template($Template, $details=array(), $seen_tags=array(), $include_repeaters=true)
+
+    public function old_fields_from_template($Template, $details=array(), $seen_tags=array(), $include_repeaters=true)
     {    
         if ($include_repeaters) {
             $tags   = $Template->find_all_tags_and_repeaters();    
@@ -463,8 +610,8 @@ class PerchAPI_Form extends PerchForm
         
         return $out;
     }
-    
-    public function receive_from_template_fields($Template, $previous_values, $perch_only=true, $fixed_fields=false, $include_repeaters=true)
+
+    public function old_receive_from_template_fields($Template, $previous_values, $perch_only=true, $fixed_fields=false, $include_repeaters=true)
     {
         if ($include_repeaters) {
             $tags   = $Template->find_all_tags_and_repeaters();    
@@ -544,58 +691,5 @@ class PerchAPI_Form extends PerchForm
         return $form_vars;
     }
 
-    public function get_posted_content($Template, $Factory, $Item=false, $include_repeaters=true, $json_encode=true)
-    {
-        $data = array();
-
-        $prev = false;
-        if ($Item) $prev = $Item->to_array();
-        
-        $dynamic_fields = $this->receive_from_template_fields($Template, $prev, $perch_only=true, $fixed_fields=false, $include_repeaters);
-
-        $static_fields = array();
-
-        // fetch out static fields
-        foreach($Factory->static_fields as $field) {
-            if (array_key_exists($field, $dynamic_fields)) { //($dynamic_fields[$field])) {
-                if (is_array($dynamic_fields[$field])) {
-                    if (isset($dynamic_fields[$field]['_default'])) {
-                        $data[$field] = trim($dynamic_fields[$field]['_default']);
-                    }
-
-                    if (isset($dynamic_fields[$field]['processed'])) {
-                        $data[$field] = trim($dynamic_fields[$field]['processed']);
-                    }
-                }
-
-                if (!isset($data[$field])) $data[$field] = $dynamic_fields[$field];
-                unset($dynamic_fields[$field]);
-            }else{
-                if (isset($_POST[$field])) {
-                    if (!is_array($_POST[$field])){
-                        $data[$field] = trim(PerchUtil::safe_stripslashes($_POST[$field]));
-                    }else{
-                        $data[$field] = $_POST[$field];
-                    }
-                }
-            }
-        }
-
-        if (!$json_encode) return $dynamic_fields;
-        
-        $data[$Factory->dynamic_fields_column] = PerchUtil::json_safe_encode($dynamic_fields);
-
-        return $data;
-
-    }
-    
-    public function post_process_field($tag, $value)
-    {
-        $out = array();
-
-        $out[$tag->id()] = $value;
-        
-        return $out;
-    }
 
 }
