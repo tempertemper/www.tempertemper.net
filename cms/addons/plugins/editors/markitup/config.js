@@ -18,9 +18,9 @@ textileSettings = {
 		{name:'Quotes', className:'fa fa-quote-left', openWith:'bq. '},
 		{name:'Paragraph', className:'fa fa-paragraph', key:'P', openWith:'p(!(([![Class]!]))!). '},
 		{name:'Bulleted list', className:'fa fa-list-ul', openWith:'(!(* |!|*)!)'},
-		{name:'Numeric list', className:'fa fa-list-ol', openWith:'(!(# |!|#)!)'}, 
-		{name:'Picture', className:'image-upload fa fa-picture-o', closeWith:function(markItUp){miu.ImageUpload.upload(markItUp,'textile');}}, 
-		{name:'File', className:'file-upload fa fa-file-o', closeWith:function(markItUp){miu.ImageUpload.upload(markItUp,'textile',true);}}, 
+		{name:'Numeric list', className:'fa fa-list-ol', openWith:'(!(# |!|#)!)'},
+		{name:'Picture', className:'image-upload fa fa-picture-o', closeWith:function(markItUp){miu.ImageUpload.upload(markItUp,'textile');}},
+		{name:'File', className:'file-upload fa fa-file-o', closeWith:function(markItUp){miu.ImageUpload.upload(markItUp,'textile',true);}},
 		{name:'Link', className:'fa fa-link', openWith:'"', closeWith:'":[![Link:!:http://]!]', placeHolder:'Your text to link here...' }
 	]
 };
@@ -38,7 +38,7 @@ markdownSettings = {
             {name:'Heading 4', className:'fa fa-header', openWith:'#### ', 	 placeHolder:'Your title here...' },
             {name:'Heading 5', className:'fa fa-header', openWith:'##### ',  placeHolder:'Your title here...' },
             {name:'Heading 6', className:'fa fa-header', openWith:'###### ', placeHolder:'Your title here...' }
-            ]},	
+            ]},
 		{name:'Bold', className:'fa fa-bold', key:'B', openWith:'**', closeWith:'**'},
 		{name:'Italic', className:'fa fa-italic', key:'I', openWith:'_', closeWith:'_'},
 		{name:'Quotes', className:'fa fa-quote-left', openWith:'> '},
@@ -46,9 +46,9 @@ markdownSettings = {
 		{name:'Numeric List', className:'fa fa-list-ol', openWith:function(markItUp) {
 			return markItUp.line+'. ';
 		}},
-		{name:'Picture', className:'image-upload fa fa-picture-o', openWith:function(markItUp){miu.ImageUpload.upload(markItUp,'markdown');}}, 
+		{name:'Picture', className:'image-upload fa fa-picture-o', openWith:function(markItUp){miu.ImageUpload.upload(markItUp,'markdown');}},
 		{name:'File', className:'file-upload fa fa-file-o', openWith:function(markItUp){miu.ImageUpload.upload(markItUp,'markdown',true);}},
-		{name:'Link', className:'fa fa-link', key:'L', openWith:'[', closeWith:']([![URL:!:http://]!] "[![Title]!]")', placeHolder:'Your text to link here...' }
+		{name:'Link', className:'fa fa-link', key:'L', openWith:'[', closeWith:']([![URL:!:http://]!])', placeHolder:'Your text to link here...' }
 	]
 };
 
@@ -86,7 +86,7 @@ htmlSettings = {
 		{name:'UL', className:'fa fa-list-ul', openWith:'<ul>\n', closeWith:'</ul>\n' },
 		{name:'OL', className:'fa fa-list-ol', openWith:'<ol>\n', closeWith:'</ol>\n' },
 		{name:'LI', className:'fa fa-minus', openWith:'<li>', closeWith:'</li>' },
-		{name:'Picture', className:'image-upload fa fa-picture-o', closeWith:function(markItUp){miu.ImageUpload.upload(markItUp,'html');}}, 
+		{name:'Picture', className:'image-upload fa fa-picture-o', closeWith:function(markItUp){miu.ImageUpload.upload(markItUp,'html');}},
 		{name:'File', className:'file-upload fa fa-file-o', closeWith:function(markItUp){miu.ImageUpload.upload(markItUp,'html',true);}},
 		{name:'Link', className:'fa fa-link', key:'L', openWith:'<a href="[![Link:!:http://]!]"(!( title="[![Title]!]")!)>', closeWith:'</a>', placeHolder:'Your text to link...' }
 	]
@@ -109,7 +109,7 @@ $(document).ready(function(){
 
 	$('body').on('focus', 'textarea.markitup', function(e){
 		$('.markItUpContainer').removeClass('active');
-		$(e.target).parents('.markItUpContainer').addClass('active');	
+		$(e.target).parents('.markItUpContainer').addClass('active');
 	});
 	$('body').on('blur', 'textarea.markitup', function(e){
 		$(e.target).parents('.markItUpContainer').removeClass('active');
