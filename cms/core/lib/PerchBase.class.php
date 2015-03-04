@@ -11,6 +11,8 @@ class PerchBase
     
     protected $event_prefix = false;
 
+    protected $can_log_resources = true;
+
     function __construct($details) 
     {        
         $this->db       = PerchDB::fetch();
@@ -34,7 +36,18 @@ class PerchBase
 		
 		return false;
 	}
+
+    public function set_null_id()
+    {
+        $this->details[$this->pk] = null;
+        $this->can_log_resources = false;
+    }
     
+    public function ready_to_log_resources()
+    {
+        return $this->can_log_resources;
+    }
+
     public function to_array()
     {
         $out = $this->details;

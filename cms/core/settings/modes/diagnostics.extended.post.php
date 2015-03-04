@@ -39,7 +39,9 @@
     <div class="info">
 		<h3><?php echo PerchLang::get('Perch information'); ?></h3>
         <ul>
-            <li>Perch: <?php echo PerchUtil::html($Perch->version); ?></li>
+            <li><?php 
+                echo (PERCH_RUNWAY ? 'Perch Runway: ' : 'Perch: ');
+                echo PerchUtil::html($Perch->version); ?></li>
             <li>Production mode: <?php 
                 switch(PERCH_PRODUCTION_MODE) {
                     case PERCH_DEVELOPMENT:

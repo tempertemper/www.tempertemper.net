@@ -12,9 +12,9 @@
 
     if (PERCH_RUNWAY) {
         include(PERCH_CORE.'/runway/apps/content/runtime.php');
+    }else{
+        perch_content_check_preview();
     }
-
-    perch_content_check_preview();
 
     function perch_content($key=false, $return=false)
     {
@@ -85,13 +85,15 @@
     {
         if (!defined('PERCH_PREVIEW_ARG')) define('PERCH_PREVIEW_ARG', 'preview');
         
-        if (isset($_GET[PERCH_PREVIEW_ARG])) {
+        if (perch_get(PERCH_PREVIEW_ARG)) {
 
             $contentID   = 'all';
             $rev         = false;
 
-            if ($_GET[PERCH_PREVIEW_ARG] != 'all') {
-                $rev  = $_GET[PERCH_PREVIEW_ARG];
+            $var = perch_get(PERCH_PREVIEW_ARG);
+
+            if ($var != 'all' && $var != 'preview') {
+                $rev  = $var;
                 if (strpos($rev, 'r')) {
                     $parts = explode('r', $rev);
                     $contentID = (int) $parts[0];
@@ -114,7 +116,7 @@
         $key = trim(stripslashes($key));
         
         $Content = PerchContent::fetch();
-        
+       
         $defaults = array();
         $defaults['template']           = 'search-result.html';
         $defaults['count']              = 10;

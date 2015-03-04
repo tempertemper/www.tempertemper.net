@@ -15,7 +15,7 @@
 		Load up an instance of the API, and any classes we need.
 	 */
 
-	$API = new PerchAPI('categories', 1.0);
+	$API = new PerchAPI(1.0, 'categories');
 	$HTML = $API->get('HTML');
 
 	$Sets 		= new PerchCategories_Sets;
@@ -38,6 +38,8 @@
 	// Success or failure message
 	$message = false;
 
+	$details = array();
+
 	/*
 		Figure out what mode we're in by testing what's on the query string.
 		Load up instances of the Category and Set where appropriate.
@@ -48,6 +50,7 @@
 		$catID = (int) PerchUtil::get('id');
 		$Category = $Categories->find($catID);
 		$Set = $Sets->find($Category->setID());
+		$details = $Category->to_array();
 
 	}else{
 		// New category mode
@@ -89,7 +92,8 @@
 
 	 */
 	$Form = $API->get('Form');
-    $Form->set_required_fields_from_template($Template);
+	$Form->handle_empty_block_generation($Template);
+    $Form->set_required_fields_from_template($Template, $details);
 
 
 
@@ -107,8 +111,6 @@
     	 */
     	$data = $Form->get_posted_content($Template, $Categories, $Category);
 
-
-
     	/*
     		If this is a new category, create it.
     	 */
@@ -124,12 +126,17 @@
 
             $Category = $Categories->create($data);
 
-
             if ($Category) {
 
 	            // Add another mode? If so, redirect to a refreshed edit page
 	            if ($Form->submitted_with_add_another()) {
-	            	PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/edit/?sid='.$Set->id().'&created=1');
+	            	$pid = '';
+	            	if ($Category->catParentID()) {
+	            		$pid = '&pid='.$Category->catParentID();	
+	            	}
+
+	            	PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/edit/?sid='.$Set->id().'&created=1'.$pid);
+	            	
 	            }
 
 	            // Redirect into edit mode to make sure the ID is on the query string for subsequent edits.
@@ -161,7 +168,11 @@
 	        	Add another?        
 	         */
 	        if ($Form->submitted_with_add_another()) {
-	        	PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/edit/?sid='.$Set->id().'&edited=1');
+	        	$pid = '';
+	        	if ($Category->catParentID()) {
+	        		$pid = '&pid='.$Category->catParentID();	
+	        	}
+	        	PerchUtil::redirect(PERCH_LOGINPATH .'/core/apps/categories/edit/?sid='.$Set->id().'&edited=1'.$pid);
 	        }
 
 	    }

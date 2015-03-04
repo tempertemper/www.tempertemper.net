@@ -19,7 +19,7 @@ class PerchUtil
 			return false;
 		}
 
-		if ($encode) $msg = PerchUtil::html($msg);
+		if ($encode || $type=='db') $msg = PerchUtil::html($msg);
 
 		if (isset($msg) && (is_array($msg) || is_object($msg))){
 			$msg	= '<pre>'.print_r($msg, 1).'</pre>';
@@ -29,8 +29,42 @@ class PerchUtil
 				'time' => microtime(true),
 				'type' => $type,
 				'msg'  => $msg,
+				'caller' => PerchUtil::get_caller_info(),
 			);
 
+
+	}
+
+	static function get_caller_info() {
+	    $c = '';
+	    $file = '';
+	    $func = '';
+	    $class = '';
+	    $trace = debug_backtrace();
+	    if (isset($trace[2])) {
+	        $file = $trace[1]['file'];
+	        $func = $trace[2]['function'];
+	        if ((substr($func, 0, 7) == 'include') || (substr($func, 0, 7) == 'require')) {
+	            $func = '';
+	        }
+	    } else if (isset($trace[1])) {
+	        $file = $trace[1]['file'];
+	        $func = '';
+	    }
+	    if (isset($trace[3]['class'])) {
+	        $class = $trace[3]['class'];
+	        $func = $trace[3]['function'];
+	        $file = $trace[2]['file'];
+	    } else if (isset($trace[2]['class'])) {
+	        $class = $trace[2]['class'];
+	        $func = $trace[2]['function'];
+	        $file = $trace[1]['file'];
+	    }
+	    if ($file != '') $file = basename($file);
+	    $c = $file . ": ";
+	    $c .= ($class != '') ? "" . $class . "->" : "";
+	    $c .= ($func != '') ? $func . "(): " : "";
+	    return($c);
 	}
 
 	public static function output_debug($return_value=false, $time=false)
@@ -70,7 +104,7 @@ class PerchUtil
 		    		$out .= '<tr>';
 		    		if ($dev) $out .= 	'<td>'.round($msg['time'] - $time, 4).'</td>';
 		    		if ($dev) $out .= 	'<td>'.round($msg['time'] - $prev_time, 4).'</td>';
-		    		$out .= 	'<td class="'.$msg['type'].'">'.$msg['msg'].'</td>';
+		    		$out .= 	'<td class="'.$msg['type'].'" title="'.$msg['caller'].'">'.$msg['msg'].'</td>';
 		    		$out .= '</tr>';
 		    		$prev_time = $msg['time'];
 		    	}
@@ -639,9 +673,21 @@ class PerchUtil
     	$string = str_replace(array('$', '£', '€'), array('', 'GBP ', 'EUR '), $string);
     	$string = preg_replace('#(\d)\.(\d)#', '$1 $2', $string); // make sure numbers with decimals don't mislead, e.g. 2.5 -> 25
 
+    	$tranliterator_rule = 'Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();';
+
+    	if (function_exists('transliterator_list_ids')) {
+    		if (in_array('Latin-ASCII', transliterator_list_ids())) {
+    			$tranliterator_rule = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();';
+    		}
+    	}
+
     	if (function_exists('transliterator_transliterate')) {
     		$string = str_replace('-', ' ', $string);
-    		$s = transliterator_transliterate("Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();", $string);
+    		$s = transliterator_transliterate($tranliterator_rule, $string);
+    	}else if(class_exists('Transliterator')) {
+    		$string = str_replace('-', ' ', $string);
+    		$T = Transliterator::create($tranliterator_rule);
+    		$s = $T->transliterate($string);
     	}else{
     		$s  = iconv('UTF-8', 'ASCII//TRANSLIT', $string);	
     		$s  = strtolower($s);
@@ -1087,6 +1133,15 @@ class PerchUtil
 	    return $default;
 	}
 
+	static function post($var, $default=false)
+	{
+	    if (isset($_POST[$var]) && $_POST[$var]!='') {
+	        return $_POST[$var];
+	    }
+
+	    return $default;
+	}
+
 	static function extend($default_opts, $opts)
 	{
 		if (is_array($opts)) {
@@ -1136,7 +1191,7 @@ class PerchUtil
 
 	static function flush_output()
 	{
-		if (PERCH_PROGRESSIVE_FLUSH) flush();
+		if (defined('PERCH_PROGRESSIVE_FLUSH') && PERCH_PROGRESSIVE_FLUSH) flush();
 	}
 
 }

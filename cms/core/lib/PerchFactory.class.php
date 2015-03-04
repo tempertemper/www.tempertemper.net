@@ -230,7 +230,7 @@ class PerchFactory
         }
     }
     
-    protected function return_instances($rows)
+    public function return_instances($rows)
     {
         if (PerchUtil::count($rows) > 0) {
             $out    = array();
@@ -245,7 +245,7 @@ class PerchFactory
         return false;
     }
     
-    protected function return_flattened_instances($rows)
+    public function return_flattened_instances($rows)
     {
         if (PerchUtil::count($rows) > 0) {
             $out    = array();
@@ -260,7 +260,7 @@ class PerchFactory
         return false;
     }
 
-    protected function return_instance($row)
+    public function return_instance($row)
     {
         if (PerchUtil::count($row) > 0) {
             $r = new $this->singular_classname($row);
@@ -271,7 +271,7 @@ class PerchFactory
         return false;
     }
     
-    protected function return_flattened_instance($row)
+    public function return_flattened_instance($row)
     {
         if (PerchUtil::count($row) > 0) {
             $r = new $this->singular_classname($row);

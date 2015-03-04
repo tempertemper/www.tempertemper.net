@@ -11,6 +11,10 @@ class PerchContent_Pages extends PerchFactory
     private $error_messages = array();
     
     private $nav_page_cache = array();
+    static $path_cache     = array();
+
+    public $static_fields  = array('pageTitle', 'pageNavText');
+
     
     
     /**
@@ -274,10 +278,13 @@ class PerchContent_Pages extends PerchFactory
      */
     public function find_by_path($path)
     {
-       $sql = 'SELECT * FROM '.$this->table.' WHERE pagePath='.$this->db->pdb($path).' LIMIT 1';
-       $row   = $this->db->get_row($sql);
+        if (isset(self::$path_cache[$path])) return self::$path_cache[$path];
 
-       return $this->return_instance($row);
+        $sql = 'SELECT * FROM '.$this->table.' WHERE pagePath='.$this->db->pdb($path).' LIMIT 1';
+        $row   = $this->db->get_row($sql);
+
+        self::$path_cache[$path] = $this->return_instance($row);
+        return self::$path_cache[$path];
     }
     
     

@@ -38,9 +38,8 @@
 	
   if ($CurrentUser->logged_in()) { ?>
 	<!--[if lt IE 9]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/iebase.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->
-	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/v2.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" />
-
-	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/assets.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" />
+	
+	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/perch.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" />
 	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/720.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" media="only screen and (min-width: 720px)" />
 	
 	<?php if (PERCH_RUNWAY) { ?>
@@ -55,8 +54,7 @@
 	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/runway/assets/css/runway_login.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" />
 	<?php } // runway ?>
 <?php }
-    if (PERCH_DEBUG) { ?><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/debug.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><?php  }
-
+    
 	if ($Settings->get('headerColour')->settingValue()) {
 		if ($CurrentUser->logged_in() || trim($Settings->get('headerColour')->settingValue())!='#ffffff') {
 	?>  <style type="text/css">.topbar{background-color: <?php echo PerchUtil::html(rtrim($Settings->get('headerColour')->settingValue(), ';')); ?>; }</style>

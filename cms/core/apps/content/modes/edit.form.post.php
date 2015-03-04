@@ -54,18 +54,18 @@
             
         ?></h1>
    <?php echo $Alert->output(); ?>
-		<ul class="smartbar">
+        <ul class="smartbar">
             <li class="selected">
-				<span class="set">
-				<a class="sub" href="<?php 
+                <span class="set">
+                <a class="sub" href="<?php 
                     if ($Region->regionPage()=='*') {
                         echo PERCH_LOGINPATH . '/core/apps/content/page/?id=-1';
                     }else{
                         echo PERCH_LOGINPATH . '/core/apps/content/page/?id='.PerchUtil::html($Region->pageID());
                     }
                 ?>"><?php echo PerchLang::get('Regions'); ?></a> 
-				<span class="sep icon"></span> 
-				
+                <span class="sep icon"></span> 
+                
 
                 <?php
                     if ($Region->regionMultiple() && $Region->get_option('edit_mode')=='listdetail') {
@@ -95,14 +95,14 @@
                     }
                 ?>
 
-				</span>
-			</li>
-			<?php
-				if ($CurrentUser->has_priv('content.regions.options')) {
-		            echo '<li><a href="'.PERCH_LOGINPATH . '/core/apps/content/options/?id='.PerchUtil::html($Region->id()).'">' . PerchLang::get('Region Options') . '</a></li>';
-		        }
-			?>
-			<?php
+                </span>
+            </li>
+            <?php
+                if ($CurrentUser->has_priv('content.regions.options')) {
+                    echo '<li><a href="'.PERCH_LOGINPATH . '/core/apps/content/options/?id='.PerchUtil::html($Region->id()).'">' . PerchLang::get('Region Options') . '</a></li>';
+                }
+            ?>
+            <?php
                 if ($Region->regionMultiple()) {
                     echo '<li class="fin">';
                     echo '<a href="'.PERCH_LOGINPATH . '/core/apps/content/reorder/region/?id='.PerchUtil::html($Region->id()).'" class="icon reorder">' . PerchLang::get('Reorder') . '</a>';
@@ -115,18 +115,18 @@
                     echo '</li>';
                 }
 
-			
-				if ($Region->is_undoable()) {
-					echo '<li class="fin">';
-			        echo '<form method="post" action="'.PerchUtil::html($fUndo->action()).'">';
-			        echo '<div>'.$fUndo->submit('btnUndo', 'Undo', 'unbutton icon undo', true, true).'</div>';
-			        echo '</form>';
-					echo '</li>';
-			    }
+            
+                if ($Region->is_undoable()) {
+                    echo '<li class="fin">';
+                    echo '<form method="post" action="'.PerchUtil::html($fUndo->action()).'">';
+                    echo '<div>'.$fUndo->submit('btnUndo', 'Undo', 'unbutton icon undo', true, true).'</div>';
+                    echo '</form>';
+                    echo '</li>';
+                }
 
 
-			
-			?>
+            
+            ?>
         </ul>
 <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" <?php echo $Form->enctype(); ?> id="content-edit" class="magnetic-save-bar">
     <div id="main-panel"<?php if ($place_token_on_main) echo 'data-token="'.PerchUtil::html($place_token_on_main->get_token()).'"'; ?>>
@@ -172,156 +172,13 @@
                     echo '<h2 class="em">'. PerchUtil::html($Region->regionKey()).'</h2>';
                 }
                 
-                display_item_fields($tags, $id, $item, $Page, $Form);
-                                
-                
+                PerchContent_Util::display_item_fields($tags, $id, $item, $Page, $Form, $Template);
+              
                 echo '</div>';
                 
                 $i++; // item count
             }
-        }
-
-
-
-        function display_item_fields($tags, $id, $item, $Page, $Form)
-        {          
-            $seen_tags = array();
-            
-            foreach($tags as $tag) {
-                
-                $item_id = 'perch_'.$id.'_'.$tag->id();
-                $tag->set('input_id', $item_id);
-                $tag->set('post_prefix', 'perch_'.$id.'_');
-                if (is_object($Page)) $tag->set('page_id', $Page->id());
-
-                if (!in_array($tag->id(), $seen_tags) && $tag->type()!='hidden' && substr($tag->id(), 0,7)!='parent.') {
-
-                    if ($tag->type()=='slug' && !$tag->editable()) {
-                        continue;
-                    }
-
-
-                    if ($tag->type()=='PerchRepeater') {
-                        $repeater_id = $id.'_'.$tag->id();
-
-                        if ($tag->divider_before()) {
-                            echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
-                        }
-
-                        echo '<h3 class="label repeater-heading">'.$tag->label().'</h3>';
-                        echo '<div class="repeater" data-prefix="perch_'.PerchUtil::html($repeater_id).'"';
-                        if ($tag->max()) echo ' data-max="'.PerchUtil::html($tag->max()).'"';
-                        echo '>';
-                            echo '<div class="repeated">';
-                        
-                            
-                            $repeater_i = 0;
-
-                            if (isset($item[$tag->id()]) && is_array($item[$tag->id()])) {
-                                
-                                $subitems = $item[$tag->id()];
-
-                                if (isset($_POST['perch_'.$repeater_id.'_count']) && (int)$_POST['perch_'.$repeater_id.'_count']>0) {
-                                    $submitted_count = (int)$_POST['perch_'.$repeater_id.'_count'];
-                                    if (PerchUtil::count($subitems) < $submitted_count) {
-                                        for ($i=PerchUtil::count($subitems); $i<$submitted_count; $i++) {
-                                            $subitems[] = array();
-                                        }
-                                    }
-                                }
-
-                                foreach($subitems as $subitem) {
-                                    echo '<div class="repeated-item">';
-                                        echo '<div class="index"><span>'.($repeater_i+1).'</span><span class="icon"></span></div>';
-                                        echo '<div class="repeated-fields">';
-                                        display_item_fields($tag->tags, $repeater_id.'_'.$repeater_i, $subitem, $Page, $Form);    
-                                        echo '<input type="hidden" name="perch_'.($repeater_id.'_'.$repeater_i).'_present" class="present" value="1" />';
-                                        echo '<input type="hidden" name="perch_'.($repeater_id.'_'.$repeater_i).'_prevpos" value="'.$repeater_i.'" />';
-                                        echo '</div>';
-                                        echo '<div class="rm"></div>';
-                                    echo '</div>';
-                                    $repeater_i++;
-                                }
-                                                               
-                            }
-
-                            $spare = true;
-
-                            if ($tag->max() && ($repeater_i-1)>=(int)$tag->max()) {
-                                $spare = false;
-                            }
-
-
-                            if ($spare) {
-                                // And one spare
-                                echo '<div class="repeated-item spare">';
-                                    echo '<div class="index icon"><span>'.($repeater_i+1).'</span><span class="icon"></span></div>';
-                                        echo '<div class="repeated-fields">';
-                                        display_item_fields($tag->tags, $repeater_id.'_'.$repeater_i, array(), $Page, $Form);  
-                                        echo '<input type="hidden" name="perch_'.($repeater_id.'_'.$repeater_i).'_present" class="present" value="1" />';  
-                                        echo '</div>';
-                                        echo '<div class="rm"></div>';
-                                echo '</div>';
-                                echo '</div>'; // .repeated
-                                // footer
-                                echo '<div class="repeater-footer">';
-                                    echo '<input type="hidden" name="perch_'.$repeater_id.'_count" value="0" class="count" />';
-                                echo '</div>';
-                            }
-                            
-                            
-                        echo '</div>';
-
-                        if ($tag->divider_after()) {
-                            echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
-                        }  
-                    }else{
-
-                        if ($tag->divider_before()) {
-                            echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
-                        }
-
-                        echo '<div class="field '.$Form->error($item_id, false).'">';
-                        echo '<div class="fieldtbl">';
-                        
-                            $label_text  = PerchUtil::html($tag->label());
-                            if ($tag->type() == 'textarea') {
-                                if (PerchUtil::bool_val($tag->textile()) == true) {
-                                    $label_text .= ' <span><a href="'.PERCH_LOGINPATH.'/core/help/textile" class="assist">Textile</a></span>';
-                                }
-                                if (PerchUtil::bool_val($tag->markdown()) == true) {
-                                    $label_text .= ' <span><a href="'.PERCH_LOGINPATH.'/core/help/markdown" class="assist">Markdown</a></span>';
-                                }
-                            }
-                            $Form->disable_html_encoding();
-                            echo '<div class="fieldlbl">'.$Form->label($item_id, $label_text, '', false, false).'</div>';
-                            $Form->enable_html_encoding();
-                            
-                            
-                            $FieldType = PerchFieldTypes::get($tag->type(), $Form, $tag);
-                            
-                            
-                            echo '<div class="field-wrap">';
-                            echo $FieldType->render_inputs($item);
-                                
-                            if ($tag->help()) {
-                                echo $Form->hint($tag->help());
-                            }
-                            echo '</div>';
-                
-                        echo '</div>';
-                        echo '</div>';      
-
-                        if ($tag->divider_after()) {
-                            echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
-                        }                      
-                    }
-
-            
-                    $seen_tags[] = $tag->id();
-                }
-            }
-        }
+        } 
 ?>        
         </div>
         <p class="submit<?php if (defined('PERCH_NONSTICK_BUTTONS') && PERCH_NONSTICK_BUTTONS) echo ' nonstick'; ?><?php if ($Form->error) echo ' error'; ?>">
@@ -335,17 +192,17 @@
                 echo '<label class="save-as-draft" for="save_as_draft"><input type="checkbox" name="save_as_draft" value="1" id="save_as_draft" '.($draft?'checked="checked"':'').'  /> '.PerchUtil::html(PerchLang::get('Save as Draft')).'</label>';
                 
 
-				if ($Region->regionMultiple()=='1' && $Region->get_option('edit_mode')=='listdetail') {
-                	echo ' ' . PerchLang::get('or') . ' <a href="'.PERCH_LOGINPATH.'/core/apps/content/edit/?id='.$Region->id().'">' . PerchLang::get('Cancel'). '</a>'; 
-            	}else{
-				    if ($Region->regionPage() == '*') {
+                if ($Region->regionMultiple()=='1' && $Region->get_option('edit_mode')=='listdetail') {
+                    echo ' ' . PerchLang::get('or') . ' <a href="'.PERCH_LOGINPATH.'/core/apps/content/edit/?id='.$Region->id().'">' . PerchLang::get('Cancel'). '</a>'; 
+                }else{
+                    if ($Region->regionPage() == '*') {
                         $pageID = '-1';
                     }else{
                         $pageID = $Page->id();
                     }
 
-                	echo ' ' . PerchLang::get('or') . ' <a href="'.PERCH_LOGINPATH.'/core/apps/content/page/?id='.$pageID.'">' . PerchLang::get('Cancel'). '</a>'; 
-				}
+                    echo ' ' . PerchLang::get('or') . ' <a href="'.PERCH_LOGINPATH.'/core/apps/content/page/?id='.$pageID.'">' . PerchLang::get('Cancel'). '</a>'; 
+                }
                 
             ?>
         </p>

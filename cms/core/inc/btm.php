@@ -35,8 +35,7 @@
 ?>
 <script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-1.11.2.min.js"></script>
 <script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-ui.js?v=<?php echo PerchUtil::html($Perch->version); ?>"></script>
-<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/perch.js?v=<?php echo PerchUtil::html($Perch->version); ?>"></script>
-<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/assets.js?v=<?php echo PerchUtil::html($Perch->version); ?>" ></script>
+<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/perch.min.js?v=<?php echo PerchUtil::html($Perch->version); ?>"></script>
 <?php
 	$javascript = $Perch->get_javascript();
 	foreach($javascript as $js) {
@@ -59,6 +58,7 @@
     
     if (PERCH_DEBUG) {
     	PerchUtil::debug('Queries: '. PerchDB_MySQL::$queries);
+    	PerchUtil::debug('Memory: '. round(memory_get_peak_usage()/1024/1024, 4));
     	PerchUtil::output_debug(); 
     }
 ?>
