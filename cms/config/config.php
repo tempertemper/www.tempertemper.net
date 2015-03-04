@@ -1,6 +1,6 @@
 <?php
 
-  define('PERCH_LICENSE_KEY', 'P21207-SKF459-BNK198-JDA345-QNL016');
+  define('PERCH_LICENSE_KEY', 'R21503-BFC937-ALW223-XSR146-VFN004');
 
   $http_host = getenv('HTTP_HOST');
   switch($http_host)
