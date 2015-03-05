@@ -40,7 +40,7 @@ class PerchBlog_Tags extends PerchAPI_Factory
                 FROM '.PERCH_DB_PREFIX.'blog_tags t, '.PERCH_DB_PREFIX.'blog_posts_to_tags p2t, '.PERCH_DB_PREFIX.'blog_posts p
                 WHERE p2t.tagID=t.tagID AND p2t.postID=p.postID
                     AND p.postStatus=\'Published\' AND p.postDateTime<='.$this->db->pdb(date('Y-m-d H:i:00')).' 
-                    AND p.sectionID='.$this->db->pdb($Section->id()).'
+                    AND p.sectionID='.$this->db->pdb((int)$Section->id()).'
                 GROUP BY t.tagID
                 ORDER BY t.tagTitle ASC
 			';
