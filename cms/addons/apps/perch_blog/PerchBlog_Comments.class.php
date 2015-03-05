@@ -77,7 +77,7 @@ class PerchBlog_Comments extends PerchAPI_Factory
 
 		$sql = ' * FROM '.$this->table;
 
-		$where[] = 'postID='.$this->db->pdb($postID);
+		$where[] = 'postID='.$this->db->pdb((int)$postID);
 		$where[] = 'commentStatus='.$this->db->pdb('LIVE');
 
 		if (isset($opts['_id'])) {
