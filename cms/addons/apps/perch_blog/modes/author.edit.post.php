@@ -43,11 +43,9 @@
        
         
 
-        echo $Form->submit_field('btnSubmit', 'Save', $API->app_path().'/categories/');
+        echo $Form->submit_field('btnSubmit', 'Save', $API->app_path().'/authors/');
 
     
     echo $Form->form_end();
     
     echo $HTML->main_panel_end();
-
-?>
