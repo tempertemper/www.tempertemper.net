@@ -292,7 +292,7 @@ class PerchBlog_Sections extends PerchAPI_Factory
 
 
         // post process       
-        $tags   = $Template->find_all_tags('blog');
+        $tags   = $Template->find_all_tags_and_repeaters('blog');
         $processed_vars = array();
         $used_items = array();
         foreach($content as $item) {

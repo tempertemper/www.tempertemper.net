@@ -102,7 +102,7 @@ class PerchBlog_Authors extends PerchAPI_Factory
             $this->db->execute($sql);
 
             foreach($rows as $row) {
-                $sql = 'UPDATE '.PERCH_DB_PREFIX.'blog_authors SET authorPostCount='.$this->db->pdb($row['qty']).' WHERE authorID='.$this->db->pdb($row['authorID']).' LIMIT 1';
+                $sql = 'UPDATE '.PERCH_DB_PREFIX.'blog_authors SET authorPostCount='.$this->db->pdb($row['qty']).' WHERE authorID='.$this->db->pdb((int)$row['authorID']).' LIMIT 1';
                 $this->db->execute($sql);
             }
         }
