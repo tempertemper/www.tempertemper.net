@@ -161,9 +161,7 @@ class PerchBlog_Post extends PerchAPI_Base
             $out = array_merge($dynamic_fields, $out);
         }
 
-        if (PerchUtil::count($template_ids) && in_array('postURL', $template_ids)) {
-            $out['postURL'] = $this->postURL();
-        }
+        $out['postURL'] = $this->postURL();
 
         return $out;
     }
@@ -210,7 +208,7 @@ class PerchBlog_Post extends PerchAPI_Base
     {
         $sql = 'SELECT c.categoryCoreID AS newID 
                 FROM '.PERCH_DB_PREFIX.'blog_posts_to_categories p2c, '.PERCH_DB_PREFIX.'blog_categories c
-                WHERE p2c.categoryID=c.categoryID AND p2c.postID='.$this->db->pdb($this->id());
+                WHERE p2c.categoryID=c.categoryID AND p2c.postID='.$this->db->pdb((int)$this->id());
         $catIDs = $this->db->get_rows_flat($sql);
 
         if (PerchUtil::count($catIDs)) {
@@ -233,7 +231,7 @@ class PerchBlog_Post extends PerchAPI_Base
             $Categories = new PerchCategories_Categories();
             $out = array();
             foreach($cats as $catID) {
-                $out[] = $Categories->find($catID);
+                $out[] = $Categories->find((int)$catID);
             }
             return $out;
         }

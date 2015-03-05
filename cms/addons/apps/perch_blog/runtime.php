@@ -389,6 +389,7 @@
             'split-items'          => false,
             'filter'               => false,
             'paginate'             => true,
+            'template'             => false,
         );
 
         if (is_array($opts)) {
@@ -719,15 +720,14 @@
         
         $years = $BlogPosts->get_years();
         /* loop through the years */
+        $Template->set('blog/'.$template_months, 'blog');
         for($i=0; $i<sizeOf($years);$i++) {
         	$months = $BlogPosts->get_months_for_year($years[$i]['year']);
-        	$Template->set('blog/'.$template_months, 'blog');
         	/* render the months into the months template*/
         	$m = $Template->render_group($months, true);
         	/* add this rendered mark-up to the $years array */
         	$years[$i]['months'] = $m;
         }
-        
         
         $Template->set('blog/'.$template_year, 'blog');
 		/* render the $years array into the years template*/
@@ -745,7 +745,7 @@
     {
         if (!defined('PERCH_PREVIEW_ARG')) define('PERCH_PREVIEW_ARG', 'preview');
         
-        if (isset($_GET[PERCH_PREVIEW_ARG])) {
+        if (perch_get(PERCH_PREVIEW_ARG)) {
 
             $Users          = new PerchUsers;
             $CurrentUser    = $Users->get_current_user();
