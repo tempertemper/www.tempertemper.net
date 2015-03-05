@@ -1,7 +1,5 @@
 # Modular Scale
 
-### This is v2.0 documentation, Go to [v1.0 documentation here](https://github.com/Team-Sass/modular-scale/blob/1.x/readme.md)
-
 A modular scale is a list of values that share the same relationship. These values are often used to size type and create a sense of harmony in a design. Proportions within modular scales are all around us from the spacing of the joints on our fingers to branches on trees. These natural proportions have been used since the time of the ancient Greeks in architecture and design and can be a tremendously helpful tool to leverage for web designers.
 
 Ems work especially well with modular scales as their recursive properties mimic modular scales making them more predictable and easier to manage. Pixels and other units work just fine and breakpoints in responsive web design can naturally fall on your scale to create better relevance to your text as all the values in your layout harmonize with each other.
@@ -29,7 +27,7 @@ To get started, you need to select a ratio and a base value. The base value is u
 
 ## Compatibility
 
-I have been working incredibly hard to make Modular Scale compatible with multiple versions of Sass. As a result, it will work and has been tested in **Libsass**, **Sass 3.2**, and **Sass 3.3**.
+I have been working incredibly hard to make Modular Scale compatible with multiple versions of Sass. As a result, it will work and has been tested in **Libsass**, **Sass 3.2**, **Sass 3.3**, and **Sass 3.4**.
 
 These are dramatically different environments so things may have slight differences. **[For best results, install via the gem with Compass](https://github.com/Team-Sass/modular-scale/tree/2.x#compass)**.
 
@@ -40,11 +38,11 @@ These are dramatically different environments so things may have slight differen
 
 #### **Libsass:**
 
-  * Everything should be working, and work fairly quickly.
+  * Everything should be working, and work very quickly.
 
 #### **Vanilla Sass:**
 
-  * Possibly slow when using multiple bases and ratios.
+  * Works fine, but is slow when using multiple bases and ratios.
 
 ## Usage
 
@@ -69,7 +67,7 @@ You can output a list to your terminal to help you find out what values are on y
 @debug ms-list($start, $end, $ms-base, $ms-ratio);
 ```
 
-You can use a double standard scale by simply adding more base sizes in a space-sepreated list.
+You can use a double standard scale by simply adding more base sizes in a space-separated list.
 **note:** the starting point of the scale will always be the **first** value in this list
 
 ```scss
@@ -132,27 +130,47 @@ $my-ratio: 1 / 3.14159265;
 $ms-ratio: $my-ratio;
 ```
 
-## Upgrading from 1.x to 2.x
+## Responsive scales
 
-1. Follow the [install instructions](#install) above.
-2. remove older versions of modular-scale with `gem cleanup modular-scale`.
-3. Rename `$base-size` to `$ms-base`.
-4. Rename `$ratio` to `$ms-ratio`.
-5. Change ratios from function format `golden()`, to variable format `$golden`.
-6. The `ms-list-output()` mixin and `power()` function have been removed.
+At times you may want to have a scale with less contrast on small screens and big type with more contrast on larger screens. For this you can use the `ms-respond` mixin that allows you to plug in a range of ratios at various breakpoints.
+
+First, you will need to set your range. A range is a list of ratio and breakpoint values from smallest to largest.
+
+```scss
+$ms-range:
+  1.2 20em,
+  1.3 30em,
+  1.4 40em,
+  1.5 50em,
+  1.6 60em;
+```
+
+Now you can use the `ms-respond` mixin to output a range of values for a single point on a scale.
+
+```scss
+foo {
+  @include ms-respond(font-size, 2);
+}
+```
+
+```css
+foo { font-size: 1.44em; }
+@media (min-width: 30em) { foo { font-size: 1.69em; } }
+@media (min-width: 40em) { foo { font-size: 1.96em; } }
+@media (min-width: 50em) { foo { font-size: 2.25em; } }
+@media (min-width: 60em) { foo { font-size: 2.56em; } }
+```
 
 ## [Changelog](https://github.com/Team-Sass/modular-scale/releases)
 
-## Inspiration
+### Licence
 
-Sassy Modular Scale was adapted from [modularscale.com](http://modularscale.com/) by Tim Brown ([@nicewebtype](http://twitter.com/nicewebtype)). Tim also wrote a supporting article at [A List Apart](http://www.alistapart.com/) titled ["More Meaningful Typography"](http://www.alistapart.com/articles/more-meaningful-typography/). Additional inspiration goes to [Robert Bringhurst](http://en.wikipedia.org/wiki/Robert_Bringhurst), author of ["The Elements of Typographic Style"](http://en.wikipedia.org/wiki/The_Elements_of_Typographic_Style) - specifically Chapter 8 titled "Shaping the Page"
+The MIT License (MIT)
 
-## MIT License
+Copyright © 2015 [Scott Kellum](http://www.scottkellum.com/) ([@scottkellum](http://twitter.com/scottkellum)), [Adam Stacoviak](http://adamstacoviak.com/) ([@adamstac](http://twitter.com/adamstac)) and [Mason Wendell](http://thecodingdesigner.com/) ([@codingdesigner](http://twitter.com/codingdesigner))
 
-Copyright (c) 2011 [Scott Kellum](http://www.scottkellum.com/) ([@scottkellum](http://twitter.com/scottkellum)), [Adam Stacoviak](http://adamstacoviak.com/) ([@adamstac](http://twitter.com/adamstac)) and [Mason Wendell](http://thecodingdesigner.com/) ([@codingdesigner](http://twitter.com/codingdesigner))
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+**The software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.**
