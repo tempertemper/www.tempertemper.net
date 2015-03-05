@@ -77,7 +77,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
         if ($Cache->exists('p'.$postID)) {
             return $Cache->get('p'.$postID);
         }else{
-            $sql = 'SELECT * FROM '.PERCH_DB_PREFIX.'blog_posts WHERE postID='.$this->db->pdb($postID);
+            $sql = 'SELECT * FROM '.PERCH_DB_PREFIX.'blog_posts WHERE postID='.$this->db->pdb((int)$postID);
             
             if (!$is_admin && self::$preview_mode==false) {
                 $sql .= ' AND postStatus=\'Published\' AND postDateTime<='.$this->db->pdb(date('Y-m-d H:i:00')).' ';
@@ -86,7 +86,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
             $row = $this->db->get_row($sql);
 
             // if(is_array($row)) {
-            //     $sql = 'SELECT categoryID FROM '.PERCH_DB_PREFIX.'blog_posts_to_categories WHERE postID='.$this->db->pdb($postID);
+            //     $sql = 'SELECT categoryID FROM '.PERCH_DB_PREFIX.'blog_posts_to_categories WHERE postID='.$this->db->pdb((int)$postID);
             //     $result = $this->db->get_rows($sql);
             //     $a = array();
             //     if(is_array($result)) {
@@ -451,7 +451,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
         if (PerchUtil::count($rows)) {
             $Categories = new PerchCategories_Categories();
             foreach($rows as $row) {
-                $Category = $Categories->find($row['catID']);
+                $Category = $Categories->find((int)$row['catID']);
                 if ($Category) {
                     $Category->update_count('blog.post', $row['qty']);
                 }

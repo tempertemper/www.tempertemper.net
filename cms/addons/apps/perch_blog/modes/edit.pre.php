@@ -41,20 +41,21 @@
 
     $Template   = $API->get('Template');
     $Template->set('blog/'.$template, 'blog');
-    $tags = $Template->find_all_tags();
 
-
-    $result = false;
+    $tags = $Template->find_all_tags_and_repeaters();
 
     $Form = $API->get('Form');
 
+    $Form->handle_empty_block_generation($Template);
+
+    $result = false;
    
-    $Form->set_required_fields_from_template($Template);
+    $Form->set_required_fields_from_template($Template, $details);
 
     if ($Form->submitted()) {
     	        
 
-        $postvars = array('postTags','postStatus', 'postAllowComments', 'postTemplate', 'authorID', 'sectionID');
+        $postvars = array('postTags', 'postStatus', 'postAllowComments', 'postTemplate', 'authorID', 'sectionID');
 		
     	$data = $Form->receive($postvars);
 
@@ -73,8 +74,11 @@
             $prev = PerchUtil::json_safe_decode($details['postDynamicFields'], true);
         }
     	
-    	$dynamic_fields = $Form->receive_from_template_fields($Template, $prev);
-       
+    	$dynamic_fields = $Form->receive_from_template_fields($Template, $prev, $Blog, $Post, $clear_post=true, $strip_static_fields=false);
+
+        PerchUtil::debug('Dynamic fields:');
+        PerchUtil::debug($dynamic_fields);
+          
 
         // fetch out static fields
         if (isset($dynamic_fields['postDescHTML']) && is_array($dynamic_fields['postDescHTML'])) {

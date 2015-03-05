@@ -25,12 +25,13 @@
 
     $Template   = $API->get('Template');
     $Template->set('blog/section.html', 'blog');
-    $tags = $Template->find_all_tags();
+    $Form->handle_empty_block_generation($Template);
+    $tags = $Template->find_all_tags_and_repeaters();
 
           
 
     $Form->require_field('sectionTitle', 'Required');
-    $Form->set_required_fields_from_template($Template);
+    $Form->set_required_fields_from_template($Template, $details);
 
     if ($Form->submitted()) {
 		$postvars = array('sectionTitle');
@@ -43,7 +44,7 @@
             $prev = PerchUtil::json_safe_decode($details['sectionDynamicFields'], true);
         }
         
-        $dynamic_fields = $Form->receive_from_template_fields($Template, $prev);
+        $dynamic_fields = $Form->receive_from_template_fields($Template, $prev, $Sections, $Section);
         $data['sectionDynamicFields'] = PerchUtil::json_safe_encode($dynamic_fields);
     	
         if (!is_object($Section)) {
