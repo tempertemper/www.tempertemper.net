@@ -35,9 +35,6 @@
     ));
   ?>" />
 
-  <script src="/assets/components/responsive-nav/responsive-nav.min.js"></script>
-  <script src="/assets/components/html5shiv/dist/html5shiv.min.js"></script>
-
 	<?php perch_get_css(); ?>
 
 </head>
