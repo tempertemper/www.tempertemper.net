@@ -1,7 +1,9 @@
 body {
   line-height: 1.5;
   color: black;
-  @include font-regular;
+  font-family: "FS Me", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   @include rms(0);
 }
 
@@ -24,18 +26,18 @@ cite {
 }
 
 strong {
-  @include font-bold;
+  font-weight: 700;
 
   em {
-    @include font-bold-italic;
+    font-style: italic;
   }
 }
 
 em {
-  @include font-regular-italic;
+  font-style: italic;
 
   strong {
-    @include font-bold-italic;
+    font-weight: 700;
   }
 }
 
