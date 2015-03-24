@@ -4,7 +4,11 @@ body {
   font-family: "FS Me", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 140%;
+  font-size: ms(0);
+
+  @media (min-width: $m) {
+    font-size: ms(2);
+  }
 }
 
 blockquote {
@@ -44,7 +48,7 @@ em {
 ul,
 ol {
 
-  @media (max-width: $m) {
+  @media (max-width: $l) {
     padding-left: 1.5em;
   }
 }
