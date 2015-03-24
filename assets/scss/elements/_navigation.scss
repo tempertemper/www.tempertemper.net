@@ -71,7 +71,7 @@
   text-indent: -999px;
   position: relative;
   overflow: hidden;
-  width: 2em;
+  width: 2.5em;
   height: 2.5em;
   cursor: pointer;
 
@@ -85,7 +85,7 @@
     text-indent: 0;
     text-align: center;
     speak: none;
-    top: -0.35em;
+    top: 0;
     left: 0;
     transition: color .2s linear;
   }
@@ -101,9 +101,5 @@
 
   &.active::before {
     content:"\00D7";
-    font-weight: 700;
-    font-size: 4.2em;
-    top: -0.5em;
-    left: -0.05em;
   }
 }
