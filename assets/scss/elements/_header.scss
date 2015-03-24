@@ -30,7 +30,7 @@
     text-align: center;
 
     @media (min-width: $s) {
-      @include font-light;
+      font-weight: 100;
     }
   }
 }
