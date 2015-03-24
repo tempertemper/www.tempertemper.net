@@ -6,11 +6,11 @@
   }
 
   @media screen and (min-width: $m) {
-    font-size: ms($n, 1.2em, $fourth);
+    font-size: ms($n, 1.2em, $major-third);
   }
 
   @media screen and (min-width: $l) {
-    font-size: ms($n, 1.3em, $fourth);
+    font-size: ms($n, 1.3em, $major-third);
   }
 }
 
