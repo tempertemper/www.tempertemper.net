@@ -1,5 +1,5 @@
 [role="banner"] {
-  margin-bottom: 5em;
+  margin-bottom: 3em;
   clear: both;
   padding-top: 1em;
   border-top: $divider;
@@ -26,17 +26,17 @@
   h1 {
     clear: both;
     margin-top: 0;
-    padding-top: 1.414em;
+    padding-top: 1em;
     text-align: center;
 
     @media (min-width: $s) {
-      font-weight: 100;
+      font-weight: 200;
     }
   }
 }
 
 .logo {
-  max-width: 15em;
+  max-width: 12em;
   display: block;
   transition: none;
   float: left;
@@ -48,18 +48,12 @@
   }
 
   @media (max-width: $s) {
-    padding-left: 90px;
-    width: 90px;
-    height: 63px;
+    padding-left: 56px;
+    width: 56px;
+    height: 40px;
     background-image: url(../img/tempertemper-web-design-abbreviated-logo.png);
     background-repeat: no-repeat;
     background-size: 100%;
-  }
-
-  @media (max-width: $s) {
-    padding-left: 66px;
-    width: 66px;
-    height: 46px;
   }
 }
 
