@@ -1,18 +1,61 @@
-@mixin rms($n) {
-  font-size: ms($n, 1em, $minor-third);
+$ms-base: $font-size;
+$ms-ratio: $major-third;
 
-  @media screen and (min-width: $s) {
-    font-size: ms($n, 1.1em, $major-third);
-  }
+// HEADINGS
 
-  @media screen and (min-width: $m) {
-    font-size: ms($n, 1.2em, $major-third);
-  }
+@mixin heading-xl {
+  font-size: ms(4);
 
-  @media screen and (min-width: $l) {
-    font-size: ms($n, 1.3em, $major-third);
+  @media (min-width: $m) {
+    font-size: ms(6);
   }
 }
+
+@mixin heading-l {
+  font-size: ms(3);
+
+  @media (min-width: $m) {
+    font-size: ms(5);
+  }
+}
+
+@mixin heading-m {
+  font-size: ms(2);
+
+  @media (min-width: $m) {
+    font-size: ms(4);
+  }
+}
+
+@mixin heading-s {
+  font-weight: 700;
+  font-size: ms(1);
+
+  @media (min-width: $m) {
+    font-weight: 300;
+    font-size: ms(3);
+  }
+}
+
+@mixin heading-xs {
+  font-weight: 200;
+  font-size: ms(1);
+
+  @media (min-width: $m) {
+    font-size: ms(2);
+  }
+}
+
+@mixin heading-xxs {
+  font-weight: 700;
+  font-size: ms();
+
+  @media (min-width: $m) {
+    font-size: ms(1);
+  }
+}
+
+// GENERAL
 
 @mixin remove-list-styling {
   list-style: none;
