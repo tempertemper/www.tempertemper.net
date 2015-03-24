@@ -1,40 +1,51 @@
 <?php
 
-PerchSystem::register_feather('tempertemper');
+  PerchSystem::register_feather('tempertemper');
 
-class PerchFeather_tempertemper extends PerchFeather
-{
-	public function get_css($opts, $index, $count)
-	{
-		$out = array();
+  class PerchFeather_tempertemper extends PerchFeather
+  {
+    public function get_css($opts, $index, $count)
+    {
+      $out = array();
 
-		if (!$this->component_registered('style')) {
-			$out[] = $this->_single_tag('link', array(
-					'rel'=>'stylesheet',
-					'href'=>$this->path.'/css/style.css'
-				));
-			$this->register_component('style');
-		}
+      if (!$this->component_registered('style')) {
+        $out[] = $this->_single_tag('link', array(
+            'rel'=>'stylesheet',
+            'href'=>$this->path.'/css/style.css'
+          ));
+        $this->register_component('style');
+      }
 
-		return implode("\n\t", $out)."\n";
-	}
+      if (!$this->component_registered('html5shiv')) {
+        $out[] = $this->_script_tag(array(
+            'src'=>$this->path.'/js/html5shiv.min.js'
+          ));
+        $this->register_component('html5shiv');
+      }
 
-	public function get_javascript($opts, $index, $count)
-	{
-		$out = array();
+      if (!$this->component_registered('responsive-nav')) {
+        $out[] = $this->_script_tag(array(
+            'src'=>$this->path.'/js/responsive-nav.min.js'
+          ));
+        $this->register_component('responsive-nav');
+      }
 
-		if (!$this->component_registered('jquery')) {
-			$out[] = $this->_script_tag(array(
-				'src'=>$this->path.'/js/production.min.js'
-			));
-			$this->register_component('jquery');
-		}
+      return implode("\n\t", $out)."\n";
+    }
 
-		return implode("\n\t", $out)."\n";
-	}
+    public function get_javascript($opts, $index, $count)
+    {
+      $out = array();
 
+      if (!$this->component_registered('jquery')) {
+        $out[] = $this->_script_tag(array(
+          'src'=>$this->path.'/js/production.min.js'
+        ));
+        $this->register_component('jquery');
+      }
 
-}
-
+      return implode("\n\t", $out)."\n";
+    }
+  }
 
 ?>
