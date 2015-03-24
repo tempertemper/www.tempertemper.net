@@ -8,4 +8,6 @@
     ));
   ?>
 
+  <?php perch_search_form(); ?>
+
 </nav>

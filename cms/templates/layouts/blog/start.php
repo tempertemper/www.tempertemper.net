@@ -38,9 +38,6 @@
 
   <link href="/blog/rss" rel="alternate" type="application/rss+xml" title="RSS" />
 
-  <script src="/assets/components/responsive-nav/responsive-nav.min.js"></script>
-  <script src="/assets/components/html5shiv/dist/html5shiv.min.js"></script>
-
   <?php perch_get_css(); ?>
 
 </head>

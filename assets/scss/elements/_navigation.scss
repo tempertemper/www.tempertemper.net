@@ -1,6 +1,5 @@
 [role="navigation"] {
   width: 100%;
-  box-shadow: inset 0px -5px 10px 0 rgba(0,0,0,.1);
 
   ul {
     margin-top: 0;
@@ -74,7 +73,6 @@
   overflow: hidden;
   width: 2em;
   height: 2.5em;
-  float: left;
   cursor: pointer;
 
   &:before {
