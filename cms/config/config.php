@@ -17,13 +17,13 @@
     define("PERCH_DB_USERNAME", 'tempertemper');
     define("PERCH_DB_PASSWORD", 'fqde}=87tzKCVihiRMaY');
     define("PERCH_DB_DATABASE", "tempertemper-staging");
-    define('PERCH_PRODUCTION_MODE', PERCH_DEVELOPMENT);
+    define('PERCH_PRODUCTION_MODE', PERCH_STAGING);
    break;
 
   default :
     define("PERCH_DB_USERNAME", 'tempertemper');
     define("PERCH_DB_PASSWORD", 'GPPJZkJRqtPju@}jG3GKr8YwtyAnxu');
-    define("PERCH_DB_DATABASE", "tempertemper");
+    define("PERCH_DB_DATABASE", "tempertemper-production");
     define('PERCH_PRODUCTION_MODE', PERCH_PRODUCTION);
     break;
   }
