@@ -38,9 +38,8 @@
 .logo {
   max-width: 15em;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
   transition: none;
+  float: left;
 
   img {
     width: 100%;
@@ -48,7 +47,7 @@
     margin-top: 0;
   }
 
-  @media (max-width: $l) {
+  @media (max-width: $s) {
     padding-left: 90px;
     width: 90px;
     height: 63px;
@@ -64,10 +63,6 @@
   }
 }
 
-[role="navigation"] {
-  float: left;
-}
-
-[role="banner"] [role="search"] {
+.nav-toggle {
   float: right;
 }
