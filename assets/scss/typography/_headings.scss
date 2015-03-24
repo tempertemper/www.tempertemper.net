@@ -7,35 +7,31 @@ h6 {
   margin: 1.414em 0 0.5em;
   line-height: 1;
   text-rendering: optimizeLegibility;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 h1 {
-  @include rms(4);
+  @include heading-xl;
 }
 
 h2 {
-  @include rms(3);
+  @include heading-l;
 }
 
 h3 {
-  @include rms(2);
-  font-weight: 700;
+  @include heading-m;
 }
 
 h4 {
-  @include rms(1);
-  font-weight: 700;
+  @include heading-s;
 }
 
 h5 {
-  @include rms(0);
-  font-weight: 700;
+  @include heading-xs;
 }
 
 h6 {
-  @include rms(-1);
-  font-weight: 700;
+  @include heading-xxs;
 }
 
 [role="complementary"],
@@ -45,30 +41,23 @@ aside,
 nav {
 
   h1 {
-    @include rms(3);
+    @include heading-l;
   }
 
   h2 {
-    @include rms(2);
+    @include heading-m;
   }
 
   h3 {
-    @include rms(1);
-    font-weight: 100;
+    @include heading-s;
   }
 
   h4 {
-    @include rms(0);
-    font-weight: 300;
+    @include heading-xs;
   }
 
-  h5 {
-    @include rms(-1);
-    font-weight: 700;
-  }
-
+  h5,
   h6 {
-    @include rms(-2);
-    font-weight: 700;
+    @include heading-xxs;
   }
 }
