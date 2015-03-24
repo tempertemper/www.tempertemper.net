@@ -1,38 +1,3 @@
-@mixin normalise-text {
-  font-weight: normal;
-  font-style: normal;
-}
-
-@mixin font-light {
-  font-family: "FS Me Light", sans-serif;
-  @include normalise-text;
-}
-
-@mixin font-light-italic {
-  font-family: "FS Me Light Italic", sans-serif;
-  @include normalise-text;
-}
-
-@mixin font-regular {
-  font-family: "FS Me Regular", sans-serif;
-  @include normalise-text;
-}
-
-@mixin font-regular-italic {
-  font-family: "FS Me Regular Italic", sans-serif;
-  @include normalise-text;
-}
-
-@mixin font-bold {
-  font-family: "FS Me Bold", sans-serif;
-  @include normalise-text;
-}
-
-@mixin font-bold-italic {
-  font-family: "FS Me Bold Italic", sans-serif;
-  @include normalise-text;
-}
-
 @mixin rms($n) {
   font-size: ms($n, 1em, $minor-third);
 
