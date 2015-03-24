@@ -18,63 +18,15 @@
 [role="banner"] {
 
   [role="search"] {
-    position: relative;
-    width: auto;
 
-    input {
-      margin-bottom: 0;
-      padding: .4em .7em;
-      color: transparent;
-      @include font-light;
-      border-radius: $border-radius-default;
-
-      &:hover,
-      &:active,
-      &:focus {
-        border-color: black;
-      }
+    @media (min-width: $s) {
+      max-width: 50%;
+      margin-right: auto;
+      margin-left: auto;
     }
 
     [type="submit"] {
       display: none;
-    }
-
-    label {
-      padding: 0.225em 0.4em 0.4em;
-      transition: all .2s ease;
-
-      &:hover,
-      &:active {
-        color: black;
-        cursor: pointer;
-      }
-    }
-  }
-
-  [type="search"] {
-    width: 2.25em;
-    transition: all .4s ease;
-
-    &:focus {
-      padding-left: 2em;
-      width: 15em;
-      color: black;
-
-      @media (min-width: $xs) {
-        width: 10em;
-      }
-
-      @media (min-width: $s) {
-        width: 8em;
-      }
-
-      @media (min-width: $m) {
-        width: 12em;
-      }
-
-      @media (min-width: $xl) {
-        width: 16em;
-      }
     }
   }
 }
