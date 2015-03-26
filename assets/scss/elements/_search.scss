@@ -15,14 +15,19 @@
   }
 }
 
-[role="banner"] {
+[role="navigation"] {
 
   [role="search"] {
+    padding-bottom: 0.25em;
 
     @media (min-width: $s) {
       max-width: 50%;
       margin-right: auto;
       margin-left: auto;
+    }
+
+    input {
+      margin-bottom: 0;
     }
 
     [type="submit"] {
