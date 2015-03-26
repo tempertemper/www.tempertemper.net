@@ -101,7 +101,7 @@
   }
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: $m) {
 
   .js .nav-collapse {
     position: relative;
