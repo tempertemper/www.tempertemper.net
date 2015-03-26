@@ -6,6 +6,10 @@ body {
   font-style: normal;
   font-size: ms(0);
 
+  @media (min-width: $s) {
+    font-size: ms(1);
+  }
+
   @media (min-width: $m) {
     font-size: ms(2);
   }

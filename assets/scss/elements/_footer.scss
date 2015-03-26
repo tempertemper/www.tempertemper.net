@@ -3,26 +3,6 @@
   padding-bottom: 1em;
   text-align: center;
   @include top-divider;
-  border-bottom: $divider;
-  position: relative;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    border-bottom: $divider;
-    bottom: -3px;
-    top: 0;
-    width: 100%;
-  }
-
-  &:before {
-    right: 100%;
-  }
-
-  &:after {
-    left: 100%;
- }
 
   p {
     margin-top: 0.5em;
