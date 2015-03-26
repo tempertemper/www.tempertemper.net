@@ -10,7 +10,7 @@ textarea {
   border-radius: $border-radius-default;
   padding: 0.8em 1em;
   margin-bottom: 1em;
-  transition: all .3s ease;
+  transition: color .3s ease;
 
   &:focus {
     border-color: black;
