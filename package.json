@@ -10,7 +10,7 @@
     "jit-grunt": "0.9.*",
     "load-grunt-config": "0.16.*",
     "grunt-contrib-copy": "0.7.*",
-    "grunt-sass": "0.18.*",
+    "grunt-sass": "0.18.0",
     "grunt-browser-sync": "2.1.*"
   }
 }
