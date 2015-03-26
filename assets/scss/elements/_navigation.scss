@@ -59,15 +59,12 @@
 }
 
 .nav-toggle {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: black;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  text-decoration: none;
   text-indent: -999px;
   position: relative;
   overflow: hidden;
@@ -101,5 +98,55 @@
 
   &.active::before {
     content:"\00D7";
+  }
+}
+
+@media screen and (min-width: $m) {
+
+  .js .nav-collapse {
+    position: relative;
+  }
+  .js .nav-collapse.closed {
+    max-height: none;
+  }
+  .nav-toggle {
+    display: none;
+  }
+
+  [role="navigation"] {
+    float: right;
+    width: auto;
+
+    li {
+      display: inline-block;
+      width: auto;
+
+      &:before {
+        content: "/";
+        display: inline-block;
+      }
+
+      &:first-child {
+
+        a {
+          padding-top: 0;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+        }
+      }
+    }
+
+    a {
+      display: inline-block;
+      padding-right: .25em;
+      padding-left: .4em;
+    }
+
+    [role="search"] {
+      float: right;
+    }
   }
 }

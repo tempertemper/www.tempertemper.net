@@ -2,7 +2,12 @@
 [role="main"],
 [role="complementary"],
 [role="contentinfo"] {
-  @include container(38em);
+  @include container(50em);
   padding-left: 0.5em;
   padding-right: 0.5em;
+}
+
+[role="main"],
+[role="complementary"] {
+  max-width: 35em;
 }

@@ -15,14 +15,58 @@
   }
 }
 
-[role="banner"] {
+[role="navigation"] {
 
   [role="search"] {
+    padding-bottom: 0.25em;
+    width: auto;
+    position: relative;
 
-    @media (min-width: $s) {
+    @media (min-width: $s) and (max-width: $m) {
       max-width: 50%;
       margin-right: auto;
       margin-left: auto;
+    }
+
+    input {
+      margin-bottom: 0;
+      color: transparent;
+      padding: .4em .7em;
+      font-weight: 200;
+      border-radius: $border-radius-default;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: black;
+      }
+    }
+
+    label {
+      padding: 0.225em 0.4em 0.4em;
+      // transition: all .2s ease;
+
+      &:hover,
+      &:active {
+        color: black;
+        cursor: pointer;
+      }
+    }
+
+    @media (min-width: $m) {
+      text-align: left;
+
+      [type="search"] {
+        width: 2.25em;
+        transition: all .4s ease;
+        float: right;
+
+        &:focus {
+          padding-left: 2em;
+          width: 15em;
+          color: black;
+        }
+      }
     }
 
     [type="submit"] {
