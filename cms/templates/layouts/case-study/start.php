@@ -36,7 +36,7 @@
 
   <meta property="og:title" content="tempertemper Web Design" />
   <meta property="og:site_name" content="tempertemper Web Design"/>
-  <meta property="og:url" content="http://tempertemper.net/portfolio/<?php
+  <meta property="og:url" content="https://tempertemper.net/portfolio/<?php
     perch_content_custom('Portfolio', array(
       'page'=>'/portfolio/index.php',
       'filter' => 'slug',
@@ -46,7 +46,7 @@
       'template'=>'/case-study/slug.html',
     ));
   ?>" />
-  <meta property="og:image" content="http://tempertemper.net/assets/images/tempertemper-web-design-logo-facebook.jpg" />
+  <meta property="og:image" content="https://tempertemper.net/assets/images/tempertemper-web-design-logo-facebook.jpg" />
   <meta property="og:description" content="<?php
     perch_content_custom('Portfolio', array(
       'page'=>'/portfolio/index.php',
@@ -71,7 +71,7 @@
     ));
   ?>"/>
   <meta name="twitter:creator" content="@tempertemper"/>
-  <meta name="twitter:url" content="http://tempertemper.net/portfolio/<?php
+  <meta name="twitter:url" content="https://tempertemper.net/portfolio/<?php
     perch_content_custom('Portfolio', array(
       'page'=>'/portfolio/index.php',
       'filter' => 'slug',
