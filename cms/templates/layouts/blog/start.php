@@ -19,7 +19,7 @@
 
   <meta property="og:title" content="<?php perch_blog_post_field($_GET['s'], 'postTitle'); ?>" />
   <meta property="og:site_name" content="tempertemper Web Design"/>
-  <meta property="og:url" content="http://tempertemper.net/blog/<?php perch_blog_post_field($_GET['s'], 'postSlug'); ?>" />
+  <meta property="og:url" content="https://tempertemper.net/blog/<?php perch_blog_post_field($_GET['s'], 'postSlug'); ?>" />
   <meta property="og:image" content="<?php
     perch_blog_custom(array(
       'template' => 'featured_image.html',
@@ -34,7 +34,7 @@
   <meta name="twitter:site" content="@tempertemper"/>
   <meta name="twitter:domain" content="<?php perch_blog_post_field($_GET['s'], 'excerpt'); ?>"/>
   <meta name="twitter:creator" content="@tempertemper"/>
-  <meta name="twitter:url" content="http://tempertemper.net/blog/<?php perch_blog_post_field($_GET['s'], 'postSlug'); ?>">
+  <meta name="twitter:url" content="https://tempertemper.net/blog/<?php perch_blog_post_field($_GET['s'], 'postSlug'); ?>">
 
   <link href="/blog/rss" rel="alternate" type="application/rss+xml" title="RSS" />
 
