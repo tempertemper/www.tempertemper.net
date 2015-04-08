@@ -18,8 +18,8 @@
 
   <meta property="og:title" content="tempertemper Web Design" />
   <meta property="og:site_name" content="tempertemper Web Design"/>
-  <meta property="og:url" content="http://tempertemper.net<?php echo PerchSystem::get_page() ?>" />
-  <meta property="og:image" content="http://tempertemper.net/assets/images/tempertemper-web-design-logo-facebook.jpg" />
+  <meta property="og:url" content="https://tempertemper.net<?php echo PerchSystem::get_page() ?>" />
+  <meta property="og:image" content="https://tempertemper.net/assets/images/tempertemper-web-design-logo-facebook.jpg" />
   <meta property="og:description" content="<?php perch_page_attribute('description'); ?>" />
 
   <meta name="twitter:card" content="summary"/>
@@ -35,7 +35,7 @@
     ));
   ?>" />
 
-	<?php perch_get_css(); ?>
+  <?php perch_get_css(); ?>
 
 </head>
 
