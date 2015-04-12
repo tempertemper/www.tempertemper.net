@@ -4202,4 +4202,3 @@ class Tag extends DataBag
         return $attributes;
     }
 }
-

@@ -16,14 +16,15 @@ class PerchAPI_Base extends PerchBase
 
 	public function log_resources($resourceIDs=false)
 	{
-		PerchUtil::debug('Logging resources for '.$this->api->app_id);
-		
 		if ($resourceIDs===false) {
 			$Resources = new PerchResources();
 			$resourceIDs = $Resources->get_logged_ids();	
 		} 
 
 	    if (PerchUtil::count($resourceIDs) && $this->api) {
+
+			PerchUtil::debug('Logging resources for '.$this->api->app_id);
+
 
 	    	$app_id = $this->api->app_id;
 	    	

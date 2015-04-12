@@ -367,5 +367,3 @@ class PerchDB_MySQLi
 	}
 	
 }
-
-?>

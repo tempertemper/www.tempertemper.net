@@ -42,6 +42,10 @@
 
                 $messages = array();
 
+                if (file_exists(PerchUtil::file_path(PERCH_PATH.'/setup'))) {
+                    $messages[] = array('type'=>'failure', 'text'=>PerchLang::get('%sSetup folder is present and should be deleted%s', '<strong>', '</strong>'));
+                }
+
                 $newest_perch = $Settings->get('on_sale_version')->val();
 
                 if ($newest_perch) {
@@ -100,6 +104,8 @@
                 if ($memory_limit<64) {
                     $messages[] = array('type'=>'warning', 'text'=>PerchLang::get('%sMemory limit is low.%s Memory use is limited to %sM, which could cause problems manipulating large images.', '<strong>', '</strong>', $memory_limit));
                 }
+
+                
 
 
                 if (PERCH_RUNWAY) {
