@@ -10,7 +10,7 @@ class PerchForms_Responses extends PerchAPI_Factory
     {
         $sql = $Paging->select_sql().' *
                 FROM '.$this->table.'
-                WHERE formID='.$this->db->pdb($formID).'
+                WHERE formID='.$this->db->pdb((int)$formID).'
                     AND responseSpam='.($spam ? '1' : '0').'
                 ORDER BY responseCreated DESC 
                 '.$Paging->limit_sql();
@@ -25,5 +25,3 @@ class PerchForms_Responses extends PerchAPI_Factory
     }
 
 }
-
-?>
