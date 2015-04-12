@@ -32,9 +32,11 @@
 	$Form->handle_empty_block_generation($Template);
     $Form->set_required_fields_from_template($Template, $details);
 
-    if ($Form->submitted()) {		
-    	
+    if ($Form->submitted()) {
+
+		$fixed_fields = $Form->receive(array('setTemplate', 'setCatTemplate'));	  	
     	$data = $Form->get_posted_content($Template, $Sets, $Set);
+    	$data = array_merge($data, $fixed_fields);
 
         if (!is_object($Set)) {
             $Set = $Sets->create($data);

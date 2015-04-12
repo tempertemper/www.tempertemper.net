@@ -534,7 +534,7 @@ class PerchContent_Util
 	                    echo $FieldType->render_inputs($item);
 	                        
 	                    if ($tag->help()) {
-	                        echo $Form->hint($tag->help());
+	                        echo $Form->translated_hint($tag->help());
 	                    }
 	                    echo '</div>';
 	        
@@ -611,7 +611,7 @@ class PerchContent_Util
 	    echo '</div>'; // .blocks
 	}
 
-	public static function display_block($id, $blocks_index, $block_data, $count, $Page, $Template, $Form, &$stamp)
+	public static function display_block($id, $blocks_index, $block_data, $count, $Page, $Template, $Form, &$stamp, $empty=false)
 	{
 		if ($id===null) {
 			$block_id = '_blocks_'.$count;	
@@ -639,7 +639,7 @@ class PerchContent_Util
 		$block_tags[] = new PerchXMLTag('<perch:'.$Template->namespace.' id="_block_id" value="'.$block_data['_block_id'].'" type="hidden" edit-control="true" />');
 		$block_tags[] = new PerchXMLTag('<perch:'.$Template->namespace.' id="_block_index" class="index" value="'.$count.'" type="hidden" edit-control="true" />');
 
-		echo '<div class="block-wrap" tabindex="0" data-block="'.$block_data['_block_id'].'" data-prefix="'.$block_id.'">';
+		echo '<div class="block-wrap" tabindex="0" data-block="'.$block_data['_block_id'].'" data-prefix="'.$block_id.'"'.($empty?' data-empty="true"':'').'>';
 		    echo '<div class="block-item">';
 		        echo '<h2 class="divider">'.PerchUtil::html($label).'<span class="rm"></span></h2>';
 		        PerchContent_Util::display_item_fields($block_tags, $block_id, $block_data, $Page, $Form, $Template);
@@ -671,7 +671,7 @@ class PerchContent_Util
 		self::set_required_fields($Form, $block_id, $block_data, $tags_for_block, $Template);
 
 
-		self::display_block($id, $blocks_index, $block_data, $block_index, $Page, $Template, $Form, $stamp);
+		self::display_block($id, $blocks_index, $block_data, $block_index, $Page, $Template, $Form, $stamp, $empty=true);
 	}
 
 	public static function get_block_link($qs)

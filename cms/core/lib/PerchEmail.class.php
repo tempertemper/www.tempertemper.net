@@ -62,6 +62,7 @@ class PerchEmail
         if (!$type) {
             $type = 'txt';
             $template .= '.txt';
+            $this->html = false;
         }else{
             if ($type == 'html') {
                 $this->html = true;
@@ -204,6 +205,8 @@ class PerchEmail
     public function send()
     {
         $body = $this->build_message();
+
+        $debug_recipients = array();
         
         $mail = new PHPMailer(true); 
         $mail->CharSet = 'UTF-8';
@@ -222,9 +225,11 @@ class PerchEmail
             if (is_array($this->recipientEmail)) {
                 foreach($this->recipientEmail as $recipient) {
                     $mail->AddAddress($recipient);
+                    $debug_recipients[] = $recipient;
                 }
             }else{
                $mail->AddAddress($this->recipientEmail(), $this->recipientName());
+               $debug_recipients[] = $this->recipientEmail();
             }
 
             $mail->Subject = $this->subject();
@@ -260,7 +265,7 @@ class PerchEmail
                 PerchUtil::debug($mail->ErrorInfo, 'error');
                 return false;
             }else{
-                PerchUtil::debug("Message sent!");
+                PerchUtil::debug('Sent email: "'.$this->subject().'" to '.implode(', ', $debug_recipients), 'success');
                 return true;
             }
             

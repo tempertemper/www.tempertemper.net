@@ -777,5 +777,6 @@
     "Failed": "Failed",
     "Editing Item Options": "Editing Item Options",
     "Item Options": "Item Options",
-    "Add a block": "Add a block"
+    "Add a block": "Add a block",
+    "%sSetup folder is present and should be deleted%s": "%sSetup folder is present and should be deleted%s"
 }

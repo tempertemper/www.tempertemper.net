@@ -342,6 +342,15 @@ class PerchForm
  		return '<span class="hint'.($classname ? ' '.$classname : '').'">'.$this->html($txt).'</span>';
 	}
 
+	/**
+	 * This isn't a redundant duplicate. It offers a unified hint interface for both API and non-API uses
+	 * String comes from templates, so should not be translated.
+	 */
+	public function translated_hint($txt, $classname=false)
+	{
+		return '<span class="hint'.($classname ? ' '.$classname : '').'">'.$this->html($txt).'</span>';
+	}
+
 	public function label($id, $txt, $class='', $colon=false, $translate=true)
 	{
 	    if ($translate) $txt = PerchLang::get($txt);
