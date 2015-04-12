@@ -72,5 +72,3 @@ class PerchForms_Response extends PerchAPI_Base
         }
     }
 }
-
-?>
