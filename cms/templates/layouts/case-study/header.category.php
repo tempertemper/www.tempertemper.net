@@ -7,11 +7,11 @@
   <h1>
     <?php
       if (perch_get('cat')) {
-        perch_category('portfolio/'.perch_get('cat').'/',array(
+        perch_category('work/'.perch_get('cat').'/',array(
           'template'=>'category_header.html'
         ));
       } else {
-        echo('<a href="/portfolio/">Portfolio</a>: Categories');
+        echo('<a href="/work/">Work</a>: Categories');
       }
     ?>
   </h1>

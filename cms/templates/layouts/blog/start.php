@@ -8,18 +8,18 @@
 
   <?php include(__DIR__ . '/../partials/_ie_specific.php') ?>
 
-  <title><?php perch_blog_post_field($_GET['s'], 'postTitle'); ?></title>
+  <title><?php perch_blog_post_field(perch_get('s'), 'postTitle'); ?></title>
 
-  <meta name="description" content="<?php perch_blog_post_field($_GET['s'], 'excerpt'); ?>" />
+  <meta name="description" content="<?php perch_blog_post_field(perch_get('s'), 'excerpt'); ?>" />
 
   <?php include(__DIR__ . '/../partials/_mobile_specific.php') ?>
 
   <?php include(__DIR__ . '/../partials/_apple_touch_icon.php') ?>
   <?php include(__DIR__ . '/../partials/_favicon.php') ?>
 
-  <meta property="og:title" content="<?php perch_blog_post_field($_GET['s'], 'postTitle'); ?>" />
+  <meta property="og:title" content="<?php perch_blog_post_field(perch_get('s'), 'postTitle'); ?>" />
   <meta property="og:site_name" content="tempertemper Web Design"/>
-  <meta property="og:url" content="https://tempertemper.net/blog/<?php perch_blog_post_field($_GET['s'], 'postSlug'); ?>" />
+  <meta property="og:url" content="https://tempertemper.net/blog/<?php perch_blog_post_field(perch_get('s'), 'postSlug'); ?>" />
   <meta property="og:image" content="<?php
     perch_blog_custom(array(
       'template' => 'featured_image.html',
@@ -28,13 +28,13 @@
       'value'=> perch_get('s'),
     ));
   ?>" />
-  <meta property="og:description" content="<?php perch_blog_post_field($_GET['s'], 'excerpt'); ?>" />
+  <meta property="og:description" content="<?php perch_blog_post_field(perch_get('s'), 'excerpt'); ?>" />
 
   <meta name="twitter:card" content="summary"/>
   <meta name="twitter:site" content="@tempertemper"/>
-  <meta name="twitter:domain" content="<?php perch_blog_post_field($_GET['s'], 'excerpt'); ?>"/>
+  <meta name="twitter:domain" content="<?php perch_blog_post_field(perch_get('s'), 'excerpt'); ?>"/>
   <meta name="twitter:creator" content="@tempertemper"/>
-  <meta name="twitter:url" content="https://tempertemper.net/blog/<?php perch_blog_post_field($_GET['s'], 'postSlug'); ?>">
+  <meta name="twitter:url" content="https://tempertemper.net/blog/<?php perch_blog_post_field(perch_get('s'), 'postSlug'); ?>">
 
   <link href="/blog/rss" rel="alternate" type="application/rss+xml" title="RSS" />
 
@@ -42,4 +42,4 @@
 
 </head>
 
-<body class="blog-post <?php perch_blog_post_field($_GET['s'], 'postSlug'); ?>" class="hentry">
+<body class="blog-post <?php perch_blog_post_field(perch_get('s'), 'postSlug'); ?>" class="hentry">
