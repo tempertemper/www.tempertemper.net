@@ -1,5 +1,3 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/cms/runtime.php'); ?>
-
 <?php perch_layout('start'); ?>
 <?php perch_layout('header'); ?>
 
@@ -8,11 +6,11 @@
   <?php perch_content('Introduction'); ?>
 
   <?php
-    perch_content_custom('Portfolio', array(
-      'page'=>'/portfolio/index.php',
+    perch_collection('Work', [
+      'page'=>'/portfolio',
       'template' => 'portfolio_teaser.html',
       'count'=>2
-    ));
+    ]);
   ?>
 
 </main>
