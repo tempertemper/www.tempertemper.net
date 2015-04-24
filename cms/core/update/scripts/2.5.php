@@ -94,6 +94,9 @@
     INSERT INTO `__PREFIX__user_privileges` (`privKey`, `privTitle`, `privOrder`)
     VALUES ('assets.create','Upload assets',1);
 
+    INSERT INTO `__PREFIX__user_privileges` (`privKey`, `privTitle`, `privOrder`)
+    VALUES ('assets.manage','Manage assets',2);
+
 
     CREATE TABLE IF NOT EXISTS `__PREFIX__categories` (
       `catID` int(10) NOT NULL AUTO_INCREMENT,

@@ -28,6 +28,9 @@
             <?php 
             
                 switch($setting['type']) {
+                    case 'text':
+                        echo $Form->text($id, $Form->get($details, $id, $setting['default'])); 
+                        break;
                     case 'checkbox':
                         echo $Form->checkbox($id, true, $Form->get($details, $id)); 
                         break;
@@ -43,12 +46,14 @@
                             }
                         }
                         echo $Form->select($id, $setting['opts'], $Form->get($details, $id, $setting['default'])); 
-                        break;
-                    
+                        break;                  
                     default:
-                        echo $Form->text($id, $Form->get($details, $id, $setting['default'])); 
+                        if (is_callable($setting['type'])) {
+                            echo call_user_func($setting['type'], $Form, $id, $details, $setting);
+                        }else{
+                            echo $Form->text($id, $Form->get($details, $id, $setting['default'])); 
+                        }
                         break;
-                        
                 }
                 
                 if ($setting['hint']) {
@@ -64,5 +69,3 @@
 
         $Lang = false;
     }
-
-?>

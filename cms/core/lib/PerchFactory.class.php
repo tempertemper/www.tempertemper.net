@@ -13,6 +13,8 @@ class PerchFactory
     protected $bypass_tags            = false;
     
     protected $default_sort_direction = 'ASC';
+
+    protected $runtime_restrictons    = array();
     
     public $dynamic_fields_column     = false;
     
@@ -658,6 +660,8 @@ class PerchFactory
 
     public function get_filtered_listing_from_index($opts, $where_callback)
     {
+        $Perch = Perch::fetch();
+
         $index_table = PERCH_DB_PREFIX.$this->index_table;
 
         $where = array();
@@ -723,8 +727,8 @@ class PerchFactory
                         }
                     }
 
-                    $sql .= $this->_get_filter_sub_sql('_category', $pos, false, $match, $where_clause);
-                    $sql .= $this->_get_filter_sub_sql('_category', $neg, true, $match, $where_clause);
+                    $sql .= $this->_get_filter_sub_sql('_category', $pos, false, $match, true, $where_clause);
+                    $sql .= $this->_get_filter_sub_sql('_category', $neg, true, $match, true, $where_clause);
                 }
 
             }
@@ -751,10 +755,17 @@ class PerchFactory
                         }
                     }
 
-                    $sql .= $this->_get_filter_sub_sql('_tag', $pos, false, $match, $where_clause);
-                    $sql .= $this->_get_filter_sub_sql('_tag', $neg, true, $match, $where_clause);
+                    $sql .= $this->_get_filter_sub_sql('_tag', $pos, false, $match, false, $where_clause);
+                    $sql .= $this->_get_filter_sub_sql('_tag', $neg, true, $match, false, $where_clause);
                 }
 
+            }
+
+            // Runtime restrictons
+            if (!$Perch->admin && count($this->runtime_restrictons)) {
+                foreach($this->runtime_restrictons as $res) {
+                    $sql .= $this->_get_filter_sub_sql($res['field'], $res['values'], $res['negative_match'], $res['match'], $res['fuzzy'], $where_clause);
+                }
             }
 
 
@@ -1147,7 +1158,7 @@ class PerchFactory
             if (PerchUtil::count($processed_vars)) {
 
                 $category_field_ids    = $Template->find_all_tag_ids('categories');
-                PerchUtil::debug($category_field_ids, 'notice');
+                //PerchUtil::debug($category_field_ids, 'notice');
 
                 foreach($processed_vars as &$item) {
                     if (PerchUtil::count($item)) {
@@ -1193,7 +1204,7 @@ class PerchFactory
         return $html;        
     }
 
-    private function _get_filter_sub_sql($field, $items, $negative_match=false, $match, $where_clause)
+    private function _get_filter_sub_sql($field, $items, $negative_match=false, $match, $fuzzy, $where_clause)
     {
         if (count($items)) {
 
@@ -1203,7 +1214,12 @@ class PerchFactory
 
             $where = array();
             foreach($items as $item) {
-                $where[] = '(idx.indexKey='.$this->db->pdb($field).' AND idx.indexValue LIKE '.$this->db->pdb($item.'%').' OR idx.indexKey='.$this->db->pdb($field).' AND idx.indexValue='.$this->db->pdb($item).')';
+                if ($fuzzy) {
+                    $where[] = '(idx.indexKey='.$this->db->pdb($field).' AND idx.indexValue LIKE '.$this->db->pdb($item.'%').' OR idx.indexKey='.$this->db->pdb($field).' AND idx.indexValue='.$this->db->pdb($item).')';
+                }else{
+                    $where[] = '(idx.indexKey='.$this->db->pdb($field).' AND idx.indexValue='.$this->db->pdb($item).')';
+                }
+                
             }
             $cat_sql .= implode(' OR ', $where);
 

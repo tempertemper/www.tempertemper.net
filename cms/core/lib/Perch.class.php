@@ -4,7 +4,7 @@ class Perch
 {
     static protected $instance;
 	
-    public $version = '2.8.4';
+    public $version = '2.8.5';
     
     public $admin           = false;
     private $page           = false;
@@ -172,9 +172,9 @@ class Perch
             }         
 
             // not defined, so treat as a subfolder of resources
-            $bucket['name']      = $bucket_name;
+            $bucket['name']       = $bucket_name;
             $bucket['web_path']  .= '/'.$bucket_name;
-            $bucket['file_path'] = PerchUtil::file_path($bucket['file_path'].'/'.$bucket_name);
+            $bucket['file_path']  = PerchUtil::file_path($bucket['file_path'].'/'.$bucket_name);
         }
 
         return $bucket;

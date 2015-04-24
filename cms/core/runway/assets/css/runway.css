@@ -24,12 +24,13 @@
 	top: 16px;
 }
 
-.body {
-	padding-top: 50px;
-}
-
 #logo {
 	text-align: center;
+	min-height: 40px;
+}
+
+#logo img {
+	display: none;
 }
 
 html .scrolled .topbar,
@@ -42,9 +43,7 @@ html .scrolled .topbar.dark {
 	top: 16px;
 }
 
-.sidebar .metanav {
-	margin-top: 35px;
-}
+
 
 .sidebar-open .sidebar .metanav {
 	padding-top: 16px;
@@ -83,4 +82,43 @@ html .scrolled .topbar.dark {
 
 #sidebar-toggle {
 	font-size: 120%;
+}
+
+@media screen and (min-width: 721px) {
+	.body {
+		padding-top: 50px;
+	}
+
+	.sidebar-open #logo img {
+		display: block;
+	}
+
+	.sidebar .metanav {
+		margin-top: 35px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.sidebar .metanav {
+		padding: 13px 0 0 0;
+		width: auto;
+	}
+
+	.subnav {
+		font-size: 1.2em;
+	}
+
+	.subnav li {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.smartbar .fin a.icon,
+	.smartbar .fin.selected a.icon {
+		width: 0;
+		height: 25px;
+		padding-right: 0;
+		padding-bottom: 0;
+		overflow: hidden;
+	}
 }
