@@ -2,13 +2,13 @@
 
   <li>
 
-    <h2><a href="/portfolio/<perch:content id="slug" type="slug" />"><perch:content id="title" type="text" /></a></h2>
+    <h2><a href="/work/<perch:content id="slug" type="slug" />"><perch:content id="title" type="text" /></a></h2>
 
     <perch:categories id="Work" label="Type of work" set="work" required="true" display-as="checkboxes" divider-before="Categories">
       <perch:before>
         <p>Work on this project included
       </perch:before>
-        <a href="/portfolio/category/<perch:category id="catSlug" />"><perch:category id="catTitle" /></a><perch:if exists="perch_item_last"><perch:else />, </perch:if>
+        <a href="/work/category/<perch:category id="catSlug" />"><perch:category id="catTitle" /></a><perch:if exists="perch_item_last"><perch:else />, </perch:if>
       <perch:after>
         </p>
       </perch:after>
@@ -16,7 +16,7 @@
 
     <div class="project-info">
 
-      <a href="/portfolio/<perch:content id="slug" type="slug" />" >
+      <a href="/work/<perch:content id="slug" type="slug" />" >
         <img src="<perch:content id="image" bucket="portfolio" label="Image" type="image" width="700" height="440" density="2" quality="80" crop="true" />" alt="<perch:content id="alt" type="text" />" />
       </a>
 
@@ -46,7 +46,7 @@
 
     </div>
 
-    <a href="/portfolio/<perch:content id="slug" type="slug" />" class="button">View full case study</a>
+    <a href="/work/<perch:content id="slug" type="slug" />" class="button">View full case study</a>
 
   </li>
 

@@ -44,7 +44,7 @@ body.sidebar-closed {
 	right: 275px;
 	left: 0;
 	background-color: #fff;
-	z-index: 101;
+	z-index: 1055;
 }
 
 .scrolled .topbar {

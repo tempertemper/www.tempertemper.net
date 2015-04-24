@@ -73,5 +73,3 @@ class PerchFeather
 		return '<!--[if '.$condition.']>' . $string . '<![endif]-->';
 	}
 }
-
-?>

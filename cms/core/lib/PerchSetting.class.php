@@ -11,5 +11,3 @@ class PerchSetting extends PerchBase
     }
     
 }
-
-?>

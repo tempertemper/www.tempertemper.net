@@ -99,5 +99,3 @@ class PerchSettings extends PerchFactory
         $this->cache = false;
     }
 }
-
-?>

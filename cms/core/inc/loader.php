@@ -2,6 +2,8 @@
     function perch_autoload($class_name) {
         if (strpos($class_name, 'PerchAPI')!==false) {
             $file = PERCH_CORE . '/lib/api/' . $class_name . '.class.php';
+        }else if (strpos($class_name, 'PerchFieldType_')!==false) {
+            $file = PERCH_CORE . '/lib/PerchFieldTypes.class.php';
         }else{
             $file = PERCH_CORE . '/lib/' . $class_name . '.class.php';
         }   

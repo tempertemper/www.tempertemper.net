@@ -57,4 +57,3 @@ class PerchSession
 	    session_write_close();
 	}
 }
-?>
