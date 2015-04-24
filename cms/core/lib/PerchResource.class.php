@@ -30,5 +30,3 @@ class PerchResource extends PerchBase
     	return parent::delete();
     }
 }
-
-?>

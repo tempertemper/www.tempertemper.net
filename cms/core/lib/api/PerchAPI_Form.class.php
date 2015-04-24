@@ -320,7 +320,8 @@ class PerchAPI_Form extends PerchForm
         
         $this->hint = $string;
     }
-    
+
+   
     public function field_help($string)
     {
         $args = func_get_args();
@@ -368,6 +369,12 @@ class PerchAPI_Form extends PerchForm
     {   
         $tags       = $Template->find_all_tags_and_repeaters();
         
+        if (PerchUtil::count($tags)) {
+            foreach($tags as $Tag) {
+                if ($Tag->type()) PerchFieldTypes::get($Tag->type(), $this, $Tag, $tags, $this->app_id);
+            }
+        }
+
         if (is_array($tags)) {           
             PerchContent_Util::set_required_fields($this, null, $details, $tags, $Template);
         }

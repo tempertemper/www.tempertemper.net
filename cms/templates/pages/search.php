@@ -1,5 +1,3 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/cms/runtime.php'); ?>
-
 <?php perch_layout('start'); ?>
 <?php perch_layout('search_header'); ?>
 

@@ -1,7 +1,8 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/cms/runtime.php'); ?>
-
-<?php perch_layout('blog/start'); ?>
-<?php perch_layout('blog/post_header'); ?>
+<?php
+  perch_blog_check_preview();
+  perch_layout('blog/start');
+  perch_layout('blog/post_header');
+?>
 
 <main role="main" class="entry-content">
 

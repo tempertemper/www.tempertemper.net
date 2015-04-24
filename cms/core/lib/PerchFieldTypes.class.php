@@ -290,7 +290,7 @@ class PerchFieldType_slug extends PerchFieldType
                     $tmp = array();
                     if (PerchUtil::count($parts)) {
                         foreach($parts as $field) {
-                            $tmp[] = $this->Tag->post_prefix().$field;
+                            $tmp[] = str_replace('__', '_', $this->Tag->post_prefix()).$field;
                         }
                     }
 
@@ -1394,7 +1394,7 @@ class PerchFieldType_file extends PerchFieldType_image
             $assetID = $details[$this->Tag->input_id()]['assetID'];
         }
 
-        $s .= $this->Form->hidden($asset_field, '');    
+        $s .= $this->Form->hidden($asset_field, $assetID);    
 
         $Bucket->initialise();
 
