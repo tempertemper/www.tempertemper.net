@@ -60,4 +60,19 @@ class PerchCategories_Sets extends PerchFactory
 	    
 	    return $file_name;
 	}
+
+	public static function get_settings_select_list($Form, $id, $details, $setting)
+	{
+		$opts = array();
+		$opts[] = array('value'=>'', 'label'=>'');
+		$c = __CLASS__;
+		$Sets = new $c;
+		$sets = $Sets->all();
+		if (PerchUtil::count($sets)) {
+			foreach($sets as $Set) {
+				$opts[] = array('value'=>$Set->id(), 'label'=>$Set->setTitle());
+			}
+		}
+        return $Form->select($id, $opts, $Form->get($details, $id, $setting['default'])); 
+	}
 }

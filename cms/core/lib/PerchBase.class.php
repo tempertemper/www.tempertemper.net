@@ -5,13 +5,15 @@ class PerchBase
     protected $db;
     protected $details;
 
-    protected $index_table = false;
+    protected $index_table          = false;
 
-    protected $api = false;    
+    protected $api                  = false;
     
-    protected $event_prefix = false;
+    protected $event_prefix         = false;
 
-    protected $can_log_resources = true;
+    protected $can_log_resources    = true;
+
+    protected $modified_date_column = false;
 
     function __construct($details) 
     {        
@@ -73,6 +75,8 @@ class PerchBase
     
     public function update($data)
     {
+        if ($this->modified_date_column) $data[$this->modified_date_column] = date('Y-m-d H:i:s');
+        
         $r = $this->db->update($this->table, $data, $this->pk, (int) $this->details[$this->pk]);
         $this->details = array_merge($this->details, $data);
         return $r;
@@ -149,6 +153,11 @@ class PerchBase
         $id_set = false;
         if (PerchUtil::count($fields)) {
             foreach($fields as $key=>$value) { 
+
+                if (strpos($key, 'DynamicFields')!==false || substr($key, 0, 6)=='perch_' || strpos($key, 'JSON')!==false) {
+                    continue;
+                }
+
                 if (isset($tag_index[$key])) {
                     $tag = $tag_index[$key];
                 }else{

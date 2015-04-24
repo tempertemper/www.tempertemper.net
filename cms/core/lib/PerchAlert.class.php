@@ -2,18 +2,11 @@
 
 class PerchAlert
 {
-	
 	private $alerts	= array();
 
-	function __construct()
-	{
-
-	}
-	
-	
 	public function set($type='success', $message='Thank you')
 	{
-		// type = success or failure
+		// type = success, notice, error
 		$this->alerts[] = array('type'=>$type, 'message'=>$message);
 		
 		PerchUtil::debug('Setting alert: ' . $message . ' ('.$type.')');

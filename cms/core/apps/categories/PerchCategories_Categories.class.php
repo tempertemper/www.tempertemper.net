@@ -21,6 +21,10 @@ class PerchCategories_Categories extends PerchFactory
 		}
 		$Category = parent::create($data);
 		if (is_object($Category)) {
+
+			$Perch = Perch::fetch();
+            $Perch->event($this->event_prefix.'.create', $Category);
+
 			$Category->update_tree_position();	
 		}
 		return $Category;
