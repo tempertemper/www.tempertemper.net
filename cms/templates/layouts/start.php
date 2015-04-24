@@ -36,6 +36,7 @@
   ?>" />
 
   <?php perch_get_css(); ?>
+  <?php perch_layout('_google_sitename'); ?>
 
 </head>
 
