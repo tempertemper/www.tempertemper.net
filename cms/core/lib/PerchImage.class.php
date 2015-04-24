@@ -53,6 +53,8 @@ class PerchImage
     
     public function resize_image($image_path, $target_w=false, $target_h=false, $crop=false, $suffix=false)
     {
+        $Perch = Perch::fetch();
+
         $bail = false;
 
         if ($this->mode === false) return false; 
@@ -229,8 +231,7 @@ class PerchImage
             if ($crop_h) $out['h'] = (int) $crop_h;
         }
 
-        
-        
+                
         // Check we're not upsizing
         if ($crop) {
             if ($crop_w > $image_w || $crop_h > $image_h) {
@@ -252,6 +253,9 @@ class PerchImage
                 $bail = true;
             }
         }
+
+        
+
         
         // Bail? 
         if ($bail) {
@@ -261,6 +265,8 @@ class PerchImage
             // reset sizes
             $out['w'] = (int) $image_w;
             $out['h'] = (int) $image_h;
+
+            $Perch->event('assets.create_image', new PerchAssetFile($out));
             return $out;
         }
         
@@ -290,9 +296,62 @@ class PerchImage
         
         PerchUtil::set_file_permissions($save_as);
 
+        $Perch->event('assets.create_image', new PerchAssetFile($out));
+
         if ($r) return $out;
         
         return false;
+    }
+
+    public function get_resize_profile($image_path)
+    {
+        $info = getimagesize($image_path);
+        
+        // WebP?
+        if (!is_array($info)) {
+            if ($this->is_webp($image_path)) {
+                $info = $this->get_webp_size($image_path);
+            }
+        }
+
+        // SVG?
+        $svg = false;
+        if (!is_array($info)) {
+            // $svg gets populated with the mime type if it's an SVG
+            $svg = $this->is_svg($image_path);
+            if ($svg) {
+                $info = $this->get_svg_size($image_path);
+            }
+        }
+
+        if (!is_array($info)) return false;
+        
+        $save_as = $image_path;
+       
+        $image_w = $info[0];
+        $image_h = $info[1];
+
+        $new_w = $image_w;
+        $new_h = $image_h;
+        
+        
+        // Prepare returned array
+        $out              = array();
+        $out['w']         = (int) $new_w;
+        $out['h']         = (int) $new_h;
+        $out['file_path'] = $save_as;
+        $parts            = explode(DIRECTORY_SEPARATOR, $save_as);
+        $out['file_name'] = array_pop($parts);
+        $out['web_path']  = str_replace(PERCH_RESFILEPATH.DIRECTORY_SEPARATOR, PERCH_RESPATH.'/', $save_as);
+        $out['density']   = $this->density;
+
+
+        // If SVG, we can return at this point.
+        if ($svg) {
+            $out['mime'] = $svg;
+        }
+        
+        return $out;
     }
     
     

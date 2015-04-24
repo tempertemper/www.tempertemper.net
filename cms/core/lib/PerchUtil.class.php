@@ -31,8 +31,6 @@ class PerchUtil
 				'msg'  => $msg,
 				'caller' => PerchUtil::get_caller_info(),
 			);
-
-
 	}
 
 	static function get_caller_info() {
@@ -669,6 +667,7 @@ class PerchUtil
     public static function urlify($string, $spacer='-')
     {   
     	$string = trim($string);
+    	$string = htmlspecialchars_decode($string, ENT_QUOTES);
     	$string = strip_tags($string);
     	$string = str_replace(array('$', '£', '€', '™'), array('', 'GBP ', 'EUR ', 'tm'), $string);
     	$string = preg_replace('#(\d)\.(\d)#', '$1 $2', $string); // make sure numbers with decimals don't mislead, e.g. 2.5 -> 25
