@@ -326,7 +326,6 @@
     "If you want to hide the page from navigation, just check the checkbox. This will also hide any pages below this one when displaying a navigation tree.": "If you want to hide the page from navigation, just check the checkbox. This will also hide any pages below this one when displaying a navigation tree.",
     "If creating a page from a Master Page, the file extension (e.g. .php) will be added automatically based on the Master Page.": "If creating a page from a Master Page, the file extension (e.g. .php) will be added automatically based on the Master Page.",
     "If adding a link or an existing page, enter the full path.": "If adding a link or an existing page, enter the full path.",
-    "Editor requested, but not installed: bananas": "Editor requested, but not installed: bananas",
     "These are all the editable regions that are shared across many pages of the site.": "These are all the editable regions that are shared across many pages of the site.",
     "Item orders successfully updated.": "Item orders successfully updated.",
     "Editor": "Editor",
@@ -778,5 +777,6 @@
     "Editing Item Options": "Editing Item Options",
     "Item Options": "Item Options",
     "Add a block": "Add a block",
-    "%sSetup folder is present and should be deleted%s": "%sSetup folder is present and should be deleted%s"
+    "%sSetup folder is present and should be deleted%s": "%sSetup folder is present and should be deleted%s",
+    "Manage assets": "Manage assets"
 }

@@ -93,7 +93,11 @@ class PerchFieldType_editcontrol extends PerchFieldType
     public function render_inputs($details=array())
     {
         return $this->Form->hidden($this->Tag->input_id(), $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()), false, $this->Tag->class());
+    }
 
+    public function get_search_text($raw=false)
+    {
+        return '';
     }
 }
 
@@ -936,6 +940,14 @@ class PerchFieldType_image extends PerchFieldType
                 $filesize = (int)$_FILES[$item_id]['size'];
 
                 $store['_default'] = rtrim($Bucket->get_web_path(), '/').'/'.$filename;
+
+                // fire events
+                if ($this->Tag->type()=='image') {
+                    $PerchImage = new PerchImage;
+                    $profile = $PerchImage->get_resize_profile($target);
+                    $profile['original'] = true;
+                    $Perch->event('assets.upload_image', new PerchAssetFile($profile));
+                }
             }
         }
 
@@ -982,8 +994,11 @@ class PerchFieldType_image extends PerchFieldType
                 }
             }
 
+
+
             // thumbnail
-            if ($this->Tag->type()=='image') {
+            if ($this->Tag->type()=='image') {              
+
                 $PerchImage = new PerchImage;
                 $PerchImage->set_density(2);
 
@@ -1363,7 +1378,6 @@ class PerchFieldType_image extends PerchFieldType
         }else{
             $out[] = array('key'=>$id, 'value'=>trim($raw));
         }
-
 
         return $out;
     }

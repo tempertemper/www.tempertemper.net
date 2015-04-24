@@ -3,7 +3,7 @@
     $Regions    = new PerchContent_Regions;
 
 	$expand_list = array(0);
-    
+
     // Find new pages and initialise
     $Pages->order_new_pages();
     

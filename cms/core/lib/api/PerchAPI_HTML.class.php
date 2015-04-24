@@ -261,6 +261,10 @@ class PerchAPI_HTML
 
             foreach($rows as $row) {
 
+                if (is_object($row)) {
+                    $row_array = $row->to_array();
+                }
+
                 $i = 0;
 
                 $s.= '<tr>';
@@ -269,12 +273,17 @@ class PerchAPI_HTML
                     if ($i==0) {
                         $s .= '<td class="primary">';
                         if ($edit_link) $s .= '<a href="'.$paths['edit'].'/?id='.$row->id().'">';
-                        $s .= $row->$val();
+                        $s .= (isset($row_array[$val]) ? $row_array[$val] : $row->$val());
                         if ($edit_link) $s .= '</a>';
                         $s .= '</td>';
                     }else{
                         $s .= '<td>';
-                        $s .= $row->$val();
+                        $v_v = (isset($row_array[$val]) ? $row_array[$val] : $row->$val());
+                        if (is_array($v_v) && isset($v_v['value'])) {
+                            $s .= $v_v['value'];
+                        }else{
+                            $s .= $v_v;
+                        }
                         $s .= '</td>';
                     }
 
