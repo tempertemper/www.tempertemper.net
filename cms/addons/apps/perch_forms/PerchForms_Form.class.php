@@ -15,7 +15,7 @@ class PerchForms_Form extends PerchAPI_Base
     {
         $sql = 'SELECT COUNT(*) AS qty
                 FROM '.PERCH_DB_PREFIX.'forms_responses
-                WHERE formID='.$this->db->pdb($this->id()).'
+                WHERE formID='.$this->db->pdb((int)$this->id()).'
                     AND responseSpam=0';
         return $this->db->get_count($sql);
     }
@@ -24,7 +24,7 @@ class PerchForms_Form extends PerchAPI_Base
     {
         $sql = 'SELECT responseCreated
                 FROM '.PERCH_DB_PREFIX.'forms_responses
-                WHERE formID='.$this->db->pdb($this->id()).'
+                WHERE formID='.$this->db->pdb((int)$this->id()).'
                 ORDER BY responseCreated DESC
                 LIMIT 1';
         return $this->db->get_value($sql);
@@ -159,7 +159,7 @@ class PerchForms_Form extends PerchAPI_Base
             $record['responseSpamData'] = PerchUtil::json_safe_encode($spam_data);
         
 
-            $Responses = new PerchForms_Responses;
+            $Responses = new PerchForms_Responses($this->api);
             $Response  = $Responses->create($record);
         }
         
@@ -201,7 +201,6 @@ class PerchForms_Form extends PerchAPI_Base
             }
 
             foreach($data['fields'] as $field) {
-
                 
                 if (isset($field->attributes['label'])) {
                     $str .= str_pad($field->attributes['label'].': ', 30);
@@ -220,8 +219,7 @@ class PerchForms_Form extends PerchAPI_Base
             $msg.=$str;
             $resp_msg.=$str;
             
-            $API  = new PerchAPI(1.0, 'perch_forms');
-            
+            $API  = new PerchAPI(1.0, 'perch_forms');           
             
             $Email = $API->get('Email');
             
@@ -293,13 +291,14 @@ class PerchForms_Form extends PerchAPI_Base
                     PerchUtil::debug('Setting '.$key.' as '.$val->value);
                     $Email->set($key, nl2br($val->value));
                 }
-                $Email->set('email_message', nl2br($opts->adminEmailMessage));
+                $Email->set('email_message', nl2br($this->_replace_vars($opts->adminEmailMessage, $data['fields'])));
             }
 
-            $Email->body($msg);
+            $Email->body($msg);        
 
-            
             $Email->send();
+
+
 
             // if we are sending an autoresponse.
             if(isset($opts->sendAutoResponse) && $reply_to != false) {
@@ -317,9 +316,13 @@ class PerchForms_Form extends PerchAPI_Base
                     foreach($data['fields'] as $key=>$val) {
                         $Email->set($key, nl2br($val->value));
                     }
+                }else{
+                    $Email->set_template(null);
+                    $Email->template_method('dollar');
+
                 }
 
-                $Email->set('email_message', nl2br($opts->responseEmailMessage));
+                $Email->set('email_message', nl2br($this->_replace_vars($opts->responseEmailMessage, $data['fields'])));
 
 
                 $Email->replyToEmail($senderEmail);
@@ -343,7 +346,6 @@ class PerchForms_Form extends PerchAPI_Base
                 $str = str_replace('{'.$key.'}', $val->value, $str);
             }
         }
-        
         return $str;
     }
     
@@ -372,5 +374,3 @@ class PerchForms_Form extends PerchAPI_Base
     }
 
 }
-
-?>

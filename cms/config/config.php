@@ -1,24 +1,23 @@
 <?php
 
-  define('PERCH_LICENSE_KEY', '***REMOVED***');
-
   $http_host = getenv('HTTP_HOST');
   switch($http_host)
   {
 
   case('tempertemper.local') :
+    define('PERCH_SITEPATH', '/Users/TemperTemper/Sites/tempertemper/');
     define("PERCH_DB_USERNAME", 'root');
     define("PERCH_DB_PASSWORD", 'root');
     define("PERCH_DB_DATABASE", "tempertemper-local");
     define('PERCH_PRODUCTION_MODE', PERCH_DEVELOPMENT);
-   break;
+    break;
 
   case('staging.tempertemper.net') :
     define("PERCH_DB_USERNAME", 'tempertemper');
     define("PERCH_DB_PASSWORD", '***REMOVED***');
     define("PERCH_DB_DATABASE", "tempertemper-staging");
     define('PERCH_PRODUCTION_MODE', PERCH_STAGING);
-   break;
+    break;
 
   default :
     define("PERCH_DB_USERNAME", 'tempertemper');
@@ -28,9 +27,9 @@
     break;
   }
 
+  define('PERCH_LICENSE_KEY', '***REMOVED***');
   define("PERCH_DB_SERVER", "localhost");
   define("PERCH_DB_PREFIX", "perch2_");
-
   define('PERCH_TZ', 'UTC');
 
   define('PERCH_EMAIL_METHOD', 'smtp');
