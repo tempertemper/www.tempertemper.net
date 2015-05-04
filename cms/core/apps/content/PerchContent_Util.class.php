@@ -262,10 +262,13 @@ class PerchContent_Util
 	                $FieldType = PerchFieldTypes::get($Tag->type(), $Form, $Tag, $tags);
 	                $FieldType->set_unique_id($Item->id());
 	                
-	                $var             = $FieldType->get_raw($postitems, $Item);
-	                PerchUtil::debug('Getting search text for: '.$Tag->id().' ('.$Tag->type().')');
-	                $search_text    .= $FieldType->get_search_text($var).' ';
-	                PerchUtil::debug($FieldType->get_search_text($var));
+	                $var  = $FieldType->get_raw($postitems, $Item);
+	                if ($Tag->searchable(true)) {
+	                	//PerchUtil::debug('Getting search text for: '.$Tag->id().' ('.$Tag->type().')');
+	                	$search_text    .= $FieldType->get_search_text($var).' ';
+	                	//PerchUtil::debug($FieldType->get_search_text($var));	
+	                }
+	                
 
 	                            
 	                if ($var || (is_string($var) && strlen($var))) {

@@ -17,10 +17,6 @@ class PerchAdmin extends Perch
     
     public $core_apps         = array('content', 'assets', 'categories');
 
-
-
-    public $event_listeners   = array();
-
     public static function fetch()
 	{	    
         if (!isset(self::$instance)) {
@@ -318,36 +314,4 @@ class PerchAdmin extends Perch
         return $this->settings;
     }
     
-    public function on($event, $callback)
-    {
-        if (!isset($this->event_listeners[$event])) {
-            $this->event_listeners[$event] = array();
-        }
-
-        $this->event_listeners[$event][] = $callback;
-    }
-
-    public function event($event)
-    {
-        if ((isset($this->event_listeners[$event]) && count($this->event_listeners[$event])) || isset($this->event_listeners['*'])) {
-
-            $Event = new PerchSystemEvent(func_get_args());
-
-            if (isset($this->event_listeners[$event]) && count($this->event_listeners[$event])) {
-                foreach($this->event_listeners[$event] as $callback) {
-                    if (is_callable($callback)) {
-                        call_user_func($callback, $Event);
-                    }
-                }
-            }
-
-            if (isset($this->event_listeners['*']) && count($this->event_listeners['*'])) {
-                foreach($this->event_listeners['*'] as $callback) {
-                    if (is_callable($callback)) {
-                        call_user_func($callback, $Event);
-                    }
-                }
-            }
-        }
-    }
 }

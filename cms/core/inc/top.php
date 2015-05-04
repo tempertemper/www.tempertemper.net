@@ -2,7 +2,9 @@
     $Settings->get('headerColour')->settingValue();
 
     // Check for updates
-    if (!$auth_page && !$Settings->get('update_'.$Perch->version)->val()) {
+    $update_setting_key = 'update_'.$Perch->version;
+  	if (PERCH_RUNWAY) $update_setting_key = 'update_runway_'.$Perch->version;
+    if (!$auth_page && !$Settings->get($update_setting_key)->val()) {
         PerchUtil::redirect(PERCH_LOGINPATH . '/core/update/');
     }
 
