@@ -4,7 +4,7 @@ class Perch
 {
     static protected $instance;
 	
-    public $version = '2.8.5';
+    public $version = '2.8.6';
     
     public $admin           = false;
     private $page           = false;
@@ -23,6 +23,8 @@ class Perch
     public    $layout_depth = 1;
     
     public $ignore_pattern  = '/^CVS$/i';
+
+    public $event_listeners = array();
     
     function __construct()
     {
@@ -202,4 +204,37 @@ class Perch
 
         return '';
     }    
+
+    public function on($event, $callback)
+    {
+        if (!isset($this->event_listeners[$event])) {
+            $this->event_listeners[$event] = array();
+        }
+
+        $this->event_listeners[$event][] = $callback;
+    }
+
+    public function event($event)
+    {
+        if ((isset($this->event_listeners[$event]) && count($this->event_listeners[$event])) || isset($this->event_listeners['*'])) {
+
+            $Event = new PerchSystemEvent(func_get_args());
+
+            if (isset($this->event_listeners[$event]) && count($this->event_listeners[$event])) {
+                foreach($this->event_listeners[$event] as $callback) {
+                    if (is_callable($callback)) {
+                        call_user_func($callback, $Event);
+                    }
+                }
+            }
+
+            if (isset($this->event_listeners['*']) && count($this->event_listeners['*'])) {
+                foreach($this->event_listeners['*'] as $callback) {
+                    if (is_callable($callback)) {
+                        call_user_func($callback, $Event);
+                    }
+                }
+            }
+        }
+    }
 }

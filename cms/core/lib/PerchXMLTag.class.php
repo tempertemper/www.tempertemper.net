@@ -63,6 +63,9 @@ class PerchXMLTag
 			return $this->attributes[$method];
 		}
 
+		// if not set, return arg[0] as the default value
+		if (isset($arguments[0])) return $arguments[0];
+
 		return false;
 	}
 	
