@@ -21,7 +21,7 @@
 
     <h1>What you say</h1>
 
-    <?php include($_SERVER['DOCUMENT_ROOT'].'/cms/templates/layouts/testimonial.php'); ?>
+    <?php perch_layout('testimonial'); ?>
 
   </aside>
 
