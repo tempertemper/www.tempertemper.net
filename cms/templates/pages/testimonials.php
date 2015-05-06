@@ -4,7 +4,7 @@
 <div role="main">
 
   <?php
-    perch_content_custom('Primary content', array(
+    perch_collection('Testimonials', array(
       'template'=>'testimonial.html',
       'paginate'=>'true',
       'count'=>6
