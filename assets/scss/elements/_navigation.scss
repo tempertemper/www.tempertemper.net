@@ -101,7 +101,7 @@
   }
 }
 
-@media screen and (min-width: $m) {
+@media screen and (min-width: $l) {
 
   .js .nav-collapse {
     position: relative;
@@ -116,6 +116,11 @@
   [role="navigation"] {
     float: right;
     width: auto;
+
+    ul {
+      width: auto;
+      display: inline-block;
+    }
 
     li {
       display: inline-block;
@@ -135,6 +140,13 @@
         &:before {
           content: "";
           position: absolute;
+        }
+      }
+
+      &:last-child {
+
+        a {
+          padding-bottom: 0;
         }
       }
     }
