@@ -5,7 +5,7 @@
     color: $colour-primary;
     font-size: 1.25em;
     position: absolute;
-    padding: 0.5em 0.75em 0.4em;
+    padding: 0.4em 0.75em 0.5em;
     display: block;
     line-height: 1.25;
   }
@@ -30,11 +30,8 @@
     }
 
     [type="search"] {
-
-      &:focus {
-        padding-left: 2em;
-        color: black;
-      }
+      color: black;
+      padding-left: 2em;
     }
 
     input {
@@ -65,13 +62,22 @@
     @media (min-width: $l) {
       text-align: left;
 
+      label {
+        right: 0;
+      }
+
       [type="search"] {
         width: 2.25em;
         transition: width .4s ease;
         float: right;
+        text-align: right;
+        padding-left: 0.4em;
+        color: transparent;
 
         &:focus {
           width: 10em;
+          padding-right: 2em;
+          color: black;
         }
       }
     }
