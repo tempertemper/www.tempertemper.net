@@ -29,6 +29,14 @@
       margin-left: auto;
     }
 
+    [type="search"] {
+
+      &:focus {
+        padding-left: 2em;
+        color: black;
+      }
+    }
+
     input {
       margin-bottom: 0;
       color: transparent;
@@ -63,9 +71,7 @@
         float: right;
 
         &:focus {
-          padding-left: 2em;
           width: 10em;
-          color: black;
         }
       }
     }
