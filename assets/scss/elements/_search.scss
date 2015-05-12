@@ -21,8 +21,9 @@
     padding-bottom: 0.25em;
     width: auto;
     position: relative;
+    margin-left: 1em;
 
-    @media (min-width: $s) and (max-width: $m) {
+    @media (min-width: $s) and (max-width: $l) {
       max-width: 50%;
       margin-right: auto;
       margin-left: auto;
@@ -53,7 +54,7 @@
       }
     }
 
-    @media (min-width: $m) {
+    @media (min-width: $l) {
       text-align: left;
 
       [type="search"] {
@@ -63,7 +64,7 @@
 
         &:focus {
           padding-left: 2em;
-          width: 15em;
+          width: 10em;
           color: black;
         }
       }
