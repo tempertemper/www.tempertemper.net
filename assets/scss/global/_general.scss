@@ -70,3 +70,9 @@ a img {
 [role="complementary"] aside {
   @include top-divider;
 }
+
+.wistia_embed {
+  max-width: 100% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
