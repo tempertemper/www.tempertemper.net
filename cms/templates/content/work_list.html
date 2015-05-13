@@ -1,0 +1,33 @@
+<perch:before><ul class="portfolio-list"></perch:before>
+
+  <li>
+
+    <h2><a href="/work/<perch:content id="slug" type="slug" />"><perch:content id="title" type="text" /></a></h2>
+
+    <perch:categories id="Work" label="Type of work" set="work" required="true" display-as="checkboxes" divider-before="Categories">
+      <perch:before>
+        <p>Work included
+      </perch:before>
+        <a href="/work/category/<perch:category id="catSlug" />"><perch:category id="catTitle" /></a><perch:if exists="perch_item_last"><perch:else />, </perch:if>
+      <perch:after>
+        </p>
+      </perch:after>
+    </perch:categories>
+
+    <div class="project-info">
+
+      <p><perch:content id="excerpt" type="textarea" markdown="true" /></p>
+
+    </div>
+
+    <a href="/work/<perch:content id="slug" type="slug" />" class="go-to">View full case study</a>
+
+  </li>
+
+<perch:after>
+
+</ul>
+
+<perch:template path="pagination/work.html" rescope="parent" />
+
+</perch:after>
