@@ -11,7 +11,7 @@
           'template'=>'category_header.html'
         ));
       } else {
-        echo('<a href="/work/">Work</a>: Categories');
+        echo('Types of Work');
       }
     ?>
   </h1>
