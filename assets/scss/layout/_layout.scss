@@ -1,13 +1,32 @@
-[role="banner"],
-[role="main"],
-[role="complementary"],
-[role="contentinfo"] {
+body {
   @include container(50em);
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
 
-[role="main"],
-[role="complementary"] {
-  max-width: 35em;
+
+@media screen and (min-width: $l) {
+
+  [role="main"],
+  [role="complementary"] {
+    @include layout($wide-layout);
+    @include span(4 of 6);
+    @include pre(1 of 6);
+  }
+
+  .portfolio-teaser ul {
+    @include layout($wide-layout);
+    @include pull(1.5 of 6);
+    @include post(-1.5 of 6);
+
+    li {
+      @include layout($wide-layout);
+      @include span(2 of 6);
+
+      &:last-of-type {
+        @include layout($wide-layout);
+        @include span(last 2 of 6);
+      }
+    }
+  }
 }
