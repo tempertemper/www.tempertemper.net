@@ -1,5 +1,5 @@
 @mixin textLink {
-  transition: all .2s ease;
+  transition: color .2s ease;
 
   &:link,
   &:visited {
