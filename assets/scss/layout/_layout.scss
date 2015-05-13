@@ -13,3 +13,8 @@ body {
     @include pre(1 of 6);
   }
 }
+
+[role="contentinfo"] {
+  float: left;
+  width: 100%;
+}
