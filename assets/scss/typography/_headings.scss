@@ -62,6 +62,10 @@ nav {
   }
 }
 
-[role="main"] > ul li:first-of-type h2 {
-  margin-top: 0;
+.hfeed,
+.testimonial-list {
+
+  li:first-of-type h2 {
+    margin-top: 0;
+  }
 }
