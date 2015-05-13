@@ -61,3 +61,7 @@ nav {
     @include heading-xxs;
   }
 }
+
+[role="main"] > ul li:first-of-type h2 {
+  margin-top: 0;
+}
