@@ -5,9 +5,9 @@
 
   <?php
     perch_collection('Testimonials', array(
-      'template'=>'testimonial.html',
+      'template'=>'testimonial_list.html',
       'paginate'=>'true',
-      'count'=>6
+      'count'=>10,
     ));
   ?>
 
