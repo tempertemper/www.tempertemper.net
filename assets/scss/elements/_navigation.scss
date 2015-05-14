@@ -1,5 +1,6 @@
 [role="navigation"] {
   width: 100%;
+  font-weight: 700;
 
   ul {
     margin-top: 0;
@@ -19,7 +20,6 @@
     display: block;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
-    font-weight: 700;
   }
 }
 
@@ -148,6 +148,21 @@
 
         a {
           padding-bottom: 0;
+        }
+      }
+
+      &.selected a,
+      &.ancestor a {
+
+        &:link,
+        &:visited {
+          color: black;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          cursor: auto;
         }
       }
     }
