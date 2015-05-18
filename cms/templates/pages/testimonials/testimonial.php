@@ -6,10 +6,14 @@
   <?php
     perch_collection('Testimonials', array(
       'template'=>'testimonial.html',
-      'paginate'=>'true',
-      'count'=>6
+      'filter'   => 'slug',
+      'match'    => 'eq',
+      'value'    => perch_get('s'),
+      'count'    => 1,
     ));
   ?>
+
+  <a href="/testimonials" class="back">View all testimonials</a>
 
 </div>
 

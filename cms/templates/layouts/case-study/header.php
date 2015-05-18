@@ -5,7 +5,7 @@
   <?php include(__DIR__ . '/../_primary_nav.php') ?>
 
   <h1>
-    <a href="/work/">Work</a>: <?php perch_collection('Work', [
+    <?php perch_collection('Work', [
       'filter' => 'slug',
       'match' => 'eq',
       'value' => perch_get('s'),
