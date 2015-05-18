@@ -8,7 +8,9 @@
   <?php
     perch_collection('Work', [
       'template' => 'work_teaser.html',
-      'count'=>3
+      'count'=>3,
+      'sort'=>'date',
+      'sort-order'=>'DESC'
     ]);
   ?>
 
