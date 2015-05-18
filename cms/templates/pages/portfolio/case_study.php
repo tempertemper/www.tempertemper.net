@@ -5,7 +5,7 @@
 
   <?php
     perch_collection('Work', [
-      'template' => 'portfolio_detail.html',
+      'template' => 'work_detail.html',
       'filter'   => 'slug',
       'match'    => 'eq',
       'value'    => perch_get('s'),
@@ -19,11 +19,11 @@
 
   <aside>
 
-    <h1>More case studies</h1>
+    <h1>More work</h1>
 
     <?php
       perch_collection('Work', [
-        'template' => 'portfolio_list_short.html',
+        'template' => 'work_list_short.html',
       ]);
     ?>
 

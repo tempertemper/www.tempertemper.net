@@ -20,13 +20,6 @@
         </a>
       </li>
 
-      <li>
-        <a href="http://www.facebook.com/tempertemperwebdesign" class="facebook icon" title="Head to my Facebook page">
-          <span aria-hidden="true" data-icon="&#102;"></span>
-          <span class="screen-reader-text">Facebook</span>
-        </a>
-      </li>
-
     </ul>
 
   </aside>

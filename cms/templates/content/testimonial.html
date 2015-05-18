@@ -1,37 +1,26 @@
-<perch:before><ul class="testimonial-list"></perch:before>
+<h2><perch:content id="citation" type="text" order="1" label="Citation" title="true" html="false" /></h2>
 
-  <li>
+<blockquote>
 
-    <h2><perch:content id="citation" type="text" order="1" label="Citation" title="true" html="false" /></h2>
+  &#8220;<perch:content id="testimonial" type="textarea" markdown="true" order="3" label="Testimonial" html="false" size="m" />&#8221;
 
-    <blockquote>
+  <cite>
 
-      &#8220;<perch:content id="testimonial" type="textarea" markdown="true" order="3" label="Testimonial" html="false" size="m" />&#8221;
+    <perch:if exists="website">
+      <a href="<perch:content id="website" order="4" type="text" label="Website" default="http://" html="false" />" rel="nofollow">
+    </perch:if>
 
+    <perch:content id="citation" type="text" order="1" label="Citation" title="true" html="false" /><perch:if exists="company">, </perch:if>
+    <perch:content id="company" type="text" order="2" label="Company" html="false" />
 
-      <cite>
+    <perch:if exists="website">
+      </a>
+    </perch:if>
 
-        <perch:if exists="website">
-          <a href="<perch:content id="website" order="4" type="text" label="Website" default="http://" html="false" />" rel="nofollow">
-        </perch:if>
+  </cite>
 
-        <perch:content id="citation" type="text" order="1" label="Citation" title="true" html="false" /><perch:if exists="company">, </perch:if>
-        <perch:content id="company" type="text" order="2" label="Company" html="false" />
+</blockquote>
 
-        <perch:if exists="website">
-          </a>
-        </perch:if>
+<perch:content id="date" type="date" label="Date" format="jS F Y" suppress="true" />
 
-      </cite>
-
-    </blockquote>
-
-  </li>
-
-<perch:after>
-
-</ul>
-
-<perch:template path="pagination/testimonials.html" rescope="parent" />
-
-</perch:after>
+<perch:content id="slug" for="citation" type="slug" suppress="true" />

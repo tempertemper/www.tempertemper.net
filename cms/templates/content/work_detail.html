@@ -1,0 +1,58 @@
+<perch:content id="title" type="text" label="Project title" html="false" order="1" title="true" suppress="true" />
+
+<perch:content id="case-study" type="textarea" label="Case study" bucket="portfolio" order="3" size="xxl" editor="markitup" required="true" markdown="true" textile="false" html="true" imagewidth="740" imagequality="90" imagecrop="true" />
+
+<perch:content id="excerpt" type="textarea" label="Excerpt" order="4" size="s" required="true" markdown="true" html="false" suppress="true" />
+
+<perch:related id="testimonial" collection="testimonials" label="Testimonial" divider-before="Linked testimonial">
+
+  <blockquote>
+
+      &#8220;<perch:content id="testimonial" type="textarea" />&#8221;
+
+      <cite>
+
+        <perch:content id="citation" type="text" /><perch:if exists="company">, </perch:if><perch:if exists="website">
+          <a href="<perch:content id="website" order="4" type="text" label="Website" default="http://" html="false" />" rel="nofollow">
+        </perch:if>
+
+          <perch:if exists="company"><perch:content id="company" type="text" /></perch:if>
+
+        <perch:if exists="website">
+          </a>
+        </perch:if>
+
+      </cite>
+
+    </blockquote>
+
+</perch:related>
+
+<perch:content id="slug" for="title" type="slug" suppress="true" />
+
+<perch:categories id="Work" label="Type of work" set="work" required="true" display-as="checkboxes" divider-before="Meta">
+  <perch:before>
+    <h3>Work included</h3>
+    <ul>
+  </perch:before>
+    <li>
+      <a href="/work/category/<perch:category id="catSlug" />"><perch:category id="catTitle" /></a>
+    </li>
+  <perch:after>
+    </ul>
+  </perch:after>
+</perch:categories>
+
+<perch:if exists="website">
+  <h3>Have a look</h3>
+
+  <a href="<perch:content id="website" order="2" type="text" label="Website" default="http://" html="false" />" rel="nofollow" class="go-to">Visit website
+  </a>
+
+</perch:if>
+
+<perch:content id="date" type="date" label="Date" format="jS F Y" suppress="true" />
+
+<h3>Work with me</h3>
+
+<a href="/contact" class="button">Say hello</a>

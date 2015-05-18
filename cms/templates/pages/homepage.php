@@ -7,9 +7,10 @@
 
   <?php
     perch_collection('Work', [
-      'page'=>'/portfolio',
-      'template' => 'portfolio_teaser.html',
-      'count'=>2
+      'template' => 'work_teaser.html',
+      'count'=>3,
+      'sort'=>'date',
+      'sort-order'=>'DESC'
     ]);
   ?>
 
@@ -19,7 +20,7 @@
 
   <aside class="testimonials">
 
-    <h1>What you say</h1>
+    <h1>Compliments</h1>
 
     <?php perch_layout('testimonial'); ?>
 
