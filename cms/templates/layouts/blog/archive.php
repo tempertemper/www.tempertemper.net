@@ -14,7 +14,7 @@
 
   /* --------------------------- POSTS BY CATEGORY --------------------------- */
   if (perch_get('cat')) {
-    echo '<h1><a href="/blog/">Blog</a>: Articles in the &lsquo;'.perch_blog_category(perch_get('cat'), true).'&rsquo; category</h1></header><main role="main">';
+    echo '<h1>Category: &lsquo;'.perch_blog_category(perch_get('cat'), true).'&rsquo;</h1></header><main role="main">';
 
     perch_blog_custom(array(
       'category'   => perch_get('cat'),
@@ -31,7 +31,7 @@
 
   /* --------------------------- POSTS BY TAG --------------------------- */
   if (perch_get('tag')) {
-    echo '<h1><a href="/blog/">Blog</a>: Articles tagged with &lsquo;'.perch_blog_tag(perch_get('tag'), true).'&rsquo;</h1></header><main role="main">';
+    echo '<h1>Tag: &lsquo;'.perch_blog_tag(perch_get('tag'), true).'&rsquo;</h1></header><main role="main">';
 
     perch_blog_custom(array(
       'tag'      => perch_get('tag'),
@@ -63,7 +63,7 @@
       $title_date_format = '%B %Y';
     }
 
-    echo '<h1><a href="/blog/">Blog</a>: Articles written in '.strftime($title_date_format, strtotime($date_from)).'</h1></header><main role="main">';
+    echo '<h1>Year: '.strftime($title_date_format, strtotime($date_from)).'</h1></header><main role="main">';
 
     perch_blog_custom(array(
       'filter'     => 'postDateTime',
@@ -83,7 +83,7 @@
   /* --------------------------- POSTS BY AUTHOR --------------------------- */
   if (perch_get('author')) {
 
-    echo '<h1><a href="/blog/">Blog</a>: Articles written by '.perch_blog_author(perch_get('author'), array(
+    echo '<h1>Author: '.perch_blog_author(perch_get('author'), array(
                         'template' => 'author_name.html',
                         ), true).'</h1></header><main role="main">';
 
@@ -107,7 +107,7 @@
     // No other options have been used; no posts have been displayed yet.
     // So display all posts.
 
-    echo '<h1><a href="/blog/">Blog</a>: Archive</h1></header><main role="main">';
+    echo '<h1>Archive</h1></header><main role="main">';
 
     perch_blog_custom(array(
       'template'   => $template,

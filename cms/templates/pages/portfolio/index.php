@@ -3,11 +3,15 @@
 
 <main role="main">
 
+  <?php perch_content('Introduction'); ?>
+
   <?php
     perch_collection('Work', [
-      'template'   => 'portfolio_list.html',
+      'template'   => 'work_list.html',
       'paginate'   => 'true',
-      'count'      => 5
+      'count'      => 5,
+      'sort'       => 'date',
+      'sort-order' => 'DESC'
     ]);
   ?>
 
