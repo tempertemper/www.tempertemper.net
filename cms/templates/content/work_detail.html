@@ -30,7 +30,7 @@
 
 <perch:content id="slug" for="title" type="slug" suppress="true" />
 
-<perch:categories id="Work" label="Type of work" set="work" required="true" display-as="checkboxes" divider-before="Categories">
+<perch:categories id="Work" label="Type of work" set="work" required="true" display-as="checkboxes" divider-before="Meta">
   <perch:before>
     <h3>Work included</h3>
     <ul>
@@ -50,6 +50,8 @@
   </a>
 
 </perch:if>
+
+<perch:content id="date" type="date" label="Date" format="jS F Y" suppress="true" />
 
 <h3>Work with me</h3>
 

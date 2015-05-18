@@ -8,6 +8,8 @@
       'template'=>'testimonial_list.html',
       'paginate'=>'true',
       'count'=>10,
+      'sort'=>'date',
+      'sort-order'=>'DESC'
     ));
   ?>
 
