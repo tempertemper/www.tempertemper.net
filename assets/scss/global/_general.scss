@@ -3,11 +3,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  border-top: $divider;
-  border-bottom: $divider;
-}
-
 ::selection {
   background: $colour-primary; // Safari
   color: white;
@@ -69,4 +64,9 @@ a img {
 
 [role="complementary"] aside {
   @include top-divider;
+}
+
+.wistia_embed,
+.wistia_embed > div {
+  width: 100% !important;
 }
