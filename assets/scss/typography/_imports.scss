@@ -1,53 +1,47 @@
 // FS Me Light
 @font-face {
   font-family: "FS Me";
-  src: url('../fonts/fs-me-light.woff?4.1.11') format('woff'),
-       url('../fonts/fs-me-light.ttf?4.1.11') format('truetype');
+  src: url('../fonts/fs-me-light.eot?4.1.14');
+  src: url('../fonts/fs-me-light.eot?#iefix?4.1.14') format('embedded-opentype'),
+       url('../fonts/fs-me-light.woff2?4.1.14') format('woff2'),
+       url('../fonts/fs-me-light.woff?4.1.14') format('woff'),
+       url('../fonts/fs-me-light.ttf?4.1.14') format('truetype');
   font-weight: 200;
   font-style: normal;
-}
-
-// FS Me Light Italic
-@font-face {
-  font-family: "FS Me";
-  src: url('../fonts/fs-me-light-italic.woff?4.1.11') format('woff'),
-       url('../fonts/fs-me-light-italic.ttf?4.1.11') format('truetype');
-  font-weight: 200;
-  font-style: italic;
 }
 
 // FS Me Regular
 @font-face {
   font-family: "FS Me";
-  src: url('../fonts/fs-me-regular.woff?4.1.11') format('woff'),
-       url('../fonts/fs-me-regular.ttf?4.1.11') format('truetype');
-  font-weight: 300;
+  src: url('../fonts/fs-me-regular.eot?4.1.14');
+  src: url('../fonts/fs-me-regular.eot?#iefix?4.1.14') format('embedded-opentype'),
+       url('../fonts/fs-me-regular.woff2?4.1.14') format('woff2'),
+       url('../fonts/fs-me-regular.woff?4.1.14') format('woff'),
+       url('../fonts/fs-me-regular.ttf?4.1.14') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
 
 // FS Me Regular Italic
 @font-face {
   font-family: "FS Me";
-  src: url('../fonts/fs-me-regular-italic.woff?4.1.11') format('woff'),
-       url('../fonts/fs-me-regular-italic.ttf?4.1.11') format('truetype');
-  font-weight: 300;
+  src: url('../fonts/fs-me-regular-italic.eot?4.1.14');
+  src: url('../fonts/fs-me-regular-italic.eot?#iefix?4.1.14') format('embedded-opentype'),
+       url('../fonts/fs-me-regular-italic.woff2?4.1.14') format('woff2'),
+       url('../fonts/fs-me-regular-italic.woff?4.1.14') format('woff'),
+       url('../fonts/fs-me-regular-italic.ttf?4.1.14') format('truetype');
+  font-weight: normal;
   font-style: italic;
 }
 
 // FS Me Bold
 @font-face {
   font-family: "FS Me";
-  src: url('../fonts/fs-me-bold.woff?4.1.11') format('woff'),
-       url('../fonts/fs-me-bold.ttf?4.1.11') format('truetype');
-  font-weight: 700;
+  src: url('../fonts/fs-me-bold.eot?4.1.14');
+  src: url('../fonts/fs-me-bold.eot?#iefix?4.1.14') format('embedded-opentype'),
+       url('../fonts/fs-me-bold.woff2?4.1.14') format('woff2'),
+       url('../fonts/fs-me-bold.woff?4.1.14') format('woff'),
+       url('../fonts/fs-me-bold.ttf?4.1.14') format('truetype');
+  font-weight: bold;
   font-style: normal;
-}
-
-// FS Me Bold Italic
-@font-face {
-  font-family: "FS Me";
-  src: url('../fonts/fs-me-bold-italic.woff?4.1.11') format('woff'),
-       url('../fonts/fs-me-bold-italic.ttf?4.1.11') format('truetype');
-  font-weight: 700;
-  font-style: italic;
 }

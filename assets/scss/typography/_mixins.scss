@@ -28,7 +28,7 @@ $ms-ratio: $major-third;
 }
 
 @mixin heading-s {
-  font-weight: 700;
+  font-weight: bold;
   font-size: ms(1);
 
   @media (min-width: $m) {
@@ -47,8 +47,8 @@ $ms-ratio: $major-third;
 }
 
 @mixin heading-xxs {
-  font-weight: 700;
-  font-size: ms();
+  font-weight: bold;
+  font-size: ms(0);
 
   @media (min-width: $m) {
     font-size: ms(1);
