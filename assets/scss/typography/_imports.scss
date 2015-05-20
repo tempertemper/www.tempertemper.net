@@ -1,0 +1,35 @@
+// FS Me Light
+@font-face {
+  font-family: "FS Me";
+  src: url('../fonts/fs-me-light.woff?4.1.11') format('woff'),
+       url('../fonts/fs-me-light.ttf?4.1.11') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+// FS Me Regular
+@font-face {
+  font-family: "FS Me";
+  src: url('../fonts/fs-me-regular.woff?4.1.11') format('woff'),
+       url('../fonts/fs-me-regular.ttf?4.1.11') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// FS Me Regular Italic
+@font-face {
+  font-family: "FS Me";
+  src: url('../fonts/fs-me-regular-italic.woff?4.1.11') format('woff'),
+       url('../fonts/fs-me-regular-italic.ttf?4.1.11') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+// FS Me Bold
+@font-face {
+  font-family: "FS Me";
+  src: url('../fonts/fs-me-bold.woff?4.1.11') format('woff'),
+       url('../fonts/fs-me-bold.ttf?4.1.11') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
