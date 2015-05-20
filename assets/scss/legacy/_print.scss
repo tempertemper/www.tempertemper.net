@@ -64,7 +64,7 @@
     a {
 
       &[href^=http] {
-        font-weight: 700;
+        font-weight: bold;
 
         &:after {
           content:" <" attr(href) "> ";
