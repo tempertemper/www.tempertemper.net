@@ -4,10 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1.414em 0 0.5em;
-  line-height: 1;
-  text-rendering: optimizeLegibility;
-  font-weight: 200;
+  @include heading-style;
 }
 
 h1 {
