@@ -26,7 +26,7 @@ body {
   @include link-marker;
   clear: both;
   display: inline-block;
-  @include heading-font;
+  @include font-heading-regular;
 }
 
 img {
@@ -37,7 +37,7 @@ img {
 
 .back {
   @include reverse-link-marker;
-  @include heading-font;
+  @include font-heading-regular;
 }
 
 .button {
@@ -77,6 +77,6 @@ ul,
 ol {
 
   .details {
-    @include heading-font;
+    @include font-heading-regular;
   }
 }
