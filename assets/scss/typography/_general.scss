@@ -1,10 +1,7 @@
 body {
-  line-height: 1.5;
   color: black;
-  font-family: "FS Me", sans-serif;
-  font-weight: normal;
-  font-style: normal;
   font-size: ms(0);
+  @include body-font;
 
   @media (min-width: $s) {
     font-size: ms(1);
@@ -31,6 +28,7 @@ cite {
   text-align: right;
   display: block;
   margin-top: 1em;
+  @include heading-font;
 }
 
 strong {

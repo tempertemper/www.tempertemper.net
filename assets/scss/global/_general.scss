@@ -26,6 +26,7 @@ body {
   @include link-marker;
   clear: both;
   display: inline-block;
+  @include heading-font;
 }
 
 img {
@@ -36,6 +37,7 @@ img {
 
 .back {
   @include reverse-link-marker;
+  @include heading-font;
 }
 
 .button {
@@ -69,4 +71,12 @@ a img {
 .wistia_embed,
 .wistia_embed > div {
   width: 100% !important;
+}
+
+ul,
+ol {
+
+  .details {
+    @include heading-font;
+  }
 }
