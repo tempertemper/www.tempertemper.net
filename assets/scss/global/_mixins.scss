@@ -74,7 +74,7 @@
   background-color: $colour-primary;
   border-color: $colour-primary;
   transition: all .3s ease;
-  @include heading-font;
+  @include font-heading-regular;
 
   &:link,
   &:visited {
