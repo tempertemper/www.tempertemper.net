@@ -28,6 +28,7 @@ cite {
   text-align: right;
   display: block;
   margin-top: 1em;
+  @include heading-font;
 }
 
 strong {
