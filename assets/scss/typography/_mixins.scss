@@ -9,7 +9,7 @@ $ms-ratio: $major-third;
 
 @mixin heading-style {
   @include heading-font;
-  margin: 1.414em 0 0em;
+  margin: 1.414em 0 0;
   line-height: 1.05;
   font-weight: 200;
 }
@@ -48,11 +48,10 @@ $ms-ratio: $major-third;
 }
 
 @mixin heading-s {
-  font-weight: bold;
+  font-weight: normal;
   font-size: ms(1);
 
   @media (min-width: $m) {
-    font-weight: 300;
     font-size: ms(3);
   }
 }
@@ -62,15 +61,17 @@ $ms-ratio: $major-third;
   font-size: ms(1);
 
   @media (min-width: $m) {
+    font-weight: normal;
     font-size: ms(2);
   }
 }
 
 @mixin heading-xxs {
-  font-weight: bold;
+  font-weight: normal;
   font-size: ms(0);
 
   @media (min-width: $m) {
+    font-weight: normal;
     font-size: ms(1);
   }
 }
