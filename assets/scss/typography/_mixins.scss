@@ -1,6 +1,26 @@
 $ms-base: $font-size;
 $ms-ratio: $major-third;
 
+@mixin heading-font {
+  font-family: "FS Me", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin heading-style {
+  @include heading-font;
+  margin: 1.414em 0 0.5em;
+  line-height: 1.05;
+  font-weight: 200;
+}
+
+@mixin body-font {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+}
+
 // HEADINGS
 
 @mixin heading-xl {
