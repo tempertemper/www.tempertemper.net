@@ -1,7 +1,3 @@
-.date {
-  font-weight: bold;
-}
-
 .tags,
 .years {
 
@@ -14,8 +10,7 @@
   }
 }
 
-.post-details {
-  @include top-divider;
+.details {
 
   .tags {
     display: inline;
