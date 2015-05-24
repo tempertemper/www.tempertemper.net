@@ -9,7 +9,7 @@ $ms-ratio: $major-third;
 
 @mixin heading-style {
   @include heading-font;
-  margin: 1.414em 0 0.5em;
+  margin: 1.414em 0 0em;
   line-height: 1.05;
   font-weight: 200;
 }
