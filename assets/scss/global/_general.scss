@@ -72,3 +72,11 @@ a img {
 .wistia_embed > div {
   width: 100% !important;
 }
+
+ul,
+ol {
+
+  .details {
+    @include heading-font;
+  }
+}
