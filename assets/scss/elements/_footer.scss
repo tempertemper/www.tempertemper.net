@@ -3,7 +3,7 @@
   padding-bottom: 1em;
   text-align: center;
   @include top-divider;
-  @include heading-font;
+  @include font-heading-regular;
 
   p {
     margin-top: 0.5em;
