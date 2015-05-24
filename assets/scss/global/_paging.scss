@@ -2,6 +2,7 @@
   clear: both;
   margin-top: 4em;
   line-height: 1;
+  @include heading-font;
 
   .page {
     text-align: center;
