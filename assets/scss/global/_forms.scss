@@ -1,5 +1,6 @@
 label {
   color: $colour-primary;
+  @include heading-font;
 }
 
 input,
@@ -23,6 +24,7 @@ textarea {
 
 input[type="submit"] {
   @include button;
+  @include heading-font;
 }
 
 [role="main"],
