@@ -1,6 +1,6 @@
 [role="navigation"] {
   width: 100%;
-  font-weight: bold;
+  @include heading-font;
 
   ul {
     margin-top: 0;
@@ -169,8 +169,8 @@
 
     a {
       display: inline-block;
-      padding-right: .25em;
-      padding-left: .4em;
+      padding-right: .1em;
+      padding-left: .1em;
     }
 
     [role="search"] {
