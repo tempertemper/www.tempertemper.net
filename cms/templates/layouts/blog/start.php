@@ -38,7 +38,10 @@
 
   <link href="/blog/rss" rel="alternate" type="application/rss+xml" title="RSS" />
 
-  <?php perch_get_css(); ?>
+  <?php
+    perch_get_css();
+    perch_layout('_fonts');
+  ?>
   <?php perch_layout('_google_sitename'); ?>
 
 </head>
