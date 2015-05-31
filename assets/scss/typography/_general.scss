@@ -47,6 +47,19 @@ em {
   }
 }
 
+p {
+  hyphens: auto;
+
+  @media (max-width: $s) {
+    margin-bottom: 0;
+
+    & + p {
+      margin-top: 0;
+      text-indent: 1.5em;
+    }
+  }
+}
+
 ul,
 ol {
 
