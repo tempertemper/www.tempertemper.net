@@ -635,6 +635,7 @@ class PerchTemplate
 	public function process_show_all($vars, $contents)
 	{
 		if (strpos($contents, 'perch:showall')) {
+			$vars['perch_namespace'] = 'perch:'.$this->namespace;
 			$s = '/<perch:showall[^>]*>/s';
         	return preg_replace($s, PerchUtil::table_dump($vars, 'showall').'<link rel="stylesheet" href="'.PERCH_LOGINPATH.'/core/assets/css/debug.css" />', $contents);		
 		}
@@ -782,18 +783,31 @@ class PerchTemplate
                 }
             }
 	        
-	        // exists
-	        if ($tag->exists()) {
+	        // exists and not-exists
+	        if ($tag->exists() || $tag->not_exists()) {
 	        	
+	        	$exists_string = $tag->exists();
+	        	
+ 				// Not-exists - just swaps the pos and neg over.
+	        	if ($tag->not_exists()) {
+	        		$exists_string = $tag->not_exists();
+	        		// swap pos and neg
+	        		$tmp      = $positive;
+	        		$positive = $negative;
+	        		$negative = $tmp;
+	        		$tmp 	  = null;
+	        	}
+
+
 	        	// do we have spaces? Then it could be a logic string
-	        	if (strpos(trim($tag->exists()), ' ')!==false) {
+	        	if (strpos(trim($exists_string), ' ')!==false) {
 	        		$operators = array('AND', 'OR', 'XOR');
 
-	        		preg_match_all('#\b[A-Za-z0-9_]+\b#', $tag->exists(), $ids, PREG_SET_ORDER);
+	        		preg_match_all('#\b[A-Za-z0-9_]+\b#', $exists_string, $ids, PREG_SET_ORDER);
 	        		
 	        		if (PerchUtil::count($ids)) {
 
-	        			$logic_string = $tag->exists();
+	        			$logic_string = $exists_string;
 
 		        		foreach($ids as $id) {
 		        			$id = $id[0];
@@ -819,7 +833,7 @@ class PerchTemplate
 
 	        	}else{
 
-		            if (array_key_exists($tag->exists(), $content_vars) && $this->_resolve_to_value($content_vars[$tag->exists()]) != '') {
+		            if (array_key_exists($exists_string, $content_vars) && $this->_resolve_to_value($content_vars[$exists_string]) != '') {
 	    	            $template_contents  = str_replace($exact_match, $positive, $template_contents);
 	    	        }else{
 	    	            $template_contents  = str_replace($exact_match, $negative, $template_contents);
@@ -1570,7 +1584,8 @@ class PerchTemplate
     		$condition_contents = mb_substr($pair_html, $opening_tag_end_pos, 0-$close_tag_len);
 
     		// Do the business
-    		$contents = call_user_func(array($this, $callback), $type, $opening_tag, $condition_contents, $pair_html, $contents, $content_vars, $index_in_group);
+   			$contents = call_user_func(array($this, $callback), $type, $opening_tag, $condition_contents, $pair_html, $contents, $content_vars, $index_in_group);	  		
+    		//$contents = $this->$callback($type, $opening_tag, $condition_contents, $pair_html, $contents, $content_vars, $index_in_group);
 
     		// escape hatch counter
     		$i++;

@@ -2,6 +2,8 @@
 
 class PerchUtil
 {
+	static private $hold_redirects = false;
+
 	static function count($a)
 	{
 		if (is_array($a)){
@@ -118,69 +120,12 @@ class PerchUtil
 		}
 	}
 
-	static function old_debug($msg, $type='log', $encode=false)
-	{
-		$Perch  = Perch::fetch();
-
-		if (!$Perch->debug){
-			return false;
-		}
-
-		if ($encode) $msg = PerchUtil::html($msg);
-
-	    $message_styles	= array();
-		$message_styles['error']	= 'color: red; font-weight: bold;';
-		$message_styles['notice']	= 'color: orange; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid orange; display: block;';
-		$message_styles['success']	= 'color: green; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid green; display: block;';
-		$message_styles['db']		= 'color: purple; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid silver; display: block;';
-		$message_styles['post']		= 'color: brown; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid silver; display: block;';
-		$message_styles['xmlrpc']	= 'color: navy;';
-		$message_styles['stats']    = 'color: teal;';
-		$message_styles['marker']   = 'color: white; background-color: cyan;';
-		$message_styles['template'] = 'color: black; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid silver; display: block;';
-		$message_styles['auth'] 	= 'color: olivedrab; margin: 0.5em 0; padding-left: 0.5em; border-left: 2px solid silver; display: block;';
-
-		$debug_messages	= '';
-		$style			= 'color: #787878;';
-
-		if (isset($message_styles[$type])){ $style	= $message_styles[$type];}
-		$debug_messages .= '<span style="'.$style.'">';
-
-		if (isset($msg) && (is_array($msg) || is_object($msg))){
-			$msg	= '<pre>'.print_r($msg, 1).'</pre>';
-		}
-
-		$debug_messages .= ((isset($msg)) ? $msg : 'Something errored (no message sent).') . "\n";
-		$debug_messages .= '</span>';
-		
-		$Perch->debug_output	.= $debug_messages;
-	}
-
 	public static function mark($msg)
 	{
 		PerchUtil::debug(str_repeat('-', 30).' '.$msg.' '.str_repeat('-', 30), 'marker');
 	}
 	
-	public static function old_output_debug($return_value=false)
-	{
-		$Perch  = Perch::fetch();
-		
-		if (!$Perch->debug){
-			return false;
-		}
 
-		if ($Perch->debug == true){
-		    $err = error_get_last();
-		    if ($err) PerchUtil::debug($err, 'error');
-
-	        if ($return_value) {
-	            return "\n<div class=\"debug\" style=\"clear:both;\">\nDIAGNOSTICS:<br />\n".nl2br($Perch->debug_output)."\n</div>";
-	        }else{
-	            echo "\n<div class=\"debug\" style=\"clear:both;\">\nDIAGNOSTICS:<br />\n".nl2br($Perch->debug_output)."\n</div>";
-	        }
-		}
-	}
-	
 	public static function html($s=false, $quotes=false, $double_encode=false)
 	{
 	    if ($quotes) {
@@ -199,11 +144,24 @@ class PerchUtil
 		return ((float)$usec + (float)$sec); 
 	}
 	
+	public static function hold_redirects()
+	{
+		self::$hold_redirects = true;
+		PerchUtil::debug('Holding redirects', 'success');
+	}
+
+	public static function release_redirects()
+	{
+		self::$hold_redirects = false;
+	}
+
 	public static function redirect($url)
 	{	
-	    PerchSession::close();
-	    header('Location: ' . $url);
-	    exit;
+		if (!self::$hold_redirects) {
+			PerchSession::close();
+	    	header('Location: ' . $url);
+	    	exit;	
+		}
 	}
 	
 	public static function setcookie($name, $value = '', $expires = 0, $path = '', $domain = '', $secure = false, $http_only = false)

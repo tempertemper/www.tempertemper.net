@@ -23,7 +23,7 @@
 .perch-debug .xmlrpc { color: navy;}
 .perch-debug .stats { color: teal;}
 .perch-debug .marker { color: white; background-color: cyan;}
-.perch-debug .template { color: black; border-left: 2px solid silver; }
+.perch-debug .template { color: skyblue; }
 .perch-debug .auth { color: olivedrab; border-left: 2px solid silver; }
 
 table.showall {

@@ -17,4 +17,4 @@
         }
     }
     
-    perch_find_posted_forms();
+    if (!PERCH_RUNWAY) perch_find_posted_forms();

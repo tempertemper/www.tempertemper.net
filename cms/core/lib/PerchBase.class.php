@@ -10,6 +10,7 @@ class PerchBase
     protected $api                  = false;
     
     protected $event_prefix         = false;
+    public    $suppress_events      = true;
 
     protected $can_log_resources    = true;
 
@@ -205,7 +206,7 @@ class PerchBase
         $sql = 'OPTIMIZE TABLE '.$table;
         $this->db->get_row($sql);
         
-        if ($this->event_prefix) {
+        if ($this->event_prefix && !$this->suppress_events) {
             $Perch = Perch::fetch();
             $Perch->event($this->event_prefix.'.index', $this);    
         }
