@@ -36,7 +36,7 @@ class PerchCategories_Category extends PerchBase
         if (count($data)) $this->update($data);
     }
 
-    public function update_meta()
+    public function update_meta($fire_events=true)
     {
     	$data = array();
     	if ($this->catParentID()!=='0' && $this->catParentID()!=='null') {
@@ -56,8 +56,11 @@ class PerchCategories_Category extends PerchBase
     	if (count($data)) {
     		parent::update($data);
 
-            $Perch = Perch::fetch();
-            $Perch->event($this->event_prefix.'.update', $this);
+            if ($fire_events) {
+                $Perch = Perch::fetch();
+                $Perch->event($this->event_prefix.'.update', $this);    
+            }
+            
     	}
     }
 
