@@ -31,7 +31,8 @@
                 'not-inline' => true,
                 )
             );
-    ?>
 
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+    echo $HTML->paging($Paging);
+
+include (PERCH_PATH.'/core/inc/main_end.php');
     

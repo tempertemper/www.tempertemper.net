@@ -368,16 +368,20 @@ class PerchAPI_Form extends PerchForm
     public function set_required_fields_from_template($Template, $details=array(), $seen_tags=array())
     {   
         $tags       = $Template->find_all_tags_and_repeaters();
+
+        if (is_array($tags)) {           
+            PerchContent_Util::set_required_fields($this, null, $details, $tags, $Template);
+        }
         
+        // init editors 
+        $tags       = $Template->find_all_tags();
         if (PerchUtil::count($tags)) {
             foreach($tags as $Tag) {
                 if ($Tag->type()) PerchFieldTypes::get($Tag->type(), $this, $Tag, $tags, $this->app_id);
             }
         }
 
-        if (is_array($tags)) {           
-            PerchContent_Util::set_required_fields($this, null, $details, $tags, $Template);
-        }
+        
     }
  
     public function fields_from_template($Template, $details=array(), $seen_tags=array(), $include_repeaters=true)

@@ -20,6 +20,7 @@
 			PerchUtil::debug('Page arguments: <pre>'.print_r($RoutedPage->args, true).'</pre>', 'template');		
 		}
 
+		perch_find_posted_forms();
 		perch_runway_content_check_preview();
 
 		$RoutedPage->output_headers();

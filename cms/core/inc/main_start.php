@@ -43,7 +43,7 @@
                 }
                  
                 // assets app - special status
-                if ($nav[0]['section']=='core/apps/assets') {
+                if (isset($nav[0]) && $nav[0]['section']=='core/apps/assets') {
                     $item = $nav[0];
                     echo ($item['section'] == $section ? '<li class="selected">' : '<li>');
                     echo '<a href="'.PerchUtil::html($item['path']).'/">'.PerchUtil::html($item['label']).'</a></li>';
@@ -51,7 +51,7 @@
                 }
 
                 // others   
-				if ($app_count>2) {
+				//if ($app_count>2) {
 	                echo '<li id="appmenu" class="apps">';
 
         				if (PerchUtil::count($nav)>1) echo '<script type="text/javascript">document.getElementById(\'appmenu\').parentNode.style.display=\'none\';</script>';
@@ -76,7 +76,7 @@
 	                            }
 	                    echo '</ul>';
 	                echo '</li>';
-				}
+				//}
                 
                 // users
                 if ($CurrentUser->has_priv('perch.users.manage') && !PERCH_AUTH_PLUGIN) {

@@ -31,7 +31,7 @@ class PerchAPI_SubmittedForm
         $this->Lang    = $Lang;
         
         $Perch         = Perch::fetch();
-        $this->page    = $Perch->get_page_as_set();
+        $this->page    = $Perch->get_page_as_set(1);
     }
     
     public function populate($formID, $templatePath, $data, $files)

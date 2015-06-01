@@ -655,7 +655,8 @@ class PerchContent extends PerchApp
                 $search_handlers = $new_handlers;
             }    
         }
-        
+
+       
         $out = array();
 
         if ($key!='') {
@@ -681,7 +682,7 @@ class PerchContent extends PerchApp
             $sql = $Paging->select_sql(); 
         
             if (!$search_content) {            
-                $sql .= ' \'PerchContent_SearchHandler\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0 ';
+                $sql .= ' \'PerchContent_SearchHandler\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0 UNION ';
             }
 
             if (PerchUtil::count($search_handlers)) {
@@ -721,7 +722,7 @@ class PerchContent extends PerchApp
                 if ($search_content) { 
                     $sql = $Paging->select_sql();
                 }else{
-                    $sql = $Paging->select_sql() . ' \'PerchContent_SearchHandler\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0 ';
+                    $sql = $Paging->select_sql() . ' \'PerchContent_SearchHandler\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0 UNION ';
                 }
                             
                 if (PerchUtil::count($search_handlers)) {
@@ -1072,7 +1073,7 @@ class PerchContent extends PerchApp
                                 SELECT COUNT(*) 
                                 FROM '.$this->table.' 
                                 WHERE regionKey='.$db->pdb($data['regionKey']).' 
-                                    AND regionPage='.$db->pdb($data['regionPage']).'
+                                    AND (regionPage='.$db->pdb($data['regionPage']).' OR regionPage='.$db->pdb('*').')
                                 )=0
                         LIMIT 1';
                                 

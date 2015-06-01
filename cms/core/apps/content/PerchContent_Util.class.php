@@ -112,6 +112,10 @@ class PerchContent_Util
 	    $deleted_blocks = array();
 	    if (isset($_POST['_blocks_deleted']) && PerchUtil::count($_POST['_blocks_deleted'])) {
 	    	$deleted_blocks = $_POST['_blocks_deleted'];
+	    	//PerchUtil::debug('Deleted blocks:');
+	    	//PerchUtil::debug($deleted_blocks);
+	    }else{
+	    	//PerchUtil::debug('No deleted blocks');
 	    }
 
 	    //PerchUtil::debug($tags, 'success');
@@ -162,7 +166,7 @@ class PerchContent_Util
 	                }
 
 	                while (in_array($Item->itemID().'_'.$subprefix.$i, $deleted_blocks)) {
-	                	PerchUtil::debug('Skipping '.$Item->itemID().'_'.$subprefix.$i.' as deleted');
+	                	//PerchUtil::debug('Skipping '.$Item->itemID().'_'.$subprefix.$i.' as deleted');
 	                 	$i++;
 	                };
 
@@ -319,8 +323,6 @@ class PerchContent_Util
 	    	$deleted_blocks = $_POST['_blocks_deleted'];
 	    }
 
-	    //PerchUtil::debug($id);
-
 	    if (PerchUtil::count($tags)) {
 
 		    foreach($tags as $tag) {
@@ -430,7 +432,7 @@ class PerchContent_Util
 
 	        
 
-	        if (!in_array($tag->id(), $seen_tags) && $tag->type()!='hidden' && substr($tag->id(), 0,7)!='parent.') {
+	        if (!in_array($tag->id(), $seen_tags) && $tag->type()!='hidden' && $tag->type()!='editcontrol' && substr($tag->id(), 0,7)!='parent.') {
 
 	            if ($tag->type()=='slug' && !$tag->editable()) {
 	                continue;
