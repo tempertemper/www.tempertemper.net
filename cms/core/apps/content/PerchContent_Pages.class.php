@@ -517,7 +517,9 @@ class PerchContent_Pages extends PerchFactory
                 $new_folder = $this->get_unique_folder_name($dir, $file_name);
                 PerchUtil::debug('Trying to create: '.$new_folder);
 
-                if (mkdir($new_folder, 0755, true)) {
+                if (!is_dir($new_folder)) mkdir($new_folder, 0755, true);
+
+                if (is_dir($new_folder)) {
                     $new_dir_name = str_replace($dir, '', $new_folder);
                     $dir          = $new_folder;
                     $new_file     = PerchUtil::file_path($dir. '/'.PERCH_DEFAULT_DOC);
@@ -688,7 +690,12 @@ class PerchContent_Pages extends PerchFactory
      */
     public function create_without_file($data)
     {
-                
+        $create_folder = false;
+        if (isset($data['create_folder'])) {
+            $create_folder = $data['create_folder'];
+            unset($data['create_folder']);    
+        }
+                        
         $link_only = false;     
         
         // is this a URL or just local file?
@@ -895,6 +902,12 @@ class PerchContent_Pages extends PerchFactory
         $folder = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $folder);
         
         if (file_exists($folder)) {
+
+            // is it a folder without an index file? That would be ok.
+            if (!file_exists(PerchUtil::file_path($folder.'/'.PERCH_DEFAULT_DOC))) {
+                return $folder;
+            }
+
             $count++;
             return $this->get_unique_folder_name($dir, $folder_name, $count);
         }else{

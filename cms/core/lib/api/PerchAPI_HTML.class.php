@@ -278,12 +278,24 @@ class PerchAPI_HTML
                         $s .= '</td>';
                     }else{
                         $s .= '<td>';
-                        $v_v = (isset($row_array[$val]) ? $row_array[$val] : $row->$val());
-                        if (is_array($v_v) && isset($v_v['value'])) {
-                            $s .= $v_v['value'];
+
+                        // link?
+                        if (strpos($val, '/')!==false) {
+                            
+                            if ($edit_link) $s .= '<a href="'.$val.'/?id='.$row->id().'">';
+                                $s .= $headings[$i];
+                            if ($edit_link) $s .= '</a>';
+                        
                         }else{
-                            $s .= $v_v;
+                            $v_v = (isset($row_array[$val]) ? $row_array[$val] : $row->$val());
+                            if (is_array($v_v) && isset($v_v['value'])) {
+                                $s .= $v_v['value'];
+                            }else{
+                                $s .= $v_v;
+                            }    
                         }
+
+                        
                         $s .= '</td>';
                     }
 

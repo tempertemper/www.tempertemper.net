@@ -1210,7 +1210,7 @@ class PerchFactory
 
             $index_table = PERCH_DB_PREFIX.$this->index_table;
 
-            $cat_sql = 'SELECT idx.itemID FROM '.$index_table.' idx JOIN '.$this->table.' main ON idx.itemID=main.'.$this->pk.' AND '.$where_clause. ' AND ';
+            $cat_sql = 'SELECT DISTINCT idx.itemID FROM '.$index_table.' idx JOIN '.$this->table.' main ON idx.itemID=main.'.$this->pk.' AND '.$where_clause. ' AND ';
 
             $where = array();
             foreach($items as $item) {

@@ -29,7 +29,7 @@ class PerchCategories_Set extends PerchBase
 
     	if (PerchUtil::count($categories)) {
     		foreach($categories as $Cat) {
-    			$Cat->update_meta();
+    			$Cat->update_meta(false);
     		}
     	}
     }
