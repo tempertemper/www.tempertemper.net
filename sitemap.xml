@@ -3,6 +3,9 @@
   header('Content-type: application/xml');
   include('cms/runtime.php');
 
+  echo '<?xml version="1.0" encoding="UTF-8"?>';
+  echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
   perch_pages_navigation(array(
     'template'         => 'sitemap.html',
     'hide-default-doc' => true,
@@ -13,15 +16,16 @@
     'flat'             => true
   ));
 
-  perch_content_custom('Portfolio', array(
-    'page'=>'/portfolio/index.php',
-    'template' => 'case_study_sitemap.html',
-  ));
+  perch_collection('Work', [
+    'template'   => 'sitemap.work.html',
+    'sort'       => 'date',
+    'sort-order' => 'DESC'
+  ]);
 
   perch_blog_custom(array(
-    'template'    =>  'blog_post_sitemap.html',
-    'sort'        =>  'postDateTime',
-    'sort-order'  =>  'DESC',
+    'template'    => 'sitemap.blog.html',
+    'sort'        => 'postDateTime',
+    'sort-order'  => 'DESC',
   ));
 
-?>
+  echo '</urlset>';
