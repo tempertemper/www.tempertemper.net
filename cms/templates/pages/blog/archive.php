@@ -1,4 +1,4 @@
-<?php perch_layout('start'); ?>
+<?php perch_layout('head'); ?>
 <?php perch_layout('blog/archive_header'); ?>
 
 <?php perch_layout('blog/archive'); ?>

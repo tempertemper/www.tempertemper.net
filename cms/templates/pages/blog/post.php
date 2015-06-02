@@ -1,6 +1,6 @@
 <?php
   perch_blog_check_preview();
-  perch_layout('blog/start');
+  perch_layout('blog/head');
   perch_layout('blog/post_header');
 ?>
 
