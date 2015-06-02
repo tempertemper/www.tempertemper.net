@@ -1,4 +1,4 @@
-<?php perch_layout('/case-study/start'); ?>
+<?php perch_layout('/case-study/head'); ?>
 <?php perch_layout('/case-study/header'); ?>
 
 <main role="main">
