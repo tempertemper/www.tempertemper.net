@@ -17,5 +17,7 @@
 
 </div>
 
-<?php perch_layout('footer'); ?>
-<?php perch_layout('end'); ?>
+<?php
+  perch_layout('footer');
+  perch_layout('end');
+?>
