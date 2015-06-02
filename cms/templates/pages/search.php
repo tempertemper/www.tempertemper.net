@@ -1,4 +1,4 @@
-<?php perch_layout('start'); ?>
+<?php perch_layout('head'); ?>
 <?php perch_layout('search_header'); ?>
 
   <?php
@@ -24,5 +24,7 @@
 
 </main>
 
-<?php perch_layout('footer'); ?>
-<?php perch_layout('end'); ?>
+<?php
+  perch_layout('footer');
+  perch_layout('end');
+?>
