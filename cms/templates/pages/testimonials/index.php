@@ -1,5 +1,7 @@
-<?php perch_layout('head'); ?>
-<?php perch_layout('header'); ?>
+<?php
+  perch_layout('head');
+  perch_layout('header');
+?>
 
 <div role="main">
 
@@ -15,5 +17,7 @@
 
 </div>
 
-<?php perch_layout('footer'); ?>
-<?php perch_layout('end'); ?>
+<?php
+  perch_layout('footer');
+  perch_layout('end');
+?>
