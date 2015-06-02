@@ -6,16 +6,17 @@
 
 <head>
 
-  <?php include(__DIR__ . '/../partials/_ie_specific.php') ?>
+  <?php perch_layout('_ie_specific'); ?>
 
   <title><?php perch_blog_post_field(perch_get('s'), 'postTitle'); ?></title>
 
   <meta name="description" content="<?php perch_blog_post_field(perch_get('s'), 'excerpt'); ?>" />
 
-  <?php include(__DIR__ . '/../partials/_mobile_specific.php') ?>
-
-  <?php include(__DIR__ . '/../partials/_apple_touch_icon.php') ?>
-  <?php include(__DIR__ . '/../partials/_favicon.php') ?>
+  <?php
+    perch_layout('_mobile_specific');
+    perch_layout('_apple_touch_icon');
+    perch_layout('_favicon');
+  ?>
 
   <meta property="og:title" content="<?php perch_blog_post_field(perch_get('s'), 'postTitle'); ?>" />
   <meta property="og:site_name" content="tempertemper Web Design"/>
@@ -41,8 +42,8 @@
   <?php
     perch_get_css();
     perch_layout('_fonts');
+    perch_layout('_google_sitename');
   ?>
-  <?php perch_layout('_google_sitename'); ?>
 
 </head>
 
