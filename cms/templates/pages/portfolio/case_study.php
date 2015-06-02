@@ -1,4 +1,4 @@
-<?php perch_layout('/case-study/start'); ?>
+<?php perch_layout('/case-study/head'); ?>
 <?php perch_layout('/case-study/header'); ?>
 
 <main role="main">
@@ -31,5 +31,7 @@
 
 </div>
 
-<?php perch_layout('footer'); ?>
-<?php perch_layout('end'); ?>
+<?php
+  perch_layout('footer');
+  perch_layout('end');
+?>
