@@ -1,10 +1,9 @@
 default:
-  - 'sass'
-  - 'autoprefixer'
+  - 'watch'
 
 css:
   - 'sass'
-  - 'autoprefixer'
+  - 'postcss'
 
 js:
   - 'concat'
@@ -13,7 +12,3 @@ js:
 files:
   - 'copy'
   - 'imagemin'
-
-up:
-  - 'browserSync'
-  - 'watch'
