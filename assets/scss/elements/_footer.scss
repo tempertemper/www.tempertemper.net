@@ -1,5 +1,6 @@
 [role="contentinfo"] {
   clear: both;
+  padding-top: 2em;
   padding-bottom: 1em;
   text-align: center;
   @include top-divider;
@@ -17,18 +18,6 @@
     &:after {
       content: "";
       margin-left: 0;
-    }
-  }
-
-  .keep-in-touch {
-
-    li {
-      display: inline-block;
-      margin-left: 1.5em;
-
-      &:first-child {
-        margin-left: 0;
-      }
     }
   }
 
