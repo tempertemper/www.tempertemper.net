@@ -23,9 +23,9 @@ $ms-ratio: $major-third;
 
 @mixin heading-style {
   @include font-heading-light;
-  margin: 1.414em 0 0;
+  margin-top: 1.414em;
+  margin-bottom: 0.25em;
   line-height: 1.05;
-  font-weight: 200;
 }
 
 @mixin font-body {
@@ -62,7 +62,6 @@ $ms-ratio: $major-third;
 }
 
 @mixin heading-s {
-  @include font-heading-regular;
   font-size: ms(1);
 
   @media (min-width: $m) {
@@ -71,21 +70,17 @@ $ms-ratio: $major-third;
 }
 
 @mixin heading-xs {
-  @include font-heading-light;
   font-size: ms(1);
 
   @media (min-width: $m) {
-    @include font-heading-regular;
     font-size: ms(2);
   }
 }
 
 @mixin heading-xxs {
-  @include font-heading-regular;
-  font-size: ms(0);
+  font-size: ms(1);
 
   @media (min-width: $m) {
-    @include font-heading-regular;
     font-size: ms(1);
   }
 }
