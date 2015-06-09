@@ -18,3 +18,14 @@ body {
   float: left;
   width: 100%;
 }
+
+section,
+aside,
+article {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+[role="contentinfo"] {
+  margin-top: 5em;
+}
