@@ -16,10 +16,6 @@
     ]);
   ?>
 
-</main>
-
-<div role="complementary">
-
   <aside class="testimonials">
 
     <h1>Compliments</h1>
@@ -28,9 +24,9 @@
 
   </aside>
 
-  <?php perch_content('Subscribe'); ?>
+  <?php perch_layout('cta_contact'); ?>
 
-</div>
+</main>
 
 <?php
   perch_layout('footer');
