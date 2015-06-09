@@ -41,7 +41,7 @@ img {
 }
 
 .button {
-  @include button;
+  @include button-primary;
 }
 
 pre {
