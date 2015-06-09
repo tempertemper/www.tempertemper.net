@@ -1,32 +1,6 @@
 <footer role="contentinfo">
 
-  <aside class="keep-in-touch">
-
-    <h1>Keep in Touch</h1>
-
-    <ul>
-
-      <li>
-        <a href="/mailing-list/subscribe" class="mailing-list icon" title="Subscribe to mailing list">
-            <span aria-hidden="true" data-icon="&#9993;"></span>
-            <span class="screen-reader-text">Mailing list</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="http://twitter.com/tempertemper" class="twitter icon" title="Head to my Twitter page">
-          <span aria-hidden="true" data-icon="&#116;"></span>
-          <span class="screen-reader-text">Twitter</span>
-        </a>
-      </li>
-
-    </ul>
-
-  </aside>
-
   <nav class="useful-links">
-
-    <h1>Useful links</h1>
 
     <?php
       perch_pages_navigation(array(
