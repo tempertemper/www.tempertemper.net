@@ -3,7 +3,7 @@
   perch_layout('header');
 ?>
 
-<div role="main">
+<main role="main">
 
   <?php
     perch_collection('Testimonials', array(
@@ -15,7 +15,7 @@
     ));
   ?>
 
-</div>
+</main>
 
 <?php
   perch_layout('footer');

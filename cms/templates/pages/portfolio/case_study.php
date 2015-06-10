@@ -13,6 +13,8 @@
     ]);
   ?>
 
+  <?php perch_content('Call to action'); ?>
+
 </main>
 
 <div role="complementary">
