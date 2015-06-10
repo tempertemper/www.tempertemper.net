@@ -14,7 +14,7 @@
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case-study/page_header.html',
+      'template'=>'/case_study/page_header.html',
     ]);
   ?></title>
   <meta name="description" content="<?php
@@ -23,7 +23,7 @@
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case-study/excerpt.html',
+      'template'=>'/case_study/excerpt.html',
     ]);
   ?>" />
 
@@ -41,7 +41,7 @@
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case-study/slug.html',
+      'template'=>'/case_study/slug.html',
     ]);
   ?>" />
   <meta property="og:image" content="https://tempertemper.net/assets/images/tempertemper-web-design-logo-facebook.jpg" />
@@ -51,7 +51,7 @@
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case-study/excerpt.html',
+      'template'=>'/case_study/excerpt.html',
     ]);
   ?>" />
 
@@ -63,7 +63,7 @@
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case-study/excerpt.html',
+      'template'=>'/case_study/excerpt.html',
     ]);
   ?>"/>
   <meta name="twitter:creator" content="@tempertemper"/>
@@ -73,7 +73,7 @@
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case-study/slug.html',
+      'template'=>'/case_study/slug.html',
     ]);
   ?>">
 

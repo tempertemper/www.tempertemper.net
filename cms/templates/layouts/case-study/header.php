@@ -12,7 +12,7 @@
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case-study/page_header.html',
+      'template'=>'/case_study/page_header.html',
     ]); ?>
   </h1>
 
