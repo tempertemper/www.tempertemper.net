@@ -6,6 +6,7 @@
 <main role="main">
 
   <?php perch_content('Primary content'); ?>
+  <?php perch_content('Call to action'); ?>
 
 </main>
 

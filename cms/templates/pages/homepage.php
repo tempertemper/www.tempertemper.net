@@ -24,7 +24,7 @@
 
   </aside>
 
-  <?php perch_layout('cta_contact'); ?>
+  <?php perch_content('Call to action'); ?>
 
 </main>
 
