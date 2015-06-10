@@ -9,7 +9,7 @@ body {
   [role="main"],
   [role="complementary"] {
     @include layout($wide-layout);
-    @include span(4 of 6);
+    width: span(4 of 6);
     @include pre(1 of 6);
   }
 }
