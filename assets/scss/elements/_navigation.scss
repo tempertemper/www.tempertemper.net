@@ -51,9 +51,6 @@
   overflow: hidden;
 }
 
-.nav-collapse.closed {
-}
-
 .disable-pointer-events {
   pointer-events: none !important;
 }
@@ -139,8 +136,7 @@
         }
 
         &:before {
-          content: "";
-          position: absolute;
+          content: none;
         }
       }
 
