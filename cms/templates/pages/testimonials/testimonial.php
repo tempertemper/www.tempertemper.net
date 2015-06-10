@@ -3,7 +3,7 @@
   perch_layout('header');
 ?>
 
-<div role="main">
+<main role="main">
 
   <?php
     perch_collection('Testimonials', array(
@@ -17,7 +17,9 @@
 
   <a href="/testimonials" class="back">View all testimonials</a>
 
-</div>
+  <?php perch_content('Call to action'); ?>
+
+</main>
 
 <?php
   perch_layout('footer');
