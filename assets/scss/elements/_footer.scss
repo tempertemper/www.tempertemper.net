@@ -6,34 +6,10 @@
   @include top-divider;
   @include font-heading-regular;
 
-  p {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
-
-  .icon {
-    font-size: 4em;
-    line-height: 1;
-
-    &:after {
-      content: "";
-      margin-left: 0;
-    }
-  }
-
-  address {
-    display: inline;
-
-    span {
-      display: inline;
-    }
-  }
-
   .copyright {
-    clear: both;
     margin-top: 2em;
     text-align: center;
-    font-size: 0.833em;
+    font-size: ms(0);
 
     p {
       display: inline;
