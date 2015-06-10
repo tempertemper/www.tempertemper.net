@@ -13,7 +13,7 @@
           'template'=>'category_header.html'
         ));
       } else {
-        echo('Types of Work');
+        echo('Types of Work I do');
       }
     ?>
   </h1>
