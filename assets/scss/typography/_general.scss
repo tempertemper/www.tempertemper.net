@@ -82,4 +82,16 @@ code {
       color: $colour-primary-darkest;
     }
   }
+
+  p {
+
+    @media (max-width: $s) {
+      margin-bottom: 1em;
+
+      & + p {
+        margin-top: 1em;
+        text-indent: 0;
+      }
+    }
+  }
 }
