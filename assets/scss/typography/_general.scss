@@ -73,22 +73,13 @@ code {
   font-size: 0.8em;
 }
 
-.portfolio-teaser,
-.search [role="main"] {
-
-  & > ul,
-  & > ol {
-    @include remove-list-styling;
-  }
-}
-
-.portfolio-list,
-.hfeed,
-.social,
-.downloads-list,
-.comments,
-.search-results,
-.testimonial-list,
-[role="contentinfo"] ul {
+.index-list {
   @include remove-list-styling;
+
+  a {
+
+    &:visited {
+      color: $colour-primary-darkest;
+    }
+  }
 }

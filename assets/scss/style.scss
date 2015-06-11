@@ -14,7 +14,6 @@
 // Typography
 
 @import "../components/modular-scale/stylesheets/modular-scale";
-@import "typography/imports";
 @import "typography/mixins";
 @import "typography/general";
 @import "typography/headings";
@@ -26,12 +25,12 @@
 @import "global/forms";
 @import "global/general";
 @import "global/paging";
-@import "global/social";
 
 // Elements
 
 @import "elements/header";
 @import "elements/navigation";
+@import "elements/call-to-action";
 @import "elements/search";
 @import "elements/footer";
 @import "elements/map";

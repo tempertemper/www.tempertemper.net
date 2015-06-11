@@ -43,16 +43,5 @@
   </perch:after>
 </perch:categories>
 
-<perch:if exists="website">
-  <h3>Have a look</h3>
-
-  <a href="<perch:content id="website" order="2" type="text" label="Website" default="http://" html="false" />" rel="nofollow" class="go-to">Visit website
-  </a>
-
-</perch:if>
-
 <perch:content id="date" type="date" label="Date" format="jS F Y" suppress="true" />
-
-<h3>Work with me</h3>
-
-<a href="/contact" class="button">Say hello</a>
+<perch:content id="website" order="2" type="text" label="Website" default="http://" html="false" suppress="true" />
