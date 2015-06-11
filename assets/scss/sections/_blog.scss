@@ -1,3 +1,4 @@
+.cats,
 .tags,
 .years {
 
@@ -15,5 +16,14 @@
   .tags {
     display: inline;
     padding-left: 0;
+  }
+}
+
+.tags {
+
+  li a {
+    &:before {
+      content: "#";
+    }
   }
 }
