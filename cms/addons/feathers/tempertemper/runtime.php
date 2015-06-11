@@ -11,7 +11,7 @@
       if (!$this->component_registered('style')) {
         $out[] = $this->_single_tag('link', array(
             'rel'=>'stylesheet',
-            'href'=>$this->path.'/css/style.css?4.1.16'
+            'href'=>$this->path.'/css/style.css?4.2'
           ));
         $this->register_component('style');
       }
