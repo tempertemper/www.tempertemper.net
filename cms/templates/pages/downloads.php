@@ -7,7 +7,7 @@
 
   <h2>Handouts from talks</h2>
 
-  <ul class="downloads-list">
+  <ul class="index-list">
 
     <li>
       <h3>&ldquo;The importance of web standards&rdquo;</h3>
