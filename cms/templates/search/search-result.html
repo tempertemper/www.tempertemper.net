@@ -1,10 +1,10 @@
 <perch:before>
   <h1><perch:search id="total" /> Search results for &#8220;<perch:search id="search_key" />&#8221;</h1></header><main role="main">
 
-    <ul>
+    <ul class="index-list">
 </perch:before>
 
-      <li class="<perch:search id="perch_item_odd" />">
+      <li <perch:if exists="perch_item_odd">class="<perch:search id="perch_item_odd" />"</perch:if>>
 
         <h2><a href="<perch:search id="result_url" />"><perch:search id="result_title" /></a></h2>
 

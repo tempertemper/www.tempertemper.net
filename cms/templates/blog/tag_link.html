@@ -1,11 +1,14 @@
-<perch:before><div class="tags">
+<perch:before>
+  <div class="tags">
+    <h2>Tags</h2>
+    <ul>
+</perch:before>
 
-  <h2>Tags</h2>
-
-  <ul></perch:before>
-
-    <li><a href="/blog/tag/<perch:blog id="tagSlug" />" rel="tag"><perch:blog id="tagTitle" /></a></li><perch:if exists="perch_item_last"><perch:else />, </perch:if>
+      <li>
+        <a href="/blog/tag/<perch:blog id="tagSlug" />" rel="tag"><perch:blog id="tagTitle" /></a><perch:if exists="perch_item_last"><perch:else />, </perch:if>
+      </li>
 
 <perch:after>
-  </ul>
+    </ul>
+  </div>
 </perch:after>

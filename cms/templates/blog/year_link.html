@@ -1,11 +1,14 @@
-<perch:before><div class="years">
+<perch:before>
+  <div class="years">
+    <h2>Years</h2>
+    <ul>
+</perch:before>
 
-  <h2>Years</h2>
+      <li>
+        <a href="/blog/year/<perch:blog id="year" />"><perch:blog id="year" /></a><perch:if exists="perch_item_last"><perch:else />, </perch:if>
+      </li>
 
-  <ul></perch:before>
-
-    <li><a href="/blog/year/<perch:blog id="year" />"><perch:blog id="year" /></a></li><perch:if exists="perch_item_last"><perch:else />, </perch:if>
-
-  <perch:after></ul>
-
-</div></perch:after>
+<perch:after>
+    </ul>
+  </div>
+</perch:after>
