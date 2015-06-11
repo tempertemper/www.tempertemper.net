@@ -9,7 +9,7 @@ body {
   [role="main"],
   [role="complementary"] {
     @include layout($wide-layout);
-    @include span(4 of 6);
+    width: span(4 of 6);
     @include pre(1 of 6);
   }
 }
@@ -17,4 +17,15 @@ body {
 [role="contentinfo"] {
   float: left;
   width: 100%;
+}
+
+section,
+aside,
+article {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+[role="contentinfo"] {
+  margin-top: 5em;
 }
