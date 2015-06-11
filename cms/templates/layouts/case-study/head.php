@@ -31,6 +31,7 @@
     perch_layout('_mobile_specific');
     perch_layout('_apple_touch_icon');
     perch_layout('_favicon');
+    perch_layout('_browser_styling');
   ?>
 
   <meta property="og:title" content="tempertemper Web Design" />
