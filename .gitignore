@@ -5,6 +5,7 @@ robots.txt
 /node_modules/
 /dev/images/
 /dev/fonts/
+/dev/components/
 /web/cms/addons/feathers/tempertemper/img/
 /web/cms/addons/feathers/tempertemper/fonts/
 /web/cms/resources/
