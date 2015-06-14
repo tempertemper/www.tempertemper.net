@@ -1,6 +1,6 @@
 module.exports = {
   sass: {
-    files: ['assets/scss/**'],
+    files: ['dev/scss/**'],
     tasks: ['sass', 'postcss'],
     options: {
       spawn: false,
