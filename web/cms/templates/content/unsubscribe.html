@@ -1,0 +1,14 @@
+<perch:content id="text" type="textarea" label="Unsubscribe message" size="s" markdown="true" />
+
+<perch:form id="unsubscribe" method="post" app="perch_forms" action="https://tempertemper.createsend.com/t/t/u/yduddd/">
+
+  <perch:error for="email" type="required"><span class="error"></perch:error>
+  <perch:error for="email" type="format"><span class="error"></perch:error>
+    <perch:label for="email">Enter your email here:</perch:label>
+    <perch:input type="email" id="email" required="true" name="cm-yduddd-yduddd" label="Email" />
+  <perch:error for="email" type="required"></span></perch:error>
+  <perch:error for="email" type="format"></span></perch:error>
+
+  <perch:input type="submit" value="Unsubscribe" />
+
+</perch:form>

@@ -1,0 +1,39 @@
+label {
+  color: $colour-primary;
+  @include font-heading-regular;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  border: 3px solid $colour-primary;
+  border-radius: $border-radius-default;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  transition: color .3s ease;
+
+  &:focus {
+    border-color: black;
+  }
+}
+
+textarea {
+  height: 10em;
+}
+
+input[type="submit"] {
+  @include button-primary;
+  @include font-heading-regular;
+}
+
+[role="main"],
+[role="complementary"] {
+
+  [type="submit"] {
+
+    &:focus {
+      color: white;
+    }
+  }
+}
