@@ -76,7 +76,8 @@ code {
 .index-list {
   @include remove-list-styling;
 
-  a {
+  .go-to,
+  h2 a {
 
     &:visited {
       color: $colour-primary-darkest;
