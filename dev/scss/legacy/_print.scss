@@ -1,0 +1,75 @@
+@media print {
+
+  body {
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 10pt !important;
+  }
+
+  .nav-toggle,
+  [role="search"],
+  .useful-links,
+  .copyright ul,
+  .keep-in-touch,
+  form,
+  .go-to,
+  .button,
+  .subscribe,
+  .paging {
+    display: none;
+  }
+
+  [role="banner"] {
+    border-top: none;
+  }
+
+  [role="contentinfo"] {
+    border-bottom: none;
+  }
+
+  .logo {
+    width: 240px !important;
+    padding-left: 0 !important;
+  }
+
+  a {
+
+    &:link,
+    &:visited {
+      color: inherit;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+
+  ul,
+  img,
+  blockquote,
+  pre {
+    page-break-inside: avoid;
+  }
+
+  p,
+  ul,
+  ol {
+
+    a {
+
+      &[href^=http] {
+        font-weight: bold;
+
+        &:after {
+          content:" <" attr(href) "> ";
+        }
+      }
+    }
+  }
+}

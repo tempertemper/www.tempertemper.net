@@ -1,0 +1,123 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:link,
+:visited {
+  text-decoration: none;
+}
+
+pre,
+code {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul,
+ol {
+  padding-left: 0;
+}
+
+pre,
+form,
+body,
+html,
+fieldset,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+address,
+cite {
+  font-style: normal;
+}
+
+a:focus {
+  outline: none;
+}
+
+a img,
+img,
+iframe,
+fieldset {
+  border: none;
+}
+
+legend {
+  padding: 0;
+  color: #000000;
+}
+
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 1px;
+  font-size: 100%;
+  font-family: inherit;
+}
+
+select {
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+// remove Firefox default focus property
+a:focus {
+  outline: none;
+}
+
+// remove Webkit form focus
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+[type="search"] {
+  -webkit-appearance: none;
+  border-radius: $border-radius-default;
+  box-shadow: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea {
+  -webkit-appearance: none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+// Cancel out Firefox Mobile's gradient background
+button {
+  background-image: none;
+}
+
+nav a.selected {
+  cursor: default;
+}
+
+textarea {
+  overflow-y: auto;
+  resize: none;
+}
+

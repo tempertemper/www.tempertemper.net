@@ -1,0 +1,41 @@
+<perch:before>
+  <h1><perch:search id="total" /> Search results for &#8220;<perch:search id="search_key" />&#8221;</h1></header><main role="main">
+
+    <ul class="index-list">
+</perch:before>
+
+      <li <perch:if exists="perch_item_odd">class="<perch:search id="perch_item_odd" />"</perch:if>>
+
+        <h2><a href="<perch:search id="result_url" />"><perch:search id="result_title" /></a></h2>
+
+        <perch:if exists="result_excerpt">
+          <p class="excerpt">&hellip;<perch:search id="result_excerpt" encode="false" />&hellip;</p>
+        </perch:if>
+
+        <p><a href="<perch:search id="result_url" />">https://tempertemper.net<perch:search id="result_url" /></a></p>
+
+      </li>
+
+<perch:after>
+  </ul>
+  <perch:template path="pagination/search.html" rescope="parent" />
+</perch:after>
+<perch:noresults>
+
+<perch:if exists="search_key">
+
+  <h1>Search results for &#8220;<perch:search id="search_key" />&#8221;</h1></header><main role="main">
+
+<perch:else />
+
+  <h1>Search the site</h1></header><main role="main">
+
+</perch:if>
+
+<perch:if exists="search_key">
+
+  <p>Oops– I'm afraid there are no results for &#8220;<perch:search id="search_key" />&#8221;. Try searching again and hopefully you'll get what you're after. Or why not <a href="/contact">send me a message</a>?</p>
+
+</perch:if>
+
+</perch:noresults>

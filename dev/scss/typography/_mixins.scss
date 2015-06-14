@@ -1,0 +1,101 @@
+$ms-base: $font-size;
+$ms-ratio: $major-third;
+
+@mixin font-heading-regular {
+  font-family: "FS Me Web Regular", sans-serif;
+  font-size-adjust: 0.53;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin font-heading-light {
+  font-family: "FS Me Web Light", sans-serif;
+  font-size-adjust: 0.53;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@mixin font-heading-regular {
+  font-family: "FS Me", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin heading-style {
+  @include font-heading-light;
+  margin-top: 1.414em;
+  margin-bottom: 0.25em;
+  line-height: 1.05;
+}
+
+@mixin font-body {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+// HEADINGS
+
+@mixin heading-xl {
+  font-size: ms(4);
+
+  @media (min-width: $m) {
+    font-size: ms(6);
+  }
+}
+
+@mixin heading-l {
+  font-size: ms(3);
+
+  @media (min-width: $m) {
+    font-size: ms(5);
+  }
+}
+
+@mixin heading-m {
+  font-size: ms(2);
+
+  @media (min-width: $m) {
+    font-size: ms(4);
+  }
+}
+
+@mixin heading-s {
+  font-size: ms(1);
+
+  @media (min-width: $m) {
+    font-size: ms(3);
+  }
+}
+
+@mixin heading-xs {
+  font-size: ms(1);
+
+  @media (min-width: $m) {
+    font-size: ms(2);
+  }
+}
+
+@mixin heading-xxs {
+  font-size: ms(1);
+
+  @media (min-width: $m) {
+    font-size: ms(1);
+  }
+}
+
+// GENERAL
+
+@mixin remove-list-styling {
+  list-style: none;
+  padding-left: 0;
+
+  ul {
+    list-style-type: disc;
+
+    ul {
+      padding-left: 1.5em;
+    }
+  }
+}

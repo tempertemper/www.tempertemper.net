@@ -1,0 +1,15 @@
+<perch:before>
+  <ul class="index-list">
+</perch:before>
+
+  <li>
+    <h2><a href="/work/category/<perch:category id="catSlug" type="slug" for="catTitle" />"><perch:category id="catTitle" type="smarttext" label="Title" required="true" /></a></h2>
+
+    <perch:category id="desc" type="textarea" label="Description" markdown="true" size="s" />
+
+    <a href="/work/category/<perch:category id="catSlug" type="slug" for="catTitle" />" class="go-to">View <perch:category id="catTitle" type="smarttext" label="Title" required="true" /> work</a>
+  </li>
+
+<perch:after>
+  </ul>
+</perch:after>

@@ -1,0 +1,29 @@
+.cats,
+.tags,
+.years {
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    display: inline;
+  }
+}
+
+.details {
+
+  .tags {
+    display: inline;
+    padding-left: 0;
+  }
+}
+
+.tags {
+
+  li a {
+    &:before {
+      content: "#";
+    }
+  }
+}

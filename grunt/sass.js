@@ -1,8 +1,8 @@
 module.exports = {
   dist: {
     options: {
-      style: 'expanded',
-      require: 'susy'
+      outputStyle: 'compressed',
+      sourceMap: true
     },
     files: {
       'cms/addons/feathers/tempertemper/css/style.css': 'assets/scss/style.scss',
