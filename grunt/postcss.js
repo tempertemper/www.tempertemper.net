@@ -8,6 +8,6 @@ module.exports = {
     ]
   },
   dist: {
-    src: 'cms/addons/feathers/tempertemper/css/style.css'
+    src: 'web/cms/addons/feathers/tempertemper/css/style.css'
   }
 };

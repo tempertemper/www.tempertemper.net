@@ -2,6 +2,6 @@ module.exports = {
   dist: {
     src: [
     ],
-    dest: 'assets/js/build.js',
+    dest: 'dev/js/build.js',
   }
 }
