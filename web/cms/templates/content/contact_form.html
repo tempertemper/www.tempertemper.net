@@ -1,0 +1,22 @@
+<perch:form id="contact" method="post" app="perch_forms">
+
+  <perch:error for="name" type="required"><span class="error"></perch:error>
+    <perch:label for="name">Name:</perch:label>
+    <perch:input type="text" id="name" required="true" label="Name" antispam="name" />
+  <perch:error for="name" type="required"></span></perch:error>
+
+  <perch:error for="email" type="required"><span class="error"></perch:error>
+  <perch:error for="email" type="format"><span class="error"></perch:error>
+    <perch:label for="email">Email:</perch:label>
+    <perch:input type="email" id="email" required="true" label="Email" antispam="email" />
+  <perch:error for="email" type="required"></span></perch:error>
+  <perch:error for="email" type="format"></span></perch:error>
+
+  <perch:error for="message" type="required"><span class="error"></perch:error>
+    <perch:label for="message">Message:</perch:label>
+    <perch:input type="textarea" id="message" required="true" label="Message" antispam="body" />
+  <perch:error for="message" type="required"></span></perch:error>
+
+  <perch:input type="submit" value="Submit" />
+
+</perch:form>

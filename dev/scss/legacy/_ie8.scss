@@ -1,0 +1,12 @@
+.ie8 {
+
+  [role="banner"],
+  [role="main"],
+  [role="complementary"] {
+    width: 600px;
+  }
+
+  [role="banner"] [type="search"] {
+
+  }
+}
