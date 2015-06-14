@@ -1,0 +1,124 @@
+.topbar {
+	padding-top: 10px;
+	min-height: 40px;
+	font-size: 80%;
+}
+
+#appmenu ul.appmenu li:nth-child(n+2) {
+	font-size: 60%;
+}
+
+.appmenu .dumb .trigger {
+
+}
+
+.mainnav {
+	margin-bottom: 5px;
+}
+
+.dashnav {
+	margin-top: 0;
+}
+
+#sidebar-toggle {
+	top: 16px;
+}
+
+#logo {
+	text-align: center;
+	min-height: 40px;
+}
+
+#logo img {
+	display: none;
+}
+
+html .scrolled .topbar,
+html .scrolled .topbar.dark {
+	box-shadow: none;
+}
+
+.sidebar-closed a.logout:link, 
+.sidebar-closed a.logout:visited {
+	top: 16px;
+}
+
+
+
+.sidebar-open .sidebar .metanav {
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.revision-published,
+.revision-draft {
+	background-color: rgb(0, 120, 0);
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+	padding: 3px 6px 2px 6px;
+	border-radius: 5px;
+	display: inline-block;
+	margin-left: -6px;
+	font-size: 96%;
+}
+
+.revision-draft {
+	background-color: rgb(192, 152, 83);
+}
+
+.footer .credit img {
+	margin-bottom: -4px;
+}
+
+.footer .credit,
+#footer .credit {
+	opacity: 0.3;
+	transition: opacity .25s ease-in-out;
+}
+
+.footer .credit:hover {
+	opacity: 0.8;
+}
+
+#sidebar-toggle {
+	font-size: 120%;
+}
+
+@media screen and (min-width: 721px) {
+	.body {
+		padding-top: 50px;
+	}
+
+	.sidebar-open #logo img {
+		display: block;
+	}
+
+	.sidebar .metanav {
+		margin-top: 35px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.sidebar .metanav {
+		padding: 13px 0 0 0;
+		width: auto;
+	}
+
+	.subnav {
+		font-size: 1.2em;
+	}
+
+	.subnav li {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.smartbar .fin a.icon,
+	.smartbar .fin.selected a.icon {
+		width: 0;
+		height: 25px;
+		padding-right: 0;
+		padding-bottom: 0;
+		overflow: hidden;
+	}
+}

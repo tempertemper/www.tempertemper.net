@@ -1,0 +1,41 @@
+.perch-debug  {
+	font-family: Consolas, Inconsolata, Courier, "Courier New", courier, fixed;
+	font-size: 14px;
+	text-align: left;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #000;
+	clear: both;
+}
+
+.perch-debug pre {
+	line-height: 1;
+}
+
+.perch-debug { border-collapse: collapse; border: 1px solid #efefef; margin: 10px 90px 45px 45px; border-radius: 3px; opacity: 1; width: auto; }
+.perch-debug:hover { opacity: 1;}
+.perch-debug th { font-weight: bold; text-align:left; }
+.perch-debug th, .perch-debug td { border: 1px solid #efefef; padding: 2px 4px; vertical-align: top; }
+.perch-debug .error { color: red; font-weight: bold;}
+.perch-debug .notice { color: orange; border-left: 2px solid orange; }
+.perch-debug .success { color: green; border-left: 2px solid green; }
+.perch-debug .db { color: purple; border-left: 2px solid silver; }
+.perch-debug .post { color: brown; border-left: 2px solid silver; }
+.perch-debug .xmlrpc { color: navy;}
+.perch-debug .stats { color: teal;}
+.perch-debug .marker { color: white; background-color: cyan;}
+.perch-debug .template { color: skyblue; }
+.perch-debug .auth { color: olivedrab; border-left: 2px solid silver; }
+
+table.showall {
+	border-collapse: collapse;
+}
+
+table.showall th {
+	font-weight: bold;
+}
+
+table.showall th,
+table.showall td {
+	border: 1px solid #ccc;
+	padding: 2px 5px;
+}

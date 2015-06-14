@@ -1,7 +1,7 @@
 module.exports = {
   sass: {
     files: ['assets/scss/**'],
-    tasks: ['sass', 'autoprefixer'],
+    tasks: ['sass', 'postcss'],
     options: {
       spawn: false,
       livereload: true,

@@ -1,0 +1,176 @@
+[role="navigation"] {
+  width: 100%;
+  @include font-heading-regular;
+
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  li:first-child a {
+    padding-top: 0.75em;
+  }
+
+  li:last-child a {
+    padding-bottom: 1em;
+  }
+
+  a {
+    display: block;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+  }
+}
+
+.nav-collapse ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  list-style: none;
+}
+
+.nav-collapse li {
+  width: 100%;
+  display: block;
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.disable-pointer-events {
+  pointer-events: none !important;
+}
+
+.nav-toggle {
+  -webkit-tap-highlight-color: black;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-indent: -999px;
+  position: relative;
+  overflow: hidden;
+  width: 2.5em;
+  height: 2.5em;
+  cursor: pointer;
+
+  &:before {
+    color: $colour-primary;
+    @include icons;
+    font-size: 2em;
+    text-transform: none;
+    position: absolute;
+    content: "\2261";
+    text-indent: 0;
+    text-align: center;
+    speak: none;
+    top: 0;
+    left: 0;
+    transition: color .2s linear;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+
+    &:before {
+      color: black;
+    }
+  }
+
+  &.active::before {
+    content:"\00D7";
+  }
+}
+
+@media screen and (min-width: $l) {
+
+  .js .nav-collapse {
+    position: relative;
+  }
+  .js .nav-collapse.closed {
+    max-height: none;
+  }
+  .nav-toggle {
+    display: none;
+  }
+
+  [role="navigation"] {
+    float: right;
+    width: auto;
+
+    ul {
+      width: auto;
+      display: inline-block;
+      margin-top: 0.2em;
+    }
+
+    li {
+      display: inline-block;
+      width: auto;
+
+      &:before {
+        content: "/";
+        display: inline-block;
+      }
+
+      &:first-child {
+
+        a {
+          padding-top: 0;
+        }
+
+        &:before {
+          content: none;
+        }
+      }
+
+      &:last-child {
+
+        a {
+          padding-bottom: 0;
+        }
+      }
+
+      &.selected a,
+      &.ancestor a {
+
+        &:link,
+        &:visited {
+          color: $colour-primary-darkest;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          cursor: auto;
+        }
+      }
+    }
+
+    a {
+      display: inline-block;
+      padding-right: .1em;
+      padding-left: .1em;
+    }
+
+    [role="search"] {
+      float: right;
+    }
+  }
+}
