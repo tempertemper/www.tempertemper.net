@@ -4,7 +4,7 @@ body {
   padding-right: 0.5em;
 }
 
-@media screen and (min-width: $l) {
+@media (min-width: $l) {
 
   [role="main"],
   [role="complementary"] {
@@ -28,4 +28,23 @@ article {
 
 [role="contentinfo"] {
   margin-top: 5em;
+}
+
+.post-groups {
+
+  @media (min-width: $xs) {
+    @include layout($wide-layout);
+
+    .cats {
+      @include span(3 of 6);
+    }
+
+    .years {
+      @include span(last 3 of 6);
+    }
+
+    .tags {
+      @include clearfix;
+    }
+  }
 }
