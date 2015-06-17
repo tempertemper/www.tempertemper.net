@@ -9,20 +9,6 @@
 
 </main>
 
-<div role="complementary">
-
-  <aside class="testimonials">
-
-    <h1>What you say</h1>
-
-    <?php include($_SERVER['DOCUMENT_ROOT'].'/cms/templates/layouts/testimonial.php'); ?>
-
-  </aside>
-
-  <?php perch_content('Subscribe'); ?>
-
-</div>
-
 <?php
   perch_layout('footer');
   perch_layout('end');
