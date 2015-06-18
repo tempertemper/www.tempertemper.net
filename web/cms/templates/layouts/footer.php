@@ -20,7 +20,7 @@
 
     <?php
       $opts = array(
-        'page'      => '/contact/index.php',
+        'page'      => '/contact',
         'template'  => '/_address.html',
       );
       perch_content_custom('Primary content',$opts);
