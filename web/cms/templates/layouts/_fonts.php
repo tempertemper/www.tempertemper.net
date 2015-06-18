@@ -1,5 +1,13 @@
-<link
-  rel="stylesheet"
-  href="//f.fontdeck.com/s/css/mCbGq/M3opM6pGpC6bTy55gcPdg/<?php echo $_SERVER['SERVER_NAME']; ?>/47788.css"
-  type="text/css"
-/>
+<script type="text/javascript">
+WebFontConfig = { fontdeck: { id: '47788' } };
+
+(function() {
+  var wf = document.createElement('script');
+  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+})();
+</script>
