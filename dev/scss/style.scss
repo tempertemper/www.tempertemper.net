@@ -9,6 +9,7 @@
 
 @import "../components/susy/sass/susy";
 @import "layout/maps";
+@import "layout/mixins";
 @import "layout/layout";
 
 // Typography
@@ -34,6 +35,8 @@
 @import "elements/search";
 @import "elements/footer";
 @import "elements/map";
+@import "elements/teaser";
+@import "elements/details";
 
 // Sections
 

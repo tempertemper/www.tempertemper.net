@@ -18,7 +18,7 @@
 
   <aside class="testimonials">
 
-    <h1>Compliments</h1>
+    <h1>Testimonials</h1>
 
     <?php perch_layout('testimonial'); ?>
 

@@ -1,15 +1,28 @@
 [role="contentinfo"] {
   clear: both;
-  padding-top: 2em;
   padding-bottom: 1em;
   text-align: center;
-  @include top-divider;
   @include font-heading-regular;
+
+  &:before {
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: black;
+    width: 10em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 3em;
+  }
+
+  address {
+    margin-top: 0;
+  }
 
   .copyright {
     margin-top: 2em;
     text-align: center;
-    font-size: ms(0);
+    font-size: ms(-2);
 
     p {
       display: inline;
@@ -22,6 +35,10 @@
 }
 
 .useful-links {
+
+  ul {
+    padding-left: 0;
+  }
 
   li {
     display: inline;

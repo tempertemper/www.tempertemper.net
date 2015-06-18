@@ -13,9 +13,8 @@ body {
 }
 
 blockquote {
-  background-color: $colour-primary-light;
-  padding: 1em;
-  border-radius: $border-radius-default;
+  border-left: 0.75em solid $colour-primary-light;
+  padding: 0.5em 0 0.5em 1em;
   margin-right: 0;
   margin-left: 0;
 
@@ -25,7 +24,6 @@ blockquote {
 }
 
 cite {
-  text-align: right;
   display: block;
   margin-top: 1em;
   @include font-heading-regular;

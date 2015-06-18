@@ -19,7 +19,7 @@
 
 <div role="complementary">
 
-  <aside>
+  <aside class="post-groups">
 
     <h1>Post groups</h1>
 
