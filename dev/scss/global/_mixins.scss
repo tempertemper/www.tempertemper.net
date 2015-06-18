@@ -104,8 +104,3 @@
 @mixin button-secondary {
   @include button;
 }
-
-@mixin top-divider {
-  margin-top: 4em;
-  border-top: $divider;
-}
