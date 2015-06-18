@@ -38,6 +38,9 @@ img {
 .back {
   @include reverse-link-marker;
   @include font-heading-regular;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: inline-block;
 }
 
 .button {
