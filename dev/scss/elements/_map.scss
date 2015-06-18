@@ -1,6 +1,14 @@
 .cmsmap {
   width: 100%;
   height: 300px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  @media (min-width: $l) {
+    @include layout($wide-layout);
+    @include pull(1 of 4);
+    width: span(6 of 4);
+  }
 
   img {
     max-width: none;
