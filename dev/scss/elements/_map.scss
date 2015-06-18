@@ -4,11 +4,7 @@
   margin-top: 1em;
   margin-bottom: 1em;
 
-  @media (min-width: $l) {
-    @include layout($wide-layout);
-    @include pull(1 of 4);
-    width: span(6 of 4);
-  }
+  @include full-width;
 
   img {
     max-width: none;
