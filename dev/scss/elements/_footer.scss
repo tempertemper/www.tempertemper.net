@@ -6,6 +6,10 @@
   @include top-divider;
   @include font-heading-regular;
 
+  address {
+    margin-top: 0;
+  }
+
   .copyright {
     margin-top: 2em;
     text-align: center;
