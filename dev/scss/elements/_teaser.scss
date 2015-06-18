@@ -1,0 +1,26 @@
+.teaser {
+
+  .index-list {
+    @include full-width;
+
+    @media (min-width: $l) {
+      @include clearfix;
+
+      h2 {
+        margin-top: 0;
+      }
+
+      li {
+        background-color: $colour-primary-light;
+        padding: 1em;
+        border-radius: $border-radius-default;
+        @include layout($wide-layout);
+        @include span(2 of 6);
+
+        &:last-of-type {
+          @include span(last 2 of 6);
+        }
+      }
+    }
+  }
+}
