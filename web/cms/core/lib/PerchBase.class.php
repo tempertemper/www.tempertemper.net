@@ -16,6 +16,8 @@ class PerchBase
 
     protected $modified_date_column = false;
 
+    protected $pk_is_int = true;
+
     function __construct($details) 
     {        
         $this->db       = PerchDB::fetch();
@@ -78,7 +80,7 @@ class PerchBase
     {
         if ($this->modified_date_column) $data[$this->modified_date_column] = date('Y-m-d H:i:s');
         
-        $r = $this->db->update($this->table, $data, $this->pk, (int) $this->details[$this->pk]);
+        $r = $this->db->update($this->table, $data, $this->pk, $this->details[$this->pk]);
         $this->details = array_merge($this->details, $data);
         return $r;
     }
@@ -101,7 +103,7 @@ class PerchBase
                 $this->details[$key]=$val;
             }
             
-            $this->details[$this->pk] = (int) $this->details[$this->pk];
+            $this->details[$this->pk] = $this->details[$this->pk];
         }
     }
 
@@ -176,7 +178,7 @@ class PerchBase
                     foreach($index_value as $index_item) {
                         $data = array();
                         $data['itemKey']    = $this->db->pdb($this->pk);
-                        $data['itemID']     = (int) $this->id();
+                        $data['itemID']     = ($this->pk_is_int ? (int) $this->id() : $this->db->pdb($this->id()));
                         $data['indexKey']   = $this->db->pdb(substr($index_item['key'], 0, 64));
                         $data['indexValue'] = $this->db->pdb(substr($index_item['value'], 0, 255));
 
@@ -192,9 +194,9 @@ class PerchBase
         if (!$id_set) {
             $data = array();
             $data['itemKey']    = $this->db->pdb($this->pk);
-            $data['itemID']     = (int) $this->id();
+            $data['itemID']     = ($this->pk_is_int ? (int) $this->id() : $this->db->pdb($this->id()));
             $data['indexKey']   = $this->db->pdb('_id');
-            $data['indexValue'] = (int) $this->id();
+            $data['indexValue'] = ($this->pk_is_int ? (int) $this->id() : $this->db->pdb($this->id()));
 
             $values[] = '('.implode(',', $data).')';
         } 

@@ -13,6 +13,8 @@ class PerchAPI_Form extends PerchForm
 
     private $hint = false;
 
+    public $orig_post = array();
+
     public $add_another = false;
     private $submitted_with_add_another = false;
     
@@ -21,6 +23,8 @@ class PerchAPI_Form extends PerchForm
         $this->app_id = $app_id;
         $this->version = $version;
         $this->Lang = $Lang;
+
+        $this->orig_post = $_POST;
         
         // Include editor plugin
         $dir = PERCH_PATH.DIRECTORY_SEPARATOR.'plugins'.DIRECTORY_SEPARATOR.'editors'.DIRECTORY_SEPARATOR.PERCH_APPS_EDITOR_PLUGIN;

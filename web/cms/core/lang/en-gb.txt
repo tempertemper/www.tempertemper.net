@@ -778,5 +778,7 @@
     "Item Options": "Item Options",
     "Add a block": "Add a block",
     "%sSetup folder is present and should be deleted%s": "%sSetup folder is present and should be deleted%s",
-    "Manage assets": "Manage assets"
+    "Manage assets": "Manage assets",
+    "Scheduled": "Scheduled",
+    "Sent": "Sent"
 }
