@@ -11,27 +11,23 @@
       'value'    => perch_get('s'),
       'count'    => 1,
     ]);
+
+    PerchSystem::set_var('modified', perch_page_modified(array(
+      'format' => '%e %B %Y',
+    ), true));
+
+    perch_collection('Work', [
+      'template' => 'work_details.html',
+      'filter'   => 'slug',
+      'match'    => 'eq',
+      'value'    => perch_get('s'),
+      'count'    => 1,
+    ]);
   ?>
 
   <?php perch_content('Call to action'); ?>
 
 </main>
-
-<div role="complementary">
-
-  <aside>
-
-    <h1>More work</h1>
-
-    <?php
-      perch_collection('Work', [
-        'template' => 'work_list_short.html',
-      ]);
-    ?>
-
-  </aside>
-
-</div>
 
 <?php
   perch_layout('footer');

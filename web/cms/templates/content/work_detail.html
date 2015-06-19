@@ -1,5 +1,3 @@
-<perch:content id="title" type="text" label="Project title" html="false" order="1" title="true" suppress="true" />
-
 <perch:content id="case-study" type="textarea" label="Case study" bucket="portfolio" order="3" size="xxl" editor="markitup" required="true" markdown="true" textile="false" html="true" imagewidth="740" imagequality="90" imagecrop="true" />
 
 <perch:content id="excerpt" type="textarea" label="Excerpt" order="4" size="s" required="true" markdown="true" html="false" suppress="true" />
@@ -28,11 +26,8 @@
 
 </perch:related>
 
-<perch:content id="slug" for="title" type="slug" suppress="true" />
-
-<perch:categories id="Work" label="Type of work" set="work" required="true" display-as="checkboxes" divider-before="Meta">
+<perch:categories id="Work" label="Type of work" set="work" required="true" display-as="checkboxes" divider-before="Meta"suppress="true">
   <perch:before>
-    <h3>Work included</h3>
     <ul>
   </perch:before>
     <li>
@@ -45,3 +40,5 @@
 
 <perch:content id="date" type="date" label="Date" format="jS F Y" suppress="true" />
 <perch:content id="website" order="2" type="text" label="Website" default="http://" html="false" suppress="true" />
+
+<a href="<perch:content id="slug" for="title" type="slug" />" class="go-to">Visit <perch:content id="title" type="text" label="Project title" html="false" order="1" title="true" /> site</a>

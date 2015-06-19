@@ -5,4 +5,8 @@
     margin-top: 0;
     margin-bottom: 0;
   }
+
+  p+p {
+    text-indent: 0;
+  }
 }
