@@ -12,6 +12,10 @@
       'count'    => 1,
     ]);
 
+    PerchSystem::set_var('modified', perch_page_modified(array(
+      'format' => '%e %B %Y',
+    ), true));
+
     perch_collection('Work', [
       'template' => 'work_details.html',
       'filter'   => 'slug',
