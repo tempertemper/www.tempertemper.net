@@ -15,7 +15,7 @@
 
     <p>Document last updated: <?php
         perch_page_modified(array(
-          'format' => '%d %B %Y',
+          'format' => '%e %B %Y',
         ));
       ?></p>
 

@@ -1,6 +1,6 @@
 <aside class="details">
 
-  <p>Added <span class="entry-published date" ><perch:content id="date" type="date" label="Date" format="jS F, Y" /></span><?php perch_blog_post_categories(perch_get('s')); ?></p>
+  <p>Added <perch:content id="date" type="date" label="Date" format="jS F Y" />, modified <perch:content id="modified" format="jS F Y" /></p>
 
   <perch:categories id="Work" label="Type of work" set="work" required="true" display-as="checkboxes" divider-before="Meta">
     <perch:before>
@@ -11,6 +11,8 @@
       </p>
     </perch:after>
   </perch:categories>
+
+  <p><a href="<perch:content id="slug" for="title" type="slug" />" class="go-to">Visit <perch:content id="title" type="text" /> site</a></p>
 
   <p><a href="/work/" class="back">Back to work list</a></p>
 
