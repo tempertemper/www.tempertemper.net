@@ -1,0 +1,17 @@
+<aside class="details">
+
+  <p>Added <span class="entry-published date" ><perch:content id="date" type="date" label="Date" format="jS F, Y" /></span><?php perch_blog_post_categories(perch_get('s')); ?></p>
+
+  <perch:categories id="Work" label="Type of work" set="work" required="true" display-as="checkboxes" divider-before="Meta">
+    <perch:before>
+      <perch:if exists="catSlug"><p class="cats">Work included <perch:else /></perch:if>
+    </perch:before>
+      <a href="/work/category/<perch:category id="catSlug" />"><perch:category id="catTitle" /></a><perch:if exists="perch_item_last"><perch:else />, </perch:if>
+    <perch:after>
+      </p>
+    </perch:after>
+  </perch:categories>
+
+  <p><a href="/work/" class="back">Back to work list</a></p>
+
+</aside>
