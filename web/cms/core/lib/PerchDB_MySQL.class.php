@@ -132,7 +132,6 @@ class PerchDB_MySQL
 			$this->error_msg = $err[2];
 			return false;
 		}
-
 		$newid	= $link->lastInsertId();
 
 		if (!$newid) {

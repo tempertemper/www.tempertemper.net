@@ -76,7 +76,7 @@ class PerchAdminSearch
 		    $sql = $Paging->select_sql(); 
 		
 		    if (!$search_content) {            
-		        $sql .= ' \'PerchContent_SearchHandler\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0 ';
+		        $sql .= ' \'PerchContent_SearchHandler\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0  ';
 		    }
 
 		    if (PerchUtil::count($search_handlers)) {

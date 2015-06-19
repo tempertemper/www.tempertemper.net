@@ -48,13 +48,13 @@ class PerchSystem
     
     public static function register_search_handler($className)
     {
-        self::$search_handlers[] = $className;
+        if (!in_array($className, self::$search_handlers)) self::$search_handlers[] = $className;
         return true;
     }
     
     public static function register_admin_search_handler($className)
     {
-        self::$admin_search_handlers[] = $className;
+        if (!in_array($className, self::$admin_search_handlers)) self::$admin_search_handlers[] = $className;
         return true;
     }
 

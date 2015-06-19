@@ -101,8 +101,10 @@ class PerchContent_Util
 
 	    if ($Item->itemID()) {
 	    	$perch_prefix = 'perch_'.$Item->itemID();
+	    	$item_prefix  = $Item->itemID().'_';
 	    }else{
 	    	$perch_prefix = 'perch';
+	    	$item_prefix  = '';
 	    }
 
 	    // Top level - see notes below.
@@ -165,8 +167,10 @@ class PerchContent_Util
 	                	
 	                }
 
-	                while (in_array($Item->itemID().'_'.$subprefix.$i, $deleted_blocks)) {
-	                	//PerchUtil::debug('Skipping '.$Item->itemID().'_'.$subprefix.$i.' as deleted');
+	                //PerchUtil::debug('Looking for  '.$item_prefix.$subprefix.$i.' in deleted blocks list');
+	                //while (in_array($Item->itemID().'_'.$subprefix.$i, $deleted_blocks)) {
+	                while (in_array($item_prefix.$subprefix.$i, $deleted_blocks)) {
+	                	PerchUtil::debug('Skipping '.$item_prefix.$subprefix.$i.' as deleted');
 	                 	$i++;
 	                };
 
@@ -204,7 +208,7 @@ class PerchContent_Util
 	                    $i++;
 
 	                    while (in_array($Item->itemID().'_'.$subprefix.$i, $deleted_blocks)) {
-	                    	//PerchUtil::debug('Skipping '.$Item->itemID().'_'.$subprefix.$i.' as deleted');
+	                    	//PerchUtil::debug('Skipping '.$Item->itemID().'_'.$subprefix.$i.' as deleted (2)');
 	                     	$i++;
 	                    };
 
@@ -426,8 +430,8 @@ class PerchContent_Util
 				$tag->set('post_prefix', 'perch_'.$id.'_');  		
 	    	}
 	        
-	        $tag->set('input_id', $item_id);
-	        $tag->set('post_prefix', 'perch_'.$id.'_');
+	        //$tag->set('input_id', $item_id);
+	        //$tag->set('post_prefix', 'perch_'.$id.'_');
 	        if (is_object($Page)) $tag->set('page_id', $Page->id());
 
 	        

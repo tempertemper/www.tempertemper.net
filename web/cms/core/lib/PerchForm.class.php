@@ -299,7 +299,7 @@ class PerchForm
 		}else{
 			$postkey	= $key;
 		}
-		
+
 		if (isset($_POST[$postkey])){
 			return $_POST[$postkey];
 		}else{
