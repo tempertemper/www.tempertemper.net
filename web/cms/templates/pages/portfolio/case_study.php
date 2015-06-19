@@ -17,22 +17,6 @@
 
 </main>
 
-<div role="complementary">
-
-  <aside>
-
-    <h1>More work</h1>
-
-    <?php
-      perch_collection('Work', [
-        'template' => 'work_list_short.html',
-      ]);
-    ?>
-
-  </aside>
-
-</div>
-
 <?php
   perch_layout('footer');
   perch_layout('end');
