@@ -104,3 +104,21 @@
 @mixin button-secondary {
   @include button;
 }
+
+@mixin inline-nav {
+
+  display: inline-block;
+  width: auto;
+
+  &:before {
+    content: "/";
+    display: inline-block;
+  }
+
+  &:first-child {
+
+    &:before {
+      content: none;
+    }
+  }
+}

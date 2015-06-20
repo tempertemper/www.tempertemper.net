@@ -1,6 +1,27 @@
+nav {
+  @include font-heading-regular;
+
+  li {
+
+    &.selected a,
+    &.ancestor a {
+
+      &:link,
+      &:visited {
+        color: $colour-primary-darkest;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: black;
+      }
+    }
+  }
+}
+
 [role="navigation"] {
   width: 100%;
-  @include font-heading-regular;
 
   ul {
     margin-top: 0;
@@ -94,7 +115,7 @@
   }
 
   &.active::before {
-    content:"\00D7";
+    content: "\00D7";
   }
 }
 
@@ -103,9 +124,11 @@
   .js .nav-collapse {
     position: relative;
   }
+
   .js .nav-collapse.closed {
     max-height: none;
   }
+
   .nav-toggle {
     display: none;
   }
@@ -121,22 +144,12 @@
     }
 
     li {
-      display: inline-block;
-      width: auto;
-
-      &:before {
-        content: "/";
-        display: inline-block;
-      }
+      @include inline-nav;
 
       &:first-child {
 
         a {
           padding-top: 0;
-        }
-
-        &:before {
-          content: none;
         }
       }
 
@@ -144,21 +157,6 @@
 
         a {
           padding-bottom: 0;
-        }
-      }
-
-      &.selected a,
-      &.ancestor a {
-
-        &:link,
-        &:visited {
-          color: $colour-primary-darkest;
-        }
-
-        &:hover,
-        &:active,
-        &:focus {
-          cursor: auto;
         }
       }
     }
