@@ -1,6 +1,27 @@
+nav {
+  @include font-heading-regular;
+
+  li {
+
+    &.selected a,
+    &.ancestor a {
+
+      &:link,
+      &:visited {
+        color: $colour-primary-darkest;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: black;
+      }
+    }
+  }
+}
+
 [role="navigation"] {
   width: 100%;
-  @include font-heading-regular;
 
   ul {
     margin-top: 0;
