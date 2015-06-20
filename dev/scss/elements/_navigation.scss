@@ -123,22 +123,12 @@
     }
 
     li {
-      display: inline-block;
-      width: auto;
-
-      &:before {
-        content: "/";
-        display: inline-block;
-      }
+      @include inline-nav;
 
       &:first-child {
 
         a {
           padding-top: 0;
-        }
-
-        &:before {
-          content: none;
         }
       }
 
@@ -146,21 +136,6 @@
 
         a {
           padding-bottom: 0;
-        }
-      }
-
-      &.selected a,
-      &.ancestor a {
-
-        &:link,
-        &:visited {
-          color: $colour-primary-darkest;
-        }
-
-        &:hover,
-        &:active,
-        &:focus {
-          cursor: auto;
         }
       }
     }
