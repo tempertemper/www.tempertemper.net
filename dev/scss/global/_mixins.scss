@@ -121,19 +121,4 @@
       content: none;
     }
   }
-
-  &.selected a,
-  &.ancestor a {
-
-    &:link,
-    &:visited {
-      color: $colour-primary-darkest;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      cursor: auto;
-    }
-  }
 }
