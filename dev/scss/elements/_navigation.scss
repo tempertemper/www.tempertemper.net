@@ -94,7 +94,7 @@
   }
 
   &.active::before {
-    content:"\00D7";
+    content: "\00D7";
   }
 }
 
@@ -103,9 +103,11 @@
   .js .nav-collapse {
     position: relative;
   }
+
   .js .nav-collapse.closed {
     max-height: none;
   }
+
   .nav-toggle {
     display: none;
   }
