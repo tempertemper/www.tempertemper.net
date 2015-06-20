@@ -41,6 +41,6 @@
   }
 
   li {
-    display: inline;
+    @include inline-nav;
   }
 }
