@@ -13,7 +13,9 @@
 <div role="complementary">
 
   <?php perch_layout('blog/post_details'); ?>
-  <?php perch_content('Blog subscribe'); ?>
+  <section>
+    <?php perch_content('Blog subscribe'); ?>
+  </section>
 
 </div>
 
