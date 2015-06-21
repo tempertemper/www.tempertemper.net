@@ -72,15 +72,18 @@
   margin-bottom: 1em;
   border-color: $colour-primary;
   background-color: transparent;
+  color: $colour-primary;
   transition: all .3s ease;
   @include font-heading-regular;
   font-size: ms(1);
+  clear: both;
 
   &:hover,
   &:focus,
   &:active {
     text-decoration: none;
     border-color: #000;
+    color: #fff;
   }
 }
 
@@ -120,5 +123,11 @@
     &:before {
       content: none;
     }
+  }
+
+  a {
+    display: inline-block;
+    padding-right: .1em;
+    padding-left: .1em;
   }
 }
