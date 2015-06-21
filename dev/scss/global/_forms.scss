@@ -27,13 +27,17 @@ input[type="submit"] {
   display: block;
 }
 
-[role="main"],
-[role="complementary"] {
+@media (min-width: $m) {
 
-  [type="submit"] {
+  form.subscribe {
 
-    &:focus {
-      color: white;
+    div {
+      @include layout($wide-layout);
+      @include span(last 2 of 4);
+
+      &:first-child {
+        @include span(2 of 4);
+      }
     }
   }
 }

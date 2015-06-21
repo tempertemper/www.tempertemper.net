@@ -1,10 +1,3 @@
-<section class="subscribe">
-
-  <h1>
-    <perch:content id="heading" type="smarttext" label="Heading" />
-  </h1>
-
-  <perch:content id="text" type="textarea" label="Message" size="xs" markdown="true" html="false" />
-  <perch:template path="content/subscribe_form.html" />
-
-</section>
+<perch:if exists="heading"><h1></perch:if><perch:content id="heading" type="smarttext" label="Heading" /><perch:if exists="heading"></h1></perch:if>
+<perch:content id="text" type="textarea" label="Message" size="xs" markdown="true" html="false" />
+<perch:template path="content/subscribe_form.html" />
