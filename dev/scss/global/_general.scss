@@ -83,3 +83,8 @@ ol {
     @include font-heading-regular;
   }
 }
+
+small {
+  display: block;
+  font-size: ms(-1);
+}

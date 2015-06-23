@@ -11,9 +11,7 @@
       }
 
       li {
-        background-color: $colour-primary-light;
-        padding: 1em;
-        border-radius: $border-radius-default;
+        @include highlight-box;
         @include layout($wide-layout);
         @include span(2 of 6);
 
