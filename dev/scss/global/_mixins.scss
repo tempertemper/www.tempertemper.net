@@ -131,3 +131,9 @@
     padding-left: .1em;
   }
 }
+
+@mixin highlight-box {
+  background-color: $colour-primary-light;
+  padding: 1em;
+  border-radius: $border-radius-default;
+}
