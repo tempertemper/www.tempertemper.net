@@ -14,7 +14,7 @@
 
   <?php perch_layout('blog/post_details'); ?>
   <section>
-    <?php perch_content('Blog subscribe'); ?>
+    <?php perch_content('Subscribe'); ?>
   </section>
 
 </div>
