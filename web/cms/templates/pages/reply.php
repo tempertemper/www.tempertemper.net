@@ -19,10 +19,11 @@
 
     <?php
       $opts = array(
-      'sort-order'=>'RAND',
-      'count'=>'2',
-      'category'=>array('resources'),
-      'template'=>'blog/post_selection.html'
+        'sort'=> 'postTitle',
+        'sort-order'=>'RAND',
+        'count'=>'3',
+        'category'=>array('resources'),
+        'template'=>'blog/post_teaser.html'
       );
       perch_blog_custom($opts);
     ?>
