@@ -9,11 +9,11 @@
   <h1>
     <?php
       if (perch_get('cat')) {
-        perch_category('work/'.perch_get('cat').'/',array(
+        perch_category('services/'.perch_get('cat').'/',array(
           'template'=>'category_header.html'
         ));
       } else {
-        echo('Types of Work I do');
+        echo('Services');
       }
     ?>
   </h1>

@@ -8,22 +8,22 @@
 
   <?php perch_layout('_ie_specific'); ?>
 
-  <title>Portfolio: <?php
-    perch_collection('Work', [
+  <title>Project: <?php
+    perch_collection('Projects', [
       'filter' => 'slug',
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case_study/page_header.html',
+      'template'=>'/project/page_header.html',
     ]);
   ?></title>
   <meta name="description" content="<?php
-    perch_collection('Work', [
+    perch_collection('Projects', [
       'filter' => 'slug',
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case_study/excerpt.html',
+      'template'=>'/project/excerpt.html',
     ]);
   ?>" />
 
@@ -36,45 +36,45 @@
 
   <meta property="og:title" content="tempertemper Web Design" />
   <meta property="og:site_name" content="tempertemper Web Design"/>
-  <meta property="og:url" content="https://tempertemper.net/portfolio/<?php
-    perch_collection('Work', [
+  <meta property="og:url" content="https://tempertemper.net/projects/<?php
+    perch_collection('Projects', [
       'filter' => 'slug',
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case_study/slug.html',
+      'template'=>'/project/slug.html',
     ]);
   ?>" />
-  <meta property="og:image" content="https://tempertemper.net/assets/images/tempertemper-web-design-logo-facebook.jpg" />
+  <meta property="og:image" content="https://tempertemper.net/img/tempertemper-web-design-logo-facebook.jpg" />
   <meta property="og:description" content="<?php
-    perch_collection('Work', [
+    perch_collection('Projects', [
       'filter' => 'slug',
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case_study/excerpt.html',
+      'template'=>'/project/excerpt.html',
     ]);
   ?>" />
 
   <meta name="twitter:card" content="summary"/>
   <meta name="twitter:site" content="@tempertemper"/>
   <meta name="twitter:domain" content="<?php
-    perch_collection('Work', [
+    perch_collection('Projects', [
       'filter' => 'slug',
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case_study/excerpt.html',
+      'template'=>'/project/excerpt.html',
     ]);
   ?>"/>
   <meta name="twitter:creator" content="@tempertemper"/>
-  <meta name="twitter:url" content="https://tempertemper.net/portfolio/<?php
-    perch_collection('Work', [
+  <meta name="twitter:url" content="https://tempertemper.net/projects/<?php
+    perch_collection('Projects', [
       'filter' => 'slug',
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case_study/slug.html',
+      'template'=>'/project/slug.html',
     ]);
   ?>">
 
