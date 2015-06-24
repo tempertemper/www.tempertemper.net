@@ -1,42 +1,42 @@
 // Global
 
-@import "global/variables";
-@import "global/reset";
-@import "global/mixins";
-@import "global/animation";
+@import "global/variables",
+        "global/reset",
+        "global/mixins",
+        "global/animation";
 
 // Layout
 
-@import "../components/susy/sass/susy";
-@import "layout/maps";
-@import "layout/mixins";
-@import "layout/layout";
+@import "../components/susy/sass/susy",
+        "layout/maps",
+        "layout/mixins",
+        "layout/layout";
 
 // Typography
 
-@import "../components/modular-scale/stylesheets/modular-scale";
-@import "typography/mixins";
-@import "typography/general";
-@import "typography/headings";
-@import "typography/links";
+@import "../components/modular-scale/stylesheets/modular-scale",
+        "typography/mixins",
+        "typography/general",
+        "typography/headings",
+        "typography/links";
 
 // Styling
 
-@import "global/icons";
-@import "global/forms";
-@import "global/general";
-@import "global/paging";
+@import "global/icons",
+        "global/forms",
+        "global/general",
+        "global/paging";
 
 // Elements
 
-@import "elements/header";
-@import "elements/navigation";
-@import "elements/call-to-action";
-@import "elements/search";
-@import "elements/footer";
-@import "elements/map";
-@import "elements/teaser";
-@import "elements/details";
+@import "elements/header",
+        "elements/navigation",
+        "elements/call-to-action",
+        "elements/search",
+        "elements/footer",
+        "elements/map",
+        "elements/teaser",
+        "elements/details";
 
 // Sections
 
@@ -44,6 +44,6 @@
 
 // Legacy
 
-@import "legacy/print";
-@import "legacy/ie9";
-@import "legacy/ie8";
+@import "legacy/print",
+        "legacy/ie9",
+        "legacy/ie8";
