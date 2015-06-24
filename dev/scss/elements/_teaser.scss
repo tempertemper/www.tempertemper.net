@@ -1,4 +1,5 @@
 .teaser {
+  text-align: center;
 
   .index-list {
     @include full-width;
@@ -14,11 +15,16 @@
         @include highlight-box;
         @include layout($wide-layout);
         @include span(2 of 6);
+        text-align: left;
 
         &:last-of-type {
           @include span(last 2 of 6);
         }
       }
     }
+  }
+
+  .go-to {
+    margin-top: 2em;
   }
 }
