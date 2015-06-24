@@ -8,8 +8,8 @@
   <?php perch_content('Introduction'); ?>
 
   <?php
-    perch_collection('Work', [
-      'template' => 'work_teaser.html',
+    perch_collection('Projects', [
+      'template' => 'project_teaser.html',
       'count'=>3,
       'sort'=>'date',
       'sort-order'=>'DESC'
