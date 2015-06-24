@@ -1,5 +1,8 @@
 .teaser {
-  text-align: center;
+
+  @media (min-width: $l) {
+    text-align: center;
+  }
 
   .index-list {
     @include full-width;
