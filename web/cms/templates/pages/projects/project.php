@@ -1,11 +1,11 @@
-<?php perch_layout('/case-study/head'); ?>
-<?php perch_layout('/case-study/header'); ?>
+<?php perch_layout('/project/head'); ?>
+<?php perch_layout('/project/header'); ?>
 
 <main role="main">
 
   <?php
-    perch_collection('Work', [
-      'template' => 'work_detail.html',
+    perch_collection('Projects', [
+      'template' => 'project_detail.html',
       'filter'   => 'slug',
       'match'    => 'eq',
       'value'    => perch_get('s'),
@@ -16,8 +16,8 @@
       'format' => '%e %B %Y',
     ), true));
 
-    perch_collection('Work', [
-      'template' => 'work_details.html',
+    perch_collection('Projects', [
+      'template' => 'project_details.html',
       'filter'   => 'slug',
       'match'    => 'eq',
       'value'    => perch_get('s'),

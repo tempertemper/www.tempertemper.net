@@ -16,8 +16,8 @@
     'flat'             => true
   ));
 
-  perch_collection('Work', [
-    'template'   => 'sitemap.work.html',
+  perch_collection('Projects', [
+    'template'   => 'sitemap.projects.html',
     'sort'       => 'date',
     'sort-order' => 'DESC'
   ]);

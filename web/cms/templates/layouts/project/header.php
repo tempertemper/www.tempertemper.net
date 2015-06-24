@@ -7,12 +7,12 @@
   ?>
 
   <h1>
-    <?php perch_collection('Work', [
+    <?php perch_collection('Projects', [
       'filter' => 'slug',
       'match' => 'eq',
       'value' => perch_get('s'),
       'count' => 1,
-      'template'=>'/case_study/page_header.html',
+      'template'=>'/project/page_header.html',
     ]); ?>
   </h1>
 

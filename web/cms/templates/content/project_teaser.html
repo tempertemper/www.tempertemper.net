@@ -1,0 +1,17 @@
+<perch:before>
+  <section class="teaser">
+    <h1>Recent projects</h1>
+    <ul class="index-list">
+</perch:before>
+
+      <li>
+        <h2><a href="/projects/<perch:content id="slug" type="slug" />"><perch:content id="title" type="text" /></a></h2>
+        <p><perch:content id="excerpt" type="textarea" striptags="true" /></p>
+        <a href="/projects/<perch:content id="slug" type="slug" />" class="go-to">Read more</a>
+      </li>
+
+<perch:after>
+    </ul>
+    <a href="/projects" class="go-to">View more projects</a>
+  </section>
+</perch:after>
