@@ -4,11 +4,11 @@
     <p class="page">Page <perch:blog id="current_page" /> of <perch:blog id="number_of_pages" /></p>
 
     <perch:if exists="not_first_page">
-      <a href="<perch:blog id="prev_url" encode="false" rewrite="/blog{cat:/category/%s}{tag:/tag/%s}{year:/year/%s}{month:/month/%s}{page:/page/%s}" />" class="previous">Previous</a>
+      <a href="<perch:blog id="prev_url" encode="false" />" class="previous">Previous</a>
     </perch:if>
 
     <perch:if exists="not_last_page">
-      <a href="<perch:blog id="next_url" encode="false" rewrite="/blog{cat:/category/%s}{tag:/tag/%s}{year:/year/%s}{month:/month/%s}{page:/page/%s}" />" class="next">Next</a>
+      <a href="<perch:blog id="next_url" encode="false" />" class="next">Next</a>
     </perch:if>
 
   </div>
