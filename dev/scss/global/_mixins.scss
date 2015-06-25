@@ -75,7 +75,6 @@
   color: $colour-primary;
   transition: all .3s ease;
   @include font-heading-regular;
-  font-size: ms(1);
   clear: both;
 
   &:hover,
