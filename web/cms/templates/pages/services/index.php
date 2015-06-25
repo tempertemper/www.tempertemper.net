@@ -8,8 +8,8 @@
       perch_collection('Projects', [
         'category' => 'services/'.perch_get('cat'),
         'template' => 'project_cat_list.html',
-        // 'paginate' => 'true',
-        // 'count'    => 5
+        'paginate' => 'true',
+        'count'    => 5
       ]);
     } else {
       perch_categories(array(

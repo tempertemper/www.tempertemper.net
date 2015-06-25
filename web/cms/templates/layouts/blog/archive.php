@@ -1,9 +1,9 @@
 <?php
-  $posts_per_page     = 100;
+  $posts_per_page     = 10;
   $template           = 'post_in_list.html';
   $sort_order         = 'DESC';
   $sort_by            = 'postDateTime';
-  $paginate           = false;
+  $paginate           = true;
   $include_categories = function($item) {
                           $item['categories'] = perch_blog_post_categories($item['postID'], array(
                             'template'=>'category_only.html'
