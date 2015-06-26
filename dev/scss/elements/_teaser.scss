@@ -8,17 +8,12 @@
     @include full-width;
 
     @media (min-width: $l) {
-      @include clearfix;
-
-      h2 {
-        margin-top: 0;
-      }
 
       li {
-        @include highlight-box;
+        text-align: left;
         @include layout($wide-layout);
         @include span(2 of 6);
-        text-align: left;
+        margin-bottom: 3em;
 
         &:last-of-type {
           @include span(last 2 of 6);
