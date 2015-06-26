@@ -1,0 +1,30 @@
+ .contact-form {
+  @include highlight-box;
+  @include clearfix;
+
+  @media (min-width: $m) {
+
+    div {
+      @include layout($wide-layout);
+      @include span(2 of 4);
+
+      &:last-of-type {
+        @include span(last 2 of 4);
+      }
+    }
+  }
+
+  @media (min-width: $l) {
+    @include bleed-x(1em);
+
+    div {
+      @include layout($wide-layout);
+      @include span(4 of 8);
+
+      &:last-of-type {
+        @include span(last 4 of 8);
+      }
+    }
+
+  }
+ }
