@@ -82,7 +82,7 @@
   &:active {
     text-decoration: none;
     border-color: #000;
-    color: #fff;
+    color: #000;
   }
 }
 
@@ -100,6 +100,7 @@
   &:focus,
   &:active {
     background-color: #000;
+    color: #fff;
   }
 }
 
