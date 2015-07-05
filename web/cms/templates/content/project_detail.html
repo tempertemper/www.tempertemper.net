@@ -1,32 +1,12 @@
-<perch:content id="case-study" type="textarea" label="Case study" bucket="projects" order="3" size="xxl" editor="markitup" required="true" markdown="true" textile="false" html="true" imagewidth="740" imagequality="90" imagecrop="true" />
+<perch:content id="case-study" type="textarea" label="Case study" bucket="projects" order="3" size="xxl" editor="markitup" required="true" markdown="true" html="true" imagewidth="740" imagequality="90" imagecrop="true" />
 
-<perch:content id="excerpt" type="textarea" label="Excerpt" order="4" size="s" required="true" markdown="true" html="false" suppress="true" />
-
-<perch:related id="testimonial" collection="testimonials" label="Testimonial" divider-before="Linked testimonial">
-
-  <blockquote>
-
-      &#8220;<perch:content id="testimonial" type="textarea" />&#8221;
-
-      <cite>
-
-        <perch:content id="citation" type="text" /><perch:if exists="company">, </perch:if><perch:if exists="website">
-          <a href="<perch:content id="website" order="4" type="text" label="Website" default="http://" html="false" />" rel="nofollow">
-        </perch:if>
-
-          <perch:if exists="company"><perch:content id="company" type="text" /></perch:if>
-
-        <perch:if exists="website">
-          </a>
-        </perch:if>
-
-      </cite>
-
-    </blockquote>
-
+<perch:related id="testimonial" collection="testimonials" label="Testimonial" divider-before="Select testimonial">
+  <perch:template path="content/testimonial_feed.html" />
 </perch:related>
 
-<perch:categories id="Services" label="Work included" set="services" required="true" display-as="checkboxes" divider-before="Meta"suppress="true">
+<perch:content id="excerpt" type="textarea" label="Excerpt" size="xs" required="true" html="false" suppress="true" chars="200" help="Max 200 characters" append="…" count="chars" divider-before="Meta" />
+
+<perch:categories id="Services" label="Work included" set="services" required="true" display-as="checkboxes" suppress="true">
   <perch:before>
     <ul>
   </perch:before>
