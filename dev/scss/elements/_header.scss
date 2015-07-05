@@ -23,6 +23,10 @@
   transition: none;
   float: left;
 
+  @media (min-width: $l) {
+    margin-top: 0.25em;
+  }
+
   img {
     width: 100%;
     border: none;
