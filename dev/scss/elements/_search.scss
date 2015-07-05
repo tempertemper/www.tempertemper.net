@@ -22,8 +22,6 @@
   [role="search"] {
     padding-bottom: 0.25em;
     width: auto;
-    position: absolute;
-    right: 0;
     margin-left: 1em;
 
     @media (min-width: $s) and (max-width: $l) {
@@ -64,6 +62,8 @@
 
     @media (min-width: $l) {
       text-align: left;
+      position: absolute;
+      right: 0;
 
       label {
         right: 0;
