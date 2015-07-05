@@ -139,8 +139,13 @@ nav {
 
     ul {
       width: auto;
-      display: inline-block;
+      float: left;
       margin-top: 0.2em;
+      padding-bottom: 0.2em;
+
+      @media (min-width: $l) {
+        padding-right: 3em;
+      }
     }
 
     li {
