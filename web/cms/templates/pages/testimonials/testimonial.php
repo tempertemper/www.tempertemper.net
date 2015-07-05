@@ -7,7 +7,7 @@
 
   <?php
     perch_collection('Testimonials', array(
-      'template'=>'testimonial.html',
+      'template' => 'testimonial.html',
       'filter'   => 'slug',
       'match'    => 'eq',
       'value'    => perch_get('s'),

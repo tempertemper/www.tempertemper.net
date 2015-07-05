@@ -21,6 +21,7 @@
     <h1>Testimonials</h1>
 
     <?php perch_layout('testimonial'); ?>
+    <a href="/testimonials/" class="go-to">View more testimonials</a>
 
   </aside>
 
