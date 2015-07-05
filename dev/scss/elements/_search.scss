@@ -22,7 +22,8 @@
   [role="search"] {
     padding-bottom: 0.25em;
     width: auto;
-    position: relative;
+    position: absolute;
+    right: 0;
     margin-left: 1em;
 
     @media (min-width: $s) and (max-width: $l) {
@@ -77,7 +78,7 @@
         color: transparent;
 
         &:focus {
-          width: 10em;
+          width: 100%;
           padding-right: 2em;
           color: black;
         }

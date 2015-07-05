@@ -7,7 +7,7 @@
 
   <?php
     perch_collection('Testimonials', array(
-      'template'=>'testimonial.html',
+      'template' => 'testimonial.html',
       'filter'   => 'slug',
       'match'    => 'eq',
       'value'    => perch_get('s'),
@@ -17,7 +17,7 @@
 
   <a href="/testimonials" class="back">View all testimonials</a>
 
-  <?php perch_content('Call to action'); ?>
+  <?php perch_layout('call_to_action'); ?>
 
 </main>
 

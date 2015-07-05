@@ -2,15 +2,7 @@
 
   <p>Added <perch:content id="date" type="date" label="Date" format="jS F Y" />, modified <perch:content id="modified" format="jS F Y" /></p>
 
-  <perch:categories id="Services" label="Type of work" set="services" required="true" display-as="checkboxes" divider-before="Meta">
-    <perch:before>
-      <perch:if exists="catSlug"><p class="cats">Work included <perch:else /></perch:if>
-    </perch:before>
-      <a href="/services/<perch:category id="catSlug" />"><perch:category id="catTitle" /></a><perch:if exists="perch_item_last"><perch:else />, </perch:if>
-    <perch:after>
-      </p>
-    </perch:after>
-  </perch:categories>
+  <perch:categories id="Services" label="Type of work" set="services" required="true" display-as="checkboxes" divider-before="Meta"><perch:before><perch:if exists="catSlug"><p class="cats">Work included <perch:else /></perch:if></perch:before><perch:if exists="perch_item_first"><perch:else /><perch:if exists="perch_item_last"> and <perch:else />, </perch:if></perch:if><a href="/services/<perch:category id="catSlug" />"><perch:category id="catTitle" /></a><perch:after><perch:if exists="catSlug"></p><perch:else /></perch:if></perch:after></perch:categories>
 
   <p><a href="/projects/" class="back">Back to work list</a></p>
 
