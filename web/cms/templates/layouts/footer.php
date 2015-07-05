@@ -3,6 +3,13 @@
   <nav class="useful-links">
 
     <?php
+
+      perch_pages_navigation(array(
+        'hide-extensions'=>true,
+        'hide-default-doc'=>true,
+        'levels'=>1,
+      ));
+
       perch_pages_navigation(array(
         'hide-extensions'   => true,
         'hide-default-doc'  => true,
@@ -11,6 +18,12 @@
         'template'          => 'list.html'
       ));
     ?>
+
+    <ul>
+      <li>
+        <a href="https://twitter.com/tempertemper">Twitter</a>
+      </li>
+    </ul>
 
   </nav>
 
