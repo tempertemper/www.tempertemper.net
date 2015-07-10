@@ -6,79 +6,31 @@
 
 <head>
 
-  <?php perch_layout('_ie_specific'); ?>
-
-  <title>Project: <?php
-    perch_collection('Projects', [
-      'filter' => 'slug',
-      'match' => 'eq',
-      'value' => perch_get('s'),
-      'count' => 1,
-      'template'=>'/project/page_header.html',
-    ]);
-  ?></title>
-  <meta name="description" content="<?php
-    perch_collection('Projects', [
-      'filter' => 'slug',
-      'match' => 'eq',
-      'value' => perch_get('s'),
-      'count' => 1,
-      'template'=>'/project/excerpt.html',
-    ]);
-  ?>" />
-
   <?php
+    perch_layout('_ie_specific');
+
+    $project = perch_collection('Projects', [
+      'filter'        => 'slug',
+      'match'         => 'eq',
+      'value'         => perch_get('s'),
+      // 'count'         => 1,
+      'skip-template' => 'true',
+      'return-html'   => 'true',
+    ]);
+
+    $title       = $project['0']['title'];
+    $description = strip_tags($project['0']['excerpt']);
+
+    perch_page_attributes_extend(array(
+      'description' => $description,
+      'title'       => $title,
+    ));
+
+    perch_layout('_attributes');
     perch_layout('_mobile_specific');
     perch_layout('_apple_touch_icon');
     perch_layout('_favicon');
     perch_layout('_browser_styling');
-  ?>
-
-  <meta property="og:title" content="tempertemper Web Design" />
-  <meta property="og:site_name" content="tempertemper Web Design"/>
-  <meta property="og:url" content="https://tempertemper.net/projects/<?php
-    perch_collection('Projects', [
-      'filter' => 'slug',
-      'match' => 'eq',
-      'value' => perch_get('s'),
-      'count' => 1,
-      'template'=>'/project/slug.html',
-    ]);
-  ?>" />
-  <meta property="og:image" content="https://tempertemper.net/img/tempertemper-web-design-logo-facebook.jpg" />
-  <meta property="og:description" content="<?php
-    perch_collection('Projects', [
-      'filter' => 'slug',
-      'match' => 'eq',
-      'value' => perch_get('s'),
-      'count' => 1,
-      'template'=>'/project/excerpt.html',
-    ]);
-  ?>" />
-
-  <meta name="twitter:card" content="summary"/>
-  <meta name="twitter:site" content="@tempertemper"/>
-  <meta name="twitter:domain" content="<?php
-    perch_collection('Projects', [
-      'filter' => 'slug',
-      'match' => 'eq',
-      'value' => perch_get('s'),
-      'count' => 1,
-      'template'=>'/project/excerpt.html',
-    ]);
-  ?>"/>
-  <meta name="twitter:creator" content="@tempertemper"/>
-  <meta name="twitter:url" content="https://tempertemper.net/projects/<?php
-    perch_collection('Projects', [
-      'filter' => 'slug',
-      'match' => 'eq',
-      'value' => perch_get('s'),
-      'count' => 1,
-      'template'=>'/project/slug.html',
-    ]);
-  ?>">
-
-  <?php
     perch_get_css();
     perch_layout('_fonts');
     perch_layout('_google_sitename');
