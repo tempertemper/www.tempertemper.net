@@ -38,8 +38,6 @@
   <meta name="twitter:creator" content="@tempertemper"/>
   <meta name="twitter:url" content="https://tempertemper.net/blog/<?php perch_blog_post_field(perch_get('s'), 'postSlug'); ?>">
 
-  <link href="/blog/rss" rel="alternate" type="application/rss+xml" title="RSS" />
-
   <?php
     perch_get_css();
     perch_layout('_fonts');
