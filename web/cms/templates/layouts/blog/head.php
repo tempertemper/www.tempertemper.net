@@ -6,11 +6,8 @@
 
 <head>
 
-  <?php perch_layout('_ie_specific'); ?>
-
-  <title><?php perch_blog_post_field(perch_get('s'), 'postTitle'); ?></title>
-
   <?php
+    perch_layout('_ie_specific');
 
     $post = perch_blog_custom(array(
       'filter'        => 'postSlug',
@@ -35,7 +32,6 @@
     perch_layout('_apple_touch_icon');
     perch_layout('_favicon');
     perch_layout('_browser_styling');
-
     perch_get_css();
     perch_layout('_fonts');
     perch_layout('_google_sitename');
