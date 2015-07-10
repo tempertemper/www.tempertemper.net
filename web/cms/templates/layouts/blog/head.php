@@ -10,35 +10,32 @@
 
   <title><?php perch_blog_post_field(perch_get('s'), 'postTitle'); ?></title>
 
-  <meta name="description" content="<?php perch_blog_post_field(perch_get('s'), 'excerpt'); ?>" />
-
   <?php
+
+    $post = perch_blog_custom(array(
+      'filter'        => 'postSlug',
+      'match'         => 'eq',
+      'value'         => perch_get('s'),
+      'skip-template' => 'true',
+      'return-html'   => 'true',
+    ));
+
+    $title       = $post['0']['postTitle'];
+    $description = strip_tags($post['0']['excerpt']);
+    $type        = 'article';
+
+    perch_page_attributes_extend(array(
+      'description' => $description,
+      'title'       => $title,
+      'type'        => $type,
+    ));
+
+    perch_layout('_attributes');
     perch_layout('_mobile_specific');
     perch_layout('_apple_touch_icon');
     perch_layout('_favicon');
     perch_layout('_browser_styling');
-  ?>
 
-  <meta property="og:title" content="<?php perch_blog_post_field(perch_get('s'), 'postTitle'); ?>" />
-  <meta property="og:site_name" content="tempertemper Web Design"/>
-  <meta property="og:url" content="https://tempertemper.net/blog/<?php perch_blog_post_field(perch_get('s'), 'postSlug'); ?>" />
-  <meta property="og:image" content="<?php
-    perch_blog_custom(array(
-      'template' => 'featured_image.html',
-      'filter'=>'postSlug',
-      'match'=>'eq',
-      'value'=> perch_get('s'),
-    ));
-  ?>" />
-  <meta property="og:description" content="<?php perch_blog_post_field(perch_get('s'), 'excerpt'); ?>" />
-
-  <meta name="twitter:card" content="summary"/>
-  <meta name="twitter:site" content="@tempertemper"/>
-  <meta name="twitter:domain" content="<?php perch_blog_post_field(perch_get('s'), 'excerpt'); ?>"/>
-  <meta name="twitter:creator" content="@tempertemper"/>
-  <meta name="twitter:url" content="https://tempertemper.net/blog/<?php perch_blog_post_field(perch_get('s'), 'postSlug'); ?>">
-
-  <?php
     perch_get_css();
     perch_layout('_fonts');
     perch_layout('_google_sitename');

@@ -11,33 +11,12 @@
   <title><?php perch_pages_title(); ?></title>
 
   <?php
-    $domain        = 'https://'.$_SERVER["HTTP_HOST"];
-    $url           = $domain.$_SERVER["REQUEST_URI"];
-    $sitename      = "tempertemper Web Design";
-    $twittername   = "@tempertemper";
-    $sharing_image = '/cms/addons/feathers/tempertemper/img/tempertemper-web-design-logo-facebook.jpg';
-    $author        = "Martin Underhill";
-    $title         = perch_pages_title(true);
-
-    PerchSystem::set_var('domain', $domain);
-    PerchSystem::set_var('url', $url);
-    PerchSystem::set_var('sharing_image', $sharing_image);
-    PerchSystem::set_var('twittername', $twittername);
-    PerchSystem::set_var('sitename', $sitename);
-    PerchSystem::set_var('author', $author);
-    PerchSystem::set_var('title', $title);
-
-    perch_page_attributes(array(
-      'template' => 'default.html'
-    ));
-
+    perch_layout('_attributes');
     perch_layout('_mobile_specific');
     perch_layout('_apple_touch_icon');
     perch_layout('_favicon');
     perch_layout('_browser_styling');
-  ?>
 
-  <?php
     perch_get_css();
     perch_layout('_fonts');
     perch_layout('_google_sitename');
