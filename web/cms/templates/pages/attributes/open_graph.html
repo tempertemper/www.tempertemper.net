@@ -3,7 +3,5 @@
 <meta property="og:title" content="<perch:pages id="title" type="hidden" />" />
 <meta property="og:description" content="<perch:pages id="description" type="textarea" />" />
 <meta property="og:image" content="<perch:pages id="domain" type="hidden" /><perch:pages id="sharing_image" type="hidden" />" />
-<perch:if exists="og_type">
-  <meta property="og:type" content="<perch:pages id="og_type" label="Facebook type" type="select" options="article,book,profile,website,video,music" allowempty="true" />" />
-</perch:if>
+<meta property="og:type" content="<perch:pages id="type" type="hidden" />" />
 <meta property="article:author" content="<perch:pages id="author" type="hidden" />" />
