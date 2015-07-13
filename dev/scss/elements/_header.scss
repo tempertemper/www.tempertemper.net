@@ -18,7 +18,6 @@
 }
 
 .logo {
-  max-width: 12em;
   display: block;
   transition: none;
   float: left;
@@ -27,21 +26,37 @@
     margin-top: 0.25em;
   }
 
-  img {
-    width: 100%;
-    border: none;
-    margin-top: 0;
-  }
-
-  @media (max-width: $s) {
-    padding-left: 56px;
+  .tt {
     width: 56px;
     height: 40px;
-    background-image: url(../img/tempertemper-web-design-abbreviated-logo.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
+
+    @media (min-width: $s) {
+      display: none;
+    }
+  }
+
+  .tempertemper {
+    width: 270px;
+    height: 38px;
+    display: none;
+
+    @media (min-width: $s) {
+      display: block;
+    }
   }
 }
+
+@keyframes blink {
+
+  to {
+    visibility: hidden;
+  }
+}
+
+.underscore {
+  animation: blink 5s steps(20, start) infinite;
+}
+
 
 .nav-toggle {
   float: right;
