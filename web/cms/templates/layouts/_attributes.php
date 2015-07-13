@@ -4,7 +4,7 @@
   $url           = $domain.$_SERVER["REQUEST_URI"];
   $sitename      = "tempertemper Web Design";
   $twittername   = "@tempertemper";
-  $sharing_image = '/cms/addons/feathers/tempertemper/img/tempertemper-web-design-logo-facebook.jpg';
+  $sharing_image = perch_path('feathers/tempertemper', false, true).'/img/tempertemper-web-design-logo-facebook.jpg';
   $author        = "Martin Underhill";
   $title         = perch_pages_title(true);
   $type         = 'website';
