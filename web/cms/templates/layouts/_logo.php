@@ -1,5 +1,5 @@
 <a href="/" class="logo" title="Return to homepage">
-  <svg class="tt" viewBox="0 0 53.8 37.7">
+  <svg version="1.1" class="tt" viewBox="0 0 53.8 37.7" aria-labelledby="title desc">
     <g id="tt" class="tt" >
       <title>tempertemper Web Design</title>
       <desc>tempertemper Web Design logo, abbreviated to 'tt_' logo mark</desc>
@@ -19,7 +19,7 @@
         C36,0.2,36,0.1,35.7,0.1L35.7,0.1z"/>
     </g>
   </svg>
-  <svg class="tempertemper" viewBox="0 0 267.6 36.4">
+  <svg version="1.1" class="tempertemper" viewBox="0 0 267.6 36.4" aria-labelledby="title desc">
     <g id="tempertemper" class="tempertemper">
       <title>tempertemper Web Design</title>
       <desc>tempertemper Web Design logo</desc>
