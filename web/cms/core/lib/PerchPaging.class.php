@@ -32,7 +32,7 @@ class PerchPaging
 
         $this->page_pattern     = '\b'.$this->qs_param.'=[0-9]+\b';
         $this->page_replacement = $this->qs_param.'=%d';
-
+        
         if (!$Perch->admin && PERCH_RUNWAY) {
             $paging_conf = PerchConfig::get('paging');
             if ($paging_conf && isset($paging_conf['pattern']) && isset($paging_conf['replacement'])) {
@@ -41,9 +41,10 @@ class PerchPaging
                 $this->use_qs = false;
             }
         }
-
+        
         if (PerchUtil::get($this->qs_param)) {
             $this->current_page = (int)PerchUtil::get($this->qs_param);
+
         }
     }
     
@@ -178,7 +179,7 @@ class PerchPaging
 
         $request_uri = PerchUtil::html($Perch->get_page(1));
 
-        //PerchUtil::debug('Pagination base url: '.$request_uri);
+        #PerchUtil::debug('Pagination base url: '.$request_uri);
         
         if (is_array($opts)) {
             if (isset($opts['hide-extensions']) && $opts['hide-extensions']==true) {

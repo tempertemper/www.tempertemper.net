@@ -151,7 +151,6 @@ class PerchLang
     private function load_translations()
     {
         $out = false;
-        
         if (file_exists($this->lang_file)) {
             $json = file_get_contents($this->lang_file);
             $out  = PerchUtil::json_safe_decode($json, true);

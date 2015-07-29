@@ -68,6 +68,5 @@
         }
         
         $Alert->set('success', PerchLang::get('Page orders successfully updated.'));
-    
+        PerchUtil::redirect(PERCH_LOGINPATH.'/core/apps/content/');
     }
-?>

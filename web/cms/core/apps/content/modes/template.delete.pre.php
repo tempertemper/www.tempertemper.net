@@ -34,4 +34,3 @@
     
     $details = $Template->to_array();
 
-?>

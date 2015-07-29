@@ -2,7 +2,6 @@
 
 class PerchContent_Util
 {
-
 	/* Utilities for keeping logic readable */
 
 	public static function flatten_details($details, $parent_itemID=false, $parent_key=false, $skipsub=false)
@@ -267,7 +266,7 @@ class PerchContent_Util
 	            
 	                $Tag->set('input_id', $field_prefix);
 	        
-	                $FieldType = PerchFieldTypes::get($Tag->type(), $Form, $Tag, $tags);
+	                $FieldType = PerchFieldTypes::get($Tag->type(), $Form, $Tag, $tags, $Form->app_id);
 	                $FieldType->set_unique_id($Item->id());
 	                
 	                $var  = $FieldType->get_raw($postitems, $Item);
@@ -414,6 +413,7 @@ class PerchContent_Util
 
 	public static function display_item_fields($tags, $id, $item, $Page, $Form, $Template, $blocks_link_builder=array('PerchContent_Util', 'get_block_link'), $seen_tags=array())
 	{          
+	    //PerchUtil::debug($tags, 'success');
 	    //$seen_tags = array();   
 
 		if (!PerchUtil::count($tags)) return;
@@ -430,8 +430,6 @@ class PerchContent_Util
 				$tag->set('post_prefix', 'perch_'.$id.'_');  		
 	    	}
 	        
-	        //$tag->set('input_id', $item_id);
-	        //$tag->set('post_prefix', 'perch_'.$id.'_');
 	        if (is_object($Page)) $tag->set('page_id', $Page->id());
 
 	        
@@ -442,6 +440,7 @@ class PerchContent_Util
 	                continue;
 	            }
 
+	            //PerchUtil::debug($tag->type(), 'success');
 
 	            if ($tag->type()=='PerchRepeater') {
 	                $repeater_id = $id.'_'.$tag->id();
@@ -472,9 +471,7 @@ class PerchContent_Util
 	                                }
 	                            }
 	                        }
-
-
-	                        
+                        
 	                        foreach($subitems as $subitem) {
 
 	                            $edit_prefix = 'perch_'.$repeater_id.'_'.$repeater_i.'_';
@@ -528,7 +525,15 @@ class PerchContent_Util
 	                }  
 	            }elseif ($tag->type()=='PerchBlocks') {
 
+	            	if ($tag->divider_before()) {
+	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
+	                }
+
 	                echo PerchContent_Util::display_blocks($tags, $id, $item, $Page, $Form, $Template, $blocks_link_builder);
+
+	                if ($tag->divider_after()) {
+	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
+	                }
 
 	            }else{
 
@@ -553,7 +558,7 @@ class PerchContent_Util
 	                    $Form->enable_html_encoding();
 	                    
 	                    
-	                    $FieldType = PerchFieldTypes::get($tag->type(), $Form, $tag);
+	                    $FieldType = PerchFieldTypes::get($tag->type(), $Form, $tag, false, $Form->app_id);
 	                    
 	                    echo '<div class="field-wrap">';
 	                    echo $FieldType->render_inputs($item);
@@ -566,9 +571,7 @@ class PerchContent_Util
 	                echo '</div>';
 	                echo '</div>';      
 
-	                if ($tag->divider_after()) {
-	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
-	                }                      
+	                                      
 	            }
 
 	    
@@ -576,7 +579,7 @@ class PerchContent_Util
 	        }else{
 	            if (!in_array($tag->id(), $seen_tags) && $tag->edit_control()) {
 	                // Hidden fields for editing purposes.
-	                $FieldType = PerchFieldTypes::get('editcontrol', $Form, $tag);
+	                $FieldType = PerchFieldTypes::get('editcontrol', $Form, $tag, false, $Form->app_id);
 	                echo $FieldType->render_inputs($item);
 	                $seen_tags[] = $tag->id();
 	            }
@@ -671,8 +674,6 @@ class PerchContent_Util
 		    echo '</div>';
 		echo '</div>';
 	}
-
-
 
 	public static function get_empty_block($id, $block_type, $block_index, $Page, $Template, $Form)
 	{

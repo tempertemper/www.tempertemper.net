@@ -31,4 +31,4 @@ $display_page = PerchUtil::html(($Region->regionPage() == '*' ? PerchLang::get('
         
     </form>
     
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+<?php include (PERCH_PATH.'/core/inc/main_end.php');

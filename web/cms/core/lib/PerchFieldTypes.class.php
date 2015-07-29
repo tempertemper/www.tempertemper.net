@@ -2133,7 +2133,12 @@ class PerchFieldType_related extends PerchFieldType
         $Collections = new PerchContent_Collections();
         $Collection  = $Collections->get_one_by('collectionKey', $collectionKey);
         
-        $items = $Collection->get_items();
+        if (is_object($Collection)) {
+            $items = $Collection->get_items();
+        }else{
+            $items = array();
+        }
+        
 
         $opts = array();
         if (PerchUtil::count($items)) {

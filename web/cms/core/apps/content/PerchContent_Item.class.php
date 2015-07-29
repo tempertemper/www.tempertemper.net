@@ -9,7 +9,7 @@ class PerchContent_Item extends PerchBase
 
     public function delete()
     {
-    	$sql = 'DELETE FROM '.PERCH_DB_PREFIX.'content_index WHERE itemID='.$this->db->pdb($this->id());
+    	$sql = 'DELETE FROM '.PERCH_DB_PREFIX.'content_index WHERE itemID='.$this->db->pdb($this->itemID());
     	$this->db->execute($sql);
 
         $Perch = Perch::fetch();
@@ -44,7 +44,7 @@ class PerchContent_Item extends PerchBase
     		$this->db->execute($sql);
 
             $Perch = Perch::fetch();
-            $Perch->event('item.clear_resources', $this);
+            $Perch->event('item.log_resources', $this);
     	}
     }
 

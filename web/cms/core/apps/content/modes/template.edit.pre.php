@@ -55,4 +55,3 @@
     $details    = $Template->to_array();
     $navgroups  = $NavGroups->all();
 
-?>

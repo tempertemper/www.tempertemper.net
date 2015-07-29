@@ -178,4 +178,4 @@
 
 
 
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+<?php include (PERCH_PATH.'/core/inc/main_end.php'); 

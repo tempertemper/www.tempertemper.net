@@ -211,6 +211,25 @@ class PerchTemplate
 
 		if (isset($content_vars['_blocks'])) {
 			$blocks = $content_vars['_blocks'];
+
+			// scope parent
+			$Tag = new PerchXMLTag($opening_tag);
+			if (PerchUtil::bool_val($Tag->scope_parent())) {
+				$vars_for_repeater = array();
+				if (PerchUtil::count($content_vars)) {
+					foreach($content_vars as $key => $val) {
+						if ($key!=$Tag->id() && $key!='itemJSON' && $key!='_blocks') {
+							$vars_for_repeater['parent.'.$key] = $val;	
+						}
+					}
+				}
+				foreach($blocks as &$item) {
+					$item = array_merge($item, $vars_for_repeater);
+				}
+			}
+			// end scope parent
+
+
 			$out = $this->render_group($blocks, true);
 			return str_replace($exact_match, $out, $template_contents);
 		}
@@ -511,7 +530,8 @@ class PerchTemplate
 	    		if ($tag_type=='repeater') {
 	    			$Repeater = new PerchRepeater($OpeningTag->attributes);
 	    			$Repeater->set('id', $OpeningTag->id());
-	    			$Repeater->tags = $this->find_all_tags($type, $condition_contents);
+	    			//$Repeater->tags = $this->find_all_tags($type, $condition_contents);
+	    			$Repeater->tags = $this->find_all_tags_and_repeaters($type, $condition_contents);
 
 	    			$tmp['tag'] = $Repeater;
 	    		}elseif ($tag_type=='blocks'){
@@ -732,6 +752,7 @@ class PerchTemplate
 	    	    $out = '';
 	    		if ($count > 0) {
 	    			foreach($matches as $match) {
+
 	    			    $file = PERCH_TEMPLATE_PATH.DIRECTORY_SEPARATOR.$match[1];
 	    			    if (file_exists($file)) {
 	    			        $subtemplate = file_get_contents($file);
@@ -745,6 +766,8 @@ class PerchTemplate
 
 	        			    $contents = str_replace($match[0], $subtemplate, $contents);
 	        			    PerchUtil::debug('Using sub-template: '.str_replace(PERCH_PATH, '', $file), 'template');
+	    			    }else{
+	    			    	PerchUtil::debug('Requested sub-template not found: '.$file, 'template');
 	    			    }
 	    			}
 	    			$this->cache[$this->template]	= $contents;	

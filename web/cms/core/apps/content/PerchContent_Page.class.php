@@ -265,6 +265,7 @@ class PerchContent_Page extends PerchBase
     {
         $new_location = PerchUtil::file_path($new_location);
         $new_location = str_replace(PERCH_LOGINPATH, '/', $new_location);
+        $new_location = str_replace('\\', '/', $new_location);
         $new_location = str_replace('..', '', $new_location);
         $new_location = str_replace('//', '/', $new_location);
 
@@ -288,10 +289,15 @@ class PerchContent_Page extends PerchBase
                             if (preg_match($pattern, $contents, $match)) {
                                 
                                 $current_path = $match[1];
-                                $template_dir = PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/pages');
-                                $template_path = str_replace(PERCH_SITEPATH.'/', '', PERCH_TEMPLATE_PATH).'/pages/';
+                                $template_dir = PERCH_TEMPLATE_PATH.'/pages';
+                                $template_path = str_replace(PERCH_SITEPATH.DIRECTORY_SEPARATOR, '', PERCH_TEMPLATE_PATH).'/pages/';
 
-                                $parts = explode($template_path, PerchUtil::file_path($current_path));
+                                // normalise
+                                $current_path = str_replace(DIRECTORY_SEPARATOR, '/', $current_path);
+                                $template_dir = str_replace(DIRECTORY_SEPARATOR, '/', $template_dir);
+                                $template_path = str_replace(DIRECTORY_SEPARATOR, '/', $template_path);
+
+                                $parts = explode($template_path, $current_path);
                                 if (PerchUtil::count($parts)) {
                                     $master_page_template = $parts[1];
 
@@ -301,6 +307,18 @@ class PerchContent_Page extends PerchBase
                                     $new_include_path = $Pages->get_relative_path($a, $b);
 
                                     $new_include = '<'.'?php include(str_replace(\'/\', DIRECTORY_SEPARATOR, \''.$new_include_path.'\')); ?'.'>';
+                                    /*
+                                    $new_include .= '<' . '?php /* '.PHP_EOL;
+                                    $new_include .= 'Current path: '.$current_path.PHP_EOL;
+                                    $new_include .= 'Template dir: '.$template_dir.PHP_EOL;
+                                    $new_include .= 'Template path: '.$template_path.PHP_EOL;
+                                    $new_include .= 'Master page template: '.$master_page_template.PHP_EOL;
+                                    $new_include .= 'A: '.$a.PHP_EOL;
+                                    $new_include .= 'B: '.$b.PHP_EOL;
+                                    $new_include .= 'New include path: '.$new_include_path.PHP_EOL;
+                                    $new_include .= 'Parts: '.print_r($parts, true).PHP_EOL;
+                                    $new_include .= PHP_EOL.' *'.'/ ?' . '>';
+                                    */
 
                                     file_put_contents($new_path, str_replace($match[0], $new_include, $contents));
 
