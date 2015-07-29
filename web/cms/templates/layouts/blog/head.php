@@ -36,6 +36,8 @@
     perch_layout('_google_sitename');
   ?>
 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/rss" />
+
 </head>
 
 <body class="blog-post <?php perch_blog_post_field(perch_get('s'), 'postSlug'); ?>" class="hentry">

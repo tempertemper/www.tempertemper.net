@@ -17,6 +17,8 @@
     perch_layout('_google_sitename');
   ?>
 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/rss" />
+
 </head>
 
 <body class="<?php echo PerchUtil::urlify(perch_pages_navigation_text(true));?>">
