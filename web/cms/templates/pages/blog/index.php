@@ -23,9 +23,14 @@
 
     <h1>Post groups</h1>
 
-    <?php perch_blog_categories(); ?>
-    <?php perch_blog_date_archive_years(); ?>
-    <?php perch_blog_tags(); ?>
+    <?php
+      perch_blog_categories(array(
+        'sort'       => 'catTitle',
+        'sort-order' => 'ASC',
+      ));
+      perch_blog_date_archive_years();
+      perch_blog_tags();
+    ?>
 
   </aside>
 

@@ -1,4 +1,12 @@
-<perch:content id="case-study" type="textarea" label="Case study" bucket="projects" order="3" size="xxl" editor="markitup" required="true" markdown="true" html="true" imagewidth="740" imagequality="90" imagecrop="true" />
+<perch:content id="case-study" type="textarea" label="Case study" bucket="projects" order="3" size="xl" editor="markitup" required="true" markdown="true" html="true" imagewidth="740" imagequality="90" imagecrop="true" />
+
+<perch:if exists="challenges">
+  <h2>Challenges</h2>
+</perch:if>
+
+<perch:content id="challenges" type="textarea" label="Challenges" order="4" size="m" markdown="true" />
+
+<h2>Kind words</h2>
 
 <perch:related id="testimonial" collection="testimonials" label="Testimonial" divider-before="Select testimonial">
   <perch:template path="content/testimonial_feed.html" />
