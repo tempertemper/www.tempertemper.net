@@ -29,4 +29,15 @@ class PerchResource extends PerchBase
 
     	return parent::delete();
     }
+
+    public function is_not_in_use()
+    {
+        $sql = 'SELECT COUNT(*) FROM '.PERCH_DB_PREFIX.'resource_log
+                WHERE resourceID='.$this->db->pdb($this->id());
+        $count = $this->db->get_count($sql);
+
+        if ($count===0) return true;
+
+        return false;
+    }
 }

@@ -141,5 +141,3 @@
     	$Regions->republish_all();
     }
 
-
-?>

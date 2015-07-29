@@ -42,8 +42,7 @@
                 foreach($pages as $Page) {
                     $s .= '<li id="page_'.$Page->id().'"><div class="page icon">';
                     $s .= '<input type="text" name="p-'.$Page->id().'" value="'.$Page->pageOrder().'" />';
-                    $s .= ''.PerchUtil::html($Page->pageTitle()).'</div>';
-                    
+                    $s .= ''.PerchUtil::html($Page->pageNavText()).'</div>';
                     $s .= render_tree($Pages, $groupID, $Page->id(), $class);
                     $s .= '</li>';
                 }
@@ -95,4 +94,3 @@
     });
 
 ");
-?>

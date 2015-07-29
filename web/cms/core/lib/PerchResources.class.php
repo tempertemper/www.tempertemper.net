@@ -115,6 +115,7 @@ class PerchResources extends PerchFactory
 
     public function get_not_in_subquery($app='content', $subquery)
     {
+        #PerchUtil::mark('Resource clean up');
         $clean_resources = true;
         if (defined('PERCH_CLEAN_RESOURCES')) $clean_resources = PERCH_CLEAN_RESOURCES;
 
@@ -129,6 +130,8 @@ class PerchResources extends PerchFactory
                     AND resourceCreated<'.$this->db->pdb(date('Y-m-d H:i:s', strtotime('-24 HOURS'))).' 
                     AND resourceID NOT IN (SELECT resourceID FROM '.PERCH_DB_PREFIX.'resource_log)';
         $rows = $this->db->get_rows($sql);
+
+        #PerchUtil::mark('/ Resource clean up');
         return $this->return_instances($rows);
     }
 

@@ -129,7 +129,7 @@ class PerchContent_PageTemplates extends PerchFactory
                 while (($file = readdir($dh)) !== false) {
                     if(substr($file, 0, 1) != '.' && $file!='attributes' && ($include_hidden || substr($file, 0, 1) != '_') && !preg_match($Perch->ignore_pattern, $file)) {
                         $extension = PerchUtil::file_extension($file);
-                        if ($extension == 'php') {
+                        if ($extension == 'php' || $extension == str_replace('.', '', PERCH_DEFAULT_EXT)) {
                             $p = str_replace($initial_path, '', $path);
                             if (!$p) {
                                 $a[] = array('filename'=>$file, 'path'=>$file, 'label'=>$this->template_display_name($file), 'group'=>'general', 'sort'=>'0_'.$file);

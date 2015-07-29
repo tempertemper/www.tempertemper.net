@@ -72,5 +72,5 @@
 	    }
 	    
 	    $Alert->set('success', PerchLang::get('Category orders successfully updated.'));
-	
+		PerchUtil::redirect(PERCH_LOGINPATH.'/core/apps/categories/sets/?id='.$setID);
 	}

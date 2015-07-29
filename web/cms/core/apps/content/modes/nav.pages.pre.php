@@ -12,6 +12,3 @@
         $NavGroup = false;
     }
     
-    
-
-?>

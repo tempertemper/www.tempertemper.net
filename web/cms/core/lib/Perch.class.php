@@ -3,9 +3,9 @@
 class Perch
 {
     static protected $instance;
-	
-    public $version = '2.8.8';
-    
+
+    public $version = '2.8.10';
+
     public $admin           = false;
     private $page           = false;
     private $page_as_set    = false;
@@ -18,14 +18,14 @@ class Perch
     public $help_html       = '';
     public $form_count      = 0;
     public $form_errors     = array();
-    
+
     protected $layout_vars  = array();
     public    $layout_depth = 1;
-    
+
     public $ignore_pattern  = '/^CVS$/i';
 
     public $event_listeners = array();
-    
+
     function __construct()
     {
         if (!defined('PERCH_DEBUG'))             define('PERCH_DEBUG', false);
@@ -40,12 +40,12 @@ class Perch
         if (!defined('PERCH_SSL'))               define('PERCH_SSL', false);
         if (!defined('PERCH_STRIPSLASHES'))      define('PERCH_STRIPSLASHES', false);
         if (!defined('PERCH_PROGRESSIVE_FLUSH')) define('PERCH_PROGRESSIVE_FLUSH', true);
-        
+
         if (PERCH_DEBUG) $this->debug = true;
     }
-    
+
     public static function fetch()
-	{	    
+	{
         if (!isset(self::$instance)) {
             $c = __CLASS__;
             self::$instance = new $c;
@@ -53,7 +53,7 @@ class Perch
 
         return self::$instance;
 	}
-    
+
     public function get_page($request_uri=false, $hide_default_doc=false)
     {
         if ($request_uri) {
@@ -66,32 +66,32 @@ class Perch
                 if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']!='') {
                     $out .= '?'.$_SERVER['QUERY_STRING'];
                 }
-                $out = preg_replace('/(\/)\\1+/', '/', $out);  
+                $out = preg_replace('/(\/)\\1+/', '/', $out);
             }
 
-                     
+
             return $out;
         }
-        
+
         if ($this->page === false) {
             $this->page = strtolower($_SERVER['SCRIPT_NAME']);
         }
-        
+
         if ($this->page != false) {
             $this->page = preg_replace('/(\/)\\1+/', '/', $this->page);
         }
 
         if ($hide_default_doc) {
             return str_replace(PERCH_DEFAULT_DOC, '', $this->page);
-        }      
-      
+        }
+
         return $this->page;
     }
-    
+
     public function get_page_as_set($request_uri=false)
     {
         if (!$this->page_as_set) return $this->get_page($request_uri, true);
-        
+
         return $this->page_as_set;
     }
 
@@ -100,12 +100,12 @@ class Perch
         $this->page        = $page;
         $this->page_as_set = $page;
     }
-    
+
     public function find_installed_apps($CurrentUser)
     {
         return false;
     }
-    
+
     public function dispatch_form($key, $post, $files)
     {
         $key      = base64_decode($key);
@@ -128,19 +128,19 @@ class Perch
                     }
                 }
             }
-        }       
+        }
     }
-    
+
     public function log_form_error($formID, $fieldID, $type="required")
     {
         if (!isset($this->form_errors[$formID])) $this->form_errors[$formID]=array();
         $this->form_errors[$formID][$fieldID] = $type;
     }
-    
+
     public function get_form_errors($formID)
     {
         if (isset($this->form_errors[$formID])) return $this->form_errors[$formID];
-        
+
         return false;
     }
 
@@ -155,7 +155,7 @@ class Perch
         $bucket['file_path'] = PERCH_RESFILEPATH;
 
         if ($bucket_name && trim($bucket_name)!='' && $bucket_name!='default') {
-            
+
             // try buckets file
             if ($this->bucket_list===false) {
                 $bucket_list_file = PerchUtil::file_path(PERCH_PATH.'/config/buckets.php');
@@ -166,12 +166,12 @@ class Perch
                     $this->bucket_list = array();
                 }
             }
-                                     
+
             if (PerchUtil::count($this->bucket_list) && isset($this->bucket_list[$bucket_name])) {
                 $bucket = $this->bucket_list[$bucket_name];
                 $bucket['name'] = $bucket_name;
                 return $bucket;
-            }         
+            }
 
             // not defined, so treat as a subfolder of resources
             $bucket['name']       = $bucket_name;
@@ -182,13 +182,13 @@ class Perch
         return $bucket;
     }
 
-    public function set_layout_vars($vars) 
+    public function set_layout_vars($vars)
     {
         if ($this->layout_depth > 1 && is_array($vars)) {
             $this->layout_vars = array_merge($this->layout_vars, $vars);
         }else{
-            $this->layout_vars = $vars;    
-        }      
+            $this->layout_vars = $vars;
+        }
     }
 
     public function get_layout_vars()
@@ -203,7 +203,7 @@ class Perch
         }
 
         return '';
-    }    
+    }
 
     public function on($event, $callback)
     {

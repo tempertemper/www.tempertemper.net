@@ -40,10 +40,10 @@
                 $Region->index();
             }
             $Alert->set('success', PerchLang::get('Item orders successfully updated.'));
+            PerchUtil::redirect(PERCH_LOGINPATH.'/core/apps/content/edit/?id='.$Region->id());
         }
     }
 
     $items = $Region->get_items_for_editing();
 
 	$cols = $Region->get_edit_columns();
-?>

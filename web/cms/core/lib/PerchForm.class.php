@@ -13,6 +13,8 @@ class PerchForm
 	var $allow_edits	= true;
 	var $name	 		= false;
 	var $force_clear	= false;
+
+	public $app_id = 'content';
 	
 	public $submitted_via_ajax = false;
 	

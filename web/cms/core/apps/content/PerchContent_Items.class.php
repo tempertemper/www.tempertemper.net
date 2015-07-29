@@ -349,6 +349,19 @@ class PerchContent_Items extends PerchFactory
                     )';
         return $this->db->execute($sql);
     }
+
+    public function delete_for_region($regionID)
+    {
+        $sql = 'SELECT * FROM '.$this->table.'
+                WHERE regionID='.$this->db->pdb((int)$regionID);
+        $items = $this->return_instances($this->db->get_rows($sql));
+
+        if (PerchUtil::count($items)) {
+            foreach($items as $Item) {
+                $Item->delete();
+            }
+        }
+    }
     
     
     /**

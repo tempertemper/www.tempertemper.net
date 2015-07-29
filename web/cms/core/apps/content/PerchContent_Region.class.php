@@ -19,6 +19,19 @@ class PerchContent_Region extends PerchBase
         return parent::__construct($details);
     }
 
+    public function delete()
+    {
+        $Items = new PerchContent_Items;
+        $Items->delete_for_region($this->id());
+
+        $r = parent::delete();
+
+        $Perch = Perch::fetch();
+        $Perch->event('region.delete', $this);
+
+        return $r;
+    }
+
 
     /**
      * Get a flat array of items
@@ -665,7 +678,9 @@ class PerchContent_Region extends PerchBase
 
         if (PerchUtil::count($resources)) {
             foreach($resources as $Resource) {
-                $Resource->delete();
+                if ($Resource->is_not_in_use()) {
+                    $Resource->delete();    
+                }
             }
         }
 

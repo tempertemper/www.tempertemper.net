@@ -608,9 +608,9 @@ class PerchContent_Pages extends PerchFactory
                                             regionOrder,
                                             regionTemplate,
                                             regionMultiple,
+                                            regionOptions,
                                             regionSearchable,
-                                            regionEditRoles,
-                                            regionOptions
+                                            regionEditRoles                                            
                                         ) 
                                         SELECT
                                             '.$this->db->pdb($Page->id()).' AS pageID,
@@ -621,34 +621,14 @@ class PerchContent_Pages extends PerchFactory
                                             regionOrder,
                                             regionTemplate,
                                             regionMultiple,
+                                            regionOptions,
                                             regionSearchable,
-                                            regionEditRoles,
-                                            regionOptions
+                                            regionEditRoles
                                         FROM '.PERCH_DB_PREFIX.'content_regions
                                         WHERE regionPage!='.$this->db->pdb('*').' AND pageID='.$this->db->pdb((int)$CopyPage->id());
                                 
                                     $this->db->execute($sql);
-                                
-                                    // Nullify resources list in options
-                                    $sql = 'SELECT regionID, regionOptions
-                                            FROM '.PERCH_DB_PREFIX.'content_regions 
-                                            WHERE pageID='.$this->db->pdb((int)$Page->id());
-                                    $rows = $this->db->get_rows($sql);
-                                    if (PerchUtil::count($rows)) {
-                                        foreach($rows as $row) {
-                                            if (isset($row['contentOptions'])) {
-                                                $jsonOptions = PerchUtil::json_safe_decode($row['contentOptions'], true);    
-                                            }else{
-                                                $jsonOptions = array();
-                                            }
-                                            
-                                            $jsonOptions['resources'] = array();
-                                            $data = array();
-                                            $data['regionOptions'] = PerchUtil::json_safe_encode($jsonOptions);
-                                            $this->db->update(PERCH_DB_PREFIX.'content_regions', $data, 'regionID', $row['regionID']);
-                                        }
-                                    }
-                                
+                                                                                                    
                                 }
                             }
                             
@@ -815,46 +795,26 @@ class PerchContent_Pages extends PerchFactory
                                         regionOrder,
                                         regionTemplate,
                                         regionMultiple,
+                                        regionOptions,
                                         regionSearchable,
-                                        regionEditRoles,
-                                        regionOptions
+                                        regionEditRoles
                                     ) 
                                     SELECT
                                         '.$this->db->pdb($Page->id()).' AS pageID,
                                         regionKey,
                                         '.$this->db->pdb($r).' AS regionPage,
                                         "<!-- Undefined content -->" AS regionHTML,
-                                        regionNew,
+                                        rregionNew,
                                         regionOrder,
                                         regionTemplate,
                                         regionMultiple,
+                                        regionOptions,
                                         regionSearchable,
-                                        regionEditRoles,
-                                        regionOptions
+                                        regionEditRoles
                                     FROM '.PERCH_DB_PREFIX.'content_regions
                                     WHERE regionPage!='.$this->db->pdb('*').' AND pageID='.$this->db->pdb((int)$CopyPage->id());
                             
                                 $this->db->execute($sql);
-                            
-                                // Nullify resources list in options
-                                $sql = 'SELECT regionID, regionOptions
-                                        FROM '.PERCH_DB_PREFIX.'content_regions 
-                                        WHERE pageID='.$this->db->pdb((int)$Page->id());
-                                $rows = $this->db->get_rows($sql);
-                                if (PerchUtil::count($rows)) {
-                                    foreach($rows as $row) {
-                                        if (isset($row['contentOptions'])) {
-                                            $jsonOptions = PerchUtil::json_safe_decode($row['contentOptions'], true);    
-                                        }else{
-                                            $jsonOptions = array();
-                                        }
-                                        
-                                        $jsonOptions['resources'] = array();
-                                        $data = array();
-                                        $data['regionOptions'] = PerchUtil::json_safe_encode($jsonOptions);
-                                        $this->db->update(PERCH_DB_PREFIX.'content_regions', $data, 'regionID', $row['regionID']);
-                                    }
-                                }
                             
                             }
                         }

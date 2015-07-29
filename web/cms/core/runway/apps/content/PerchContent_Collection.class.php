@@ -412,7 +412,9 @@ class PerchContent_Collection extends PerchBase
 
 	        if (PerchUtil::count($resources)) {
 	            foreach($resources as $Resource) {
-	                $Resource->delete();
+	                if ($Resource->is_not_in_use()) {
+                    	$Resource->delete();    
+                	}
 	            }
 	        }
 

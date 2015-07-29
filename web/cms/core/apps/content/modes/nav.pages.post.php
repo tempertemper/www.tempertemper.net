@@ -34,7 +34,7 @@
             if (PerchUtil::count($pages)) {
                 
                 foreach($pages as $Page) {
-                    $s .= '<li><div class="page icon">'.PerchUtil::html($Page->pageTitle()).'</div>';
+                    $s .= '<li><div class="page icon">'.PerchUtil::html($Page->pageNavText()).'</div>';
                     $s .= render_tree($Pages, $groupID, $Page->id(), $class);
                     $s .= '</li>';
                 }

@@ -25,4 +25,3 @@
     include($app_path.'/modes/page.details.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-?>

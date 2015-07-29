@@ -7,5 +7,3 @@
 
     $templates = $Templates->all();
     
-
-?>
