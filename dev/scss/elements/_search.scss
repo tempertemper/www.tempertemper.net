@@ -90,13 +90,12 @@
       margin-bottom: 0;
 
       @media (min-width: $l) {
-        width: 2.25em;
+        width: 2.45em;
         transition: width .4s ease;
         float: right;
         text-align: right;
         padding-right: 1.2em;
         padding-left: 0.5em;
-        min-width: 2.4  5em;
         color: transparent;
 
         &:focus {

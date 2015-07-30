@@ -34,7 +34,7 @@ nav {
   }
 
   li:last-child a {
-    padding-bottom: 1em;
+    padding-bottom: 0.9em;
   }
 
   a {
@@ -136,6 +136,7 @@ nav {
   [role="navigation"] {
     float: right;
     width: auto;
+    position: relative;
 
     ul {
       width: auto;
@@ -164,10 +165,6 @@ nav {
           padding-bottom: 0;
         }
       }
-    }
-
-    [role="search"] {
-      float: right;
     }
   }
 }
