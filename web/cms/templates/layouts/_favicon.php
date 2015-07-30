@@ -1,2 +1,2 @@
-<link rel="icon" href="/img/icons/favicon.png">
-<!--[if IE]><link rel="shortcut icon" href="/img/icons/favicon.ico"><![endif]-->
+<link rel="icon" href="<?php perch_path('feathers/tempertemper'); ?>/img/icons/favicon.png">
+<!--[if IE]><link rel="shortcut icon" href="<?php perch_path('feathers/tempertemper'); ?>/img/icons/favicon.ico"><![endif]-->
