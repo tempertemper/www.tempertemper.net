@@ -1,6 +1,12 @@
 <perch:form id="search" method="get" action="/search" role="search">
 
-  <perch:label for="q" aria-hidden="true">&#8981;</perch:label>
+  <perch:label for="q" aria-hidden="true">
+    <svg viewBox="0 0 35 35" version="1.1" aria-labelledby="title desc">
+      <title>Search</title>
+      <desc>Magnifying glass icon</desc>
+      <path id="icon-search" class="icon-search" d="M34.215,29.61l-8.373,-8.371c1.267,-2.072 1.99,-4.507 1.99,-7.114c0,-7.566 -6.558,-14.125 -14.126,-14.125c-7.573,-0.002 -13.706,6.133 -13.706,13.704c0,7.568 6.558,14.125 14.124,14.125c2.519,0 4.876,-0.683 6.902,-1.863l8.416,8.419c0.825,0.82 2.156,0.82 2.983,0l2.086,-2.086c0.824,-0.827 0.526,-1.865 -0.296,-2.689ZM4.232,13.719c0,-5.241 4.247,-9.487 9.485,-9.487c5.242,0 9.911,4.669 9.911,9.907c0,5.243 -4.247,9.489 -9.488,9.489c-5.241,-0.003 -9.908,-4.671 -9.908,-9.909Z" style="fill:#0097db;"/>
+    </svg>
+  </perch:label>
   <perch:input type="search" id="q" />
   <perch:input type="submit" value="Search" />
 

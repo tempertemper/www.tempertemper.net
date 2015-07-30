@@ -34,7 +34,7 @@ nav {
   }
 
   li:last-child a {
-    padding-bottom: 1em;
+    padding-bottom: 0.9em;
   }
 
   a {
@@ -86,23 +86,26 @@ nav {
   text-indent: -999px;
   position: relative;
   overflow: hidden;
-  width: 2.5em;
-  height: 2.5em;
+  width: 3.5em;
+  height: 3.5em;
   cursor: pointer;
 
   &:before {
     color: $colour-primary;
     @include icons;
-    font-size: 2em;
+    font-size: 1.5em;
     text-transform: none;
     position: absolute;
     content: "\2261";
     text-indent: 0;
     text-align: center;
     speak: none;
-    top: 0;
-    left: 0;
+    top: 0.1em;
+    left: 0.5em;
     transition: color .2s linear;
+    border: 3px solid $colour-primary;
+    border-radius: $border-radius-default;
+    padding: 0.25em;
   }
 
   &:hover,
@@ -136,12 +139,13 @@ nav {
   [role="navigation"] {
     float: right;
     width: auto;
+    position: relative;
 
     ul {
       width: auto;
       float: left;
       margin-top: 0.2em;
-      padding-bottom: 0.2em;
+      padding-bottom: 0.3em;
 
       @media (min-width: $l) {
         padding-right: 3em;
@@ -164,10 +168,6 @@ nav {
           padding-bottom: 0;
         }
       }
-    }
-
-    [role="search"] {
-      float: right;
     }
   }
 }
