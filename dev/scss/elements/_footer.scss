@@ -45,4 +45,10 @@
   li {
     @include inline-nav;
   }
+
+  .icon-twitter {
+    display: inline-block;
+    width: 1.5em;
+    margin-bottom: -0.2em;
+  }
 }
