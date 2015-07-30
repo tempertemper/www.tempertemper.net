@@ -3,6 +3,10 @@
   margin-top: 0;
   margin-bottom: 0;
 
+  path {
+    transition: all .4s ease;
+  }
+
   &:hover,
   &:active,
   &:focus {
@@ -12,24 +16,11 @@
     }
   }
 
-  input {
-
-    &:hover,
-    &:active,
-    &:focus {
-
-      & + label {
-        background-color: hotpink !important;
-      }
-    }
-  }
-
   label {
     position: absolute;
     display: block;
     top: 0.55em;
     left: 0.6em;
-    transition: color .2s ease;
 
     &:hover,
     &:active,
@@ -65,7 +56,6 @@
       }
     }
 
-    // narrows width of search box at medium sized screens
     @media (min-width: $s) and (max-width: $l) {
       @include layout($susy);
       width: span(4 of 6);
@@ -91,7 +81,7 @@
 
       @media (min-width: $l) {
         width: 2.45em;
-        transition: width .4s ease;
+        transition: all .4s ease;
         float: right;
         text-align: right;
         padding-right: 1.2em;
