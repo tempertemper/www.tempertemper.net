@@ -1,92 +1,110 @@
 [role="search"] {
+  position: relative;
   margin-top: 0;
   margin-bottom: 0;
 
+  &:hover,
+  &:active,
+  &:focus {
+
+    .icon-search {
+      fill: black !important;
+    }
+  }
+
+  input {
+
+    &:hover,
+    &:active,
+    &:focus {
+
+      & + label {
+        background-color: hotpink !important;
+      }
+    }
+  }
+
   label {
-    @include icons;
-    color: $colour-primary;
-    font-size: 1.25em;
     position: absolute;
-    padding: 0.3em 0.75em 0.5em;
     display: block;
-    line-height: 1.25;
+    top: 0.5em;
+    left: 0.5em;
+    transition: color .2s ease;
+
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+    }
   }
 
   [type="search"] {
-    padding-left: 2.75em;
+    padding-left: 2.2em;
+    padding-right: 0.5em;
+  }
+
+  svg {
+    height: 1.4em;
+    width: 1.4em;
+  }
+
+  [type="submit"] {
+    display: none;
   }
 }
 
 [role="navigation"] {
 
   [role="search"] {
-    padding-bottom: 0.25em;
-    width: auto;
-    margin-left: 1em;
 
+    label {
+
+      @media (min-width: $l) {
+        left: auto;
+        right: 0.5em;
+      }
+    }
+
+    // narrows width of search box at medium sized screens
     @media (min-width: $s) and (max-width: $l) {
-      max-width: 50%;
-      margin-right: auto;
-      margin-left: auto;
+      @include layout($susy);
+      width: span(4 of 6);
+      @include pre(1 of 6);
     }
 
-    [type="search"] {
-      color: black;
-      padding-left: 2em;
+    @media (min-width: $l) {
+      position: absolute;
+      right: 0;
     }
 
-    input {
-      margin-bottom: 0;
-      color: transparent;
-      padding: .4em .7em;
-      font-weight: 200;
-      border-radius: $border-radius-default;
+    &:hover,
+    &:active,
+    &:focus {
 
-      &:hover,
-      &:active,
-      &:focus {
+      input {
         border-color: black;
       }
     }
 
-    label {
-      padding: 0.225em 0.4em 0.4em;
-      transition: color .2s ease;
+    [type="search"] {
+      margin-bottom: 0;
 
-      &:hover,
-      &:active {
-        color: black;
-        cursor: pointer;
-      }
-    }
-
-    @media (min-width: $l) {
-      text-align: left;
-      position: absolute;
-      right: 0;
-
-      label {
-        right: 0;
-      }
-
-      [type="search"] {
+      @media (min-width: $l) {
         width: 2.25em;
         transition: width .4s ease;
         float: right;
         text-align: right;
-        padding-left: 0.4em;
+        padding-right: 1.2em;
+        padding-left: 0.5em;
+        min-width: 2.4  5em;
         color: transparent;
 
         &:focus {
           width: 100%;
-          padding-right: 2em;
+          padding-right: 2.2em;
           color: black;
         }
       }
-    }
-
-    [type="submit"] {
-      display: none;
     }
   }
 }
