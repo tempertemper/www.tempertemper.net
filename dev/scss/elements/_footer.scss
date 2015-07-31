@@ -46,6 +46,22 @@
     @include inline-nav;
   }
 
+  path {
+    transition: fill .2s ease;
+  }
+
+  a {
+
+    &:hover,
+    &:active,
+    &:focus {
+
+      path {
+        fill: black !important;
+      }
+    }
+  }
+
   .icon-twitter {
     display: inline-block;
     width: 1.5em;
