@@ -21,6 +21,9 @@
     display: block;
     top: 0.55em;
     left: 0.6em;
+    $svg-height: 1.4em;
+    height: $svg-height;
+    width: $svg-height;
 
     &:hover,
     &:active,
@@ -32,11 +35,6 @@
   [type="search"] {
     padding-left: 2.2em;
     padding-right: 0.5em;
-  }
-
-  svg {
-    height: 1.4em;
-    width: 1.4em;
   }
 
   [type="submit"] {
