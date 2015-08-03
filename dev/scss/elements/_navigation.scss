@@ -126,20 +126,23 @@ nav {
       display: block;
     }
   }
+
+  @media screen and (min-width: $l) {
+    display: none;
+  }
 }
 
 @media screen and (min-width: $l) {
 
-  .js .nav-collapse {
-    position: relative;
-  }
+  .js {
 
-  .js .nav-collapse.closed {
-    max-height: none;
-  }
+    .nav-collapse {
+      position: relative;
 
-  .nav-toggle {
-    display: none;
+      &.closed {
+        max-height: none;
+      }
+    }
   }
 
   [role="navigation"] {
