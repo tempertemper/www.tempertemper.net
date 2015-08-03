@@ -77,7 +77,6 @@ nav {
 }
 
 .nav-toggle {
-  $svg-height: 3em;
   -webkit-tap-highlight-color: black;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -105,11 +104,14 @@ nav {
     padding: 0;
     display: block;
     outline: none;
+    $svg-height: 2em;
     height: $svg-height;
-  }
+    width: $svg-height;
 
-  svg {
-    height: $svg-height;
+    @media screen and (min-width: $s) {
+      height: $svg-height * 1.4;
+      width: $svg-height * 1.4;
+    }
   }
 
   .icon-close {
@@ -134,15 +136,11 @@ nav {
 
 @media screen and (min-width: $l) {
 
-  .js {
-
-    .nav-collapse {
-      position: relative;
-
-      &.closed {
-        max-height: none;
-      }
-    }
+  .js .nav-collapse {
+    position: relative;
+  }
+  .js .nav-collapse.closed {
+    max-height: none;
   }
 
   [role="navigation"] {
