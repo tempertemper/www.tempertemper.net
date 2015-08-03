@@ -19,4 +19,45 @@
   .wistia_embed {
     display: none;
   }
+
+  .nav-toggle {
+
+    button {
+      height: 2em;
+
+      &:before {
+        content: "Menu:";
+        color: $colour-primary;
+      }
+    }
+
+    &.active button {
+
+      &:before {
+        content: "Close:";
+        color: $colour-primary;
+      }
+    }
+  }
+
+  [role="search"] {
+
+    label {
+
+      &:before {
+        content: "Search:";
+      }
+    }
+
+    [type="search"] {
+      padding-left: 4.5em;
+    }
+  }
+
+  [role="contentinfo"] [href="https://twitter.com/tempertemper"] {
+
+    &:before {
+      content: "Twitter:";
+    }
+  }
 }
