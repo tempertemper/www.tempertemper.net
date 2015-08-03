@@ -1,14 +1,14 @@
 body {
   color: black;
-  font-size: ms(0);
+  font-size: 90%;
   @include font-body;
 
   @media (min-width: $s) {
-    font-size: ms(1);
+    font-size: 120%;
   }
 
   @media (min-width: $m) {
-    font-size: ms(2);
+    font-size: 140%;
   }
 }
 
