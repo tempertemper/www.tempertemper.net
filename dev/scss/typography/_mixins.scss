@@ -15,12 +15,6 @@ $ms-ratio: $major-third;
   font-style: normal;
 }
 
-@mixin font-heading-regular {
-  font-family: "FS Me", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-}
-
 @mixin heading-style {
   @include font-heading-light;
   margin-top: 1.414em;

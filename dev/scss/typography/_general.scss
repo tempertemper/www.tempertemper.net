@@ -1,14 +1,14 @@
 body {
   color: black;
-  font-size: ms(0);
+  font-size: 90%;
   @include font-body;
 
   @media (min-width: $s) {
-    font-size: ms(1);
+    font-size: 120%;
   }
 
   @media (min-width: $m) {
-    font-size: ms(2);
+    font-size: 140%;
   }
 }
 
@@ -48,15 +48,6 @@ em {
 
 p {
   hyphens: auto;
-
-  @media (max-width: $s) {
-    margin-bottom: 0;
-
-    & + p {
-      margin-top: 0;
-      text-indent: 1.5em;
-    }
-  }
 }
 
 ul,
@@ -80,18 +71,6 @@ code {
 
     &:visited {
       color: $colour-primary-darkest;
-    }
-  }
-
-  p {
-
-    @media (max-width: $s) {
-      margin-bottom: 1em;
-
-      & + p {
-        margin-top: 1em;
-        text-indent: 0;
-      }
     }
   }
 }
