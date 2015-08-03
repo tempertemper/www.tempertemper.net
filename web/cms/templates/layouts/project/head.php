@@ -1,6 +1,6 @@
 <!doctype html>
 
-<!--[if lte IE 8 ]><html class="ie8" xml:lang="en" lang="en"><![endif]-->
+<!--[if lte IE 8 ]><html class="ie" xml:lang="en" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html xml:lang="en" lang="en"><!--<![endif]-->
 
 <head>
