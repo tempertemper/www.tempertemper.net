@@ -36,8 +36,8 @@
 
     <?php
       $opts = array(
-        'page'      => '/contact',
-        'template'  => '/_address.html',
+        'page'     => '/contact',
+        'template' => '/footer_address.html',
       );
       perch_content_custom('Primary content',$opts);
     ?>
