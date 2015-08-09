@@ -15,8 +15,6 @@
     ));
   ?>
 
-  <a href="/testimonials" class="back">View all testimonials</a>
-
   <?php perch_layout('call_to_action'); ?>
 
 </main>

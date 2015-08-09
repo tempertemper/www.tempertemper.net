@@ -1,5 +1,7 @@
 <h2><perch:content id="citation" type="text" order="1" label="Citation" title="true" html="false" /></h2>
 
+<perch:content id="embed" type="textarea" label="Embedded media" html="true" size="xs" />
+
 <blockquote>
 
   &#8220;<perch:content id="testimonial" type="textarea" markdown="true" order="3" label="Testimonial" html="false" size="m" />&#8221;
@@ -7,7 +9,7 @@
   <cite>
 
     <perch:if exists="website">
-      <a href="<perch:content id="website" order="4" type="text" label="Website" default="http://" html="false" />" rel="nofollow">
+      <a href="<perch:content id="website" order="5" type="text" label="Website" default="http://" html="false" />" rel="nofollow">
     </perch:if>
 
     <perch:content id="citation" type="text" order="1" label="Citation" title="true" html="false" /><perch:if exists="company">, </perch:if>
@@ -21,6 +23,8 @@
 
 </blockquote>
 
+<perch:content id="excerpt" order="4" type="textarea" label="Testimonial excerpt" count="chars" append="…" size="xs" help="Recommended length 200 characters" suppress="true" />
 <perch:content id="date" type="date" label="Date" format="jS F Y" suppress="true" />
-
+<perch:content id="featured" type="checkbox" suppress="true" label="Feature testimonial" value="featured" />
 <perch:content id="slug" for="citation" type="slug" suppress="true" />
+<a href="/testimonials" class="back">View more testimonials</a>
