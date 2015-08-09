@@ -1,8 +1,7 @@
 <a href="/" class="logo" title="Return to homepage">
-  <svg version="1.1" class="tt" viewBox="0 0 53.8 37.7" aria-labelledby="title desc">
+  <svg version="1.1" class="tt" viewBox="0 0 53.8 37.7" aria-labelledby="title">
+    <title id="title">tempertemper Web Design</title>
     <g id="tt" class="tt" >
-      <title>tempertemper Web Design</title>
-      <desc>tempertemper Web Design logo, abbreviated to 'tt_' logo mark</desc>
       <path d="M6.5,0c2.5,0,2.7,0.2,2.7,0.6V6h5c0.4,0,0.5,0.1,0.5,2.1v0.3
         c0,2-0.2,2.1-0.5,2.1h-5v10.4c0,1.2,0.2,1.9,0.7,2.4c0.4,0.4,1.1,0.6,1.8,0.6c0.7,0,1.4-0.2,2.2-0.4c0.4-0.1,0.6,0.1,1.1,1.7
         l0.1,0.4c0.5,1.6,0.4,1.8-0.1,2.1c-1.3,0.7-3.2,1-4.8,1c-2.4,0-4-0.6-5.1-1.7C4,25.7,3.4,24,3.4,21.3V10.5H0.5
@@ -19,10 +18,9 @@
         C36,0.2,36,0.1,35.7,0.1L35.7,0.1z"/>
     </g>
   </svg>
-  <svg version="1.1" class="tempertemper" viewBox="0 0 267.6 36.4" aria-labelledby="title desc">
+  <svg version="1.1" class="tempertemper" viewBox="0 0 267.6 36.4" aria-labelledby="title">
+    <title id="title">tempertemper Web Design</title>
     <g id="tempertemper" class="tempertemper">
-      <title>tempertemper Web Design</title>
-      <desc>tempertemper Web Design logo</desc>
       <path d="M5.7,3.4c2.2,0,2.4,0.1,2.4,0.6v4.7h4.4c0.3,0,0.5,0.1,0.5,1.8v0.3
         c0,1.8-0.1,1.8-0.5,1.8H8.1v9.1c0,1.1,0.2,1.7,0.6,2.1c0.4,0.3,0.9,0.5,1.6,0.5c0.6,0,1.3-0.1,1.9-0.4c0.4-0.1,0.6,0.1,1,1.5
         l0.1,0.4c0.4,1.4,0.4,1.6-0.1,1.8c-1.2,0.6-2.8,0.9-4.2,0.9c-2.1,0-3.5-0.6-4.5-1.5c-1-1-1.5-2.6-1.5-5v-9.4H0.5
