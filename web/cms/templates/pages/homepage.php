@@ -20,8 +20,17 @@
 
     <h1>Testimonials</h1>
 
-    <?php perch_layout('testimonial'); ?>
-    <a href="/testimonials/" class="go-to">View more testimonials</a>
+    <?php
+      perch_collection('Testimonials', array(
+        'sort'=>'citation',
+        'sort-order'=>'RAND',
+        'count'=>1,
+        'template'=>'testimonial_feature.html',
+        'filter' => 'featured',
+        'match' => 'eq',
+        'value' => 'featured',
+      ));
+    ?>
 
   </aside>
 
