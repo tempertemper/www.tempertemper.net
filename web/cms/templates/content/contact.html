@@ -1,4 +1,9 @@
 <perch:content id="intro" type="textarea" label="Introduction" markdown="true" size="xs" />
 <perch:template path="/content/contact_form.html" />
-<perch:template path="/content/_map.html" />
-<perch:template path="/content/_address.html" />
+
+<!--* Address *-->
+<perch:content suppress="true" divider-before="Address" id="house-name" type="text" label="House name" html="false" />
+<perch:content suppress="true" id="street-address" type="text" label="Street address" html="false" required="true" />
+<perch:content suppress="true" id="locality" type="text" label="Town/city" html="false" required="true" />
+<perch:content suppress="true" id="county" type="text" label="Postcode" html="false" required="true" />
+<perch:content suppress="true" id="country" type="text" label="Country" html="false" />
