@@ -42,6 +42,8 @@
       perch_content_custom('Primary content',$opts);
     ?>
 
+    <p>VAT registration number 219 5624 96</p>
+
     <ul>
       <li><a href="/legal/privacy-policy" rel="privacypolicy">Privacy policy</a>, </li>
       <li><a href="/legal/terms">Terms&nbsp;of&nbsp;business</a></li>
