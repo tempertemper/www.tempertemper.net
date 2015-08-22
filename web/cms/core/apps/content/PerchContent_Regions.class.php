@@ -149,9 +149,9 @@ class PerchContent_Regions extends PerchFactory
      * @return void
      * @author Drew McLellan
      */
-    public function template_display_name($file_name)
+    public function template_display_name($file_name, $star_hidden=false)
     {
-        if (substr($file_name, 0, 1) == '_') {
+        if ($star_hidden && substr($file_name, 0, 1) == '_') {
             $file_name = '*'.$file_name;
         }
 
@@ -162,7 +162,7 @@ class PerchContent_Regions extends PerchFactory
         
         $file_name = ucwords($file_name);
         
-        return $file_name;
+        return trim($file_name);
     }
     
     /**
@@ -189,7 +189,7 @@ class PerchContent_Regions extends PerchFactory
                         if ($extension == 'html' || $extension == 'htm') {
                             $p = str_replace($initial_path, '', $path);
                             if (!$p) {
-                                $a[PerchLang::get('General')][] = array('filename'=>$file, 'value'=>$file, 'path'=>$file, 'label'=>$this->template_display_name($file));
+                                $a[PerchLang::get('General')][] = array('filename'=>$file, 'value'=>$file, 'path'=>$file, 'label'=>$this->template_display_name($file, true));
                             }else{
                                 $a[] = array('filename'=>$file, 'value'=>ltrim($p, '/').'/'.$file, 'path'=>ltrim($p, '/').'/'.$file, 'label'=>$this->template_display_name($file));
                             }
@@ -198,9 +198,9 @@ class PerchContent_Regions extends PerchFactory
                             //$a[$this->template_display_name($file)] = $this->get_templates($path.'/'.$file, $include_hidden, $initial_path);
                             
                             if ($p) {
-                                $group_name = $this->template_display_name(trim($p, '/\\').'/'.$file);
+                                $group_name = $this->template_display_name(trim($p, '/\\').'/'.$file, true);
                             }else{
-                                $group_name = $this->template_display_name($file);
+                                $group_name = $this->template_display_name($file, true);
                             }
                             
                             $groups[$group_name] = $this->get_templates($path.'/'.$file, $include_hidden, $initial_path);

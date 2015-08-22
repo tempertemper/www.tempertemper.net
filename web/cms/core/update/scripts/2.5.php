@@ -159,10 +159,10 @@
         }
     }
 
-    include(PERCH_CORE.'/apps/assets/PerchAssets_Assets.class.php');
-    include(PERCH_CORE.'/apps/assets/PerchAssets_Asset.class.php');
-    $Assets = new PerchAssets_Assets();
+#  include(PERCH_CORE.'/apps/assets/PerchAssets_Assets.class.php');
+#   include(PERCH_CORE.'/apps/assets/PerchAssets_Asset.class.php');
+#   $Assets = new PerchAssets_Assets();
 
-    $Assets->import_from_perch_gallery();
+#   $Assets->import_from_perch_gallery();
 
-    $Assets->reindex();
+#    $Assets->reindex();

@@ -4,18 +4,18 @@ class PerchAuthenticatedUser extends PerchBase
 {
     protected $table  = 'users';
     protected $pk     = 'userID';
-    
+
     public $activation_failed = false;
-    
+
     private $logged_in = false;
-    
+
     private $privileges = array();
-    
+
     public function authenticate($username, $password)
     {
         // Passwords should never be longer than 72 characters
         if (strlen($password) > 72) return false;
-        
+
         $username = filter_var($username, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
         $password = filter_var($password, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 
@@ -27,28 +27,28 @@ class PerchAuthenticatedUser extends PerchBase
             $result = $this->db->get_row($sql);
             if (is_array($result)) {
                 PerchUtil::debug('User exists, checking password.');
-                
+
                 // presume password fail.
                 $password_match  = false;
                 $stored_password = $result['userPassword'];
-                
+
                 // check which type of password - default is portable
                 if (defined('PERCH_NONPORTABLE_HASHES') && PERCH_NONPORTABLE_HASHES) {
                     $portable_hashes = false;
                 }else{
                     $portable_hashes = true;
                 }
-                
+
                 $Hasher = new PasswordHash(8, $portable_hashes);
-                
-                
+
+
                 // data array for user details - gets committed if passwords check out.
                 $data = array();
-                                            
+
                 // check password type
                 if (substr($stored_password, 0, 3)=='$P$') {
                     PerchUtil::debug('Stronger password hash.');
-                    
+
                     // stronger hash, check password
                     if ($Hasher->CheckPassword($password, $stored_password)) {
                         $password_match = true;
@@ -56,7 +56,7 @@ class PerchAuthenticatedUser extends PerchBase
                     }else{
                         PerchUtil::debug('Password failed to match.');
                     }
-                    
+
                 }else{
                     // old MD5 password
                     PerchUtil::debug('Old MD5 password.');
@@ -70,28 +70,29 @@ class PerchAuthenticatedUser extends PerchBase
                         PerchUtil::debug('MD5 password failed to match.');
                     }
                 }
-                                
+
                 if ($password_match) {
                     $this->set_details($result);
-                    
+
                     $data['userHash'] = md5(uniqid());
                     $data['userLastLogin'] = date('Y-m-d H:i:s');
                     $this->update($data);
                     $this->result['userHash'] = $data['userHash'];
                     $this->set_details($result);
 
+                    PerchSession::regenerate();
                     PerchSession::set('userID', $result['userID']);
                     PerchSession::set('userHash', $data['userHash']);
 
                     $this->logged_in = true;
                     $this->_load_privileges();
-                    
+
                     if (!$this->has_priv('perch.login')) {
                         PerchUtil::debug('User role does not have login privs');
                         $this->logout();
                         return false;
                     }
-                    
+
                     // Set cookie for front-end might-be-authed checked
                     PerchUtil::setcookie('cmsa', 1, strtotime('+30 days'), '/');
 
@@ -106,12 +107,12 @@ class PerchAuthenticatedUser extends PerchBase
         PerchUtil::debug('Writing auth fail to log.');
         $username = escapeshellcmd(stripslashes($username));
         syslog(LOG_INFO, 'Authentication failure for '.$username.' from '.PerchUtil::get_client_ip());
-        
+
         return false;
     }
-    
+
     public function recover()
-    {    
+    {
         if (PerchSession::is_set('userID')) {
             $sql     = 'SELECT u.*, r.* FROM ' . $this->table . ' u, '.PERCH_DB_PREFIX.'user_roles r
                         WHERE u.roleID=r.roleID AND u.userEnabled=1 AND u.userID=' . $this->db->pdb((int)PerchSession::get('userID')) . ' AND u.userHash=' . $this->db->pdb(PerchSession::get('userHash')) . '
@@ -124,9 +125,9 @@ class PerchAuthenticatedUser extends PerchBase
                 $this->update($data);
                 $this->result['userHash'] = $data['userHash'];
                 $this->set_details($result);
-                
+
                 PerchSession::set('userHash', $data['userHash']);
-                
+
                 $this->logged_in = true;
                 $this->_load_privileges();
                 return true;
@@ -136,7 +137,7 @@ class PerchAuthenticatedUser extends PerchBase
         $this->privileges = array();
         return false;
     }
-    
+
     public function logout()
     {
         $this->logged_in = false;
@@ -144,33 +145,33 @@ class PerchAuthenticatedUser extends PerchBase
         PerchSession::delete('userHash');
         return true;
     }
-    
+
     public function logged_in()
     {
         return $this->logged_in;
     }
-    
+
     private function activate()
     {
-        /* 
-            Any attempt to circumvent activation invalidates your license. 
-            We're a small company trying to make something useful at a fair price. 
+        /*
+            Any attempt to circumvent activation invalidates your license.
+            We're a small company trying to make something useful at a fair price.
             Please don't steal from us.
         */
-        
+
         $Perch  = PerchAdmin::fetch();
-        
+
         $host = 'activation.grabaperch.com';
         $path = '/activate/';
         $url = 'http://' . $host . $path;
-        
+
         $data = '';
         $data['key']     = PERCH_LICENSE_KEY;
         $data['host']    = $_SERVER['SERVER_NAME'];
         $data['version'] = $Perch->version;
         $data['php']     = phpversion();
         $content = http_build_query($data);
-        
+
         $result = false;
         $use_curl = false;
         if (function_exists('curl_init')) $use_curl = true;
@@ -228,7 +229,7 @@ class PerchAuthenticatedUser extends PerchBase
                 $Settings = new PerchSettings;
                 $Settings->set('latest_version', $json->latest_version);
                 $Settings->set('on_sale_version', $json->on_sale_version);
-                
+
                 PerchUtil::debug($json);
                 PerchUtil::debug('Activation: success');
                 return true;
@@ -238,7 +239,7 @@ class PerchAuthenticatedUser extends PerchBase
                 return false;
             }
         }
-        
+
         // If activation can't complete, assume honesty. That's how I roll.
         return true;
     }
@@ -247,27 +248,27 @@ class PerchAuthenticatedUser extends PerchBase
 	{
 		return $this->activate();
 	}
-	
+
 	public function has_priv($priv)
 	{
         if ($this->roleMasterAdmin()) return true;
 	    return in_array($priv, $this->privileges);
 	}
-	
+
     public function get_privs()
     {
         return $this->privileges;
     }
-    
+
 	private function _load_privileges()
 	{
         if ($this->roleMasterAdmin()) {
             $sql = 'SELECT p.privKey FROM '.PERCH_DB_PREFIX.'user_privileges p';
         }else{
             $sql = 'SELECT p.privKey FROM '.PERCH_DB_PREFIX.'users u, '.PERCH_DB_PREFIX.'user_role_privileges rp, '.PERCH_DB_PREFIX.'user_privileges p
-                    WHERE u.roleID=rp.roleID AND rp.privID=p.privID AND u.userID='.$this->db->pdb((int)$this->id());    
+                    WHERE u.roleID=rp.roleID AND rp.privID=p.privID AND u.userID='.$this->db->pdb((int)$this->id());
         }
-	    
+
 	    $rows = $this->db->get_rows($sql);
 	    if (PerchUtil::count($rows)) {
 	        $privs = array();

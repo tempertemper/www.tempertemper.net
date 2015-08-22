@@ -4,7 +4,7 @@ class Perch
 {
     static protected $instance;
 
-    public $version = '2.8.10';
+    public $version = '2.8.13';
 
     public $admin           = false;
     private $page           = false;
@@ -108,11 +108,12 @@ class Perch
 
     public function dispatch_form($key, $post, $files)
     {
-        $key      = base64_decode($key);
-        $parts    = explode(':', $key);
-        $formID   = $parts[0];
-        $appIDs   = $parts[1];
-        $template = $parts[2];
+        $key       = base64_decode($key);
+        $parts     = explode(':', $key);
+        $formID    = $parts[0];
+        $appIDs    = $parts[1];
+        $template  = $parts[2];
+        $timestamp = (isset($parts[3]) ? $parts[3] : false);
 
         if ($appIDs) {
             $appIDs = explode(' ', $appIDs);
@@ -121,7 +122,7 @@ class Perch
                     if (function_exists($appID.'_form_handler')) {
                         $API = new PerchAPI(1.0, $appID);
                         $SubmittedForm = $API->get('SubmittedForm');
-                        $SubmittedForm->populate($formID, $template, $post, $files);
+                        $SubmittedForm->populate($formID, $template, $post, $files, $timestamp);
                         call_user_func($appID.'_form_handler', $SubmittedForm);
                     }else{
                         PerchUtil::debug($appID.' form handler not found.', 'error');

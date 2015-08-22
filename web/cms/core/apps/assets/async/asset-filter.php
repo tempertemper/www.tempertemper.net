@@ -4,10 +4,10 @@
     include(PERCH_CORE . '/inc/loader.php');
     $Perch  = PerchAdmin::fetch();
     include(PERCH_CORE . '/inc/auth_light.php');
-    
+
     header('X-Perch: '.$Perch->version);
     header('Content-Type: text/html; charset=utf-8');
-    
+
     include(__DIR__.'/../PerchAssets_Asset.class.php');
     include(__DIR__.'/../PerchAssets_Assets.class.php');
 
@@ -22,7 +22,7 @@
     if (isset($_GET['filter']) && $_GET['filter']=='new') {
         $filter = 'new';
     }
-    
+
     if (isset($_GET['bucket']) && $_GET['bucket']!='') {
         $filter = 'bucket';
         $filter_value = $_GET['bucket'];

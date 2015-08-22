@@ -42,6 +42,12 @@
       
       ALTER IGNORE TABLE `__PREFIX__resource_log` ADD UNIQUE INDEX `idx_uni` (`appID`, `itemFK`, `itemRowID`, `resourceID`);
 
+      ALTER TABLE `__PREFIX__users` ADD `userPasswordToken` CHAR(255)  NOT NULL  DEFAULT 'expired'  AFTER `userMasterAdmin`;
+
+      ALTER TABLE `__PREFIX__users` ADD `userPasswordTokenExpires` DATETIME  NOT NULL  DEFAULT '2015-01-01 00:00:00'  AFTER `userPasswordToken`;
+
+
+
     ";
 
     if (PERCH_RUNWAY) {

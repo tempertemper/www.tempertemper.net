@@ -1,14 +1,14 @@
 <?php
 
 class PerchBase
-{   
+{
     protected $db;
     protected $details;
 
     protected $index_table          = false;
 
     protected $api                  = false;
-    
+
     protected $event_prefix         = false;
     public    $suppress_events      = true;
 
@@ -18,14 +18,14 @@ class PerchBase
 
     protected $pk_is_int = true;
 
-    function __construct($details) 
-    {        
+    function __construct($details)
+    {
         $this->db       = PerchDB::fetch();
         $this->details  = $details;
 
         $this->table    = PERCH_DB_PREFIX . $this->table;
     }
-    
+
     function __call($method, $arguments)
 	{
 		if (isset($this->details[$method])) {
@@ -38,7 +38,7 @@ class PerchBase
 		        return $this->details[$method];
 		    }
 		}
-		
+
 		return false;
 	}
 
@@ -47,7 +47,7 @@ class PerchBase
         $this->details[$this->pk] = null;
         $this->can_log_resources = false;
     }
-    
+
     public function ready_to_log_resources()
     {
         return $this->can_log_resources;
@@ -70,39 +70,39 @@ class PerchBase
 
         return $out;
     }
-    
+
     public function id()
     {
         return $this->details[$this->pk];
     }
-    
+
     public function update($data)
     {
         if ($this->modified_date_column) $data[$this->modified_date_column] = date('Y-m-d H:i:s');
-        
+
         $r = $this->db->update($this->table, $data, $this->pk, $this->details[$this->pk]);
         $this->details = array_merge($this->details, $data);
         return $r;
     }
-    
+
     public function delete()
     {
         $this->db->delete($this->table, $this->pk, $this->details[$this->pk]);
     }
-    
+
     public function squirrel($key, $val)
     {
         // non-persistant store
         $this->details[$key] = $val;
     }
-    
+
     public function set_details($details)
     {
         if (is_array($details)) {
             foreach($details as $key=>$val) {
                 $this->details[$key]=$val;
             }
-            
+
             $this->details[$this->pk] = $this->details[$this->pk];
         }
     }
@@ -149,13 +149,13 @@ class PerchBase
         }
 
         $fields = $this->to_array(array_keys($tag_index));
-        
+
         $sql = 'INSERT INTO '.$table.' (itemKey, itemID, indexKey, indexValue) VALUES ';
         $values = array();
 
         $id_set = false;
         if (PerchUtil::count($fields)) {
-            foreach($fields as $key=>$value) { 
+            foreach($fields as $key=>$value) {
 
                 if (strpos($key, 'DynamicFields')!==false || substr($key, 0, 6)=='perch_' || strpos($key, 'JSON')!==false) {
                     continue;
@@ -199,20 +199,20 @@ class PerchBase
             $data['indexValue'] = ($this->pk_is_int ? (int) $this->id() : $this->db->pdb($this->id()));
 
             $values[] = '('.implode(',', $data).')';
-        } 
-        
+        }
+
         $sql .= implode(',', $values);
         $this->db->execute($sql);
 
-        // optimize index 
+        // optimize index
         $sql = 'OPTIMIZE TABLE '.$table;
         $this->db->get_row($sql);
-        
+
         if ($this->event_prefix && !$this->suppress_events) {
             $Perch = Perch::fetch();
-            $Perch->event($this->event_prefix.'.index', $this);    
+            $Perch->event($this->event_prefix.'.index', $this);
         }
-        return true;      
+        return true;
     }
 
 }

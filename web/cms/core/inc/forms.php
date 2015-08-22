@@ -16,5 +16,4 @@
             $Perch->dispatch_form($key, $post, $_FILES);
         }
     }
-    
     if (!PERCH_RUNWAY) perch_find_posted_forms();

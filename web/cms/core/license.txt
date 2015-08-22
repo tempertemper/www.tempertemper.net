@@ -4,7 +4,7 @@ INTRODUCTION
 
 This document sets out the terms upon which we grant you permission to use *Our Software*.  We will refer to it as “the *Licence Terms*”.  It’s fundamental to the relationship we will have with you so it would be a good idea for you to read it through carefully before making use of Our Software.  If you want to purchase a licence for our software, you should read our *Purchase Terms*.  These Licence Terms just relate to your use of our Software.
 
-In these Licence Terms, when we use the words “*we*”, “*us*’ or “*our*”, we are referring to Edgeofmyseat Ltd, a company registered in England and Wales under company number 04735127.  Sometimes you may see us using the trading name Edgeofmyseat.com.  Our registered office is at 18 Keble Road, Maidenhead, Berkshire SL6 6BA, England.  
+In these Licence Terms, when we use the words “*we*”, “*us*’ or “*our*”, we are referring to Edgeofmyseat Ltd, a company registered in England and Wales under company number 04735127.  Sometimes you may see us using the trading name Edgeofmyseat.com.  Our registered office is at Spike Island, 133 Cumberland Road, Bristol BS1 6UX, England.  
 
 When we use words like “*you*” or “*your*”, it’s to you, the individual (or the company on whose behalf you are acting) that will be using or deploying Our Software that we refer.  
 

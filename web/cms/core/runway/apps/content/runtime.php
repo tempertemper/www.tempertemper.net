@@ -13,16 +13,16 @@
         if ($key === false) return ' ';
 
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
-            $return  = true; 
+            $return  = true;
             $postpro = false;
         }else{
             $postpro = true;
         }
 
-        $Content = PerchContent::fetch();    
+        $Content = PerchContent::fetch();
         $out = $Content->get_collection($key, $opts);
 
-        // Post processing - if there are still <perch:x /> tags      
+        // Post processing - if there are still <perch:x /> tags
         if ($postpro) {
             if (is_array($out)) {
                 // split-items
@@ -38,7 +38,7 @@
                 if (strpos($out, '<perch:')!==false) {
                     $Template = new PerchTemplate();
                     $out     = $Template->apply_runtime_post_processing($out);
-                } 
+                }
             }
         }
 
@@ -50,7 +50,7 @@
     function perch_runway_content_check_preview()
     {
         if (!defined('PERCH_PREVIEW_ARG')) define('PERCH_PREVIEW_ARG', 'preview');
-        
+
         if (perch_get(PERCH_PREVIEW_ARG)) {
 
             $contentID   = 'all';
@@ -69,7 +69,7 @@
 
             $Users       = new PerchUsers;
             $CurrentUser = $Users->get_current_user();
-            
+
             if (is_object($CurrentUser) && $CurrentUser->logged_in()) {
                 $Content = PerchContent::fetch();
                 $Content->set_preview($contentID, $rev);

@@ -20,7 +20,7 @@
 
 	}else{
 		$cli = false;
-		
+
 		if (!isset($_GET['secret'])) {
 			die('No secret found. See http://docs.grabaperch.com/docs/scheduled-tasks/ for configuration instructions.'."\n");
 		}
@@ -49,6 +49,5 @@
 
 
 
-	
+
 	//PerchUtil::output_debug();
-?>

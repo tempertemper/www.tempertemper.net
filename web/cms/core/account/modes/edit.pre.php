@@ -1,11 +1,11 @@
 <?php
 
     $User = $Users->find($CurrentUser->id());
-    
+
     if (!is_object($User)) {
         PerchUtil::redirect(PERCH_LOGINPATH);
     }
-    
+
 
 
     /* --------- Edit User Form ----------- */
@@ -31,10 +31,10 @@
 		$data		= array();
 		$postvars 	= array('userGivenName', 'userFamilyName','userEmail','userPassword');
 		$data = $Form->receive($postvars);
-		
+
 		if (isset($data['userPassword'])) {
 		    if ($data['userPassword'] != '') {
-		        
+
 		        // check which type of password - default is portable
                 if (defined('PERCH_NONPORTABLE_HASHES') && PERCH_NONPORTABLE_HASHES) {
                     $portable_hashes = false;
@@ -53,7 +53,7 @@
 
 		$User->update($data);
 		$Alert->set('success', PerchLang::get('Your details have been successfully updated.'));
-		
+
 		// Language setting
 		$postvars = array( 'lang');
     	$data = $Form->receive($postvars);
@@ -61,18 +61,16 @@
     	foreach($data as $key=>$value) {
     	    $Settings->set($key, $value, $User->id());
     	}
-    	
+
     	$Settings->reload();
-        
+
         $Lang = PerchLang::fetch();
         $Lang->reload();
 
     }
-    
+
 
 
     $details = $User->to_array();
     $settings = $Settings->get_as_array(true);
-    PerchUtil::debug($settings);
-
-?>
+    #PerchUtil::debug($settings);

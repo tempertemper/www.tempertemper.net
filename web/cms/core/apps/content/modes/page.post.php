@@ -2,9 +2,9 @@
 
 	<p><?php
 		if ($Page->pagePath()=='*') {
-			printf(PerchLang::get('These are all the editable regions that are shared across many pages of the site.')); 
+			printf(PerchLang::get('These are all the editable regions that are shared across many pages of the site.'));
 		}else{
-			printf(PerchLang::get('These are all the editable regions on the %s page.'),' &#8216;' . PerchUtil::html($Page->pageNavText()) . '&#8217; '); 	
+			printf(PerchLang::get('These are all the editable regions on the %s page.'),' &#8216;' . PerchUtil::html($Page->pageNavText()) . '&#8217; ');
 		}
 	?></p>
 	<p>
@@ -22,15 +22,15 @@
 	?>
 
 
-	<h1><?php 
+	<h1><?php
 		if ($Page->pagePath()=='*') {
-			printf(PerchLang::get('Editing Shared Regions')); 
+			printf(PerchLang::get('Editing Shared Regions'));
 		}else{
-			printf(PerchLang::get('Editing %s Page'),' &#8216;' . PerchUtil::html($Page->pageNavText()) . '&#8217; '); 	
+			printf(PerchLang::get('Editing %s Page'),' &#8216;' . PerchUtil::html($Page->pageNavText()) . '&#8217; ');
 		}
-		
+
 	?></h1>
-    
+
     <?php echo $Alert->output(); ?>
 
 
@@ -77,10 +77,10 @@
 				foreach($regions as $Region) {
 					if ($Region->role_may_view($CurrentUser, $Settings)) {
 						echo '<tr>';
-					
+
 								// Region name / edit link
 								echo '<td class="primary">';
-							
+
 								if ($Region->role_may_edit($CurrentUser)) {
 		                            echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/edit/?id=' . PerchUtil::html($Region->id()) . '" class="edit">' . PerchUtil::html($Region->regionKey()) . '</a>';
 		                        }else{
@@ -89,47 +89,47 @@
 
 		                        // Draft
 		                        if ($Region->has_draft()) echo '<span class="draft icon" title="'.PerchLang::get('This item is a draft.').'"></span>';
-							
-							
+
+
 								echo '</td>';
-							
+
 								// Region type
-		                        echo '<td class="type">' . ($Region->regionNew() ? '<span class="new">'.PerchLang::get('New').'</span>' : PerchUtil::html($Regions->template_display_name($Region->regionTemplate()))) . '</td>';
-							
-						
-							
+		                        echo '<td class="type">' . ($Region->regionNew() ? '<span class="new">'.PerchLang::get('New').'</span>' : PerchUtil::html($Regions->template_display_name($Region->regionTemplate(), false))) . '</td>';
+
+
+
 								// Item count
 								echo '<td>'.$Region->get_item_count().'</td>';
-							
+
 
 								// Updated date
 								if (PERCH_RUNWAY) {
 									echo '<td>';
 									if ($Region->regionUpdated()!='0000-00-00 00:00:00') {
-										echo strftime(PERCH_DATE_SHORT .' '.PERCH_TIME_SHORT, strtotime($Region->regionUpdated()));	
+										echo strftime(PERCH_DATE_SHORT .' '.PERCH_TIME_SHORT, strtotime($Region->regionUpdated()));
 									}else{
 										echo '&dash;';
 									}
-									
+
 									echo '</td>';
 								}
-							
+
 								// Draft preview
-								echo '<td>';						
+								echo '<td>';
 									if ($Region->has_draft() && $Region->regionPage() != '*') {
 		                                $path = rtrim($Settings->get('siteURL')->val(), '/');
 		                                echo '<a href="'.PerchUtil::html($path.$Region->regionPage()).'?'.PERCH_PREVIEW_ARG.'=all" class="draft preview">'.PerchLang::get('Preview').'</a>';
 		                            }
 								echo '</td>';
-							
+
 								// Delete
 								echo '<td>';
 		                        if ($CurrentUser->has_priv('content.regions.delete') || ($CurrentUser->has_priv('content.pages.delete.own') && $Page->pageCreatorID()==$CurrentUser->id())) {
 		                            echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/delete/?id=' . PerchUtil::html($Region->id()) . '" class="delete inline-delete">'.PerchLang::get('Delete').'</a>';
 		                        }
 		                        echo '</td>';
-					
-					
+
+
 						echo '</tr>';
 					}
 				}
@@ -138,50 +138,50 @@
 				foreach($collections as $Collection) {
 					if ($Collection->role_may_view($CurrentUser, $Settings)) {
 						echo '<tr>';
-					
+
 								// Region name / edit link
 								echo '<td class="primary">';
-							
+
 								if ($Collection->role_may_edit($CurrentUser)) {
 		                            echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/collections/?id=' . PerchUtil::html($Collection->id()) . '" class="edit">' . PerchUtil::html($Collection->collectionKey()) . '</a>';
 		                        }else{
 		                            echo '<span class="denied">'.PerchUtil::html($Collection->collectionKey()).'</span>';
 		                        }
-							
+
 								echo '</td>';
-							
+
 								// Region type
 		                        echo '<td class="type">' . PerchUtil::html($Regions->template_display_name($Collection->collectionTemplate())) . '</td>';
-							
-													
+
+
 								// Item count
 								echo '<td>'.$Collection->get_item_count().'</td>';
-							
+
 
 								// Updated date
 								echo '<td>';
 								if ($Collection->collectionUpdated()!='0000-00-00 00:00:00') {
-									echo strftime(PERCH_DATE_SHORT .' '.PERCH_TIME_SHORT, strtotime($Collection->collectionUpdated()));	
+									echo strftime(PERCH_DATE_SHORT .' '.PERCH_TIME_SHORT, strtotime($Collection->collectionUpdated()));
 								}else{
 									echo '&dash;';
 								}
-								
+
 								echo '</td>';
-							
+
 								// Draft preview
-								echo '<td>';						
+								echo '<td>';
 								echo '</td>';
-							
+
 								// Delete
 								echo '<td>';
 		                        echo '</td>';
-					
-					
+
+
 						echo '</tr>';
 					}
 				}
 			}
-		
+
 		?>
 		</tbody>
 	</table>

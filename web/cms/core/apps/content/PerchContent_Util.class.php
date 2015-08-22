@@ -12,23 +12,23 @@ class PerchContent_Util
 	    foreach($details as $detail) {
 	        if (PerchUtil::count($detail)) {
 	            $itemID = $parent_itemID ? $parent_itemID : $detail['itemID'];
-	            
+
 	            $tmp = array();
 
 	            foreach($detail as $field_key => $field_val) {
-	             
+
 	                $new_key = 'perch_'.$itemID.'_'.$field_key;
 
 	                if ($skipsub) {
 	                	if ($parent_itemID) $new_key = 'perch_'.$itemID.'_'.$k.'_'.$field_key;
 	                }else{
-	                	if ($parent_itemID) $new_key = 'perch_'.$itemID.'_'.$parent_key.'_'.$k.'_'.$field_key;	
+	                	if ($parent_itemID) $new_key = 'perch_'.$itemID.'_'.$parent_key.'_'.$k.'_'.$field_key;
 	                }
-	                
+
 
 	                $tmp[$new_key] = $field_val;
 	                $tmp[$field_key] = $field_val;
-	             
+
 
 	                if (!$parent_key && is_array($field_val)) {
 	                    $out = self::flatten_details($field_val, $itemID, $field_key, $skipsub);
@@ -50,7 +50,7 @@ class PerchContent_Util
 	{
 	    if ($Tag->title()) {
 	        $title_var = $var;
-	    
+
 	        if (is_array($var)) {
 	            if (isset($var['_title'])) {
 	                $title_var = $var['_title'];
@@ -60,7 +60,7 @@ class PerchContent_Util
 	                $title_var = strip_tags($var['processed']);
 	            }
 	        }
-	    
+
 	        if (isset($form_vars['_title'])) {
 	            if (isset($options['title_delimit'])) {
 	                $title_delim = $options['title_delimit'];
@@ -70,13 +70,13 @@ class PerchContent_Util
 	            $form_vars['_title'] .= $title_delim.$title_var;
 	        }else{
 	            $form_vars['_title'] = $title_var;
-	        }                                  
+	        }
 	    }
 
 	    return $form_vars;
 	}
 
-	public static function multi_implode($array, $glue='') 
+	public static function multi_implode($array, $glue='')
 	{
 	    $ret = '';
 
@@ -91,10 +91,10 @@ class PerchContent_Util
 	    return $ret;
 	}
 
-	public static function read_items_from_post($Item, $tags, $subprefix, $form_vars, $postitems, $Form, $search_text, $options, $Resources, $in_repeater=false, $Template, $in_block=false) 
+	public static function read_items_from_post($Item, $tags, $subprefix, $form_vars, $postitems, $Form, $search_text, $options, $Resources, $in_repeater=false, $Template, $in_block=false)
 	{
 		//PerchUtil::mark('reading items from post'. ($in_block ? ' (in block)': ''));
-		
+
 		$given_subprefix = $subprefix;
 	    $seen_tags = array();
 
@@ -121,7 +121,7 @@ class PerchContent_Util
 
 	    //PerchUtil::debug($tags, 'success');
 
-	    foreach($tags as $Tag) {                   
+	    foreach($tags as $Tag) {
 
 	        if (!in_array($Tag->id(), $seen_tags)) {
 
@@ -149,42 +149,42 @@ class PerchContent_Util
 	            	}
 
 	                //PerchUtil::debug('Reading: '.$Tag->id());
-	                
+
 	                $new_form_vars = array();
 
 	                $i = 0;
 	                $minor_prefix = $i.'_';
-	                
+
 	                if ($Tag->type()=='PerchBlocks') {
 	                	$subprefix .= '_blocks_';
 	                }else{
 	                	if ($in_repeater && $in_block) {
-	                		$subprefix .= '_'.$Tag->id().'_';	
+	                		$subprefix .= '_'.$Tag->id().'_';
 	                	}else{
-	                		$subprefix .= $Tag->id().'_';		
+	                		$subprefix .= $Tag->id().'_';
 	                	}
-	                	
+
 	                }
 
-	                //PerchUtil::debug('Looking for  '.$item_prefix.$subprefix.$i.' in deleted blocks list');
+	                PerchUtil::debug('Looking for  '.$item_prefix.$subprefix.$i.' in deleted blocks list');
 	                //while (in_array($Item->itemID().'_'.$subprefix.$i, $deleted_blocks)) {
 	                while (in_array($item_prefix.$subprefix.$i, $deleted_blocks)) {
-	                	PerchUtil::debug('Skipping '.$item_prefix.$subprefix.$i.' as deleted');
+	                	//PerchUtil::debug('Skipping '.$item_prefix.$subprefix.$i.' as deleted');
 	                 	$i++;
 	                };
 
-	                $new_postitems = $Form->find_items($perch_prefix.'_'.$subprefix.$i.'_');               
-	                
+	                $new_postitems = $Form->find_items($perch_prefix.'_'.$subprefix.$i.'_');
+
 	                //PerchUtil::debug('Subprefix: ' . $subprefix);
 	                //PerchUtil::debug('*Looking for: '.$perch_prefix.'_'.$subprefix.$i.'_'. ' '. ($in_repeater ? '(in repeater)':''));
 	                //PerchUtil::debug($new_postitems);
 
 	                while (PerchUtil::count($new_postitems)) {
-	                
+
 	                	if ($Tag->type()=='PerchBlocks') {
 	                		$item_tags = array();
 	                		if (isset($new_postitems['_block_type'])) {
-	                			$item_tags = $Template->get_block_tags($new_postitems['_block_type']);	
+	                			$item_tags = $Template->get_block_tags($new_postitems['_block_type']);
 	                			$item_tags[] = new PerchXMLTag('<perch:'.$Template->namespace.' id="_block_type" value="'.$new_postitems['_block_type'].'" type="editcontrol" />');
 	                			$item_tags[] = new PerchXMLTag('<perch:'.$Template->namespace.' id="_block_id" value="'.$new_postitems['_block_id'].'" type="editcontrol" />');
 	                			$item_tags[] = new PerchXMLTag('<perch:'.$Template->namespace.' id="_block_index" value="'.$new_postitems['_block_index'].'" type="editcontrol" />');
@@ -195,7 +195,7 @@ class PerchContent_Util
 	                		$as_in_block = false;
 	                	}
 
-	                	
+
 	                    list($result, $search_text) = self::read_items_from_post($Item, $item_tags, $subprefix.$i, $new_form_vars, $new_postitems, $Form, $search_text, $options, $Resources, true, $Template, $as_in_block);
 
 	                    //PerchUtil::debug($result, 'notice');
@@ -203,11 +203,11 @@ class PerchContent_Util
 	                    if (strlen(self::multi_implode($result)) > 0) {
 	                        $form_vars[$Tag->id()][] = $result;
 	                    }
-	                    
+
 	                    $i++;
 
-	                    while (in_array($Item->itemID().'_'.$subprefix.$i, $deleted_blocks)) {
-	                    	//PerchUtil::debug('Skipping '.$Item->itemID().'_'.$subprefix.$i.' as deleted (2)');
+	                    while (in_array($item_prefix.$subprefix.$i, $deleted_blocks)) {
+	                    	PerchUtil::debug('Skipping '.$Item->itemID().'_'.$subprefix.$i.' as deleted (2)');
 	                     	$i++;
 	                    };
 
@@ -215,17 +215,17 @@ class PerchContent_Util
 
 	                    //PerchUtil::debug('Looking for: '.$perch_prefix.$subprefix.'_'.$i.'_');
 	                    //PerchUtil::debug($new_postitems);
-	                    
-	                    
-	                    if (!PerchUtil::count($new_postitems)) {
+
+
+	                    //if (!PerchUtil::count($new_postitems)) {
 	                        //PerchUtil::debug('Not found: '.$perch_prefix.'_'.$subprefix.$i.'_', 'error');
-	                    }
+	                    //}
 	                }
 
 	                // if ($Tag->id()=='_blocks' && isset($form_vars[$Tag->id()])) {
 	                // 	$form_vars[$Tag->id()] = PerchUtil::array_sort($form_vars[$Tag->id()], '_block_index');
 	                // }
-	                    
+
 	                if ($in_block) {
 	                	$subprefix = $given_subprefix;
 	                }else{
@@ -239,7 +239,7 @@ class PerchContent_Util
 	                }else{
 	                    $field_prefix = $perch_prefix.'_'.$Tag->id();
 	                }
-	                
+
 	                //PerchUtil::debug('Form looking for field prefix: '.$field_prefix);
 
 	                if ($in_repeater) {
@@ -252,47 +252,47 @@ class PerchContent_Util
 	                        $parts[] = (int)$_POST[$perch_prefix.'_'.$subprefix.'_prevpos'];
 
 	                        if (isset($_POST[$perch_prefix.'_'.$subprefix.'_present'])) {
-	                            $Tag->set('tag_context', implode('_', $parts).'_'.$Tag->id());    
+	                            $Tag->set('tag_context', implode('_', $parts).'_'.$Tag->id());
 	                        }else{
 	                            $Tag->set('tag_context', false);
 	                        }
-	                        
+
 	                    }else{
 	                        $Tag->set('tag_context', false);
 	                    }
 	                }
 
 	                $var = false;
-	            
+
 	                $Tag->set('input_id', $field_prefix);
-	        
+
 	                $FieldType = PerchFieldTypes::get($Tag->type(), $Form, $Tag, $tags, $Form->app_id);
 	                $FieldType->set_unique_id($Item->id());
-	                
+
 	                $var  = $FieldType->get_raw($postitems, $Item);
 	                if ($Tag->searchable(true)) {
 	                	//PerchUtil::debug('Getting search text for: '.$Tag->id().' ('.$Tag->type().')');
 	                	$search_text    .= $FieldType->get_search_text($var).' ';
-	                	//PerchUtil::debug($FieldType->get_search_text($var));	
+	                	//PerchUtil::debug($FieldType->get_search_text($var));
 	                }
-	                
 
-	                            
+
+
 	                if ($var || (is_string($var) && strlen($var))) {
 	                    if (!is_array($var)) {
 	                    	$var = PerchUtil::safe_stripslashes($var);
 	                    }
 	                    $form_vars[$Tag->id()] = $var;
-	                
+
 	                    // title
 	                    $form_vars = self::determine_title($Tag, $var, $options, $form_vars);
 	                }else{
 	                    // Store empty values for valid fields
 	                    if ($Tag->is_set('type') && $Tag->type()!='hidden' && substr($Tag->id(), 0, 1)!='_') {
-	                        //PerchUtil::debug('Empty '.$Tag->id(), 'error');    
+	                        //PerchUtil::debug('Empty '.$Tag->id(), 'error');
 	                        $form_vars[$Tag->id()] = null;
 	                    }
-	                    
+
 	                }
 
 	                // Resources
@@ -300,7 +300,7 @@ class PerchContent_Util
 	                	$resourceIDs = $Resources->get_logged_ids();
 	                	if (PerchUtil::count($resourceIDs)) {
 	                	    $Item->log_resources($resourceIDs);
-	                	}	
+	                	}
 	                }
 	            }
 
@@ -309,14 +309,14 @@ class PerchContent_Util
 
 	            $seen_tags[] = $Tag->id();
 	        }
-	        
+
 	    }
 
 	    return array($form_vars, $search_text);
 	}
 
 
-	public static function set_required_fields($Form, $id, $item, $tags, $Template) 
+	public static function set_required_fields($Form, $id, $item, $tags, $Template)
 	{
 	    $req = array();
 	    $seen_tags = array();
@@ -330,19 +330,19 @@ class PerchContent_Util
 
 		    foreach($tags as $tag) {
 
-		        if ($tag->type()=='PerchRepeater') {  
+		        if ($tag->type()=='PerchRepeater') {
 		            $repeater_id = $id.'_'.$tag->id();
 		            $repeater_i  = 0;
 
 		            if (isset($item[$tag->id()]) && is_array($item[$tag->id()])) {
-		                
+
 		                if (isset($_POST['perch_'.$repeater_id.'_count'])){// && (int)$_POST['perch_'.$repeater_id.'_count']>0) {
 		                    for($repeater_i=0; $repeater_i<(int)$_POST['perch_'.$repeater_id.'_count']; $repeater_i++) {
 		                        self::set_required_fields($Form, $repeater_id.'_'.$repeater_i, array(), $tag->tags, $Template);
 		                    }
 		                }else{
 		                    foreach($item[$tag->id()] as $subitem) {
-		                        self::set_required_fields($Form, $repeater_id.'_'.$repeater_i, $subitem, $tag->tags, $Template);    
+		                        self::set_required_fields($Form, $repeater_id.'_'.$repeater_i, $subitem, $tag->tags, $Template);
 		                        $repeater_i++;
 		                    }
 		                }
@@ -359,16 +359,16 @@ class PerchContent_Util
 
 		        	if (PerchUtil::count($blocks_data)) {
 		        	    foreach($blocks_data as $count => $block_data) {
-		        	    	
+
 		        	    	if ($id === null) {
-		        	    		$block_id = '_blocks_'.$count;	
+		        	    		$block_id = '_blocks_'.$count;
 		        	    	}else{
 		        	    		$block_id = $id.'__blocks_'.$count;
 		        	    	}
-		        	    			        	        
+
 		        	        if (!in_array($block_id, $deleted_blocks)) {
 		        	        	$block_tags = $Template->get_block_tags($block_data['_block_type']);
-		        	        	self::set_required_fields($Form, $block_id, $block_data, $block_tags, $Template);	
+		        	        	self::set_required_fields($Form, $block_id, $block_data, $block_tags, $Template);
 		        	        }
 		        	    }
 		        	}
@@ -384,7 +384,7 @@ class PerchContent_Util
 		        if ($id===null) {
 		        	$input_id = 'perch_'.$tag->id();
 		        }else{
-		        	$input_id = 'perch_'.$id.'_'.$tag->id();	
+		        	$input_id = 'perch_'.$id.'_'.$tag->id();
 		        }
 
 		        if (!in_array($tag->id(), $seen_tags)) {
@@ -398,9 +398,9 @@ class PerchContent_Util
 		                }else{
 		                    $req[$input_id] = "Required";
 		                }
-		            
+
 		            }
-		        
+
 		            $seen_tags[] = $tag->id();
 		        }
 		    }
@@ -412,9 +412,9 @@ class PerchContent_Util
 	}
 
 	public static function display_item_fields($tags, $id, $item, $Page, $Form, $Template, $blocks_link_builder=array('PerchContent_Util', 'get_block_link'), $seen_tags=array())
-	{          
+	{
 	    //PerchUtil::debug($tags, 'success');
-	    //$seen_tags = array();   
+	    //$seen_tags = array();
 
 		if (!PerchUtil::count($tags)) return;
 
@@ -423,16 +423,16 @@ class PerchContent_Util
 	    	if ($id===null) {
 	    		$item_id = 'perch_'.$tag->id();
 	    		$tag->set('input_id', $item_id);
-	    		$tag->set('post_prefix', 'perch_');    		
+	    		$tag->set('post_prefix', 'perch_');
 	    	}else{
-				$item_id = 'perch_'.$id.'_'.$tag->id();	  
+				$item_id = 'perch_'.$id.'_'.$tag->id();
 				$tag->set('input_id', $item_id);
-				$tag->set('post_prefix', 'perch_'.$id.'_');  		
+				$tag->set('post_prefix', 'perch_'.$id.'_');
 	    	}
-	        
+
 	        if (is_object($Page)) $tag->set('page_id', $Page->id());
 
-	        
+
 
 	        if (!in_array($tag->id(), $seen_tags) && $tag->type()!='hidden' && $tag->type()!='editcontrol' && substr($tag->id(), 0,7)!='parent.') {
 
@@ -455,12 +455,12 @@ class PerchContent_Util
 	                if ($tag->max()) echo ' data-max="'.PerchUtil::html($tag->max()).'"';
 	                echo '>';
 	                    echo '<div class="repeated">';
-	                
-	                    
+
+
 	                    $repeater_i = 0;
 
 	                    if (isset($item[$tag->id()]) && is_array($item[$tag->id()])) {
-	                        
+
 	                        $subitems = $item[$tag->id()];
 
 	                        if (isset($_POST['perch_'.$repeater_id.'_count']) && (int)$_POST['perch_'.$repeater_id.'_count']>0) {
@@ -471,7 +471,7 @@ class PerchContent_Util
 	                                }
 	                            }
 	                        }
-                        
+
 	                        foreach($subitems as $subitem) {
 
 	                            $edit_prefix = 'perch_'.$repeater_id.'_'.$repeater_i.'_';
@@ -482,7 +482,7 @@ class PerchContent_Util
 	                            echo '<div class="repeated-item">';
 	                                echo '<div class="index"><span>'.($repeater_i+1).'</span><span class="icon"></span></div>';
 	                                echo '<div class="repeated-fields">';
-	                                PerchContent_Util::display_item_fields($tag->tags, $repeater_id.'_'.$repeater_i, $subitem, $Page, $Form, $Template);    
+	                                PerchContent_Util::display_item_fields($tag->tags, $repeater_id.'_'.$repeater_i, $subitem, $Page, $Form, $Template);
 	                                echo '<input type="hidden" name="perch_'.($repeater_id.'_'.$repeater_i).'_present" class="present" value="1" />';
 	                                echo '<input type="hidden" name="perch_'.($repeater_id.'_'.$repeater_i).'_prevpos" value="'.$repeater_i.'" />';
 	                                echo '</div>';
@@ -490,7 +490,7 @@ class PerchContent_Util
 	                            echo '</div>';
 	                            $repeater_i++;
 	                        }
-	                                                       
+
 	                    }
 
 	                    $spare = true;
@@ -505,8 +505,8 @@ class PerchContent_Util
 	                        echo '<div class="repeated-item spare">';
 	                            echo '<div class="index icon"><span>'.($repeater_i+1).'</span><span class="icon"></span></div>';
 	                                echo '<div class="repeated-fields">';
-	                                PerchContent_Util::display_item_fields($tag->tags, $repeater_id.'_'.$repeater_i, array(), $Page, $Form, $Template);  
-	                                echo '<input type="hidden" name="perch_'.($repeater_id.'_'.$repeater_i).'_present" class="present" value="1" />';  
+	                                PerchContent_Util::display_item_fields($tag->tags, $repeater_id.'_'.$repeater_i, array(), $Page, $Form, $Template);
+	                                echo '<input type="hidden" name="perch_'.($repeater_id.'_'.$repeater_i).'_present" class="present" value="1" />';
 	                                echo '</div>';
 	                                echo '<div class="rm"></div>';
 	                        echo '</div>';
@@ -516,13 +516,13 @@ class PerchContent_Util
 	                            echo '<input type="hidden" name="perch_'.$repeater_id.'_count" value="0" class="count" />';
 	                        echo '</div>';
 	                    }
-	                    
-	                    
+
+
 	                echo '</div>';
 
 	                if ($tag->divider_after()) {
 	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
-	                }  
+	                }
 	            }elseif ($tag->type()=='PerchBlocks') {
 
 	            	if ($tag->divider_before()) {
@@ -543,7 +543,7 @@ class PerchContent_Util
 
 	                echo '<div class="field '.$Form->error($item_id, false).'">';
 	                echo '<div class="fieldtbl">';
-	                
+
 	                    $label_text  = PerchUtil::html($tag->label());
 	                    if ($tag->type() == 'textarea') {
 	                        if (PerchUtil::bool_val($tag->textile()) == true) {
@@ -556,25 +556,28 @@ class PerchContent_Util
 	                    $Form->disable_html_encoding();
 	                    echo '<div class="fieldlbl">'.$Form->label($item_id, $label_text, '', false, false).'</div>';
 	                    $Form->enable_html_encoding();
-	                    
-	                    
+
+
 	                    $FieldType = PerchFieldTypes::get($tag->type(), $Form, $tag, false, $Form->app_id);
-	                    
+
 	                    echo '<div class="field-wrap">';
 	                    echo $FieldType->render_inputs($item);
-	                        
+
 	                    if ($tag->help()) {
 	                        echo $Form->translated_hint($tag->help());
 	                    }
 	                    echo '</div>';
-	        
-	                echo '</div>';
-	                echo '</div>';      
 
-	                                      
+	                echo '</div>';
+	                echo '</div>';
+
+	                if ($tag->divider_after()) {
+	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
+	                }
+
 	            }
 
-	    
+
 	            $seen_tags[] = $tag->id();
 	        }else{
 	            if (!in_array($tag->id(), $seen_tags) && $tag->edit_control()) {
@@ -613,14 +616,14 @@ class PerchContent_Util
 	    		$flat_data = PerchContent_Util::flatten_details($blocks_data, '_blocks', false, true);
 	    	}
 
-	        foreach($blocks_data as $count => $block_data) {        	
+	        foreach($blocks_data as $count => $block_data) {
 	        	if (isset($flat_data[$count])) {
-	        		$block_data = array_merge($block_data, $flat_data[$count]);	
+	        		$block_data = array_merge($block_data, $flat_data[$count]);
 	        	}
 	        	self::display_block($id, $blocks_index, $block_data, $count, $Page, $Template, $Form, $stamp);
 	        }
 	    }
-	    
+
 	    echo '<div class="master block-add-bar '.(PerchUtil::count($blocks_data)?'hidden':'').'" tabindex="0">';
 			$qs        = array();
 			$qs['id']  = PerchUtil::get('id');
@@ -642,11 +645,11 @@ class PerchContent_Util
 	public static function display_block($id, $blocks_index, $block_data, $count, $Page, $Template, $Form, &$stamp, $empty=false)
 	{
 		if ($id===null) {
-			$block_id = '_blocks_'.$count;	
+			$block_id = '_blocks_'.$count;
 		}else{
-			$block_id = $id.'__blocks_'.$count;	
+			$block_id = $id.'__blocks_'.$count;
 		}
-				
+
 		$label = false;
 		if (isset($blocks_index[$block_data['_block_type']])) {
 		    $Tag = $blocks_index[$block_data['_block_type']];
@@ -692,7 +695,7 @@ class PerchContent_Util
 		}
 
 
-		$block_id = $id.'__blocks_'.$block_index;		
+		$block_id = $id.'__blocks_'.$block_index;
 		$tags_for_block = $Template->get_block_tags($block_data['_block_type']);
 		self::set_required_fields($Form, $block_id, $block_data, $tags_for_block, $Template);
 

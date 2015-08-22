@@ -1,6 +1,8 @@
 <?php
     $auth_page = true;
     $done = false;
+    $mode = 'request_link';
+    $error = false;
 
     include('../inc/pre_config.php');
     include('../../config/config.php');
@@ -8,7 +10,7 @@
 
     $Perch  = new Perch;
     include(PERCH_CORE . '/inc/auth.php');
-    
+
     // Check for logout
     if ($CurrentUser->logged_in() && isset($_GET['logout']) && is_numeric($_GET['logout'])) {
         $CurrentUser->logout();
@@ -20,15 +22,44 @@
     }
 
     $Perch->page_title = PerchLang::get('Reset your password');
-    
-    
+
+    if (PerchUtil::get('token')) {
+        $mode = 'enter_token';
+
+        $Users = new PerchUsers();
+        $User = $Users->get_by_password_recovery_token(PerchUtil::get('token'));
+        if (!$User) {
+            $mode = 'token_expired';
+        }else{
+
+            if (PerchUtil::post('username') && PerchUtil::post('new_password')) {
+                if (PerchUtil::post('username')==$User->userUsername()) {
+                    PerchUtil::debug('Username matches');
+
+                    if (PerchUtil::post('new_password') == PerchUtil::post('new_password2')) {
+                        $User->set_new_password(PerchUtil::post('new_password'));
+                        $mode = 'password_set';
+                    }else {
+                        $error = 'non_matching_passwords';
+                    }
+                }else{
+                    $error = 'non_matching_username';
+                }
+            }
+
+        }
+
+
+    }
+
+
     if (isset($_POST['reset']) && $_POST['reset']=='1' && isset($_POST['email']) && $_POST['email']!='') {
         $email = $_POST['email'];
         if (PerchUtil::is_valid_email($email)) {
             $Users = new PerchUsers();
             $User = $Users->find_by_email($email);
             if (is_object($User)) {
-                $User->reset_pwd_and_notify();
+                $User->send_password_recovery_link();
             }
         }
         $done = true;
@@ -52,23 +83,25 @@
             <h1><?php echo PerchLang::get('Reset password'); ?></h1>
         </div>
         <div class="bd">
-            
+
 <?php
-    if ($done) {
-?>            
+    if ($mode == 'request_link') {
+
+        if ($done) {
+?>
             <form action="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/reset/" method="post" class="reset">
-                <p class="instructions"><?php echo PerchLang::get('Thank you. Now check your email for the new password.'); ?></p>
+                <p class="instructions"><?php echo PerchLang::get('Thank you. Now check your email for the recovery link.'); ?></p>
                 <p class="instructions"><?php echo PerchLang::get('If you do not receive an email, look in your spam folder and also check that the email address you have used is the one we have for you.'); ?></p>
                 <p class="instructions"><?php echo PerchLang::get('%sLog in%s or %stry again%s', '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'">', '</a>', '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/reset/">', '</a>'); ?></p>
             </form>
 <?php
-    }else{
+        }else{
 ?>
             <form action="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/reset/" method="post" class="reset">
-                <p class="instructions"><?php echo PerchLang::get('If you have forgotten your password, enter your email address and a new password will be sent to you.'); ?></p>
+                <p class="instructions"><?php echo PerchLang::get('If you have forgotten your password, enter your email address and you will be sent a recovery link.'); ?></p>
                 <div<?php if (isset($_POST['email']) && @$_POST['email']=='') echo ' class="error"'; ?>>
                     <label for="email"><?php echo PerchLang::get('Email'); ?></label>
-                    <input type="email" name="email" value="<?php echo PerchUtil::html(@$_POST['email'],1); ?>" id="email" class="text" />
+                    <input type="email" name="email" value="<?php echo PerchUtil::html((isset($_POST['email']) ? $_POST['email'] : ''),1); ?>" id="email" class="text" />
                     <?php if (isset($_POST['email']) && @$_POST['email']=='') echo '<span class="error">'.PerchLang::get('Required').'</span>'; ?>
                 </div>
 
@@ -78,14 +111,75 @@
                 </p>
             </form>
 
-<?php    
-    }
+<?php
+        }
+    } // request link
+
+    if ($mode == 'enter_token') {
 ?>
+        <form action="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/reset/?token=<?php echo PerchUtil::html(PerchUtil::get('token'), true); ?>" method="post" class="reset recover">
+            <p class="instructions"><?php echo PerchLang::get('Please confirm your username and then choose a new password.'); ?></p>
+
+            <?php if ($error && $error=='non_matching_username') { ?>
+                <p class="instructions error"><?php echo PerchLang::get('Sorry, that username is not correct.'); ?></p>
+            <?php } ?>
+
+            <?php if ($error && $error=='non_matching_passwords') { ?>
+                <p class="instructions error"><?php echo PerchLang::get('Sorry, your new passwords did not match. Try typing them again.'); ?></p>
+            <?php } ?>
+
+
+            <div<?php if (isset($_POST['username']) && @$_POST['username']=='') echo ' class="error"'; ?>>
+                <label for="username"><?php echo PerchLang::get('Username'); ?></label>
+                <input type="username" name="username" value="<?php echo PerchUtil::html((isset($_POST['username']) ? $_POST['username'] : ''),1); ?>" id="username" class="text" />
+                <?php if (isset($_POST['username']) && @$_POST['username']=='') echo '<span class="error">'.PerchLang::get('Required').'</span>'; ?>
+            </div>
+
+            <div<?php if (isset($_POST['new_password']) && @$_POST['new_password']=='') echo ' class="error"'; ?>>
+                <label for="new_password"><?php echo PerchLang::get('New password'); ?></label>
+                <input type="password" autocomplete="off" name="new_password" value="" id="new_password" class="text" />
+                <?php if (isset($_POST['password']) && @$_POST['password']=='') echo '<span class="error">'.PerchLang::get('Required').'</span>'; ?>
+            </div>
+
+            <div<?php 
+                        if ((isset($_POST['new_password2']) && @$_POST['new_password2']=='') 
+                        || isset($_POST['new_password']) && @$_POST['new_password2']!=@$_POST['new_password']) echo ' class="error"'; ?>>
+                <label for="new_password2"><?php echo PerchLang::get('Repeat new password'); ?></label>
+                <input type="password" autocomplete="off" name="new_password2" value="" id="new_password2" class="text" />
+                <?php if (isset($_POST['password']) && @$_POST['password']=='') echo '<span class="error">'.PerchLang::get('Required').'</span>'; ?>
+            </div>
+
+            <p class="submit">
+                <input type="submit" class="button" value="<?php echo PerchLang::get('Reset password'); ?>">
+                <input type="hidden" name="reset" value="1" />
+            </p>
+        </form>
+<?php
+    } // enter_token
+
+    if ($mode == 'token_expired') {
+?>
+            <form action="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/reset/" method="post" class="reset">
+                <p class="instructions"><?php echo PerchLang::get('Sorry, that recovery link has expired. For security reasons, you need to %srequest a new link%s', '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/reset/">', '</a>'); ?></p>
+            </form>
+<?php
+    } // token_expired
+
+
+    if ($mode == 'password_set') {
+?>
+            <form action="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/" method="post" class="reset">
+                <p class="instructions"><?php echo PerchLang::get('Thank you. Your new password has been set and you can now log in using it.'); ?></p>
+                <p class="instructions"><?php echo PerchLang::get('%sLog in%s', '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'" class="button">', '</a>'); ?></p>
+            </form>
+<?php
+    } // password_set
+?>
+
         </div>
-        
+
     </div>
 
 
 <?php
     include(PERCH_CORE . '/inc/btm.php');
-?>
