@@ -31,14 +31,18 @@ class PerchRouter
 
 		if ($url==='') $url = '/'; // homepage
 
-		$sql  = 'SELECT p.pagePath, pr.routePattern, pr.routeRegExp, p.pageTemplate FROM '.$this->table .' p LEFT JOIN '.PERCH_DB_PREFIX.'page_routes pr 
-				ON p.pageID=pr.pageID ORDER BY pr.routeOrder ASC';
+		$sql  = 'SELECT p.pagePath, pr.routePattern, pr.routeRegExp, p.pageTemplate FROM '.$this->table .' p LEFT JOIN '.PERCH_DB_PREFIX.'page_routes pr
+				ON p.pageID=pr.pageID ORDER BY pr.routeOrder ASC, p.pagePath ASC';
+
 		$rows = $this->db->get_rows($sql);
 
 		if (PerchUtil::count($rows)) {
 			$patterns = [];
 			foreach($rows as $row) {
-				if ($url == $row['pagePath']) return new PerchRoutedPage($url, $url, $query, false, $row['pageTemplate']);
+				if ($url == $row['pagePath']) {
+					PerchUtil::debug('Matched page: '.$row['pagePath'].', so not using routes.', 'routing');
+					return new PerchRoutedPage($url, $url, $query, false, $row['pageTemplate']);
+				}
 				if ($row['routeRegExp']!='') $patterns[] = $row;
 			}
 			if (count($patterns)) {
@@ -48,7 +52,7 @@ class PerchRouter
 						return new PerchRoutedPage($url, $pattern['pagePath'], $query, $match, $pattern['pageTemplate']);
 					}
 				}
-			}			
+			}
 		}
 
 		return new PerchRoutedPage($url, $url, $query, false, 'errors/404.php', 404);
@@ -64,7 +68,7 @@ class PerchRouter
 				}else{
 					$url_pattern = str_replace($match[0], $this->token_to_regexp($match[1]), $url_pattern);
 				}
-				
+
 			}
 			if ($posix) return '/'.$url_pattern.'/?$';
 
@@ -92,14 +96,14 @@ class PerchRouter
 		if (isset($token_list[$token])) {
 
 			if ($name) {
-				return '(?<'.$name.'>'.$token_list[$token].')';	
+				return '(?<'.$name.'>'.$token_list[$token].')';
 			}else{
-				return '('.$token_list[$token].')';	
+				return '('.$token_list[$token].')';
 			}
 		}
 
 		if ($name) {
-			return '(?<'.$name.'>'.$token.')';	
+			return '(?<'.$name.'>'.$token.')';
 		}
 
 		return $token;
@@ -121,7 +125,7 @@ class PerchRouter
 		$token_list = $this->get_tokens();
 
 		if (isset($token_list[$token])) {
-			return '('.$token_list[$token].')';	
+			return '('.$token_list[$token].')';
 		}
 
 		return $token;
@@ -143,7 +147,7 @@ class PerchRouter
 		$parts = parse_url($url);
 		$out = [];
 		$out[] = rtrim($parts['path'], '/');
-		
+
 		// querystring
 		if (isset($parts['query'])) {
 			$out[] = $parts['query'];

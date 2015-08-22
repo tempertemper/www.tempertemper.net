@@ -3,9 +3,9 @@
       if (strpos($_SERVER['SCRIPT_NAME'], 'start.php')) {
         die('You have included the Perch runtime in your page template. Please remove it - Runway will include it for you.');
       }else{
-        die('You have included the Perch runtime in your page more than once. Please only include it once.');  
+        die('You have included the Perch runtime in your page more than once. Please only include it once.');
       }
-    }  
+    }
 
     define('PERCH_ERROR_MODE', 'SILENT');
 	  include(__DIR__.'/../inc/pre_config.php');
@@ -14,7 +14,6 @@
     include(PERCH_CORE . '/runtime/loader.php');
     include(PERCH_CORE . '/inc/apps.php');
     include(PERCH_PATH . '/core/inc/forms.php');
-   	
    	if (file_exists(PERCH_PATH . '/config/feathers.php')){
       include(PERCH_PATH . '/config/feathers.php');
       include(PERCH_PATH . '/core/inc/feathers.php');

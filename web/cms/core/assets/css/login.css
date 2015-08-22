@@ -227,6 +227,10 @@ form div.error .text {
 	margin-bottom: 20px;
 }
 
+.instructions.error {
+	color: #b34040;
+}
+
 .instructions a:link,
 .instructions a:visited {
 	text-decoration: none;
@@ -300,3 +304,16 @@ code.sql {
 	color: navy;
 }
 
+form.recover div.error label,
+form.recover label {
+	width: 150px;
+}
+
+form.recover div.error .text,
+form.recover .text {
+	width: 220px;
+}
+
+form.recover p.submit {
+	margin-left: 165px;
+}

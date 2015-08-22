@@ -105,6 +105,7 @@ class PerchUtil
 		    		if ($dev) $out .= 	'<td>'.round($msg['time'] - $time, 4).'</td>';
 		    		if ($dev) $out .= 	'<td>'.round($msg['time'] - $prev_time, 4).'</td>';
 		    		$out .= 	'<td class="'.$msg['type'].'" title="'.$msg['caller'].'">'.$msg['msg'].'</td>';
+		    		#$out .= 	'<script>console.log(\''.str_replace(PHP_EOL, " \\", addslashes($msg['msg'])).'\');</script>';
 		    		$out .= '</tr>';
 		    		$prev_time = $msg['time'];
 		    	}
@@ -164,8 +165,16 @@ class PerchUtil
 		}
 	}
 
-	public static function setcookie($name, $value = '', $expires = 0, $path = '', $domain = '', $secure = false, $http_only = false)
+	public static function setcookie($name, $value = '', $expires = 0, $path = '', $domain = '', $secure = null, $http_only = true)
 	{
+		if ($secure===null) {
+			if (defined('PERCH_SSL') && PERCH_SSL) {
+				$secure = true;
+			}else{
+				$secure = false;
+			}
+		}
+
 	   header('Set-Cookie: ' . rawurlencode($name) . '=' . rawurlencode($value)
 	                         . (empty($expires) ? '' : '; expires=' . gmdate('D, d-M-Y H:i:s \\G\\M\\T', $expires))
 	                         . (empty($path)    ? '' : '; path=' . $path)
@@ -1151,6 +1160,20 @@ class PerchUtil
 	static function flush_output()
 	{
 		if (defined('PERCH_PROGRESSIVE_FLUSH') && PERCH_PROGRESSIVE_FLUSH) flush();
+	}
+
+	static function set_security_headers()
+	{
+		/* https://www.owasp.org/index.php/List_of_useful_HTTP_headers */
+		header('X-Frame-Options: deny');
+		header('X-XSS-Protection: 1; mode=block');
+		header('X-Content-Type-Options: nosniff');
+
+		if (defined('PERCH_SSL') && PERCH_SSL) {
+			header('Strict-Transport-Security: max-age=31536000; includeSubDomains; preload');
+		}
+
+		header_remove('X-Powered-By');
 	}
 
 }

@@ -50,6 +50,7 @@
     	if (!isset($data['pageHidden'])) $data['pageHidden'] = '0';
     	
         if (!PERCH_RUNWAY) {
+            if (!isset($data['pageSubpagePath'])) $data['pageSubpagePath'] = false;
             $data['pageSubpagePath'] = '/'.ltrim($data['pageSubpagePath'], '/');
             $_POST['pageSubpagePath'] = $data['pageSubpagePath'];
         }

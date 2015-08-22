@@ -106,7 +106,11 @@ class PerchContent_Collection extends PerchBase
 	     */
 	    public function role_may_edit($User)
 	    {
-
+	    	/*
+				Changes here should also be reflected in 
+				PerchRunway::find_collections_for_app_menu()
+	    	*/
+				
 	        if ($User->roleMasterAdmin()) return true;
 
 	        $roleID = $User->roleID();
@@ -503,7 +507,10 @@ class PerchContent_Collection extends PerchBase
 	    {
 	    	$items = $Region->get_items();
 
-	    	if (PerchUtiL::count($items)) {
+	    	if (PerchUtil::count($items)) {
+
+	    		$Resources = new PerchResources;
+
 	    		foreach($items as $RegionItem) {
 
 	    			$CollectionItem = $this->add_new_item();
@@ -520,6 +527,15 @@ class PerchContent_Collection extends PerchBase
 
 	    			$CollectionItem->publish();
 	    			$CollectionItem->index();
+
+	    			if ($CollectionItem->ready_to_log_resources()) {
+	                	$resourceIDs = $RegionItem->get_logged_resource_ids();
+	                	if (PerchUtil::count($resourceIDs)) {
+	                	    $CollectionItem->log_resources($resourceIDs);
+	                	}else{
+	                		PerchUtil::debug('No resources to log', 'error');
+	                	}
+	                }
 
 	    		}
 	    	}

@@ -21,19 +21,19 @@
 	                $path = '/';
 	            }
 				echo PerchUtil::html($path);
-			
+
 			?>" class="icon site assist"><span><?php echo PerchLang::get('My Site'); ?></span></a></li>
     </ul>
     <?php
         if ($CurrentUser->logged_in()) {
-                        
+
             $nav   = $Perch->get_apps(true);
 
 			$app_count = PerchUtil::count($nav);
 
             if (is_array($nav)) {
                 echo '<ul class="mainnav">';
-                
+
                 // content app - special status
                 if ($nav[0]['section']=='core/apps/content') {
                     $item = $nav[0];
@@ -41,7 +41,7 @@
                     echo '<a href="'.PerchUtil::html($item['path']).'/">'.PerchUtil::html($item['label']).'</a></li>';
                     array_shift($nav);
                 }
-                 
+
                 // assets app - special status
                 if (isset($nav[0]) && $nav[0]['section']=='core/apps/assets') {
                     $item = $nav[0];
@@ -50,7 +50,7 @@
                     array_shift($nav);
                 }
 
-                // others   
+                // others
 				//if ($app_count>2) {
 	                echo '<li id="appmenu" class="apps">';
 
@@ -67,27 +67,27 @@
 	                                		echo '<a href="'.PerchUtil::html($item['path'].'/'.$item['create_page']).'/" class="add">+</a>';
 	                                	}
 
-	                                	
+
 	                                }
 
 	                                echo '<a href="'.PerchUtil::html($item['path']).'">'.PerchUtil::html($item['label']).'</a>';
-	                                
+
 	                                echo '</li>';
 	                            }
 	                    echo '</ul>';
 	                echo '</li>';
 				//}
-                
+
                 // users
                 if ($CurrentUser->has_priv('perch.users.manage') && !PERCH_AUTH_PLUGIN) {
                     $item = array('path'=>PERCH_LOGINPATH.'/core/users/', 'label'=>'Users', 'section'=>'core/users');
                     echo ($item['section'] == $section ? '<li class="selected">' : '<li>');
                     echo '<a href="'.PerchUtil::html($item['path']).'">'.PerchUtil::html(PerchLang::get($item['label'])).'</a></li>';
                 }
-                
+
                 echo '</ul>';
-				
-			    
+
+
             }
         }
     ?>

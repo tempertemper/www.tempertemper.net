@@ -33,7 +33,7 @@
 <?php
 	if ($CurrentUser->logged_in()) {
 ?>
-<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-1.11.2.min.js"></script>
+<script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/jquery-ui.js?v=<?php echo PerchUtil::html($Perch->version); ?>"></script>
 <script src="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/js/perch.min.js?v=<?php echo PerchUtil::html($Perch->version); ?>"></script>
 <?php

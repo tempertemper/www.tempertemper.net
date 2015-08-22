@@ -3,7 +3,7 @@
 	font-size: 14px;
 	text-align: left;
 	background-color: rgba(255, 255, 255, 0.8);
-	color: #000;
+	color: #676767;
 	clear: both;
 }
 
@@ -20,6 +20,7 @@
 .perch-debug .success { color: green; border-left: 2px solid green; }
 .perch-debug .db { color: purple; border-left: 2px solid silver; }
 .perch-debug .post { color: brown; border-left: 2px solid silver; }
+.perch-debug .routing { color: silver; }
 .perch-debug .xmlrpc { color: navy;}
 .perch-debug .stats { color: teal;}
 .perch-debug .marker { color: white; background-color: cyan;}
@@ -32,6 +33,7 @@ table.showall {
 
 table.showall th {
 	font-weight: bold;
+	color: #aaa;
 }
 
 table.showall th,

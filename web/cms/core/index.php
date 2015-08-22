@@ -114,7 +114,7 @@
                 
                 <div<?php if ($login_attempt && $password=='') echo ' class="error"'; ?>>
                     <label for="password"><?php echo PerchLang::get('Password'); ?></label>
-                    <input type="password" name="password" value="" id="password" class="text" />
+                    <input type="password" name="password" value="" id="password" class="text" autocomplete="off" />
                     <?php if ($login_attempt && $password=='') echo '<span class="error">'.PerchLang::get('Required').'</span>'; ?>
                 </div>
 

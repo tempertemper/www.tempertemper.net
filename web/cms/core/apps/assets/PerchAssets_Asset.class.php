@@ -135,7 +135,7 @@ class PerchAssets_Asset extends PerchBase
                 $this->update($data);
             }
         }else{
-            $this->mark_as_awol();
+            //$this->mark_as_awol();
         }
     }
 
