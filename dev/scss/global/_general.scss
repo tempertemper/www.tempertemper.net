@@ -17,11 +17,15 @@ body {
   }
 }
 
-.go-to {
-  @include link-marker;
-  @include font-heading-regular;
-  clear: both;
-  display: inline-block;
+.read-more {
+  text-align: center;
+
+  a {
+    @include link-marker;
+    @include font-heading-regular;
+    display: inline-block;
+    margin-top: 0;
+  }
 }
 
 img {
