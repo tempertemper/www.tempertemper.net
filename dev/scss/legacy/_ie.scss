@@ -1,4 +1,4 @@
-.ie {
+.ie8 {
 
   body {
     width: 500px;
@@ -74,6 +74,16 @@
 
     &:before {
       content: 'Twitter:';
+    }
+  }
+}
+
+.ie9 {
+
+  .teaser {
+
+    li {
+      float: left;
     }
   }
 }

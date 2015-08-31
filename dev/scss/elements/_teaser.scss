@@ -1,23 +1,26 @@
 .teaser {
 
-  .index-list {
-    @include full-width;
-  }
-
-  .call-to-action {
-    text-align: center;
-  }
-
   @media (min-width: $l) {
+
+    .index-list {
+      @include full-width;
+      display: flex;
+    }
 
     li {
       @include layout($wide-layout);
-      @include span(2 of 6);
-      margin-bottom: 3em;
+      @include highlight-box;
+      margin-bottom: 1em;
+      width: span(2 of 6);
+      margin-right: gutter();
 
       &:last-of-type {
-        @include span(last 2 of 6);
+        margin-right: 0;
       }
+    }
+
+    h2 {
+      margin-top: 0;
     }
   }
 }
