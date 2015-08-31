@@ -2,8 +2,6 @@ linters:
 
 # Overrides
 
-  # NestingDepth:
-  #   max_depth: 4 # Aim to decreased this to 3 at one point
   EmptyLineBetweenBlocks:
     ignore_single_line_blocks: false # Single line blocks are inconsistent with the overall style
   PropertyUnits:
