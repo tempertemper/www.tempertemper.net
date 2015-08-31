@@ -1,25 +1,22 @@
 .teaser {
 
-  @media (min-width: $l) {
+  .index-list {
+    @include full-width;
+  }
+
+  .call-to-action {
     text-align: center;
   }
 
-  .index-list {
-    @include full-width;
+  @media (min-width: $l) {
 
-    @media (min-width: $l) {
+    li {
+      @include layout($wide-layout);
+      @include span(2 of 6);
+      margin-bottom: 3em;
 
-      li {
-        @include layout($wide-layout);
-        @include span(2 of 6);
-        margin-bottom: 3em;
-        text-align: left;
-
-        // Nesting needs to be this deep, unfortunately. I'll have a look at the markup at one point soon and sort it
-        // scss-lint:disable NestingDepth
-        &:last-of-type {
-          @include span(last 2 of 6);
-        }
+      &:last-of-type {
+        @include span(last 2 of 6);
       }
     }
   }

@@ -7,11 +7,15 @@
       <li>
         <h2><a href="/projects/<perch:content id="slug" type="slug" />"><perch:content id="title" type="text" /></a></h2>
         <p><perch:content id="excerpt" type="textarea" striptags="true" /></p>
-        <a href="/projects/<perch:content id="slug" type="slug" />" class="go-to">Read more</a>
+        <div class="read-more">
+          <a href="/projects/<perch:content id="slug" type="slug" />" class="go-to">Read more</a>
+        </div>
       </li>
 
 <perch:after>
     </ul>
-    <a href="/projects" class="go-to">View more projects</a>
+    <div class="read-more">
+      <a href="/projects">View more projects</a>
+    </div>
   </section>
 </perch:after>
