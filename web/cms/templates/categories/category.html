@@ -7,7 +7,9 @@
 
     <perch:category id="desc" type="textarea" label="Description" markdown="true" size="s" />
 
-    <a href="/services/<perch:category id="catSlug" type="slug" for="catTitle" />" class="go-to">View <perch:category id="catTitle" type="smarttext" label="Title" required="true" /> work</a>
+    <div class="read-more">
+      <a href="/services/<perch:category id="catSlug" type="slug" for="catTitle" />">View <perch:category id="catTitle" type="smarttext" label="Title" required="true" /> work</a>
+    </div>
   </li>
 
 <perch:after>

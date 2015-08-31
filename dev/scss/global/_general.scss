@@ -4,13 +4,8 @@ body {
 }
 
 ::selection {
-  background: $colour-primary; // Safari
-  color: white;
-}
-
-::-moz-selection {
-  background: $colour-primary; // Firefox
-  color: white;
+  background: $colour-primary;
+  color: $white;
 }
 
 [role="main"],
@@ -22,11 +17,15 @@ body {
   }
 }
 
-.go-to {
-  @include link-marker;
-  clear: both;
-  display: inline-block;
-  @include font-heading-regular;
+.read-more {
+  text-align: center;
+
+  a {
+    @include link-marker;
+    @include font-heading-regular;
+    display: inline-block;
+    margin-top: 0;
+  }
 }
 
 img {
@@ -47,8 +46,8 @@ img {
 
 pre {
   padding: 1em;
-  background-color: black;
-  color: white;
+  background-color: $black;
+  color: $white;
 }
 
 img,
@@ -65,12 +64,14 @@ a img {
   display: inline;
 }
 
+// This selector is in an iframe so I've got no control over its formatting
+// scss-lint:disable SelectorFormat
 .wistia_embed {
   margin-top: 1em;
   margin-bottom: 1em;
   background-color: $colour-primary-light;
 
-  & > div {
+  > div {
     width: 100% !important;
   }
 }

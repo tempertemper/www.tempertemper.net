@@ -2,15 +2,15 @@ $ms-base: $font-size;
 $ms-ratio: $major-third;
 
 @mixin font-heading-regular {
-  font-family: "FS Me Web Regular", sans-serif;
-  font-size-adjust: 0.53;
+  font-family: 'FS Me Web Regular', sans-serif;
+  font-size-adjust: .53;
   font-weight: normal;
   font-style: normal;
 }
 
 @mixin font-heading-light {
-  font-family: "FS Me Web Light", sans-serif;
-  font-size-adjust: 0.53;
+  font-family: 'FS Me Web Light', sans-serif;
+  font-size-adjust: .53;
   font-weight: 200;
   font-style: normal;
 }
@@ -18,7 +18,7 @@ $ms-ratio: $major-third;
 @mixin heading-style {
   @include font-heading-light;
   margin-top: 1.414em;
-  margin-bottom: 0.25em;
+  margin-bottom: .25em;
   line-height: 1.05;
 }
 
