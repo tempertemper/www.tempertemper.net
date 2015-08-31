@@ -1,4 +1,4 @@
-@mixin textLink {
+@mixin text-link {
   transition: color .2s ease;
 
   &:link,
@@ -14,25 +14,25 @@
   &:hover,
   &:active,
   &:focus {
-    color: black;
+    color: $black;
   }
 }
 
 a {
-  @include textLink;
-}
+  @include text-link;
 
-a > img {
-  display: block;
-  border: 3px solid $colour-primary;
+  > img {
+    display: block;
+    border: 3px solid $colour-primary;
 
-  &:visited {
-    border-color: $colour-primary-darker;
-  }
+    &:visited {
+      border-color: $colour-primary-darker;
+    }
 
-  &:hover,
-  &:active,
-  &:focus {
-    border-color: black;
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $black;
+    }
   }
 }

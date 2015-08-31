@@ -13,6 +13,13 @@ html {
   text-decoration: none;
 }
 
+// Autoprefixer doesn't pick up `text-size-adjust` for some reason, so these have to be left in
+// scss-lint:disable VendorPrefix
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 pre,
 code {
   font-size: 100%;
@@ -46,12 +53,12 @@ a img,
 img,
 iframe,
 fieldset {
-  border: none;
+  border: 0;
 }
 
 legend {
   padding: 0;
-  color: #000000;
+  color: $black;
 }
 
 input,
@@ -71,14 +78,8 @@ table {
   border-collapse: collapse;
 }
 
-// remove Firefox default focus property
-a:focus {
-  outline: none;
-}
-
-// remove Webkit form focus
-input:focus,
-textarea:focus {
+// removes default focus property
+:focus {
   outline: none;
 }
 
@@ -93,16 +94,16 @@ textarea:focus {
   box-shadow: none;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="url"],
+[type="text"],
+[type="email"],
+[type="tel"],
+[type="url"],
 textarea {
   -webkit-appearance: none;
 }
 
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button {
+::-webkit-search-decoration,
+::-webkit-search-cancel-button {
   display: none;
 }
 
@@ -111,7 +112,7 @@ button {
   background-image: none;
 }
 
-nav a.selected {
+nav .selected {
   cursor: default;
 }
 

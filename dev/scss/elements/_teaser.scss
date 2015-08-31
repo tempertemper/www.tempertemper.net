@@ -10,11 +10,13 @@
     @media (min-width: $l) {
 
       li {
-        text-align: left;
         @include layout($wide-layout);
         @include span(2 of 6);
         margin-bottom: 3em;
+        text-align: left;
 
+        // Nesting needs to be this deep, unfortunately. I'll have a look at the markup at one point soon and sort it
+        // scss-lint:disable NestingDepth
         &:last-of-type {
           @include span(last 2 of 6);
         }
