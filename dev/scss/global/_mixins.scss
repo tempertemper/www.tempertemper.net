@@ -2,7 +2,7 @@
 
   &:before,
   &:after {
-    content: " ";
+    content: ' ';
     display: table;
   }
 
@@ -23,7 +23,7 @@
   }
 
   &:after {
-    content: "\00a0\203A";
+    content: '\00a0\203A';
     display: inline-block;
   }
 }
@@ -40,8 +40,8 @@
   }
 
   &:before {
-    content: "\2039";
-    margin-right: 0.25em;
+    content: '\2039';
+    margin-right: .25em;
     display: inline-block;
   }
 }
@@ -65,7 +65,7 @@
   display: inline-block;
   width: auto;
   border-radius: $border-radius-default;
-  padding: 0.5em 2em;
+  padding: .5em 2em;
   border-style: solid;
   border-width: 3px;
   margin-top: 1em;
@@ -81,26 +81,26 @@
   &:focus,
   &:active {
     text-decoration: none;
-    border-color: #000;
-    color: #000;
+    border-color: $black;
+    color: $black;
   }
 }
 
 @mixin button-primary {
   @include button;
   background-color: $colour-primary;
-  color: #fff;
+  color: $white;
 
   &:link,
   &:visited {
-    color: #fff;
+    color: $white;
   }
 
   &:hover,
   &:focus,
   &:active {
-    background-color: #000;
-    color: #fff;
+    background-color: $black;
+    color: $white;
   }
 }
 
@@ -114,7 +114,7 @@
   width: auto;
 
   &:before {
-    content: "/";
+    content: '/';
     display: inline-block;
   }
 

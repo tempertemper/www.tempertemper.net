@@ -1,48 +1,47 @@
 // Global
 
-@import "global/variables",
-        "global/reset",
-        "global/mixins";
+@import 'global/variables',
+        'global/reset',
+        'global/mixins';
 
 // Layout
 
-@import "../components/susy/sass/susy",
-        "layout/maps",
-        "layout/mixins",
-        "layout/layout";
+@import '../components/susy/sass/susy',
+        'layout/maps',
+        'layout/mixins',
+        'layout/layout';
 
 // Typography
 
-@import "../components/modular-scale/stylesheets/modular-scale",
-        "typography/mixins",
-        "typography/general",
-        "typography/headings",
-        "typography/links";
+@import '../components/modular-scale/stylesheets/modular-scale',
+        'typography/mixins',
+        'typography/general',
+        'typography/headings',
+        'typography/links';
 
 // Styling
 
-@import "global/forms",
-        "global/general",
-        "global/paging";
+@import 'global/forms',
+        'global/general',
+        'global/paging';
 
 // Elements
 
-@import "elements/header",
-        "elements/navigation",
-        "elements/call-to-action",
-        "elements/search",
-        "elements/footer",
-        "elements/map",
-        "elements/teaser",
-        "elements/details",
-        "elements/subscribe",
-        "elements/contact-form";
+@import 'elements/header',
+        'elements/navigation',
+        'elements/call-to-action',
+        'elements/search',
+        'elements/footer',
+        'elements/teaser',
+        'elements/details',
+        'elements/subscribe',
+        'elements/contact-form';
 
 // Sections
 
-@import "sections/blog";
+@import 'sections/blog';
 
 // Legacy
 
-@import "legacy/print",
-        "legacy/ie";
+@import 'legacy/print',
+        'legacy/ie';

@@ -12,3 +12,6 @@ js:
 files:
   - 'copy'
   - 'imagemin'
+
+lint:
+  - 'scsslint'

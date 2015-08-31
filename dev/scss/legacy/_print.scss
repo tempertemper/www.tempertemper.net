@@ -21,11 +21,11 @@
   }
 
   [role="banner"] {
-    border-top: none;
+    border-top: 0;
   }
 
   [role="contentinfo"] {
-    border-bottom: none;
+    border-bottom: 0;
   }
 
   .logo {
@@ -61,14 +61,11 @@
   ul,
   ol {
 
-    a {
+    [href^=http] {
+      font-weight: bold;
 
-      &[href^=http] {
-        font-weight: bold;
-
-        &:after {
-          content:" <" attr(href) "> ";
-        }
+      &:after {
+        content: ' <' attr(href) '> ';
       }
     }
   }

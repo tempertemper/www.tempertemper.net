@@ -1,7 +1,7 @@
 module.exports = {
   sass: {
     files: ['dev/scss/**'],
-    tasks: ['sass', 'postcss'],
+    tasks: ['scsslint', 'sass', 'postcss'],
     options: {
       spawn: false,
       livereload: true,

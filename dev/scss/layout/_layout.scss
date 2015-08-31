@@ -1,7 +1,7 @@
 body {
   @include container(50em);
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-left: .5em;
+  padding-right: .5em;
 }
 
 @media (min-width: $l) {
@@ -9,8 +9,8 @@ body {
   [role="main"],
   [role="complementary"] {
     @include layout($wide-layout);
-    width: span(4 of 6);
     @include pre(1 of 6);
+    width: span(4 of 6);
   }
 }
 

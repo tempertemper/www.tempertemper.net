@@ -1,0 +1,22 @@
+linters:
+
+# Overrides
+
+  # NestingDepth:
+  #   max_depth: 4 # Aim to decreased this to 3 at one point
+  EmptyLineBetweenBlocks:
+    ignore_single_line_blocks: false # Single line blocks are inconsistent with the overall style
+  PropertyUnits:
+    # global: ['em', '%'] # Allow relative units globally
+    properties:
+      border: ['px'] # Only pixels
+      border-radius: ['px'] # Only pixels
+      text-shadow: ['px'] # Only pixels
+      line-height: [] # No units allowed
+
+# To add back in at one point
+
+  PropertySortOrder:
+    enabled: false # Makes gzipped file smaller
+  ImportantRule:
+    enabled: false # work out how to override svg paths without !important

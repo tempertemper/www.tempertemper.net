@@ -1,8 +1,8 @@
 .paging {
+  @include font-heading-regular;
   clear: both;
   margin-top: 4em;
   line-height: 1;
-  @include font-heading-regular;
 
   .page {
     text-align: center;
@@ -14,12 +14,12 @@
   }
 
   .previous {
-    float: left;
     @include reverse-link-marker;
+    float: left;
   }
 
   .next {
-    float: right;
     @include link-marker;
+    float: right;
   }
 }

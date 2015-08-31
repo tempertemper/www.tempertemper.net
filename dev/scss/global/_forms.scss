@@ -1,6 +1,6 @@
 label {
-  color: $colour-primary;
   @include font-heading-regular;
+  color: $colour-primary;
 }
 
 input,
@@ -9,13 +9,13 @@ textarea {
   width: 100%;
   border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
-  padding: 0.5em 1em;
+  padding: .5em 1em;
   margin-bottom: 1em;
   transition: color .3s ease;
   font-family: Georgia, serif;
 
   &:focus {
-    border-color: black;
+    border-color: $black;
   }
 }
 
@@ -27,7 +27,7 @@ textarea {
   height: 10em;
 }
 
-input[type="submit"] {
+[type="submit"] {
   @include button-primary;
   display: block;
 }

@@ -1,7 +1,7 @@
 body {
-  color: black;
-  font-size: 90%;
   @include font-body;
+  color: $black;
+  font-size: 90%;
 
   @media (min-width: $s) {
     font-size: 120%;
@@ -13,8 +13,8 @@ body {
 }
 
 blockquote {
-  border-left: 0.75em solid $colour-primary-light;
-  padding: 0.5em 0 0.5em 1em;
+  border-left: .75em solid $colour-primary-light;
+  padding: .5em 0 .5em 1em;
   margin-right: 0;
   margin-left: 0;
   padding-right: 1.25em;
@@ -25,9 +25,9 @@ blockquote {
 }
 
 cite {
+  @include font-heading-regular;
   display: block;
   margin-top: 1em;
-  @include font-heading-regular;
 }
 
 strong {
@@ -60,7 +60,7 @@ ol {
 
 code {
   font-family: menlo, monaco, "Lucida Console", monospace;
-  font-size: 0.8em;
+  font-size: .8em;
 }
 
 .index-list {
