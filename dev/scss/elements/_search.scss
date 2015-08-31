@@ -55,7 +55,7 @@
     }
 
     @media (min-width: $s) and (max-width: $l) {
-      @include layout($susy);
+      @include layout($default);
       @include pre(1 of 6);
       width: span(4 of 6);
     }
