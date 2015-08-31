@@ -4,6 +4,7 @@ default:
 css:
   - 'sass'
   - 'postcss'
+  - 'scsslint'
 
 js:
   - 'concat'
@@ -12,6 +13,3 @@ js:
 files:
   - 'copy'
   - 'imagemin'
-
-lint:
-  - 'scsslint'
