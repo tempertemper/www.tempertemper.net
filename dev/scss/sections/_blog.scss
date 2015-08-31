@@ -22,8 +22,9 @@
 .tags {
 
   a {
+
     &:before {
-      content: "#";
+      content: '#';
     }
   }
 }

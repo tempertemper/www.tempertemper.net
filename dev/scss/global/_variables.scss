@@ -11,7 +11,7 @@ $xl: 72em;
 
 // Primary (blue)
 
-$colour-primary: #0097DB; // normal
+$colour-primary: #0097db; // normal
 $colour-primary-lighter: lighten($colour-primary, 5%);
 $colour-primary-light: lighten($colour-primary, 53%);
 $colour-primary-darker: darken($colour-primary, 5%);
@@ -19,13 +19,15 @@ $colour-primary-darkest: darken($colour-primary, 15%);
 
 // Secondary (black)
 
-$colour-secondary-lighter: lighten(black, 60%);
-$colour-secondary-light: lighten(black, 95%);
+$black: #000;
+$colour-secondary-lighter: lighten($black, 60%);
+$colour-secondary-light: lighten($black, 95%);
+$white: #fff;
 
 // STYLE
 
 $border-radius-default: 5px;
-$divider: 3px solid black;
+$divider: 3px solid $black;
 
 // FONTS
 

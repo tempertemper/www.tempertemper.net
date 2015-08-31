@@ -12,15 +12,15 @@
   &:focus {
 
     .icon-search {
-      fill: black !important;
+      fill: $black !important;
     }
   }
 
   label {
     position: absolute;
     display: block;
-    top: 0.55em;
-    left: 0.6em;
+    top: .55em;
+    left: .6em;
     $svg-height: 1.4em;
     height: $svg-height;
     width: $svg-height;
@@ -34,7 +34,7 @@
 
   [type="search"] {
     padding-left: 2.2em;
-    padding-right: 0.5em;
+    padding-right: .5em;
   }
 
   [type="submit"] {
@@ -50,14 +50,14 @@
 
       @media (min-width: $l) {
         left: auto;
-        right: 0.5em;
+        right: .5em;
       }
     }
 
     @media (min-width: $s) and (max-width: $l) {
-      @include layout($susy);
-      width: span(4 of 6);
+      @include layout($default);
       @include pre(1 of 6);
+      width: span(4 of 6);
     }
 
     @media (min-width: $l) {
@@ -65,13 +65,10 @@
       right: 0;
     }
 
-    &:hover,
-    &:active,
-    &:focus {
-
-      input {
-        border-color: black;
-      }
+    &:hover input,
+    &:active input,
+    &:focus input {
+      border-color: $black;
     }
 
     [type="search"] {
@@ -83,13 +80,15 @@
         float: right;
         text-align: right;
         padding-right: 1.2em;
-        padding-left: 0.5em;
+        padding-left: .5em;
         color: transparent;
 
+        // Nesting needs to be this deep, unfortunately. I'll maybe add a class to the header search box at one point
+        // scss-lint:disable NestingDepth
         &:focus {
           width: 100%;
           padding-right: 2.2em;
-          color: black;
+          color: $black;
         }
       }
     }

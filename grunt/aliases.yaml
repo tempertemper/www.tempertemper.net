@@ -4,6 +4,7 @@ default:
 css:
   - 'sass'
   - 'postcss'
+  - 'scsslint'
 
 js:
   - 'concat'

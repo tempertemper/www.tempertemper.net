@@ -1,24 +1,26 @@
 .teaser {
 
   @media (min-width: $l) {
-    text-align: center;
-  }
 
-  .index-list {
-    @include full-width;
+    .index-list {
+      @include full-width;
+      display: flex;
+    }
 
-    @media (min-width: $l) {
+    li {
+      @include layout($wide-layout);
+      @include highlight-box;
+      margin-bottom: 1em;
+      width: span(2 of 6);
+      margin-right: gutter();
 
-      li {
-        text-align: left;
-        @include layout($wide-layout);
-        @include span(2 of 6);
-        margin-bottom: 3em;
-
-        &:last-of-type {
-          @include span(last 2 of 6);
-        }
+      &:last-of-type {
+        margin-right: 0;
       }
+    }
+
+    h2 {
+      margin-top: 0;
     }
   }
 }

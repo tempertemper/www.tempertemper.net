@@ -1,21 +1,18 @@
 nav {
   @include font-heading-regular;
 
-  li {
+  .selected a,
+  .ancestor a {
 
-    &.selected a,
-    &.ancestor a {
+    &:link,
+    &:visited {
+      color: $colour-primary-darkest;
+    }
 
-      &:link,
-      &:visited {
-        color: $colour-primary-darkest;
-      }
-
-      &:hover,
-      &:active,
-      &:focus {
-        color: black;
-      }
+    &:hover,
+    &:active,
+    &:focus {
+      color: $black;
     }
   }
 }
@@ -30,17 +27,17 @@ nav {
   }
 
   li:first-child a {
-    padding-top: 0.75em;
+    padding-top: .75em;
   }
 
   li:last-child a {
-    padding-bottom: 0.9em;
+    padding-bottom: .9em;
   }
 
   a {
     display: block;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
+    padding-top: .25em;
+    padding-bottom: .25em;
   }
 }
 
@@ -76,30 +73,29 @@ nav {
   pointer-events: none !important;
 }
 
+// Two vendor prefix olny properties
+// scss-lint:disable VendorPrefix
 .nav-toggle {
-  -webkit-tap-highlight-color: black;
+  -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  padding: 0.4em;
+  padding: .4em;
   border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
 
   &:hover,
   &:active,
   &:focus {
-    border-color: black;
+    border-color: $black;
 
     path {
-      fill: black !important;
+      fill: $black !important;
     }
   }
 
   button {
-    border: none;
+    border: 0;
     background-color: transparent;
     padding: 0;
     display: block;
@@ -136,11 +132,15 @@ nav {
 
 @media screen and (min-width: $l) {
 
-  .js .nav-collapse {
-    position: relative;
-  }
-  .js .nav-collapse.closed {
-    max-height: none;
+  .js {
+
+    .nav-collapse {
+      position: relative;
+
+      &.closed {
+        max-height: none;
+      }
+    }
   }
 
   [role="navigation"] {
@@ -151,8 +151,8 @@ nav {
     ul {
       width: auto;
       float: left;
-      margin-top: 0.2em;
-      padding-bottom: 0.3em;
+      margin-top: .2em;
+      padding-bottom: .3em;
 
       @media (min-width: $l) {
         padding-right: 3em;
@@ -162,18 +162,12 @@ nav {
     li {
       @include inline-nav;
 
-      &:first-child {
-
-        a {
-          padding-top: 0;
-        }
+      &:first-child a {
+        padding-top: 0;
       }
 
-      &:last-child {
-
-        a {
-          padding-bottom: 0;
-        }
+      &:last-child a {
+        padding-bottom: 0;
       }
     }
   }
