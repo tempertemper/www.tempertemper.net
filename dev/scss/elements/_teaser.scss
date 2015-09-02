@@ -11,7 +11,7 @@
       @include layout($wide-layout);
       @include highlight-box;
       margin-bottom: 1em;
-      width: span(2 of 6);
+      width: span(3 of 6);
       margin-right: gutter();
 
       &:last-of-type {

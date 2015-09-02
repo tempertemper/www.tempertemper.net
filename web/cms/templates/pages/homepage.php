@@ -10,7 +10,7 @@
   <?php
     perch_collection('Projects', [
       'template' => 'project_teaser.html',
-      'count'=>3,
+      'count'=>2,
       'sort'=>'date',
       'sort-order'=>'DESC'
     ]);
