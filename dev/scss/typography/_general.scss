@@ -12,7 +12,11 @@ body {
   }
 
   @media (min-width: $l) {
-    font-size: 150%;
+    font-size: 160%;
+  }
+
+  @media (min-width: $xl) {
+    font-size: 180%;
   }
 }
 
