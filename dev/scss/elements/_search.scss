@@ -42,54 +42,49 @@
   }
 }
 
-[role="navigation"] {
+[role="navigation"] [role="search"] {
 
-  [role="search"] {
-
-    label {
-
-      @media (min-width: $l) {
-        left: auto;
-        right: .5em;
-      }
-    }
-
-    @media (min-width: $s) and (max-width: $l) {
-      @include layout($default);
-      @include pre(1 of 6);
-      width: span(4 of 6);
-    }
+  label {
 
     @media (min-width: $l) {
-      position: absolute;
-      right: 0;
+      left: auto;
+      right: .5em;
     }
+  }
 
-    &:hover input,
-    &:active input,
-    &:focus input {
-      border-color: $black;
-    }
+  @media (min-width: $s) and (max-width: $l) {
+    @include layout($default);
+    @include pre(1 of 6);
+    width: span(4 of 6);
+  }
 
-    [type="search"] {
-      margin-bottom: 0;
+  @media (min-width: $l) {
+    position: absolute;
+    right: 0;
+  }
 
-      @media (min-width: $l) {
-        width: 2.45em;
-        transition: all .4s ease;
-        float: right;
-        text-align: right;
-        padding-right: 1.2em;
-        padding-left: .5em;
-        color: transparent;
+  &:hover input,
+  &:active input,
+  &:focus input {
+    border-color: $black;
+  }
 
-        // Nesting needs to be this deep, unfortunately. I'll maybe add a class to the header search box at one point
-        // scss-lint:disable NestingDepth
-        &:focus {
-          width: 100%;
-          padding-right: 2.2em;
-          color: $black;
-        }
+  [type="search"] {
+    margin-bottom: 0;
+
+    @media (min-width: $l) {
+      width: 2.45em;
+      transition: all .4s ease;
+      float: right;
+      text-align: right;
+      padding-right: 1.2em;
+      padding-left: .5em;
+      color: transparent;
+
+      &:focus {
+        width: 100%;
+        padding-right: 2.2em;
+        color: $black;
       }
     }
   }
