@@ -9,9 +9,10 @@
       $out = array();
 
       if (!$this->component_registered('style')) {
+        $version = filemtime($_SERVER['DOCUMENT_ROOT'].'/cms/addons/feathers/tempertemper/css/style.css');
         $out[] = $this->_single_tag('link', array(
             'rel'=>'stylesheet',
-            'href'=>$this->path.'/css/style.css?4.5.6'
+            'href'=>$this->path.'/css/style.css?v='.$version
           ));
         $this->register_component('style');
       }
