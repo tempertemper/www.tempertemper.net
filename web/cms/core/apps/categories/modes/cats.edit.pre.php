@@ -19,7 +19,7 @@
 	$HTML = $API->get('HTML');
 
 	$Sets 		= new PerchCategories_Sets;
-	$Categories = new PerchCategories_Categories;
+	$Categories = new PerchCategories_Categories($API);
 
 	/*
 		Initialising variables we need to set the default for our different edit states.

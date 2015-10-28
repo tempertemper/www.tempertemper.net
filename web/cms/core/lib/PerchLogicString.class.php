@@ -35,7 +35,7 @@ class PerchLogicString
 			while(mb_strpos($exp, '(', $ob+1)!==false && mb_strpos($exp, '(', $ob+1) < $cb) {
 				$ob = mb_strpos($exp, '(', $ob+1);
 			}
-			
+
 			// parse bracketed section and reconstruct expression
 			$exp = ($ob>0 ? mb_substr($exp, 0, $ob) : '') . $this->_parse_expression(mb_substr($exp, $ob+1, ($cb-$ob-1))) . mb_substr($exp, $cb+1);
 
@@ -47,7 +47,7 @@ class PerchLogicString
 		// break on (normalised) spaces; first 3 items should be value, operator, value
 		$parts = explode(' ', $exp);
 
-		while(count($parts)>2) {	
+		while(count($parts)>2) {
 			$args = array();
 			$args[0] = filter_var(array_shift($parts), FILTER_VALIDATE_BOOLEAN);
 			$op      = array_shift($parts);
@@ -56,11 +56,11 @@ class PerchLogicString
 			// compare and push result back onto the front of the array, then repeat until done
 			array_unshift($parts, $this->_compare_values($op, $args));
 		}
-		
+
 		return $parts[0];
 	}
 
-	private function _compare_values($op, $args) 
+	private function _compare_values($op, $args)
 	{
 		$r = false;
 
@@ -76,7 +76,7 @@ class PerchLogicString
 				break;
 		}
 
-		if ($r) return 'true';	
+		if ($r) return 'true';
 		return 'false';
 	}
 
@@ -92,7 +92,7 @@ class PerchLogicString
 		return $exp;
 	}
 
-	private function _replace_operators($exp) 
+	private function _replace_operators($exp)
 	{
 		return str_replace(array_keys($this->operators), array_values($this->operators), $exp);
 	}

@@ -17,7 +17,6 @@ class PerchAuthenticatedUser extends PerchBase
         if (strlen($password) > 72) return false;
 
         $username = filter_var($username, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-        $password = filter_var($password, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 
         if ($this->activate()) {
 

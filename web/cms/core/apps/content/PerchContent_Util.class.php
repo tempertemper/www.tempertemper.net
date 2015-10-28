@@ -113,10 +113,10 @@ class PerchContent_Util
 	    $deleted_blocks = array();
 	    if (isset($_POST['_blocks_deleted']) && PerchUtil::count($_POST['_blocks_deleted'])) {
 	    	$deleted_blocks = $_POST['_blocks_deleted'];
-	    	//PerchUtil::debug('Deleted blocks:');
-	    	//PerchUtil::debug($deleted_blocks);
+	    	#PerchUtil::debug('Deleted blocks:');
+	    	#PerchUtil::debug($deleted_blocks);
 	    }else{
-	    	//PerchUtil::debug('No deleted blocks');
+	    	#PerchUtil::debug('No deleted blocks');
 	    }
 
 	    //PerchUtil::debug($tags, 'success');
@@ -166,7 +166,7 @@ class PerchContent_Util
 
 	                }
 
-	                PerchUtil::debug('Looking for  '.$item_prefix.$subprefix.$i.' in deleted blocks list');
+	                //PerchUtil::debug('Looking for  '.$item_prefix.$subprefix.$i.' in deleted blocks list');
 	                //while (in_array($Item->itemID().'_'.$subprefix.$i, $deleted_blocks)) {
 	                while (in_array($item_prefix.$subprefix.$i, $deleted_blocks)) {
 	                	//PerchUtil::debug('Skipping '.$item_prefix.$subprefix.$i.' as deleted');
@@ -450,6 +450,10 @@ class PerchContent_Util
 	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
 	                }
 
+	                if ($tag->notes_before()) {
+	                    echo '<p class="formnotes">'.PerchUtil::html($tag->notes_before()).'</p>';
+	                }
+
 	                echo '<h3 class="label repeater-heading">'.$tag->label().'</h3>';
 	                echo '<div class="repeater" data-prefix="perch_'.PerchUtil::html($repeater_id).'"';
 	                if ($tag->max()) echo ' data-max="'.PerchUtil::html($tag->max()).'"';
@@ -529,6 +533,10 @@ class PerchContent_Util
 	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
 	                }
 
+	                if ($tag->notes_before()) {
+	                    echo '<p class="formnotes">'.PerchUtil::html($tag->notes_before()).'</p>';
+	                }
+
 	                echo PerchContent_Util::display_blocks($tags, $id, $item, $Page, $Form, $Template, $blocks_link_builder);
 
 	                if ($tag->divider_after()) {
@@ -539,6 +547,10 @@ class PerchContent_Util
 
 	                if ($tag->divider_before()) {
 	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
+	                }
+
+	                if ($tag->notes_before()) {
+	                    echo '<p class="formnotes">'.PerchUtil::html($tag->notes_before()).'</p>';
 	                }
 
 	                echo '<div class="field '.$Form->error($item_id, false).'">';

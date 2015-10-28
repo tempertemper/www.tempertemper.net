@@ -32,6 +32,10 @@ class PerchBase
 			return $this->details[$method];
 		}else{
 		    PerchUtil::debug('Looking up missing property ' . $method, 'notice');
+            $array = $this->to_array();
+            if (isset($array[$method])){
+                return $array[$method];
+            }
 		    if (isset($this->details[$this->pk])){
 		        $sql    = 'SELECT ' . $method . ' FROM ' . $this->table . ' WHERE ' . $this->pk . '='. $this->db->pdb($this->details[$this->pk]);
 		        $this->details[$method] = $this->db->get_value($sql);

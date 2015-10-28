@@ -833,7 +833,7 @@ class PerchTemplate
 	        	if (strpos(trim($exists_string), ' ')!==false) {
 	        		$operators = array('AND', 'OR', 'XOR');
 
-	        		preg_match_all('#\b[A-Za-z0-9_]+\b#', $exists_string, $ids, PREG_SET_ORDER);
+	        		preg_match_all('#!?\b[A-Za-z0-9_]+\b#', $exists_string, $ids, PREG_SET_ORDER);
 
 	        		if (PerchUtil::count($ids)) {
 
@@ -843,10 +843,23 @@ class PerchTemplate
 		        			$id = $id[0];
 		        			if (!in_array($id, $operators)) {
 
+		        				// Flip the operator?
+		        				if (substr($id, 0, 1)=='!') {
+		        					$id = substr($id, 1);
+		        					$flip_operator = true;
+		        				}else{
+		        					$flip_operator = false;
+		        				}
+
 					            if (array_key_exists($id, $content_vars) && $this->_resolve_to_value($content_vars[$id]) != '') {
-				    	            $logic_string = preg_replace('#\b'.preg_quote($id, '#').'\b#', 'true', $logic_string);
+					            	$op = 'true';
+					            	if ($flip_operator) $op = 'false';
+				    	            $logic_string = preg_replace('#!?\b'.preg_quote($id, '#').'\b#', $op, $logic_string);
 				    	        }else{
-				    	            $logic_string = preg_replace('#\b'.preg_quote($id, '#').'\b#', 'false', $logic_string);
+				    	        	$op = 'false';
+					            	if ($flip_operator) $op = 'true';
+
+				    	            $logic_string = preg_replace('#!?\b'.preg_quote($id, '#').'\b#', $op, $logic_string);
 				    	        }
 		        			}
 		        		}

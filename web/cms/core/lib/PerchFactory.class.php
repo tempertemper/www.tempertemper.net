@@ -289,14 +289,14 @@ class PerchFactory
         return '';
     }
 
-    public function get_filtered_listing($opts, $where_callback=null)
+    public function get_filtered_listing($opts, $where_callback=null, $pre_template_callback=null)
     {
         /*
             Are we using an index table? If so, filter differently.
 
          */
         if ($this->index_table!==false) {
-            return $this->get_filtered_listing_from_index($opts, $where_callback);
+            return $this->get_filtered_listing_from_index($opts, $where_callback, $pre_template_callback);
         }
 
         /*
@@ -546,6 +546,11 @@ class PerchFactory
                 $Paging->set_total($this->db->get_count($Paging->total_count_sql()));
             }
 
+            // pre-template callback
+            if (PerchUtil::count($rows) && $pre_template_callback && is_callable($pre_template_callback)) {
+                $rows = $pre_template_callback($rows);
+            }
+
             // each
             if (PerchUtil::count($rows) && isset($opts['each']) && is_callable($opts['each'])) {
                 $content = array();
@@ -658,7 +663,7 @@ class PerchFactory
         return $html;
     }
 
-    public function get_filtered_listing_from_index($opts, $where_callback)
+    public function get_filtered_listing_from_index($opts, $where_callback, $pre_template_callback=null)
     {
         $Perch = Perch::fetch();
 
@@ -1066,6 +1071,11 @@ class PerchFactory
             if (is_object($Paging)) {
                 $total_count = $this->db->get_value($Paging->total_count_sql());
                 $Paging->set_total($total_count);
+            }
+
+            // pre-template callback
+            if (PerchUtil::count($rows) && $pre_template_callback && is_callable($pre_template_callback)) {
+               $rows = $pre_template_callback($rows);
             }
 
             // each
