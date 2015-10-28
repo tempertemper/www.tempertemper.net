@@ -20,7 +20,7 @@
 	if (PerchUtil::count($buckets)) {
 		$opts = array();
 		foreach($buckets as $Bucket) {
-			$opts[] = ucwords($Bucket->get_name()).'|'.$Bucket->get_name();
+			if ($Bucket) $opts[] = ucwords($Bucket->get_name()).'|'.$Bucket->get_name();
 		}
 		$bucket_opts = implode(',',	$opts);
 	}

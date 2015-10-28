@@ -4,17 +4,17 @@ class PerchAPI_HTML
 {
     public $app_id = false;
     public $version = 1.0;
-    
+
     private $Lang = false;
-    
+
     function __construct($version=1.0, $app_id, $Lang)
     {
         $this->app_id = $app_id;
         $this->version = $version;
-        
+
         $this->Lang = $Lang;
     }
-    
+
     public function set_lang($Lang)
     {
         $this->Lang = $Lang;
@@ -23,39 +23,39 @@ class PerchAPI_HTML
     public function title_panel_start()
     {
     }
-    
+
     public function title_panel_end()
     {
     }
-    
+
     public function side_panel_start()
-    {	
+    {
 		include (PERCH_PATH.'/core/inc/sidebar_start.php');
     }
-    
+
     public function side_panel_end()
     {
 		include (PERCH_PATH.'/core/inc/sidebar_end.php');
     }
-    
+
     public function main_panel_start()
     {
 		include (PERCH_PATH.'/core/inc/main_start.php');
     }
-    
+
     public function main_panel_end()
     {
 		include (PERCH_PATH.'/core/inc/main_end.php');
     }
-    
-    
+
+
     public function heading1($string)
     {
         $args = func_get_args();
         array_shift($args);
 
         $string =  $this->Lang->get($string, $args);
-       
+
         return '<h1>'.$string.'</h1>';
     }
 
@@ -65,100 +65,100 @@ class PerchAPI_HTML
         array_shift($args);
 
         $string =  $this->Lang->get($string, $args);
-        
+
         return '<h2>'.$string.'</h2>';
     }
-    
+
     public function heading3($string)
     {
         $args = func_get_args();
         array_shift($args);
 
         $string =  $this->Lang->get($string, $args);
-        
+
         return '<h3><span>'.$string.'</span></h3>';
     }
-    
+
     public function heading3filter($string, $opts, $arg='by')
     {
 		$Perch = new PerchAdmin;
-	
+
         $s = '<h3 class="em"><span>'.$this->Lang->get($string).'<span class="filter">';
-        
+
         foreach($opts as $opt) {
             $s .= '<a href="'.PerchUtil::html($Perch->get_page()).'?'.$arg.'='.$opt['slug'].'" class="filter-'.$opt['slug'].' '.($opt['selected']?'selected':'').'">'.$this->Lang->get($opt['title']).'</a> ';
         }
-        
+
         $s .= '</span></span></h3>';
-        
+
         return $s;
     }
-    
+
     public function heading4($string)
     {
         $args = func_get_args();
         array_shift($args);
 
         $string =  $this->Lang->get($string, $args);
-        
+
         return '<h4>'.$string.'</h4>';
     }
-    
-    
+
+
     public function para($string)
     {
         $args = func_get_args();
         array_shift($args);
 
         $string =  $this->Lang->get($string, $args);
-        
+
         return '<p>'.$string.'</p>';
     }
-    
+
     public function form_help($string)
     {
         $args = func_get_args();
         array_shift($args);
 
         $string =  $this->Lang->get($string, $args);
-        
+
         return '<p class="form-help">'.$string.'</p>';
     }
-    
+
     public function warning_message($string)
     {
         $args = func_get_args();
         array_shift($args);
 
         $string =  $this->Lang->get($string, $args);
-        
+
         return '<p class="alert notice">'.$string.'</p>';
     }
-    
+
     public function success_message($string)
     {
         $args = func_get_args();
         array_shift($args);
 
         $string =  $this->Lang->get($string, $args);
-        
+
         return '<p class="alert success">'.$string.'</p>';
     }
-    
+
     public function failure_message($string)
     {
         $args = func_get_args();
         array_shift($args);
 
         $string =  $this->Lang->get($string, $args);
-        
+
         return '<p class="alert error">'.$string.'</p>';
     }
-    
+
     public function icon($type='tick', $alt='Success')
     {
         switch($type) {
-            
+
             case 'tick':
                 $file = 'icon_tick.gif';
                 break;
@@ -186,51 +186,51 @@ class PerchAPI_HTML
             case 'user':
                 $file = 'icon_user.png';
                 break;
-        
+
             default:
                 $file = false;
                 break;
         }
-        
+
         if ($file) {
             return '<img src="'.PERCH_LOGINPATH.'/assets/img/'.$file.'" alt="'.$this->encode($alt).'" />"';
         }
-        
+
     }
-    
+
     public function paging($Paging)
     {
         $paging = $Paging->to_array();
 
         if ((int)$paging['total_pages']<2) return '';
-        
+
         $s = '<div class="paging">';
-        
+
         if (isset($paging['not_first_page']) && $paging['not_first_page']) {
             $s .= '<a class="paging-prev button" href="'.$paging['prev_url'].'">'.$this->Lang->get('Prev').'</a> ';
         }
 
         $s .= '<span class="paging-status">'.$this->Lang->get('Page %s of %s', $paging['current_page'], $paging['total_pages']).'</span>';
 
-        
+
         if (isset($paging['not_last_page']) && $paging['not_last_page']) {
             $s .= '<a class="paging-next button" href="'.$paging['next_url'].'">'.$this->Lang->get('Next').'</a> ';
         }
-        
+
         $s .= '</div>';
-        
+
         return $s;
     }
-    
-    
-    
+
+
+
     public function encode($string, $quotes=false, $double_encode=false)
     {
         return PerchUtil::html($string, $quotes, $double_encode);
     }
 
-	public function subnav($CurrentUser, $opts) 
-	{  
+	public function subnav($CurrentUser, $opts)
+	{
 		return PerchUtil::subnav($CurrentUser, $opts, $this->Lang);
 	}
 
@@ -257,7 +257,7 @@ class PerchAPI_HTML
                     </thead>
                     <tbody>';
 
-            
+
 
             foreach($rows as $row) {
 
@@ -270,6 +270,15 @@ class PerchAPI_HTML
                 $s.= '<tr>';
 
                 foreach($values as $val) {
+
+                    $formatting_code = false;
+
+                    if (strpos($val, '|')>0) {
+                        $parts = explode('|', $val);
+                        $formatting_code = $parts[0];
+                        $val = $parts[1];
+                    }
+
                     if ($i==0) {
                         $s .= '<td class="primary">';
                         if ($edit_link) $s .= '<a href="'.$paths['edit'].'/?id='.$row->id().'">';
@@ -281,21 +290,21 @@ class PerchAPI_HTML
 
                         // link?
                         if (strpos($val, '/')!==false) {
-                            
+
                             if ($edit_link) $s .= '<a href="'.$val.'/?id='.$row->id().'">';
                                 $s .= $headings[$i];
                             if ($edit_link) $s .= '</a>';
-                        
+
                         }else{
                             $v_v = (isset($row_array[$val]) ? $row_array[$val] : $row->$val());
                             if (is_array($v_v) && isset($v_v['value'])) {
-                                $s .= $v_v['value'];
+                                $s .= $this->format_list_value($formatting_code, $v_v['value']);
                             }else{
-                                $s .= $v_v;
-                            }    
+                                $s .= $this->format_list_value($formatting_code, $v_v);
+                            }
                         }
 
-                        
+
                         $s .= '</td>';
                     }
 
@@ -306,22 +315,22 @@ class PerchAPI_HTML
                     if (isset($privs['not-inline'])) {
                         $s .= '<td><a href="'.$paths['delete'].'/?id='.$row->id().'" class="delete">'.$this->Lang->get('Delete').'</a></td>';
                     }else{
-                        $s .= '<td><a href="'.$paths['delete'].'/?id='.$row->id().'" class="delete inline-delete">'.$this->Lang->get('Delete').'</a></td>';    
+                        $s .= '<td><a href="'.$paths['delete'].'/?id='.$row->id().'" class="delete inline-delete">'.$this->Lang->get('Delete').'</a></td>';
                     }
-                    
+
                 }else{
                     $s .= '<td></td>';
                 }
-                $s .= '</tr>';               
+                $s .= '</tr>';
             }
 
-            
+
 
             $s .= '   </tbody>
                     </table>';
         }
         return $s;
-    }  
+    }
 
     public function smartbar()
     {
@@ -371,7 +380,7 @@ class PerchAPI_HTML
 
             $s .= '</span>';
             $s .= '</li>';
-        }      
+        }
 
         return $s;
     }
@@ -403,5 +412,27 @@ class PerchAPI_HTML
         $s .= '</li>';
 
         return $s;
+    }
+
+    private function format_list_value($code, $value)
+    {
+        if ($code===false) return $value;
+
+        switch($code) {
+
+            case 'active':
+                if ($value==0) return '';
+                if ($value==1) {
+                    return '<span class="icon ok"></span>';
+                }
+                break;
+
+            case 'implode':
+                if (!is_array($value)) return '';
+                return implode(', ', $value);
+                break;
+        }
+
+        return $value;
     }
 }

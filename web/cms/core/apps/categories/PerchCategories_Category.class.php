@@ -1,6 +1,6 @@
 <?php
 
-class PerchCategories_Category extends PerchBase
+class PerchCategories_Category extends PerchAPI_Base
 {
     protected $table        = 'categories';
     protected $pk           = 'catID';
@@ -9,6 +9,8 @@ class PerchCategories_Category extends PerchBase
     public function update($data)
     {
     	$r = parent::update($data);
+
+        $this->log_resources();
     	
     	$this->update_meta();
 

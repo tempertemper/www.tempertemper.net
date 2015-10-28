@@ -636,7 +636,7 @@ class PerchUtil
     	$string = trim($string);
     	$string = htmlspecialchars_decode($string, ENT_QUOTES);
     	$string = strip_tags($string);
-    	$string = str_replace(array('$', '£', '€', '™'), array('', 'GBP ', 'EUR ', 'tm'), $string);
+    	$string = str_replace(array('$', '£', '€', '™', '®', '|'), array('', 'GBP ', 'EUR ', 'tm', 'r', ''), $string);
     	$string = preg_replace('#(\d)\.(\d)#', '$1 $2', $string); // make sure numbers with decimals don't mislead, e.g. 2.5 -> 25
 
     	$tranliterator_rule = 'Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();';

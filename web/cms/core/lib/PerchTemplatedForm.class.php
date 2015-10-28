@@ -346,15 +346,23 @@ class PerchTemplatedForm
     private function _replace_select_field($match, $Tag, $template)
     {
         $attrs = $this->_copy_standard_attributes($Tag);
-        $opts = explode(',', $Tag->options());
+        $option_string = $Tag->options();
+        $option_string = str_replace('\,', '__COMMA__', $option_string);
+        $opts = explode(',', $option_string);
 
         // Allow empty?
+        $s = '';
+
         if ($Tag->allowempty()) {
-        	$s = '';
         	if ($Tag->placeholder()) {
         		$s .= $Tag->placeholder().'|';
         	}
         	array_unshift($opts, $s);
+        }else{
+            if ($Tag->placeholder()) {
+                $s = '!'.$Tag->placeholder().'|';
+            }
+            array_unshift($opts, $s);
         }
 
         $value    = $attrs['value'];
@@ -366,6 +374,16 @@ class PerchTemplatedForm
 
         if (PerchUtil::count($opts)) {
             foreach($opts as $opt) {
+
+                $attrs = array();
+
+                $opt = str_replace('__COMMA__', ',', $opt);
+
+                if (substr($opt, 0, 1)=='!') {
+                    $opt = substr($opt, 1);
+                    $attrs['disabled'] = 'disabled';
+                }
+
                 $val = $opt;
                 $text = $opt;
 
@@ -375,7 +393,6 @@ class PerchTemplatedForm
                     $val = $parts[1];
                 }
 
-                $attrs = array();
                 if (trim($val) == $value) $attrs['selected'] = 'selected';
                 $attrs['value'] = trim($val);
 
