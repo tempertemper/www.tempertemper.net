@@ -162,6 +162,8 @@ class PerchUtil
 			PerchSession::close();
 	    	header('Location: ' . $url);
 	    	exit;
+		}else{
+			PerchUtil::debug("Redirect held: $url");
 		}
 	}
 

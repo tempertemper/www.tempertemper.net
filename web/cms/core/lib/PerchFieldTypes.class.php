@@ -698,8 +698,14 @@ class PerchFieldType_select extends PerchFieldType
             foreach($opts as $opt) {
                 $parts = explode('|', $opt);
                 if (PerchUtil::count($parts)) {
-                    if (trim($parts[1])==$raw) {
-                        return trim($parts[0]);
+                    if (isset($parts[1])) {
+                        if (trim($parts[1])==$raw) {
+                            return trim($parts[0]);
+                        }
+                    }else{
+                        if (trim($parts[0])==$raw) {
+                            return trim($parts[0]);
+                        }
                     }
                 }
             }
