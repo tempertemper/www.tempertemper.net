@@ -75,7 +75,7 @@ class PerchRouter
 			return '^/'.$url_pattern.'/?$';
 		}
 
-		return $url_pattern;
+		return '^/'.$url_pattern.'/?$';
 	}
 
 	private function token_to_regexp($token)

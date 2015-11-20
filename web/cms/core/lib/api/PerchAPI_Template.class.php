@@ -25,6 +25,8 @@ class PerchAPI_Template
     {    
         $Perch = Perch::fetch(); // called to make sure constants are defined.
 
+        if ($file && substr($file, -5)!=='.html') $file .= '.html';
+
         $this->namespace = $namespace;
         
         if (strpos($file, '~')!==false) {

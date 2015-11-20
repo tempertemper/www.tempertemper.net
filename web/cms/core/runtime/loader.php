@@ -33,6 +33,11 @@
         define('PERCH_RUNWAY', false);
     }
 
+    if (!defined('PERCH_RUNWAY_ROUTED')) {
+        define('PERCH_RUNWAY_ROUTED', false);
+    }
+
+
     // Essentials used on every request - no point autoloading
     include(PERCH_CORE.'/lib/PerchDB.class.php');
     include(PERCH_CORE.'/lib/PerchDB_MySQL.class.php');
@@ -52,4 +57,10 @@
 
     if (!defined('PERCH_SECURITY_HEADERS') || PERCH_SECURITY_HEADERS===true) {
         PerchUtil::set_security_headers();
+    }
+
+    if (!PERCH_RUNWAY_ROUTED && isset($_SERVER['SCRIPT_FILENAME'])) {
+        if ($_SERVER['SCRIPT_FILENAME']!='') {
+            PerchUtil::invalidate_opcache($_SERVER['SCRIPT_FILENAME']);    
+        }
     }

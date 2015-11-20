@@ -789,5 +789,9 @@
     "Sorry, that username is not correct.": "Sorry, that username is not correct.",
     "Sorry, your new passwords did not match. Try typing them again.": "Sorry, your new passwords did not match. Try typing them again.",
     "Thank you. Your new password has been set and you can now log in using it.": "Thank you. Your new password has been set and you can now log in using it.",
-    "%sLog in%s": "%sLog in%s"
+    "%sLog in%s": "%sLog in%s",
+    "Errors": "Errors",
+    "Your resources folder is not writable. Make this folder (<code>": "Your resources folder is not writable. Make this folder (<code>",
+    "<\/code>) writable if you want to upload a custom logo.": "<\/code>) writable if you want to upload a custom logo.",
+    "Sorry, that backup plan could not be edited.": "Sorry, that backup plan could not be edited."
 }

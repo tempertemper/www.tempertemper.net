@@ -1,5 +1,5 @@
 <?php
-    require('../../../../../runtime.php');
+    require('../../../../../core/inc/api.php');
 
     if (!class_exists('PerchAssets_Assets', false)) {
         include_once(PERCH_CORE.'/apps/assets/PerchAssets_Assets.class.php');
@@ -12,10 +12,10 @@
         $Tag->set('input_id', 'miu_image_upload_image');
 
         $API = new PerchAPI(1.0, 'miu_image_upload');
-        
+
         if ($_POST['image']=='false'){
             $is_image = false;
-            $Tag->set('type', 'file');  
+            $Tag->set('type', 'file');
         }else{
             $is_image = true;
             $Tag->set('type', 'image');
@@ -30,12 +30,12 @@
 
         $Tag->set('bucket', $bucket_name);
 
-       
+
         if ($is_image) {
             $width = false;
             if (isset($_POST['width'])) $width = (int)$_POST['width'];
             $Tag->set('width', $width);
-        
+
             $height = false;
             if (isset($_POST['height'])) $height = (int)$_POST['height'];
             $Tag->set('height', $height);
@@ -43,7 +43,7 @@
             $crop = false;
             if (isset($_POST['crop']) && $_POST['crop']=='true') $crop = true;
             $Tag->set('crop', $crop);
-            
+
             $quality = false;
             if (isset($_POST['quality'])) $quality = (int)$_POST['quality'];
             $Tag->set('quality', $quality);
@@ -54,35 +54,35 @@
 
             $density = 1;
             if (isset($_POST['density'])) $density = (int)$_POST['density'];
-            $Tag->set('density', $density); 
+            $Tag->set('density', $density);
 
         }
 
         $Assets  = new PerchAssets_Assets;
-        
+
         $message = false;
         $assetID = false;
         $Asset = false;
-               
+
         $Form = new PerchForm('edit');
 
         $Resources = new PerchResources;
 
         $data = array();
-        $FieldType = PerchFieldTypes::get($Tag->type(), $Form, $Tag, array($Tag));
+        $FieldType = PerchFieldTypes::get($Tag->type(), $Form, $Tag, array($Tag), 'markitup');
         $var       = $FieldType->get_raw();
 
         if (PerchUtil::count($var)) {
-            
+
             $ids = $Resources->get_logged_ids();
             $Resources->mark_group_as_library($ids);
             $assetID = $ids[0];
             $Asset = $Assets->find($assetID);
 
             if (isset($_POST['miu_image_upload_title']) && $_POST['miu_image_upload_title']!='') {
-                $Asset->update(array('resourceTitle'=>$_POST['miu_image_upload_title']));    
+                $Asset->update(array('resourceTitle'=>$_POST['miu_image_upload_title']));
             }
-            
+
             $Asset->reindex();
 
             if (PerchUtil::count($ids)) {
@@ -116,9 +116,9 @@
                 exit;
             }
 
-            
+
         }
-       
+
     }
 
     echo 'FAIL';

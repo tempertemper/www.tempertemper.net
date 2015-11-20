@@ -86,7 +86,7 @@
 
         $tags   = $Template->find_all_tags_and_repeaters('content');
 
-        //PerchUtil::debug($tags, 'db');
+        //PerchUtil::debug($tags);
 
         $template_help_html = $Template->find_help();
 

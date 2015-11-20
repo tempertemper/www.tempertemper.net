@@ -25,6 +25,7 @@
 .perch-debug .stats { color: teal;}
 .perch-debug .marker { color: white; background-color: cyan;}
 .perch-debug .template { color: skyblue; }
+.perch-debug .template-error { color: maroon; border-left-color: maroon; border-left-width: 2px; }
 .perch-debug .auth { color: olivedrab; border-left: 2px solid silver; }
 
 table.showall {

@@ -535,24 +535,33 @@ class PerchFieldType_textarea extends PerchFieldType
 
             // Markdown
             if (!$formatting_language_used && PerchUtil::bool_val($this->Tag->markdown()) == true) {
+
+                //PerchUtil::debug($value);
+                $value1 = $value;
+
                 // Fix markdown blockquote syntax - > gets encoded.
                 $value = preg_replace('/[\n\r]&gt;\s/', "\n> ", $value);
 
                 // Fix autolink syntax
                 $value = preg_replace('#&lt;(http[a-zA-Z0-9-\.\/:]*)&gt;#', "<$1>", $value);
 
-                $Markdown = new ParsedownExtra();
-                $value = $Markdown->text($value);
 
                 if (!class_exists('\\Michelf\\SmartyPants', false) && class_exists('SmartyPants', true)) {
                     // sneaky autoloading hack
                 }
 
-                $SmartyPants = new \Michelf\SmartyPants;
+                $SmartyPants = new \Michelf\SmartyPants(\Michelf\SMARTYPANTS_ATTR_LONG_EM_DASH_SHORT_EN);
                 $value = $SmartyPants->transform($value);
                 if (PERCH_HTML_ENTITIES==false) {
                     $value = html_entity_decode($value, ENT_NOQUOTES, 'UTF-8');
+                    $value = PerchUtil::html($value, -1);
                 }
+
+                $Markdown = new ParsedownExtra();
+                $value = $Markdown->text($value);
+
+                // Parsedown has naive encoding of URLs - fix it.
+                $value = str_replace('&amp;amp;', '&amp;', $value);
 
                 $formatting_language_used = true;
                 $flang = 'markdown';
@@ -566,11 +575,12 @@ class PerchFieldType_textarea extends PerchFieldType
                         // sneaky autoloading hack
                     }
 
-                    $SmartyPants = new \Michelf\SmartyPants;
+                    $SmartyPants = new \Michelf\SmartyPants(\Michelf\SMARTYPANTS_ATTR_LONG_EM_DASH_SHORT_EN);
 
                     $value = $SmartyPants->transform($value);
                     if (PERCH_HTML_ENTITIES==false) {
                         $value = html_entity_decode($value, ENT_NOQUOTES, 'UTF-8');
+                        $value = PerchUtil::html($value, -1);
                     }
 
                     $flang = 'smartypants';
@@ -1915,11 +1925,12 @@ class PerchFieldType_smarttext extends PerchFieldType
                 // sneaky autoloading hack
             }
 
-            $SmartyPants = new \Michelf\SmartyPants;
+            $SmartyPants = new \Michelf\SmartyPants(\Michelf\SMARTYPANTS_ATTR_LONG_EM_DASH_SHORT_EN);
 
             $value = $SmartyPants->transform($value);
             if (PERCH_HTML_ENTITIES==false) {
                 $value = html_entity_decode($value, ENT_NOQUOTES, 'UTF-8');
+                $value = PerchUtil::html($value, -1);
             }
 
             $flang = 'smartypants';

@@ -1,6 +1,8 @@
 <?php
 	if (PHP_VERSION_ID<50400) die('Perch Runway requires PHP 5.4 or greater.');
 
+	define('PERCH_RUNWAY_ROUTED', true);
+
 	include(__DIR__.'/../runtime/runtime.php');
 	if (!PERCH_RUNWAY) die('Perch Runway requires a Runway license key.');
 
@@ -28,6 +30,7 @@
 		$Perch->event('page.loaded');
 
 		$RoutedPage->output_headers();
+		PerchUtil::invalidate_opcache($RoutedPage->template);
 		include($RoutedPage->template);
 	}
 

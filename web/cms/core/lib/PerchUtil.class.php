@@ -135,6 +135,10 @@ class PerchUtil
 	        $q = ENT_NOQUOTES;
 	    }
 
+	    if ($quotes===-1) {
+	    	$q = null;
+	    }
+
 		if ($s || (is_string($s) && strlen($s))) return htmlspecialchars($s, $q, 'UTF-8', $double_encode);
 	    return '';
 	}
@@ -1176,6 +1180,18 @@ class PerchUtil
 		}
 
 		header_remove('X-Powered-By');
+	}
+
+	static function invalidate_opcache($path, $min_version=false)
+	{
+		if ($min_version===false) $min_version = PERCH_PRODUCTION;
+
+		if (PERCH_PRODUCTION_MODE < $min_version && function_exists('opcache_invalidate')) {
+			PerchUtil::debug('Invalidating opcache: '.$path);
+			clearstatcache(true, $path);
+			return opcache_invalidate($path, true);
+		}
+		return false;
 	}
 
 }
