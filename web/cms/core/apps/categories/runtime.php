@@ -1,8 +1,4 @@
 <?php
-	#include(PERCH_CORE.'/apps/categories/PerchCategories_Categories.class.php');
-	#include(PERCH_CORE.'/apps/categories/PerchCategories_Category.class.php');
-	#include(PERCH_CORE.'/apps/categories/PerchCategories_Sets.class.php');
-	#include(PERCH_CORE.'/apps/categories/PerchCategories_Set.class.php');
 
 	spl_autoload_register(function($class_name){
         if (strpos($class_name, 'PerchCategories')===0) {

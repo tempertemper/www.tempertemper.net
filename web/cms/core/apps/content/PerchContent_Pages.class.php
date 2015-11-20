@@ -222,7 +222,7 @@ class PerchContent_Pages extends PerchFactory
                 $values[] = implode('-', $parts);
                 array_pop($parts);
             }
-            $sql = 'SELECT pageID FROM '.$table.' WHERE '.$where.' pageTreePosition IN ('.$this->db->implode_for_sql_in($values).')';
+            $sql = 'SELECT pageID FROM '.$table.' WHERE '.$where.' pageTreePosition IN ('.$this->db->implode_for_sql_in($values).') ORDER BY pageTreePosition DESC';
             $rows = $this->db->get_rows($sql);
 
             if (PerchUtil::count($rows)) {

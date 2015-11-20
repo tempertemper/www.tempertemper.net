@@ -24,6 +24,8 @@ class PerchTemplate
 	{
 		$Perch = Perch::fetch(); // required to define constants
 
+		if ($file && substr($file, -5)!=='.html') $file .= '.html';
+
 		$this->current_file = $file;
 		$this->namespace    = $namespace;
 
@@ -39,7 +41,7 @@ class PerchTemplate
 
 			$this->file_path = pathinfo($file, PATHINFO_DIRNAME);
 		}else{
-		    if ($file!=false) PerchUtil::debug('Template file not found: ' . $file, 'template');
+		    if ($file!=false) PerchUtil::debug('Template file not found: ' . $file, 'template-error');
 			$this->status = 404;
 		}
 
@@ -270,7 +272,10 @@ class PerchTemplate
 						if (isset($content_vars[$key])) {
 							$value = $content_vars[$key];
 						}else{
-							$contents = str_replace($match, '', $contents);
+							$replacement = '';
+							if ($tag->else()) $replacement = $tag->else();
+
+							$contents = str_replace($match, $replacement, $contents);
 							continue;
 						}
 
@@ -473,6 +478,8 @@ class PerchTemplate
 
 		if ($contents===false) $contents = $this->load();
 
+		$untouched_content = $contents;
+
 		$out = array();
 
 		// Excluded tags are discarded
@@ -545,17 +552,17 @@ class PerchTemplate
 	    			$tmp['tag'] = $OpeningTag;
 	    		}
 
+	    		// Set the order
 	    		if ($OpeningTag->order()) {
 	                $tmp['order'] = (int) $OpeningTag->order();
 	            }else{
-	                $tmp['order'] = $open_pos;
+	                $tmp['order'] = strpos($untouched_content, $opening_tag);
 	            }
 
 	            // If the tag isn't one to strip/exclude, add it to the list.
 	            if (!in_array($tag_type, $tag_pairs_to_exclude)) {
 	            	$out[] = $tmp;
 	            }
-
 
 				// Remove the pair so we can parse the next one
 				$contents = str_replace($pair_html, '', $contents);
@@ -590,19 +597,21 @@ class PerchTemplate
 		            	if ($tmp['tag']->order()) {
 			                $tmp['order'] = (int) $tmp['tag']->order();
 			            }else{
-			                $tmp['order'] = strpos($contents, $match);
+			                $tmp['order'] = strpos($untouched_content, $match);
+			                #PerchUtil::debug('Setting order to: '.$tmp['order']);
 			                $i++;
 			            }
 	                    $out[] = $tmp;
 		            }
 		        }
-		    }
-
-		    // sort tags using 'order' attribute
-		    $out = PerchUtil::array_sort($out, 'order');
+		    }				
 		}
 
 		if (PerchUtil::count($out)) {
+
+			// sort tags using 'order' attribute
+		    $out = PerchUtil::array_sort($out, 'order');  
+
 			$final = array();
 
 		    foreach($out as $tag) {
@@ -739,6 +748,7 @@ class PerchTemplate
     			$contents	= $this->cache[$this->template];
     		}else{
     			// read and cache
+    			PerchUtil::invalidate_opcache($this->file);
     			if (file_exists($this->file)){
     				$contents 	= file_get_contents($this->file);
     				$contents 	= $this->_strip_comments($contents);

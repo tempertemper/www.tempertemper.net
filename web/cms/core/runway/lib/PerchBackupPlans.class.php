@@ -21,5 +21,14 @@ class PerchBackupPlans extends PerchFactory
 									'planFrequency', 
 									'planBucket');
 
+	public function create($data)
+	{
+		if (!isset($data['planActive'])) {
+			$data['planActive'] = '0';
+		}
+
+		return parent::create($data);
+	}
+
 
 }

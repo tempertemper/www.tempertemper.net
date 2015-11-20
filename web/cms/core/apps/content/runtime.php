@@ -1,13 +1,4 @@
 <?php
-    #include(PERCH_CORE.'/apps/content/PerchContent_Regions.class.php');
-    #include(PERCH_CORE.'/apps/content/PerchContent_Region.class.php');
-    #include(PERCH_CORE.'/apps/content/PerchContent_Items.class.php');
-    #include(PERCH_CORE.'/apps/content/PerchContent_Item.class.php');
-    #include(PERCH_CORE.'/apps/content/PerchContent_Pages.class.php');
-    #include(PERCH_CORE.'/apps/content/PerchContent_Page.class.php');
-    #include(PERCH_CORE.'/apps/content/PerchContent.class.php');
-    #include(PERCH_CORE.'/apps/content/PerchContent_SearchHandler.class.php');
-
     spl_autoload_register(function($class_name){
         if (strpos($class_name, 'PerchContent')===0) {
             include(PERCH_CORE.'/apps/content/'.$class_name.'.class.php');

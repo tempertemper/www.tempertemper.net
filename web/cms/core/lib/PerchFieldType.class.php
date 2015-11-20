@@ -124,13 +124,31 @@ class PerchFieldType
     {
         $s = '';
         $id = $this->Tag->id();
+        $attrs = array();
+
+        if ($this->Tag->placeholder()) {
+            $attrs[] = 'placeholder="'.PerchUtil::html($this->Tag->placeholder(), true).'"';
+        }
+
+        if ($this->Tag->count()) {
+            if ($this->Tag->count()=='chars') $attrs[] = 'data-count="chars"';
+            if ($this->Tag->count()=='words') $attrs[] = 'data-count="words"';
+            $attrs[] = 'data-count-container="' . $this->Tag->input_id().'__count"';
+        }
+
+        $attrs = implode(' ', $attrs);
+
         $s = $this->Form->text($this->Tag->input_id(), 
                             $this->Form->get($details, $id, $this->Tag->default(), $this->Tag->post_prefix()), 
                             $this->Tag->size(), 
                             $this->Tag->maxlength(), 
                             'text', 
-                            $this->Tag->get_data_attribute_string()
+                            $attrs.$this->Tag->get_data_attribute_string()
                         );
+
+        if ($this->Tag->count()) {
+            $s .= '<div class="counter text-counter" id="'.$this->Tag->input_id().'__count"></div>';
+        }
 
         return $s;
     }

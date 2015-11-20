@@ -161,7 +161,7 @@ class PerchCategories_Categories extends PerchFactory
 			    }
 
 			    if ($setID) {
-			        $Query->where[] = ' setID='.$db->pdb($setID);
+			        $Query->where[] = ' setID='.$db->pdb((int)$setID);
 			    }
 			}
 

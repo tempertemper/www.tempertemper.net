@@ -134,7 +134,7 @@ class PerchScheduledTasks extends PerchFactory
 
     private function _load_app_callbacks()
     {
-    	$path = PERCH_PATH.'/addons/apps/';
+    	$path = PERCH_PATH.'/addons/apps';
 
     	$apps = PerchUtil::get_dir_contents(PerchUtil::file_path($path), true);
 
@@ -153,7 +153,6 @@ class PerchScheduledTasks extends PerchFactory
 
         if (PERCH_RUNWAY) {
             include(PERCH_CORE.'/runway/scheduled_tasks.php');
-            
         }
 
     	return $out;

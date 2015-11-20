@@ -137,24 +137,24 @@ class PerchAPI_SubmittedForm
 
         			            case 'number':
         			            case 'range':
-        			                if (filter_var($val, FILTER_VALIDATE_FLOAT)) {
+        			                if (filter_var($val, FILTER_VALIDATE_FLOAT)!==false) {
         			                    $val = (float)$val;
 
         			                    // min
-    			                        if ($Tag->min() && $val<(float)$Tag->min()) {
+    			                        if ($Tag->is_set('min') && $val<(float)$Tag->min()) {
     			                            $valid = false;
         			                        $Perch->log_form_error($this->formID, $Tag->id(), 'format');
     			                        }
 
         			                    // max
-    			                        if ($Tag->max() && $val>(float)$Tag->max()) {
+    			                        if ($Tag->is_set('max') && $val>(float)$Tag->max()) {
     			                            $valid = false;
         			                        $Perch->log_form_error($this->formID, $Tag->id(), 'format');
     			                        }
 
                                         // step
                                         $min = 0;
-                                        if ($Tag->min()) $min = (float)$Tag->min();
+                                        if ($Tag->is_set('min')) $min = (float)$Tag->min();
                                         if ($Tag->step() && strtolower($Tag->step())!='any' && ($val-$min)%(float)$Tag->step()>0) {
                                             $valid = false;
         			                        $Perch->log_form_error($this->formID, $Tag->id(), 'format');

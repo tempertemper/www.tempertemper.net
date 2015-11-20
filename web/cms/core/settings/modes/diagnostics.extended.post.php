@@ -108,8 +108,6 @@
                     }
                     
                 }
-                
-            
             ?>
             <?php
                 echo '<li>Editor plug-ins: '.implode(', ', PerchUtil::get_dir_contents(PerchUtil::file_path(PERCH_PATH.'/addons/plugins/editors/', true))).'</li>';
@@ -119,6 +117,7 @@
             <li>L1: <?php echo PerchUtil::html(md5(PERCH_LICENSE_KEY)); ?></li>
             
             <?php
+            
                 $settings = $Settings->get_as_array();
                 if (PerchUtil::count($settings)) {
                     foreach($settings as $key=>$val) {
@@ -128,6 +127,7 @@
             
             ?>
 			<?php
+            
                 $constants = get_defined_constants(true);
                 $ignore = array('PERCH_LICENSE_KEY', 'PERCH_DB_PASSWORD', 'PERCH_EMAIL_PASSWORD');
                 if (PerchUtil::count($constants['user'])) {
@@ -135,6 +135,7 @@
                         if (!in_array($key, $ignore) && substr($key, 0, 5)=='PERCH') echo '<li>'.PerchUtil::html($key.': '.$val).'</li>';
                     }
                 }
+                
             ?>
 		</ul>
 		<h3><?php echo PerchLang::get('Hosting settings'); ?></h3>
@@ -166,6 +167,7 @@
             <li>Transliteration functions: <?php echo function_exists('transliterator_transliterate')?'Yes':'No'; ?></li>
             
             <?php
+            
                 $first = true;
                 foreach($_SERVER as $key=>$val) {
                     if ($key && $val){
@@ -175,10 +177,11 @@
                     }
                     
                 }
+
             ?>       
         </ul>
         
     </div>
     
 
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+<?php include (PERCH_PATH.'/core/inc/main_end.php'); 

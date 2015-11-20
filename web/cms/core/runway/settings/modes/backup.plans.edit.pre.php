@@ -30,7 +30,7 @@
 	$default_fields = '<perch:backup id="planTitle" type="text" label="'.$l3.'" required="true" />
 					   <perch:backup id="planRole" type="select" label="'.$l4.'" options="'.$l1.'|all,'.$l2.'|db" />
 					   <perch:backup id="planFrequency" type="number" label="'.$l6.'" default="24" help="'.$l7.'" size="s" />
-					   <perch:backup id="planBucket" type="select" label="'.$l8.'" options="'.$bucket_opts.'" />	   
+					   <perch:backup id="planBucket" type="select" label="'.$l8.'" options="'.$bucket_opts.'" required="true" />	   
 					   <perch:backup id="planActive" type="checkbox" label="'.$l5.'" value="1" />
 					   ';
 
@@ -70,10 +70,16 @@
         if (!is_object($Plan)) {
 
             $Plan = $Plans->create($data);
-            PerchUtil::redirect(PERCH_LOGINPATH .'/core/settings/backup/edit/?id='.$Plan->id().'&created=1');
+
+            if (is_object($Plan)) {
+            	PerchUtil::redirect(PERCH_LOGINPATH .'/core/settings/backup/edit/?id='.$Plan->id().'&created=1');	
+            }
+            
         }
 
-        $Plan->update($data);
+        if (is_object($Plan)) {
+        	$Plan->update($data);
+        }
     	
 
         if (is_object($Plan)) {
