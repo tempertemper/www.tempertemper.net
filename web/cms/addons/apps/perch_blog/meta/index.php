@@ -11,14 +11,14 @@
     $Perch->add_css($API->app_path().'/assets/css/blog.css');
 
     # Do anything you want to do before output is started
-    include('../modes/edit.pre.php');
+    include('../modes/edit.meta.pre.php');
 
     # Top layout
     include(PERCH_CORE . '/inc/top.php');
 
     # Display your page
-    include('../modes/edit.post.php');
-
+    include('../modes/edit.meta.post.php');
 
     # Bottom layout
     include(PERCH_CORE . '/inc/btm.php');
+
