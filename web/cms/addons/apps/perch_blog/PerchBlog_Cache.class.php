@@ -6,9 +6,9 @@ class PerchBlog_Cache
     private $cache = array();
 
     private static $disabled = false;
-        
+
     public static function fetch()
-    {       
+    {
         if (!isset(self::$instance)) {
             $c = __CLASS__;
              self::$instance = new $c;
@@ -18,21 +18,21 @@ class PerchBlog_Cache
     }
 
 
-    
+
     public function exists($key)
     {
         return array_key_exists($key, $this->cache);
     }
-    
+
     public function get($key)
     {
         if (array_key_exists($key, $this->cache)) {
             return $this->cache[$key];
         }
-        
+
         return false;
     }
-    
+
     public function set($key, $value)
     {
         $this->cache[$key] = $value;
@@ -62,11 +62,11 @@ class PerchBlog_Cache
         PerchUtil::debug('Fetching from cache: '.$key);
 
         $file = PerchUtil::file_path(PERCH_RESFILEPATH.'/perch_blog.'.$key.'.cache');
-        
+
         if (file_exists($file)) {
             $stat = stat($file);
             $mod_time = (int)$stat['mtime'];
-            
+
             if (time()-($minutes*60)<$mod_time) {
                 return file_get_contents($file);
             }
@@ -75,7 +75,7 @@ class PerchBlog_Cache
         }
         return false;
     }
-    
+
     public static function expire_all()
     {
         $files = glob(PerchUtil::file_path(PERCH_RESFILEPATH.'/perch_blog.*.cache'));

@@ -19,7 +19,7 @@ class PerchBlog_Comment extends PerchAPI_Base
 
             if ($this->commentStatus()=='SPAM' && $status=='LIVE') {
                 // was marked as spam, but isn't. So tell askismet.
-                
+
                 $spam_data = PerchUtil::json_safe_decode($this->commentSpamData(), true);
 
                 if (PerchUtil::count($spam_data)){
@@ -29,7 +29,7 @@ class PerchBlog_Comment extends PerchAPI_Base
 
             if ($status=='SPAM') {
                 // was marked as not spam, but is spam.
-                
+
                 $spam_data = PerchUtil::json_safe_decode($this->commentSpamData(), true);
 
                 if (PerchUtil::count($spam_data)){
@@ -55,7 +55,7 @@ class PerchBlog_Comment extends PerchAPI_Base
     public function to_array($template_ids=false)
     {
         $out = parent::to_array();
-               
+
         if (PerchUtil::count($template_ids) && in_array('postURL', $template_ids)) {
             $API = new PerchAPI(1.0, 'perch_blog');
             $Posts = new PerchBlog_Posts($API);
@@ -74,7 +74,7 @@ class PerchBlog_Comment extends PerchAPI_Base
             }
             $out = array_merge($dynamic_fields, $out);
         }
-        
+
         return $out;
     }
 }

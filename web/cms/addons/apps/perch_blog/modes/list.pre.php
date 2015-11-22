@@ -1,34 +1,51 @@
 <?php
-    
+
     $HTML = $API->get('HTML');
-    
+
     // Try to update
     $Settings = $API->get('Settings');
 
-    if ($Settings->get('perch_blog_update')->val()!='5.0') {
+    if ($Settings->get('perch_blog_update')->val()!='5.0.1') {
         PerchUtil::redirect($API->app_path().'/update/');
     }
 
-        
-    $Blog = new PerchBlog_Posts($API);
-    
+    $Posts = new PerchBlog_Posts($API);
+    $Blogs = new PerchBlog_Blogs($API);
+    $blogs = $Blogs->all();
+
+    if (!PerchUtil::count($blogs)) {
+         $Posts->attempt_install();
+         $blogs = $Blogs->all();
+    }
+
     $Paging = $API->get('Paging');
     $Paging->set_per_page(15);
-    
-    $Categories   = new PerchCategories_Categories();
-    $categories = $Categories->get_for_set('blog');
+
+    $Blog = false;
+
+    if (PERCH_RUNWAY) {
+        if (PerchUtil::get('blog')) {
+            $Blog = $Blogs->get_one_by('blogSlug', PerchUtil::get('blog'));
+        }
+    }
+    if (!$Blog) {
+        $Blog = $Blogs->find(1);
+    }
+
+
+    $Categories = new PerchCategories_Categories();
+    $categories = $Categories->get_for_set($Blog->setSlug());
 
     $Sections = new PerchBlog_Sections($API);
-    $sections = $Sections->all();
+    $sections = $Sections->get_by('blogID', (int)$Blog->id());
 
-	
-   
+
+
 	$Lang = $API->get('Lang');
 
     $posts = array();
-	
+
     $filter = 'all';
-    
 
     if (isset($_GET['category']) && $_GET['category'] != '') {
         $filter = 'category';
@@ -39,37 +56,35 @@
         $filter = 'section';
         $section = $_GET['section'];
     }
-    
+
 
     if (isset($_GET['status']) && $_GET['status'] != '') {
         $filter = 'status';
         $status = $_GET['status'];
     }
 
-    
+
     switch ($filter) {
-        
+
         case 'category':
-            $posts = $Blog->get_by_category_slug_for_admin_listing($category, $Paging);
-            break;        
+            $posts = $Posts->get_by_category_slug_for_admin_listing($category, $Paging);
+            break;
 
         case 'section':
-            $posts = $Blog->get_by_section_slug_for_admin_listing($section, $Paging);
+            $posts = $Posts->get_by_section_slug_for_admin_listing($section, $Paging);
             break;
 
         case 'status':
-            $posts = $Blog->get_by_status($status, false, $Paging);
+            $posts = $Posts->get_by_status($status, false, $Blog->blogSlug(), $Paging);
             break;
 
         default:
-            $posts = $Blog->all($Paging);
-            
+            $posts = $Posts->get_by('blogID', (int)$Blog->id(), 'postDateTime DESC', $Paging);
+
             // Install
             if ($posts == false) {
-                $Blog->attempt_install();
+                $Posts->attempt_install();
             }
-            
+
             break;
     }
-
-?>

@@ -1,10 +1,10 @@
 <?php
-	
+
 	PerchScheduledTasks::register_task('perch_blog', 'delete_spam_comments', 1440, 'scheduled_blog_delete_spam_comments');
 
 	function scheduled_blog_delete_spam_comments($last_run)
 	{
-		$API  = new PerchAPI(1.0, 'perch_blog'); 
+		$API  = new PerchAPI(1.0, 'perch_blog');
 		$Settings = $API->get('Settings');
 
 		$days = $Settings->get('perch_blog_max_spam_days')->val();

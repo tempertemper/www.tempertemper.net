@@ -7,7 +7,8 @@
 		array('page'=>array(
 					'perch_blog',
 					'perch_blog/delete',
-					'perch_blog/edit'
+					'perch_blog/edit',
+					'perch_blog/meta'
 			), 'label'=>'Add/Edit'),
 		array('page'=>array(
 					'perch_blog/comments',
@@ -26,5 +27,10 @@
 					'perch_blog/sections/delete'
 
 			), 'label'=>'Sections', 'priv'=>'perch_blog.sections.manage'),
+		array('page'=>array(
+					'perch_blog/blogs',
+					'perch_blog/blogs/edit',
+					'perch_blog/blogs/delete'
+
+			), 'label'=>'Blogs', 'priv'=>'perch_blog.blogs.manage', 'runway'=>true),
 	));
-?>

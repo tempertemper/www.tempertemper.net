@@ -4,8 +4,8 @@ class PerchBlog_Section  extends PerchAPI_Base
 {
     protected $table  = 'blog_sections';
     protected $pk     = 'sectionID';
-    
-    
+
+
     public function to_array()
     {
     	$out = parent::to_array();
