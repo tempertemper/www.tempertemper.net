@@ -4,7 +4,7 @@ class Perch
 {
     static protected $instance;
 
-    public $version = '2.8.16';
+    public $version = '2.8.17';
 
     public $admin           = false;
     private $page           = false;

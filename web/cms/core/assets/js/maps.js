@@ -20,6 +20,7 @@ Perch.UI.Maps	= function()
 		if (map_fields.length) {
 			map_fields.each(function(i,o){
 				var self = $(o);
+				var opts = {};
 				
 				if (!self.attr('data-map-built')) {
 					
@@ -40,13 +41,13 @@ Perch.UI.Maps	= function()
 				
 					if (get_field(mapid, 'clat')) {
 						var latlng = new google.maps.LatLng(get_field(mapid, 'clat'), get_field(mapid, 'clng'));
-						var opts = {
+						opts = {
 							zoom: parseInt(get_field(mapid, 'zoom'),10),
 							center: latlng,
 							mapTypeId: get_type(get_field(mapid, 'type'))
 						};
 					}else{
-						var opts = {
+						opts = {
 							zoom: 10,
 							center: new google.maps.LatLng(51.5, -0.11),
 							mapTypeId: get_type('roadmap')
@@ -122,11 +123,11 @@ Perch.UI.Maps	= function()
 	
 	var get_type = function(type) {
 		switch(type) {
-			case 'roadmap'	: return google.maps.MapTypeId.ROADMAP; break;
-			case 'satellite': return google.maps.MapTypeId.SATELLITE; break;
-			case 'hybrid'	: return google.maps.MapTypeId.HYBRID; break;
-			case 'terrain'	: return google.maps.MapTypeId.TERRAIN; break;
-			default			: return google.maps.MapTypeId.ROADMAP; break;
+			case 'roadmap'	: return google.maps.MapTypeId.ROADMAP;
+			case 'satellite': return google.maps.MapTypeId.SATELLITE;
+			case 'hybrid'	: return google.maps.MapTypeId.HYBRID;
+			case 'terrain'	: return google.maps.MapTypeId.TERRAIN;
+			default			: return google.maps.MapTypeId.ROADMAP;
 		}
 	};
 	

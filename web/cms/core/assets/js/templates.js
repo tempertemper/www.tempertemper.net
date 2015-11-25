@@ -1,274 +1,150 @@
-(function() {
-var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['asset-badge'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression, self=this;
+this["Handlebars"] = this["Handlebars"] || {};
+this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
+this["Handlebars"]["templates"]["asset-badge"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=container.escapeExpression;
 
-function program1(depth0,data) {
-  
-  var buffer = "", stack1, helper;
-  buffer += "\n		<img src=\"";
-  if (helper = helpers.thumburl) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.thumburl); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\" width=\"";
-  if (helper = helpers.thumbwidth) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.thumbwidth); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\" height=\"";
-  if (helper = helpers.thumbheight) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.thumbheight); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\" alt=\"Preview\" />\n		";
-  return buffer;
-  }
+  return "		<img src=\""
+    + alias3(((helper = (helper = helpers.thumburl || (depth0 != null ? depth0.thumburl : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"thumburl","hash":{},"data":data}) : helper)))
+    + "\" width=\""
+    + alias3(((helper = (helper = helpers.thumbwidth || (depth0 != null ? depth0.thumbwidth : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"thumbwidth","hash":{},"data":data}) : helper)))
+    + "\" height=\""
+    + alias3(((helper = (helper = helpers.thumbheight || (depth0 != null ? depth0.thumbheight : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"thumbheight","hash":{},"data":data}) : helper)))
+    + "\" alt=\"Preview\" />\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=helpers.helperMissing, alias2="function", alias3=container.escapeExpression;
 
-  buffer += "<div class=\"asset-badge\" data-for=\"";
-  if (helper = helpers.asset_field) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.asset_field); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\">\n	<div class=\"asset-badge-thumb\">\n		";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.has_thumb), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n	</div>\n	<div class=\"asset-badge-meta\">\n		<div class=\"asset-badge-remove\">\n			<label for=\"";
-  if (helper = helpers.input_id) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.input_id); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "_remove\" class=\"inline\">Remove</label> \n			<input type=\"checkbox\" class=\"check \" id=\"";
-  if (helper = helpers.input_id) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.input_id); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "_remove\" name=\"";
-  if (helper = helpers.input_id) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.input_id); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "_remove\" value=\"1\" />\n		</div>\n		<ul class=\"meta\">\n			<li class=\"title\">";
-  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n			<li>";
-  if (helper = helpers.mime_display) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.mime_display); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n			<li>";
-  if (helper = helpers.width) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.width); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + " x ";
-  if (helper = helpers.height) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.height); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + " px @ ";
-  if (helper = helpers.display_filesize) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.display_filesize); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
+  return "<div class=\"asset-badge\" data-for=\""
+    + alias3(((helper = (helper = helpers.asset_field || (depth0 != null ? depth0.asset_field : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"asset_field","hash":{},"data":data}) : helper)))
+    + "\">\n	<div class=\"asset-badge-thumb\">\n"
+    + ((stack1 = helpers["if"].call(depth0,(depth0 != null ? depth0.has_thumb : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "	</div>\n	<div class=\"asset-badge-meta\">\n		<div class=\"asset-badge-remove\">\n			<label for=\""
+    + alias3(((helper = (helper = helpers.input_id || (depth0 != null ? depth0.input_id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"input_id","hash":{},"data":data}) : helper)))
+    + "_remove\" class=\"inline\">Remove</label> \n			<input type=\"checkbox\" class=\"check \" id=\""
+    + alias3(((helper = (helper = helpers.input_id || (depth0 != null ? depth0.input_id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"input_id","hash":{},"data":data}) : helper)))
+    + "_remove\" name=\""
+    + alias3(((helper = (helper = helpers.input_id || (depth0 != null ? depth0.input_id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"input_id","hash":{},"data":data}) : helper)))
+    + "_remove\" value=\"1\" />\n		</div>\n		<ul class=\"meta\">\n			<li class=\"title\">"
+    + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</li>\n			<li>"
+    + alias3(((helper = (helper = helpers.mime_display || (depth0 != null ? depth0.mime_display : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"mime_display","hash":{},"data":data}) : helper)))
+    + "</li>\n			<li>"
+    + alias3(((helper = (helper = helpers.width || (depth0 != null ? depth0.width : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"width","hash":{},"data":data}) : helper)))
+    + " x "
+    + alias3(((helper = (helper = helpers.height || (depth0 != null ? depth0.height : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"height","hash":{},"data":data}) : helper)))
+    + " px @ "
+    + alias3(((helper = (helper = helpers.display_filesize || (depth0 != null ? depth0.display_filesize : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"display_filesize","hash":{},"data":data}) : helper)))
     + "</li>\n		</ul>\n	</div>\n</div>";
-  return buffer;
-  });
-
-templates['asset-chooser'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this, functionType="function";
-
-function program1(depth0,data) {
-  
-  var buffer = "", helper, options;
-  buffer += "<a href=\"#\" class=\"add button\">"
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "Add Asset", options) : helperMissing.call(depth0, "Lang", "Add Asset", options)))
+},"useData":true});
+this["Handlebars"]["templates"]["asset-chooser"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    return "<a href=\"#\" class=\"add button\">"
+    + container.escapeExpression((helpers.Lang || (depth0 && depth0.Lang) || helpers.helperMissing).call(depth0,"Add Asset",{"name":"Lang","hash":{},"data":data}))
     + "</a>";
-  return buffer;
-  }
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=helpers.helperMissing, alias2=container.escapeExpression;
 
-  buffer += "<div class=\"asset-chooser\">\n	<div class=\"asset-topbar\">\n		<div class=\"actions\">\n			<a href=\"#\" class=\"close icon asset-icon\"><span class=\"hidden\">"
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "Close", options) : helperMissing.call(depth0, "Lang", "Close", options)))
-    + "</span></a>\n			";
-  stack1 = (helper = helpers.hasPriv || (depth0 && depth0.hasPriv),options={hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data},helper ? helper.call(depth0, "assets.create", options) : helperMissing.call(depth0, "hasPriv", "assets.create", options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n			<a href=\"#\" class=\"select button\">"
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "Use Selected", options) : helperMissing.call(depth0, "Lang", "Use Selected", options)))
+  return "<div class=\"asset-chooser\">\n	<div class=\"asset-topbar\">\n		<div class=\"actions\">\n			<a href=\"#\" class=\"close icon asset-icon\"><span class=\"hidden\">"
+    + alias2((helpers.Lang || (depth0 && depth0.Lang) || alias1).call(depth0,"Close",{"name":"Lang","hash":{},"data":data}))
+    + "</span></a>\n			"
+    + ((stack1 = (helpers.hasPriv || (depth0 && depth0.hasPriv) || alias1).call(depth0,"assets.create",{"name":"hasPriv","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "\n			<a href=\"#\" class=\"select button\">"
+    + alias2((helpers.Lang || (depth0 && depth0.Lang) || alias1).call(depth0,"Use Selected",{"name":"Lang","hash":{},"data":data}))
     + "</a>\n		</div>\n		<h2>"
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "Select an Asset", options) : helperMissing.call(depth0, "Lang", "Select an Asset", options)))
-    + "</h2>\n	</div>\n	<div class=\"asset-drop\">\n		<form action=\"";
-  if (helper = helpers.upload_url) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.upload_url); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
+    + alias2((helpers.Lang || (depth0 && depth0.Lang) || alias1).call(depth0,"Select an Asset",{"name":"Lang","hash":{},"data":data}))
+    + "</h2>\n	</div>\n	<div class=\"asset-drop\">\n		<form action=\""
+    + alias2(((helper = (helper = helpers.upload_url || (depth0 != null ? depth0.upload_url : depth0)) != null ? helper : alias1),(typeof helper === "function" ? helper.call(depth0,{"name":"upload_url","hash":{},"data":data}) : helper)))
     + "\" id=\"asset-dropzone\" method=\"post\" enctype=\"multipart/form-data\">\n			<div class=\"fallback\">\n			    <input name=\"file\" type=\"file\" multiple />\n			    <input type=\"submit\" value=\""
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "Upload", options) : helperMissing.call(depth0, "Lang", "Upload", options)))
+    + alias2((helpers.Lang || (depth0 && depth0.Lang) || alias1).call(depth0,"Upload",{"name":"Lang","hash":{},"data":data}))
     + "\" />\n			 </div>\n		</form>\n	</div>\n	<div class=\"asset-field\">\n		<div id=\"asset-filter\" class=\"asset-filter\">\n\n		</div>\n		<div class=\"inner\">\n\n		</div>\n	</div>\n</div>";
-  return buffer;
-  });
+},"useData":true});
+this["Handlebars"]["templates"]["asset-grid"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=helpers.helperMissing, alias2="function", alias3=container.escapeExpression;
 
-templates['asset-grid'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1, helper;
-  buffer += "\n	<div class=\"grid-asset asset-";
-  if (helper = helpers.type) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.type); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1);
-  stack1 = helpers.unless.call(depth0, (depth0 && depth0.has_thumb), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\" tabindex=\"0\" data-id=\"";
-  if (helper = helpers.id) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.id); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\">\n		";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.has_thumb), {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n		<div class=\"asset-meta";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.has_thumb), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"title\">";
-  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</span></div>\n		<span class=\"ind ";
-  if (helper = helpers.orientation) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.orientation); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
+  return "	<div class=\"grid-asset asset-"
+    + alias3(((helper = (helper = helpers.type || (depth0 != null ? depth0.type : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"type","hash":{},"data":data}) : helper)))
+    + ((stack1 = helpers.unless.call(depth0,(depth0 != null ? depth0.has_thumb : depth0),{"name":"unless","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "\" tabindex=\"0\" data-id=\""
+    + alias3(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\">\n"
+    + ((stack1 = helpers["if"].call(depth0,(depth0 != null ? depth0.has_thumb : depth0),{"name":"if","hash":{},"fn":container.program(4, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "		<div class=\"asset-meta"
+    + ((stack1 = helpers["if"].call(depth0,(depth0 != null ? depth0.has_thumb : depth0),{"name":"if","hash":{},"fn":container.program(6, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "\"><span class=\"title\">"
+    + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</span></div>\n		<span class=\"ind "
+    + alias3(((helper = (helper = helpers.orientation || (depth0 != null ? depth0.orientation : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"orientation","hash":{},"data":data}) : helper)))
     + "\"></span>\n	</div>\n";
-  return buffer;
-  }
-function program2(depth0,data) {
-  
-  
-  return " asset-icon";
-  }
+},"2":function(container,depth0,helpers,partials,data) {
+    return " asset-icon";
+},"4":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=container.escapeExpression;
 
-function program4(depth0,data) {
-  
-  var buffer = "", stack1, helper;
-  buffer += "\n			<img class=\"thumb ";
-  if (helper = helpers.orientation) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.orientation); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\" src=\"";
-  if (helper = helpers.thumburl) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.thumburl); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\" alt=\"";
-  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\" data-width=\"";
-  if (helper = helpers.thumbwidth) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.thumbwidth); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\" data-height=\"";
-  if (helper = helpers.thumbheight) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.thumbheight); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\" />\n		";
-  return buffer;
-  }
-
-function program6(depth0,data) {
-  
-  
-  return " with-thumb";
-  }
-
-function program8(depth0,data) {
-  
-  var buffer = "", helper, options;
-  buffer += "\n	<p class=\"alert notice\">"
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "No matching assets found", options) : helperMissing.call(depth0, "Lang", "No matching assets found", options)))
+  return "			<img class=\"thumb "
+    + alias3(((helper = (helper = helpers.orientation || (depth0 != null ? depth0.orientation : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"orientation","hash":{},"data":data}) : helper)))
+    + "\" src=\""
+    + alias3(((helper = (helper = helpers.thumburl || (depth0 != null ? depth0.thumburl : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"thumburl","hash":{},"data":data}) : helper)))
+    + "\" alt=\""
+    + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"title","hash":{},"data":data}) : helper)))
+    + "\" data-width=\""
+    + alias3(((helper = (helper = helpers.thumbwidth || (depth0 != null ? depth0.thumbwidth : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"thumbwidth","hash":{},"data":data}) : helper)))
+    + "\" data-height=\""
+    + alias3(((helper = (helper = helpers.thumbheight || (depth0 != null ? depth0.thumbheight : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"thumbheight","hash":{},"data":data}) : helper)))
+    + "\" />\n";
+},"6":function(container,depth0,helpers,partials,data) {
+    return " with-thumb";
+},"8":function(container,depth0,helpers,partials,data) {
+    return "	<p class=\"alert notice\">"
+    + container.escapeExpression((helpers.Lang || (depth0 && depth0.Lang) || helpers.helperMissing).call(depth0,"No matching assets found",{"name":"Lang","hash":{},"data":data}))
     + "</p>\n";
-  return buffer;
-  }
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
 
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.assets), {hash:{},inverse:self.program(8, program8, data),fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
-  });
+  return ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.assets : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(8, data, 0),"data":data})) != null ? stack1 : "");
+},"useData":true});
+this["Handlebars"]["templates"]["asset-list"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=helpers.helperMissing, alias2="function", alias3=container.escapeExpression;
 
-templates['asset-list'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, helper, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1, helper;
-  buffer += "\n	<tr>\n		<td class=\"primary\"><a class=\"list-asset-title\" href=\"#\" data-id=\"";
-  if (helper = helpers.id) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.id); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</a></td>\n		<td class=\"asset-icon-cell\"><span class=\"icon asset-icon asset-";
-  if (helper = helpers.type) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.type); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\"></span></td>\n		<td>";
-  if (helper = helpers.mime_display) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.mime_display); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</td>\n		<td>";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.width), {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</td>\n		<td>";
-  if (helper = helpers.display_filesize) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.display_filesize); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
+  return "	<tr>\n		<td class=\"primary\"><a class=\"list-asset-title\" href=\"#\" data-id=\""
+    + alias3(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\">"
+    + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</a></td>\n		<td class=\"asset-icon-cell\"><span class=\"icon asset-icon asset-"
+    + alias3(((helper = (helper = helpers.type || (depth0 != null ? depth0.type : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"type","hash":{},"data":data}) : helper)))
+    + "\"></span></td>\n		<td>"
+    + alias3(((helper = (helper = helpers.mime_display || (depth0 != null ? depth0.mime_display : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"mime_display","hash":{},"data":data}) : helper)))
+    + "</td>\n		<td>"
+    + ((stack1 = helpers["if"].call(depth0,(depth0 != null ? depth0.width : depth0),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.program(4, data, 0),"data":data})) != null ? stack1 : "")
+    + "</td>\n		<td>"
+    + alias3(((helper = (helper = helpers.display_filesize || (depth0 != null ? depth0.display_filesize : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"display_filesize","hash":{},"data":data}) : helper)))
     + "</td>\n	</tr>\n";
-  return buffer;
-  }
-function program2(depth0,data) {
-  
-  var buffer = "", stack1, helper;
-  if (helper = helpers.width) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.width); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + " x ";
-  if (helper = helpers.height) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.height); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1);
-  return buffer;
-  }
+},"2":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=container.escapeExpression;
 
-function program4(depth0,data) {
-  
-  
-  return " - ";
-  }
+  return alias3(((helper = (helper = helpers.width || (depth0 != null ? depth0.width : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"width","hash":{},"data":data}) : helper)))
+    + " x "
+    + alias3(((helper = (helper = helpers.height || (depth0 != null ? depth0.height : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"height","hash":{},"data":data}) : helper)));
+},"4":function(container,depth0,helpers,partials,data) {
+    return " - ";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, alias1=helpers.helperMissing, alias2=container.escapeExpression;
 
-  buffer += "<table class=\"list-asset\">\n    <thead>\n        <tr>\n            <th class=\"first\">"
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "Name", options) : helperMissing.call(depth0, "Lang", "Name", options)))
+  return "<table class=\"list-asset\">\n    <thead>\n        <tr>\n            <th class=\"first\">"
+    + alias2((helpers.Lang || (depth0 && depth0.Lang) || alias1).call(depth0,"Name",{"name":"Lang","hash":{},"data":data}))
     + "</th>\n            <th></th>\n            <th>"
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "Type", options) : helperMissing.call(depth0, "Lang", "Type", options)))
+    + alias2((helpers.Lang || (depth0 && depth0.Lang) || alias1).call(depth0,"Type",{"name":"Lang","hash":{},"data":data}))
     + "</th>\n            <th>"
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "Dimensions", options) : helperMissing.call(depth0, "Lang", "Dimensions", options)))
+    + alias2((helpers.Lang || (depth0 && depth0.Lang) || alias1).call(depth0,"Dimensions",{"name":"Lang","hash":{},"data":data}))
     + "</th>\n            <th>"
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "Size", options) : helperMissing.call(depth0, "Lang", "Size", options)))
-    + "</th>\n        </tr>\n    </thead>\n    <tbody>\n";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.assets), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n	</tbody>\n</table>";
-  return buffer;
-  });
+    + alias2((helpers.Lang || (depth0 && depth0.Lang) || alias1).call(depth0,"Size",{"name":"Lang","hash":{},"data":data}))
+    + "</th>\n        </tr>\n    </thead>\n    <tbody>\n"
+    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.assets : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "	</tbody>\n</table>";
+},"useData":true});
+this["Handlebars"]["templates"]["asset-static-drop"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2=container.escapeExpression;
 
-templates['asset-static-drop'] = template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, helper, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
-
-
-  buffer += "<div class=\"asset-drop static\">\n	<form action=\"";
-  if (helper = helpers.upload_url) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.upload_url); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
+  return "<div class=\"asset-drop static\">\n	<form action=\""
+    + alias2(((helper = (helper = helpers.upload_url || (depth0 != null ? depth0.upload_url : depth0)) != null ? helper : alias1),(typeof helper === "function" ? helper.call(depth0,{"name":"upload_url","hash":{},"data":data}) : helper)))
     + "\" id=\"asset-dropzone\" method=\"post\" enctype=\"multipart/form-data\">\n		<div class=\"fallback\">\n		    <input name=\"file\" type=\"file\" multiple />\n		    <input type=\"submit\" value=\""
-    + escapeExpression((helper = helpers.Lang || (depth0 && depth0.Lang),options={hash:{},data:data},helper ? helper.call(depth0, "Upload", options) : helperMissing.call(depth0, "Lang", "Upload", options)))
+    + alias2((helpers.Lang || (depth0 && depth0.Lang) || alias1).call(depth0,"Upload",{"name":"Lang","hash":{},"data":data}))
     + "\" />\n		 </div>\n	</form>\n</div>\n";
-  return buffer;
-  });
-}());
+},"useData":true});
