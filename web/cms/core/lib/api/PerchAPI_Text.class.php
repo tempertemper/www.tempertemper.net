@@ -38,29 +38,9 @@ class PerchAPI_Text
                 break;
 
             case 'markdown' :
-                // Fix markdown blockquote syntax - > gets encoded.
-                $value = preg_replace('/[\n\r]&gt;\s/', "\n> ", $value);
-
-                // Fix autolink syntax
-                $value = preg_replace('#&lt;(http[a-zA-Z0-9-\.\/:]*)&gt;#', "<$1>", $value);
-
-
-                if (!class_exists('\\Michelf\\SmartyPants', false) && class_exists('SmartyPants', true)) {
-                    // sneaky autoloading hack
-                }
-
-                $SmartyPants = new \Michelf\SmartyPants(\Michelf\SMARTYPANTS_ATTR_LONG_EM_DASH_SHORT_EN);
-                $value = $SmartyPants->transform($value);
-                if (PERCH_HTML_ENTITIES==false) {
-                    $value = html_entity_decode($value, ENT_NOQUOTES, 'UTF-8');
-                    $value = PerchUtil::html($value, -1);
-                }
-
-
-                $Markdown = new ParsedownExtra();
+ 
+                $Markdown = new PerchParsedown();
                 $value = $Markdown->text($value);
-
-
 
                 break;
         }

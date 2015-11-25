@@ -77,6 +77,21 @@ class PerchFactory
         return $this->return_instances($results);
     }
 
+    public function first()
+    {
+        $sql = 'SELECT * FROM ' . $this->table;
+
+        if (isset($this->default_sort_column)) {
+            $sql .= ' ORDER BY ' . $this->default_sort_column . ' '.$this->default_sort_direction;
+        }
+
+        $sql .= ' LIMIT 1 ';
+     
+        $result = $this->db->get_row($sql);
+
+        return $this->return_instance($result);
+    }
+
     /**
      * Get one item by the specified column. e.g. get_one_by('widgetID', 232) would select from this table where widgetID=232.
      *
@@ -1240,6 +1255,7 @@ class PerchFactory
 
             if (!PerchUtil::count($cat_results)) {
                 $cat_results = array(null);
+                if ($negative_match) return ''; // Return nothing if there are no categories to match against
             }
 
             if ($negative_match) {
