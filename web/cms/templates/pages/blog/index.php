@@ -7,11 +7,12 @@
 
   <?php
     perch_blog_custom(array(
-      'template'    =>  'post_in_list.html',
-      'sort'        =>  'postDateTime',
-      'sort-order'  =>  'DESC',
-      'paginate'    =>  true,
-      'count'       =>  10,
+      'template'   => 'post_in_list.html',
+      'sort'       => 'postDateTime',
+      'sort-order' => 'DESC',
+      'paginate'   => true,
+      'count'      => 10,
+      'blog'       => 'resources',
     ));
   ?>
 
