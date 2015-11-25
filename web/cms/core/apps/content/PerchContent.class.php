@@ -1224,6 +1224,7 @@ class PerchContent extends PerchApp
             
             if (!PerchUtil::count($cat_results)) {
                 $cat_results = array(null);
+                if ($negative_match) return ''; // Return nothing if there are no categories to match against
             }    
 
             if ($negative_match) {

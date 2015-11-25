@@ -45,7 +45,7 @@ CMSMap.UI	= function()
 
 			CMSMap.maps[i].gmap = map;
 			CMSMap.maps[i].latlng = latlng;
-		};
+		}
 	};
 
 	var refresh = function() {
@@ -53,7 +53,7 @@ CMSMap.UI	= function()
 		for(i=0, l=CMSMap.maps.length; i<l; i++) {
 			google.maps.event.trigger(CMSMap.maps[i].gmap, 'resize');
 			CMSMap.maps[i].gmap.setCenter(CMSMap.maps[i].latlng);
-		};
+		}
 		return true;
 	};
 	
@@ -79,4 +79,13 @@ CMSMap.Loader = function(){
 	}
 }();
 
-document.write('<scr'+'ipt type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"><'+'/sc'+'ript>');
+var load_google_map_api = function(){
+	var js = document.createElement("script");
+	js.type = "text/javascript";
+	js.src = 'https://maps.googleapis.com/maps/api/js';
+	if (typeof document.head != 'object') {
+		document.body.appendChild(js);
+	}else{
+		document.head.appendChild(js);
+	}
+}();
