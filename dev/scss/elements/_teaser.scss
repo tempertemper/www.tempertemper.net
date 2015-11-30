@@ -9,13 +9,12 @@
 
     li {
       @include layout($wide-layout);
+      @include span(3 of 6);
       @include highlight-box;
-      margin-bottom: 1em;
-      width: span(3 of 6);
-      margin-right: gutter();
+      margin-bottom: gutter();
 
       &:last-of-type {
-        margin-right: 0;
+        @include span(last 3 of 6);
       }
     }
 
