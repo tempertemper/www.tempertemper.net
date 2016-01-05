@@ -1,19 +1,6 @@
 ﻿[role="banner"] {
   clear: both;
   padding-top: 1em;
-  background-image: url('/img/christmas-baubles.svg');
-  background-repeat: no-repeat;
-  background-size: 80px auto;
-  background-position: 80px top;
-
-  @media (min-width: $s) {
-    background-size: 120px auto;
-    background-position: 300px top;
-  }
-
-  @media (min-width: $l) {
-    background-size: 220px auto;
-  }
 
   h1 {
     clear: both;
