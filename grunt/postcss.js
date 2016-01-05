@@ -10,4 +10,4 @@ module.exports = {
   dist: {
     src: 'web/cms/addons/feathers/tempertemper/css/style.css'
   }
-};
+}
