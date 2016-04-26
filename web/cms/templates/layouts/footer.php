@@ -42,7 +42,7 @@
       perch_content_custom('Primary content',$opts);
     ?>
 
-    <p>VAT registration number 219 5624 96</p>
+    <p>Company number 07742506, VAT&nbsp;registration number&nbsp;219&nbsp;5624&nbsp;96</p>
 
     <ul>
       <li><a href="/legal/privacy-policy" rel="privacypolicy">Privacy policy</a>, </li>
