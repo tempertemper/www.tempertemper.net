@@ -790,5 +790,7 @@
     "Errors": "Errors",
     "Your resources folder is not writable. Make this folder (<code>": "Your resources folder is not writable. Make this folder (<code>",
     "<\/code>) writable if you want to upload a custom logo.": "<\/code>) writable if you want to upload a custom logo.",
-    "Sorry, that backup plan could not be edited.": "Sorry, that backup plan could not be edited."
+    "Sorry, that backup plan could not be edited.": "Sorry, that backup plan could not be edited.",
+    "Meta and Social": "Meta and Social",
+    "View Post": "View Post"
 }
