@@ -5,6 +5,7 @@ class PerchParsedown extends ParsedownExtra
 	public function text($text)
 	{
 		// Fix markdown blockquote syntax - > gets encoded.
+        if (substr($text, 0, 4)=='&gt;') $text = '>'.substr($text, 5);
         $text = preg_replace('/[\n\r]&gt;\s/', "\n> ", $text);
 
         // Fix autolink syntax
@@ -66,5 +67,47 @@ class PerchParsedown extends ParsedownExtra
         }
 
         return $text;
+    }
+
+    protected function blockFencedCodeComplete($Block)
+    {
+        $text = $Block['element']['text']['text'];
+
+        $text = htmlspecialchars($text, ENT_NOQUOTES, 'UTF-8', false);
+
+        $Block['element']['text']['text'] = $text;
+
+        return $Block;
+    }
+
+    protected function inlineCode($Excerpt)
+    {
+        $marker = $Excerpt['text'][0];
+
+        if (preg_match('/^('.$marker.'+)[ ]*(.+?)[ ]*(?<!'.$marker.')\1(?!'.$marker.')/s', $Excerpt['text'], $matches))
+        {
+            $text = $matches[2];
+            $text = htmlspecialchars($text, ENT_NOQUOTES, 'UTF-8', false);
+            $text = preg_replace("/[ ]*\n/", ' ', $text);
+
+            return array(
+                'extent' => strlen($matches[0]),
+                'element' => array(
+                    'name' => 'code',
+                    'text' => $text,
+                ),
+            );
+        }
+    }
+
+    protected function blockCodeComplete($Block)
+    {
+        $text = $Block['element']['text']['text'];
+
+        $text = htmlspecialchars($text, ENT_NOQUOTES, 'UTF-8');
+
+        $Block['element']['text']['text'] = $text;
+
+        return $Block;
     }
 }

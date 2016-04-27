@@ -5,6 +5,8 @@ class PerchAPI_HTML
     public $app_id = false;
     public $version = 1.0;
 
+    private $formatters = array();
+
     private $Lang = false;
 
     function __construct($version=1.0, $app_id, $Lang)
@@ -13,6 +15,18 @@ class PerchAPI_HTML
         $this->version = $version;
 
         $this->Lang = $Lang;
+    }
+
+    public function set_formatter($key, $callback)
+    {
+        $this->formatters[$key] = $callback;
+    }
+
+    public function get_formatter($key)
+    {
+        if (isset($this->formatters[$key])) return $this->formatters[$key];
+
+        return false;
     }
 
     public function set_lang($Lang)
@@ -418,6 +432,11 @@ class PerchAPI_HTML
     {
         if ($code===false) return $value;
 
+        $formatter = $this->get_formatter($code);
+        if ($formatter && is_callable($formatter)) {
+            return call_user_func($formatter, $value);
+        }
+
         switch($code) {
 
             case 'active':
@@ -431,6 +450,7 @@ class PerchAPI_HTML
                 if (!is_array($value)) return '';
                 return implode(', ', $value);
                 break;
+
         }
 
         return $value;

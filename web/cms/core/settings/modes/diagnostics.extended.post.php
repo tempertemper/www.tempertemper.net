@@ -40,7 +40,9 @@
 		<h3><?php echo PerchLang::get('Perch information'); ?></h3>
         <ul>
             <li><?php 
-                echo (PERCH_RUNWAY ? 'Perch Runway: ' : 'Perch: ');
+                echo (PERCH_RUNWAY ? 'Perch Runway' : 'Perch');
+                if (strpos(PERCH_LICENSE_KEY, 'LOCAL-TESTING')>2) echo ' LTM';
+                echo ': ';
                 echo PerchUtil::html($Perch->version); ?></li>
             <li>Production mode: <?php 
                 switch(PERCH_PRODUCTION_MODE) {
@@ -81,7 +83,9 @@
                     
                     foreach($rows as $row) {
                         foreach($row as $key=>$val) {
-                            $tables[] =  PerchUtil::html($val);
+                            $sql = 'SELECT COUNT(*) FROM '.$val;
+                            $count = $DB->get_count($sql);
+                            $tables[] =  PerchUtil::html($val . ' ('.$count.')');
                         }
                     }
                     echo '<li>DB tables: '.implode(', ', $tables).'</li>';
@@ -115,7 +119,8 @@
             ?>
             <li>H1: <?php echo PerchUtil::html(md5($_SERVER['SERVER_NAME'])); ?></li>
             <li>L1: <?php echo PerchUtil::html(md5(PERCH_LICENSE_KEY)); ?></li>
-            
+            <li>F1: <?php echo md5(file_get_contents(PerchUtil::file_path(PERCH_CORE.'/lib/PerchAuthenticatedUser.class.php'))); ?>
+            </li>
             <?php
             
                 $settings = $Settings->get_as_array();
@@ -147,6 +152,15 @@
             <li>Safe mode: <?php echo (ini_get('safe_mode') ? 'detected' : 'not detected'); ?></li>
             <li>MySQL client: <?php echo PerchUtil::html($DB->get_client_info()); ?></li>
             <li>MySQL server: <?php echo PerchUtil::html($DB->get_server_info()); ?></li>
+            <li>Free disk space: 
+            <?php
+                $bytes     = disk_free_space("."); 
+                $si_prefix = array( 'B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB' );
+                $base      = 1024;
+                $class     = min((int)log($bytes , $base) , count($si_prefix) - 1);
+                echo sprintf('%1.2f' , $bytes / pow($base,$class)) . ' ' . $si_prefix[$class];
+            ?>
+            </li>
             <li>Extensions: <?php echo PerchUtil::html(implode(', ', get_loaded_extensions())); ?></li>
             <li class="section">GD: <?php echo PerchUtil::html((extension_loaded('gd')? 'Yes' : 'No')); ?>
             <?php 
@@ -165,7 +179,6 @@
             <li>Native JSON: <?php echo function_exists('json_encode')?'Yes':'No'; ?></li>
             <li>Filter functions: <?php echo function_exists('filter_var')?'Yes':'No (Required for form field type validation)'; ?></li>
             <li>Transliteration functions: <?php echo function_exists('transliterator_transliterate')?'Yes':'No'; ?></li>
-            
             <?php
             
                 $first = true;

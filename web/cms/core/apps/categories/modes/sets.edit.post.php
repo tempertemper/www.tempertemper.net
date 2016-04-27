@@ -9,7 +9,7 @@
  
     
     if ($Set) {
-        echo $HTML->heading1('Editing ‘%s’ Category Set', $Set->setTitle());
+        echo $HTML->heading1('Editing ‘%s’ Category Set', $HTML->encode($Set->setTitle()));
     }else{
         echo $HTML->heading1('Adding a New Category Set');         
     }

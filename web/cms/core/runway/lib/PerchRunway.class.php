@@ -36,7 +36,7 @@ class PerchRunway
                 if (!$may_view && $row['collectionEditRoles']=='*') $may_view = true;
                 if (!$may_view) {
                     $roles = explode(',', $row['collectionEditRoles']);
-                    $may_view = in_array($roleID, $roles);
+                    $may_view = in_array($User->roleID(), $roles);
                 }
 
                 if ($may_view) $Perch->register_collection_as_app($row['collectionKey'], $row['collectionID']);

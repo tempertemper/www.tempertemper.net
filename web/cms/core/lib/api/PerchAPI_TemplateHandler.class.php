@@ -4,7 +4,7 @@ class PerchAPI_TemplateHandler
 {
 	public $tag_mask = '';
 
-	public function render($vars, $html)
+	public function render($vars, $html, $Template)
 	{
 		return $html;
 	}

@@ -18,6 +18,8 @@ class PerchAPI_Form extends PerchForm
     public $add_another = false;
     private $submitted_with_add_another = false;
 
+    private $search_text = false;
+
     function __construct($version=1.0, $app_id, $Lang)
     {
         $this->app_id = $app_id;
@@ -240,7 +242,12 @@ class PerchAPI_Form extends PerchForm
         if (!$values) $values = array();
 
         $out .= '<fieldset>';
-        $out .= '<div class="wrapped checkboxes '.$container_class.'"><strong>'.PerchUtil::html($this->Lang->get($label)).'</strong>';
+        $out .= '<div class="wrapped checkboxes '.$container_class.'">';
+        
+        if ($label!==false) {
+            $out .= '<strong>'.PerchUtil::html($this->Lang->get($label)).'</strong>';
+        }
+        
         $i = 0;
 
         foreach($options as $option) {
@@ -461,6 +468,8 @@ class PerchAPI_Form extends PerchForm
         // Clear values from Post (for reordering of blocks etc)
         if ($clear_post) $_POST = array();
 
+        $this->search_text = $search_text;
+
         return $out;
     }
 
@@ -506,6 +515,11 @@ class PerchAPI_Form extends PerchForm
         $data[$Factory->dynamic_fields_column] = PerchUtil::json_safe_encode($dynamic_fields);
 
         return $data;
+    }
+
+    public function get_search_text()
+    {
+        return $this->search_text;
     }
 
     public function post_process_field($tag, $value)

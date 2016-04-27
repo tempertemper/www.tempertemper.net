@@ -44,7 +44,8 @@ Perch.UI.Maps	= function()
 						opts = {
 							zoom: parseInt(get_field(mapid, 'zoom'),10),
 							center: latlng,
-							mapTypeId: get_type(get_field(mapid, 'type'))
+							mapTypeId: get_type(get_field(mapid, 'type')),
+							scrollwheel: false
 						};
 					}else{
 						opts = {

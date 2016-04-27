@@ -9,7 +9,7 @@
  
     
     if ($Plan) {
-        echo $HTML->heading1('Editing ‘%s’ Backup Plan', $Plan->planTitle());
+        echo $HTML->heading1('Editing ‘%s’ Backup Plan', $HTML->encode($Plan->planTitle()));
     }else{
         echo $HTML->heading1('Adding a New Backup Plan');         
     }

@@ -1,5 +1,5 @@
 <?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-    <p><?php echo PerchLang::get('You may update the user’s personal details, email address and password here. If you wish to send a new password by email, just check the box.'); ?></p>
+    <p><?php echo PerchLang::get('You may update the user’s personal details, email address and password here. If you wish to send password recovery instructions by email, just check the box.'); ?></p>
 
 	
 <?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
@@ -7,7 +7,7 @@
 <?php include ('_subnav.php'); ?>
 
 
-	   <h1><?php echo PerchLang::get('Editing %s’s User Account', $details['userGivenName'].' '.$details['userFamilyName']); ?></h1>
+	   <h1><?php echo PerchLang::get('Editing %s’s User Account', PerchUtil::html($details['userGivenName'].' '.$details['userFamilyName'])); ?></h1>
 
 
     
@@ -21,7 +21,13 @@
 		
         <div class="field <?php echo $Form->error('userUsername', false);?>">
             <?php echo $Form->label('userUsername', 'Username'); ?>
-            <?php echo $Form->text('userUsername', $Form->get($details, 'userUsername'), ''); ?>
+            <?php echo $Form->text('userUsername', $Form->get($details, 'userUsername'), ''); 
+
+            if (PERCH_PARANOID) {
+            	echo $Form->hint(PerchLang::get('Usernames are case-sensitive'));
+            }
+
+            ?>
         </div>
         
         <div class="field <?php echo $Form->error('userGivenName', false);?>">
@@ -56,9 +62,20 @@
         <?php } ?>
 
 		<div class="field">
-			<?php echo $Form->label('resetPwd', 'Send a new password by email'); ?>
+			<?php echo $Form->label('resetPwd', 'Send new password instructions'); ?>
 			<?php echo $Form->checkbox('resetPwd', '1', '0'); ?>
 		</div>
+
+		<?php
+			if (PERCH_PARANOID) {
+		?>
+		<h2><?php echo PerchLang::get('Authenticate'); ?></h2>
+		<div class="field <?php echo $Form->error('currentPassword', false);?>">
+			<?php echo $Form->label('currentPassword', 'Your password'); ?>
+			<?php echo $Form->password('currentPassword', $Form->get(false, 'currentPassword'), ''); ?>
+		</div>
+
+		<?php } // PARANOID ?>
 
 		<p class="submit">
 			<?php 		

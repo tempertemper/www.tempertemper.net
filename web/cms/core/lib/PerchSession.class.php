@@ -2,8 +2,6 @@
 
 class PerchSession
 {
-	public static $lifetime_secs = 1200;
-
 	public static function commence()
 	{
 	    if (!isset($_SESSION['ready'])) {

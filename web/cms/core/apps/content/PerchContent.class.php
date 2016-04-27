@@ -44,9 +44,9 @@ class PerchContent extends PerchApp
         $this->preview_rev       = $rev;
     }
     
-    public function get($key=false)
+    public function get($key=null)
     {
-        if ($key === false) return ' ';
+        if ($key === null) return ' ';
         
         if ($this->cache === false) {
             $this->_populate_cache_with_page_content();
@@ -58,7 +58,7 @@ class PerchContent extends PerchApp
         
         if (isset($this->cache[$key])) {
             $r = $this->cache[$key];
-        }else{
+        } else {
             $this->_register_new_key($key);
         }
         
@@ -81,7 +81,7 @@ class PerchContent extends PerchApp
         
         if (isset($opts['page'])) {
             $page = $opts['page'];
-        }else{
+        } else {
             $page   = $Perch->get_page();
         }
 
@@ -92,24 +92,24 @@ class PerchContent extends PerchApp
 
         if (is_array($page)) {
             $cache_key = implode('|', $page).':'.$region_key_for_cache;
-        }else{
+        } else {
             $cache_key = $page.':'.$region_key_for_cache;
         }       
                 
         if (array_key_exists($cache_key, $this->custom_region_cache)) {
             $regions = $this->custom_region_cache[$cache_key];
-        }else{
+        } else {
             $sql    = 'SELECT regionID, regionTemplate, regionPage';
         
             if ($this->preview){ 
 
                 if ($this->preview_rev!==false && $this->preview_contentID!='all') {
                     $sql .= ', IF(regionID='.(int)$this->preview_contentID.', '.(int)$this->preview_rev.', regionLatestRev) AS rev';
-                }else{
+                } else {
                     $sql .= ', regionLatestRev AS rev';    
                 }
                 
-            }else{
+            } else {
                 $sql .= ', regionRev AS rev';
             }
 
@@ -123,7 +123,7 @@ class PerchContent extends PerchApp
                     }
                     $sql .= implode(' OR ', $key_items);
                 $sql .= ')';
-            }else{
+            } else {
                 $sql .= 'regionKey='.$db->pdb($key);
             }            
                         
@@ -166,7 +166,7 @@ class PerchContent extends PerchApp
                     $where[] = '(c.regionID='.$this->db->pdb($region['regionID']).' AND c.itemRev='.$this->db->pdb((int)$region['rev']).')';
                 }
                 $sql .= ' AND ('.implode(' OR ', $where).')';
-            }else{
+            } else {
                 $sql .= ' AND c.regionID IS NULL ';
             }
 
@@ -174,17 +174,17 @@ class PerchContent extends PerchApp
 
             $rows = $db->get_rows($sql);
 
-        }else{
+        } else {
             $sortval = ' idx2.indexValue as sortval ';
 
             if (isset($opts['paginate']) && $opts['paginate']) {
                 if (isset($opts['pagination-var'])) {
                     $Paging = new PerchPaging($opts['pagination-var']);
-                }else{
+                } else {
                     $Paging = new PerchPaging();
                 }
                 $sql = $Paging->select_sql();
-            }else{
+            } else {
                 $sql = 'SELECT';
             }
 
@@ -194,7 +194,7 @@ class PerchContent extends PerchApp
 
             if (isset($opts['sort'])) {
                 $sql .= ' AND idx2.indexKey='.$db->pdb($opts['sort']).' ';
-            }else{
+            } else {
                 $sql .= ' AND idx2.indexKey='.$db->pdb('_order').' ';
             }
 
@@ -204,7 +204,7 @@ class PerchContent extends PerchApp
                     $where[] = '(idx.regionID='.$this->db->pdb((int)$region['regionID']).' AND idx.itemRev='.$this->db->pdb((int)$region['rev']).')';
                 }
                 $where_clause = ' WHERE ('.implode(' OR ', $where).')';
-            }else{
+            } else {
                 $where_clause = ' WHERE idx.regionID IS NULL ';
             }
             $sql .= $where_clause;
@@ -227,7 +227,7 @@ class PerchContent extends PerchApp
                     foreach($cats as $cat) {
                         if (substr($cat, 0, 1)=='!') {
                             $neg[] = substr($cat, 1);
-                        }else{
+                        } else {
                             $pos[] = $cat;
                         }
                     }
@@ -253,7 +253,7 @@ class PerchContent extends PerchApp
                                     )
                                 );
                     $filter_mode = 'AND';
-                }else{
+                } else {
                     $filters = $opts['filter'];
                     $filter_mode = 'AND';
 
@@ -353,7 +353,7 @@ class PerchContent extends PerchApp
             }
 
             $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemRev=idx2.itemRev
-                    ) as tbl GROUP BY itemID ';
+                    ) as tbl GROUP BY itemID, pageID, itemJSON, sortval '; // DM added ', pageID, itemJSON, sortval' for MySQL 5.7
 
             if ($filter_mode=='AND' && PerchUtil::count($filters)>1) {
                 $sql .= ' HAVING count(*)='.PerchUtil::count($filters).' ';
@@ -383,27 +383,27 @@ class PerchContent extends PerchApp
 
                 if ($direction=='RAND') {
                     $sql .= ' ORDER BY RAND()';
-                }else{
+                } else {
                     if (isset($opts['sort-type']) && $opts['sort-type']=='numeric') {
                         $sql .= ' ORDER BY sortval * 1 '.$direction .' ';
-                    }else{
+                    } else {
                         $sql .= ' ORDER BY sortval '.$direction .' ';
                     }
                 }
                
-            }else{
+            } else {
                 if (isset($opts['sort-type']) && $opts['sort-type']=='numeric') {
                     $sql .= ' ORDER BY sortval * 1 ASC ';
-                }else{
+                } else {
                     $sql .= ' ORDER BY sortval ASC ';
                 }
             }
 
             // Pagination
-            if (isset($opts['paginate'])) {
+            if (isset($opts['paginate']) && $opts['paginate']) {
                 if (isset($opts['pagination-var'])) {
                     $Paging = new PerchPaging($opts['pagination-var']);
-                }else{
+                } else {
                     $Paging = new PerchPaging();
                 }
                 
@@ -412,7 +412,7 @@ class PerchContent extends PerchApp
                 $opts['count'] = $Paging->per_page();
                 $opts['start'] = $Paging->lower_bound()+1;
                 
-            }else{
+            } else {
                 $Paging = false;
             }
                     
@@ -422,25 +422,25 @@ class PerchContent extends PerchApp
                 // count
                 if (isset($opts['count'])) {
                     $count = (int) $opts['count'];
-                }else{
+                } else {
                     $count = false;
                 }
                 
                 // start
                 if (isset($opts['start'])) {
                     $start = ((int) $opts['start'])-1; 
-                }else{
+                } else {
                     $start = 0;
                 }
 
                 if (is_object($Paging)) {
                     $sql .= $Paging->limit_sql();
-                }else{
+                } else {
                     $sql .= ' LIMIT '.$start; 
                     if ($count) $sql .= ', '.$count;
                 }
             }
-   
+            
             $rows = $db->get_rows($sql);
 
             if (is_object($Paging)) {
@@ -492,7 +492,7 @@ class PerchContent extends PerchApp
         // template
         if (isset($opts['template'])) {
             $template = $opts['template'];
-        }else{
+        } else {
             $template = $regions[0]['regionTemplate'];
         }
         
@@ -502,28 +502,7 @@ class PerchContent extends PerchApp
             return 'The template <code>' . PerchUtil::html($template) . '</code> could not be found.';
         }
         
-        // post process
-        
-        /* Refactoring: this now looks surplus.
-        $tags           = $Template->find_all_tags('content');
-        $processed_vars = array();
-        $used_items     = array();
-        
-        foreach($content as $item) {
-            $tmp = $item;
-            if (PerchUtil::count($tags)) {
-                foreach($tags as $Tag) {
-                    
-                    if (isset($item[$Tag->id])) {                         
-                        $used_items[] = $item;
-                    }
-                }
-            }
-            if ($tmp) $processed_vars[] = $tmp;
-        }
-
-        Replacing with:
-        */      
+        // post process   
         $processed_vars = array();  
         foreach($content as $item) {
             $tmp = $item;
@@ -547,11 +526,11 @@ class PerchContent extends PerchApp
 
             if (isset($opts['split-items']) && $opts['split-items']) {
                 $html = $Template->render_group($processed_vars, false);
-            }else{
+            } else {
                 $html = $Template->render_group($processed_vars, true);    
             }
 
-        }else{
+        } else {
             $Template->use_noresults();
             $html = $Template->render(array());
         }
@@ -606,7 +585,7 @@ class PerchContent extends PerchApp
             
         if (isset($this->cache[$key])) {
             return false;
-        }else{
+        } else {
             $this->_register_new_key($key, $opts);
         }
         
@@ -673,7 +652,7 @@ class PerchContent extends PerchApp
                 if (isset($opts['start']) && $opts['start']!='') {
                     $Paging->set_start_position($opts['start']);
                 }
-            }else{
+            } else {
                 $Paging->disable();
             }
         
@@ -698,7 +677,7 @@ class PerchContent extends PerchApp
                         if ($first) {
                             $sql .= ' '.$handler_sql.' ';
                             $first = false;
-                        }else{
+                        } else {
                             $sql .= ' 
                             UNION 
                             '.$handler_sql.' ';    
@@ -721,7 +700,7 @@ class PerchContent extends PerchApp
             
                 if ($search_content) { 
                     $sql = $Paging->select_sql();
-                }else{
+                } else {
                     $sql = $Paging->select_sql() . ' \'PerchContent_SearchHandler\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0 UNION ';
                 }
                             
@@ -733,7 +712,7 @@ class PerchContent extends PerchApp
                             if ($first) {
                                 $sql .= ' '.$handler_sql.' ';
                                 $first = false;
-                            }else{
+                            } else {
                                 $sql .= ' 
                                 UNION 
                                 '.$handler_sql.' ';    
@@ -762,7 +741,7 @@ class PerchContent extends PerchApp
                     $className = $row['source'];
                     if (method_exists($className, $format_method)) {
                         $r = call_user_func(array($className, $format_method), $key, $opts, $row);    
-                    }else{
+                    } else {
                         $r = false;
                     }
                     
@@ -798,6 +777,12 @@ class PerchContent extends PerchApp
         if (PerchUtil::count($out)) {
             foreach($out as &$row) {
 
+                // compat
+                if (!$opts['no-conflict']) {
+                    $row['url'] = $row['result_url'];
+                    if (isset($row['result_result_url'])) $row['result_url'] = $row['result_result_url'];
+                }
+
                 // hide default doc
                 if ($opts['hide-default-doc']) {
                     $row['result_url'] = preg_replace('/'.preg_quote(PERCH_DEFAULT_DOC).'$/', '', $row['result_url']);
@@ -822,11 +807,7 @@ class PerchContent extends PerchApp
                     $row['result_url'] = rtrim($row['result_url'], '/').'/';
                 }
 
-                // compat
-                if (!$opts['no-conflict']) {
-                    $row['url'] = $row['result_url'];
-                    if (isset($row['result_result_url'])) $row['result_url'] = $row['result_result_url'];
-                }
+                
             }
 
             if (isset($Paging) && $Paging->enabled()) {
@@ -839,7 +820,7 @@ class PerchContent extends PerchApp
                 }
             }
             return $Template->render_group($out, 1);
-        }else{
+        } else {
             $Template->use_noresults();
             return $Template->render(array('search_key'=>$key, 'key'=>$key));
         }
@@ -895,7 +876,7 @@ class PerchContent extends PerchApp
     {
         if ($this->preview) {
             $this->cache = $this->get_content_latest_revision();
-        }else{
+        } else {
             $this->cache = $this->_get_content();
         }
     }
@@ -927,7 +908,7 @@ class PerchContent extends PerchApp
                 }
             }
             return $out;
-        }else{
+        } else {
             return array();
         }
     }
@@ -947,13 +928,13 @@ class PerchContent extends PerchApp
             foreach($regions as $Region) {
                 if ($this->preview && $Region->id()==$this->preview_contentID && $this->preview_rev!=false) {
                     $out[$Region->regionKey()] = $Region->render($this->preview_rev);
-                }else{
+                } else {
                     $out[$Region->regionKey()] = $Region->render();    
                 }
                 
             }
             return $out;
-        }else{
+        } else {
             return array();
         }
     }
@@ -974,14 +955,14 @@ class PerchContent extends PerchApp
             foreach($page as $p) {
                 if (strpos($p, '*')!==false) {
                     $where[] = 'regionPage LIKE '.$db->pdb(str_replace('*', '%', $p));
-                }else{
+                } else {
                     $where[] = 'regionPage='.$db->pdb($p);
                 }
             }
-        }else{
+        } else {
             if (strpos($page, '*')!==false) {
                 $where[] = 'regionPage LIKE '.$db->pdb(str_replace('*', '%', $page));
-            }else{
+            } else {
                 $where[] = 'regionPage='.$db->pdb($page);    
             }
         }
@@ -993,10 +974,11 @@ class PerchContent extends PerchApp
      * Add a new key to the regions table
      *
      * @param string $key 
+     * @param array $opts
      * @return void
      * @author Drew McLellan
      */
-    private function _register_new_key($key, $opts=false)
+    private function _register_new_key($key, $opts=array())
     {
         if (!isset($this->registered[$key])) {      
             
@@ -1009,7 +991,7 @@ class PerchContent extends PerchApp
             $data['regionHTML']    = '<!-- Undefined content: '.PerchUtil::html($key).' -->';
             $data['regionOptions'] = '';
             
-            if (is_array($opts)) {
+            if (is_array($opts) && count($opts)) {
 
                 if ($opts['page']) {
                     $data['regionPage'] = $opts['page'];
@@ -1026,13 +1008,13 @@ class PerchContent extends PerchApp
                 
                 if ($opts['multiple']) {
                     $data['regionMultiple'] = 1;  
-                }else{
+                } else {
                     $data['regionMultiple'] = 0;
                 }
 
                 if ($opts['searchable']) {
                     $data['regionSearchable'] = 1;  
-                }else{
+                } else {
                     $data['regionSearchable'] = 0;
                 }
 

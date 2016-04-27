@@ -25,7 +25,9 @@
     if ($username!=false && $password!=false) {
         $auth_succeeded = $CurrentUser->authenticate($username, $password);
         if (!$auth_succeeded) {
-            header("HTTP/1.0 403 Forbidden", true, 403);
+            if (strtoupper(substr(PHP_OS, 0, 3)) !== 'WIN') {
+                header("HTTP/1.0 403 Forbidden", true, 403);
+            }
         }
     }
 
@@ -44,7 +46,9 @@
     }
     
     if (!$CurrentUser->logged_in() && $auth_page) {
-        header("HTTP/1.0 403 Forbidden", true, 403);
+        if (strtoupper(substr(PHP_OS, 0, 3)) !== 'WIN') {
+            header("HTTP/1.0 403 Forbidden", true, 403);
+        }
     }
 
 
