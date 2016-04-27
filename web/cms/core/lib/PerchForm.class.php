@@ -2,30 +2,30 @@
 
 class PerchForm
 {
-    var $html_encode    = true;
-
-	var $required	= array();
-	var $validate	= array();
-	var $messages	= array();
-	var $error		= false;
-
-	var $display_only	= false;
-	var $allow_edits	= true;
-	var $name	 		= false;
-	var $force_clear	= false;
-
-	public $app_id = 'content';
-
+	public $html_encode        = true;
+	
+	public $required           = array();
+	public $validate           = array();
+	public $messages           = array();
+	public $error              = false;
+	
+	public $display_only       = false;
+	public $allow_edits        = true;
+	public $name               = false;
+	public $force_clear        = false;
+	
+	public $app_id             = 'content';
+	
 	public $submitted_via_ajax = false;
+	
+	public $csrf_token         = null;
+	
+	public $fields             = array();
+	
+	public $translate_errors   = true;
 
-	public $csrf_token     = false;
 
-	var $fields		= array();
-
-	public $translate_errors = true;
-
-
-	function __construct($name=false, $display_only=false, $allow_edits=true, $use_session=true)
+	public function __construct($name=false, $display_only=false, $allow_edits=true, $use_session=true)
 	{
 		$Perch  = PerchAdmin::fetch();
 
@@ -129,6 +129,11 @@ class PerchForm
 	            if ($class) return ' class="error"';
 	            return ' error';
 	        }
+
+	        if (isset($this->messages[$id])) {
+	        	if ($class) return ' class="error"';
+	            return ' error';
+	        }
 	    }
 
 	    return '';
@@ -154,23 +159,28 @@ class PerchForm
 		{
 			case 'email':
 				$r	= $this->check_email($id, $args);
-			break;
+				break;
 
 			case 'username':
 				$r	= $this->check_username($id, $args);
-			break;
+				break;
 
 			case 'password':
 				$r	= $this->check_password($id, $args);
-			break;
+				break;
+
+			case 'change_password':
+				$r	= $this->check_current_password($id, $args);
+				break;
+
+			case 'admin_auth':
+				$r	= $this->check_admin_password($id, $args);
+				break;
 
 			case 'licensekey':
 				$r	= $this->check_license_key($id, $args);
-			break;
+				break;
 
-			default:
-				# code...
-			break;
 		}
 
 		if (!$r) $this->messages[$id]	= $value[1];
@@ -227,19 +237,65 @@ class PerchForm
 
 	private function check_password($id, $args)
 	{
-
 		$str 	= $_POST[$id];
 		$str2	= $_POST[$id.'2'];
 
 		if ($str != $str2){
 			return false;
 		}
+
+		if (isset($args['user'])) {
+		    $User = $args['user'];
+		    if (is_object($User)) {
+		    	if (!$User->password_meets_requirements($str)) {
+		    		return false;
+		    	}
+		    }
+		}
+
 		return true;
+	}
+
+	private function check_current_password($id, $args)
+	{
+		$current_password = $_POST[$args['current_password']];
+
+		if (isset($args['user'])) {
+		    $User = $args['user'];
+		    if (is_object($User)) {
+		    	if ($User->validate_password($current_password)) {
+		    		return $this->check_password($id, $args);
+		    	}
+		    }
+		}
+
+		return false;		
+	}
+
+	private function check_admin_password($id, $args)
+	{
+		$current_password 	= $_POST[$id];
+
+		if (isset($args['user'])) {
+		    $User = $args['user'];
+		    if (is_object($User)) {
+		    	if ($User->validate_password($current_password)) {
+		    		return true;
+		    	}
+		    }
+		}
+
+		return false;	
 	}
 
 	private function check_license_key($id, $args)
 	{
 		$str 	= $_POST[$id];
+
+		// LTM?
+		if (strpos($str, 'LOCAL-TESTING')>2) {
+			return true;
+		}
 
 		$pattern = '#^(P|R)[0-9]{5}(-[A-Z]{3}[0-9]{3}){4}$#';
 
@@ -411,12 +467,15 @@ class PerchForm
 	{
 		$this->fields[] = $id;
 
-		if ($this->display_only) return $this->html($value);
+		if ($this->display_only) return '';
 
-		$s	= '<input type="password" autocomplete="off" id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" value="'.$this->html($this->value($value), true).'" class="text '.$this->html($class, true).'" />';
+		$autocomplete = 'off';
+		if (PERCH_PARANOID) $autocomplete = 'new-password';
+
+		$s	= '<input type="password" autocomplete="'.$autocomplete.'" id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" value="'.$this->html($this->value($value), true).'" class="text '.$this->html($class, true).'" />';
 
 		if ($this->required($id) || isset($this->messages[$id])){
-			$s	.= $this->message($id, $value);
+			$s	.= $this->message($id, 'void');
 		}
 
 		return $s;
@@ -618,10 +677,7 @@ class PerchForm
 			}
 		}
 
-
 		return $s;
-
-
 	}
 
     public function datetimepicker($id, $value=false, $field_order='dmy', $allowempty=false)
@@ -867,7 +923,7 @@ class PerchForm
 
 		if ($this->display_only) {
 			if ($this->allow_edits) {
-				$segments	= str_replace('/editform='.$this->name, '', split('/', $Perch->get_page(true)));
+				$segments	= str_replace('/editform='.$this->name, '', explode('/', $Perch->get_page(true)));
 				$segments[]	= 'editform='.$this->name;
 				$url		= implode('/', $segments);
 				$url		= str_replace('//', '/', $url);
@@ -941,9 +997,6 @@ class PerchForm
 		return false;
 	}
 
-
-
-
 	public function check_alpha($id)
 	{
 		$str 	= $_POST[$id];
@@ -952,8 +1005,6 @@ class PerchForm
 		}
 		return true;
 	}
-
-
 
 	public function show_fields()
 	{

@@ -12,7 +12,7 @@
          </form>';
 
 
-    echo $HTML->heading1('Viewing ‘%s’ Backup Plan', $Plan->planTitle());
+    echo $HTML->heading1('Viewing ‘%s’ Backup Plan', $HTML->encode($Plan->planTitle()));
     
 
     echo $HTML->smartbar(

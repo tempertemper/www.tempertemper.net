@@ -16,4 +16,12 @@
             $Perch->dispatch_form($key, $post, $_FILES);
         }
     }
-    if (!PERCH_RUNWAY_ROUTED) perch_find_posted_forms();
+
+    if (PERCH_RUNWAY_ROUTED) {
+        $Perch = Perch::fetch();
+        $Perch->on('page.loaded', function(){
+            perch_find_posted_forms();
+        });
+    }else{
+        perch_find_posted_forms();
+    }

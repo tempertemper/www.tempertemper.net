@@ -17,7 +17,7 @@
 
     include(PERCH_CORE . '/inc/auth.php');
 
-    // Done allow this to be run twice.
+    // Don't' allow this to be run twice.
     if ($Settings->get($setting_key)->val()) {
 
     	if (isset($_GET['force']) && $_GET['force']=='update') {
@@ -47,7 +47,7 @@
 	<meta charset="utf-8" />
 	<title>Software Update</title>
 <?php
-    if ($CurrentUser->logged_in()) {
+    #if ($CurrentUser->logged_in()) {
 ?>
 	<!--[if lt IE 9]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/iebase.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->
 	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/perch.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" />
@@ -57,7 +57,7 @@
 	<!--[if IE 6]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/ie6.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->	
 <?php 
 		if (PERCH_DEBUG) {?><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/debug.css" type="text/css" /><?php } 	
-	} 
+	#} 
 ?>    
 </head>
 <body class="sidebar-closed">
@@ -91,7 +91,7 @@
 					if (!$errors) {
 						echo '<a href="'.PERCH_LOGINPATH.'" class="button">Continue</a>';
 					}else{
-						echo '<p><a href="http://support.grabaperch.com/">Contact us</a> if you are unsure how to resolve these problems, or <a href="'.PERCH_LOGINPATH.'/core/update/?force=accept">accept these errors and continue</a>.</p>';
+						echo '<p><a href="https://grabaperch.com/support">Contact us</a> if you are unsure how to resolve these problems, or <a href="'.PERCH_LOGINPATH.'/core/update/?force=accept">accept these errors and continue</a>.</p>';
 					}
 				?>
 

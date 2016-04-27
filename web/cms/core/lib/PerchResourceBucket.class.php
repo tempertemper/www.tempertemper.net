@@ -58,6 +58,7 @@ class PerchResourceBucket
 		$filename = PerchUtil::tidy_file_name($name);
 
 		if (strpos($filename, '.php')!==false) $filename .= '.txt'; // diffuse PHP files
+		if (strpos($filename, '.phtml')!==false) $filename .= '.txt'; // diffuse PHP files
 
 		$target = PerchUtil::file_path($this->file_path.'/'.$filename);
 

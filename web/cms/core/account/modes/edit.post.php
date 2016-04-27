@@ -64,12 +64,23 @@
         <fieldset>
             <legend class="redundant"><?php echo PerchUtil::html(PerchLang::get('Change password')); ?></legend>
 
-            <div class="field">
+        <?php
+            if (PERCH_PARANOID) {
+        ?>
+            <div class="field <?php echo $Form->error('currentPassword', false);?>">
+                <?php echo $Form->label('currentPassword', 'Current password'); ?>
+                <?php echo $Form->password('currentPassword', ''); ?>
+            </div>
+        <?php
+            }
+        ?>
+
+            <div class="field <?php echo $Form->error('userPassword', false);?>">
                 <?php echo $Form->label('userPassword', 'New password'); ?>
                 <?php echo $Form->password('userPassword', ''); ?>
             </div>
-            <div class="field">
-                <?php echo $Form->label('userPassword2', 'Repeat'); ?>
+            <div class="field <?php echo $Form->error('userPassword2', false);?>">
+                <?php echo $Form->label('userPassword2', 'Repeat new password'); ?>
                 <?php echo $Form->password('userPassword2', ''); ?>
             </div>
         </fieldset>

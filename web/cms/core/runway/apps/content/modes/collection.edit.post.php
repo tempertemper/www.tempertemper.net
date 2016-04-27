@@ -24,7 +24,7 @@
         <div class="field">
             <?php echo $Form->label('collectionTemplate', 'Template'); ?>
             <?php         
-                echo $Form->grouped_select('collectionTemplate', $Regions->get_templates(false, true), $Form->get(array('collectionTemplate'=>''), 'collectionTemplate', 0));               
+                echo $Form->grouped_select('collectionTemplate', $Regions->get_templates(false, false), $Form->get(array('collectionTemplate'=>''), 'collectionTemplate', 0));               
             ?>
         </div>
 

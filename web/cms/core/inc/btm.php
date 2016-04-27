@@ -7,7 +7,17 @@
 		        }
 		    ?>
 		</div>
-		<?php  } ?>
+		<?php  }else{
+
+	        if (defined('PERCH_LICENSE_KEY')) {
+	            if (strpos(PERCH_LICENSE_KEY, 'LOCAL-TESTING')>2) {
+	            	// This is to remind you that you need to pay for a license to use the software publicly.
+	            	// If you don't pay for licenses we can't develop or support this CMS. We'll have to go and find other jobs and Perch will go away.
+	                echo '<a href="https://grabaperch.com/buy"><div class="have-some-integrity">Unlicensed</div></a>';
+	            }
+	        }
+	    
+			} ?>
 		<div class="credit">
 	        <?php
 	            if (!$Settings->get('hideBranding')->settingValue()) {

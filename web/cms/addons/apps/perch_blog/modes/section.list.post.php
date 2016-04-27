@@ -14,13 +14,31 @@
 	include ('_subnav.php');
 
 
-    echo '<a class="add button" href="'.$HTML->encode($API->app_path().'/sections/edit/').'">'.$Lang->get('Add Section').'</a>';
+    echo '<a class="add button" href="'.$HTML->encode($API->app_path().'/sections/edit/?blog='.$Blog->id()).'">'.$Lang->get('Add Section').'</a>';
 
 
 	# Title panel
     echo $HTML->heading1('Listing Sections');
-    
 
+
+    /* ----------------------------------------- SMART BAR ----------------------------------------- */
+    //
+    ?>
+    <ul class="smartbar">
+        <?php
+            if (PerchUtil::count($blogs)) {
+                foreach($blogs as $Item) {
+                    if ($Item->id()==$Blog->id()) {
+                        echo '<li class="selected">';
+                    }else{
+                        echo '<li>';
+                    }
+                    echo '<a href="'.PerchUtil::html($API->app_path()).'/sections/?blog='.$Item->blogSlug().'">'.$Item->blogTitle().'</a></li>';
+                }
+            }
+        ?>
+    </ul>
+<?php
     
     if (PerchUtil::count($sections)) {
 ?>

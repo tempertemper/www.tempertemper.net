@@ -5,12 +5,12 @@ class PerchBlog_Sections extends PerchAPI_Factory
     protected $table     = 'blog_sections';
 	protected $pk        = 'sectionID';
 	protected $singular_classname = 'PerchBlog_Section';
-	
+
 	protected $default_sort_column = 'sectionTitle';
 
-	public $static_fields   = array('sectionTitle', 'sectionSlug', 'sectionPostCount');
+	public $static_fields   = array('sectionTitle', 'sectionSlug', 'sectionPostCount', 'blogID');
 
-	
+
     public function find_by_given($id_or_slug)
     {
         if (is_numeric($id_or_slug)) {
@@ -19,43 +19,43 @@ class PerchBlog_Sections extends PerchAPI_Factory
 
         return $this->find_by_slug($id_or_slug);
     }
-	
+
 	/**
 	 * Find a section by its sectionSlug
 	 *
-	 * @param string $slug 
+	 * @param string $slug
 	 * @return void
 	 * @author Drew McLellan
 	 */
 	public function find_by_slug($slug)
     {
-        $sql    = 'SELECT * 
+        $sql    = 'SELECT *
                     FROM ' . $this->table . '
                     WHERE sectionSlug='. $this->db->pdb($slug) .'
                     LIMIT 1';
-                    
+
         $result = $this->db->get_row($sql);
-        
+
         if (is_array($result)) {
             return new $this->singular_classname($result);
         }
-        
+
         return false;
     }
-    	
+
 	/**
-	 * 
+	 *
 	 * retrieves all sections used by blog posts along with a count of number of posts for each section.
 	 */
 	 public function all_in_use() {
 		$sql = 'SELECT sectionID, sectionTitle, sectionSlug, sectionPostCount, sectionPostCount AS qty, sectionDynamicFields
-                FROM '.PERCH_DB_PREFIX.'blog_sections WHERE sectionPostCount>0 
+                FROM '.PERCH_DB_PREFIX.'blog_sections WHERE sectionPostCount>0
                 ORDER BY sectionTitle ASC';
-		
+
 		$rows   = $this->db->get_rows($sql);
 
     	$r = $this->return_instances($rows);
-    	    
+
     	return $r;
 	}
 
@@ -63,10 +63,21 @@ class PerchBlog_Sections extends PerchAPI_Factory
 	{
 		$API = new PerchAPI(1.0, 'perch_blog');
 
+        $blogSQL = '';
+        if ($opts['blog']) {
+            $BlogPosts = new PerchBlog_Posts($API);
+            $Blogs = new PerchBlog_Blogs($API);
+            $Blog = $Blogs->get_one_by('blogSlug', $opts['blog']);
+            if ($Blog) {
+                $blogID = (int)$Blog->id();
+                $blogSQL = ' AND blogID='.$this->db->pdb($blogID) .' ';
+            }
+        }
+
 		if ($opts['include-empty']) {
-			$sql = 'SELECT *, sectionID AS _id, sectionPostCount as qty FROM '.$this->table.' ORDER BY sectionTitle ASC';
+			$sql = 'SELECT *, sectionID AS _id, sectionPostCount as qty FROM '.$this->table.' WHERE 1=1 '.$blogSQL.' ORDER BY sectionTitle ASC';
 		}else{
-			$sql = 'SELECT *, sectionID AS _id, sectionPostCount as qty FROM '.$this->table.' WHERE sectionPostCount>0 ORDER BY sectionTitle ASC';
+			$sql = 'SELECT *, sectionID AS _id, sectionPostCount as qty FROM '.$this->table.' WHERE sectionPostCount>0 '.$blogSQL.' ORDER BY sectionTitle ASC';
 		}
 
 		$rows   = $this->db->get_rows($sql);
@@ -75,10 +86,10 @@ class PerchBlog_Sections extends PerchAPI_Factory
 		$content = array();
 
         if (PerchUtil::count($sections)) {
-            foreach($sections as $Section) $content[] = $Section->to_array();    
+            foreach($sections as $Section) $content[] = $Section->to_array();
         }
-		
-		
+
+
 		if (isset($opts['filter']) && (isset($opts['value']) || is_array($opts['filter']))) {
             if (PerchUtil::count($content)) {
                 $out = array();
@@ -104,7 +115,7 @@ class PerchBlog_Sections extends PerchAPI_Factory
 
                 $filter_content = $content;
 
-                foreach($filters as $filter) {                       
+                foreach($filters as $filter) {
 
                     $key = $filter['filter'];
                     $val = $filter['value'];
@@ -121,14 +132,14 @@ class PerchBlog_Sections extends PerchAPI_Factory
                             $this_item = $this->_resolve_to_value($item[$key]);
 
                             switch ($match) {
-                                case 'eq': 
-                                case 'is': 
-                                case 'exact': 
+                                case 'eq':
+                                case 'is':
+                                case 'exact':
                                     if ($this_item==$val) $out[$item['_id']] = $item;
                                     break;
-                                case 'neq': 
-                                case 'ne': 
-                                case 'not': 
+                                case 'neq':
+                                case 'ne':
+                                case 'not':
                                     if ($this_item!=$val) $out[$item['_id']] = $item;
                                     break;
                                 case 'gt':
@@ -184,7 +195,7 @@ class PerchBlog_Sections extends PerchAPI_Factory
 
                     // if 'AND' mode, run the next filter against the already filtered list
                     if ($filter_mode == 'AND') {
-                        $filter_content = $out;                        
+                        $filter_content = $out;
                     }else{
                         $filter_content = $content;
                     }
@@ -199,7 +210,7 @@ class PerchBlog_Sections extends PerchAPI_Factory
         $new_content = array();
         foreach($content as $c) $new_content[] = $c;
         $content = $new_content;
-    
+
         // sort
         if (isset($opts['sort'])) {
             if (isset($opts['sort-order']) && $opts['sort-order']=='DESC') {
@@ -209,11 +220,11 @@ class PerchBlog_Sections extends PerchAPI_Factory
             }
             $content = PerchUtil::array_sort($content, $opts['sort'], $desc);
         }
-    
+
         if (isset($opts['sort-order']) && $opts['sort-order']=='RAND') {
             shuffle($content);
         }
-    
+
         // Pagination
         if (isset($opts['paginate'])) {
 
@@ -222,17 +233,17 @@ class PerchBlog_Sections extends PerchAPI_Factory
             if (isset($opts['pagination-var'])) {
                 $Paging->set_qs_param($opts['pagination-var']);
             }
-            
+
             $Paging->set_per_page(isset($opts['count'])?(int)$opts['count']:10);
-            
+
             $opts['count'] = $Paging->per_page();
             $opts['start'] = $Paging->lower_bound()+1;
-            
+
             $Paging->set_total(PerchUtil::count($content));
         }else{
             $Paging = false;
         }
-                
+
         // limit
         if (isset($opts['count']) || isset($opts['start'])) {
 
@@ -242,13 +253,13 @@ class PerchBlog_Sections extends PerchAPI_Factory
             }else{
                 $count = PerchUtil::count($content);
             }
-            
+
             // start
             if (isset($opts['start'])) {
                 if ($opts['start'] === 'RAND') {
                     $start = rand(0, PerchUtil::count($content)-1);
                 }else{
-                    $start = ((int) $opts['start'])-1; 
+                    $start = ((int) $opts['start'])-1;
                 }
             }else{
                 $start = 0;
@@ -265,8 +276,8 @@ class PerchBlog_Sections extends PerchAPI_Factory
             }
             $content = $out;
         }
-              
-        
+
+
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
             if (isset($opts['raw']) && $opts['raw']==true) {
                 if (PerchUtil::count($content)) {
@@ -280,18 +291,17 @@ class PerchBlog_Sections extends PerchAPI_Factory
                         }
                     }
                 }
-                return $content; 
+                return $content;
             }
         }
-    
-        
+
+
         // template
         $Template = $API->get('Template');
         $Template->set('blog/'.$opts['template'], 'blog');
 
 
-
-        // post process       
+        // post process
         $tags   = $Template->find_all_tags_and_repeaters('blog');
         $processed_vars = array();
         $used_items = array();
@@ -299,7 +309,7 @@ class PerchBlog_Sections extends PerchAPI_Factory
             $tmp = $item;
             if (PerchUtil::count($tags)) {
                 foreach($tags as $Tag) {
-                    if (isset($item[$Tag->id()])) {    
+                    if (isset($item[$Tag->id()])) {
                         $used_items[] = $item;
                     }
                 }
@@ -307,9 +317,9 @@ class PerchBlog_Sections extends PerchAPI_Factory
             if ($tmp) $processed_vars[] = $tmp;
         }
 
-        
-        
-        
+
+
+
         // Paging to template
         if (is_object($Paging) && $Paging->enabled()) {
             $paging_array = $Paging->to_array($opts);
@@ -320,7 +330,7 @@ class PerchBlog_Sections extends PerchAPI_Factory
                 }
             }
         }
-        
+
         if (PerchUtil::count($processed_vars)) {
             $html = $Template->render_group($processed_vars, true);
 
@@ -329,7 +339,7 @@ class PerchBlog_Sections extends PerchAPI_Factory
             $html = $Template->render(array());
         }
 
-        
+
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
             $out = array();
 
@@ -356,7 +366,7 @@ class PerchBlog_Sections extends PerchAPI_Factory
 
             return $out;
         }
-        
+
         return $html;
 
 	}
@@ -385,7 +395,7 @@ class PerchBlog_Sections extends PerchAPI_Factory
     	$sql = 'SELECT c.sectionID, COUNT(p.postID) AS qty
                 FROM '.PERCH_DB_PREFIX.'blog_sections c, '.PERCH_DB_PREFIX.'blog_posts p
                 WHERE c.sectionID=p.sectionID
-                    AND p.postStatus=\'Published\' AND p.postDateTime<='.$this->db->pdb(date('Y-m-d H:i:00')).' 
+                    AND p.postStatus=\'Published\' AND p.postDateTime<='.$this->db->pdb(date('Y-m-d H:i:00')).'
                 GROUP BY c.sectionID
                 ORDER BY c.sectionTitle ASC';
         $rows = $this->db->get_rows($sql);

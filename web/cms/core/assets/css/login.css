@@ -278,7 +278,7 @@ form div.error .text {
 .button,
 .compact-button {
 	display: inline-block;
-	padding: .4em 1.5em;
+	padding: .39em 1.5em;
 	text-decoration: none;
 	color: #333;
 	font-size: 93%;
@@ -316,4 +316,20 @@ form.recover .text {
 
 form.recover p.submit {
 	margin-left: 165px;
+}
+
+.have-some-integrity {
+	width: 200px;
+	background: #b34040;
+	position: absolute;
+	text-align: center;
+	line-height: 50px;
+	letter-spacing: 1px;
+	color: #f0f0f0;
+	top: 25px;
+	right: -50px;
+	left: auto;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	text-transform: uppercase;
 }

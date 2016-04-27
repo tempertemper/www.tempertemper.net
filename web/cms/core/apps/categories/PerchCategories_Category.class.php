@@ -86,7 +86,10 @@ class PerchCategories_Category extends PerchAPI_Base
 
     public function catDepth()
     {
-    	return substr_count($this->catTreePosition(), '-');
+        if (isset($this->details['catTreePosition'])) {
+            return substr_count($this->details['catTreePosition'], '-');
+        }
+    	return 0;
     }
 
     public function get_display_path($catID=false, $s=array())

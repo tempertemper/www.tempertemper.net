@@ -20,8 +20,24 @@ class PerchAuthenticatedUser extends PerchBase
 
         if ($this->activate()) {
 
+            if (PERCH_PARANOID) {
+                // reset any expired lockouts for this user
+                $sql = 'UPDATE '.$this->table.' SET userLastFailedLogin=NULL, userFailedLoginAttempts=0
+                        WHERE BINARY userUsername='. $this->db->pdb($username).' 
+                            AND userLastFailedLogin<'.$this->db->pdb(date('Y-m-d H:i:s', strtotime('-'.PERCH_AUTH_LOCKOUT_DURATION)));
+                $this->db->execute($sql);
+            }
+
             $sql     = 'SELECT u.*, r.* FROM ' . $this->table . ' u, '.PERCH_DB_PREFIX.'user_roles r
-                        WHERE u.roleID=r.roleID AND u.userEnabled=1 AND userUsername=' . $this->db->pdb($username) . ' LIMIT 1';
+                        WHERE u.roleID=r.roleID AND u.userEnabled=1 AND ';
+
+            if (PERCH_PARANOID) {
+                $sql .=  'BINARY userUsername=' . $this->db->pdb($username) .' AND userFailedLoginAttempts<'.(int)PERCH_MAX_FAILED_LOGINS;
+            }else{
+                $sql .=  'userUsername=' . $this->db->pdb($username);
+            }
+
+            $sql .=  ' LIMIT 1';
 
             $result = $this->db->get_row($sql);
             if (is_array($result)) {
@@ -31,14 +47,7 @@ class PerchAuthenticatedUser extends PerchBase
                 $password_match  = false;
                 $stored_password = $result['userPassword'];
 
-                // check which type of password - default is portable
-                if (defined('PERCH_NONPORTABLE_HASHES') && PERCH_NONPORTABLE_HASHES) {
-                    $portable_hashes = false;
-                }else{
-                    $portable_hashes = true;
-                }
-
-                $Hasher = new PasswordHash(8, $portable_hashes);
+                $Hasher = PerchUtil::get_password_hasher();
 
 
                 // data array for user details - gets committed if passwords check out.
@@ -75,6 +84,8 @@ class PerchAuthenticatedUser extends PerchBase
 
                     $data['userHash'] = md5(uniqid());
                     $data['userLastLogin'] = date('Y-m-d H:i:s');
+                    $data['userFailedLoginAttempts'] = 0;
+                    $data['userLastFailedLogin'] = null;
                     $this->update($data);
                     $this->result['userHash'] = $data['userHash'];
                     $this->set_details($result);
@@ -92,7 +103,7 @@ class PerchAuthenticatedUser extends PerchBase
                         return false;
                     }
 
-                    // Set cookie for front-end might-be-authed checked
+                    // Set cookie for front-end might-be-authed check
                     PerchUtil::setcookie('cmsa', 1, strtotime('+30 days'), '/');
 
                     $Perch = Perch::fetch();
@@ -100,12 +111,25 @@ class PerchAuthenticatedUser extends PerchBase
 
                     return true;
                 }
+
+                // Username checks out, but wrong password.
+                $data['userFailedLoginAttempts'] = (int)$result['userFailedLoginAttempts'] + 1;
+                $data['userLastFailedLogin']     = date('Y-m-d H:i:s');  
+                $this->set_details($result);
+                $this->update($data);
+
+                
+                if (PERCH_PARANOID && $data['userFailedLoginAttempts'] == PERCH_MAX_FAILED_LOGINS) {
+                    $this->send_lockout_email($result['userID']);
+                }    
+            
+                
             }
         }
 
         PerchUtil::debug('Writing auth fail to log.');
         $username = escapeshellcmd(stripslashes($username));
-        syslog(LOG_INFO, 'Authentication failure for '.$username.' from '.PerchUtil::get_client_ip());
+        @syslog(LOG_INFO, 'Authentication failure for '.$username.' from '.PerchUtil::get_client_ip());
 
         return false;
     }
@@ -277,4 +301,11 @@ class PerchAuthenticatedUser extends PerchBase
 	        $this->privileges = $privs;
 	    }
 	}
+
+    private function send_lockout_email($userID)
+    {
+        $Users = new PerchUsers;
+        $User = $Users->find((int)$userID);
+        $User->send_lockout_email();
+    }
 }

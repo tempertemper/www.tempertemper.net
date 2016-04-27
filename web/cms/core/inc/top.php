@@ -6,7 +6,7 @@
     // Check for updates
     $update_setting_key = 'update_'.$Perch->version;
   	if (PERCH_RUNWAY) $update_setting_key = 'update_runway_'.$Perch->version;
-    if (!$auth_page && !$Settings->get($update_setting_key)->val()) {
+    if (!$Settings->get($update_setting_key)->val()) {
         PerchUtil::redirect(PERCH_LOGINPATH . '/core/update/');
     }
 

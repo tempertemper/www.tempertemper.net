@@ -44,29 +44,38 @@ class PerchUsers extends PerchFactory
         return new PerchAuthenticatedUser(array('userID'=>1));
     }
 
-    public function create($data, $send_welcome_email=true)
+    public function create($data, $send_welcome_email=true, $token_mode=false)
     {
 
-        // check which type of password - default is portable
-        if (defined('PERCH_NONPORTABLE_HASHES') && PERCH_NONPORTABLE_HASHES) {
-            $portable_hashes = false;
-        }else{
-            $portable_hashes = true;
-        }
-
-        $Hasher = new PasswordHash(8, $portable_hashes);
-
-        $clear_pwd  = $data['userPassword'];
-        $data['userPassword'] = $Hasher->HashPassword($clear_pwd);
         $data['userCreated'] = date('Y-m-d H:i:s');
         $data['userEnabled'] = '1';
 
-        $NewUser = parent::create($data);
+        if ($token_mode) {
 
-        if (is_object($NewUser) && $send_welcome_email) {
-            $NewUser->squirrel('clear_pwd', $clear_pwd);
-            $NewUser->send_welcome_email();
+            // issue a token for creating an account with a new password, like password reset does.
+
+            $NewUser = parent::create($data);
+            if (is_object($NewUser) && $send_welcome_email) {
+                $NewUser->send_welcome_email($token_mode);
+            }
+
+        }else{
+
+            $Hasher = PerchUtil::get_password_hasher();
+
+            $clear_pwd  = $data['userPassword'];
+            $data['userPassword'] = $Hasher->HashPassword($clear_pwd);
+        
+            $NewUser = parent::create($data);
+
+            if (is_object($NewUser) && $send_welcome_email) {
+                $NewUser->squirrel('clear_pwd', $clear_pwd);
+                $NewUser->send_welcome_email();
+            }
+
         }
+
+        
 
         return $NewUser;
     }
@@ -74,8 +83,9 @@ class PerchUsers extends PerchFactory
     public function username_available($username, $exclude_userID=false)
     {
         $sql = 'SELECT COUNT(*)
-                FROM ' . $this->table . '
-                WHERE userUsername='.$this->db->pdb($username);
+            FROM ' . $this->table . '
+            WHERE userUsername='.$this->db->pdb($username);
+    
 
         if ($exclude_userID) {
             $sql .= ' AND userID!='.$this->db->pdb((int) $exclude_userID);

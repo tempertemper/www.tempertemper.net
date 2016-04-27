@@ -23,6 +23,8 @@ class PerchAPI_SubmittedForm
     private $timestamp = false;
     public $mimetypes = array();
 
+    public $redispatched = false;
+
 
     function __construct($version=1.0, $app_id, $Lang)
     {
@@ -63,7 +65,7 @@ class PerchAPI_SubmittedForm
         if ($this->timestamp > 0) {
             // reject if the form was submitted less than 1 second after being generated
             if (time() - (int) $this->timestamp < 1) {
-                PerchUtil::debug('Form submitted too quickly - are you a robot?', 'error');
+                PerchUtil::debug('🤖 Form submitted too quickly - are you a robot?', 'error');
                 return false;
             }
         }
@@ -285,10 +287,15 @@ class PerchAPI_SubmittedForm
 			            $this->mimetypes[$incoming_attr] = $mime_type;
 			            $parts = explode('/', $mime_type);
 			            $mime_type_wildcarded = $parts[0].'/*';
-			            $arr_accept = explode(' ', $accept);
+                        if (strpos($accept, ',')) {
+                            $arr_accept = explode(',', $accept);    
+                        }else{
+                            $arr_accept = explode(' ', $accept);
+                        }
 			            $found = false;
 			            if (PerchUtil::count($arr_accept)) {
 			                foreach($arr_accept as $type) {
+                                $type = trim($type);
 			                    if (isset($this->filetypes[$type])) {
 			                        if (in_array($mime_type, $this->filetypes[$type]) || in_array($mime_type_wildcarded, $this->filetypes[$type])) {
 			                            $found = true;
@@ -405,14 +412,58 @@ class PerchAPI_SubmittedForm
         }
     }
 
+    public function clear_from_post_env()
+    {
+        if (PerchUtil::count($this->data)) {
+            foreach($this->data as $key=>$val) {
+                if (isset($_POST[$key])) {
+                    unset($_POST[$key]);
+                }
+            }
+        }
+    }
+
+    public function duplicate($copy_vars, $unset_vars)
+    {
+        $new_vars = array();
+
+        if (PerchUtil::count($this->data)) {
+            foreach($this->data as $key=>$val) {
+                if (in_array($key, $copy_vars)) {
+                    $new_vars[$key] = $val;
+                }
+                if (in_array($key, $unset_vars)) {
+                    unset($this->data[$key]);
+                }
+            }
+        }
+
+        $API = new PerchAPI(1.0, $this->app_id);
+        $NewForm = $API->get('SubmittedForm');
+
+        $NewForm->populate($this->formID, $this->templatePath, $new_vars, $this->files, $this->timestamp);
+
+        return $NewForm;
+    }
+
+    public function redispatch($appID)
+    {
+        $this->redispatched = true;
+        call_user_func($appID.'_form_handler', $this);
+    }
+
     private function _get_template_content()
     {
         if ($this->templateContent === false) {
-            $content = file_get_contents(PerchUtil::file_path(PERCH_PATH.$this->templatePath));
-
-            // parse subtemplates
-            $Template = new PerchTemplate();
-            $this->templateContent = $Template->load($content, true);
+            $file = PerchUtil::file_path(PERCH_PATH.$this->templatePath);
+            if (file_exists($file)) {
+                $content = file_get_contents($file);
+                // parse subtemplates
+                $Template = new PerchTemplate();
+                $this->templateContent = $Template->load($content, true); 
+            }else{
+                PerchUtil::debug('Template file not found: '.$file, 'error');
+            }    
         }
 
         return $this->templateContent;

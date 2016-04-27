@@ -749,7 +749,7 @@ class PerchContent_Pages extends PerchFactory
                 $data['templateID'] = 0;
             }
 
-            $dir            = PERCH_SITEPATH.str_replace('/', DIRECTORY_SEPARATOR, $pageSection);
+            $dir  = PERCH_SITEPATH.str_replace('/', DIRECTORY_SEPARATOR, $pageSection);
 
             // Get the new file path
             $new_url = $pageSection.'/'.str_replace($dir, '', $file_name);
@@ -802,7 +802,7 @@ class PerchContent_Pages extends PerchFactory
                                         regionKey,
                                         '.$this->db->pdb($r).' AS regionPage,
                                         "<!-- Undefined content -->" AS regionHTML,
-                                        rregionNew,
+                                        regionNew,
                                         regionOrder,
                                         regionTemplate,
                                         regionMultiple,

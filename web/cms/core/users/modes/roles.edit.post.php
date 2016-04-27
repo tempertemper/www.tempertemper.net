@@ -6,7 +6,7 @@
 
     <h1><?php 
 		if (is_object($Role)) {
-			echo PerchLang::get('Editing %s Role', $Role->roleTitle());
+			echo PerchLang::get('Editing %s Role', PerchUtil::html($Role->roleTitle()));
 		}else{
 			echo PerchLang::get('Adding a New Role');
 		}
