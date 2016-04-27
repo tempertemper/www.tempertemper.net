@@ -51,7 +51,6 @@
     transition: fill .2s ease;
   }
 
-
   a:hover,
   a:active,
   a:focus {
@@ -59,11 +58,5 @@
     path {
       fill: $black !important;
     }
-  }
-
-  .icon-twitter {
-    display: inline-block;
-    width: 1.5em;
-    margin-bottom: -.2em;
   }
 }
