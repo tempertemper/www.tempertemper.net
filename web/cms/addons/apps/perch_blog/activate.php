@@ -33,12 +33,13 @@
 
     CREATE TABLE IF NOT EXISTS `__PREFIX__blog_posts` (
       `postID` int(11) NOT NULL AUTO_INCREMENT,
+      `blogID` int(10) unsigned DEFAULT '1',
       `postTitle` varchar(255) NOT NULL DEFAULT '',
       `postSlug` varchar(255) NOT NULL DEFAULT '',
       `postDateTime` datetime DEFAULT NULL,
       `postDescRaw` text,
       `postDescHTML` text,
-      `postDynamicFields` text,
+      `postDynamicFields` mediumtext,
       `postTags` varchar(255) NOT NULL DEFAULT '',
       `postStatus` enum('Published','Draft') NOT NULL DEFAULT 'Published',
       `authorID` int(10) unsigned NOT NULL DEFAULT '0',
@@ -48,11 +49,13 @@
       `postLegacyURL` varchar(255) DEFAULT NULL,
       `postAllowComments` tinyint(1) unsigned NOT NULL DEFAULT '1',
       `postTemplate` varchar(255) NOT NULL DEFAULT 'post.html',
+      `postMetaTemplate` varchar(255) NOT NULL DEFAULT 'post_meta.html',
       PRIMARY KEY (`postID`),
       KEY `idx_date` (`postDateTime`),
+      KEY `idx_status` (`postStatus`),
+      KEY `idx_blog` (`blogID`),
       FULLTEXT KEY `idx_search` (`postTitle`,`postDescRaw`,`postTags`)
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-
 
     CREATE TABLE IF NOT EXISTS `__PREFIX__blog_posts_to_tags` (
       `postID` int(11) NOT NULL DEFAULT '0',
@@ -69,10 +72,10 @@
 
     INSERT INTO `__PREFIX__settings` (`settingID`, `userID`, `settingValue`)
       VALUES ('perch_blog_post_url', 0, '/blog/post.php?s={postSlug}');
-    
 
     CREATE TABLE IF NOT EXISTS `__PREFIX__blog_sections` (
       `sectionID` int(11) NOT NULL AUTO_INCREMENT,
+      `blogID` int(10) unsigned NOT NULL DEFAULT '1',
       `sectionTitle` varchar(255) NOT NULL DEFAULT '',
       `sectionSlug` varchar(255) NOT NULL DEFAULT '',
       `sectionPostCount` int(10) unsigned NOT NULL DEFAULT '0',
@@ -94,17 +97,30 @@
       KEY `idx_keys` (`itemKey`,`indexKey`)
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+    CREATE TABLE IF NOT EXISTS `__PREFIX__blogs` (
+      `blogID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+      `blogTitle` char(255) NOT NULL DEFAULT 'Blog',
+      `blogSlug` char(255) DEFAULT 'blog',
+      `setSlug` char(255) DEFAULT 'blog',
+      `postTemplate` char(255) DEFAULT 'post.html',
+      `blogDynamicFields` mediumtext,
+      PRIMARY KEY (`blogID`)
+    ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+    INSERT INTO `__PREFIX__blogs` (`blogID`, `blogTitle`, `blogSlug`, `setSlug`, `postTemplate`, `blogDynamicFields`)
+    VALUES (1,'Blog','blog','blog','post.html','[]');
+
     ";
-    
+
     $sql = str_replace('__PREFIX__', PERCH_DB_PREFIX, $sql);
-    
+
     $statements = explode(';', $sql);
     foreach($statements as $statement) {
         $statement = trim($statement);
         if ($statement!='') $this->db->execute($statement);
     }
- 
-   
+
+
     $API = new PerchAPI(1.0, 'perch_blog');
     $UserPrivileges = $API->get('UserPrivileges');
     $UserPrivileges->create_privilege('perch_blog', 'Access the blog');
@@ -115,7 +131,7 @@
     $UserPrivileges->create_privilege('perch_blog.comments.enable', 'Enable comments on a post');
     $UserPrivileges->create_privilege('perch_blog.import', 'Import data');
     $UserPrivileges->create_privilege('perch_blog.authors.manage', 'Manage authors');
-    
+
     $sql = "INSERT INTO `".PERCH_DB_PREFIX."blog_sections` (sectionID, sectionTitle, sectionSlug, sectionPostCount, sectionDynamicFields) VALUES ('1', 'Posts', 'posts', 0, '')";
         $this->db->execute($sql);
 
@@ -134,7 +150,5 @@
 
     $sql = 'SHOW TABLES LIKE "'.$this->table.'"';
     $result = $this->db->get_value($sql);
-    
-    return $result;
 
-?>
+    return $result;

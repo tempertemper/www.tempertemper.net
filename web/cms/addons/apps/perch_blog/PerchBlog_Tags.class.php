@@ -5,9 +5,9 @@ class PerchBlog_Tags extends PerchAPI_Factory
     protected $table     = 'blog_tags';
 	protected $pk        = 'tagID';
 	protected $singular_classname = 'PerchBlog_Tag';
-	
+
 	protected $default_sort_column = 'tagTitle';
-	
+
 	/**
 	 * fetch the posts for a given tag
 	 * @param int $postID
@@ -19,16 +19,25 @@ class PerchBlog_Tags extends PerchAPI_Factory
 	            WHERE t.tagID=p2t.tagID
 	                AND p2t.postID='.$this->db->pdb($postID);
 	    $rows   = $this->db->get_rows($sql);
-	    
+
 	    return $this->return_instances($rows);
 	}
-	
+
 /**
-	 * 
+	 *
 	 * retrieves all tags used by blog posts along with a count of number of posts for each tag.
 	 */
-	public function all_in_use($opts=array()) 
+	public function all_in_use($opts=array())
 	{
+		$blogSQL = false; // SQL for refining by blog
+
+		if (isset($opts['blog']) &&  PERCH_RUNWAY) {
+			$Blogs = new PerchBlog_Blogs($this->api);
+			$Blog = $Blogs->get_one_by('blogSlug', $opts['blog']);
+			if ($Blog) {
+				$blogSQL  = ' AND p.blogID='.$this->db->pdb((int)$Blog->id()).' ';
+			}
+		}
 
 		if (isset($opts['section']) && $opts['section']) {
 			$Sections = new PerchBlog_Sections($this->api);
@@ -39,8 +48,8 @@ class PerchBlog_Tags extends PerchAPI_Factory
 			$sql = 'SELECT t.tagTitle, t.tagSlug, COUNT(p2t.postID) AS qty
                 FROM '.PERCH_DB_PREFIX.'blog_tags t, '.PERCH_DB_PREFIX.'blog_posts_to_tags p2t, '.PERCH_DB_PREFIX.'blog_posts p
                 WHERE p2t.tagID=t.tagID AND p2t.postID=p.postID
-                    AND p.postStatus=\'Published\' AND p.postDateTime<='.$this->db->pdb(date('Y-m-d H:i:00')).' 
-                    AND p.sectionID='.$this->db->pdb((int)$Section->id()).'
+                    AND p.postStatus=\'Published\' AND p.postDateTime<='.$this->db->pdb(date('Y-m-d H:i:00')).'
+                    AND p.sectionID='.$this->db->pdb((int)$Section->id()).$blogSQL.'
                 GROUP BY t.tagID
                 ORDER BY t.tagTitle ASC
 			';
@@ -50,18 +59,18 @@ class PerchBlog_Tags extends PerchAPI_Factory
 			$sql = 'SELECT t.tagTitle, t.tagSlug, COUNT(p2t.postID) AS qty
                 FROM '.PERCH_DB_PREFIX.'blog_tags t, '.PERCH_DB_PREFIX.'blog_posts_to_tags p2t, '.PERCH_DB_PREFIX.'blog_posts p
                 WHERE p2t.tagID=t.tagID AND p2t.postID=p.postID
-                    AND p.postStatus=\'Published\' AND p.postDateTime<='.$this->db->pdb(date('Y-m-d H:i:00')).' 
+                    AND p.postStatus=\'Published\' AND p.postDateTime<='.$this->db->pdb(date('Y-m-d H:i:00')).$blogSQL.'
                 GROUP BY t.tagID
                 ORDER BY t.tagTitle ASC';
 
 		}
 
-		
-		
+
+
 		$rows   = $this->db->get_rows($sql);
 
     	$r = $this->return_instances($rows);
-    	    
+
     	return $r;
 	}
 
@@ -87,25 +96,25 @@ class PerchBlog_Tags extends PerchAPI_Factory
 		/**
 	 * Find a tag by its tagSlug
 	 *
-	 * @param string $slug 
+	 * @param string $slug
 	 * @return void
 	 * @author Drew McLellan
 	 */
 	public function find_by_slug($slug)
     {
-        $sql    = 'SELECT * 
+        $sql    = 'SELECT *
                     FROM ' . $this->table . '
                     WHERE tagSlug='. $this->db->pdb($slug) .'
                     LIMIT 1';
-                    
+
         $result = $this->db->get_row($sql);
-        
+
         if (is_array($result)) {
             return new $this->singular_classname($result);
         }
-        
+
         return false;
     }
-    
+
 }
 

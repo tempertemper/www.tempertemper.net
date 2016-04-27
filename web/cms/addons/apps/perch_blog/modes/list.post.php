@@ -10,30 +10,41 @@
     }
 
     echo $HTML->side_panel_end();
-    
-    
+
+
     # Main panel
     echo $HTML->main_panel_start();
-	
+
 	include('_subnav.php');
 
 
-    if ($CurrentUser->has_priv('perch_blog.post.create')) echo '<a class="add button" href="'.$HTML->encode($API->app_path().'/edit/').'">'.$Lang->get('Add Post').'</a>';
+    if ($CurrentUser->has_priv('perch_blog.post.create')) echo '<a class="add button" href="'.$HTML->encode($API->app_path().'/edit/'.(PERCH_RUNWAY ? '?blog='.$Blog->id() : '')).'">'.$Lang->get('Add Post').'</a>';
 
 	# Title panel
     echo $HTML->heading1('Listing Posts');
-    
+
     if (isset($message)) echo $message;
 
 
     /* ----------------------------------------- SMART BAR ----------------------------------------- */
-    if (PerchUtil::count($posts)) {
+    //
     ?>
 
 
     <ul class="smartbar">
-        <li class="<?php echo ($filter=='all'?'selected':''); ?>"><a href="<?php echo PerchUtil::html($API->app_path()); ?>"><?php echo $Lang->get('All'); ?></a></li>
-        <li class="new <?php echo ($filter=='status'&&$status=='draft'?'selected':''); ?>"><a href="<?php echo PerchUtil::html($API->app_path().'?status=draft'); ?>"><?php echo $Lang->get('Drafts'); ?></a></li>
+        <?php
+            if (PerchUtil::count($blogs)) {
+                foreach($blogs as $Item) {
+                    if ($Item->id()==$Blog->id()) {
+                        echo '<li class="selected">';
+                    }else{
+                        echo '<li>';
+                    }
+                    echo '<a href="'.PerchUtil::html($API->app_path()).'?blog='.$Item->blogSlug().'">'.$Item->blogTitle().'</a></li>';
+                }
+            }
+        ?>
+        <li class="new <?php echo ($filter=='status'&&$status=='draft'?'selected':''); ?>"><a href="<?php echo PerchUtil::html($API->app_path().'?status=draft&blog='.$Blog->blogSlug()); ?>"><?php echo $Lang->get('Drafts'); ?></a></li>
         <?php
 
             if ($filter == 'status' && $status == 'draft') {
@@ -53,7 +64,7 @@
 
                 echo PerchUtil::smartbar_filter('cf', 'By Category', 'Filtered by ‘%s’', $items, 'folder', $Alert, "You are viewing posts in ‘%s’", $API->app_path());
             }
-           
+
 
             if (PerchUtil::count($sections) > 1) {
                 $items = array();
@@ -68,17 +79,17 @@
 
                 echo PerchUtil::smartbar_filter('sf', 'By Section', 'Filtered by ‘%s’', $items, 'folder', $Alert, "You are viewing posts in ‘%s’", $API->app_path());
             }
-            
-        
+
+
         ?>
     </ul>
 
     <?php
-        }else{
+        if (!PerchUtil::count($posts)) {
             $Alert->set('notice', $Lang->get('There are no posts yet.'));
         }
-    
-    echo $Alert->output(); 
+
+    echo $Alert->output();
 
     /* ----------------------------------------- /SMART BAR ----------------------------------------- */
 
@@ -106,16 +117,16 @@
                     <?php echo $HTML->encode($Post->postTitle()); ?></a>
                 </td>
                 <td>
-                <?php 
+                <?php
                     if (strtotime($Post->postDateTime()) > time() && $Post->postStatus()=='Published') {
                         echo $Lang->get('Will publish on date');
                     }else{
                         if ($Post->postStatus()=='Draft') {
                             echo '<span class="special">'.$HTML->encode($Lang->get($Post->postStatus())).'</span>';
                         }else{
-                            echo $HTML->encode($Lang->get($Post->postStatus())); 
+                            echo $HTML->encode($Lang->get($Post->postStatus()));
                         }
-                        
+
                     }
                 ?>
                 </td>
@@ -125,18 +136,17 @@
                 <?php } // if delete ?>
             </tr>
 
-<?php   
+<?php
     }
 ?>
         </tbody>
     </table>
-<?php    
+<?php
         if ($Paging->enabled()) {
             echo $HTML->paging($Paging);
         }
-    
+
 
     } // if pages
-    
+
     echo $HTML->main_panel_end();
-?>

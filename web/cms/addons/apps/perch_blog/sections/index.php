@@ -9,13 +9,6 @@
         PerchUtil::redirect($API->app_path());
     }
 
-    # include your class files
-    include('../PerchBlog_Sections.class.php');
-    include('../PerchBlog_Section.class.php');
-    include('../PerchBlog_Cache.class.php');
-    include('../PerchBlog_Comments.class.php');
-    include('../PerchBlog_Comment.class.php');
-
     # Set the page title
     $Perch->page_title = $Lang->get('Manage Blog Sections');
 
