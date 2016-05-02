@@ -6,6 +6,10 @@
 
 <perch:content id="challenges" type="textarea" label="Challenges" order="4" size="m" markdown="true" />
 
+<perch:if exists="website">
+  <a href="<perch:content id="website" type="text" />" rel="nofollow" class="go-to">Visit <perch:content id="title" type="text" label="Project title" html="false" order="1" title="true" /> site</a>
+</perch:if>
+
 <h2>Kind words</h2>
 
 <perch:related id="testimonial" collection="testimonials" label="Testimonial" divider-before="Select testimonial">
@@ -29,10 +33,6 @@
 <perch:content id="date" type="date" label="Date" format="jS F Y" suppress="true" />
 <perch:content id="website" order="2" type="text" label="Website" default="http://" html="false" suppress="true" />
 <perch:content id="slug" for="title" type="slug" suppress="true" />
-
-<perch:if exists="website">
-  <a href="<perch:content id="website" type="text" />" rel="nofollow" class="go-to">Visit <perch:content id="title" type="text" label="Project title" html="false" order="1" title="true" /> site</a>
-</perch:if>
 
 <perch:noresults>
   <h1>Uh oh…</h1>
