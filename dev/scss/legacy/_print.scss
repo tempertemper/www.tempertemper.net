@@ -62,7 +62,7 @@
   ol {
 
     [href^=http] {
-      font-weight: bold;
+      font-weight: 700;
 
       &:after {
         content: ' <' attr(href) '> ';
