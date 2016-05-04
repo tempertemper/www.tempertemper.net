@@ -1,3 +1,7 @@
+form {
+  width: 100%;
+}
+
 label {
   @include font-heading-regular;
   color: $colour-primary;
