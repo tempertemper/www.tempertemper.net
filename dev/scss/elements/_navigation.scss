@@ -70,11 +70,9 @@ nav {
 }
 
 .disable-pointer-events {
-  pointer-events: none !important;
+  pointer-events: none;
 }
 
-// Two vendor prefix olny properties
-// scss-lint:disable VendorPrefix
 .nav-toggle {
   border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
@@ -84,13 +82,17 @@ nav {
   -webkit-touch-callout: none;
   user-select: none;
 
+  path {
+    color: $colour-primary;
+  }
+
   &:hover,
   &:active,
   &:focus {
     border-color: $black;
 
     path {
-      fill: $black !important;
+      fill: $black;
     }
   }
 

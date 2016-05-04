@@ -7,12 +7,16 @@
     transition: all .4s ease;
   }
 
+  .icon-search {
+    fill: $colour-primary;
+  }
+
   &:hover,
   &:active,
   &:focus {
 
     .icon-search {
-      fill: $black !important;
+      fill: $black;
     }
   }
 
