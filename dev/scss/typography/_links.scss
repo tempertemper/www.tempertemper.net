@@ -3,12 +3,8 @@
 
   &:link,
   &:visited {
-    text-decoration: none;
-  }
-
-  &:link,
-  &:visited {
     color: $colour-primary;
+    text-decoration: none;
   }
 
   &:hover,
