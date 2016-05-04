@@ -21,8 +21,8 @@ nav {
   width: 100%;
 
   ul {
-    margin-top: 0;
     margin-bottom: 0;
+    margin-top: 0;
     text-align: center;
   }
 
@@ -36,37 +36,37 @@ nav {
 
   a {
     display: block;
-    padding-top: .25em;
     padding-bottom: .25em;
+    padding-top: .25em;
   }
 }
 
 .nav-collapse ul {
+  display: block;
+  list-style: none;
   margin: 0;
   padding: 0;
   width: 100%;
-  display: block;
-  list-style: none;
 }
 
 .nav-collapse li {
-  width: 100%;
   display: block;
+  width: 100%;
 }
 
 .js .nav-collapse {
   clip: rect(0 0 0 0);
-  max-height: 0;
-  position: absolute;
   display: block;
+  max-height: 0;
   overflow: hidden;
+  position: absolute;
   zoom: 1;
 }
 
 .nav-collapse.opened {
   max-height: 9999px;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .disable-pointer-events {
@@ -76,13 +76,13 @@ nav {
 // Two vendor prefix olny properties
 // scss-lint:disable VendorPrefix
 .nav-toggle {
+  border: 3px solid $colour-primary;
+  border-radius: $border-radius-default;
+  cursor: pointer;
+  padding: .4em;
   -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
   user-select: none;
-  cursor: pointer;
-  padding: .4em;
-  border: 3px solid $colour-primary;
-  border-radius: $border-radius-default;
 
   &:hover,
   &:active,
@@ -95,13 +95,13 @@ nav {
   }
 
   button {
-    border: 0;
-    background-color: transparent;
-    padding: 0;
-    display: block;
-    outline: none;
     $svg-height: 2em;
+    background-color: transparent;
+    border: 0;
+    display: block;
     height: $svg-height;
+    outline: none;
+    padding: 0;
     width: $svg-height;
 
     @media screen and (min-width: $s) {
@@ -145,14 +145,14 @@ nav {
 
   [role="navigation"] {
     float: right;
-    width: auto;
     position: relative;
+    width: auto;
 
     ul {
-      width: auto;
       float: left;
       margin-top: .2em;
       padding-bottom: .3em;
+      width: auto;
 
       @media (min-width: $l) {
         padding-right: 3em;

@@ -22,10 +22,9 @@ body {
 
 blockquote {
   border-left: .75em solid $colour-primary-light;
-  padding: .5em 0 .5em 1em;
-  margin-right: 0;
   margin-left: 0;
-  padding-right: 1.25em;
+  margin-right: 0;
+  padding: .5em 1.25em .5em 1em;
 
   p {
     display: inline;

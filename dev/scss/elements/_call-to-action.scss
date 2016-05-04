@@ -8,4 +8,8 @@
   .primary {
     @include button-secondary;
   }
+
+  .read-more {
+    text-align: center;
+  }
 }

@@ -1,34 +1,34 @@
-﻿[role="banner"] {
+[role="banner"] {
   clear: both;
   padding-top: 1em;
 
   h1 {
     clear: both;
-    margin-top: 0;
-    text-align: center;
-    padding-top: 1em;
     margin-bottom: 1em;
+    margin-top: 0;
+    padding-top: 1em;
+    text-align: center;
 
     @media (min-width: $s) {
       clear: none;
-      padding-top: 0;
       margin-top: 2em;
+      padding-top: 0;
     }
   }
 }
 
 .logo {
   display: block;
-  transition: none;
   float: left;
+  transition: none;
 
   @media (min-width: $l) {
     margin-top: .25em;
   }
 
   .tt {
-    width: 56px;
     height: 40px;
+    width: 56px;
 
     @media (min-width: $s) {
       display: none;
@@ -36,9 +36,9 @@
   }
 
   .tempertemper {
-    width: 270px;
-    height: 38px;
     display: none;
+    height: 38px;
+    width: 270px;
 
     @media (min-width: $s) {
       display: block;

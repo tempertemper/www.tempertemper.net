@@ -22,8 +22,8 @@ a {
   @include text-link;
 
   > img {
-    display: block;
     border: 3px solid $colour-primary;
+    display: block;
 
     &:visited {
       border-color: $colour-primary-darker;

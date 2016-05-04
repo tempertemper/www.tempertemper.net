@@ -1,10 +1,10 @@
 @media print {
 
   body {
-    width: 500px;
-    margin-right: auto;
-    margin-left: auto;
     font-size: 10pt !important;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
   }
 
   .nav-toggle,
@@ -29,8 +29,8 @@
   }
 
   .logo {
-    width: 240px !important;
     padding-left: 0 !important;
+    width: 240px !important;
   }
 
   a {
