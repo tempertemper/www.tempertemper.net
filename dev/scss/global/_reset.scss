@@ -1,3 +1,5 @@
+/* stylelint-disable property-no-vendor-prefix  */
+
 html {
   box-sizing: border-box;
 }
@@ -13,8 +15,6 @@ html {
   text-decoration: none;
 }
 
-// Autoprefixer doesn't pick up `text-size-adjust` for some reason, so these have to be left in
-// scss-lint:disable VendorPrefix
 body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -23,7 +23,7 @@ body {
 pre,
 code {
   font-size: 100%;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 ul,
@@ -57,17 +57,17 @@ fieldset {
 }
 
 legend {
-  padding: 0;
   color: $black;
+  padding: 0;
 }
 
 input,
 textarea,
 select {
+  font-family: inherit;
+  font-size: 100%;
   margin: 0;
   padding: 1px;
-  font-size: 100%;
-  font-family: inherit;
 }
 
 select {
@@ -78,14 +78,13 @@ table {
   border-collapse: collapse;
 }
 
-// removes default focus property
 :focus {
   outline: none;
 }
 
 [type="submit"] {
-  cursor: pointer;
   -webkit-appearance: none;
+  cursor: pointer;
 }
 
 [type="search"] {
@@ -107,7 +106,6 @@ textarea {
   display: none;
 }
 
-// Cancel out Firefox Mobile's gradient background
 button {
   background-image: none;
 }
@@ -122,10 +120,12 @@ textarea {
 }
 
 img {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 iframe {
   max-width: 100%;
 }
+
+/* stylelint-enable */

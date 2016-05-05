@@ -29,9 +29,9 @@
     [type="submit"] {
       @include span(last 2 of 8);
       clear: none;
+      margin-top: 1.55em;
       padding-left: 0;
       padding-right: 0;
-      margin-top: 1.55em;
     }
   }
 }

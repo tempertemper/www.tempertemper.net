@@ -1,3 +1,7 @@
+form {
+  width: 100%;
+}
+
 label {
   @include font-heading-regular;
   color: $colour-primary;
@@ -5,14 +9,14 @@ label {
 
 input,
 textarea {
-  display: block;
-  width: 100%;
   border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
-  padding: .5em 1em;
+  display: block;
+  font-family: georgia, serif;
   margin-bottom: 1em;
+  padding: .5em 1em;
   transition: color .3s ease;
-  font-family: Georgia, serif;
+  width: 100%;
 
   &:focus {
     border-color: $black;

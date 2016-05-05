@@ -34,9 +34,9 @@ img {
 .back {
   @include reverse-link-marker;
   @include font-heading-regular;
-  margin-top: 1em;
-  margin-bottom: 1em;
   display: inline-block;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .button {
@@ -44,27 +44,23 @@ img {
 }
 
 pre {
-  padding: 1em;
   background-color: $black;
   color: $white;
+  padding: 1em;
 }
 
 img,
 address,
 pre,
 .map {
-  margin-top: 1em;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 a img {
-  margin-top: 0;
-  margin-bottom: 0;
   display: inline;
 }
 
-// This selector is in an iframe so I've got no control over its formatting
-// scss-lint:disable SelectorFormat
 .wistia_responsive_padding {
   background-color: $colour-primary-light;
 }

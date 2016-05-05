@@ -4,32 +4,30 @@ $ms-ratio: $major-third;
 @mixin font-heading-regular {
   font-family: 'FS Me Web Regular', sans-serif;
   font-size-adjust: .53;
-  font-weight: normal;
   font-style: normal;
+  font-weight: 400;
 }
 
 @mixin font-heading-light {
   font-family: 'FS Me Web Light', sans-serif;
   font-size-adjust: .53;
-  font-weight: 200;
   font-style: normal;
+  font-weight: 200;
 }
 
 @mixin heading-style {
   @include font-heading-light;
-  margin-top: 1.414em;
-  margin-bottom: .25em;
   line-height: 1.05;
+  margin-bottom: .25em;
+  margin-top: 1.414em;
 }
 
 @mixin font-body {
-  font-family: Georgia, serif;
-  font-weight: normal;
+  font-family: georgia, serif;
   font-style: normal;
+  font-weight: 400;
   line-height: 1.5;
 }
-
-// HEADINGS
 
 @mixin heading-xl {
   font-size: ms(4);
@@ -78,8 +76,6 @@ $ms-ratio: $major-third;
     font-size: ms(1);
   }
 }
-
-// GENERAL
 
 @mixin remove-list-styling {
   list-style: none;
