@@ -4,16 +4,18 @@ class PerchUtil
 {
 	static private $hold_redirects = false;
 
-	static function count($a)
+	public static function count($a)
 	{
 		if (is_array($a)){
 			return count($a);
-		}else{
+		}elseif($a instanceof SplFixedArray){
+			return count($a);
+		} else {
 			return 0;
 		}
 	}
 
-	static function debug($msg, $type='log', $encode=false)
+	public static function debug($msg, $type='log', $encode=false)
 	{
 		$Perch  = Perch::fetch();
 
@@ -35,30 +37,45 @@ class PerchUtil
 			);
 	}
 
-	static function get_caller_info() {
-	    $c = '';
-	    $file = '';
-	    $func = '';
-	    $class = '';
-	    $trace = debug_backtrace();
+	public static function debug_badge($msg)
+	{
+		$Perch  = Perch::fetch();
+
+		if (!$Perch->debug){
+			return false;
+		}
+
+		if (PerchUtil::count($Perch->debug_items)) {
+			$Perch->debug_items[count($Perch->debug_items)-1]['badge'] = $msg;	
+		}
+		
+	}
+
+	public static function get_caller_info() 
+	{
+		$c     = '';
+		$file  = '';
+		$func  = '';
+		$class = '';
+		$trace = debug_backtrace();
 	    if (isset($trace[2])) {
 	        $file = $trace[1]['file'];
 	        $func = $trace[2]['function'];
 	        if ((substr($func, 0, 7) == 'include') || (substr($func, 0, 7) == 'require')) {
 	            $func = '';
 	        }
-	    } else if (isset($trace[1])) {
+	    } elseif (isset($trace[1])) {
 	        $file = $trace[1]['file'];
 	        $func = '';
 	    }
 	    if (isset($trace[3]['class'])) {
-	        $class = $trace[3]['class'];
-	        $func = $trace[3]['function'];
-	        $file = $trace[2]['file'];
-	    } else if (isset($trace[2]['class'])) {
-	        $class = $trace[2]['class'];
-	        $func = $trace[2]['function'];
-	        $file = $trace[1]['file'];
+			$class = $trace[3]['class'];
+			$func  = $trace[3]['function'];
+			$file  = $trace[2]['file'];
+	    } elseif (isset($trace[2]['class'])) {
+			$class = $trace[2]['class'];
+			$func  = $trace[2]['function'];
+			$file  = $trace[1]['file'];
 	    }
 	    if ($file != '') $file = basename($file);
 	    $c = $file . ": ";
@@ -103,9 +120,19 @@ class PerchUtil
 
 		    		$out .= '<tr>';
 		    		if ($dev) $out .= 	'<td>'.round($msg['time'] - $time, 4).'</td>';
-		    		if ($dev) $out .= 	'<td>'.round($msg['time'] - $prev_time, 4).'</td>';
-		    		$out .= 	'<td class="'.$msg['type'].'" title="'.$msg['caller'].'">'.$msg['msg'].'</td>';
-		    		#$out .= 	'<script>console.log(\''.str_replace(PHP_EOL, " \\", addslashes($msg['msg'])).'\');</script>';
+			    	if ($dev) {
+		    			$diff = round($msg['time'] - $prev_time, 4);
+		    			$class = '';
+		    			if ($diff>0.01) $class="perf-warn";
+		    			if ($diff>0.5)  $class="perf-bad";
+		    			$out .= 	'<td class="'.$class.'">'.$diff.'</td>';
+		    		}
+		    		$out .= 	'<td class="'.$msg['type'].'" title="'.$msg['caller'].'">';
+		    		if (isset($msg['badge'])) {
+		    			$out .= ' <span class="debug-badge"><span class="debug-brkt">[</span>'.PerchUtil::html($msg['badge']).'<span class="debug-brkt">]</span></span> ';
+		    		}
+		    		$out .= $msg['msg'];
+		    		$out .= '</td>';
 		    		$out .= '</tr>';
 		    		$prev_time = $msg['time'];
 		    	}
@@ -115,7 +142,7 @@ class PerchUtil
 
 	        if ($return_value) {
 	            return $out;
-	        }else{
+	        } else {
 	            echo $out;
 	        }
 		}
@@ -127,11 +154,11 @@ class PerchUtil
 	}
 
 
-	public static function html($s=false, $quotes=false, $double_encode=false)
+	public static function html($s, $quotes=false, $double_encode=false)
 	{
 	    if ($quotes) {
 	        $q = ENT_QUOTES;
-	    }else{
+	    } else {
 	        $q = ENT_NOQUOTES;
 	    }
 
@@ -166,7 +193,7 @@ class PerchUtil
 			PerchSession::close();
 	    	header('Location: ' . $url);
 	    	exit;
-		}else{
+		} else {
 			PerchUtil::debug("Redirect held: $url");
 		}
 	}
@@ -176,12 +203,16 @@ class PerchUtil
 		if ($secure===null) {
 			if (defined('PERCH_SSL') && PERCH_SSL) {
 				$secure = true;
-			}else{
+			} else {
 				$secure = false;
 			}
 		}
 
-	   header('Set-Cookie: ' . rawurlencode($name) . '=' . rawurlencode($value)
+		if (PERCH_FORCE_SECURE_COOKIES) {
+			$secure = true;
+		}
+
+	   	header('Set-Cookie: ' . rawurlencode($name) . '=' . rawurlencode($value)
 	                         . (empty($expires) ? '' : '; expires=' . gmdate('D, d-M-Y H:i:s \\G\\M\\T', $expires))
 	                         . (empty($path)    ? '' : '; path=' . $path)
 	                         . (empty($domain)  ? '' : '; domain=' . $domain)
@@ -194,7 +225,7 @@ class PerchUtil
 	    $n = (int)$n;
 		if ($n<10){
 			return '0'.$n;
-		}else{
+		} else {
 			return ''.$n;
 		}
 
@@ -223,7 +254,7 @@ class PerchUtil
 	{
         if (function_exists('filter_var')) {
             return filter_var($email, FILTER_VALIDATE_EMAIL);
-        }else{
+        } else {
 
             if (!ereg("^[^@]{1,64}@[^@]{1,255}$", $email)) {
     			// Email invalid because wrong number of characters in one section, or wrong number of @ symbols.
@@ -256,7 +287,6 @@ class PerchUtil
 	public static function send_email($to, $from_address, $from_name, $subject, $body, $misc_headers=false)
 	{
 		PerchUtil::debug('Deprecated: PerchUtil::send_email', 'error');
-		$Perch  = Perch::fetch();
 
 		$headers    = "From: ".$from_name." <".$from_address.">\r\n";
 
@@ -264,7 +294,7 @@ class PerchUtil
 
 		if (defined('PERCH_MAIL_PARAMS')) {
 		    $params = PERCH_MAIL_PARAMS;
-		}else{
+		} else {
 		    $params = false;
 		}
 
@@ -276,7 +306,7 @@ class PerchUtil
 		        @mail($mail_to, $subject, $body, $headers, $params);
 		    }
 		    return true;
-		}else{
+		} else {
 		    PerchUtil::debug("Sending mail '$subject' to '$to' from '$from_name' ($from_address)");
     		return @mail($to, $subject, $body, $headers, $params);
 		}
@@ -361,10 +391,10 @@ class PerchUtil
     	        if (isset($closing_tags[0])) {
     	            if ($closing_tags[0]!=$opening_tag) {
     	                $str .= '</'.$opening_tag.'>';
-    	            }else{
+    	            } else {
     	                array_shift($closing_tags);
     	            }
-    	        }else{
+    	        } else {
     	            $str .= '</'.$opening_tag.'>';
     	        }
     	    }
@@ -391,14 +421,14 @@ class PerchUtil
 
         if (PERCH_HTML5) {
             $Textile = new \Netcarver\Textile\Parser('html5');
-        }else{
+        } else {
             $Textile = new \Netcarver\Textile\Parser;
         }
 
 
         if (PERCH_RWD) {
             $string  =  $Textile->setDimensionlessImages(true)->textileThis($string);
-        }else{
+        } else {
             $string  =  $Textile->textileThis($string);
         }
 
@@ -436,7 +466,7 @@ class PerchUtil
         if ($flip) {
             if ($perch_flip == true) {
                 $perch_flip = false;
-            }else{
+            } else {
                 $perch_flip = true;
             }
         }
@@ -468,7 +498,7 @@ class PerchUtil
     public static function filename($filename, $include_crumb=true, $for_sorting=false)
     {
         $extensions = array('.html', '.htm', '.php');
-        $filename = str_replace(array('.html', '.htm', '.php'), '', $filename);
+        $filename = str_replace($extensions, '', $filename);
 
         $filename = ltrim($filename, '/');
         $filename = str_replace(array('_', '-'), ' ', $filename);
@@ -482,11 +512,11 @@ class PerchUtil
             if (count($parts)==0) {
                 if ($for_sorting) {
                     $filename = '/';
-                }else{
+                } else {
                     $filename = PerchLang::get('Home page');
                 }
 
-            }else{
+            } else {
                 $filename = array_pop($parts);
             }
 
@@ -566,7 +596,7 @@ class PerchUtil
 
 		if (strlen($s)>0){
 			return $s;
-		}else{
+		} else {
 			$md5	= md5($filename);
 			$s		= strtolower($md5);
 			return 'ra-'.substr($s, 0, 4).'-'.substr($s, 5, 4);
@@ -660,7 +690,7 @@ class PerchUtil
     		$string = str_replace('-', ' ', $string);
     		$T = Transliterator::create($tranliterator_rule);
     		$s = $T->transliterate($string);
-    	}else{
+    	} else {
     		$s  = iconv('UTF-8', 'ASCII//TRANSLIT', $string);
     		$s  = strtolower($s);
     		$s  = preg_replace('/[^a-z0-9\-\s]/', '', $s);
@@ -670,7 +700,7 @@ class PerchUtil
 
         if (strlen($s)>0){
             return $s;
-        }else{
+        } else {
             return PerchUtil::urlify_non_translit($string);
         }
     }
@@ -684,7 +714,7 @@ class PerchUtil
 
         if (strlen($s)>0){
             return $s;
-        }else{
+        } else {
             $md5    = md5($string);
             $s      = strtolower($md5);
             return 'ra-'.substr($s, 0, 4).'-'.substr($s, 5, 4);
@@ -707,7 +737,7 @@ class PerchUtil
 			$result = curl_exec($ch);
 			PerchUtil::debug($result);
 			curl_close($ch);
-        }else{
+        } else {
             if (function_exists('fsockopen')) {
                 $fp = fsockopen($host, 80, $errno, $errstr, 10);
                 if ($fp) {
@@ -797,13 +827,13 @@ class PerchUtil
 				if ((isset($page['priv']) && $CurrentUser->has_priv($page['priv'])) || !isset($page['priv'])) {
 					if (is_array($page['page'])) {
 						$paths = $page['page'];
-					}else{
+					} else {
 						$paths = explode(',', $page['page']);
 					}
 
 					if ($Lang===false) {
 						$label = PerchLang::get($page['label']);
-					}else{
+					} else {
 						$label = $Lang->get($page['label']);
 					}
 
@@ -849,13 +879,13 @@ class PerchUtil
 					if ($Alert) {
 						if ($clear_filter_url!==false) {
 							$clear_html = ' <a href="'.PerchUtil::html($clear_filter_url).'" class="action">'.PerchLang::get('Clear Filter').'</a>';
-						}else{
+						} else {
 							$clear_html = '';
 						}
 
 						if ($alert_message) {
 							$Alert->set('filter', PerchLang::get($alert_message, $match).$clear_html);
-						}else{
+						} else {
 							$Alert->set('filter', PerchLang::get($selected_label, $match).$clear_html);
 						}
 
@@ -869,13 +899,13 @@ class PerchUtil
 
 			if ($match){
 				$s .= '<li class="filter filtered">';
-			}else{
+			} else {
 				$s .= '<li class="filter">';
 			}
 
 			if (isset($_GET['show-filter']) && ($_GET['show-filter']==$id)){
 			 	$s .= '<ul class="open">';
-			}else{
+			} else {
 				$s .= '<ul>';
 			}
 
@@ -884,7 +914,7 @@ class PerchUtil
 			$s .= '<a class="icon '.$classname.'" href="?show-filter='.$id.'">';
 			if ($match) {
 				$s .= PerchLang::get($selected_label, $match);
-			}else{
+			} else {
 				$s .= PerchLang::get($label);
 			}
 
@@ -915,7 +945,7 @@ class PerchUtil
 							$out .= $val['processed'];
 						}else if(isset($val['_default'])){
 							$out .= $val['_default'];
-						}else{
+						} else {
 							$out .= '<pre>'.print_r($val, true).'</pre>';
 						}
 
@@ -941,7 +971,6 @@ class PerchUtil
 			}
 			$out .= '</table>';
 		}
-
 		return $out;
 	}
 
@@ -958,6 +987,15 @@ class PerchUtil
 	public static function is_assoc($array)
 	{
   		return (bool)count(array_filter(array_keys($array), 'is_string'));
+	}
+
+	public static function url_to_ssl_if_needed($path)
+	{
+		if (PERCH_SSL) {
+			return PerchUtil::url_to_ssl($path);
+		} else {
+			return PerchUtil::url_to_non_ssl($path);
+		}
 	}
 
 	public static function url_to_ssl($path)
@@ -1076,7 +1114,7 @@ class PerchUtil
 	            $result = @getimagesize($file);
 	            if (is_array($result)) $mimetype = $result['mime'];
 	        } catch (Exception $e) {
-	            $result = false;
+	            $mimetype = false;
 	        }
 	    }
 
@@ -1091,7 +1129,7 @@ class PerchUtil
 	    return $mimetype;
 	}
 
-	static function get($var, $default=false)
+	public static function get($var, $default=false)
 	{
 	    if (isset($_GET[$var]) && $_GET[$var]!='') {
 	        return $_GET[$var];
@@ -1105,7 +1143,7 @@ class PerchUtil
 	    return $default;
 	}
 
-	static function post($var, $default=false)
+	public static function post($var, $default=false)
 	{
 	    if (isset($_POST[$var]) && $_POST[$var]!='') {
 	        return $_POST[$var];
@@ -1114,26 +1152,25 @@ class PerchUtil
 	    return $default;
 	}
 
-	static function extend($default_opts, $opts)
+	public static function extend($default_opts, $opts)
 	{
 		if (is_array($opts)) {
 		    $opts = array_merge($default_opts, $opts);
-		}else{
+		} else {
 		    $opts = $default_opts;
 		}
 
 		return $opts;
 	}
 
-	static function debug_error_handler($errno, $errstr, $errfile=false, $errline=false)
+	public static function debug_error_handler($errno, $errstr, $errfile=false, $errline=false)
 	{
 		PerchUtil::debug('Error '.$errno.' in '.$errfile.' on line '.$errline, 'error');
 		PerchUtil::debug($errstr, 'error');
 	}
 
-	static function get_client_ip()
+	public static function get_client_ip()
 	{
-		$ipaddress = '';
 	    if (array_key_exists('HTTP_CLIENT_IP', $_SERVER))
 	        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
 	    else if(array_key_exists('HTTP_X_REAL_IP', $_SERVER))
@@ -1153,7 +1190,7 @@ class PerchUtil
 	    return $ipaddress;
 	}
 
-	static function safe_stripslashes($str)
+	public static function safe_stripslashes($str)
 	{
 		$strip = false;
 		if (PERCH_STRIPSLASHES)			$strip = true;
@@ -1163,12 +1200,12 @@ class PerchUtil
 		return $str;
 	}
 
-	static function flush_output()
+	public static function flush_output()
 	{
 		if (defined('PERCH_PROGRESSIVE_FLUSH') && PERCH_PROGRESSIVE_FLUSH) flush();
 	}
 
-	static function set_security_headers()
+	public static function set_security_headers()
 	{
 		/* https://www.owasp.org/index.php/List_of_useful_HTTP_headers */
 		header('X-Frame-Options: deny');
@@ -1182,16 +1219,46 @@ class PerchUtil
 		header_remove('X-Powered-By');
 	}
 
-	static function invalidate_opcache($path, $min_version=false)
+	public static function invalidate_opcache($path, $min_version=false)
 	{
 		if ($min_version===false) $min_version = PERCH_PRODUCTION;
 
 		if (PERCH_PRODUCTION_MODE < $min_version && function_exists('opcache_invalidate')) {
-			PerchUtil::debug('Invalidating opcache: '.$path);
 			clearstatcache(true, $path);
 			return opcache_invalidate($path, true);
 		}
 		return false;
+	}
+
+	public static function find_executable_files_in_resources()
+	{
+		$files = PerchUtil::get_dir_contents(PERCH_RESFILEPATH, false);
+		if (PerchUtil::count($files)) {
+			$out = array();
+			$bad_ext = array('php', 'phtml', 'php3', 'php4', 'php5');
+			foreach($files as $file) {
+				$ext = PerchUtil::file_extension($file);
+				if (in_array($ext, $bad_ext)) {
+					$out[] = $file;
+				}
+			}
+			if (PerchUtil::count($out)) {
+				return $out;
+			}
+		}
+
+		return false;	
+	}
+
+	public static function get_password_hasher()
+	{
+		if (defined('PERCH_NONPORTABLE_HASHES') && PERCH_NONPORTABLE_HASHES) {
+            $portable_hashes = false;
+        } else {
+            $portable_hashes = true;
+        }
+        
+        return new PasswordHash(8, $portable_hashes);
 	}
 
 }

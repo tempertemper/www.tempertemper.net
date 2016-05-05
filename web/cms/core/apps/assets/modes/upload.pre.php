@@ -1,6 +1,6 @@
 <?php
     header('Content-Type: application/json');
-    $FieldTag = new PerchXMLTag('<perch:content id="file" type="image" disable-asset-panel="true" detect-type="true" />');
+    $FieldTag = new PerchXMLTag('<perch:content id="file" type="image" disable-asset-panel="true" detect-type="true" accept="all" />');
     $FieldTag->set('input_id', 'file');
 
     if (isset($_POST['bucket']) && !empty($_POST['bucket'])) {
@@ -27,7 +27,7 @@
         $Resources = new PerchResources;
 
 		$data = array();
-        $FieldType = PerchFieldTypes::get($FieldTag->type(), $Form, $FieldTag);
+        $FieldType = PerchFieldTypes::get($FieldTag->type(), $Form, $FieldTag, null, 'assets');
         $var       = $FieldType->get_raw();
 
         if (PerchUtil::count($var)) {

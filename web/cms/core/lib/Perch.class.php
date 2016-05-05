@@ -4,7 +4,7 @@ class Perch
 {
     static protected $instance;
 
-    public $version = '2.8.17';
+    public $version = '2.8.29';
 
     public $admin           = false;
     private $page           = false;
@@ -26,20 +26,22 @@ class Perch
 
     public $event_listeners = array();
 
-    function __construct()
+    public function __construct()
     {
-        if (!defined('PERCH_DEBUG'))             define('PERCH_DEBUG', false);
-        if (!defined('PERCH_PREVIEW_ARG'))       define('PERCH_PREVIEW_ARG', 'preview');
-        if (!defined('PERCH_TEMPLATE_PATH'))     define('PERCH_TEMPLATE_PATH', PerchUtil::file_path(PERCH_PATH.'/templates'));
-        if (!defined('PERCH_DEFAULT_DOC'))       define('PERCH_DEFAULT_DOC', 'index.php');
-        if (!defined('PERCH_DEFAULT_EXT'))       define('PERCH_DEFAULT_EXT', '.php');
-        if (!defined('PERCH_PRODUCTION_MODE'))   define('PERCH_PRODUCTION_MODE', 100);
-        if (!defined('PERCH_HTML5'))             define('PERCH_HTML5', false);
-        if (!defined('PERCH_RWD'))               define('PERCH_RWD', false);
-        if (!defined('PERCH_HTML_ENTITIES'))     define('PERCH_HTML_ENTITIES', false);
-        if (!defined('PERCH_SSL'))               define('PERCH_SSL', false);
-        if (!defined('PERCH_STRIPSLASHES'))      define('PERCH_STRIPSLASHES', false);
-        if (!defined('PERCH_PROGRESSIVE_FLUSH')) define('PERCH_PROGRESSIVE_FLUSH', true);
+        if (!defined('PERCH_DEBUG'))                define('PERCH_DEBUG', false);
+        if (!defined('PERCH_PREVIEW_ARG'))          define('PERCH_PREVIEW_ARG', 'preview');
+        if (!defined('PERCH_TEMPLATE_PATH'))        define('PERCH_TEMPLATE_PATH', PerchUtil::file_path(PERCH_PATH.'/templates'));
+        if (!defined('PERCH_DEFAULT_DOC'))          define('PERCH_DEFAULT_DOC', 'index.php');
+        if (!defined('PERCH_DEFAULT_EXT'))          define('PERCH_DEFAULT_EXT', '.php');
+        if (!defined('PERCH_PRODUCTION_MODE'))      define('PERCH_PRODUCTION_MODE', 100);
+        if (!defined('PERCH_HTML5'))                define('PERCH_HTML5', false);
+        if (!defined('PERCH_RWD'))                  define('PERCH_RWD', false);
+        if (!defined('PERCH_HTML_ENTITIES'))        define('PERCH_HTML_ENTITIES', false);
+        if (!defined('PERCH_SSL'))                  define('PERCH_SSL', false);
+        if (!defined('PERCH_STRIPSLASHES'))         define('PERCH_STRIPSLASHES', false);
+        if (!defined('PERCH_PROGRESSIVE_FLUSH'))    define('PERCH_PROGRESSIVE_FLUSH', true);
+        if (!defined('PERCH_PARANOID'))             define('PERCH_PARANOID', false);
+        if (!defined('PERCH_FORCE_SECURE_COOKIES')) define('PERCH_FORCE_SECURE_COOKIES', PERCH_PARANOID);
 
         if (PERCH_DEBUG) $this->debug = true;
     }
@@ -61,14 +63,13 @@ class Perch
             if (PERCH_RUNWAY && $this->admin==false) {
                 $Runway = PerchRunway::fetch();
                 $out = $Runway->get_page(true);
-            }else{
+            } else {
                 $out = str_replace(PERCH_DEFAULT_DOC, '', strtolower($_SERVER['SCRIPT_NAME']));
                 if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']!='') {
                     $out .= '?'.$_SERVER['QUERY_STRING'];
                 }
                 $out = preg_replace('/(\/)\\1+/', '/', $out);
             }
-
 
             return $out;
         }
@@ -124,7 +125,7 @@ class Perch
                         $SubmittedForm = $API->get('SubmittedForm');
                         $SubmittedForm->populate($formID, $template, $post, $files, $timestamp);
                         call_user_func($appID.'_form_handler', $SubmittedForm);
-                    }else{
+                    } else {
                         PerchUtil::debug($appID.' form handler not found.', 'error');
                     }
                 }
@@ -163,7 +164,7 @@ class Perch
                 if (file_exists($bucket_list_file)) {
                     $this->bucket_list = include ($bucket_list_file);
                     if ($this->bucket_list==false) $this->bucket_list = array();
-                }else{
+                } else {
                     $this->bucket_list = array();
                 }
             }
@@ -187,7 +188,7 @@ class Perch
     {
         if ($this->layout_depth > 1 && is_array($vars)) {
             $this->layout_vars = array_merge($this->layout_vars, $vars);
-        }else{
+        } else {
             $this->layout_vars = $vars;
         }
     }

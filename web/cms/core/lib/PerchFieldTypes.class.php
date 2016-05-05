@@ -4,7 +4,7 @@ class PerchFieldTypes
 {
     private static $_seen = array();
 
-    public static function get($type, $Form, $Tag, $all_tags=false, $app_id='content')
+    public static function get($type, $Form, $Tag, $all_tags=array(), $app_id='content')
     {
         $r = false;
 
@@ -12,12 +12,11 @@ class PerchFieldTypes
             $tag_name = $Tag->tag_name();
 
             switch($tag_name) {
-
-                case 'perch:categories' :
+                case 'perch:categories':
                     $type = 'category';
                     break;
 
-                case 'perch:related' :
+                case 'perch:related':
                     $type = 'related';
                     break;
 
@@ -25,7 +24,14 @@ class PerchFieldTypes
                     $type = 'text';
                     break;
             }
+        }
 
+        if (!$Form) {
+            $Form = null;
+        }
+
+        if (!$Tag) {
+            $Tag = null;
         }
 
         $classname = 'PerchFieldType_'.$type;
@@ -35,7 +41,7 @@ class PerchFieldTypes
             if (!in_array($classname, self::$_seen)) {
                 $Perch = Perch::fetch();
                 if ($Perch->admin) {
-                    if ($all_tags) $r->set_sibling_tags($all_tags);
+                    if (count($all_tags)) $r->set_sibling_tags($all_tags);
                     $r->add_page_resources();
                 }
 
@@ -50,7 +56,7 @@ class PerchFieldTypes
 
                 $Perch = Perch::fetch();
                 if ($Perch->admin) {
-                    if ($all_tags) $r->set_sibling_tags($all_tags);
+                    if (count($all_tags)) $r->set_sibling_tags($all_tags);
                     $r->add_page_resources();
                 }
             }
@@ -60,7 +66,7 @@ class PerchFieldTypes
             $r = new PerchFieldType($Form, $Tag, $app_id);
         }
 
-        if ($all_tags) {
+        if (count($all_tags)) {
             $r->set_sibling_tags($all_tags);
         }
 
@@ -257,6 +263,69 @@ class PerchFieldType_time extends PerchFieldType
     }
 }
 
+
+/* ------------ PERIOD ------------ */
+
+class PerchFieldType_period extends PerchFieldType
+{
+    public function render_inputs($details=array())
+    {
+        $s = '';
+
+        $s .= $this->Form->text($this->Tag->input_id().'_count',
+                                $this->Form->get((isset($details[$this->Tag->input_id()])? $details[$this->Tag->input_id()] : array()), 'count', $this->Tag->default(), $this->Tag->post_prefix()),
+                                's',
+                                $this->Tag->maxlength(),
+                                'number');
+
+        $opts = array(
+                array('label' => PerchLang::get('minutes'), 'value' => 'MINUTES'),
+                array('label' => PerchLang::get('hours'),   'value' => 'HOURS'),
+                array('label' => PerchLang::get('days'),    'value' => 'DAYS'),
+                array('label' => PerchLang::get('weeks'),   'value' => 'WEEKS'),
+                array('label' => PerchLang::get('months'),  'value' => 'MONTHS'),
+                array('label' => PerchLang::get('years'),   'value' => 'YEARS'),
+            );
+
+        $s .= ' ' .$this->Form->select($this->Tag->input_id().'_unit',
+                                $opts,
+                                $this->Form->get((isset($details[$this->Tag->input_id()])? $details[$this->Tag->input_id()] : array()), 'unit', strtoupper($this->Tag->default_unit()), $this->Tag->post_prefix())
+                                );
+
+        return $s;
+    }
+
+    public function get_raw($post=false, $Item=false)
+    {
+        $id = $this->Tag->id();
+
+        if ($post===false) {
+            $post = $_POST;
+        }
+
+        $this->raw_item['_default'] = null;
+
+        if (isset($post[$id.'_count']) && $post[$id.'_count']!='') {
+            $this->raw_item['count'] = $post[$id.'_count'];
+            $this->raw_item['_default'] = '+'.$this->raw_item['count'].' ';
+
+            if (isset($post[$id.'_unit'])) {
+                $this->raw_item['unit'] = $post[$id.'_unit'];
+                $this->raw_item['_default'] .= $this->raw_item['unit'];
+            }
+
+        }
+
+        return $this->raw_item;
+    }
+
+    public function get_search_text($raw=false)
+    {
+        if ($raw===false) $raw = $this->get_raw();
+
+        return $raw['_default'];
+    }
+}
 
 /* ------------ SLUG ------------ */
 
@@ -732,6 +801,8 @@ class PerchFieldType_image extends PerchFieldType
 {
     public static $file_paths = array();
 
+    protected $accept_types = 'webimage';
+
     public function render_inputs($details=array())
     {
         $Perch = Perch::fetch();
@@ -916,26 +987,37 @@ class PerchFieldType_image extends PerchFieldType
 
         if ($image_folder_writable && isset($_FILES[$item_id]) && (int) $_FILES[$item_id]['size'] > 0) {
 
+            // If we haven't already got this file
             if (!isset(self::$file_paths[$this->Tag->id()])) {
 
-                // We do this before writing to the bucket, as it performs better for remote buckets.
-                $AssetMeta = $Assets->get_meta_data($_FILES[$item_id]['tmp_name'], $_FILES[$item_id]['name']);
+                // Verify the file type / size / name
+                if ($this->_file_is_acceptable($_FILES[$item_id])) {
 
-                $result   = $Bucket->write_file($_FILES[$item_id]['tmp_name'], $_FILES[$item_id]['name']);
+                    // We do this before writing to the bucket, as it performs better for remote buckets.
+                    $AssetMeta = $Assets->get_meta_data($_FILES[$item_id]['tmp_name'], $_FILES[$item_id]['name']);
 
-                $target   = $result['path'];
-                $filename = $result['name'];
-                $filesize = (int)$_FILES[$item_id]['size'];
+                    $result   = $Bucket->write_file($_FILES[$item_id]['tmp_name'], $_FILES[$item_id]['name']);
 
-                $store['_default'] = rtrim($Bucket->get_web_path(), '/').'/'.$filename;
+                    $target   = $result['path'];
+                    $filename = $result['name'];
+                    $filesize = (int)$_FILES[$item_id]['size'];
 
-                // fire events
-                if ($this->Tag->type()=='image') {
-                    $PerchImage = new PerchImage;
-                    $profile = $PerchImage->get_resize_profile($target);
-                    $profile['original'] = true;
-                    $Perch->event('assets.upload_image', new PerchAssetFile($profile));
+                    $store['_default'] = rtrim($Bucket->get_web_path(), '/').'/'.$filename;
+
+                    // fire events
+                    if ($this->Tag->type()=='image') {
+                        $PerchImage = new PerchImage;
+                        $profile = $PerchImage->get_resize_profile($target);
+                        $profile['original'] = true;
+                        $Perch->event('assets.upload_image', new PerchAssetFile($profile));
+                    }
+
+                }else{
+                    $target = false;
                 }
+
+
+                
             }
         }
 
@@ -1369,6 +1451,32 @@ class PerchFieldType_image extends PerchFieldType
 
         return $out;
     }
+
+    private function _file_is_acceptable($file)
+    {   
+        if (!PERCH_VERIFY_UPLOADS) return true;
+
+        if (isset($file['error'])) {
+            if ($file['error']!=UPLOAD_ERR_OK) {
+                return false;
+            }
+        }
+
+        $File = new PerchAssetFile(array(
+                        'file_path' => $file['tmp_name'],
+                        'file_name' => $file['name'],
+                        'size'      => $file['size'],
+                    ));
+
+        $result = $File->is_acceptable_upload($this->Tag, $this->accept_types);
+
+        if (!$result) PerchUtil::debug($File->get_errors(), 'notice');
+
+        #error_log(print_r($File->get_errors(), 1));
+
+        return $result;
+
+    }
 }
 
 
@@ -1376,6 +1484,8 @@ class PerchFieldType_image extends PerchFieldType
 
 class PerchFieldType_file extends PerchFieldType_image
 {
+    protected $accept_types = 'pdf,text,richtext,xml,zip,audio,video,office';
+
     public function render_inputs($details=array())
     {
         $Perch = Perch::fetch();

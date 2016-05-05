@@ -8,6 +8,15 @@
 
 	PerchSystem::register_search_handler('PerchContent_RunwaySearch');
 
+    if (PERCH_RUNWAY_ROUTED) {
+        $Perch = Perch::fetch();
+        $Perch->on('page.loaded', function(){
+            perch_runway_content_check_preview();
+        });
+    }else{
+        perch_runway_content_check_preview();
+    }
+
 	function perch_collection($key=false, $opts=false, $return=false)
     {
         if ($key === false) return ' ';
@@ -15,6 +24,10 @@
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
             $return  = true;
             $postpro = false;
+
+            if (isset($opts['return-html']) && $opts['return-html']) {
+                $postpro = true;
+            }
         }else{
             $postpro = true;
         }
@@ -25,8 +38,17 @@
         // Post processing - if there are still <perch:x /> tags
         if ($postpro) {
             if (is_array($out)) {
+
+                // return-html
+                if (isset($out['html'])) {
+                    if (strpos($out['html'], '<perch:')!==false) {
+                        $Template = new PerchTemplate();
+                        $out['html'] = $Template->apply_runtime_post_processing($out['html']);
+                    }
+                }
+
                 // split-items
-                if (PerchUtil::count($out)) {
+                if (PerchUtil::count($out) && !isset($out['html'])) {
                     $Template = new PerchTemplate();
                     foreach($out as &$html_item) {
                         if (strpos($html_item, '<perch:')!==false) {

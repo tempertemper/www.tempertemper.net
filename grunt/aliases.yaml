@@ -2,9 +2,9 @@ default:
   - 'watch'
 
 css:
+  - 'postcss:lint'
   - 'sass'
-  - 'postcss'
-  - 'scsslint'
+  - 'postcss:build'
 
 js:
   - 'concat'
@@ -12,4 +12,3 @@ js:
 
 files:
   - 'copy'
-  - 'imagemin'

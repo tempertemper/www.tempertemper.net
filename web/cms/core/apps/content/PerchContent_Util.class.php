@@ -296,12 +296,12 @@ class PerchContent_Util
 	                }
 
 	                // Resources
-	                if ($Item->ready_to_log_resources()) {
-	                	$resourceIDs = $Resources->get_logged_ids();
-	                	if (PerchUtil::count($resourceIDs)) {
-	                	    $Item->log_resources($resourceIDs);
-	                	}
-	                }
+	                #if ($Item->ready_to_log_resources()) {
+	                #	$resourceIDs = $Resources->get_logged_ids();
+	                #	if (PerchUtil::count($resourceIDs)) {
+	                #	    $Item->log_resources($resourceIDs);
+	                #	}
+	                #}
 	            }
 
 
@@ -311,6 +311,14 @@ class PerchContent_Util
 	        }
 
 	    }
+
+	    // Resources
+        if (!$in_repeater && !$in_block && $Item->ready_to_log_resources()) {
+        	$resourceIDs = $Resources->get_logged_ids();
+        	if (PerchUtil::count($resourceIDs)) {
+        	    $Item->log_resources($resourceIDs);
+        	}
+        }
 
 	    return array($form_vars, $search_text);
 	}
@@ -389,6 +397,11 @@ class PerchContent_Util
 
 		        if (!in_array($tag->id(), $seen_tags)) {
 		            if (PerchUtil::bool_val($tag->required())) {
+
+		            	if (!PERCH_RUNWAY && $tag->runway()) {
+			            	continue;
+						}
+
 		                if ($tag->type() == 'date' && !$tag->native()) {
 		                    if ($tag->time()) {
 		                        $req[$input_id.'_minute'] = "Required";
@@ -438,6 +451,10 @@ class PerchContent_Util
 
 	            if ($tag->type()=='slug' && !$tag->editable()) {
 	                continue;
+	            }
+
+	            if (!PERCH_RUNWAY && $tag->runway()) {
+	            	continue;
 	            }
 
 	            //PerchUtil::debug($tag->type(), 'success');

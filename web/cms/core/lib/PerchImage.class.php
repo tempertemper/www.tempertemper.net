@@ -4,10 +4,10 @@ class PerchImage
 {
     private $mode = false;
     
-    // Image quality for JPEGs (0-99)
+    // Image quality for JPEGs (0 to 99)
     private $jpeg_quality = 85;
 
-    // Compression rate for PNGs (0-9)
+    // Compression rate for PNGs (0 to 9)
     private $png_compression = 9;
 
     // Pixel density
@@ -21,7 +21,7 @@ class PerchImage
     
     private $box_constrain = true;
     
-    function __construct()
+    public function __construct()
     {
         if (!defined('PERCH_IMAGE_LIB')) define('PERCH_IMAGE_LIB', 'GD');
 
@@ -528,8 +528,6 @@ class PerchImage
 
     private function resize_with_gd($image_path, $save_as, $new_w, $new_h, $crop_w, $crop_h, $crop_x, $crop_y)
     {   
-        //PerchUtil::debug("Actual resize: w$new_w h$new_h @{$this->density}x", 'error');
-
         if ($this->is_webp($image_path)) {
             $mime    = 'image/webp';
         }else{
@@ -552,8 +550,6 @@ class PerchImage
             $new_image = imagecreate($new_w, $new_h);
             if ($crop) $crop_image = imagecreate($crop_w, $crop_h);
         }
-        
-        //PerchUtil::debug('Image is true colour? '. (imageistruecolor($new_image) ? 'YES' : 'NO'), 'notice');
 
         $real_save_as = $save_as;
         $save_as = tempnam(PERCH_RESFILEPATH, '_gd_tmp_');
@@ -795,13 +791,8 @@ class PerchImage
     private function thumbnail_file_with_imagick($file_path, $save_as, $w=0, $h=0)
     {
         try {
-            //PerchUtil::debug('File: '.$file_path);
-            //PerchUtil::debug('Real save as: '.$save_as);
-
             $real_save_as = $save_as;
             $save_as = tempnam(PERCH_RESFILEPATH, '_im_tmp_');
-
-            //PerchUtil::debug('Temp save as: '.$save_as);
 
             $Image = new Imagick($file_path.'[0]');
             $Image->setImageFormat('jpg');
@@ -811,9 +802,6 @@ class PerchImage
             }else{
                 $Image->thumbnailImage(0,$w*$this->density);
             }           
-            if ($this->sharpening) {
-                ///$Image->unsharpMaskImage(0, $this->sharpening/10, $this->sharpening/2, 0.05);
-            }
 
             // progressive jpg?
             if ($this->progressive_jpeg) {
@@ -837,8 +825,6 @@ class PerchImage
             $out['mime']      = 'image/'.$Image->getImageFormat();
 
             $Image->destroy(); 
-
-            
 
             return $out;
         }catch(Exception $e) {

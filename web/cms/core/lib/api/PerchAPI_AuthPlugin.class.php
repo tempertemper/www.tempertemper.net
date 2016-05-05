@@ -42,7 +42,7 @@ class PerchAPI_AuthPlugin extends PerchBase
 			$details['roleMasterAdmin'] = $Role->roleMasterAdmin();
 			$this->set_details($details);		
 
-			$this->_load_privileges($Role->id());
+			$this->_load_privileges($Role);
 
 			// activate
 			$AuthenticatedUser = new PerchAuthenticatedUser(array());
@@ -77,7 +77,7 @@ class PerchAPI_AuthPlugin extends PerchBase
 
 			$AuthenticatedUser = new PerchAuthenticatedUser(array());
 
-			$this->_load_privileges($Role->id());
+			$this->_load_privileges($Role);
 
 			return true;
 		}
@@ -94,6 +94,8 @@ class PerchAPI_AuthPlugin extends PerchBase
 	public function logout()
 	{
 		$this->logged_in = false;
+        PerchSession::delete('userID');
+        PerchSession::delete('userHash');
 		$this->log_user_out();
 		
 		return true;
@@ -104,24 +106,33 @@ class PerchAPI_AuthPlugin extends PerchBase
         return $this->details['userEmail'];
     }
 
-
     public function has_priv($priv)
 	{
 	    return in_array($priv, $this->privileges);
 	}
 
-	private function _load_privileges($roleID)
+	public function get_privs()
     {
-        $sql = 'SELECT p.privKey FROM '.PERCH_DB_PREFIX.'user_role_privileges rp, '.PERCH_DB_PREFIX.'user_privileges p
-                WHERE rp.privID=p.privID AND rp.roleID='.$this->db->pdb((int)$roleID);
-        $rows = $this->db->get_rows($sql);
-        if (PerchUtil::count($rows)) {
-            $privs = array();
-            foreach($rows as $row) {
-                $privs[] = $row['privKey'];
-            }
-            $this->privileges = $privs;
-        }
+        return $this->privileges;
     }
+
+	private function _load_privileges($Role)
+	{
+        if ($Role->roleMasterAdmin()) {
+            $sql = 'SELECT p.privKey FROM '.PERCH_DB_PREFIX.'user_privileges p';
+        }else{
+            $sql = 'SELECT p.privKey FROM '.PERCH_DB_PREFIX.'user_role_privileges rp, '.PERCH_DB_PREFIX.'user_privileges p
+                WHERE rp.privID=p.privID AND rp.roleID='.$this->db->pdb((int)$Role->id());
+        }
+
+	    $rows = $this->db->get_rows($sql);
+	    if (PerchUtil::count($rows)) {
+	        $privs = array();
+	        foreach($rows as $row) {
+	            $privs[] = $row['privKey'];
+	        }
+	        $this->privileges = $privs;
+	    }
+	}
 
 }

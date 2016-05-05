@@ -7,7 +7,7 @@ class PerchAPI_Paging extends PerchPaging
     
     private $Lang = false;
     
-    function __construct($version=1.0, $app_id, $Lang)
+    public function __construct($version=1.0, $app_id, $Lang)
     {
         $this->app_id = $app_id;
         $this->version = $version;

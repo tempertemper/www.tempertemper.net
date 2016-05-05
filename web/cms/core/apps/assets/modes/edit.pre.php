@@ -1,6 +1,6 @@
 <?php
     
-    $FieldTag = new PerchXMLTag('<perch:content id="image" type="image" disable-asset-panel="true" app-mode="true" detect-type="true" />');
+    $FieldTag = new PerchXMLTag('<perch:content id="image" type="image" disable-asset-panel="true" app-mode="true" detect-type="true" accept="all" />');
     $FieldTag->set('input_id', 'image');
 
     $Assets  = new PerchAssets_Assets;

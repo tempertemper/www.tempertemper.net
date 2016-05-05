@@ -1,4 +1,5 @@
 <?php
+	$runway_request_time = microtime(true);
 	if (PHP_VERSION_ID<50400) die('Perch Runway requires PHP 5.4 or greater.');
 
 	define('PERCH_RUNWAY_ROUTED', true);
@@ -23,9 +24,6 @@
 			}
 		}
 
-		perch_find_posted_forms();
-		perch_runway_content_check_preview();
-
 		$Perch = Perch::fetch();
 		$Perch->event('page.loaded');
 
@@ -35,7 +33,8 @@
 	}
 
 	if (PERCH_DEBUG) {
-		PerchUtil::debug('Time: '.round(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 4));
+		PerchUtil::debug('Request time: '.round(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 4));
+		PerchUtil::debug('Process time: '.round(microtime(true) - $runway_request_time, 4));
 		PerchUtil::debug('Memory: '. round(memory_get_peak_usage()/1024/1024, 4));
 		PerchUtil::output_debug();
 	}

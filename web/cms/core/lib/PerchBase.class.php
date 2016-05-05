@@ -17,8 +17,9 @@ class PerchBase
     protected $modified_date_column = false;
 
     protected $pk_is_int = true;
+    protected $pk        = null;
 
-    function __construct($details)
+    public function __construct($details)
     {
         $this->db       = PerchDB::fetch();
         $this->details  = $details;
@@ -26,9 +27,16 @@ class PerchBase
         $this->table    = PERCH_DB_PREFIX . $this->table;
     }
 
-    function __call($method, $arguments)
+    public function __destruct()
+    {
+        $this->details = null;
+    }
+
+    public function __call($method, $arguments)
 	{
-		if (isset($this->details[$method])) {
+        if (isset($this->details[$method])) {
+            return $this->details[$method];
+        }else if (array_key_exists($method, $this->details)) {
 			return $this->details[$method];
 		}else{
 		    PerchUtil::debug('Looking up missing property ' . $method, 'notice');
@@ -125,13 +133,7 @@ class PerchBase
         return $this->api;
     }
 
-    /**
-     * Add the content of this region into the content index
-     * @param  boolean $item_id [description]
-     * @param  boolean $rev [description]
-     * @return [type]       [description]
-     */
-    public function index($Template=false)
+    public function index($Template=null)
     {
         if (!$this->index_table) return;
 

@@ -4,7 +4,6 @@
 	include(__DIR__ . '/../../config/config.php');
 	include(PERCH_CORE . '/inc/loader.php');
 	$Perch  = PerchAdmin::fetch();
-
 	$strings = array(
 		'Apps',
 		'Save',
@@ -42,11 +41,10 @@
 		'No',
 		'Bucket',
 	);
-
 	echo "Perch.Lang.init({\n\t";
 
-		foreach($strings as $string) {
-			echo "'{$string}':'".addslashes(PerchLang::get($string))."',\n\t";
-		}
-		echo "'EOF':'EOF'\n";
+	foreach($strings as $string) {
+		echo "'{$string}':'".addslashes(PerchLang::get($string))."',\n\t";
+	}
+	echo "'EOF':'EOF'\n";
 	echo '});';

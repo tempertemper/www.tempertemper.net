@@ -39,7 +39,7 @@ class PerchFactory
 
     public function find($id)
     {
-        $sql    = 'SELECT * FROM ' . $this->table . ' WHERE ' . $this->pk . '='. $this->db->pdb($id) .' LIMIT 1';
+        $sql    = 'SELECT * FROM ' . $this->table . ' WHERE ' . $this->pk . '='. $this->db->pdb($id) .$this->standard_restrictions().' LIMIT 1';
         $result = $this->db->get_row($sql);
 
         if (is_array($result)) {
@@ -59,6 +59,12 @@ class PerchFactory
 
         $sql .= ' *
                 FROM ' . $this->table;
+
+        $restrictions = $this->standard_restrictions();
+
+        if ($restrictions!='') {
+            $sql .= ' WHERE 1=1 '.$restrictions;
+        }
 
         if (isset($this->default_sort_column)) {
             $sql .= ' ORDER BY ' . $this->default_sort_column . ' '.$this->default_sort_direction;
@@ -131,13 +137,13 @@ class PerchFactory
     public function get_by($col, $val, $order_by_col=false, $Paging=false)
     {
 
-    	if (is_object($Paging)) {
-    		$select = 'SELECT SQL_CALC_FOUND_ROWS DISTINCT ';
-    	}else{
-    		$select = 'SELECT ';
-    	}
+        if (is_object($Paging)) {
+            $select = 'SELECT SQL_CALC_FOUND_ROWS DISTINCT ';
+        }else{
+            $select = 'SELECT ';
+        }
 
-    	if (is_array($val)) {
+        if (is_array($val)) {
             $sql    = $select . ' * FROM ' . $this->table . ' WHERE ' . $col . ' IN ('. PerchUtil::implode_for_sql_in($val) .') '.$this->standard_restrictions();
         }else{
             $sql    = $select . ' * FROM ' . $this->table . ' WHERE ' . $col . '='. $this->db->pdb($val) .' '.$this->standard_restrictions();
@@ -151,16 +157,16 @@ class PerchFactory
         }
 
         if (is_object($Paging) && $Paging->enabled()){
-        	$limit  = ' LIMIT ' . $Paging->lower_bound() . ', ' . $Paging->per_page();
-        	$sql    .= $limit;
+            $limit  = ' LIMIT ' . $Paging->lower_bound() . ', ' . $Paging->per_page();
+            $sql    .= $limit;
         }
 
         $rows = $this->db->get_rows($sql);
 
         if (is_object($Paging) && $Paging->enabled()){
-        	$sql	= "SELECT FOUND_ROWS() AS count";
-        	$total	= $this->db->get_value($sql);
-        	$Paging->set_total($total);
+            $sql    = "SELECT FOUND_ROWS() AS count";
+            $total  = $this->db->get_value($sql);
+            $Paging->set_total($total);
         }
 
         return $this->return_instances($rows);
@@ -249,13 +255,24 @@ class PerchFactory
 
     public function return_instances($rows)
     {
-        if (PerchUtil::count($rows) > 0) {
-            $out    = array();
-            foreach($rows as $row) {
-                $r = new $this->singular_classname($row);
-                if (is_object($r) && $this->api) $r->api($this->api);
-                $out[] = $r;
+        $row_count = PerchUtil::count($rows);
+        if ($row_count > 0) {
+            if (false && class_exists('SplFixedArray')) {
+                $out = new SplFixedArray($row_count);
+                for($i=0; $i<$row_count; $i++) {
+                    $r = new $this->singular_classname($rows[$i]);
+                    if (is_object($r) && $this->api) $r->api($this->api);
+                    $out[$i] = $r;
+                }
+            }else{
+                $out    = array();
+                foreach($rows as $row) {
+                    $r = new $this->singular_classname($row);
+                    if (is_object($r) && $this->api) $r->api($this->api);
+                    $out[] = $r;
+                }
             }
+            $row_count = null;
             return $out;
         }
 
@@ -263,14 +280,27 @@ class PerchFactory
     }
 
     public function return_flattened_instances($rows)
-    {
-        if (PerchUtil::count($rows) > 0) {
-            $out    = array();
-            foreach($rows as $row) {
-                $r = new $this->singular_classname($row);
-                if (is_object($r) && $this->api) $r->api($this->api);
-                $out[] = $r->to_array();
+    {        
+        $row_count = PerchUtil::count($rows);
+        if ($row_count > 0) {
+
+            if (false && class_exists('SplFixedArray')) {
+                $out    = new SplFixedArray($row_count);
+                for($i=0; $i<=$row_count; $i++) {
+                    $r = new $this->singular_classname($row);
+                    if (is_object($r) && $this->api) $r->api($this->api);
+                    $out[$i] = $r->to_array();
+                }          
+            }else{
+                $out    = array();
+                foreach($rows as $row) {
+                    $r = new $this->singular_classname($row);
+                    if (is_object($r) && $this->api) $r->api($this->api);
+                    $out[] = $r->to_array();
+                }
             }
+
+            $row_count = null;
             return $out;
         }
 
@@ -681,7 +711,7 @@ class PerchFactory
     public function get_filtered_listing_from_index($opts, $where_callback, $pre_template_callback=null)
     {
         $Perch = Perch::fetch();
-
+        
         $index_table = PERCH_DB_PREFIX.$this->index_table;
 
         $where = array();
@@ -745,7 +775,7 @@ class PerchFactory
                         }else{
                             $pos[] = $cat;
                         }
-                    }
+                    }                   
 
                     $sql .= $this->_get_filter_sub_sql('_category', $pos, false, $match, true, $where_clause);
                     $sql .= $this->_get_filter_sub_sql('_category', $neg, true, $match, true, $where_clause);
@@ -960,8 +990,8 @@ class PerchFactory
             if (PerchUtil::count($where)) $sql .= ' AND ('.implode($where, ' OR ').') ';
 
             $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemKey=idx2.itemKey
-                        GROUP BY idx.itemID
-                    ) as tbl ';
+                        GROUP BY idx.itemID, idx2.indexValue, '.$this->pk.'
+                    ) as tbl '; // DM added ', idx2.indexValue' for MySQL 5.7 compat
 
             $where = array();
 
@@ -984,7 +1014,7 @@ class PerchFactory
                 $sql .= ' WHERE ('.implode($where, ' AND ').') ';
             }
 
-            $sql .= 'GROUP BY itemID ';
+            $sql .= 'GROUP BY itemID, sortval '; // DM added ', sortval' for MySQL 5.7 compat
 
             if ($filter_mode=='AND' && PerchUtil::count($filters)>1) {
                 $sql .= ' HAVING count(*)='.PerchUtil::count($filters).' ';
@@ -1246,7 +1276,7 @@ class PerchFactory
                 }
 
             }
-            $cat_sql .= implode(' OR ', $where);
+            $cat_sql .= '(' . implode(' OR ', $where). ')';
 
             if ($match=='all') {
                 $cat_sql .= ' GROUP BY idx.itemID HAVING COUNT(idx.itemID)='.count($items).' ';

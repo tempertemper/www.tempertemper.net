@@ -12,9 +12,8 @@ class PerchAssets_Assets extends PerchFactory
     /**
      * Get a paginated list of assets for admin display, filtered by smartbar options
      * @param  boolean $Paging       [description]
-     * @param  string  $filter       [description]
-     * @param  string  $filter_value [description]
-     * @return [type]                [description]
+     * @param  array  $filters       [description]
+     * @return object                [description]
      */
     public function get_filtered_for_admin(PerchPaging $Paging, $filters)
     {
@@ -85,7 +84,7 @@ class PerchAssets_Assets extends PerchFactory
     public function get_available_buckets()
     {
     	$sql = 'SELECT DISTINCT resourceBucket FROM '.$this->table.' 
-    			WHERE resourceAWOL=0 AND resourceType !="" ORDER BY resourceType ASC';
+    			WHERE resourceAWOL=0 AND resourceType !=""';
     	$list = $this->db->get_rows_flat($sql);
         if (!$list) $list = array();
 
@@ -98,6 +97,8 @@ class PerchAssets_Assets extends PerchFactory
                 }
             }
         }
+
+        if ($list) sort($list);
 
         return $list;
     }
@@ -163,7 +164,7 @@ class PerchAssets_Assets extends PerchFactory
 
     }
 
-    public function search($term, $filters)
+    public function search($term, $filters=array())
     {
         $term = trim($term);
         $tag  = PerchUtil::urlify($term);

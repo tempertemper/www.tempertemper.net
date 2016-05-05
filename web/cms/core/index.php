@@ -66,7 +66,7 @@
             <h1><?php echo PerchLang::get('Log in'); ?></h1>
         </div>
         <div class="bd">
-            <form action="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/" method="post">
+            <form action="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/" method="post" <?php if (PERCH_PARANOID) echo 'autocomplete="off"'; ?>>
                 
                 <?php
 					if ($db_error) {
@@ -108,7 +108,7 @@
                 
                 <div<?php if ($login_attempt && $username=='') echo ' class="error"'; ?>>
                     <label for="username"><?php echo PerchLang::get('Username'); ?></label>
-                    <input type="text" name="username" value="<?php echo PerchUtil::html($username,1); ?>" id="username" class="text" autofocus="autofocus" />
+                    <input type="text" name="username" value="<?php echo PerchUtil::html($username,1); ?>" id="username" class="text" autofocus="autofocus" <?php if (PERCH_PARANOID) echo 'autocomplete="off"'; ?> />
                     <?php if ($login_attempt && $username=='') echo '<span class="error">'.PerchLang::get('Required').'</span>'; ?>
                 </div>
                 
@@ -144,5 +144,3 @@
 </div>
 <?php
     include('inc/btm.php');
-
-?>

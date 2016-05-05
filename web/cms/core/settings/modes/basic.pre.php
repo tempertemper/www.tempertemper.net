@@ -41,31 +41,35 @@
     	// image upload
     	if (isset($_FILES['customlogo']) &&  (int) $_FILES['customlogo']['size'] > 0) {
 
-            if (is_array(getimagesize($_FILES['customlogo']['tmp_name']))) {
-        	    $filename = $_FILES['customlogo']['name'];
-                if (strpos($filename, '.php')!==false) $filename .= '.txt'; // diffuse PHP files
-                $target = PERCH_RESFILEPATH.'/'.$filename;
-                if (file_exists($target)) {
-                    $filename = time().'_'.$_FILES['customlogo']['name'];
-                    $target = PERCH_RESFILEPATH.'/'.$filename;
-                }
+            // new
+            $FieldTag = new PerchXMLTag('<perch:content id="customlogo" type="image" disable-asset-panel="true" detect-type="true" accept="webimage" />');
+            $FieldTag->set('input_id', 'customlogo');
 
-                PerchUtil::move_uploaded_file($_FILES['customlogo']['tmp_name'], $target);
+            $Assets    = new PerchAssets_Assets;
+            $Resources = new PerchResources;
 
-                $Settings->set('logoPath', PERCH_RESPATH . '/' . $filename);
+            $FieldType = PerchFieldTypes::get($FieldTag->type(), $Form, $FieldTag, false, 'system');
+            $var       = $FieldType->get_raw();
+
+            if (PerchUtil::count($var)) {
+
+                $ids     = $Resources->get_logged_ids();
+                $assetID = $ids[0];
+                $Asset   = $Assets->find($assetID);
+                $Asset->reindex();
+                $Asset->mark_as_library();
+
+                $Settings->set('logoPath', $Asset->web_path());
             }
     	}
 
         $Settings->reload();
-
     }
 
 
 
-    PerchUtil::debug('Image folder writable? ' . $image_folder_writable);
+    #PerchUtil::debug('Image folder writable? ' . $image_folder_writable);
 
 
 
     $details = $Settings->get_as_array();
-
-?>

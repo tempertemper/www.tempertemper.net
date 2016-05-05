@@ -286,7 +286,7 @@ class PerchContent_Runway extends PerchContent
 	        }
 
 	        $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemRev=idx2.itemRev
-	                ) as tbl GROUP BY itemID ';
+	                ) as tbl GROUP BY itemID, itemJSON, sortval '; // DM added ', itemJSON, sortval' for MySQL 5.7
 
 	        if ($filter_mode=='AND' && PerchUtil::count($filters)>1) {
 	            $sql .= ' HAVING count(*)='.PerchUtil::count($filters).' ';

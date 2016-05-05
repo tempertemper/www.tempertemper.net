@@ -53,6 +53,8 @@
             if (!isset($data['pageSubpagePath'])) $data['pageSubpagePath'] = false;
             $data['pageSubpagePath'] = '/'.ltrim($data['pageSubpagePath'], '/');
             $_POST['pageSubpagePath'] = $data['pageSubpagePath'];
+        }else{
+            $data['pageSortPath'] = PerchUtil::strip_file_extension(str_replace(array('/'.PERCH_DEFAULT_DOC), '', $data['pagePath']));
         }
 
         $data['pageModified'] = date('Y-m-d H:i:s');

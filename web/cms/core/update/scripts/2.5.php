@@ -67,7 +67,7 @@
 
             ALTER TABLE `__PREFIX__resource_log` ADD INDEX `idx_fk` (`itemFK`, `itemRowID`);
 
-            ALTER IGNORE TABLE `__PREFIX__resource_log` ADD UNIQUE INDEX `idx_uni` (`appID`, `itemFK`, `itemRowID`, `resourceID`);
+            ALTER TABLE `__PREFIX__resource_log` ADD UNIQUE INDEX `idx_uni` (`appID`, `itemFK`, `itemRowID`, `resourceID`);
 
             ";
 
