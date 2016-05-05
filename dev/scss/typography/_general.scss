@@ -22,10 +22,9 @@ body {
 
 blockquote {
   border-left: .75em solid $colour-primary-light;
-  padding: .5em 0 .5em 1em;
-  margin-right: 0;
   margin-left: 0;
-  padding-right: 1.25em;
+  margin-right: 0;
+  padding: .5em 1.25em .5em 1em;
 
   p {
     display: inline;
@@ -39,7 +38,7 @@ cite {
 }
 
 strong {
-  font-weight: bold;
+  font-weight: 700;
 
   em {
     font-style: italic;
@@ -50,7 +49,7 @@ em {
   font-style: italic;
 
   strong {
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 
@@ -67,7 +66,7 @@ ol {
 }
 
 code {
-  font-family: menlo, monaco, "Lucida Console", monospace;
+  font-family: menlo, monaco, 'Lucida Console', monospace;
   font-size: .8em;
 }
 

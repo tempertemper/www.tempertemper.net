@@ -1,10 +1,14 @@
 [role="search"] {
-  position: relative;
-  margin-top: 0;
   margin-bottom: 0;
+  margin-top: 0;
+  position: relative;
 
   path {
     transition: all .4s ease;
+  }
+
+  .icon-search {
+    fill: $colour-primary;
   }
 
   &:hover,
@@ -12,17 +16,17 @@
   &:focus {
 
     .icon-search {
-      fill: $black !important;
+      fill: $black;
     }
   }
 
   label {
-    position: absolute;
-    display: block;
-    top: .55em;
-    left: .6em;
     $svg-height: 1.4em;
+    display: block;
     height: $svg-height;
+    left: .6em;
+    position: absolute;
+    top: .55em;
     width: $svg-height;
 
     &:hover,
@@ -73,18 +77,18 @@
     margin-bottom: 0;
 
     @media (min-width: $l) {
-      width: 2.45em;
-      transition: all .4s ease;
-      float: right;
-      text-align: right;
-      padding-right: 1.2em;
-      padding-left: .5em;
       color: transparent;
+      float: right;
+      padding-left: .5em;
+      padding-right: 1.2em;
+      text-align: right;
+      transition: all .4s ease;
+      width: 2.45em;
 
       &:focus {
-        width: 100%;
-        padding-right: 2.2em;
         color: $black;
+        padding-right: 2.2em;
+        width: 100%;
       }
     }
   }

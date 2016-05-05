@@ -41,8 +41,8 @@
 
   &:before {
     content: '\2039';
-    margin-right: .25em;
     display: inline-block;
+    margin-right: .25em;
   }
 }
 
@@ -61,28 +61,28 @@
 }
 
 @mixin button {
-  text-align: center;
-  display: inline-block;
-  width: auto;
+  @include font-heading-regular;
+  background-color: transparent;
+  border-color: $colour-primary;
   border-radius: $border-radius-default;
-  padding: .5em 2em;
   border-style: solid;
   border-width: 3px;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  border-color: $colour-primary;
-  background-color: transparent;
-  color: $colour-primary;
-  transition: all .3s ease;
-  @include font-heading-regular;
   clear: both;
+  color: $colour-primary;
+  display: inline-block;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding: .5em 2em;
+  text-align: center;
+  transition: all .3s ease;
+  width: auto;
 
   &:hover,
   &:focus,
   &:active {
-    text-decoration: none;
     border-color: $black;
     color: $black;
+    text-decoration: none;
   }
 }
 
@@ -109,7 +109,6 @@
 }
 
 @mixin inline-nav {
-
   display: inline-block;
   width: auto;
 
@@ -127,13 +126,13 @@
 
   a {
     display: inline-block;
-    padding-right: .1em;
     padding-left: .1em;
+    padding-right: .1em;
   }
 }
 
 @mixin highlight-box {
   background-color: $colour-primary-light;
-  padding: 1em;
   border-radius: $border-radius-default;
+  padding: 1em;
 }

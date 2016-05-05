@@ -1,10 +1,10 @@
 @media print {
 
   body {
-    width: 500px;
-    margin-right: auto;
+    font-size: 10pt;
     margin-left: auto;
-    font-size: 10pt !important;
+    margin-right: auto;
+    width: 500px;
   }
 
   .nav-toggle,
@@ -29,8 +29,8 @@
   }
 
   .logo {
-    width: 240px !important;
-    padding-left: 0 !important;
+    padding-left: 0;
+    width: 240px;
   }
 
   a {
@@ -62,7 +62,7 @@
   ol {
 
     [href^=http] {
-      font-weight: bold;
+      font-weight: 700;
 
       &:after {
         content: ' <' attr(href) '> ';
