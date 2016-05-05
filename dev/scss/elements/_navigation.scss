@@ -86,6 +86,7 @@ nav {
 
   path {
     color: $colour-primary;
+    transition: all 284ms ease;
   }
 
   &:hover,
@@ -98,10 +99,26 @@ nav {
     }
   }
 
+  &.active {
+
+    .top {
+      transform: rotate(45deg) translate(8px, -5px);
+    }
+
+    .middle {
+      opacity: 0;
+    }
+
+    .bottom {
+      transform: rotate(-45deg) translate(-18px, -6px);
+    }
+  }
+
   button {
     $svg-height: 2em;
     background-color: transparent;
     border: 0;
+    cursor: pointer;
     display: block;
     height: $svg-height;
     outline: none;
@@ -111,21 +128,6 @@ nav {
     @media screen and (min-width: $s) {
       height: $svg-height * 1.4;
       width: $svg-height * 1.4;
-    }
-  }
-
-  .icon-close {
-    display: none;
-  }
-
-  &.active {
-
-    .icon-menu {
-      display: none;
-    }
-
-    .icon-close {
-      display: block;
     }
   }
 
