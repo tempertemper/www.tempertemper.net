@@ -1,0 +1,21 @@
+<title><perch:blog id="postTitle" /></title>
+	<meta property="og:site_name" content="<perch:setting id="perch_blog_site_name" />" />
+	<meta property="og:url" content="<perch:blog id="domain" type="hidden" /><perch:blog id="postURL" type="hidden" />" />
+	<meta property="og:title" content="<perch:blog id="og_title" label="Social title" type="text" escape="true" />" />
+	<meta property="og:description" content="<perch:blog id="og_description" label="Social description" type="textarea" size="s" escape="true" />" /><!--* *-->
+	<perch:if exists="og_image">
+	<meta property="og:image" content="<perch:blog id="domain" type="hidden" /><perch:blog id="og_image" label="Image when shared" help="Should be at least 1200x630" type="image" width="1200" />" />
+	</perch:if><!--* *-->
+	<perch:if exists="og_type"><!--* *-->
+	<meta property="og:type" content="<perch:blog id="og_type" label="Facebook type" type="select" options="article,book,profile,website,video,music" allowempty="true" />" />
+	</perch:if><!--* *-->
+	<meta property="article:author" content="<perch:blog id="author_facebook" type="hidden" />" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="<perch:blog id="author_twitter" type="hidden" />" />
+	<meta name="twitter:title" content="<perch:blog id="og_title" label="Social title" type="text" escape="true" />" />
+	<meta name="twitter:description" content="<perch:blog id="og_description" label="Social description" type="textarea" size="s" escape="true" />" /><!--* *-->
+	<perch:if exists="og_image">
+	<meta property="twitter:image" content="<perch:blog id="domain" type="hidden" /><perch:blog id="og_image" label="Image when shared" help="Should be at least 1200x630" type="image" width="1200" />" />
+	</perch:if><!--* *-->
+	<meta name="twitter:url" content="<perch:blog id="domain" type="hidden" /><perch:blog id="postURL" type="hidden" />" />

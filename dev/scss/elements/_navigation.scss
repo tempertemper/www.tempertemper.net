@@ -21,68 +21,73 @@ nav {
   width: 100%;
 
   ul {
-    margin-top: 0;
     margin-bottom: 0;
-    text-align: center;
-  }
-
-  li:first-child a {
+    margin-top: 0;
+    padding-bottom: .75em;
+    padding-left: 0;
     padding-top: .75em;
-  }
+    text-align: center;
 
-  li:last-child a {
-    padding-bottom: .9em;
+    @media screen and (min-width: $l) {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
   }
 
   a {
     display: block;
-    padding-top: .25em;
     padding-bottom: .25em;
+    padding-top: .25em;
   }
 }
 
-.nav-collapse ul {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: block;
-  list-style: none;
-}
+.nav-collapse {
 
-.nav-collapse li {
-  width: 100%;
-  display: block;
-}
+  ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    width: 100%;
+  }
 
-.js .nav-collapse {
-  clip: rect(0 0 0 0);
-  max-height: 0;
-  position: absolute;
-  display: block;
-  overflow: hidden;
-  zoom: 1;
-}
+  li {
+    display: block;
+    width: 100%;
+  }
 
-.nav-collapse.opened {
-  max-height: 9999px;
-  position: relative;
-  overflow: hidden;
+  .js & {
+    clip: rect(0 0 0 0);
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    zoom: 1;
+  }
+
+  &.opened {
+    max-height: 9999px;
+    overflow: hidden;
+    position: relative;
+  }
 }
 
 .disable-pointer-events {
-  pointer-events: none !important;
+  pointer-events: none;
 }
 
-// Two vendor prefix olny properties
-// scss-lint:disable VendorPrefix
 .nav-toggle {
+  border: 3px solid $colour-primary;
+  border-radius: $border-radius-default;
+  cursor: pointer;
+  padding: .4em;
   -webkit-tap-highlight-color: $black;
   -webkit-touch-callout: none;
   user-select: none;
-  cursor: pointer;
-  padding: .4em;
-  border: 3px solid $colour-primary;
-  border-radius: $border-radius-default;
+
+  path {
+    color: $colour-primary;
+    transition: all 284ms ease;
+  }
 
   &:hover,
   &:active,
@@ -90,38 +95,39 @@ nav {
     border-color: $black;
 
     path {
-      fill: $black !important;
+      fill: $black;
+    }
+  }
+
+  &.active {
+
+    .top {
+      transform: rotate(45deg) translate(8px, -5px);
+    }
+
+    .middle {
+      opacity: 0;
+    }
+
+    .bottom {
+      transform: rotate(-45deg) translate(-18px, -6px);
     }
   }
 
   button {
-    border: 0;
-    background-color: transparent;
-    padding: 0;
-    display: block;
-    outline: none;
     $svg-height: 2em;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: block;
     height: $svg-height;
+    outline: none;
+    padding: 0;
     width: $svg-height;
 
     @media screen and (min-width: $s) {
       height: $svg-height * 1.4;
       width: $svg-height * 1.4;
-    }
-  }
-
-  .icon-close {
-    display: none;
-  }
-
-  &.active {
-
-    .icon-menu {
-      display: none;
-    }
-
-    .icon-close {
-      display: block;
     }
   }
 
@@ -145,14 +151,14 @@ nav {
 
   [role="navigation"] {
     float: right;
-    width: auto;
     position: relative;
+    width: auto;
 
     ul {
-      width: auto;
       float: left;
       margin-top: .2em;
       padding-bottom: .3em;
+      width: auto;
 
       @media (min-width: $l) {
         padding-right: 3em;
@@ -161,14 +167,6 @@ nav {
 
     li {
       @include inline-nav;
-
-      &:first-child a {
-        padding-top: 0;
-      }
-
-      &:last-child a {
-        padding-bottom: 0;
-      }
     }
   }
 }

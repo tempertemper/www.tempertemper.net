@@ -5,15 +5,15 @@ class PerchBlog_Comments extends PerchAPI_Factory
 	protected $table     = 'blog_comments';
 	protected $pk        = 'commentID';
 	protected $singular_classname = 'PerchBlog_Comment';
-	
+
 	protected $default_sort_column = 'commentDateTime';
-	
+
 	public $static_fields   = array('postID', 'commentName', 'commentEmail', 'commentURL', 'commentIP', 'commentDateTime', 'commentHTML', 'commentStatus', 'commentEnvironment');
-	
+
 	/**
 	 * Get count of comments of the given type.
 	 *
-	 * @param string $status 
+	 * @param string $status
 	 * @return void
 	 * @author Drew McLellan
 	 */
@@ -22,46 +22,46 @@ class PerchBlog_Comments extends PerchAPI_Factory
 		$sql = 'SELECT COUNT(*) FROM '.$this->table;
 
 		if ($status) $sql .=' WHERE commentStatus='.$this->db->pdb($status);
-		
+
 		return $this->db->get_count($sql);
 	}
-	
+
 	/**
 	 * Get comments by their status (pending, live, rejected, spam or ALL)
 	 *
-	 * @param string $status 
-	 * @param string $Paging 
+	 * @param string $status
+	 * @param string $Paging
 	 * @return void
 	 * @author Drew McLellan
 	 */
 	public function get_by_status($status='pending', $Paging=false)
 	{
 		$status = strtoupper($status);
-		
+
 		if ($Paging && $Paging->enabled()) {
             $sql = $Paging->select_sql();
         }else{
             $sql = 'SELECT';
         }
-        
-        $sql .= ' c.*, p.postTitle  
-                FROM ' . $this->table .' c, '.PERCH_DB_PREFIX.'blog_posts p 
+
+        $sql .= ' c.*, p.postTitle
+                FROM ' . $this->table .' c, '.PERCH_DB_PREFIX.'blog_posts p
 				WHERE c.postID=p.postID ';
-				
+
 		if ($status != 'ALL') $sql .= ' AND c.commentStatus='.$this->db->pdb($status);
-		 
+
 		$sql .= ' ORDER BY c.commentDateTime DESC ';
-        
+
         if ($Paging && $Paging->enabled()) {
             $sql .=  ' '.$Paging->limit_sql();
         }
-        
+
         $results = $this->db->get_rows($sql);
-        
+
         if ($Paging && $Paging->enabled()) {
             $Paging->set_total($this->db->get_count($Paging->total_count_sql()));
         }
-        
+
         return $this->return_instances($results);
 	}
 
@@ -91,17 +91,17 @@ class PerchBlog_Comments extends PerchAPI_Factory
 			$key = $opts['filter'];
             $raw_value = $opts['value'];
             $value = $this->db->pdb($opts['value']);
-            
+
             $match = isset($opts['match']) ? $opts['match'] : 'eq';
             switch ($match) {
-                case 'eq': 
-                case 'is': 
-                case 'exact': 
+                case 'eq':
+                case 'is':
+                case 'exact':
                     $where[] = $key.'='.$value;
                     break;
-                case 'neq': 
-                case 'ne': 
-                case 'not': 
+                case 'neq':
+                case 'ne':
+                case 'not':
                     $where[] = $key.'!='.$value;
                     break;
                 case 'gt':
@@ -145,26 +145,26 @@ class PerchBlog_Comments extends PerchAPI_Factory
                 case 'within':
                     $vals  = explode(',', $raw_value);
                     if (PerchUtil::count($vals)) {
-                        $where[] = $key.' IN ('.$this->implode_for_sql_in($vals).') ';                            
+                        $where[] = $key.' IN ('.$this->implode_for_sql_in($vals).') ';
                     }
                     break;
             }
-           
-	    
+
+
 		    // limit
 		    if (isset($opts['count'])) {
 		        $count = (int) $opts['count'];
-	        
+
 		        if (isset($opts['start'])) {
 	                $start = (((int) $opts['start'])-1). ',';
 		        }else{
 		            $start = '';
 		        }
-	        
+
 		        $limit = $start.$count;
 		    }
 
-		    
+
 		}
 
 		// sort
@@ -177,14 +177,14 @@ class PerchBlog_Comments extends PerchAPI_Factory
 	        }
 	        $order[] = $opts['sort'].' '.($desc ? 'DESC' : 'ASC');
 	    }
-    
+
 	    if (isset($opts['sort-order']) && $opts['sort-order']=='RAND') {
             $order[] = 'RAND()';
         }
 
 
-   
-        
+
+
         // Paging
         $Paging = $this->api->get('Paging', $opts['pagination-var']);
         if ($opts['paginate']==false || (isset($opts['start']) && $opts['start']!='')) {
@@ -195,20 +195,20 @@ class PerchBlog_Comments extends PerchAPI_Factory
                 $Paging->set_start_position($opts['start']);
             }
         }
-        
+
 	    $sql = $Paging->select_sql() . $sql;
-    
-        		    	
-    	$sql .= ' WHERE 1=1 ';            
-    	
+
+
+    	$sql .= ' WHERE 1=1 ';
+
 	    if (count($where)) {
 	        $sql .= ' AND ' . implode(' AND ', $where);
 	    }
-    
+
 	    if (count($order)) {
 	        $sql .= ' ORDER BY '.implode(', ', $order);
 	    }
-        
+
         if ($filter_type=='sql' && $Paging->enabled()) {
             $sql .= ' '.$Paging->limit_sql();
         }else{
@@ -216,13 +216,13 @@ class PerchBlog_Comments extends PerchAPI_Factory
     	        $sql .= ' LIMIT '.$limit;
     	    }
         }
-        	    	    
+
 	    $rows    = $this->db->get_rows($sql);
-	    
+
 	    if ($Paging->enabled()) {
 	        $Paging->set_total($this->db->get_count($Paging->total_count_sql()));
 	    }
-	        	    
+
 	    $objects  = $this->return_instances($rows);
 
     	$comments = array();
@@ -230,12 +230,12 @@ class PerchBlog_Comments extends PerchAPI_Factory
             foreach($objects as $Object) $comments[] = $Object->to_array();
         }
 
-        
+
         // if not filtering by a column in SQL
 	    if ($filter_type=='php') {
 	        // if not picking an _id, check for a filter
 	        if (isset($opts['filter']) && isset($opts['value'])) {
-	            if (PerchUtil::count($comments)) {	                
+	            if (PerchUtil::count($comments)) {
     	            $out = array();
     	            $key = $opts['filter'];
     	            $val = $opts['value'];
@@ -244,14 +244,14 @@ class PerchBlog_Comments extends PerchAPI_Factory
     	            	if (!isset($item[$key])) $item[$key] = false;
     	                if (isset($item[$key])) {
     	                    switch ($match) {
-                                case 'eq': 
-                                case 'is': 
-                                case 'exact': 
+                                case 'eq':
+                                case 'is':
+                                case 'exact':
                                     if ($item[$key]==$val) $out[] = $item;
                                     break;
-                                case 'neq': 
-                                case 'ne': 
-                                case 'not': 
+                                case 'neq':
+                                case 'ne':
+                                case 'not':
                                     if ($item[$key]!=$val) $out[] = $item;
                                     break;
                                 case 'gt':
@@ -318,24 +318,24 @@ class PerchBlog_Comments extends PerchAPI_Factory
 		        }
 		        $comments = PerchUtil::array_sort($comments, $opts['sort'], $desc);
 		    }
-	    
+
 		    if (isset($opts['sort-order']) && $opts['sort-order']=='RAND') {
 	            shuffle($comments);
 	        }
-	    
+
 	        // Pagination
 	        if (isset($opts['paginate'])) {
-	            
+
 	            $Paging->set_per_page(isset($opts['count'])?(int)$opts['count']:10);
-	            
+
 	            $opts['count'] = $Paging->per_page();
 	            $opts['start'] = $Paging->lower_bound()+1;
-	            
+
 	            $Paging->set_total(PerchUtil::count($comments));
 	        }else{
 	            $Paging = false;
 	        }
-	                
+
 	        // limit
 		    if (isset($opts['count']) || isset($opts['start'])) {
 
@@ -345,13 +345,13 @@ class PerchBlog_Comments extends PerchAPI_Factory
 		        }else{
 		            $count = PerchUtil::count($comments);
 		        }
-	            
+
 		        // start
 		        if (isset($opts['start'])) {
 		            if ($opts['start'] === 'RAND') {
 		                $start = rand(0, PerchUtil::count($comments)-1);
 		            }else{
-		                $start = ((int) $opts['start'])-1; 
+		                $start = ((int) $opts['start'])-1;
 		            }
 		        }else{
 		            $start = 0;
@@ -368,22 +368,22 @@ class PerchBlog_Comments extends PerchAPI_Factory
 		        }
 
 			}
-		    
+
 		  	$comments = $out;
 	    }
-               
-        
+
+
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
-            return $comments; 
+            return $comments;
 	    }
-	    
+
 	    // template
 	    if (isset($opts['template'])) {
 	        $template = 'blog/'.$opts['template'];
 	    }else{
 	        $template = 'blog/comment.html';
 	    }
-	    
+
 	   	// Paging to template
         if (is_object($Paging)) {
             $paging_array = $Paging->to_array($opts);
@@ -394,10 +394,10 @@ class PerchBlog_Comments extends PerchAPI_Factory
 	            }
 	        }
         }
-        	    
+
 	    $Template = $this->api->get("Template");
 	    $Template->set($template, 'blog');
-	    
+
         $html = $Template->render_group($comments, true);
 
 	    return $html;
@@ -441,9 +441,9 @@ class PerchBlog_Comments extends PerchAPI_Factory
 
 		        $spam = false;
 		        $antispam = $SubmittedForm->get_antispam_values();
-		        
+
 		        $environment = $_SERVER;
-		       
+
 		        $spam_data = array();
 	            $spam_data['fields'] = $antispam;
 	            $spam_data['environment'] = $environment;
@@ -451,23 +451,23 @@ class PerchBlog_Comments extends PerchAPI_Factory
 
 	            $data['commentIP'] = ip2long($_SERVER['REMOTE_ADDR']);
 
-		        
+
 		        $spam = $this->_check_for_spam($antispam, $environment, $akismetAPIKey);
-		        
+
 		        if ($spam) {
 		        	$data['commentStatus'] = 'SPAM';
 		        }else{
 
 		        	$Users          = new PerchUsers;
             		$CurrentUser    = $Users->get_current_user();
-            
+
             		if (is_object($CurrentUser) && $CurrentUser->logged_in()) {
             			$data['commentStatus'] = 'LIVE';
             		}else{
             			$data['commentStatus'] = 'PENDING';
             		}
 
-		        	
+
 		        }
 
 
@@ -476,23 +476,23 @@ class PerchBlog_Comments extends PerchAPI_Factory
 					switch($key) {
 
 						case 'commentHTML':
-					        if (!class_exists('\\Netcarver\\Textile\\Parser', false) && class_exists('Textile', true)) { 
-					            // sneaky autoloading hack 
+					        if (!class_exists('\\Netcarver\\Textile\\Parser', false) && class_exists('Textile', true)) {
+					            // sneaky autoloading hack
 					        }
-					        
+
 					        if (PERCH_HTML5) {
 					            $Textile = new \Netcarver\Textile\Parser('html5');
 					        }else{
 					            $Textile = new \Netcarver\Textile\Parser;
 					        }
-					        
+
 
 					        if (PERCH_RWD) {
 					            $val  =  $Textile->setDimensionlessImages(true)->textileRestricted($val);
 					        }else{
 					            $val  =  $Textile->textileRestricted($val);
 					        }
-					        
+
 					        if (defined('PERCH_XHTML_MARKUP') && PERCH_XHTML_MARKUP==false) {
 							    $val = str_replace(' />', '>', $val);
 							}
@@ -536,7 +536,7 @@ class PerchBlog_Comments extends PerchAPI_Factory
 			}
 		}
 
-		
+
 
 		PerchUtil::debug($SubmittedForm);
 	}
@@ -613,6 +613,6 @@ class PerchBlog_Comments extends PerchAPI_Factory
         return false;
     }
 
-		
+
 }
 

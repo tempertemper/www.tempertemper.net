@@ -12,7 +12,7 @@
     $posts = $Posts->get_recent(5);
 
     $Comments = new PerchBlog_Comments($API);
-    
+
     $comment_count = $Comments->get_count();
 
     $comments = array();
@@ -45,7 +45,7 @@
 		?>
 
 		<h3><?php echo $Lang->get('Comments'); ?> <span class="note"><?php echo PerchUtil::html($comment_count); ?></span></h3>
-		<?php 
+		<?php
 			echo '<ul class="mod">';
 				foreach($comments as $label=>$count) {
 					echo '<li>';
