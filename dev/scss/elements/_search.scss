@@ -48,14 +48,6 @@
 
 [role="navigation"] [role="search"] {
 
-  label {
-
-    @media (min-width: $l) {
-      left: auto;
-      right: .5em;
-    }
-  }
-
   @media (min-width: $s) and (max-width: $l) {
     @include layout($default);
     @include pre(1 of 6);
@@ -63,8 +55,18 @@
   }
 
   @media (min-width: $l) {
-    position: absolute;
-    right: 0;
+
+    label {
+      left: auto;
+      right: .5em;
+      z-index: 1;
+    }
+
+    input {
+      position: absolute;
+      right: 0;
+      z-index: .9;
+    }
   }
 
   &:hover input,

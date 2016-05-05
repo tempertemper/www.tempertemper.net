@@ -18,8 +18,7 @@
 }
 
 .logo {
-  display: block;
-  float: left;
+  display: inline-block;
   transition: none;
 
   @media (min-width: $l) {

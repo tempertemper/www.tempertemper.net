@@ -23,15 +23,15 @@ nav {
   ul {
     margin-bottom: 0;
     margin-top: 0;
-    text-align: center;
-  }
-
-  li:first-child a {
+    padding-bottom: .75em;
+    padding-left: 0;
     padding-top: .75em;
-  }
+    text-align: center;
 
-  li:last-child a {
-    padding-bottom: .9em;
+    @media screen and (min-width: $l) {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
   }
 
   a {
@@ -41,32 +41,34 @@ nav {
   }
 }
 
-.nav-collapse ul {
-  display: block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
+.nav-collapse {
 
-.nav-collapse li {
-  display: block;
-  width: 100%;
-}
+  ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    width: 100%;
+  }
 
-.js .nav-collapse {
-  clip: rect(0 0 0 0);
-  display: block;
-  max-height: 0;
-  overflow: hidden;
-  position: absolute;
-  zoom: 1;
-}
+  li {
+    display: block;
+    width: 100%;
+  }
 
-.nav-collapse.opened {
-  max-height: 9999px;
-  overflow: hidden;
-  position: relative;
+  .js & {
+    clip: rect(0 0 0 0);
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    zoom: 1;
+  }
+
+  &.opened {
+    max-height: 9999px;
+    overflow: hidden;
+    position: relative;
+  }
 }
 
 .disable-pointer-events {
@@ -163,14 +165,6 @@ nav {
 
     li {
       @include inline-nav;
-
-      &:first-child a {
-        padding-top: 0;
-      }
-
-      &:last-child a {
-        padding-bottom: 0;
-      }
     }
   }
 }
