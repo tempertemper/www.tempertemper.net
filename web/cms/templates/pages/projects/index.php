@@ -12,8 +12,6 @@
       'template'   => 'project_list.html',
       'paginate'   => 'true',
       'count'      => 5,
-      'sort'       => 'date',
-      'sort-order' => 'DESC'
     ]);
   ?>
 
