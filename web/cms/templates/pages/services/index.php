@@ -1,26 +1,15 @@
-<?php perch_layout('head'); ?>
-<?php perch_layout('/services/header'); ?>
-
-<main role="main">
-
-  <?php
-    if (perch_get('cat')) {
-      perch_collection('Projects', [
-        'category' => 'services/'.perch_get('cat'),
-        'template' => 'project_cat_list.html',
-        'paginate' => 'true',
-        'count'    => 5
-      ]);
-    } else {
-      perch_categories(array(
-        'set'=>'services',
-      ));
-    }
-  ?>
-
-</main>
-
 <?php
+  perch_layout('head');
+  perch_layout('header');
+
+  echo '<main role="main">';
+  perch_content('Introduction');
+  perch_collection('Services', [
+    'template'   => 'service_list.html',
+    'paginate'   => 'true',
+    'count'      => 5,
+  ]);
+  echo '</main>';
+
   perch_layout('footer');
   perch_layout('end');
-?>

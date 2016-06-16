@@ -5,10 +5,7 @@
 
   <?php
 
-    PerchSystem::set_var('modified', perch_page_modified(array(
-      'format' => '%e %B %Y',
-    ), true));
-
+    echo '<aside class="details">';
     perch_collection('Projects', [
       'template' => 'project_details.html',
       'filter'   => 'slug',
@@ -16,6 +13,7 @@
       'value'    => perch_get('s'),
       'count'    => 1,
     ]);
+    echo '</aside>';
 
     perch_collection('Projects', [
       'template' => 'project_detail.html',

@@ -1,7 +1,15 @@
-<aside class="details">
-
-  <p>Added <perch:content id="date" type="date" label="Date" format="F Y" />, updated <perch:content id="modified" type="text" format="F Y" /></p>
-
-  <perch:categories id="Services" label="Type of work" set="services" required="true" display-as="checkboxes" divider-before="Meta"><perch:before><perch:if exists="catSlug"><p class="cats">Work included <perch:else /></perch:if></perch:before><perch:if exists="perch_item_first"><perch:else /><perch:if exists="perch_item_last"> and <perch:else />, </perch:if></perch:if><a href="/services/<perch:category id="catSlug" />"><perch:category id="catTitle" /></a><perch:after><perch:if exists="catSlug"></p><perch:else /></perch:if></perch:after></perch:categories>
-
-</aside>
+<perch:related id="services" collection="Services"><!--*
+  *--><perch:before>
+    <perch:if exists="slug">
+      <p class="details">Work included
+      <perch:else />
+      </perch:if>
+  </perch:before><!--*
+  *--><perch:if exists="perch_item_first"><perch:else /><perch:if exists="perch_item_last"> and <perch:else />, </perch:if></perch:if><a href="/services/<perch:content id="slug" />"><perch:content id="title" /></a><!--*
+  *--><perch:after>
+    <perch:if exists="slug">
+      </p>
+    <perch:else />
+    </perch:if>
+  </perch:after><!--*
+*--></perch:related>
