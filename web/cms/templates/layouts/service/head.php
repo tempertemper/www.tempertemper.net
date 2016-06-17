@@ -8,26 +8,24 @@
   <?php
     perch_layout('_ie_specific');
 
-    $post = perch_blog_custom([
-      'filter'        => 'postSlug',
+    $project = perch_collection('Projects', [
+      'filter'        => 'slug',
       'match'         => 'eq',
       'value'         => perch_get('s'),
       'skip-template' => 'true',
       'return-html'   => 'true',
     ]);
 
-    $title = $post['0']['postTitle'];
-    if (isset($post['0']['excerpt']) && $post['0']['excerpt'] != '') {
-      $description = strip_tags($post['0']['excerpt']);
+    $title = $project['0']['title'];
+    if (isset($project['0']['excerpt']) && $project['0']['excerpt'] != '') {
+      $description = strip_tags($project['0']['excerpt']);
     } else {
-      $description = strip_tags($post['0']['postDescHTML']);
+      $description = strip_tags($project['0']['description']);
     }
-    $type = 'article';
 
     perch_page_attributes_extend([
       'description' => $description,
       'title'       => $title,
-      'type'        => $type,
     ]);
 
     perch_layout('_attributes');
@@ -44,4 +42,4 @@
 
 </head>
 
-<body class="blog-post <?php perch_blog_post_field(perch_get('s'), 'postSlug'); ?>" class="hentry">
+<body class="<?php echo PerchUtil::urlify(perch_pages_navigation_text(true));?>">

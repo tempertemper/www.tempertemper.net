@@ -9,14 +9,16 @@
   $title         = perch_pages_title(true);
   $type         = 'website';
 
-  PerchSystem::set_var('domain', $domain);
-  PerchSystem::set_var('url', $url);
-  PerchSystem::set_var('sharing_image', $sharing_image);
-  PerchSystem::set_var('twittername', $twittername);
-  PerchSystem::set_var('sitename', $sitename);
-  PerchSystem::set_var('author', $author);
-  PerchSystem::set_var('title', $title);
-  PerchSystem::set_var('type', $type);
+  PerchSystem::set_vars([
+    'domain'        => $domain,
+    'url'           => $url,
+    'sharing_image' => $sharing_image,
+    'twittername'   => $twittername,
+    'sitename'      => $sitename,
+    'author'        => $author,
+    'title'         => $title,
+    'type'          => $type,
+  ]);
 
   perch_page_attributes(array(
     'template' => 'default.html'

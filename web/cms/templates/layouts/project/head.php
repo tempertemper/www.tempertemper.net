@@ -8,22 +8,25 @@
   <?php
     perch_layout('_ie_specific');
 
-    $project = perch_collection('Projects', [
+    $service = perch_collection('Services', [
       'filter'        => 'slug',
       'match'         => 'eq',
       'value'         => perch_get('s'),
-      // 'count'         => 1,
       'skip-template' => 'true',
       'return-html'   => 'true',
     ]);
 
-    $title       = $project['0']['title'];
-    $description = strip_tags($project['0']['excerpt']);
+    $title = $service['0']['title'];
+    if (isset($service['0']['excerpt']) && $service['0']['excerpt'] != '') {
+      $description = strip_tags($service['0']['excerpt']);
+    } else {
+      $description = strip_tags($service['0']['description']);
+    }
 
-    perch_page_attributes_extend(array(
+    perch_page_attributes_extend([
       'description' => $description,
       'title'       => $title,
-    ));
+    ]);
 
     perch_layout('_attributes');
     perch_layout('_mobile_specific');

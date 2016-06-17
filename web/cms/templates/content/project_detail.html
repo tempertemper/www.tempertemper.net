@@ -20,19 +20,20 @@
 
 <perch:content id="excerpt" type="textarea" label="Excerpt" size="xs" required="true" html="false" suppress="true" chars="200" help="Max 200 characters" append="…" count="chars" divider-before="Meta" />
 
-<perch:categories id="Services" label="Work included" set="services" required="true" display-as="checkboxes" suppress="true">
+<perch:related id="services" collection="Services" label="Services" required="true" display-as="checkboxes" suppress="true">
   <perch:before>
-    <ul>
+    <section>
+      <ul>
   </perch:before>
-    <li>
-      <a href="/services/<perch:category id="catSlug" />"><perch:category id="catTitle" /></a>
-    </li>
+        <li>
+          <a href="/services/<perch:content id="slug" type="slug" />"><perch:content id="title" /></a>
+        </li>
   <perch:after>
-    </ul>
+      </ul>
+    </section>
   </perch:after>
-</perch:categories>
+</perch:related>
 
-<perch:content id="date" type="date" label="Date" format="jS F Y" suppress="true" />
 <perch:content id="website" order="2" type="text" label="Website" default="http://" html="false" suppress="true" />
 <perch:content id="slug" for="title" type="slug" suppress="true" />
 
