@@ -1,16 +1,19 @@
 <?php
-  perch_layout('head');
-  perch_layout('testimonials/header');
+  perch_layout('/service/head');
+  perch_layout('/service/header');
 
   echo '<main role="main">';
-  perch_collection('Testimonials', array(
-    'template' => 'testimonial.html',
+
+  perch_collection('Services', [
+    'template' => 'service_detail.html',
     'filter'   => 'slug',
     'match'    => 'eq',
     'value'    => perch_get('s'),
     'count'    => 1,
-  ));
+  ]);
+
   perch_layout('call_to_action');
+  echo '<p><a href="/services/" class="back">Back to full list of services</a></p>';
   echo '</main>';
 
   perch_layout('footer');

@@ -1,18 +1,14 @@
-body {
+html {
   @include font-body;
   color: $black;
-  font-size: 90%;
+  font-size: 120%;
 
   @media (min-width: $s) {
-    font-size: 120%;
-  }
-
-  @media (min-width: $m) {
-    font-size: 140%;
+    font-size: 130%;
   }
 
   @media (min-width: $l) {
-    font-size: 160%;
+    font-size: 150%;
   }
 
   @media (min-width: $xl) {
