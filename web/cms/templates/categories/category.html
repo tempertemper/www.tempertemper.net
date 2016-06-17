@@ -1,17 +1,3 @@
-<perch:before>
-  <ul class="index-list">
-</perch:before>
-
-  <li>
-    <h2><a href="/services/<perch:category id="catSlug" type="slug" for="catTitle" />"><perch:category id="catTitle" type="smarttext" label="Title" required="true" /></a></h2>
-
-    <perch:category id="desc" type="textarea" label="Description" markdown="true" size="s" />
-
-    <div class="read-more">
-      <a href="/services/<perch:category id="catSlug" type="slug" for="catTitle" />">View <perch:category id="catTitle" type="smarttext" label="Title" required="true" /> work</a>
-    </div>
-  </li>
-
-<perch:after>
-  </ul>
-</perch:after>
+<perch:category id="catTitle" type="smarttext" label="Title" required="true" />
+<perch:category id="catSlug" type="slug" for="catTitle" suppress="true" />
+<perch:category id="desc" type="textarea" label="Description" editor="markitup" markdown="true" size="s" />
