@@ -398,7 +398,11 @@ class PerchFactory
                         case 'eq':
                         case 'is':
                         case 'exact':
-                            $where[] = $key.'='.$value;
+                            if ($value==='NULL' || $value===null) {
+                                $where[] = $key.' IS NULL';
+                            } else {
+                                $where[] = $key.'='.$value;    
+                            }
                             break;
                         case 'neq':
                         case 'ne':

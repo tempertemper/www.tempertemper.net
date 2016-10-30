@@ -102,8 +102,8 @@ class PerchBackupPlan extends PerchBase
         $prefix = PerchUtil::urlify($this->planTitle());
         $ext    = function_exists('gzopen') ?'.sql.gz' : '.sql';
         
-        $filename = 'db_'.$prefix.'_'.date('YmdHm').$ext;
-        $tmp      = 'tmp_'.$prefix.'_'.date('YmdHm').$ext;
+        $filename = 'db_'.$prefix.'_'.date('YmdHi').$ext;
+        $tmp      = 'tmp_'.$prefix.'_'.date('YmdHi').$ext;
 
         $this->db_file = $filename;
 

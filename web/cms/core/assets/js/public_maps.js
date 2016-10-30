@@ -4,6 +4,8 @@ if (typeof CMSMap == 'undefined') {
 
 CMSMap.UI	= function()
 {
+	var api_key;
+
 	var init	= function() {
 		if (CMSMap.maps.length) {			
 			plot_maps();
@@ -59,7 +61,8 @@ CMSMap.UI	= function()
 	
 	return {
 		init: init,
-		refresh: refresh
+		refresh: refresh,
+		key: api_key
 	};
 	
 }();
@@ -82,7 +85,7 @@ CMSMap.Loader = function(){
 var load_google_map_api = function(){
 	var js = document.createElement("script");
 	js.type = "text/javascript";
-	js.src = 'https://maps.googleapis.com/maps/api/js';
+	js.src = 'https://maps.googleapis.com/maps/api/js?key='+CMSMap.key;
 	if (typeof document.head != 'object') {
 		document.body.appendChild(js);
 	}else{

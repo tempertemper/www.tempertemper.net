@@ -11,7 +11,7 @@ class PerchAssets_Asset extends PerchBase
     private static $doc_types    = array('doc', 'docx', 'pdf', 'odt', 'fodt', 'epub', 'mobi', 'docm', 'rtf', 'txt', 'uof', 'wpd', 'wri');
     private static $sheet_types  = array('xls', 'csv', 'ods', 'fods', 'xlsx');
     private static $audio_types  = array('mp3', 'wav', 'ogg', 'flac', 'm4a', 'wma', 'aiff', 'mp2', 'spx', 'ra', 'rm', 'mid');
-    private static $video_types  = array('mp4', 'mov', 'webm', 'ogv', 'aff', '3gp', 'asf', 'avi', 'flv', 'mpeg', 'mpg', 'wmv');
+    private static $video_types  = array('mp4', 'mov', 'webm', 'ogv', 'aff', '3gp', 'asf', 'avi', 'flv', 'mpeg', 'mpg', 'wmv', 'm4v');
     private static $pres_types   = array('ppt', 'pps', 'odp', 'fodp', 'key', 'pez', 'pptx', 'pot', 'opt');
 
     public static function get_type_map()
