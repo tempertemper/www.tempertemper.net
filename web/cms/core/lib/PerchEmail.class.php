@@ -424,10 +424,10 @@ class PerchEmail
 
     private function find_subject_from_html($contents)
     {
-        $s = '/<title>(.*?)<\/title>/';
+        $s = '/<title>([\w\W]*?)<\/title>/';
         if (preg_match($s, $contents, $matches)) {
             if (isset($matches[1])) {
-                return $matches[1];
+                return trim($matches[1]);
             }
         }
         return false;

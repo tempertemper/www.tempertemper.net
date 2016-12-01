@@ -325,7 +325,7 @@ class PerchAPI_HTML
                     $i++;
                 }
 
-                if ($privs['delete']===false || ($CurrentUser && $CurrentUser->has_priv($privs['delete']))) {
+                if ($privs['delete']!==null && ($privs['delete']===false || ($CurrentUser && $CurrentUser->has_priv($privs['delete'])))) {
                     if (isset($privs['not-inline'])) {
                         $s .= '<td><a href="'.$paths['delete'].'/?id='.$row->id().'" class="delete">'.$this->Lang->get('Delete').'</a></td>';
                     }else{

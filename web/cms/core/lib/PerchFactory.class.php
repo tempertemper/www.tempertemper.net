@@ -14,7 +14,7 @@ class PerchFactory
 
     protected $default_sort_direction = 'ASC';
 
-    protected $runtime_restrictons    = array();
+    protected $runtime_restrictions    = array();
 
     public $dynamic_fields_column     = false;
 
@@ -398,7 +398,11 @@ class PerchFactory
                         case 'eq':
                         case 'is':
                         case 'exact':
-                            $where[] = $key.'='.$value;
+                            if ($value==='NULL' || $value===null) {
+                                $where[] = $key.' IS NULL';
+                            } else {
+                                $where[] = $key.'='.$value;    
+                            }
                             break;
                         case 'neq':
                         case 'ne':
@@ -557,7 +561,7 @@ class PerchFactory
                 $Query->where  = $where;
 
                 // do callback
-                $Query         = $where_callback($Query);
+                $Query         = $where_callback($Query, $opts);
 
                 // retrieve
                 $select        = $Query->select;
@@ -593,7 +597,7 @@ class PerchFactory
 
             // pre-template callback
             if (PerchUtil::count($rows) && $pre_template_callback && is_callable($pre_template_callback)) {
-                $rows = $pre_template_callback($rows);
+                $rows = $pre_template_callback($rows, $opts);
             }
 
             // each
@@ -811,10 +815,14 @@ class PerchFactory
 
             }
 
-            // Runtime restrictons
-            if (!$Perch->admin && count($this->runtime_restrictons)) {
-                foreach($this->runtime_restrictons as $res) {
-                    $sql .= $this->_get_filter_sub_sql($res['field'], $res['values'], $res['negative_match'], $res['match'], $res['fuzzy'], $where_clause);
+            // Runtime restrictions
+            if (!$Perch->admin && count($this->runtime_restrictions)) {
+                foreach($this->runtime_restrictions as $res) {
+                    if (isset($opts['defeat-restrictions']) && $opts['defeat-restrictions'] && isset($res['defeatable']) && $res['defeatable']) {
+                        // ... don't apply restriction as it's marked as defeatable and the options ask to defeat all defeatable restrictions
+                    } else {
+                        $sql .= $this->_get_filter_sub_sql($res['field'], $res['values'], $res['negative_match'], $res['match'], $res['fuzzy'], $where_clause);    
+                    }
                 }
             }
 
@@ -989,9 +997,15 @@ class PerchFactory
 
             if (PerchUtil::count($where)) $sql .= ' AND ('.implode($where, ' OR ').') ';
 
-            $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemKey=idx2.itemKey
-                        GROUP BY idx.itemID, idx2.indexValue, '.$this->pk.'
-                    ) as tbl '; // DM added ', idx2.indexValue' for MySQL 5.7 compat
+            $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemKey=idx2.itemKey ';
+
+            if (isset($opts['filter-mode']) && $opts['filter-mode']=='legacy-group') {
+                // I don't think we need this. Leaving an option for recovery if there are circumstances where it breaks anything
+                $sql .= 'GROUP BY idx.itemID, idx2.indexValue, '.$this->pk;  // DM added ', idx2.indexValue' for MySQL 5.7 compat     
+            }
+           
+
+            $sql .= ' ) as tbl ';
 
             $where = array();
 
@@ -1003,7 +1017,7 @@ class PerchFactory
                 $Query->where  = $where;
 
                 // do callback
-                $Query         = $where_callback($Query);
+                $Query         = $where_callback($Query, $opts);
 
                 // retrieve
                 $sql           = $Query->select;
@@ -1120,7 +1134,7 @@ class PerchFactory
 
             // pre-template callback
             if (PerchUtil::count($rows) && $pre_template_callback && is_callable($pre_template_callback)) {
-               $rows = $pre_template_callback($rows);
+               $rows = $pre_template_callback($rows, $opts);
             }
 
             // each

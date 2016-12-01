@@ -104,7 +104,7 @@ class PerchBase
 
     public function squirrel($key, $val)
     {
-        // non-persistant store
+        // non-persistent store
         $this->details[$key] = $val;
     }
 
