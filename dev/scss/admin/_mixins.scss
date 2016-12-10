@@ -61,7 +61,6 @@
 }
 
 @mixin button {
-  @include font-heading-regular;
   background-color: transparent;
   border-color: $colour-primary;
   border-radius: $border-radius-default;
@@ -70,6 +69,7 @@
   clear: both;
   color: $colour-primary;
   display: inline-block;
+  font-family: $font--heading;
   margin-bottom: 1em;
   margin-top: 1em;
   padding: .5em 2em;
@@ -135,4 +135,13 @@
   background-color: $colour-primary-light;
   border-radius: $border-radius-default;
   padding: 1em;
+}
+
+@mixin full-width {
+
+  @media (min-width: $l) {
+    @include layout($wide-layout);
+    @include pull(1 of 4);
+    width: span(6 of 4);
+  }
 }

@@ -1,48 +1,29 @@
-// Global
+@import 'admin/variables',
+        'admin/mixins',
+        'admin/placeholders',
+        '../components/susy/sass/susy',
+        'admin/grid',
+        '../components/modular-scale/stylesheets/modular-scale';
 
-@import 'global/variables',
-        'global/reset',
-        'global/mixins';
+@import 'base/reset',
+        'base/typography',
+        'base/general',
+        'base/icons',
+        'base/forms',
+        'base/paging';
 
-// Layout
+@import 'components/header',
+        'components/navigation',
+        'components/search',
+        'components/call-to-action',
+        'components/details',
+        'components/teaser',
+        'components/subscribe',
+        'components/contact-form',
+        'components/footer';
 
-@import '../components/susy/sass/susy',
-        'layout/maps',
-        'layout/mixins',
-        'layout/layout';
-
-// Typography
-
-@import '../components/modular-scale/stylesheets/modular-scale',
-        'typography/mixins',
-        'typography/general',
-        'typography/headings',
-        'typography/links';
-
-// Styling
-
-@import 'global/forms',
-        'global/general',
-        'global/icons',
-        'global/paging';
-
-// Elements
-
-@import 'elements/header',
-        'elements/navigation',
-        'elements/call-to-action',
-        'elements/search',
-        'elements/footer',
-        'elements/teaser',
-        'elements/details',
-        'elements/subscribe',
-        'elements/contact-form';
-
-// Sections
-
-@import 'sections/blog';
-
-// Legacy
+@import 'designs/general',
+        'designs/blog';
 
 @import 'legacy/print',
         'legacy/ie';

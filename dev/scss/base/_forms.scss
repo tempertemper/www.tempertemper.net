@@ -3,8 +3,8 @@ form {
 }
 
 label {
-  @include font-heading-regular;
   color: $colour-primary;
+  font-family: $font--heading;
 }
 
 input,
