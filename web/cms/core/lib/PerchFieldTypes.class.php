@@ -1808,7 +1808,7 @@ class PerchFieldType_map extends PerchFieldType
             $out['type'] = $type;
 
             $r  = '<img id="cmsmap'.PerchUtil::html($id).'" src="//maps.google.com/maps/api/staticmap';
-            $r  .= '?center='.$clat.','.$clng.'&amp;size='.$static_width.'x'.$static_height.'&amp;zoom='.$zoom.'&amp;maptype='.$type;
+            $r  .= '?key='.PerchUtil::html($this->_get_api_key(), true).'&amp;center='.$clat.','.$clng.'&amp;size='.$static_width.'x'.$static_height.'&amp;scale=2&amp;zoom='.$zoom.'&amp;maptype='.$type;
             if ($lat && $lng)   $r .= '&amp;markers=color:red|color:red|'.$lat.','.$lng;
             $r  .= '" ';
             if ($tag->class())  $r .= ' class="'.PerchUtil::html($tag->class()).'"';

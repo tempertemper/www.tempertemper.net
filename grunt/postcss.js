@@ -20,6 +20,7 @@ module.exports = {
     src: [
       'dev/scss/**/*.scss',
       '!dev/scss/legacy/_ie.scss',
+      '!dev/scss/base/_typography.scss',
       '!dev/scss/style.scss'
     ]
   }

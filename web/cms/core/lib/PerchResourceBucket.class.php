@@ -57,8 +57,10 @@ class PerchResourceBucket
 	{
 		$filename = PerchUtil::tidy_file_name($name);
 
-		if (strpos($filename, '.php')!==false) $filename .= '.txt'; // diffuse PHP files
-		if (strpos($filename, '.phtml')!==false) $filename .= '.txt'; // diffuse PHP files
+		if (strpos($filename, '.php')!==false) 		$filename .= '.txt'; // diffuse PHP files
+		if (strpos($filename, '.phtml')!==false) 	$filename .= '.txt'; // diffuse PHP files
+		if ($filename == '.htaccess') 				$filename = 'htaccess.txt'; // apache overrides file
+		if (strpos($filename, '.')===0) 			$filename = 'dot_'.substr($filename, 1).'.txt'; // hidden files
 
 		$target = PerchUtil::file_path($this->file_path.'/'.$filename);
 

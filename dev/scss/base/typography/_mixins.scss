@@ -1,29 +1,36 @@
 $ms-base: 1em;
 $ms-ratio: $major-third;
 
-@mixin font-heading-regular {
-  font-family: 'FS Me Web Regular', sans-serif;
-  font-size-adjust: .53;
-  font-style: normal;
-  font-weight: 400;
-}
-
-@mixin font-heading-light {
-  font-family: 'FS Me Web Light', sans-serif;
+@font-face {
+  font-family: 'FS Me Web';
   font-size-adjust: .53;
   font-style: normal;
   font-weight: 200;
+  src: url('../fonts/FSMeWeb-Light.woff') format('woff2'),
+    url('../fonts/FSMeWeb-Light.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'FS Me Web';
+  font-size-adjust: .53;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/FSMeWeb-Regular.woff') format('woff2'),
+    url('../fonts/FSMeWeb-Regular.woff') format('woff');
+}
+
+$font--heading: 'FS Me Web', sans-serif;
+
 @mixin heading-style {
-  @include font-heading-light;
+  font-family: $font--heading;
+  font-weight: 200;
   line-height: 1.05;
   margin-bottom: .25em;
   margin-top: 1.414em;
 }
 
 @mixin font-body {
-  font-family: georgia, serif;
+  font-family: Georgia, serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
