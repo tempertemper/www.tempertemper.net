@@ -1,5 +1,5 @@
 nav {
-  @include font-heading-regular;
+  font-family: $font--heading;
 
   .selected a,
   .ancestor a {

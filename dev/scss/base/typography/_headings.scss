@@ -32,13 +32,9 @@ h6 {
   @include heading-xxs;
 }
 
-h4,
 h5,
 h6 {
-
-  @media (min-width: $m) {
-    @include font-heading-regular;
-  }
+  font-weight: 400;
 }
 
 [role="complementary"],
