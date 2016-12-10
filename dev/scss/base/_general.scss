@@ -21,8 +21,8 @@ body {
 
   a {
     @include link-marker;
-    @include font-heading-regular;
     display: inline-block;
+    font-family: $font--heading;
     margin-top: 0;
   }
 }
@@ -33,8 +33,8 @@ img {
 
 .back {
   @include reverse-link-marker;
-  @include font-heading-regular;
   display: inline-block;
+  font-family: $font--heading;
   margin-bottom: 1em;
   margin-top: 1em;
 }
@@ -69,7 +69,7 @@ ul,
 ol {
 
   .details {
-    @include font-heading-regular;
+    font-family: $font--heading;
   }
 }
 
