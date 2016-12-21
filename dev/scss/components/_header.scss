@@ -26,11 +26,12 @@
   }
 
   .tt {
+    display: block !important;
     height: 40px;
     width: 56px;
 
     @media (min-width: $s) {
-      display: none;
+      display: none !important;
     }
   }
 
@@ -52,8 +53,8 @@
   }
 }
 
-.underscore {
-  animation: blink 5s steps(20, start) infinite;
+.baubles rect {
+  animation: blink 2s steps(20, start) infinite;
 }
 
 .nav-toggle {
