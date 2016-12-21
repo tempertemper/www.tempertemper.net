@@ -4,7 +4,7 @@
     "autoprefixer": "6.*",
     "grunt": "1.0.*",
     "grunt-contrib-concat": "0.5.*",
-    "grunt-contrib-copy": "0.8.*",
+    "grunt-contrib-copy": "1.0.*",
     "grunt-contrib-uglify": "0.10.*",
     "grunt-contrib-watch": "1.*.*",
     "grunt-notify": "0.4.*",
