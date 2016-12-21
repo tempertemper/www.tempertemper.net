@@ -28,7 +28,7 @@
   .tt {
     display: block !important;
     height: 40px;
-    width: 56px;
+    width: auto;
 
     @media (min-width: $s) {
       display: none !important;
@@ -37,8 +37,8 @@
 
   .tempertemper {
     display: none;
-    height: 38px;
-    width: 270px;
+    height: 40px;
+    width: auto;
 
     @media (min-width: $s) {
       display: block;
