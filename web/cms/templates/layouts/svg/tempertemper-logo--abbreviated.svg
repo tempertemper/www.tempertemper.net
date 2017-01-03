@@ -1,59 +1,6 @@
-<svg id="tt" class="tt" width="78" height="40" viewBox="0 0 78 40" version="1.1" aria-labelledby="title" style="display: none;">
+<svg id="tt" class="tt" width="60" height="40" viewBox="0 0 60 40" version="1.1" aria-labelledby="title" style="display: none;">
   <title id="title">tempertemper Web Design</title>
   <path d="M7.635,1.167c2.478,0 2.73,0.168 2.73,0.63l0,5.418l4.999,0c0.378,0 0.546,0.084 0.546,2.1l0,0.294c0,2.017 -0.168,2.101 -0.546,2.101l-4.999,0l0,10.374c0,1.218 0.211,1.891 0.714,2.353c0.421,0.378 1.051,0.587 1.849,0.587c0.672,0 1.428,-0.168 2.184,-0.419c0.42,-0.127 0.63,0.126 1.092,1.68l0.126,0.42c0.462,1.554 0.42,1.806 -0.084,2.058c-1.344,0.672 -3.192,1.05 -4.831,1.05c-2.352,0 -3.99,-0.63 -5.082,-1.722c-1.176,-1.176 -1.722,-2.94 -1.722,-5.671l0,-10.71l-2.898,0c-0.378,0 -0.546,-0.084 -0.546,-2.101l0,-0.294c0,-2.016 0.168,-2.1 0.546,-2.1l2.898,0l0,-5.418c0,-0.462 0.084,-0.63 2.814,-0.63l0.21,0Zm16.917,0c2.478,0 2.73,0.168 2.73,0.63l0,5.418l4.999,0c0.377,0 0.545,0.084 0.545,2.1l0,0.294c0,2.017 -0.168,2.101 -0.546,2.101l-4.998,0l0,10.374c0,1.218 0.21,1.891 0.714,2.353c0.42,0.378 1.05,0.587 1.848,0.587c0.672,0 1.428,-0.168 2.184,-0.419c0.42,-0.127 0.63,0.126 1.092,1.68l0.126,0.42c0.462,1.554 0.42,1.806 -0.084,2.058c-1.343,0.672 -3.191,1.05 -4.83,1.05c-2.352,0 -3.99,-0.63 -5.082,-1.722c-1.177,-1.176 -1.723,-2.94 -1.723,-5.671l0,-10.71l-2.898,0c-0.378,0 -0.546,-0.084 -0.546,-2.101l0,-0.294c0,-2.016 0.168,-2.1 0.546,-2.1l2.898,0l0,-5.418c0,-0.462 0.084,-0.63 2.815,-0.63l0.21,0Z"/>
-  <path d="M55.445,34c0.406,0 0.552,0.021 0.552,1.869l0,0.252c0,1.848 -0.552,1.879 -0.552,1.879l-20.043,0c0,0 -0.585,-0.031 -0.585,-1.879l0,-0.252c0,-1.848 0.179,-1.869 0.585,-1.869l20.043,0Z" fill="#d0011b"/>
+  <path class="underscore" d="M55.445,34c0.406,0 0.552,0.021 0.552,1.869l0,0.252c0,1.848 -0.552,1.879 -0.552,1.879l-20.043,0c0,0 -0.585,-0.031 -0.585,-1.879l0,-0.252c0,-1.848 0.179,-1.869 0.585,-1.869l20.043,0Z" fill="#0097DB"/>
   <path class="trademark" d="M33.941,1.307c-0.033,0 -0.042,0.051 -0.042,0.154l0,0.056c0,0.107 0.009,0.158 0.042,0.158l0.863,0l0,2.94c0,0.038 0.07,0.052 0.191,0.052l0.052,0c0.13,0 0.2,-0.014 0.2,-0.052l0,-2.94l0.868,0c0.033,0 0.042,-0.051 0.042,-0.158l0,-0.056c0,-0.103 -0.009,-0.154 -0.042,-0.154l-2.174,0Zm2.972,0c-0.2,0 -0.228,0.009 -0.233,0.07l-0.154,3.238c0,0.038 0.065,0.052 0.182,0.052l0.047,0c0.126,0 0.191,-0.014 0.191,-0.052l0.093,-2.524l0.78,1.941c0.014,0.037 0.056,0.051 0.21,0.051l0.037,0c0.149,0 0.196,-0.014 0.21,-0.046l0.77,-2.012l0.084,2.59c0,0.038 0.065,0.052 0.191,0.052l0.052,0c0.116,0 0.182,-0.014 0.182,-0.052l-0.131,-3.238c0,-0.047 -0.047,-0.07 -0.243,-0.07l-0.032,0c-0.182,0 -0.224,0.018 -0.243,0.07l-0.845,2.174l-0.868,-2.174c-0.018,-0.052 -0.074,-0.07 -0.256,-0.07l-0.024,0Z"/>
-  <g class="christmas-tree">
-    <path class="tree" d="M68,6l2,0l0,6l2,0l0,4l2,0l0,4l2,0l0,4l2,0l0,6l-2,0l0,2l-2,0l0,2l-12,0l0,-2l-2,0l0,-2l-2,0l0,-6l2,0l0,-4l2,0l0,-4l2,0l0,-4l2,0l0,-4l2,0l0,-2Z" fill="#55a823"/>
-    <g class="baubles">
-      <rect class="Rectangle-path" x="68" y="8" width="2" height="2" fill="#f8e81c"/>
-      <rect class="Rectangle-path1" x="70" y="12" width="2" height="2" fill="#d0011b"/>
-      <rect class="Rectangle-path2" x="62" y="16" width="2" height="2" fill="#d0011b"/>
-      <rect class="Rectangle-path3" x="66" y="16" width="2" height="2" fill="#f8e81c"/>
-      <rect class="Rectangle-path4" x="64" y="20" width="2" height="2" fill="#f8e81c"/>
-      <rect class="Rectangle-path5" x="68" y="20" width="2" height="2" fill="#d0011b"/>
-      <rect class="Rectangle-path6" x="74" y="20" width="2" height="2" fill="#d0011b"/>
-      <rect class="Rectangle-path7" x="58" y="24" width="2" height="2" fill="#f8e81c"/>
-      <rect class="Rectangle-path8" x="70" y="24" width="2" height="2" fill="#d0011b"/>
-      <rect class="Rectangle-path9" x="60" y="26" width="2" height="2" fill="#d0011b"/>
-      <rect class="Rectangle-path10" x="76" y="26" width="2" height="2" fill="#d0011b"/>
-      <rect class="Rectangle-path11" x="66" y="28" width="2" height="2" fill="#d0011b"/>
-      <rect class="Rectangle-path12" x="74" y="28" width="2" height="2" fill="#f8e81c"/>
-      <rect class="Rectangle-path13" x="70" y="30" width="2" height="2" fill="#d0011b"/>
-      <rect class="Rectangle-path14" x="62" y="32" width="2" height="2" fill="#f8e81c"/>
-    </g>
-    <g class="shading">
-      <rect class="Rectangle-path15" x="68" y="6" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path16" x="66" y="8" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path17" x="66" y="12" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path18" x="68" y="14" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path19" x="64" y="18" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path20" x="70" y="18" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path21" x="60" y="20" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path22" x="72" y="22" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path23" x="62" y="24" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path24" x="76" y="24" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path25" x="60" y="28" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path26" x="62" y="30" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path27" x="68" y="30" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path28" x="74" y="30" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path29" x="64" y="32" width="2" height="2" fill="#22852a"/>
-      <rect class="Rectangle-path30" x="70" y="32" width="2" height="2" fill="#22852a"/>
-    </g>
-    <g class="highlights">
-      <rect class="Rectangle-path31" x="64" y="14" width="2" height="2" fill="#a0c962"/>
-      <rect class="Rectangle-path32" x="72" y="18" width="2" height="2" fill="#a0c962"/>
-      <rect class="Rectangle-path33" x="66" y="22" width="2" height="2" fill="#a0c962"/>
-      <rect class="Rectangle-path34" x="64" y="26" width="2" height="2" fill="#a0c962"/>
-      <rect class="Rectangle-path35" x="72" y="28" width="2" height="2" fill="#a0c962"/>
-      <rect class="Rectangle-path36" x="60" y="30" width="2" height="2" fill="#a0c962"/>
-      <rect class="Rectangle-path37" x="72" y="32" width="2" height="2" fill="#a0c962"/>
-    </g>
-    <g class="trunk">
-      <rect class="Rectangle-path38" x="66" y="34" width="2" height="2" fill="#3c2910"/>
-      <rect class="Rectangle-path39" x="68" y="34" width="2" height="2" fill="#5c380e"/>
-      <rect class="Rectangle-path40" x="66" y="36" width="2" height="2" fill="#3c2910"/>
-      <rect class="Rectangle-path41" x="68" y="36" width="2" height="2" fill="#704210"/>
-    </g>
-  </g>
 </svg>
