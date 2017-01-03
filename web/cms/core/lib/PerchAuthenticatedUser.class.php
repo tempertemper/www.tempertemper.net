@@ -188,7 +188,7 @@ class PerchAuthenticatedUser extends PerchBase
         $path = '/activate/';
         $url = 'http://' . $host . $path;
 
-        $data = '';
+        $data = array();
         $data['key']     = PERCH_LICENSE_KEY;
         $data['host']    = $_SERVER['SERVER_NAME'];
         $data['version'] = $Perch->version;

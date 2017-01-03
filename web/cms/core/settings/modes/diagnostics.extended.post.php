@@ -91,7 +91,8 @@
                     echo '<li>DB tables: '.implode(', ', $tables).'</li>';
                 }
             ?>
-			<li>Users: <?php echo PerchDB::fetch()->get_value('SELECT COUNT(*) FROM '.PERCH_DB_PREFIX.'users'); ?></li>        
+			<li>Users: <?php echo PerchDB::fetch()->get_value('SELECT COUNT(*) FROM '.PERCH_DB_PREFIX.'users'); ?></li>     
+            <li>PHPMailer: <?php $PHPMailer = new PHPMailer(true); echo $PHPMailer->Version; ?></li>   
             <li>App runtimes: <pre><?php
                 $file = PerchUtil::file_path(PERCH_PATH.'/config/apps.php');
                 echo PerchUtil::html(file_get_contents($file));
