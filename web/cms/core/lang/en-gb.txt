@@ -369,5 +369,21 @@
     "Adding a new backup plan": "Adding a new backup plan",
     "New Plan": "New Plan",
     "To configure tasks to run, you first need to set a %ssecret%s. This is just a code word to stop tasks being run accidentally. Choose a secret (e.g. %scarbonara%s) and add it to your %sconfig\/config.php%s file like this:": "To configure tasks to run, you first need to set a %ssecret%s. This is just a code word to stop tasks being run accidentally. Choose a secret (e.g. %scarbonara%s) and add it to your %sconfig\/config.php%s file like this:",
-    "Do that now, then reload this page. Don't use %scarbonara%s.": "Do that now, then reload this page. Don't use %scarbonara%s."
+    "Do that now, then reload this page. Don't use %scarbonara%s.": "Do that now, then reload this page. Don't use %scarbonara%s.",
+    "Add item": "Add item",
+    "Menu options": "Menu options",
+    "Detail": "Detail",
+    "Organise": "Organise",
+    "Email incomplete or already in use.": "Email incomplete or already in use.",
+    "Your passwords must match and meet complexity requirements.": "Your passwords must match and meet complexity requirements.",
+    "Editing My Account": "Editing My Account",
+    "First name": "First name",
+    "Last name": "Last name",
+    "Change password": "Change password",
+    "New password": "New password",
+    "Repeat new password": "Repeat new password",
+    "Collection Options": "Collection Options",
+    "Editing Collection Options": "Editing Collection Options",
+    "Used for search results and draft previews. If you need this, enter the root-relative URL using %sbraces%s around any dynamic fields. e.g.": "Used for search results and draft previews. If you need this, enter the root-relative URL using %sbraces%s around any dynamic fields. e.g.",
+    "\/news-article.php?s=%sslug%s": "\/news-article.php?s=%sslug%s"
 }
