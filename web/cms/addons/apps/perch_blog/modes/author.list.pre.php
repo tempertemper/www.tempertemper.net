@@ -8,8 +8,5 @@
         PerchUtil::redirect($API->app_path());
     }
 
-    $authors = $Authors->all();
+    $authors = $Authors->all($Paging);
     
-   
-
-?>

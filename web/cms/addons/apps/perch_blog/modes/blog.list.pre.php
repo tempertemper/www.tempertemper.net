@@ -9,4 +9,4 @@
         PerchUtil::redirect($API->app_path());
     }
 
-    $blogs = $Blogs->all();
+    $blogs = $Blogs->all($Paging);

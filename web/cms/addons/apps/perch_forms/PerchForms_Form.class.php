@@ -57,6 +57,7 @@ class PerchForms_Form extends PerchAPI_Base
                     'navtext'     => $Page->pageNavText(),
                     );
             }
+            PerchUtil::debug($data);
         }
        
         
@@ -183,20 +184,18 @@ class PerchForms_Form extends PerchAPI_Base
     
     private function _send_email($opts, $data)
     {
-        
-
-        if ($opts->emailAddress) {
+        if (isset($opts->emailAddress) && $opts->emailAddress) {
             //the message string for admin
             $msg = '';
             //the message string for an autoresponse
             $resp_msg = '';
             $str = '';
 
-            if ($opts->adminEmailMessage) {
+            if (isset($opts->adminEmailMessage) && $opts->adminEmailMessage) {
                 $msg .= $this->_replace_vars($opts->adminEmailMessage, $data['fields'])."\n\n";
             }
 
-            if ($opts->responseEmailMessage) {
+            if (isset($opts->responseEmailMessage) && $opts->responseEmailMessage) {
                 $resp_msg .= $this->_replace_vars($opts->responseEmailMessage, $data['fields'])."\n\n";
             }
 

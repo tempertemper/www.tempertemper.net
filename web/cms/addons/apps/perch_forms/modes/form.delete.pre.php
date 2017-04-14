@@ -4,7 +4,6 @@
     
     $Forms = new PerchForms_Forms($API);
 
-    $HTML = $API->get('HTML');
     $Form = $API->get('Form');
     
     $Form->set_name('delete');
@@ -40,6 +39,3 @@
     
     $details = $ThisForm->to_array();
 
-
-
-?>

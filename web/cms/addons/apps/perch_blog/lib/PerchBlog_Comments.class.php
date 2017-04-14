@@ -36,10 +36,15 @@ class PerchBlog_Comments extends PerchAPI_Factory
 	 */
 	public function get_by_status($status='pending', $Paging=false)
 	{
+		$sort_val = null;
+        $sort_dir = null;
+
+
 		$status = strtoupper($status);
 
 		if ($Paging && $Paging->enabled()) {
             $sql = $Paging->select_sql();
+            list($sort_val, $sort_dir) = $Paging->get_custom_sort_options();
         }else{
             $sql = 'SELECT';
         }
@@ -50,7 +55,11 @@ class PerchBlog_Comments extends PerchAPI_Factory
 
 		if ($status != 'ALL') $sql .= ' AND c.commentStatus='.$this->db->pdb($status);
 
-		$sql .= ' ORDER BY c.commentDateTime DESC ';
+		if ($sort_val) {
+            $sql .= ' ORDER BY '.$sort_val.' '.$sort_dir;
+        } else {
+        	$sql .= ' ORDER BY c.commentDateTime DESC ';	
+        }
 
         if ($Paging && $Paging->enabled()) {
             $sql .=  ' '.$Paging->limit_sql();
@@ -227,7 +236,12 @@ class PerchBlog_Comments extends PerchAPI_Factory
 
     	$comments = array();
         if (PerchUtil::count($objects)) {
-            foreach($objects as $Object) $comments[] = $Object->to_array();
+        	if (isset($opts['api']) && $opts['api']) {
+        		foreach($objects as $Object) $comments[] = $Object->to_array_for_api();
+        	} else {
+        		foreach($objects as $Object) $comments[] = $Object->to_array();	
+        	}
+            
         }
 
 

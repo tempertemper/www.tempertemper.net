@@ -1,79 +1,54 @@
 <?php
-   
-    # Side panel
-    echo $HTML->side_panel_start();
- 
-    echo $HTML->para('This page lists the sections you can place posts into.');
-    
-    echo $HTML->side_panel_end();
-    
-    
-    # Main panel
-    echo $HTML->main_panel_start();
+   echo $HTML->title_panel([
+            'heading' => $Lang->get('Listing sections'),
+            'button'  => [
+                            'text' => $Lang->get('Add section'),
+                            'link' => $API->app_nav().'/sections/edit/'.(PERCH_RUNWAY ? '?blog='.$Blog->id() : ''),
+                            'icon' => 'core/plus',
+                            'priv' => 'perch_blog.sections.create',
+                        ]
+            ], $CurrentUser);
 
-	include ('_subnav.php');
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
 
+    if (PerchUtil::count($blogs)) {
+        foreach($blogs as $Item) {
 
-    echo '<a class="add button" href="'.$HTML->encode($API->app_path().'/sections/edit/?blog='.$Blog->id()).'">'.$Lang->get('Add Section').'</a>';
+            $Smartbar->add_item([
+                'active' => ($Item->id()==$Blog->id()),
+                'title' => $Item->blogTitle(),
+                'link'  => $API->app_nav().'/sections/?blog='.$Item->blogSlug(),
+                'icon'  => 'blocks/newspaper',
+            ]);
 
-
-	# Title panel
-    echo $HTML->heading1('Listing Sections');
-
-
-    /* ----------------------------------------- SMART BAR ----------------------------------------- */
-    //
-    ?>
-    <ul class="smartbar">
-        <?php
-            if (PerchUtil::count($blogs)) {
-                foreach($blogs as $Item) {
-                    if ($Item->id()==$Blog->id()) {
-                        echo '<li class="selected">';
-                    }else{
-                        echo '<li>';
-                    }
-                    echo '<a href="'.PerchUtil::html($API->app_path()).'/sections/?blog='.$Item->blogSlug().'">'.$Item->blogTitle().'</a></li>';
-                }
-            }
-        ?>
-    </ul>
-<?php
-    
-    if (PerchUtil::count($sections)) {
-?>
-    <table class="d">
-        <thead>
-            <tr>
-                <th class="first"><?php echo $Lang->get('Section'); ?></th>
-                <th><?php echo $Lang->get('Slug'); ?></th>
-                <th><?php echo $Lang->get('Posts'); ?></th>
-                <th class="action last"></th>
-            </tr>
-        </thead>
-        <tbody>
-<?php
-    foreach($sections as $Section) {
-?>
-            <tr>
-                <td class="primary"><a href="<?php echo $HTML->encode($API->app_path()); ?>/sections/edit/?id=<?php echo $HTML->encode(urlencode($Section->id())); ?>"><?php echo $HTML->encode($Section->sectionTitle())?></a></td>
-                <td><?php echo $HTML->encode($Section->sectionSlug())?></td>  
-                <td><?php echo $HTML->encode($Section->sectionPostCount())?></td>  
-                <td><a href="<?php echo $HTML->encode($API->app_path()); ?>/sections/delete/?id=<?php echo $HTML->encode(urlencode($Section->id())); ?>" class="delete inline-delete" data-msg="<?php echo $Lang->get('Delete this section?'); ?>"><?php echo $Lang->get('Delete'); ?></a></td>
-            </tr>
-<?php   
+        }
     }
-?>
-        </tbody>
-    </table>
 
+    echo $Smartbar->render();
 
-    
-<?php    
-    } // if pages
-    
-     
-    echo $HTML->main_panel_end();
+    $Listing = new PerchAdminListing($CurrentUser, $HTML, $Lang, $Paging);
+    $Listing->add_col([
+            'title'     => 'Section',
+            'value'     => 'sectionTitle',
+            'sort'      => 'sectionTitle',
+            'edit_link' => 'edit',
+        ]);
 
+    $Listing->add_col([
+            'title'     => 'Slug',
+            'value'     => 'sectionSlug',
+            'sort'      => 'sectionSlug',
+        ]);
 
-?>
+    $Listing->add_col([
+            'title'     => 'Posts',
+            'value'     => 'sectionPostCount',
+        ]);
+
+    $Listing->add_delete_action([
+            'priv'   => 'perch_blog.post.delete',
+            'inline' => true,
+            'path'   => 'delete',
+        ]);
+
+    echo $Listing->render($sections);

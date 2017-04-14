@@ -1,42 +1,38 @@
 <?php
 
-    # Side panel
-    echo $HTML->side_panel_start();
-
-    echo $HTML->para('Give the section a new name.');
-
-    echo $HTML->side_panel_end();
-
-
-    # Main panel
-    echo $HTML->main_panel_start();
-
-    include('_subnav.php');
-
-
     # Title panel
     if (is_object($Section)) {
-        echo $HTML->heading1('Editing ‘%s’ Section', $details['sectionTitle']);
+        $heading = $Lang->get('Editing ‘%s’ Section', $HTML->encode($details['sectionTitle']));
     }else{
-        echo $HTML->heading1('Creating a New Section');
+        $heading = $Lang->get('Creating a New Section');
     }
+
+    echo $HTML->title_panel([
+            'heading' => $heading,
+            ], $CurrentUser);
 
     if ($message) echo $message;
 
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
 
-    echo $HTML->smartbar(
-                $HTML->smartbar_breadcrumb(true,
-                        array(
-                            'link'=> $API->app_path('perch_blog').'/sections/?blog='.$Blog->blogSlug(),
-                            'label' => $Blog->blogTitle(),
-                        ),
-                        array(
-                            'link'=> $API->app_path('perch_blog').'/sections/edit/'. (is_object($Section) ? '?id='.$Section->id() : '?blog='.$Blog->blogID()),
-                            'label' => (is_object($Section) ? $Section->sectionTitle() : $Lang->get('New Section')),
-                        )
-                    )
-            );
+    $Smartbar->add_item([
+        'active' => true,
+        'type' => 'breadcrumb',
+        'links' => [
+            [
+                'title' => $Blog->blogTitle(),
+                'translate' => false,
+                'link' => $API->app_nav('perch_blog').'/sections/?blog='.$Blog->blogSlug()
+            ],
+            [
+                'title' => (is_object($Section) ? $Section->sectionTitle() : $Lang->get('New Section')),
+                'translate' => false,
+                'link' => $API->app_nav('perch_blog').'/sections/edit/'. (is_object($Section) ? '?id='.$Section->id() : '?blog='.$Blog->blogID())
+            ]
+        ],
+        ]);
 
+    echo $Smartbar->render();
 
     $template_help_html = $Template->find_help();
     if ($template_help_html) {
@@ -61,6 +57,4 @@
 
     echo $Form->form_end();
 
-    echo $HTML->main_panel_end();
-
-?>
+ 

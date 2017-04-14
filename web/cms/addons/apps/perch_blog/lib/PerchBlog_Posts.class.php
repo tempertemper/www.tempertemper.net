@@ -298,6 +298,14 @@ class PerchBlog_Posts extends PerchAPI_Factory
             );
 
 
+        if ($Paging && $Paging->enabled()) {
+            list($sort_val, $sort_dir) = $Paging->get_custom_sort_options();
+            if ($sort_val) {
+                $opts['sort'] = $sort_val;
+                $opts['sort-order'] = $sort_dir;
+            }
+        }
+
         return $this->get_filtered_listing($opts, $this->_standard_where_callback($opts));
 
     }
@@ -306,11 +314,20 @@ class PerchBlog_Posts extends PerchAPI_Factory
     public function get_by_section_slug_for_admin_listing($slug, $Paging)
     {
 
+        $sort_val = null;
+        $sort_dir = null;
+
+        list($sort_val, $sort_dir) = $Paging->get_custom_sort_options();
+        if (!$sort_val) {
+            $sort_val = $this->default_sort_column;
+            $sort_dir = 'DESC';
+        }        
+
         $sql = $Paging->select_sql(). ' p.*
                 FROM '.$this->table.' p, '.PERCH_DB_PREFIX.'blog_sections s
                 WHERE p.sectionID=s.sectionID
                     AND s.sectionSlug='.$this->db->pdb($slug).'
-                ORDER BY '.$this->default_sort_column.' DESC';
+                ORDER BY '.$sort_val.' '.$sort_dir;
 
 
         if ($Paging && $Paging->enabled()) {
@@ -423,7 +440,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
 
         if ($sectionID) $sql .= ' AND p.sectionID='.$this->db->pdb($sectionID);
 
-        $sql .= ' GROUP BY year, month
+        $sql .= ' GROUP BY year, month, postDateTime
             	ORDER BY month DESC';
 
         $rows   = $this->db->get_rows($sql);
@@ -439,7 +456,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
                 FROM '.PERCH_DB_PREFIX.$this->index_table.' i, '.PERCH_DB_PREFIX.'categories c, '.$this->table.' p
                 WHERE i.indexValue=c.catPath AND i.indexKey=\'_category\' AND i.itemKey=\'postID\' AND i.itemID=p.postID
                     AND p.postStatus=\'Published\' AND p.postDateTime<='.$this->db->pdb(date('Y-m-d H:i:00')).'
-                GROUP BY i.indexValue
+                GROUP BY i.indexValue, c.catID
                 ';
         $rows = $this->db->get_rows($sql);
 

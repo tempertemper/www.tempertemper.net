@@ -1,25 +1,16 @@
 <?php
 
-    # Side panel
-    echo $HTML->side_panel_start();
-
-    echo $HTML->para('Give the blog a new name.');
-
-    echo $HTML->side_panel_end();
-
-
-    # Main panel
-    echo $HTML->main_panel_start();
-
-    include('_subnav.php');
-
-
     # Title panel
     if (is_object($Blog)) {
-        echo $HTML->heading1('Editing ‘%s’ Blog', $details['blogTitle']);
+        $heading = $Lang->get('Editing ‘%s’ Blog', $HTML->encode($details['blogTitle']));
     }else{
-        echo $HTML->heading1('Creating a New Blog');
+        $heading = $Lang->get('Creating a New Blog');
     }
+
+    echo $HTML->title_panel([
+        'heading' => $heading,
+    ], $CurrentUser);
+
 
     if ($message) echo $message;
 
@@ -66,5 +57,3 @@
 
 
     echo $Form->form_end();
-
-    echo $HTML->main_panel_end();

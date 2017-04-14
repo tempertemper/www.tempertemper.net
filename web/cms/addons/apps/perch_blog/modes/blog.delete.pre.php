@@ -3,7 +3,6 @@
 
     $Blogs = new PerchBlog_Blogs($API);
 
-    $HTML = $API->get('HTML');
     $Form = $API->get('Form');
 
     $Form->set_name('delete');

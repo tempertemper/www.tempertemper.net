@@ -47,6 +47,7 @@ class PerchBlog_Util extends PerchAPI_Factory
                 }
                 closedir($dh);
             }
+            sort($a);
         }
         return $a;
     }

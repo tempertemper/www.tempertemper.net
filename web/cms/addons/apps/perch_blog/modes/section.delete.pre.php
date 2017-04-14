@@ -1,8 +1,6 @@
 <?php
     
     $Sections = new PerchBlog_Sections($API);
-
-    $HTML = $API->get('HTML');
     $Form = $API->get('Form');
 
     $Form->set_name('delete');
@@ -45,6 +43,3 @@
     
     $details = $Section->to_array();
 
-
-
-?>

@@ -1,58 +1,51 @@
 <?php
 
-    # Side panel
-    echo $HTML->side_panel_start();
-
-    echo $HTML->para('This page lists the blogs you can place posts into.');
-
-    echo $HTML->side_panel_end();
-
-
-    # Main panel
-    echo $HTML->main_panel_start();
-
-	include ('_subnav.php');
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Listing blogs'),
+        'button'  => [
+                        'text' => $Lang->get('Add blog'),
+                        'link' => $API->app_nav().'/blogs/edit/',
+                        'icon' => 'core/plus',
+                        'priv' => 'perch_blog.blog.create',
+                    ]
+        ], $CurrentUser);
 
 
-    echo '<a class="add button" href="'.$HTML->encode($API->app_path().'/blogs/edit/').'">'.$Lang->get('Add Blog').'</a>';
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    $Smartbar->add_item([
+        'active' => true,
+        'title' => $Lang->get('Blogs'),
+        'link'  => $API->app_nav().'/blogs/',
+        'icon'  => 'blocks/newspaper',
+    ]);
+
+    echo $Smartbar->render();
 
 
-	# Title panel
-    echo $HTML->heading1('Listing Blogs');
+    $Listing = new PerchAdminListing($CurrentUser, $HTML, $Lang, $Paging);
+    $Listing->add_col([
+            'title'     => 'Blog',
+            'value'     => 'blogTitle',
+            'sort'      => 'blogTitle',
+            'edit_link' => 'edit',
+        ]);
 
+    $Listing->add_col([
+            'title'     => 'Slug',
+            'value'     => 'blogSlug',
+            'sort'      => 'blogSlug',
+        ]);
 
+    $Listing->add_col([
+            'title'     => 'Posts',
+            'value'     => 'blogPostCount',
+        ]);
 
-    if (PerchUtil::count($blogs)) {
-?>
-    <table class="d">
-        <thead>
-            <tr>
-                <th class="first"><?php echo $Lang->get('Blog'); ?></th>
-                <th><?php echo $Lang->get('Slug'); ?></th>
-                <th><?php echo $Lang->get('Posts'); ?></th>
-                <th class="action last"></th>
-            </tr>
-        </thead>
-        <tbody>
-<?php
-    foreach($blogs as $Blog) {
-?>
-            <tr>
-                <td class="primary"><a href="<?php echo $HTML->encode($API->app_path()); ?>/blogs/edit/?id=<?php echo $HTML->encode(urlencode($Blog->id())); ?>"><?php echo $HTML->encode($Blog->blogTitle())?></a></td>
-                <td><?php echo $HTML->encode($Blog->blogSlug())?></td>
-                <td><?php echo $HTML->encode($Blog->blogPostCount())?></td>
-                <td><a href="<?php echo $HTML->encode($API->app_path()); ?>/blogs/delete/?id=<?php echo $HTML->encode(urlencode($Blog->id())); ?>" class="delete inline-delete" data-msg="<?php echo $Lang->get('Delete this blog?'); ?>"><?php echo $Lang->get('Delete'); ?></a></td>
-            </tr>
-<?php
-    }
-?>
-        </tbody>
-    </table>
+    $Listing->add_delete_action([
+            'priv'   => 'perch_blog.blog.delete',
+            'inline' => true,
+            'path'   => 'delete',
+        ]);
 
-
-
-<?php
-    } // if pages
-
-
-    echo $HTML->main_panel_end();
+    echo $Listing->render($blogs);

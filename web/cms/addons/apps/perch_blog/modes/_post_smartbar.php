@@ -6,32 +6,43 @@
 
     if (is_object($Post)) {
 
-        echo $HTML->smartbar(
-                $HTML->smartbar_breadcrumb(($smartbar_selection=='details'),
-                        array(
-                            'link'=> $API->app_path('perch_blog').'/?blog='.$Blog->blogSlug(),
-                            'label' => $Blog->blogTitle(),
-                        ),
-                        array(
-                            'link'=> $API->app_path('perch_blog').'/edit/?id='.$Post->id(),
-                            'label' => $Post->postTitle(),
-                        )
-                    ),
-                $HTML->smartbar_link(($smartbar_selection=='meta'),
-                        array(
-                            'link'=> $API->app_path('perch_blog').'/meta/?id='.$Post->id(),
-                            'label' => PerchLang::get('Meta and Social'),
-                        )
-                    ),
-                $HTML->smartbar_link(false,
-                        array(
-                            'link'=> ($draft ? $Post->previewURL() : $Post->postURL()),
-                            'label' => PerchLang::get($draft ? 'Preview Draft' : 'View Post'),
-                            'class' => 'icon page draft-preview'
-                        ),
-                        true
-                    )
-            );
+        $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+        $Smartbar->add_item([
+                'active' => ($smartbar_selection=='details'),
+                'type'  => 'breadcrumb',
+                'links' => [
+                    [
+                        'title' => $Blog->blogTitle(),
+                        'link'  => $API->app_nav('perch_blog').'/?blog='.$Blog->blogSlug(),
+                        'translate' => false,
+                    ],
+                    [
+                        'title' => $Post->postTitle(),
+                        'link'  => $API->app_nav('perch_blog').'/edit/?id='.$Post->id(),
+                        'translate' => false,
+                    ]
+                ],
+            ]);
+
+        $Smartbar->add_item([
+                'active' => ($smartbar_selection=='meta'),
+                'link' => $API->app_nav('perch_blog').'/meta/?id='.$Post->id(),
+                'title' => 'Meta and Social',
+                'icon'  => 'core/o-toggles',
+            ]);
+
+        $Smartbar->add_item([
+                'active'        => false,
+                'link'          => ($draft ? $Post->previewURL() : $Post->postURL()),
+                'title'         => ($draft ? 'Preview Draft' : 'View Post'),
+                'link-absolute' => true,
+                'new-tab'       => true,
+                'icon'          => 'core/document',
+                'position'      => 'end',
+            ]);
+
+        echo $Smartbar->render();
 
     }
 
