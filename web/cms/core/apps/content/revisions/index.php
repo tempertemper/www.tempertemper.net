@@ -20,10 +20,9 @@
     
         
     include(PERCH_CORE.'/runway/apps/content/modes/region.revisions.pre.php');
-    
+    include($app_path.'/modes/_subnav.php');
     include(PERCH_CORE . '/inc/top.php');
 
     include(PERCH_CORE.'/runway/apps/content/modes/region.revisions.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-?>

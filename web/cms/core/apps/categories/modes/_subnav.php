@@ -1,5 +1,5 @@
 <?php
-	echo $HTML->subnav($CurrentUser, array(
+	PerchUI::set_subnav(array(
 		array('page'=>array(
 						'core/apps/categories',
 						'core/apps/categories/sets',

@@ -1,28 +1,27 @@
 <?php
 
-    $Form 	= new PerchForm('email', false);
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+    
 
-    $Email = new PerchEmail('settings-test.html');
-
+    $Form   = $API->get('Form');
+    $Email  = new PerchEmail('settings-test.html');
 
     $req = array();
     $req['email']      = "Required";
 
     $Form->set_required($req);
     
-    
-
     if ($Form->posted() && $Form->validate()) {
 
-		$data		= array();
-		$postvars 	= array('email');
-		$data = $Form->receive($postvars);
+        $data     = [];
+        $postvars = ['email'];
+        $data     = $Form->receive($postvars);
 
 		if (PERCH_DEBUG) {
             $Email->SMTPDebug = 2;
         }
-		
-        //$Email->subject('Email settings test message');
         
         $Email->recipientEmail($data['email']);
         $Email->senderName(PERCH_EMAIL_FROM_NAME);
@@ -31,13 +30,6 @@
         if ($Email->send()) {
             $Alert->set('success', PerchLang::get('The email has been successfully sent.'));
         }else{
-            $Alert->set('error', $Email->errors);
+            $Alert->set('alert', $Email->errors);
         }
-		
-		
-		
-
     }
-    
-
-?>

@@ -1,7 +1,9 @@
 <?php
 
 	$API  = new PerchAPI(1.0, 'categories');
-	$HTML = $API->get('HTML');
+	$Lang   = $API->get('Lang');
+	$HTML   = $API->get('HTML');
+	$Paging = $API->get('Paging');
 
 	$Sets = new PerchCategories_Sets;
 	$Categories = new PerchCategories_Categories;
@@ -13,8 +15,6 @@
 		$setID = false;
 		$Set   = false;
 	}
-
-	$Perch->add_javascript(PERCH_LOGINPATH.'/core/assets/js/jquery.ui.nestedSortable.js');	
 	
 	$Form = new PerchForm('order');
 	

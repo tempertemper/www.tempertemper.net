@@ -1,4 +1,9 @@
 <?php
+
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $id = (int) $_GET['id'];
         $Regions = new PerchContent_Regions;
@@ -17,7 +22,6 @@
 
         
     }
-
     
     if (!$Region || !is_object($Region)) {
         PerchUtil::redirect(PERCH_LOGINPATH . '/core/apps/content');
@@ -35,7 +39,8 @@
 
     /* --------- Delete Form ----------- */
     
-    $Form = new PerchForm('delete');
+    $Form = $API->get('Form');
+    $Form->set_name('delete');
     
     if ($Form->posted() && $Form->validate()) {
     	$Region->delete();
@@ -47,5 +52,8 @@
     	    PerchUtil::redirect(PERCH_LOGINPATH . '/core/apps/content/page/?id='.$Page->id());
     	}
     	    	
+    }else{
+        print_r($_POST);
+        die();
     }
 

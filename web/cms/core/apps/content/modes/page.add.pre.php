@@ -1,4 +1,7 @@
 <?php
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
 
     $Pages = new PerchContent_Pages;
     $PageTemplates  = new PerchContent_PageTemplates;
@@ -68,7 +71,7 @@
 
     			$Pages->order_new_pages();
     		
-    	        PerchUtil::redirect(PERCH_LOGINPATH.'/core/apps/content/page/edit/?id='.$Page->id().'&created=true');
+    	        PerchUtil::redirect(PERCH_LOGINPATH.'/core/apps/content/page/details/?id='.$Page->id().'&created=true');
     	    }else{
     	        $message = '';
     	        

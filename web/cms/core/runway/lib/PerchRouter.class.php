@@ -23,6 +23,14 @@ class PerchRouter
 		if (defined('PERCH_DB_PREFIX')) {
 		    $this->table    = PERCH_DB_PREFIX.$this->table;
 		}
+
+		if (!defined('PERCH_SITE_BEHIND_LOGIN')) {
+			define('PERCH_SITE_BEHIND_LOGIN', false);
+		}
+
+		if (!defined('PERCH_API_PATH')) {
+			define('PERCH_API_PATH', '/api');
+		}
 	}
 
 	public function get_route($url)
@@ -31,14 +39,41 @@ class PerchRouter
 
 		if ($url==='') $url = '/'; // homepage
 
-		$sql  = 'SELECT p.pagePath, pr.routePattern, pr.routeRegExp, p.pageTemplate FROM '.$this->table .' p LEFT JOIN '.PERCH_DB_PREFIX.'page_routes pr
-				ON p.pageID=pr.pageID ORDER BY pr.routeOrder ASC, p.pagePath ASC';
+		if (PERCH_SITE_BEHIND_LOGIN) {
+			$Users       = new PerchUsers;
+	        $CurrentUser = $Users->get_current_user();
+
+	        if (!is_object($CurrentUser) || !$CurrentUser->logged_in()) {
+	            return new PerchRoutedPage($url, $url, $query, false, 'errors/login-required.php', 403);
+	        }
+			
+		}
+
+		if (strpos($url, PERCH_API_PATH) === 0) {
+			return new PerchRoutedPage($url, $url, $query);
+		}
+
+		$sql = 'SELECT p.pagePath, pr.routePattern, pr.routeRegExp, p.pageTemplate, pr.routeOrder
+					FROM '.$this->table .' p LEFT JOIN '.PERCH_DB_PREFIX.'page_routes pr ON p.pageID=pr.pageID
+					UNION SELECT NULL AS pagePath, pr2.routePattern, pr2.routeRegExp, pr2.templatePath AS pageTemplate, pr2.routeOrder
+					FROM '.PERCH_DB_PREFIX.'page_routes pr2 WHERE templateID!=0 ORDER BY routeOrder ASC, pagePath ASC';
+
+
+		$sql = 'SELECT p.pagePath, pr.routePattern, pr.routeRegExp, p.pageTemplate, pr.routeOrder, s.settingValue AS siteOffline
+					FROM '.$this->table .' p LEFT JOIN '.PERCH_DB_PREFIX.'page_routes pr ON p.pageID=pr.pageID LEFT JOIN '.PERCH_DB_PREFIX.'settings s ON s.settingID=\'siteOffline\'
+					UNION SELECT NULL AS pagePath, pr2.routePattern, pr2.routeRegExp, pr2.templatePath AS pageTemplate, pr2.routeOrder, NULL AS siteOffline
+					FROM '.PERCH_DB_PREFIX.'page_routes pr2 WHERE templateID!=0 ORDER BY routeOrder ASC, pagePath ASC';
 
 		$rows = $this->db->get_rows($sql);
 
 		if (PerchUtil::count($rows)) {
 			$patterns = [];
 			foreach($rows as $row) {
+
+				if ($row['siteOffline'] === '1') {
+					return new PerchRoutedPage($url, $url, $query, false, 'errors/site-offline.php', 503);
+				}
+
 				if ($url == $row['pagePath']) {
 					PerchUtil::debug('Matched page: '.$row['pagePath'].', so not using routes.', 'routing');
 					return new PerchRoutedPage($url, $url, $query, false, $row['pageTemplate']);
@@ -48,8 +83,15 @@ class PerchRouter
 			if (count($patterns)) {
 				foreach($patterns as $pattern) {
 					if (preg_match('#'.$pattern['routeRegExp'].'#', $url, $match)) {
-						PerchUtil::debug('Matched route: '.PerchUtil::html($pattern['routePattern']));
+						if (PERCH_DEBUG) {
+							if ($pattern['pagePath']=='') {
+								PerchUtil::debug('Matched pageless route: '.PerchUtil::html($pattern['routePattern']));
+							} else {
+								PerchUtil::debug('Matched route: '.PerchUtil::html($pattern['routePattern']));
+							}	
+						}
 						return new PerchRoutedPage($url, $pattern['pagePath'], $query, $match, $pattern['pageTemplate']);
+							
 					}
 				}
 			}
@@ -91,19 +133,31 @@ class PerchRouter
 		// empty token?
 		if ($token=='') $token = '*';
 
+		// multi-segment token?
+		if (strpos($token, '/')) {
+			$tokens = explode('/', $token);
+		} else {
+			$tokens = [$token];
+		}
+
 		$token_list = $this->get_tokens();
 
-		if (isset($token_list[$token])) {
+		$arr_token = [];
 
-			if ($name) {
-				return '(?<'.$name.'>'.$token_list[$token].')';
-			}else{
-				return '('.$token_list[$token].')';
+		foreach($tokens as $token) {
+			if (isset($token_list[$token])) {
+				$arr_token[] = $token_list[$token];
+			} else {
+				$arr_token[] = $token;
 			}
 		}
 
+		$str_token = implode('/',$arr_token);
+
 		if ($name) {
-			return '(?<'.$name.'>'.$token.')';
+			return '(?<'.$name.'>'.$str_token.')';
+		} else {
+			return '('.$str_token.')';
 		}
 
 		return $token;

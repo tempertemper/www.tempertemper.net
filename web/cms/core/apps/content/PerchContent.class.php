@@ -353,7 +353,7 @@ class PerchContent extends PerchApp
             }
 
             $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemRev=idx2.itemRev
-                    ) as tbl GROUP BY itemID, pageID, itemJSON, sortval '; // DM added ', pageID, itemJSON, sortval' for MySQL 5.7
+                    ) as tbl GROUP BY itemID, pageID, itemJSON, sortval, regionID '; // DM added ', pageID, itemJSON, sortval, regionID' for MySQL 5.7
 
             if ($filter_mode=='AND' && PerchUtil::count($filters)>1) {
                 $sql .= ' HAVING count(*)='.PerchUtil::count($filters).' ';
@@ -492,8 +492,10 @@ class PerchContent extends PerchApp
         // template
         if (isset($opts['template'])) {
             $template = $opts['template'];
+        } elseif (isset($regions[0])){
+            $template = $regions[0]['regionTemplate'];    
         } else {
-            $template = $regions[0]['regionTemplate'];
+            $template = null;
         }
         
         $Template = new PerchTemplate('content/'.$template, 'content');
@@ -540,7 +542,15 @@ class PerchContent extends PerchApp
 
             if (PerchUtil::count($processed_vars)) {
 
+                if (isset($opts['api']) && $opts['api']==true) {
+                    $field_type_map = $Template->get_field_type_map();
+                    $api = true;
+                } else {
+                    $api = false;
+                }
+
                 $category_field_ids    = $Template->find_all_tag_ids('categories');
+
 
                 foreach($processed_vars as &$item) {
                     if (PerchUtil::count($item)) {
@@ -548,6 +558,14 @@ class PerchContent extends PerchApp
 
                             if (in_array($key, $category_field_ids)) {
                                 $field = $this->_process_category_field($field);
+                                continue;
+                            }
+
+                            if ($api) {
+                                if (array_key_exists($key, $field_type_map)) {
+                                    $field = $field_type_map[$key]->get_api_value($field);
+                                    continue;
+                                }
                             }
 
                             if (is_array($field) && isset($field['processed'])) {
@@ -980,91 +998,105 @@ class PerchContent extends PerchApp
      */
     private function _register_new_key($key, $opts=array())
     {
+        if (PerchSystem::is_api_request()) {
+            return false;
+        }
+
         if (!isset($this->registered[$key])) {      
             
-            $Perch  = Perch::fetch();
-            $page   = $Perch->get_page();
-
-            $data   = array();
-            $data['regionKey']     = $key;
-            $data['regionPage']    = $page;
-            $data['regionHTML']    = '<!-- Undefined content: '.PerchUtil::html($key).' -->';
-            $data['regionOptions'] = '';
-            
-            if (is_array($opts) && count($opts)) {
-
-                if ($opts['page']) {
-                    $data['regionPage'] = $opts['page'];
-
-                    // Creating for a different page, so make sure old pageID cache is cleared.
-                    $this->pageID = false;
-                }
-                if ($opts['shared']) $data['regionPage'] = '*';
-                
-                if ($opts['template']) {
-                    $data['regionTemplate'] = $opts['template']; 
-                    $data['regionNew'] = 0; 
-                } 
-                
-                if ($opts['multiple']) {
-                    $data['regionMultiple'] = 1;  
-                } else {
-                    $data['regionMultiple'] = 0;
-                }
-
-                if ($opts['searchable']) {
-                    $data['regionSearchable'] = 1;  
-                } else {
-                    $data['regionSearchable'] = 0;
-                }
-
-                if ($opts['roles']) $data['regionEditRoles'] = $opts['roles'];
-
-                $regionOptions = array();
-
-                if ($opts['sort'])              $regionOptions['sortField']     = $opts['sort'];
-                if ($opts['sort-order'])        $regionOptions['sortOrder']     = $opts['sort-order'];
-                if ($opts['edit-mode'])         $regionOptions['edit_mode']     = $opts['edit-mode'];
-                if ($opts['search-url'])        $regionOptions['searchURL']     = $opts['search-url'];
-                if ($opts['add-to-top'])        $regionOptions['addToTop']      = $opts['add-to-top'];
-                if ($opts['limit'])             $regionOptions['limit']         = $opts['limit'];
-                if ($opts['title-delimiter'])   $regionOptions['title_delimit'] = $opts['title-delimiter'];
-                if ($opts['columns'])           $regionOptions['column_ids']    = $opts['columns'];
-
-                $data['regionOptions'] = PerchUtil::json_safe_encode($regionOptions);
-            }
+            $data = $this->prepare_new_region($key, $opts);
 
             $data['pageID'] = $this->_find_or_create_page($data['regionPage']);
 
             if ($data['pageID']) {
-        
-                $db = PerchDB::fetch();
-                
-                $cols   = array();
-                $vals   = array();
-
-                foreach($data as $key => $value) {
-                    $cols[] = $key;
-                    $vals[] = $db->pdb($value).' AS '.$key;
-                }
-
-                $sql = 'INSERT INTO ' . $this->table . '(' . implode(',', $cols) . ') 
-                        SELECT '.implode(',', $vals).' 
-                        FROM (SELECT 1) AS dtable
-                        WHERE (
-                                SELECT COUNT(*) 
-                                FROM '.$this->table.' 
-                                WHERE regionKey='.$db->pdb($data['regionKey']).' 
-                                    AND (regionPage='.$db->pdb($data['regionPage']).' OR regionPage='.$db->pdb('*').')
-                                )=0
-                        LIMIT 1';
-                                
-                $db->execute($sql);
-                
+                $this->create_new_regions($data);
                 $this->registered[$key] = true;
                 $this->new_keys_registered = true;
             }
         }
+    }
+
+    private function prepare_new_region($key, $opts)
+    {
+        $Perch  = Perch::fetch();
+        $page   = $Perch->get_page();
+
+        $data = [];
+        $data['regionKey']     = $key;
+        $data['regionPage']    = $page;
+        $data['regionHTML']    = '<!-- Undefined content: '.PerchUtil::html($key).' -->';
+        $data['regionOptions'] = '';
+        
+        if (is_array($opts) && count($opts)) {
+
+            if ($opts['page']) {
+                $data['regionPage'] = $opts['page'];
+
+                // Creating for a different page, so make sure old pageID cache is cleared.
+                $this->pageID = false;
+            }
+            if ($opts['shared']) $data['regionPage'] = '*';
+            
+            if ($opts['template']) {
+                $data['regionTemplate'] = $opts['template']; 
+                $data['regionNew'] = 0; 
+            } 
+            
+            if ($opts['multiple']) {
+                $data['regionMultiple'] = 1;  
+            } else {
+                $data['regionMultiple'] = 0;
+            }
+
+            if ($opts['searchable']) {
+                $data['regionSearchable'] = 1;  
+            } else {
+                $data['regionSearchable'] = 0;
+            }
+
+            if ($opts['roles']) $data['regionEditRoles'] = $opts['roles'];
+
+            $regionOptions = [];
+
+            if ($opts['sort'])              $regionOptions['sortField']     = $opts['sort'];
+            if ($opts['sort-order'])        $regionOptions['sortOrder']     = $opts['sort-order'];
+            if ($opts['edit-mode'])         $regionOptions['edit_mode']     = $opts['edit-mode'];
+            if ($opts['search-url'])        $regionOptions['searchURL']     = $opts['search-url'];
+            if ($opts['add-to-top'])        $regionOptions['addToTop']      = $opts['add-to-top'];
+            if ($opts['limit'])             $regionOptions['limit']         = $opts['limit'];
+            if ($opts['title-delimiter'])   $regionOptions['title_delimit'] = $opts['title-delimiter'];
+            if ($opts['columns'])           $regionOptions['column_ids']    = $opts['columns'];
+
+            $data['regionOptions'] = PerchUtil::json_safe_encode($regionOptions);
+        }
+
+        return $data;
+    }
+
+    private function create_new_regions($data)
+    {
+        $db = PerchDB::fetch();
+                
+        $cols   = [];
+        $vals   = [];
+
+        foreach($data as $key => $value) {
+            $cols[] = $key;
+            $vals[] = $db->pdb($value).' AS '.$key;
+        }
+
+        $sql = 'INSERT INTO ' . $this->table . '(' . implode(',', $cols) . ') 
+                SELECT '.implode(',', $vals).' 
+                FROM (SELECT 1) AS dtable
+                WHERE (
+                        SELECT COUNT(*) 
+                        FROM '.$this->table.' 
+                        WHERE regionKey='.$db->pdb($data['regionKey']).' 
+                            AND (regionPage='.$db->pdb($data['regionPage']).' OR regionPage='.$db->pdb('*').')
+                        )=0
+                LIMIT 1';
+                        
+        $db->execute($sql);
     }
     
     
@@ -1072,14 +1104,14 @@ class PerchContent extends PerchApp
      * Find the page by its path, or create it if it's new.
      *
      * @param string $path 
-     * @return void
+     * @return int Page ID
      * @author Drew McLellan
      */
     private function _find_or_create_page($path)
     {
         if ($path=='*') return 1;
 
-        if ($this->pageID) return $this->pageID;
+        if (is_int($this->pageID) && $this->pageID > 0) return $this->pageID;
         
         $db     = PerchDB::fetch();
         $table  = PERCH_DB_PREFIX.'pages';

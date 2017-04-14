@@ -1,8 +1,6 @@
 <?php
-    
     $Authors = new PerchBlog_Authors($API);
 
-    $HTML = $API->get('HTML');
     $Form = $API->get('Form');
 
     $Form->set_name('delete');
@@ -47,6 +45,3 @@
     
     $details = $Author->to_array();
 
-
-
-?>

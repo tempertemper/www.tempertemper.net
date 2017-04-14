@@ -1,4 +1,9 @@
 <?php
+    $API    = new PerchAPI(1.0, 'content');
+    $HTML   = $API->get('HTML');
+    $Lang   = $API->get('Lang');
+    $Paging = $API->get('Paging');
+
 
     $Pages = new PerchContent_Pages;
     $Page = $Pages->find((int)$Region->pageID());
@@ -16,7 +21,7 @@
         }
     }
 
-    $items = $Region->get_items_for_editing();
+    $items = $Region->get_items_for_editing(false, $Paging);
 
 	if (!PerchUtil::count($items)) {
 		// No items(!) so add a new one and edit it.

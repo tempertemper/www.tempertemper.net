@@ -4,21 +4,29 @@ class PerchSession
 {
 	public static function commence()
 	{
+		if (!defined('PERCH_PARANOID')) {
+			define('PERCH_PARANOID', false);
+		}
+
 	    if (!isset($_SESSION['ready'])) {
 
-	    	if (!defined('PERCH_SESSION_TIMEOUT_MINS')) {
-	    		define('PERCH_SESSION_TIMEOUT_MINS', 20);
-	    	}
-
-			$path          = '/';
-			$domain        = '';
+	    	$path          = '/';
+			$domain        = null;
 			$secure        = (defined('PERCH_SSL') && PERCH_SSL);
 			$http_only     = true;
 
-	    	session_set_cookie_params((PERCH_SESSION_TIMEOUT_MINS*60), $path, $domain, $secure, $http_only);
+	    	if (PERCH_PARANOID) {
+	    		if (!defined('PERCH_SESSION_TIMEOUT_MINS')) {
+					define('PERCH_SESSION_TIMEOUT_MINS', 20);
+	    		}
+	    		session_set_cookie_params((PERCH_SESSION_TIMEOUT_MINS*60), $path, $domain, $secure, $http_only);
+	    	} else {
+	    		session_set_cookie_params(0, $path, $domain, $secure, $http_only);
+	    	}
+
 	        session_start();
-	        self::extend_session();
 	        $_SESSION['ready'] = true;
+	        self::extend_session();
 	    }
 	}
 
@@ -30,8 +38,12 @@ class PerchSession
 
 	public static function extend_session()
 	{
+		self::commence();
+
+		if (!PERCH_PARANOID) return;
+
 		$path          = '/';
-		$domain        = '';
+		$domain        = null;
 		$secure        = (defined('PERCH_SSL') && PERCH_SSL);
 		$http_only     = true;
 
@@ -79,7 +91,13 @@ class PerchSession
 
 	public static function keep_alive()
 	{
-	    self::commence();
+	    self::extend_session();
 	    session_write_close();
+	}
+
+	public static function get_all()
+	{
+		self::commence();
+        return $_SESSION;
 	}
 }

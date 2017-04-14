@@ -1,114 +1,102 @@
 <?php 
-    include (PERCH_PATH.'/core/inc/sidebar_start.php');
- 
-    echo $HTML->para('Listing backup runs');
- 
-    include (PERCH_PATH.'/core/inc/sidebar_end.php'); 
-    include (PERCH_PATH.'/core/inc/main_start.php'); 
-    include ($app_path.'/modes/_subnav.php'); 
- 
-    echo '<form method="post" action="'.PerchUtil::html($Form->action(), true).'">
-            <div>'.$Form->submit('backup', 'Backup now', 'add button topadd').'</div>
-         </form>';
+
+    $form_button = [
+                'action' => $Form->action(),
+                'button' => $Form->submit('backup', 'Backup now', 'button button-icon icon-left', true, true, PerchUI::icon('ext/umbrella', 14))
+            ];
 
 
-    echo $HTML->heading1('Viewing ‘%s’ Backup Plan', $HTML->encode($Plan->planTitle()));
-    
-
-    echo $HTML->smartbar(
-        $HTML->smartbar_link(true, 
-                array( 
-                    'link'=> PERCH_LOGINPATH.'/core/settings/backup/?id='.$Plan->id(),
-                    'label' => $Plan->planTitle(),
-                )
-        ),
-
-        $HTML->smartbar_link(false, 
-                array( 
-                    'link'=> PERCH_LOGINPATH.'/core/settings/backup/edit/?id='.$Plan->id(),
-                    'label' => PerchLang::get('Plan Options'),
-                )
-        )
-
-    );
+    echo $HTML->title_panel([
+            'heading' => $Lang->get('Viewing ‘%s’ backup plan', $HTML->encode($Plan->planTitle())),
+            'form'  => $form_button,
+        ], $CurrentUser);
 
 
-    // If a success or failure message has been set, output that here
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    $Smartbar->add_item([
+            'active' => true,
+            'type' => 'breadcrumb',
+            'links' => [
+                [   
+                    'title' => 'Plans',
+                    'link'  => '/core/settings/backup/',
+                ],
+                [
+                    'title' => $Plan->planTitle(),
+                    'translate' => false,
+                    'link '=> '/core/settings/backup/?id='.$Plan->id(),
+                ]
+            ],
+            
+        ]);
+
+    $Smartbar->add_item([
+            'title' => 'Plan Options',
+            'link'  => '/core/settings/backup/edit/?id='.$Plan->id(),
+            'icon' => 'core/o-toggles'
+        ]);
+
+    echo $Smartbar->render();
 
 
-    $Alert->output();
+    $Listing = new PerchAdminListing($CurrentUser, $HTML, $Lang, $Paging);
+    $Listing->add_col([
+            'title'     => 'Status',
+            'value'     => 'runResult',
+            'icon'      => function($Run) {
+                switch($Run->runResult()) {
+                    case 'OK':
+                        return PerchUI::icon('core/circle-check', 16, null, 'icon-status-success');
+                        break;
 
-    $rows = $runs;
+                    case 'FAILED':
+                        return PerchUI::icon('core/circle-delete', 16, null, 'icon-status-alert');
+                        break;
 
-    $headings = ['Date', 'Result', 'Message'];
+                    case 'WARNING':
+                        return PerchUI::icon('core/alert', 16, null, 'icon-status-warning');
+                        break;
 
-    $s = '';
-    if (PerchUtil::count($rows)) {
-
-        $first = true;
-
-        $s .= '<table class="d">
-                <thead>
-                    <tr>';
-        foreach($headings as $heading) {
-            $s .= '<th'.($first?' class="compact"':'').'>'.PerchLang::get($heading).'</th>';
-            $first = false;
-        }
-        $s .= '     <th class="action last"></th>
-                    </tr>
-                </thead>
-                <tbody>';
-        echo $s;
-      
-
-        foreach($rows as $row) {
-
-        ?>
-        <tr>
-            <td class="action"><?php 
-                    switch($row->runResult()) {
-                        case 'OK':
-                            echo '<span class="icon ok">'.PerchLang::get('OK').'</span>';
-                            break;
-                        case 'FAILED':
-                            echo '<span class="icon failed">'.PerchLang::get('Failed').'</span>';
-                            break;
-                        default:
-                            echo '<span class="icon warning">'.PerchUtil::html($row->runResult()).'</span>';
-                            break;
-                    }
-                ?></td>
-            <td><?php echo strftime(PERCH_DATE_SHORT.' '.PERCH_TIME_SHORT, strtotime($row->runDateTime())); ?></td>
-
-            <td><?php
-                    if ($row->runType()=='db') {
-                        if ($row->runDbFile()!='') {
-                            echo PerchLang::get('Database backed up.');
-                        }else{
-                            echo PerchUtil::html($row->runMessage());
-                        }
-                    }else{
-                        echo PerchUtil::html($row->runMessage());
-                    }
-                ?></td>
-            <td><?php
-                if ($row->runDbFile()!='') {
-                    echo '<a href="'.PERCH_LOGINPATH.'/core/settings/backup/restore/?id='.$row->id().'" class="caution">'.PerchLang::get('Restore').'</a>';
+                    default:
+                        return PerchUI::icon('core/info-alt', 16, null, 'icon-status-info');
+                        break;
                 }
-
-            ?></td>
-        </tr>
-        <?php     
-        }     
-
-        $s = '   </tbody>
-                </table>';
-        echo $s;
-
-        echo $HTML->paging($Paging);
-    }
-
+                
+            }
+        ]);
+    $Listing->add_col([
+            'title'     => 'Date',
+            'value'     => function($Run){
+                return strftime(PERCH_DATE_SHORT.' '.PERCH_TIME_SHORT, strtotime($Run->runDateTime()));
+            },
+        ]);
+    $Listing->add_col([
+            'title'     => 'Message',
+            'value'     => function($Run){
+                if ($Run->runType()=='db') {
+                    if ($Run->runDbFile()!='') {
+                        return PerchLang::get('Database backed up.');
+                    }else{
+                        return PerchUtil::html($Run->runMessage());
+                    }
+                }else{
+                    return PerchUtil::html($Run->runMessage());
+                }
+            },
+        ]);
+    $Listing->add_misc_action([
+            'title'   => 'Restore',
+            'path'    => function($Run) {
+                return PERCH_LOGINPATH.'/core/settings/backup/restore/?id='.$Run->id();
+            },
+            'class'   => 'warning',
+            'priv'    => 'runway.backups.restore',
+            'display' => function($Run) {
+                return $Run->runDbFile()!='';
+            }
+        ]);
     
-    
-    // Footer
-    include (PERCH_PATH.'/core/inc/main_end.php');
+
+
+    echo $Listing->render($runs);

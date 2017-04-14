@@ -1,5 +1,9 @@
 <?php
 
+    $API    = new PerchAPI(1.0, 'assets');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     if (!$CurrentUser->has_priv('assets.delete')) {
         PerchUtil::redirect(PERCH_LOGINPATH . '/core/apps/assets/');
     }

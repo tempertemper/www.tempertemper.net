@@ -1,65 +1,53 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-<p><?php echo PerchLang::get('These are the master pages available for use when creating a new page. You can access their settings from this list.'); ?></p>
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
+<?php 
 
-    <h1><?php echo PerchLang::get('Listing All Master Pages'); ?></h1>
-    
-    <?php echo $Alert->output(); ?>
-    
-<?php
-    if (PerchUtil::count($templates)) {
-?>
-    <table class="d">
-        <thead>
-            <tr>
-                <th class="first"><?php echo PerchLang::get('Title'); ?></th>
-                <th><?php echo PerchLang::get('Path'); ?></th>
-                <th class="action last"></th>
-            </tr>
-        </thead>
-        <tbody>
-<?php
-    foreach($templates as $Template) {
-?>
-            <tr>
-                <td class="primary">
-                    <?php 
-                        if (strpos($Template->templatePath(), '/')!==false) {
-                            $segments = explode('/', $Template->templatePath());
-                            array_pop($segments);
-                            echo PerchUtil::filename(implode('/', $segments)).' → ';
-                        }
-                    ?>
-                    <a href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/apps/content/page/templates/edit/?id=<?php echo PerchUtil::html(urlencode($Template->id())); ?>"><?php echo PerchUtil::html($Template->templateTitle())?></a>
-
-                </td>
-                <td><?php echo PerchUtil::html($Template->templatePath())?></td>  
-                <td>
-                    <?php if ($CurrentUser->has_priv('content.templates.delete')) { ?>
-                    <a href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/apps/content/page/templates/delete/?id=<?php echo PerchUtil::html(urlencode($Template->id())); ?>" class="delete"><?php echo PerchLang::get('Delete'); ?></a>
-                    <?php  } ?>
-                </td>
-                
-            </tr>
-
-<?php   
+    if (!PerchUtil::count($templates)) {
+        $Alert->set('info', PerchLang::get('No master pages yet?') . ' ' .PerchLang::get('New master page templates can be added to the %stemplates/pages%s folder.', '<code>', '</code>'));
     }
-?>
-        </tbody>
-    </table>
-<?php
 
-}else{
-    ?>
-        <div class="info-panel">
-            <h2><?php echo PerchLang::get('No page templates yet?'); ?></h2>
-            <p><?php echo PerchLang::get('New page templates can be added to the %stemplates/pages%s folder.', '<code>', '</code>'); ?></p>
+    echo $HTML->title_panel([
+    'heading' => $Lang->get('Listing all master pages'),
+    ]);
 
-        </div>
-    
-    <?php
-}
-?>
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); 
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    $Smartbar->add_item([
+        'active' => true,
+        'title' => 'Master pages',
+        'link'  => '/core/apps/content/page/templates/',
+    ]);
+
+    echo $Smartbar->render();
+
+    $Listing = new PerchAdminListing($CurrentUser, $HTML, $Lang, $Paging);
+
+    $Listing->add_col([
+            'title'     => 'Title',
+            'value'     => function($item, $HTML){
+                                $s = '';
+                                if (strpos($item->templatePath(), '/')!==false) {
+                                    $segments = explode('/', $item->templatePath());
+                                    array_pop($segments);
+                                    $s .= PerchUtil::filename(implode('/', $segments)).' → ';
+                                }
+                                $s .= $item->templateTitle();
+                                return $s;
+                            },
+            'edit_link' => 'edit',
+            'sort' => 'templateTitle',
+        ]);
+
+    $Listing->add_col([
+            'title'     => 'Path',
+            'value'     => 'templatePath',
+            'sort'      => 'templatePath',
+        ]);
+
+    $Listing->add_delete_action([
+            'priv'   => 'content.templates.delete',
+            'inline' => true,
+            'path'   => 'delete',
+        ]);
+
+    echo $Listing->render($templates);
+
+

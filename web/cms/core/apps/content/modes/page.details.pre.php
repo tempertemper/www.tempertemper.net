@@ -1,4 +1,9 @@
 <?php
+    $API    = new PerchAPI(1.0, 'content');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+    $Paging = $API->get('Paging');
+
 
     $Pages = new PerchContent_Pages;
     $Page  = false;
@@ -20,7 +25,6 @@
     }
 
     // Page attributes
-    $API = new PerchAPI(1.0, 'perch_pages');
     $Page->api($API);
     $Template = $API->get('Template');
     $status = $Template->set('pages/attributes/'.$Page->pageAttributeTemplate(), 'pages');
@@ -67,4 +71,9 @@
         $details = $Page->to_array();
     }
 
+    $created = false;
     
+    if (isset($_GET['created'])) {
+        $Alert->set('success', PerchLang::get('Your page has been successfully created. Return to %spage listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/content/" class="notification-link">', '</a>'));
+        $created = true;
+    }

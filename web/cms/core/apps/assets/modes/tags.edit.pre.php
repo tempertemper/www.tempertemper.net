@@ -1,8 +1,12 @@
 <?php
     
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     $Tags = new PerchAssets_Tags();
 
-    $Form = new PerchForm('edit');
+    $Form = $API->get('Form');
 	
     $message = false;
         
@@ -13,8 +17,7 @@
         PerchUtil::redirect(PERCH_LOGINPATH.'/core/apps/assets/tags/');
     }
     
-    
-    $Form = new PerchForm('editpage');
+
 
     $req = array();
     $req['tagTitle']   = "Required";

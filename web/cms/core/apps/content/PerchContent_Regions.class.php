@@ -60,15 +60,25 @@ class PerchContent_Regions extends PerchFactory
      * @return void
      * @author Drew McLellan
      */
-    public function get_for_page($pageID, $include_shared=true, $new_only=false, $template=false)
+    public function get_for_page($pageID, $include_shared=true, $new_only=false, $template=false, PerchAPI_Paging $Paging = null)
     {
         if ($this->_regions_preloaded) {
             if (isset($this->_region_cache[$pageID])) {
                 return $this->return_instances($this->_region_cache[$pageID]);
             }
         }
+
+        $sort_val = null;
+        $sort_dir = null;
+
+        if ($Paging && $Paging->enabled()) {
+            $sql = $Paging->select_sql();
+            list($sort_val, $sort_dir) = $Paging->get_custom_sort_options();
+        }else{
+            $sql = 'SELECT';
+        }
         
-        $sql = 'SELECT * FROM '.$this->table.' WHERE pageID='.$this->db->pdb((int)$pageID);
+        $sql .= ' * FROM '.$this->table.' WHERE pageID='.$this->db->pdb((int)$pageID);
         
         if (!$include_shared) {
             $sql .= ' AND regionPage!='.$this->db->pdb('*');
@@ -82,9 +92,21 @@ class PerchContent_Regions extends PerchFactory
 			$sql .= ' AND regionTemplate='.$this->db->pdb($template).' ';
 		}
 
-        $sql .= ' ORDER BY regionOrder ASC';
+        if ($Paging && $Paging->enabled() && $sort_val) {
+            $sql .= ' ORDER BY '.$sort_val.' '.$sort_dir;
+        } else {
+            $sql .= ' ORDER BY regionOrder ASC';    
+        }
+        
+        if ($Paging && $Paging->enabled()) {
+            $sql .=  ' '.$Paging->limit_sql();
+        }
         
         $rows = $this->db->get_rows($sql);
+
+        if ($Paging && $Paging->enabled()) {
+            $Paging->set_total($this->db->get_count($Paging->total_count_sql()));
+        }
         
         return $this->return_instances($rows);
     }
@@ -113,16 +135,42 @@ class PerchContent_Regions extends PerchFactory
      * @return void
      * @author Drew McLellan
      */
-    public function get_shared($template=false)
+    public function get_shared(PerchAPI_Paging $Paging = null, $template=false)
     {
-        $sql = 'SELECT * FROM '.$this->table.' WHERE regionPage='.$this->db->pdb('*');
+
+        $sort_val = null;
+        $sort_dir = null;
+
+        if ($Paging && $Paging->enabled()) {
+            $sql = $Paging->select_sql();
+            list($sort_val, $sort_dir) = $Paging->get_custom_sort_options();
+        }else{
+            $sql = 'SELECT';
+        }
+
+
+        $sql .= ' * FROM '.$this->table.' WHERE regionPage='.$this->db->pdb('*');
 
 		if ($template) {
 			$sql .= ' AND regionTemplate='.$this->db->pdb($template).' ';
 		}
 
+        if (!$sort_val) {
+            $sort_val = 'regionKey';
+            $sort_dir = 'ASC';
+        }
+
+        $sql .= ' ORDER BY '.$sort_val.' '.$sort_dir;
+
+        if ($Paging && $Paging->enabled()) {
+            $sql .=  ' '.$Paging->limit_sql();
+        }
 
         $rows = $this->db->get_rows($sql);
+
+        if ($Paging && $Paging->enabled()) {
+            $Paging->set_total($this->db->get_count($Paging->total_count_sql()));
+        }
         
         return $this->return_instances($rows);
     }
@@ -322,7 +370,7 @@ class PerchContent_Regions extends PerchFactory
             foreach($regions as $Region) {
 
                 if ($interactive) {
-                    echo '<li class="success icon">'.PerchLang::get('Republishing: %s on page %s', $Region->regionKey(), $Region->regionPage()).'</li>';
+                    echo '<li class="progress-item progress-success">'.PerchUI::icon('core/circle-check').' '.PerchLang::get('Republishing: %s on page %s', $Region->regionKey(), $Region->regionPage()).'</li>';
                 }
 
                 $Region->publish();
@@ -332,7 +380,7 @@ class PerchContent_Regions extends PerchFactory
             }
 
             if ($interactive) {
-                echo '<li class="success icon">'.PerchLang::get('Republishing completed successfully').'</li>';
+                echo '<li class="progress-item progress-success">'.PerchUI::icon('core/circle-check').' '.PerchLang::get('Republishing completed successfully').'</li>';
                 flush();
             }
         }

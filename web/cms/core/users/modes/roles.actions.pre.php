@@ -1,8 +1,14 @@
 <?php
-    include(PERCH_PATH.'/core/apps/content/PerchContent_Regions.class.php');
-    include(PERCH_PATH.'/core/apps/content/PerchContent_Region.class.php');
-    include(PERCH_PATH.'/core/apps/content/PerchContent_Pages.class.php');
-    include(PERCH_PATH.'/core/apps/content/PerchContent_Page.class.php');
+    #include(PERCH_PATH.'/core/apps/content/PerchContent_Regions.class.php');
+    #include(PERCH_PATH.'/core/apps/content/PerchContent_Region.class.php');
+    #include(PERCH_PATH.'/core/apps/content/PerchContent_Pages.class.php');
+    #include(PERCH_PATH.'/core/apps/content/PerchContent_Page.class.php');
+
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+    
+
 
 
 	$Roles   = new PerchUserRoles; 
@@ -27,7 +33,6 @@
     $Form 	= new PerchForm('action', false);
 
     if ($Form->posted() && $Form->validate()) {
-    	PerchUtil::debug($_POST);
 
     	$action = false;
 
@@ -66,5 +71,3 @@
     	}
 
    	}
-
-?>

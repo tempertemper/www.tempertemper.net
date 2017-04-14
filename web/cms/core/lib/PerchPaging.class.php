@@ -3,8 +3,10 @@
 class PerchPaging
 {
     public $enabled  = true;
+    public $sortable = false;
     
-    private $qs_param = 'page';
+    private $qs_param      = 'page';
+    private $qs_param_sort = 'sort';
     
     private $per_page         = 10;
     private $start_position   = 0;
@@ -17,11 +19,20 @@ class PerchPaging
     private $qs_char          = '';
     private $page_pattern     = '';
     private $page_replacement = '';
+    private $sort_pattern     = '';
+    private $sort_replacement = '';
     private $use_qs           = true;
 
-    function __construct($qs_param=false)
+    private $sort_key         = null;
+    private $sort_dir         = null;
+
+    function __construct($qs_param=false, $qs_param_sort=false)
     {
         $this->set_qs_param($qs_param);
+        if (PERCH_RUNWAY) {
+            $this->sortable = true;
+            $this->set_qs_param_sort($qs_param_sort);
+        }
     }    
 
     public function set_qs_param($qs_param)
@@ -44,8 +55,28 @@ class PerchPaging
         
         if (PerchUtil::get($this->qs_param)) {
             $this->current_page = (int)PerchUtil::get($this->qs_param);
-
         }
+    }
+
+    public function set_qs_param_sort($qs_param_sort)
+    {
+        $Perch = Perch::fetch();
+
+        if ($Perch->admin && PERCH_RUNWAY) {
+            if ($qs_param_sort) $this->qs_param_sort = $qs_param_sort;
+
+            $this->sort_pattern     = '\b'.$this->qs_param_sort.'=([a-zA-Z0-9_\^]+)\b';
+            $this->sort_replacement = $this->qs_param_sort.'=%s';
+
+            list($key, $dir) = $this->get_custom_sort_options();
+            $this->sort_key = $key;
+            $this->sort_dir = $dir;
+        }
+    }
+
+    public function get_sorting_qs_param()
+    {
+        return $this->qs_param_sort;
     }
     
     public function select_sql()
@@ -172,31 +203,80 @@ class PerchPaging
     {
         return $this->current_page;
     }
+
+    public function sort_link($col)
+    {
+        $Perch       = Perch::fetch();
+        $request_uri = PerchUtil::html($Perch->get_page(1));
+        $qs_char     = '?';
+        if (strpos($request_uri, $qs_char)!==false) $qs_char = '&amp;';
+
+        if (preg_match('#'.$this->sort_pattern.'#', $request_uri, $match)) {
+            switch($match[1]) {
+                case $col:
+                    $sub = '^'.$col;
+                    break;
+
+                case '^'.$col:
+                    $sub = false;
+                    break;
+
+                default:
+                    $sub = $col;
+                    break;
+            }
+            if ($sub) {
+                return $this->sort_link_replacement(preg_replace('#'.$this->sort_pattern.'#', sprintf($this->sort_replacement, $sub), $request_uri));
+            } else {
+                if (strpos($request_uri, '?'.$this->qs_param_sort)!==false) {
+                    $char = '\?';
+                } else {
+                    $char = '&amp;';
+                }
+                return $this->sort_link_replacement(preg_replace('#'.$char . $this->sort_pattern.'#', '', $request_uri));    
+            }
+            
+        } else {
+            return $this->sort_link_replacement(rtrim($request_uri) . $qs_char. sprintf($this->sort_replacement, $col));
+        }
+    }
+
+    private function sort_link_replacement($uri)
+    {
+        $uri = preg_replace('#'.$this->page_pattern.'#', sprintf($this->page_replacement, 1), $uri);
+
+        $uri = str_replace('/&amp;', '/?', $uri);
+
+        return $uri;
+    }
+
+    public function get_custom_sort_options(PerchTemplate $Template = null)
+    {
+        $sort_arg = PerchUtil::get($this->qs_param_sort);
+        if ($sort_arg) {
+            if (strpos($sort_arg, '^') === 0) {
+                $dir = 'DESC';
+                $key = str_replace('^', '', $sort_arg);
+            } else {
+                $dir = 'ASC';
+                $key = $sort_arg;
+            }
+
+            // _title isn't indexed, so look up the indexed field from the template and use that instead 
+            if ($Template && $key == '_title') {
+                $key = $Template->find_title_field_id();
+            }
+
+
+            return [$key, $dir];
+        }
+
+        return [null, null];
+    }
     
     public function to_array($opts=false)
     {
-        $Perch = Perch::fetch();
-
-        $request_uri = PerchUtil::html($Perch->get_page(1));
-
-        #PerchUtil::debug('Pagination base url: '.$request_uri);
-        
-        if (is_array($opts)) {
-            if (isset($opts['hide-extensions']) && $opts['hide-extensions']==true) {
-                
-                if (strpos($request_uri, '.')) {
-                    $query = '';
-                    if ($qpos = strpos($request_uri, '?')) {
-                        $query = substr($request_uri, $qpos);
-                    }
-                    $parts = explode('.', $request_uri);
-                    array_pop($parts);
-                    $request_uri = implode('.', $parts);
-                    $request_uri .= $query;
-                }
-                
-            }
-        }
+        $request_uri = $this->prep_request_uri($opts);
 
         $qs_char = '?';
         if (strpos($request_uri, $qs_char)!==false) $qs_char = '&amp;';
@@ -222,6 +302,9 @@ class PerchPaging
 
         $out['prev_page_number'] = '';
         $out['next_page_number'] = '';
+
+        $out['first_page_url'] = preg_replace('#'.$this->page_pattern.'#', sprintf($this->page_replacement, 1), $request_uri);
+        $out['last_page_url']  = preg_replace('#'.$this->page_pattern.'#', sprintf($this->page_replacement, $this->number_of_pages()), $request_uri);
             
         if (!$this->is_first_page()) {
 
@@ -244,6 +327,9 @@ class PerchPaging
 
             $out['not_first_page'] = true;
             $out['prev_page_number'] = $prev_page_number;
+        
+        } else {
+            $out['first_page'] = true;
         }
         
         if (!$this->is_last_page()) {
@@ -259,10 +345,12 @@ class PerchPaging
             }
 
             $out['not_last_page'] = true;
+        
+        } else {
+            $out['last_page'] = true;
         }
 
         // Page links
-        
         if (isset($opts['page-links']) && $opts['page-links']) {
             $this->base_url = $request_uri;
             $this->qs_char = $qs_char;
@@ -281,8 +369,14 @@ class PerchPaging
                     $template = $opts['page-link-template'];
                 }
 
-                $Template = new PerchTemplate('pagination/'.$template, 'pages');
-                $out['page_links'] = $Template->render_group($page_links, true);
+                if ($template) {
+                    $Template = new PerchTemplate('pagination/'.$template, 'pages');
+                    $out['page_links'] = $Template->render_group($page_links, true);
+                } else {
+                    $out['page_links'] = $page_links;
+                }
+
+                
             }
         }    
        
@@ -345,6 +439,8 @@ class PerchPaging
         return $links;
     }
 
+    
+
     private function _create_page_link($page_number) 
     {
         $out = array();
@@ -374,6 +470,34 @@ class PerchPaging
             'url' => false,
             'page_number' => '…',
             );
+    }
+
+    private function prep_request_uri($opts=false) 
+    {
+        $Perch = Perch::fetch();
+
+        $request_uri = PerchUtil::html($Perch->get_page(1));
+
+        #PerchUtil::debug('Pagination base url: '.$request_uri);
+        
+        if (is_array($opts)) {
+            if (isset($opts['hide-extensions']) && $opts['hide-extensions']==true) {
+                
+                if (strpos($request_uri, '.')) {
+                    $query = '';
+                    if ($qpos = strpos($request_uri, '?')) {
+                        $query = substr($request_uri, $qpos);
+                    }
+                    $parts = explode('.', $request_uri);
+                    array_pop($parts);
+                    $request_uri = implode('.', $parts);
+                    $request_uri .= $query;
+                }
+                
+            }
+        }
+
+        return $request_uri;
     }
 
 }

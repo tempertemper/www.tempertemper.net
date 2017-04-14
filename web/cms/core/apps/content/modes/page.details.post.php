@@ -1,61 +1,88 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
+<?php 
+    $heading = sprintf(PerchLang::get('Editing %s Page'),' &#8216;' . PerchUtil::html($Page->pageNavText()) . '&#8217; '); 
 
-    <p>
-        <?php echo PerchLang::get('These are the details for this page. Each page has a title, and navigation text which can be different from the title. The navigation text is used in menus and is often shorter than the main page title. '); ?>
-    </p>
+    echo $HTML->title_panel([
+            'heading' => $heading,
+            'button'  => [
+                        'text' => $Lang->get('Add subpage'),
+                        'link' => '/core/apps/content/page/add/?pid='.$Page->id(),
+                        'icon' => 'core/plus',
+                        'priv' => 'content.pages.create',
+                    ]
+        ], $CurrentUser);
 
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+    $Smartbar->add_item([
+            
+            'title'  => 'Regions',
+            'link'   => '/core/apps/content/page/?id='.$Page->id(),
+            'icon'   => 'core/o-grid',
+        ]);
 
-	    <h1><?php 
-	            printf(PerchLang::get('Editing %s Page'),' &#8216;' . PerchUtil::html($Page->pageNavText()) . '&#8217; '); 
-	        ?></h1>
+    if ($Page->pagePath()!='*') {
+        $Smartbar->add_item([
+            'active' => true,
+            'title'  => 'Details',
+            'link'   => '/core/apps/content/page/details/?id='.$Page->id(),
+            'priv'   => 'content.pages.attributes',
+            'icon'   => 'core/o-toggles',
+        ]); 
 
-    <?php echo $Alert->output(); ?>
+        $Smartbar->add_item([
+                'title'  => 'Location',
+                'link'   => '/core/apps/content/page/url/?id='.$Page->id(),
+                'priv'   => 'content.pages.manage_urls',
+                'icon'   => 'core/o-signs',
+            ]); 
 
-	<ul class="smartbar">
-        <li><a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/page/?id='.PerchUtil::html($Page->id());?>"><?php echo PerchLang::get('Regions'); ?></a></li>
-        <?php
-            if ($CurrentUser->has_priv('content.pages.attributes')) {
-                echo '<li class="selected"><a href="'.PERCH_LOGINPATH . '/core/apps/content/page/details/?id='.PerchUtil::html($Page->id()).'">' . PerchLang::get('Page Details') . '</a></li>';
-            }
-        ?>
-        <?php
-			if ($CurrentUser->has_priv('content.pages.edit')) {
-	            echo '<li class="fin"><a href="'.PERCH_LOGINPATH . '/core/apps/content/page/edit/?id='.PerchUtil::html($Page->id()).'" class="icon setting">' . PerchLang::get('Page Options') . '</a></li>';
-	        }
+        $Smartbar->add_item([
+            'title'    => 'View Page',
+            'link'     => rtrim($Settings->get('siteURL')->val(), '/').$Page->pagePath(),
+            'icon'     => 'core/document',
+            'position' => 'end',
+            'new-tab'  => true,
+            'link-absolute' => true,
+            ]); 
 
-            if ($Page->pagePath() != '*') {
-                $view_page_url = rtrim($Settings->get('siteURL')->val(), '/').$Page->pagePath();
+        $Smartbar->add_item([
+            'title'    => 'Settings',
+            'link'     => '/core/apps/content/page/edit/?id='.$Page->id(),
+            'priv'     => 'content.pages.edit',
+            'icon'     => 'core/gear',
+            'position' => 'end',
+            ]);             
+    }
 
-                echo '<li class="fin">';
-                echo '<a href="'.PerchUtil::html($view_page_url).'" class="icon page assist">' . PerchLang::get('View Page') . '</a>';
-                echo '</li>';
-            }
-		?>
-    </ul>
-    
-    <h2><?php echo PerchLang::get('Details'); ?></h2>
-    <?php echo $Form->form_start('editattr'); ?>
+    echo $Smartbar->render();
 
-        <div class="field">
+    echo $Form->form_start('editattr'); ?>
+
+        <h2 class="divider"><div><?php echo PerchLang::get('Details'); ?></div></h2>
+
+        <div class="field-wrap">
         	<?php echo $Form->label('pageTitle', 'Page title'); ?>
+            <div class="form-entry">
         	<?php echo $Form->text('pageTitle', $Form->get($details, 'pageTitle')); ?>
+            </div>
         </div>
 
-        <div class="field">
+        <div class="field-wrap">
             <?php echo $Form->label('pageNavText', 'Navigation text'); ?>
+            <div class="form-entry">
             <?php echo $Form->text('pageNavText', $Form->get($details, 'pageNavText')); ?>
+            </div>
         </div>
         <?php
             echo $Form->fields_from_template($Template, $details, array('pageTitle', 'pageNavText'));
         ?>
-
-        <p class="submit">
+        <div class="submit-bar">
             <?php echo $Form->submit('btnsubmit', 'Submit', 'button'); ?>
-        </p>
+        </div>
         
-    <?php echo $Form->form_end(); ?>
+    <?php echo $Form->form_end(); 
 
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+
+
+        if (isset($created) && $created!==false) {
+            echo '<img src="'.PerchUtil::html($Page->pagePath()).'" width="1" height="1" class="off-screen">';
+        }

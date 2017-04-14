@@ -8,7 +8,7 @@
         foreach($app_settings as $id=>$setting) {
             if ($setting['app_id']!=$prev_app_id) {
                 $app = $Perch->get_app($setting['app_id']);
-                if (PerchUtil::count($app)) echo '<h2 id="'.PerchUtil::html(($app['id']=='content'?'perch_content':$app['id'])).'">'.PerchUtil::html($app['label']).'</h2>';
+                if (PerchUtil::count($app)) echo '<h2 id="'.PerchUtil::html(($app['id']=='content'?'perch_content':$app['id'])).'" class="divider"><div>'.PerchUtil::html($app['label']).'</div></h2>';
             
                 $API   = new PerchAPI(1, $app['id']);
                 $Lang  = $API->get('Lang');
@@ -23,8 +23,9 @@
                 }
             }
 ?>
-        <div class="field <?php echo $Form->error($id, false); echo $c; ?>">
+        <div class="field-wrap <?php echo $Form->error($id, false); echo $c; if ($setting['type']=='checkbox') echo ' checkbox-single'; ?>">
             <?php echo $Form->label($id, ($app['id']=='content' ? PerchLang::get($setting['label']) : $Lang->get($setting['label'])), false, false, false); ?>
+            <div class="form-entry">
             <?php 
             
                 switch($setting['type']) {
@@ -32,7 +33,7 @@
                         echo $Form->text($id, $Form->get($details, $id, $setting['default'])); 
                         break;
                     case 'checkbox':
-                        echo $Form->checkbox($id, true, $Form->get($details, $id)); 
+                        echo $Form->checkbox($id, '1', $Form->get($details, $id)); 
                         break;
                     case 'textarea':
                         echo $Form->textarea($id, $Form->get($details, $id, $setting['default'])); 
@@ -62,6 +63,7 @@
                 
                 $prev_app_id = $setting['app_id'];
             ?>
+            </div>
         </div>
 
 <?php            

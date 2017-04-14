@@ -10,18 +10,30 @@ class PerchContent_PageTemplates extends PerchFactory
     
     public function all($Paging=false)
     {
+        $sort_val = null;
+        $sort_dir = null;
+
         if ($Paging && $Paging->enabled()) {
             $sql = $Paging->select_sql();
+            list($sort_val, $sort_dir) = $Paging->get_custom_sort_options();
         }else{
             $sql = 'SELECT';
         }
         
         $sql .= ' *, (LENGTH(templatePath) - LENGTH(REPLACE (templatePath, "/", "")))  AS depth 
                 FROM ' . $this->table;
-                
-        if (isset($this->default_sort_column)) {
-            $sql .= ' ORDER BY depth, ' . $this->default_sort_column . ' '.$this->default_sort_direction;
+
+
+        if ($sort_val) {
+            $sql .= ' ORDER BY '.$sort_val.' '.$sort_dir;
+        } else {
+            if (isset($this->default_sort_column)) {
+                $sql .= ' ORDER BY depth, ' . $this->default_sort_column . ' '.$this->default_sort_direction;
+            }
         }
+
+                
+        
         
         if ($Paging && $Paging->enabled()) {
             $sql .=  ' '.$Paging->limit_sql();

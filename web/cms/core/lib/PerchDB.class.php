@@ -6,7 +6,7 @@ class PerchDB {
 	
 	static public $driver = '';
 
-	public static function fetch()
+	public static function fetch($config=null)
 	{	    
         if (!isset(self::$instance)) {
 
@@ -17,7 +17,7 @@ class PerchDB {
         		$c = 'PerchDB_MySQLi';
         		PerchDB::$driver = 'MySQLi';
         	}
-            self::$instance = new $c;
+            self::$instance = new $c($config);
         }
 
         return self::$instance;

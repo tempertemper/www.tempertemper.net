@@ -21,7 +21,7 @@ class PerchUsers extends PerchFactory
 	            $str = PERCH_AUTH_PLUGIN.'_auth_plugin';
 
 	            if (!class_exists($str)) {
-	                require PERCH_PATH.DIRECTORY_SEPARATOR.'plugins'.DIRECTORY_SEPARATOR.'auth'.DIRECTORY_SEPARATOR.PERCH_AUTH_PLUGIN.DIRECTORY_SEPARATOR.'auth.php';
+                    require PerchUtil::file_path(PERCH_PATH.'/addons/plugins/auth/'.PERCH_DB_PREFIX.'/auth.php');
 	            }
 
 	            $AuthenticatedUser = new $str(array());
@@ -128,8 +128,12 @@ class PerchUsers extends PerchFactory
 
     public function get_grouped_listing($Paging=false)
     {
+        $sort_val = null;
+        $sort_dir = null;
+
         if ($Paging && $Paging->enabled()) {
             $sql = $Paging->select_sql();
+            list($sort_val, $sort_dir) = $Paging->get_custom_sort_options();
         }else{
             $sql = 'SELECT';
         }
@@ -137,8 +141,13 @@ class PerchUsers extends PerchFactory
         $sql .= ' u.*, ur.*
                 FROM ' . $this->table .' u, '.PERCH_DB_PREFIX.'user_roles ur
                 WHERE u.roleID=ur.roleID
-                ORDER BY roleMasterAdmin DESC, userMasterAdmin DESC, roleTitle, userFamilyName ASC, userGivenName ASC';
+                ORDER BY ';
 
+        if ($sort_val) {
+            $sql .= $sort_val.' '.$sort_dir;
+        } else {
+            $sql .= 'roleMasterAdmin DESC, userMasterAdmin DESC, roleTitle, userFamilyName ASC, userGivenName ASC';
+        }
 
         if ($Paging && $Paging->enabled()) {
             $sql .=  ' '.$Paging->limit_sql();

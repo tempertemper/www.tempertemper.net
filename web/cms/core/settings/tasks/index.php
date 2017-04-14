@@ -15,11 +15,10 @@
     $Alert = new PerchAlert;
     
     include(__DIR__ . '/../modes/tasks.pre.php');
+    include(__DIR__ . '/../modes/_subnav.php');
     
     include(PERCH_CORE . '/inc/top.php');
 
     include(__DIR__ . '/../modes/tasks.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-
-?>

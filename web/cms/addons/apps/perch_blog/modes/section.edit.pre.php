@@ -2,7 +2,6 @@
 
     $Sections = new PerchBlog_Sections($API);
 
-    $HTML = $API->get('HTML');
     $Form = $API->get('Form');
 
     $message = false;

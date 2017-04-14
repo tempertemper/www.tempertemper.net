@@ -1,0 +1,17 @@
+<div id="{{ id }}" aria-hidden="true" class="dialog" data-single-use="true">
+  <div tabindex="-1" class="dialog-overlay" data-a11y-dialog-hide></div>
+  <div role="dialog" aria-labelledby="{{ id }}-title" class="dialog-content role-confirm">
+    <div role="document" class="dialog-body">
+      <h1 id="{{ id }}-title">{{ title }}</h1>
+      
+      <div class="confirm-dialog-buttons">
+        <a data-result="true" class="button button-simple action-alert" href="#">{{ confirm_button_text }}</a> {{ Lang "or" }}
+        <a href="#" data-a11y-dialog-hide tabindex="0">{{ cancel_button_text }}</a>
+      </div>
+
+    </div>
+    <button type="button" data-a11y-dialog-hide aria-label="{{ Lang "Close this dialog window" }}" class="dialog-close">
+        {{ icon 'core/cancel' 24 }} 
+    </button>
+  </div>
+</div>

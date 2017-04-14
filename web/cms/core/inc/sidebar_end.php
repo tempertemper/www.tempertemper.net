@@ -1,4 +1,2 @@
-	</div>
-</div>
 <?php
-	flush();
+	ob_clean();

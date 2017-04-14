@@ -13,7 +13,7 @@
     include(__DIR__.'/../PerchAssets_Tag.class.php');
 
     $Paging = new PerchPaging();
-    $Paging->set_per_page(32);
+    $Paging->set_per_page(64);
 
     $Assets = new PerchAssets_Assets;
 
@@ -38,6 +38,10 @@
 
     if (isset($_GET['date']) && $_GET['date']!='') {
         $filters['date'] = $_GET['date'];
+    }
+
+    if (isset($_GET['tag']) && $_GET['tag']!='') {
+        $filters['tag'] = $_GET['tag'];
     }
 
 

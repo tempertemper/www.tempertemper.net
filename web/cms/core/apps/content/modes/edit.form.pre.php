@@ -1,8 +1,15 @@
 <?php
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     $place_token_on_main = false;
 
+    $lock_key = 'region:'.$Region->id();
+
     // test to see if image folder is writable
-    $image_folder_writable = is_writable(PERCH_RESFILEPATH);
+    $DefaultBucket = PerchResourceBuckets::get();
+    $image_folder_writable = $DefaultBucket->ready_to_write();
 
     // set the current user
     $Region->set_current_user($CurrentUser->id());
@@ -62,12 +69,11 @@
 
                 $Alert->set('success', PerchLang::get('Your most recent change has been reverted.'));
             }else{
-                $Alert->set('error', PerchLang::get('There was nothing to undo.'));
+                $Alert->set('alert', PerchLang::get('There was nothing to undo.'));
             }
 
         }
     }
-
 
 
 
@@ -214,7 +220,8 @@
             }
 
             // Clear values from Post (for reordering of blocks etc)
-            $_POST = array();
+            $_POST = array();// Slowly refactoring this. Baby steps.
+            PerchRequest::reset_post();
 
 
             if (isset($item_id) && $item_id) {
@@ -240,7 +247,7 @@
     }
 
     if (!$image_folder_writable) {
-        $Alert->set('error', PerchLang::get('Your resources folder is not writable. Make this folder (') . PerchUtil::html(PERCH_RESPATH) . PerchLang::get(') writable if you want to upload files and images.'));
+        $Alert->set('error', PerchLang::get('Your resources folder is not writable. Make this folder (') . PerchUtil::html($DefaultBucket->get_file_path()) . PerchLang::get(') writable if you want to upload files and images.'));
     }
 
     // is it a draft?
@@ -270,7 +277,7 @@
             }
 
 
-            $Alert->set('draft', PerchLang::get('You are editing a draft.') . ' <a href="'.PerchUtil::html($preview_url).'" class="action draft-preview">'.PerchLang::get('Preview').'</a>');
+            $Alert->set('draft', PerchLang::get('You are editing a draft.') . ' <a href="'.PerchUtil::html($preview_url).'" class="button button-small action-warning draft-preview viewext">'.PerchLang::get('Preview').'</a>');
         }
 
 
@@ -283,11 +290,17 @@
         $Alert->set('success', PerchLang::get('Content successfully updated and a new item added.'));
     }
 
-    //$Perch->add_javascript(PERCH_LOGINPATH.'/core/assets/js/repeaters.js?v='.$Perch->version);
-    //$Perch->add_css(PERCH_LOGINPATH.'/core/assets/css/repeaters.css?v='.$Perch->version);
-
-
     if (PerchUtil::count($details)) {
         $details = PerchContent_Util::flatten_details($details);
+    }
+
+    if ($Template && $CurrentUser->has_priv('templates.validate')) { // primary user only
+        $Validator = new PerchTemplateValidator($Template, $Lang);
+        $messages = $Validator->validate();
+        if (PerchUtil::count($messages)) {
+            foreach($messages as $msg) {
+                $Alert->set($msg['status'], $msg['message']);
+            }
+        }
     }
 

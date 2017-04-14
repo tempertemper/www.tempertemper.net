@@ -1,4 +1,7 @@
 <?php
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
     
     $Regions = new PerchContent_Regions;
     $Region  = false;
@@ -32,6 +35,7 @@
 
         if ($CurrentUser->has_priv('content.regions.templates') && isset($_POST['regionTemplate'])) {
             $data['regionTemplate'] = $_POST['regionTemplate'];
+            $data['regionKey'] = $_POST['regionKey'];
         }
         
         if (!isset($data['regionMultiple'])) {
@@ -61,8 +65,6 @@
     	}else{
     	    $data['regionEditRoles'] = '';
     	}
-    	
-    	
     	
         $Region->update($data);
         
@@ -108,6 +110,10 @@
     	if (!isset($data['edit_mode'])) {
     	    $data['edit_mode'] = 'listdetail';
     	}
+
+        if (!isset($data['column_ids'])) {
+            $data['column_ids'] = [];
+        }
     	
     	$Region->set_options($data);
     	

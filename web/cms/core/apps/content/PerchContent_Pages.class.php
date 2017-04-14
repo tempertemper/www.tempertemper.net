@@ -274,6 +274,8 @@ class PerchContent_Pages extends PerchFactory
      */
     public function find_by_path($path)
     {
+        if (!$path) return null;
+
         if (isset(self::$path_cache[$path])) return self::$path_cache[$path];
 
         $sql = 'SELECT * FROM '.$this->table.' WHERE pagePath='.$this->db->pdb($path).' LIMIT 1';
@@ -317,6 +319,7 @@ class PerchContent_Pages extends PerchFactory
         $page['pageTemplate']          = '';
         $page['templateID']            = '0';
         $page['pageSubpageTemplates']  = '';
+        $page['pageCollections']       = '';
 
         return $this->return_instance($page);
 
@@ -576,9 +579,9 @@ class PerchContent_Pages extends PerchFactory
                             $Page =  $this->create($data);
 
 
-                            if (!is_object($Page)) {
-                                PerchUtil::output_debug();
-                            }
+                            #if (!is_object($Page)) {
+                            #    PerchUtil::output_debug();
+                            #}
 
                             // Set its position in the tree
                             $Page->update_tree_position($parentPageID);
@@ -1045,7 +1048,7 @@ class PerchContent_Pages extends PerchFactory
         }
 
         if ($include_domain) {
-            $current_page = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'].$current_page;
+            $current_page = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']!='off') ? 's' : '') . '://' . $_SERVER['HTTP_HOST'].$current_page;
         }
 
 
@@ -1591,12 +1594,51 @@ class PerchContent_Pages extends PerchFactory
                     );
 
             $ErrorsPage = $this->create_without_file($data);
+            $TopErrorsPage = $ErrorsPage;
 
             $data = array(
                     'pageTitle'      => '404',
                     'pageNavText'    => '404',
                     'file_name'      => '/errors/404',
                     'pageParentID'   => $ErrorsPage->id(),
+                    'templateID'     => $ErrorTemplate->id(),
+                    'pageNew'        => 1,
+                    'pageCreatorID'  => $CurrentUser->id(),
+                    'pageModified'   => date('Y-m-d H:i:s'),
+                    'pageAttributes' => '',
+                    'pageTemplate'   => $ErrorTemplate->templatePath(),
+                    'pageHidden'     => '1',
+                    );
+
+            $ErrorsPage = $this->create_without_file($data);
+        }
+
+        $ErrorTemplate = $PageTemplates->get_one_by('templatePath', 'errors/login-required.php');
+        if ($ErrorTemplate) {
+            $data = array(
+                    'pageTitle'      => 'Login required',
+                    'pageNavText'    => 'Login required',
+                    'file_name'      => '/errors/login-required',
+                    'pageParentID'   => $TopErrorsPage->id(),
+                    'templateID'     => $ErrorTemplate->id(),
+                    'pageNew'        => 1,
+                    'pageCreatorID'  => $CurrentUser->id(),
+                    'pageModified'   => date('Y-m-d H:i:s'),
+                    'pageAttributes' => '',
+                    'pageTemplate'   => $ErrorTemplate->templatePath(),
+                    'pageHidden'     => '1',
+                    );
+
+            $ErrorsPage = $this->create_without_file($data);
+        }
+
+        $ErrorTemplate = $PageTemplates->get_one_by('templatePath', 'errors/site-offline.php');
+        if ($ErrorTemplate) {
+            $data = array(
+                    'pageTitle'      => 'Site offline',
+                    'pageNavText'    => 'Site offline',
+                    'file_name'      => '/errors/site-offline',
+                    'pageParentID'   => $TopErrorsPage->id(),
                     'templateID'     => $ErrorTemplate->id(),
                     'pageNew'        => 1,
                     'pageCreatorID'  => $CurrentUser->id(),

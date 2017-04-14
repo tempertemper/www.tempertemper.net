@@ -19,6 +19,17 @@ class PerchResourceBucket
 		$this->file_path = $details['file_path'];
 	}
 
+	public function to_array()
+	{
+		return [
+			'name'      => $this->name,
+			'type'      => $this->type,
+			'web_path'  => $this->web_path,
+			'file_path' => $this->file_path,
+			'remote'    => $this->is_remote(),
+		];
+	}
+
 	public function get_name()
 	{
 		return $this->name;
@@ -42,6 +53,11 @@ class PerchResourceBucket
 	public function is_remote()
 	{
 		return $this->type!='file';
+	}
+
+	public function get_web_path_for_file($file)
+	{
+		return $this->get_web_path() .'/'.$file;
 	}
 
 	/**
@@ -119,20 +135,6 @@ class PerchResourceBucket
 			PerchUtil::debug($e->getMessage(), 'error');
 		}
 		return $a;
-	}
-
-	public function old_get_files_with_prefix($prefix, $subpath=false)
-	{
-		$out = array();
-		$files = PerchUtil::get_dir_contents($this->get_file_path().$subpath);
-		if (PerchUtil::count($files)) {
-			foreach($files as $file) {
-				if (substr($file, 0, strlen($prefix))==$prefix) {
-					$out[] = $file;
-				}
-			}
-		}
-		return $out;
 	}
 
 }

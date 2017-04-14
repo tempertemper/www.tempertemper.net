@@ -1,22 +1,12 @@
 <perch:before>
-<div class="results primary">
-    <ul>
+    <ul class="search-results">
 </perch:before>
-
         <li class="<perch:search id="perch_item_odd" />">
             <h2><a href="<perch:search id="result_url" />"><perch:search id="result_title" /></a></h2>
+            <perch:if exists="result_thumb"><img src="<perch:search id="result_thumb" />"></perch:if>
             <perch:if exists="result_excerpt"><p class="excerpt">&hellip;<perch:search id="result_excerpt" encode="false" />&hellip;</p></perch:if>
+        	<p class="source"><perch:search id="result_display_source" /></p>
         </li>
-
 <perch:after>
     </ul>
-</div>
 </perch:after>
-
-<perch:noresults>
-<div class="results">
-    <perch:if exists="search_key">
-        <p>Sorry, there are no results for &#8220;<perch:search id="search_key" />&#8221;.</p>
-    </perch:if>
-</div>
-</perch:noresults>

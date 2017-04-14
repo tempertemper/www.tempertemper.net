@@ -19,7 +19,7 @@
     
         
     include($app_path.'/modes/region.reorder.pre.php');
-    
+    include($app_path.'/modes/_subnav.php');
     include(PERCH_CORE . '/inc/top.php');
 
     include($app_path.'/modes/region.reorder.post.php');

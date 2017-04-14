@@ -1,38 +1,86 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
+<?php 
+
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Importing into Collection'),
+        ]);
+
+
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    // Breadcrumb
+    $links = [];
+
+    $links[] = [
+        'title' => 'Collections',
+        'link'  => '/core/apps/content/manage/collections/',
+    ];
+
+    $links[] = [
+        'title' => $Collection->collectionKey(),
+        'translate' => false,
+        'link'  => '/core/apps/content/collections/?id='.$Collection->id(),
+    ];
+
+    $Smartbar->add_item([
+            'active' => false,
+            'type' => 'breadcrumb',
+            'links' => $links,
+        ]);
     
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include (PERCH_PATH.'/core/apps/content/modes/_subnav.php'); ?>
+    // Options button
+    $Smartbar->add_item([
+            'active' => false,
+            'title'  => 'Options',
+            'link'   => '/core/apps/content/collections/options/?id='.$Collection->id(),
+            'priv'   => 'content.collections.options',
+            'icon'   => 'core/o-toggles',
+        ]);
 
 
-	    <h1><?php echo PerchLang::get('Importing into Collection'); ?></h1>
-	   <?php echo $Alert->output(); ?>
+    // Revision history
+    /*
+    $Smartbar->add_item([
+        'active' => false,
+        'title'  => 'Revision History',
+        'link'   => '/core/apps/content/collections/revisions/?id='.$Collection->id(),
+        'priv'   => 'content.regions.options',
+        'icon'   => 'core/o-backup',
+        'position' => 'end',
+    ]);
+    */
 
-		<ul class="smartbar">
-            <li>
-				<a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/collections/?id='.PerchUtil::html($id);?>"><?php echo PerchUtil::html($Collection->collectionKey()); ?></a>
-			</li>
-			<?php
-				if ($CurrentUser->has_priv('content.regions.options')) {
-		            echo '<li class=""><a href="'.PERCH_LOGINPATH . '/core/apps/content/collections/options/?id='.PerchUtil::html($id).'">' . PerchLang::get('Options') . '</a></li>';
-		        }
 
-                echo '<li class="fin">';
-                echo '<a href="'.PERCH_LOGINPATH . '/core/apps/content/reorder/collection/?id='.PerchUtil::html($Collection->id()).'" class="icon reorder">'.PerchLang::get('Reorder').'</a>';
-                echo '</li>';
-                echo '<li class="selected fin"><a class="icon import" href="'.PERCH_LOGINPATH . '/core/apps/content/collections/import/?id='.PerchUtil::html($Collection->id()).'">'.PerchLang::get('Import').'</a></li>';
-			?>
-        </ul>
-		
+    // Import button
+    $Smartbar->add_item([
+            'active'   => true,
+            'title'    => 'Import',
+            'link'     => '/core/apps/content/collections/import/?id='.$Collection->id(),
+            'position' => 'end',
+            'icon'     => 'core/inbox-download',
+        ]);
 
-    
+
+    // Reorder button    
+    $Smartbar->add_item([
+            'active'   => false,
+            'title'    => 'Reorder',
+            'link'     => '/core/apps/content/reorder/collection/?id='.$Collection->id(),
+            'position' => 'end',
+            'icon'     => 'core/menu',
+        ]);
+
+
+
+
+    echo $Smartbar->render();
+
+ ?>     
+    <form method="post" action="<?php echo PerchUtil::html($Form->action(), true); ?>" class="form-simple">
         
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="magnetic-save-bar">
-        
-        <h2><?php echo PerchLang::get('Import'); ?></h2>
+        <h2 class="divider"><div><?php echo PerchLang::get('Import'); ?></div></h2>
         
 
-        <div class="field">
+        <div class="field-wrap">
             <?php echo $Form->label('pageID', 'Page'); ?>
             <?php 
                 $opts = array();
@@ -49,7 +97,7 @@
         </div>
 
         <?php if ($pageID) { ?>
-        <div class="field last">
+        <div class="field-wrap">
             <?php echo $Form->label('regionID', 'Region'); ?>
             <?php 
                 $opts = array();
@@ -72,7 +120,7 @@
 
             echo $HTML->heading2('About the source');
 
-            echo '<div class="info">';
+            echo '<div class="instructions">';
             echo $HTML->para('The source region %s uses template %s with the these fields:', $Region->regionKey(), '<code>'.$Region->regionTemplate().'</code>');
 
             $Template = new PerchTemplate('content/'.$Region->regionTemplate(), 'content');
@@ -81,7 +129,7 @@
 
             echo $HTML->heading2('About the target');
 
-            echo '<div class="info">';
+            echo '<div class="instructions">';
             echo $HTML->para('The target collection %s uses template %s with the these fields:', $Collection->collectionKey(), '<code>'.$Collection->collectionTemplate().'</code>');
 
             $Template = new PerchTemplate('content/'.$Collection->collectionTemplate(), 'content');
@@ -100,7 +148,8 @@
         ?>
 
 
-        <p class="submit">
+        <div class="submit-bar">
+            <div class="submit-bar-actions">
             <?php 
                 $label = 'Next';
 
@@ -112,7 +161,6 @@
                 echo $Form->submit('btnsubmit', $label, 'button'), ' ', PerchLang::get('or'), ' <a href="',PERCH_LOGINPATH . '/core/apps/content/collections/edit/?id='.PerchUtil::html($id).'', '">', PerchLang::get('Cancel'), '</a>'; 
 
             ?>
-        </p>
+            </div>
+        </div>
     </form>
-    
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>

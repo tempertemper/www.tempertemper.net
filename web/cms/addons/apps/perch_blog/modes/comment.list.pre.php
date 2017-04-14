@@ -1,14 +1,7 @@
 <?php
     
-    $HTML = $API->get('HTML');
-    
-    
-    $Paging = $API->get('Paging');
-    $Paging->set_per_page(20);
-    
     $Comments = new PerchBlog_Comments($API);
     $Posts = new PerchBlog_Posts($API);
-
 
 	$Form = $API->get('Form');
 
@@ -41,8 +34,6 @@
         }
 
     }
-
-
 	
 	$pending_comment_count = $Comments->get_count('PENDING');
 
@@ -53,7 +44,8 @@
     if (isset($_GET['status']) && $_GET['status'] != '') {
         $status = $_GET['status'];
     }
+
+    PerchRequest::overwrite('get', 'status', $status);
     
     $comments = $Comments->get_by_status($status, $Paging);
  
-?>

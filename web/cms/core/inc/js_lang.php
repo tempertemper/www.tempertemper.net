@@ -5,7 +5,6 @@
 	include(PERCH_CORE . '/inc/loader.php');
 	$Perch  = PerchAdmin::fetch();
 	$strings = array(
-		'Apps',
 		'Save',
 		'Undo',
 		'Image title',
@@ -40,6 +39,7 @@
 		'Yes',
 		'No',
 		'Bucket',
+		'%s is also editing here'
 	);
 	echo "Perch.Lang.init({\n\t";
 

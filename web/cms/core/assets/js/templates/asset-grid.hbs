@@ -1,0 +1,21 @@
+<div class="asset-grid js">
+{{#each assets}}
+
+	<div class="asset-selectable grid-asset asset-{{type}} {{#if has_thumb}}asset-display-square{{else}}asset-display-thumbless{{/if}}" data-id="{{id}}" tabindex="0">
+		{{#if has_thumb }}
+		  <img class="thumb {{orientation}}" src="{{thumburl}}" alt="{{title}}" data-width="{{thumbwidth}}" data-height="{{thumbheight}}" />
+		{{ else }}
+		  {{ icon iicon 64 }}
+		{{/if}}
+		<div class="asset-meta with-thumb"><span class="title">{{title}}</span></div>
+		<span class="asset-ratio asset-{{orientation}}"></span>
+	</div>
+
+
+
+{{else}}
+	<div role="alert" class="notification notification-info">
+		{{Lang 'No matching assets found'}}
+	</div>
+{{/each}}
+</div>

@@ -20,7 +20,7 @@
         include(__DIR__ . '/../modes/diagnostics.pre.php');
     }
     
-    include(__DIR__ . '/../modes/diagnostics.pre.php');
+    include(__DIR__ . '/../modes/_subnav.php');
     
     include(PERCH_CORE . '/inc/top.php');
 
@@ -31,5 +31,3 @@
      }
 
     include(PERCH_CORE . '/inc/btm.php');
-
-?>

@@ -1,152 +1,140 @@
 <?php
-    # Side panel
-    echo $HTML->side_panel_start();
 
-    echo $HTML->para('This page lists your blog posts. You can filter them by category or status.');
+    echo $HTML->title_panel([
+            'heading' => $Lang->get('Listing posts'),
+            'button'  => [
+                            'text' => $Lang->get('Add post'),
+                            'link' => $API->app_nav().'/edit/'.(PERCH_RUNWAY ? '?blog='.$Blog->id() : ''),
+                            'icon' => 'core/plus',
+                            'priv' => 'perch_blog.post.create',
+                        ]
+            ], $CurrentUser);
 
-    if ($CurrentUser->has_priv('perch_blog.import')) {
-        echo $HTML->heading3('Import');
-        echo $HTML->para('If moving from a different blog system, you may be able to %simport your posts%s', '<a href="'.$API->app_path().'/import/">', '.</a>');
+
+
+
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    if (PerchUtil::count($blogs)) {
+        foreach($blogs as $Item) {
+
+            $Smartbar->add_item([
+                'active' => ($Item->id()==$Blog->id()),
+                'title' => $Item->blogTitle(),
+                'link'  => $API->app_nav().'/?blog='.$Item->blogSlug(),
+                'icon'  => 'blocks/newspaper',
+            ]);
+
+        }
     }
 
-    echo $HTML->side_panel_end();
+    if (PerchUtil::count($categories)) {
 
+        $category_options = [];
 
-    # Main panel
-    echo $HTML->main_panel_start();
-
-	include('_subnav.php');
-
-
-    if ($CurrentUser->has_priv('perch_blog.post.create')) echo '<a class="add button" href="'.$HTML->encode($API->app_path().'/edit/'.(PERCH_RUNWAY ? '?blog='.$Blog->id() : '')).'">'.$Lang->get('Add Post').'</a>';
-
-	# Title panel
-    echo $HTML->heading1('Listing Posts');
-
-    if (isset($message)) echo $message;
-
-
-    /* ----------------------------------------- SMART BAR ----------------------------------------- */
-    //
-    ?>
-
-
-    <ul class="smartbar">
-        <?php
-            if (PerchUtil::count($blogs)) {
-                foreach($blogs as $Item) {
-                    if ($Item->id()==$Blog->id()) {
-                        echo '<li class="selected">';
-                    }else{
-                        echo '<li>';
-                    }
-                    echo '<a href="'.PerchUtil::html($API->app_path()).'?blog='.$Item->blogSlug().'">'.$Item->blogTitle().'</a></li>';
-                }
-            }
-        ?>
-        <li class="new <?php echo ($filter=='status'&&$status=='draft'?'selected':''); ?>"><a href="<?php echo PerchUtil::html($API->app_path().'?status=draft&blog='.$Blog->blogSlug()); ?>"><?php echo $Lang->get('Drafts'); ?></a></li>
-        <?php
-
-            if ($filter == 'status' && $status == 'draft') {
-                $Alert->set('filter', PerchLang::get('You are viewing all draft posts.'). ' <a href="'.$API->app_path().'" class="action">'.$Lang->get('Clear Filter').'</a>');
-            }
-
-            if (PerchUtil::count($categories)) {
-                $items = array();
-                foreach($categories as $Category) {
-                    $items[] = array(
-                            'arg'   => 'category',
-                            'val'   => $Category->catPath(),
-                            'label' => $Category->catTitle(),
-                            'path'  => $API->app_path()
-                        );
-                }
-
-                echo PerchUtil::smartbar_filter('cf', 'By Category', 'Filtered by ‘%s’', $items, 'folder', $Alert, "You are viewing posts in ‘%s’", $API->app_path());
-            }
-
-
-            if (PerchUtil::count($sections) > 1) {
-                $items = array();
-                foreach($sections as $Section) {
-                    $items[] = array(
-                            'arg'   => 'section',
-                            'val'   => $Section->sectionSlug(),
-                            'label' => $Section->sectionTitle(),
-                            'path'  => $API->app_path()
-                        );
-                }
-
-                echo PerchUtil::smartbar_filter('sf', 'By Section', 'Filtered by ‘%s’', $items, 'folder', $Alert, "You are viewing posts in ‘%s’", $API->app_path());
-            }
-
-
-        ?>
-    </ul>
-
-    <?php
-        if (!PerchUtil::count($posts)) {
-            $Alert->set('notice', $Lang->get('There are no posts yet.'));
+        foreach($categories as $Category) {
+            $category_options[] = [
+                            'value' => $Category->catPath(),
+                            'title' => $Category->catTitle(),
+                        ];
         }
 
-    echo $Alert->output();
-
-    /* ----------------------------------------- /SMART BAR ----------------------------------------- */
-
-
-    if (PerchUtil::count($posts)) {
-?>
-    <table class="d">
-        <thead>
-            <tr>
-                <th class="first"><?php echo $Lang->get('Post'); ?></th>
-                <th><?php echo $Lang->get('Status'); ?></th>
-                <th><?php echo $Lang->get('Date'); ?></th>
-                <?php if ($CurrentUser->has_priv('perch_blog.post.delete')) { ?>
-                <th class="action last"></th>
-                <?php } // if delete ?>
-            </tr>
-        </thead>
-        <tbody>
-<?php
-    foreach($posts as $Post) {
-?>
-            <tr>
-                <td class="primary">
-                    <a href="<?php echo $HTML->encode($API->app_path()); ?>/edit/?id=<?php echo $HTML->encode(urlencode($Post->id())); ?>">
-                    <?php echo $HTML->encode($Post->postTitle()); ?></a>
-                </td>
-                <td>
-                <?php
-                    if (strtotime($Post->postDateTime()) > time() && $Post->postStatus()=='Published') {
-                        echo $Lang->get('Will publish on date');
-                    }else{
-                        if ($Post->postStatus()=='Draft') {
-                            echo '<span class="special">'.$HTML->encode($Lang->get($Post->postStatus())).'</span>';
-                        }else{
-                            echo $HTML->encode($Lang->get($Post->postStatus()));
-                        }
-
-                    }
-                ?>
-                </td>
-                <td><?php echo $HTML->encode(strftime(PERCH_DATE_LONG.', '.PERCH_TIME_SHORT, strtotime($Post->postDateTime()))); ?></td>
-                <?php if ($CurrentUser->has_priv('perch_blog.post.delete')) { ?>
-                <td><a href="<?php echo $HTML->encode($API->app_path()); ?>/delete/?id=<?php echo $HTML->encode(urlencode($Post->id())); ?>" class="delete inline-delete" data-msg="<?php echo $Lang->get('Delete this post?'); ?>"><?php echo $Lang->get('Delete'); ?></a></td>
-                <?php } // if delete ?>
-            </tr>
-
-<?php
+        $Smartbar->add_item([
+                    'id'      => 'cf',
+                    'title'   => $Lang->get('By Category'),
+                    'icon'    => 'core/o-connect',
+                    'active'  => PerchRequest::get('category'),
+                    'type'    => 'filter',
+                    'arg'     => 'category',
+                    'persist' => ['blog'],
+                    'options' => $category_options,
+                    'actions' => [
+                                [
+                                    'title'  => 'Clear',
+                                    'remove' => ['category', 'show-filter'],
+                                    'icon'   => 'core/cancel',
+                                ]
+                            ],
+                    ]);
     }
-?>
-        </tbody>
-    </table>
-<?php
-        if ($Paging->enabled()) {
-            echo $HTML->paging($Paging);
+
+    if (PerchUtil::count($sections) > 1) {
+
+        $section_options = [];
+
+        foreach($sections as $Section) {
+            $section_options[] = [
+                            'value' => $Section->sectionSlug(),
+                            'title' => $Section->sectionTitle(),
+                        ];
         }
 
+        $Smartbar->add_item([
+                    'id'      => 'sf',
+                    'title'   => $Lang->get('By Section'),
+                    'icon'    => 'core/grid-big',
+                    'active'  => PerchRequest::get('section'),
+                    'type'    => 'filter',
+                    'arg'     => 'section',
+                    'persist' => ['blog'],
+                    'options' => $section_options,
+                    'actions' => [
+                                [
+                                    'title'  => 'Clear',
+                                    'remove' => ['section', 'show-filter'],
+                                    'icon'   => 'core/cancel',
+                                ]
+                            ],
+                    ]);
+    }
 
-    } // if pages
+    $Smartbar->add_item([
+                'active' => false,
+                'title' => $Lang->get('Import'),
+                'link'  => $API->app_nav().'/import/',
+                'icon'  => 'core/inbox-download',
+                'position' => 'end',
+            ]);
 
-    echo $HTML->main_panel_end();
+
+    echo $Smartbar->render();
+
+    $Listing = new PerchAdminListing($CurrentUser, $HTML, $Lang, $Paging);
+    $Listing->add_col([
+            'title'     => 'Post',
+            'value'     => 'postTitle',
+            'sort'      => 'postTitle',
+            'edit_link' => 'edit',
+        ]);
+
+    $Listing->add_col([
+            'title'     => 'Status',
+            'sort'      => 'postStatus',
+            'value'     => function($Post) use ($Lang, $HTML) {
+                if (strtotime($Post->postDateTime()) > time() && $Post->postStatus()=='Published') {
+                        return $Lang->get('Will publish on date');
+                }else{
+                    if ($Post->postStatus()=='Draft') {
+                        return $HTML->encode($Lang->get($Post->postStatus()));
+                    }else{
+                        return $HTML->encode($Lang->get($Post->postStatus()));
+                    }
+                }
+            },
+        ]);
+
+    $Listing->add_col([
+            'title'     => 'Date',
+            'sort'      => 'postDateTime',
+            'value'     => function($Post) {
+                return strftime(PERCH_DATE_LONG.', '.PERCH_TIME_SHORT, strtotime($Post->postDateTime()));
+            },
+        ]);
+
+    $Listing->add_delete_action([
+            'priv'   => 'perch_blog.post.delete',
+            'inline' => true,
+            'path'   => 'delete',
+        ]);
+
+    echo $Listing->render($posts);

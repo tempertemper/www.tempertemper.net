@@ -1,26 +1,32 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-    <p><?php echo PerchLang::get('You may update the user’s personal details, email address and password here. If you wish to send password recovery instructions by email, just check the box.'); ?></p>
+<?php
+	    echo $HTML->title_panel([
+        	'heading' => $Lang->get('Editing %s’s User Account', $details['userGivenName'].' '.$details['userFamilyName']),
+        ]);
 
-	
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
+            $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+		    $Smartbar->add_item([
+		        'active'   => true,
+		        'title'    => 'Users',
+		        'link'     => '/core/users/',
+		        'icon'     => 'core/users',
+		    ]);
+		    $Smartbar->add_item([
+		        'active'   => false,
+		        'title'    => 'My Account',
+		        'link'     => '/core/account/',
+		        'icon'     => 'core/user',
+		    ]);
+		    echo $Smartbar->render();
+?>
 
+    <h2 class="divider"><div><?php echo PerchLang::get('User details'); ?></div></h2>
 
-	   <h1><?php echo PerchLang::get('Editing %s’s User Account', PerchUtil::html($details['userGivenName'].' '.$details['userFamilyName'])); ?></h1>
-
-
-    
-    <?php echo $Alert->output(); ?>
-
-    <h2><?php echo PerchLang::get('User details'); ?></h2>
-
-    
-
-    <form action="<?php echo PerchUtil::html($Form->action()); ?>" method="post" class="sectioned">
+   
+    <form action="<?php echo PerchUtil::html($Form->action()); ?>" method="post" class="form-simple">
 		
-        <div class="field <?php echo $Form->error('userUsername', false);?>">
+        <div class="field-wrap <?php echo $Form->error('userUsername', false);?>">
             <?php echo $Form->label('userUsername', 'Username'); ?>
+            <div class="form-entry">
             <?php echo $Form->text('userUsername', $Form->get($details, 'userUsername'), ''); 
 
             if (PERCH_PARANOID) {
@@ -28,26 +34,34 @@
             }
 
             ?>
+            </div>
         </div>
         
-        <div class="field <?php echo $Form->error('userGivenName', false);?>">
+        <div class="field-wrap <?php echo $Form->error('userGivenName', false);?>">
             <?php echo $Form->label('userGivenName', 'First name'); ?>
+            <div class="form-entry">
             <?php echo $Form->text('userGivenName', $Form->get($details, 'userGivenName'), ''); ?>
+            </div>
         </div>
 		
-		<div class="field <?php echo $Form->error('userFamilyName', false);?>">
+		<div class="field-wrap <?php echo $Form->error('userFamilyName', false);?>">
 			<?php echo $Form->label('userFamilyName', 'Last name'); ?>
+			<div class="form-entry">
 			<?php echo $Form->text('userFamilyName', $Form->get($details, 'userFamilyName'), ''); ?>
+			</div>
 		</div>
 		
-		<div class="field <?php echo $Form->error('userEmail', false);?>">
+		<div class="field-wrap <?php echo $Form->error('userEmail', false);?>">
 			<?php echo $Form->label('userEmail', 'Email'); ?>
+			<div class="form-entry">
 			<?php echo $Form->email('userEmail', $Form->get($details, 'userEmail'), ''); ?>
+			</div>
 		</div>
 		
 		<?php if ($User->id() != $CurrentUser->id()){ ?>		
-		<div class="field <?php echo $Form->error('roleID', false);?>">
+		<div class="field-wrap <?php echo $Form->error('roleID', false);?>">
 			<?php echo $Form->label('roleID', 'Role'); ?>
+			<div class="form-entry">
 			<?php 
 			    $opts = array();
 			    
@@ -58,32 +72,35 @@
                 }
 			    
 			    echo $Form->select('roleID', $opts, $Form->get($details, 'roleID'), ''); ?>
+			</div>
 		</div>
         <?php } ?>
 
-		<div class="field">
+		<div class="field-wrap">
 			<?php echo $Form->label('resetPwd', 'Send new password instructions'); ?>
+			<div class="form-entry">
 			<?php echo $Form->checkbox('resetPwd', '1', '0'); ?>
+			</div>
 		</div>
 
 		<?php
 			if (PERCH_PARANOID) {
 		?>
 		<h2><?php echo PerchLang::get('Authenticate'); ?></h2>
-		<div class="field <?php echo $Form->error('currentPassword', false);?>">
+		<div class="field-wrap <?php echo $Form->error('currentPassword', false);?>">
 			<?php echo $Form->label('currentPassword', 'Your password'); ?>
+			<div class="form-entry">
 			<?php echo $Form->password('currentPassword', $Form->get(false, 'currentPassword'), ''); ?>
+			</div>
 		</div>
 
 		<?php } // PARANOID ?>
 
-		<p class="submit">
-			<?php 		
-				echo $Form->submit('submit', 'Save changes', 'button');
-				echo ' ' . PerchLang::get('or') . ' <a href="'.PERCH_LOGINPATH.'/core/users">' . PerchLang::get('Cancel'). '</a>'; 
-				
-			?>
-		</p>
+		
+		<?php
+			echo $HTML->submit_bar([
+					'button' => $Form->submit('submit', 'Save changes', 'button'),
+					'cancel_link' => '/core/users'
+				]);
+		?>
 	</form>
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>

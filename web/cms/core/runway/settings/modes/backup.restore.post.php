@@ -1,46 +1,45 @@
 <?php 
-    include (PERCH_PATH.'/core/inc/sidebar_start.php');
- 
-    echo $HTML->para('Restore your database from backup.');
- 
-    include (PERCH_PATH.'/core/inc/sidebar_end.php'); 
-    include (PERCH_PATH.'/core/inc/main_start.php'); 
-    include ($app_path.'/modes/_subnav.php'); 
- 
 
-    echo $HTML->heading1('Restoring a Backup');         
-        
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Restoring a backup'),
+    ], $CurrentUser);
 
 
-    echo $HTML->smartbar(
-        $HTML->smartbar_link(true, 
-                array( 
-                    'link'=> PERCH_LOGINPATH.'/core/settings/backup/?id='.$Plan->id(),
-                    'label' => $Plan->planTitle(),
-                )
-        ),
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
 
-        $HTML->smartbar_link(false, 
-                array( 
-                    'link'=> PERCH_LOGINPATH.'/core/settings/backup/edit/?id='.$Plan->id(),
-                    'label' => PerchLang::get('Plan Options'),
-                )
-        )
-    );
+    $Smartbar->add_item([
+            'active' => true,
+            'type' => 'breadcrumb',
+            'links' => [
+                [   
+                    'title' => 'Plans',
+                    'link'  => '/core/settings/backup/',
+                ],
+                [
+                    'title' => $Plan->planTitle(),
+                    'translate' => false,
+                    'link' => '/core/settings/backup/?id='.$Plan->id(),
+                ],
+                [
+                    'title' => 'Restore',
+                ]
+            ],
+            
+        ]);
 
+    $Smartbar->add_item([
+            'title' => 'Plan Options',
+            'link'  => '/core/settings/backup/edit/?id='.$Plan->id(),
+            'icon' => 'core/o-toggles'
+        ]);
 
-
-    // If a success or failure message has been set, output that here
-    echo $message;
-
+    echo $Smartbar->render();
 
     // Output the edit form
     echo $Form->form_start();
 
-    echo $HTML->warning_message('Restoring will revert your database to the state it was in when this backup was made. There is no undo. Are you sure?');
+    echo $HTML->warning_block('Restoring replaces your database', 'Restoring will revert the state of your database to the state it was in when this backup was made. Any content added since the backup was made will be lost. There is no undo. Are you sure?');
 
-    echo $Form->submit_field('btnSubmit', 'Restore backup now');
+    echo $Form->submit_field('btnSubmit', 'Restore backup now', PERCH_LOGINPATH.'/core/settings/backup/?id='.$Plan->id());
     echo $Form->form_end();
     
-    // Footer
-    include (PERCH_PATH.'/core/inc/main_end.php');

@@ -1,65 +1,49 @@
+<?php 
 
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ($app_path.'/modes/_subnav.php'); ?>
-
-
-   <h1><?php echo PerchLang::get('Reordering Routes'); ?></h1>
     
-    <?php echo $Alert->output(); ?>
-    
+    echo $HTML->title_panel([
+            'heading' => $Lang->get('Reordering routes'),
+            ], $CurrentUser);
 
-    <?php
-    /* ----------------------------------------- SMART BAR ----------------------------------------- */
-
-
-    echo $HTML->smartbar(
-        $HTML->smartbar_link(false, 
-                array( 
-                    'link'=> PERCH_LOGINPATH.'/core/apps/content/routes/',
-                    'label' => PerchLang::get('Routes'),
-                )
-            ),
-        $HTML->smartbar_link(true, 
-                array( 
-                    'link'=> PERCH_LOGINPATH.'/core/apps/content/routes/reorder/',
-                    'label' => PerchLang::get('Reorder'),
-                    'class' => 'icon reorder'
-                ), 
-                true
-            )
-    );
-
-
-
-
-    /* ----------------------------------------- /SMART BAR ----------------------------------------- */
-    ?>
-
-
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>">
-    
-    <?php
-        $Alert->set('notice', PerchLang::get('Drag and drop the routes to reorder them.').' '. $Form->submit('reorder', 'Save Changes', 'button action'));
+     $Alert->set('info', PerchLang::get('Drag and drop the routes to reorder them.'));
         $Alert->output();
+
+        $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+        $Smartbar->add_item([
+                'active' => false,
+                'title'  => 'Routes',
+                'link'   => '/core/apps/content/routes/',
+                'icon'   => 'core/o-signs',
+            ]);
+        $Smartbar->add_item([
+                'active'   => true,
+                'title'    => 'Reorder',
+                'link'     => '/core/apps/content/routes/reorder/',
+                'position' => 'end',
+                'icon'   => 'core/menu',
+            ]);
+        echo $Smartbar->render();
+
+
+    echo $HTML->open('div.inner');
+    echo $Form->form_start(false, 'reorder');
+
 
         $cols = 2;
 
-        $s = '<ul class="reorder" data-start="1">';
+        $s = '<ol class="basic-sortable sortable-tree" data-start="1">';
         if (PerchUtil::count($routes)) {
             
             foreach($routes as $Route) {
-                $s .= '<li id="route_'.$Route->id().'" class="icon">';
+                $s .= '<li id="route_'.$Route->id().'" class="icon"><div>';
                 $s .= '<input type="text" name="item_'.$Route->id().'" value="'.$Route->routeOrder().'" />';
-                $s .= '<pre class="col">'.PerchUtil::html($Route->routePattern()).'</pre>';
+                $s .= '<code class="col">'.PerchUtil::html($Route->routePattern()).'</code>';
                 $s .= '<span class="col">'.PerchUtil::html($Route->pagePath()).'</span>';
-                $s .= '</li>';
+                $s .= '</div></li>';
             }
             
         }
-        $s .= '</ul>';
+        $s .= '</ol>';
 
         echo $s;
 
@@ -68,17 +52,18 @@
         </style>'
 
     ?>
-        <div>
-            <?php echo $Form->hidden('orders', ''); ?>
-        </div> 
-    </form>
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+    <div class="submit-bar">
+        <?php 
+        echo $Form->submit('reorder', 'Save Changes', 'button action');
+        echo $Form->hidden('orders', ''); 
+        ?>
+    </div> 
 
-
-<script>
-    var locked_root = false; 
-</script>
 <?php
+    echo $Form->form_end(); 
+    echo $HTML->close('div.inner');
+
+
     /*$Perch->add_javascript_block("
 
     jQuery(function($){

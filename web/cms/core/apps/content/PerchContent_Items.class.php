@@ -2,11 +2,11 @@
 
 class PerchContent_Items extends PerchFactory
 {
-    protected $singular_classname = 'PerchContent_Item';
-    protected $table    = 'content_items';
-    protected $pk   = 'itemRowID';
-
-    protected $default_sort_column  = 'itemOrder';
+    protected $singular_classname  = 'PerchContent_Item';
+    protected $table               = 'content_items';
+    protected $pk                  = 'itemRowID';
+    
+    protected $default_sort_column = 'itemOrder';
 
 
     /**
@@ -38,16 +38,51 @@ class PerchContent_Items extends PerchFactory
      * @return void
      * @author Drew McLellan
      */
-    public function get_flat_for_region($regionID, $rev, $item_id=false, $limit=false)
+    public function get_flat_for_region($regionID, $rev, $item_id=false, $limit_or_Paging=false, $Template=null)
     {
-        $sql = 'SELECT * FROM '.$this->table.'
-                WHERE regionID='.$this->db->pdb((int)$regionID).' AND itemRev='.$this->db->pdb((int)$rev);
+        $sort_val = null;
+        $sort_dir = null;
 
-        if ($item_id!==false) {
-            $sql .= ' AND itemID='.$this->db->pdb((int)$item_id);
+        if ($limit_or_Paging && is_object($limit_or_Paging)) {
+            $Paging = $limit_or_Paging;
+            $limit = false;
+        }else{
+            $Paging = false;
+            $limit = $limit_or_Paging;
         }
 
-        $sql .= ' ORDER BY itemOrder ASC';
+        if ($Paging) {
+            $sql = $Paging->select_sql();
+            list($sort_val, $sort_dir) = $Paging->get_custom_sort_options($Template);
+        }else{
+            $sql = 'SELECT';
+        }
+
+        $sql .= ' * ';
+
+        if ($sort_val) {
+            $sql .= ', idx.indexValue AS sortval';
+        }
+
+        $sql .= ' FROM '.$this->table.' c';
+
+        if ($sort_val) {
+            $sql .= ', '.PERCH_DB_PREFIX.'content_index idx';
+        }
+
+        $sql .= ' WHERE c.regionID='.$this->db->pdb((int)$regionID).' AND c.itemRev='.$this->db->pdb((int)$rev);
+
+        if ($item_id!==false) {
+            $sql .= ' AND c.itemID='.$this->db->pdb((int)$item_id);
+        }
+
+        if ($sort_val) {
+            $sql .= ' AND c.itemID=idx.itemID AND c.itemRev=idx.itemRev AND c.regionID=idx.regionID
+                        AND idx.indexKey='.$this->db->pdb($sort_val).' 
+                    ORDER BY sortval '.$sort_dir.' ';
+        } else {
+            $sql .= ' ORDER BY c.itemOrder ASC ';    
+        }
 
         if ($limit!==false) {
             $sql .= ' LIMIT '.intval($limit);

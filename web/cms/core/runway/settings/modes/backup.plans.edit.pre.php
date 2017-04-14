@@ -1,6 +1,6 @@
 <?php
 
-	$API  = new PerchAPI(1.0, 'backup');
+	$API  = new PerchAPI(1.0, 'core');
 	$HTML = $API->get('HTML');
 	$Lang = $API->get('Lang');
 

@@ -2,7 +2,6 @@
     
     $Authors = new PerchBlog_Authors($API);
 
-    $HTML = $API->get('HTML');
     $Form = $API->get('Form');
 	
     $message = false;

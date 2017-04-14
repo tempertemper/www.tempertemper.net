@@ -1,55 +1,52 @@
+<?php
+    echo $HTML->title_panel([
+    'heading' => PerchLang::get('Reordering Categories')
+    ], $CurrentUser);
 
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
+    $Alert->set('info', PerchLang::get('Drag and drop the categories to reorder them.'));
+    $Alert->output();
 
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    $Smartbar->add_item([
+    'active' => false,
+    'type' => 'breadcrumb',
+    'links' => [
+        [
+            'title' => 'Sets',
+            'link'  => '/core/apps/categories/',
+        ],
+        [
+            'title' => $Set->setTitle(),
+            'link'  => '/core/apps/categories/sets/?id='.$Set->id(),
+            'translate' => false,
+        ]
+    ],
+    ]);
+
+    $Smartbar->add_item([
+        'active' => false,
+        'title'  => 'Set Options',
+        'link'   => '/core/apps/categories/sets/edit?id='.$Set->id(),
+        'icon'   => 'core/o-toggles',
+    ]);
+
+    $Smartbar->add_item([
+        'active'   => true,
+        'title'    => 'Reorder',
+        'link'     => '/core/apps/categories/reorder/?id='.$Set->id(),
+        'position' => 'end',
+        'icon'     => 'core/menu',
+    ]);
+
+    echo $Smartbar->render();
 
 
-   <h1><?php echo PerchLang::get('Reordering Categories'); ?></h1>
-    
-    <?php echo $Alert->output(); ?>
-    
-
-    <?php
-    /* ----------------------------------------- SMART BAR ----------------------------------------- */
-
-    echo $HTML->smartbar(
-            $HTML->smartbar_breadcrumb(false, 
-                    array( 
-                        'link'=> PERCH_LOGINPATH.'/core/apps/categories/sets/?id='.$Set->id(),
-                        'label' => $Set->setTitle(),
-                    )
-            ),
-            $HTML->smartbar_link(false, 
-                    array( 
-                        'link'=> PERCH_LOGINPATH.'/core/apps/categories/sets/edit?id='.$Set->id(),
-                        'label' => PerchLang::get('Set Options'),
-                    )
-                ),
-            $HTML->smartbar_link(true, 
-                    array( 
-                        'link'=> PERCH_LOGINPATH.'/core/apps/categories/reorder/?id='.$Set->id(),
-                        'label' => PerchLang::get('Reorder Categories'),
-                        'class' => 'icon reorder'
-                    ), 
-                    true
-                )
-        );
-
-
-    /* ----------------------------------------- /SMART BAR ----------------------------------------- */
     ?>
-
-
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>">
-    
+<div class="inner">
+    <form method="post" action="<?php echo PerchUtil::html($Form->action(), true); ?>" class="reorder form-simple">
     <?php
-        $Alert->set('notice', PerchLang::get('Drag and drop the categories to reorder them.').' '. $Form->submit('reorder', 'Save Changes', 'button action'));
-        $Alert->output();
-
-
-        echo render_tree($Categories, $Set, 0, 'sortable');
+        echo render_tree($Categories, $Set, 0, 'sortable sortable-tree');
         
         function render_tree($Categories, $Set, $parentID=0, $class=false)
         {
@@ -61,8 +58,9 @@
             if (PerchUtil::count($categories)) {
                 
                 foreach($categories as $Category) {
-                    $s .= '<li id="category_'.$Category->id().'" data-parent="'.$parentID.'"><div class="category icon">';
+                    $s .= '<li id="category_'.$Category->id().'" data-parent="'.$parentID.'"><div class="category">';
                     $s .= '<input type="text" name="c-'.$Category->id().'" value="'.$Category->catOrder().'" />';
+                    $s .= PerchUI::icon('core/chart-pie');
                     $s .= ''.PerchUtil::html($Category->catTitle()).'</div>';
                     
                     $s .= render_tree($Categories, $Set, $Category->id());
@@ -75,53 +73,11 @@
             return $s;
         }
     ?>
-        <div>
-            <?php echo $Form->hidden('orders', ''); ?>
+        <div class="submit-bar">
+            <?php 
+            echo $Form->submit('reorder', 'Save Changes', 'button action');
+            echo $Form->hidden('orders', ''); 
+            ?>
         </div> 
     </form>
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
-
-
-<script>
-    var locked_root = false; 
-</script>
-<?php
-    $Perch->add_javascript_block("
-
-    jQuery(function($){
-        $('.sortable').nestedSortable({
-			forcePlaceholderSize: true,
-			handle: 'div',
-			helper:	'clone',
-			items: 'li',
-			opacity: .6,
-			placeholder: 'placeholder',
-			revert: 250,
-			tabSize: 25,
-			tolerance: 'pointer',
-			toleranceElement: '> div',
-            disableNesting: 'ui-nestedSortable-no-nesting',
-            protectRoot: locked_root,
-            isAllowed: function(item, parent) {
-                if (locked_root && parent==null) return false;
-                return true;
-            }
-        }).disableSelection()
-          .on('click', 'a', function(e) {
-              e.preventDefault();
-          })
-          .find('input').remove();
-                
-        $('form').on('submit', function(e){
-            var serialized='';
-            $('ol.sortable').each(function(i, o){
-                var out;
-                out = $(o).nestedSortable('serialize');
-                if (out) serialized +='&'+out;
-            });
-            $('#orders').val(serialized);
-        });
-        
-    });
-");
-?>
+</div>

@@ -10,6 +10,7 @@ class PerchAdmin extends Perch
     private $css              = array();
     private $head_content     = '';
     private $foot_content     = '';
+    private $fe_plugins       = [];
     private $nav_section      = false;
 
     public $section           = '';
@@ -36,6 +37,8 @@ class PerchAdmin extends Perch
         if (!defined('PERCH_MAX_FAILED_LOGINS'))     define('PERCH_MAX_FAILED_LOGINS', 10);
         if (!defined('PERCH_AUTH_LOCKOUT_DURATION')) define('PERCH_AUTH_LOCKOUT_DURATION', '1 HOUR');
         if (!defined('PERCH_VERIFY_UPLOADS'))        define('PERCH_VERIFY_UPLOADS', PERCH_PARANOID);
+        if (!defined('PERCH_TRANSLATION_ASSIST'))    define('PERCH_TRANSLATION_ASSIST', false);
+        if (!defined('PERCH_PRIV_ASSIST'))           define('PERCH_PRIV_ASSIST', false);
         
     }
 
@@ -78,7 +81,10 @@ class PerchAdmin extends Perch
     {
         $this->apps = array();
 
-        if (!$CurrentUser->logged_in()) return;
+
+        if (PERCH_RUNWAY) {
+            include(PERCH_CORE.'/runway/apps/apps.php');
+        }
 
         $a = array();
 
@@ -108,13 +114,11 @@ class PerchAdmin extends Perch
             }
         }
 
-        if (PERCH_RUNWAY) {
-            $Runway = PerchRunway::fetch();
-            $Runway->find_collections_for_app_menu($CurrentUser);
-        }
-
-
         $this->apps = PerchUtil::super_sort($this->apps, 'priority', 'label');
+
+        $this->add_new_apps_to_menu();
+
+        return $this->apps;
     }
 
     public function get_section()
@@ -218,7 +222,33 @@ class PerchAdmin extends Perch
 
     public function get_foot_content()
     {
-        return $this->foot_content;
+        return $this->foot_content.$this->get_fe_plugin_code();
+    }
+
+    public function add_fe_plugin($id, $json)
+    {
+        $this->fe_plugins[$id] =  $json;
+    }
+
+    public function get_fe_plugin_code()
+    {
+        if (!PerchUtil::count($this->fe_plugins)) return '';
+
+        $s = '<script>'.PHP_EOL;
+        $s .= 'Perch.UI.plugins = {'.PHP_EOL;
+
+        $sections = [];
+
+        foreach($this->fe_plugins as $key => $json) {
+            $sections[] = '"'.$key.'":'.$json.PHP_EOL;
+        }
+
+        $s .= implode(',', $sections);
+
+        $s .= '};'.PHP_EOL;
+        $s .= '</script>'.PHP_EOL;
+
+        return $s;
     }
 
     public function set_section($section)
@@ -330,4 +360,9 @@ class PerchAdmin extends Perch
         return $this->settings;
     }
 
+    private function add_new_apps_to_menu()
+    {
+        $Menu = new PerchMenu();
+        $Menu->add_new_apps($this->apps);
+    }
 }

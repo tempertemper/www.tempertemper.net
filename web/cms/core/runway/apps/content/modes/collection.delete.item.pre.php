@@ -1,4 +1,9 @@
 <?php
+
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $collection_id  = (int) $_GET['id'];
         $item_id    = (int) $_GET['itm'];
@@ -23,7 +28,8 @@
 
     /* --------- Delete Form ----------- */
     
-    $Form = new PerchForm('delete');
+    $Form = $API->get('Form');
+    $Form->set_name('delete');
     
     if ($Form->posted() && $Form->validate() && isset($item_id)) {
         

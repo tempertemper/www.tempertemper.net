@@ -10,6 +10,8 @@ class PerchAPI_AuthPlugin extends PerchBase
 	public $activation_failed = false;
 
 	private $privileges = array();
+
+	private $Role;
 	
     public function log_user_in($username, $password)
 	{
@@ -33,6 +35,7 @@ class PerchAPI_AuthPlugin extends PerchBase
 
 			$Roles = new PerchUserRoles;
 			$Role = $Roles->get_one_by('roleSlug', $user_details['role']);
+			$this->Role = $Role;
 
 			$details = array();
 			$details['userID']    = $user_details['email'];
@@ -66,6 +69,7 @@ class PerchAPI_AuthPlugin extends PerchBase
 
 			$Roles = new PerchUserRoles;
 			$Role = $Roles->get_one_by('roleSlug', $user_details['role']);
+			$this->Role = $Role;
 
 			$details = array();
 			$details['userID']    = $user_details['email'];
@@ -108,6 +112,7 @@ class PerchAPI_AuthPlugin extends PerchBase
 
     public function has_priv($priv)
 	{
+		if ($this->Role && $this->Role->roleMasterAdmin()) return true;
 	    return in_array($priv, $this->privileges);
 	}
 

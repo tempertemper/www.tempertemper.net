@@ -1,5 +1,10 @@
 <?php
     
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
+
     $Collections = new PerchContent_Collections;
     $Items = new PerchContent_CollectionItems;
     $Collection  = false;
@@ -35,7 +40,7 @@
     /* --------- Options Form ----------- */
     
 
-    $Form = new PerchForm('options');
+    $Form = $API->get('Form');
     
     if ($Form->posted() && $Form->validate()) {
         $postvars = array('itemSearchable');

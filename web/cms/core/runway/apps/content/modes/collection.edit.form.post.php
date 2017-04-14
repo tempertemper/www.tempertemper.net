@@ -1,80 +1,127 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-    <h3 class="em"><span><?php echo PerchLang::get('About this collection'); ?></span></h3>
-    <p>
-        <?php            
-            echo PerchLang::get("Required fields are marked with an asterisk.");
-        ?>
-    </p>
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ($app_path.'/modes/_subnav.php'); ?>
-    <h1><?php 
-            printf(PerchLang::get('Editing %s Collection'),' &#8216;' . PerchUtil::html($Collection->collectionKey()) . '&#8217; ');     
-        ?></h1>
-   <?php echo $Alert->output(); ?>
-		<ul class="smartbar">
-            <li class="selected">
-				<span class="set">
-                <a class="sub" href="<?php echo PERCH_LOGINPATH . '/core/apps/content/collections/edit/?id='.PerchUtil::html($Collection->id());?>"><?php echo PerchUtil::html($Collection->collectionKey()); ?></a>
-                <span class="sep icon"></span> 
-                <a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/collections/edit/?id='.PerchUtil::html($Collection->id()).'&amp;itm='.$details[0]['itemID'];?>"><?php 
-                        
-                        $item = $details[0];
-                        $id = $item['itemID'];                   
-                
-                        if (isset($item['perch_'.$id.'__title'])) {
-                            echo PerchUtil::html(PerchUtil::excerpt($item['perch_'.$id.'__title'], 10));
-                        }else{
-                            if (isset($item['itemOrder'])) {
-                                echo PerchLang::get('Item'). ' '.PerchUtil::html($item['itemOrder']-999);
-                            }else{
-                                echo PerchLang::get('New Item');
-                            }
-                        }
-                ?></a>
+<?php
+
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Editing ‘%s’ collection', PerchUtil::html($Collection->collectionKey())),
+        'notifications' => true,
+        ]);
+
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    // Breadcrumb
+    $links = [];
+
+    $links[] = [
+        'title' => 'Collections',
+        'link'  => '/core/apps/content/manage/collections/',
+    ];
+
+    $links[] = [
+        'title' => $Collection->collectionKey(),
+        'translate' => false,
+        'link'  => '/core/apps/content/collections/?id='.$Collection->id(),
+    ];
 
 
-				</span>
-			</li>
-			<?php
-				if ($CurrentUser->has_priv('content.regions.options')) {
-		            echo '<li><a href="'.PERCH_LOGINPATH . '/core/apps/content/collections/edit/options/?id='.PerchUtil::html($Collection->id()).'&amp;itm='.$item_id.'">' . PerchLang::get('Item Options') . '</a></li>';
-		        }
-			?>
-			<?php
-                
-                    echo '<li class="fin">';
-                    echo '<a href="'.PERCH_LOGINPATH . '/core/apps/content/reorder/collection/?id='.PerchUtil::html($Collection->id()).'" class="icon reorder">' . PerchLang::get('Reorder') . '</a>';
-                    echo '</li>';
-                
+    $item = $details[0];
+    $id = $item['itemID'];                   
 
-                if (isset($view_page_url) && $view_page_url) {
-                    echo '<li class="fin">';
-                    echo '<a href="'.PerchUtil::html($view_page_url).'" class="icon page assist">' . PerchLang::get('View Page') . '</a>';
-                    echo '</li>';
-                }
+    if (isset($item['perch_'.$id.'__title'])) {
+        $title = PerchUtil::html(PerchUtil::excerpt($item['perch_'.$id.'__title'], 10));
+    }else{
+        if (isset($item['itemOrder'])) {
+            $title = PerchLang::get('Item'). ' '.PerchUtil::html($item['itemOrder']-999);
+        }else{
+            $title = PerchLang::get('New Item');
+        }
+    }
 
-			
-				if ($Item->is_undoable()) {
-					echo '<li class="fin">';
-			        echo '<form method="post" action="'.PerchUtil::html($fUndo->action()).'">';
-			        echo '<div>'.$fUndo->submit('btnUndo', 'Undo', 'unbutton icon undo', true, true).'</div>';
-			        echo '</form>';
-					echo '</li>';
-			    }
+    $links[] = [
+        'title' => $title,
+        'translate' => false,
+        'link'  => '/core/apps/content/collections/edit/?id='.$Collection->id().'&itm='.$details[0]['itemID']
+    ];
+
+    $Smartbar->add_item([
+            'active' => true,
+            'type' => 'breadcrumb',
+            'links' => $links,
+        ]);
+    
+    // Options button
+    $Smartbar->add_item([
+            'active' => false,
+            'title'  => 'Item Options',
+            'link'   => '/core/apps/content/collections/edit/options/?id='.$Collection->id().'&itm='.$details[0]['itemID'],
+            'priv'   => 'content.collections.options',
+            'icon'   => 'core/o-toggles',
+        ]);
 
 
-			
-			?>
-        </ul>
-<form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" <?php echo $Form->enctype(); ?> id="content-edit" class="magnetic-save-bar">
+    if ($PrevItem) {
+        $Smartbar->add_item([
+            'title'    => 'Previous',
+            'position' => 'end',
+            'icon'     => 'core/o-navigate-left',
+            'icon-size'=> 10,
+            'link'     => '/core/apps/content/collections/edit/?id='.$Collection->id().'&itm='.$PrevItem->itemID(),
+        ]);
+    }
+
+    if ($NextItem) {
+        $Smartbar->add_item([
+            'title'         => 'Next',
+            'position'      => 'end',
+            'icon'          => 'core/o-navigate-right',
+            'icon-position' => 'end',
+            'icon-size'     => 10,
+            'link'          => '/core/apps/content/collections/edit/?id='.$Collection->id().'&itm='.$NextItem->itemID(),
+        ]);
+    }
+
+    // Undo button
+    if ($Item->is_undoable()) {
+        $Smartbar->add_item([
+            'type'     => 'submit',
+            'form'     => $fUndo,
+            'fieldID'  => 'btnUndo',
+            'active'   => false,
+            'title'    => 'Undo',
+            'position' => 'end',
+            'icon'     => 'core/o-undo',
+        ]);
+    }
+
+
+    // Reorder button    
+    $Smartbar->add_item([
+            'active'   => false,
+            'title'    => 'Reorder',
+            'link'     => '/core/apps/content/reorder/collection/?id='.$Collection->id(),
+            'position' => 'end',
+            'icon'     => 'core/menu',
+        ]);
+
+
+
+
+    echo $Smartbar->render();
+
+?>
+<form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" <?php echo $Form->enctype(); ?> id="content-edit"  class="form-simple"<?php
+
+if (PERCH_RUNWAY) {
+    echo ' data-lock="'.PerchUtil::html($lock_key, true).'"';
+}
+
+
+?>>
     <div id="main-panel"<?php if ($place_token_on_main) echo 'data-token="'.PerchUtil::html($place_token_on_main->get_token()).'"'; ?>>
 <?php
     /*  ------------------------------------ EDIT CONTENT ----------------------------------  */
 
  
     if ($template_help_html) {
-        echo '<h2><span>' . PerchLang::get('Help') .'</span></h2>';
+        echo '<h2 class="divider"><div>' . PerchLang::get('Help') .'</div></h2>';
         echo '<div id="template-help">' . $template_help_html . '</div>';
     }
     
@@ -92,21 +139,21 @@
                 
                 echo '<div class="edititem">';
 
-                echo '<div class="h2" id="item'.($id).'">';
+                echo '<h2 class="divider" id="item'.($id).'"><div>';
                     if (isset($item['perch_'.$id.'__title'])) {
-                        echo '<h2>'. PerchUtil::html($item['perch_'.$id.'__title']) .'</h2>';
+                        echo PerchUtil::html($item['perch_'.$id.'__title']);
                     }else{
                         if (isset($item['itemOrder'])) {
-                            echo '<h2>'. PerchLang::get('Item'). ' '.PerchUtil::html($item['itemOrder']-999).'</h2>';
+                            echo PerchLang::get('Item'). ' '.PerchUtil::html($item['itemOrder']-999);
                         }else{
                             //PerchUtil::debug($item);
-                            echo '<h2>'. PerchLang::get('New Item'). '</h2>';
+                            echo PerchLang::get('New Item');
                         }
                         
                     }
-                    
-                    echo '<a href="'.PERCH_LOGINPATH.'/core/apps/content/delete/collection/item/?id='.PerchUtil::html($Collection->id()).'&amp;itm='.$id.'" class="delete action inline-delete">'.PerchLang::get('Delete').'</a>';
-                echo '</div>';
+                    echo '</div>';
+                    echo '<a href="'.PERCH_LOGINPATH.'/core/apps/content/delete/collection/item/?id='.PerchUtil::html($Collection->id()).'&amp;itm='.$id.'" class="button button-small action-alert inline-delete">'.PerchLang::get('Delete').'</a>';
+                echo '</h2>';
 
                 
                 //display_item_fields($tags, $id, $item, false, $Form);
@@ -120,38 +167,26 @@
         }
 ?>        
         </div>
-        <p class="submit<?php if (defined('PERCH_NONSTICK_BUTTONS') && PERCH_NONSTICK_BUTTONS) echo ' nonstick'; ?><?php if ($Form->error) echo ' error'; ?>">
-            <?php 
-                echo $Form->submit('btnsubmit', 'Save Changes', 'button'); 
-                
-            
-                echo '<input type="submit" name="add_another" value="'.PerchUtil::html(PerchLang::get('Save & Add another')).'" id="add_another" class="button" />';
-            
-                
-                echo '<label class="save-as-draft" for="save_as_draft"><input type="checkbox" name="save_as_draft" value="1" id="save_as_draft" '.($draft?'checked="checked"':'').'  /> '.PerchUtil::html(PerchLang::get('Save as Draft')).'</label>';
-                
-
-				
-                echo ' ' . PerchLang::get('or') . ' <a href="'.PERCH_LOGINPATH.'/core/apps/content/collections/?id='.$Collection->id().'">' . PerchLang::get('Cancel'). '</a>'; 
-            	
-                // prev/next links
-                echo '<span class="prevnext">';
-
-                    if ($PrevItem) {
-                        echo ' <a href="'.PERCH_LOGINPATH.'/core/apps/content/collections/edit/?id='.$Collection->id().'&amp;itm='.$PrevItem->itemID().'" class="paging-prev icon" title="'.PerchLang::get('Previous').'"><span class="hidden">'.PerchLang::get('Previous').'</span></a>';
-                    }
-
-                    if ($NextItem) {
-                        echo ' <a href="'.PERCH_LOGINPATH.'/core/apps/content/collections/edit/?id='.$Collection->id().'&amp;itm='.$NextItem->itemID().'" class="paging-next icon" title="'.PerchLang::get('Next').'"><span class="hidden">'.PerchLang::get('Next').'</span></a>';
-                    }
-
-                echo '</span>';
+        <div class="submit-bar <?php if ($Form->error) echo ' error'; ?>">
+            <div class="field-wrap checkbox-single">
+            <?php
+                echo '<label class="save-as-draft" for="save_as_draft">'.PerchUtil::html(PerchLang::get('Save as draft')).'</label>';
+                echo '<div class="form-entry">';
+                echo '<input type="checkbox" name="save_as_draft" value="1" id="save_as_draft" '.($draft?'checked="checked"':'').'  />';
+                echo '</div>';
             ?>
-        </p>
+            </div>
+            <div class="submit-bar-actions">
+            <?php
+                echo $Form->submit('btnsubmit', 'Save changes'); 
+                echo ' <input type="submit" name="add_another" value="'.PerchUtil::html(PerchLang::get('Save & add another')).'" id="add_another" class="button button-simple" />';
+                echo ' ' . PerchLang::get('or') . ' <a href="'.PERCH_LOGINPATH.'/core/apps/content/collections/?id='.$Collection->id().'">' . PerchLang::get('Cancel'). '</a>'; 
+            ?>
+            </div>
+        </div>
         <?php
 
-            echo '<input type="submit" name="add_another" value="'.PerchUtil::html(PerchLang::get('Save & Add another')).'" class="add button topadd" />';
+            echo '<input type="submit" name="add_another" value="'.PerchUtil::html(PerchLang::get('Save & add another')).'" class="button button-simple to-the-top" />';
         ?>
     </div>
 </form>
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>

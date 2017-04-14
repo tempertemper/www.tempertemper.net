@@ -1,4 +1,7 @@
 <?php
+    $API  = new PerchAPI(1.0, 'content');
+    $HTML = $API->get('HTML');
+    $Lang   = $API->get('Lang');
     
     $Collections = new PerchContent_Collections;
     $Regions = new PerchContent_Regions;
@@ -89,6 +92,10 @@
     	if (!isset($data['addToTop'])) {
             $data['addToTop'] = 0;
         }
+
+        if (!isset($data['column_ids'])) {
+            $data['column_ids'] = [];
+        }
     	
     	$Collection->set_options($data);
     	
@@ -113,4 +120,3 @@
     $Roles = new PerchUserRoles();
     $roles = $Roles->all();
     
-?>

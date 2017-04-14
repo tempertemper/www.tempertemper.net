@@ -1,86 +1,124 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-    <h3 class="em"><span><?php echo PerchLang::get('About this region'); ?></span></h3>
-    
-    <p><?php 
-            echo PerchLang::get("This region may contain one or more items.");
-            echo ' ';
-            echo PerchLang::get("Select an item to edit its content.");
-    ?></p>
-    
-    <?php
-        if ($Region->regionTemplate() != '') {
-            
-            if ($CurrentUser->has_priv('content.regions.options')) {
-                echo '<h4>'.PerchLang::get('Options').'</h4>';
+<?php 
+
+    if ($Region->regionTemplate() != '') {
+        $view_page_url = false;
+
+        if ($Region->regionPage() != '*') {
+
+            if ($Region->get_option('edit_mode')=='listdetail' && $Region->get_option('searchURL')!='') {
+                $search_url = $Region->get_option('searchURL');  
+
+                $Region->tmp_url_vars = $details[0];             
+                $search_url = preg_replace_callback('/{([A-Za-z0-9_\-]+)}/', array($Region, 'substitute_url_vars'), $search_url);
+                $Region->tmp_url_vars = false; 
+
+                $view_page_url = rtrim($Settings->get('siteURL')->val(), '/').$search_url;
             }else{
-                echo '<h4>' . PerchLang::get('Page assignment') . '</h4>';
+                $view_page_url = rtrim($Settings->get('siteURL')->val(), '/').$Region->regionPage();
             }
-
-            if ($Region->regionPage() == '*') {
-                echo '<p>' . PerchLang::get('This region is shared across all pages.') . '</p>';
-            }else{
-                echo '<p>' . PerchLang::get('This region is only available within') . ':</p><p><code><a href="' . PerchUtil::html($Region->regionPage()) . '">' . PerchUtil::html($Region->regionPage()) . '</a></code></p>';
-            }
-
-            if ($CurrentUser->has_priv('content.regions.options')) {
-                echo '<p>';
-                echo ' <a href="'.PERCH_LOGINPATH . '/core/apps/content/options/?id='.PerchUtil::html($Region->id()).'">' . PerchLang::get('Set your options for this region.') . '</a></p>';
-            }
-        
-        
         }
-    ?>
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
 
-    <h1><?php 
-            printf(PerchLang::get('Editing %s Region'),' &#8216;' . PerchUtil::html($Region->regionKey()) . '&#8217; '); 
-        ?></h1>
+    } 
+
+    echo $HTML->title_panel([
+        'heading' => sprintf(PerchLang::get('Editing %s Region'),' &#8216;' . PerchUtil::html($Region->regionKey()) . '&#8217; '),
+    ]);
+
+
+    $Alert->set('info', PerchLang::get('Drag and drop the items to reorder them.'));
+    $Alert->output();
+
+
+
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    // Breadcrumb
+    $links = [];
+    if ($Region->regionPage()=='*') {
+        $links[] = [
+            'title' => 'Regions',
+            'link'  => '/core/apps/content/page/?id=-1',
+        ];
+    }else{
+        $links[] = [
+            'title' => 'Regions',
+            'link'  => '/core/apps/content/page/?id='.$Region->pageID(),
+        ];
+    }
+
+    if ($Region->regionMultiple() && $Region->get_option('edit_mode')=='listdetail') {
+        $links[] = [
+            'title' => $Region->regionKey(),
+            'translate' => false,
+            'link'  => '/core/apps/content/edit/?id='.$Region->id(),
+        ];
+
+    } else {
+        $links[] = [
+            'title' => $Region->regionKey(),
+            'translate' => false,
+            'link'  => '/core/apps/content/edit/?id='.$Region->id(),
+        ];
+    }
+
+    $Smartbar->add_item([
+            'active' => false,
+            'type' => 'breadcrumb',
+            'links' => $links,
+        ]);
     
-    <?php echo $Alert->output(); ?>
+    // Region Options buttons
+    $Smartbar->add_item([
+            'active' => false,
+            'title'  => 'Region Options',
+            'link'   => '/core/apps/content/options/?id='.$Region->id(),
+            'priv'   => 'content.regions.options',
+            'icon'   => 'core/o-toggles',
+        ]);
+
+    if (PERCH_RUNWAY) {
+         $Smartbar->add_item([
+            'active' => false,
+            'title'  => 'Revision History',
+            'link'   => '/core/apps/content/revisions/?id='.$Region->id(),
+            'priv'   => 'content.regions.options',
+            'icon'   => 'core/o-backup',
+            'position' => 'end',
+        ]);
+
+    }
+
+    // View Page button
+    if (isset($view_page_url) && $view_page_url) {
+        $Smartbar->add_item([
+                'active'        => false,
+                'title'         => 'View Page',
+                'link'          => $view_page_url,
+                'link-absolute' => true,
+                'position'      => 'end',
+                'icon'          => 'core/o-world',
+            ]);
+    }
+
+    // Reorder button
+    if ($Region->regionMultiple()) {
+        $Smartbar->add_item([
+                'active'   => true,
+                'title'    => 'Reorder',
+                'link'     => '/core/apps/content/reorder/region/?id='.$Region->id(),
+                'position' => 'end',
+                'icon'     => 'core/menu',
+            ]);
+    } 
 
 
-
-	<ul class="smartbar">
-        <li>
-			<span class="set">
-			<a class="sub" href="<?php 
-                    if ($Region->regionPage()=='*') {
-                        echo PERCH_LOGINPATH . '/core/apps/content/page/?id=-1';
-                    }else{
-                        echo PERCH_LOGINPATH . '/core/apps/content/page/?id='.PerchUtil::html($Region->pageID());
-                    }
-                ?>">Regions</a> 
-			<span class="sep icon"></span> 
-			<a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/edit/?id='.PerchUtil::html($Region->id());?>"><?php echo PerchUtil::html($Region->regionKey()); ?></a>
-			</span>
-		</li>
-		<?php
-			if ($CurrentUser->has_priv('content.regions.options')) {
-	            echo '<li><a href="'.PERCH_LOGINPATH . '/core/apps/content/options/?id='.PerchUtil::html($Region->id()).'">' . PerchLang::get('Region Options') . '</a></li>';
-	        }
-		
-        ?>
-
-		<li class="fin selected"><a class="icon reorder" href="<?php echo PERCH_LOGINPATH . '/core/apps/content/reorder/region/?id='.PerchUtil::html($Region->id());?>"><?php echo PerchLang::get('Reorder'); ?></a></li>
-        <?php
-        if (PERCH_RUNWAY) {
-            echo '<li class="fin"><a class="icon undo" href="'.PERCH_LOGINPATH . '/core/apps/content/revisions/?id='.PerchUtil::html($Region->id()).'">' . PerchLang::get('Revision History') . '</a></li>';
-        }
-        ?>
-    </ul>
+    echo $Smartbar->render();
 
 
-
-
-
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="sectioned">
+?>
+<div class="inner">
+    <form method="post" action="<?php echo PerchUtil::html($Form->action(), true); ?>" class="reorder form-simple">
     <?php
-        $Alert->set('notice', PerchLang::get('Drag and drop the items to reorder them.').' '. $Form->submit('reorder', 'Save Changes', 'button action'));
-        $Alert->output();
-
-
 
         if (PerchUtil::count($items)) {
             
@@ -105,13 +143,13 @@
             /* ---------------------------- */
 
 
-            echo '<ul class="reorder">';
+            echo '<ol class="basic-sortable sortable-tree">';
                 
                 $i = 1;
                 $first = true;
                 $Template = new PerchTemplate;
                 foreach($items as $item) {
-                    echo '<li class="icon">';
+                    echo '<li><div>';
                         
                             foreach($cols as $col) {
 
@@ -119,7 +157,7 @@
                                     echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/edit/?id=' . PerchUtil::html($Region->id()) . '&amp;itm='.PerchUtil::html($item['itemID']).'" class="col">';
                                 }else{
                                     echo '<span class="col">'.$col['title'].': ';
-                                    PerchUtil::debug($col);
+                                    //PerchUtil::debug($col);
                                 }
 
                                 if ($col['id']=='_title') {
@@ -174,13 +212,13 @@
 
                             echo $Form->text('item_'.$item['itemID'], $item['itemOrder'], 's');
                         
-                    echo '</li>';
+                    echo '</div></li>';
                     $i++;
                 }
                 
             
             
-            echo '</ul>';
+            echo '</ol>';
             echo '<style>
             .col { display: inline-block; width: '.(100/PerchUtil::count($cols)).'%; color: rgba(0,0,0,0.5);}
             .col img { max-height: 1.5em; width: auto; display: inline-block; vertical-align: middle;}
@@ -193,6 +231,11 @@
         }
     
     ?>
+        <div class="submit-bar">
+            <?php 
+            echo $Form->submit('reorder', 'Save Changes', 'button action');
+            echo $Form->hidden('orders', ''); 
+            ?>
+        </div> 
     </form>
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); 
+</div>

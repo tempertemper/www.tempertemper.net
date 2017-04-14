@@ -65,10 +65,9 @@ class PerchCategories_Categories extends PerchFactory
 	{
 	    $sql = 'SELECT c.*, (SELECT COUNT(*) FROM '.$this->table.' WHERE catParentID=c.catID) AS subcats 
 	            FROM '.$this->table.' c
-	            WHERE setID='.$this->db->pdb((int)$setID).'
-	            ORDER BY catTreePosition ASC';
-	    $rows   = $this->db->get_rows($sql);
-	    
+	            WHERE setID='.$this->db->pdb((int)$setID).' ORDER BY catTreePosition ASC';
+
+	    $rows   = $this->db->get_rows($sql);	    
 	    return $this->return_instances($rows);
 	}
 
@@ -81,6 +80,14 @@ class PerchCategories_Categories extends PerchFactory
 		        
 		$rows   = $this->db->get_rows($sql);	
 		return $this->return_instances($rows);
+	}
+
+	public function get_by_path($catPath)
+	{
+		$catPath = ltrim($catPath, '/');
+		$catPath = rtrim($catPath, '/').'/';
+
+		return $this->get_one_by('catPath', $catPath);
 	}
 
 	public function get_for_set($setSlug)

@@ -17,6 +17,11 @@ class PerchAssets_Assets extends PerchFactory
      */
     public function get_filtered_for_admin(PerchPaging $Paging, $filters)
     {
+        $sort_val = null;
+        $sort_dir = null;
+
+        list($sort_val, $sort_dir) = $Paging->get_custom_sort_options();
+
     	$sql = $Paging->select_sql();
     	$sql .= ' r1.*, r2.resourceFile AS thumb, r2.resourceWidth AS thumbWidth, r2.resourceHeight AS thumbHeight, r2.resourceDensity AS thumbDensity
 				FROM '.$this->table.' r1
@@ -39,11 +44,20 @@ class PerchAssets_Assets extends PerchFactory
                     case 'type':
 
                         $type_map = PerchAssets_Asset::get_type_map();
+                        $neg = false;
+
+                        // check for negative match
+                        if (substr($filter_value, 0, 1)==='!') {
+                            $neg = true;
+                            $filter_value = substr($filter_value, 1);
+                        }
 
                         if (array_key_exists($filter_value, $type_map)) {
-                            $sql .= ' AND r1.resourceType IN ('.$this->db->implode_for_sql_in($type_map[$filter_value]['exts']).') ';
+                            $operator = ($neg ? 'NOT IN' : 'IN');
+                            $sql .= ' AND r1.resourceType '.$operator.' ('.$this->db->implode_for_sql_in($type_map[$filter_value]['exts']).') ';
                         }else{
-                            $sql .= ' AND r1.resourceType='.$this->db->pdb($filter_value). ' ';
+                            $operator = ($neg ? '!=' : '=');
+                            $sql .= ' AND r1.resourceType '.$operator.' '.$this->db->pdb($filter_value). ' ';
                         }
                 
                         break;
@@ -53,15 +67,24 @@ class PerchAssets_Assets extends PerchFactory
                         $sql .= ' AND r1.resourceCreated BETWEEN '.$this->db->pdb(date('Y-m-d 00:00:00', $ts)). ' AND '.$this->db->pdb(date('Y-m-d 25:59:59', $ts)). ' ';
                         break;
 
+                    case 'tag':
+                        $sql .= ' AND r1.resourceID IN (
+                                    SELECT r2t.resourceID FROM '.PERCH_DB_PREFIX.'resources_to_tags r2t, '.PERCH_DB_PREFIX.'resource_tags rt
+                                    WHERE r2t.tagID=rt.tagID AND rt.tagSlug=' .$this->db->pdb($filter_value). '
+                                    ) ';
+                        break;
 
                 }
             }
         }
 
+        if ($sort_val) {
+            $sql .= ' ORDER BY r1.'.$sort_val.' '.$sort_dir.' ';
+        } else {
+            $sql .= ' ORDER BY r1.resourceUpdated DESC, r1.resourceID DESC ';
+        }
 
-
-		$sql .= ' ORDER BY r1.resourceUpdated DESC, r1.resourceID DESC ';
-
+		
 
 		$sql .= $Paging->limit_sql();
 
@@ -81,7 +104,7 @@ class PerchAssets_Assets extends PerchFactory
     	return $this->db->get_rows_flat($sql);
     }
 
-    public function get_available_buckets()
+    public function get_available_buckets($exclude_roles = array('backup'))
     {
     	$sql = 'SELECT DISTINCT resourceBucket FROM '.$this->table.' 
     			WHERE resourceAWOL=0 AND resourceType !=""';
@@ -93,7 +116,11 @@ class PerchAssets_Assets extends PerchFactory
             $bucket_list = include ($bucket_list_file);
             if (PerchUtil::count($bucket_list)) {
                 foreach($bucket_list as $key=>$val) {
-                    if (!in_array($key, $list)) $list[] = $key;
+                    if (!in_array($key, $list)) {
+                        if (!isset($val['role']) || (isset($val['role']) && !in_array($val['role'], $exclude_roles))) {
+                            $list[] = $key;
+                        }  
+                    } 
                 }
             }
         }
@@ -162,6 +189,22 @@ class PerchAssets_Assets extends PerchFactory
         $row = $this->db->get_row($sql);
         return $this->return_instance($row);
 
+    }
+
+    public function find_original($ids)
+    {
+        $sql = 'SELECT r1.*, r2.resourceFile AS thumb, r2.resourceWidth AS thumbWidth, r2.resourceHeight AS thumbHeight, r2.resourceDensity AS thumbDensity
+                FROM '.$this->table.' r1
+                    LEFT OUTER JOIN '.$this->table.' r2 ON r2.resourceParentID=r1.resourceID AND r2.resourceKey=\'thumb\'
+                        AND r2.resourceAWOL!=1
+                WHERE  r1.resourceKey=\'orig\' AND r1.resourceAWOL=0 
+                    AND r1.resourceID IN ('.$this->db->implode_for_sql_in($ids).')
+                ORDER BY r1.resourceID DESC 
+                LIMIT 1';
+
+
+        $row = $this->db->get_row($sql);
+        return $this->return_instance($row);
     }
 
     public function search($term, $filters=array())
@@ -300,11 +343,7 @@ class PerchAssets_Assets extends PerchFactory
 
 
     public function get_meta_data($file_path, $name)
-    {
-        if (!class_exists('PerchAssets_MetaData')) {
-            include_once(__DIR__.'/PerchAssets_MetaData.class.php');    
-        }
-        
+    {        
         $MetaData = new PerchAssets_MetaData();
 
         if (is_callable('iptcparse') && is_callable('getimagesize')) {

@@ -1,77 +1,125 @@
-	<ul class="smartbar">
-        <li><a href="?<?php
-            $opts = $_GET;
-            $opts['view'] = ($view=='grid' ? 'list' : 'grid');
-            $current_view = ($view=='grid' ? 'grid' : 'list');
-            echo PerchUtil::html(http_build_query($opts), true);
-        ?>" class="set asset-view-mode <?php echo $current_view; ?>"><?php echo PerchLang::get('View'); ?></a></li>
-        <?php
-            // Type filter
-            $types = $Assets->get_available_types();
-            if (PerchUtil::count($types)) {              
-                $items = array();
+<?php
 
-                $group_types = PerchAssets_Asset::get_type_map();
+    // Type filter
+    $types = $Assets->get_available_types();
+    $type_options = [];
 
-                foreach ($group_types as $type=>$val) {
-                    $items[] = array(
-                        'arg'   => 'type',
-                        'val'   => $type,
-                        'label' => $val['label'],
-                        'path'  => $base_path,
-                    );
-                }
-
-
-                foreach ($types as $type) {
-                    $items[] = array(
-                        'arg'   => 'type',
-                        'val'   => $type,
-                        'label' => strtoupper($type),
-                        'path'  => $base_path,
-                    );
-                }
-                echo PerchUtil::smartbar_filter('type', 'By Asset Type', 'Filtered by type ‘%s’', $items, 'asset-icon asset-type', $Alert, "You are viewing assets filtered by type ‘%s’", $base_path);
-            }
-
-            // Bucket filter
-            $buckets = $Assets->get_available_buckets();
-            if (PerchUtil::count($buckets)) {              
-                $items = array();
-                foreach ($buckets as $bucket) {
-                    $items[] = array(
-                        'arg'   => 'bucket',
-                        'val'   => $bucket,
-                        'label' => ucfirst($bucket),
-                        'path'  => $base_path,
-                    );
-                }
-                echo PerchUtil::smartbar_filter('bucket', 'By Bucket', 'Filtered by bucket ‘%s’', $items, 'asset', $Alert, "You are viewing assets filtered by bucket ‘%s’", $base_path);
-            }
-        ?>
-        <li class="fin">
-            <form method="get" action="?" class="search">
-                <input name="q" type="text" placeholder="<?php echo PerchLang::get('Search'); ?>" type="required" class="search" value="<?php
-                    if ($term) {
-                        echo PerchUtil::html($term, true);
-                    }
-                ?>" />
-                <button type="submit"><img src="<?php echo PERCH_LOGINPATH.'/core/assets/img/search.svg'; ?>" /></button>
-                <?php
-                    $opts = $_GET;
-                    if (isset($opts['q'])) unset($opts['q']);
-                    if (PerchUtil::count($opts)) {
-                        foreach($opts as $key=>$val) {
-                            echo '<input type="hidden" name="'.PerchUtil::html($key, true).'" value="'.PerchUtil::html($val, true).'" />';
-                        }
-                    }
-                ?>
-            </form>
-        </li>
-    </ul>
-    <?php echo $Alert->output(); ?>
-    <?php
-        if (isset($filters) && isset($filters['bucket'])) {
-            echo '<script>head.ready(function(){Perch.UI.Assets.setTargetBucket("'.PerchUtil::html($filters['bucket'], true).'");});</script>';
+    if (PerchUtil::count($types)) {              
+        $items = [];
+        $group_types = PerchAssets_Asset::get_type_map();
+        foreach ($group_types as $type=>$val) {
+            $type_options[] = array(
+                'value'  => $type,
+                'title' => $val['label'],
+            );
         }
-    ?>
+        foreach ($types as $type) {
+            $type_options[] = array(
+                'value'   => $type,
+                'title' => strtoupper($type),
+            );
+        }
+    }
+
+
+    // Bucket filter
+    $buckets = $Assets->get_available_buckets();
+    $bucket_options = [];
+    if (PerchUtil::count($buckets)) {              
+        foreach ($buckets as $bucket) {
+            $bucket_options[] = array(
+                'value'   => $bucket,
+                'title' => ucfirst($bucket),
+            );
+        }
+    }
+
+    // Tag filter
+    $Tags = new PerchAssets_Tags();
+    $tags = $Tags->all();
+    $tag_options = [];
+    if (PerchUtil::count($tags)) {
+        foreach($tags as $Tag) {
+            $tag_options[] = [
+                'value' => $Tag->tagSlug(),
+                'title' => $Tag->tagTitle(),
+            ];
+        }
+    } 
+    
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    $Smartbar->add_item([
+        'type'   => 'toggle',
+        'arg'    => 'view',
+        'persist'=> ['show-filter', 'type', 'bucket', 'tag'],
+        'options'=> [
+                        [
+                            'title' => 'Grid',
+                            'icon'  => 'core/grid-big',
+                            'value' => 'grid',
+                        ],
+                        [
+                            'title' => 'List',
+                            'icon'  => 'core/menu',
+                            'value' => 'list',
+                        ],
+                    ],
+    ]);
+
+    $Smartbar->add_item([
+        'id'      => 'atf',
+        'title'   => 'By Type',
+        'icon'    => 'assets/o-photo',
+        'active'  => PerchRequest::get('type'),
+        'type'    => 'filter',
+        'arg'     => 'type',
+        'persist' => ['view'],
+        'options' => $type_options,
+        'actions' => [
+
+                ],
+    ]);
+
+    $Smartbar->add_item([
+        'id'      => 'bf',
+        'title'   => 'By Bucket',
+        'icon'    => 'core/box-storage',
+        'active'  => PerchRequest::get('bucket'),
+        'type'    => 'filter',
+        'arg'     => 'bucket',
+        'persist' => ['view'],
+        'options' => $bucket_options,
+        'actions' => [
+
+                ],
+    ]);
+
+    $Smartbar->add_item([
+        'id'      => 'tf',
+        'title'   => 'By Tag',
+        'icon'    => 'core/tag',
+        'active'  => PerchRequest::get('tag'),
+        'type'    => 'filter',
+        'arg'     => 'tag',
+        'persist' => ['view'],
+        'options' => $tag_options,
+        'actions' => [
+                    [
+                        'title'  => 'Clear',
+                        'remove' => ['tag', 'show-filter'],
+                        'icon'   => 'core/cancel',
+                    ]
+                ],
+    ]);
+
+/*
+    $Smartbar->add_item([
+        'active' => false,
+        'title'  => 'Search',
+        'link'   => '/core/apps/assets/search/',
+        'icon'   => 'core/search',
+        'position' => 'end',
+    ]);
+*/
+    echo $Smartbar->render();

@@ -1,6 +1,8 @@
-.perch-debug  {
-	font-family: Inconsolata, Consolas, Courier, "Courier New", courier, fixed;
-	font-size: 13px;
+html body table.perch-debug,
+html body table.perch-debug td,
+html body table.perch-debug th  {
+	font-family: Menlo, Inconsolata, Consolas, Courier, "Courier New", courier, fixed;
+	font-size: 10px;
 	text-align: left;
 	background-color: rgba(255, 255, 255, 0.8);
 	color: #676767;
@@ -8,15 +10,20 @@
 	text-transform: none;
 	border-collapse: collapse; 
 	border: 1px solid #efefef; 
-	margin: 10px 75px 45px 45px; 
 	border-radius: 3px; 
 	opacity: 1; 
-	width: auto;
+}
+
+html body table.perch-debug {
+	position: relative;
+	border: 12px solid #fcfcfc;
+	width: 100%;
+	margin: 0;
 }
 
 .perch-debug pre {
 	line-height: 1;
-	font-size: 11px;
+	font-size: 10px;
 }
 
 .perch-debug th { font-weight: bold; text-align:left; }
@@ -24,16 +31,16 @@
 .perch-debug .error { color: red; font-weight: bold;}
 .perch-debug .notice { color: orange; border-left: 2px solid orange; }
 .perch-debug .success { color: green; border-left: 2px solid green; }
-.perch-debug .db { color: purple; border-left: 2px solid silver; }
-.perch-debug .post { color: brown; border-left: 2px solid silver; }
-.perch-debug .routing { color: silver; }
+.perch-debug .db { color: seagreen; border-left: 2px solid gainsboro; }
+.perch-debug .post { color: brown; border-left: 2px solid gainsboro; }
+.perch-debug .routing { color: gainsboro; }
 .perch-debug .xmlrpc { color: navy;}
-.perch-debug .stats { color: teal;}
+.perch-debug .stats { color: indigo;}
 .perch-debug .marker { color: white; background-color: cyan;}
-.perch-debug .template { color: skyblue; }
+.perch-debug .template { color: palevioletred; }
 .perch-debug .template-error { color: maroon; border-left-color: maroon; border-left-width: 2px; }
-.perch-debug .auth { color: olivedrab; border-left: 2px solid silver; }
-.perch-debug .perf-warn { background-color: #FAAC58; }
+.perch-debug .auth { color: olivedrab; border-left: 2px solid gainsboro; }
+.perch-debug .perf-warn { background-color: gold; }
 .perch-debug .perf-bad { background-color: maroon; color: white; }
 
 .perch-debug .debug-badge {
@@ -42,13 +49,15 @@
 	background-color: gray;
 	color: white;
 	padding: 0 0.5em;
-	font-size: 11px;
+	font-size: 9px;
 	opacity: 0.5;
 	float: right;
 	margin-top: 2px;
+	min-width: 20px;
+	text-align: center;
 }
 
-.perch-debug .db .debug-badge { background-color: purple; }
+.perch-debug .db .debug-badge { background-color: cornflowerblue; }
 .perch-debug .template .debug-badge { background-color: skyblue; }
 
 .perch-debug .debug-brkt {

@@ -24,7 +24,9 @@ class PerchBackupPlan extends PerchBase
 
     	if ($Run) {
     		return strftime(PERCH_DATE_SHORT.' '.PERCH_TIME_SHORT, strtotime($Run->runDateTime()));
-    	}
+    	} else {
+            return ' - ';
+        }
 
     	return false;
     }
@@ -131,7 +133,7 @@ class PerchBackupPlan extends PerchBase
 
         $sql = 'SELECT * FROM '.PERCH_DB_PREFIX.'resources r 
                 WHERE resourceID NOT IN (
-                    SELECT resourceID FROM '.PERCH_DB_PREFIX.'backup_resources WHERE resourceID=r.resourceID and planID='.$this->db->pdb($this->id()).'
+                    SELECT resourceID FROM '.PERCH_DB_PREFIX.'backup_resources WHERE resourceID=r.resourceID and planID='.$this->db->pdb((int)$this->id()).'
                 ) 
                 AND r.resourceAWOL=0 ';
         if (PerchUtil::count($buckets)) {
@@ -189,6 +191,12 @@ class PerchBackupPlan extends PerchBase
                 return copy($from, $to);
 
             }else{
+                // File doesn't exist, so mark as AWOL
+                $Assets = new PerchAssets_Assets($this->api);
+                $Asset = $Assets->return_instance($res);
+                if ($Asset) {
+                    $Asset->mark_as_awol();
+                }
                 return false;
             }
         }

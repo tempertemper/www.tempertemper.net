@@ -477,6 +477,13 @@ class PerchContent_Runway extends PerchContent
 
 	        if (PerchUtil::count($processed_vars)) {
 
+	        	if (isset($opts['api']) && $opts['api']==true) {
+                    $field_type_map = $Template->get_field_type_map();
+                    $api = true;
+                } else {
+                    $api = false;
+                }
+
 	        	$category_field_ids    = $Template->find_all_tag_ids('categories');
 
 	            foreach($processed_vars as &$item) {
@@ -486,6 +493,13 @@ class PerchContent_Runway extends PerchContent
 	                    	if (in_array($key, $category_field_ids)) {
 	                    	    $field = $this->_process_category_field($field);
 	                    	}
+
+	                    	if ($api) {
+                                if (array_key_exists($key, $field_type_map)) {
+                                    $field = $field_type_map[$key]->get_api_value($field);
+                                    continue;
+                                }
+                            }
 
 	                        if (is_array($field) && isset($field['processed'])) {
 	                            $field = $field['processed'];

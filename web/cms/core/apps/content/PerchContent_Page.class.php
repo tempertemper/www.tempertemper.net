@@ -125,13 +125,45 @@ class PerchContent_Page extends PerchBase
         return in_array($roleID, $roles);
     }
 
+
+    public function role_may_delete($User)
+    {
+        if ($this->id() < 0) return false; // shared page
+        
+        //if (($User->has_priv('content.pages.delete') || ($User->has_priv('content.pages.delete.own') && $this->pageCreatorID()==$User->id()) ) && !$this->subpages()) {
+        if (($User->has_priv('content.pages.delete') || ($User->has_priv('content.pages.delete.own') && $this->pageCreatorID()==$User->id()) )) {
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * Delete the page, along with its file
      * @return nothing
      */
-    public function delete()
+    public function delete($cascade = true)
     {
         $Pages = new PerchContent_Pages;
+
+        // Delete sub pages
+        if ($cascade) {
+            $child_pages = $Pages->get_by('pageParentID', $this->id());
+            if (PerchUtil::count($child_pages)) {
+                foreach($child_pages as $ChildPage) {
+                    $ChildPage->delete($cascade);
+                }
+            }
+        }
+
+        // Delete regions
+        $Regions = new PerchContent_Regions;
+        $regions = $Regions->get_for_page($this->id(), false);
+        if (PerchUtil::count($regions)) {
+            foreach($regions as $Region) {
+                $Region->delete();
+            }
+        }
 
         $site_path = $Pages->find_site_path();
 
@@ -250,6 +282,8 @@ class PerchContent_Page extends PerchBase
         $Template = new PerchTemplate('pages/attributes/'.$opts['template'], 'pages');
         $tag = $Template->find_tag($id, false, true);
         if ($tag) {
+            // prevent tag suppression here.
+            $tag = str_replace(' suppress=', ' xsuppress=', $tag);
             $Template->load($tag);
             return $Template->render($this);
         }

@@ -32,6 +32,8 @@
             $postpro = true;
         }
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         $Content = PerchContent::fetch();
         $out = $Content->get_collection($key, $opts);
 

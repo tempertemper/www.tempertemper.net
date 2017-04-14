@@ -1,48 +1,80 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
+<?php
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Editing ‘%s’ Collection', PerchUtil::html($Collection->collectionKey())),
+        ]);
 
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ($app_path.'/modes/_subnav.php'); ?>
-
-    <h1><?php 
-            printf(PerchLang::get('Editing %s Collection'),' &#8216;' . PerchUtil::html($Collection->collectionKey()) . '&#8217; '); 
-        ?></h1>
-    
-    <?php echo $Alert->output(); ?>
-
-
-
-	<ul class="smartbar">
-        <li>
-			<a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/collections/?id='.PerchUtil::html($Collection->id());?>"><?php echo PerchUtil::html($Collection->collectionKey()); ?></a>
-		</li>
-		<?php
-			if ($CurrentUser->has_priv('content.regions.options')) {
-	            echo '<li><a href="'.PERCH_LOGINPATH . '/core/apps/content/collections/options/?id='.PerchUtil::html($Collection->id()).'">' . PerchLang::get('Options') . '</a></li>';
-	        }
-		
-        ?>
-
-		<li class="fin selected"><a class="icon reorder" href="<?php echo PERCH_LOGINPATH . '/core/apps/content/reorder/collection/?id='.PerchUtil::html($Collection->id());?>"><?php echo PerchLang::get('Reorder'); ?></a></li>
-    </ul>
-
-
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="sectioned">
-    <?php
-        $Alert->set('notice', PerchLang::get('Drag and drop the items to reorder them.').' '. $Form->submit('reorder', 'Save Changes', 'button action'));
+    $Alert->set('warning', PerchLang::get('Drag and drop the items to reorder them.'));
         $Alert->output();
 
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
 
+    // Breadcrumb
+    $links = [];
+
+    $links[] = [
+        'title' => 'Collections',
+        'link'  => '/core/apps/content/manage/collections/',
+    ];
+
+    $links[] = [
+        'title' => $Collection->collectionKey(),
+        'translate' => false,
+        'link'  => '/core/apps/content/collections/?id='.$Collection->id(),
+    ];
+
+    $Smartbar->add_item([
+            
+            'type' => 'breadcrumb',
+            'links' => $links,
+        ]);
+    
+    // Options button
+    $Smartbar->add_item([
+            'active' => false,
+            'title'  => 'Options',
+            'link'   => '/core/apps/content/collections/options/?id='.$Collection->id(),
+            'priv'   => 'content.collections.options',
+            'icon'   => 'core/o-toggles',
+        ]);
+
+    // Import button
+    $Smartbar->add_item([
+            'active'   => false,
+            'title'    => 'Import',
+            'link'     => '/core/apps/content/collections/import/?id='.$Collection->id(),
+            'position' => 'end',
+            'icon'     => 'core/inbox-download',
+        ]);
+
+
+    // Reorder button    
+    $Smartbar->add_item([
+            'active' => true,
+            'title'    => 'Reorder',
+            'link'     => '/core/apps/content/reorder/collection/?id='.$Collection->id(),
+            'position' => 'end',
+            'icon'     => 'core/menu',
+        ]);
+
+
+
+
+    echo $Smartbar->render();
+
+?>
+<div class="inner">
+    <form method="post" action="<?php echo PerchUtil::html($Form->action(), true); ?>" class="reorder form-simple">
+<?php
         if (PerchUtil::count($items)) {
            
 
-            echo '<ul class="reorder">';
+            echo '<ol class="basic-sortable sortable-tree">';
                 
                 $i = 1;
                 $first = true;
                 $Template = new PerchTemplate;
                 foreach($items as $item) {
-                    echo '<li class="icon">';
+                    echo '<li><div>';
                         
                             foreach($cols as $col) {
 
@@ -105,13 +137,13 @@
 
                             echo $Form->text('item_'.$item['itemID'], $item['itemOrder'], 's');
                         
-                    echo '</li>';
+                    echo '</div></li>';
                     $i++;
                 }
                 
             
             
-            echo '</ul>';
+            echo '</ol>';
             echo '<style>
             .col { display: inline-block; width: '.(100/PerchUtil::count($cols)).'%; color: rgba(0,0,0,0.5);}
             .col img { max-height: 1.5em; width: auto; display: inline-block; vertical-align: middle;}
@@ -124,6 +156,11 @@
         }
     
     ?>
+        <div class="submit-bar">
+            <?php 
+            echo $Form->submit('reorder', 'Save Changes', 'button action');
+            echo $Form->hidden('orders', ''); 
+            ?>
+        </div> 
     </form>
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+</div>

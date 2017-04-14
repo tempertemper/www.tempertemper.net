@@ -1,0 +1,20 @@
+CREATE TABLE `__PREFIX__content_regions` (
+  `regionID` int(10) NOT NULL AUTO_INCREMENT,
+  `pageID` int(10) unsigned NOT NULL,
+  `regionKey` varchar(255) NOT NULL DEFAULT '',
+  `regionPage` varchar(255) NOT NULL DEFAULT '',
+  `regionHTML` longtext NOT NULL,
+  `regionNew` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `regionOrder` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `regionTemplate` varchar(255) NOT NULL DEFAULT '',
+  `regionMultiple` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `regionOptions` text NOT NULL,
+  `regionSearchable` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `regionRev` int(10) unsigned NOT NULL DEFAULT '0',
+  `regionLatestRev` int(10) unsigned NOT NULL DEFAULT '0',
+  `regionEditRoles` varchar(255) NOT NULL DEFAULT '*',
+  `regionUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`regionID`),
+  KEY `idx_key` (`regionKey`),
+  KEY `idx_path` (`regionPage`)
+) DEFAULT CHARSET=utf8

@@ -1,5 +1,9 @@
 <?php
 
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     $Item     = false;
     $NextItem = false;
     $PrevItem = false;
@@ -7,7 +11,8 @@
     $place_token_on_main = false;
 
     // test to see if image folder is writable
-    $image_folder_writable = is_writable(PERCH_RESFILEPATH);
+    $DefaultBucket = PerchResourceBuckets::get();
+    $image_folder_writable = $DefaultBucket->ready_to_write();
 
     // set the current user
 	$Collection->set_current_user($CurrentUser->id());
@@ -26,6 +31,8 @@
             $PrevItem   = $Items->find_previous_item($Item);
         }
     }
+
+    $lock_key = 'collection:'.$Collection->id().':'.$item_id;
 
     $item_count         = 1;
 
@@ -193,7 +200,8 @@
             }
 
             // Clear values from Post (for reordering of blocks etc)
-            $_POST = array();
+            $_POST = array(); // Slowly refactoring this. Baby steps.
+            PerchRequest::reset_post();
 
             $details    = $Collection->get_items_for_editing($item_id);
 
@@ -214,7 +222,7 @@
     }
 
     if (!$image_folder_writable) {
-        $Alert->set('error', PerchLang::get('Your resources folder is not writable. Make this folder (') . PerchUtil::html(PERCH_RESPATH) . PerchLang::get(') writable if you want to upload files and images.'));
+        $Alert->set('error', PerchLang::get('Your resources folder is not writable. Make this folder (') . PerchUtil::html($DefaultBucket->get_file_path()) . PerchLang::get(') writable if you want to upload files and images.'));
     }
 
     // is it a draft?

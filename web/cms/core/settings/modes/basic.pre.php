@@ -1,7 +1,12 @@
 <?php
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
 
     // test to see if image folder is writable
-    $image_folder_writable = is_writable(PERCH_RESFILEPATH);
+    $DefaultBucket = PerchResourceBuckets::get();
+    $image_folder_writable = $DefaultBucket->ready_to_write();
 
     $Form = new PerchForm('settings');
 
@@ -14,6 +19,11 @@
     if ($Form->posted() && $Form->validate()) {
     	$postvars = array('headerColour', 'headerScheme', 'lang', 'hideBranding', 'helpURL', 'siteURL', 'dashboard', 'hide_pwd_reset');
     	$checkboxes = array('hideBranding', 'dashboard', 'hide_pwd_reset');
+
+        if (PERCH_RUNWAY) {
+            $postvars[]   = 'siteOffline';
+            $checkboxes[] = 'siteOffline';
+        }
 
     	include('_app_settings.pre.php');
 
@@ -68,7 +78,7 @@
 
 
 
-    #PerchUtil::debug('Image folder writable? ' . $image_folder_writable);
+    //PerchUtil::debug('Image folder writable? ' . $image_folder_writable);
 
 
 

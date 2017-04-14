@@ -15,8 +15,13 @@
         perch_content_check_preview();
     }
 
-    function perch_content($key=null, $return=false)
+    function perch_content($key=null, $return=false, $custom_return=false)
     {
+        if (is_array($return)) {
+            // if perch_content() is used like perch_content_custom(), just make it work.
+            return perch_content_custom($key, $return, $custom_return);
+        }
+
         if ($key === null) {
             echo 'You must pass in a <em>name</em> for the content. e.g. <code style="color: navy;background: white;">&lt;' . '?php perch_content(\'Phone number\'); ?' . '&gt;</code>';
             return ' ';
@@ -56,6 +61,7 @@
         }
 
         if (isset($opts['pagination_var']))    $opts['pagination-var'] = $opts['pagination_var'];
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         $Content = PerchContent::fetch();
         $out     = $Content->get_custom($key, $opts);
@@ -154,6 +160,8 @@
         if (isset($opts['from_path']))          $opts['from-path']       = $opts['from_path'];
         if (isset($opts['excerpt_chars']))      $opts['excerpt-chars']   = $opts['excerpt_chars'];
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         $out = $Content->search_content($key, $opts);
 
         if ($opts['skip-template']) return $out;
@@ -181,6 +189,8 @@
         }else{
             $opts = $defaults;
         }
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         $Template   = new PerchTemplate('search'.DIRECTORY_SEPARATOR.$opts['template']);
         $html = $Template->render(array());
@@ -284,6 +294,8 @@
 
         if ($opts['skip-template']) $return = true;
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         $current_page = $Perch->get_page();
 
         $r = $Pages->get_sibling_navigation('next', $opts, $current_page);
@@ -316,6 +328,8 @@
         }
 
         if ($opts['skip-template']) $return = true;
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         $current_page = $Perch->get_page();
 
@@ -351,6 +365,8 @@
         if ($opts['skip-template']) $return = true;
 
         $current_page = $Perch->get_page();
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         $r = $Pages->get_parent_navigation($opts, $current_page);
 
@@ -401,6 +417,8 @@
             $opts = $default_opts;
         }
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         if ($opts['skip-template']) $return = true;
 
         $current_page = $Perch->get_page();
@@ -438,6 +456,8 @@
         }else{
             $opts = $default_opts;
         }
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         if ($opts['skip-template']) $return = true;
 
@@ -487,100 +507,6 @@
         return $Content->create_region($key, $opts);
     }
 
-    function perch_get($var, $default=false)
-    {
-        if (isset($_GET[$var]) && $_GET[$var]!='') {
-            return rawurldecode($_GET[$var]);
-        }
-
-        if (PERCH_RUNWAY) {
-            $r = PerchSystem::get_url_var($var);
-            if ($r) return $r;
-        }
-
-        return $default;
-    }
-
-    function perch_post($var, $default=false)
-    {
-        if (isset($_POST[$var]) && $_POST[$var]!='') {
-            return $_POST[$var];
-        }
-
-        return $default;
-    }
-
-    function perch_layout($file, $vars=array(), $return=false)
-    {
-        $Perch = Perch::fetch();
-        $Perch->set_layout_vars($vars);
-
-        if ($return) {
-            flush();
-            ob_start();
-        }
-
-        $path = PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/layouts/'.$file.'.php');
-
-        if (file_exists($path)) {
-            $Perch->layout_depth++;
-            include($path);
-            $Perch->layout_depth--;
-        }else{
-            echo '<!-- Missing layout file: "'.PerchUtil::html('templates/layouts/'.$file.'.php').'" -->';
-            PerchUtil::debug('Missing layout file: '.$path, 'error');
-        }
-
-        if ($return) {
-            return ob_get_clean();
-        }
-        PerchUtil::flush_output();
-    }
-
-    function perch_layout_var($var, $return=false)
-    {
-        $Perch = Perch::fetch();
-        $var = $Perch->get_layout_var($var);
-
-        if ($return) return $var;
-
-        echo PerchUtil::html($var);
-    }
-
-    function perch_layout_has($var)
-    {
-        $Perch = Perch::fetch();
-        $var = $Perch->get_layout_var($var);
-        if ($var) return true;
-        return false;
-    }
-
-    function perch_template($tpl, $vars=array(), $return=false)
-    {
-        $Template = new PerchTemplate($tpl);
-
-        if (!is_array($vars)) {
-            PerchUtil::debug('Non-array content value passed to perch_template.', 'error');
-            $vars = array();
-        }
-
-        if (count($vars)==0) {
-            $Template->use_noresults();
-        }
-
-        if (!PerchUtil::is_assoc($vars)) {
-            $html = $Template->render_group($vars, true);
-        }else{
-            $html = $Template->render($vars);
-        }
-
-        $html     = $Template->apply_runtime_post_processing($html);
-
-        if ($return) return $html;
-        echo $html;
-        PerchUtil::flush_output();
-    }
-
     function perch_page_attributes($opts=array(), $return=false)
     {
         $Content = PerchContent::fetch();
@@ -604,6 +530,8 @@
             }else{
                 $opts = $default_opts;
             }
+
+            if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
             if ($opts['skip-template']) {
                 return $Page->to_array();
@@ -644,6 +572,8 @@
                 $opts = $default_opts;
             }
 
+            if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
             if ($opts['skip-template']) {
                 $out = $Page->to_array();
                 return $out['perch_'.$key];
@@ -656,6 +586,11 @@
             echo $r;
         }
         return false;
+    }
+
+    function perch_page_get_attribute($key, $opts=array())
+    {
+        return perch_page_attribute($key, $opts, true);
     }
 
     function perch_page_attributes_extend($attrs)
@@ -680,33 +615,11 @@
             $opts = $default_opts;
         }
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         $r = strftime($opts['format'], strtotime($Page->pageModified()));
 
         if ($return) return $r;
 
         echo $r;
-    }
-
-    function perch_page_url($opts=array(), $return=false)
-    {
-        $default_opts = array(
-            'hide-extensions'    => false,
-            'hide-default-doc'   => true,
-            'add-trailing-slash' => false,
-            'include-domain'     => true,
-        );
-
-        if (is_array($opts)) {
-            $opts = array_merge($default_opts, $opts);
-        }else{
-            $opts = $default_opts;
-        }
-
-        $Pages = new PerchContent_Pages;
-
-        $r = $Pages->get_full_url($opts);
-
-        if ($return) return $r;
-
-        echo PerchUtil::html($r);
     }

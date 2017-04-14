@@ -19,6 +19,20 @@ class PerchContent_Collection extends PerchBase
 	        return parent::__construct($details);
 	    }
 
+	    public function to_api_array()
+	    {
+	    	$out = [
+				'id'           => $this->collectionID(),
+				'key'          => $this->collectionKey(),
+				'order'        => $this->collectionOrder(),
+				'template'     => $this->collectionTemplate(),
+				'searchable'   => $this->collectionSearchable(),
+				'last_updated' => $this->collectionUpdated(),
+	    	];	
+
+	    	return $out;
+	    }
+
 
 	    /**
 	     * Get a flat array of items
@@ -30,7 +44,8 @@ class PerchContent_Collection extends PerchBase
 	    public function get_items_for_editing($item_id=false, $Paging=false)
 	    {
 	        $Items = new PerchContent_CollectionItems;
-	        return $Items->get_flat_for_collection($this->id(), 'latest', $item_id, $Paging);
+	        $Template = new PerchTemplate('content/'.$this->collectionTemplate(), 'content');
+	        return $Items->get_flat_for_collection($this->id(), 'latest', $item_id, $Paging, false, $Template);
 	    }
 
 	    /**
@@ -56,6 +71,25 @@ class PerchContent_Collection extends PerchBase
 	    {
 	        $Items = new PerchContent_CollectionItems;
 	        return $Items->get_for_collection($this->id(), $rev, $item_id);
+	    }
+
+	    public function get_items_sorted($order, $item_id=false, $rev=false)
+	    {
+	    	//PerchUtil::debug($order);
+
+	    	if (PerchUtil::count($order)) {
+	    		$sql = 'CASE r.itemID ';
+
+	    		for ($i=0; $i<count($order); $i++) {
+	    			$sql .= ' WHEN '. $order[$i] .' THEN '.($i+1);
+	    		}
+
+	    		$sql .= ' ELSE ' .($i+1). ' END, ';
+	    	}
+
+
+	        $Items = new PerchContent_CollectionItems;	        
+	        return $Items->get_for_collection($this->id(), $rev, $item_id, $sql);
 	    }
 
 	    /**
@@ -268,12 +302,20 @@ class PerchContent_Collection extends PerchBase
 	     */
 	    public function truncate($resulting_item_count=1)
 	    {
-	        $new_rev = $this->create_new_revision();
 	        $Items = new PerchContent_CollectionItems();
-	        $Items->truncate_for_region($this->id(), $new_rev, $resulting_item_count);
+	        $Items->truncate_for_collection($this->id(), $resulting_item_count);
 
 	        $Perch = Perch::fetch();
 	        $Perch->event('region.truncate', $this);
+	    }
+
+	    /**
+	     * Empty the collection of all content. Used by import scripts primarily.
+	     */
+	    public function delete_all_items()
+	    {
+	    	$Items = new PerchContent_CollectionItems();
+	    	$Items->delete_for_collection($this->id());
 	    }
 	    
 
@@ -431,7 +473,11 @@ class PerchContent_Collection extends PerchBase
 	        $column_ids = $this->get_option('column_ids');
 
 	        if ($column_ids) {
-	            $cols = explode(',', $column_ids);
+	            if (is_array($column_ids)) {
+	                $cols = $column_ids;
+	            } else {
+	                $cols = explode(',', $column_ids);    
+	            }
 
 	            $Template = new PerchTemplate('content/'.$this->collectionTemplate(), 'content');
 

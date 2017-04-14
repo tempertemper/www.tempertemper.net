@@ -1,0 +1,10 @@
+{
+	"js": [
+		"PERCH_LOGINPATH/core/editors/markitup/jquery.markitup.js",
+		"PERCH_LOGINPATH/core/editors/markitup/config.js",
+		"PERCH_LOGINPATH/core/editors/markitup/assets/perchassets.js"
+	],
+	"css": [
+		"PERCH_LOGINPATH/core/editors/markitup/css/markitup.min.css"
+	]
+}

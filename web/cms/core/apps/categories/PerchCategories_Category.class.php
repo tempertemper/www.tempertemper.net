@@ -6,6 +6,8 @@ class PerchCategories_Category extends PerchAPI_Base
     protected $pk           = 'catID';
     protected $event_prefix = 'category';
 
+    protected $exclude_from_api = ['catParentID', 'catTreePosition', 'setID', 'catOrder', 'catDisplayPath', 'catDepth'];
+
     public function update($data)
     {
     	$r = parent::update($data);

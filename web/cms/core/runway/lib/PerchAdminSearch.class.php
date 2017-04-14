@@ -5,7 +5,7 @@ class PerchAdminSearch
 	private $api;
 	private $db;
 
-	public function search($key, $opts)
+	public function search($key, $opts, $Paging=false)
 	{
 		PerchUtil::debug('Search term: '.$key, 'success');
 
@@ -15,7 +15,7 @@ class PerchAdminSearch
 		$defaults = array();
 		$defaults['template']           = 'search-result.html';
 		$defaults['count']              = 10;
-		$defaults['excerpt-chars']      = 100;
+		$defaults['excerpt-chars']      = 1000;
 		$defaults['from-path']          = '/';
 		$defaults['hide-extensions']    = false;
 		$defaults['add-trailing-slash'] = false;
@@ -29,7 +29,6 @@ class PerchAdminSearch
 		}else{
 		    $opts = $defaults;
 		}
-
 
 	    $search_method = 'get_admin_search_sql';
 	    $format_method = 'format_admin_result';
@@ -60,7 +59,7 @@ class PerchAdminSearch
 		    
 		    $encoded_key = str_replace('"', '', PerchUtil::json_safe_encode($key));
 		
-		    $Paging = $this->api->get('Paging');
+		    if (!$Paging) $Paging = $this->api->get('Paging');
 		
 		    if (isset($opts['count'])) {
 		        $Paging->set_per_page($opts['count']);
@@ -76,7 +75,7 @@ class PerchAdminSearch
 		    $sql = $Paging->select_sql(); 
 		
 		    if (!$search_content) {            
-		        $sql .= ' \'PerchContent_SearchHandler\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0  ';
+		        $sql .= ' \'PerchContent_SearchHandler\' AS source, \'Page Content\' AS display_source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0  ';
 		    }
 
 		    if (PerchUtil::count($search_handlers)) {
@@ -110,13 +109,16 @@ class PerchAdminSearch
 		    }        
 		        
 		    $rows = $this->db->get_rows($sql);
+
+		    $total_count = $this->db->get_value($Paging->total_count_sql());
+            $Paging->set_total($total_count);
 		
 		    if (PerchUtil::count($rows)==0) {
 		    
 		        if ($search_content) { 
 		            $sql = $Paging->select_sql();
 		        }else{
-		            $sql = $Paging->select_sql() . ' \'PerchContent_SearchHandler\' AS source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0 ';
+		            $sql = $Paging->select_sql() . ' \'PerchContent_SearchHandler\' AS source, \'Page Content\' AS display_source, \'\' AS score, \'\' AS col1, \'\' AS col2, \'\' AS col3, \'\' AS col4, \'\' AS col5, \'\' AS col6, \'\' AS col7, \'\' AS col8 FROM '.$this->table.' WHERE 1=0 ';
 		        }
 		                    
 		        if (PerchUtil::count($search_handlers)) {
@@ -144,10 +146,17 @@ class PerchAdminSearch
 		        }        
 
 		        $rows = $this->db->get_rows($sql);
+
+		        $total_count = $this->db->get_value($Paging->total_count_sql());
+                $Paging->set_total($total_count);
 		    }
 		
 		        
 		    if (PerchUtil::count($rows)) {
+
+		    	$paging_array = $Paging->to_array($opts);
+		    	PerchUtil::debug($paging_array);
+
 		        foreach($rows as $row) {
 		            $className = $row['source'];
 		            if (method_exists($className, $format_method)) {
@@ -157,6 +166,9 @@ class PerchAdminSearch
 		            }
 		            
 		            if ($r) {
+
+		            	$r = array_merge($r, $paging_array);
+
 		                $r['source'] = str_replace('_SearchHandler', '', $row['source']);
 
 		                // duplicate vals
@@ -171,6 +183,9 @@ class PerchAdminSearch
 		                if (!$opts['no-conflict']) {
 		                    $r['key'] = $key; 
 		                }
+
+		                
+
 		                $out[] = $r; 
 		            } 
 		        }
@@ -181,6 +196,7 @@ class PerchAdminSearch
 		    return $out;
 		}
 		
+
 		$Template = new PerchTemplate(PERCH_CORE.'/templates/search/'.$opts['template'], 'search', false);
 		$Template->enable_encoding();
 		

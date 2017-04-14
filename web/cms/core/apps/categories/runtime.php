@@ -16,6 +16,8 @@
 			'template'      => 'category.html',
 		), $opts);
 
+		if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
 		$Categories = new PerchCategories_Categories();
 
 		$r = $Categories->get_custom($opts);
@@ -39,6 +41,8 @@
 			'match'			=> 'eq',
 			'value'			=> $path,
 		), $opts);
+
+		if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
 		$Categories = new PerchCategories_Categories();
 

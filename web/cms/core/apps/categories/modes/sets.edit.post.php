@@ -1,62 +1,72 @@
-<?php 
-    include (PERCH_PATH.'/core/inc/sidebar_start.php');
- 
-    echo $HTML->para('Update your category set.');
- 
-    include (PERCH_PATH.'/core/inc/sidebar_end.php'); 
-    include (PERCH_PATH.'/core/inc/main_start.php'); 
-    include ('_subnav.php'); 
- 
+<?php
     
     if ($Set) {
-        echo $HTML->heading1('Editing ‘%s’ Category Set', $HTML->encode($Set->setTitle()));
+        $heading = $Lang->get('Editing ‘%s’ Category Set', $HTML->encode($Set->setTitle()));
     }else{
-        echo $HTML->heading1('Adding a New Category Set');         
+        $heading = $Lang->get('Adding a New Category Set');         
     }
+
+    echo $HTML->title_panel([
+    'heading' => $heading
+    ], $CurrentUser);
         
-
-    // Set up a smartbar
-    if ($Set) {
-
-        echo $HTML->smartbar(
-                $HTML->smartbar_breadcrumb(false, 
-                        array( 
-                            'link'=> PERCH_LOGINPATH.'/core/apps/categories/sets/?id='.$Set->id(),
-                            'label' => $Set->setTitle(),
-                        )
-                ),
-                $HTML->smartbar_link(true, 
-                        array( 
-                            'link'=> PERCH_LOGINPATH.'/core/apps/categories/sets/edit?id='.$Set->id(),
-                            'label' => PerchLang::get('Set Options'),
-                        )
-                    ),
-                $HTML->smartbar_link(false, 
-                        array( 
-                            'link'=> PERCH_LOGINPATH.'/core/apps/categories/reorder/?id='.$Set->id(),
-                            'label' => PerchLang::get('Reorder Categories'),
-                            'class' => 'icon reorder'
-                        ), 
-                        true
-                    )
-            );
-
-    }else{
-
-        echo $HTML->smartbar(
-                $HTML->smartbar_breadcrumb(true, 
-                        array( 
-                            'link'=> PERCH_LOGINPATH.'/core/apps/categories/sets/',
-                            'label' => PerchLang::get('New Set'),
-                        )
-                )
-            );
-
-    }
-
-
     // If a success or failure message has been set, output that here
     echo $message;
+
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    if ($Set) {
+
+         $Smartbar->add_item([
+            'active' => false,
+            'type' => 'breadcrumb',
+            'links' => [
+                [
+                    'title' => 'Sets',
+                    'link'  => '/core/apps/categories/',
+                ],
+                [
+                    'title' => $Set->setTitle(),
+                    'link'  => '/core/apps/categories/sets/?id='.$Set->id(),
+                    'translate' => false,
+                ]
+            ],
+        ]);
+
+        $Smartbar->add_item([
+                'active' => true,
+                'title'  => 'Set Options',
+                'link'   => '/core/apps/categories/sets/edit?id='.$Set->id(),
+                'icon'   => 'core/o-toggles',
+            ]);
+
+        $Smartbar->add_item([
+                'active'   => false,
+                'title'    => 'Reorder',
+                'link'     => '/core/apps/categories/reorder/?id='.$Set->id(),
+                'position' => 'end',
+                'icon'     => 'core/menu',
+            ]);
+
+
+    } else {
+
+        $Smartbar->add_item([
+            'active' => true,
+            'type' => 'breadcrumb',
+            'links' => [
+                [
+                    'title' => 'New Set',
+                    'link'  => '/core/apps/categories/sets/',
+                ]
+            ],
+        ]);
+
+    }
+
+    echo $Smartbar->render();
+
+
 
     // Sub head
     echo $HTML->heading2('Details');
@@ -90,5 +100,3 @@
     echo $Form->submit_field();
     echo $Form->form_end();
     
-    // Footer
-    include (PERCH_PATH.'/core/inc/main_end.php');

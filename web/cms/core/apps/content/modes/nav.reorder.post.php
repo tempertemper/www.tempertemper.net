@@ -1,34 +1,47 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-<p><?php echo PerchLang::get('These are the pages that belong to this navigation group. Each page can appear in multiple groups.'); ?></p>
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
+<?php 
 
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Editing ‘%s’ navigation group', PerchUtil::html($NavGroup->groupTitle())),
+        ]);
 
-    <h1><?php printf(PerchLang::get('Editing %s Navigation Group'), PerchUtil::html($NavGroup->groupTitle())); ?></h1>
-    
-    <?php echo $Alert->output(); ?>
-
-    <?php
-    /* ----------------------------------------- SMART BAR ----------------------------------------- */
-    ?>
-    <ul class="smartbar">
-        <li><a href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/navigation/pages/?id='.$groupID); ?>"><?php echo PerchLang::get('Pages'); ?></a></li>
-        <li><a href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/navigation/edit/?id='.$groupID); ?>"><?php echo PerchLang::get('Group Options'); ?></a></li>
-        <li class="selected fin"><a class="icon reorder" href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/navigation/reorder/?id='.$groupID); ?>"><?php echo PerchLang::get('Reorder Pages'); ?></a></li>
-    </ul>
-    <?php
-    /* ----------------------------------------- /SMART BAR ----------------------------------------- */
-    ?>
-
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>">
-    
-    <?php
-        $Alert->set('notice', PerchLang::get('Drag and drop the pages to reorder them.').' '. $Form->submit('reorder', 'Save Changes', 'button action'));
+    $Alert->set('info', PerchLang::get('Drag and drop the pages to reorder them.'));
         $Alert->output();
 
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+    $Smartbar->add_item([
+        'active' => false,
+        'type'   => 'breadcrumb',
+        'links'  => [
+            [
+                'title' => 'Navigation groups',
+                'link'  => '/core/apps/content/navigation/',
+            ],
+            [
+                'title' => $NavGroup->groupTitle(),
+                'translate' => false,
+                'link'  => '/core/apps/content/navigation/pages/?id='.$groupID,
+            ]
+        ]
+    ]);
+    $Smartbar->add_item([
+        'active'   => false,
+        'title'    => 'Group Options',
+        'link'     => '/core/apps/content/navigation/edit/?id='.$groupID,
+        'icon'   => 'core/o-toggles',
+    ]);
+    $Smartbar->add_item([
+        'active'   => true,
+        'title'    => 'Reorder',
+        'link'     => '/core/apps/content/navigation/reorder/?id='.$groupID,
+        'icon'     => 'core/menu',
+        'position' => 'end',
+    ]);
+    echo $Smartbar->render();
 
-        echo render_tree($Pages, $groupID, 0, 'sortable');
+    echo $HTML->open('div.inner');
+    echo $Form->form_start(false, 'reorder');
+    
+        echo render_tree($Pages, $groupID, 0, 'sortable sortable-tree');
         
         function render_tree($Pages, $groupID, $parentID=0, $class=false)
         {
@@ -40,8 +53,9 @@
             if (PerchUtil::count($pages)) {
                 
                 foreach($pages as $Page) {
-                    $s .= '<li id="page_'.$Page->id().'"><div class="page icon">';
+                    $s .= '<li id="page_'.$Page->id().'"><div class="page">';
                     $s .= '<input type="text" name="p-'.$Page->id().'" value="'.$Page->pageOrder().'" />';
+                    $s .= PerchUI::icon('core/document');
                     $s .= ''.PerchUtil::html($Page->pageNavText()).'</div>';
                     $s .= render_tree($Pages, $groupID, $Page->id(), $class);
                     $s .= '</li>';
@@ -53,14 +67,17 @@
             return $s;
         }
     ?>
-        <div>
-            <?php echo $Form->hidden('orders', ''); ?>
-        </div> 
-    </form>
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
-
-<?php
-    $Perch->add_javascript_block("
+    <div class="submit-bar">
+        <?php 
+        echo $Form->submit('reorder', 'Save Changes', 'button action');
+        echo $Form->hidden('orders', ''); 
+        ?>
+    </div> 
+    
+<?php 
+    echo $Form->form_end(); 
+    echo $HTML->close('div.inner');
+    /*$Perch->add_javascript_block("
 
 
     jQuery(function($){
@@ -93,4 +110,4 @@
         
     });
 
-");
+");*/

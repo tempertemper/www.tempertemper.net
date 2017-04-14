@@ -5,12 +5,19 @@ class PerchDB_MySQLi
     private $link = false;
 	public $errored   = false;
 	public $error_msg = false;
+	public $error_code = false;
+
+	private $config   = [];
 	
 	static public $queries    = 0;
 	
 
-	function __construct()
+	function __construct($config=null)
 	{
+		mysqli_report(MYSQLI_REPORT_STRICT);
+
+		if ($config) $this->config = $config;
+
 		if (!defined('PERCH_DB_CHARSET')) 	define('PERCH_DB_CHARSET', NULL);
 		if (!defined('PERCH_DB_PORT')) 		define('PERCH_DB_PORT', NULL);
 		if (!defined('PERCH_DB_SOCKET')) 	define('PERCH_DB_SOCKET', NULL);
@@ -20,19 +27,23 @@ class PerchDB_MySQLi
 	{
 		$this->close_link();
 	}
+
+	private function config($item)
+	{
+		if (isset($this->config[$item])) return $this->config[$item];
+		return constant($item);
+	}
 		
 	private function open_link() 
 	{
 		try {
-			$this->link = new mysqli(PERCH_DB_SERVER, PERCH_DB_USERNAME, PERCH_DB_PASSWORD, PERCH_DB_DATABASE, PERCH_DB_PORT, PERCH_DB_SOCKET);
+			$this->link = new mysqli($this->config('PERCH_DB_SERVER'), $this->config('PERCH_DB_USERNAME'), $this->config('PERCH_DB_PASSWORD'), $this->config('PERCH_DB_DATABASE'), $this->config('PERCH_DB_PORT'), $this->config('PERCH_DB_SOCKET'));
 		} catch (Exception $e) {
 			
-		}
-
-		if ($this->link->connect_errno) {
-		    switch(PERCH_ERROR_MODE) 
+			switch($this->config('PERCH_ERROR_MODE')) 
 		    {
 		        case 'SILENT':
+		        	$this->errored = true;
 		            break;
 		            
 		        case 'ECHO':
@@ -43,15 +54,17 @@ class PerchDB_MySQLi
 		            break;
 		            
 		        default:
-		            PerchUtil::redirect(PERCH_LOGINPATH.'/core/error/db.php');
+		            PerchUtil::redirect($this->config('PERCH_LOGINPATH').'/core/error/db.php');
 		            break;
 		    }
 
 			PerchUtil::debug("Could not create DB link!", 'error');
+			PerchUtil::debug($e->getMessage(), 'error');
+			$this->error_msg = $e->getMessage();
 			return false;
 		}
 
-		if (PERCH_DB_CHARSET && !$this->link->set_charset(PERCH_DB_CHARSET)) {
+		if ($this->config('PERCH_DB_CHARSET') && !$this->link->set_charset($this->config('PERCH_DB_CHARSET'))) {
 		    PerchUtil::debug("Error loading character set utf8: ". $this->link->error, 'error');
 		}
 		
@@ -95,6 +108,7 @@ class PerchDB_MySQLi
 			PerchUtil::debug("Invalid query: " . $link->error, 'error');
 			$this->errored = true;
 			$this->error_msg = $link->error;
+			$this->error_code = $link->errno;
 			return false;
 		}
 		
@@ -364,6 +378,13 @@ class PerchDB_MySQLi
 	{
 		$link = $this->get_link();
 		return $link->server_info;
+	}
+
+	public function test_connection()
+	{
+		$link = $this->get_link();
+		if ($link) return true;
+		return false;
 	}
 	
 }

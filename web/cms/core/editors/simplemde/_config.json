@@ -1,0 +1,10 @@
+{
+	"js": [
+		"PERCH_LOGINPATH/core/editors/simplemde/simplemde.min.js?v=1.11.2",
+		"PERCH_LOGINPATH/core/editors/simplemde/perch/config.js?v=1.11.2"
+	],
+	"css": [
+		"PERCH_LOGINPATH/core/editors/simplemde/simplemde.min.css?v=1.11.2",
+		"PERCH_LOGINPATH/core/editors/simplemde/perch/edit.css?v=1.11.2"
+	]
+}

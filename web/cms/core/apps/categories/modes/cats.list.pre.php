@@ -1,8 +1,10 @@
 <?php
 	
-	$API  = new PerchAPI('categories', 1.0);
-	$HTML = $API->get('HTML');
-
+	$API  = new PerchAPI(1.0, 'categories');
+	$Lang   = $API->get('Lang');
+	$HTML   = $API->get('HTML');
+	$Paging = $API->get('Paging');
+	
 	$Sets 		= new PerchCategories_Sets;
 	$Categories = new PerchCategories_Categories;
 

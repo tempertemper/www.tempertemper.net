@@ -20,7 +20,7 @@
     
         
     include(PERCH_CORE.'/runway/apps/content/modes/routes.reorder.pre.php');
-    
+    include($app_path.'/modes/_subnav.php');
     include(PERCH_CORE . '/inc/top.php');
 
     include(PERCH_CORE.'/runway/apps/content/modes/routes.reorder.post.php');

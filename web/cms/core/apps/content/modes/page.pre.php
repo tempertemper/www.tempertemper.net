@@ -1,4 +1,11 @@
 <?php
+    $API    = new PerchAPI(1.0, 'content');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
+    $Paging = $API->get('Paging');
+    $Paging->set_per_page(100);
+    
 
     $Pages   = new PerchContent_Pages;
     $Regions = new PerchContent_Regions;
@@ -34,9 +41,18 @@
     }
 
 	if ($Page->pagePath()=='*') {
-        $regions = $Regions->get_shared();
+        $regions = $Regions->get_shared($Paging);
     }else{
-        $regions = $Regions->get_for_page($Page->id(), $include_shared=false);
+        $regions = $Regions->get_for_page($Page->id(), $include_shared=false, $new_only=false, $template=false, $Paging);
     }
 
 
+    if (PerchUtil::get('f')=='pl' && PerchUtil::count($regions) == 1 && $collections == false) {
+        // link is from page list (f=pl)
+        // and only one region, so jump directly to it.
+        $item = $regions[0];
+        if ($item->role_may_edit($CurrentUser)) {
+            $page = '../edit/?id='.$item->id();
+            PerchUtil::redirect($page);
+        }
+    }

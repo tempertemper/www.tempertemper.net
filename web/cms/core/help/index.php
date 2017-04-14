@@ -9,11 +9,11 @@
     $Alert = new PerchAlert;
     
     include('modes/help.pre.php');
+    include('modes/_subnav.php');
     
     include(PERCH_CORE . '/inc/top.php');
+    
 
     include('modes/help.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-
-?>

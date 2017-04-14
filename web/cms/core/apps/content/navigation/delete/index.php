@@ -22,10 +22,9 @@
     
         
     include($app_path.'/modes/nav.delete.pre.php');
-    
+    include($app_path.'/modes/_subnav.php');
     include(PERCH_CORE . '/inc/top.php');
 
     include($app_path.'/modes/nav.delete.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-?>

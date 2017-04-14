@@ -1,47 +1,56 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
+<?php
     
-    <p><?php echo PerchLang::get('When raising a support ticket you should copy and paste the information on this page.'); ?></p>
-   
-    <h3><p><?php echo PerchLang::get('Understanding this report'); ?></p></h3>
-    
-    <p><?php echo PerchLang::get('The Diagnostics Report gives you useful advice about your set-up and also your hosting environment.'); ?></p>
-    
-    <p><?php echo PerchLang::get('The Health Check gives you a quick overview of the state of critical items like software versions and hosting configuration.'); ?></p>
-    
-    <p><?php echo PerchLang::get('Settings listed under Perch Information are part of Perch and generally things you can change.'); ?></p>
-    
-    <p><?php echo PerchLang::get('Settings listed under Hosting Settings are part of your hosting environment. Making a change to any of these - for example increasing the maximum allowable file upload size - is something that you would need to ask your hosting company about.'); ?></p>
-
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
-    
-    <h1><?php echo PerchLang::get('Viewing Diagnostic Information'); ?></h1>
-	
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Viewing diagnostic information'),
+        ]);
 
 
-    <?php echo $Alert->output(); ?>
-    
-    <h2><?php echo PerchLang::get('Diagnostics report'); ?></h2>
-    
-    <?php
-        $max_upload   = (int)(ini_get('upload_max_filesize'));
-        $max_post     = (int)(ini_get('post_max_size'));
-        $memory_limit = (int)(ini_get('memory_limit'));
-        $upload_mb    = min($max_upload, $max_post, $memory_limit);
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+    $Smartbar->add_item([
+        'active'   => false,
+        'title'    => 'Basic',
+        'link'     => '/core/settings/diagnostics/',
+        'icon'     => 'core/info-alt',
+    ]);
+    $Smartbar->add_item([
+        'active'   => true,
+        'title'    => 'Extended',
+        'link'     => '/core/settings/diagnostics/?extended',
+        'icon'     => 'core/gear',
+    ]);
+    $Smartbar->add_item([
+        'active'   => false,
+        'title'    => 'Add-ons',
+        'link'     => '/core/settings/diagnostics/add-ons/',
+        'icon'     => 'blocks/pencil-paintbrush-pen',
+    ]);
+    $Smartbar->add_item([
+        'active'   => false,
+        'title'    => 'Update',
+        'link'     => '/core/settings/update/',
+        'icon'     => 'ext/o-sync',
+        'position' => 'end',
+    ]);
+    echo $Smartbar->render();
 
-        $DB = PerchDB::fetch();
 
-        $messages = array();
+    $max_upload   = PerchUtil::shorthand_to_megabytes(ini_get('upload_max_filesize'));
+    $max_post     = PerchUtil::shorthand_to_megabytes(ini_get('post_max_size'));
+    $memory_limit = PerchUtil::shorthand_to_megabytes(ini_get('memory_limit'));
+    $upload_mb    = min($max_upload, $max_post, $memory_limit);
 
-    ?>
+    $DB = PerchDB::fetch();
 
-    <div class="info">
+    $messages = array();
+
+?>
+
+    <div class="inner">
 		<h3><?php echo PerchLang::get('Perch information'); ?></h3>
-        <ul>
+        <ul class="diagnostics-list">
             <li><?php 
                 echo (PERCH_RUNWAY ? 'Perch Runway' : 'Perch');
-                if (strpos(PERCH_LICENSE_KEY, 'LOCAL-TESTING')>2) echo ' LTM';
+                if (strpos(PERCH_LICENSE_KEY, '-LOCAL-')==2) echo ' LTM';
                 echo ': ';
                 echo PerchUtil::html($Perch->version); ?></li>
             <li>Production mode: <?php 
@@ -91,11 +100,10 @@
                     echo '<li>DB tables: '.implode(', ', $tables).'</li>';
                 }
             ?>
-			<li>Users: <?php echo PerchDB::fetch()->get_value('SELECT COUNT(*) FROM '.PERCH_DB_PREFIX.'users'); ?></li>     
-            <li>PHPMailer: <?php $PHPMailer = new PHPMailer(true); echo $PHPMailer->Version; ?></li>   
+			<li>Users: <?php echo PerchDB::fetch()->get_value('SELECT COUNT(*) FROM '.PERCH_DB_PREFIX.'users'); ?></li>        
             <li>App runtimes: <pre><?php
                 $file = PerchUtil::file_path(PERCH_PATH.'/config/apps.php');
-                echo PerchUtil::html(file_get_contents($file));
+                echo PerchUtil::html(trim(file_get_contents($file)));
             ?></pre></li>
             <?php
                 $ScheduledTasks = new PerchScheduledTasks;
@@ -145,7 +153,7 @@
             ?>
 		</ul>
 		<h3><?php echo PerchLang::get('Hosting settings'); ?></h3>
-		<ul>
+		<ul class="diagnostics-list">
             <li>PHP: <?php echo PerchUtil::html(phpversion()); ?></li>
             <li>Zend: <?php echo PerchUtil::html(zend_version()); ?></li>
             <li>OS: <?php echo PerchUtil::html(PHP_OS); ?></li>
@@ -196,6 +204,3 @@
         </ul>
         
     </div>
-    
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); 

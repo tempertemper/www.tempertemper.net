@@ -1,35 +1,49 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
+<?php 
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Creating a new collection'),
+        ]);
 
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ($app_path.'/modes/_subnav.php'); ?>
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+    $Smartbar->add_item([
+            'active' => true,
+            'type'   => 'breadcrumb',
+            'links'  => [
+                [
+                    'title'  => 'Collections',
+                    'link'   => '/core/apps/content/manage/collections/',
+                ],
+                [
+                    'title' => 'New',
+                    'link'  => '/core/apps/content/manage/collections/edit/',
+                ]
+            ]
+            
+        ]);
+    echo $Smartbar->render();
 
-    <h1><?php echo PerchLang::get('Creating a New Collection'); ?></h1>
-    
-    <?php echo $Alert->output(); ?>
-
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="magnetic-save-bar">
-        
-        <h2><?php echo PerchLang::get('Collection'); ?></h2>
-        
-        
-        <div class="field">
-                <?php echo $Form->label('collectionKey', 'Collection Key'); ?>
-                <?php
-                    echo $Form->text('collectionKey', $Form->get($details, 'collectionKey'), 'm');
-                    echo $Form->hint(PerchLang::get('Examples: Articles, Events, Locations, Departments'));
-                ?>
+    echo $Form->form_start();
+?>
+    <div class="field-wrap">
+        <?php echo $Form->label('collectionKey', 'Collection Key'); ?>
+        <div class="form-entry">
+        <?php
+            echo $Form->text('collectionKey', $Form->get($details, 'collectionKey'));
+            echo $Form->hint(PerchLang::get('Examples: Articles, Events, Locations, Departments'));
+        ?>
         </div>
+    </div>
 
-        <div class="field">
-            <?php echo $Form->label('collectionTemplate', 'Template'); ?>
-            <?php         
-                echo $Form->grouped_select('collectionTemplate', $Regions->get_templates(false, false), $Form->get(array('collectionTemplate'=>''), 'collectionTemplate', 0));               
-            ?>
+    <div class="field-wrap">
+        <?php echo $Form->label('collectionTemplate', 'Template'); ?>
+        <div class="form-entry">
+        <?php         
+            echo $Form->grouped_select('collectionTemplate', $Regions->get_templates(false, false), $Form->get(array('collectionTemplate'=>''), 'collectionTemplate', 0));               
+        ?>
         </div>
-
-        <p class="submit">
-            <?php echo $Form->submit('btnsubmit', 'Save', 'button'), ' ', PerchLang::get('or'), ' <a href="',PERCH_LOGINPATH . '/core/apps/content/manage/collections/">', PerchLang::get('Cancel'), '</a>'; ?>
-        </p>
-    </form>
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+    </div>
+<?php
+    echo $HTML->submit_bar([
+        'button' => $Form->submit('btnsubmit', 'Save', 'button'),
+        'cancel_link' => '/core/apps/content/manage/collections/'
+        ]);
+    echo $Form->form_end();

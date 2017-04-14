@@ -5,6 +5,7 @@
 
 	$API  = new PerchAPI(1.0, 'assets');
 	$HTML = $API->get('HTML');
+	$Lang = $API->get('Lang');
 
 	$Assets = new PerchAssets_Assets;
 
@@ -31,6 +32,10 @@
 
 	if (isset($_GET['date']) && $_GET['date']!='') {
 	    $filters['date'] = $_GET['date'];
+	}
+
+	if (isset($_GET['tag']) && $_GET['tag']!='') {
+	    $filters['tag'] = $_GET['tag'];
 	}
 
 

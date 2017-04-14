@@ -1,0 +1,25 @@
+<div id="{{ id }}" aria-hidden="true" class="dialog">
+  <div tabindex="-1" class="dialog-overlay" data-a11y-dialog-hide></div>
+  <div role="dialog" aria-labelledby="{{ id }}-title" class="dialog-content role-search">
+    <div role="document" class="dialog-body">
+      <h1 id="{{ id }}-title" tabindex="0" aria-hidden="true">{{ Lang "Search" }}</h1>
+      <form class="form-simple" action="{{ form_action }}" method="get">
+        <div class="field-wrap">
+          <label for="q" aria-hidden="true">{{ Lang "Search" }}</label>
+          <div class="form-entry">
+            <input type="search" id="q" name="q" required="required" aria-required="true" class="input-simple">
+            <button class="button button-icon icon-left action-info">
+            <div>
+              {{ icon 'core/search' }}
+              <span>{{ Lang "Search" }}</span>
+            </div>
+          </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <button type="button" data-a11y-dialog-hide aria-label="Close this dialog window" class="dialog-close">
+    {{ icon 'core/cancel' 24 }}
+    </button>
+  </div>
+</div>

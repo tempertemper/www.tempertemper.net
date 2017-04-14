@@ -6,13 +6,8 @@
     include(PERCH_CORE . '/inc/auth.php');
     
     $Perch->page_title = PerchLang::get('Edit Asset');
-
-    include(__DIR__.'/../PerchAssets_Asset.class.php');
-    include(__DIR__.'/../PerchAssets_Assets.class.php');
-    include(__DIR__.'/../PerchAssets_Display.class.php');
-    include(__DIR__.'/../PerchAssets_Tags.class.php');
-    include(__DIR__.'/../PerchAssets_Tag.class.php');
             
+    include(__DIR__.'/../modes/_subnav.php');
     include(__DIR__.'/../modes/edit.pre.php');
    
     include(PERCH_CORE.'/inc/top.php');
@@ -20,4 +15,3 @@
     include(__DIR__.'/../modes/edit.post.php');
 
     include(PERCH_CORE.'/inc/btm.php');
-

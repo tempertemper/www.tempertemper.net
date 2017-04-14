@@ -7,9 +7,9 @@
     
     $Perch->page_title = PerchLang::get('Reindex Assets');
 
-    include(__DIR__.'/../PerchAssets_Asset.class.php');
-    include(__DIR__.'/../PerchAssets_Assets.class.php');
+
             
+    include(__DIR__.'/../modes/_subnav.php');
     include(__DIR__.'/../modes/reindex.pre.php');
    
     include(PERCH_CORE.'/inc/top.php');
@@ -17,5 +17,3 @@
     include(__DIR__.'/../modes/reindex.post.php');
 
     include(PERCH_CORE.'/inc/btm.php');
-
-?>

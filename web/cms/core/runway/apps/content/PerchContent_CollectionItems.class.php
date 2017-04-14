@@ -114,8 +114,12 @@ class PerchContent_CollectionItems extends PerchFactory
      * @return void
      * @author Drew McLellan
      */
-    public function get_flat_for_collection($collectionID, $rev=false, $item_id=false, $limit_or_Paging=false, $limit_fields_to=false)
+    public function get_flat_for_collection($collectionID, $rev=false, $item_id=false, $limit_or_Paging=false, $limit_fields_to=false, PerchTemplate $Template = null)
     {
+
+        $sort_val = null;
+        $sort_dir = null;
+
         if ($limit_or_Paging && is_object($limit_or_Paging)) {
             $Paging = $limit_or_Paging;
             $limit = false;
@@ -126,6 +130,7 @@ class PerchContent_CollectionItems extends PerchFactory
 
         if ($Paging) {
             $sql = $Paging->select_sql();
+            list($sort_val, $sort_dir) = $Paging->get_custom_sort_options($Template);
         }else{
             $sql = 'SELECT';
         }
@@ -137,15 +142,34 @@ class PerchContent_CollectionItems extends PerchFactory
         }
 
 
-        $sql .= ' ci.*, r.itemOrder, IF(r.itemLatestRev>r.itemRev,1,0) AS _has_draft FROM '.$this->table.' ci, '.PERCH_DB_PREFIX.'collection_revisions r 
-                WHERE r.itemID=ci.itemID AND ci.collectionID='.$this->db->pdb($collectionID).' AND ci.itemRev=r.'.$rev_field;
+        $sql .= ' ci.*, r.itemOrder, IF(r.itemLatestRev>r.itemRev,1,0) AS _has_draft';
+
+        if ($sort_val) {
+            $sql .= ', idx.indexValue AS sortval';
+        }
+
+        $sql .= ' FROM '.$this->table.' ci, '.PERCH_DB_PREFIX.'collection_revisions r';
+
+        if ($sort_val) {
+            $sql .= ', '.PERCH_DB_PREFIX.'collection_index idx';
+        }
+
+
+        $sql .= ' WHERE r.itemID=ci.itemID AND ci.collectionID='.$this->db->pdb($collectionID).' AND ci.itemRev=r.'.$rev_field;
                 
         if ($item_id!==false) {
             $sql .= ' AND ci.itemID='.$this->db->pdb($item_id);
         }
-        
-        $sql .= ' ORDER BY r.itemOrder ASC ';
 
+        if ($sort_val) {
+            $sql .= ' AND ci.itemID=idx.itemID AND ci.itemRev=idx.itemRev AND ci.collectionID=idx.collectionID
+                        AND idx.indexKey='.$this->db->pdb($sort_val).' 
+                    ORDER BY sortval '.$sort_dir.' ';
+        } else {
+            $sql .= ' ORDER BY r.itemOrder ASC ';    
+        }
+        
+    
         if ($Paging) {
             $sql .= $Paging->limit_sql();
         }else{
@@ -224,7 +248,7 @@ class PerchContent_CollectionItems extends PerchFactory
      * @return void
      * @author Drew McLellan
      */
-    public function get_for_collection($collectionID, $rev=false, $item_id=false)
+    public function get_for_collection($collectionID, $rev=false, $item_id=false, $custom_order='')
     {
         $sql = 'SELECT * FROM '.$this->table.' ci, '.PERCH_DB_PREFIX.'collection_revisions r
                 WHERE r.itemID=ci.itemID AND ci.collectionID='.$this->db->pdb($collectionID);
@@ -240,7 +264,7 @@ class PerchContent_CollectionItems extends PerchFactory
             $sql .= ' AND ci.itemID='.$this->db->pdb($item_id);
         }
         
-        $sql .= ' ORDER BY r.itemOrder ASC';
+        $sql .= ' ORDER BY '.$custom_order.'r.itemOrder ASC';
         
         return $this->return_instances($this->db->get_rows($sql));
     }
@@ -251,7 +275,7 @@ class PerchContent_CollectionItems extends PerchFactory
      * @param  [type] $item_ids     [description]
      * @return [type]               [description]
      */
-    public function get_for_collection_by_ids_runtime($collectionID, $item_ids)
+    public function get_for_collection_by_ids_runtime($collectionID, $item_ids, $sort=false, $count=false)
     {
         $sql = 'SELECT * FROM '.$this->table.' ci, '.PERCH_DB_PREFIX.'collection_revisions r
                 WHERE r.itemID=ci.itemID AND ci.collectionID='.$this->db->pdb((int)$collectionID) .'
@@ -260,7 +284,21 @@ class PerchContent_CollectionItems extends PerchFactory
         if (PerchUtil::count($item_ids)==1) {
             $sql .= 'AND ci.itemID='.$this->db->pdb((int)$item_ids[0]).' ';
         }else{
-            $sql .= 'AND ci.itemID IN ('.$this->db->implode_for_sql_in($item_ids, true).') ORDER BY r.itemOrder ASC';    
+            $sql .= 'AND ci.itemID IN ('.$this->db->implode_for_sql_in($item_ids, true).') ORDER BY ';
+
+            if ($sort && $sort == 'custom') {
+                $sql .= 'CASE r.itemID ';
+                for ($i=0; $i<count($item_ids); $i++) {
+                    $sql .= ' WHEN '. $item_ids[$i] .' THEN '.($i+1);
+                }
+                $sql .= ' ELSE ' .($i+1). ' END, ';
+            }
+
+            $sql .= 'r.itemOrder ASC';    
+
+            if ($count) {
+                $sql .= ' LIMIT '.(int)$count;
+            }
         }
         
         return $this->return_instances($this->db->get_rows($sql));
@@ -478,7 +516,7 @@ class PerchContent_CollectionItems extends PerchFactory
      * @return void
      * @author Drew McLellan
      */
-    public function truncate_for_region($collectionID, $rev, $resulting_item_count=1)
+    public function truncate_for_collection($collectionID, $rev, $resulting_item_count=1)
     {
         $sql = 'DELETE FROM '.$this->table.'
                 WHERE itemRowID IN 
@@ -489,6 +527,26 @@ class PerchContent_CollectionItems extends PerchFactory
                         LIMIT '.$resulting_item_count.', 99999999 
                         ) AS t2
                     )';
+        return $this->db->execute($sql);
+    }
+
+    /**
+     * Deletes all items in the collection. Used mainly by bulk import scripts to reset. Not used commonly during editing.
+     *
+     * @param string $collectionID 
+     */
+    public function delete_for_collection($collectionID)
+    {
+        $sql = 'DELETE FROM '.$this->table.'
+                WHERE collectionID='.$this->db->pdb((int)$collectionID);
+        return $this->db->execute($sql);
+
+        $sql = 'DELETE FROM '.PERCH_DB_PREFIX.'collection_revisions
+                WHERE collectionID='.$this->db->pdb((int)$collectionID);
+        return $this->db->execute($sql);
+
+        $sql = 'DELETE FROM '.PERCH_DB_PREFIX.'collection_index
+                WHERE collectionID='.$this->db->pdb((int)$collectionID);
         return $this->db->execute($sql);
     }
     

@@ -1,4 +1,8 @@
 <?php
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $id = (int) $_GET['id'];
 
@@ -6,7 +10,8 @@
         $Page = $Pages->find($id);
     }
 
-    $Form = new PerchForm('delete');
+    $Form = $API->get('Form');
+    $Form->set_name('delete');
     
     if (!$Page || !is_object($Page)) {
         PerchUtil::redirect(PERCH_LOGINPATH . '/core/apps/content');

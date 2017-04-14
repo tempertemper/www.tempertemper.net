@@ -1,4 +1,8 @@
 <?php
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+    
 
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $id = (int) $_GET['id'];
@@ -65,8 +69,6 @@
 		$User->send_password_recovery_link();
 		$Alert->set('success', PerchLang::get('Password recovery instructions have been sent by email.'));
 	}
-
-
 
     $details = $User->to_array();
 
