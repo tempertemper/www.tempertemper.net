@@ -53,5 +53,3 @@
 
   define('PERCH_HTML5', true);
   define('PERCH_RWD', true);
-
-?>
