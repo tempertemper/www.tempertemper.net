@@ -1,7 +1,14 @@
 <?php
 
+	$API    = new PerchAPI(1.0, 'core');
+	$Lang   = $API->get('Lang');
+	$HTML   = $API->get('HTML');
+	$Paging = $API->get('Paging');
+
+	$Paging->set_per_page(20);
+
 	$ScheduledTasks = new PerchScheduledTasks();
-	$tasks = $ScheduledTasks->get_recent(20);
+	$tasks = $ScheduledTasks->get_recent($Paging);
 
 	$apps = $Perch->get_apps();
 
@@ -13,6 +20,4 @@
 		}	
 	}
 	
-    
-
-?>
+   

@@ -30,10 +30,9 @@
 
         
     include($app_path.'/modes/page.edit.pre.php');
-    
+    include($app_path.'/modes/_subnav.php');
     include(PERCH_CORE . '/inc/top.php');
 
     include($app_path.'/modes/page.edit.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-?>

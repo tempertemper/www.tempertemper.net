@@ -1,6 +1,6 @@
 <?php
 
-	echo PerchUtil::subnav($CurrentUser, array(
+	PerchUI::set_subnav(array(
 		array('page'=>array(
 						'core/apps/content',
 						'core/apps/content/page',
@@ -8,6 +8,7 @@
 						'core/apps/content/page/edit',
 						'core/apps/content/page/delete',
 						'core/apps/content/page/details',
+						'core/apps/content/page/url',
 						'core/apps/content/edit',
 						'core/apps/content/options',
 						'core/apps/content/delete',
@@ -16,20 +17,21 @@
 						'core/apps/content/reorder',
 						'core/apps/content/reorder/region',
 						'core/apps/content/revisions',
-						'core/apps/content/revisions/revert',	
-						'core/apps/content/collections',
-						'core/apps/content/collections/edit',
-						'core/apps/content/collections/edit/options',
-						'core/apps/content/collections/options',
-						'core/apps/content/collections/import',
-						'core/apps/content/delete/collection/item',				
+						'core/apps/content/revisions/revert',						
 						), 
-				'label'=>'Add/Edit'),
+				'label'=>'Pages'),
 		array('page'=>array(
 						'core/apps/content/manage/collections',
 						'core/apps/content/manage/collections/edit',
 						'core/apps/content/manage/collections/delete',
 						'core/apps/content/manage/collections/import',
+						'core/apps/content/collections',
+						'core/apps/content/collections/edit',
+						'core/apps/content/collections/edit/options',
+						'core/apps/content/collections/options',
+						'core/apps/content/collections/import',
+						'core/apps/content/delete/collection/item',	
+						'core/apps/content/reorder/collection',
 						), 
 				'label'=>'Collections', 'runway'=>true, 'priv'=>'content.collections.manage'),
 		array('page'=>array(

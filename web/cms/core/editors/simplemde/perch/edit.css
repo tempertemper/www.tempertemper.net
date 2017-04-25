@@ -1,0 +1,191 @@
+.simplemde-wrap .editor-toolbar {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	font-size: 93%;
+	padding: 0;
+	min-height: 26px;
+}
+
+.simplemde-wrap .editor-toolbar.fullscreen {
+	padding: 12px 7px;
+	border-radius: 0;
+}
+
+.simplemde-wrap .editor-toolbar.fullscreen:before {
+	width: 0;
+}
+
+.simplemde-wrap .editor-toolbar:before {
+	margin: 0;
+}
+
+.simplemde-wrap .editor-toolbar:after {
+	margin: 0;
+}
+
+.simplemde-wrap.active .editor-toolbar {
+	opacity: 1;
+}
+
+.simplemde-wrap .editor-toolbar a {
+	width: 24px;
+	height: 24px;
+}
+
+.simplemde-wrap .editor-toolbar a:before {
+	line-height: 24px;
+}
+
+.simplemde-wrap .editor-toolbar a:hover {
+	border-radius: 20px;
+}
+
+.simplemde-wrap .editor-toolbar a.active {
+	color: #fff !important; /* seriously simpleMDE?! */
+	background: #4d4d4d;
+	border-radius: 20px;
+	border: 1px solid #fff;
+} 
+
+.simplemde-wrap .CodeMirror {
+	border-radius: 3px;
+	color: #1a1a1a;
+	font-size: 93%;
+	border: 1px solid #ccc;
+	padding: 7px;
+    margin: 0;
+    line-height: normal;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+.simplemde-wrap .CodeMirror,
+.simplemde-wrap .CodeMirror-scroll {
+  min-height: auto;
+}
+
+.editor-wrap.xxs .CodeMirror-scroll {
+  height: 1em;
+}
+
+.editor-wrap.xs .CodeMirror-scroll {
+  height: 3.5em;
+}
+
+.editor-wrap.s .CodeMirror-scroll {
+  height: 5.5em;
+}
+
+.editor-wrap.m .CodeMirror-scroll {
+  height: 8em;
+}
+
+.editor-wrap.l .CodeMirror-scroll {
+  height: 12em;
+}
+
+.editor-wrap.xl .CodeMirror-scroll {
+  height: 20em; 
+}
+
+.editor-wrap.xxl .CodeMirror-scroll {
+  height: 30em; 
+}
+
+.simplemde-wrap .CodeMirror-fullscreen,
+.simplemde-wrap .editor-preview-side {
+	z-index: 2;
+	border-radius: 0;
+}
+
+.simplemde-wrap .editor-preview h1,
+.simplemde-wrap .editor-preview h2,
+.simplemde-wrap .editor-preview h3,
+.simplemde-wrap .editor-preview h4,
+.simplemde-wrap .editor-preview h5,
+.simplemde-wrap .editor-preview h6 {
+  font-weight: 400;
+}
+
+.simplemde-wrap .editor-preview-side h1,
+.simplemde-wrap .editor-preview-side h2,
+.simplemde-wrap .editor-preview-side h3,
+.simplemde-wrap .editor-preview-side h4,
+.simplemde-wrap .editor-preview-side h5,
+.simplemde-wrap .editor-preview-side h6 {
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'perch_simplemde';
+  src: url('font/perch_simplemde.eot?77608310');
+  src: url('font/perch_simplemde.eot?77608310#iefix') format('embedded-opentype'),
+       url('font/perch_simplemde.woff2?77608310') format('woff2'),
+       url('font/perch_simplemde.woff?77608310') format('woff'),
+       url('font/perch_simplemde.ttf?77608310') format('truetype'),
+       url('font/perch_simplemde.svg?77608310#perch_simplemde') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'perch_simplemde';
+    src: url('../font/perch_simplemde.svg?77608310#perch_simplemde') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "perch_simplemde";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-bold:before { content: '\e800'; } /* '' */
+.icon-italic:before { content: '\e801'; } /* '' */
+.icon-link:before { content: '\e802'; } /* '' */
+.icon-picture:before { content: '\e803'; } /* '' */
+.icon-doc:before { content: '\e804'; } /* '' */
+.icon-eye:before { content: '\e805'; } /* '' */
+.icon-resize-full-alt:before { content: '\f0b2'; } /* '' */
+.icon-list-bullet:before { content: '\f0ca'; } /* '' */
+.icon-list-numbered:before { content: '\f0cb'; } /* '' */
+.icon-strike:before { content: '\f0cc'; } /* '' */
+.icon-underline:before { content: '\f0cd'; } /* '' */
+.icon-table:before { content: '\f0ce'; } /* '' */
+.icon-columns:before { content: '\f0db'; } /* '' */
+.icon-quote-left:before { content: '\f10d'; } /* '' */
+.icon-code:before { content: '\f121'; } /* '' */
+.icon-header:before { content: '\f1dc'; } /* '' */

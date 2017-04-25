@@ -248,7 +248,7 @@
           if ($query != '') {
               $DB->execute($query);
               if ($DB->errored && strpos($DB->error_msg, 'Duplicate')===false) { 
-                  echo '<li class="icon failure error">'.PerchUtil::html(PerchLang::get('The following error occurred:')) .'</li>';
+                 echo '<li class="progress-item progress-alert">'.PerchUI::icon('core/face-pain').' '.PerchUtil::html(PerchLang::get('The following error occurred:')) .'</li>';
                   echo '<li class="failure"><code class="sql">'.PerchUtil::html($query).'</code></li>';
                   echo '<li class="failure"><code>'.PerchUtil::html($DB->error_msg).'</code></p></li>';
                   $errors = true;

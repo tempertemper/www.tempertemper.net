@@ -98,7 +98,7 @@ class PerchContent_Util
 		$given_subprefix = $subprefix;
 	    $seen_tags = array();
 
-	    if ($Item->itemID()) {
+	    if ($Item && $Item->itemID()) {
 	    	$perch_prefix = 'perch_'.$Item->itemID();
 	    	$item_prefix  = $Item->itemID().'_';
 	    }else{
@@ -222,6 +222,13 @@ class PerchContent_Util
 	                    //}
 	                }
 
+	                if (PerchUtil::count($deleted_blocks)) {
+	                	// were all the blocks deleted? If so, add an empty _blocks entry so that the previous value isn't persisted
+	                	if (!isset($form_vars['_blocks'])) {
+	                		$form_vars['_blocks'] = [];
+	                	}
+	                }
+
 	                // if ($Tag->id()=='_blocks' && isset($form_vars[$Tag->id()])) {
 	                // 	$form_vars[$Tag->id()] = PerchUtil::array_sort($form_vars[$Tag->id()], '_block_index');
 	                // }
@@ -267,7 +274,7 @@ class PerchContent_Util
 	                $Tag->set('input_id', $field_prefix);
 
 	                $FieldType = PerchFieldTypes::get($Tag->type(), $Form, $Tag, $tags, $Form->app_id);
-	                $FieldType->set_unique_id($Item->id());
+	                if ($Item) $FieldType->set_unique_id($Item->id());
 
 	                $var  = $FieldType->get_raw($postitems, $Item);
 	                if ($Tag->searchable(true)) {
@@ -313,7 +320,7 @@ class PerchContent_Util
 	    }
 
 	    // Resources
-        if (!$in_repeater && !$in_block && $Item->ready_to_log_resources()) {
+        if (!$in_repeater && !$in_block && $Item && $Item->ready_to_log_resources()) {
         	$resourceIDs = $Resources->get_logged_ids();
         	if (PerchUtil::count($resourceIDs)) {
         	    $Item->log_resources($resourceIDs);
@@ -464,14 +471,14 @@ class PerchContent_Util
 
 
 	                if ($tag->divider_before()) {
-	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
+	                    echo '<h2 class="divider"><div>'.PerchUtil::html($tag->divider_before()).'</div></h2>';
 	                }
 
 	                if ($tag->notes_before()) {
-	                    echo '<p class="formnotes">'.PerchUtil::html($tag->notes_before()).'</p>';
+	                    echo '<p class="notes-before">'.PerchUtil::html($tag->notes_before()).'</p>';
 	                }
 
-	                echo '<h3 class="label repeater-heading">'.$tag->label().'</h3>';
+	                echo '<h3 class="repeater-heading"><div>'.$tag->label().'</div></h3>';
 	                echo '<div class="repeater" data-prefix="perch_'.PerchUtil::html($repeater_id).'"';
 	                if ($tag->max()) echo ' data-max="'.PerchUtil::html($tag->max()).'"';
 	                echo '>';
@@ -501,13 +508,13 @@ class PerchContent_Util
 	                            }
 
 	                            echo '<div class="repeated-item">';
-	                                echo '<div class="index"><span>'.($repeater_i+1).'</span><span class="icon"></span></div>';
+	                                echo '<div class="index"><span class="number">'.($repeater_i+1).'</span><span class="icon"></span><div class="rm"></div> '.PerchUI::icon('core/menu', 12).'</div>';
 	                                echo '<div class="repeated-fields">';
 	                                PerchContent_Util::display_item_fields($tag->tags, $repeater_id.'_'.$repeater_i, $subitem, $Page, $Form, $Template);
 	                                echo '<input type="hidden" name="perch_'.($repeater_id.'_'.$repeater_i).'_present" class="present" value="1" />';
 	                                echo '<input type="hidden" name="perch_'.($repeater_id.'_'.$repeater_i).'_prevpos" value="'.$repeater_i.'" />';
 	                                echo '</div>';
-	                                echo '<div class="rm"></div>';
+	                                //echo '<div class="rm"></div>';
 	                            echo '</div>';
 	                            $repeater_i++;
 	                        }
@@ -524,16 +531,17 @@ class PerchContent_Util
 	                    if ($spare) {
 	                        // And one spare
 	                        echo '<div class="repeated-item spare">';
-	                            echo '<div class="index icon"><span>'.($repeater_i+1).'</span><span class="icon"></span></div>';
+	                            echo '<div class="index"><span class="number">'.($repeater_i+1).'</span><span class="icon"></span><div class="rm"></div> '.PerchUI::icon('core/menu', 12).'</div>';
 	                                echo '<div class="repeated-fields">';
 	                                PerchContent_Util::display_item_fields($tag->tags, $repeater_id.'_'.$repeater_i, array(), $Page, $Form, $Template);
 	                                echo '<input type="hidden" name="perch_'.($repeater_id.'_'.$repeater_i).'_present" class="present" value="1" />';
 	                                echo '</div>';
-	                                echo '<div class="rm"></div>';
+	                               // echo '<div class="rm"></div>';
 	                        echo '</div>';
 	                        echo '</div>'; // .repeated
 	                        // footer
 	                        echo '<div class="repeater-footer">';
+	                        	echo '<span class="repeater-add-prompt">'.PerchUI::icon('core/add', 20).'</span>';
 	                            echo '<input type="hidden" name="perch_'.$repeater_id.'_count" value="0" class="count" />';
 	                        echo '</div>';
 	                    }
@@ -542,66 +550,81 @@ class PerchContent_Util
 	                echo '</div>';
 
 	                if ($tag->divider_after()) {
-	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
+	                    echo '<h2 class="divider"><div>'.PerchUtil::html($tag->divider_after()).'</div></h2>';
 	                }
 	            }elseif ($tag->type()=='PerchBlocks') {
 
 	            	if ($tag->divider_before()) {
-	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
+	                    echo '<h2 class="divider"><div>'.PerchUtil::html($tag->divider_before()).'</div></h2>';
 	                }
 
 	                if ($tag->notes_before()) {
-	                    echo '<p class="formnotes">'.PerchUtil::html($tag->notes_before()).'</p>';
+	                    echo '<p class="notes-before">'.PerchUtil::html($tag->notes_before()).'</p>';
 	                }
 
 	                echo PerchContent_Util::display_blocks($tags, $id, $item, $Page, $Form, $Template, $blocks_link_builder);
 
 	                if ($tag->divider_after()) {
-	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
+	                    echo '<h2 class="divider"><div>'.PerchUtil::html($tag->divider_after()).'</div></h2>';
 	                }
 
 	            }else{
 
+	            	$FieldType = PerchFieldTypes::get($tag->type(), $Form, $tag, false, $Form->app_id);
+
 	                if ($tag->divider_before()) {
-	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_before()).'</h2>';
+	                    echo '<h2 class="divider"><div>'.PerchUtil::html($tag->divider_before()).'</div></h2>';
 	                }
 
 	                if ($tag->notes_before()) {
-	                    echo '<p class="formnotes">'.PerchUtil::html($tag->notes_before()).'</p>';
+	                    echo '<p class="notes-before">'.PerchUtil::html($tag->notes_before()).'</p>';
 	                }
 
-	                echo '<div class="field '.$Form->error($item_id, false).'">';
-	                echo '<div class="fieldtbl">';
+	                $inputs = $FieldType->render_inputs($item);
+	                $help   = $Template->find_help($tag->id);
+	                $wrap_class = $FieldType->get_wrapper_class();
 
+	                echo '<div class="field-wrap '.$Form->error($item_id, false).($help ? ' with-detailed-help':'').'">';
+	                
 	                    $label_text  = PerchUtil::html($tag->label());
-	                    if ($tag->type() == 'textarea') {
-	                        if (PerchUtil::bool_val($tag->textile()) == true) {
-	                            $label_text .= ' <span><a href="'.PERCH_LOGINPATH.'/core/help/textile" class="assist">Textile</a></span>';
-	                        }
-	                        if (PerchUtil::bool_val($tag->markdown()) == true) {
-	                            $label_text .= ' <span><a href="'.PERCH_LOGINPATH.'/core/help/markdown" class="assist">Markdown</a></span>';
-	                        }
-	                    }
+
+	                    if ($wrap_class) {
+	                		echo '<div class="'.PerchUtil::html($wrap_class, true).'">';
+	                	}
+
 	                    $Form->disable_html_encoding();
-	                    echo '<div class="fieldlbl">'.$Form->label($item_id, $label_text, '', false, false).'</div>';
+	                    echo $Form->label($item_id, $label_text, '', false, false);
 	                    $Form->enable_html_encoding();
 
-
-	                    $FieldType = PerchFieldTypes::get($tag->type(), $Form, $tag, false, $Form->app_id);
-
-	                    echo '<div class="field-wrap">';
-	                    echo $FieldType->render_inputs($item);
-
-	                    if ($tag->help()) {
-	                        echo $Form->translated_hint($tag->help());
+	                    
+	                    if ($help) {
+	                    	echo '<div class="input-detailed-help">'.PerchUI::icon('core/info-alt', 14).' '.$help.'</div>';
 	                    }
+
+	                    if ($FieldType->hints_before) {
+	                    	if ($tag->help()) {
+		                        echo $Form->translated_hint($tag->help());
+		                    }	
+	                    }
+
+	                    echo '<div class="form-entry">';
+	                    echo $inputs;
 	                    echo '</div>';
 
-	                echo '</div>';
+	                    if ($wrap_class) {
+	                		echo '</div>';
+	                	}
+
+	                    if (!$FieldType->hints_before) {
+	                    	if ($tag->help()) {
+		                        echo $Form->translated_hint($tag->help());
+		                    }	
+	                    }
+
 	                echo '</div>';
 
 	                if ($tag->divider_after()) {
-	                    echo '<h2 class="divider">'.PerchUtil::html($tag->divider_after()).'</h2>';
+	                    echo '<h2 class="divider"><div>'.PerchUtil::html($tag->divider_after()).'</div></h2>';
 	                }
 
 	            }
@@ -654,6 +677,7 @@ class PerchContent_Util
 	    }
 
 	    echo '<div class="master block-add-bar '.(PerchUtil::count($blocks_data)?'hidden':'').'" tabindex="0">';
+	    	echo '<span class="block-add-prompt">'.PerchUI::icon('core/add', 20, PerchLang::get('Add')).'</span>';
 			$qs        = array();
 			$qs['id']  = PerchUtil::get('id');
 			$qs['itm'] = $id;
@@ -664,7 +688,12 @@ class PerchContent_Util
 
 	        	$url = call_user_func($blocks_link_builder, $qs);
 
-	            echo '<a href="'.PerchUtil::html($url, true).'" class="icon add" tabindex="0">'.$BlockTag->label().'</a> ';
+	            echo '<a href="'.PerchUtil::html($url, true).'" class="block-add" tabindex="0">';
+	            if ($BlockTag->icon()) {
+	            	echo PerchUI::icon('blocks/'.$BlockTag->icon(), 10).' ';
+	            }
+	            echo PerchUtil::html($BlockTag->label());
+	            echo '</a> ';
 	        }
 	    echo '</div>';
 
@@ -701,7 +730,7 @@ class PerchContent_Util
 
 		echo '<div class="block-wrap" tabindex="0" data-block="'.$block_data['_block_id'].'" data-prefix="'.$block_id.'"'.($empty?' data-empty="true"':'').'>';
 		    echo '<div class="block-item">';
-		        echo '<h2 class="divider">'.PerchUtil::html($label).'<span class="rm"></span></h2>';
+		        echo '<h2 class="divider"><div>'.PerchUtil::html($label).'</div><span class="rm"></span></h2>';
 		        PerchContent_Util::display_item_fields($block_tags, $block_id, $block_data, $Page, $Form, $Template);
 		    echo '</div>';
 		echo '</div>';

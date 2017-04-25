@@ -1,0 +1,28 @@
+{{#if assets}}
+<div class="asset-list ">
+    <table>
+        <thead>
+            <tr>
+                <th class="first">Name</th>
+                <th>Type</th>
+                <th>Dimensions</th>
+                <th>Size</th>
+            </tr>
+        </thead>
+        <tbody>
+{{#each assets}}
+            <tr class="asset-{{type}} asset-selectable" data-id="{{id}}">
+                <td>{{ icon iicon 16 }} <a class=" list-asset-title primary" href="#" data-id="{{id}}">{{title}}</a></td>
+                <td>{{ mime_display }}</td>
+                <td>{{#if width }}{{width}} × {{height}}{{else}} - {{/if}}</td>
+                <td>{{{ display_filesize }}}</td>
+            </tr>
+{{/each}}
+        </tbody>
+    </table>
+</div>
+{{else}}
+    <div role="alert" class="notification notification-info">
+        {{Lang 'No matching assets found'}}
+    </div>
+{{/if}}

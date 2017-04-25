@@ -1,98 +1,56 @@
+<?php  
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Reordering pages'),
+        ]);
 
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-<p><?php echo PerchLang::get('Drag and drop the pages or groups of pages to reorder them. Greyed out sections cannot be reordered.'); ?></p>
-
-<h3><?php echo PerchLang::get('Advisory'); ?></h3>
-<p><?php echo PerchLang::get('In general you should try to avoid moving pages out of their parent-child relationship in the site and try only to reorder within a section. This helps to keep your site structure logical for visitors. If you want a page to appear in a certain section you should create it in that section rather than creating it elsewhere and dragging it in.'); ?></p>
-
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
-
-
-	    <h1><?php echo PerchLang::get('Reordering Pages'); ?></h1>
-    
-    <?php echo $Alert->output(); ?>
-    
-
-    <?php
-    /* ----------------------------------------- SMART BAR ----------------------------------------- */
-
-        $filter = false;
-    ?>
-
-
-
-    <ul class="smartbar">
-        <li><span class="set"><?php echo PerchLang::get('Filter'); ?></span></li>
-        <li class="<?php echo ($filter=='all'?'selected':''); ?>"><a href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/'); ?>"><?php echo PerchLang::get('All'); ?></a></li>
-        <li class="new <?php echo ($filter=='new'?'selected':''); ?>"><a href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/?filter=new'); ?>"><?php echo PerchLang::get('New'); ?></a></li>
-        <?php
-
-            if ($filter == 'new') {
-                $Alert->set('filter', PerchLang::get('You are viewing pages with new regions.'). ' <a href="'.PERCH_LOGINPATH.'/core/apps/content/" class="action">'.PerchLang::get('Clear Filter').'</a>');
-            }
-
-            $templates = $Regions->get_templates_in_use();
-            if (PerchUtil::count($templates)) {
-                
-                $items = array();
-                foreach ($templates as $template) {
-                    if ($template['regionTemplate']!='') {
-                        $items[] = array(
-                            'arg'=>'template',
-                            'val'=>$template['regionTemplate'],
-                            'label'=>$Regions->template_display_name($template['regionTemplate']),
-                            'path'=>PERCH_LOGINPATH.'/core/apps/content/'
-                        );
-                    }
-                }
-                
-                echo PerchUtil::smartbar_filter('rtf', 'By Region Type', 'Filtered by ‘%s’', $items, 'region', $Alert, "You are viewing pages filtered by region type ‘%s’", PERCH_LOGINPATH.'/core/apps/content/');
-        
-        } ?>
-
-
-
-        <?php 
-            if ($CurrentUser->has_priv('content.pages.reorder')) { 
-        ?>
-        <li class="fin selected"><a class="icon reorder" href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/reorder/'); ?>"><?php echo PerchLang::get('Reorder Pages'); ?></a></li>
-        <?php
-            }// reorder
-        ?>
-
-        <?php 
-            if ($CurrentUser->has_priv('content.pages.republish')) { 
-        ?>
-        <li class="fin"><a class="icon page" href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/republish/'); ?>"><?php echo PerchLang::get('Republish'); ?></a></li>
-        <?php
-            }// republish
-        ?>
-    </ul>
-    
-
-     <?php echo $Alert->output(); ?>
-
-
-    <?php
-    /* ----------------------------------------- /SMART BAR ----------------------------------------- */
-    ?>
-
-
-
-
-
-
-
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>">
-    
-    <?php
-        $Alert->set('notice', PerchLang::get('Drag and drop the pages to reorder them.').' '. $Form->submit('reorder', 'Save Changes', 'button action'));
+    $Alert->set('warning', PerchLang::get('Drag and drop the pages to reorder them.'));
         $Alert->output();
 
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
 
-        echo render_tree($Pages, $CurrentUser, 0, 'sortable');
+        $Smartbar->add_item([
+            'active' => false,
+            'title'  => 'All',
+            'link'   => '/core/apps/content/'
+        ]); 
+
+        $Smartbar->add_item([
+            'active' => false,
+            'title'  => 'New',
+            'link'   => '/core/apps/content/?filter=new'
+        ]); 
+
+
+        $Smartbar->add_item([
+            'title'    => 'Reorder Pages',
+            'link'     => '/core/apps/content/reorder/',
+            'priv'     => 'content.pages.reorder',
+            'icon'     => 'core/menu',
+            'position' => 'end',
+            'active'   => true,
+        ]);  
+
+        $Smartbar->add_item([
+            
+            'title'    => 'Republish',
+            'link'     => '/core/apps/content/republish/',
+            'priv'     => 'content.pages.republish',
+            'icon'     => 'core/documents',
+            'position' => 'end',
+        ]);  
+
+    echo $Smartbar->render();
+
+    ?>
+
+<div class="inner">
+    <form method="post" action="<?php echo PerchUtil::html($Form->action(), true); ?>" class="reorder form-simple">
+    
+    <?php
+        
+
+
+        echo render_tree($Pages, $CurrentUser, 0, 'sortable sortable-tree');
         
         function render_tree($Pages, $CurrentUser, $parentID=0, $class=false)
         {
@@ -106,6 +64,7 @@
                 foreach($pages as $Page) {
                     $s .= '<li id="page_'.$Page->id().'" data-parent="'.$parentID.'" '.(!$Page->role_may_create_subpages($CurrentUser)?' class="ui-nestedSortable-no-nesting "':'class=""').'><div class="page icon">';
                     $s .= '<input type="text" name="p-'.$Page->id().'" value="'.$Page->pageOrder().'" />';
+                    $s .= PerchUI::icon('core/document');
                     $s .= ''.PerchUtil::html($Page->pageNavText()).'</div>';
                     
                     $s .= render_tree($Pages, $CurrentUser, $Page->id());
@@ -118,17 +77,22 @@
             return $s;
         }
     ?>
-        <div>
-            <?php echo $Form->hidden('orders', ''); ?>
+        <div class="submit-bar">
+            <?php 
+            echo $Form->submit('reorder', 'Save Changes', 'button action');
+            echo $Form->hidden('orders', ''); 
+            ?>
         </div> 
     </form>
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+</div>
+
 
 
 <script>
-    var locked_root = <?php echo ($CurrentUser->has_priv('content.pages.create.toplevel') ? 'false' : 'true'); ?>; 
+//    var locked_root = <?php echo ($CurrentUser->has_priv('content.pages.create.toplevel') ? 'false' : 'true'); ?>; 
 </script>
 <?php
+/*
     $Perch->add_javascript_block("
 
     jQuery(function($){
@@ -167,3 +131,4 @@
         
     });
 ");
+*/

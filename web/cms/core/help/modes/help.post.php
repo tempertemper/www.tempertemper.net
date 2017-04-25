@@ -1,18 +1,10 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-    
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-	<?php include ('_subnav.php'); ?>
+<?php
+	echo $HTML->title_panel([
+        'heading' => 'Help & Support',
+        ]);
 
-
-    <h1><?php echo PerchLang::get('Help &amp; Support'); ?></h1>
-
-
-
-    <?php echo $Alert->output(); ?>
-
-    <div class="helptext">
-
+	echo $HTML->open('div.inner');
+?>
 		<p>Welcome to the help page for your content administration panel.</p>
 
 		<h2>Editing Content on your website</h2>
@@ -72,6 +64,6 @@
 		<p>Perch is a highly configurable system and the help is is generic to most installs. For further help contact the person who developed your site as they will know which configuration options have been selected and be able to help you make changes to the editing environment as required.</p>
 
 
-	</div>
 
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+
+<?php echo $HTML->close('div'); ?>

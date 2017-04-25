@@ -1,0 +1,18 @@
+.redactor-link-tooltip,.redactor-toolbar,#redactor-modal,#redactor-modal button,.redactor-styles,.redactor-styles h1,.redactor-styles h2,.redactor-styles h3,.redactor-styles h4,.redactor-styles h5,.redactor-styles h6 {
+	font-family: "Helvetica Neue", Helvetica, Arial, clean, sans-serif;
+	font-size: 93%;
+}
+
+
+.redactor-layer {
+	padding: 12px;
+}
+
+body #redactor-modal-box,
+body #redactor-modal-overlay {
+	z-index: 1056;
+}
+
+html body .redactor-toolbar {
+	z-index: 2;
+}

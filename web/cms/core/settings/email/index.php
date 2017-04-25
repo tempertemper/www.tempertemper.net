@@ -9,17 +9,14 @@
         PerchUtil::redirect(PERCH_LOGINPATH);
     }
 
-    
-    
     $Perch->page_title = PerchLang::get('Settings');
     $Alert = new PerchAlert;
     
     include(__DIR__ . '/../modes/email.pre.php');
+    include(__DIR__ . '/../modes/_subnav.php');
     
     include(PERCH_CORE . '/inc/top.php');
 
     include(__DIR__ . '/../modes/email.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-
-?>

@@ -6,8 +6,6 @@
     $Authors = new PerchBlog_Authors;
     $Author = $Authors->find_or_create($CurrentUser);
 
-    $HTML = $API->get('HTML');
-
     if (!$CurrentUser->has_priv('perch_blog.post.create')) {
         PerchUtil::redirect($API->app_path());
     }

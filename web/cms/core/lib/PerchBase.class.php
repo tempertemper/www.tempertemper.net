@@ -4,8 +4,10 @@ class PerchBase
 {
     protected $db;
     protected $details;
+    protected $table;
 
     protected $index_table          = false;
+    protected $optimize_index       = true;
 
     protected $api                  = false;
 
@@ -18,6 +20,10 @@ class PerchBase
 
     protected $pk_is_int = true;
     protected $pk        = null;
+
+    protected $exclude_from_api = [];
+
+    public $prefix_vars  = true;
 
     public function __construct($details)
     {
@@ -54,6 +60,11 @@ class PerchBase
 		return false;
 	}
 
+    public function set_pk($col)
+    {
+        $this->pk = $col;
+    }
+
     public function set_null_id()
     {
         $this->details[$this->pk] = null;
@@ -73,12 +84,39 @@ class PerchBase
         if (isset($out[$dynamic_field_col]) && $out[$dynamic_field_col] != '') {
             $dynamic_fields = PerchUtil::json_safe_decode($out[$dynamic_field_col], true);
             if (PerchUtil::count($dynamic_fields)) {
-                foreach($dynamic_fields as $key=>$value) {
-                    $out['perch_'.$key] = $value;
+                if ($this->prefix_vars) {
+                    foreach($dynamic_fields as $key=>$value) {
+                        $out['perch_'.$key] = $value;
+                    }    
                 }
                 $out = array_merge($dynamic_fields, $out);
             }
         }
+
+        return $out;
+    }
+
+    public function to_array_for_api()
+    {
+        // get current value
+        $prefix_vars = $this->prefix_vars;
+        // set to false
+        $this->prefix_vars = false;
+
+        // get content
+        $out =  $this->to_array();
+        
+        // set back to old value
+        $this->prefix_vars = $prefix_vars;
+
+        $this->exclude_from_api[] = str_replace('ID', 'DynamicFields', $this->pk);
+
+        foreach($this->exclude_from_api as $col) {
+            if (array_key_exists($col, $out)) {
+                unset($out[$col]);
+            }
+        }
+
 
         return $out;
     }
@@ -211,8 +249,11 @@ class PerchBase
         $this->db->execute($sql);
 
         // optimize index
-        $sql = 'OPTIMIZE TABLE '.$table;
-        $this->db->get_row($sql);
+        if ($this->optimize_index) {
+            $sql = 'OPTIMIZE TABLE '.$table;
+            $this->db->get_row($sql);    
+        }
+        
 
         if ($this->event_prefix && !$this->suppress_events) {
             $Perch = Perch::fetch();

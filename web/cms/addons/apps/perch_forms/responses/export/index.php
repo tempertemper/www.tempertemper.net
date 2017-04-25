@@ -23,7 +23,7 @@
 
     
     # Display your page
-    include('../../modesresponses.export.post.php');
+    include('../../modes/responses.export.post.php');
     
     
     # Bottom layout

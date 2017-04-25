@@ -1,46 +1,39 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-    
-    <p><?php echo PerchLang::get('You can edit roles and add new roles with custom privileges.'); ?></p>
-    
+<?php 
 
-    
-	
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
-    
-    <a class="button add" href="<?php echo PERCH_LOGINPATH; ?>/core/users/roles/edit/"><?php echo PerchLang::get('Add Role'); ?></a>
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Listing all user roles'),
+        'button'  => [
+                        'text' => $Lang->get('Add role'),
+                        'link' => '/core/users/roles/edit/',
+                        'icon' => 'core/plus'
+                    ]
+        ]);
 
-    <h1><?php echo PerchLang::get('Listing All User Roles'); ?></h1>
+
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+    $Smartbar->add_item([
+        'active'   => true,
+        'title'    => 'Roles',
+        'link'     => '/core/users/roles/',
+    ]);
+    echo $Smartbar->render();
+
+
+    $Listing = new PerchAdminListing($CurrentUser, $HTML, $Lang, $Paging);
+    $Listing->add_col([
+            'title'     => 'Role',
+            'value'     => 'roleTitle',
+            'sort'      => 'roleTitle',
+            'edit_link' => 'edit',
+        ]);
     
-    <?php echo $Alert->output(); ?>
+    $Listing->add_delete_action([
+            'priv'   => 'perch.users.roles.delete',
+            'inline' => true,
+            'path'   => 'delete',
+            'display'=> function($Item) {
+                return !$Item->roleMasterAdmin();
+            },
+        ]);
 
-    
-
-    <table>
-        <thead>
-            <tr>
-                <th class="first"><?php echo PerchLang::get('Role'); ?></th>
-                <th class="action last"></th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php
-            if (PerchUtil::count($roles)) {
-                foreach($roles as $item) {
-                    echo '<tr class="'.PerchUtil::flip('odd').'">';
-                        echo '<td><a href="edit/?id=' . PerchUtil::html($item->id()) . '">' . PerchUtil::html($item->roleTitle()) . '</a></td>';
-                        if (!$item->roleMasterAdmin()) {
-                            echo '<td><a href="delete/?id=' . PerchUtil::html($item->id()) . '" class="delete">'.PerchLang::get('Delete').'</a></td>';
-                        }else{
-                            echo '<td><span class="delete" title="'.PerchLang::get('You cannot delete the master admin role.').'">'.PerchLang::get('Delete').'</span></td>';
-                        }
-                    echo '</tr>';
-                }
-            }
-        
-        ?>
-        </tbody>
-    </table>
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+    echo $Listing->render($roles);

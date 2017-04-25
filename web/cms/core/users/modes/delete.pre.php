@@ -1,5 +1,10 @@
 <?php
 
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
+
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $id = (int) $_GET['id'];
         $User = $Users->find($id);
@@ -18,7 +23,8 @@
 
     /* --------- Delete User Form ----------- */
 
-    $Form 	= new PerchForm('delete', false);
+    $Form = $API->get('Form');
+    $Form->set_name('delete');
 
 
     if ($Form->posted() && $Form->validate()) {
@@ -38,5 +44,3 @@
 
     $details = $User->to_array();
 
-
-?>

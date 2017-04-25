@@ -1,66 +1,89 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
+<?php 
     
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Editing item options'),
+    ]);
 
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include (PERCH_PATH.'/core/apps/content/modes/_subnav.php'); ?>
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
 
+    // Breadcrumb
+    $links = [];
 
-	    <h1><?php echo PerchLang::get('Editing Item Options'); ?></h1>
-	   <?php echo $Alert->output(); ?>
+    $links[] = [
+        'title' => 'Collections',
+        'link'  => '/core/apps/content/manage/collections/',
+    ];
 
-		<ul class="smartbar">
-            <li>
-                <span class="set">
-                <a class="sub" href="<?php echo PERCH_LOGINPATH . '/core/apps/content/collections/edit/?id='.PerchUtil::html($Collection->id());?>"><?php echo PerchUtil::html($Collection->collectionKey()); ?></a>
-                <span class="sep icon"></span> 
-                <a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/collections/edit/?id='.PerchUtil::html($Collection->id()).'&amp;itm='.$details[0]['itemID'];?>"><?php 
-                        
-                        $item = $details[0];
-                        $id = $item['itemID'];                   
-                
-                        if (isset($item['perch_'.$id.'__title'])) {
-                            echo PerchUtil::html(PerchUtil::excerpt($item['perch_'.$id.'__title'], 10));
-                        }else{
-                            if (isset($item['itemOrder'])) {
-                                echo PerchLang::get('Item'). ' '.PerchUtil::html($item['itemOrder']-999);
-                            }else{
-                                echo PerchLang::get('New Item');
-                            }
-                        }
-                ?></a>
+    $links[] = [
+        'title' => $Collection->collectionKey(),
+        'translate' => false,
+        'link'  => '/core/apps/content/collections/?id='.$Collection->id(),
+    ];
 
 
-                </span>
-            </li>
-			<?php
-				if ($CurrentUser->has_priv('content.regions.options')) {
-		            echo '<li class="selected"><a href="'.PERCH_LOGINPATH . '/core/apps/content/collections/options/?id='.PerchUtil::html($id).'">' . PerchLang::get('Options') . '</a></li>';
-		        }
+    $item = $details[0];
+    $id = $item['itemID'];                   
 
-                echo '<li class="fin">';
-                echo '<a href="'.PERCH_LOGINPATH . '/core/apps/content/reorder/collection/?id='.PerchUtil::html($Collection->id()).'" class="icon reorder">'.PerchLang::get('Reorder').'</a>';
-                echo '</li>';
+    if (isset($item['perch_'.$id.'__title'])) {
+        $title = PerchUtil::html(PerchUtil::excerpt($item['perch_'.$id.'__title'], 10));
+    }else{
+        if (isset($item['itemOrder'])) {
+            $title = PerchLang::get('Item'). ' '.PerchUtil::html($item['itemOrder']-999);
+        }else{
+            $title = PerchLang::get('New Item');
+        }
+    }
 
-			?>
-        </ul>
-		
+    $links[] = [
+        'title' => $title,
+        'translate' => false,
+        'link'  => '/core/apps/content/collections/edit/?id='.$Collection->id().'&itm='.$details[0]['itemID']
+    ];
+
+    $Smartbar->add_item([
+            'active' => false,
+            'type' => 'breadcrumb',
+            'links' => $links,
+        ]);
     
-        
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="magnetic-save-bar">
-           
-        <h2><?php echo PerchLang::get('Search'); ?></h2>
+    // Options button
+    $Smartbar->add_item([
+            'active' => true,
+            'title'  => 'Item Options',
+            'link'   => '/core/apps/content/collections/options/?id='.$Collection->id(),
+            'priv'   => 'content.collections.options',
+            'icon'   => 'core/o-toggles',
+        ]);
 
-        <div class="field last">
+
+    // Reorder button    
+    $Smartbar->add_item([
+            'active'   => false,
+            'title'    => 'Reorder',
+            'link'     => '/core/apps/content/reorder/collection/?id='.$Collection->id(),
+            'position' => 'end',
+            'icon'     => 'core/menu',
+        ]);
+
+
+
+
+    echo $Smartbar->render();
+
+    echo $Form->form_start();
+    echo $HTML->heading2('Search');
+?>
+        <div class="field-wrap checkbox-single">
             <?php echo $Form->label('itemSearchable', 'Include in search results'); ?>
+            <div class="form-entry">
             <?php
                 $tmp = $options->to_array();
                 echo $Form->checkbox('itemSearchable', '1', $Form->get($tmp, 'itemSearchable', 1)); ?>
+            </div>
         </div>
-
-        <p class="submit">
-            <?php echo $Form->submit('btnsubmit', 'Save', 'button'), ' ', PerchLang::get('or'), ' <a href="',PERCH_LOGINPATH . '/core/apps/content/collections/edit/?id='.PerchUtil::html($id).'', '">', PerchLang::get('Cancel'), '</a>'; ?>
-        </p>
-    </form>
-    
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+<?php
+    echo $HTML->submit_bar([
+        'button' => $Form->submit('btnsubmit', 'Save', 'button'),
+        'cancel_button' => 'core/apps/content/collections/edit/?id='.PerchUtil::html($id)
+        ]);
+    echo $Form->form_end();

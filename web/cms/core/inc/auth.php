@@ -4,8 +4,9 @@
     }
 
     /* Check for auth plugins */
-    if (defined('PERCH_AUTH_PLUGIN')) {
-        require PERCH_PATH.DIRECTORY_SEPARATOR.'addons'.DIRECTORY_SEPARATOR.'plugins'.DIRECTORY_SEPARATOR.'auth'.DIRECTORY_SEPARATOR.PERCH_AUTH_PLUGIN.DIRECTORY_SEPARATOR.'auth.php';
+    if (defined('PERCH_AUTH_PLUGIN') && PERCH_AUTH_PLUGIN) {
+        $plug_path = [PERCH_PATH, 'addons', 'plugins', 'auth', PERCH_AUTH_PLUGIN, 'auth.php'];
+        require implode(DIRECTORY_SEPARATOR, $plug_path);
     }else{
         define('PERCH_AUTH_PLUGIN', false);
     }
@@ -42,15 +43,9 @@
     }else{
         $Settings   = PerchSettings::fetch();
         $Settings->set_user($CurrentUser);
-        $Perch->find_installed_apps($CurrentUser);
-    }
-    
-    if (!$CurrentUser->logged_in() && $auth_page) {
-        if (strtoupper(substr(PHP_OS, 0, 3)) !== 'WIN') {
-            header("HTTP/1.0 403 Forbidden", true, 403);
+        if ($CurrentUser->logged_in()) {
+            $Perch->find_installed_apps($CurrentUser);
         }
     }
 
-
     $Alert = new PerchAlert;
-    

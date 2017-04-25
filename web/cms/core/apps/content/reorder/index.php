@@ -19,10 +19,9 @@
     
         
     include($app_path.'/modes/page.reorder.pre.php');
-    
+    include($app_path.'/modes/_subnav.php');
     include(PERCH_CORE . '/inc/top.php');
 
     include($app_path.'/modes/page.reorder.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-?>

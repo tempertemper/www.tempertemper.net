@@ -3,7 +3,6 @@
     $Blog       = new PerchBlog_Posts($API);
     $Authors    = new PerchBlog_Authors($API);
 
-    $HTML = $API->get('HTML');
     $Form = $API->get('Form');
 	
 	$message = false;
@@ -46,5 +45,3 @@
     $details = $Post->to_array();
 
 
-
-?>

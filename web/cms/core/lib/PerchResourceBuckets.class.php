@@ -5,17 +5,19 @@ class PerchResourceBuckets
 
 	private static $bucket_list = false;
 
-	public static function get($bucket_name='default')
+	public static function get($bucket_name=PERCH_DEFAULT_BUCKET)
 	{
-		$bucket = array();
+		if (trim($bucket_name) == '') $bucket_name = PERCH_DEFAULT_BUCKET;
 
 		// hardwire default, most common case
-		$bucket['name']      = 'default';
-		$bucket['type']		 = 'file';
-		$bucket['web_path']  = PERCH_RESPATH;
-		$bucket['file_path'] = PERCH_RESFILEPATH;
+		$bucket = [
+			'name'      => 'default',
+			'type'      => 'file',
+			'web_path'  => PERCH_RESPATH,
+			'file_path' => PERCH_RESFILEPATH,
+		];
 
-		if ($bucket_name && trim($bucket_name)!='' && $bucket_name!='default') {
+		if ($bucket_name && $bucket_name!='default') {
 		    
 		    // try buckets file
 		    if (self::$bucket_list===false) {
@@ -41,7 +43,7 @@ class PerchResourceBuckets
 
 	public static function get_all_remote()
 	{
-		$out = array();
+		$out = [];
 
 		if (self::$bucket_list===false) {
 			self::load_bucket_list();
@@ -63,9 +65,9 @@ class PerchResourceBuckets
 		$bucket_list_file = PerchUtil::file_path(PERCH_PATH.'/config/buckets.php');
 		if (file_exists($bucket_list_file)) {
 		    self::$bucket_list = include ($bucket_list_file);
-		    if (self::$bucket_list==false) self::$bucket_list = array();
+		    if (self::$bucket_list==false) self::$bucket_list = [];
 		}else{
-		    self::$bucket_list = array();
+		    self::$bucket_list = [];
 		}
 	}
 

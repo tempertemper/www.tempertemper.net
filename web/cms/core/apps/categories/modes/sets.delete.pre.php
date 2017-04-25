@@ -1,5 +1,9 @@
 <?php
 
+    $API    = new PerchAPI(1.0, 'categories');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     if (!$CurrentUser->has_priv('categories.sets.delete')) {
         PerchUtil::redirect(PERCH_LOGINPATH . '/core/apps/categories/');
     }
@@ -18,7 +22,8 @@
 
     /* --------- Delete Form ----------- */
     
-    $Form = new PerchForm('delete');
+    $Form = $API->get('Form');
+    $Form->set_name('delete');
     
     if ($Form->posted() && $Form->validate()) {
         

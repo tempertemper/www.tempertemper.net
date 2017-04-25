@@ -31,8 +31,9 @@ class PerchTemplatedForm
 	public function refine($formID)
 	{
 	    $contents = $this->template;
-	    $s = '/(<perch:form[^>]*id="'.$formID.'"[^>]*>)(?:(?!perch:form).*)(?:<\/perch:form>)/s';
+	    $s = '/(<perch:form[^>]*id="'.$formID.'"[^>]*>)(?:(?!perch:form).*?)(?:<\/perch:form>)/s';
 	    preg_match_all($s, $contents, $match, PREG_SET_ORDER);
+        
 	    if (PerchUtil::count($match)) {
 	        $this->template = $match[0][0];
 	        $tag = new PerchXMLTag($match[0][1]);

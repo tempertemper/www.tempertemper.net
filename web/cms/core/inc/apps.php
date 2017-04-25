@@ -2,19 +2,17 @@
 	$apps_list = array();
 	include(PERCH_PATH . '/config/apps.php');
 
+	include(PERCH_PATH.'/core/apps/content/runtime.php');
+	include(PERCH_PATH.'/core/apps/assets/runtime.php');
+	include(PERCH_PATH.'/core/apps/categories/runtime.php');
+
 	if (PerchUtil::count($apps_list)) {
 	    foreach($apps_list as $app_id) {
 	        switch($app_id) {
 	            case 'content':
-	                include(PERCH_PATH.'/core/apps/content/runtime.php');
-	                break;
-
 	            case 'assets':
-	                include(PERCH_PATH.'/core/apps/assets/runtime.php');
-	                break;
-
 	            case 'categories':
-	                include(PERCH_PATH.'/core/apps/categories/runtime.php');
+	            	// do nothing
 	                break;
 
 	            default:

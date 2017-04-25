@@ -49,6 +49,9 @@ class PerchSettings extends PerchFactory
             
             if (is_object($CurrentUser) && $CurrentUser->logged_in()) {
                 $sql = 'SELECT * FROM (SELECT DISTINCT settingID, settingValue, userID FROM ' . $this->table .' WHERE userID='.$this->db->pdb((int)$CurrentUser->id()).' OR userID=0 ORDER BY userID DESC) AS settings GROUP BY settingID, settingValue, userID';
+
+                $sql = 'SELECT settingID, settingValue, userID FROM ' . $this->table .' WHERE userID='.$this->db->pdb((int)$CurrentUser->id()).' OR userID=0 ORDER BY userID ASC';
+
             }else{
                 $sql = 'SELECT DISTINCT settingID, settingValue FROM ' . $this->table .' WHERE userID=0';
             }

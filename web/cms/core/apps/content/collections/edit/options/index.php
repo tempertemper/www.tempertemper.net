@@ -25,7 +25,7 @@
     
         
     include(PERCH_CORE.'/runway/apps/content/modes/collection.item.options.pre.php');
-    
+    include($app_path.'/modes/_subnav.php');
     include(PERCH_CORE . '/inc/top.php');
 
     include(PERCH_CORE.'/runway/apps/content/modes/collection.item.options.post.php');

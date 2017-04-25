@@ -33,8 +33,8 @@
         if (PerchUtil::count($var)) {
             
             $ids     = $Resources->get_logged_ids();
-            $assetID = $ids[0];
-            $Asset   = $Assets->find($assetID);
+            $Asset   = $Assets->find_original($ids);
+            $assetID = $Asset->id();
             $Asset->reindex();
 
             //PerchUtil::debug($ids);
@@ -55,12 +55,13 @@
                 }
                 PerchSession::set('resourceIDs', $logged_ids);
             }
+
             $type = $Asset->get_type();
             if ($type=='image') $type = 'img';
-            echo json_encode(array('type'=>$type));
+            $out = $Asset->to_api_array();
+            echo json_encode(array_merge($out, array('type'=>$type, 'debug'=>$ids)));
             
         }
    		$Alert->set('success', PerchLang::get('Successfully updated'));
     }
-
   	

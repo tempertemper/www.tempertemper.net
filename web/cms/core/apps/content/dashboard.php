@@ -1,47 +1,49 @@
 <?php 
-	include('PerchContent_Pages.class.php');
-	include('PerchContent_Page.class.php');
-	include('PerchContent_Regions.class.php');
-	include('PerchContent_Region.class.php');
+	return function(){
 
-	$Pages = new PerchContent_Pages;
-	$pages = $Pages->get_by_parent(0);
+		$API    = new PerchAPI(1.0, 'core');
+    	$Lang   = $API->get('Lang');
+    	$HTML   = $API->get('HTML');
 
-	$Regions = new PerchContent_Regions;
-	$shared = $Regions->get_shared();
+		$Pages = new PerchContent_Pages;
+		$pages = $Pages->get_by_parent(0);
 
-?>
-<div class="widget">
-	<h2>
-		<?php 
-			echo PerchLang::get('Pages');
-			if ($CurrentUser->has_priv('content.pages.create')) {
-				echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/page/add/').'" class="add button">'.PerchLang::get('Add Page').'</a>';
+		$Regions = new PerchContent_Regions;
+		$shared = $Regions->get_shared();
+
+		$title  = $HTML->wrap('h2', $Lang->get('Pages'));
+		$button = '<a class="button button-small button-icon icon-left action-info" href="'.$HTML->encode(PERCH_LOGINPATH.'/core/apps/content/page/add/').'"><div>'.PerchUI::icon('core/plus', 8).'<span>'.$Lang->get('Add page').'</span></div></a>';
+		$header = $HTML->wrap('header', $title.$button);
+
+		$s = '';
+
+		if (PerchUtil::count($pages)) {
+			$items = [];
+			if (PerchUtil::count($shared)) {				
+				$s = '<a href="'.$HTML->encode(PERCH_LOGINPATH).'/core/apps/content/page/?id=-1">';
+					$s .= $HTML->encode($Lang->get('Shared'));
+				$s .= '</a>';
+			
+				$items[] = $HTML->wrap('li', $s);
 			}
-		?>
-	</h2>
-	<div class="bd">
-		<?php
-			if (PerchUtil::count($pages)) {
-				echo '<ul>';
-				if (PerchUtil::count($shared)) {
-					echo '<li>';
-						echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/page/?id=-1">';
-							echo PerchUtil::html(PerchLang::get('Shared'));
-						echo '</a>';
-					echo '</li>';
-				}
 
-				foreach($pages as $Page) {
-					echo '<li>';
-						echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/page/?id='.$Page->id()).'">';
-							echo PerchUtil::html($Page->pageNavText());
-						echo '</a>';
-					echo '</li>';
-				}
-				echo '</ul>';
+			foreach($pages as $Page) {
+				$s = '<a href="'.$HTML->encode(PERCH_LOGINPATH.'/core/apps/content/page/?id='.$Page->id()).'">';
+					$s .= $HTML->encode($Page->pageNavText());
+				$s .= '</a>';
+
+				$s .= '<span class="note">'.strftime(PERCH_DATE_SHORT .' @ '.PERCH_TIME_SHORT, strtotime($Page->pageModified())).'</span>';
+				
+				$items[] = $HTML->wrap('li', $s);
 			}
-		?>
-	</div>
+			
+			$s = $HTML->wrap('ul.dash-list', implode('', $items));
 
-</div>
+			$body = $HTML->wrap('div.body', $s);
+
+			return $HTML->wrap('div.widget div.dash-content', $header.$body);
+		}
+
+		return '';
+
+	};	

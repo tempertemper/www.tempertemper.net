@@ -1,42 +1,163 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-    <h3 class="em"><span><?php echo PerchLang::get('About this collection'); ?></span></h3>
+<?php
+    echo $HTML->title_panel([
+        'heading' => sprintf($Lang->get('Editing %s Collection'),' &#8216;' . PerchUtil::html($Collection->collectionKey()) . '&#8217; '),
+        'form' => [
+            'action' => $Form->action(),
+            'button' => $Form->submit('add_another', 'Add another item', 'button button-icon icon-left', true, true, PerchUI::icon('core/plus', 10))
+        ]
+    ]);
+
+
+
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    // Breadcrumb
+    $links = [];
+
+    $links[] = [
+        'title' => 'Collections',
+        'link'  => '/core/apps/content/manage/collections/',
+    ];
+
+    $links[] = [
+        'title' => $Collection->collectionKey(),
+        'translate' => false,
+        'link'  => '/core/apps/content/collections/?id='.$Collection->id(),
+    ];
+
+    $Smartbar->add_item([
+            'active' => true,
+            'type' => 'breadcrumb',
+            'links' => $links,
+        ]);
     
-    <p><?php 
-            echo PerchLang::get("Select an item to edit its content.");
-    ?></p>
-    
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ($app_path.'/modes/_subnav.php'); ?>
-
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>">      
-        <div><?php echo $Form->submit('add_another', 'Add another item', 'add button topadd'); ?></div>
-    </form>
-
-    <h1><?php 
-            printf(PerchLang::get('Editing %s Collection'),' &#8216;' . PerchUtil::html($Collection->collectionKey()) . '&#8217; '); 
-        ?></h1>
-    
-    <?php echo $Alert->output(); ?>
-
-	<ul class="smartbar">
-        <li class="selected">
-            <a href="<?php echo PERCH_LOGINPATH . '/core/apps/content/collections/?id='.PerchUtil::html($Collection->id());?>"><?php echo PerchUtil::html($Collection->collectionKey()); ?></a>
-		</li>
-		<?php
-			if ($CurrentUser->has_priv('content.regions.options')) {
-	            echo '<li><a href="'.PERCH_LOGINPATH . '/core/apps/content/collections/options/?id='.PerchUtil::html($Collection->id()).'">' . PerchLang::get('Options') . '</a></li>';
-	        }
-
-		?>
-		<li class="fin"><a class="icon reorder" href="<?php echo PERCH_LOGINPATH . '/core/apps/content/reorder/collection/?id='.PerchUtil::html($Collection->id());?>"><?php echo PerchLang::get('Reorder'); ?></a></li>
-        <li class="fin"><a class="icon import" href="<?php echo PERCH_LOGINPATH . '/core/apps/content/collections/import/?id='.PerchUtil::html($Collection->id());?>"><?php echo PerchLang::get('Import'); ?></a></li>
-    </ul>
+    // Options button
+    $Smartbar->add_item([
+            'active' => false,
+            'title'  => 'Options',
+            'link'   => '/core/apps/content/collections/options/?id='.$Collection->id(),
+            'priv'   => 'content.collections.options',
+            'icon'   => 'core/o-toggles',
+        ]);
 
 
-    
-    <?php
-        if (PerchUtil::count($items)) {
+    // Revision history
+    /*
+    $Smartbar->add_item([
+        'active' => false,
+        'title'  => 'Revision History',
+        'link'   => '/core/apps/content/collections/revisions/?id='.$Collection->id(),
+        'priv'   => 'content.regions.options',
+        'icon'   => 'core/o-backup',
+        'position' => 'end',
+    ]);
+    */
+
+
+    // Import button
+    $Smartbar->add_item([
+            'active'   => false,
+            'title'    => 'Import',
+            'link'     => '/core/apps/content/collections/import/?id='.$Collection->id(),
+            'position' => 'end',
+            'icon'     => 'core/inbox-download',
+        ]);
+
+
+    // Reorder button    
+    $Smartbar->add_item([
+            'active'   => false,
+            'title'    => 'Reorder',
+            'link'     => '/core/apps/content/reorder/collection/?id='.$Collection->id(),
+            'position' => 'end',
+            'icon'     => 'core/menu',
+        ]);
+
+
+
+
+    echo $Smartbar->render();
+
+
+
+    if (PerchUtil::count($items)) {    
+        $Listing = new PerchAdminListing($CurrentUser, $HTML, $Lang, $Paging);
+        $first = true;
+        $i = 0;
+        foreach($cols as $col) {
+            $Listing->add_col([
+                    'title'     => $col['title'],
+                    'sort'      => $col['id'],
+                    'value'     => function($item) use ($col, $first, &$i) {
+                        $item = $item->to_array();
+                        if ($col['id']=='_title') {
+                            if (isset($item['_title'])) {
+                                $title = $item['_title'];
+                            }else{
+                                $i++;
+                                $title = PerchLang::get('Item').' '.$i;
+                            }
+                        }else{
+                            if (isset($item[$col['id']])) {
+                                $title = $item[$col['id']];
+                            }else{
+                                if ($first) {
+                                    if (isset($item['_title'])) {
+                                        $title = $item['_title'];
+                                    }else{
+                                        $i++;
+                                        $title = PerchLang::get('Item').' '.$i;
+                                    }
+                                }else{
+                                    $title = '-';
+                                }
+                            }
+
+                    }
+
+                        if ($col['Tag']) {
+
+                            $FieldType = PerchFieldTypes::get($col['Tag']->type(), false, $col['Tag']);
+
+                            $title = $FieldType->render_admin_listing($title);
+
+                            if ($col['Tag']->format()) {
+                                $Template = new PerchTemplate;
+                                $title = $Template->format_value($col['Tag'], $title);
+                            }
+                        }
+
+                        if ($first && trim($title)=='') {
+                            $title = '#'.$item['_id'];
+                        }
+
+                        return $title;
+
+                    },
+                    'edit_link' => ($first ? PERCH_LOGINPATH.'/core/apps/content/collections/edit/?id='.$Collection->id().'&itm=' : false),
+                ]);
+
+            $first = false;
+        }
+
+
+            
+
+            $Listing->add_delete_action([
+                    'inline' => true,
+                    'path'   => PERCH_LOGINPATH.'/core/apps/content/delete/collection/item/?id=' . $Collection->id() . '&itm=',
+                    'custom' => true,
+                ]);
+
+
+        echo $Listing->render($Listing->objectify($items, 'itemID'));
+    }
+
+
+
+
+
+        if (PerchUtil::count(false && $items)) {
             
             echo '<table class="d itemlist">';
                 echo '<thead>';
@@ -130,9 +251,3 @@
     
 
 
-
-    ?>
-
-
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>

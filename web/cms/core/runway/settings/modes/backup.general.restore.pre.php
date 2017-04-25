@@ -2,8 +2,10 @@
 	$Plans  = new PerchBackupPlans;
 	$Runs   = new PerchBackupRuns;
 
-	$API  = new PerchAPI(1.0, 'backup');
-	$HTML = $API->get('HTML');
+	$API    = new PerchAPI(1.0, 'core');
+	$Lang   = $API->get('Lang');
+	$HTML   = $API->get('HTML');
+	$Paging = $API->get('Paging');
 
 	$Form = $API->get('Form');
     

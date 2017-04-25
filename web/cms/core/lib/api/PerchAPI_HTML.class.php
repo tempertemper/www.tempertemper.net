@@ -1,5 +1,7 @@
 <?php
 
+use \DrewM\Selecta\Selecta;
+
 class PerchAPI_HTML
 {
     public $app_id = false;
@@ -80,7 +82,7 @@ class PerchAPI_HTML
 
         $string =  $this->Lang->get($string, $args);
 
-        return '<h2>'.$string.'</h2>';
+        return '<h2 class="divider"><div>'.$string.'</div></h2>';
     }
 
     public function heading3($string)
@@ -145,8 +147,10 @@ class PerchAPI_HTML
         array_shift($args);
 
         $string =  $this->Lang->get($string, $args);
+        $icon = PerchUI::icon('core/alert');
+    
+        return $this->wrap('div[role=alert].notification.notification-warning', $icon.$string);
 
-        return '<p class="alert notice">'.$string.'</p>';
     }
 
     public function success_message($string)
@@ -156,7 +160,9 @@ class PerchAPI_HTML
 
         $string =  $this->Lang->get($string, $args);
 
-        return '<p class="alert success">'.$string.'</p>';
+        $icon = PerchUI::icon('core/circle-check');
+    
+        return $this->wrap('div[role=alert].notification.notification-success', $icon.$string);
     }
 
     public function failure_message($string)
@@ -166,50 +172,73 @@ class PerchAPI_HTML
 
         $string =  $this->Lang->get($string, $args);
 
-        return '<p class="alert error">'.$string.'</p>';
+        $icon = PerchUI::icon('core/face-pain');
+    
+        return $this->wrap('div[role=alert].notification.notification-alert', $icon.$string);
+
+    }
+
+    public function warning_block($heading, $message)
+    {
+        $args = func_get_args();
+        array_shift($args);
+        array_shift($args);
+
+        $icon = PerchUI::icon('core/alert');
+
+        $heading = $this->wrap('h2.notification-heading', $icon.' '.$this->Lang->get($heading));
+        $body    = $this->wrap('p', $this->Lang->get($message, $args));
+    
+        return $this->wrap('div[role=alert].notification-block.notification-warning', $heading.$body);
+
+    }
+
+    public function info_block($heading, $message)
+    {
+        $args = func_get_args();
+        array_shift($args);
+        array_shift($args);
+
+        $icon = PerchUI::icon('core/info-alt');
+
+        $heading = $this->wrap('h2.notification-heading', $icon.' '.$this->Lang->get($heading));
+        $body    = $this->wrap('p', $this->Lang->get($message, $args));
+    
+        return $this->wrap('div[role=alert].notification-block.notification-info', $heading.$body);
+
+    }
+
+    public function success_block($heading, $message)
+    {
+        $args = func_get_args();
+        array_shift($args);
+        array_shift($args);
+
+        $icon = PerchUI::icon('core/circle-check');
+
+        $heading = $this->wrap('h2.notification-heading', $icon.' '.$this->Lang->get($heading));
+        $body    = $this->wrap('p', $this->Lang->get($message, $args));
+    
+        return $this->wrap('div[role=alert].notification-block.notification-success', $heading.$body);
+    }
+
+    public function failure_block($heading, $message)
+    {
+        $args = func_get_args();
+        array_shift($args);
+        array_shift($args);
+
+        $icon = PerchUI::icon('core/face-pain');
+
+        $heading = $this->wrap('h2.notification-heading', $icon.' '.$this->Lang->get($heading));
+        $body    = $this->wrap('p', $this->Lang->get($message, $args));
+    
+        return $this->wrap('div[role=alert].notification-block.notification-alert', $heading.$body);
     }
 
     public function icon($type='tick', $alt='Success')
     {
-        switch($type) {
-
-            case 'tick':
-                $file = 'icon_tick.gif';
-                break;
-            case 'warn':
-                $file = 'icon_warn.gif';
-                break;
-            case 'draft':
-                $file = 'icon_draft.png';
-                break;
-            case 'notice':
-                $file = 'icon_notice.gif';
-                break;
-            case 'page-preview':
-                $file = 'icon_page_preview.png';
-                break;
-            case 'page':
-                $file = 'icon_page.png';
-                break;
-            case 'pages':
-                $file = 'icon_pages.png';
-                break;
-            case 'undo':
-                $file = 'icon_undo.png';
-                break;
-            case 'user':
-                $file = 'icon_user.png';
-                break;
-
-            default:
-                $file = false;
-                break;
-        }
-
-        if ($file) {
-            return '<img src="'.PERCH_LOGINPATH.'/assets/img/'.$file.'" alt="'.$this->encode($alt).'" />"';
-        }
-
+        return "Deprecated. Use PerchUI::icon() instead.";
     }
 
     public function paging($Paging)
@@ -349,11 +378,13 @@ class PerchAPI_HTML
     public function smartbar()
     {
         $items  = func_get_args();
-        $s = '<ul class="smartbar">';
+        $s = '<div class="smartbar">
+                <ul>';
         foreach($items as $item) {
             $s .= $item;
         }
-        $s .= '</ul>';
+        $s .= '</ul>
+        </div>';
 
         return $s;
     }
@@ -427,6 +458,105 @@ class PerchAPI_HTML
 
         return $s;
     }
+
+    public function title_panel($def, $CurrentUser = null)
+    {
+        if (isset($def['heading'])) {
+            $heading = $this->wrap('h1', $this->encode($def['heading']));
+        } else {
+            $heading = '';
+        }
+
+        #if (isset($def['notifications']) && $def['notifications']) {
+            $heading .= $this->wrap('div.notifications', '');
+        #}
+
+        $button = '';
+
+        if (isset($def['button'])) {
+
+            $show_button = true;
+
+            if (isset($def['button']['priv'])) {
+
+                if (is_null($CurrentUser)) {
+                    die(sprintf('title_panel() is checking for button privilege "%s" but $CurrentUser has not been passed in as the second argument.', $def['button']['priv']));
+                }
+
+                $show_button = false;
+                if ($CurrentUser->has_priv($def['button']['priv'])) {
+                    $show_button = true;
+                }
+            }
+
+            if ($show_button) {
+                    $label = '';
+                $class = '.button';
+                if (isset($def['button']['icon'])) {
+                    $label .= PerchUI::icon($def['button']['icon'], 10);
+                    $class .= '.button-icon.icon-left';
+                }
+                $label .= $this->wrap('span', $this->encode($def['button']['text']));
+                $path = PERCH_LOGINPATH . $def['button']['link'];
+                $button = $this->wrap('div.buttons a'.$class.'[href='.$path.'] div', $label);    
+            }
+            
+        } 
+
+        if (isset($def['button-placeholder'])) {
+            $button = $this->build('div.buttons');
+        }
+
+        if (isset($def['form'])) {
+            $button = $this->wrap('div', $def['form']['button']);
+            $button = $this->wrap('form[method=post][action='.$def['form']['action'].'].buttons', $button);
+        }
+
+        $Alert = new PerchAlert;
+
+        if (PERCH_DEBUG) {
+            $trace = debug_backtrace();
+            PerchUtil::debug("File: ".str_replace(realpath(__DIR__.'/../../../'), '', $trace[0]['file']));    
+        }
+        
+
+        return $this->wrap('header.title-panel', $heading.$button).$Alert->output(true);
+    }
+
+    public function build($selector, $contents='', $open_tags=true, $close_tags=true)
+    {
+        return Selecta::build($selector, $contents, $open_tags, $close_tags);
+    }
+
+    public function wrap($selector, $contents='')
+    {
+        return Selecta::wrap($selector, $contents);
+    }
+
+    public function open($selector)
+    {
+        return Selecta::open($selector);
+    }
+
+    public function close($selector)
+    {
+        return Selecta::close($selector);
+    }
+
+    public function submit_bar($def)
+    {
+        $s = $def['button'];
+
+        if (isset($def['cancel_link'])) {
+            $cancel_link = PERCH_LOGINPATH.$def['cancel_link'];
+            $s .= ' ' . $this->Lang->get('or') .' '. $this->wrap("a[href=$cancel_link]", $this->Lang->get('Cancel'));
+        }
+
+        $s = $this->wrap('div.submit-bar div.submit-bar-actions', $s);
+
+        return $s;
+    }
+
 
     private function format_list_value($code, $value)
     {

@@ -1,5 +1,9 @@
 <?php
 
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     $Roles = new PerchUserRoles;
     $Privs = new PerchUserPrivileges;
 
@@ -11,7 +15,8 @@
         $Role = false;
     }
 
-    $Form 	= new PerchForm('role', false);
+    
+    $Form = $API->get('Form');
 
     $req = array();
     $req['roleTitle']   = "Required";

@@ -14,6 +14,7 @@
     include(__DIR__.'/../../PerchAssets_Tag.class.php');
             
     include(__DIR__.'/../../modes/tags.delete.pre.php');
+    include(__DIR__.'/../../modes/_subnav.php');
    
     include(PERCH_CORE.'/inc/top.php');
 

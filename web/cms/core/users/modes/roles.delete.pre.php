@@ -1,5 +1,9 @@
 <?php
 
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     $Roles = new PerchUserRoles;
 
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
@@ -18,7 +22,8 @@
 
     /* --------- Delete User Form ----------- */
 
-    $Form 	= new PerchForm('delete', false);
+    $Form = $API->get('Form');
+    $Form->set_name('delete');
 
 
     if ($Form->posted() && $Form->validate()) {
@@ -44,4 +49,3 @@
     $details = $Role->to_array();
 
     $all_roles = $Roles->all();
-?>

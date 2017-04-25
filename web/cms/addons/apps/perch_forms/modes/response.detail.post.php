@@ -1,23 +1,52 @@
 <?php
   
-    # Side panel
-    echo $HTML->side_panel_start();
-    echo $HTML->para('This page shows the information collected in full.');
-    echo $HTML->side_panel_end();
     
-    
-    # Main panel
-    echo $HTML->main_panel_start(); 
-    include('_subnav.php');
-
-    echo $HTML->heading1('Viewing a Response');
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Response #%d', $Response->id()),
+    ], $CurrentUser);
     
 
-    if ($message) echo $message;
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    $Smartbar->add_item([
+        'active' => true,
+        'title' => 'All Responses',
+        'link'  => $API->app_nav().'/responses/?id='.$ResponseForm->id(),
+        'icon'  => 'core/o-documents',
+    ]);
+
+    $Smartbar->add_item([
+        'active' => false,
+        'title' => 'Spam',
+        'link'  => $API->app_nav().'/responses/?id='.$ResponseForm->id().'&spam=1',
+        'icon'  => 'ext/o-poop',
+    ]);
+
+    $Smartbar->add_item([
+        'active' => false,
+        'title' => 'Form Options',
+        'link'  => $API->app_nav().'/settings/?id='.$ResponseForm->id(),
+        'priv'  => 'perch_forms.configure',
+        'icon'  => 'core/o-toggles',
+    ]);
+
+    $Smartbar->add_item([
+        'active' => false,
+        'title' => 'Download CSV',
+        'link'  => $API->app_nav().'/responses/export/?id='.$ResponseForm->id(),
+        'priv'  => 'perch_forms.configure',
+        'icon'  => 'ext/o-cloud-download',
+        'position' => 'end',
+    ]);
+
+
+
+    echo $Smartbar->render();
 
     echo $HTML->heading2('Response');
     
-    echo '<table class="d factsheet">';
+    echo '<div class="inner">';
+    echo '<table>';
 
     echo '<tr>';
         echo '<th>'.$Lang->get('Received').'</th>';
@@ -49,44 +78,48 @@
     }
     
     echo '</table>';
+    echo '</div>';
 
     $page_details = $Response->page();
 
-    if (is_object($page_details)) {
+    if ($page_details) {
 
         echo $HTML->heading2('Page');
 
-        echo '<table class="d factsheet">';
+        echo '<div class="inner">';
+        echo '<table>';
 
-        echo '<tr>';
-            echo '<th>'.$Lang->get('Title').'</th>';
-            echo '<td><a href="'.PERCH_LOGINPATH.'/core/apps/content/page/?id='.$page_details->id.'">'.$HTML->encode($page_details->title).'</a></td>';
-        echo '</tr>';
+        if (is_object($page_details)) {
+            echo '<tr>';
+                echo '<th>'.$Lang->get('Title').'</th>';
+                echo '<td><a href="'.PERCH_LOGINPATH.'/core/apps/content/page/?id='.$page_details->id.'">'.$HTML->encode($page_details->title).'</a></td>';
+            echo '</tr>';
 
-        echo '<tr>';
-            echo '<th>'.$Lang->get('Path').'</th>';
-            echo '<td>'.$HTML->encode($page_details->path).'</td>';
-        echo '</tr>';
+            echo '<tr>';
+                echo '<th>'.$Lang->get('Path').'</th>';
+                echo '<td>'.$HTML->encode($page_details->path).'</td>';
+            echo '</tr>';
+        }else{
+            echo '<tr>';
+                echo '<th>'.$Lang->get('Path').'</th>';
+                echo '<td>'.$HTML->encode($page_details).'</td>';
+            echo '</tr>';
+        }
+ 
+
 
         echo '</table>';
+        echo '</div>';
     }
 
 
         echo $Form->form_start(false, 'bulk-edit');
-            echo '<div class="controls">';
+
         if ($Response->responseSpam()) {
-            
-            echo $Form->label('btnSubmit', 'This response was flagged as spam.');
             echo $Form->submit_field('btnSubmit', 'This is not spam');
             
         }else{
-            
-            echo $Form->label('btnSubmit', 'Is this a junk message?');
             echo $Form->submit_field('btnSubmit', 'Mark as spam');
         }
-            echo '</div>';
+
         echo $Form->form_end();
-
-    echo $HTML->main_panel_end();
-
-?>

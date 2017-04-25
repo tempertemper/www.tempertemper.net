@@ -1,5 +1,11 @@
 <?php
 
+		$API  = new PerchAPI(1.0, 'categories');
+	$Lang   = $API->get('Lang');
+	$HTML   = $API->get('HTML');
+	$Paging = $API->get('Paging');
+
+
 	/*
 		DEFAULT FIELDS
 		This is a string of template code that gets appended to the end of the template.
@@ -9,14 +15,6 @@
 	$default_fields = '<perch:category id="catTitle" type="smarttext" label="Title" required="true" />
 					   <perch:category id="catSlug" type="slug" for="catTitle" />';
 
-
-	/*
-		SET UP
-		Load up an instance of the API, and any classes we need.
-	 */
-
-	$API = new PerchAPI(1.0, 'categories');
-	$HTML = $API->get('HTML');
 
 	$Sets 		= new PerchCategories_Sets;
 	$Categories = new PerchCategories_Categories($API);
@@ -182,7 +180,7 @@
         	Create a success or failure message.
          */
         if (is_object($Category)) {
-            $message = $HTML->success_message('Your category has been successfully edited. Return to %scategory listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/categories">', '</a>');
+            $message = $HTML->success_message('Your category has been successfully edited. Return to %scategory listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/categories" class="notification-link">', '</a>');
         }else{
             $message = $HTML->failure_message('Sorry, that category could not be edited.');
         }
@@ -197,7 +195,7 @@
     	Pick that up and show a message saying the category was created.
      */
     if (isset($_GET['created']) && !$message) {
-        $message = $HTML->success_message('Your category has been successfully created. Return to %scategory listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/categories/sets/?id='.$Set->id().'">', '</a>');
+        $message = $HTML->success_message('Your category has been successfully created. Return to %scategory listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/categories/sets/?id='.$Set->id().'" class="notification-link">', '</a>');
     }
 
     /*
@@ -205,5 +203,5 @@
     	Pick that up and show a message saying the category was edited.
      */
     if (isset($_GET['edited']) && !$message) {
-        $message = $HTML->success_message('Your category has been successfully edited. Return to %scategory listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/categories">', '</a>');
+        $message = $HTML->success_message('Your category has been successfully edited. Return to %scategory listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/categories" class="notification-link">', '</a>');
     }

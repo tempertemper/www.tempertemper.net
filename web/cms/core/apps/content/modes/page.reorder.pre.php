@@ -3,14 +3,16 @@
 
     $Regions    = new PerchContent_Regions;
     
-    
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
 
 
-    $Perch->add_javascript(PERCH_LOGINPATH.'/core/assets/js/jquery.ui.nestedSortable.js');
+    //$Perch->add_javascript(PERCH_LOGINPATH.'/core/assets/js/jquery.ui.nestedSortable.js');
     
     
     
-    $Form = new PerchForm('order');
+    $Form = $API->get('Form');
     
     if ($Form->posted() && $Form->validate()) {
         

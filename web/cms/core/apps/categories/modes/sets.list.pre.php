@@ -6,6 +6,8 @@
 	$API  = new PerchAPI(1.0, 'categories');
 	$HTML = $API->get('HTML');
 
+	$Lang   = $API->get('Lang');
+
 	$Sets = new PerchCategories_Sets;
 	$Categories = new PerchCategories_Categories;
 

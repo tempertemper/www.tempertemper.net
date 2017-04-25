@@ -1,4 +1,8 @@
 <?php
+	$API    = new PerchAPI(1.0, 'core');
+	$Lang   = $API->get('Lang');
+	$HTML   = $API->get('HTML');
+
     $Pages      = new PerchContent_Pages;
     $Regions    = new PerchContent_Regions;
 
@@ -9,7 +13,7 @@
     
     // Collapse list?
     $do_list_collapse = $Settings->get('content_collapseList')->val();
-    $Perch->add_javascript_block("Perch.Apps.Content.settings = { 'collapseList':".(PerchUtil::bool_val($do_list_collapse) ? 'true':'false')." };");
+    //$Perch->add_javascript_block("Perch.Apps.Content.settings = { 'collapseList':".(PerchUtil::bool_val($do_list_collapse) ? 'true':'false')." };");
 
 
 	// default state
@@ -31,6 +35,10 @@
 		$do_list_collapse = false;
 		$show_shared = true;
 		$template_to_filter = urldecode($_GET['template']);
+	}
+
+	if (isset($_GET['show-filter']) && $_GET['show-filter']!='') { 
+		$filter = $_GET['show-filter'];
 	}
 	
 
@@ -75,6 +83,12 @@
         
         
         $pages = $Pages->get_page_tree_collapsed($expand_list);
+
+        if (PERCH_RUNWAY && PerchUtil::count($pages)==0) {
+			$Pages->create_defaults($CurrentUser);
+			$pages = $Pages->get_page_tree_collapsed(array(0));
+		}
+		
     }else{
 		
 		switch($filter) {
@@ -113,12 +127,12 @@
 		switch($filter) {
 			
 			case 'template':
-				$shared_regions = $Regions->get_shared($template_to_filter);
+				$shared_regions = $Regions->get_shared(null, $template_to_filter);
 
 				break;
 				
 			default:
-				$shared_regions = $Regions->get_shared();
+				$shared_regions = $Regions->get_shared(null);
 				break;
 			
 		}

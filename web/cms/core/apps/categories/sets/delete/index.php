@@ -13,6 +13,7 @@
     include(__DIR__.'/../../PerchCategories_Set.class.php');
             
     include(__DIR__.'/../../modes/sets.delete.pre.php');
+    include(__DIR__.'/../../modes/_subnav.php');
    
     include(PERCH_CORE.'/inc/top.php');
 

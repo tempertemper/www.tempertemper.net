@@ -1,60 +1,63 @@
 <?php 
-    // Side bar
-    include (PERCH_PATH.'/core/inc/sidebar_start.php');
-
-    // Help text for side bar
-    echo $HTML->para('Update your category.');
- 
-    // Ends of sidebar and start of main col
-    include (PERCH_PATH.'/core/inc/sidebar_end.php'); 
-    include (PERCH_PATH.'/core/inc/main_start.php'); 
-
-    // Include the subnav
-    include ('_subnav.php'); 
- 
     // Main heading - different if new vs edit mode
     if ($Category) {
-        echo $HTML->heading1('Editing ‘%s’ Category', $HTML->encode($Category->catTitle()));
+        $heading = $Lang->get('Editing ‘%s’ Category', $HTML->encode($Category->catTitle()));
     }else{
-        echo $HTML->heading1('Adding a New Category');         
+        $heading = $Lang->get('Adding a New Category');         
     }
-        
 
-    // Set up a smartbar
-    echo $HTML->smartbar(
-            $HTML->smartbar_breadcrumb(true, 
-                    array( 
-                        'link'=> PERCH_LOGINPATH.'/core/apps/categories/sets/?id='.$Set->id(),
-                        'label' => $Set->setTitle(),
-                    ),
-                    ( $Category ? 
-                        array( 
-                            'link'=> PERCH_LOGINPATH.'/core/apps/categories/edit/?id='.$Category->id(),
-                            'label' => $Category->catTitle(),
-                        ) :
-                        array( 
-                            'link'=> PERCH_LOGINPATH.'/core/apps/categories/edit/',
-                            'label' => PerchLang::get('New Category'),
-                        )
-                    )
-            ),
-            $HTML->smartbar_link(false, 
-                    array( 
-                        'link'=> PERCH_LOGINPATH.'/core/apps/categories/sets/edit?id='.$Set->id(),
-                        'label' => PerchLang::get('Set Options'),
-                    )
-                )
-        );
+    echo $HTML->title_panel([
+        'heading' => $heading,
+        ]);
 
-    // If a success or failure message has been set, output that here
     echo $message;
+
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+
+    $Smartbar->add_item([
+            'active' => true,
+            'type' => 'breadcrumb',
+            'links' => [
+                [
+                    'title' => 'Sets',
+                    'link'  => '/core/apps/categories/',
+                ],
+                [
+                    'title' => $Set->setTitle(),
+                    'link'  => '/core/apps/categories/sets/?id='.$Set->id(),
+                    'translate' => false,
+                ],
+                [
+                    'title' => ($Category ? $Category->catTitle() : $Lang->get('New category')),
+                    'translate' => false,
+                ]
+            ],
+        ]);
+
+    $Smartbar->add_item([
+            'active' => false,
+            'title'  => 'Set Options',
+            'link'   => '/core/apps/categories/sets/edit?id='.$Set->id(),
+            'icon'   => 'core/o-toggles',
+        ]);
+
+    $Smartbar->add_item([
+            'active'   => false,
+            'title'    => 'Reorder',
+            'link'     => '/core/apps/categories/reorder/?id='.$Set->id(),
+            'position' => 'end',
+            'icon'     => 'core/menu',
+        ]);
+
+    echo $Smartbar->render();
+
+
 
     // Sub head
     echo $HTML->heading2('Details');
 
     // Output the edit form
     $Form->add_another = true;
-    echo $Form->form_complete($Template, $Category);
+    echo $Form->form_complete($Template, $Category, 'catset:'.$Set->id());
     
-    // Footer
-    include (PERCH_PATH.'/core/inc/main_end.php');

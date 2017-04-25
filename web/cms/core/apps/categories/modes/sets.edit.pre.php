@@ -2,8 +2,13 @@
 	$default_fields = '<perch:categories id="setTitle" type="smarttext" label="Title" required="true" />
 					   <perch:categories id="setSlug" type="slug" for="setTitle" />';
 
-	$API = new PerchAPI(1.0, 'categories');
-	$HTML = $API->get('HTML');
+
+
+	$API  = new PerchAPI(1.0, 'categories');
+	$Lang   = $API->get('Lang');
+	$HTML   = $API->get('HTML');
+	$Paging = $API->get('Paging');
+	
 
 	$Sets 		= new PerchCategories_Sets;
 
@@ -48,7 +53,7 @@
     	$Set->update_all_in_set();
 
         if (is_object($Set)) {
-            $message = $HTML->success_message('Your set has been successfully edited. Return to %scategory listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/categories">', '</a>');
+            $message = $HTML->success_message('Your set has been successfully edited. Return to %scategory listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/categories/sets/?id='.$Set->id().'" class="notification-link">', '</a>');
         }else{
             $message = $HTML->failure_message('Sorry, that set could not be edited.');
         }
@@ -56,5 +61,5 @@
     } 
 
     if (isset($_GET['created']) && !$message) {
-        $message = $HTML->success_message('Your set has been successfully created. Return to %scategory listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/categories/">', '</a>');
+        $message = $HTML->success_message('Your set has been successfully created. Return to %scategory listing%s', '<a href="'.PERCH_LOGINPATH .'/core/apps/categories/" class="notification-link">', '</a>');
     }

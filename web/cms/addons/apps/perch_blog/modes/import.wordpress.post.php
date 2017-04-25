@@ -1,19 +1,9 @@
 <?php 
-    # Side panel
-    echo $HTML->side_panel_start();
- 
-    echo $HTML->para('This page lists the data files you have available to import.');
-    
-    echo $HTML->side_panel_end();
-    
-    
-    # Main panel
-    echo $HTML->main_panel_start();
 
-	include ('_subnav.php');
-
-	# Title panel
-    echo $HTML->heading1('Importing Data');
+	echo $HTML->title_panel([
+    'heading' => $Lang->get('Importing data'),
+    ], $CurrentUser);
+        
     
     flush();
 
@@ -22,20 +12,23 @@
         $results = $BlogUtil->import_from_wp($file, $format, null, $sectionID);
 
         if (PerchUtil::count($results)) {
-            echo '<ul class="importables">';
+            echo '<div class="inner"><ul class="progress-list">';
             foreach($results as $result) {
-                echo '<li class="icon '.$result['type'].'">';
+                echo '<li class="progress-item progress-'.$result['type'].'">';
+                switch($result['type']) {
+                    case 'success':
+                        echo PerchUI::icon('core/circle-check'). ' ';
+                        break;
+                    default:
+                        echo PerchUI::icon('core/alert'). ' ';
+                        break;
+                }
                 echo implode(' &mdash; ', $result['messages']);
                 echo '</li>';
                 flush();
             }
-            echo '</ul>';
+            echo '</ul></div>';
         }
 
     }
     
-     
-    echo $HTML->main_panel_end();
-
-
-?>

@@ -1,0 +1,21 @@
+CREATE TABLE `__PREFIX__users` (
+  `userID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `userUsername` varchar(255) NOT NULL DEFAULT '',
+  `userPassword` varchar(255) NOT NULL DEFAULT '',
+  `userCreated` datetime NOT NULL DEFAULT '2000-01-01 00:00:00',
+  `userUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `userLastLogin` datetime NOT NULL DEFAULT '2000-01-01 00:00:00',
+  `userGivenName` varchar(255) NOT NULL DEFAULT '',
+  `userFamilyName` varchar(255) NOT NULL DEFAULT '',
+  `userEmail` varchar(255) NOT NULL DEFAULT '',
+  `userEnabled` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `userHash` char(32) NOT NULL DEFAULT '',
+  `roleID` int(10) unsigned NOT NULL DEFAULT '1',
+  `userMasterAdmin` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `userPasswordToken` char(255) NOT NULL DEFAULT 'expired',
+  `userPasswordTokenExpires` datetime NOT NULL DEFAULT '2015-01-01 00:00:00',
+  `userLastFailedLogin` datetime DEFAULT NULL,
+  `userFailedLoginAttempts` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`userID`),
+  KEY `idx_enabled` (`userEnabled`)
+) DEFAULT CHARSET=utf8

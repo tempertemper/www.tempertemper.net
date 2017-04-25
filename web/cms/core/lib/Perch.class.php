@@ -4,7 +4,7 @@ class Perch
 {
     static protected $instance;
 
-    public $version = '2.8.34';
+    public $version = '3.0.1';
 
     public $admin           = false;
     private $page           = false;
@@ -31,17 +31,21 @@ class Perch
         if (!defined('PERCH_DEBUG'))                define('PERCH_DEBUG', false);
         if (!defined('PERCH_PREVIEW_ARG'))          define('PERCH_PREVIEW_ARG', 'preview');
         if (!defined('PERCH_TEMPLATE_PATH'))        define('PERCH_TEMPLATE_PATH', PerchUtil::file_path(PERCH_PATH.'/templates'));
+        if (!defined('PERCH_TEMPLATE_FILTERS'))     define('PERCH_TEMPLATE_FILTERS', false);
         if (!defined('PERCH_DEFAULT_DOC'))          define('PERCH_DEFAULT_DOC', 'index.php');
         if (!defined('PERCH_DEFAULT_EXT'))          define('PERCH_DEFAULT_EXT', '.php');
         if (!defined('PERCH_PRODUCTION_MODE'))      define('PERCH_PRODUCTION_MODE', 100);
-        if (!defined('PERCH_HTML5'))                define('PERCH_HTML5', false);
-        if (!defined('PERCH_RWD'))                  define('PERCH_RWD', false);
+        if (!defined('PERCH_HTML5'))                define('PERCH_HTML5', true);
+        if (!defined('PERCH_XHTML_MARKUP'))         define('PERCH_XHTML_MARKUP', false);
+        if (!defined('PERCH_RWD'))                  define('PERCH_RWD', true);
         if (!defined('PERCH_HTML_ENTITIES'))        define('PERCH_HTML_ENTITIES', false);
         if (!defined('PERCH_SSL'))                  define('PERCH_SSL', false);
         if (!defined('PERCH_STRIPSLASHES'))         define('PERCH_STRIPSLASHES', false);
         if (!defined('PERCH_PROGRESSIVE_FLUSH'))    define('PERCH_PROGRESSIVE_FLUSH', true);
         if (!defined('PERCH_PARANOID'))             define('PERCH_PARANOID', false);
         if (!defined('PERCH_FORCE_SECURE_COOKIES')) define('PERCH_FORCE_SECURE_COOKIES', PERCH_PARANOID);
+        if (!defined('PERCH_DEFAULT_BUCKET'))       define('PERCH_DEFAULT_BUCKET', 'default');
+        if (!defined('PERCH_TRANSLATION_ASSIST'))   define('PERCH_TRANSLATION_ASSIST', false);
 
         if (PERCH_DEBUG) $this->debug = true;
     }

@@ -1,78 +1,51 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-    
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ($app_path.'/modes/_subnav.php'); ?>
+<?php
+
+    echo $HTML->title_panel([
+            'heading' => $Lang->get('Listing Page Routes'),
+            ], $CurrentUser);
+
+        $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+        $Smartbar->add_item([
+                'active' => true,
+                'title'  => 'Routes',
+                'link'   => '/core/apps/content/routes/',
+                'icon'   => 'core/o-signs',
+            ]);
+        $Smartbar->add_item([
+                'active'   => false,
+                'title'    => 'Reorder',
+                'link'     => '/core/apps/content/routes/reorder/',
+                'position' => 'end',
+                'icon'   => 'core/menu',
+            ]);
+        echo $Smartbar->render();
 
 
-    <h1><?php 
-             echo PerchLang::get('Listing Page Routes'); 
-        ?></h1>
-    
-    <?php echo $Alert->output();
+        $Listing = new PerchAdminListing($CurrentUser, $HTML, $Lang, $Paging);
+        $Listing->add_col([
+                'title'     => 'Pattern',
+                'value'     => function($Item) use ($HTML) {
+                    return $HTML->wrap('code', $Item->routePattern());
+                },
+            ]);
+        $Listing->add_col([
+                'title'     => 'Page',
+                'value'     => function($item) use ($HTML) {
+                    if ($item->pageID() == '0') {
+                        return $HTML->wrap('a[href='.PERCH_LOGINPATH.'/core/apps/content/page/templates/edit/?id='.$item->templateID().']', PerchUI::icon('core/o-documents', 12). ' '. $item->templateTitle());
+                    } else {
 
-
-        echo $HTML->smartbar(
-            $HTML->smartbar_link(true, 
-                    array( 
-                        'link'=> PERCH_LOGINPATH.'/core/apps/content/routes/',
-                        'label' => PerchLang::get('Routes'),
-                    )
-                ),
-            $HTML->smartbar_link(false, 
-                    array( 
-                        'link'=> PERCH_LOGINPATH.'/core/apps/content/routes/reorder/',
-                        'label' => PerchLang::get('Reorder'),
-                        'class' => 'icon reorder'
-                    ), 
-                    true
-                )
-        );
-
-
-
-
-        if (PerchUtil::count($routes)) {
-
-            echo '<table class="d itemlist">';
-                echo '<thead>';
-                    echo '<tr>';
-                        echo '<th>'.PerchLang::get('Pattern').'</th>';
-                        echo '<th>'.PerchLang::get('Page').'</th>';
-                        echo '<th>'.PerchLang::get('Order').'</th>';
-                        echo '<th class="last action"></th>';
-                    echo '</tr>';
-                echo '</thead>';
-            
-                echo '<tbody>';
-                foreach($routes as $Route) {
-                    echo '<tr>';
-                        echo '<td class="primary"><pre class="icon page">';
-                            echo $Route->routePattern();
-                        echo '</pre></td>';
-                        echo '<td>';
-                            echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/page/edit/?id='.$Route->pageID().'">'.$Route->pagePath().'</a>';
-                        echo '</td>';
-                        echo '<td>';
-                            echo $Route->routeOrder();
-                        echo '</td>';
-                        echo '<td>';
-                            echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/routes/delete/?id=' . PerchUtil::html($Route->id()) . '" class="delete inline-delete">'.PerchLang::get('Delete').'</a>';
-                            
-                        echo ' </td>';
-                    echo '</tr>';
+                        return $HTML->wrap('a[href='.PERCH_LOGINPATH.'/core/apps/content/page/url/?id='.$item->pageID().']', $item->pagePath());
+                    }
                 }
-                echo '</tbody>';
-            
-            
-            echo '</table>';
-            
-            
-        
-        }
-    
-    ?>
+            ]);        
+        $Listing->add_col([
+                'title'     => 'Order',
+                'value'     => 'routeOrder',
+            ]);
+        $Listing->add_delete_action([
+                'inline' => true,
+                'path'   => 'delete',
+            ]);
 
-
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+        echo $Listing->render($routes);

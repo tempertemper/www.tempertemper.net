@@ -1,0 +1,49 @@
+<div class="asset-badge" data-for="{{asset_field}}">
+	<div class="asset-badge-inner">
+		<div class="asset-badge-thumb {{ strikethrough }}{{#if has_thumb}}{{else}} thumbless{{/if}}">
+			{{#if has_thumb}}
+				<img src="{{thumburl}}" width="{{thumbwidth}}" height="{{thumbheight}}" alt="{{ Lang 'Preview' }}">
+			{{ else }}
+				{{#if iicon}}
+					{{ icon iicon 64 }}
+				{{else}}
+			  		{{ icon 'assets/upload' 64 }}
+				{{/if}}
+			{{/if}}
+			<div class="asset-badge-remove">
+				<span class="asset-ban hidden">{{ icon 'assets/ban-alt' 64 }}</span>
+				<span class="asset-badge-remove-fields js">
+					<label for="{{input_id}}_remove" class="inline">{{ Lang 'Remove' }}</label>
+					<input type="checkbox" class="check" id="{{input_id}}_remove" name="{{input_id}}_remove" value="1">
+				</span>
+				<a href="#" class="asset-badge-remove-action">
+					{{ icon 'core/cancel' 24 }}
+				</a>
+			</div>
+		</div>
+		<div class="asset-badge-meta">
+			<h3 class="title">{{title}}</h3>
+			<ul class="meta">
+				<li>{{#if iicon}}
+					{{ icon iicon 12 }}
+				{{else}}
+			  		{{icon 'assets/o-document' 12}}
+				{{/if}} {{mime_display}}</li>
+				<li>{{#if width }}
+						{{icon 'assets/o-crop' 12}}
+					{{else}}
+						{{icon 'assets/o-weight-scale' 12}}
+					{{/if}} 
+					{{#if width }}{{width}} x {{height}} <span class="unit">px</span> @ {{/if}}{{{display_filesize}}}</li>
+			</ul>
+			<div class="asset-add ft-choose-asset" data-field="{{asset_field}}">
+				<a href="#">{{ Lang 'Select or upload a file' }}</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+

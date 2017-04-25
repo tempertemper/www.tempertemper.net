@@ -21,6 +21,8 @@
     include(PERCH_CORE .'/runway/settings/inc/backup.php');
 
     include(PERCH_CORE . '/runway/settings/modes/backup.plans.delete.pre.php');  
+    include ($app_path.'/modes/_subnav.php'); 
     include(PERCH_CORE . '/inc/top.php');
+
     include(PERCH_CORE . '/runway/settings/modes/backup.plans.delete.post.php');
     include(PERCH_CORE . '/inc/btm.php');

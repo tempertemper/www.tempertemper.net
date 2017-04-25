@@ -8,7 +8,7 @@
 	$planID    = (int) PerchUtil::get('id');
 	$Plan      = $Plans->find($planID);
 
-	$API  = new PerchAPI(1.0, 'backup');
+	$API  = new PerchAPI(1.0, 'core');
 	$HTML = $API->get('HTML');
 
 	$message = false;

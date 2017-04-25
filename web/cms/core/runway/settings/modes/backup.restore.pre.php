@@ -7,7 +7,7 @@
 
 	$Plan     = $Plans->find($Run->planID());
 
-	$API  = new PerchAPI(1.0, 'backup');
+	$API  = new PerchAPI(1.0, 'core');
 	$HTML = $API->get('HTML');
 
 

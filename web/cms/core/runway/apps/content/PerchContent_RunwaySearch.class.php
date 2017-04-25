@@ -6,7 +6,7 @@ class PerchContent_RunwaySearch implements PerchAPI_SearchHandler
     {
         $db = PerchDB::fetch(); 
 
-        $sql = 'SELECT \''.__CLASS__.'\' AS source, MATCH(ci.itemSearch) AGAINST('.$db->pdb($key).') AS score, 
+        $sql = 'SELECT \''.__CLASS__.'\' AS source, \'Collections\' AS display_source, MATCH(ci.itemSearch) AGAINST('.$db->pdb($key).') AS score, 
                 c.collectionKey AS col1, ci.itemSearch AS col2, ci.itemJSON AS col3, c.collectionOptions AS col4, c.collectionKey AS col5, c.collectionKey AS col6, c.collectionID AS col7, ci.itemID AS col8
                 FROM '.PERCH_DB_PREFIX.'collections c, '.PERCH_DB_PREFIX.'collection_items ci, '.PERCH_DB_PREFIX.'collection_revisions cr
                 WHERE c.collectionID=cr.collectionID AND cr.itemID=ci.itemID AND cr.itemRev=ci.itemRev 
@@ -110,6 +110,8 @@ class PerchContent_RunwaySearch implements PerchAPI_SearchHandler
             $out['pageNavText'] = $result[$_pageNavText];
             $out['source']      = $result['source'];
             $out['region_key']  = $result[$_regionKey];
+
+            if (isset($result['display_source'])) $out['display_source'] = $result['display_source'];
 
             // duplicate vals
             foreach($out as $k=>$val) {

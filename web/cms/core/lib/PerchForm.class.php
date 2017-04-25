@@ -4,9 +4,9 @@ class PerchForm
 {
 	public $html_encode        = true;
 	
-	public $required           = array();
-	public $validate           = array();
-	public $messages           = array();
+	public $required           = [];
+	public $validate           = [];
+	public $messages           = [];
 	public $error              = false;
 	
 	public $display_only       = false;
@@ -20,7 +20,7 @@ class PerchForm
 	
 	public $csrf_token         = null;
 	
-	public $fields             = array();
+	public $fields             = [];
 	
 	public $translate_errors   = true;
 
@@ -117,22 +117,20 @@ class PerchForm
 			}
 		}
 
-		return ' <span class="required">*</span> ';
-
-
+		return '';
 	}
 
 	public function error($id, $class=true)
 	{
 	    if ($this->error == true){
 	        if ($this->required($id) && (!isset($_POST[$id]) || ($_POST[$id]) === '') && (!isset($_FILES[$id]) && !isset($_POST[$id.'_populated']))) {
-	            if ($class) return ' class="error"';
-	            return ' error';
+	            if ($class) return ' class="input-error"';
+	            return ' input-error';
 	        }
 
 	        if (isset($this->messages[$id])) {
-	        	if ($class) return ' class="error"';
-	            return ' error';
+	        	if ($class) return ' class="input-error"';
+	            return ' input-error';
 	        }
 	    }
 
@@ -152,7 +150,7 @@ class PerchForm
 	{
 		$r= true;
 
-		$args = array();
+		$args = [];
 		if (isset($value[2])) $args = $value[2];
 
 		switch ( $value[0] )
@@ -189,6 +187,7 @@ class PerchForm
 
 	public function validate()
 	{
+
 		$this->error	= true;
 		$r				= true;
 
@@ -293,7 +292,7 @@ class PerchForm
 		$str 	= $_POST[$id];
 
 		// LTM?
-		if (strpos($str, 'LOCAL-TESTING')>2) {
+		if (strpos($str, '-LOCAL-')==2) {
 			return true;
 		}
 
@@ -375,7 +374,7 @@ class PerchForm
 
 	public function find_items($prefix, $keys_only=false)
 	{
-		$out	= array();
+		$out	= [];
 
 		foreach($_POST as $key=>$val) {
 
@@ -397,7 +396,7 @@ class PerchForm
 
 	public function hint($txt, $classname=false)
 	{
- 		return '<span class="hint'.($classname ? ' '.$classname : '').'">'.$this->html($txt).'</span>';
+ 		return '<span class="inline-help'.($classname ? ' '.$classname : '').'">'.$this->html($txt).'</span>';
 	}
 
 	/**
@@ -406,21 +405,37 @@ class PerchForm
 	 */
 	public function translated_hint($txt, $classname=false)
 	{
-		return '<span class="hint'.($classname ? ' '.$classname : '').'">'.$this->html($txt).'</span>';
+		return '<p class="inline-help'.($classname ? ' '.$classname : '').'">'.$this->html($txt).'</p>';
 	}
 
 	public function label($id, $txt, $class='', $colon=false, $translate=true)
 	{
-	    if ($translate) $txt = PerchLang::get($txt);
+	    if ($translate) {
+	    	$txt = PerchLang::get($txt);
+	    }
+
+	    $req_txt = '';
+
+	    if ($this->required($id)){
+			$req_txt = ' <span class="required-value">' . PerchLang::get('(required)') .'</span>';
+		}
 
 		if ($this->display_only) return '<span class="label">'.$this->html($txt).($colon?':':'').'</span>';
 
-		return '<label for="'.$this->html($id, true).'" class="'.$this->html($class, true).'">'.$this->html($txt, true).($colon?':':'') . '</label>';
+		return '<label for="'.$this->html($id, true).'" class="'.$this->html($class, true).'">'.$this->html($txt, true).$req_txt.($colon?':':'') . '</label>';
 	}
 
-	public function text($id, $value='', $class='', $limit=false, $type='text', $attributes='')
+	public function text($id, $value='', $class=false, $limit=false, $type='text', $attributes='')
 	{
+		if (!$class) {
+			$class = 'input-simple m';
+		}
+
 		$this->fields[] = $id;
+
+		if (!$type) {
+			$type = 'text';
+		}
 
 		if ($this->display_only) return $this->html($this->value($value));
 
@@ -431,7 +446,11 @@ class PerchForm
 		}
 
 		if ($this->required($id)){
-			$attributes .= ' required="required" ';
+			$attributes .= ' required aria-required="true" ';
+		}
+
+		if ($attributes != '') {
+			$attributes = ' '.trim($attributes);
 		}
 
 		$s	= '<input type="'.$type.'" id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" value="'.$this->html($this->value($value), true).'"'.$attributes.' class="'.$type.' '.$this->html($class, true).'"'.$limit.' />';
@@ -445,12 +464,12 @@ class PerchForm
 
 	public function email($id, $value='', $class='', $limit=false)
 	{
-	    return $this->text($id, $value, $class, $limit=false, 'text email');
+	    return $this->text($id, $value, $class, $limit=false, 'input-simple m email');
 	}
 
     public function url($id, $value='', $class='', $limit=false)
     {
-        return $this->text($id, $value, $class, $limit=false, 'text url');
+        return $this->text($id, $value, $class, $limit=false, 'input-simple m url');
     }
 
     public function color($id, $value='', $class='', $limit=false)
@@ -460,7 +479,7 @@ class PerchForm
 
     public function tags($id, $value='', $class='', $limit=false)
     {
-        return $this->text($id, $value, $class, $limit=false, 'text tags');
+        return $this->text($id, $value, $class, $limit=false, 'input-simple m tags');
     }
 
 	public function password($id, $value='', $class='')
@@ -472,7 +491,7 @@ class PerchForm
 		$autocomplete = 'off';
 		if (PERCH_PARANOID) $autocomplete = 'new-password';
 
-		$s	= '<input type="password" autocomplete="'.$autocomplete.'" id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" value="'.$this->html($this->value($value), true).'" class="text '.$this->html($class, true).'" />';
+		$s	= '<input type="password" autocomplete="'.$autocomplete.'" id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" value="'.$this->html($this->value($value), true).'" class="input-simple m '.$this->html($class, true).'" />';
 
 		if ($this->required($id) || isset($this->messages[$id])){
 			$s	.= $this->message($id, 'void');
@@ -497,41 +516,55 @@ class PerchForm
 	}
 
 
-	public function select($id, $array, $value, $class='', $multiple=false, $attributes=false)
+	public function select($id, $array, $value, $class='', $multiple=false, $attributes=false, $sorted=false)
 	{
 		if ($multiple) $id .= '[]';
 
 		$this->fields[] = $id;
-		if ($this->display_only && trim($value)=='') return 'No selection';
 
-		$s	= '<select id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" class="'.$this->html($class, true).'"'.($multiple ? 'multiple="multiple"':'').($attributes ? ' '.$attributes:'').'>';
+		$opener	= '<select id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" class="'.$this->html($class, true).'"'.($multiple ? 'multiple':'').($attributes ? ' '.$attributes:'').'>';
+
+		$top_options = [];
+		$options = '';
 
 		for ($i=0; $i<PerchUtil::count($array); $i++){
-			$s .= '<option value="'.$this->html($array[$i]['value'], true).'"';
+			$is_selected = false;
+			$selected_index = $i;
+
+			$option = '<option value="'.$this->html($array[$i]['value'], true).'"';
 
 			if (is_array($value)) {
 				if (in_array($array[$i]['value'], $this->value($value))){
-					$s .= ' selected="selected"';
+					$option .= ' selected';
+					$is_selected = true;
+					$selected_index = array_search($array[$i]['value'], $this->value($value));
 				}
 			}else{
 				if ($array[$i]['value'] == $this->value($value)){
-					$s .= ' selected="selected"';
+					$option .= ' selected';
+					$is_selected = true;
+					$selected_index = $i;
 				}
 			}
 
-
 			if (isset($array[$i]['disabled']) && $array[$i]['disabled']) {
-    		    $s .= ' disabled="disabled"';
+    		    $option .= ' disabled';
     		}
 
-			$s .='>'.$this->html($array[$i]['label']).'</option>';
+			$option .='>'.$this->html($array[$i]['label']).'</option>';
 
-			if ($this->display_only && $array[$i]['value'] == $value) {
-				return $this->html($array[$i]['label']);
+			if ($is_selected && $sorted) {
+				$top_options[$selected_index] = $option;
+			} else {
+				$options .= $option;
 			}
 		}
 
-		$s	.= '</select>';
+		$closer	= '</select>';
+
+		ksort($top_options);
+
+		$s = $opener . implode('', $top_options) . $options . $closer;
 
 		if ($this->required($id)){
 			$s	.= $this->message($id, $value);
@@ -540,46 +573,6 @@ class PerchForm
 
 		return $s;
 	}
-
-
-	function old_grouped_select($id, $groups, $value, $class='')
-	{
-
-		$this->fields[] = $id;
-		if ($this->display_only && trim($value)=='') return 'No selection';
-
-		$s	= '<select id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" class="'.$this->html($class, true).'">';
-
-		foreach($groups as $group_name=>$array) {
-
-		    $s .= '<optgroup label="'.$this->html($group_name, true).'">';
-
-    		for ($i=0; $i<PerchUtil::count($array); $i++){
-    			$s .= '<option value="'.$this->html($array[$i]['value'], true).'"';
-
-    			if ($array[$i]['value'] == $this->value($value)){
-    				$s .= ' selected="selected"';
-    			}
-
-    			$s .='>'.$this->html($array[$i]['label']).'</option>';
-
-    			if ($this->display_only && $array[$i]['value'] == $value) {
-    				return $this->html($array[$i]['label']);
-    			}
-    		}
-
-    		$s .= '</optgroup>';
-    	}
-
-		$s	.= '</select>';
-
-		if ($this->required($id)){
-			$s	.= $this->message($id, $value);
-		}
-
-		return $s;
-	}
-
 
 	function grouped_select($id, $groups, $value, $class='')
 	{
@@ -643,29 +636,29 @@ class PerchForm
 
 		$s	 = '';
 
-		$fields = array();
+		$fields = [];
 
 		$value	= ($this->value($value) ? $this->value($value) : strftime('%Y-%m-%d'));
 
-		$d			= array();
+		$d			= [];
 		$d['day']	= strftime('%d', strtotime($value));
 		$d['month']	= strftime('%m', strtotime($value));
 		$d['year']	= strftime('%Y', strtotime($value));
 
 		// Day
-		$days	= array();
+		$days	= [];
 		if ($allowempty) $days[] = array('label'=>'', 'value'=>'');
 		for ($i=1; $i<32; $i++) $days[]	= array('label'=>PerchUtil::pad($i), 'value'=>PerchUtil::pad($i));
 		$fields['d'] = $this->select($id.'_day', $days, $d['day']);
 
 		// Month
-		$months	= array();
+		$months	= [];
 		if ($allowempty) $months[] = array('label'=>'', 'value'=>'');
 		for ($i=1; $i<13; $i++) $months[]	= array('label'=>strftime('%b', strtotime('2007-'.PerchUtil::pad($i).'-01')), 'value'=>PerchUtil::pad($i));
 		$fields['m']	= $this->select($id.'_month', $months, $d['month']);
 
 		// Year
-		$years	= array();
+		$years	= [];
 		if ($allowempty) $years[] = array('label'=>'', 'value'=>'');
 		for ($i=strftime('%Y')-100; $i<strftime('%Y')+11; $i++) $years[]	= array('label'=>$i, 'value'=>$i);
 		$fields['y']	= $this->select($id.'_year', $years, $d['year']);
@@ -694,11 +687,11 @@ class PerchForm
 
         $s   = '';
 
-        $fields = array();
+        $fields = [];
 
         $value  = ($this->value($value) ? $this->value($value) : strftime('%Y-%m-%d %H:%M'));
 
-        $d          = array();
+        $d          = [];
         $d['day']   = strftime('%d', strtotime($value));
         $d['month'] = strftime('%m', strtotime($value));
         $d['year']  = strftime('%Y', strtotime($value));
@@ -706,19 +699,19 @@ class PerchForm
         $d['minute']= strftime('%M', strtotime($value));
 
         // Day
-        $days   = array();
+        $days   = [];
         if ($allowempty) $days[] = array('label'=>'', 'value'=>'');
         for ($i=1; $i<32; $i++) $days[] = array('label'=>PerchUtil::pad($i), 'value'=>PerchUtil::pad($i));
         $fields['d'] = $this->select($id.'_day', $days, $d['day']);
 
         // Month
-        $months = array();
+        $months = [];
         if ($allowempty) $months[] = array('label'=>'', 'value'=>'');
         for ($i=1; $i<13; $i++) $months[]   = array('label'=>strftime('%b', strtotime('2007-'.PerchUtil::pad($i).'-01')), 'value'=>PerchUtil::pad($i));
         $fields['m'] = $this->select($id.'_month', $months, $d['month']);
 
         // Year
-        $years  = array();
+        $years  = [];
         if ($allowempty) $years[] = array('label'=>'', 'value'=>'');
         for ($i=strftime('%Y')-100; $i<strftime('%Y')+11; $i++) $years[]    = array('label'=>$i, 'value'=>$i);
         $fields['y'] = $this->select($id.'_year', $years, $d['year']);
@@ -733,13 +726,13 @@ class PerchForm
         $s  .= ' : ';
 
         // Hours
-        $hours  = array();
+        $hours  = [];
         if ($allowempty) $hours[] = array('label'=>'', 'value'=>'');
         for ($i=0; $i<24; $i++) $hours[]    = array('label'=>PerchUtil::pad($i), 'value'=>PerchUtil::pad($i));
         $s      .= $this->select($id.'_hour', $hours, $d['hour']);
 
         // Minutes
-        $minutes    = array();
+        $minutes    = [];
         if ($allowempty) $minutes[] = array('label'=>'', 'value'=>'');
         for ($i=0; $i<60; $i++) $minutes[]  = array('label'=>PerchUtil::pad($i), 'value'=>PerchUtil::pad($i));
         $s      .= $this->select($id.'_minute', $minutes, $d['minute']);
@@ -766,17 +759,17 @@ class PerchForm
 
         $value  = ($this->value($value) ? $this->value($value) : strftime('%H:%M'));
 
-        $d          = array();
+        $d          = [];
         $d['hour']  = strftime('%H', strtotime($value));
         $d['minute']= strftime('%M', strtotime($value));
 
         // Hours
-        $hours  = array();
+        $hours  = [];
         for ($i=0; $i<24; $i++) $hours[]    = array('label'=>PerchUtil::pad($i), 'value'=>PerchUtil::pad($i));
         $s      .= $this->select($id.'_hour', $hours, $d['hour']);
 
         // Minutes
-        $minutes    = array();
+        $minutes    = [];
         for ($i=0; $i<60; $i++) $minutes[]  = array('label'=>PerchUtil::pad($i), 'value'=>PerchUtil::pad($i));
         $s      .= $this->select($id.'_minute', $minutes, $d['minute']);
 
@@ -821,19 +814,30 @@ class PerchForm
 		return $s;
 	}
 
-	public function checkbox_set($id, $label=false, $options, $values=array(), $class='', $limit=false, $container_class=false)
+	public function checkbox_set($id, $label=false, $options, $values=[], $class='', $limit=false, $container_class=false)
     {
     	/*
     	Note:
-    		$class and $limit aren't used. They exist to maintain argument consistancy
+    		$class isn't used. They exist to maintain argument consistancy
     		between this and the older PerchAPI_Form::checkbox_set method
     	*/
 
         $out = '';
 
-        $out .= '<fieldset>';
-        $out .= '<div class="wrapped checkboxes '.($container_class ? ' '.$container_class: ' ').'">';
-        if ($label!==false) $out .= '<strong>'.$this->html(PerchLang::get($label)).'</strong>';
+        $out .= '<fieldset class="fieldset-clean">';
+        $out .= '<div class="fieldset-inner '.($container_class ? ' '.$container_class: ' ').'">';
+
+        if ($label!==false) {
+        	$out .= '<div class="legend-wrap"><legend>'.$this->html(PerchLang::get($label)).'</legend></div>';	
+        } 
+
+        $out .= '<div class="checkbox-group"';
+
+        if ($limit>0) {
+        	$out .=' data-checkbox-max="'.(int)$limit.'"';
+        }
+
+        $out .='>';
 
         $i = 0;
 
@@ -856,31 +860,26 @@ class PerchForm
             	$option['disabled'] = false;
             }
 
-            $out .= '<div class="checkbox">';
+            $out .= '<div class="checkbox-single">';
             $out .= $this->checkbox($boxid, $option['value'], $checked_value, (isset($option['class']) ? $option['class'] : false), $id, $option['disabled']);
+            $out .= '<div class="form-entry">';
             $out .= $this->label($boxid, $option['label'], '', $colon=false, $translate=false);
+            $out .= '</div>';
             $out .= '</div>';
             $i++;
         }
 
 
         $out .= '</div>';
+        $out .= '</div>';
         $out .= '</fieldset>';
 
         return $out;
     }
 
-	public function radio($id, $group, $value, $checked, $class='')
+	public function radio($id, $group, $value, $checked, $class='', $attributes='')
 	{
 		$this->fields[] = $id;
-
-		if ($this->display_only){
-			if ($value == $checked){
-				return 'Yes';
-			}else{
-				return 'No';
-			}
-		}
 
 		$s	= '<input type="radio" class="check '.$this->html($class, true).'" id="'.$this->html($id, true).'" name="'.$this->html($group, true).'" value="'.$this->html($this->value($value), true).'"';
 
@@ -888,18 +887,18 @@ class PerchForm
 			$s .= ' checked="checked"';
 		}
 
+		if ($attributes != '') {
+			$s .= ' '.$attributes;
+		}
+
 		$s .= ' />';
-
-
 
 		return $s;
 	}
 
-	public function textarea($id, $value='', $class='', $data_attributes=false)
+	public function textarea($id, $value='', $class='', $data_attributes=false, $attributes='')
 	{
 		$this->fields[] = $id;
-
-		if ($this->display_only) return nl2br($this->html($value));
 
 		$data = '';
 		if (PerchUtil::count($data_attributes)) {
@@ -908,7 +907,7 @@ class PerchForm
 		    }
 		}
 
-		$s	= '<textarea id="'.$this->html($id, true).'" name="'.$this->html($id, true).'"  class="text '.$this->html($class, true).'"'.$data.' rows="6" cols="40">'.$this->html($this->value($value)).'</textarea>';
+		$s	= '<textarea id="'.$this->html($id, true).'" name="'.$this->html($id, true).'"  class="text '.$this->html($class, true).'"'.$data.' ' .$attributes. ' rows="6" cols="40">'.$this->html($this->value($value)).'</textarea>';
 
 		if ($this->required($id)){
 			$s	.= $this->message($id, $value);
@@ -917,31 +916,29 @@ class PerchForm
 		return $s;
 	}
 
-	public function submit($id, $value, $class=false, $translate=true, $use_button=false)
+	public function submit($id, $value, $class=false, $translate=true, $use_button=false, $icon=false)
 	{
+		if ($id == 'submit') $id = 'btnsubmit'; // don't allow id="submit"
+
 		$Perch  = PerchAdmin::fetch();
-
-		if ($this->display_only) {
-			if ($this->allow_edits) {
-				$segments	= str_replace('/editform='.$this->name, '', explode('/', $Perch->get_page(true)));
-				$segments[]	= 'editform='.$this->name;
-				$url		= implode('/', $segments);
-				$url		= str_replace('//', '/', $url);
-
-				return '<a href="'.$url.'" class="button" id="'.$this->html($id, true).'">Edit</a>';
-			}
-
-			return '';
-
-		}
 
 		if ($translate)  {
 		    $value = PerchLang::get($value);
 		}
 
 		if ($use_button) {
-		    $s = '<button type="submit" name="'.$this->html($id, true).'" id="'.$this->html($id, true).'" value="'.$this->html($value, true).'" class="'.$this->html($class, true).'"><span></span>'.$this->html($value, true).'</button>';
+		    $s = '<button type="submit" name="'.$this->html($id, true).'" id="'.$this->html($id, true).'" value="'.$this->html($value, true).'" class="'.$this->html($class, true).'" title="'.$this->html($value, true).'">';
+
+		    if ($icon) {
+		    	$s .= '<div>'.$icon.'<span>'.$this->html($value, true).'</span></div>';
+
+		    } else {
+		    	$s .= $this->html($value, true);
+		    }
+
+		    $s .= '</button>';
 		}else{
+			$class .= ' button button-simple';
 		    $s = '<input type="submit" name="'.$this->html($id, true).'" id="'.$this->html($id, true).'" value="'.$this->html($value, true).'" class="'.$this->html($class, true).'" />';
 		}
 
@@ -959,7 +956,7 @@ class PerchForm
 			return '';
 		}
 
-		$s	= '<input type="file" id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" value="'.$this->html($this->value($value), true).'" class="'.$this->html($class, true).'" />';
+		$s	= '<input type="file" id="'.$this->html($id, true).'" name="'.$this->html($id, true).'" value="'.$this->html($this->value($value), true).'" class="'.$this->html($class, true).'" title="'.$this->html($this->value($value), true).'" />';
 
 		if ($this->required($id)){
 			$s	.= $this->message($id, $value);
@@ -1010,7 +1007,7 @@ class PerchForm
 	{
 		$s 	= '<textarea rows="16" cols="80">';
 
-		$s 	.= '$req = array();' . "\n";
+		$s 	.= '$req = [];' . "\n";
 
 		if (is_array($this->fields)) {
 			foreach ($this->fields as $field){
@@ -1090,7 +1087,7 @@ class PerchForm
 
 	public function receive($postvars)
 	{
-	    $data = array();
+	    $data = [];
 	    foreach($postvars as $val){
 	        if (isset($_POST[$val])) {
 	            if (!is_array($_POST[$val])){
@@ -1139,7 +1136,7 @@ class PerchForm
 
 	public function reset()
 	{
-    	$this->messages	= array();
+    	$this->messages	= [];
     	$this->error	= false;
 	}
 
@@ -1148,6 +1145,16 @@ class PerchForm
     	if (isset($_POST[$id])) {
     		$_POST[$id] = '';
     	}
+	}
+
+	public function open()
+	{
+		return '<form method="post" action="'.$this->html($this->action()).'">';
+	}
+
+	public function close()
+	{
+		return '</form>';
 	}
 }
 

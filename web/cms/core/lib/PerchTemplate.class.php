@@ -10,15 +10,16 @@ class PerchTemplate
 	public $current_file          = false;
 
 	protected $template;
-	protected $cache             = array();
+	protected $cache             = [];
 	protected $autoencode        = true;
 
 	private $layout_renderer     = 'perch_layout';
-	private $_previous_item      = array();
-	private $cached_objects      = array();
-	private $blocks              = array();
+	private $_previous_item      = [];
+	private $cached_objects      = [];
+	private $blocks              = [];
+	private $help 				 = [];
 
-	protected $disabled_features = array();
+	protected $disabled_features = [];
 
 	function __construct($file=false, $namespace='content', $relative_path=true)
 	{
@@ -46,7 +47,7 @@ class PerchTemplate
 		}
 
 		// Mock up fallback functions if server doesn't have mbstring
-		$this->mb_fallback();
+		PerchUtil::mb_fallback();
 	}
 
 	public function set_template($template)
@@ -294,6 +295,7 @@ class PerchTemplate
 					if ($tag->suppress) {
 						$contents = str_replace($match, '', $contents);
 					}else{
+
 						if (isset($content_vars[$tag->id])) {
 							$value = $content_vars[$tag->id];
 						}else{
@@ -312,6 +314,24 @@ class PerchTemplate
 							$field_is_markup = $FieldType->processed_output_is_markup;
 				        }else{
 				            $modified_value  = $value;
+				        }
+
+				        // check that what we've got isn't an array. If it is, try your best to get a good string.
+				        if (is_array($modified_value)) {
+				            if (isset($modified_value['_default'])) {
+				                $modified_value = (string) $modified_value['_default'];
+				            }else{
+				            	if (isset($modified_value['processed'])) {
+				            		$modified_value = (string) $modified_value['processed'];
+				            	}else{
+				            		$modified_value = (string) array_shift($modified_value);
+				            	}
+				            }
+				        }
+
+				        // Filters: before processing
+				        if (PERCH_TEMPLATE_FILTERS && $tag->filter) {
+				        	list($modified_value, $field_is_markup) = $this->_apply_filters(0, $tag, $modified_value, $content_vars, $field_is_markup);
 				        }
 
 				        // check for 'rewrite' attribute
@@ -360,19 +380,6 @@ class PerchTemplate
                         	$modified_value = md5($modified_value);
                         }
 
-					    // check that what we've got isn't an array. If it is, try your best to get a good string.
-				        if (is_array($modified_value)) {
-				            if (isset($modified_value['_default'])) {
-				                $modified_value = (string) $modified_value['_default'];
-				            }else{
-				            	if (isset($modified_value['processed'])) {
-				            		$modified_value = (string) $modified_value['processed'];
-				            	}else{
-				            		$modified_value = (string) array_shift($modified_value);
-				            	}
-				            }
-				        }
-
 				        // Strip tags
 				        if ($tag->striptags) {
 				        	$modified_value = strip_tags($modified_value);
@@ -381,6 +388,11 @@ class PerchTemplate
 				        // Append
 				        if (!$tag->words && !$tag->chars && $tag->append) {
 				        	$modified_value .= $tag->append;
+				        }
+
+				        // Filters: after processing
+				        if (PERCH_TEMPLATE_FILTERS && $tag->filter) {
+				        	list($modified_value, $field_is_markup) = $this->_apply_filters(1, $tag, $modified_value, $content_vars, $field_is_markup);
 				        }
 
 				        // URL Encode
@@ -420,7 +432,7 @@ class PerchTemplate
 
 	/**
 	 * Find tag by ID. Optionally also ID with a given output="" attribute
-	 * @return [type]          PerchXMLTag
+	 * @return PerchXMLTag
 	 */
 	public function find_tag($tag, $output=false, $raw=false)
 	{
@@ -447,6 +459,19 @@ class PerchTemplate
 			if ($count == 1){
 				if ($raw) return $match[0];
 				return new PerchXMLTag($match[0]);
+			}
+		}
+
+		return false;
+	}
+
+	// Finds the ID of the first field with title="true" - used for control panel column sorting
+	public function find_title_field_id()
+	{
+		$tags = $this->find_all_tags();
+		if (PerchUtil::count($tags)) {
+			foreach($tags as $Tag) {
+				if ($Tag->title()) return $Tag->id();
 			}
 		}
 
@@ -499,9 +524,6 @@ class PerchTemplate
 
 	public function find_all_tags_and_repeaters($type='content', $contents=false)
 	{
-	    $template	= $this->template;
-		$path		= $this->file;
-
 		if ($contents===false) $contents = $this->load();
 
 		$untouched_content = $contents;
@@ -531,11 +553,9 @@ class PerchTemplate
 			$close_tag_len = mb_strlen($close_tag);
 			$open_tag      = '<perch:'.$tag_type.($empty_opener ? '' : ' ');
 
-			$order = 1;
-
 			// escape hatch
 			$i = 0;
-			$max_loops = 100;
+			$max_loops = 1000;
 
 			// loop through while we have closing tags
 	    	while($close_pos = mb_strpos($contents, $close_tag)) {
@@ -566,7 +586,6 @@ class PerchTemplate
 	    		if ($tag_type=='repeater') {
 	    			$Repeater = new PerchRepeater($OpeningTag->attributes);
 	    			$Repeater->set('id', $OpeningTag->id());
-	    			//$Repeater->tags = $this->find_all_tags($type, $condition_contents);
 	    			$Repeater->tags = $this->find_all_tags_and_repeaters($type, $condition_contents);
 
 	    			$tmp['tag'] = $Repeater;
@@ -668,8 +687,58 @@ class PerchTemplate
 		return $out;
 	}
 
-	public function find_help()
+	public function get_field_type_map($type='content', $contents=false)
 	{
+		$tags = $this->find_all_tags_and_repeaters($type, $contents);
+
+		$out = [];
+
+		if (PerchUtil::count($tags)) {
+			foreach($tags as $tag) {
+				if (!array_key_exists($tag->id, $out)) {
+					if ($tag->type) {
+						if ($tag->type == 'PerchBlocks') {
+
+							$Ft = PerchFieldTypes::get($tag->type, false, $tag);
+
+							if (count($this->blocks)==0) {
+					    		$template = $this->load();
+					    		$this->parse_blocks($template, array());
+					    	}
+
+					    	if (count($this->blocks)>0) {
+					    		$block_field_map = [];
+					    		foreach($this->blocks as $block_type=>$block_markup) {
+					    			$block_field_map[$block_type] = $this->get_field_type_map($type, $block_markup);
+					    		}
+
+					    		$Ft->field_type_map = $block_field_map;
+					    	}
+
+							$out[$tag->id] = $Ft;
+							
+						} else {
+							$out[$tag->id] = PerchFieldTypes::get($tag->type, false, $tag);	
+						}
+					}
+				}
+			}
+		}
+
+		return $out;
+	}
+
+	public function find_help($id = '_global')
+	{
+		if (isset($this->help[$id])) {
+			return $this->help[$id];
+		} else{
+			// don't keep doing the work
+			if (isset($this->help['_done'])) {
+				return null;
+			}
+		}
+
 	    $template	= $this->template;
 		$path		= $this->file;
 
@@ -678,17 +747,29 @@ class PerchTemplate
 		$out        = '';
 
 		if (strpos($contents, 'perch:help')>0) {
-            $s = '/<perch:help[^>]*>(.*?)<\/perch:help>/s';
+            $s = '/(<perch:help[^>]*>)(.*?)<\/perch:help>/s';
     		$count	= preg_match_all($s, $contents, $matches, PREG_SET_ORDER);
 
     		if ($count > 0) {
     			foreach($matches as $match) {
-    			    $out .= $match[1];
+    				$Tag = new PerchXMLTag($match[1]);
+    				if ($Tag->is_set('for')) {
+    					$this->help[$Tag->for()] = $match[2];
+    				} else {
+    					$out .= $match[2];
+    				}
     			}
     		}
     	}
 
-    	return $out;
+    	$this->help['_global'] = $out;
+    	$this->help['_done']   = true;
+
+    	if (isset($this->help[$id])) {
+    		return $this->help[$id];
+    	}
+    	
+    	return '';
 	}
 
 	public function process_show_all($vars, $contents)
@@ -816,6 +897,10 @@ class PerchTemplate
 	    	    $out = '';
 	    		if ($count > 0) {
 	    			foreach($matches as $match) {
+	    				if (substr($match[1], -5) !== '.html') {
+	    					$match[1].= '.html';
+	    				}
+
 	    			    $file = PERCH_TEMPLATE_PATH.DIRECTORY_SEPARATOR.$match[1];
 
 	    			    if (!file_exists($file)) {
@@ -852,7 +937,11 @@ class PerchTemplate
 		if (!isset($this->cache[$this->template])){
 			$this->load();
 		}
-		$contents = $this->cache[$this->template].$template_string;
+		if (isset($this->cache[$this->template])) {
+			$contents = $this->cache[$this->template].$template_string;
+		} else {
+			$contents = $template_string;	
+		}
 		return $this->load($contents, $parse_includes);
 	}
 
@@ -915,13 +1004,11 @@ class PerchTemplate
 					            if (array_key_exists($id, $content_vars) && $this->_resolve_to_value($content_vars[$id]) != '') {
 					            	$op = 'true';
 					            	if ($flip_operator) $op = 'false';
-				    	            $logic_string = preg_replace('#!?\b'.preg_quote($id, '#').'\b#', $op, $logic_string);
 				    	        }else{
 				    	        	$op = 'false';
 					            	if ($flip_operator) $op = 'true';
-
-				    	            $logic_string = preg_replace('#!?\b'.preg_quote($id, '#').'\b#', $op, $logic_string);
 				    	        }
+				    	        $logic_string = preg_replace('#'.($flip_operator ? '!' : '(?<!\!)').'\b'.preg_quote($id, '#').'\b#', $op, $logic_string);       
 		        			}
 		        		}
 
@@ -1350,7 +1437,7 @@ class PerchTemplate
 			}
 
 			$Collections = $this->_get_cached_object('PerchContent_Collections');
-			$value 		 = $Collections->get_data_from_ids_runtime($Tag->collection(), $content_vars[$Tag->id()], $Tag->sort());
+			$value 		 = $Collections->get_data_from_ids_runtime($Tag->collection(), $content_vars[$Tag->id()], $Tag->sort(), $Tag->count());
 
 			$RelatedTemplate = new PerchTemplate(false, $this->namespace);
 			$RelatedTemplate->load($condition_contents);
@@ -1664,7 +1751,7 @@ class PerchTemplate
 
 		// escape hatch
 		$i = 0;
-		$max_loops = 100;
+		$max_loops = 1000;
 
 		// loop through while we have closing tags
     	while($close_pos = mb_strpos($contents, $close_tag)) {
@@ -1688,47 +1775,17 @@ class PerchTemplate
     		$condition_contents = mb_substr($pair_html, $opening_tag_end_pos, 0-$close_tag_len);
 
     		// Do the business
-   			$contents = call_user_func(array($this, $callback), $type, $opening_tag, $condition_contents, $pair_html, $contents, $content_vars, $index_in_group);
-    		//$contents = $this->$callback($type, $opening_tag, $condition_contents, $pair_html, $contents, $content_vars, $index_in_group);
+    		$contents = $this->$callback($type, $opening_tag, $condition_contents, $pair_html, $contents, $content_vars, $index_in_group);
 
     		// escape hatch counter
     		$i++;
-    		if ($i > $max_loops) return $contents;
+    		if ($i > $max_loops) {
+    			PerchUtil::debug('Template max limit hit for perch:'.$type.' tags, or malformed template.', 'error');
+    			return $contents;	
+    		} 
     	}
 
     	return $contents;
-    }
-
-    private function mb_fallback()
-    {
-    	// If one's not there, the others won't be
-        if (!extension_loaded('mbstring')) {
-
-        	if (!function_exists('mb_strlen')) {
-	            function mb_strlen($a) {
-	                return strlen($a);
-	            }
-        	}
-
-            if (!function_exists('mb_strpos')) {
-	            function mb_strpos($a, $b) {
-	                return stripos($a, $b);
-	            }
-	        }
-
-	        if (!function_exists('mb_strrpos')) {
-	            function mb_strrpos($a, $b) {
-	                return strripos($a, $b);
-	            }
-	        }
-
-	        if (!function_exists('mb_substr')) {
-	            function mb_substr($a, $b, $c) {
-	                return substr($a, $b, $c);
-	            }
-	        }
-
-        }
     }
 
     private function _get_cached_object($name)
@@ -1765,6 +1822,43 @@ class PerchTemplate
     	$replacement = '';
     	if ($block_index==0) $replacement = '<BLOCKS />';
     	return str_replace($exact_match, $replacement, $template_contents);
+    }
+
+    private function _apply_filters($stage, $tag, $value, $vars, $field_is_markup)
+    {
+    	$filters = explode(' ', $tag->filter);
+    	if (PerchUtil::count($filters)) {
+    		$class_map = PerchSystem::get_registered_template_filters();
+
+    		foreach($filters as $filter) {
+    			$filter = trim($filter);
+
+    			if (array_key_exists($filter, $class_map)) {
+    				$Filter = new $class_map[$filter]($tag, $vars);
+    				$pre_value = $value;
+
+    				switch($stage) {
+    					case 0:
+    						$value = $Filter->filterBeforeProcessing($value, $field_is_markup);
+    						break;
+
+    					case 1: 
+    						$value = $Filter->filterAfterProcessing($value, $field_is_markup);
+    						break;
+    				}
+
+    				
+    				// Has it changed?
+    				if ($pre_value !== $value && $Filter->returns_markup) {
+    					$field_is_markup = true;
+    				}
+    			} else {
+    				PerchUtil::debug("Missing template filter: ".$filter, 'error');
+    			}
+    		}
+    	}
+
+    	return [$value, $field_is_markup];
     }
 
 }

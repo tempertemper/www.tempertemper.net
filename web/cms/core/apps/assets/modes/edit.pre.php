@@ -1,7 +1,11 @@
 <?php
     
-    $FieldTag = new PerchXMLTag('<perch:content id="image" type="image" disable-asset-panel="true" app-mode="true" detect-type="true" accept="all" />');
+    $FieldTag = new PerchXMLTag('<perch:content id="image" type="image" disable-asset-panel="true" app-mode="true" detect-type="true" accept="all" title="'.PerchLang::get('Select a file').'" />');
     $FieldTag->set('input_id', 'image');
+
+    $API  = new PerchAPI(1.0, 'assets');
+    $HTML = $API->get('HTML');
+    $Lang = $API->get('Lang');
 
     $Assets  = new PerchAssets_Assets;
     $Tags    = new PerchAssets_Tags;
@@ -65,7 +69,7 @@
             $Resources = new PerchResources;
             $ids       = $Resources->get_logged_ids();
             $assetID   = array_shift($ids);
-            $Asset     = $Assets->find($assetID);
+            $Asset     = $Assets->find((int)$assetID);
             $created   = true;
         }
 
@@ -104,4 +108,3 @@
         $details = new ArrayObject(); 
     }
   	
-?>

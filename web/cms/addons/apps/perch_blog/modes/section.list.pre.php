@@ -2,7 +2,6 @@
     
     $Sections = new PerchBlog_Sections($API);
 
-    $HTML = $API->get('HTML');
 
     if (!$CurrentUser->has_priv('perch_blog.sections.manage')) {
         PerchUtil::redirect($API->app_path());
@@ -19,7 +18,7 @@
         }
     }
     if (!$Blog) {
-        $Blog = $Blogs->find(1);
+        $Blog = $Blogs->first();
     }
 
-    $sections = $Sections->get_by('blogID', (int)$Blog->id());
+    $sections = $Sections->get_by('blogID', (int)$Blog->id(), false, $Paging);

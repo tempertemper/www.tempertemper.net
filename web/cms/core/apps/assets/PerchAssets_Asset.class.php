@@ -7,22 +7,27 @@ class PerchAssets_Asset extends PerchBase
 
     private $Bucket   = null;
 
-    private static $image_types  = array('jpg', 'png', 'gif', 'svg', 'jpeg', 'webp');
-    private static $doc_types    = array('doc', 'docx', 'pdf', 'odt', 'fodt', 'epub', 'mobi', 'docm', 'rtf', 'txt', 'uof', 'wpd', 'wri');
-    private static $sheet_types  = array('xls', 'csv', 'ods', 'fods', 'xlsx');
-    private static $audio_types  = array('mp3', 'wav', 'ogg', 'flac', 'm4a', 'wma', 'aiff', 'mp2', 'spx', 'ra', 'rm', 'mid');
-    private static $video_types  = array('mp4', 'mov', 'webm', 'ogv', 'aff', '3gp', 'asf', 'avi', 'flv', 'mpeg', 'mpg', 'wmv', 'm4v');
-    private static $pres_types   = array('ppt', 'pps', 'odp', 'fodp', 'key', 'pez', 'pptx', 'pot', 'opt');
+    private static $image_types  = ['jpg', 'png', 'gif', 'svg', 'jpeg', 'webp'];
+    private static $doc_types    = ['doc', 'docx', 'pdf', 'odt', 'fodt', 'epub', 'mobi', 'docm', 'rtf', 'txt', 'uof', 'wpd', 'wri'];
+    private static $sheet_types  = ['xls', 'csv', 'ods', 'fods', 'xlsx'];
+    private static $audio_types  = ['mp3', 'wav', 'ogg', 'flac', 'm4a', 'wma', 'aiff', 'mp2', 'spx', 'ra', 'rm', 'mid'];
+    private static $video_types  = ['mp4', 'mov', 'webm', 'ogv', 'aff', '3gp', 'asf', 'avi', 'flv', 'mpeg', 'mpg', 'wmv', 'm4v'];
+    private static $pres_types   = ['ppt', 'pps', 'odp', 'fodp', 'key', 'pez', 'pptx', 'pot', 'opt'];
+    private static $archive_types= ['zip'];
 
     public static function get_type_map()
     {
+        $files = array_merge(self::$doc_types, self::$sheet_types, self::$audio_types, self::$video_types, self::$pres_types, self::$archive_types);
+
         return array(
-            'img'   => array('label'=>PerchLang::get('Images'), 'exts'=>self::$image_types),
-            'doc'   => array('label'=>PerchLang::get('Documents'), 'exts'=>self::$doc_types),
-            'sheet' => array('label'=>PerchLang::get('Spreadsheets'), 'exts'=>self::$sheet_types),
-            'audio' => array('label'=>PerchLang::get('Audio'), 'exts'=>self::$audio_types),
-            'video' => array('label'=>PerchLang::get('Video'), 'exts'=>self::$video_types),
-            'pres'  => array('label'=>PerchLang::get('Presentations'), 'exts'=>self::$pres_types),
+            'img'     => ['label'=>PerchLang::get('Images'), 'exts'=>self::$image_types, 'icon'=>'assets/o-photo'],
+            'file'    => ['label'=>PerchLang::get('Files'), 'exts'=>$files, 'icon'=>'assets/o-document'],
+            'doc'     => ['label'=>PerchLang::get('Documents'), 'exts'=>self::$doc_types, 'icon'=>'assets/o-document'],
+            'sheet'   => ['label'=>PerchLang::get('Spreadsheets'), 'exts'=>self::$sheet_types, 'icon'=>'assets/o-chart-rise'],
+            'audio'   => ['label'=>PerchLang::get('Audio'), 'exts'=>self::$audio_types, 'icon'=>'assets/o-volume-high'],
+            'video'   => ['label'=>PerchLang::get('Video'), 'exts'=>self::$video_types, 'icon'=>'assets/o-video'],
+            'pres'    => ['label'=>PerchLang::get('Presentations'), 'exts'=>self::$pres_types, 'icon'=>'assets/o-keynote'],
+            'archive' => ['label'=>PerchLang::get('Archives'), 'exts'=>self::$archive_types, 'icon'=>'assets/o-file-zip'],
             );
     }
 
@@ -78,26 +83,37 @@ class PerchAssets_Asset extends PerchBase
     {
         $type = strtolower($this->resourceType());
 
-        if (in_array($type, self::$image_types))  return 'image';
-        if (in_array($type, self::$doc_types))    return 'doc';
-        if (in_array($type, self::$sheet_types))  return 'sheet';
-        if (in_array($type, self::$audio_types))  return 'audio';
-        if (in_array($type, self::$video_types))  return 'video';
-        if (in_array($type, self::$pres_types))   return 'pres';
+        if (in_array($type, self::$image_types))   return 'image';
+        if (in_array($type, self::$doc_types))     return 'doc';
+        if (in_array($type, self::$sheet_types))   return 'sheet';
+        if (in_array($type, self::$audio_types))   return 'audio';
+        if (in_array($type, self::$video_types))   return 'video';
+        if (in_array($type, self::$pres_types))    return 'pres';
+        if (in_array($type, self::$archive_types)) return 'archive';
 
         return 'doc';
+    }
+
+    public function icon_for_type()
+    {
+        $type = $this->get_type();
+        if ($type == 'image') $type='img';
+
+        $map  = $this->get_type_map();
+        return $map[$type]['icon'];
     }
 
     static function get_type_from_filename($filename)
     {
         $type = strtolower(PerchUtil::file_extension($filename));
         
-        if (in_array($type, self::$image_types))  return 'image';
-        if (in_array($type, self::$doc_types))    return 'doc';
-        if (in_array($type, self::$sheet_types))  return 'sheet';
-        if (in_array($type, self::$audio_types))  return 'audio';
-        if (in_array($type, self::$video_types))  return 'video';
-        if (in_array($type, self::$pres_types))   return 'pres';
+        if (in_array($type, self::$image_types))   return 'image';
+        if (in_array($type, self::$doc_types))     return 'doc';
+        if (in_array($type, self::$sheet_types))   return 'sheet';
+        if (in_array($type, self::$audio_types))   return 'audio';
+        if (in_array($type, self::$video_types))   return 'video';
+        if (in_array($type, self::$pres_types))    return 'pres';
+        if (in_array($type, self::$archive_types)) return 'archive';
 
         return 'doc';
     }
@@ -187,6 +203,14 @@ class PerchAssets_Asset extends PerchBase
     {
         $Bucket = $this->get_bucket();
         return $Bucket->get_web_path().'/'.$this->resourceFile();
+    }
+
+    /**
+     * Get the title
+     */
+    public function title()
+    {
+        return $this->resourceTitle();
     }
 
     /**
@@ -320,9 +344,11 @@ class PerchAssets_Asset extends PerchBase
         $out['thumbheight'] = $this->thumb_display_height();
 
         //$out['has_thumb'] = ($out['thumb']? true : false);
-        $out['has_thumb'] = ($this->is_image()? true : false);
+        $out['has_thumb'] = ($out['thumburl']? true : false);
 
         $out['orientation'] = 'landscape';
+
+        $out['iicon'] = $this->icon_for_type();
 
         if ($out['thumbwidth']<$out['thumbheight']) $out['orientation'] = 'portrait';
         if ($out['thumbwidth']==$out['thumbheight']) $out['orientation'] = 'square';
@@ -338,9 +364,9 @@ class PerchAssets_Asset extends PerchBase
         $size = $this->resourceFileSize();
 
         if ($size < 1048576) {
-            $size = round($size/1024, 0).'KB';
+            $size = round($size/1024, 0).'<span class="unit">KB</span>';
         } else {
-            $size = round($size/1024/1024, 0).'MB';
+            $size = round($size/1024/1024, 0).'<span class="unit">MB</span>';
         }
 
         return $size;
@@ -355,7 +381,12 @@ class PerchAssets_Asset extends PerchBase
     {
         $out = array();
         $Assets = new PerchAssets_Assets();
-        $Thumb = $Assets->get_thumb($this->id());
+
+        if ($this->is_svg()) {
+            $Thumb = $this;
+        } else {
+            $Thumb = $Assets->get_thumb($this->id());    
+        }
 
         $out['assetID'] = $this->id();
         $out['title'] = $this->resourceTitle();
@@ -380,5 +411,10 @@ class PerchAssets_Asset extends PerchBase
         $count = $this->db->get_count($sql);
 
         return ($count > 0);
+    }
+
+    public function add_new_size_variant($key, $data)
+    {
+        
     }
 }

@@ -1,31 +1,22 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-<p><?php echo PerchLang::get('The title you give to this page will display when the user is selecting a master page.'); ?></p>
+<?php
+        echo $HTML->title_panel([
+            'heading' => $Lang->get('Editing ‘%s’ master page', PerchUtil::html($Template->templateTitle())),
+            ]);
 
-<p><?php echo PerchLang::get('You can select a page to copy regions from. This means that when a user creates a new page the regions will not show up as NEW but instead will take on the types set for the page you are copying. No content is copied.'); ?></p>
+        echo $HTML->heading2('Details');
+?>
+    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="form-simple">
 
-<p><?php echo PerchLang::get('If you reference this master page then changes made to the template will reflect on all pages that use the master page. This is usually what you want. If new pages copy this master page then if you make a change to your site design you will need to update all of the created pages individually.'); ?></p>
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
-
-
-    <h1><?php 
-            printf(PerchLang::get('Editing %s Master Page'), PerchUtil::html($Template->templateTitle())); 
-        ?></h1>
-
-    
-    <?php echo $Alert->output(); ?>
-
-    <h2><?php echo PerchLang::get('Details'); ?></h2>
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="sectioned">
-
-        <div class="field">
+        <div class="field-wrap">
             <?php echo $Form->label('templateTitle', 'Title'); ?>
+            <div class="form-entry">
             <?php echo $Form->text('templateTitle', $Form->get($details, 'templateTitle')); ?>
+            </div>
         </div>
         
-        <div class="field">
+        <div class="field-wrap">
             <?php echo $Form->label('optionsPageID', 'Copy region options from'); ?>
+            <div class="form-entry">
             <?php 
                 $opts = array();
                 $opts[] = array('label'=>PerchLang::get('Do not copy'), 'value'=>'0');
@@ -40,24 +31,27 @@
                 
                 echo $Form->select('optionsPageID', $opts, $Form->get($details, 'optionsPageID')); 
             ?>
+            </div>
         </div>
         <?php if (!PERCH_RUNWAY) { ?>
-        <div class="field">
+        <div class="field-wrap">
             <?php echo $Form->label('templateReference', 'New pages should'); ?>
+            <div class="form-entry">
             <?php 
                 $opts = array();
         		$opts[] = array('label'=>PerchLang::get('Reference this master page'), 'value'=>1);
         		$opts[] = array('label'=>PerchLang::get('Copy this master page'), 'value'=>0);
                 echo $Form->select('templateReference', $opts, $Form->get($details, 'templateReference')); 
             ?>
+            </div>
         </div>
         <?php }// Runway ?>
 
 <?php
     if (PerchUtil::count($navgroups)) {
-        echo '<h2>'.PerchLang::get('Navigation groups').'</h2>';
+        echo '<h2 class="divider"><div>'.PerchLang::get('Navigation groups').'</div></h2>';
 
-        echo '<div class="field last">';
+        //echo '<div class="field-wrap">';
 
             $opts = array();
             
@@ -71,23 +65,49 @@
         
             
             echo $Form->checkbox_set('navgroups', 'Add new pages to', $opts, $vals, $class='', $limit=false);
-        
-        echo '</div>';
+            
+        //echo '</div>';
 
     }
+
+
+        if (PERCH_RUNWAY) { 
+
+            echo '<h2 class="divider"><div>'.PerchLang::get('Routes').'</div></h2>';
+     
+
+            if (PerchUtil::count($routes)) {
+
+                foreach($routes as $Route) {
+
+                    echo '<div class="field-wrap routes">';
+                        $id = 'routePattern_'.$Route->id();
+                        echo $Form->label($id, 'URL pattern');
+                        echo '<div class="form-entry">';
+                        echo $Form->text($id, $Form->get($details, $id, $Route->routePattern()));
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+
+            echo '<div class="field-wrap routes-spare">';
+                echo $Form->label('new_pattern', 'URL pattern');
+                echo '<div class="form-entry">';
+                echo $Form->text('new_pattern', $Form->get($details, 'new_pattern'));
+                echo '</div>';
+            echo '</div>';
+
+        }
+
+
+
 
 ?>
 
 
 
-        <p class="submit">
+        <p class="submit-bar">
             <?php echo $Form->submit('btnsubmit', 'Submit', 'button'); ?>
         </p>
         
     </form>
-
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); 
-
-
-

@@ -19,12 +19,13 @@
     include($app_path.'/PerchContent_PageTemplates.class.php');
     include($app_path.'/PerchContent_PageTemplate.class.php');
     
-        
-    include($app_path.'/modes/template.delete.pre.php');
     
+    include($app_path.'/modes/template.delete.pre.php');
+    include($app_path.'/modes/_subnav.php');    
+    
+
     include(PERCH_CORE . '/inc/top.php');
 
     include($app_path.'/modes/template.delete.post.php');
 
     include(PERCH_CORE . '/inc/btm.php');
-?>

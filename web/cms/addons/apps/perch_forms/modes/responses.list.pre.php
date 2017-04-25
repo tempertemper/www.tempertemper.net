@@ -3,11 +3,6 @@
     $Forms = new PerchForms_Forms($API);
     $Responses = new PerchForms_Responses($API);
 
-    $HTML = $API->get('HTML');
-    
-    $Paging = $API->get('Paging');
-    $Paging->set_per_page(10);
-
     $filter = 'all';
 
     if (isset($_GET['id']) && $_GET['id']!='') {
@@ -24,9 +19,3 @@
 	    PerchUtil::redirect($API->app_path());
 	}
 	
-
-
-	
-    
-
-?>

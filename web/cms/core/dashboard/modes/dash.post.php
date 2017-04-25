@@ -1,8 +1,4 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-	<p><?php echo PerchLang::get('Welcome. The dashboard gives you an overview of the content on your website.'); ?></p>
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<div id="dashboard" class="dash">
+<div id="dashboard" class="dashboard">
 <?php
 
     $apps = $Perch->get_apps();
@@ -27,29 +23,30 @@
     	foreach($order as $appID) {
     		foreach($apps as $app) {
 		        if ($app['id']==$appID && $app['dashboard']) {
-		            ob_start();
-		            include($app['dashboard']);
-		            $str = ob_get_clean();
+		            
+		            $func = include($app['dashboard']);
 
-		            $result = preg_match('#<div ([^>]*)>#', $str, $matches);
+                    if (is_callable($func)) {
+                        $str = $func($CurrentUser);
 
-		            if ($result) {
-		            	if (PerchUtil::count($matches)) {
-		            		$replacement = '<div data-app="'.$app['id'].'" '.$matches[1].'>';
-		            		$str = str_replace($matches[0], $replacement, $str);
-		            	}
-		            }
+                        $result = preg_match('#<div ([^>]*)>#', $str, $matches);
 
-		            echo $str;
+                        if ($result) {
+                            if (PerchUtil::count($matches)) {
+                                $replacement = '<div data-app="'.$app['id'].'" '.$matches[1].'>';
+                                $str = str_replace($matches[0], $replacement, $str);
+                            }
+                        }
+
+                        echo $str;
+                    }
+
+		            
+                    
 		        }
 		    }
     	}
     }
-  
-    
-    
-
 
 ?>
 </div>
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>

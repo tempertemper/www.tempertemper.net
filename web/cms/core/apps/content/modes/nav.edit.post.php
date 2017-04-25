@@ -1,53 +1,63 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-<p><?php echo PerchLang::get('Give the navigation group a descriptive title.'); ?></p>
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
-
-
-    <h1><?php 
+<?php 
         if (is_object($NavGroup)) {
-            printf(PerchLang::get('Editing %s Navigation Group'), PerchUtil::html($NavGroup->groupTitle())); 
+            $heading = sprintf(PerchLang::get('Editing ‘%s’ Navigation Group'), PerchUtil::html($NavGroup->groupTitle())); 
         }else{
-            printf(PerchLang::get('Creating New Navigation Group')); 
+            $heading = sprintf(PerchLang::get('Creating New Navigation Group')); 
         }
-            
-        ?></h1>
 
-    
-    <?php echo $Alert->output(); ?>
-
-    <?php
-    /* ----------------------------------------- SMART BAR ----------------------------------------- */
-    ?>
-    <ul class="smartbar">
-        <?php if ($groupID) { ?><li><a href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/navigation/pages/?id='.$groupID); ?>"><?php echo PerchLang::get('Pages'); ?></a></li><?php } ?>
-        <li class="selected"><a href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/navigation/edit/?id='.$groupID); ?>"><?php echo PerchLang::get('Group Options'); ?></a></li>
-        <?php if ($groupID) { ?><li class="fin"><a class="icon reorder" href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/navigation/reorder/?id='.$groupID); ?>"><?php echo PerchLang::get('Reorder Pages'); ?></a></li><?php } ?>
-    </ul>
-    <?php
-    /* ----------------------------------------- /SMART BAR ----------------------------------------- */
-    ?>
+        echo $HTML->title_panel([
+            'heading' => $heading,
+            ]);
 
 
+        
+        if ($groupID) {
+            $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+            $Smartbar->add_item([
+                'active' => false,
+                'type'   => 'breadcrumb',
+                'links'  => [
+                    [
+                        'title' => 'Navigation groups',
+                        'link'  => '/core/apps/content/navigation/',
+                    ],
+                    [
+                        'title' => $NavGroup->groupTitle(),
+                        'translate' => false,
+                        'link'  => '/core/apps/content/navigation/pages/?id='.$groupID,
+                    ]
+                ]
+            ]);
+            $Smartbar->add_item([
+                'active'   => true,
+                'title'    => 'Group Options',
+                'link'     => '/core/apps/content/navigation/edit/?id='.$groupID,
+                'icon'   => 'core/o-toggles',
+            ]);
+            $Smartbar->add_item([
+                'active'   => false,
+                'title'    => 'Reorder',
+                'link'     => '/core/apps/content/navigation/reorder/?id='.$groupID,
+                'icon'     => 'core/menu',
+                'position' => 'end',
+            ]);
+            echo $Smartbar->render();
+        }
 
 
-    <h2><?php echo PerchLang::get('Details'); ?></h2>
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="sectioned">
+    echo $HTML->heading2('Details');
 
-        <div class="field">
+    echo $Form->form_start();
+?>
+        <div class="field-wrap">
             <?php echo $Form->label('groupTitle', 'Title'); ?>
+            <div class="form-entry">
             <?php echo $Form->text('groupTitle', $Form->get($details, 'groupTitle')); ?>
-        </div>
-        
-        <p class="submit">
-            <?php echo $Form->submit('btnsubmit', 'Submit', 'button'); ?>
-        </p>
-        
-    </form>
+            </div>
+        </div>        
+<?php
 
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
-
-
-
+    echo $HTML->submit_bar([
+                'button' => $Form->submit('btnsubmit', 'Submit', 'button'),
+            ]);
+    echo $Form->form_end();

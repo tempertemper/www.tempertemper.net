@@ -8,6 +8,11 @@
     $Perch  = PerchAdmin::fetch();
     include(PERCH_CORE . '/inc/auth.php');
 
+
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+
     if (!$CurrentUser->has_priv('perch.settings')) {
         PerchUtil::redirect(PERCH_LOGINPATH);
     }
@@ -21,6 +26,8 @@
     include(PERCH_CORE .'/runway/settings/inc/backup.php');
 
     include(PERCH_CORE . '/runway/settings/modes/backup.restore.pre.php');  
+    include ($app_path.'/modes/_subnav.php'); 
     include(PERCH_CORE . '/inc/top.php');
+
     include(PERCH_CORE . '/runway/settings/modes/backup.restore.post.php');
     include(PERCH_CORE . '/inc/btm.php');

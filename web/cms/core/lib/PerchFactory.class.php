@@ -51,8 +51,12 @@ class PerchFactory
 
     public function all($Paging=false)
     {
+        $sort_val = null;
+        $sort_dir = null;
+
         if ($Paging && $Paging->enabled()) {
             $sql = $Paging->select_sql();
+            list($sort_val, $sort_dir) = $Paging->get_custom_sort_options();
         }else{
             $sql = 'SELECT';
         }
@@ -66,9 +70,15 @@ class PerchFactory
             $sql .= ' WHERE 1=1 '.$restrictions;
         }
 
-        if (isset($this->default_sort_column)) {
-            $sql .= ' ORDER BY ' . $this->default_sort_column . ' '.$this->default_sort_direction;
+        if ($sort_val) {
+            $sql .= ' ORDER BY '.$sort_val.' '.$sort_dir;
+        } else {
+
+            if (isset($this->default_sort_column)) {
+                $sql .= ' ORDER BY ' . $this->default_sort_column . ' '.$this->default_sort_direction;
+            }
         }
+
 
         if ($Paging && $Paging->enabled()) {
             $sql .=  ' '.$Paging->limit_sql();
@@ -136,11 +146,14 @@ class PerchFactory
      */
     public function get_by($col, $val, $order_by_col=false, $Paging=false)
     {
+        $sort_val = null;
+        $sort_dir = null;
 
-        if (is_object($Paging)) {
-            $select = 'SELECT SQL_CALC_FOUND_ROWS DISTINCT ';
+        if ($Paging && $Paging->enabled()) {
+            $select = $Paging->select_sql();
+            list($sort_val, $sort_dir) = $Paging->get_custom_sort_options();
         }else{
-            $select = 'SELECT ';
+            $select = 'SELECT';
         }
 
         if (is_array($val)) {
@@ -150,10 +163,14 @@ class PerchFactory
         }
 
 
-        if ($order_by_col) {
-            $sql .= ' ORDER BY '.$order_by_col;
-        }else{
-            if ($this->default_sort_column) $sql .= ' ORDER BY '.$this->default_sort_column.' '.$this->default_sort_direction;
+        if ($sort_val) {
+            $sql .= ' ORDER BY '.$sort_val.' '.$sort_dir;
+        } else {
+            if ($order_by_col) {
+                $sql .= ' ORDER BY '.$order_by_col;
+            }else{
+                if ($this->default_sort_column) $sql .= ' ORDER BY '.$this->default_sort_column.' '.$this->default_sort_direction;
+            }
         }
 
         if (is_object($Paging) && $Paging->enabled()){
@@ -398,11 +415,7 @@ class PerchFactory
                         case 'eq':
                         case 'is':
                         case 'exact':
-                            if ($value==='NULL' || $value===null) {
-                                $where[] = $key.' IS NULL';
-                            } else {
-                                $where[] = $key.'='.$value;    
-                            }
+                            $where[] = $key.'='.$value;
                             break;
                         case 'neq':
                         case 'ne':
@@ -666,24 +679,56 @@ class PerchFactory
 
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
 
-            if ($single_mode) return $Item->to_array();
+            if (isset($opts['api']) && $opts['api']==true) {
+                $api = true;
+            } else {
+                $api = false;
+            }
+
+            if ($single_mode) {
+                if ($api) {
+                    return $Item->to_array_for_api();
+                } else {
+                    return $Item->to_array();
+                }
+            } 
 
             $processed_vars = array();
             if (PerchUtil::count($items)) {
                 foreach($items as $Item) {
-                    $processed_vars[] = $Item->to_array();
+                    if ($api) {
+                        $Item->prefix_vars = false;
+                        $processed_vars[] = $Item->to_array_for_api();
+                    } else {
+                        $processed_vars[] = $Item->to_array();    
+                    }
                 }
             }
 
-            $category_field_ids    = $Template->find_all_tag_ids('categories');
-
+        
             if (PerchUtil::count($processed_vars)) {
+
+                if ($api) {
+                    $field_type_map = $Template->get_field_type_map($this->namespace);
+                }
+
+                $category_field_ids    = $Template->find_all_tag_ids('categories');
+
                 foreach($processed_vars as &$item) {
                     if (PerchUtil::count($item)) {
                         foreach($item as $key => &$field) {
 
-                            if (in_array($key, $category_field_ids)) {
-                                $field = $this->_process_category_field($field);
+                            if ($api) {
+
+                                if (array_key_exists($key, $field_type_map)) {
+                                    $field = $field_type_map[$key]->get_api_value($field);
+                                    continue;
+                                }
+                            } else {
+
+                                if (in_array($key, $category_field_ids)) {
+                                    $field = $this->_process_category_field($field);
+                                }
                             }
 
                             if (is_array($field) && isset($field['processed'])) {
@@ -999,8 +1044,9 @@ class PerchFactory
 
             $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemKey=idx2.itemKey ';
 
-            if (isset($opts['filter-mode']) && $opts['filter-mode']=='legacy-group') {
+            if (true || (isset($opts['filter-mode']) && $opts['filter-mode']=='legacy-group')) {
                 // I don't think we need this. Leaving an option for recovery if there are circumstances where it breaks anything
+                // Update: we do want this. Improves performance massively for large data sets. Enabed.
                 $sql .= 'GROUP BY idx.itemID, idx2.indexValue, '.$this->pk;  // DM added ', idx2.indexValue' for MySQL 5.7 compat     
             }
            
@@ -1215,16 +1261,38 @@ class PerchFactory
 
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
 
-            if ($single_mode) return $Item->to_array();
+            if (isset($opts['api']) && $opts['api']==true) {
+                $api = true;
+            } else {
+                $api = false;
+            }
+
+            if ($single_mode) {
+                if ($api) {
+                    return $Item->to_array_for_api();
+                } else {
+                    return $Item->to_array();      
+                }
+            } 
 
             $processed_vars = array();
             if (PerchUtil::count($items)) {
                 foreach($items as $Item) {
-                    $processed_vars[] = $Item->to_array();
+                    if (isset($opts['api']) && $opts['api']) {
+                        $Item->prefix_vars = false;
+                        $processed_vars[] = $Item->to_array_for_api();
+                    } else {
+                        $processed_vars[] = $Item->to_array();    
+                    }
+                    
                 }
             }
 
             if (PerchUtil::count($processed_vars)) {
+
+                if ($api) {
+                    $field_type_map = $Template->get_field_type_map($this->namespace);
+                }
 
                 $category_field_ids    = $Template->find_all_tag_ids('categories');
                 //PerchUtil::debug($category_field_ids, 'notice');
@@ -1232,9 +1300,18 @@ class PerchFactory
                 foreach($processed_vars as &$item) {
                     if (PerchUtil::count($item)) {
                         foreach($item as $key => &$field) {
-                            if (in_array($key, $category_field_ids)) {
-                                $field = $this->_process_category_field($field);
+                            
+                            if ($api) {
+                                if (array_key_exists($key, $field_type_map)) {
+                                    $field = $field_type_map[$key]->get_api_value($field);
+                                    continue;
+                                }
+                            } else {
+                                if (in_array($key, $category_field_ids)) {
+                                    $field = $this->_process_category_field($field);
+                                }
                             }
+
                             if (is_array($field) && isset($field['processed'])) {
                                 $field = $field['processed'];
                             }

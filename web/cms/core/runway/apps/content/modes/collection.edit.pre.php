@@ -3,12 +3,14 @@
 	$Items       = new PerchContent_CollectionItems();
 	$Regions     = new PerchContent_Regions();
 
-
+	$API    = new PerchAPI(1.0, 'core');
+	$Lang   = $API->get('Lang');
+	$HTML   = $API->get('HTML');
 
 	$Collection = false;
 
 
-	$Form = new PerchForm('edit');
+	$Form = $API->get('Form');
 
 	if ($Form->posted() && $Form->validate()) {
 		$postvars = array('collectionKey', 'collectionTemplate');

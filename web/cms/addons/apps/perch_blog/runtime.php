@@ -1,7 +1,11 @@
 <?php
     spl_autoload_register(function($class_name){
         if (strpos($class_name, 'PerchBlog')===0) {
-            include(__DIR__.'/'.$class_name.'.class.php');
+            include(__DIR__.'/lib/'.$class_name.'.class.php');
+            return true;
+        }
+        if (strpos($class_name, 'API_PerchBlog')>0) {
+            include(__DIR__.'/lib/api/'.$class_name.'.class.php');
             return true;
         }
         return false;
@@ -48,6 +52,8 @@
             );
 
         $opts = PerchUtil::extend($default_opts, $opts);
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         $r = perch_blog($opts, $return);
     	if ($return) return $r;
@@ -102,6 +108,8 @@
             $opts = $defaults;
         }
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         $postID = false;
 
         if (is_numeric($id_or_slug)) {
@@ -137,6 +145,8 @@
         }else{
             $opts = $defaults;
         }
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         $postID = false;
 
@@ -190,6 +200,8 @@
 
         if (is_object($Post)) {
             $r = $Post->get_field($field);
+        } else {
+            PerchUtil::debug('no post', 'error');
         }
 
         if ($return) return $r;
@@ -228,6 +240,8 @@
         if ($opts['skip-template'] || $opts['split-items']) {
             $return = true;
         }
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         $opts['template'] = '~perch_blog/templates/blog/'.str_replace('blog/', '', $opts['template']);
 
@@ -326,6 +340,8 @@
             $opts = $default_opts;
         }
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         if ($opts['skip-template'] || $opts['split-items']) {
             $return = true;
         }
@@ -413,6 +429,8 @@
             $opts = $default_opts;
         }
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         $API  = new PerchAPI(1.0, 'perch_blog');
@@ -460,6 +478,8 @@
         }else{
             $opts = $default_opts;
         }
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         $opts['template'] = '~perch_blog/templates/blog/'.str_replace('blog/', '', $opts['template']);
 
@@ -584,6 +604,8 @@
             $opts = $default_opts;
         }
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         if (isset($opts['pagination_var'])) $opts['pagination-var'] = $opts['pagination_var'];
@@ -686,6 +708,8 @@
         if ($opts['skip-template'] || $opts['split-items']) {
             $return = true;
         }
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         $cache = false;
         $template = $opts['template'];
@@ -825,6 +849,8 @@
             $opts = $default_opts;
         }
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         if (isset($opts['pagination_var'])) $opts['pagination-var'] = $opts['pagination_var'];
@@ -870,6 +896,8 @@
         }else{
             $opts = $default_opts;
         }
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
@@ -931,6 +959,8 @@
         }else{
             $opts = $default_opts;
         }
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
@@ -1005,6 +1035,8 @@
             $opts = $default_opts;
         }
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
         if (isset($opts['pagination_var'])) $opts['pagination-var'] = $opts['pagination_var'];
@@ -1050,6 +1082,8 @@
         }else{
             $opts = $default_opts;
         }
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         if ($opts['skip-template'] || $opts['split-items']) $return = true;
 
@@ -1114,6 +1148,8 @@
 
         $opts = array_merge($default_opts, $opts);
 
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
+
         $r = perch_blog($opts, $return);
         if ($return) return $r;
         echo $r;
@@ -1137,6 +1173,8 @@
         }else{
             $opts = $default_opts;
         }
+
+        if (isset($opts['data'])) PerchSystem::set_vars($opts['data']);
 
         if ($opts['skip-template'] || $opts['split-items']) $return = true;
 

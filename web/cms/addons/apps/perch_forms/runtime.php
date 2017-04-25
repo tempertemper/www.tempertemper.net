@@ -1,10 +1,12 @@
 <?php
 
-    require('PerchForms_Forms.class.php');
-    require('PerchForms_Form.class.php');
-    require('PerchForms_Responses.class.php');
-    require('PerchForms_Response.class.php');
-    require('PerchForms_Akismet.class.php');
+    spl_autoload_register(function($class_name){
+        if (strpos($class_name, 'PerchForms')===0) {
+            include(__DIR__.'/'.$class_name.'.class.php');
+            return true;
+        }
+        return false;
+    });
 
     function perch_forms_form_handler($SubmittedForm)
     {
@@ -51,5 +53,3 @@
         if ($return) return $html;
         echo $html;
     }
-
-?>

@@ -1,18 +1,11 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-    
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-	<?php include ('_subnav.php'); ?>
+<?php 
 
+	echo $HTML->title_panel([
+        'heading' => $Lang->get('Textile formatting'),
+    ]);
 
-    <h1><?php echo PerchLang::get('Textile formatting'); ?></h1>
-
-
-    <?php echo $Alert->output(); ?>
-
-    <div class="helptext">
-
-    	<h2>About Textile formatting</h2>
+	echo $HTML->open('div.inner');
+?>
 
 <p>Textile is a simple syntax to mark-up text in your pages. It is enabled on any field that displays the Textile link. We have listed the most common syntax here, along with some examples. There is a full Textile reference at <a href="http://txstyle.org/">http://txstyle.org/</a> </p>
 
@@ -20,9 +13,7 @@
 
 <p>These are tags that you wrap around a word or words to change the way it looks. For example to make a word in a sentence bold you wrap it with <code>**</code>.</p>
 
-<div class="sample">
-In this the word <code>*bold*</code> will display as bold text on the webpage.
-</div>
+<div class="markup-sample">In this the word <code>*bold*</code> will display as bold text on the webpage.</div>
 
 <ul>
 <li><code>_emphasis_</code></li>
@@ -42,18 +33,14 @@ In this the word <code>*bold*</code> will display as bold text on the webpage.
 
 <h4>Example:</h4>
 
-<div class="sample">
-<pre><code>h1. This is a level one heading
+<div class="markup-sample"><pre><code>h1. This is a level one heading
 
 This is a paragraph. You do not need to use the p. tag before paragraphs unless you are forcing a change from a previous block modifier.
 
 * List item one
 * List item two
 * List item three
-</code></pre>
-</div>
-
-<hr />
+</code></pre></div>
 
 <h4>More block modifiers:</h4>
 
@@ -74,11 +61,9 @@ This is a paragraph. You do not need to use the p. tag before paragraphs unless 
 
 <p>To create a link, put the text of the link in quotes, then a <code>:</code> and then the full URL including the <code>http://</code> if it is an external link. You can link to pages on your site by giving the path from root as shown below.</p>
 
-<div class="sample">
-<pre><code>&quot;Visit Google&quot;:http://google.com
+<div class="markup-sample"><pre><code>&quot;Visit Google&quot;:http://google.com
 &quot;Internal links on your site&quot;:/about/page.php
-</code></pre>
-</div>
+</code></pre></div>
 
 <h3>Punctuation:</h3>
 
@@ -93,7 +78,6 @@ This is a paragraph. You do not need to use the p. tag before paragraphs unless 
 </ul>
 
 
-
-	</div>
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>
+<?php
+	echo $HTML->close('div.inner');
+?>

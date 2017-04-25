@@ -14,8 +14,10 @@
         }
         return false;
     }
-    
+
     spl_autoload_register('perch_autoload');
+
+    include(__DIR__.'/../lib/vendor/autoload.php');
      
     if (extension_loaded('mbstring')) mb_internal_encoding('UTF-8');
 
@@ -28,6 +30,8 @@
     if (get_magic_quotes_runtime()) {
         set_magic_quotes_runtime(false);
     }
+
+    PerchRequest::init($_GET, $_POST, $_SERVER, $_COOKIE);
 
     if (defined('PERCH_LICENSE_KEY')) {
 
@@ -45,8 +49,8 @@
         }else{
             define('PERCH_RUNWAY', false);
 
-            if (version_compare(PHP_VERSION, '5.3.0', '<')) {
-                die('Perch requires at least PHP 5.3. This server is running version ' . PHP_VERSION);
+            if (version_compare(PHP_VERSION, '5.4.0', '<')) {
+                die('Perch requires at least PHP 5.4. This server is running version ' . PHP_VERSION);
             }
         }
 
@@ -59,3 +63,9 @@
     if (!defined('PERCH_TIME_LONG'))        define('PERCH_TIME_LONG', '%H:%M:%S');
     if (!defined('PERCH_RUNWAY_ROUTED'))    define('PERCH_RUNWAY_ROUTED', false);
     if (!defined('PERCH_STRONG_PASSWORDS')) define('PERCH_STRONG_PASSWORDS', false);
+
+    include(PERCH_CORE.'/assets/js/version.php');
+    
+    if (defined('PERCH_TEMPLATE_FILTERS') && PERCH_TEMPLATE_FILTERS) {
+        include PERCH_PATH.'/addons/templates/filters.php';
+    }

@@ -1,42 +1,84 @@
+<?php  
 
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Editing ‘%s’ region', PerchUtil::html($Region->regionKey())),
+    ]);
 
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-<p><?php echo PerchLang::get('Please choose a template for the content you wish to add to this region.'); ?></p>
-<p><?php echo PerchLang::get('If you would like to have multiple items of content in this region, select the <em>Allow multiple items</em> option.'); ?></p>
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
 
-    <h1><?php 
-            printf(PerchLang::get('Editing %s Region'),' &#8216;' . PerchUtil::html($Region->regionKey()) . '&#8217; '); 
-        ?></h1>
+    // Breadcrumb
+    $links = [];
+    if ($Region->regionPage()=='*') {
+        $links[] = [
+            'title' => 'Regions',
+            'link'  => '/core/apps/content/page/?id=-1',
+        ];
+    }else{
+        $links[] = [
+            'title' => 'Regions',
+            'link'  => '/core/apps/content/page/?id='.$Region->pageID(),
+        ];
+    }
+
+    if ($Region->regionMultiple() && $Region->get_option('edit_mode')=='listdetail') {
+        $links[] = [
+            'title' => $Region->regionKey(),
+            'translate' => false,
+            'link'  => '/core/apps/content/edit/?id='.$Region->id(),
+        ];
+
+    } else {
+        $links[] = [
+            'title' => $Region->regionKey(),
+            'translate' => false,
+            'link'  => '/core/apps/content/edit/?id='.$Region->id(),
+        ];
+    }
+
+    $Smartbar->add_item([
+            'active' => true,
+            'type' => 'breadcrumb',
+            'links' => $links,
+        ]);
     
-    <?php echo $Alert->output(); ?>
+    // Region Options buttons
+    $Smartbar->add_item([
+            'active' => false,
+            'title'  => 'Region Options',
+            'link'   => '/core/apps/content/options/?id='.$Region->id(),
+            'priv'   => 'content.regions.options',
+            'icon'   => 'core/o-toggles',
+        ]);
 
+    echo $Smartbar->render();
 
-	<h2><?php echo PerchLang::get('Choose a template'); ?></h2>
+    echo $HTML->heading2('Choose a template');
 
-    <form method="post" action="<?php echo PerchUtil::html($fTemplate->action()); ?>">
+?>
+
+    <form method="post" action="<?php echo PerchUtil::html($fTemplate->action()); ?>" class="form-simple">
 			
         
-            <div class="field">
+            <div class="field-wrap">
                 <?php echo $fTemplate->label('regionTemplate', 'Template'); ?>
+                <div class="form-entry">
                 <?php         
                     echo $fTemplate->grouped_select('regionTemplate', $Regions->get_templates(), $fTemplate->get('contentTemplate', false));                    
                 ?>
+                </div>
             </div>
     
-            <div class="field">
+            <div class="field-wrap checkbox-single">
                 <?php echo $fTemplate->label('regionMultiple', 'Allow multiple items'); ?>
+                <div class="form-entry">
                 <?php echo $fTemplate->checkbox('regionMultiple', '1', '0'); ?>
+                </div>
             </div>
     
+<?php
+    echo $HTML->submit_bar([
+        'button' => $fTemplate->submit('btnsubmit', 'Submit', 'button')
+        ]);
 
-        <p class="submit">
-            <?php echo $fTemplate->submit('btnsubmit', 'Submit', 'button'); ?>
-        </p>
-        
+?>      
     </form>
-
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>

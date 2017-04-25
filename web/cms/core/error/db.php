@@ -5,45 +5,51 @@
     include(PERCH_CORE . '/inc/loader.php');
     $Perch  = new Perch;
     $Perch->page_title = 'Database connection error'; 
-?>
-<!DOCTYPE html>
-<html lang="en">
+?><!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <link media="all" rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH, true); ?>/core/assets/css/styles.css">
+    <!--[if IE]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH, true); ?>/core/assets/css/ie9.css"><![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php 
         echo PerchUtil::html($Perch->page_title);      
     ?></title>
-    <link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/login.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" />   
 </head>
-<body class="login">
-    <div class="logincont light">
+<body>
+<div class="page-setup">
+
+    <div class="setup-box">
         <div class="logo">
             <?php
-                echo '<img src="'.PERCH_LOGINPATH.'/core/assets/img/logo.png" width="110" class="logo" alt="Perch" />';
+               if (PERCH_RUNWAY) {
+                    echo '<img src="'.PerchUtil::html(PERCH_LOGINPATH, true).'/core/runway/assets/img/logo.png" alt="Perch" width="110">';
+                } else {
+                    echo '<img src="'.PerchUtil::html(PERCH_LOGINPATH, true).'/core/assets/img/logo.png" alt="Perch" width="110">';
+                }
             ?>
         </div>
 
-        <div id="login">
-            <div id="hd" class="topbar">
-                <h1>Error</h1>
-            </div>
-            <div class="bd">
-                <form class="error">
-                    <p class="error alert alert-failure">Perch could not connect to the database</p>
+        <div class="bd">     
 
-                    <p>Please check that the access details specified in <code>config.php</code> are correct.</p>
-
-                    <p><a href="<?php echo PERCH_LOGINPATH; ?>">Try again</a></p>
-                </form>
+            <div role="alert" class="notification-block notification-alert">
+                <h2 class="notification-heading">
+                    <?php echo PerchUI::icon('core/face-pain'); ?> Error: Could not connect to the database
+                </h2>
+                <p>Please check that the access details specified in <code><?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/config/config.php</code> file are correct.</p>
             </div>
+
+            <p><a href="<?php echo PerchUtil::html(PERCH_LOGINPATH, true); ?>" class="button button-simple">Try again</a></p>
+        
+            
         </div>
 
-        <div class="footer">        
-            <div class="credit">
-                    <p><a href="http://grabaperch.com"><img src="/perch/core/assets/img/perch.png" width="35" height="12" alt="Perch" /></a>
-            by <a href="http://edgeofmyseat.com">edgeofmyseat.com</a></p>
-            </div>
-        </div>
+    <div class="ft">
+        
     </div>
+</div>
+
+</div>
+
 </body>
 </html>

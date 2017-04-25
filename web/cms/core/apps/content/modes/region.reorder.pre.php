@@ -1,7 +1,12 @@
 <?php
 
+    $API    = new PerchAPI(1.0, 'content');
+    $HTML   = $API->get('HTML');
+    $Lang   = $API->get('Lang');
+    $Paging = $API->get('Paging');
+
     $Regions = new PerchContent_Regions;
-    $Items = new PerchContent_Items;
+    $Items   = new PerchContent_Items;
     $Region  = false;
     
     // Find the region
@@ -40,6 +45,8 @@
                 $Region->index();
             }
             $Alert->set('success', PerchLang::get('Item orders successfully updated.'));
+            
+
             PerchUtil::redirect(PERCH_LOGINPATH.'/core/apps/content/edit/?id='.$Region->id());
         }
     }

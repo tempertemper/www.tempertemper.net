@@ -32,6 +32,11 @@ class PerchPageRoutes extends PerchFactory
 		return $this->get_by('pageID', $pageID);
 	}
 
+	public function get_routes_for_template($templateID)
+	{
+		return $this->get_by('templateID', $templateID);
+	}
+
 	public function get_next_route_order($pageID)
 	{
 		$sql = 'SELECT MAX(routeOrder) FROM '.$this->table.' WHERE pageID='.$this->db->pdb((int)$pageID);
@@ -42,13 +47,17 @@ class PerchPageRoutes extends PerchFactory
 		return $result;
 	}
 
-	public function get_routes_for_admin_edit()
+	public function get_routes_for_admin_edit($Paging)
 	{
-		$sql = 'SELECT pr.*, p.* FROM '.$this->table.' pr, '.PERCH_DB_PREFIX.'pages p
-				WHERE pr.pageID=p.pageID
-				ORDER BY pr.routeORDER ASC';
-		return $this->return_instances($this->db->get_rows($sql));
+		$sql = $Paging->select_sql().' pr.*, p.pagePath, pt.templatePath, pt.templateTitle
+				FROM '.$this->table.' pr 
+					LEFT JOIN  '.PERCH_DB_PREFIX.'pages p ON pr.pageID=p.pageID
+					LEFT JOIN  '.PERCH_DB_PREFIX.'page_templates pt ON pr.templateID=pt.templateID
+				ORDER BY pr.routeOrder ASC '.$Paging->limit_sql();
+
+		$results = $this->db->get_rows($sql);
+		$Paging->set_total($this->db->get_count($Paging->total_count_sql()));
+		return $this->return_instances($results);
 	}
 
 }
-

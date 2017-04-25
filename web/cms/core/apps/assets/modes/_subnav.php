@@ -1,5 +1,5 @@
 <?php
-	echo PerchUtil::subnav($CurrentUser, array(
+	PerchUI::set_subnav(array(
 		array('page'=>array(
 						'core/apps/assets',
 						'core/apps/assets/edit',

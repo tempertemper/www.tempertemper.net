@@ -1,13 +1,14 @@
 <?php
    
     $Responses = new PerchForms_Responses($API);
+    $Forms = new PerchForms_Forms($API);
 
-    $HTML = $API->get('HTML');
 	
 	$message = false;
 	
 	if (isset($_GET['id']) && $_GET['id']!='') {
-	    $Response = $Responses->find($_GET['id']);
+        $Response = $Responses->find($_GET['id']);
+	    $ResponseForm = $Forms->find($Response->formID());
 	}else{
 	    PerchUtil::redirect($API->app_path());
 	}
@@ -40,6 +41,3 @@
         }
         
     }
-
-
-?>

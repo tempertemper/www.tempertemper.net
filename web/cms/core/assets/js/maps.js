@@ -92,8 +92,9 @@ Perch.UI.Maps	= function()
 					});
 
 				
-					var find_button = $('<a href="#" class="compact-button">'+mapcont.attr('data-btn-label')+'</a>');
+					var find_button = $('<a href="#" class="map-find button button-simple action-info">'+Perch.UI.Helpers.icon('core/search', 10)+' '+mapcont.attr('data-btn-label')+'</a>');
 					find_button.insertAfter(self);
+					self.parents('.form-entry').addClass('input-action');
 					find_button.click(function(e){
 						e.preventDefault();
 						mapcont.removeClass('offscreen');

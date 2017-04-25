@@ -4,8 +4,6 @@
 	
 	$errors    = false;
 
-
-
     include('../inc/pre_config.php');
     include('../../config/config.php');
     include(PERCH_CORE . '/inc/loader.php');
@@ -30,43 +28,21 @@
 
     if (isset($_GET['force']) && $_GET['force']=='accept') {
     	$Settings->set($setting_key, 'done');
-    	PerchUtil::redirect(PERCH_LOGINPATH);
+    	PerchUtil::redirect(PERCH_LOGINPATH.'?logout=1');
     }
 
-    include(PERCH_CORE.'/apps/content/PerchContent_Regions.class.php');
-    include(PERCH_CORE.'/apps/content/PerchContent_Region.class.php');
-    include(PERCH_CORE.'/apps/content/PerchContent_Items.class.php');
-    include(PERCH_CORE.'/apps/content/PerchContent_Item.class.php');
-    include(PERCH_CORE.'/apps/content/PerchContent_Pages.class.php');
-    include(PERCH_CORE.'/apps/content/PerchContent_Page.class.php');
+    $page_tile = 'Software Update';
 
+    include(PERCH_CORE . '/templates/update/top.php');
 
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>Software Update</title>
-<?php
-    #if ($CurrentUser->logged_in()) {
 ?>
-	<!--[if lt IE 9]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/iebase.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->
-	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/perch.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" />
-	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/720.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" media="only screen and (min-width: 720px)" />
-	<!--[if lt IE 9]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/720.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->
-	<!--[if IE 7]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/ie7.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->
-	<!--[if IE 6]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/ie6.css?v=<?php echo PerchUtil::html($Perch->version); ?>" type="text/css" /><![endif]-->	
-<?php 
-		if (PERCH_DEBUG) {?><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/assets/css/debug.css" type="text/css" /><?php } 	
-	#} 
-?>    
-</head>
-<body class="sidebar-closed">
-	<div class="main">
-		<div class="body">
-			<div class="inner">
-				<h1>Software Update</h1>
+	<div class="update-box">
+	    <div class="hd">
+	        <h1>Software Update</h1>
+	    </div>
 
-				<ul class="updates">
+	    <div class="bd">
+	        <ul class="progress-list">
 				<?php
 					$files = PerchUtil::get_dir_contents('scripts', false);
 
@@ -81,29 +57,28 @@
 					}
 
 				   	if (!$errors) {
-				    	echo '<li class="icon success">Successfully updated to version '.$Perch->version.'.</li>';    
+				    	echo '<li class="progress-item progress-success">'.PerchUI::icon('core/circle-check').' ';
+				    	echo 'Successfully updated to version '.$Perch->version.'.</li>';    
 				    	$Settings->set($setting_key, 'done');
 				    }
 
 				?>
-				</ul>
-				<?php
+			</ul>
+	    </div>
+
+	    <div class="ft">
+	        <?php
 					if (!$errors) {
-						echo '<a href="'.PERCH_LOGINPATH.'" class="button">Continue</a>';
+						echo '<a href="'.PERCH_LOGINPATH.'?logout=1" class="button button-simple action-success">Continue</a>';
 					}else{
-						echo '<p><a href="https://grabaperch.com/support">Contact us</a> if you are unsure how to resolve these problems, or <a href="'.PERCH_LOGINPATH.'/core/update/?force=accept">accept these errors and continue</a>.</p>';
+						echo '<div class="notification-block notification-warning">';
+						echo '<h2 class="notification-heading">'.PerchUI::icon('core/alert').' Please check the messages</h2>';
+						echo '<p><a href="https://grabaperch.com/support" class="notification-link">Contact us</a> if you are unsure how to resolve these problems, or <a href="'.PERCH_LOGINPATH.'/core/update/?force=accept" class="notification-link">accept these errors and continue</a>.</p>';
+						echo '</div>';
 					}
 				?>
-
-			</div>
-		</div>
-
+	    </div>
 	</div>
 <?php
-	if (PERCH_DEBUG) {
-    	PerchUtil::debug('Queries: '. PerchDB_MySQL::$queries);
-    	PerchUtil::output_debug(); 
-    }
-?>
-</body>
-</html>
+
+include(PERCH_CORE . '/templates/update/btm.php');

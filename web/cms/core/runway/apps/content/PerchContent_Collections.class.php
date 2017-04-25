@@ -22,7 +22,7 @@ class PerchContent_Collections extends PerchFactory
 		return false;
 	}
 
-	public function get_data_from_ids_runtime($collectionKey, $vars, $sort=false)
+	public function get_data_from_ids_runtime($collectionKey, $vars, $sort=false, $count=false)
 	{
 		if (isset($this->cache[$collectionKey]) && $this->cache[$collectionKey]) {
 			$collectionID = $this->cache[$collectionKey];
@@ -36,7 +36,7 @@ class PerchContent_Collections extends PerchFactory
 
 		if ($collectionID) {
 			$Items = new PerchContent_CollectionItems();
-			$items = $Items->get_for_collection_by_ids_runtime($collectionID, $vars, $sort);
+			$items = $Items->get_for_collection_by_ids_runtime($collectionID, $vars, $sort, $count);
 			if (PerchUtil::count($items)) {
 				$out = [];
 				foreach($items as $Item) {

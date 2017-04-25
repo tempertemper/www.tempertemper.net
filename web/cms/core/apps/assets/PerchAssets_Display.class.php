@@ -2,7 +2,8 @@
 
 class PerchAssets_Display
 {
-	static public function grid_item($Asset)
+
+	static public function grid_item(PerchAssets_Asset $Asset, PerchAPI_HTML $HTML)
 	{
 		$has_thumb = false;
 		if ($Asset->thumb()!='' || $Asset->is_svg()) {
@@ -14,11 +15,13 @@ class PerchAssets_Display
 				'href' => PERCH_LOGINPATH.'/core/apps/assets/edit/?id='.$Asset->id()
 			));
 			$s .= PerchXMLTag::create('div', 'opening', array(
-				'class'=>'grid-asset asset-'.$Asset->get_type().($has_thumb ? '' : ' asset-icon')
+				'class'=>'grid-asset asset-'.$Asset->get_type().($has_thumb ? '' : ' asset-display-thumbless')
 			));
 			
 			if ($has_thumb) {
 				$s .= self::thumbnail($Asset);	
+			} else {
+				$s .= PerchUI::icon($Asset->icon_for_type(), 64);
 			}
 			
 				$s .= PerchXMLTag::create('div', 'opening', array('class'=>'asset-meta'));

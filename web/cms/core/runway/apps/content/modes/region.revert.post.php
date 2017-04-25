@@ -1,28 +1,25 @@
+<?php
+        echo $HTML->title_panel([
+        'heading' => $Lang->get('Rolling back the ‘%s’ Region', PerchUtil::html($Region->regionKey())),
+        ]);
+?>
 
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
-    
-    <p>
-        <?php echo PerchLang::get("Roll back a region to a prior version here."); ?>
-    </p>
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include($app_path.'/modes/_subnav.php'); ?>
-      	
-	    <h1><?php echo PerchLang::get('Rolling back the %s Region', PerchUtil::html($Region->regionKey())); ?></h1>
 	
 
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="sectioned">
+    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="form-simple">
 
-        <p class="alert notice"><?php 
-            printf(PerchLang::get('Are you sure you wish to roll back the region %s?'), '<strong>'. PerchUtil::html($Region->regionKey()). '</strong>'); ?>
-        </p>
+        <div role="alert" class="notification notification-warning"><?php 
+            echo PerchUI::icon('core/alert');
+            printf($Lang->get('Are you sure you wish to roll back the region ‘%s’?'), '<strong>'. PerchUtil::html($Region->regionKey()). '</strong>'); ?>
+        </div>
         
         
         
-        <p class="submit">
-            <?php echo $Form->submit('btnsubmit', 'Delete', 'button'), ' ', PerchLang::get('or'), ' <a href="',PERCH_LOGINPATH . '/core/apps/content/revisions/?id='.$Region->id(), '">', PerchLang::get('Cancel'), '</a>'; ?>
-        </p>
+        <div class="submit-bar">
+            <div class="submit-bar-actions">
+            <?php echo $Form->submit('btnsubmit', 'Delete', 'button'), ' ', $Lang->get('or'), ' <a href="',PERCH_LOGINPATH . '/core/apps/content/revisions/?id='.$Region->id(), '">', $Lang->get('Cancel'), '</a>'; ?>
+            </div>
+        </div>
         
     </form>
     
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>

@@ -1,69 +1,49 @@
-<?php include (PERCH_PATH.'/core/inc/sidebar_start.php'); ?>
+<?php
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Add a new page'),
+        ]);
+?>
 
-    <p>
-        <?php echo PerchLang::get('These are the options for this page. Each page has a title, and navigation text which can be different from the title. The navigation text is used in menus and is often shorter than the main page title. '); ?>
-    </p>
-    <?php if (!PERCH_RUNWAY) { ?>
-    <p>
-        <?php echo PerchLang::get('If creating a page from a Master Page, the file extension (e.g. .php) will be added automatically based on the Master Page.'); ?>
-    </p>
-    <p>
-        <?php echo PerchLang::get('If adding a link or an existing page, enter the full path.'); ?>
-    </p>
-
-    <h3><?php echo PerchLang::get('Creating pages in a folder'); ?></h3>
-
-    <p>
-        <?php echo PerchLang::get('If you check the box to indicate that the page will have more pages below it, a new folder will be created rather than just a single file.'); ?>
-    </p>
-    <?php } ?>
-
-
-<?php include (PERCH_PATH.'/core/inc/sidebar_end.php'); ?>
-<?php include (PERCH_PATH.'/core/inc/main_start.php'); ?>
-<?php include ('_subnav.php'); ?>
+    <h2 class="divider"><div><?php echo PerchLang::get('Page details'); ?></div></h2>
     
+    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="form-simple">
 
 
-    <h1><?php 
-            echo PerchLang::get('Add a New Page'); 
-        ?></h1>
-
-
-    <?php echo $Alert->output(); ?>
-
-    <h2><?php echo PerchLang::get('Page details'); ?></h2>
-    
-    <form method="post" action="<?php echo PerchUtil::html($Form->action()); ?>" class="sectioned">
-
-
-        <div class="field">
+        <div class="field-wrap">
         	<?php echo $Form->label('pageTitle', 'Page title'); ?>
-        	<?php echo $Form->text('pageTitle', $Form->get($details, 'pageTitle'), false, false, 'text', ' data-urlify="file_name" data-copy="pageNavText" '); ?>
+            <div class="form-entry">
+        	<?php echo $Form->text('pageTitle', $Form->get($details, 'pageTitle'), null, false, false, ' data-urlify="file_name" data-copy="pageNavText" '); ?>
+            </div>
         </div>
 
-        <div class="field">
+        <div class="field-wrap">
         	<?php echo $Form->label('pageNavText', 'Navigation text'); ?>
+            <div class="form-entry">
         	<?php echo $Form->text('pageNavText', $Form->get($details, 'pageNavText')); ?>
+            </div>
         </div>
 
-        <div class="field">
+        <div class="field-wrap">
         <?php if (PERCH_RUNWAY) { ?>
         
             <?php echo $Form->label('file_name', 'URL segment'); ?>
+            <div class="form-entry">
             <?php echo $Form->text('file_name', $Form->get($details, 'file_name')); ?>
+            </div>
         
         <?php  } else { ?>
         
             <?php echo $Form->label('file_name', 'File name'); ?>
+            <div class="form-entry">
             <?php echo $Form->text('file_name', $Form->get($details, 'file_name')); ?>
             <?php echo $Form->hint('The file extension will be added automatically. Can be a full URL to create just a link.'); ?>
-        
+            </div>
         <?php } // runway ?>
         </div>
         
-        <div class="field">
+        <div class="field-wrap">
             <?php echo $Form->label('pageParentID', 'Parent page'); ?>
+            <div class="form-entry">
             <?php 
                 $opts = array();
                 $opts[] = array('label'=>PerchLang::get('Top level'), 'value'=>'0', 'disabled'=>!$CurrentUser->has_priv('content.pages.create.toplevel'));
@@ -86,10 +66,12 @@
             
                 echo $Form->select('pageParentID', $opts, $Form->get($details, 'pageParentID', $parentID)); 
             ?>
+            </div>
         </div>
 
-        <div class="field">
+        <div class="field-wrap">
             <?php echo $Form->label('templateID', 'Master page'); ?>
+            <div class="form-entry">
             <?php
                 if (PERCH_RUNWAY) {
                                         
@@ -143,22 +125,24 @@
 
 
             ?>
+            </div>
         </div>
         <?php if (!PERCH_RUNWAY) { ?>
-        <div class="field checkboxes labelless">
-            <div class="checkbox">
-                <?php echo $Form->checkbox('create_folder', '1', $Form->get($details, 'create_folder')); ?>
-                <?php echo $Form->label('create_folder', 'This page will have more pages below it'); ?>
+        <div class="field-wrap">
+            <?php echo $Form->checkbox('create_folder', '1', $Form->get($details, 'create_folder')); ?>
+            <div class="form-entry">
+            <?php echo $Form->label('create_folder', 'This page will have more pages below it'); ?>
             </div>
         </div>
         <?php } ?>
         
+        <?php
+            echo $HTML->submit_bar([
+                'button' => $Form->submit('btnsubmit', 'Submit', 'button'),
+                'cancel_link' => '/core/apps/content'
 
-        <p class="submit">
-            <?php echo $Form->submit('btnsubmit', 'Submit', 'button'); ?>
-        </p>
+                ]);
+
+        ?>
         
     </form>
-
-
-<?php include (PERCH_PATH.'/core/inc/main_end.php'); ?>

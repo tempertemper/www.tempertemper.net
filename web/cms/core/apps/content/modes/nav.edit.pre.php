@@ -1,9 +1,13 @@
 <?php
+
+    $API    = new PerchAPI(1.0, 'core');
+    $Lang   = $API->get('Lang');
+    $HTML   = $API->get('HTML');
     
     $NavGroups  = new PerchContent_NavGroups;
     $Pages      = new PerchContent_Pages;
 
-    $Form = new PerchForm('edit');
+    $Form = $API->get('Form');
 	
     $message = false;
         
@@ -14,8 +18,6 @@
         $groupID = false;
         $NavGroup = false;
     }
-        
-    $Form = new PerchForm('editpage');
 
     $req = array();
     $req['groupTitle']   = "Required";

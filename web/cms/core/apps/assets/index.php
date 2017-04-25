@@ -14,11 +14,11 @@
     include(__DIR__.'/PerchAssets_Display.class.php');
             
     include(__DIR__.'/modes/list.pre.php');
+    include(__DIR__.'/modes/_subnav.php');
    
     include(PERCH_CORE.'/inc/top.php');
+
 
     include(__DIR__.'/modes/list.post.php');
 
     include(PERCH_CORE.'/inc/btm.php');
-
-?>
