@@ -10,8 +10,7 @@ class PerchBlog_SearchHandler implements PerchAPI_SearchHandler
         $API = new PerchAPI(1.0, 'perch_blog');
         $db = $API->get('DB');
 
-        $sql = 'SELECT \''.__CLASS__.'\' AS source, MATCH(postTitle, postDescRaw, postTags) AGAINST('.$db->pdb($key).') AS score, postTitle, postSlug, postDateTime, postDescHTML, postID, sectionSlug,
-                "", ""
+        $sql = 'SELECT \''.__CLASS__.'\' AS source, \'Blog\' AS display_source, MATCH(postTitle, postDescRaw, postTags) AGAINST('.$db->pdb($key).') AS score, postTitle AS col1, postSlug AS col2, postDateTime AS col3, postDescHTML AS col4, postID AS col5, sectionSlug AS col6, "" AS col7, "" AS col8
                 FROM '.PERCH_DB_PREFIX.'blog_posts p, '.PERCH_DB_PREFIX.'blog_sections s
                 WHERE p.sectionID=s.sectionID
                     AND MATCH(postTitle, postDescRaw, postTags) AGAINST('.$db->pdb($key).')';

@@ -1,12 +1,12 @@
 <?php
     $Blogs = new PerchBlog_Blogs($API);
     $Posts = new PerchBlog_Posts($API);
+    $Util = new PerchBlog_Util($API);
     $message = false;
 
     $Authors = new PerchBlog_Authors;
     $Author = $Authors->find_or_create($CurrentUser);
 
-    $HTML = $API->get('HTML');
     $post = $_POST;
 
     if (!$CurrentUser->has_priv('perch_blog.post.create')) {
@@ -15,7 +15,7 @@
 
     $edit_mode = 'edit';
 
-    $post_templates = PerchUtil::get_dir_contents(PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/blog/posts'), false);
+    $post_templates = $Util->get_dir_contents(PerchUtil::file_path(PERCH_TEMPLATE_PATH.'/blog/posts'), false);
 
     if (isset($_GET['id']) && $_GET['id']!='') {
         $postID   = (int) $_GET['id'];

@@ -1,9 +1,16 @@
 <?php
-    
-    $HTML = $API->get('HTML');
-
     if (!$CurrentUser->has_priv('perch_blog.import')) {
         PerchUtil::redirect($API->app_path());
+    }
+
+    $Posts = new PerchBlog_Posts($API);
+    $Blogs = new PerchBlog_Blogs($API);
+    $blogs = $Blogs->all();
+
+    $Blog = false;
+
+    if (!$Blog) {
+        $Blog = $Blogs->first();
     }
 
     $BlogUtil = new PerchBlog_Util($API);
@@ -34,6 +41,3 @@
     	}
 
     }
-
-
-?>

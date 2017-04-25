@@ -1,37 +1,49 @@
 <?php
-	include('PerchForms_Forms.class.php');
-	include('PerchForms_Form.class.php');
-	include('PerchForms_Responses.class.php');
-	include('PerchForms_Response.class.php');
 
-    $API   = new PerchAPI(1.0, 'perch_forms');
-    $Lang  = $API->get('Lang');
-    $Forms = new PerchForms_Forms($API);
-    $forms = $Forms->all();
+	return function() {
 
- 
-?>
-<div class="widget">
-	<h2>
-		<?php echo $Lang->get('Forms'); ?>
-	</h2>
-	<div class="bd">
-		<?php
-			if (PerchUtil::count($forms)) {
-				echo '<ul>';
-				foreach($forms as $Form) {
-					echo '<li>';
-						echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH.'/addons/apps/perch_forms/responses/?id='.$Form->id()).'">';
-							echo PerchUtil::html($Form->formTitle());
-						echo '</a>';
-						echo '<a class="action" href="'.PerchUtil::html(PERCH_LOGINPATH.'/addons/apps/perch_forms/responses/export/?id='.$Form->id()).'">';
-							echo $Lang->get('CSV');
-						echo '</a>';
-						echo '<span class="note">'.$Lang->get('%s responses', $Form->number_of_responses()).'</span>';
-					echo '</li>';
-				}
-				echo '</ul>';
+		$API   = new PerchAPI(1.0, 'perch_forms');
+	    $Lang  = $API->get('Lang');
+	    $HTML  = $API->get('HTML');
+	    $Forms = new PerchForms_Forms($API);
+	    $forms = $Forms->all();
+
+	    $header  = $HTML->wrap('header h2', $Lang->get('Forms'));
+
+	    $body = '';
+
+	    if (PerchUtil::count($forms)) {
+			
+
+			$items = '';
+
+			foreach($forms as $Form) {
+
+				$s = '';
+				
+					$s .= '<a href="'.$HTML->encode(PERCH_LOGINPATH.'/addons/apps/perch_forms/responses/?id='.$Form->id()).'">';
+						$s .= $HTML->encode($Form->formTitle());
+					$s .= '</a>';
+					$s .= '<a class="button button-small action" href="'.$HTML->encode(PERCH_LOGINPATH.'/addons/apps/perch_forms/responses/export/?id='.$Form->id()).'">';
+						$s .= $Lang->get('CSV');
+					$s .= '</a>';
+					$responses = (int)$Form->number_of_responses();
+
+					if ($responses == 1) {
+						$s .= '<span class="note">'.$Lang->get('%s response', $responses).'</span>';	
+					} else {
+						$s .= '<span class="note">'.$Lang->get('%s responses', $responses).'</span>';
+					}
+					
+	
+
+				$items[] = $HTML->wrap('li', $s);
 			}
-		?>
-	</div>
-</div>
+			
+			$body .= $HTML->wrap('ul.dash-list', implode('', $items));
+		}
+
+	    return $HTML->wrap('div.widget div.dash-content', $header.$body);
+
+	};
+    

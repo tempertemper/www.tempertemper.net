@@ -23,12 +23,3 @@
         $sectionID = (int)$_GET['section'];
     }
 
-
-
-
-
-
-
-
-
-?>

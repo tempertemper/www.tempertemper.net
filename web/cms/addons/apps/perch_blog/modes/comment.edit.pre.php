@@ -8,7 +8,6 @@
 
     $Comments = new PerchBlog_Comments;
     $Posts = new PerchBlog_Posts;
-    include(realpath('.').'/../../PerchBlog_Akismet.class.php');
 
 
     if (!$CurrentUser->has_priv('perch_blog.comments.moderate')) {

@@ -8,6 +8,8 @@ class PerchBlog_Post extends PerchAPI_Base
     protected $index_table  = 'blog_index';
     protected $event_prefix = 'blog.post';
 
+    protected $exclude_from_api = ['postDescRaw'];
+
     public $Template        = false;
 
     private $tmp_slug_vars  = array();
@@ -201,7 +203,7 @@ class PerchBlog_Post extends PerchAPI_Base
 
         if ($out['postDynamicFields'] != '') {
             $dynamic_fields = PerchUtil::json_safe_decode($out['postDynamicFields'], true);
-            if (PerchUtil::count($dynamic_fields)) {
+            if (PerchUtil::count($dynamic_fields) && $this->prefix_vars) {
                 foreach($dynamic_fields as $key=>$value) {
                     $out['perch_'.$key] = $value;
                 }
@@ -212,6 +214,29 @@ class PerchBlog_Post extends PerchAPI_Base
         }
 
         $out['postURL'] = $this->postURL();
+
+        return $out;
+    }
+
+    public function to_array_for_api()
+    {
+        $out = parent::to_array_for_api();
+
+        
+        if (!$this->Author) $this->_load_author();
+        if (is_object($this->Author)) {
+            $out = array_merge($this->Author->to_array_for_api(), $out);
+        }
+    
+        if (!$this->Section) $this->_load_section();
+        if (is_object($this->Section)) {
+            $out = array_merge($this->Section->to_array_for_api(), $out);
+        }
+
+        if (!$this->Blog) $this->_load_blog();
+        if (is_object($this->Blog)) {
+            $out = array_merge($this->Blog->to_array_for_api(), $out);
+        }
 
         return $out;
     }
@@ -308,6 +333,7 @@ class PerchBlog_Post extends PerchAPI_Base
     public function get_field($field, $use_template=true)
     {
         $data = $this->to_array(array($field));
+        
         if (isset($data[$field])) {
 
             if ($use_template) {
@@ -318,7 +344,7 @@ class PerchBlog_Post extends PerchAPI_Base
                     if ($Tag->is_set('suppress')) {
                         $Tag->set('suppress', false);
                     }
-                    $Template->set_from_string(PerchXMLTag::create('perch:blog', 'single', $Tag->get_attributes()), 'blog');
+                    $Template->set_from_string(PerchXMLTag::create('perch:blog', 'template', $Tag->get_attributes()), 'blog');
                     return $Template->render($data);
                 }
             }

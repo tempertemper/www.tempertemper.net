@@ -1,6 +1,5 @@
 <?php
-    # Side panel
-    echo $HTML->side_panel_start();
+    /*
     echo $HTML->heading3('Personal data');
     echo $HTML->para('If storing personal data, you must pay attention to any legal requirements for how that data is treated.');
 
@@ -17,40 +16,58 @@
     
     echo $HTML->heading3('Spam prevention');
     echo $HTML->para('Akismet is an excellent third-party service for filtering spam. %sFind out more or get an API key,%s', '<a href="http://akismet.com/">', '</a>');
-    echo $HTML->side_panel_end();
-    
-    
-    # Main panel
-    echo $HTML->main_panel_start(); 
-    include('_subnav.php');
+    */
 
-    echo $HTML->heading1('Editing Form Options');
     
-    if ($message) echo $message;
+    echo $HTML->title_panel([
+        'heading' => $Lang->get('Editing form options'),
+    ], $CurrentUser);
     
-    
+
     if (isset($settings['fileLocation']) && trim($settings['fileLocation'])!='' && !is_writable($settings['fileLocation'])) {
         echo $HTML->warning_message('The file path %s is not writable by PHP.', '<code>'.$settings['fileLocation'].'</code>');
     }
 
-    /* ----------------------------------------- SMART BAR ----------------------------------------- */
-    ?>
-    <ul class="smartbar">
-        <li class="<?php echo ($filter=='all'?'selected':''); ?>"><a href="<?php echo PerchUtil::html($API->app_path().'/responses/?id='.$ThisForm->id()); ?>"><?php echo $Lang->get('All Responses'); ?></a></li>
-        <li class="new <?php echo ($filter=='spam'?'selected':''); ?>"><a href="<?php echo PerchUtil::html($API->app_path().'/responses/'.'?id='.$ThisForm->id().'&spam=1'); ?>"><?php echo $Lang->get('Spam'); ?></a></li>
-        <?php if ($CurrentUser->has_priv('perch_forms.configure')) { ?>
-        <li class="<?php echo ($filter=='options'?'selected':''); ?>"><a href="<?php echo PerchUtil::html($API->app_path().'/settings/?id='.$ThisForm->id()); ?>"><?php echo $Lang->get('Form Options'); ?></a></li>
-        <?php } ?>
-        <li class="fin"><a class="download icon" href="<?php echo $HTML->encode($API->app_path().'/responses/export/?id='.$ThisForm->id()); ?>"><?php echo $Lang->get('Download CSV'); ?></a></li>
-    </ul>
-    <?php
-    /* ----------------------------------------- /SMART BAR ----------------------------------------- */
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    $Smartbar->add_item([
+        'active' => false,
+        'title' => 'All Responses',
+        'link'  => $API->app_nav().'/responses/?id='.$ThisForm->id(),
+        'icon'  => 'core/o-documents',
+    ]);
+
+    $Smartbar->add_item([
+        'active' => false,
+        'title' => 'Spam',
+        'link'  => $API->app_nav().'/responses/?id='.$ThisForm->id().'&spam=1',
+        'icon'  => 'ext/o-poop',
+    ]);
+
+    $Smartbar->add_item([
+        'active' => true,
+        'title' => 'Form Options',
+        'link'  => $API->app_nav().'/settings/?id='.$ThisForm->id(),
+        'priv'  => 'perch_forms.configure',
+        'icon'  => 'core/o-toggles',
+    ]);
+
+    $Smartbar->add_item([
+        'active' => false,
+        'title' => 'Download CSV',
+        'link'  => $API->app_nav().'/responses/export/?id='.$ThisForm->id(),
+        'priv'  => 'perch_forms.configure',
+        'icon'  => 'ext/o-cloud-download',
+        'position' => 'end',
+    ]);
 
 
+
+    echo $Smartbar->render();
     
     echo $HTML->heading2('Form settings');
         
-    echo $Form->form_start(false, 'magnetic-save-bar');
+    echo $Form->form_start();
     
         $Form->last = true;
         echo $Form->text_field('formTitle', 'Title', $details['formTitle']);
@@ -96,15 +113,20 @@
         $Template = $API->get('Template');
         $file = PerchUtil::file_path(PERCH_PATH.$ThisForm->formTemplate());
         if (file_exists($file)) {
+             PerchUtil::debug('Using template: '.$file, 'template');
             $content = file_get_contents($file);
             $Template->set_from_string($content, 'input');
             $tags = $Template->find_all_tags('input');
 
             if (PerchUtil::count($tags)) {
                 foreach($tags as $Tag) {
-                    $opts[] = array('value'=>$Tag->id(), 'label'=>$Tag->id());
+                    if ($Tag->id()) {
+                        $opts[] = array('value'=>$Tag->id(), 'label'=>$Tag->id());    
+                    }
                 }
             }
+        }else{
+            PerchUtil::debug('Template not found: '.$file, 'error');
         }
 
 
@@ -113,7 +135,7 @@
 
 
         $Form->last = true;
-        echo $Form->textarea_field('adminEmailMessage', 'Email introduction text', isset($settings['adminEmailMessage'])?$settings['adminEmailMessage']:'', 's', false);
+        echo $Form->textarea_field('adminEmailMessage', 'Email introduction text', isset($settings['adminEmailMessage'])?$settings['adminEmailMessage']:'', 's input-simple', false);
 
         /* RESPONDING */
         echo $HTML->heading2('Autoresponse');
@@ -128,7 +150,7 @@
 
 
         $Form->last = true;
-        echo $Form->textarea_field('responseEmailMessage', 'Response introduction text', isset($settings['responseEmailMessage'])?$settings['responseEmailMessage']:'', 's', false);
+        echo $Form->textarea_field('responseEmailMessage', 'Response introduction text', isset($settings['responseEmailMessage'])?$settings['responseEmailMessage']:'', 's input-simple', false);
         
         /* SPAM */        
         echo $HTML->heading2('Spam prevention');
@@ -148,4 +170,3 @@
     
     echo $Form->form_end();
     
-    echo $HTML->main_panel_end();

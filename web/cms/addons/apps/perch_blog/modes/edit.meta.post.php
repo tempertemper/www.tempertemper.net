@@ -1,28 +1,8 @@
 <?php
-    # Side panel
-    echo $HTML->side_panel_start();
 
-    echo $HTML->para('You can edit your post here. Set the status to Published to make the post visible on the website.');
-    echo $HTML->para('If a post has a date in the future, it will not appear on the site until that date and time.');
-
-    if (PerchUtil::count($post_templates)) {
-        echo $HTML->heading3('Post types');
-        echo $HTML->para('Different posts types can contain different content fields.');
-        echo $HTML->para('Switching a post to a different type can result in content being lost if the same fields aren\'t present in both types.');
-    }
-
-
-    echo $HTML->side_panel_end();
-
-
-    # Main panel
-    echo $HTML->main_panel_start();
-
-    include('_subnav.php');
-
-    echo $HTML->heading1('Editing Post ‘%s’', $Post->postTitle());
-
-    if ($message) echo $message;
+    echo $HTML->title_panel([
+            'heading' => $Lang->get('Editing Post ‘%s’', $HTML->encode($Post->postTitle())),
+            ], $CurrentUser);
 
     $smartbar_selection = 'meta';
     include(__DIR__.'/_post_smartbar.php');
@@ -87,11 +67,12 @@
         /* ---- AUTHORS ---- */
         $authors = $Authors->all();
         if (PerchUtil::count($authors)) {
+
             $opts = array();
             foreach($authors as $author) {
                 $opts[] = array('label'=>$author->authorGivenName().' '.$author->authorFamilyName(), 'value'=>$author->id());
             }
-            echo $Form->select_field('authorID', 'Author', $opts, isset($details['authorID'])?$details['authorID']:$Author->id());
+            echo $Form->select_field('authorID', 'Author', $opts, (isset($details['authorID']) && $details['authorID']>0)?$details['authorID']:$Author->id());
         }
 
         /* ---- SECTIONS ---- */
@@ -107,6 +88,3 @@
 
     echo $Form->form_end();
     /* ---- /FORM ---- */
-
-    echo $HTML->main_panel_end();
-

@@ -1,7 +1,7 @@
 <?php
 	if ($CurrentUser->logged_in() && $CurrentUser->has_priv('perch_blog')) {
-	    $this->register_app('perch_blog', 'Blog', 1, 'A simple blog', '5.0');
-	    $this->require_version('perch_blog', '2.8.15');
+	    $this->register_app('perch_blog', 'Blog', 1, 'A simple blog', '5.5.1');
+	    $this->require_version('perch_blog', '3.0');
 	    $this->add_setting('perch_blog_site_name', 'Site name', 'text', '');
 	    $this->add_setting('perch_blog_post_url', 'Blog post page path', 'text', '/blog/post.php?s={postSlug}');
 	    $this->add_setting('perch_blog_slug_format', 'Slug format', 'text', '%Y-%m-%d-{postTitle}');
@@ -18,14 +18,17 @@
 	    	));
 	    $this->add_create_page('perch_blog', 'edit');
 
-
 	    PerchSystem::register_admin_search_handler('PerchBlog_SearchHandler');
-
-	    spl_autoload_register(function($class_name){
-	    	if (strpos($class_name, 'PerchBlog')===0) {
-	    		include(PERCH_PATH.'/addons/apps/perch_blog/'.$class_name.'.class.php');
-	    		return true;
-	    	}
-	    	return false;
-	    });
 	}
+
+	spl_autoload_register(function($class_name){
+    	if (strpos($class_name, 'PerchBlog')===0) {
+    		include(PERCH_PATH.'/addons/apps/perch_blog/lib/'.$class_name.'.class.php');
+    		return true;
+    	}
+    	if (strpos($class_name, 'API_PerchBlog')>0) {
+    		include(PERCH_PATH.'/addons/apps/perch_blog/lib/api/'.$class_name.'.class.php');
+    		return true;
+    	}
+    	return false;
+    });

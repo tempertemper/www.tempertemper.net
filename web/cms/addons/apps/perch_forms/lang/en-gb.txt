@@ -80,5 +80,18 @@
     "Will send any text entered below plus the details the visitor submitted": "Will send any text entered below plus the details the visitor submitted",
     "Send autoreponse": "Send autoreponse",
     "Autoresponse Template": "Autoresponse Template",
-    "Response introduction text": "Response introduction text"
+    "Response introduction text": "Response introduction text",
+    "Listing forms": "Listing forms",
+    "Are you sure?": "Are you sure?",
+    "": "",
+    "Listing responses": "Listing responses",
+    "Listing spam responses": "Listing spam responses",
+    "Form \/ Export": "Form \/ Export",
+    "date": "date",
+    "ip_address": "ip_address",
+    "View response...": "View response...",
+    "Response #%d": "Response #%d",
+    "Editing form options": "Editing form options",
+    "The file path %s is not writable by PHP.": "The file path %s is not writable by PHP.",
+    "%s response": "%s response"
 }

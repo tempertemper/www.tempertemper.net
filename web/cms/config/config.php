@@ -49,9 +49,8 @@
   define('PERCH_RESFILEPATH', PERCH_PATH . DIRECTORY_SEPARATOR . 'resources');
   define('PERCH_RESPATH', PERCH_LOGINPATH . '/resources');
 
-  define('PERCH_MAP_JS', '/cms/addons/plugins/maps/custom_maps.js');
-
+  define('PERCH_FEATHERS', true);
   define('PERCH_HTML5', true);
   define('PERCH_RWD', true);
 
-?>
+  define('PERCH_MAP_JS', '/cms/addons/plugins/maps/custom_maps.js');

@@ -1,22 +1,11 @@
 <?php
 
-    # Side panel
-    echo $HTML->side_panel_start();
-
-    echo $HTML->para('Edit the author details');
-
-    echo $HTML->side_panel_end();
-
-
-    # Main panel
-    echo $HTML->main_panel_start();
-
-    include('_subnav.php');
-
-
     # Title panel
-    echo $HTML->heading1('Editing Author ‘%s’', trim($details['authorGivenName']. ' '.$details['authorFamilyName']));
+    $heading = $Lang->get('Editing Author ‘%s’', $HTML->encode(trim($details['authorGivenName']. ' '.$details['authorFamilyName'])));
 
+    echo $HTML->title_panel([
+            'heading' => $heading,
+            ], $CurrentUser);
 
 
     if ($message) echo $message;
@@ -40,11 +29,7 @@
 
         echo $Form->fields_from_template($Template, $details, $Authors->static_fields);
 
-
-
         echo $Form->submit_field('btnSubmit', 'Save', $API->app_path().'/authors/');
 
 
     echo $Form->form_end();
-
-    echo $HTML->main_panel_end();

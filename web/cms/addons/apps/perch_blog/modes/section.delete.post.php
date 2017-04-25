@@ -1,17 +1,5 @@
 <?php
- 
-    # Side panel
-    echo $HTML->side_panel_start();
-    echo $HTML->heading3('Delete Section');
-    echo $HTML->para('Delete a blog section here.');
-    echo $HTML->side_panel_end();
-    
-    
-    # Main panel
-    echo $HTML->main_panel_start(); 
 
-    include('_subnav.php');
-    
     echo $Form->form_start();
     
     if ($message) {
@@ -25,7 +13,3 @@
 
         echo $Form->form_end();
     }
-    
-    echo $HTML->main_panel_end();
-
-?>

@@ -1,60 +1,74 @@
 <?php
-	include('PerchBlog_Posts.class.php');
-	include('PerchBlog_Post.class.php');
-	include('PerchBlog_Authors.class.php');
-	include('PerchBlog_Author.class.php');
-	include('PerchBlog_Comments.class.php');
-    include('PerchBlog_Comment.class.php');
+	return function(){
 
-    $API   = new PerchAPI(1, 'perch_blog');
-    $Lang  = $API->get('Lang');
-    $Posts = new PerchBlog_Posts($API);
-    $posts = $Posts->get_recent(5);
+		$API   = new PerchAPI(1, 'perch_blog');
+    	$Lang  = $API->get('Lang');
+    	$HTML  = $API->get('HTML');
+    	
+    	$Posts = new PerchBlog_Posts($API);
+    	$posts = $Posts->get_recent(5);
+		
+		$Comments = new PerchBlog_Comments($API);
+	    $comment_count = $Comments->get_count();
 
-    $Comments = new PerchBlog_Comments($API);
+	    $comments = array();
+		$comments['Pending']  = $Comments->get_count('PENDING');
+		$comments['Live']     = $Comments->get_count('LIVE');
+		$comments['Rejected'] = $Comments->get_count('REJECTED');
+		$comments['Spam']     = $Comments->get_count('SPAM');
 
-    $comment_count = $Comments->get_count();
 
-    $comments = array();
-    $comments['Pending'] = $Comments->get_count('PENDING');
-    $comments['Live'] = $Comments->get_count('LIVE');
-    $comments['Rejected'] = $Comments->get_count('REJECTED');
-    $comments['Spam'] = $Comments->get_count('SPAM');
-?>
-<div class="widget">
-	<h2>
-		<?php echo $Lang->get('Blog'); ?>
-		<a href="<?php echo PerchUtil::html(PERCH_LOGINPATH.'/addons/apps/perch_blog/edit/'); ?>" class="add button"><?php echo $Lang->get('Add Post'); ?></a>
-	</h2>
-	<div class="bd">
-		<?php
-			if (PerchUtil::count($posts)) {
-				echo '<ul>';
-				foreach($posts as $Post) {
-					echo '<li>';
-						if ($Post->postStatus()=='Draft') {
-							echo PerchUtil::html(strtoupper($Lang->get('Draft:'))).' ';
-						}
-						echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH.'/addons/apps/perch_blog/edit/?id='.$Post->id()).'">';
-							echo PerchUtil::html($Post->postTitle());
-						echo '</a>';
-					echo '</li>';
-				}
-				echo '</ul>';
+		$title  = $HTML->wrap('h2', $Lang->get('Blog'));
+		$button = '<a class="button button-small button-icon icon-left action-info" href="'.$HTML->encode(PERCH_LOGINPATH.'/addons/apps/perch_blog/edit/').'"><div>'.PerchUI::icon('core/plus', 8).'<span>'.$Lang->get('Add post').'</span></div></a>';
+		$header = $HTML->wrap('header', $title.$button);
+
+		$body = '';
+
+		if (PerchUtil::count($posts)) {
+
+			$items = [];
+
+			foreach($posts as $Post) {
+				$s = '';
+				
+				$s .= '<a href="'.PerchUtil::html(PERCH_LOGINPATH.'/addons/apps/perch_blog/edit/?id='.$Post->id()).'">';
+					if ($Post->postStatus()=='Draft') {
+						$s .= PerchUI::icon('core/o-pencil', 12, $Lang->get('Draft')) .' ';
+					}
+					$s .= $HTML->encode($Post->postTitle());
+				$s .= '</a>';
+
+				$s .= '<span class="note">'.strftime(PERCH_DATE_SHORT, strtotime($Post->postDateTime())).'</span>';
+
+				$items[] = $HTML->wrap('li', $s);
 			}
-		?>
+			
+			$body .= $HTML->wrap('ul.dash-list', implode('', $items));
+		}
 
-		<h3><?php echo $Lang->get('Comments'); ?> <span class="note"><?php echo PerchUtil::html($comment_count); ?></span></h3>
-		<?php
-			echo '<ul class="mod">';
-				foreach($comments as $label=>$count) {
-					echo '<li>';
-						echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH.'/addons/apps/perch_blog/comments/?status='.strtolower($label)).'">';
-							echo PerchUtil::html($Lang->get($label). ' ('.$count.')');
-						echo '</a>';
-					echo '</li>';
-				}
-			echo '</ul>';
-		?>
-	</div>
-</div>
+
+		if ($comment_count > 0) {
+
+			$body .= $HTML->heading3('Comments');
+
+			$items = [];
+			$first = true;
+			foreach($comments as $label=>$count) {
+				$s = '';
+				$s .= '<a href="'.$HTML->encode(PERCH_LOGINPATH.'/addons/apps/perch_blog/comments/?status='.strtolower($label)).'">';
+					$s .= $HTML->encode($Lang->get($label));
+				$s .= '</a>';
+				$s .= '<span class="'.($first&&$count ? 'badge success' : 'note').'">'.$count.'</span>';
+				
+				$items[] = $HTML->wrap('li', $s);
+				$first = false;
+			}
+
+			$body .= $HTML->wrap('ul.dash-list', implode('', $items));
+
+		}
+
+		$body = $HTML->wrap('div.body', $body);
+		return $HTML->wrap('div.widget div.dash-content', $header.$body);
+
+	};

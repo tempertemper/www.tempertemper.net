@@ -1,20 +1,38 @@
 <?php 
-    # Side panel
-    echo $HTML->side_panel_start();
- 
-    echo $HTML->para('This page lists the data files you have available to import.');
-    
-    echo $HTML->side_panel_end();
-    
-    
-    # Main panel
-    echo $HTML->main_panel_start();
 
-	include ('_subnav.php');
+    echo $HTML->title_panel([
+    'heading' => $Lang->get('Importing data'),
+    ], $CurrentUser);
+        
 
-	# Title panel
-    echo $HTML->heading1('Importing Data');
+       $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+        if (PerchUtil::count($blogs)) {
+            foreach($blogs as $Item) {
+
+                $Smartbar->add_item([
+                    'active' => false,
+                    'title' => $Item->blogTitle(),
+                    'link'  => $API->app_nav().'/?blog='.$Item->blogSlug(),
+                    'icon'  => 'blocks/newspaper',
+                ]);
+
+            }
+        }
+
+        $Smartbar->add_item([
+                'active' => true,
+                'title' => $Lang->get('Import'),
+                'link'  => $API->app_nav().'/import/',
+                'icon'  => 'core/inbox-download',
+                'position' => 'end',
+            ]);
     
+
+
+    echo $Smartbar->render();
+
+
 
     if (PerchUtil::count($files)) {
 
@@ -78,8 +96,3 @@ echo $Form->hint('If you have a lot of content to import, you expect this to tak
 
 
     
-     
-    echo $HTML->main_panel_end();
-
-
-?>

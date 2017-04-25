@@ -3,18 +3,16 @@
     include('../../../core/inc/api.php');
     
     $API  = new PerchAPI(1.0, 'perch_forms');
-    $Lang = $API->get('Lang');
+    $HTML   = $API->get('HTML');
+    $Lang   = $API->get('Lang');
+    $Paging = $API->get('Paging');
+    
 
-    # include your class files
-    include('PerchForms_Forms.class.php');
-    include('PerchForms_Form.class.php');
-    include('PerchForms_Responses.class.php');
-    include('PerchForms_Response.class.php');
 
     # Set the page title
     $Perch->page_title = $Lang->get('Forms');
 
-    # Do anything you want to do before output is started
+    include('modes/_subnav.php');
     include('modes/forms.list.pre.php');
     
     
