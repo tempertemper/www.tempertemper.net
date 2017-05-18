@@ -84,6 +84,11 @@ nav {
   -webkit-touch-callout: none;
   user-select: none;
 
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
   path {
     color: $colour-primary;
     transition: all 284ms ease;
