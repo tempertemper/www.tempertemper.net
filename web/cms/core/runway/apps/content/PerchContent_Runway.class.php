@@ -333,7 +333,7 @@ class PerchContent_Runway extends PerchContent
 	        }
 
 	        // Pagination
-	        if (isset($opts['paginate'])) {
+	        if (isset($opts['paginate']) && $opts['paginate']) {
 	            if (isset($opts['pagination-var'])) {
 	                $Paging = new PerchPaging($opts['pagination-var']);
 	            }else{

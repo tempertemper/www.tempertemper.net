@@ -192,7 +192,7 @@ class PerchContent_Collection extends PerchBase
 	     * Get an option by key
 	     *
 	     * @param string $optKey 
-	     * @return void
+	     * @return string|bool
 	     * @author Drew McLellan
 	     */
 	    public function get_option($optKey)
@@ -255,17 +255,27 @@ class PerchContent_Collection extends PerchBase
 				'collectionID' => $this->id(),
 				'itemRev'      => 1,
 				'itemJSON'     => '',
-				'itemSearch'   => ''
+				'itemSearch'   => '',
 	        );
 	        
-	        if ($this->get_option('addToTop')==true) {
-	            $new_item['itemOrder'] = $this->get_lowest_item_order()-1;
-	        }else{
-	            $new_item['itemOrder'] = $this->get_highest_item_order()+1;
+	       	$sortField = $this->get_option('sortField');
+
+	        if ($sortField && $sortField!='') {
+	        	$new_item['itemOrder'] = 1;
+	        } else {
+	        	if ($this->get_option('addToTop')==true) {
+		            $new_item['itemOrder'] = $this->get_lowest_item_order()-1;
+		        }else{
+		            $new_item['itemOrder'] = $this->get_highest_item_order()+1;
+		        }	
 	        }
 
 	        $Items = new PerchContent_CollectionItems();
 	        $Item = $Items->create($new_item);
+
+	        if ($sortField && $sortField!='') {
+	        	$this->sort_items();
+	        }
 	        
 	        $Perch = Perch::fetch();
 	        $Perch->event('collection.add_item', $this);
@@ -306,7 +316,7 @@ class PerchContent_Collection extends PerchBase
 	        $Items->truncate_for_collection($this->id(), $resulting_item_count);
 
 	        $Perch = Perch::fetch();
-	        $Perch->event('region.truncate', $this);
+	        $Perch->event('collection.truncate', $this);
 	    }
 
 	    /**
@@ -557,6 +567,10 @@ class PerchContent_Collection extends PerchBase
 
 	    		$Resources = new PerchResources;
 
+	    		if (!$this->current_userID) {
+	    			$this->current_userID = 0;
+	    		}
+ 
 	    		foreach($items as $RegionItem) {
 
 	    			$CollectionItem = $this->add_new_item();

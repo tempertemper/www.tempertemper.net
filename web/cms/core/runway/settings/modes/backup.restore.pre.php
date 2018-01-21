@@ -18,7 +18,7 @@
     if ($Form->submitted()) {		
     	    	
         if ($Run->restore()) {
-            $message = $HTML->success_message('Your backup has been successfully restored. You will now be asked to  %sreauthenticate%s', '<a href="'.PERCH_LOGINPATH .'/core/settings/backup/">', '</a>');
+            $message = $HTML->success_message('Your backup has been successfully restored. You will now be asked to  %sreauthenticate%s', '<a href="'.PERCH_LOGINPATH .'/core/settings/backup/" class="notification-link">', '</a>');
         }else{
             $message = $HTML->failure_message('Sorry, that backup could not be restored.');
             $message .= $HTML->failure_message($Run->message);

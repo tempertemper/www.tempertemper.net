@@ -3,6 +3,7 @@
 
     if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=='XMLHttpRequest') {
         $ajax = true;
+        # if (PERCH_DEBUG) sleep(5);
     }
 
     include(realpath(__DIR__ . '/../../..').'/inc/pre_config.php');

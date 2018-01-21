@@ -122,7 +122,7 @@ if (PERCH_RUNWAY) {
  
     if ($template_help_html) {
         echo '<h2 class="divider"><div>' . PerchLang::get('Help') .'</div></h2>';
-        echo '<div id="template-help">' . $template_help_html . '</div>';
+        echo '<div class="template-help">' . $template_help_html . '</div>';
     }
     
 ?>

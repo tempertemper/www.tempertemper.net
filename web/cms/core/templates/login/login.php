@@ -94,7 +94,7 @@
                     <?php
                         if (!$Settings->get('hide_pwd_reset')->val()) {
                     ?>
-                    <a class="reset-link" href="/perch/core/reset"><?php echo PerchLang::get('Reset password'); ?></a>
+                    <a class="reset-link" href="<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>/core/reset"><?php echo PerchLang::get('Reset password'); ?></a>
                     <?php
                         } // hide pwd reset
                     ?>

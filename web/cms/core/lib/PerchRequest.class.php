@@ -21,7 +21,7 @@ class PerchRequest
 	public static function get($var, $default=false)
 	{
 		if (isset(self::$get[$var]) && self::$get[$var]) {
-			return self::$get[$var];
+			return urldecode(self::$get[$var]);
 		}
 		return $default;
 	}

@@ -310,6 +310,10 @@ class PerchPaging
 
             $prev_page_number = ($this->current_page()-1);
 
+            if (strpos($request_uri, '?')===false) {
+                $request_uri .= '?'.$this->qs_param.'='.$prev_page_number;
+            }
+
             if ($prev_page_number==1) {
                 // page 1, so don't include page=1
                 $out['prev_url']    = preg_replace('#'.$this->page_pattern.'#', '', $request_uri);

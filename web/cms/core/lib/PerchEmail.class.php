@@ -230,6 +230,11 @@ class PerchEmail
         $this->files[] = $file;
     }
 
+    public function removeAttachedFiles()
+    {
+        $this->files = [];
+    }
+
     public function send()
     {
         $LogMessage = new PerchSystemEventSubject;

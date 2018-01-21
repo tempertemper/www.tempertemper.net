@@ -268,6 +268,25 @@
 
 <?php
         }
+
+        if ($CurrentUser->has_priv('content.regions.empty')){
+?>
+        <?php 
+            $Alert->set('warning', PerchLang::get('This option deletes all content from this collection.'));
+            echo $Alert->output();
+        ?>
+        <div class="field-wrap">
+            <?php echo $Form->label('collectionReset', 'Delete all content from this collection immediately'); ?>
+            <div class="form-entry">
+            <?php         
+                echo $Form->checkbox('collectionReset', 1, 0);
+                
+            ?>
+            </div>
+        </div>
+
+<?php
+        }
 ?>
 
 

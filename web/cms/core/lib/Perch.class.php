@@ -4,7 +4,7 @@ class Perch
 {
     static protected $instance;
 
-    public $version = '3.0.1';
+    public $version = '3.0.13';
 
     public $admin           = false;
     private $page           = false;
@@ -13,18 +13,18 @@ class Perch
 
     public $debug           = false;
     public $debug_output    = '';
-    public $debug_items     = array();
+    public $debug_items     = [];
     public $page_title      = 'Welcome';
     public $help_html       = '';
     public $form_count      = 0;
-    public $form_errors     = array();
+    public $form_errors     = [];
 
-    protected $layout_vars  = array();
+    protected $layout_vars  = [];
     public    $layout_depth = 1;
 
     public $ignore_pattern  = '/^CVS$/i';
 
-    public $event_listeners = array();
+    public $event_listeners = [];
 
     public function __construct()
     {

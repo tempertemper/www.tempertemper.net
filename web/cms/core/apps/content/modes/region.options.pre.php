@@ -116,6 +116,11 @@
         }
     	
     	$Region->set_options($data);
+
+        // Reset
+        if (isset($_POST['regionReset']) && $_POST['regionReset']=='1') {
+            $Region->truncate(0);
+        }
     	
         $Region->sort_items();
         $Region->publish();

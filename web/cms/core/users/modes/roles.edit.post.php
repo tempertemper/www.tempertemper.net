@@ -28,12 +28,24 @@
                     ]
                 ]
             ]);
+
+            if (PERCH_RUNWAY) {
+                $Smartbar->add_item([
+                    'active'   => false,
+                    'title'    => 'Buckets',
+                    'link'     => '/core/users/roles/buckets/?id='.$Role->id(),
+                    'icon'   => 'core/o-box-storage',
+                ]);
+            }
+
+
             $Smartbar->add_item([
                 'active'   => false,
                 'title'    => 'Actions',
                 'link'     => '/core/users/roles/actions/?id='.$Role->id(),
                 'icon'   => 'assets/o-clapper',
             ]);
+
         echo $Smartbar->render();
 
     }

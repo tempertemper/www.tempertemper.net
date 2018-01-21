@@ -22,7 +22,6 @@ class PerchFieldTypes
 
                 default:
                     $type = 'text';
-                    break;
             }
         }
 
@@ -68,7 +67,7 @@ class PerchFieldTypes
             $r = new PerchFieldType($Form, $Tag, $app_id);
         }
 
-        if (count($all_tags)) {
+        if (PerchUtil::count($all_tags)) {
             $r->set_sibling_tags($all_tags);
         }
 
@@ -148,6 +147,7 @@ class PerchFieldType_password extends PerchFieldType
 
 class PerchFieldType_number extends PerchFieldType
 {
+
     public function render_inputs($details=array())
     {
         $attributes = '';
@@ -163,9 +163,9 @@ class PerchFieldType_number extends PerchFieldType
 
         return $this->Form->text($this->Tag->input_id(),
                                 $this->Form->get($details, $this->Tag->id(), $this->Tag->default(), $this->Tag->post_prefix()),
-                                $this->Tag->size(),
+                                'input-simple '.$this->Tag->size(),
                                 $this->Tag->maxlength(),
-                                'number input-simple',
+                                'number',
                                 $attributes);
     }
 }
@@ -526,6 +526,10 @@ class PerchFieldType_textarea extends PerchFieldType
         $Perch = Perch::fetch();
         $siblings = $this->get_sibling_tags();
 
+        if (PERCH_CUSTOM_EDITOR_CONFIGS) {
+            $Perch->add_fe_plugin('user-plugins', '{"js": ["'.PERCH_LOGINPATH.'/addons/plugins/editors/config.js"],"css": []}');
+        }
+
         if (is_array($siblings)) {
             $seen_editors = array();
             foreach($siblings as $tag) {
@@ -549,7 +553,6 @@ class PerchFieldType_textarea extends PerchFieldType
             if ($this->Tag->editor()) {
                 $file = $this->get_editor_path($this->Tag->editor());
                 if (is_file($file)) {
-                    //$Perch->add_foot_content(str_replace('PERCH_LOGINPATH', PERCH_LOGINPATH, file_get_contents($file)));
                     $Perch->add_fe_plugin($this->Tag->editor(), str_replace('PERCH_LOGINPATH', PERCH_LOGINPATH, file_get_contents($file)));
                 }else{
                     PerchUtil::debug('Editor requested, but not installed: '.$this->Tag->editor(), 'error');
@@ -897,9 +900,29 @@ class PerchFieldType_image extends PerchFieldType
     public function render_inputs($details=array())
     {
         $Perch = Perch::fetch();
-        $Bucket = PerchResourceBuckets::get($this->Tag->bucket());
-
         $Assets = new PerchAssets_Assets;
+
+
+        if ($this->Tag->bucket()) {
+            $Users       = new PerchUsers;
+            $CurrentUser = $Users->get_current_user();
+            $buckets = explode(' ', $this->Tag->bucket());
+            $buckets = $Assets->hydrate_bucket_list($buckets, $CurrentUser);
+            if (count($buckets)) {
+                $bucket  = $buckets[0];
+                $Bucket = PerchResourceBuckets::get($bucket);    
+            } else {
+                $Bucket = PerchResourceBuckets::get('default');
+            }
+            
+        } else {
+            $Bucket = PerchResourceBuckets::get($this->Tag->bucket());
+        }
+        
+
+
+
+        
 
         $PerchImage = new PerchImage;
         $s = $this->Form->image($this->Tag->input_id(), $this->Tag->title());
@@ -930,7 +953,15 @@ class PerchFieldType_image extends PerchFieldType
         $type = 'img';
         if ($this->Tag->file_type()) $type = $this->Tag->file_type();
 
-        $add_cta = ' <div class="asset-add ft-choose-asset'.($this->Tag->disable_asset_panel() ? ' assets-disabled' : '').'" data-type="'.$type.'" data-field="'.$asset_field.'" data-input="'.$this->Tag->input_id().'" data-app="'.$this->app_id.'" data-app-uid="'.$this->unique_id.'" data-bucket="'.PerchUtil::html($Bucket->get_name(), true).'"></div>';
+        
+        $Settings = PerchSettings::fetch();
+        $permissive = '';
+        if (!(int)$Settings->get('assets_restrict_buckets')->val()) {
+            $permissive = ' data-permissive-bucketing="true"';
+        } 
+
+
+        $add_cta = ' <div class="asset-add ft-choose-asset'.($this->Tag->disable_asset_panel() ? ' assets-disabled' : '').'" data-type="'.$type.'" data-field="'.$asset_field.'" data-input="'.$this->Tag->input_id().'" data-app="'.$this->app_id.'" data-app-uid="'.$this->unique_id.'" data-bucket="'.PerchUtil::html($Bucket->get_name(), true).'"'.$permissive.'></div>';
 
 
         if (isset($details[$this->Tag->input_id()]) && $details[$this->Tag->input_id()]!='') {
@@ -1013,9 +1044,9 @@ class PerchFieldType_image extends PerchFieldType
 
                         $s .= '<h3 class="title">';
                         if ($Asset) {
-                            $s .= $Asset->title();
+                            $s .= PerchUtil::html($Asset->title());
                         } else {
-                            $s .= (isset($json['title']) ? $json['title'] : $variant['path']);
+                            $s .= PerchUtil::html((isset($json['title']) ? $json['title'] : $variant['path']));
                         }
                         $s .= '</h3>';
 
@@ -1458,25 +1489,20 @@ class PerchFieldType_image extends PerchFieldType
                 switch($this->Tag->output()) {
                     case 'size':
                         return isset($item['size']) ? $item['size'] : 0;
-                        break;
 
                     case 'h':
                     case 'height':
                         return isset($item['h']) ? $item['h'] : 0;
-                        break;
 
                     case 'w':
                     case 'width':
                         return isset($item['w']) ? $item['w'] : 0;
-                        break;
 
 					case 'filename':
 						return $item['path'];
-						break;
 
                     case 'mime':
                         return $item['mime'];
-                        break;
 
                     case 'tag':
 
@@ -1532,10 +1558,6 @@ class PerchFieldType_image extends PerchFieldType
         
                         }
 
-                        
-                        
-
-                        break;
                 }
             }
 
@@ -1573,6 +1595,8 @@ class PerchFieldType_image extends PerchFieldType
         if (isset($raw['bucket'])) {
             $Bucket = PerchResourceBuckets::get($raw['bucket']);
             $out['bucket'] = $Bucket->to_array();
+        } else {
+            $Bucket = PerchResourceBuckets::get();
         }
         if (isset($raw['sizes'])) {
             $out['sizes'] = [];
@@ -1789,7 +1813,13 @@ class PerchFieldType_file extends PerchFieldType_image
             $type = $this->Tag->file_type();
         }
 
-        $add_cta = ' <span class="ft-choose-asset ft-file '.($this->Tag->disable_asset_panel() ? ' assets-disabled' : '').'" data-type="'.$type.'" data-field="'.$asset_field.'" data-bucket="'.PerchUtil::html($Bucket->get_name(), true).'" data-input="'.$this->Tag->input_id().'"></span>';
+        $Settings = PerchSettings::fetch();
+        $permissive = '';
+        if (!(int)$Settings->get('assets_restrict_buckets')->val()) {
+            $permissive = ' data-permissive-bucketing="true"';
+        }
+
+        $add_cta = ' <span class="ft-choose-asset ft-file '.($this->Tag->disable_asset_panel() ? ' assets-disabled' : '').'" data-type="'.$type.'" data-field="'.$asset_field.'" data-bucket="'.PerchUtil::html($Bucket->get_name(), true).'" data-input="'.$this->Tag->input_id().'"'.$permissive.'></span>';
 
         if (isset($details[$this->Tag->input_id()]) && $details[$this->Tag->input_id()]!='') {
             $json = $details[$this->Tag->input_id()];
@@ -2293,7 +2323,6 @@ class PerchFieldType_repeater extends PerchFieldType
                 switch($this->Tag->output()) {
                     case 'count':
                         return count($raw);
-                        break;
                 }
             }
         }
@@ -2432,10 +2461,7 @@ class PerchFieldType_category extends PerchFieldType
                 break;
             default:
                 return $this->render_select($details, $opts);
-                break;
         }
-
-
     }
 
     private function render_select($details, $opts)
@@ -2535,8 +2561,17 @@ class PerchFieldType_category extends PerchFieldType
             $out = array();
             $Categories = new PerchCategories_Categories();
             foreach($raw as $catID) {
-                $Cat = $Categories->find((int)$catID);
-                $out[] = $Cat->to_array_for_api();
+                if (is_numeric($catID)) {
+                    $Cat = $Categories->find((int)$catID);    
+                } else {
+                    $Cat = $Categories->get_by_path($catID);
+                }
+
+                
+                if ($Cat) {
+                    $out[] = $Cat->to_array_for_api();    
+                } 
+                
             }
 
             return $out;
@@ -2624,7 +2659,6 @@ class PerchFieldType_related extends PerchFieldType
                 break;
             default:
                 return $this->render_select($details, $opts);
-                break;
         }
     }
 

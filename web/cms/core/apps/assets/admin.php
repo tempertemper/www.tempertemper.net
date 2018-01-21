@@ -1,6 +1,8 @@
 <?php
+    $this->add_setting('assets_restrict_buckets', 'Enforce bucket restrictions on content', 'checkbox', false);
+
 	if ($CurrentUser->has_priv('assets.manage')) {
-    	$this->register_app('assets', 'Assets', 1.1, 'Asset management', $this->version);
+    	$this->register_app('assets', 'Assets', 1.2, 'Asset management', $this->version);
 
         if (PERCH_RUNWAY) {
             PerchSystem::register_admin_search_handler('PerchAssets_SearchHandler');

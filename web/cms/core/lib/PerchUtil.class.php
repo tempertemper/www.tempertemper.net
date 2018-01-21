@@ -655,6 +655,28 @@
 				PerchUtil::debug($filename);
 			}
 
+			$dot = strrpos($filename, '.');
+		    $filename_a = substr($filename, 0, $dot);
+		    $filename_b = substr($filename, $dot);
+
+		    $filename_a = PerchUtil::urlify($filename_a);
+		    $filename_b = PerchUtil::urlify($filename_b);
+
+			if (strlen($filename_a) > 0) {
+				return $filename_a.'.'.$filename_b;
+			} else {
+				$md5 = md5($filename);
+				$s   = strtolower($md5);
+				return 'unknown-' . substr($s, 0, 4) . '-' . substr($s, 5, 4).'.'.$filename_b;
+			}
+		}
+
+		public static function old_tidy_file_name($filename)
+		{
+			if (is_array($filename)) {
+				PerchUtil::debug($filename);
+			}
+
 			$s = strtolower($filename);
 			$s = str_replace('-', ' ', $s);
 			$s = preg_replace('/[^a-z0-9\s\.]/', '', $s);

@@ -4,6 +4,7 @@
     $this->add_setting('content_singlePageEdit', 'Default to single-page edit mode', 'checkbox', false);
     $this->add_setting('content_hideNonEditableRegions', 'Hide regions you can\'t edit', 'checkbox', false);
     $this->add_setting('content_frontend_edit', 'Enable Ctrl-E to edit', 'checkbox', false);
+    $this->add_setting('content_skip_region_list', 'Skip region list for just one region', 'checkbox', false);
 
     PerchSystem::register_admin_search_handler('PerchContent_SearchHandler');
     if (PERCH_RUNWAY) {

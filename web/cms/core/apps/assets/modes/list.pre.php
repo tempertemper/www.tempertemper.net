@@ -50,9 +50,9 @@
 	if (isset($_GET['q']) && $_GET['q']!='') {
 	    $term = $_GET['q'];
 	    
-	    $assets = $Assets->search($term, $filters);
+	    $assets = $Assets->search($term, $filters, $CurrentUser);
 	}else{
-	    $assets = $Assets->get_filtered_for_admin($Paging, $filters); 
+	    $assets = $Assets->get_filtered_for_admin($Paging, $filters, $CurrentUser); 
 	}
 
 	

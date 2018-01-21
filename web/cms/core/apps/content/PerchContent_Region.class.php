@@ -487,6 +487,8 @@ class PerchContent_Region extends PerchBase
     {
         if ($rev===false) $rev = $this->regionLatestRev();
 
+        PerchUtil::mb_fallback();
+
         $Items = new PerchContent_Items();
 
         // clear out old items
@@ -549,8 +551,8 @@ class PerchContent_Region extends PerchBase
                                     $data['regionID']   = (int) $this->id();
                                     $data['pageID']     = (int) $Item->pageID();
                                     $data['itemRev']    = (int) $Item->itemRev();
-                                    $data['indexKey']   = $this->db->pdb(substr($index_item['key'], 0, 64));
-                                    $data['indexValue'] = $this->db->pdb(substr($index_item['value'], 0, 255));
+                                    $data['indexKey']   = $this->db->pdb(mb_substr($index_item['key'], 0, 64));
+                                    $data['indexValue'] = $this->db->pdb(mb_substr($index_item['value'], 0, 255));
 
                                     $values[] = '('.implode(',', $data).')';
 

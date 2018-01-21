@@ -32,5 +32,10 @@ body div.page {
   position: absolute;
   top: 80px;
   left: 10%;
-  height: 80%;
   width: 80%; }
+
+.pagination li,
+.pagination-prev-group, .pagination-numbers,
+.pagination-next-group, .pagination-prev-group li,
+.pagination-next-group li {
+  display: inline-block; }

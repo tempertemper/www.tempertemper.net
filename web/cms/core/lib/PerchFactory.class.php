@@ -157,7 +157,7 @@ class PerchFactory
         }
 
         if (is_array($val)) {
-            $sql    = $select . ' * FROM ' . $this->table . ' WHERE ' . $col . ' IN ('. PerchUtil::implode_for_sql_in($val) .') '.$this->standard_restrictions();
+            $sql    = $select . ' * FROM ' . $this->table . ' WHERE ' . $col . ' IN ('. $this->db->implode_for_sql_in($val) .') '.$this->standard_restrictions();
         }else{
             $sql    = $select . ' * FROM ' . $this->table . ' WHERE ' . $col . '='. $this->db->pdb($val) .' '.$this->standard_restrictions();
         }
@@ -1044,12 +1044,14 @@ class PerchFactory
 
             $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemKey=idx2.itemKey ';
 
-            if (true || (isset($opts['filter-mode']) && $opts['filter-mode']=='legacy-group')) {
-                // I don't think we need this. Leaving an option for recovery if there are circumstances where it breaks anything
-                // Update: we do want this. Improves performance massively for large data sets. Enabed.
-                $sql .= 'GROUP BY idx.itemID, idx2.indexValue, '.$this->pk;  // DM added ', idx2.indexValue' for MySQL 5.7 compat     
-            }
-           
+
+            if ((isset($opts['filter-mode']) && $opts['filter-mode']=='ungrouped')) {
+                // don't do the GROUP BY.
+                // The GROUP BY improves performance massively for large data sets, but in some circumstances is rolling up
+                // too many results. This is the opposite of the old 'legacy-group' option
+            } else {
+                $sql .= 'GROUP BY idx.itemID, idx2.indexValue, '.$this->pk;  // DM added ', idx2.indexValue' for MySQL 5.7 compat  
+            }           
 
             $sql .= ' ) as tbl ';
 

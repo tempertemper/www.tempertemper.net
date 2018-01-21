@@ -231,6 +231,7 @@ if (PERCH_RUNWAY) {
             ?>
             </div>
         </div>
+    </div>
         <?php
             if ($Region->regionMultiple()=='1') {
                 //echo '<input type="submit" name="add_another" value="'.PerchUtil::html(PerchLang::get('Save & add another')).'" class="button button-simple to-the-top" />';
@@ -243,5 +244,5 @@ if (PERCH_RUNWAY) {
                     </button>';
             }
         ?>
-    </div>
+    
 </form>

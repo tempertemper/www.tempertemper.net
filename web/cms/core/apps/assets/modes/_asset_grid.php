@@ -7,3 +7,9 @@
 	}
 
 	echo $HTML->close('div');
+
+    if ($Paging->enabled()) {
+        echo '<div class="paging-cont">';
+        echo $HTML->paging($Paging);
+        echo '</div>';
+    }

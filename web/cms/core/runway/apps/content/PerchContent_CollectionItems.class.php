@@ -21,7 +21,13 @@ class PerchContent_CollectionItems extends PerchFactory
         $Users          = new PerchUsers;
         $CurrentUser    = $Users->get_current_user();
 
-        $data['itemUpdatedBy'] = $CurrentUser->id();
+        if ($CurrentUser->id()) {
+            $userID = $CurrentUser->id();
+        } else {
+            $userID = 0;
+        }
+
+        $data['itemUpdatedBy'] = $userID;
 
         $Item = parent::create($data);
 
@@ -33,7 +39,7 @@ class PerchContent_CollectionItems extends PerchFactory
                 'itemRev'       => $Item->itemRev(),
                 'itemLatestRev' => $Item->itemRev(),
                 'itemCreated'   => date('Y-m-d H:i:s'),
-                'itemCreatedBy' => $CurrentUser->id(),
+                'itemCreatedBy' => $userID,
             ]);
         }
 

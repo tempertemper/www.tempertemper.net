@@ -244,7 +244,7 @@
                 $preview_url = $search_url . '?' . PERCH_PREVIEW_ARG.'=all';
             }
 
-            $Alert->set('draft', PerchLang::get('You are editing a draft.') . ' <a href="'.PerchUtil::html($preview_url).'" class="action draft-preview">'.PerchLang::get('Preview').'</a>');
+            $Alert->set('draft', PerchLang::get('You are editing a draft.') . ' <a href="'.PerchUtil::html($preview_url).'" class="button button-small action-warning viewext">'.PerchLang::get('Preview').'</a>');
 
         }else{
             $Alert->set('draft', PerchLang::get('You are editing a draft.'));

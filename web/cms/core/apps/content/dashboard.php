@@ -1,5 +1,5 @@
 <?php 
-	return function(){
+	return function($CurrentUser){
 
 		$API    = new PerchAPI(1.0, 'core');
     	$Lang   = $API->get('Lang');
@@ -12,10 +12,13 @@
 		$shared = $Regions->get_shared();
 
 		$title  = $HTML->wrap('h2', $Lang->get('Pages'));
-		$button = '<a class="button button-small button-icon icon-left action-info" href="'.$HTML->encode(PERCH_LOGINPATH.'/core/apps/content/page/add/').'"><div>'.PerchUI::icon('core/plus', 8).'<span>'.$Lang->get('Add page').'</span></div></a>';
-		$header = $HTML->wrap('header', $title.$button);
+		$button = '';
 
-		$s = '';
+		if ($CurrentUser->has_priv('content.pages.create')) {
+			$button = '<a class="button button-small button-icon icon-left action-info" href="'.$HTML->encode(PERCH_LOGINPATH.'/core/apps/content/page/add/').'"><div>'.PerchUI::icon('core/plus', 8).'<span>'.$Lang->get('Add page').'</span></div></a>';
+		}
+
+		$header = $HTML->wrap('header', $title.$button);
 
 		if (PerchUtil::count($pages)) {
 			$items = [];

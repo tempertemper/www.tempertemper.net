@@ -38,7 +38,7 @@
 
     echo $HTML->open('div.inner');
 
-    echo render_tree($Pages, $groupID, 0, 'sortable disabled');
+    echo render_tree($Pages, $groupID, 0, 'page-list');
 
     echo $HTML->close('div.inner');
     
@@ -48,11 +48,15 @@
         
         $s = '';
         $s = '<ol class="'.$class.'">';
+
+        $class = false;
         
         if (PerchUtil::count($pages)) {
             
             foreach($pages as $Page) {
-                $s .= '<li><div class="page icon">'.PerchUtil::html($Page->pageNavText()).'</div>';
+                $s .= '<li><div class="page">';
+                $s .= PerchUI::icon('core/document');
+                $s .= PerchUtil::html($Page->pageNavText()).'</div>';
                 $s .= render_tree($Pages, $groupID, $Page->id(), $class);
                 $s .= '</li>';
             }

@@ -98,6 +98,12 @@
         }
     	
     	$Collection->set_options($data);
+
+        // Reset
+        if (isset($_POST['collectionReset']) && $_POST['collectionReset']=='1') {
+            $Collection->delete_all_items();
+        }
+        
     	
         $Collection->sort_items();
         

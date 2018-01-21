@@ -38,7 +38,9 @@
 		'Are you sure?',
 		'Yes',
 		'No',
+		'Add an item',
 		'Bucket',
+		'Uploading',
 		'%s is also editing here'
 	);
 	echo "Perch.Lang.init({\n\t";

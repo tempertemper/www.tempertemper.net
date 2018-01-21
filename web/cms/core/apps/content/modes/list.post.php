@@ -88,6 +88,8 @@
             $icon_toggle_closed = PerchUI::icon('core/arrow-circle-right', 12, PerchLang::get('Subpages are not shown')).'';
             $icon_toggle_open   = PerchUI::icon('core/arrow-circle-down', 12, PerchLang::get('Subpages are shown')).'';
         
+            $origin = ($Settings->get('content_skip_region_list')->val() ? 'f=pl' : 'f=x');
+
             foreach($pages as $Page) {
 
                 $delete_link = '<a href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/page/delete/?id=' . PerchUtil::html($Page->id()) . '" class="button button-small action-alert inline-delete"  data-delete="confirm-cascade" data-msg="'.PerchUtil::html(PerchLang::get('Are you sure? This will delete the page, all the content belonging to the page, and any pages below this page.'), true).'">'.PerchLang::get('Delete').'</a>';
@@ -137,7 +139,7 @@
 
                            
 
-                                echo '  <a class="page" href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/page/?f=pl&amp;id='.PerchUtil::html($Page->id()).'">'. ($shared ? $icon_pages : $icon_page) .'<span class="primary">' . PerchUtil::html($Page->pageNavText()) . '</span></a>';
+                                echo '  <a class="page" href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/page/?'.$origin.'&amp;id='.PerchUtil::html($Page->id()).'">'. ($shared ? $icon_pages : $icon_page) .'<span class="primary">' . PerchUtil::html($Page->pageNavText()) . '</span></a>';
 
 							 if ($CurrentUser->has_priv('content.pages.create') && $Page->role_may_create_subpages($CurrentUser) && $Page->pagePath()!='*') {
 	                                echo ' <a href="'.PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/page/add/?pid='.$Page->id()).'" class="create-subitem">'.PerchUI::icon('core/plus', 8).' '.PerchLang::get('New subpage').'</a>';
@@ -251,7 +253,7 @@
                                 }
 
 
-                                    echo '  <a class="page" href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/page/?f=pl&amp;id='.PerchUtil::html($Page->id()).'">'. ($shared ? $icon_pages : $icon_page) .'<span class="primary">' . PerchUtil::html($Page->pageNavText()) . '</span></a>';
+                                    echo '  <a class="page" href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/page/?'.$origin.'&amp;id='.PerchUtil::html($Page->id()).'">'. ($shared ? $icon_pages : $icon_page) .'<span class="primary">' . PerchUtil::html($Page->pageNavText()) . '</span></a>';
 
 								if ($CurrentUser->has_priv('content.pages.create') && $Page->role_may_create_subpages($CurrentUser) && $Page->pagePath()!='*') {
                                     echo ' <a href="'.PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/page/add/?pid='.$Page->id()).'" class="create-subitem">'.PerchUI::icon('core/plus', 8).' '.PerchLang::get('New subpage').'</a>';
@@ -334,7 +336,7 @@
                                 echo '<a href="'.PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/?'.$arg.'='.$Page->id()).'" class="toggle icon">'.($closed ? $icon_toggle_closed : $icon_toggle_open).'</a>';
                             }
                         
-	                       echo '<a class="page" href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/page/?f=pl&amp;id='.PerchUtil::html($Page->id()).'"> '.$icon_page.'<span class="primary">' . PerchUtil::html($Page->pageNavText()) . '</span></a>';
+	                       echo '<a class="page" href="'.PerchUtil::html(PERCH_LOGINPATH).'/core/apps/content/page/?'.$origin.'&amp;id='.PerchUtil::html($Page->id()).'"> '.$icon_page.'<span class="primary">' . PerchUtil::html($Page->pageNavText()) . '</span></a>';
 
                            if ($CurrentUser->has_priv('content.pages.create') && $Page->role_may_create_subpages($CurrentUser) && $Page->pagePath()!='*') {
                                     echo ' <a href="'.PerchUtil::html(PERCH_LOGINPATH.'/core/apps/content/page/add/?pid='.$Page->id()).'" class="create-subitem">'.PerchUI::icon('core/plus', 8).' '.PerchLang::get('New subpage').'</a>';

@@ -98,9 +98,22 @@
 
 
 	var set_up_markitup = function(){
-		$('textarea.markitup.textile:not(.markItUpEditor)').markItUp(textileSettings);
-		$('textarea.markitup.markdown:not(.markItUpEditor)').markItUp(markdownSettings);
-		$('textarea.markitup.html:not(.markItUpEditor)').markItUp(htmlSettings);
+
+		if (typeof Perch.UserConfig.markitup != 'undefined') {
+			Perch.UserConfig.markitup.load(function(){
+				var editors = $('textarea.markitup:not(.markItUpEditor)');
+				editors.each(function(i, o){
+					var self = $(o);
+					config = Perch.UserConfig.markitup.get(self.attr('data-editor-config'), markdownSettings, self);
+					self.markItUp(config);
+				});
+			});
+		} else {
+			$('textarea.markitup.textile:not(.markItUpEditor)').markItUp(textileSettings);
+			$('textarea.markitup.markdown:not(.markItUpEditor)').markItUp(markdownSettings);
+			$('textarea.markitup.html:not(.markItUpEditor)').markItUp(htmlSettings);	
+		}
+	
 	}
 
 	$(window).on('Perch_Init_Editors', function(){
