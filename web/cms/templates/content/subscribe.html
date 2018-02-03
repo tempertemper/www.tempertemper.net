@@ -1,4 +1,6 @@
-<perch:if exists="heading"><h1></perch:if><perch:content id="heading" type="smarttext" label="Heading" /><perch:if exists="heading"></h1></perch:if>
-<perch:content id="intro" type="textarea" label="Introduction" size="xs" markdown="true" html="false" />
-<perch:template path="content/_subscribe_form.html" />
-<perch:content id="privacy" type="textarea" label="Small print" size="xs" markdown="true" html="false" />
+<section>
+  <perch:if exists="heading"><h1></perch:if><perch:content id="heading" type="smarttext" label="Heading" /><perch:if exists="heading"></h1></perch:if>
+  <perch:content id="intro" type="textarea" label="Introduction" size="xs" markdown="true" html="false" />
+  <perch:template path="content/_subscribe_form.html" />
+  <p><small><perch:content id="privacy" type="textarea" label="Small print" size="xs" markdown="true" html="false" /></small></p>
+</section>
