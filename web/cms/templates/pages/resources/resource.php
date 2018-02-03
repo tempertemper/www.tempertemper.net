@@ -22,5 +22,8 @@
     ]
   ]);
   echo '</main>';
+  echo '<div role="complementary">';
+  perch_content('Subscribe');
+  echo '</div>';
   perch_layout('footer');
   perch_layout('end');
