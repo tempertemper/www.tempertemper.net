@@ -1,6 +1,8 @@
 <?php
-  perch_layout('resource/head');
   $page = 'resource';
+  perch_layout('head', [
+    'page' => $page,
+  ]);
   perch_layout('header', [
     'page' => $page,
   ]);
