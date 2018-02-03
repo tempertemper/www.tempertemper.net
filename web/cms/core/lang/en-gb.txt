@@ -413,5 +413,6 @@
     "Navigation group pages": "Navigation group pages",
     "Editing \u2018%s\u2019 navigation group": "Editing \u2018%s\u2019 navigation group",
     "Group Options": "Group Options",
-    "Reordering navigation group": "Reordering navigation group"
+    "Reordering navigation group": "Reordering navigation group",
+    "Editing Shared Regions": "Editing Shared Regions"
 }
