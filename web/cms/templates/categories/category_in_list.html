@@ -1,0 +1,15 @@
+<perch:before>
+  <div role="complementary">
+    <aside class="cats">
+      <h1>Categories</h1>
+      <ul>
+</perch:before>
+        <li>
+          <a href="/resources/category/<perch:category id="catSlug" type="slug" for="catTitle" />"><perch:category id="catTitle" type="smarttext" label="Title" required="true" /></a><perch:if exists="perch_item_last"><perch:else />, </perch:if>
+        </li>
+<perch:after>
+      </ul>
+      <p><a href="/resources/" class="back">Back to resources</a></p>
+    </aside>
+  </div>
+</perch:after>

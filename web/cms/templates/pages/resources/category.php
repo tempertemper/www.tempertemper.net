@@ -5,7 +5,6 @@
     'page' => $page,
   ]);
   echo '<main role="main">';
-
   if (perch_get('cat')) {
     perch_collection('Resources', [
       'template'   => 'resource_list.html',
@@ -23,7 +22,10 @@
       'set' => 'resources',
     ]);
   }
-
   echo '</main>';
+  perch_categories([
+    'set'      => 'resources',
+    'template' => 'category_in_list.html',
+  ]);
   perch_layout('footer');
   perch_layout('end');
