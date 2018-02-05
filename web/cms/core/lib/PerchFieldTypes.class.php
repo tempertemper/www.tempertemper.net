@@ -976,7 +976,7 @@ class PerchFieldType_image extends PerchFieldType
             if (isset($json['mime']) && strpos($json['mime'],'svg')!==false) {
                 if ($Asset) {
                     $json = array_merge($json, $Asset->get_fieldtype_profile());
-                    PerchUtil::debug($json);
+                    //PerchUtil::debug($json);
                 }
             }
 
@@ -1040,7 +1040,7 @@ class PerchFieldType_image extends PerchFieldType
                 if (!$this->Tag->is_set('app_mode')) {
 
                     if ($variant) {
-                        PerchUtil::debug($variant, 'notice');
+                        //PerchUtil::debug($variant, 'notice');
 
                         $s .= '<h3 class="title">';
                         if ($Asset) {

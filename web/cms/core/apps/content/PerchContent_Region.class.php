@@ -156,6 +156,31 @@ class PerchContent_Region extends PerchBase
     }
 
     /**
+     * Does the given roleID have permission to publish this region?
+     *
+     * @param string $roleID 
+     * @return void
+     * @author Drew McLellan
+     */
+    public function role_may_publish($User)
+    {
+        if (PERCH_RUNWAY) {
+            if ($User->roleMasterAdmin()) return true;
+
+            $roleID    = $User->roleID();
+            $str_roles = $this->regionPublishRoles();
+
+            if ($str_roles=='*') return true;
+            
+            $roles = explode(',', $str_roles);
+
+            return in_array($roleID, $roles);
+        }
+
+        return true;
+    }
+
+    /**
      * Does the current role have permission to even see this region?
      * @param  obj $User     User object
      * @param  obj $Settings Settings object

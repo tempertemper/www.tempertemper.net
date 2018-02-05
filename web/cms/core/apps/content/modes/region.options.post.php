@@ -311,7 +311,32 @@
             
             echo $Form->checkbox_set('edit_roles', 'May be edited by', $opts, $vals, $class='', $limit=false);
         
-        
+
+            if (PERCH_RUNWAY) {
+
+                $opts = [];
+                $opts[] = ['label'=>PerchLang::get('Everyone'), 'value'=>'*', 'class'=>'single'];
+                
+                $vals = explode(',', $Region->regionPublishRoles());
+
+                if (PerchUtil::count($roles)) {
+                    foreach($roles as $Role) {
+                        $tmp = ['label'=>$Role->roleTitle(), 'value'=>$Role->id()];
+
+                        if ($Role->roleMasterAdmin()) {
+                            $tmp['disabled'] = true;
+                            $vals[] = $Role->id();
+                        }
+
+                        $opts[] = $tmp;
+                    }
+                }
+                
+                echo $Form->checkbox_set('publish_roles', 'Drafts may be published by', $opts, $vals, $class='', $limit=false);
+
+
+            }        
+
         ?>
     
 <?php   if ($CurrentUser->has_priv('content.regions.templates')) { ?>

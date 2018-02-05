@@ -13,6 +13,7 @@ CREATE TABLE `__PREFIX__content_regions` (
   `regionRev` int(10) unsigned NOT NULL DEFAULT '0',
   `regionLatestRev` int(10) unsigned NOT NULL DEFAULT '0',
   `regionEditRoles` varchar(255) NOT NULL DEFAULT '*',
+  `regionPublishRoles` varchar(255) NOT NULL DEFAULT '*',
   `regionUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`regionID`),
   KEY `idx_key` (`regionKey`),

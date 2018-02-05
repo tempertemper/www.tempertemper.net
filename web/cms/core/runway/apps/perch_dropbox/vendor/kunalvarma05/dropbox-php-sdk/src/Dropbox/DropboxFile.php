@@ -9,6 +9,7 @@ use Kunnu\Dropbox\Exceptions\DropboxClientException;
 class DropboxFile
 {
     const MODE_READ = 'r';
+
     const MODE_WRITE = 'w';
 
     /**
@@ -49,6 +50,13 @@ class DropboxFile
     protected $mode;
 
     /**
+     * Flag to see if we created an instance using a stream
+     *
+     * @var bool
+     */
+    private $isStream = false;
+    
+    /**
      * Create a new DropboxFile instance
      *
      * @param string $filePath Path of the file to upload
@@ -66,6 +74,63 @@ class DropboxFile
     public function __destruct()
     {
         $this->close();
+    }
+    
+    
+    /**
+     * Create a new DropboxFile instance using a file stream
+     *
+     * @param $fileName
+     * @param $resource
+     * @param string $mode
+     * @return DropboxFile
+     * @throws DropboxClientException
+     */
+    public static function createByStream($fileName, $resource, $mode = self::MODE_READ)
+    {
+        // create a new stream and set it to the dropbox file
+        $stream = \GuzzleHttp\Psr7\stream_for($resource);
+        if (!$stream) {
+            throw new DropboxClientException('Failed to create DropboxFile instance. Unable to open the given resource.');
+        }
+
+        // Try to get the file path from the stream (we'll need this for uploading bigger files)
+        $filePath = $stream->getMetadata('uri');
+        if (!is_null($filePath)) {
+            $fileName = $filePath;
+        }
+
+        $dropboxFile = new self($fileName, $mode);
+        $dropboxFile->setStream($stream);
+
+        return $dropboxFile;
+    }
+
+    /**
+     * Create a new DropboxFile instance using a file path
+     *
+     * This behaves the same as the constructor but was added in order to
+     * match the syntax of the static createByStream function
+     *
+     * @see DropboxFile::createByStream()
+     *
+     * @param $filePath
+     * @param $mode
+     * @return DropboxFile
+     */
+    public static function createByPath($filePath, $mode)
+    {
+        return new self($filePath, $mode);
+    }
+
+    /**
+     * Close the file stream
+     */
+    public function close()
+    {
+        if ($this->stream) {
+            $this->stream->close();
+        }
     }
 
     /**
@@ -89,53 +154,16 @@ class DropboxFile
     {
         $this->maxLength = $maxLength;
     }
-
+    
     /**
-     * Opens the File Stream
+     * Manually set the stream for this DropboxFile instance
      *
-     * @throws DropboxClientException
-     *
-     * @return void
+     * @param $stream
      */
-    public function open()
+    public function setStream($stream)
     {
-        if (!$this->isRemoteFile($this->path)) {
-            if (self::MODE_READ === $this->mode && !is_readable($this->path)) {
-                throw new DropboxClientException('Failed to create DropboxFile instance. Unable to read resource: ' . $this->path . '.');
-            }
-            if (self::MODE_WRITE === $this->mode && file_exists($this->path) && !is_writable($this->path)) {
-                throw new DropboxClientException('Failed to create DropboxFile instance. Unable to write resource: ' . $this->path . '.');
-            }
-        }
-
-        $this->stream = \GuzzleHttp\Psr7\stream_for(fopen($this->path, $this->mode));
-
-        if (!$this->stream) {
-            throw new DropboxClientException('Failed to create DropboxFile instance. Unable to open resource: ' . $this->path . '.');
-        }
-    }
-
-    /**
-     * Get the Open File Stream
-     *
-     * @return \GuzzleHttp\Psr7\Stream
-     */
-    public function getStream()
-    {
-        if (!$this->stream) {
-            $this->open();
-        }
-        return $this->stream;
-    }
-
-    /**
-     * Close the file stream
-     */
-    public function close()
-    {
-        if ($this->stream) {
-            $this->stream->close();
-        }
+        $this->isStream = true;
+        $this->stream = $stream;
     }
 
     /**
@@ -159,6 +187,61 @@ class DropboxFile
         }
 
         return $stream->getContents();
+    }
+
+    /**
+     * Get the Open File Stream
+     *
+     * @return \GuzzleHttp\Psr7\Stream
+     */
+    public function getStream()
+    {
+        if (!$this->stream) {
+            $this->open();
+        }
+        return $this->stream;
+    }
+
+    /**
+     * Opens the File Stream
+     *
+     * @throws DropboxClientException
+     *
+     * @return void
+     */
+    public function open()
+    {
+        // File was created from a stream so don't open it again
+        if ($this->stream && $this->isStream === true) {
+            return;
+        }
+        
+        if (!$this->isRemoteFile($this->path)) {
+            if (self::MODE_READ === $this->mode && !is_readable($this->path)) {
+                throw new DropboxClientException('Failed to create DropboxFile instance. Unable to read resource: ' . $this->path . '.');
+            }
+            if (self::MODE_WRITE === $this->mode && file_exists($this->path) && !is_writable($this->path)) {
+                throw new DropboxClientException('Failed to create DropboxFile instance. Unable to write resource: ' . $this->path . '.');
+            }
+        }
+
+        $this->stream = \GuzzleHttp\Psr7\stream_for(fopen($this->path, $this->mode));
+
+        if (!$this->stream) {
+            throw new DropboxClientException('Failed to create DropboxFile instance. Unable to open resource: ' . $this->path . '.');
+        }
+    }
+
+    /**
+     * Returns true if the path to the file is remote
+     *
+     * @param string $pathToFile
+     *
+     * @return boolean
+     */
+    protected function isRemoteFile($pathToFile)
+    {
+        return preg_match('/^(https?|ftp):\/\/.*/', $pathToFile) === 1;
     }
 
     /**
@@ -209,17 +292,5 @@ class DropboxFile
     public function getMimetype()
     {
         return \GuzzleHttp\Psr7\mimetype_from_filename($this->path) ?: 'text/plain';
-    }
-
-    /**
-     * Returns true if the path to the file is remote
-     *
-     * @param string $pathToFile
-     *
-     * @return boolean
-     */
-    protected function isRemoteFile($pathToFile)
-    {
-        return preg_match('/^(https?|ftp):\/\/.*/', $pathToFile) === 1;
     }
 }

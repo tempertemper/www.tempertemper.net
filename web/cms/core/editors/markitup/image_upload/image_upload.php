@@ -57,28 +57,28 @@
             $Tag->set('density', $density);
 
         }
-
-        $Assets  = new PerchAssets_Assets;
-
-        $message = false;
-        $assetID = false;
-        $Asset = false;
-
-        $Form = new PerchForm('edit');
-
+        
+        $Assets    = new PerchAssets_Assets;
+        
+        $message   = false;
+        $assetID   = false;
+        $Asset     = false;
+        
+        $Form      = new PerchForm('edit');
+        
         $Resources = new PerchResources;
-
-        $data = array();
+        
+        $data      = array();
         $FieldType = PerchFieldTypes::get($Tag->type(), $Form, $Tag, array($Tag), 'markitup');
         
         $var       = $FieldType->get_raw();
 
         if (PerchUtil::count($var)) {
 
-            $ids = $Resources->get_logged_ids();
+            $ids     = $Resources->get_logged_ids();
             $Resources->mark_group_as_library($ids);
             $assetID = $ids[0];
-            $Asset = $Assets->find($assetID);
+            $Asset   = $Assets->find($assetID);
 
             if (isset($_POST['miu_image_upload_title']) && $_POST['miu_image_upload_title']!='') {
                 $Asset->update(array('resourceTitle'=>$_POST['miu_image_upload_title']));

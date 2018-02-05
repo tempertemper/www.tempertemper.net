@@ -201,7 +201,12 @@ if (PERCH_RUNWAY) {
             <?php
                 echo '<label class="save-as-draft" for="save_as_draft">'.PerchUtil::html(PerchLang::get('Save as draft')).'</label>';
                 echo '<div class="form-entry">';
-                echo '<input type="checkbox" name="save_as_draft" value="1" id="save_as_draft" '.($draft?'checked="checked"':'').'  />';
+                if ($Region->role_may_publish($CurrentUser)) {
+                    echo '<input type="checkbox" name="save_as_draft" value="1" id="save_as_draft" '.($draft?'checked="checked"':'').'  />';
+                } else {
+                    echo '<input type="checkbox" name="save_as_draft" value="1" id="save_as_draft" checked disabled />';
+                }
+                
                 echo '</div>';
             ?>
             </div>

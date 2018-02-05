@@ -71,6 +71,27 @@
     	}else{
     	    $data['collectionEditRoles'] = '';
     	}
+
+
+        if (isset($_POST['publish_roles']) && PerchUtil::count($_POST['publish_roles'])) {
+            $roles = $_POST['publish_roles'];
+            $new_roles = array();
+            foreach($roles as $role) {
+                $role = trim($role);
+                if ($role=='*') {
+                    $new_roles = array('*');
+                    break;
+                }
+                
+                $new_roles[] = (int) $role;
+            }
+            
+            if (PerchUtil::count($new_roles)) {
+                $data['collectionPublishRoles'] = implode(',', $new_roles);
+            }
+        }else{
+            $data['collectionPublishRoles'] = '';
+        }
     	   	
     	
         $Collection->update($data);

@@ -158,9 +158,9 @@
             if (isset($_POST['save_as_draft'])) {
                 $Alert->set('success', PerchLang::get('Draft successfully updated'));
             }else{
-                PerchUtil::debug('Publishing');
-                $Item->publish();
-                PerchUtil::debug('Published');
+                if ($Collection->role_may_publish($CurrentUser)) {
+                    $Item->publish();
+                }
                 $Alert->set('success', PerchLang::get('Content successfully updated'));
             }
 

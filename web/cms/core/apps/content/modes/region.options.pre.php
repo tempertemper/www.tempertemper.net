@@ -65,6 +65,30 @@
     	}else{
     	    $data['regionEditRoles'] = '';
     	}
+
+        if (PERCH_RUNWAY && (isset($_POST['publish_roles']) && PerchUtil::count($_POST['publish_roles']))) {
+            $roles = $_POST['publish_roles'];
+            $new_roles = [];
+            foreach($roles as $role) {
+                $role = trim($role);
+                if ($role=='*') {
+                    $new_roles = ['*'];
+                    break;
+                }
+                
+                $new_roles[] = (int) $role;
+            }
+            
+            if (PerchUtil::count($new_roles)) {
+                $data['regionPublishRoles'] = implode(',', $new_roles);
+            }
+        }else{
+            if (PERCH_RUNWAY) {
+                $data['regionPublishRoles'] = '';    
+            } else {
+                $data['regionPublishRoles'] = '*';
+            }
+        }
     	
         $Region->update($data);
         

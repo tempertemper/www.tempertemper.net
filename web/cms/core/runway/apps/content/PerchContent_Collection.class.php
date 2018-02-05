@@ -132,7 +132,7 @@ class PerchContent_Collection extends PerchBase
 
 	    
 	    /**
-	     * Does the given roleID have permission to edit this region?
+	     * Does the given roleID have permission to edit this collection?
 	     *
 	     * @param string $roleID 
 	     * @return void
@@ -159,7 +159,29 @@ class PerchContent_Collection extends PerchBase
 	    }
 
 	    /**
-	     * Does the current role have permission to even see this region?
+	     * Does the given roleID have permission to publish this collection?
+	     *
+	     * @param string $roleID 
+	     * @return void
+	     * @author Drew McLellan
+	     */
+	    public function role_may_publish($User)
+	    {				
+	        if ($User->roleMasterAdmin()) return true;
+
+	        $roleID = $User->roleID();
+
+	        $str_roles = $this->collectionPublishRoles();
+	    
+	        if ($str_roles=='*') return true;
+	        
+	        $roles = explode(',', $str_roles);
+
+	        return in_array($roleID, $roles);
+	    }
+
+	    /**
+	     * Does the current role have permission to even see this collection?
 	     * @param  obj $User     User object
 	     * @param  obj $Settings Settings object
 	     * @return bool           View or not

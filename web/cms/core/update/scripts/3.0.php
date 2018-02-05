@@ -50,6 +50,8 @@
 
       ";
 
+      $sql .= "ALTER TABLE `__PREFIX__collections` ADD `collectionPublishRoles` VARCHAR(255)  NOT NULL  DEFAULT '*'  AFTER `collectionEditRoles`;";
+
 
     }
 
@@ -72,6 +74,8 @@
         $sql .= "INSERT INTO `__PREFIX__user_privileges` (`privKey`, `privTitle`, `privOrder`)
                   VALUES ('assets.delete','Delete assets',3);";
     }
+
+    $sql .= "ALTER TABLE `__PREFIX__content_regions` ADD `regionPublishRoles` VARCHAR(255)  NOT NULL  DEFAULT '*'  AFTER `regionEditRoles`;";
 
 
 	$sql = str_replace('__PREFIX__', PERCH_DB_PREFIX, $sql);
