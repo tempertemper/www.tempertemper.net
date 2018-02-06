@@ -2,6 +2,7 @@
   perch_layout('head');
   perch_layout('header');
   echo '<main role="main">';
+  perch_content('Introduction');
   perch_collection('Resources', [
     'template'   => 'resource_list.html',
     'paginate'   => 'true',
