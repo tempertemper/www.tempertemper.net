@@ -2,6 +2,8 @@ body {
   @include container(50em);
   padding-left: .5em;
   padding-right: .5em;
+  border-top: .1em solid $colour-primary;
+  border-bottom: .1em solid $colour-primary;
 }
 
 @media (min-width: $l) {
