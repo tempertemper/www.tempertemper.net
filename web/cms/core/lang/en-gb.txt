@@ -374,5 +374,22 @@
     "Show dedicated back link in sidebar": "Show dedicated back link in sidebar",
     "Enable keyboard shortcuts": "Enable keyboard shortcuts",
     "Skip region list for just one region": "Skip region list for just one region",
-    "Enforce bucket restrictions on content": "Enforce bucket restrictions on content"
+    "Enforce bucket restrictions on content": "Enforce bucket restrictions on content",
+    "Drafts may be published by": "Drafts may be published by",
+    "Category Set": "Category Set",
+    "Listing categories in \u2018%s\u2019 set": "Listing categories in \u2018%s\u2019 set",
+    "Add category": "Add category",
+    "Set Options": "Set Options",
+    "Category": "Category",
+    "New sub-category": "New sub-category",
+    "Edit Category": "Edit Category",
+    "Adding a New Category": "Adding a New Category",
+    "New category": "New category",
+    "Save & Add another": "Save & Add another",
+    "Your category has been successfully created. Return to %scategory listing%s": "Your category has been successfully created. Return to %scategory listing%s",
+    "Editing \u2018%s\u2019 Category": "Editing \u2018%s\u2019 Category",
+    "Reorder Categories": "Reorder Categories",
+    "Reordering Categories": "Reordering Categories",
+    "Drag and drop the categories to reorder them.": "Drag and drop the categories to reorder them.",
+    "Category orders successfully updated.": "Category orders successfully updated."
 }
