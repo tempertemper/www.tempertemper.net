@@ -4,14 +4,14 @@
 	/* Check we're ok to run */
 
 	if (!defined('PERCH_SCHEDULE_SECRET')) {
-		die('You must set a secret. See http://docs.grabaperch.com/docs/scheduled-tasks/ for configuration instructions.');
+		die('You must set a secret. See https://docs.grabaperch.com/docs/scheduled-tasks/ for configuration instructions.');
 	}
 
 	if (isset($argv)) {
 		$cli = true;
 
 		if (!isset($argv[1])) {
-			die('No secret found. See http://docs.grabaperch.com/docs/scheduled-tasks/ for configuration instructions.'."\n");
+			die('No secret found. See https://docs.grabaperch.com/docs/scheduled-tasks/ for configuration instructions.'."\n");
 		}
 
 		if ($argv[1]!=PERCH_SCHEDULE_SECRET) {
@@ -22,7 +22,7 @@
 		$cli = false;
 
 		if (!isset($_GET['secret'])) {
-			die('No secret found. See http://docs.grabaperch.com/docs/scheduled-tasks/ for configuration instructions.'."\n");
+			die('No secret found. See https://docs.grabaperch.com/docs/scheduled-tasks/ for configuration instructions.'."\n");
 		}
 
 		if ($_GET['secret']!=PERCH_SCHEDULE_SECRET) {
@@ -50,4 +50,4 @@
 
 
 
-	//PerchUtil::output_debug();
+	PerchUtil::output_debug();

@@ -5,5 +5,5 @@
 			'label'=>'Add/Edit'
 		],
 		
-		array('page'=>'core/users/roles,core/users/roles/edit,core/users/roles/delete,core/users/roles/actions', 'label'=>'Roles')
+		array('page'=>'core/users/roles,core/users/roles/edit,core/users/roles/delete,core/users/roles/actions,core/users/roles/buckets', 'label'=>'Roles')
 	]);

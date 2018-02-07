@@ -93,7 +93,10 @@ class PerchContent_Util
 
 	public static function read_items_from_post($Item, $tags, $subprefix, $form_vars, $postitems, $Form, $search_text, $options, $Resources, $in_repeater=false, $Template, $in_block=false)
 	{
-		//PerchUtil::mark('reading items from post'. ($in_block ? ' (in block)': ''));
+		$debugging = false;
+
+		if ($debugging) PerchUtil::mark('reading items from post'. ($in_block ? ' (in block)': ''));
+		if ($debugging) PerchUtil::debug($_POST);
 
 		$given_subprefix = $subprefix;
 	    $seen_tags = array();
@@ -113,22 +116,22 @@ class PerchContent_Util
 	    $deleted_blocks = array();
 	    if (isset($_POST['_blocks_deleted']) && PerchUtil::count($_POST['_blocks_deleted'])) {
 	    	$deleted_blocks = $_POST['_blocks_deleted'];
-	    	#PerchUtil::debug('Deleted blocks:');
-	    	#PerchUtil::debug($deleted_blocks);
+	    	if ($debugging) PerchUtil::debug('Deleted blocks:');
+	    	if ($debugging) PerchUtil::debug($deleted_blocks);
 	    }else{
-	    	#PerchUtil::debug('No deleted blocks');
+	    	if ($debugging) PerchUtil::debug('No deleted blocks');
 	    }
 
-	    //PerchUtil::debug($tags, 'success');
+	    if ($debugging) PerchUtil::debug($tags, 'success');
 
 	    foreach($tags as $Tag) {
 
 	        if (!in_array($Tag->id(), $seen_tags)) {
 
-	        	//PerchUtil::debug($Tag->id(). ': '.$Tag->type(), 'notice');
-	        	//PerchUtil::debug(($in_block ? 'In block' : 'Not in block'), 'notice');
-	        	//PerchUtil::debug(($in_repeater ? 'In repeater' : 'Not in repeater'), 'notice');
-	        	//PerchUtil::debug('subprefix: '.$subprefix);
+	        	if ($debugging) PerchUtil::debug($Tag->id(). ': '.$Tag->type(), 'notice');
+	        	if ($debugging) PerchUtil::debug(($in_block ? 'In block' : 'Not in block'), 'notice');
+	        	if ($debugging) PerchUtil::debug(($in_repeater ? 'In repeater' : 'Not in repeater'), 'notice');
+	        	if ($debugging) PerchUtil::debug('subprefix: '.$subprefix);
 
 
 	            if ($Tag->type()=='PerchRepeater' || $Tag->type()=='PerchBlocks') {
@@ -148,7 +151,7 @@ class PerchContent_Util
         			    }
 	            	}
 
-	                //PerchUtil::debug('Reading: '.$Tag->id());
+	                if ($debugging) PerchUtil::debug('Reading: '.$Tag->id());
 
 	                $new_form_vars = array();
 
@@ -166,18 +169,18 @@ class PerchContent_Util
 
 	                }
 
-	                //PerchUtil::debug('Looking for  '.$item_prefix.$subprefix.$i.' in deleted blocks list');
+	                if ($debugging) PerchUtil::debug('Looking for  '.$item_prefix.$subprefix.$i.' in deleted blocks list');
 	                //while (in_array($Item->itemID().'_'.$subprefix.$i, $deleted_blocks)) {
 	                while (in_array($item_prefix.$subprefix.$i, $deleted_blocks)) {
-	                	//PerchUtil::debug('Skipping '.$item_prefix.$subprefix.$i.' as deleted');
+	                	if ($debugging) PerchUtil::debug('Skipping '.$item_prefix.$subprefix.$i.' as deleted');
 	                 	$i++;
 	                };
 
 	                $new_postitems = $Form->find_items($perch_prefix.'_'.$subprefix.$i.'_');
 
-	                //PerchUtil::debug('Subprefix: ' . $subprefix);
-	                //PerchUtil::debug('*Looking for: '.$perch_prefix.'_'.$subprefix.$i.'_'. ' '. ($in_repeater ? '(in repeater)':''));
-	                //PerchUtil::debug($new_postitems);
+	                if ($debugging) PerchUtil::debug('Subprefix: ' . $subprefix);
+	               	if ($debugging) PerchUtil::debug('*Looking for: '.$perch_prefix.'_'.$subprefix.$i.'_'. ' '. ($in_repeater ? '(in repeater)':''));
+	                if ($debugging) PerchUtil::debug($new_postitems);
 
 	                while (PerchUtil::count($new_postitems)) {
 
@@ -198,7 +201,7 @@ class PerchContent_Util
 
 	                    list($result, $search_text) = self::read_items_from_post($Item, $item_tags, $subprefix.$i, $new_form_vars, $new_postitems, $Form, $search_text, $options, $Resources, true, $Template, $as_in_block);
 
-	                    //PerchUtil::debug($result, 'notice');
+	                    if ($debugging) PerchUtil::debug($result, 'notice');
 
 	                    if (strlen(self::multi_implode($result)) > 0) {
 	                        $form_vars[$Tag->id()][] = $result;
@@ -213,8 +216,8 @@ class PerchContent_Util
 
 	                    $new_postitems = $Form->find_items($perch_prefix.'_'.$subprefix.$i.'_');
 
-	                    //PerchUtil::debug('Looking for: '.$perch_prefix.$subprefix.'_'.$i.'_');
-	                    //PerchUtil::debug($new_postitems);
+	                    if ($debugging) PerchUtil::debug('Looking for: '.$perch_prefix.$subprefix.'_'.$i.'_');
+	                    if ($debugging) PerchUtil::debug($new_postitems);
 
 
 	                    //if (!PerchUtil::count($new_postitems)) {
@@ -247,7 +250,7 @@ class PerchContent_Util
 	                    $field_prefix = $perch_prefix.'_'.$Tag->id();
 	                }
 
-	                //PerchUtil::debug('Form looking for field prefix: '.$field_prefix);
+	                if ($debugging) PerchUtil::debug('Form looking for field prefix: '.$field_prefix);
 
 	                if ($in_repeater) {
 	                    $Tag->set('in_repeater', true);
@@ -278,9 +281,9 @@ class PerchContent_Util
 
 	                $var  = $FieldType->get_raw($postitems, $Item);
 	                if ($Tag->searchable(true)) {
-	                	//PerchUtil::debug('Getting search text for: '.$Tag->id().' ('.$Tag->type().')');
+	                	if ($debugging) PerchUtil::debug('Getting search text for: '.$Tag->id().' ('.$Tag->type().')');
 	                	$search_text    .= $FieldType->get_search_text($var).' ';
-	                	//PerchUtil::debug($FieldType->get_search_text($var));
+	                	if ($debugging) PerchUtil::debug($FieldType->get_search_text($var));
 	                }
 
 

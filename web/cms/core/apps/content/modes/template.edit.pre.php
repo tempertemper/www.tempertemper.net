@@ -78,7 +78,8 @@
                         $PageRoute = $PageRoutes->create(array(
                             'templateID'=>$Template->id(),
                             'templatePath' => $Template->templatePath(),
-                            'routePattern' => $pattern
+                            'routePattern' => $pattern,
+                            'routeOrder'   => 99,
                             ));
                     }
                     

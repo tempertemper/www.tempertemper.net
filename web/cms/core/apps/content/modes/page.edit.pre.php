@@ -45,7 +45,7 @@
     
     if ($Form->posted() && $Form->validate()) {
         //$postvars = array('pageSubpagePath', 'pageHidden', 'pageAccessTags', 'pageAttributeTemplate');
-    	$postvars = array('pageHidden', 'pageAccessTags', 'pageAttributeTemplate');
+    	$postvars = array('pageSubpagePath', 'pageHidden', 'pageAccessTags', 'pageAttributeTemplate');
 
         if (PERCH_RUNWAY) {
             $postvars[] = 'templateID';

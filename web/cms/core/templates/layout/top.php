@@ -45,14 +45,16 @@
 ?>
 <script>
 	if (typeof(Perch) == 'undefined') {
-		Perch      = {};
-		Perch.UI   = {};
-		Perch.Apps = {};
+		Perch           = {};
+		Perch.UI        = {};
+		Perch.Apps      = {};
 	}
 	Perch.token   = '<?php $CSRFForm = new PerchForm('csrf'); echo $CSRFForm->get_token(); ?>';
 	Perch.path    = '<?php echo PerchUtil::html(PERCH_LOGINPATH); ?>';
 	Perch.version = '<?php echo $Perch->version; ?>';
 	Perch.theme   = '<?php echo PerchUtil::html(rtrim($headerColour)); ?>';
+	Perch.Runway  = <?php echo (PERCH_RUNWAY ? 'true' : 'false'); ?>;
+	Perch.UI.enableKeyboardShortcuts = <?php echo ($Settings->get('keyboardShortcuts')->val() ? 'true' : 'false'); ?>;
 </script>
 <?php
     echo '<script src="'.PerchUtil::html(PERCH_LOGINPATH, true).'/core/assets/js/static/vendor.'.PERCH_ASSET_VERSION.'.js"></script>'."\n";

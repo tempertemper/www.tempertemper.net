@@ -10,7 +10,7 @@
                 ]
     ], $CurrentUser);
 
-
+    include('_upload_progress.php');
     include('_smart_bar.php');
 
     echo $HTML->open('div.inner.asset-app-listing');
@@ -22,12 +22,6 @@
             include('_asset_list.php');
         }else{
             include('_asset_grid.php');
-        }
-
-        if ($Paging->enabled()) {
-            echo '<div class="paging-cont">';
-            echo $HTML->paging($Paging);
-            echo '</div>';
         }
 
     }

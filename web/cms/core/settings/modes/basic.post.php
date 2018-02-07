@@ -20,9 +20,6 @@
 
     echo $Smartbar->render();
 
-
-    
-    //echo $HTML->heading2('Branding');
 ?>
     
     <form action="<?php echo PerchUtil::html($Form->action()); ?>" method="post" enctype="multipart/form-data" class="form-simple">
@@ -104,10 +101,24 @@
             </div>
         </div>
 
+        <div class="field-wrap checkbox-single <?php echo $Form->error('sidebar_back_link', false);?>">
+            <?php echo $Form->label('sidebar_back_link', 'Show dedicated back link in sidebar'); ?>
+            <div class="form-entry">
+            <?php echo $Form->checkbox('sidebar_back_link', '1', $Form->get($details, 'sidebar_back_link')); ?>
+            </div>
+        </div>
+
         <div class="field-wrap checkbox-single <?php echo $Form->error('hide_pwd_reset', false);?>">
             <?php echo $Form->label('hide_pwd_reset', 'Hide password reset'); ?>
             <div class="form-entry">
             <?php echo $Form->checkbox('hide_pwd_reset', '1', $Form->get($details, 'hide_pwd_reset')); ?>
+            </div>
+        </div>
+
+        <div class="field-wrap checkbox-single <?php echo $Form->error('keyboardShortcuts', false);?>">
+            <?php echo $Form->label('keyboardShortcuts', 'Enable keyboard shortcuts'); ?>
+            <div class="form-entry">
+            <?php echo $Form->checkbox('keyboardShortcuts', '1', $Form->get($details, 'keyboardShortcuts')); ?>
             </div>
         </div>
 

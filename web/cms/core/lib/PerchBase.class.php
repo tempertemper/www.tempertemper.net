@@ -117,7 +117,6 @@ class PerchBase
             }
         }
 
-
         return $out;
     }
 
@@ -175,6 +174,8 @@ class PerchBase
     {
         if (!$this->index_table) return;
 
+        PerchUtil::mb_fallback();
+
         $table = PERCH_DB_PREFIX.$this->index_table;
 
         // clear out old items
@@ -201,7 +202,7 @@ class PerchBase
         if (PerchUtil::count($fields)) {
             foreach($fields as $key=>$value) {
 
-                if (strpos($key, 'DynamicFields')!==false || substr($key, 0, 6)=='perch_' || strpos($key, 'JSON')!==false) {
+                if (strpos($key, 'DynamicFields')!==false || mb_substr($key, 0, 6)=='perch_' || mb_strpos($key, 'JSON')!==false) {
                     continue;
                 }
 
@@ -223,8 +224,8 @@ class PerchBase
                         $data = array();
                         $data['itemKey']    = $this->db->pdb($this->pk);
                         $data['itemID']     = ($this->pk_is_int ? (int) $this->id() : $this->db->pdb($this->id()));
-                        $data['indexKey']   = $this->db->pdb(substr($index_item['key'], 0, 64));
-                        $data['indexValue'] = $this->db->pdb(substr($index_item['value'], 0, 255));
+                        $data['indexKey']   = $this->db->pdb(mb_substr($index_item['key'], 0, 64));
+                        $data['indexValue'] = $this->db->pdb(mb_substr($index_item['value'], 0, 255));
 
                         $values[] = '('.implode(',', $data).')';
 

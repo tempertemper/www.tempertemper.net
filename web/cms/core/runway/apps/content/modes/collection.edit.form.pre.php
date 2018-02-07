@@ -158,9 +158,9 @@
             if (isset($_POST['save_as_draft'])) {
                 $Alert->set('success', PerchLang::get('Draft successfully updated'));
             }else{
-                PerchUtil::debug('Publishing');
-                $Item->publish();
-                PerchUtil::debug('Published');
+                if ($Collection->role_may_publish($CurrentUser)) {
+                    $Item->publish();
+                }
                 $Alert->set('success', PerchLang::get('Content successfully updated'));
             }
 
@@ -244,7 +244,7 @@
                 $preview_url = $search_url . '?' . PERCH_PREVIEW_ARG.'=all';
             }
 
-            $Alert->set('draft', PerchLang::get('You are editing a draft.') . ' <a href="'.PerchUtil::html($preview_url).'" class="action draft-preview">'.PerchLang::get('Preview').'</a>');
+            $Alert->set('draft', PerchLang::get('You are editing a draft.') . ' <a href="'.PerchUtil::html($preview_url).'" class="button button-small action-warning viewext">'.PerchLang::get('Preview').'</a>');
 
         }else{
             $Alert->set('draft', PerchLang::get('You are editing a draft.'));

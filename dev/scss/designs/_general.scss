@@ -4,6 +4,11 @@ body {
   padding-right: .5em;
 }
 
+html {
+  border-top: .1em solid $colour-primary;
+  border-bottom: .1em solid $colour-primary;
+}
+
 @media (min-width: $l) {
 
   [role="main"],

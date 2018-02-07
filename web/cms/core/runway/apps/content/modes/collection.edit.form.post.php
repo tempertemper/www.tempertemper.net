@@ -122,7 +122,7 @@ if (PERCH_RUNWAY) {
  
     if ($template_help_html) {
         echo '<h2 class="divider"><div>' . PerchLang::get('Help') .'</div></h2>';
-        echo '<div id="template-help">' . $template_help_html . '</div>';
+        echo '<div class="template-help">' . $template_help_html . '</div>';
     }
     
 ?>
@@ -172,7 +172,15 @@ if (PERCH_RUNWAY) {
             <?php
                 echo '<label class="save-as-draft" for="save_as_draft">'.PerchUtil::html(PerchLang::get('Save as draft')).'</label>';
                 echo '<div class="form-entry">';
-                echo '<input type="checkbox" name="save_as_draft" value="1" id="save_as_draft" '.($draft?'checked="checked"':'').'  />';
+
+                if ($Collection->role_may_publish($CurrentUser)) {
+                    echo '<input type="checkbox" name="save_as_draft" value="1" id="save_as_draft" '.($draft?'checked="checked"':'').'  />';
+                } else {
+                    echo '<input type="checkbox" name="save_as_draft" value="1" id="save_as_draft" checked disabled />';
+                }
+
+
+
                 echo '</div>';
             ?>
             </div>

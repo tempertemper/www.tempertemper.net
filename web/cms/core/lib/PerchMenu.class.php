@@ -13,9 +13,15 @@ class PerchMenu extends PerchFactory
 
 	public function get_menu($parentID = 0, $index = 0, $count = 1)
 	{
-		
+		/*
 		$sql = 'SELECT * FROM '.$this->table.' WHERE itemActive=1 AND itemType=\'menu\' AND parentID='.$this->db->pdb($parentID)
 				.' ORDER BY itemOrder ASC LIMIT '. $index . ', '. $count;
+		*/
+
+		$sql = 'SELECT mi.*, p.privKey FROM '.$this->table.' mi LEFT JOIN '.PERCH_DB_PREFIX.'user_privileges p  ON mi.privID=p.privID 
+				WHERE mi.itemActive=1 AND mi.parentID='.$this->db->pdb($parentID)
+				.' ORDER BY itemOrder ASC LIMIT '. $index . ', '. $count;
+
 
 		$rows= $this->db->get_rows($sql);
 
@@ -37,6 +43,13 @@ class PerchMenu extends PerchFactory
 	public function title()
 	{
 		return $this->details['itemTitle'];
+	}
+
+	public function is_permitted($CurrentUser)
+	{
+		if (is_null($this->details['privKey'])) return true;
+
+		return $CurrentUser->has_priv($this->details['privKey']);
 	}
 
 	public function get_items()
@@ -79,6 +92,8 @@ class PerchMenu extends PerchFactory
 	            				if (is_null($top_menu)) {
 	            					$top_menu = $this->db->get_value('SELECT itemID FROM '.$this->table.' WHERE parentID=0 AND itemActive=1 AND itemType="menu" ORDER BY itemOrder ASC LIMIT 1');
 	            				}
+
+
 	            				$this->create([
 										'parentID'     => $top_menu,
 										'itemType'     => 'app',
@@ -86,7 +101,7 @@ class PerchMenu extends PerchFactory
 										'itemTitle'    => $app_profile['label'],
 										'itemValue'    => $app,
 										'itemPersists' => 0,
-										'itemActive'   => 1,
+										'itemActive'   => ($app_profile['hidden'] ? 0 : 1),
 										'privID'       => null,
 										'userID'       => 0,
 										'itemInternal' => 0,

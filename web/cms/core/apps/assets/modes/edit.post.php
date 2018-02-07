@@ -22,7 +22,7 @@
 
     if ($Asset) {
         $links[] = [
-            'title' => $Asset->resourceTitle(),
+            'title' => $HTML->encode($Asset->resourceTitle()),
             'link'  => '/core/apps/assets/edit/?id='.$Asset->id(),
             'translate' => false,
         ];
@@ -87,7 +87,7 @@
             echo $Form->label('resourceBucket', 'Save in bucket');
             echo '<div class="form-entry">';
             $opts = array();
-            $buckets = $Assets->get_available_buckets();
+            $buckets = $Assets->get_available_buckets($CurrentUser, ['backup'], ['insert']);
             if (PerchUtil::count($buckets)) {
                 foreach ($buckets as $bucket) {
                     $opts[] = array('label' => ucfirst($bucket), 'value' => $bucket);
@@ -116,7 +116,7 @@
                     $edit_str = $Tags->get_for_asset_as_edit_string($Asset->id());
                 }
                 
-                echo $Form->text('tags', $Form->get(array('tags'=>$edit_str), 'tags'), '', false, 'input-simple m', 'data-tags="/core/apps/assets/async/tags.php"'); 
+                echo $Form->text('tags', $Form->get(array('tags'=>$edit_str), 'tags'), '', false, 'input-simple m', 'data-tags="/core/apps/assets/async/tags/"'); 
             ?>
             <?php echo $Form->hint(PerchLang::get('Complete each tag with a comma.')); ?>
             </div>

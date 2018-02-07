@@ -206,6 +206,7 @@ class PerchForm
 
 		//run validations
 		foreach($this->validate as $key => $value) {
+
 			if (isset($_POST[$key]) && !$_POST[$key]==''){
 				if (!$this->is_valid($key, $value)) {
 				 	$r	= false;

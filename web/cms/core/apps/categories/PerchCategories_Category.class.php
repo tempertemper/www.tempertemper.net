@@ -37,6 +37,10 @@ class PerchCategories_Category extends PerchAPI_Base
             $data['catOrder'] = $this->find_next_child_order($data['catParentID']);    
         }
 
+        if ($data['catParentID'] == 'null') {
+            $data['catParentID'] = '0';
+        }
+
         if (count($data)) $this->update($data);
     }
 

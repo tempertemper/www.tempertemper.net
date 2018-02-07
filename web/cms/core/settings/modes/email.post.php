@@ -11,7 +11,7 @@
     $Smartbar->add_item([
         'active' => true,
         'title' => 'Settings',
-        'link'  => '/core/setting/email/',
+        'link'  => '/core/settings/email/',
         'icon'  => 'core/mail',
     ]);
 

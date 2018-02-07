@@ -4,7 +4,10 @@
     $FieldTag->set('input_id', 'file');
 
     if (isset($_POST['bucket']) && !empty($_POST['bucket'])) {
-        $FieldTag->set('bucket', $_POST['bucket']);
+        $bucket = $_POST['bucket'];
+        if ($bucket == 'null') $bucket = null;
+        
+        $FieldTag->set('bucket', $bucket);
     }
 
     if (!$CurrentUser->has_priv('assets.create')) {

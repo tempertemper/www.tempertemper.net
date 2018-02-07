@@ -31,7 +31,7 @@ class PerchAssets_Display
 								'type'=>'checkbox',
 								));
 						*/
-						$s .= $Asset->resourceTitle();
+						$s .= $HTML->encode($Asset->resourceTitle());
 					$s .= PerchXMLTag::create('span', 'closing');
 				$s .= PerchXMLTag::create('div', 'closing');
 			$s .= PerchXMLTag::create('div', 'closing');

@@ -529,6 +529,10 @@ class PerchImage
     {
         if (!function_exists('exif_read_data')) return;
 
+        if (defined('PERCH_ENABLE_EXIF') && PERCH_ENABLE_EXIF == false) return;
+
+        if (exif_imagetype($file_path) != IMAGETYPE_JPEG) return;
+
         $exif = exif_read_data($file_path);
         if ($exif && is_array($exif) && isset($exif['Orientation'])) {
             $orientation = (int) $exif['Orientation'];
@@ -764,16 +768,16 @@ class PerchImage
 
         switch($setting) {
             case 0:  return $image; // no sharpening
-            case 1:  $amount=5; break;
-            case 2:  $amount=7; break;
-            case 3:  $amount=8; break;
-            case 4:  $amount=10; break;
-            case 5:  $amount=12; break;
-            case 6:  $amount=18; break;
-            case 7:  $amount=24; break;
-            case 8:  $amount=30; break;
-            case 9:  $amount=40; break;
-            case 10: $amount=60; break;
+            case 1:  $amount = 4; break;
+            case 2:  $amount = 5; break;
+            case 3:  $amount = 6; break;
+            case 4:  $amount = 8; break;
+            case 5:  $amount = 9; break;
+            case 6:  $amount = 14; break;
+            case 7:  $amount = 19; break;
+            case 8:  $amount = 24; break;
+            case 9:  $amount = 32; break;
+            case 10: $amount = 48; break;
         }
 
         /**

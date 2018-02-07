@@ -4,6 +4,7 @@
         'heading' => $Lang->get('Restoring a backup'),
     ], $CurrentUser);
 
+echo $message;
 
     $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
 
@@ -34,6 +35,8 @@
         ]);
 
     echo $Smartbar->render();
+
+
 
     // Output the edit form
     echo $Form->form_start();

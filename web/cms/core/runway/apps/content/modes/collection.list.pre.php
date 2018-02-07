@@ -9,3 +9,14 @@
 
 	$collections = $Collections->all($Paging);
 
+	if (PerchUtil::count($collections)) {
+		$tmp = [];
+
+		foreach($collections as $Collection) {
+			if ($Collection->role_may_edit($CurrentUser)) {
+				$tmp[] = $Collection;
+			}
+		}
+		$collections = $tmp;
+	}
+

@@ -1,7 +1,6 @@
-$(function() {
+jQuery(function() {
 
-
-	$.Redactor.prototype.perchassets = function()
+	jQuery.Redactor.prototype.perchassets = function()
 	{
 	    return {
 	        init: function ()
@@ -13,11 +12,13 @@ $(function() {
 	            var file_button = this.button.add('perchassets_file', 'File');
 	            this.button.setIcon(file_button, '<i class="re-icon-file"></i>');
 	            this.button.addCallback(file_button, this.perchassets.chooser);
+	            
 	        },
 	        chooser: function(buttonName)
 	        {
-	        	var textarea = this.core.textarea();
-	        	var asset_type = textarea.attr('data-type');
+				var this_redactor = this;
+				var textarea      = this_redactor.core.textarea();
+				var asset_type    = textarea.attr('data-type');
 	        	
 	        	if (!asset_type) {
 	        		asset_type = 'file';
@@ -32,44 +33,59 @@ $(function() {
 					type:     asset_type
 				};
 
-				var this_redactor = this;
-
 				Perch.UI.Assets.choose(opts, function(result){
 					this_redactor.insert.html(result.embed);
 				});      
+
 	        }
 	    };
 	};
 
-
 	var set_up_redactor = function() {
-		$('textarea.redactor:not([data-init])').each(function(i,o){
-			var self = $(o);
-			var uploadFields = {
-					'width'	 : 	self.attr('data-width')||'',
-					'height' : 	self.attr('data-height')||'',
-					'crop'	 : 	self.attr('data-crop')||'',
-					'quality': 	self.attr('data-quality')||'',
-					'sharpen': 	self.attr('data-sharpen')||'',
-					'density': 	self.attr('data-density')||'',
-					'bucket' : 	self.attr('data-bucket')||'default'
-
-				};
-			self.wrap('<div class="editor-wrap"></div>');
-			self.redactor({
-				//imageUpload: 'PERCH_LOGINPATH/addons/plugins/editors/redactor/perch/upload.php?filetype=image',
-				//fileUpload: 'PERCH_LOGINPATH/addons/plugins/editors/redactor/perch/upload.php',
-				//fileUploadFields: uploadFields,
-				//imageUploadFields: uploadFields,
-				plugins: ['perchassets']
+		
+		if (typeof Perch.UserConfig.redactor != 'undefined') {
+			Perch.UserConfig.redactor.load(function(){	
+				create_editors();
 			});
-			self.attr('data-init', true);
+		} else {
+			create_editors();
+		}
+	};
+
+	var create_editors = function() {
+
+		var config = {
+				plugins: ['perchassets']
+			};
+
+		jQuery('textarea.redactor:not([data-init])').each(function(i,o){
+			var self = $(o);
+
+			if (!self.parents('.spare').length) {
+
+				self.wrap('<div class="editor-wrap"></div>');	
+
+				if (typeof Perch.UserConfig.redactor != 'undefined') {
+					config = Perch.UserConfig.redactor.get(self.attr('data-editor-config'), config, self);
+					self.redactor(config);
+				} else {
+					self.redactor(config);	
+				}
+				
+				self.attr('data-init', true);
+			};
+			
 		});
+
 	};
 
 	set_up_redactor();
 
-	$(window).on('Perch_Init_Editors', function(){
+	jQuery(window).on('Perch_Init_Editors', function(){
+		set_up_redactor();
+	});
+
+	jQuery(window).on('Perch.FieldTypes.redraw', function(){
 		set_up_redactor();
 	});
 

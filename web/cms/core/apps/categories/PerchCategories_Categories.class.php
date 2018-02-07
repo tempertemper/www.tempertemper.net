@@ -10,7 +10,7 @@ class PerchCategories_Categories extends PerchFactory
 	
 	protected $default_sort_column  = 'catTreePosition';  
 
-	public $static_fields   = array('catTitle', 'catSlug');
+	public $static_fields   = array('catTitle', 'catSlug', 'setID', 'catID', 'catParentID', 'catPath', 'catDisplayPath', 'catOrder', 'catTreePosition', 'catDynamicFields');
 
 	private $from_ids_cache = array();
 
@@ -28,6 +28,22 @@ class PerchCategories_Categories extends PerchFactory
 			$Category->update_tree_position();	
 		}
 		return $Category;
+	}
+
+	public function find_or_create_from_data($data)
+	{
+		$sql = 'SELECT * FROM '.$this->table.'
+	            WHERE catSlug='.$this->db->pdb($data['catSlug']).'
+	            		AND setID='.$this->db->pdb((int)$data['setID']).'
+	            LIMIT 1'; 
+		        
+		$row   = $this->db->get_row($sql);	
+		$Cat   = $this->return_instance($row);
+
+
+		if (is_object($Cat)) return $Cat;
+
+		return $this->create($data);
 	}
 
 	public function find_or_create($catPath, $label=false)

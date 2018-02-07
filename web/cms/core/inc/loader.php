@@ -62,7 +62,7 @@
     if (!defined('PERCH_TIME_SHORT'))       define('PERCH_TIME_SHORT', '%H:%M');
     if (!defined('PERCH_TIME_LONG'))        define('PERCH_TIME_LONG', '%H:%M:%S');
     if (!defined('PERCH_RUNWAY_ROUTED'))    define('PERCH_RUNWAY_ROUTED', false);
-    if (!defined('PERCH_STRONG_PASSWORDS')) define('PERCH_STRONG_PASSWORDS', false);
+    if (!defined('PERCH_STRONG_PASSWORDS')) define('PERCH_STRONG_PASSWORDS', (defined('PERCH_PARANOID') ? PERCH_PARANOID : false));
 
     include(PERCH_CORE.'/assets/js/version.php');
     

@@ -1,5 +1,5 @@
 <?php
-    
+
     if ($Region->regionTemplate() != '') {
         $view_page_url = false;
 
@@ -8,6 +8,7 @@
             if ($Region->get_option('edit_mode')=='listdetail' && $Region->get_option('searchURL')!='') {
                 $search_url = $Region->get_option('searchURL');  
 
+                $details    = $Region->get_items_for_editing();
                 $Region->tmp_url_vars = $details[0];             
                 $search_url = preg_replace_callback('/{([A-Za-z0-9_\-]+)}/', array($Region, 'substitute_url_vars'), $search_url);
                 $Region->tmp_url_vars = false; 
@@ -310,7 +311,32 @@
             
             echo $Form->checkbox_set('edit_roles', 'May be edited by', $opts, $vals, $class='', $limit=false);
         
-        
+
+            if (PERCH_RUNWAY) {
+
+                $opts = [];
+                $opts[] = ['label'=>PerchLang::get('Everyone'), 'value'=>'*', 'class'=>'single'];
+                
+                $vals = explode(',', $Region->regionPublishRoles());
+
+                if (PerchUtil::count($roles)) {
+                    foreach($roles as $Role) {
+                        $tmp = ['label'=>$Role->roleTitle(), 'value'=>$Role->id()];
+
+                        if ($Role->roleMasterAdmin()) {
+                            $tmp['disabled'] = true;
+                            $vals[] = $Role->id();
+                        }
+
+                        $opts[] = $tmp;
+                    }
+                }
+                
+                echo $Form->checkbox_set('publish_roles', 'Drafts may be published by', $opts, $vals, $class='', $limit=false);
+
+
+            }        
+
         ?>
     
 <?php   if ($CurrentUser->has_priv('content.regions.templates')) { ?>
@@ -332,6 +358,23 @@
             <div class="form-entry">
             <?php         
                 echo $Form->text('regionKey', $Form->get(array('regionKey'=>$Region->regionKey()), 'regionKey', 0));
+                
+            ?>
+            </div>
+        </div>
+
+<?php
+        }
+
+
+        if ($CurrentUser->has_priv('content.regions.empty')){
+?>
+        <h2 class="divider notification notification-warning"><?php echo PerchLang::get('Warning'), ' - ', PerchLang::get('This option deletes all content from this region.'); ?></h2>
+        <div class="field-wrap">
+            <?php echo $Form->label('regionReset', 'Delete all content from this region immediately'); ?>
+            <div class="form-entry">
+            <?php         
+                echo $Form->checkbox('regionReset', 1, 0);
                 
             ?>
             </div>
