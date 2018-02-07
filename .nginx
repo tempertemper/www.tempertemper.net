@@ -1,0 +1,158 @@
+server {
+    listen 80;
+    server_name tempertemper.net www.tempertemper.net;
+    return 301 https://tempertemper.net$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name www.tempertemper.net;
+    ssl_certificate /etc/letsencrypt/live/tempertemper.net/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/tempertemper.net/privkey.pem;
+    return 301 https://tempertemper.net$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    root /srv/www/tempertemper.net/web;
+    index index.php index.html index.htm;
+    server_name tempertemper.net www.tempertemper.net;
+    ssl_certificate /etc/letsencrypt/live/tempertemper.net/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/tempertemper.net/privkey.pem;
+#    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+
+    access_log /srv/www/tempertemper.net/logs/access.log;
+    error_log /srv/www/tempertemper.net/logs/error.log error;
+
+    location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    location = / {
+        try_files $uri @runway;
+    }
+    location / {
+        try_files $uri $uri/ @runway;
+    }
+    location @runway {
+        rewrite ^ /cms/core/runway/start.php last;
+    }
+
+    # Blog to Resources redirects
+    rewrite ^/blog/why-you-need-a-privacy-policy /resources/why-you-need-a-privacy-policy permanent;
+    rewrite ^/blog/google-gets-serious-about-ssl /resources/google-gets-serious-about-ssl permanent;
+    rewrite ^/blog/ssl-for-everyone /resources/ssl-for-everyone permanent;
+    rewrite ^/blog/website-updates-and-avoiding-content-loss /resources/website-updates-and-avoiding-content-loss permanent;
+    rewrite ^/blog/types-of-email-and-when-to-use-each /resources/types-of-email-and-when-to-use-each permanent;
+    rewrite ^/blog/regular-backups-are-important /resources/regular-backups-are-important permanent;
+    rewrite ^/blog/edit-your-blog-posts-off-line /resources/edit-your-blog-posts-off-line permanent;
+    rewrite ^/blog/design-and-build-for-the-worst-case-scenario /resources/design-and-build-for-the-worst-case-scenario permanent;
+    rewrite ^/blog/look-after-your-domain-name /resources/look-after-your-domain-name permanent;
+    rewrite ^/blog/regular-website-maintenance /resources/regular-website-maintenance permanent;
+    rewrite ^/blog/website-video /resources/website-video permanent;
+    rewrite ^/blog/bookmark-icons /resources/bookmark-icons permanent;
+    rewrite ^/blog/giving-social-media-the-right-information /resources/giving-social-media-the-right-information permanent;
+    rewrite ^/blog/tidy-up-your-sites-addresses-for-search /resources/tidy-up-your-sites-addresses-for-search permanent;
+    rewrite ^/blog/mobile-friendly-markers /resources/mobile-friendly-markers permanent;
+    rewrite ^/blog/the-three-golden-rules-of-sending-marketing-emails /resources/the-three-golden-rules-of-sending-marketing-emails permanent;
+    rewrite ^/blog/displaying-an-email-address-on-your-website /resources/displaying-an-email-address-on-your-website permanent;
+    rewrite ^/blog/what-is-meta-data /resources/what-is-meta-data permanent;
+    rewrite ^/blog/webfonts /resources/webfonts permanent;
+    rewrite ^/blog/how-the-web-works /resources/how-the-web-works permanent;
+    rewrite ^/blog/what-is-ssl-and-is-it-worth-the-bother /resources/what-is-ssl-and-is-it-worth-the-bother permanent;
+    rewrite ^/blog/image-cropping /resources/image-cropping permanent;
+    rewrite ^/blog/why-i-changed-my-baseline /resources/why-i-changed-my-baseline permanent;
+    rewrite ^/blog/page-titles /resources/page-titles permanent;
+    rewrite ^/blog/the-great-unknown /resources/the-great-unknown permanent;
+    rewrite ^/blog/taking-a-break-without-neglecting-your-business /resources/taking-a-break-without-neglecting-your-business permanent;
+    rewrite ^/blog/are-you-living-in-the-past /resources/are-you-living-in-the-past permanent;
+    rewrite ^/blog/how-to-write-a-link-using-markdown /resources/how-to-write-a-link-using-markdown permanent;
+    rewrite ^/blog/how-to-write-a-link /resources/how-to-write-a-link permanent;
+    rewrite ^/blog/password-security /resources/password-security permanent;
+    rewrite ^/blog/how-headings-work /resources/how-headings-work permanent;
+    rewrite ^/blog/what-is-markdown /resources/what-is-markdown permanent;
+    rewrite ^/blog/markdown-cheatsheet /resources/markdown-cheatsheet permanent;
+    rewrite ^/blog/how-can-twitter-help-my-business /resources/how-can-twitter-help-my-business permanent;
+    rewrite ^/blog/ios-email-set-up /resources/ios-email-set-up permanent;
+    rewrite ^/blog/android-email-set-up /resources/android-email-set-up permanent;
+    rewrite ^/blog/contact-forms /resources/contact-forms permanent;
+    rewrite ^/blog/do-i-need-a-cms /resources/do-i-need-a-cms permanent;
+    rewrite ^/blog/should-you-go-responsive /resources/should-you-go-responsive permanent;
+    rewrite ^/blog/disability-on-the-web /resources/disability-on-the-web permanent;
+    rewrite ^/blog/calls-to-action /resources/calls-to-action permanent;
+    rewrite ^/blog/links-make-the-web-go-round /resources/links-make-the-web-go-round permanent;
+    rewrite ^/blog/making-the-most-of-your-blog-posts /resources/making-the-most-of-your-blog-posts permanent;
+    rewrite ^/blog/image-alt-text /resources/image-alt-text permanent;
+    rewrite ^/blog/little-by-little /resources/little-by-little permanent;
+    rewrite ^/blog/like-follow-no-thanks /resources/like-follow-no-thanks permanent;
+    rewrite ^/blog/google-places /resources/google-places permanent;
+    rewrite ^/blog/cms-updates /resources/cms-updates permanent;
+    rewrite ^/blog/page-descriptions /resources/page-descriptions permanent;
+    rewrite ^/blog/reduce-spam /resources/reduce-spam permanent;
+    rewrite ^/blog/domain-name-renewals /resources/domain-name-renewals permanent;
+    rewrite ^/blog/google-history-and-your-ranking /resources/google-history-and-your-ranking permanent;
+    rewrite ^/blog/facebook-business-pages /resources/facebook-business-pages permanent;
+    rewrite ^/blog/writing-your-website /resources/writing-your-website permanent;
+    rewrite ^/blog/older-browsers /resources/older-browsers permanent;
+    rewrite ^/blog/why-do-i-need-a-website /resources/why-do-i-need-a-website permanent;
+    rewrite ^/blog/branded-email /resources/branded-email permanent;
+    rewrite ^/blog/keywords /resources/keywords permanent;
+    rewrite ^/blog/do-i-need-a-mobile-website /resources/do-i-need-a-mobile-website permanent;
+    rewrite ^/blog/whats-in-a-browser /resources/whats-in-a-browser permanent;
+    rewrite ^/blog/why-should-i-blog /resources/why-should-i-blog permanent;
+    rewrite ^/blog/google-whats-the-fuss /resources/google-whats-the-fuss permanent;
+    rewrite ^/blog/qr-readers /resources/qr-readers permanent;
+    rewrite ^/blog/the-types-of-email /resources/the-types-of-email permanent;
+    rewrite ^/blog/google-analytics /resources/google-analytics permanent;
+    rewrite ^/blog/category/apps /blog/category/tools permanent;
+    rewrite ^/blog/category/design-and-build /resources/category/content permanent;
+    rewrite ^/blog/category/gathering-content /resources/category/content permanent;
+    rewrite ^/blog/category/ongoing-work /resources/category/updates permanent;
+    rewrite ^/blog/category/opinion /blog/ permanent;
+    rewrite ^/blog/category/planning /resources/category/admin permanent;
+    rewrite ^/blog/category/resources /resources/ permanent;
+    rewrite ^/blog/category/set-up /resources/category/admin permanent;
+    rewrite ^/blog/tag/accessibility /resources/category/accessibility permanent;
+    rewrite ^/blog/tag/backup /resources/category/updates permanent;
+    rewrite ^/blog/tag/backups /resources/category/updates permanent;
+    rewrite ^/blog/tag/browsers /resources/category/accessibility permanent;
+    rewrite ^/blog/tag/cms /resources/category/content permanent;
+    rewrite ^/blog/tag/content /resources/category/content permanent;
+    rewrite ^/blog/tag/core-concepts /resources/category/performance permanent;
+    rewrite ^/blog/tag/design /resources/category/performance permanent;
+    rewrite ^/blog/tag/engagement /resources/category/marketing permanent;
+    rewrite ^/blog/tag/focus /resources/category/content permanent;
+    rewrite ^/blog/tag/gadgets /resources/category/tools permanent;
+    rewrite ^/blog/tag/google /resources/category/search permanent;
+    rewrite ^/blog/tag/holidays /resources/category/business permanent;
+    rewrite ^/blog/tag/images /resources/category/content permanent;
+    rewrite ^/blog/tag/keeping-in-touch /resources/category/social-media permanent;
+    rewrite ^/blog/tag/maintenance /resources/category/updates permanent;
+    rewrite ^/blog/tag/markdown /resources/category/markdown permanent;
+    rewrite ^/blog/tag/marketing /resources/category/marketing permanent;
+    rewrite ^/blog/tag/measurement /resources/category/updates permanent;
+    rewrite ^/blog/tag/meta-data /resources/category/meta-data permanent;
+    rewrite ^/blog/tag/mobile-friendly /resources/category/search permanent;
+    rewrite ^/blog/tag/performance /resources/category/performance permanent;
+    rewrite ^/blog/tag/privacy /resources/category/search permanent;
+    rewrite ^/blog/tag/search /resources/category/search permanent;
+    rewrite ^/blog/tag/security /resources/category/security permanent;
+    rewrite ^/blog/tag/seo /resources/category/search permanent;
+    rewrite ^/blog/tag/social /resources/category/social-media permanent;
+    rewrite ^/blog/tag/social-media /resources/category/social-media permanent;
+    rewrite ^/blog/tag/speed /resources/category/performance permanent;
+    rewrite ^/blog/tag/twitter /resources/category/social-media permanent;
+    rewrite ^/blog/tag/video /resources/category/content permanent;
+    rewrite ^/blog/tag/work-life-balance /resources/category/business permanent;
+    rewrite ^/blog/tag/writing /resources/category/content permanent;
+
+    # Other rewites
+    rewrite ^/legal/ /privacy-policy permanent;
+    rewrite ^/legal/terms /terms permanent;
+    rewrite ^/legal/privacy-policy /privacy-policy permanent;
+}
+
