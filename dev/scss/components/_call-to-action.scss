@@ -13,7 +13,12 @@
     text-align: center;
   }
 
-  form div {
-    text-align: left;
+  form {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    div {
+      text-align: left;
+    }
   }
 }
