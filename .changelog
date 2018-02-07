@@ -1,0 +1,34 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html). Each change can include things under the following categories:
+
++ Adds
++ Changes
++ Removes
++ Fixes
+
+----------
+
+## [4.9.0] - 2018-02-07
+
+### Adds
++ New resources section, more or less mirroring the setup of Blog with:
+    + Resource index
+    + Resource page
+    + Resource categories
++ Introductory paragraph on blog index
++ Adds top and bottom borders to the page to brighten it up a wee bit
+
+### Changes
++ Updates to Perch 3.0.14
++ Makes blog call to action 'follow me on Twitter', rather than a mailing list subscribe form
++ Makes twitter svg reuseable
+
+### Fixes
++ Fixes blog navigation pagination
++ Sitemap.xml now works
++ Sorts out form width issue
+
+### Removes
++ Gets rid of PostCSS Stylelint (for time being)
+
