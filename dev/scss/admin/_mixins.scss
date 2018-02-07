@@ -146,7 +146,7 @@
   }
 }
 
-@mixin form {
+@mixin boxout {
   @include highlight-box;
   @include clearfix;
 
