@@ -64,11 +64,3 @@ nav {
     @include heading-xxs;
   }
 }
-
-.hfeed,
-.testimonial-list {
-
-  li:first-of-type h2 {
-    margin-top: 0;
-  }
-}

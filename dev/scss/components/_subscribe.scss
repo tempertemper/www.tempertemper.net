@@ -1,6 +1,5 @@
 .subscribe {
-  @include highlight-box;
-  @include clearfix;
+  @include boxout;
 
   @media (min-width: $m) {
 
@@ -15,7 +14,6 @@
   }
 
   @media (min-width: $l) {
-    @include bleed-x(1em);
 
     div {
       @include layout($wide-layout);
