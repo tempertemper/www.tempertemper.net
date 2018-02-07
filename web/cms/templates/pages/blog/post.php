@@ -2,24 +2,12 @@
   perch_blog_check_preview();
   perch_layout('blog/head');
   perch_layout('blog/post_header');
-?>
-
-<main role="main" class="entry-content">
-
-  <?php perch_blog_post(perch_get('s')); ?>
-
-</main>
-
-<div role="complementary">
-
-  <?php perch_layout('blog/post_details'); ?>
-  <section>
-    <?php perch_content('Subscribe'); ?>
-  </section>
-
-</div>
-
-<?php
+  echo '<main role="main" class="entry-content">';
+  perch_blog_post(perch_get('s'));
+  echo '</main>';
+  echo '<div role="complementary">';
+  perch_layout('blog/post_details');
+  perch_content('Follow');
+  echo '</div>';
   perch_layout('footer');
   perch_layout('end');
-?>
