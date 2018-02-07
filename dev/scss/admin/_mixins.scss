@@ -145,3 +145,17 @@
     width: span(6 of 4);
   }
 }
+
+@mixin form {
+  @include highlight-box;
+  @include clearfix;
+
+  @media (min-width: $l) {
+    @include layout($wide-layout);
+    $spacing: gutter();
+    margin-left: -$spacing;
+    padding-left: $spacing;
+    padding-right: $spacing;
+    width: 100%+$spacing+$spacing;
+  }
+}
