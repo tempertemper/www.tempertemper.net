@@ -3,11 +3,15 @@
 class PerchResourceBucket
 {
 	protected $name;
+	protected $label;
 	protected $type;
+	protected $role;
 	protected $web_path;
 	protected $file_path;
 
 	protected $error;
+
+	protected $allow_non_uploads = false;
 
 	public function __construct($details)
 	{
@@ -17,6 +21,16 @@ class PerchResourceBucket
 		$this->type      = $details['type'];
 		$this->web_path  = $details['web_path'];
 		$this->file_path = $details['file_path'];
+
+		if (isset($details['label'])) {
+			$this->label = $details['label'];
+		} else {
+			$this->label = ucwords($this->name);
+		}
+
+		if (isset($details['role'])) {
+			$this->role = $details['role'];
+		}
 	}
 
 	public function to_array()
@@ -35,9 +49,19 @@ class PerchResourceBucket
 		return $this->name;
 	}
 
+	public function get_label()
+	{
+		return $this->label;
+	}
+
 	public function get_type()
 	{
 		return $this->type;
+	}
+
+	public function get_role()
+	{
+		return $this->role;
 	}
 
 	public function get_web_path()
@@ -94,8 +118,14 @@ class PerchResourceBucket
 		    $target     = PerchUtil::file_path($this->file_path.'/'.$filename);
 
 		}
+
+		if ($this->allow_non_uploads) {
+			copy($file, $target);
+			PerchUtil::set_file_permissions($target);
+		} else {
+			PerchUtil::move_uploaded_file($file, $target);	
+		}
 		
-		PerchUtil::move_uploaded_file($file, $target);
 
 		return array(
 				'name' => $filename,
@@ -135,6 +165,11 @@ class PerchResourceBucket
 			PerchUtil::debug($e->getMessage(), 'error');
 		}
 		return $a;
+	}
+
+	public function enable_non_uploaded_files()
+	{
+		$this->allow_non_uploads = true;
 	}
 
 }

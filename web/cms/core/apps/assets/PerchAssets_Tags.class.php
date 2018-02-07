@@ -105,6 +105,24 @@ class PerchAssets_Tags extends PerchFactory
 		return $ids;
 	}
 	
+
+	public function get_top($count) 
+	{
+
+		$sql = 'SELECT t.tagTitle, t.tagSlug, t.tagCount
+            FROM '.PERCH_DB_PREFIX.'resource_tags t
+            WHERE tagCount > 0
+            GROUP BY t.tagID
+            ORDER BY t.tagCount DESC
+            LIMIT '.(int)$count;	
+		
+		$rows   = $this->db->get_rows($sql);
+
+    	$r = $this->return_instances($rows);
+    	    
+    	return $r;
+	}
+
 	/**
 	 * 
 	 * retrieves all tags used by assets along with a count of number of posts for each tag.

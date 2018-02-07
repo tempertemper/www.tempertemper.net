@@ -2,9 +2,9 @@
 
 class PerchCollectionImporter
 {
-	private $Template = null;
-	private $Form = null;
-	private $Collection = null;
+	private $Template      = null;
+	private $Form          = null;
+	private $Collection    = null;
 	private $template_tags = null;
 
 	public function set_template(PerchAPI_Template $Template)
@@ -72,6 +72,8 @@ class PerchCollectionImporter
 
 			$Item = $Collection->add_new_item();
 
+			if (!$Item) return false;
+
 			// Set the ID
 			$content_vars['_id'] 	= $Item->itemID();
 
@@ -93,6 +95,8 @@ class PerchCollectionImporter
             // Update the page modified date
             $Collection->update(array('collectionUpdated'=>date('Y-m-d H:i:s')));
             $Perch->event('collection.publish', $Collection);
+
+            return $content_vars['_id'];
 		}
 
 	}

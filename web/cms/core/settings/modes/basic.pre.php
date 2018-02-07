@@ -17,8 +17,8 @@
 
 
     if ($Form->posted() && $Form->validate()) {
-    	$postvars = array('headerColour', 'headerScheme', 'lang', 'hideBranding', 'helpURL', 'siteURL', 'dashboard', 'hide_pwd_reset');
-    	$checkboxes = array('hideBranding', 'dashboard', 'hide_pwd_reset');
+    	$postvars = array('headerColour', 'headerScheme', 'lang', 'hideBranding', 'helpURL', 'siteURL', 'dashboard', 'sidebar_back_link', 'hide_pwd_reset', 'keyboardShortcuts');
+    	$checkboxes = array('hideBranding', 'dashboard', 'sidebar_back_link', 'hide_pwd_reset', 'keyboardShortcuts');
 
         if (PERCH_RUNWAY) {
             $postvars[]   = 'siteOffline';

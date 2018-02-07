@@ -243,9 +243,28 @@
                     }
                 }
                 
-                
-                
                 echo $Form->checkbox_set('edit_roles', 'May be edited by', $opts, $vals, $class='', $limit=false);
+            
+
+                $opts = array();
+                $opts[] = array('label'=>PerchLang::get('Everyone'), 'value'=>'*', 'class'=>'single');
+                
+                $vals = explode(',', $Collection->collectionPublishRoles());
+
+                if (PerchUtil::count($roles)) {
+                    foreach($roles as $Role) {
+                        $tmp = array('label'=>$Role->roleTitle(), 'value'=>$Role->id());
+
+                        if ($Role->roleMasterAdmin()) {
+                            $tmp['disabled'] = true;
+                            $vals[] = $Role->id();
+                        }
+
+                        $opts[] = $tmp;
+                    }
+                }
+                
+                echo $Form->checkbox_set('publish_roles', 'Drafts may be published by', $opts, $vals, $class='', $limit=false);
             
             
             ?>
@@ -261,6 +280,25 @@
             <div class="form-entry">
             <?php         
                 echo $Form->grouped_select('collectionTemplate', $Regions->get_templates(false, true), $Form->get(array('collectionTemplate'=>$Collection->collectionTemplate()), 'collectionTemplate', 0));
+                
+            ?>
+            </div>
+        </div>
+
+<?php
+        }
+
+        if ($CurrentUser->has_priv('content.regions.empty')){
+?>
+        <?php 
+            $Alert->set('warning', PerchLang::get('This option deletes all content from this collection.'));
+            echo $Alert->output();
+        ?>
+        <div class="field-wrap">
+            <?php echo $Form->label('collectionReset', 'Delete all content from this collection immediately'); ?>
+            <div class="form-entry">
+            <?php         
+                echo $Form->checkbox('collectionReset', 1, 0);
                 
             ?>
             </div>

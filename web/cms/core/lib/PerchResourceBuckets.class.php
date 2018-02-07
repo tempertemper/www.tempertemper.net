@@ -60,6 +60,42 @@ class PerchResourceBuckets
 		return $out;
 	}
 
+	public static function get_all_unfiltered($Role)
+	{
+		$out   = [];
+		$found = [$Role->roleSlug()];
+
+		if (self::$bucket_list===false) {
+			self::load_bucket_list();
+		}
+		                         
+		if (PerchUtil::count(self::$bucket_list)) {
+			foreach(self::$bucket_list as $name=>$bucket) {
+				if (!in_array($name, $found)) {
+					$bucket['name'] = $name;
+					$found[] = $name;
+					$out[] = self::factory($bucket);
+				}
+			}
+		} 
+
+		$sql = 'SELECT DISTINCT resourceBucket FROM '.PERCH_DB_PREFIX.'resources WHERE resourceAWOL=0 AND resourceType !=""';
+    	$DB = PerchDB::fetch();
+    	$result = $DB->get_rows_flat($sql);
+        if (is_array($result)) {
+
+        	$Perch = Perch::fetch();
+
+        	foreach($result as $name) {
+        		if (!in_array($name, $found)) {
+					$out[] = self::factory($Perch->get_resource_bucket($name));
+        		}
+        	}
+        }
+
+		return $out;
+	}
+
 	public static function load_bucket_list()
 	{
 		$bucket_list_file = PerchUtil::file_path(PERCH_PATH.'/config/buckets.php');

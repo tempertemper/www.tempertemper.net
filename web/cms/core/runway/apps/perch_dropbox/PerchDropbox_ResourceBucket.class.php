@@ -1,8 +1,8 @@
 <?php
-require_once(__DIR__.'/lib/Dropbox/autoload.php');
+require_once(__DIR__.'/vendor/autoload.php');
 require_once(__DIR__.'/DropboxStream.class.php');
 
-use \Dropbox as dbx;
+use Kunnu\Dropbox\DropboxApp;
 
 
 class PerchDropbox_ResourceBucket extends PerchResourceBucket

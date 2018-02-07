@@ -30,7 +30,7 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php echo PerchUtil::html($page_title);	?></title>
-	<meta name="viewport" content="width=540" />
+	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH, true); ?>/core/assets/css/styles.css?v=<?php echo PerchUtil::html($Perch->version, true); ?>">
 	<!--[if IE]><link rel="stylesheet" href="<?php echo PerchUtil::html(PERCH_LOGINPATH, true); ?>/core/assets/css/ie9.css"><![endif]-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

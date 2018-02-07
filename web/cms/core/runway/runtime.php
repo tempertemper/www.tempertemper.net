@@ -8,6 +8,7 @@
 
 		$extras = [
 			'PerchCollectionImporter',
+			'PerchCategoryImporter',
 		];
 
 		if (in_array($class_name, $extras)) {

@@ -49,7 +49,6 @@
         $menu_html = '';
 
         foreach($menus as $UtilMenu) {
-
             $menu_html .= PerchUI::render_menu($CurrentUser, $UtilMenu, 2);
             if (!PERCH_RUNWAY) break;
         }

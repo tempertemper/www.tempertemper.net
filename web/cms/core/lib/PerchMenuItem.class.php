@@ -24,8 +24,16 @@ class PerchMenuItem extends PerchBase
         }
     }
 
-    public function is_permitted($CurrentUser)
+    public function is_permitted($CurrentUser, $apps)
     {
+
+        if ($this->details['itemType'] == 'app' && !is_numeric($this->details['itemValue'])) {
+            if (!in_array($this->details['itemValue'], $apps)) {
+                return false;
+            }
+        } 
+
+
         if (!$this->privID()) {
             return true;
         }

@@ -59,6 +59,9 @@ class PerchRepeater
 
 							if (PerchUtil::count($field_index)) {
 								foreach($field_index as $field_index_item) {
+
+									// don't deep index
+									if (strpos($field_index_item['key'], '.')) continue;
 									
 									if ($key == $field_index_item['key']) {
 										$indexing_key = $this->id().'.'.$key;

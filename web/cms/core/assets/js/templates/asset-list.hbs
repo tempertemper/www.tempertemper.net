@@ -11,7 +11,7 @@
         </thead>
         <tbody>
 {{#each assets}}
-            <tr class="asset-{{type}} asset-selectable" data-id="{{id}}">
+            <tr class="asset-{{type}} asset-selectable" data-id="{{id}}" data-bucket="{{bucket}}">
                 <td>{{ icon iicon 16 }} <a class=" list-asset-title primary" href="#" data-id="{{id}}">{{title}}</a></td>
                 <td>{{ mime_display }}</td>
                 <td>{{#if width }}{{width}} × {{height}}{{else}} - {{/if}}</td>

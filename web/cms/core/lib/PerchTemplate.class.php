@@ -103,17 +103,14 @@ class PerchTemplate
 					$item['perch_item_odd']            = ($i % 2 == 0 ? '' : 'odd');
 					$item['perch_item_count']          = $count;
 
+					if (isset($item['paging'])) {
+						$item = $this->_assign_paging_values($item, $i);
+					}
+
     				$r[] = $this->render($item, $i+1);
 
     				$this->_previous_item = $item;
 
-    				/*
-    				PerchUtil::debug('Resetting blocks');
-    				foreach($this->blocks as $key=>$val) {
-    					PerchUtil::debug($key.':', 'success');
-    					PerchUtil::debug($val, 'notice', true);
-    				}
-    				*/
     				$this->blocks = array();
     			}
 			}
@@ -150,7 +147,6 @@ class PerchTemplate
 		}
 
 		$template	= str_replace(PERCH_PATH, '', $this->template);
-		$path		= $this->file;
 
 		$contents	= $this->load();
 
@@ -897,7 +893,7 @@ class PerchTemplate
 	    	    $out = '';
 	    		if ($count > 0) {
 	    			foreach($matches as $match) {
-	    				if (substr($match[1], -5) !== '.html') {
+	    				if (PerchUtil::file_extension($match[1])===false) {
 	    					$match[1].= '.html';
 	    				}
 
@@ -1859,6 +1855,24 @@ class PerchTemplate
     	}
 
     	return [$value, $field_is_markup];
+    }
+
+    private function _assign_paging_values($item, $index)
+    {
+		$page     = (int)$item['current_page'];
+		$per_page = (int)$item['per_page'];
+
+		$item['perch_index_in_set']      = (($page-1) * $per_page) + $index+1;
+		$item['perch_zero_index_in_set'] = $item['perch_index_in_set']-1;
+		
+		if ($item['perch_index_in_set'] == 1) {
+			$item['perch_first_in_set'] = true;
+		}
+
+		if ($item['perch_index_in_set'] == (int)$item['total']) {
+			$item['perch_last_in_set'] = true;	
+		}
+    	return $item;
     }
 
 }

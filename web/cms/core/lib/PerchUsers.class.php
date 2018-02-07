@@ -21,7 +21,7 @@ class PerchUsers extends PerchFactory
 	            $str = PERCH_AUTH_PLUGIN.'_auth_plugin';
 
 	            if (!class_exists($str)) {
-                    require PerchUtil::file_path(PERCH_PATH.'/addons/plugins/auth/'.PERCH_DB_PREFIX.'/auth.php');
+                    require PerchUtil::file_path(PERCH_PATH.'/addons/plugins/auth/'.PERCH_AUTH_PLUGIN.'/auth.php');
 	            }
 
 	            $AuthenticatedUser = new $str(array());

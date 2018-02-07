@@ -180,8 +180,10 @@
             if (isset($_POST['save_as_draft'])) {
                 $Alert->set('success', PerchLang::get('Draft successfully updated'));
             }else{
-                $Region->publish();
-                $Alert->set('success', PerchLang::get('Content successfully updated'));
+                if ($Region->role_may_publish($CurrentUser)) {
+                    $Region->publish();
+                }
+                $Alert->set('success', PerchLang::get('Content successfully updated'));    
             }
 
 

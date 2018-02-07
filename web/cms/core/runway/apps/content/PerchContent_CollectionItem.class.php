@@ -70,8 +70,14 @@ class PerchContent_CollectionItem extends PerchBase
         $Users          = new PerchUsers;
         $CurrentUser    = $Users->get_current_user();
 
+        if ($CurrentUser) {
+            $userID = $CurrentUser->id();
+        } else {
+            $userID = 0;
+        }
+
         $sql = 'INSERT INTO '.$this->table.' (itemID, collectionID, itemRev, itemJSON, itemSearch, itemUpdatedBy)
-                    SELECT itemID, collectionID, '.$this->db->pdb((int)$new_rev).' AS itemRev, itemJSON, itemSearch, '.$this->db->pdb($CurrentUser->id()).' AS itemUpdatedBy
+                    SELECT itemID, collectionID, '.$this->db->pdb((int)$new_rev).' AS itemRev, itemJSON, itemSearch, '.$this->db->pdb($userID).' AS itemUpdatedBy
                     FROM '.$this->table.'
                     WHERE collectionID='.$this->db->pdb((int)$this->collectionID()).' AND itemID='.$this->db->pdb((int)$this->itemID()).' AND itemRev='.$this->db->pdb((int)$old_rev).'
                     ';

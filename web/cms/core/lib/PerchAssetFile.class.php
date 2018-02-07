@@ -80,7 +80,7 @@ class PerchAssetFile
             if ($this->_mimetype_is_in_accepted_types($mime_type, $accept_types, $filetypes)) {
 
             	// check that file extension maps to a mime type that is accepted.
-            	$extension = PerchUtil::file_extension($this->details['file_name']);
+            	$extension = strtolower(PerchUtil::file_extension($this->details['file_name']));
 
             	$mimetypes = $this->_parse_mimetypes_file($extension);
 

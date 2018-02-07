@@ -253,7 +253,7 @@ class PerchAPI_Form extends PerchForm
 
     public function checkbox_field($id, $label, $checked_value='1', $value='', $class='', $limit=false)
     {
-        $out = $this->field_start($id);
+        $out  = $this->field_start($id, 'checkbox-single');
         $out .= $this->label($id, $this->Lang->get($label), '', $colon=false, $translate=false);
         $out .= '<div class="form-entry">';
         $out .= $this->checkbox($id, $checked_value, $this->get_value($id, $value), $class, $limit);
@@ -316,6 +316,88 @@ class PerchAPI_Form extends PerchForm
         return $out;
     }
 
+    public function checkbox_table($options, $values=array())
+    { 
+        $out = '';
+        $out .= '<div class="form-inner">';
+        $out .= '<table>';
+        $out .= '<thead>';
+        $out .= '<tr>';
+            $out .= '<th></th>';
+            foreach($options as $opt_row) {
+                foreach($opt_row['opts'] as $opt) {
+                    $out .= '<th>'.PerchUtil::html($opt['label']).'</th>';
+                }
+                break;
+            }
+        $out .= '</tr>';
+
+        $out .= '</thead>';
+
+        $out .= '<tbody>';
+
+        foreach($options as $opt_row) {
+
+            $row_values = [];
+            if (isset($values[$opt_row['value_id']])) {
+                $row_values = $values[$opt_row['value_id']];
+            }
+
+            $out .= $this->checkbox_table_row($opt_row['id'], $opt_row['label'], $opt_row['opts'], $row_values);
+        }
+
+        $out .= '</tbody>';
+        $out .= '</table>';
+        $out .= '</div>';
+        return $out;
+    }
+
+    public function checkbox_table_row($id, $label, $options, $values=array())
+    {
+        $out = '';
+
+        if (empty($values)) $values = array();
+
+        $out .= '<tr>';
+        
+        
+        if ($label!==false) {
+            $out .= '<th>'.PerchUtil::html($label).'</th>';
+        }
+
+        $i = 0;
+
+
+        foreach($options as $option) {
+            $boxid = $id.'_'.$i;
+            $checked_value = false;
+            if (in_array($option['value'], $values)){
+                $checked_value = $option['value'];
+            }
+            if (PerchUtil::count($_POST)) {
+                $checked_value = false;
+                if (isset($_POST[$id]) && is_array($_POST[$id])) {
+                    if (in_array($option['value'], $_POST[$id])) {
+                        $checked_value = $option['value'];
+                    }
+                }
+            }
+
+            $out .= '<td data-label="'.PerchUtil::html($option['label'], true).'">';
+            $out .= $this->checkbox($boxid, $option['value'], $checked_value, '', $id, $option['disabled']);
+            $out .= '<div class="form-entry" hidden>';
+            $out .= $this->label($boxid, $option['label'], '', $colon=false, $translate=false);
+            $out .= '</div>';
+            $out .= '</td>';
+            $i++;
+        }
+
+
+        $out .= '</tr>';
+
+        return $out;
+    }
+
 
     public function submit_field($id='btnSubmit', $value="Save Changes", $cancel_url=false, $class='button', $misc_action=null)
     {
@@ -346,9 +428,9 @@ class PerchAPI_Form extends PerchForm
         return $out;
     }
 
-    public function field_start($id)
+    public function field_start($id, $class='')
     {
-        $r = '<div class="field-wrap '. $this->error($id, false). ($this->last ? ' last' : '').'">';
+        $r = '<div class="field-wrap '.$class. $this->error($id, false). ($this->last ? ' last' : '').'">';
         $this->last = false;
         return $r;
     }

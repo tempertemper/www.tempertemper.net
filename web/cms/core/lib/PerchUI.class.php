@@ -61,9 +61,16 @@ class PerchUI
 			}
 		}
 
-		//$s .= $HTML->wrap('div.sidebar-back a[href='.PERCH_LOGINPATH.']', PerchUI::icon('core/o-navigate-left', 12). ' ' . $main_nav_title);
+		$Settings = $API->get('Settings');
 
-		$title = $HTML->wrap('a[href='.PERCH_LOGINPATH.'].back', PerchUI::icon('core/o-navigate-left', 16)). ' '.$title;
+		if ($Settings->get('sidebar_back_link')->val()) {
+			$s .= $HTML->wrap('div.sidebar-back a[href='.PERCH_LOGINPATH.'].back', PerchUI::icon('core/o-navigate-left', 12). ' ' . $main_nav_title);	
+		} else {
+			$title = $HTML->wrap('a[href='.PERCH_LOGINPATH.'].back', PerchUI::icon('core/o-navigate-left', 16)). ' '.$title;	
+		}
+
+		
+
 		//$title = $HTML->wrap('a[href='.PERCH_LOGINPATH.'].back', PerchUI::icon('core/o-birdhouse', 20)). ' '.$title;
 
 		
@@ -80,6 +87,10 @@ class PerchUI
 		$API = new PerchAPI(1.0, 'core');
 		$HTML = $API->get('HTML');
 
+		if (!$Menu->is_permitted($CurrentUser)) {
+			return '';
+		}
+
 		$s = '';
 
 		$s .= PerchUI::render_menu_heading($HTML, $Menu->title(), $level);
@@ -87,10 +98,12 @@ class PerchUI
 		$item_html = '';
 
 		$items = $Menu->get_items();
+		$Perch = PerchAdmin::fetch();
+		$apps  = $Perch->get_app_ids();
 
 		if (PerchUtil::count($items)) {
 			foreach($items as $Item) {
-				if ($Item->is_permitted($CurrentUser)) {
+				if ($Item->is_permitted($CurrentUser, $apps)) {
 					$item_html .= PerchUI::render_menu_item($HTML, $Item);	
 				}
 			}

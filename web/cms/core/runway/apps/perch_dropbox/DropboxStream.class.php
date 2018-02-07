@@ -1,6 +1,7 @@
 <?php
 
-use \Dropbox as dbx;
+use Kunnu\Dropbox\DropboxApp;
+use Kunnu\Dropbox\Dropbox;
 
 class DropboxStream
 {
@@ -22,7 +23,9 @@ class DropboxStream
 	{
 		$dropbox_config    = PerchConfig::get('dropbox');
 		$Perch             = Perch::fetch();
-		$this->Client      = new dbx\Client($dropbox_config['access_token'], "Perch Runway/".$Perch->version);
+
+		$app 			   = new DropboxApp(null, null, $dropbox_config['access_token']);
+		$this->Client      = new Dropbox($app);
 				
 		$conf              = PerchConfig::get('env');
 		$this->temp_folder = $conf['temp_folder'];
@@ -39,20 +42,20 @@ class DropboxStream
 	{
 		$path   = $this->clean_path($path);
 		
-		$result = $this->Client->getMetadataWithChildren($path);
+		$listFolderContents = $this->Client->listFolder($path);
 
-		if (is_array($result) && $result['is_dir']==true) {
-			$this->current_folder = $result['contents'];
-			return true;	
+		if (is_object($listFolderContents)) {
+			$this->current_folder = $listFolderContents->getItems();
+			return true;
 		}
-
+		
 		return false;
 	}
 
 	public function dir_readdir() 
 	{
 		if (isset($this->current_folder[$this->current_folder_pos])) {
-			$file_path     = $this->current_folder[$this->current_folder_pos]['path'];
+			$file_path     = $this->current_folder[$this->current_folder_pos]->getPathLower();
 			$file_segments = explode('/', $file_path);
 			$this->current_folder_pos++;
 			return array_pop($file_segments);
@@ -120,25 +123,9 @@ class DropboxStream
 
 	public function stream_flush() 
 	{
-		switch($this->file_mode) {
-
-			case 'r':
-			case 'r+':
-				return false;
-				break;
-
-			case 'a':
-			case 'a+':
-				$mode = dbx\WriteMode::update();
-				break;
-
-			default:
-				$mode = dbx\WriteMode::force();
-		}
-
 		fseek($this->temp_file_resource, 0);
 
-		$this->Client->uploadFileChunked($this->file_path, $mode, $this->temp_file_resource, null, null);
+		$this->Client->simpleUpload($this->temp_file, $this->file_path);
 
 		return true;
 	}
@@ -165,7 +152,10 @@ class DropboxStream
 	{
 		if (!$this->file_open_for_reading) {
 			
-			$this->Client->getFile($this->file_path, $this->temp_file_resource);
+			$file = $this->Client->download($this->file_path);
+			if ($file) {
+				fwrite($this->temp_file_resource, $file->getContents());
+			}
 			
 			if (!is_resource($this->temp_file_resource)) {
 				$this->temp_file_resource = fopen($this->temp_file, 'r');
@@ -223,36 +213,43 @@ class DropboxStream
 
 	public function url_stat($path, $flags) 
 	{
-		$path     = $this->clean_path($path);
-		$metadata = $this->Client->getMetadata($path);
+		$path = $this->clean_path($path);
 		
-		if ($metadata) {
-			$d    = strtotime($metadata['modified']);
-			$mode = 0;
+		try {
+			$metadata = $this->Client->getMetadata($path);
 
-			if ($metadata['is_dir']==1) {
-				$mode = 040777;
+			if ($metadata) {
+
+				$d    = strtotime($metadata->getClientModified());
+				$mode = 0;
+
+				if ($metadata->getDataProperty('.tag')=='folder') {
+					$mode = 040777;
+				}
+
+				$out = [
+					'dev'     => 0,
+					'ino'     => 0,
+					'mode'    => $mode,
+					'nlink'   => 0,
+					'uid'     => 0,
+					'gid'     => 0,
+					'rdev'    => 0,
+					'size'    => (int) $metadata->getSize(),
+					'atime'   => $d,
+					'mtime'   => $d,
+					'ctime'   => $d,
+					'blksize' => 0,
+					'blocks'  => 0,
+				];
+
+				foreach($out as $val) $out[] = $val;
+				return $out;
 			}
-
-			$out = [
-				'dev'     => 0,
-				'ino'     => 0,
-				'mode'    => $mode,
-				'nlink'   => 0,
-				'uid'     => 0,
-				'gid'     => 0,
-				'rdev'    => 0,
-				'size'    => (int) $metadata['bytes'],
-				'atime'   => $d,
-				'mtime'   => $d,
-				'ctime'   => $d,
-				'blksize' => 0,
-				'blocks'  => 0,
-			];
-
-			foreach($out as $val) $out[] = $val;
-			return $out;
+		} catch (Exception $e) {
+			return false;	
 		}
+
 		return false;
 	}
 
@@ -265,7 +262,7 @@ class DropboxStream
 	{
 		//$s = "Calling method '$method' ". implode(', ', $args). "\n";
 		//file_put_contents(__DIR__.'/log.txt', $s, FILE_APPEND);
-		error_log("Dropbox stream wrapper does not yet implement method: $method");
+		//error_log("Dropbox stream wrapper does not yet implement method: $method");
 	}
 
 	private function get_temp_file()

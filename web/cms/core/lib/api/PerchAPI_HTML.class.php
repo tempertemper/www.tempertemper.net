@@ -243,6 +243,92 @@ class PerchAPI_HTML
 
     public function paging($Paging)
     {
+        $paging = $Paging->to_array([
+                'page-links' => true,
+                'page-link-template' => false,
+            ]);
+
+        if ($paging['total_pages'] < 2) return '';
+
+        $s  = '<nav class="pagination" role="navigation" aria-label="'.$this->Lang->get('Pagination').'">';
+
+        $s .= '<ul class="pagination-prev-group">';
+
+        $state = 'disabled';
+        if (isset($paging['not_first_page']) && $paging['not_first_page']) {
+            $state = '';
+        }
+
+        $s .= '<li class="pagination-first">
+                    <a '.$state.' href="'.$paging['first_page_url'].'" title="'.$this->Lang->get('First page').'" aria-label="'.$this->Lang->get('First page').'" class="button button-icon icon-left '.$state.'">
+                    <div>'.PerchUI::icon('core/o-navigate-double-left', 8).'<span>'.$this->Lang->get('First').'</span>
+                    </div></a>
+                </li>';
+
+
+        $s .= '<li class="pagination-prev">
+                    <a '.$state.' href="'.$paging['prev_url'].'" rel="prev" title="'.$this->Lang->get('Previous page').'" aria-label="'.$this->Lang->get('Previous page').'" class="button button-icon icon-left '.$state.'">
+                    <div>'.PerchUI::icon('core/o-navigate-left', 8).'<span>'.$this->Lang->get('Prev').'</span></div></a>
+                </li>';
+
+        $s .= '</ul>';
+        
+
+        $page_links = $paging['page_links'];
+
+        if (PerchUtil::count($page_links)) {
+
+            $s .= '<ul class="pagination-numbers">';
+
+            foreach($page_links as $page) {
+                $url = $page['url'];
+                $num = $page['page_number'];
+                $class = (isset($page['selected']) ? 'pagination-number pagination-current' : 'pagination-number ');
+                $title = $this->Lang->get('Page %d', $num);
+                $aria_label = false;
+
+                if (isset($page['selected'])) {
+                    $title = $this->Lang->get('Page %d, current page', $num);
+                    $aria_label = $this->Lang->get('%d, current page', $num);
+                }
+                
+                $s .= '<li class="'.$class.'">
+                        <a href="'.$url.'" title="'.$title.'" aria-label="'.$aria_label.'" class="button button-simple">'.$num.'</a>
+                        </li>';
+            }
+
+            $s .= '</ul>';
+
+        }
+
+
+        $s .= '<ul class="pagination-next-group">';
+
+        $state = 'disabled';
+        if (isset($paging['not_last_page']) && $paging['not_last_page']) {
+            $state = '';
+        }
+
+        $s .= '<li class="pagination-next">
+                    <a '.$state.' href="'.$paging['next_url'].'" rel="next" title="'.$this->Lang->get('Next page').'" aria-label="'.$this->Lang->get('Next page').'" class="button button-icon icon-right '.$state.'">
+                    <div>'.PerchUI::icon('core/o-navigate-right', 8).'<span>'.$this->Lang->get('Next').'</span></div></a>
+                </li>';
+
+        $s .= '<li class="pagination-last">
+                    <a '.$state.' href="'.$paging['last_page_url'].'" title="'.$this->Lang->get('Last page').'" aria-label="'.$this->Lang->get('Last page').'" class="button button-icon icon-right '.$state.'">
+                    <div>'.PerchUI::icon('core/o-navigate-double-right', 8).'<span>'.$this->Lang->get('Last').'</span></div></a>
+                </li>';
+
+        $s .= '</ul>';
+
+        
+        $s .= '</nav>';
+
+        return $s;
+    }
+
+    public function old_paging($Paging)
+    {
         $paging = $Paging->to_array();
 
         if ((int)$paging['total_pages']<2) return '';

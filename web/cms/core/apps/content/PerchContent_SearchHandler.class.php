@@ -30,8 +30,18 @@ class PerchContent_SearchHandler implements PerchAPI_SearchHandler
                 FROM '.PERCH_DB_PREFIX.'content_regions r, '.PERCH_DB_PREFIX.'content_items ci, '.PERCH_DB_PREFIX.'pages p
                 WHERE r.regionID=ci.regionID AND r.regionRev=ci.itemRev AND r.pageID=p.pageID AND r.regionPage!=\'*\' AND r.regionSearchable=1 
                     AND (MATCH(ci.itemSearch) AGAINST('.$db->pdb($key).') OR MATCH(ci.itemSearch) AGAINST('.$db->pdb($encoded_key).') )
-                    AND r.regionPage LIKE '.$db->pdb($opts['from-path'].'%').' 
-                    ';
+                    AND (';
+
+            if (is_array($opts['from-path']) && PerchUtil::count($opts['from-path'])) {
+                $pathopts = [];
+                foreach($opts['from-path'] as $frompath) {
+                    $pathopts[] = 'r.regionPage LIKE '.$db->pdb($frompath.'%');
+                }
+                $sql .= implode(' OR ', $pathopts);
+            } else {
+                $sql .= 'r.regionPage LIKE '.$db->pdb($opts['from-path'].'%');
+            }
+            $sql .= ') ';
 
         return $sql;
 
@@ -48,7 +58,19 @@ class PerchContent_SearchHandler implements PerchAPI_SearchHandler
                 FROM '.PERCH_DB_PREFIX.'content_regions r, '.PERCH_DB_PREFIX.'content_items ci, '.PERCH_DB_PREFIX.'pages p
                 WHERE r.regionID=ci.regionID AND r.regionRev=ci.itemRev AND r.pageID=p.pageID AND r.regionPage!=\'*\' AND r.regionSearchable=1 
                     AND ci.itemSearch REGEXP '.$db->pdb('[[:<:]]'.$key.'[[:>:]]').' 
-                    AND r.regionPage LIKE '.$db->pdb($opts['from-path'].'%').' ';
+                    AND (';
+
+
+            if (is_array($opts['from-path']) && PerchUtil::count($opts['from-path'])) {
+                $pathopts = [];
+                foreach($opts['from-path'] as $frompath) {
+                    $pathopts[] = 'r.regionPage LIKE '.$db->pdb($frompath.'%');
+                }
+                $sql .= implode(' OR ', $pathopts);
+            } else {
+                $sql .= 'r.regionPage LIKE '.$db->pdb($opts['from-path'].'%');
+            }
+            $sql .= ') ';
 
         return $sql;
     }

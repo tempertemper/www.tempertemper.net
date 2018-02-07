@@ -1054,7 +1054,13 @@ class PerchContent extends PerchApp
                 $data['regionSearchable'] = 0;
             }
 
-            if ($opts['roles']) $data['regionEditRoles'] = $opts['roles'];
+            if ($opts['roles']) {
+                $data['regionEditRoles'] = $opts['roles'];
+
+                if (PERCH_RUNWAY) {
+                    $data['regionPublishRoles'] = $opts['roles'];                    
+                }
+            }
 
             $regionOptions = [];
 

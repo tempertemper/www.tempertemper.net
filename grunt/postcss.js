@@ -11,12 +11,12 @@ module.exports = {
     src: 'web/cms/addons/feathers/tempertemper/css/style.css'
   },
   lint: {
-    options: {
-      processors: [
-        require('stylelint')({ /* your options */ }),
-        require('postcss-reporter')({ clearMessages: true })
-      ]
-    },
+    // options: {
+    //   processors: [
+    //     require('stylelint')({ // your options  }),
+    //     require('postcss-reporter')({ clearMessages: true })
+    //   ]
+    // },
     src: [
       'dev/scss/**/*.scss',
       '!dev/scss/legacy/_ie.scss',

@@ -39,6 +39,8 @@ class PerchAdmin extends Perch
         if (!defined('PERCH_VERIFY_UPLOADS'))        define('PERCH_VERIFY_UPLOADS', PERCH_PARANOID);
         if (!defined('PERCH_TRANSLATION_ASSIST'))    define('PERCH_TRANSLATION_ASSIST', false);
         if (!defined('PERCH_PRIV_ASSIST'))           define('PERCH_PRIV_ASSIST', false);
+        if (!defined('PERCH_CUSTOM_EDITOR_CONFIGS')) define('PERCH_CUSTOM_EDITOR_CONFIGS', false);
+        if (!defined('PERCH_ENABLE_EXIF'))           define('PERCH_ENABLE_EXIF', true);
         
     }
 
@@ -65,6 +67,18 @@ class PerchAdmin extends Perch
             }
         }
         return false;
+    }
+
+    public function get_app_ids()
+    {
+        $apps = $this->get_apps();
+        $ids  = [];
+        if (PerchUtil::count($apps)) {
+            foreach($apps as $app) {
+                $ids[] = $app['id'];
+            }
+        }
+        return $ids;
     }
 
     public function app_name($app_id)
@@ -213,7 +227,6 @@ class PerchAdmin extends Perch
     {
         return $this->head_content;
     }
-
 
     public function add_foot_content($str)
     {

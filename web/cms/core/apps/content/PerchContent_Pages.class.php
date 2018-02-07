@@ -609,7 +609,8 @@ class PerchContent_Pages extends PerchFactory
                                             regionMultiple,
                                             regionOptions,
                                             regionSearchable,
-                                            regionEditRoles
+                                            regionEditRoles,
+                                            regionPublishRoles
                                         )
                                         SELECT
                                             '.$this->db->pdb($Page->id()).' AS pageID,
@@ -622,7 +623,8 @@ class PerchContent_Pages extends PerchFactory
                                             regionMultiple,
                                             regionOptions,
                                             regionSearchable,
-                                            regionEditRoles
+                                            regionEditRoles,
+                                            regionPublishRoles
                                         FROM '.PERCH_DB_PREFIX.'content_regions
                                         WHERE regionPage!='.$this->db->pdb('*').' AND pageID='.$this->db->pdb((int)$CopyPage->id());
 
@@ -798,7 +800,8 @@ class PerchContent_Pages extends PerchFactory
                                         regionMultiple,
                                         regionOptions,
                                         regionSearchable,
-                                        regionEditRoles
+                                        regionEditRoles,
+                                        regionPublishRoles
                                     )
                                     SELECT
                                         '.$this->db->pdb($Page->id()).' AS pageID,
@@ -811,7 +814,8 @@ class PerchContent_Pages extends PerchFactory
                                         regionMultiple,
                                         regionOptions,
                                         regionSearchable,
-                                        regionEditRoles
+                                        regionEditRoles,
+                                        regionPublishRoles
                                     FROM '.PERCH_DB_PREFIX.'content_regions
                                     WHERE regionPage!='.$this->db->pdb('*').' AND pageID='.$this->db->pdb((int)$CopyPage->id());
 
