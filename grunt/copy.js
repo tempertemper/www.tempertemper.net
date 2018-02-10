@@ -15,8 +15,8 @@ module.exports = {
     expand: true,
     flatten: true,
     src: [
-      'dev/components/responsive-nav/responsive-nav.min.js',
-      'dev/components/html5shiv/dist/html5shiv.min.js'
+      'node_modules/responsive-nav/responsive-nav.min.js',
+      'node_modules/html5shiv/dist/html5shiv.min.js'
     ],
     dest: 'web/cms/addons/feathers/tempertemper/js/',
   }
