@@ -1,9 +1,9 @@
 @import 'admin/variables',
         'admin/mixins',
         'admin/placeholders',
-        '../components/susy/sass/susy',
+        '../../node_modules/susy/sass/susy',
         'admin/grid',
-        '../components/modular-scale/stylesheets/modular-scale';
+        '../../node_modules/modularscale-sass/stylesheets/modular-scale';
 
 @import 'base/reset',
         'base/typography',
