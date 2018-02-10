@@ -9,6 +9,21 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 
+## [4.9.1] - 2018-02-10
+
+### Adds
++ Nginx config file for reference
++ Introduces this `.changelog`
++ Updates `.editorconfig`
++ Adds `copy:js` to js Grunt alias
+
+### Changes
++ Updates js files for document `<head>`
+
+### Removes
++ Removes [Bower](https://bower.io)
+
+
 ## [4.9.0] - 2018-02-07
 
 ### Adds
