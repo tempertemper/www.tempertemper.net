@@ -14,6 +14,10 @@
     "load-grunt-config": "0.19.*",
     "postcss-reporter": "5.*",
     "stylelint": "8.*",
-    "time-grunt": "1.*"
+    "time-grunt": "1.*",
+    "susy": "2.2.*",
+    "modularscale-sass": "2.*",
+    "responsive-nav": "1.*",
+    "html5shiv": "3.*"
   }
 }
