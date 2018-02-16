@@ -1,7 +1,6 @@
 <?php
   perch_layout('head');
   perch_layout('testimonials/header');
-
   echo '<main role="main">';
   perch_collection('Testimonials', [
     'template' => 'testimonial.html',
@@ -12,6 +11,5 @@
   ]);
   perch_layout('call_to_action');
   echo '</main>';
-
   perch_layout('footer');
   perch_layout('end');
