@@ -9,13 +9,13 @@
   <h1>
 
     <?php
-      perch_collection('Testimonials', array(
+      perch_collection('Testimonials', [
         'template' => 'testimonial_header.html',
         'filter'   => 'slug',
         'match'    => 'eq',
         'value'    => perch_get('s'),
         'count'    => 1,
-      ));
+      ]);
     ?>
 
   </h1>

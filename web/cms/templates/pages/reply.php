@@ -18,14 +18,13 @@
     <p>Head <a href="/">back to the homepage</a> or have a read of one of these articles:</p>
 
     <?php
-      $opts = array(
+      perch_blog_custom([
         'sort'=> 'postTitle',
         'sort-order'=>'RAND',
         'count'=>'3',
         'category'=>array('resources'),
         'template'=>'blog/post_teaser.html'
-      );
-      perch_blog_custom($opts);
+      ]);
     ?>
 
   </section>

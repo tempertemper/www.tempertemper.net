@@ -3,11 +3,11 @@
 
 <?php
   $query = perch_get('q');
-  perch_content_search($query, array(
+  perch_content_search($query, [
     'count'=>5,
     'hide-extensions'=>'true',
     'hide-default-doc'=>'true'
-  ));
+  ]);
 ?>
 
 </main>

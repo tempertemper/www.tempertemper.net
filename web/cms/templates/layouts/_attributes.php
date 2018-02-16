@@ -20,6 +20,6 @@
     'type'          => $type,
   ]);
 
-  perch_page_attributes(array(
+  perch_page_attributes([
     'template' => 'default.html'
-  ));
+  ]);

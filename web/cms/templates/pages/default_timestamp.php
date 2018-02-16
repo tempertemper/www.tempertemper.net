@@ -14,9 +14,9 @@
   <aside>
 
     <p>Document last updated: <?php
-        perch_page_modified(array(
+        perch_page_modified([
           'format' => '%e %B %Y',
-        ));
+        ]);
       ?></p>
 
   </aside>

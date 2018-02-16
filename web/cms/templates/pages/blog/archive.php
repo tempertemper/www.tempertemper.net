@@ -6,10 +6,10 @@
   echo '<div role="complementary">';
   echo '<aside class="post-groups">';
   echo '<h1>Post groups</h1>';
-  perch_blog_categories(array(
+  perch_blog_categories([
     'sort'       => 'catTitle',
     'sort-order' => 'ASC',
-  ));
+  ]);
   perch_blog_date_archive_years();
   perch_blog_tags();
   echo '</aside>';

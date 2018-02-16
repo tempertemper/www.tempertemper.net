@@ -12,12 +12,12 @@
     <description>Tips and tricks for anyone looking to get the most out of their website.</description>
     <atom:link href="<?php echo PerchUtil::html($domain); ?>/blog/rss.php" rel="self" type="application/rss+xml" />
     <?php
-      perch_blog_custom(array(
+      perch_blog_custom([
         'template'=>'rss_post.html',
         'count'=>10,
         'sort'=>'postDateTime',
         'sort-order'=>'DESC'
-      ));
+      ]);
     ?>
   </channel>
 </rss>
