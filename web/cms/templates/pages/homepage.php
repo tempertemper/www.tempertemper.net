@@ -19,7 +19,7 @@
     <h1>Testimonials</h1>
 
     <?php
-      perch_collection('Testimonials', array(
+      perch_collection('Testimonials', [
         'sort'=>'citation',
         'sort-order'=>'RAND',
         'count'=>1,
@@ -27,7 +27,7 @@
         'filter' => 'featured',
         'match' => 'eq',
         'value' => 'featured',
-      ));
+      ]);
     ?>
 
   </aside>

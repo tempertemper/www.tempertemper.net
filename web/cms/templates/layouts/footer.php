@@ -3,19 +3,19 @@
   <nav class="useful-links">
 
     <?php
-      perch_pages_navigation(array(
+      perch_pages_navigation([
         'hide-extensions'  => true,
         'hide-default-doc' => true,
         'levels'           => 1,
-      ));
+      ]);
 
-      perch_pages_navigation(array(
+      perch_pages_navigation([
         'hide-extensions'   => true,
         'hide-default-doc'  => true,
         'levels'            => 2,
         'navgroup'          => 'footer-nav',
         'template'          => 'list.html'
-      ));
+      ]);
     ?>
 
     <div>
@@ -32,10 +32,10 @@
     <p>&copy;&nbsp;copyright 2009&nbsp;to&nbsp;<?php echo date ("Y"); ?></p>
 
     <?php
-      $opts = array(
+      $opts = [
         'page'     => '/contact',
         'template' => '/footer_address.html',
-      );
+      ];
       perch_content_custom('Primary content',$opts);
     ?>
 

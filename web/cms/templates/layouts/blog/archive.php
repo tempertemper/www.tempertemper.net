@@ -5,9 +5,9 @@
   $sort_by            = 'postDateTime';
   $paginate           = true;
   $include_categories = function($item) {
-                          $item['categories'] = perch_blog_post_categories($item['postID'], array(
+                          $item['categories'] = perch_blog_post_categories($item['postID'], [
                             'template'=>'category_only.html'
-                          ), true);
+                          ], true);
                           return $item;
                         };
   $posts_displayed = false;
@@ -16,7 +16,7 @@
   if (perch_get('cat')) {
     echo '<h1>Category: &lsquo;'.perch_blog_category(perch_get('cat'), true).'&rsquo;</h1></header><main role="main">';
 
-    perch_blog_custom(array(
+    perch_blog_custom([
       'category'   => perch_get('cat'),
       'template'   => $template,
       'count'      => $posts_per_page,
@@ -24,7 +24,7 @@
       'sort-order' => $sort_order,
       'paginate'   => $paginate,
       'each'       => $include_categories
-    ));
+    ]);
 
     $posts_displayed = true;
   }
@@ -33,7 +33,7 @@
   if (perch_get('tag')) {
     echo '<h1>Tag: &lsquo;'.perch_blog_tag(perch_get('tag'), true).'&rsquo;</h1></header><main role="main">';
 
-    perch_blog_custom(array(
+    perch_blog_custom([
       'tag'      => perch_get('tag'),
       'template'   => $template,
       'count'      => $posts_per_page,
@@ -41,7 +41,7 @@
       'sort-order' => $sort_order,
       'paginate'   => $paginate,
       'each'       => $include_categories
-    ));
+    ]);
 
     $posts_displayed = true;
   }
@@ -65,7 +65,7 @@
 
     echo '<h1>Year: '.strftime($title_date_format, strtotime($date_from)).'</h1></header><main role="main">';
 
-    perch_blog_custom(array(
+    perch_blog_custom([
       'filter'     => 'postDateTime',
       'match'      => 'eqbetween',
       'value'      => $date_from.','.$date_to,
@@ -75,7 +75,7 @@
       'sort-order' => $sort_order,
       'paginate'   => $paginate,
       'each'       => $include_categories
-    ));
+    ]);
 
     $posts_displayed = true;
   }
@@ -83,11 +83,11 @@
   /* --------------------------- POSTS BY AUTHOR --------------------------- */
   if (perch_get('author')) {
 
-    echo '<h1>Author: '.perch_blog_author(perch_get('author'), array(
+    echo '<h1>Author: '.perch_blog_author(perch_get('author'), [
                         'template' => 'author_name.html',
-                        ), true).'</h1></header><main role="main">';
+                        ], true).'</h1></header><main role="main">';
 
-    perch_blog_custom(array(
+    perch_blog_custom([
       'author'     => perch_get('author'),
       'template'   => $template,
       'count'      => $posts_per_page,
@@ -95,7 +95,7 @@
       'sort-order' => $sort_order,
       'paginate'   => $paginate,
       'each'       => $include_categories
-    ));
+    ]);
 
     $posts_displayed = true;
   }
@@ -109,13 +109,13 @@
 
     echo '<h1>Archive</h1></header><main role="main">';
 
-    perch_blog_custom(array(
+    perch_blog_custom([
       'template'   => $template,
       'count'      => $posts_per_page,
       'sort'       => $sort_by,
       'sort-order' => $sort_order,
       'paginate'   => $paginate,
       'each'       => $include_categories
-    ));
+    ]);
   }
 ?>
