@@ -1,29 +1,15 @@
 <?php
   perch_layout('head');
   perch_layout('header');
-?>
-
-<main role="main">
-
-  <?php perch_content('Primary content'); ?>
-
-</main>
-
-<div role="complementary">
-
-  <aside>
-
-    <p>Document last updated: <?php
-        perch_page_modified([
-          'format' => '%e %B %Y',
-        ]);
-      ?></p>
-
-  </aside>
-
-</div>
-
-<?php
+  echo '<main role="main">';
+  perch_content('Primary content');
+  echo '</main>';
+  echo '<div role="complementary">';
+  echo '<aside>';
+    echo '<p>Document last updated:'.perch_page_modified([
+      'format' => '%e %B %Y',
+    ]).'</p>';
+  echo '</aside>';
+  echo '</div>';
   perch_layout('footer');
   perch_layout('end');
-?>

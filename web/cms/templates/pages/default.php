@@ -1,15 +1,8 @@
 <?php
   perch_layout('head');
   perch_layout('header');
-?>
-
-<main role="main">
-
-  <?php perch_content('Primary content'); ?>
-
-</main>
-
-<?php
+  echo '<main role="main">';
+  perch_content('Primary content');
+  echo '</main>';
   perch_layout('footer');
   perch_layout('end');
-?>
