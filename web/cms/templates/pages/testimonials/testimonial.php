@@ -1,6 +1,11 @@
 <?php
-perch_layout('head');
-perch_layout('testimonials/header');
+$page = 'testimonial';
+perch_layout('head', [
+    'page' => $page,
+]);
+perch_layout('header', [
+    'page' => $page,
+]);
 echo '<main role="main">';
 perch_collection('Testimonials', [
     'template' => 'testimonial.html',

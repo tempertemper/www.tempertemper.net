@@ -1,4 +1,9 @@
 <?php
+echo '<header role="banner">';
+perch_layout('_logo');
+perch_layout('_nav_toggle');
+perch_layout('_primary_nav');
+
 $posts_per_page     =   10;
 $template           =   'post_in_list.html';
 $sort_order         =   'DESC';

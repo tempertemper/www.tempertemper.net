@@ -20,5 +20,5 @@ PerchSystem::set_vars([
 ]);
 
 perch_page_attributes([
-'template' => 'default.html'
+    'template' => 'default.html'
 ]);
