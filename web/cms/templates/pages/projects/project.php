@@ -1,6 +1,11 @@
 <?php
-perch_layout('/project/head');
-perch_layout('/project/header');
+$page = 'project';
+perch_layout('head', [
+    'page' => $page,
+]);
+perch_layout('header', [
+    'page' => $page,
+]);
 echo '<main role="main">';
 echo '<aside>';
 perch_collection('Projects', [

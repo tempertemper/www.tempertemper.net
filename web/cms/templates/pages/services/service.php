@@ -1,6 +1,11 @@
 <?php
-perch_layout('/service/head');
-perch_layout('/service/header');
+$page = 'service';
+perch_layout('head', [
+    'page' => $page,
+]);
+perch_layout('header', [
+    'page' => $page,
+]);
 echo '<main role="main">';
 perch_collection('Services', [
     'template' => 'service_detail.html',

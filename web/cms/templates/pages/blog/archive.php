@@ -1,6 +1,5 @@
 <?php
 perch_layout('head');
-perch_layout('blog/archive_header');
 perch_layout('blog/archive');
 echo '</main>';
 echo '<div role="complementary">';
