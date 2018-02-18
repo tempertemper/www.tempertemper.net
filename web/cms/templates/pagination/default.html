@@ -1,15 +1,11 @@
 <perch:if exists="paging">
-  <div class="paging">
-
-    <p class="page">Page <perch:search id="current_page" /> of <perch:search id="number_of_pages" /></p>
-
-    <perch:if exists="not_first_page">
-      <a href="<perch:search id="prev_url" encode="false" />" class="previous">Previous</a>
-    </perch:if>
-
-    <perch:if exists="not_last_page">
-      <a href="<perch:search id="next_url" encode="false" />" class="next">Next</a>
-    </perch:if>
-
-  </div>
+    <div class="paging">
+        <p class="page">Page <perch:search id="current_page" /> of <perch:search id="number_of_pages" /></p>
+        <perch:if exists="not_first_page">
+            <a href="<perch:search id="prev_url" encode="false" />" class="previous">Previous</a>
+        </perch:if>
+        <perch:if exists="not_last_page">
+            <a href="<perch:search id="next_url" encode="false" />" class="next">Next</a>
+        </perch:if>
+    </div>
 </perch:if>

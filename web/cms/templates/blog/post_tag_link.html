@@ -1,7 +1,7 @@
 <perch:before>
-  <perch:if exists="tagTitle"><p class="tags"> Tagged with<perch:else /></perch:if>
+    <perch:if exists="tagTitle"><p class="tags"> Tagged with<perch:else /></perch:if>
 </perch:before>
-  <a href="/blog/tag/<perch:blog id="tagSlug" />" rel="tag"><perch:blog id="tagTitle" /> </a>
+    <a href="/blog/tag/<perch:blog id="tagSlug" />" rel="tag"><perch:blog id="tagTitle" /> </a>
 <perch:after>
-  <perch:if exists="tagTitle"></p><perch:else /></perch:if>
+    <perch:if exists="tagTitle"></p><perch:else /></perch:if>
 </perch:after>
