@@ -1,16 +1,13 @@
-<perch:before><h2>Comments:</h2>
-
-  <ul class="comments"></perch:before>
-
+<perch:before>
+    <h2>Comments:</h2>
+    <ul class="comments">
+</perch:before>
     <li id="comment<perch:blog id="commentID" type="hidden" />">
-
-      <img src="//www.gravatar.com/avatar/<perch:blog id="commentEmail" type="email" label="Email" order="2" hash="md5" required="true" />?s=220&amp;d=mm" />
-
-      <h3><perch:if exists="commentURL"><a href="<perch:blog id="commentURL" type="url" label="URL" order="3" />"></perch:if><perch:blog id="commentName" type="text" label="Name" order="1" required="true" />:<perch:if exists="commentURL"></a></perch:if></h3>
-      <p rel="bookmark" class="date"><perch:blog id="commentDateTime" format="l jS F Y, g:ia" type="date" time="true" label="Date" /></p>
-
-      <perch:blog id="commentHTML" encode="false" html="true" type="textarea" label="Comment (HTML)" order="4" required="true" />
-
+        <img src="//www.gravatar.com/avatar/<perch:blog id="commentEmail" type="email" label="Email" order="2" hash="md5" required="true" />?s=220&amp;d=mm" />
+        <h3><perch:if exists="commentURL"><a href="<perch:blog id="commentURL" type="url" label="URL" order="3" />"></perch:if><perch:blog id="commentName" type="text" label="Name" order="1" required="true" />:<perch:if exists="commentURL"></a></perch:if></h3>
+        <p rel="bookmark" class="date"><perch:blog id="commentDateTime" format="l jS F Y, g:ia" type="date" time="true" label="Date" /></p>
+        <perch:blog id="commentHTML" encode="false" html="true" type="textarea" label="Comment (HTML)" order="4" required="true" />
     </li>
-
-<perch:after></ul></perch:after>
+<perch:after>
+    </ul>
+</perch:after>

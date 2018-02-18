@@ -1,18 +1,16 @@
 <perch:before>
-  <section class="teaser">
-    <h1>Now what</h1>
-    <ul class="index-list">
+    <section class="teaser">
+        <h1>Now what</h1>
+        <ul class="index-list">
 </perch:before>
-
-  <li>
-    <h2><a href="/blog/<perch:blog id="postSlug" />"><perch:blog id="postTitle" /></a></h2>
-    <perch:if exists="image"><img src="<perch:blog id="image" type="image" width="110" height="110" quality="100" density="2" crop="true" />"" alt="<perch:blog id="postTitle" />" /></perch:if>
-    <p><perch:blog id="excerpt" class="description entry-summary" type="textarea" encode="false" /></p>
-    <a href="/blog/<perch:blog id="postSlug" />" class="go-to">Read article</a>
-  </li>
-
+    <li>
+        <h2><a href="/blog/<perch:blog id="postSlug" />"><perch:blog id="postTitle" /></a></h2>
+        <perch:if exists="image"><img src="<perch:blog id="image" type="image" width="110" height="110" quality="100" density="2" crop="true" />"" alt="<perch:blog id="postTitle" />" /></perch:if>
+        <p><perch:blog id="excerpt" class="description entry-summary" type="textarea" encode="false" /></p>
+        <a href="/blog/<perch:blog id="postSlug" />" class="go-to">Read article</a>
+    </li>
 <perch:after>
-    </ul>
-    <a href="/blog" class="go-to">View all posts</a>
-  </section>
+        </ul>
+        <a href="/blog" class="go-to">View all posts</a>
+    </section>
 </perch:after>
