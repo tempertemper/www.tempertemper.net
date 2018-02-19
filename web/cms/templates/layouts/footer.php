@@ -21,18 +21,18 @@
             </a>
         </div>
     </nav>
-  <div class="copyright">
-    <p>&copy;&nbsp;copyright 2009&nbsp;to&nbsp;<?php echo date ("Y"); ?></p>
-    <?php
-      perch_content_custom('Primary content',[
-        'page'     => '/contact',
-        'template' => '/footer_address.html',
-      ]);
-    ?>
-    <p>Company number 07742506, VAT&nbsp;registration number&nbsp;219&nbsp;5624&nbsp;96</p>
-    <ul>
-      <li><a href="/privacy-policy" rel="privacypolicy">Privacy policy</a>, </li>
-      <li><a href="/terms">Terms&nbsp;of&nbsp;business</a></li>
-    </ul>
-  </div>
+    <div class="copyright">
+        <p>&copy;&nbsp;copyright 2009&nbsp;to&nbsp;<?php echo date ("Y"); ?></p>
+        <?php
+            perch_content_custom('Primary content',[
+            'page'     => '/contact',
+            'template' => '/footer_address.html',
+            ]);
+        ?>
+        <p>Company number 07742506, VAT&nbsp;registration number&nbsp;219&nbsp;5624&nbsp;96</p>
+        <ul>
+            <li><a href="/privacy-policy" rel="privacypolicy">Privacy policy</a>, </li>
+            <li><a href="/terms">Terms&nbsp;of&nbsp;business</a></li>
+        </ul>
+    </div>
 </footer>
