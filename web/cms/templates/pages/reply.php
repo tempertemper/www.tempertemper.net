@@ -8,12 +8,14 @@ echo '<div role="complementary">';
 echo '<section class="now-what">';
 echo '<h1>Now what?</h1>';
 echo '<p>Head <a href="/">back to the homepage</a> or have a read of one of these articles:</p>';
-perch_blog_custom([
-    'sort'=> 'postTitle',
-    'sort-order'=>'RAND',
-    'count'=>'3',
-    'category'=>array('resources'),
-    'template'=>'blog/post_teaser.html'
+perch_collection('Resources', [
+    'template'   => 'resource_list.html',
+    'count'      => 3,
+    'sort'       => 'date',
+    'sort-order' => 'RAND',
+    'filter'     => 'status',
+    'match'      => 'eq',
+    'value'      => 'published',
 ]);
 echo '</section>';
 echo '</div>';
