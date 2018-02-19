@@ -31,8 +31,8 @@
     ?>
     <p>Company number 07742506, VAT&nbsp;registration number&nbsp;219&nbsp;5624&nbsp;96</p>
     <ul>
-      <li><a href="/legal/privacy-policy" rel="privacypolicy">Privacy policy</a>, </li>
-      <li><a href="/legal/terms">Terms&nbsp;of&nbsp;business</a></li>
+      <li><a href="/privacy-policy" rel="privacypolicy">Privacy policy</a>, </li>
+      <li><a href="/terms">Terms&nbsp;of&nbsp;business</a></li>
     </ul>
   </div>
 </footer>
