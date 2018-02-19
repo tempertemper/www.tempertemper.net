@@ -1,21 +1,19 @@
 <perch:before>
-  <section class="teaser">
-    <h1>Recent projects</h1>
-    <ul class="index-list">
+    <section class="teaser">
+        <h1>Recent projects</h1>
+        <ul class="index-list">
 </perch:before>
-
-      <li>
+    <li>
         <h2><a href="/projects/<perch:content id="slug" type="slug" />"><perch:content id="title" type="text" /></a></h2>
         <p><perch:content id="excerpt" type="textarea" striptags="true" /></p>
         <div class="read-more">
-          <a href="/projects/<perch:content id="slug" type="slug" />" class="go-to">Read more</a>
+            <a href="/projects/<perch:content id="slug" type="slug" />" class="go-to">Read more</a>
         </div>
-      </li>
-
+    </li>
 <perch:after>
-    </ul>
-    <div class="read-more">
-      <a href="/projects">View more projects</a>
-    </div>
-  </section>
+        </ul>
+        <div class="read-more">
+            <a href="/projects">View more projects</a>
+        </div>
+    </section>
 </perch:after>

@@ -7,7 +7,8 @@ $ms-ratio: $major-third;
   font-style: normal;
   font-weight: 200;
   src: url('../fonts/FSMeWeb-Light.woff') format('woff2'),
-    url('../fonts/FSMeWeb-Light.woff') format('woff');
+       url('../fonts/FSMeWeb-Light.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face {
@@ -16,7 +17,8 @@ $ms-ratio: $major-third;
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/FSMeWeb-Regular.woff') format('woff2'),
-    url('../fonts/FSMeWeb-Regular.woff') format('woff');
+       url('../fonts/FSMeWeb-Regular.woff') format('woff');
+  font-display: swap;
 }
 
 $font--heading: 'FS Me Web', sans-serif;

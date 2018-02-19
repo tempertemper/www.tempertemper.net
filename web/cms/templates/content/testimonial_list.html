@@ -1,21 +1,19 @@
 <perch:before>
-  <ul class="index-list">
+    <ul class="index-list">
 </perch:before>
+        <li>
+            <h2>
+                <a href="/testimonials/<perch:content id="slug" for="citation" type="slug" />"><perch:content id="citation" type="text" /><perch:if exists="company"></a>
+            </h2>
+            <blockquote>
+                &#8220;<perch:content id="excerpt" type="textarea" />&#8221;
+            </blockquote>
 
-    <li>
-      <h2>
-        <a href="/testimonials/<perch:content id="slug" for="citation" type="slug" />"><perch:content id="citation" type="text" /><perch:if exists="company"></a>
-      </h2>
-      <blockquote>
-        &#8220;<perch:content id="excerpt" type="textarea" />&#8221;
-      </blockquote>
-
-      <div class="read-more">
-        <a href="/testimonials/<perch:content id="slug" for="citation" type="slug" />">View full testimonial</a>
-      </div>
-    </li>
-
+            <div class="read-more">
+                <a href="/testimonials/<perch:content id="slug" for="citation" type="slug" />">View full testimonial</a>
+            </div>
+        </li>
 <perch:after>
-  </ul>
-  <perch:template path="pagination/testimonials.html" rescope="parent" />
+    </ul>
+    <perch:template path="pagination/testimonials.html" rescope="parent" />
 </perch:after>
