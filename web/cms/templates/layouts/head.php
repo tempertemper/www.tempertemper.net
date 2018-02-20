@@ -75,6 +75,7 @@
         perch_layout('_apple_touch_icon');
         perch_layout('_favicon');
         perch_layout('_browser_styling');
+        perch_layout('_javascript');
         perch_get_css();
         perch_layout('_fonts');
         perch_layout('_google_sitename');
