@@ -8,7 +8,7 @@ perch_collection('Projects', [
     'count'=>2,
 ]);
 echo '<aside class="testimonials">';
-echo '<h1>Testimonials</h1>';
+echo '<h2>Testimonials</h2>';
 perch_collection('Testimonials', [
     'sort'=>'citation',
     'sort-order'=>'RAND',
