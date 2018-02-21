@@ -36,31 +36,3 @@ h5,
 h6 {
   font-weight: 400;
 }
-
-[role="complementary"],
-section,
-article,
-aside,
-nav {
-
-  h1 {
-    @include heading-l;
-  }
-
-  h2 {
-    @include heading-m;
-  }
-
-  h3 {
-    @include heading-s;
-  }
-
-  h4 {
-    @include heading-xs;
-  }
-
-  h5,
-  h6 {
-    @include heading-xxs;
-  }
-}

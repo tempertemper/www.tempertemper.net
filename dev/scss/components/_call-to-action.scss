@@ -1,10 +1,6 @@
 .call-to-action {
   text-align: center;
 
-  h1 {
-    @include heading-s;
-  }
-
   .primary {
     @include button-secondary;
   }

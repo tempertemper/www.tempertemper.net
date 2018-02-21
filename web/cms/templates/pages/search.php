@@ -10,7 +10,7 @@ perch_content_search($query, [
 echo '</main>';
 echo '<div role="complementary">';
 echo '<aside>';
-echo '<h1>Search again</h1>';
+echo '<h2>Search again</h2>';
 perch_search_form();
 echo '</aside>';
 echo '</div>';
