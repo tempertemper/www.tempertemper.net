@@ -6,7 +6,7 @@
         <perch:template path="content/project_details.html" />
         <p><perch:content id="excerpt" type="textarea" markdown="true" striptags="true" /></p>
         <div class="read-more">
-            <a href="/projects/<perch:content id="slug" type="slug" />">View full case study</a>
+            <a href="/projects/<perch:content id="slug" type="slug" />" aria-label="View full case study on <perch:content id="title" type="text" />">View full case study</a>
         </div>
     </li>
 <perch:after>

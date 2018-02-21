@@ -5,7 +5,7 @@
         <h2><a href="/services/<perch:content id="slug" type="slug" />"><perch:content id="title" type="text" /></a></h2>
         <p><perch:if exists="excerpt"><perch:content id="excerpt" type="textarea" markdown="true" /><perch:else /><perch:content id="description" type="textarea" striptags="true" chars="200" append="…" /></perch:if></p>
         <div class="read-more">
-            <a href="/services/<perch:content id="slug" type="slug" />">Read more</a>
+            <a href="/services/<perch:content id="slug" type="slug" />" aria-label="Read more about <perch:content id="title" type="text" />">Read more</a>
         </div>
     </li>
 <perch:after>
