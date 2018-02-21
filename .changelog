@@ -9,19 +9,41 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 
-## [4.9.1] - 2018-02-10
+## [4.9.1] - 2018-02-21
 
 ### Adds
 + Nginx config file for reference
 + Introduces this `.changelog`
 + Updates `.editorconfig`
 + Adds `copy:js` to js Grunt alias
++ Adds `aria-label`s to 'read more' links on index pages for blog, resources, testimonials, services and projects
 
 ### Changes
 + Updates js files for document `<head>`
++ Uses php's more up to date array syntax
++ Page templates are now a raw-html-free-zone – php only
++ Brings indentation in line with `.editorconfig`
++ Uses one head layout template for whole site, to save duplication
++ Uses one header layout template for whole site, to save duplication
++ Lazy loads fonts with new CSS `font-display` property
++ Dedicated mailing list page template
++ Newly drawn search icon
++ Reworks search fields' semantics and restyles accordingly
++ Includes html5 shiv and responsive-nav js differently (better)
++ Uses traditional sectioning headings, rather than now-depricated HTML5 method
++ Increases CTA heading size
+
+### Fixes
++ Fixes some broken links in footer (privacy policy and terms)
++ Fixes broken project links on servcies pages
++ Makes subscribed/unsubscribed pages reference Resources rather than the blog
++ Fixes flash of 'open' mobile nav on smaller screens when page loads
 
 ### Removes
 + Removes [Bower](https://bower.io)
++ Gets rid of scss linting (for now)
++ Removes downloads page
++ Removes unnecessary link and form input colour animations on hover/focus
 
 
 ## [4.9.0] - 2018-02-07

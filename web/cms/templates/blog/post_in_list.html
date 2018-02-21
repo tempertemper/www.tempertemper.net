@@ -1,29 +1,27 @@
 <perch:before>
-  <ul class="hfeed index-list">
+    <ul class="hfeed index-list">
 </perch:before>
     <li class="hentry">
-      <h2>
-        <a href="/blog/<perch:blog id="postSlug" />" class="entry-title"><perch:blog id="postTitle" /></a>
-      </h2>
-      <p class="details">Posted <span class="entry-published date"><perch:blog id="postDateTime" format="jS F Y" /></span>
-        <perch:categories id="categories" set="blog">
-          <perch:if exists="perch_item_first"> in</perch:if>
-          <a href="/blog/category/<perch:category id="catSlug" type="slug" />">
-            <perch:category id="catTitle" type="text" />
-          </a>
-          <perch:if exists="perch_item_last"><perch:else />, </perch:if>
-        </perch:categories>
-      </p>
-      <p class="description entry-summary"><perch:blog id="excerpt" type="textarea" encode="false" /></p>
-      <div class="read-more">
-        <a href="/blog/<perch:blog id="postSlug" />">Read article</a>
-      </div>
+        <h2><a href="/blog/<perch:blog id="postSlug" />" class="entry-title"><perch:blog id="postTitle" /></a></h2>
+        <p class="details">Posted <span class="entry-published date"><perch:blog id="postDateTime" format="jS F Y" /></span>
+            <perch:categories id="categories" set="blog">
+                <perch:if exists="perch_item_first"> in</perch:if>
+                    <a href="/blog/category/<perch:category id="catSlug" type="slug" />">
+                        <perch:category id="catTitle" type="text" />
+                    </a>
+                <perch:if exists="perch_item_last"><perch:else />, </perch:if>
+            </perch:categories>
+        </p>
+        <p class="description entry-summary"><perch:blog id="excerpt" type="textarea" encode="false" /></p>
+        <div class="read-more">
+            <a href="/blog/<perch:blog id="postSlug" />" aria-label="Read article about <perch:blog id="postTitle" />">Read article</a>
+        </div>
     </li>
 <perch:after>
-  </ul>
-  <perch:template path="pagination/blog.html" rescope="parent" />
+    </ul>
+    <perch:template path="pagination/blog.html" rescope="parent" />
 </perch:after>
 
 <perch:noresults>
-  <p>Uh oh… Looks like there are no posts under this grouping. Don’t worry tough – check out the post group navigation below and you should be able to find what you were after.</p>
+    <p>Uh oh… Looks like there are no posts under this grouping. Don’t worry tough – check out the post group navigation below and you should be able to find what you were after.</p>
 </perch:noresults>
