@@ -5,6 +5,8 @@
     .index-list {
       @include full-width;
       display: flex;
+
+
     }
 
     li {
@@ -13,6 +15,10 @@
       @include highlight-box;
       margin-bottom: gutter();
 
+      & > :first-child {
+        margin-top: 0;
+      }
+
       &:last-of-type {
         @include span(last 3 of 6);
       }
@@ -20,10 +26,6 @@
 
     ul {
       margin-bottom: 0;
-    }
-
-    h2 {
-      margin-top: 0;
     }
 
     > .read-more {

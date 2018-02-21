@@ -1,32 +1,23 @@
 <perch:before>
-<ul class="index-list">
+    <ul class="index-list">
 </perch:before>
-
-  <li>
-
-    <h2>
-      <a href="/resources/<perch:content id="slug" type="slug" />" class="entry-title"><perch:content id="title" type="smarttext" /></a>
-    </h2>
-
-    <p class="details">Posted <span class="date"><perch:content id="date" format="jS F Y" /></span>
-      <perch:categories id="categories" set="resources">
-        <perch:if exists="perch_item_first"> in</perch:if>
-        <a href="/resources/category/<perch:category id="catSlug" type="slug" />">
-          <perch:category id="catTitle" type="text" />
-        </a>
-        <perch:if exists="perch_item_last"><perch:else />, </perch:if>
-      </perch:categories>
-    </p>
-    <p class="description entry-summary"><perch:content id="excerpt" type="textarea" encode="false" /></p>
-
-    <div class="read-more">
-      <a href="/resources/<perch:content id="slug" type="slug" />">Read article</a>
-    </div>
-
-  </li>
-
+    <li>
+        <h2><a href="/resources/<perch:content id="slug" type="slug" />" class="entry-title"><perch:content id="title" type="smarttext" /></a></h2>
+        <p class="details">Posted <span class="date"><perch:content id="date" format="jS F Y" /></span>
+            <perch:categories id="categories" set="resources">
+                <perch:if exists="perch_item_first"> in</perch:if>
+                <a href="/resources/category/<perch:category id="catSlug" type="slug" />">
+                   <perch:category id="catTitle" type="text" />
+                </a>
+                <perch:if exists="perch_item_last"><perch:else />, </perch:if>
+            </perch:categories>
+        </p>
+        <p class="description entry-summary"><perch:content id="excerpt" type="textarea" encode="false" /></p>
+        <div class="read-more">
+            <a href="/resources/<perch:content id="slug" type="slug" />" aria-label="Read article about <perch:content id="title" type="smarttext" />">Read article</a>
+        </div>
+    </li>
 <perch:after>
-</ul>
-<perch:template path="pagination/resources.html" rescope="parent" />
-
+    </ul>
+    <perch:template path="pagination/resources.html" rescope="parent" />
 </perch:after>
