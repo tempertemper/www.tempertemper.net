@@ -5,8 +5,6 @@ h4,
 h5,
 h6 {
   @include heading-style;
-  font-feature-settings: 'kern' 1;
-  font-kerning: normal;
 }
 
 h1 {
