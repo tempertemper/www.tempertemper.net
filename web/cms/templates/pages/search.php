@@ -3,9 +3,9 @@ perch_layout('head');
 perch_layout('search_header');
 $query = perch_get('q');
 perch_content_search($query, [
-    'count'=>5,
-    'hide-extensions'=>'true',
-    'hide-default-doc'=>'true'
+    'count'            => 5,
+    'hide-extensions'  => 'true',
+    'hide-default-doc' => 'true'
 ]);
 echo '</main>';
 echo '<div role="complementary">';

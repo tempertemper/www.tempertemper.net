@@ -2,10 +2,10 @@
     <div class="paging">
         <p class="page">Page <perch:search id="current_page" /> of <perch:search id="number_of_pages" /></p>
         <perch:if exists="not_first_page">
-            <a href="<perch:search id="prev_url" encode="false" />" class="previous">Previous</a>
+            <a href="/search/<perch:search id="search_key" />/page/<perch:search id="prev_page_number" encode="false" />" class="previous">Previous</a>
         </perch:if>
         <perch:if exists="not_last_page">
-           <a href="<perch:search id="next_url" encode="false" />" class="next">Next</a>
+           <a href="/search/<perch:search id="search_key" />/page/<perch:search id="next_page_number" encode="false" />" class="next">Next</a>
         </perch:if>
     </div>
 </perch:if>
