@@ -397,5 +397,11 @@
     "Are you sure you wish to republish all pages?": "Are you sure you wish to republish all pages?",
     "Republishing is under way.": "Republishing is under way.",
     "Republishing: %s on page %s": "Republishing: %s on page %s",
-    "Republishing completed successfully": "Republishing completed successfully"
+    "Republishing completed successfully": "Republishing completed successfully",
+    "Collection Options": "Collection Options",
+    "Editing Collection Options": "Editing Collection Options",
+    "Used for search results and draft previews. If you need this, enter the root-relative URL using %sbraces%s around any dynamic fields. e.g.": "Used for search results and draft previews. If you need this, enter the root-relative URL using %sbraces%s around any dynamic fields. e.g.",
+    "\/news-article.php?s=%sslug%s": "\/news-article.php?s=%sslug%s",
+    "This option deletes all content from this collection.": "This option deletes all content from this collection.",
+    "Delete all content from this collection immediately": "Delete all content from this collection immediately"
 }
