@@ -7,7 +7,7 @@ module.exports = {
   },
   favicon: {
     expand: true,
-    cwd: 'src/images/icons/',
+    cwd: 'src/img/icons/',
     src: 'favicon.ico',
     dest: 'web/cms/addons/feathers/tempertemper/img/icons',
   },
