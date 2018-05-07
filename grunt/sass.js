@@ -5,7 +5,7 @@ module.exports = {
       sourceMap: true
     },
     files: {
-      'web/cms/addons/feathers/tempertemper/css/style.css': 'dev/scss/style.scss',
+      'web/cms/addons/feathers/tempertemper/css/style.css': 'src/scss/style.scss',
     }
   }
 }
