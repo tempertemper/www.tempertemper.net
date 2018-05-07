@@ -19,10 +19,10 @@ module.exports = {
   //     ]
   //   },
   //   src: [
-  //     'dev/scss/**/*.scss',
-  //     '!dev/scss/legacy/_ie.scss',
-  //     '!dev/scss/base/_typography.scss',
-  //     '!dev/scss/style.scss'
+  //     'src/scss/**/*.scss',
+  //     '!src/scss/legacy/_ie.scss',
+  //     '!src/scss/base/_typography.scss',
+  //     '!src/scss/style.scss'
   //   ]
   // }
 }

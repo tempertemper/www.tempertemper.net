@@ -1,13 +1,13 @@
 module.exports = {
   fonts: {
     expand: true,
-    cwd: 'dev/fonts/',
+    cwd: 'src/fonts/',
     src: '**',
     dest: 'web/cms/addons/feathers/tempertemper/fonts/',
   },
   favicon: {
     expand: true,
-    cwd: 'dev/images/icons/',
+    cwd: 'src/images/icons/',
     src: 'favicon.ico',
     dest: 'web/cms/addons/feathers/tempertemper/img/icons',
   },
