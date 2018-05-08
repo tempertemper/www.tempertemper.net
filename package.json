@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@frctl/fractal": "^1.1.7",
+    "@frctl/nunjucks": "^1.0.3",
     "browser-sync": "2.*",
     "npm": "^6.0.0"
   }
