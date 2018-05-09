@@ -3,7 +3,7 @@
 const fractal = module.exports = require('@frctl/fractal').create();
 
 fractal.components.engine('@frctl/nunjucks');
-fractal.components.set('ext', '.nunj');
+fractal.components.set('ext', '.njk');
 
 fractal.set('project.title', 'tempertemper pattern library');
 
