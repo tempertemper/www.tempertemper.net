@@ -10,7 +10,8 @@ fractal.set('project.title', 'tempertemper pattern library');
 const mandelbrot = require('@frctl/mandelbrot');
 const tempertemperTheme = mandelbrot({
   favicon: '../img/icons/favicon.ico',
-  skin: "white"
+  lang: 'en-gb',
+  skin: 'white'
 });
 fractal.web.theme(tempertemperTheme);
 
