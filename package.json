@@ -19,6 +19,7 @@
     "@frctl/fractal": "^1.1.7",
     "@frctl/nunjucks": "^1.0.3",
     "browser-sync": "2.*",
-    "npm": "^6.0.0"
+    "markdown-it": "^8.4.1",
+    "npm": "^6.0.1"
   }
 }
