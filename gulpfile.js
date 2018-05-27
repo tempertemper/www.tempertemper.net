@@ -61,13 +61,16 @@ gulp.task('clean-tmp', function () {
   return del(['tmp']);
 });
 
-// Copy assets
-gulp.task('copy', function() {
+// Copy files
+gulp.task('files', function() {
   gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
+  .pipe(gulp.dest(paths.tmp.scripts))
   .pipe(gulp.dest(paths.dist.scripts));
   gulp.src('./node_modules/responsive-nav/responsive-nav.min.js')
+  .pipe(gulp.dest(paths.tmp.scripts))
   .pipe(gulp.dest(paths.dist.scripts));
   gulp.src(paths.src.fonts)
+  .pipe(gulp.dest(paths.tmp.fonts))
   .pipe(gulp.dest(paths.dist.fonts));
 });
 
@@ -94,14 +97,14 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(paths.tmp.scripts));
 });
 
-gulp.task('build', ['clean-tmp', 'scripts', 'styles']);
+gulp.task('build', ['files', 'scripts', 'styles']);
 
 gulp.task('watch', ['build'], function () {
   gulp.watch(paths.src.styles, ['styles']);
   gulp.watch(paths.src.scripts, ['scripts']);
 });
 
-gulp.task('serve', ['watch'], function(){
+gulp.task('serve', ['build', 'watch'], function(){
   const server = fractal.web.server({
     sync: true
   });

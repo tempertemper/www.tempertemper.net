@@ -32,7 +32,9 @@ const nunjucks = require('@frctl/nunjucks')({
       return str.toLowerCase().replace(/[^\w]+/g, '' + '/\s/g','-');
     }
   },
-  paths: [`${paths.static}/assets/img/svg`]
+  paths: [
+    `${paths.static}/assets/js`
+  ]
 });
 
 // Project config
