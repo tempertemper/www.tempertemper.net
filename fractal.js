@@ -58,7 +58,8 @@ fractal.web.set('static.path', paths.static);
 fractal.web.set('server.syncOptions', {
   open: false,
   injectChanges: true,
-  notify: true
+  notify: true,
+  port: 8080
 });
 fractal.web.set('builder.dest', paths.build);
 fractal.web.set('builder.urls.ext', null);
