@@ -8,6 +8,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const logger = fractal.cli.console;
+const del = require('del');
 
 const paths = {
   src: {
@@ -15,6 +16,12 @@ const paths = {
     scripts: 'src/js/**/*',
     images: 'src/img/**/*',
     fonts: 'src/fonts/**/*'
+  },
+  tmp: {
+    styles: 'tmp/assets/css',
+    scripts: 'tmp/assets/js',
+    images: 'tmp/assets/img',
+    fonts: 'tmp/assets/fonts'
   },
   dist: {
     styles: 'web/cms/addons/feathers/tempertemper/css',
@@ -24,6 +31,37 @@ const paths = {
   }
 };
 
+const scssConfig = function() {
+  return sass({
+    outputStyle: 'compressed'
+  })
+  .on('error', sass.logError)
+  .on('error', notify.onError(function (error) {
+    return {
+      title: 'SASS error',
+      message: error.message
+    }
+  }))
+};
+
+const autoprefixerConfig = function() {
+  return autoprefixer({
+    browsers: [
+      '> 1%',
+      'last 2 version',
+      'ie 8',
+      'ie 9'
+    ],
+    flexbox: false
+  })
+};
+
+// Clean web folder
+gulp.task('clean-tmp', function () {
+  return del(['tmp']);
+});
+
+// Copy assets
 gulp.task('copy', function() {
   gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
   .pipe(gulp.dest(paths.dist.scripts));
@@ -33,51 +71,30 @@ gulp.task('copy', function() {
   .pipe(gulp.dest(paths.dist.fonts));
 });
 
-//
 // Compile SCSS and autoprefix styles.
-//
 gulp.task('styles', function () {
   return gulp.src(paths.src.styles)
     .pipe(sourcemaps.init())
-    .pipe(
-      sass({
-        outputStyle: 'compressed'
-      })
-      .on('error', sass.logError)
-      .on('error', notify.onError(function (error) {
-        return {
-          title: 'SASS error',
-          message: error.message
-        }
-      }))
-    )
-    .pipe(autoprefixer({
-      browsers: [
-        '> 1%',
-        'last 2 version',
-        'ie 8',
-        'ie 9',
-      ],
-      flexbox: false
-    }))
+    .pipe(scssConfig())
+    .pipe(autoprefixerConfig())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.dist.styles))
+    .pipe(gulp.dest(paths.tmp.styles))
     .pipe(browserSync.stream());
 });
 
-//
 // Concatenate and uglify JavaScript
-//
 gulp.task('scripts', function() {
   return gulp.src([
       './src/js/**/*.js'
     ])
     .pipe(concat('production.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(paths.dist.scripts));
+    .pipe(gulp.dest(paths.dist.scripts))
+    .pipe(gulp.dest(paths.tmp.scripts));
 });
 
-gulp.task('build', ['scripts', 'styles']);
+gulp.task('build', ['clean-tmp', 'scripts', 'styles']);
 
 gulp.task('watch', ['build'], function () {
   gulp.watch(paths.src.styles, ['styles']);
