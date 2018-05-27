@@ -14,6 +14,19 @@
         <!--[if IE]><link rel="shortcut icon" href="/assets/img/icons/favicon.ico"><![endif]-->
         <link rel="mask-icon" href="/assets/img/icons/evaluagent.svg" color="black">
         <meta name="theme-color" content="#0097DB">
+        <script>
+            {% include 'html5shiv.min.js' %}
+            {% include 'responsive-nav.min.js' %}
+            var root = document.getElementsByTagName('html')[0];
+            root.className += ' scripts ';
+        </script>
+        <style>
+            @media screen and (max-width: 60em) {
+                .scripts .nav-collapse {
+                  display: none;
+                }
+            }
+        </style>
         <link media="all" rel="stylesheet" href="/assets/css/style.css">
     </head>
     <body>
