@@ -61,6 +61,10 @@ ol {
   }
 }
 
+li + li {
+  margin-top: .5em;
+}
+
 code {
   font-family: menlo, monaco, 'Lucida Console', monospace;
   font-size: .8em;
