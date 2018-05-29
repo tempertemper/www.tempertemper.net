@@ -10,6 +10,9 @@
             </svg>
         </button>
     </div>
-    {% include '@nav-primary' %}
+    <nav class="nav-collapse" role="navigation">
+        {% include '@nav-primary' %}
+        {% include '@search' %}
+    </nav>
     <h1>{{ heading }}</h1>
 </header>

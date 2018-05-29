@@ -1,0 +1,7 @@
+<ul>
+    {% for item in items %}
+        <li{% if selected %} class="selected"{% endif %}{% if ancestor %} class="ancestor"{% endif %}>
+            <a href="#">{{ item }}</a>
+        </li>
+    {% endfor %}
+</ul>
