@@ -39,6 +39,10 @@ nav {
     padding-bottom: .25em;
     padding-top: .25em;
   }
+
+  li + li {
+    margin-top: 0;
+  }
 }
 
 .nav-collapse {
