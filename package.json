@@ -19,7 +19,7 @@
     "@frctl/fractal": "^1.1.7",
     "@frctl/handlebars": "1.1.*",
     "browser-sync": "2.*",
-    "helper-markdown": "1.*",
+    // "helper-markdown": "1.*",
     "markdown-it": "^8.4.1",
     "npm": "^6.1.0"
   }
