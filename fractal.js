@@ -20,36 +20,23 @@ const markdown = require('markdown-it')({
   typographer: true
 });
 
-const nunjucks = require('@frctl/nunjucks')({
-  filters: {
-    markdown(str) {
-      return markdown.render(str);
-    },
-    markdownInline(str) {
-      return markdown.renderInline(str);
-    },
-    slugify(str) {
-      return str.toLowerCase().replace(/[^\w]+/g, '' + '/\s/g','-');
-    }
-  },
-  paths: [
-    `${paths.static}/assets/js`
-  ]
+const hbs = require('@frctl/handlebars')({
+  helpers: markdown
 });
 
 // Project config
 fractal.set('project.title', 'tempertemper pattern library');
 
 // Components config
-fractal.components.engine(nunjucks);
-fractal.components.set('ext', '.njk');
+fractal.components.engine(hbs);
+fractal.components.set('ext', '.hbs');
 fractal.components.set('default.preview', '@preview');
 fractal.components.set('default.status', 'wip');
 fractal.components.set('label', 'Patterns');
 fractal.components.set('path', `${paths.src}/patterns`);
 
 // Docs config
-fractal.docs.engine(nunjucks);
+fractal.docs.engine(hbs);
 fractal.docs.set('ext', '.md');
 fractal.docs.set('default.status', 'draft');
 fractal.docs.set('path', `${paths.src}/docs`);

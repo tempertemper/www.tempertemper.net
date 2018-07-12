@@ -4,22 +4,22 @@
     "del": "3.*",
     "gulp": "3.9.*",
     "gulp-autoprefixer": "5.*",
-    "gulp-notify": "3.*",
-    "gulp-sass": "4.*",
-    "gulp-rename": "1.2.*",
-    "gulp-sourcemaps": "2.6.*",
     "gulp-concat": "2.6.*",
+    "gulp-notify": "3.*",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "4.*",
+    "gulp-sourcemaps": "2.6.*",
     "gulp-uglify": "3.*",
-    "susy": "2.*",
-    "modularscale-sass": "2.*",
     "html5shiv": "3.*",
-    "responsive-nav": "1.*"
+    "modularscale-sass": "2.*",
+    "responsive-nav": "1.*",
+    "susy": "2.*"
   },
   "dependencies": {
     "@frctl/fractal": "^1.1.7",
-    "@frctl/nunjucks": "^1.0.3",
+    "@frctl/handlebars": "1.1.*",
+    "helper-markdown": "1.*",
     "browser-sync": "2.*",
-    "markdown-it": "^8.4.1",
-    "npm": "^6.0.1"
+    "npm": "^6.1.0"
   }
 }
