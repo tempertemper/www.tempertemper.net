@@ -1,5 +1,5 @@
 <header role="banner">
-    {% include '@logo' %}
+    {{> @logo }}
     <div class="nav-toggle" id="nav-toggle">
         <button>
             <svg width="36" height="36" class="icon-menu" viewBox="0 0 36 36" version="1.1" aria-labelledby="title">
@@ -11,8 +11,8 @@
         </button>
     </div>
     <nav class="nav-collapse" role="navigation">
-        {% include '@nav-primary' %}
-        {% include '@search' %}
+        {{> @nav nav-primary }}
+        {{> @search }}
     </nav>
     <h1>{{ heading }}</h1>
 </header>

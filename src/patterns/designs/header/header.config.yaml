@@ -1,3 +1,9 @@
 context:
-  items: '@nav-primary.items'
+  nav-primary:
+    items:
+      - Services
+      - Projects
+      - About
+      - Resources
+      - Contact
   heading: Main page heading

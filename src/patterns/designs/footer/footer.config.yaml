@@ -1,3 +1,10 @@
 context:
-  items: '@nav-primary.items'
+  nav-primary:
+    items: '@header.nav-primary.items'
+  nav-secondary:
+    items:
+      - Home
+      - Testimonials
+      - Blog
+      - Mailing list
   heading: Main page heading
