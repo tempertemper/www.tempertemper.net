@@ -14,14 +14,12 @@ const mandelbrot = require('@frctl/mandelbrot')({
   skin: 'white'
 });
 
-const markdown = require('markdown-it')({
-  html: true,
-  xhtmlOut: true,
-  typographer: true
-});
+const markdown = require('helper-markdown');
 
 const hbs = require('@frctl/handlebars')({
-  helpers: markdown
+  helpers: {
+    markdown: markdown()
+  }
 });
 
 // Project config
