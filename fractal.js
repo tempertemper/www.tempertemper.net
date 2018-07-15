@@ -21,7 +21,9 @@ const markdown = require('markdown-it')({
 });
 
 const hbs = require('@frctl/handlebars')({
-  helpers: markdown
+  helpers: {
+    markdown: ({ data: { root: { content } } }) => markdown.render(content)
+  }
 });
 
 // Project config
