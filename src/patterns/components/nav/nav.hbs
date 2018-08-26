@@ -1,0 +1,7 @@
+<ul>
+    {{#each items }}
+        <li{{#if selected }} class="selected"{{/if }}{{#if ancestor }} class="ancestor"{{/if }}>
+            <a href="#">{{ this }}</a>
+        </li>
+    {{/each }}
+</ul>

@@ -1,0 +1,9 @@
+context:
+  nav-primary:
+    items:
+      - Services
+      - Projects
+      - About
+      - Resources
+      - Contact
+  heading: Main page heading

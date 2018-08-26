@@ -1,0 +1,18 @@
+<header role="banner">
+    {{> @logo }}
+    <div class="nav-toggle" id="nav-toggle">
+        <button>
+            <svg width="36" height="36" class="icon-menu" viewBox="0 0 36 36" version="1.1" aria-labelledby="title">
+                <title id="title">Menu</title>
+                <path class="top" d="M36,2.516c0,-0.837 -0.679,-1.516 -1.516,-1.516l-32.968,0c-0.837,0 -1.516,0.679 -1.516,1.516l0,3.968c0,0.837 0.679,1.516 1.516,1.516l32.968,0c0.837,0 1.516,-0.679 1.516,-1.516l0,-3.968Z" fill="currentColor"/>
+                <path class="middle" d="M36,16.016c0,-0.837 -0.679,-1.516 -1.516,-1.516l-32.968,0c-0.837,0 -1.516,0.679 -1.516,1.516l0,3.968c0,0.837 0.679,1.516 1.516,1.516l32.968,0c0.837,0 1.516,-0.679 1.516,-1.516l0,-3.968Z" fill="currentColor"/>
+                <path class="bottom" d="M36,29.516c0,-0.837 -0.679,-1.516 -1.516,-1.516l-32.968,0c-0.837,0 -1.516,0.679 -1.516,1.516l0,3.968c0,0.837 0.679,1.516 1.516,1.516l32.968,0c0.837,0 1.516,-0.679 1.516,-1.516l0,-3.968Z" fill="currentColor"/>
+            </svg>
+        </button>
+    </div>
+    <nav class="nav-collapse" role="navigation">
+        {{> @nav nav-primary }}
+        {{> @search }}
+    </nav>
+    <h1>{{ heading }}</h1>
+</header>
