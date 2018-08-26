@@ -1,5 +1,8 @@
 <?php
 
+    $UserPrivileges = $API->get('UserPrivileges');
+    $UserPrivileges->create_privilege('perch_forms.export', 'Export responses');
+
     echo $HTML->title_panel([
         'heading' => $Lang->get($spam ? 'Listing spam responses' : 'Listing responses'),
     ], $CurrentUser);
@@ -33,7 +36,7 @@
         'active' => false,
         'title' => 'Download CSV',
         'link'  => $API->app_nav().'/responses/export/?id='.$Form->id(),
-        'priv'  => 'perch_forms.configure',
+        'priv'  => 'perch_forms.export',
         'icon'  => 'ext/o-cloud-download',
         'position' => 'end',
     ]);
@@ -48,6 +51,8 @@
 
 
         $Listing = new PerchAdminListing($CurrentUser, $HTML, $Lang, $Paging);
+
+        $Listing->enable_bulk_action();
     
         $Listing->add_col([
                 'title'     => 'Response',
@@ -88,7 +93,7 @@
             ]);
         
         $Listing->add_delete_action([
-                'priv'   => 'perch.users.roles.delete',
+                'priv'   => 'perch_forms.delete_responses',
                 'inline' => true,
                 'path'   => 'delete',
             ]);

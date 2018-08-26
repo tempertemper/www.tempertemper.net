@@ -12,6 +12,8 @@ class PerchResourceBucket
 	protected $error;
 
 	protected $allow_non_uploads = false;
+	protected $allow_overwrite   = false;
+
 
 	public function __construct($details)
 	{
@@ -31,6 +33,10 @@ class PerchResourceBucket
 		if (isset($details['role'])) {
 			$this->role = $details['role'];
 		}
+
+		if (isset($details['overwrite']) && $details['overwrite']) {
+			$this->allow_overwrite = true;
+		} 
 	}
 
 	public function to_array()
@@ -93,7 +99,7 @@ class PerchResourceBucket
 		return is_writable($this->file_path);
 	}
 
-	public function write_file($file, $name)
+	public function write_file($file, $name, $allow_overwrite = false)
 	{
 		$filename = PerchUtil::tidy_file_name($name);
 
@@ -104,18 +110,25 @@ class PerchResourceBucket
 
 		$target = PerchUtil::file_path($this->file_path.'/'.$filename);
 
-		if (file_exists($target)) {                                        
-		    $dot = strrpos($filename, '.');
-		    $filename_a = substr($filename, 0, $dot);
-		    $filename_b = substr($filename, $dot);
+		if (file_exists($target)) {     
 
-		    $count = 1;
-		    while (file_exists(PerchUtil::file_path($this->file_path.'/'.PerchUtil::tidy_file_name($filename_a.'-'.$count.$filename_b)))) {
-		        $count++;
-		    }
+			if ($allow_overwrite && $this->allow_overwrite) {
+				unlink($target);
+			} else {			
+			    $dot = strrpos($filename, '.');
+			    $filename_a = substr($filename, 0, $dot);
+			    $filename_b = substr($filename, $dot);
 
-		    $filename   = PerchUtil::tidy_file_name($filename_a . '-' . $count . $filename_b);
-		    $target     = PerchUtil::file_path($this->file_path.'/'.$filename);
+			    $count = 1;
+			    while (file_exists(PerchUtil::file_path($this->file_path.'/'.PerchUtil::tidy_file_name($filename_a.'-'.$count.$filename_b)))) {
+			        $count++;
+			    }
+
+			    $filename   = PerchUtil::tidy_file_name($filename_a . '-' . $count . $filename_b);
+			    $target     = PerchUtil::file_path($this->file_path.'/'.$filename);
+			}
+
+
 
 		}
 

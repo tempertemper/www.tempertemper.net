@@ -176,7 +176,16 @@ class PerchBlog_Comments extends PerchAPI_Factory
 
 		}
 
+
+		if (!isset($opts['group-mentions'])) {
+			$opts['group-mentions'] = false;
+		}
+
 		// sort
+		if ($opts['group-mentions']) {
+			$order[] =  'FIELD(webmentionType, \'like\', \'repost\', \'comment\', NULL) ASC';
+		}
+
 	    if (isset($opts['sort'])) {
 	        $desc = false;
 	        if (isset($opts['sort-order']) && $opts['sort-order']=='DESC') {
@@ -190,9 +199,6 @@ class PerchBlog_Comments extends PerchAPI_Factory
 	    if (isset($opts['sort-order']) && $opts['sort-order']=='RAND') {
             $order[] = 'RAND()';
         }
-
-
-
 
         // Paging
         $Paging = $this->api->get('Paging', $opts['pagination-var']);
@@ -324,7 +330,7 @@ class PerchBlog_Comments extends PerchAPI_Factory
 
 
 	        // sort
-		    if (isset($opts['sort'])) {
+		    if (isset($opts['sort']) && !$opts['group-mentions']) {
 		        if (isset($opts['sort-order']) && $opts['sort-order']=='DESC') {
 		            $desc = true;
 		        }else{
@@ -336,6 +342,8 @@ class PerchBlog_Comments extends PerchAPI_Factory
 		    if (isset($opts['sort-order']) && $opts['sort-order']=='RAND') {
 	            shuffle($comments);
 	        }
+
+
 
 	        // Pagination
 	        if (isset($opts['paginate'])) {
@@ -577,7 +585,18 @@ class PerchBlog_Comments extends PerchAPI_Factory
 		return $count;
 	}
 
+	public function notify_author($Post, $Comment)
+	{
+		return $this->_notify_author_of_comment($Post, $Comment);
+	}
 
+	public function get_first_pending($excluding_commentID)
+	{
+		$sql = 'SELECT * FROM '.$this->table.'
+				WHERE commentStatus='.$this->db->pdb('PENDING').' AND commentID!='.$this->db->pdb($excluding_commentID).'
+				ORDER BY commentDateTime DESC';
+		return $this->return_instance($this->db->get_row($sql));
+	}
 
 	private function _notify_author_of_comment($Post, $Comment)
 	{

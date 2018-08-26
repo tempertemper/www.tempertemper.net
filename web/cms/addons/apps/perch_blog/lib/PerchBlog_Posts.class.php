@@ -161,7 +161,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
     {
         if (!isset($data['postDateTime'])) $data['postDateTime'] = date('Y-m-d H:i:s');
 
-        if (isset($data['postTitle'])) {
+        if (isset($data['postTitle']) && !isset($data['postSlug'])) {
             $data['postSlug'] = PerchUtil::urlify(date('Y m d', strtotime($data['postDateTime'])). ' ' . $data['postTitle']);
         }
 
@@ -431,7 +431,7 @@ class PerchBlog_Posts extends PerchAPI_Factory
     	$sql = 'SELECT DISTINCT
     	            year(postDateTime) AS year,
     	            month(postDateTime) AS month,
-    	            CONCAT(year(postDateTime),"-",month(postDateTime),"-01") AS postDateTime,
+    	            CONCAT(year(postDateTime),"-",month(postDateTime),"-01") AS grouped_date,
     	            COUNT(*) AS month_qty
                 FROM '.$this->table .' p
             	WHERE year(postDateTime) = '.$this->db->pdb($year).'
@@ -440,10 +440,16 @@ class PerchBlog_Posts extends PerchAPI_Factory
 
         if ($sectionID) $sql .= ' AND p.sectionID='.$this->db->pdb($sectionID);
 
-        $sql .= ' GROUP BY year, month, postDateTime
+        $sql .= ' GROUP BY year, month, grouped_date
             	ORDER BY month DESC';
 
         $rows   = $this->db->get_rows($sql);
+
+        if (PerchUtil::count($rows)) {
+            foreach($rows as &$row) {
+                $row['postDateTime'] = $row['grouped_date'];
+            }
+        }
 
     	$Cache->set($cache_key, $rows);
 
@@ -473,6 +479,27 @@ class PerchBlog_Posts extends PerchAPI_Factory
             }
         }
     }
+
+
+    public function publish_posts()
+    {
+        $posts = $this->get_custom([
+            'return-objects' => true,
+            'unpublished'    => true,
+            'template'       => null,
+        ]);
+
+        if (PerchUtil::count($posts)) {
+            foreach($posts as $Post) {
+                $Post->publish();
+            }
+
+            $this->update_category_counts();
+        }
+
+        return PerchUtil::count($posts);
+    }
+
 
     private function _standard_where_callback($opts)
     {
@@ -566,6 +593,12 @@ class PerchBlog_Posts extends PerchAPI_Factory
                 // nothing
             }else{
                 $Query->where[] = 'postStatus=\'Published\' AND postDateTime<='.$db->pdb(date('Y-m-d H:i:00')).' ';
+            }
+
+
+            // unpublished
+            if (isset($opts['unpublished']) && $opts['unpublished']) {
+                $Query->where[] = 'postIsPublished=0';
             }
 
             return $Query;

@@ -283,7 +283,7 @@ class PerchContent_Page extends PerchBase
         $tag = $Template->find_tag($id, false, true);
         if ($tag) {
             // prevent tag suppression here.
-            $tag = str_replace(' suppress=', ' xsuppress=', $tag);
+            $tag = str_replace(' suppress', ' xsuppress', $tag);
             $Template->load($tag);
             return $Template->render($this);
         }

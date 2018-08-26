@@ -64,7 +64,7 @@
 <?php if ($CurrentUser->has_priv('assets.create')) { ?>
         <div class="field-wrap">
             <?php
-                echo $Form->label('image', 'File');
+                echo $Form->label('image', 'Replace file');
             ?>
             <div class="form-entry">
             <?php

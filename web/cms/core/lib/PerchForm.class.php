@@ -187,7 +187,6 @@ class PerchForm
 
 	public function validate()
 	{
-
 		$this->error	= true;
 		$r				= true;
 

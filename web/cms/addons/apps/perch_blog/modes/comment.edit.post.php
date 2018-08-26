@@ -6,8 +6,12 @@
         
         echo $Form->form_start('content-edit');
 
-            echo $HTML->heading2('Comment details');
-    
+            echo $HTML->heading2('Comment on ‘%s’', $Post->postTitle());
+
+            if ($Comment->webmention()) {
+                echo '<div class="field-wrap">'.$Lang->get('This comment is a webmention (%s)', $Comment->webmentionType()).'</div>';
+            }
+
             echo $Form->fields_from_template($Template, $details);
 
             if ($Comment->commentIP()) {
@@ -23,7 +27,7 @@
     		    		
     		echo $Form->select_field('commentStatus', 'Status', $opts, isset($details['commentStatus'])?$details['commentStatus']:false);
 		
-
+            $Form->add_another = true;
             echo $Form->submit_field('btnSubmit', 'Save', $API->app_path());
 
         echo $Form->form_end();

@@ -500,7 +500,7 @@
             $opts = $default_opts;
         }
 
-        if (!$opts['template']) return false;
+        if ($opts['template']===false) return false;
 
         $Content = PerchContent::fetch();
 

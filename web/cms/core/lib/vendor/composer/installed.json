@@ -1,48 +1,5 @@
 [
     {
-        "name": "drewm/selecta",
-        "version": "v1.0.4",
-        "version_normalized": "1.0.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/drewm/selecta.git",
-            "reference": "0fedf05437c33e193e4de708f6fcf221e14720df"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/drewm/selecta/zipball/0fedf05437c33e193e4de708f6fcf221e14720df",
-            "reference": "0fedf05437c33e193e4de708f6fcf221e14720df",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "4.0.*"
-        },
-        "time": "2016-11-06 17:13:58",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "DrewM\\Selecta\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Drew McLellan",
-                "email": "drew.mclellan@gmail.com"
-            }
-        ],
-        "keywords": [
-            "selector"
-        ]
-    },
-    {
         "name": "drewm/morse",
         "version": "v0.6",
         "version_normalized": "0.6.0.0",
@@ -63,7 +20,7 @@
         "require-dev": {
             "phpunit/phpunit": "4.0.*"
         },
-        "time": "2015-08-18 17:37:17",
+        "time": "2015-08-18T17:37:17+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -85,6 +42,49 @@
         "description": "A PHP feature detection library for code portability",
         "keywords": [
             "morse"
+        ]
+    },
+    {
+        "name": "drewm/selecta",
+        "version": "v1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/drewm/selecta.git",
+            "reference": "0fedf05437c33e193e4de708f6fcf221e14720df"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/drewm/selecta/zipball/0fedf05437c33e193e4de708f6fcf221e14720df",
+            "reference": "0fedf05437c33e193e4de708f6fcf221e14720df",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.0.*"
+        },
+        "time": "2016-11-06T17:13:58+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DrewM\\Selecta\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Drew McLellan",
+                "email": "drew.mclellan@gmail.com"
+            }
+        ],
+        "keywords": [
+            "selector"
         ]
     }
 ]

@@ -98,7 +98,7 @@
         $edit_mode = 'edit';
 
         #$postvars = array('postTags', 'postStatus', 'postAllowComments', 'postTemplate', 'authorID', 'sectionID');
-        $postvars = array('postStatus', 'postTemplate');
+        $postvars = array('postStatus', 'postTemplate', 'authorID');
 
     	$data = $Form->receive($postvars);
 

@@ -2,14 +2,20 @@
     
     class PerchXMLTag
     {
-        public $attributes = [];
+        public $attributes      = [];
         public $data_attributes = [];
         private $tag;
         
-        public function __construct($tag)
+        public function __construct($tag, $boolean_attributes = true)
         {
             $this->tag = $tag;
-            $this->parse();
+
+            if ($boolean_attributes) {
+                $this->parse_v2();
+            } else {
+                $this->parse();    
+            }
+            
         }
         
         public function __get($property)
@@ -49,7 +55,9 @@
             $count = preg_match_all($pattern, $this->tag, $matches, PREG_SET_ORDER);
             
             if ($count > 0 && is_array($matches)) {
+
                 foreach ($matches as $match) {
+
                     if ($match[2] == 'false') {
                         $val = false;
                     } else {
@@ -64,6 +72,43 @@
                 }
             }
         }
+
+        private function parse_v2()
+        {
+            $tag = $this->tag;
+            $tag = rtrim($tag, '/>');
+            $tag = substr($tag, strpos($tag, ' '));
+
+            $pattern = '{\s([a-z-]*)(?:="([^"]*)"){0,1}}';
+            
+            // Do we have escaped quotes? If so, use heavier rexexp
+            if (strpos($this->tag, '\"') !== false) {
+                # http://ad.hominem.org/log/2005/05/quoted_strings.php - Thanks, Trent!
+                $pattern = '{\s([a-z-]+)(?:=[\"]([^\"\\\\]*(?:\\\\.[^\"\\\\]*)*)[\"]){0,1}}';
+            }
+            
+            $count = preg_match_all($pattern, $tag, $matches, PREG_SET_ORDER);
+            
+            if ($count > 0 && is_array($matches)) {
+
+                foreach ($matches as $match) {
+
+                    if (!isset($match[2])) {
+                        $val = true;
+                    } else {
+                        if ($match[2] == 'false') {
+                            $val = false;
+                        } else {
+                            $val = str_replace('\"', '"', $match[2]);
+                        }
+                    }
+                    
+                    $key = str_replace('-', '_', $match[1]);
+                    
+                    $this->attributes[$key] = $val;
+                }
+            }
+        }
         
         public function get_attributes()
         {
@@ -72,6 +117,14 @@
         
         public function get_data_attribute_string()
         {
+            if (!PerchUtil::count($this->data_attributes)) {
+                foreach($this->attributes as $key => $val) {
+                    if (substr($key, 0, 5) == 'data-') {
+                        $this->data_attributes[$key] = $val;
+                    }
+                }
+            }
+
             if (PerchUtil::count($this->data_attributes)) {
                 $out = [];
                 foreach ($this->data_attributes as $key => $val) {

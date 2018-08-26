@@ -43,6 +43,8 @@
     $UserPrivileges->create_privilege('perch_forms', 'Access forms');
     $UserPrivileges->create_privilege('perch_forms.configure', 'Configure forms');
     $UserPrivileges->create_privilege('perch_forms.delete', 'Delete forms');
+    $UserPrivileges->create_privilege('perch_forms.delete_responses', 'Delete responses');
+    $UserPrivileges->create_privilege('perch_forms.export', 'Export responses');
 
 
     $sql = 'SHOW TABLES LIKE "'.$this->table.'"';
