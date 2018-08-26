@@ -1,5 +1,13 @@
 <?php
     
+    $UserPrivileges = $API->get('UserPrivileges');
+    $UserPrivileges->create_privilege('perch_forms.export', 'Export responses');
+
+
+    if (!$CurrentUser->has_priv('perch_forms.export')) {
+        exit;
+    }
+
     $Forms = new PerchForms_Forms($API);
     $Responses = new PerchForms_Responses($API);
 

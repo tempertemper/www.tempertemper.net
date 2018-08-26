@@ -78,7 +78,7 @@
         
         echo $Form->checkbox_field('store', 'Store responses', '1', isset($settings['store'])?$settings['store']:'');
         $Form->last = true;
-        echo $Form->hint('Must be absolute system path outside site - see sidebar');
+        echo $Form->hint('Must be absolute system path outside site public root');
         echo $Form->text_field('fileLocation', 'File upload path', isset($settings['fileLocation'])?$settings['fileLocation']:'');
 
 
