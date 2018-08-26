@@ -221,6 +221,38 @@ class PerchFieldType
         return $value;
     }
 
+    public function get_content_summary($details=array(), $Template)
+    {
+        $id = $this->Tag->id();
+
+        if (!PerchUtil::count($details)) return '';
+
+        if (array_key_exists($id, $details)) {
+            $raw = $details[$id];
+            $value = '';
+
+            if (is_array($raw)) {
+                if (isset($raw['_title'])) {
+                    $value = trim($raw['_title']);
+                }else if (isset($raw['_default'])) {
+                    $value = trim($raw['_default']);
+                }else if (isset($raw['processed'])) {
+                    $value = trim($raw['processed']);
+                }
+            } else {
+                $value = $raw;
+            }
+
+            if ($value) {
+                $value = PerchUtil::excerpt($value, 12);
+            }
+
+            return PerchUtil::html($value, true);
+        }
+
+        return '';
+    }
+
     /**
      * Get the text used for search indexing
      *

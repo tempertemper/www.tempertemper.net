@@ -349,7 +349,7 @@ class PerchTemplatedForm
         return str_replace($match, $new_tag, $template);
     }
 
-    private function _replace_select_field($match, $Tag, $template)
+    private function  _replace_select_field($match, $Tag, $template)
     {
         $attrs = $this->_copy_standard_attributes($Tag);
         $option_string = $Tag->options();

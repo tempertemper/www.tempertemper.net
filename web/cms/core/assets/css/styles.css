@@ -1736,7 +1736,7 @@ select {
 
 .fieldset-clean {
   border: none;
-  margin: 0 0 1em 0;
+  margin: 0 0 0 0;
   padding: 0; }
 
 .form-simple .label-radio {
@@ -1879,6 +1879,12 @@ h2.divider {
   top: 0px;
   width: 32px;
   z-index: 2; }
+
+.field-group .repeater.repeater-empty .repeated:after,
+.field-group .repeater .repeated:after {
+  background: #f6f6f6;
+  -webkit-box-shadow: 5px 5px 0 #f6f6f6, -5px -5px 0 #f6f6f6;
+          box-shadow: 5px 5px 0 #f6f6f6, -5px -5px 0 #f6f6f6; }
 
 .repeated-item {
   display: -webkit-box;
@@ -2123,6 +2129,74 @@ h2.divider {
   font-size: 0.75rem;
   line-height: 1.125rem;
   color: #cccccc; }
+
+.field-group {
+  background-color: #f6f6f6;
+  border-top: 1px solid #fff;
+  padding: 12px 0 0 0; }
+
+.field-group-label {
+  padding: 0 0 0 36px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem; }
+
+.field-group .divider-toggle {
+  margin-left: -20px;
+  margin-right: 8px;
+  vertical-align: text-bottom; }
+
+.field-group.closed {
+  padding: 12px 0; }
+
+.field-group.closed .divider-toggle svg {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+
+.field-group.closed .summary {
+  -webkit-column-count: 2;
+          column-count: 2;
+  padding-top: 0.5em; }
+
+.field-group.closed dl {
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  margin: 0 0 0 36px;
+  padding: 0 24px 0 0; }
+  .field-group.closed dl {
+    *zoom: 1; }
+  .field-group.closed dl:before, .field-group.closed dl:after {
+    content: "";
+    display: table; }
+  .field-group.closed dl:after {
+    clear: both; }
+
+.field-group.closed dt {
+  font-weight: 600;
+  float: left;
+  clear: left;
+  padding: 0 0.5em 0 0;
+  color: #4d4d4d; }
+
+.field-group.closed dd {
+  margin: 0;
+  padding: 0;
+  color: #4d4d4d; }
+
+.field-group.closed p {
+  margin: 0;
+  padding: 0; }
+
+.field-group.closed dt::after {
+  content: ":"; }
+
+.js .field-group-label,
+.js .field-group-preview {
+  cursor: pointer; }
 
 button::-moz-focus-inner {
   border: 0;
@@ -2515,6 +2589,9 @@ td .button.button-small {
 
 .pagination .disabled {
   opacity: 0.2; }
+
+.delete-controls {
+  margin: -10px 5px 15px 5px; }
 
 .breadcrumb.tab-active {
   background-color: #fff; }

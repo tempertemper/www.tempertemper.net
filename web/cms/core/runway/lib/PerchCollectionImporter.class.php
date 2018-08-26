@@ -101,6 +101,133 @@ class PerchCollectionImporter
 
 	}
 
+	public function find_items($opts)
+	{
+		$opts['skip-template'] = true;
+
+		$Collection = $this->get_active_collection();
+		$Content    = PerchContent::fetch();
+		$out        = $Content->get_collection($Collection->collectionKey(), $opts);
+		return $out;
+	}
+
+	public function update_item($id, $data)
+	{
+		if (!count($data)) return;
+
+		$Perch  = PerchAdmin::fetch();
+
+
+		$Collection = $this->get_active_collection();
+		$Items = new PerchContent_CollectionItems;
+
+		$Item = $Items->find_item($Collection->id(), $id);
+
+		if ($Item) {
+			$Collection->create_new_revision($Item);
+			$Item   = $Items->find_item($Collection->id(), $id);
+			$items    = $Collection->get_items_for_updating($id);
+
+			$contents = $Collection->get_items_for_editing($id);
+
+			if (PerchUtil::count($contents)) {
+				foreach($contents as $existing_content) {
+					if (PerchUtil::count($items) && $Item) {
+				
+						$options 	= $Collection->get_options();
+
+						foreach($items as $CollectionItem) {
+
+							$search_text  = '';
+
+							$CollectionItem->clear_resources();
+
+                        	$id = $CollectionItem->itemID();
+
+							$content_vars['_id'] = $id;
+							$content_vars['_title'] = '';
+
+							//$this->validate_input($data);
+
+							$tags = $this->get_template_tags();
+							$seen_tags = [];
+
+							foreach($tags as $Tag) {
+
+							
+								if (array_key_exists($Tag->id, $data) && !in_array($Tag->id, $seen_tags)) {
+
+									$seen_tags[] = $Tag->id;
+
+									$FieldType = $this->get_field_type($Tag, $tags);
+
+									// import the data
+									$content_vars[$Tag->id] = $FieldType->import_data($data);
+
+									// find the title
+
+									PerchUtil::debug('1 Title = '.$content_vars['_title']);
+
+									$content_vars = PerchContent_Util::determine_title($Tag, $content_vars[$Tag->id], $options, $content_vars);
+
+									PerchUtil::debug('2 Title = '.$content_vars['_title']);
+									
+									// build up a search string
+									$search_text .= ' '.$FieldType->get_search_text($content_vars[$Tag->id]);
+
+									//$content_vars = PerchContent_Util::determine_title($Tag, $content_vars[$Tag->id], $options, $content_vars);
+								} else {
+									if (!in_array($Tag->id, $seen_tags)) {
+										if (isset($existing_content[$Tag->id])) {
+											$content_vars[$Tag->id] = $existing_content[$Tag->id];	
+										}
+										
+									}
+									if (isset($content_vars[$Tag->id])) {
+										$content_vars = PerchContent_Util::determine_title($Tag, $content_vars[$Tag->id], $options, $content_vars);	
+									}
+									
+								}
+							}
+
+							if (count($content_vars)) {
+
+								$newdata = array();
+		                        $newdata['itemJSON']   = PerchUtil::json_safe_encode($content_vars);
+		                        $newdata['itemSearch'] = $search_text;
+
+		                        $CollectionItem->update($newdata);
+										
+								
+							}
+
+						}
+
+					}
+				}
+			}
+
+			$Collection->sort_items($CollectionItem->itemID());
+			$Collection->clean_up_resources();
+			$Item->publish();
+			$Item->index();
+			$Collection->update(array('collectionUpdated'=>date('Y-m-d H:i:s')));
+				
+
+		}
+
+		
+
+	}
+
+	public function delete_item($id)
+	{
+		$Perch  = PerchAdmin::fetch();
+		$Collection = $this->get_active_collection();
+		return $Collection->delete_item($id);
+
+	}
+
 	private function get_active_collection()
 	{
 		if (!$this->Collection) {

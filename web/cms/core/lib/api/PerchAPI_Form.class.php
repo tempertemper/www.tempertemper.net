@@ -667,6 +667,11 @@ class PerchAPI_Form extends PerchForm
             echo PerchContent_Util::get_empty_block(null, PerchUtil::post('add-block'), (int)PerchUtil::post('count'), false, $Template, $this);
             exit;
         }
+
+        if (PerchUtil::post('generate-summary')) {
+            echo PerchContent_Util::get_content_summary(PerchUtil::post('updated'), PerchUtil::post('fields'), $Template);
+            exit;
+        }
     }
 
 }

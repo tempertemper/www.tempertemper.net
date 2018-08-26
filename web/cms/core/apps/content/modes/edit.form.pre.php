@@ -90,7 +90,13 @@
             $Alert->set('error', PerchLang::get('The template for this region (%s) cannot be found.', '<code>'.$Region->regionTemplate().'</code>'));
         }
 
-        $tags   = $Template->find_all_tags_and_repeaters('content');
+        if (PerchUtil::post('generate-summary')) {
+            echo PerchContent_Util::get_content_summary(PerchUtil::post('updated'), PerchUtil::post('fields'), $Template);
+            exit;
+        }
+
+
+        $tags   = $Template->find_all_tags_and_repeaters('content', false, true);
 
         //PerchUtil::debug($tags);
 

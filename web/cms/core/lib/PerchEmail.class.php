@@ -3,37 +3,37 @@
 class PerchEmail
 {
 
-    private $vars = array();
-    private $template = false;
+    private $vars            = [];
+    private $template        = false;
     private $template_path;
-
-    private $cache	= array();
-
+    
+    private $cache           = [];
+    
     private $subject;
-
+    
     private $senderName;
     private $senderEmail;
-
+    
     private $recipientEmail;
-    private $recipientName = '';
-
-    private $replyToEmail  = '';
-    private $replyToName   = '';
-
-    private $bcc_list    = array();
-
+    private $recipientName   = '';
+    
+    private $replyToEmail    = '';
+    private $replyToName     = '';
+    
+    private $bcc_list        = [];
+    
     private $template_data;
-
-    private $files = array();
-
-    private $body = false;
-
-    private $html = false;
-
+    
+    private $files           = [];
+    
+    private $body            = false;
+    
+    private $html            = false;
+    
     private $template_method = 'dollar';
     private $template_ns     = 'email';
-
-    public $errors = '';
+    
+    public $errors           = '';
 
     function __construct($template, $namespace='email')
     {
@@ -65,8 +65,8 @@ class PerchEmail
         $type = PerchUtil::file_extension($template);
 
         if (!$type) {
-            $type = 'txt';
-            $template .= '.txt';
+            $type       = 'txt';
+            $template   .= '.txt';
             $this->html = false;
         }else{
             if ($type == 'html') {
@@ -223,11 +223,11 @@ class PerchEmail
 
     public function attachFile($name, $path, $mimetype)
     {
-        $file = array();
-        $file['name'] = $name;
-        $file['path'] = $path;
+        $file             = [];
+        $file['name']     = $name;
+        $file['path']     = $path;
         $file['mimetype'] = $mimetype;
-        $this->files[] = $file;
+        $this->files[]    = $file;
     }
 
     public function removeAttachedFiles()
@@ -237,23 +237,23 @@ class PerchEmail
 
     public function send()
     {
-        $LogMessage = new PerchSystemEventSubject;
-        $LogMessage->recipients = array();
-        $LogMessage->attachments = array();
-
-        $body = $this->build_message();
-        $LogMessage->body = $body;
-
-        $debug_recipients = array();
-
-        $mail = new PHPMailer(true);
-        $mail->CharSet = 'UTF-8';
-        $LogMessage->charset = 'utf-8';
+        $LogMessage              = new PerchSystemEventSubject;
+        $LogMessage->recipients  = [];
+        $LogMessage->attachments = [];
+        
+        $body                    = $this->build_message();
+        $LogMessage->body        = $body;
+        
+        $debug_recipients        = [];
+        
+        $mail                    = new PHPMailer(true);
+        $mail->CharSet           = 'UTF-8';
+        $LogMessage->charset     = 'utf-8';
 
         if ($this->html) {
             $mail->IsHTML();
-            $mail->AltBody = $this->plain_textify($body);
-
+            $mail->AltBody       = $this->plain_textify($body);
+            
             $LogMessage->is_html = true;
             $LogMessage->altbody = $mail->AltBody;
         }else{
@@ -280,19 +280,19 @@ class PerchEmail
             if (is_array($this->recipientEmail)) {
                 foreach($this->recipientEmail as $recipient) {
                     $mail->AddAddress($recipient);
-                    $debug_recipients[] = $recipient;
+                    $debug_recipients[]       = $recipient;
                     $LogMessage->recipients[] = $recipient;
                 }
             }else{
                $mail->AddAddress($this->recipientEmail(), $this->recipientName());
-               $debug_recipients[] = $this->recipientEmail();
+               $debug_recipients[]       = $this->recipientEmail();
                $LogMessage->recipients[] = $this->recipientEmail();
             }
 
-            $mail->Subject = $this->subject();
+            $mail->Subject       = $this->subject();
             $LogMessage->subject = $this->subject();
-
-            $mail->Body = $body;
+            
+            $mail->Body          = $body;
 
             if (PerchUtil::count($this->files)) {
                 foreach($this->files as $file) {
@@ -349,8 +349,6 @@ class PerchEmail
         PerchUtil::debug($this->errors, 'error');
 
         return false;
-
-
     }
 
 
@@ -368,14 +366,14 @@ class PerchEmail
     private function build_message_with_perch()
     {
         if (isset($this->app_id)) {
-            $API = new PerchAPI($this->version, $this->app_id);
+            $API      = new PerchAPI($this->version, $this->app_id);
             $Template = $API->get('Template');
             $Template->set($this->template, $this->template_ns);
         }else{
             $Template = new PerchTemplate($this->template, 'email');    
         }
         
-        $html = $Template->render_group(array($this->vars), true);
+        $html = $Template->render_group([$this->vars], true);
         $html = $Template->apply_runtime_post_processing($html);
         $this->subject($this->find_subject_from_html($html));
         return $html;
@@ -457,6 +455,5 @@ class PerchEmail
 
         return $out;
     }
-
 
 }

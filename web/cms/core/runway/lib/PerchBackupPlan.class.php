@@ -271,6 +271,10 @@ class PerchBackupPlan extends PerchBase
                 'runMessage'  => $message,
                 'runDbFile'   => $db_file,
             ]);
+
+        $Perch = Perch::fetch();
+        $Perch->event('backup.run', $Run);
+
         return $Run;
     }
 

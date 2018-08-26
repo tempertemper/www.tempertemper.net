@@ -75,6 +75,11 @@
                   VALUES ('assets.delete','Delete assets',3);";
     }
 
+    if ($DB->get_count('SELECT COUNT(*) FROM '.PERCH_DB_PREFIX.'user_privileges WGERE privKey="content.bulk.delete"')==0) {
+        $sql .= "INSERT INTO `__PREFIX__user_privileges` (`privKey`, `privTitle`, `privOrder`)
+                  VALUES ('content.bulk.delete','Bulk delete content',30);";
+    }
+
     $sql .= "ALTER TABLE `__PREFIX__content_regions` ADD `regionPublishRoles` VARCHAR(255)  NOT NULL  DEFAULT '*'  AFTER `regionEditRoles`;";
 
 

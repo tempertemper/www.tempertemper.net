@@ -133,7 +133,7 @@ class PerchAPI_Template
     public function find_all_tags_and_repeaters($type=false, $contents=false)
     {
         if ($type==false) $type = $this->namespace;
-        return $this->Template->find_all_tags_and_repeaters($type, $contents);
+        return $this->Template->find_all_tags_and_repeaters($type, $contents, true);
     }
 
     public function get_block_tags($type)
@@ -149,6 +149,11 @@ class PerchAPI_Template
     public function get_field_type_map($type='content')
     {
         return $this->Template->get_field_type_map($type);
+    }
+
+    public function format_value($tag, $value)
+    {
+        return $this->Template->format_value($tag, $value);
     }
 
 }

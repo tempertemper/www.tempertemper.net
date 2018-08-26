@@ -434,10 +434,12 @@ class PerchContent_Util
 		}
 	}
 
-	public static function display_item_fields($tags, $id, $item, $Page, $Form, $Template, $blocks_link_builder=array('PerchContent_Util', 'get_block_link'), $seen_tags=array())
+	public static function display_item_fields($tags, $id, $item, $Page, $Form, $Template, $blocks_link_builder=['PerchContent_Util', 'get_block_link'], $seen_tags=[])
 	{
 	    //PerchUtil::debug($tags, 'success');
 	    //$seen_tags = array();
+
+	    $previous_group = null;
 
 		if (!PerchUtil::count($tags)) return;
 
@@ -468,6 +470,22 @@ class PerchContent_Util
 	            }
 
 	            //PerchUtil::debug($tag->type(), 'success');
+
+
+	            // GROUPS
+	           	if ($tag->group) {
+	           		if ($tag->group->id != $previous_group) { 
+	           			if (!is_null($previous_group)) {
+	           				echo self::end_group();
+	           			}
+	           			echo self::start_group($tag->group, $Form, $tag); 
+	           		}
+	           	} else {
+	           		if ($previous_group) { echo self::end_group(); }
+	           	}
+	            // /GROUPS
+
+
 
 	            if ($tag->type()=='PerchRepeater') {
 	                $repeater_id = $id.'_'.$tag->id();
@@ -583,11 +601,16 @@ class PerchContent_Util
 	                    echo '<p class="notes-before">'.PerchUtil::html($tag->notes_before()).'</p>';
 	                }
 
-	                $inputs = $FieldType->render_inputs($item);
-	                $help   = $Template->find_help($tag->id);
-	                $wrap_class = $FieldType->get_wrapper_class();
+					$inputs     = $FieldType->render_inputs($item);
+					$summary    = $FieldType->get_content_summary($item, $Template);
+					$help       = $Template->find_help($tag->id);
+					$wrap_class = $FieldType->get_wrapper_class();
 
-	                echo '<div class="field-wrap '.$Form->error($item_id, false).($help ? ' with-detailed-help':'').'">';
+	                $data_attrs = ' data-label="'.PerchUtil::html($tag->label, true).'"';
+	                $data_attrs .= ' data-summary="'.$summary.'"';
+	                $data_attrs .= ' data-update="'.$tag->id.':'.$tag->input_id.'"';
+ 
+	                echo '<div class="field-wrap '.$Form->error($item_id, false).($help ? ' with-detailed-help':'').'"'.$data_attrs.'>';
 	                
 	                    $label_text  = PerchUtil::html($tag->label());
 
@@ -643,7 +666,81 @@ class PerchContent_Util
 	            }
 	        }
 
+	        // GROUPS
+           	if ($tag->group) {
+           		$previous_group = $tag->group->id;
+           	} else {
+           		$previous_group = null;
+           	}
+            // /GROUPS
+
+            //PerchUtil::debug('previous group: '.$previous_group);
+
 	    }
+
+	    if ($previous_group != null) {
+	    	echo self::end_group();
+	    }
+	}
+
+	private static function start_group($Group, $Form, $Tag) 
+	{
+		//PerchUtil::debug('Opening group '.$Group->id);
+		$c = '';
+		$errors_within = false;
+
+		//PerchUtil::debug($Tag->post_prefix, 'error');
+
+		if (PerchUtil::count($Group->tag_ids)) {
+			foreach($Group->tag_ids as $id) {
+				//PerchUtil::debug(sprintf('Checking for: %s', $Tag->post_prefix.$id));
+				$c .= $Form->error($Tag->post_prefix.$id, false);
+			}
+		}
+
+		if (strlen($c) > 0) {
+			$errors_within = true;
+		}
+
+		$s = '<section class="field-group '.($errors_within ? ' error' : '').'"'.($Group->tag->collapse ? ' data-collapse' : '').'>';
+		$s .= '<h3 class="field-group-label">'.$Group->tag->label.'</h3>';
+		$s .= '<div class="field-group-fields">';
+
+		return $s;
+	}
+
+	private static function end_group()
+	{
+		//PerchUtil::debug('closing group');
+		$s = '</div>
+		</section>';
+
+		return $s;
+	}
+
+	public static function get_content_summary($updated, $raw_field_data, $Template)
+	{
+		$fields     = array();
+		parse_str($raw_field_data, $fields);
+		
+		$Form       = new PerchForm();
+		$return     = [];
+		
+		$parts      = explode(':', $updated);
+		$updatedID  = $parts[0];
+		$prefixedID = $parts[1];
+
+		$tag = $Template->find_tag($updatedID);
+		if ($tag) {
+			$tag->set('id', $prefixedID);
+		}
+		$FieldType     = PerchFieldTypes::get($tag->type(), $Form, $tag, false, $Form->app_id);
+		$raw           = $FieldType->get_raw($fields);
+		$summary       = $FieldType->get_content_summary([$prefixedID => $raw], $Template);
+		$out[$updated] = $summary;
+
+		header('Content-Type: application/json');
+		return PerchUtil::json_safe_encode($out);
 	}
 
 

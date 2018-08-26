@@ -2,17 +2,20 @@
 
 class PerchAdminListing
 {
-	private $cols        = [];
-	private $headings    = [];
-	private $filters     = [];
+	private $cols             = [];
+	private $headings         = [];
+	private $filters          = [];
 	
-	private $Paging      = null;
-	private $HTML        = null;
-	private $Lang        = null;
-	private $CurrentUser = null;
-
-	private $sortable	 = false;
-	private $sort_arg	 = 'sort';
+	private $Paging           = null;
+	private $HTML             = null;
+	private $Lang             = null;
+	private $CurrentUser      = null;
+	private $Form             = null;
+	
+	private $sortable         = false;
+	private $sort_arg         = 'sort';
+	
+	private $bulk_action_path = null;
 
 	public function __construct(
 		$CurrentUser, 
@@ -27,8 +30,7 @@ class PerchAdminListing
 		
 		if ($Paging) {
 			$this->sortable    = $Paging->sortable;
-		}
-		
+		}	
 	}
 
 	public function add_filter($func)
@@ -99,6 +101,27 @@ class PerchAdminListing
 
 			$this->cols[] = $def;
 			$this->headings[] = ['title'=>null, 'class'=>'action'];
+		}
+	}
+
+	public function enable_bulk_action($action_path = 'delete')
+	{
+		if ($this->CurrentUser->has_priv('content.bulk.delete')) {
+			if (!$this->Form) {
+				$API  = new PerchAPI(1.0, 'perch');
+				$this->Form = $API->get('Form');
+			}
+
+			$Form = $this->Form;
+			$this->bulk_action_path = rtrim($action_path, '/').'/';
+
+			$this->add_col([
+	                'title' => '',
+	                'type'  => 'checkbox',
+	                'value'     => function($Item) use ($Form) {
+	                    return $Form->checkbox('bulk-'.$Item->id(), '1', 0);
+	                },
+	            ]);
 		}
 	}
 
@@ -371,6 +394,7 @@ class PerchAdminListing
 						$attrs .= ' data-msg="'.$this->HTML->encode($col['message'], true).'"';
 					}
 					
+					$attrs .= ' data-id="'.$this->HTML->encode($row->id(), true).'"';
 				}
 
 				$s .= '<a class="button button-small action-alert" href="';
@@ -380,6 +404,7 @@ class PerchAdminListing
 				} else {
 					$s .= $this->HTML->encode($col['path']).'/?id='.$this->HTML->encode($row->id());	
 				}
+
 				
 				$s .= '"'.$attrs.'>'.$this->enc('Delete').'</a>';	
 			}
@@ -411,17 +436,43 @@ class PerchAdminListing
 
 	public function template($headings, $values)
 	{
-		$s = '<div class="inner">';
+		$s = '';
+
+		if ($this->Form) {
+			$s .= $this->Form->form_start('listing', 'bulk-edit inner');
+		}
+
+		$s .= '<div class="inner">';
 		$s .= '<table>';
 		$s .= '<thead>' . $headings .'</thead>';
 		$s .= '<tbody>' . $values .'</tbody>';
 		$s .= '</table>';
 
+		if ($this->Form) {
+			$s .= $this->template_controls($this->Form);
+			
+		}
+
+
 		$s .= $this->template_paging();
 
 		$s .= '</div>';
 
+		if ($this->Form) {
+			
+			$s .= $this->Form->form_end();
+		}
+ 
 		return $s;
+	}
+
+	private function template_controls($Form)
+	{
+		$s = '<div class="delete-controls hidden">';
+		$s .= '<a class="button button-small action-alert" href="'.$this->HTML->encode($this->bulk_action_path, true).'" data-bulk-action="'.$this->HTML->encode($this->bulk_action_path, true).'">'.$this->enc('Delete selected').'</a>';	
+        $s .= '</div> ';
+
+    	return $s;
 	}
 
 	public function objectify($items, $pk = null)
