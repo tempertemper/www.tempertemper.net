@@ -13,7 +13,7 @@ perch_blog_custom([
 echo '</main>';
 echo '<div role="complementary">';
 echo '<aside class="post-groups">';
-echo '<h2>Post groups</h2>';
+echo '<h2>Blog post groups</h2>';
 perch_blog_categories([
     'sort'       => 'catTitle',
     'sort-order' => 'ASC',
