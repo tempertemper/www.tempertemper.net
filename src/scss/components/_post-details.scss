@@ -1,0 +1,16 @@
+.post-details {
+  font-style: italic;
+
+  [role="main"] &:first-child {
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    + p {
+      text-indent: 0;
+    }
+  }
+}
