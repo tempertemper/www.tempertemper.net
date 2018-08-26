@@ -1,0 +1,19 @@
+<perch:form id="ping" method="post" app="perch_blog" class="comment-form" action="<perch:blog id="postURL" escape="true" />">
+	<fieldset>
+	   <legend>Posted a response? Enter the URL</legend>
+		<div>
+			<perch:label for="commentURL">Article URL</perch:label>
+			<perch:input type="url" id="source" placeholder="https://" />
+		</div>
+		<div>
+			<perch:input type="hidden" id="pid" value="<perch:blog id="postID" />" />
+			<perch:input type="hidden" id="target" value="<perch:blog id="postURLFull" escape="true" />" />
+			<perch:input type="submit" id="submitPing" value="Submit" />
+		</div>
+
+    </fieldset>
+	<perch:success>
+		<p>Thank you. Your response has been submitted and will appear on the site once approved.</p>
+	</perch:success>
+
+</perch:form>

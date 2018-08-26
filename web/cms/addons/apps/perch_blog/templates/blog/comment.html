@@ -1,5 +1,5 @@
 <perch:before>
-    <h2>Comments</h2>
+    <h2>Comments and responses</h2>
 	<ul class="comments listing">
 </perch:before>
 		<li id="comment<perch:blog id="commentID" type="hidden" />">
@@ -12,7 +12,7 @@
 					<perch:if exists="commentURL"></a></perch:if>
 				</div>
 				<p rel="bookmark" class="date"><perch:blog id="commentDateTime" format="%d %b %Y %X" type="date" time="true" label="Date" /></p>
-				<perch:blog id="commentHTML" encode="false" html="true" type="textarea" label="Message (HTML)" order="4" required="true" />
+				<perch:blog id="commentHTML" encode="false" html="true" type="textarea" label="Message (HTML)" order="4" />
 			</div>
 		</li>
 <perch:after>

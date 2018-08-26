@@ -109,7 +109,7 @@ class PerchBlog_Post extends PerchAPI_Base
         parent::update($data);
 
         // slug
-        if (isset($data['postTitle'])) {
+        if (isset($data['postTitle']) && !isset($data['postSlug'])) {
 
             if (!isset($data['postDateTime'])) {
                 $data['postDateTime'] = date('Y-m-d H:i:s');
@@ -214,6 +214,7 @@ class PerchBlog_Post extends PerchAPI_Base
         }
 
         $out['postURL'] = $this->postURL();
+        $out['postURLFull'] = $this->postURL(true);
 
         return $out;
     }
@@ -253,7 +254,7 @@ class PerchBlog_Post extends PerchAPI_Base
         return $url;
     }
 
-    public function postURL()
+    public function postURL($full_url = false)
     {
         $Settings = PerchSettings::fetch();
         $url_template = $Settings->get('perch_blog_post_url')->val();
@@ -271,6 +272,15 @@ class PerchBlog_Post extends PerchAPI_Base
 
         $out = preg_replace_callback('/{([A-Za-z0-9_\-]+)}/', array($this, "substitute_url_vars"), $url_template);
         $this->tmp_url_vars = false;
+
+        if ($full_url) {
+            if (strpos($out, '://')===false) {
+                $Settings = PerchSettings::fetch();
+                $siteURL = $Settings->get('siteURL')->settingValue();
+                if (substr($siteURL, 0, 4)!='http') $siteURL = 'http://'.$_SERVER['HTTP_HOST'];
+                $out = $siteURL.$out;
+            }
+        }
 
         return $out;
     }
@@ -295,6 +305,15 @@ class PerchBlog_Post extends PerchAPI_Base
 
         return parent::index($Template);
     }
+
+    public function publish()
+    {
+        $this->update(['postIsPublished'=>1]);
+        $Perch = Perch::fetch();
+        $Perch->event($this->event_prefix.'.publish', $this);
+    }
+
+
 
     public function import_legacy_categories()
     {

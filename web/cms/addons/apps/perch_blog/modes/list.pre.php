@@ -2,7 +2,7 @@
     // Try to update
     $Settings = $API->get('Settings');
 
-    if ($Settings->get('perch_blog_update')->val()!='5.0.1') {
+    if ($Settings->get('perch_blog_update')->val()!='5.6') {
         PerchUtil::redirect($API->app_path().'/update/');
     }
 
