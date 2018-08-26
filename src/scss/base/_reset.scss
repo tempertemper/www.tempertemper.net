@@ -47,6 +47,7 @@ cite {
 
 a:focus {
   outline: none;
+  text-decoration: underline !important;
 }
 
 a img,
@@ -76,10 +77,6 @@ select {
 
 table {
   border-collapse: collapse;
-}
-
-:focus {
-  outline: none;
 }
 
 [type="submit"] {
