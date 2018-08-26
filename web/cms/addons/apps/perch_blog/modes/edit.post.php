@@ -21,7 +21,7 @@
         $template_help_html = $Template->find_help();
         if ($template_help_html) {
             echo $HTML->heading2('Help');
-            echo '<div id="template-help">' . $template_help_html . '</div>';
+            echo '<div class="template-help">' . $template_help_html . '</div>';
         }
 
         if ($template =='post.html') {
@@ -97,13 +97,26 @@
 
 
             /* ---- PUBLISHING ---- */
-            $opts = array();
-            $opts[] = array('label'=>$Lang->get('Draft'), 'value'=>'Draft');
-            if ($CurrentUser->has_priv('perch_blog.post.publish')) $opts[] = array('label'=>$Lang->get('Published'), 'value'=>'Published');
-            echo $Form->select_field('postStatus', 'Status', $opts, isset($details['postStatus'])?$details['postStatus']:'Draft');
 
 
-            echo $Form->submit_field('btnSubmit', 'Save', $API->app_path());
+            if (is_object($Post)) {
+
+                $opts = array();
+                $opts[] = array('label'=>$Lang->get('Draft'), 'value'=>'Draft');
+                if ($CurrentUser->has_priv('perch_blog.post.publish')) $opts[] = array('label'=>$Lang->get('Published'), 'value'=>'Published');
+                echo $Form->select_field('postStatus', 'Status', $opts, isset($details['postStatus'])?$details['postStatus']:'Draft');
+
+                echo $Form->submit_field('btnSubmit', 'Save', $API->app_path());
+
+            } else {
+
+                echo $Form->hidden('authorID', $Author->id());
+                echo $Form->hidden('postStatus', 'Draft');
+                echo $Form->submit_field('btnSubmit', 'Create draft', $API->app_path());
+            }
+
+
+            
 
         echo $Form->form_end();
         /* ---- /FORM ---- */

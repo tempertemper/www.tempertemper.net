@@ -270,5 +270,13 @@
     "Listing authors": "Listing authors",
     "Preview Draft": "Preview Draft",
     "perch_blog.blog.create": "perch_blog.blog.create",
-    "perch_blog.blog.delete": "perch_blog.blog.delete"
+    "perch_blog.blog.delete": "perch_blog.blog.delete",
+    "Importing data": "Importing data",
+    "perch_blog.sections.create": "perch_blog.sections.create",
+    "Create draft": "Create draft",
+    "Send webmentions": "Send webmentions",
+    "Receive webmentions": "Receive webmentions",
+    "This comment is a webmention (%s)": "This comment is a webmention (%s)",
+    "Comment on \u2018%s\u2019": "Comment on \u2018%s\u2019",
+    "Save & Add another": "Save & Moderate next"
 }

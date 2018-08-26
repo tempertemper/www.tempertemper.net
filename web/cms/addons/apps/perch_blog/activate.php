@@ -28,6 +28,8 @@
       `commentStatus` enum('LIVE','PENDING','SPAM','REJECTED') NOT NULL DEFAULT 'PENDING',
       `commentSpamData` text NOT NULL,
       `commentDynamicFields` text NOT NULL,
+      `webmention` tinyint(1) unsigned NOT NULL DEFAULT '0',
+      `webmentionType` enum('comment','like','repost') DEFAULT NULL,
       PRIMARY KEY (`commentID`)
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
@@ -50,6 +52,7 @@
       `postAllowComments` tinyint(1) unsigned NOT NULL DEFAULT '1',
       `postTemplate` varchar(255) NOT NULL DEFAULT 'post.html',
       `postMetaTemplate` varchar(255) NOT NULL DEFAULT 'post_meta.html',
+      `postIsPublished` tinyint(1) NOT NULL DEFAULT '0',
       PRIMARY KEY (`postID`),
       KEY `idx_date` (`postDateTime`),
       KEY `idx_status` (`postStatus`),
@@ -109,6 +112,18 @@
 
     INSERT INTO `__PREFIX__blogs` (`blogID`, `blogTitle`, `blogSlug`, `setSlug`, `postTemplate`, `blogDynamicFields`)
     VALUES (1,'Blog','blog','blog','post.html','[]');
+
+
+    CREATE TABLE IF NOT EXISTS `__PREFIX__blog_webmention_queue` (
+      `entryID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+      `entryCreated` timestamp NOT NULL DEFAULT '2000-01-01 00:00:00',
+      `entrySource` char(255) NOT NULL DEFAULT '',
+      `entryTarget` char(255) NOT NULL DEFAULT '',
+      `entryType` enum('post','comment') NOT NULL DEFAULT 'post',
+      `entryFK` int(10) NOT NULL DEFAULT '0',
+      PRIMARY KEY (`entryID`)
+    ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 
     ";
 

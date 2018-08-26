@@ -3,11 +3,11 @@
     $HTML = $API->get('HTML');
 
 	$Form = $API->get('Form');
+    $Posts = new PerchBlog_Posts($API);
 
     $message = false;
 
-    $Comments = new PerchBlog_Comments;
-    $Posts = new PerchBlog_Posts;
+    $Comments = new PerchBlog_Comments($API);
 
 
     if (!$CurrentUser->has_priv('perch_blog.comments.moderate')) {
@@ -19,6 +19,7 @@
          $commentID = (int) $_GET['id'];    
          $Comment = $Comments->find($commentID);
          $details = $Comment->to_array();
+         $Post    = $Posts->find($Comment->postID());
      }else{
          $message = $HTML->failure_message('Sorry, that comment could not be found.');
          $details = array();
@@ -38,6 +39,7 @@
  		$postvars = array('perch_commentName', 'perch_commentEmail', 'perch_commentHTML', 'commentStatus', 'perch_commentDateTime', 'perch_commentURL');
 
      	$data = $Form->receive($postvars);
+        $data['perch_commentDateTime'] = $Form->get_date('perch_commentDateTime');
 
         if (PerchUtil::count($data)) 
         foreach($data as $key=>$val) {
@@ -64,8 +66,6 @@
             
         }
 
-        PerchUtil::debug($data);
-
         $Comment->update($data);
 
         if (is_object($Comment)) {
@@ -74,10 +74,19 @@
             $message = $HTML->failure_message('Sorry, that comment could not be edited.');
         }
 
+        if ($Form->submitted_with_add_another()) {
+            // find the next unmoderated
+            $NextComment = $Comments->get_first_pending($Comment->id());
+            if ($NextComment) {
+                PerchUtil::redirect($API->app_path().'/comments/edit/?id='.$NextComment->id());
+            }else{
+                PerchUtil::redirect($API->app_path().'/comments/');
+            }
+        }
+
         
         
      }
 
      $details = $Comment->to_array();
  
-?>
