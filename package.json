@@ -1,23 +1,25 @@
 {
   "name": "tempertemper",
   "devDependencies": {
-    "autoprefixer": "7.*",
-    "grunt": "1.0.*",
-    "grunt-contrib-concat": "1.*",
-    "grunt-contrib-copy": "1.*",
-    "grunt-contrib-uglify": "3.*",
-    "grunt-contrib-watch": "1.*",
-    "grunt-notify": "0.4.*",
-    "grunt-postcss": "0.9.*",
-    "grunt-sass": "2.*",
-    "jit-grunt": "0.10.*",
-    "load-grunt-config": "0.19.*",
-    "postcss-reporter": "5.*",
-    "stylelint": "8.*",
-    "time-grunt": "1.*",
-    "susy": "2.2.*",
+    "del": "3.*",
+    "gulp": "3.9.*",
+    "gulp-autoprefixer": "5.*",
+    "gulp-concat": "2.6.*",
+    "gulp-notify": "3.*",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "4.*",
+    "gulp-sourcemaps": "2.6.*",
+    "gulp-uglify": "3.*",
+    "html5shiv": "3.*",
     "modularscale-sass": "2.*",
     "responsive-nav": "1.*",
-    "html5shiv": "3.*"
+    "susy": "2.*"
+  },
+  "dependencies": {
+    "@frctl/fractal": "^1.1.7",
+    "@frctl/handlebars": "1.1.*",
+    "browser-sync": "^2.24.6",
+    "markdown-it": "^8.4.1",
+    "npm": "^6.4.0"
   }
 }
