@@ -4,6 +4,17 @@
         'heading' => $Lang->get('Listing forms'),
     ], $CurrentUser);
 
+    $Smartbar = new PerchSmartbar($CurrentUser, $HTML, $Lang);
+
+    $Smartbar->add_item([
+        'active' => true,
+        'title' => 'Forms',
+        'link'  => $API->app_nav(),
+        'icon'  => 'core/o-pencil',
+    ]);
+
+    echo $Smartbar->render();
+
     if (PerchUtil::count($forms)) {
 
 
@@ -29,6 +40,18 @@
                                 ],
             ]);
         
+        $Listing->add_misc_action([
+                'priv'   => 'perch_forms.export',
+                'title'  => $Lang->get('Export'),
+                'class'  => 'warning',
+                'path'   => function($fForm){
+                    if ($fForm->number_of_responses() > 0) {
+                        return 'responses/export/?id='.$fForm->id();    
+                    }
+                    return '';
+                },
+            ]);
+
         $Listing->add_delete_action([
                 'priv'   => 'perch_forms.delete',
                 'inline' => true,

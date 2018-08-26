@@ -28,5 +28,3 @@
     }
     
     echo $HTML->main_panel_end();
-
-?>

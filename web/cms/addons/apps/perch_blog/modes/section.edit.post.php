@@ -37,7 +37,7 @@
     $template_help_html = $Template->find_help();
     if ($template_help_html) {
         echo $HTML->heading2('Help');
-        echo '<div id="template-help">' . $template_help_html . '</div>';
+        echo '<div class="template-help">' . $template_help_html . '</div>';
     }
 
 

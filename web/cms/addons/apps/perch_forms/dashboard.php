@@ -13,9 +13,8 @@
 	    $body = '';
 
 	    if (PerchUtil::count($forms)) {
-			
-
-			$items = '';
+		
+			$items = [];
 
 			foreach($forms as $Form) {
 

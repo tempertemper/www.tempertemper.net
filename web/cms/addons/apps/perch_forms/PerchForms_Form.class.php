@@ -174,6 +174,12 @@ class PerchForms_Form extends PerchAPI_Base
                 }
             }
         }
+
+        if (!$spam) {
+            $Perch = Perch::fetch();
+            $data['_id'] = $SubmittedForm->id;
+            $Perch->event('perch_forms.received', $data);
+        }
         
         // Redirect?
         if (isset($opts->successURL) && $opts->successURL) {
@@ -301,6 +307,8 @@ class PerchForms_Form extends PerchAPI_Base
 
             // if we are sending an autoresponse.
             if(isset($opts->sendAutoResponse) && $reply_to != false) {
+
+                $Email->removeAttachedFiles();
 
                 if (isset($opts->responseEmailSubject) && $opts->responseEmailSubject!='') {
                     $Email->subject($this->_replace_vars($opts->responseEmailSubject, $data['fields']));

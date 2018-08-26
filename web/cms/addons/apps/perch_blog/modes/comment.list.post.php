@@ -104,6 +104,17 @@
             ]);
 
         $Listing->add_col([
+                'title' => 'Type',
+                'value' => function($Comment) use ($Lang) {
+                    if ($Comment->webmention()) {
+                        return $Lang->get(ucfirst($Comment->webmentionType()));
+                    }
+                    return $Lang->get('Comment');
+                },
+                'sort' => 'webmentionType',
+            ]);
+
+        $Listing->add_col([
                 'title' => 'Email',
                 'value' => 'commentEmail',
                 'sort' => 'commentEmail',

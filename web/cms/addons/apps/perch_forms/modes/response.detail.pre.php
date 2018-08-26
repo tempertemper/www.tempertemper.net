@@ -16,7 +16,8 @@
     
     if (isset($_GET['file']) && $_GET['file']!='') {
         $files = $Response->files();
-        $file = $files->$_GET['file'];
+        $gf = $_GET['file'];
+        $file = $files->$gf;
         
         if (file_exists($file->path)) {
             header('Content-Type: '.$file->mime);

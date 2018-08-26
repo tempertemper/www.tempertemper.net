@@ -1,6 +1,6 @@
 <?php
 	if ($CurrentUser->logged_in() && $CurrentUser->has_priv('perch_blog')) {
-	    $this->register_app('perch_blog', 'Blog', 1, 'A simple blog', '5.5.1');
+	    $this->register_app('perch_blog', 'Blog', 1, 'A simple blog', '5.6.1');
 	    $this->require_version('perch_blog', '3.0');
 	    $this->add_setting('perch_blog_site_name', 'Site name', 'text', '');
 	    $this->add_setting('perch_blog_post_url', 'Blog post page path', 'text', '/blog/post.php?s={postSlug}');
@@ -17,8 +17,12 @@
 	    		array('label'=>'After 90 days', 'value'=>'90'),
 	    	));
 	    $this->add_create_page('perch_blog', 'edit');
+	    $this->add_setting('perch_blog_webmention_tx', 'Send webmentions', 'checkbox', '0');
+	    $this->add_setting('perch_blog_webmention_rx', 'Receive webmentions', 'checkbox', '0');
 
 	    PerchSystem::register_admin_search_handler('PerchBlog_SearchHandler');
+
+	    include(__DIR__.'/vendor/autoload.php');
 	}
 
 	spl_autoload_register(function($class_name){
