@@ -1,12 +1,14 @@
+html {
+  padding-top: .1em;
+  padding-bottom: .1em;
+  background-color: $colour-primary;
+}
+
 body {
   @include container(50em);
   padding-left: .5em;
   padding-right: .5em;
-}
-
-html {
-  border-top: .1em solid $colour-primary;
-  border-bottom: .1em solid $colour-primary;
+  background-color: $white;
 }
 
 @media (min-width: $l) {
