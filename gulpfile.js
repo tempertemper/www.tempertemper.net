@@ -23,6 +23,13 @@ const paths = {
     images: 'tmp/assets/img',
     fonts: 'tmp/assets/fonts'
   },
+  build: {
+    styles: 'patterns/assets/css',
+    scripts: 'patterns/assets/js',
+    images: 'patterns/assets/img',
+    fonts: 'patterns/assets/fonts',
+    all: 'patterns'
+  },
   dist: {
     styles: 'web/cms/addons/feathers/tempertemper/css',
     scripts: 'web/cms/addons/feathers/tempertemper/js',
@@ -61,17 +68,22 @@ gulp.task('clean-tmp', function () {
   return del(['tmp']);
 });
 
+// Clean build folder
+gulp.task('clean-build', function () {
+  return del([paths.build.all]);
+});
+
 // Copy files
 gulp.task('files', function() {
   gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
-  .pipe(gulp.dest(paths.tmp.scripts))
-  .pipe(gulp.dest(paths.dist.scripts));
+    .pipe(gulp.dest(paths.tmp.scripts))
+    .pipe(gulp.dest(paths.dist.scripts));
   gulp.src('./node_modules/responsive-nav/responsive-nav.min.js')
-  .pipe(gulp.dest(paths.tmp.scripts))
-  .pipe(gulp.dest(paths.dist.scripts));
+    .pipe(gulp.dest(paths.tmp.scripts))
+    .pipe(gulp.dest(paths.dist.scripts));
   gulp.src(paths.src.fonts)
-  .pipe(gulp.dest(paths.tmp.fonts))
-  .pipe(gulp.dest(paths.dist.fonts));
+    .pipe(gulp.dest(paths.tmp.fonts))
+    .pipe(gulp.dest(paths.dist.fonts));
 });
 
 // Compile SCSS and autoprefix styles.
@@ -97,14 +109,26 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(paths.tmp.scripts));
 });
 
-gulp.task('build', ['files', 'scripts', 'styles']);
+gulp.task('compile', [
+  'files',
+  'scripts',
+  'styles'
+]);
 
-gulp.task('watch', ['build'], function () {
+// Build static pattern library
+gulp.task('build', ['clean-build', 'compile'], function() {
+  const builder = fractal.web.builder();
+  return builder.build().then(function(){
+    console.log(`Pattern library static build complete!`);
+  });
+});
+
+gulp.task('watch', ['compile'], function () {
   gulp.watch(paths.src.styles, ['styles']);
   gulp.watch(paths.src.scripts, ['scripts']);
 });
 
-gulp.task('serve', ['build', 'watch'], function(){
+gulp.task('serve', ['compile', 'build', 'watch'], function(){
   const server = fractal.web.server({
     sync: true
   });
@@ -114,4 +138,4 @@ gulp.task('serve', ['build', 'watch'], function(){
   });
 });
 
-gulp.task('default', ['build']);
+gulp.task('default', ['compile']);
