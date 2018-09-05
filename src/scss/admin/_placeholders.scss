@@ -1,3 +1,9 @@
 %clearfix {
   @include clearfix;
 }
+
+%container {
+  @include container(50em);
+  padding-left: .5em;
+  padding-right: .5em;
+}
