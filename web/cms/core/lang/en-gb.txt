@@ -370,5 +370,8 @@
     "Warning": "Warning",
     "This option deletes all content from this region.": "This option deletes all content from this region.",
     "Delete all content from this region immediately": "Delete all content from this region immediately",
-    "Content successfully updated and a new item added.": "Content successfully updated and a new item added."
+    "Content successfully updated and a new item added.": "Content successfully updated and a new item added.",
+    "Reordering pages": "Reordering pages",
+    "Drag and drop the pages to reorder them.": "Drag and drop the pages to reorder them.",
+    "Page orders successfully updated.": "Page orders successfully updated."
 }
