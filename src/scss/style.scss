@@ -10,8 +10,7 @@
         'base/utility',
         'base/general',
         'base/icons',
-        'base/forms',
-        'base/paging';
+        'base/forms';
 
 @import 'components/header',
         'components/navigation',
@@ -21,7 +20,8 @@
         'components/teaser',
         'components/subscribe',
         'components/contact-form',
-        'components/footer';
+        'components/footer',
+        'components/paging';
 
 @import 'designs/general',
         'designs/blog';
