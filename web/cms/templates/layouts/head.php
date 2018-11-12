@@ -3,8 +3,9 @@
 <!--[if IE 9 ]><html class="ie9 ie" xml:lang="en" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html xml:lang="en" lang="en"><!--<![endif]-->
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
     <?php
-        perch_layout('_ie_specific');
         if (perch_layout_var('page', true) == 'resource') {
             $collection = 'Resources';
         };
