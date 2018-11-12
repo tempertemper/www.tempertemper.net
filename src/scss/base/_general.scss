@@ -47,6 +47,10 @@ pre {
   background-color: $black;
   color: $white;
   padding: 1em;
+
+  code {
+    background-color: transparent;
+  }
 }
 
 img,
