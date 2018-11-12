@@ -22,6 +22,10 @@ blockquote {
   margin-right: 0;
   padding: .5em 1.25em .5em 1em;
 
+  @include dark-mode() {
+    border-left-color: $colour-dark-mode-highlight;
+  }
+
   p {
     display: inline;
   }
@@ -86,4 +90,7 @@ code {
 hr {
   border-top: 2px solid $colour-primary;
   margin: 1em 0;
+  @include dark-mode () {
+    border-color: $colour-primary;
+  }
 }
