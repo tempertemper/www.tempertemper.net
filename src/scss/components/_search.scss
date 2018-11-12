@@ -9,7 +9,16 @@
 
       + .icon-search {
         color: $black;
+        @include dark-mode($color: $white);
       }
+    }
+  }
+
+  &:hover {
+
+    .icon-search {
+      color: $black;
+      @include dark-mode($color: $white);
     }
   }
 
@@ -60,8 +69,16 @@
       &:hover,
       &:focus {
 
+        @include dark-mode() {
+          border-color: $white;
+        }
+
         + .icon-search {
           color: $black;
+
+          @include dark-mode() {
+            color: $white;
+          }
         }
       }
     }
@@ -71,6 +88,10 @@
   &:active input,
   &:focus input {
     border-color: $black;
+
+    @include dark-mode() {
+      border-color: $white;
+    }
   }
 
   [type="search"] {
@@ -86,12 +107,12 @@
       width: 2.45em;
       background-color: transparent;
 
-
       &:focus {
         color: $black;
         padding-right: 2.2em;
         width: 100%;
         background-color: white;
+        @include dark-mode($background: $colour-dark-mode-main, $color: $white);
 
         + .icon-search {
           z-index: 1;
