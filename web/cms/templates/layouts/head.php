@@ -77,7 +77,6 @@
         perch_layout('_browser_styling');
         perch_layout('_javascript');
         perch_get_css();
-        perch_layout('_fonts');
         perch_layout('_google_sitename');
     ?>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/rss" />
