@@ -162,6 +162,14 @@
   border-radius: $border-radius-default;
   padding: 1em;
   @include dark-mode($background: $colour-dark-mode-highlight, $color: $white);
+
+  a {
+
+    &:focus {
+      background-color: $white;
+      @include dark-mode($background: $colour-dark-mode-main);
+    }
+  }
 }
 
 @mixin full-width {
