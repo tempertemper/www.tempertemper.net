@@ -16,6 +16,11 @@ $colour-primary-light: lighten($colour-primary, 53%);
 $colour-primary-darker: darken($colour-primary, 5%);
 $colour-primary-darkest: darken($colour-primary, 15%);
 
+// Dark mode
+
+$colour-dark-mode-main: #28302d;
+$colour-dark-mode-highlight: #353d3a;
+
 // Secondary (black)
 
 $black: #000;

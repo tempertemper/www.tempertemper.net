@@ -13,6 +13,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 10em;
+    @include dark-mode ($background: $colour-primary);
   }
 
   address {
@@ -45,18 +46,5 @@
 
   li {
     @include inline-nav;
-  }
-
-  path {
-    fill: $colour-primary;
-  }
-
-  a:hover,
-  a:active,
-  a:focus {
-
-    path {
-      fill: $black;
-    }
   }
 }

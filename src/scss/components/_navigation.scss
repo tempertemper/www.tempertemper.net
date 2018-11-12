@@ -6,13 +6,7 @@ nav {
 
     &:link,
     &:visited {
-      color: $colour-primary-darkest;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: $black;
+      color: $colour-primary;
     }
   }
 }
@@ -103,8 +97,16 @@ nav {
   &:focus {
     border-color: $black;
 
+    @include dark-mode() {
+      border-color: $white;
+    }
+
     path {
       fill: $black;
+
+      @media screen and (prefers-color-scheme: dark) {
+        fill: $white;
+      }
     }
   }
 
