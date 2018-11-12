@@ -20,7 +20,7 @@ blockquote {
   border-left: .75em solid $colour-primary-light;
   margin-left: 0;
   margin-right: 0;
-  padding: .5em 1.25em .5em 1em;
+  padding: .5em 0 .5em 1em;
 
   @include dark-mode() {
     border-left-color: $colour-dark-mode-highlight;
