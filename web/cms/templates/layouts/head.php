@@ -83,5 +83,6 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/rss" />
 </head>
 <body class="<?php echo PerchUtil::urlify(perch_pages_navigation_text(true));?>">
-<div class="canvas">
-<div class="page-wrapper">
+    <div class="canvas">
+        <div class="page-wrapper">
+            <a href="#main" tab-index="0" class="skip-nav visually-hidden">Skip to main content</a>

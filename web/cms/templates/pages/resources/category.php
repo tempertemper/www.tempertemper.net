@@ -4,7 +4,7 @@ $page = 'resource_category';
 perch_layout('header', [
     'page' => $page,
 ]);
-echo '<main role="main">';
+echo '<main role="main" id="main">';
 if (perch_get('cat')) {
 perch_collection('Resources', [
     'template'   => 'resource_list.html',
