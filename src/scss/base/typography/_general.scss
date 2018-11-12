@@ -71,10 +71,6 @@ code {
   background-color: $colour-primary-light;
 }
 
-.index-list {
-  @include remove-list-styling;
-}
-
 hr {
   border-top: 2px solid $colour-primary;
   margin: 1em 0;
