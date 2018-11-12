@@ -5,20 +5,18 @@
 
   input {
 
+    &:hover,
     &:focus {
+      // border-color: $white;
+
+      @include dark-mode() {
+        border-color: $white;
+      }
 
       + .icon-search {
         color: $black;
         @include dark-mode($color: $white);
       }
-    }
-  }
-
-  &:hover {
-
-    .icon-search {
-      color: $black;
-      @include dark-mode($color: $white);
     }
   }
 
