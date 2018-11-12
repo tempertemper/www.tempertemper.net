@@ -43,6 +43,14 @@
       display: block;
     }
   }
+
+  @media screen and (prefers-color-scheme: dark) {
+
+    .mark,
+    .trademark {
+      fill: $white;
+    }
+  }
 }
 
 @keyframes blink {

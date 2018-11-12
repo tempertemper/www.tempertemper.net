@@ -3,13 +3,17 @@
   &:link,
   &:visited {
     color: $colour-primary;
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   &:hover,
   &:active,
   &:focus {
-    color: $black;
+    color: $colour-primary-darker;
+
+    @include dark-mode() {
+      color: $white;
+    }
   }
 }
 
