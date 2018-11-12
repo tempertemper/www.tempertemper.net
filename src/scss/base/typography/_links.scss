@@ -10,15 +10,18 @@
   &:active,
   &:focus {
     color: $colour-primary-darker;
-
-    @include dark-mode() {
-      color: $white;
-    }
   }
 }
 
 a {
   @include text-link;
+
+  &:focus {
+    outline: none;
+    background-color: $colour-primary-light;
+    border-radius: .1em;
+    @include dark-mode($colour-dark-mode-highlight);
+  }
 
   > img {
     border: 3px solid $colour-primary;
