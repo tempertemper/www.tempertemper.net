@@ -1,36 +1,22 @@
-// BREAKPOINTS //
-
+// Breakpoints
 $xs: 25em;
 $s: 31em;
 $m: 43em;
 $l: 60em;
 $xl: 85em;
 
-// COLOURS //
-
-// Primary (blue)
-
+// Primary colours
 $colour-primary: #0097db;
 $colour-primary-light: lighten($colour-primary, 53%);
 $colour-primary-darker: darken($colour-primary, 5%);
 
-// Dark mode
-
+// Dark mode colours
 $colour-dark-mode-main: #28302d;
 $colour-dark-mode-highlight: #353d3a;
 
-// Secondary (black)
-
+// Other colours
 $black: #0B0C0C;
-$colour-secondary-lighter: lighten($black, 60%);
-$colour-secondary-light: lighten($black, 95%);
 $white: #fff;
 
-// STYLE
-
+// Gerneral styles
 $border-radius-default: 5px;
-$divider: 3px solid $black;
-
-// FONTS
-
-// $font-size: 1em;
