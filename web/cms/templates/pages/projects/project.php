@@ -6,7 +6,7 @@ perch_layout('head', [
 perch_layout('header', [
     'page' => $page,
 ]);
-echo '<main role="main">';
+echo '<main role="main" id="main">';
 echo '<aside>';
 perch_collection('Projects', [
     'template' => 'project_details.html',

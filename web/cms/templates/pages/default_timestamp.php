@@ -1,7 +1,7 @@
 <?php
 perch_layout('head');
 perch_layout('header');
-echo '<main role="main">';
+echo '<main role="main" id="main">';
 perch_content('Primary content');
 echo '</main>';
 echo '<div role="complementary">';
