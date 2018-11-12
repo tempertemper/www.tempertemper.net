@@ -73,14 +73,6 @@ code {
 
 .index-list {
   @include remove-list-styling;
-
-  h2,
-  .read-more {
-
-    a:visited {
-      color: $colour-primary-darkest;
-    }
-  }
 }
 
 hr {
