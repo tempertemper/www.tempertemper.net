@@ -1,7 +1,7 @@
 <?php
 perch_layout('head');
 perch_layout('header');
-echo '<main role="main">';
+echo '<main role="main" id="main">';
 perch_content('Primary content');
 echo '<p>Now what? Head <a href="/">back to the homepage</a> or have a read of one of these articles:</p>';
 perch_collection('Resources', [
