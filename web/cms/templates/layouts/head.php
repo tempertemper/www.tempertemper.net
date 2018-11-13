@@ -3,8 +3,9 @@
 <!--[if IE 9 ]><html class="ie9 ie" xml:lang="en" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html xml:lang="en" lang="en"><!--<![endif]-->
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
     <?php
-        perch_layout('_ie_specific');
         if (perch_layout_var('page', true) == 'resource') {
             $collection = 'Resources';
         };
@@ -77,11 +78,11 @@
         perch_layout('_browser_styling');
         perch_layout('_javascript');
         perch_get_css();
-        perch_layout('_fonts');
         perch_layout('_google_sitename');
     ?>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/rss" />
 </head>
 <body class="<?php echo PerchUtil::urlify(perch_pages_navigation_text(true));?>">
-<div class="canvas">
-<div class="page-wrapper">
+    <div class="canvas">
+        <div class="page-wrapper">
+            <a href="#main" tab-index="0" class="skip-nav visually-hidden">Skip to main content</a>
