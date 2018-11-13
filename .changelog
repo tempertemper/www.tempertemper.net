@@ -4,10 +4,38 @@ All notable changes to this project will be documented in this file. The format 
 
 + Adds
 + Changes
-+ Removes
 + Fixes
++ Removes
 
 ----------
+
+
+## [4.10.0] - 2018-11-13
+
+## Adds
+- support for Safari dark mode
+- adds skip to main content link for screenreaders
+- adds `visually-hidden` utility class
+- utility classes stylesheet
+
+## Changes
+- better link focus styling using background colour
+- softens black a tiny bit for dyslexic users
+- reduces padding on right side of blockquotes to provide more reading width at mobile
+- tidies up scss variables
+- moves .index-list to utility stylesheet
+- moves pagination styling to components
+- moves ie specific meta data from partial to document head
+- underlines all links except headings
+
+## Fixes
+- fixes `code` background when in a `pre`
+
+## Removes
+- removes hyphenation from paragraph text so that words don't break
+- removes visited link styles
+- gets rid of unused fonts partial in head
+
 
 ## [4.9.1] - 2018-02-21
 
