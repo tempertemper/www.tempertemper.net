@@ -128,7 +128,9 @@
                         }
 
                         if ($first && trim($title)=='') {
-                            $title = '#'.$item['_id'];
+                            if (isset($item['_id'])) {
+                                $title = '#'.$item['_id'];    
+                            }
                         }
 
                         return $title;
