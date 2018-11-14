@@ -373,5 +373,10 @@
     "Content successfully updated and a new item added.": "Content successfully updated and a new item added.",
     "Reordering pages": "Reordering pages",
     "Drag and drop the pages to reorder them.": "Drag and drop the pages to reorder them.",
-    "Page orders successfully updated.": "Page orders successfully updated."
+    "Page orders successfully updated.": "Page orders successfully updated.",
+    "Remove image": "Remove image",
+    "Show dedicated back link in sidebar": "Show dedicated back link in sidebar",
+    "Enable keyboard shortcuts": "Enable keyboard shortcuts",
+    "Skip region list for just one region": "Skip region list for just one region",
+    "Enforce bucket restrictions on content": "Enforce bucket restrictions on content"
 }
