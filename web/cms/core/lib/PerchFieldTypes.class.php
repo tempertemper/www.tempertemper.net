@@ -55,7 +55,7 @@ class PerchFieldTypes
 
                 $Perch = Perch::fetch();
                 if ($Perch->admin) {
-                    if (PerchUtil::count($all_tags)) $r->set_sibling_tags($all_tags);
+                    if (count($all_tags)) $r->set_sibling_tags($all_tags);
                     $r->add_page_resources();
                 }
 
@@ -2378,9 +2378,6 @@ class PerchFieldType_dataselect extends PerchFieldType
 
 class PerchFieldType_composite extends PerchFieldType
 {
-
-    public $editFormUnrenderable = true;
-
     public function render_inputs($details=array())
     {
         return '';
