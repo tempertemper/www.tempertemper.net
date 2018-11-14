@@ -6,6 +6,8 @@ class PerchSystem
     private static $admin_search_handlers = [];
     private static $bucket_handlers       = [];
     private static $template_filters      = [];
+    private static $advanced_field_types  = [];
+    private static $tag_pairs             = [];
     private static $template_vars         = [];
     private static $attribute_vars        = [];
     private static $feathers              = [];
@@ -139,6 +141,37 @@ class PerchSystem
     public static function get_registered_template_handlers()
     {
         return self::$template_handlers;
+    }
+
+    public static function register_field_type($type)
+    {
+        if ($type) {
+            if (!in_array($type, self::$advanced_field_types)) {
+                self::$advanced_field_types[] = $type;
+                $void = PerchFieldTypes::get($type, null, null);
+                unset($void);
+            }
+        }
+    }
+
+    public static function get_registered_field_types()
+    {
+        return self::$advanced_field_types;
+    }
+
+
+    public static function register_tag_pairs($fieldtype, $pairs)
+    {  
+        PerchUtil::debug('Registering for type '.$fieldtype);
+
+        if (PerchUtil::count($pairs)) {
+            self::$tag_pairs[$fieldtype] = $pairs;    
+        }
+    }
+
+    public static function get_registered_tag_pairs()
+    {
+        return self::$tag_pairs;
     }
     
     public static function set_var($var, $value=false)

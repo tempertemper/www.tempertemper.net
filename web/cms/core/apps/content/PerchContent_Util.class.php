@@ -593,6 +593,10 @@ class PerchContent_Util
 
 	            	$FieldType = PerchFieldTypes::get($tag->type(), $Form, $tag, false, $Form->app_id);
 
+	            	if ($FieldType->editFormUnrenderable) {
+	            		continue;
+	            	}
+
 	                if ($tag->divider_before()) {
 	                    echo '<h2 class="divider"><div>'.PerchUtil::html($tag->divider_before()).'</div></h2>';
 	                }

@@ -539,12 +539,28 @@ class PerchTemplate
 		$out = array();
 
 		// Excluded tags are discarded
-		$tag_pairs_to_exclude         = array();
+		$tag_pairs_to_exclude         = [];
 
-		$tag_pairs_with_empty_openers = array('blocks');
+		$tag_pairs_with_empty_openers = ['blocks'];
 
 		//	List of tags to process. Blocks needs to come before others, as blocks can contain e.g. repeaters.
-		$tag_pairs_to_process         = array('blocks', 'repeater');
+		$tag_pairs_to_process         = ['blocks', 'repeater'];
+
+		// Load up any user-registered field types
+		$user_fieldtype_map = PerchSystem::get_registered_tag_pairs();
+		$user_fieldtypes = [];
+		if (PerchUtil::count($user_fieldtype_map)) {
+			foreach($user_fieldtype_map as $user_fieldtype => $pairs) {
+				if (PerchUtil::count($pairs)) {
+					foreach($pairs as $tagpair) {
+						if (!in_array($tagpair, $tag_pairs_to_process)) {
+							$tag_pairs_to_process[] = $tagpair;
+							$user_fieldtypes[$tagpair] = $user_fieldtype;
+						}
+					}
+				}
+			}
+		}
 
 		if (PERCH_RUNWAY) {
 			$tag_pairs_to_process[]   = 'related';
@@ -602,7 +618,12 @@ class PerchTemplate
 	    			$OpeningTag->set('type', 'PerchBlocks');
 	    			$tmp['tag'] = $OpeningTag;
 	    		}else{
-	    			$tmp['tag'] = $OpeningTag;
+	    			$tmpTag = $OpeningTag;
+	    			if (isset($user_fieldtypes[$tag_type])) {
+	    				$tmpTag->set('type', $user_fieldtypes[$tag_type]);	
+	    			}
+	    			$tmpTag->tags = $this->find_all_tags_and_repeaters($type, $condition_contents);
+	    			$tmp['tag'] = $tmpTag;
 	    		}
 
 	    		// Set the order
