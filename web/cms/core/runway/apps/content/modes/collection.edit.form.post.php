@@ -57,18 +57,6 @@
         ]);
 
 
-    // View Page button
-    if (isset($view_page_url) && $view_page_url) {
-        $Smartbar->add_item([
-                'active'        => false,
-                'title'         => 'View Page',
-                'link'          => $view_page_url,
-                'link-absolute' => true,
-                'position'      => 'end',
-                'icon'          => 'core/o-world',
-            ]);
-    }
-
     if ($PrevItem) {
         $Smartbar->add_item([
             'title'    => 'Previous',
@@ -103,8 +91,6 @@
         ]);
     }
 
-
-    
 
     // Reorder button    
     $Smartbar->add_item([

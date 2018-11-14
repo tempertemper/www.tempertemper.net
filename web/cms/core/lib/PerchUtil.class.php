@@ -1406,11 +1406,9 @@
 			header('X-XSS-Protection: 1; mode=block');
 			header('X-Content-Type-Options: nosniff');
 
-			/* Deprecated
 			if (defined('PERCH_SSL') && PERCH_SSL) {
 				header('Strict-Transport-Security: max-age=31536000; includeSubDomains; preload');
 			}
-			*/
 
 			header_remove('X-Powered-By');
 		}

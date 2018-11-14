@@ -218,7 +218,7 @@ class PerchAssets_Assets extends PerchFactory
     	return $this->db->get_rows_flat($sql);
     }
 
-    public function get_available_buckets($CurrentUser, $exclude_roles = ['backup'], $privs = array())
+    public function get_available_buckets($CurrentUser, $exclude_roles = array('backup'), $privs = array())
     {
         $list = ['default', $CurrentUser->roleSlug()];
     	$sql = 'SELECT DISTINCT resourceBucket FROM '.$this->table.' 
@@ -339,7 +339,7 @@ class PerchAssets_Assets extends PerchFactory
         $Tags = new PerchAssets_Tags();
         $Tag  = $Tags->get_one_by('tagSlug', $tag);
 
-        $sql = 'SELECT DISTINCT * FROM (';
+        $sql = 'SELECT * FROM (';
         $filter_sql = '';
 
         if (PerchUtil::count($filters)) {
@@ -400,7 +400,7 @@ class PerchAssets_Assets extends PerchFactory
                 ORDER BY score DESC, resourceUpdated DESC';
 
 
-        $sql .= ') AS t ';//GROUP BY resourceID';
+        $sql .= ') AS t GROUP BY resourceID';
 
         return $this->return_instances($this->db->get_rows($sql));
        
