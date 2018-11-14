@@ -10,6 +10,8 @@
 
     $place_token_on_main = false;
 
+    $view_page_url = false;
+
     // test to see if image folder is writable
     $DefaultBucket = PerchResourceBuckets::get();
     $image_folder_writable = $DefaultBucket->ready_to_write();
@@ -260,6 +262,14 @@
 
     }else{
         $draft = false;
+
+        if ($Collection->get_option('searchURL')!='') {
+            $search_url = $Collection->get_option('searchURL');
+
+            $Collection->tmp_url_vars = $details[0];
+            $view_page_url = preg_replace_callback('/{([A-Za-z0-9_\-]+)}/', array($Collection, 'substitute_url_vars'), $search_url);
+            $Collection->tmp_url_vars = false;
+        }
     }
 
 

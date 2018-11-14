@@ -9,7 +9,8 @@ class PerchAPI_AuthPlugin extends PerchBase
 
 	public $activation_failed = false;
 
-	private $privileges = array();
+	private $privileges = [];
+	private $buckets    = null;
 
 	private $Role;
 	
@@ -41,6 +42,7 @@ class PerchAPI_AuthPlugin extends PerchBase
 			$details['userID']    = $user_details['email'];
 			$details['userEmail'] = $user_details['email'];
 			$details['roleID']    = $Role->id();
+			$details['roleSlug']  = $Role->roleSlug();
 			$details['userMasterAdmin'] = $Role->roleMasterAdmin();
 			$details['roleMasterAdmin'] = $Role->roleMasterAdmin();
 			$this->set_details($details);		
@@ -62,6 +64,8 @@ class PerchAPI_AuthPlugin extends PerchBase
 	
 	public function recover()
 	{
+		$start_session_for_internal  = PerchSession::is_set('userID');
+
 		$user_details = $this->resume_session();
 		
 		if (is_array($user_details)) {
@@ -75,6 +79,7 @@ class PerchAPI_AuthPlugin extends PerchBase
 			$details['userID']    = $user_details['email'];
 			$details['userEmail'] = $user_details['email'];
 			$details['roleID']    = $Role->id();
+			$details['roleSlug']  = $Role->roleSlug();
 			$details['userMasterAdmin'] = $Role->roleMasterAdmin();
 			$details['roleMasterAdmin'] = $Role->roleMasterAdmin();
 			$this->set_details($details);
@@ -121,6 +126,72 @@ class PerchAPI_AuthPlugin extends PerchBase
         return $this->privileges;
     }
 
+    public function can_use_bucket($bucket, $privs=array(), $check='any')
+    {
+        if ($this->roleMasterAdmin()) {
+            // master admin can use everything, no need to check
+            return true;
+        }
+
+        if ($this->buckets === null) {
+            // lazy load the bucket permissions
+            $this->_load_bucket_privileges();
+        }
+
+        if (count($privs) === 0) {
+            $privs = ['select', 'insert', 'update', 'delete'];
+        }
+
+        if (count($this->buckets) === 0) {
+            // privs aren't explicitly set for this role, so allow it. Permissive by default.
+            return true;
+        }
+
+        // if matching all privs
+        if ($check == 'all') {
+            $common = array_intersect($privs, (isset($this->buckets[$bucket]) ? $this->buckets[$bucket] : []));
+            if (count($common) == count($privs)) {
+                return true;
+            }
+            return false;    
+        }
+
+        // match any privs
+        foreach($privs as $priv) {
+            if (!isset($this->buckets[$bucket])) {
+                return false;
+            }
+
+            if (in_array($priv, $this->buckets[$bucket])) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function get_privs_for_bucket($bucket)
+    {
+        $privs = ['select', 'insert', 'update', 'delete'];
+
+        if ($this->buckets === null) {
+            // lazy load the bucket permissions
+            $this->_load_bucket_privileges();
+        }
+
+        if (!isset($this->buckets[$bucket])) {
+            if (count($this->buckets)) {
+                return [];
+            }
+        }
+
+        if (isset($this->buckets[$bucket])) {
+            return $this->buckets[$bucket];
+        }
+
+        return $privs;
+    }
+
 	private function _load_privileges($Role)
 	{
         if ($Role->roleMasterAdmin()) {
@@ -139,5 +210,36 @@ class PerchAPI_AuthPlugin extends PerchBase
 	        $this->privileges = $privs;
 	    }
 	}
+
+	private function _load_bucket_privileges()
+    {
+        if (!PERCH_RUNWAY) {
+            $this->buckets = [];
+            return;
+        }
+
+        // bucket privs
+        if (!$this->roleMasterAdmin()) {
+            $sql = 'SELECT * FROM '.PERCH_DB_PREFIX.'user_role_buckets WHERE roleID='.$this->db->pdb((int)$this->roleID());
+            $rows = $this->db->get_rows($sql);
+            if (PerchUtil::count($rows)) {
+                $privs = ['roleSelect', 'roleInsert', 'roleUpdate', 'roleDelete', 'roleDefault'];
+                $this->buckets = [];
+                foreach($rows as $row) {
+                    $tmp = [];
+                    foreach($privs as $priv) {
+                        if ($row[$priv]) {
+                            $tmp[] = str_replace('role', '', strtolower($priv));
+                        }    
+                    }       
+                    $this->buckets[$row['bucket']] = $tmp;
+                }            
+            }
+        }
+
+        if ($this->buckets === null) {
+            $this->buckets = [];
+        }
+    }
 
 }

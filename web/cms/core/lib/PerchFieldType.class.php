@@ -85,16 +85,30 @@ class PerchFieldType
      */
     public $input_type = 'text';
 
+
+    /**
+     * Paired tags expected by this field type.
+     */
+    public $tag_pairs = [];
+
+    /**
+     * Can this tag be rendered in an edit form>
+     */
+    public $editFormUnrenderable = false;
+
     public function __construct(PerchForm $Form=null, PerchXMLTag $Tag=null, $app_id)
     {
         $this->Form   = $Form;
         $this->Tag    = $Tag;
         $this->app_id = $app_id;
 
-        $this->required_id = $Tag->input_id();
+        if ($Tag) $this->required_id = $Tag->input_id();
 
         $this->add_class_dependancies();
 
+        if (PerchUtil::count($this->tag_pairs)) {
+            PerchSystem::register_tag_pairs(str_replace('PerchFieldType_', '', get_called_class()), $this->tag_pairs);
+        }
     }
 
     public function get_wrapper_class()
