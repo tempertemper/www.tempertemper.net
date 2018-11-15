@@ -11,6 +11,20 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds gulp bump for versioning
+- Adds unreleased section to changelog
+
+### Changes
+- Updates readme to use npm start
+- Fleshes out package.json file
+- Adds some more extension to 2 space index in editorconfig
+- Sublime text project syntax highlighting overrides
+- Nginx config details for pattern library
+- Updates npm packages
+
+### Fixes
+- Corrects version number in changelog
 
 ----------
 
