@@ -5,7 +5,7 @@ indent_size = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{css,scss,yaml,json,js}]
+[*.{css,scss,yaml,yml,json,js,sublime-project}]
 indent_size = 2
 
 [*.svg]

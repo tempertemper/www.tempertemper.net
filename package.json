@@ -1,15 +1,35 @@
 {
   "name": "tempertemper",
+  "version": "4.10.1",
+  "description": "tempertemper's website",
+  "scripts": {
+    "start": "gulp serve",
+    "test": "echo \"Error: no test specified\"",
+    "bump:major": "gulp bump:major",
+    "bump:minor": "gulp bump:minor",
+    "bump:patch": "gulp bump:patch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:tempertemper/tempertemper-website.git"
+  },
+  "author": "Martin Underhill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tempertemper/tempertemper-website/issues"
+  },
+  "homepage": "https://github.com/tempertemper/tempertemper-website",
   "devDependencies": {
     "del": "3.*",
     "gulp": "3.9.*",
     "gulp-autoprefixer": "5.*",
+    "gulp-bump": "^3.1.0",
     "gulp-concat": "2.6.*",
     "gulp-notify": "3.*",
-    "gulp-rename": "^1.2.3",
-    "gulp-sass": "4.*",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "2.6.*",
-    "gulp-uglify": "3.*",
+    "gulp-uglify": "^3.0.1",
     "html5shiv": "3.*",
     "modularscale-sass": "2.*",
     "responsive-nav": "1.*",
@@ -17,9 +37,9 @@
   },
   "dependencies": {
     "@frctl/fractal": "^1.1.7",
-    "@frctl/handlebars": "1.1.*",
-    "browser-sync": "^2.24.6",
-    "markdown-it": "^8.4.1",
-    "npm": "^6.4.0"
+    "@frctl/handlebars": "^1.1.5",
+    "browser-sync": "^2.26.3",
+    "markdown-it": "^8.4.2",
+    "npm": "^6.4.1"
   }
 }
