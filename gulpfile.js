@@ -5,6 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const notify = require('gulp-notify');
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
+const bump = require('gulp-bump');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const logger = fractal.cli.console;
@@ -38,6 +39,26 @@ const paths = {
   }
 };
 
+// Bump
+gulp.task('bump:major', function() {
+  return gulp.src(['./*.json'], {base: './'})
+    .pipe(bump({type: 'major'}))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('bump:minor', function() {
+  return gulp.src(['./*.json'], {base: './'})
+    .pipe(bump({type: 'minor'}))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('bump:patch', function() {
+  return gulp.src(['./*.json'], {base: './'})
+    .pipe(bump({type: 'patch'}))
+    .pipe(gulp.dest('./'));
+});
+
+// Sass shared config
 const scssConfig = function() {
   return sass({
     outputStyle: 'compressed'

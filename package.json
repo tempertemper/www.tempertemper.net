@@ -1,10 +1,13 @@
 {
   "name": "tempertemper",
-  "version": "4.11.0",
+  "version": "4.10.1",
   "description": "tempertemper's website",
   "scripts": {
     "start": "gulp serve",
     "test": "echo \"Error: no test specified\"",
+    "bump:major": "gulp bump:major",
+    "bump:minor": "gulp bump:minor",
+    "bump:patch": "gulp bump:patch"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,7 @@
     "del": "3.*",
     "gulp": "3.9.*",
     "gulp-autoprefixer": "5.*",
+    "gulp-bump": "^3.1.0",
     "gulp-concat": "2.6.*",
     "gulp-notify": "3.*",
     "gulp-rename": "^1.2.3",
