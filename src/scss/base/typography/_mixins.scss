@@ -36,6 +36,11 @@ $font--heading: 'FS Me Web', sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
+
+  @include dark-mode () {
+    line-height: 1.7;
+    word-spacing: .05em;
+  }
 }
 
 @mixin heading-xl {
