@@ -161,7 +161,7 @@
   background-color: $colour-primary-light;
   border-radius: $border-radius-default;
   padding: 1em;
-  @include dark-mode($background: $colour-dark-mode-highlight, $color: $white);
+  @include dark-mode($background: $colour-dark-mode-highlight, $color: $colour-dark-mode-white);
 
   a {
 

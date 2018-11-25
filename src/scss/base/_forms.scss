@@ -9,7 +9,7 @@ label {
 
 input,
 textarea {
-  @include dark-mode($background: $colour-dark-mode-main, $color: $white);
+  @include dark-mode($background: $colour-dark-mode-main, $color: $colour-dark-mode-white);
   border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
   display: block;
