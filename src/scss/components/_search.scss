@@ -10,12 +10,12 @@
       // border-color: $white;
 
       @include dark-mode() {
-        border-color: $white;
+        border-color: $colour-dark-mode-white;
       }
 
       + .icon-search {
         color: $black;
-        @include dark-mode($color: $white);
+        @include dark-mode($color: $colour-dark-mode-white);
       }
     }
   }
@@ -68,14 +68,14 @@
       &:focus {
 
         @include dark-mode() {
-          border-color: $white;
+          border-color: $colour-dark-mode-white;
         }
 
         + .icon-search {
           color: $black;
 
           @include dark-mode() {
-            color: $white;
+            color: $colour-dark-mode-white;
           }
         }
       }
@@ -88,7 +88,7 @@
     border-color: $black;
 
     @include dark-mode() {
-      border-color: $white;
+      border-color: $colour-dark-mode-white;
     }
   }
 
@@ -110,7 +110,7 @@
         padding-right: 2.2em;
         width: 100%;
         background-color: white;
-        @include dark-mode($background: $colour-dark-mode-main, $color: $white);
+        @include dark-mode($background: $colour-dark-mode-main, $color: $colour-dark-mode-white);
 
         + .icon-search {
           z-index: 1;
