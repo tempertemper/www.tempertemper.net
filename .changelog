@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Adds
 - Adds gulp bump for versioning
 - Adds unreleased section to changelog
+- Introduces new white, specific to dark mode
 
 ### Changes
 - Updates readme to use npm start
@@ -22,9 +23,12 @@ All notable changes to this project will be documented in this file. The format 
 - Sublime text project syntax highlighting overrides
 - Nginx config details for pattern library
 - Updates npm packages
+- Changes dark mode greys slightly
+- Adjusts font spacing in dark mode
 
 ### Fixes
 - Corrects version number in changelog
+- Fixes top margin on second list item in teaser component
 
 ----------
 
