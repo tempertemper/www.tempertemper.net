@@ -89,5 +89,18 @@
     "By Type": "By Type",
     "By Bucket": "By Bucket",
     "By Tag": "By Tag",
-    "Clear": "Clear"
+    "Clear": "Clear",
+    "Edit Page": "Edit Page",
+    "Editing %s Page": "Editing %s Page",
+    "Add subpage": "Add subpage",
+    "Details": "Details",
+    "Location": "Location",
+    "View Page": "View Page",
+    "Region": "Region",
+    "Items": "Items",
+    "Last updated": "Last updated",
+    "Region Options": "Region Options",
+    "Save as draft": "Save as draft",
+    "Save changes": "Save changes",
+    "Content successfully updated": "Content successfully updated"
 }
