@@ -68,7 +68,15 @@ li + li {
 code {
   font-family: menlo, monaco, 'Lucida Console', monospace;
   font-size: .8em;
-  background-color: $colour-primary-light;
+  background-color: $colour-dark-mode-main;
+  outline: 2px solid $colour-dark-mode-main;
+  color: $colour-dark-mode-white;
+
+  @include dark-mode () {
+    background-color: $colour-dark-mode-white;
+    outline: 2px solid $colour-dark-mode-white;
+    color: $black;
+  }
 }
 
 hr {
