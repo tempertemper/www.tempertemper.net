@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds gulp bump for versioning
 - Adds unreleased section to changelog
 - Introduces new white, specific to dark mode
+- Styling for inline and block level code in dark mode
 
 ### Changes
 - Updates readme to use npm start
@@ -29,6 +30,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Corrects version number in changelog
 - Fixes top margin on second list item in teaser component
+- Makes inline code legible
 
 ----------
 
