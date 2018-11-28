@@ -9,7 +9,7 @@ perch_blog_custom([
     'sort-order' => 'DESC',
     'count'      => 2,
 ]);
-perch_layout('call_to_action');
+perch_content('Call to action');
 echo '</main>';
 perch_layout('footer');
 perch_layout('end');

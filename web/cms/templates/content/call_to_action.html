@@ -1,0 +1,19 @@
+<section class="call-to-action">
+    <h2><perch:content id="heading" type="smarttext" label="Heading" required="true" /></h2>
+    <perch:if exists="intro">
+        <perch:content id="intro" type="textarea" label="Introduction" size="m" markdown="true" html="false" />
+    </perch:if>
+    <perch:content id="type" type="radio" required="true" label="Type of call to action" options="Twitter|twitter, Contact|contact" suppress="true">
+    <perch:if id="type" value="twitter">
+        <a class="primary" href="https://twitter.com/tempertemper">
+            <perch:template path="layouts/svg/twitter.svg" />
+            @tempertemper
+        </a>
+    </perch:if>
+    <perch:if id="type" value="contact">
+        <a href="/contact" class="primary">Say hello</a>
+        <div class="read-more"><a href="/projects">Or check out more of my work</a></div>
+    </perch:if>
+</section>
+
+
