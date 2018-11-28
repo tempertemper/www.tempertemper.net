@@ -44,12 +44,19 @@ img {
 }
 
 pre {
-  background-color: $black;
-  color: $white;
+  background-color: $colour-dark-mode-main;
+  color: $colour-dark-mode-white;
   padding: 1em;
+
+  @include dark-mode ($colour-dark-mode-highlight);
 
   code {
     background-color: transparent;
+    outline: 2px solid transparent;
+
+    @include dark-mode () {
+      color: $colour-dark-mode-white;
+    }
   }
 }
 
