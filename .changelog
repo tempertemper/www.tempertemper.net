@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds unreleased section to changelog
 - Introduces new white, specific to dark mode
 - Styling for inline and block level code in dark mode
+- New dynamic call to action template
 
 ### Changes
 - Updates readme to use npm start
@@ -26,13 +27,24 @@ All notable changes to this project will be documented in this file. The format 
 - Updates npm packages
 - Changes dark mode greys slightly
 - Adjusts font spacing in dark mode
-- Makes footer text bigger to pass AA accessibility
 - Adds outline to focussed links
+- Makes read more button stick to bottom of panel in teaser component
+- Makes homepage video embed optional
+- Adds blog teaser to homepage
 
 ### Fixes
 - Corrects version number in changelog
 - Fixes top margin on second list item in teaser component
 - Makes inline code legible
+- Stops colour animation on navigation menu icon
+- Makes footer text bigger to pass AA accessibility
+- Sorts messy underline on Twitter link in footer
+- Fixes output of timestamp page template
+
+### Removes
+- Takes Perch language files out of the repo once and for all
+- Gets rid of projects and testimonials on homepage
+
 
 ----------
 

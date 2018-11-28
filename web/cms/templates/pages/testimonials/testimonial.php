@@ -14,7 +14,7 @@ perch_collection('Testimonials', [
     'value'    => perch_get('s'),
     'count'    => 1,
 ]);
-perch_layout('call_to_action');
+perch_content('Call to action');
 echo '</main>';
 perch_layout('footer');
 perch_layout('end');
