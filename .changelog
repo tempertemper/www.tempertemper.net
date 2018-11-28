@@ -33,6 +33,7 @@ All notable changes to this project will be documented in this file. The format 
 - Corrects version number in changelog
 - Fixes top margin on second list item in teaser component
 - Makes inline code legible
+- Stops colour animation on navigation menu icon
 
 ----------
 
