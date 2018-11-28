@@ -14,10 +14,10 @@
                 'template'          => 'list.html'
             ]);
         ?>
-        <div>
+        <div class="social-media">
             <a href="https://twitter.com/tempertemper">
                 <?php include(PERCH_PATH.'/templates/layouts/svg/twitter.svg'); ?>
-                @tempertemper
+                <span>@tempertemper</span>
             </a>
         </div>
     </nav>

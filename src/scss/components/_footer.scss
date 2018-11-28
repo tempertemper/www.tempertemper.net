@@ -33,6 +33,10 @@
     li {
       display: inline;
     }
+
+    ul {
+      font-size: ms(1);
+    }
   }
 }
 
@@ -42,6 +46,19 @@
     margin-bottom: .25em;
     margin-top: .25em;
     padding-left: 0;
+  }
+
+  .social-media {
+    margin-top: .75em;
+
+    a {
+      display: flex;
+      justify-content: center;
+    }
+
+    .icon-twitter {
+      margin-right: .25em;
+    }
   }
 
   li {

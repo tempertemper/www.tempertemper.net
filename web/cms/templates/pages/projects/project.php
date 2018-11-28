@@ -23,7 +23,7 @@ perch_collection('Projects', [
     'value'    => perch_get('s'),
     'count'    => 1,
 ]);
-perch_layout('call_to_action');
+perch_content('Call to action');
 echo '<p><a href="/projects/" class="back">Back to full list of work</a></p>';
 echo '</main>';
 perch_layout('footer');
