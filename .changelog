@@ -26,6 +26,8 @@ All notable changes to this project will be documented in this file. The format 
 - Updates npm packages
 - Changes dark mode greys slightly
 - Adjusts font spacing in dark mode
+- Makes footer text bigger to pass AA accessibility
+- Adds outline to focussed links
 
 ### Fixes
 - Corrects version number in changelog
