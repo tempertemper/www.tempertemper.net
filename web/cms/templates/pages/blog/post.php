@@ -13,7 +13,7 @@ perch_blog_post(perch_get('s'));
 echo '</main>';
 echo '<div role="complementary">';
 perch_layout('blog/post_details');
-perch_content('Follow');
+perch_content('Call to action');
 echo '</div>';
 perch_layout('footer');
 perch_layout('end');

@@ -27,7 +27,7 @@ perch_collection('Projects', [
     'match'    => 'eq',
     'value'    => perch_get('s'),
 ]);
-perch_layout('call_to_action');
+perch_content('Call to action');
 echo '<p><a href="/services/" class="back">Back to full list of services</a></p>';
 echo '</main>';
 perch_layout('footer');
