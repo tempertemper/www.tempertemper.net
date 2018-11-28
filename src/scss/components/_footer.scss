@@ -44,6 +44,19 @@
     padding-left: 0;
   }
 
+  .social-media {
+    margin-top: .75em;
+
+    a {
+      display: flex;
+      justify-content: center;
+    }
+
+    .icon-twitter {
+      margin-right: .25em;
+    }
+  }
+
   li {
     @include inline-nav;
   }
