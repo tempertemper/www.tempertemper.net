@@ -31,6 +31,11 @@ All notable changes to this project will be documented in this file. The format 
 - Makes read more button stick to bottom of panel in teaser component
 - Makes homepage video embed optional
 - Adds blog teaser to homepage
+- Makes secondary call to action on CTA template editable and optional
+- Makes primary CTA text editable
+- Makes excerpt textareas a little bit bigger
+- Adds published toggle to projects
+- Adds published toggle to services
 
 ### Fixes
 - Corrects version number in changelog
@@ -40,11 +45,12 @@ All notable changes to this project will be documented in this file. The format 
 - Makes footer text bigger to pass AA accessibility
 - Sorts messy underline on Twitter link in footer
 - Fixes output of timestamp page template
+- Blog post tag spacing fix
 
 ### Removes
 - Takes Perch language files out of the repo once and for all
 - Gets rid of projects and testimonials on homepage
-
+- Removes unused call to action templates
 
 ----------
 
