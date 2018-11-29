@@ -15,10 +15,10 @@ perch_collection('Services', [
     'count'    => 1,
 ]);
 $service = perch_collection('Services', [
-    'filter' => 'slug',
-    'match' => 'eq',
-    'value' => perch_get('s'),
-    'skip-template'=>'true',
+    'filter'        => 'slug',
+    'match'         => 'eq',
+    'value'         => perch_get('s'),
+    'skip-template' => 'true',
 ]);
 PerchSystem::set_var('service_title', $service[0]["title"]);
 perch_collection('Projects', [
