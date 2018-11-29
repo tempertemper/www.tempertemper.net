@@ -35,15 +35,24 @@
                 ]);
             } elseif (perch_layout_var('page', true) == 'service') {
                 perch_collection('Services', [
-                    'filter' => 'slug',
-                    'match' => 'eq',
-                    'value' => perch_get('s'),
-                    'count' => 1,
-                    'template'=>'/project/page_header.html',
+                    'template' => '/project/heading.html',
+                    'filter'   => [
+                        [
+                            'filter'   => 'slug',
+                            'match'    => 'eq',
+                            'value'    => perch_get('s'),
+                            'count'    => 1,
+                        ],
+                        [
+                            'filter'   => 'published',
+                            'match'    => 'eq',
+                            'value'    => 'true',
+                        ],
+                    ],
                 ]);
             } elseif (perch_layout_var('page', true) == 'project') {
                 perch_collection('Projects', [
-                    'template'=>'/project/page_header.html',
+                    'template' => '/project/heading.html',
                     'filter'   => [
                         [
                             'filter'   => 'slug',
