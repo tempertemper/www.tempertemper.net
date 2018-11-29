@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+## [4.11.0] - 2018-11-29
+
 ### Adds
 - Adds gulp bump for versioning
 - Adds unreleased section to changelog
@@ -52,7 +56,6 @@ All notable changes to this project will be documented in this file. The format 
 - Gets rid of projects and testimonials on homepage
 - Removes unused call to action templates
 
-----------
 
 ## [4.10.1] - 2018-11-13
 
