@@ -23,9 +23,18 @@ $service = perch_collection('Services', [
 PerchSystem::set_var('service_title', $service[0]["title"]);
 perch_collection('Projects', [
     'template' => 'project_services.html',
-    'filter'   => 'services.slug',
-    'match'    => 'eq',
-    'value'    => perch_get('s'),
+    'filter'   => [
+        [
+            'filter' => 'services.slug',
+            'match'  => 'eq',
+            'value'  => perch_get('s'),
+        ],
+        [
+            'filter' => 'published',
+            'match'  => 'eq',
+            'value'  => 'true',
+        ],
+    ],
 ]);
 perch_content('Call to action');
 echo '<p><a href="/services/" class="back">Back to full list of services</a></p>';
