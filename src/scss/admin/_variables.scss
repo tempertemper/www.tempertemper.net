@@ -5,18 +5,19 @@ $m: 43em;
 $l: 60em;
 $xl: 85em;
 
+// Other colours
+$black: #0B0C0C;
+$white: #fff;
+
 // Primary colours
 $colour-primary: #0097db;
 $colour-primary-light: lighten($colour-primary, 53%);
 $colour-primary-darker: darken($colour-primary, 5%);
 
 // Dark mode colours
-$colour-dark-mode-main: #28302d;
-$colour-dark-mode-highlight: #353d3a;
-
-// Other colours
-$black: #0B0C0C;
-$white: #fff;
+$colour-dark-mode-main: #2C2C2C;
+$colour-dark-mode-highlight: #3D3D3D;
+$colour-dark-mode-white: #f2f2f2;
 
 // Gerneral styles
 $border-radius-default: 5px;

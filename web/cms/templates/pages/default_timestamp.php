@@ -6,9 +6,9 @@ perch_content('Primary content');
 echo '</main>';
 echo '<div role="complementary">';
 echo '<aside>';
-echo '<p>Document last updated:'.perch_page_modified([
-  'format' => '%e %B %Y',
-]).'</p>';
+echo '<p>Document last updated: ';
+perch_page_modified(['format' => '%e %B %Y']);
+echo '</p>';
 echo '</aside>';
 echo '</div>';
 perch_layout('footer');
