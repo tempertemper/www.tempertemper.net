@@ -89,7 +89,7 @@ nav {
 
   path {
     color: $colour-primary;
-    transition: all 284ms ease;
+    transition: transform 284ms ease, opacity 284ms ease;
   }
 
   &:hover,

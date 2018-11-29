@@ -1,3 +1,5 @@
+# Main website
+
 server {
     listen 80;
     server_name tempertemper.net www.tempertemper.net;
@@ -156,3 +158,29 @@ server {
     rewrite ^/legal/privacy-policy /privacy-policy permanent;
 }
 
+# Pattern library
+
+server {
+    listen 80;
+    server_name patterns.tempertemper.net www.patterns.tempertemper.net;
+    return 301 https://patterns.tempertemper.net$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name www.patterns.tempertemper.net;
+    ssl_certificate /etc/letsencrypt/live/patterns.tempertemper.net/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/patterns.tempertemper.net/privkey.pem;
+    return 301 https://patterns.tempertemper.net$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name patterns.tempertemper.net;
+    root /srv/www/patterns.tempertemper.net/web;
+    index index.php index.html index.htm;
+    ssl_certificate /etc/letsencrypt/live/patterns.tempertemper.net/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/patterns.tempertemper.net/privkey.pem;
+    access_log /srv/www/patterns.tempertemper.net/logs/access.log;
+    error_log /srv/www/patterns.tempertemper.net/logs/error.log error;
+}

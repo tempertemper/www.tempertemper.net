@@ -2,15 +2,62 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html). Each change can include things under the following categories:
 
-+ Adds
-+ Changes
-+ Fixes
-+ Removes
+- Adds
+- Changes
+- Removes
+- Fixes
 
 ----------
 
+## [Unreleased]
 
-## [4.10.0] - 2018-11-13
+----------
+
+## [4.11.0] - 2018-11-29
+
+### Adds
+- Adds gulp bump for versioning
+- Adds unreleased section to changelog
+- Introduces new white, specific to dark mode
+- Styling for inline and block level code in dark mode
+- New dynamic call to action template
+
+### Changes
+- Updates readme to use npm start
+- Fleshes out package.json file
+- Adds some more extension to 2 space index in editorconfig
+- Sublime text project syntax highlighting overrides
+- Nginx config details for pattern library
+- Updates npm packages
+- Changes dark mode greys slightly
+- Adjusts font spacing in dark mode
+- Adds outline to focussed links
+- Makes read more button stick to bottom of panel in teaser component
+- Makes homepage video embed optional
+- Adds blog teaser to homepage
+- Makes secondary call to action on CTA template editable and optional
+- Makes primary CTA text editable
+- Makes excerpt textareas a little bit bigger
+- Adds published toggle to projects
+- Adds published toggle to services
+
+### Fixes
+- Corrects version number in changelog
+- Fixes top margin on second list item in teaser component
+- Makes inline code legible
+- Stops colour animation on navigation menu icon
+- Makes footer text bigger to pass AA accessibility
+- Sorts messy underline on Twitter link in footer
+- Fixes output of timestamp page template
+- Blog post tag spacing fix
+
+### Removes
+- Takes Perch language files out of the repo once and for all
+- Gets rid of projects and testimonials on homepage
+- Removes unused call to action templates
+
+
+## [4.10.1] - 2018-11-13
 
 ## Adds
 - support for Safari dark mode
@@ -37,63 +84,76 @@ All notable changes to this project will be documented in this file. The format 
 - gets rid of unused fonts partial in head
 
 
+## [4.10.1] - 2018-09-05
+
+### Adds
+- Adds blue background colour to website that shows when the page bounces
+
+
+## [4.10.0] - 2018-08-29
+
+### Adds
+- Configures pattern library
+- Adds basic components to library for header, footer and typography
+
+
 ## [4.9.1] - 2018-02-21
 
 ### Adds
-+ Nginx config file for reference
-+ Introduces this `.changelog`
-+ Updates `.editorconfig`
-+ Adds `copy:js` to js Grunt alias
-+ Adds `aria-label`s to 'read more' links on index pages for blog, resources, testimonials, services and projects
+- Nginx config file for reference
+- Introduces this `.changelog`
+- Updates `.editorconfig`
+- Adds `copy:js` to js Grunt alias
+- Adds `aria-label`s to 'read more' links on index pages for blog, resources, testimonials, services and projects
 
 ### Changes
-+ Updates js files for document `<head>`
-+ Uses php's more up to date array syntax
-+ Page templates are now a raw-html-free-zone – php only
-+ Brings indentation in line with `.editorconfig`
-+ Uses one head layout template for whole site, to save duplication
-+ Uses one header layout template for whole site, to save duplication
-+ Lazy loads fonts with new CSS `font-display` property
-+ Dedicated mailing list page template
-+ Newly drawn search icon
-+ Reworks search fields' semantics and restyles accordingly
-+ Includes html5 shiv and responsive-nav js differently (better)
-+ Uses traditional sectioning headings, rather than now-depricated HTML5 method
-+ Increases CTA heading size
+- Updates js files for document `<head>`
+- Uses php's more up to date array syntax
+- Page templates are now a raw-html-free-zone – php only
+- Brings indentation in line with `.editorconfig`
+- Uses one head layout template for whole site, to save duplication
+- Uses one header layout template for whole site, to save duplication
+- Lazy loads fonts with new CSS `font-display` property
+- Dedicated mailing list page template
+- Newly drawn search icon
+- Reworks search fields' semantics and restyles accordingly
+- Includes html5 shiv and responsive-nav js differently (better)
+- Uses traditional sectioning headings, rather than now-depricated HTML5 method
+- Increases CTA heading size
 
 ### Fixes
-+ Fixes some broken links in footer (privacy policy and terms)
-+ Fixes broken project links on servcies pages
-+ Makes subscribed/unsubscribed pages reference Resources rather than the blog
-+ Fixes flash of 'open' mobile nav on smaller screens when page loads
+- Fixes some broken links in footer (privacy policy and terms)
+- Fixes broken project links on servcies pages
+- Makes subscribed/unsubscribed pages reference Resources rather than the blog
+- Fixes flash of 'open' mobile nav on smaller screens when page loads
 
 ### Removes
-+ Removes [Bower](https://bower.io)
-+ Gets rid of scss linting (for now)
-+ Removes downloads page
-+ Removes unnecessary link and form input colour animations on hover/focus
+- Removes [Bower](https://bower.io)
+- Gets rid of scss linting (for now)
+- Removes downloads page
+- Removes unnecessary link and form input colour animations on hover/focus
 
 
 ## [4.9.0] - 2018-02-07
 
 ### Adds
-+ New resources section, more or less mirroring the setup of Blog with:
-    + Resource index
-    + Resource page
-    + Resource categories
-+ Introductory paragraph on blog index
-+ Adds top and bottom borders to the page to brighten it up a wee bit
+- New resources section, more or less mirroring the setup of Blog with:
+    - Resource index
+    - Resource page
+    - Resource categories
+- Introductory paragraph on blog index
+- Adds top and bottom borders to the page to brighten it up a wee bit
 
 ### Changes
-+ Updates to Perch 3.0.14
-+ Makes blog call to action 'follow me on Twitter', rather than a mailing list subscribe form
-+ Makes twitter svg reuseable
+- Updates to Perch 3.0.14
+- Makes blog call to action 'follow me on Twitter', rather than a mailing list subscribe form
+- Makes twitter svg reuseable
 
 ### Fixes
-+ Fixes blog navigation pagination
-+ Sitemap.xml now works
-+ Sorts out form width issue
+- Fixes blog navigation pagination
+- Sitemap.xml now works
+- Sorts out form width issue
 
 ### Removes
-+ Gets rid of PostCSS Stylelint (for time being)
+- Gets rid of PostCSS Stylelint (for time being)
 
