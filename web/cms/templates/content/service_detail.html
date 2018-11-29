@@ -1,8 +1,9 @@
 <perch:content id="title" type="smarttext" label="Service" html="false" title="true" suppress="true" />
-<perch:content id="description" type="textarea" label="Description" bucket="services" size="l" editor="markitup" required="true" markdown="true" html="true" imagewidth="740" imagequality="90" imagecrop="true" />
-<perch:content id="excerpt" type="textarea" label="Excerpt" size="xs" html="false" suppress="true" chars="200" help="Max 200 characters" append="…" count="chars" divider-before="Meta" />
+<perch:content id="description" type="textarea" label="Description" bucket="services" size="xl" editor="markitup" required="true" markdown="true" html="true" imagewidth="740" imagequality="90" imagecrop="true" />
+<perch:content id="excerpt" type="textarea" label="Excerpt" size="s" html="false" suppress="true" chars="200" help="Max 200 characters" append="…" count="chars" divider-before="Meta" />
 <perch:content id="slug" for="title" type="slug" suppress="true" />
+<perch:content id="published" type="select" label="Published" options="Not published|false, Published|true" allowempty="false" required="true" suppress="true" />
+
 <perch:noresults>
-    <h1>Uh oh…</h1>
     <p>Looks like the page you were after has been moved, deleted or doesn’t exist. Or maybe there was a typo in the link you followed. Don’t worry – all is not lost! Just use the navigation or search to find the page you were after.</p>
 </perch:noresults>
