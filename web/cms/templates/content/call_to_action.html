@@ -11,7 +11,8 @@
         </a>
     </perch:if>
     <perch:if id="type" value="contact">
-        <a href="/contact" class="primary">Say hello</a>
+        <a href="/contact" class="primary"><perch:content id="primary_cta" type="text" label="Primary CTA text" /></a>
+    </perch:if>
     <perch:if exists="secondary_cta">
         <perch:content id="secondary_cta" type="text" label="Secondary CTA text" suppress="true" />
         <div class="read-more"><a href="<perch:content id="secondary_cta_link" type="text" label="Secondary CTA link" size="m" urlify="true" />"><perch:content id="secondary_cta" type="text" /></a></div>
