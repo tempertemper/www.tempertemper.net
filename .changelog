@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- JSON feed
+
+### Changes
+- Moves RSS feed page template
+
 ----------
 
 ## [4.11.0] - 2018-11-29
