@@ -94,5 +94,6 @@
     "%s response": "%s response",
     "Must be absolute system path outside site public root": "Must be absolute system path outside site public root",
     "Export": "Export",
-    "Export responses": "Export responses"
+    "Export responses": "Export responses",
+    "Blog": "Blog"
 }

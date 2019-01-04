@@ -11,7 +11,20 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+
 ----------
+
+## [4.11.1] - 2019-01-04
+
+### Adds
+- JSON feed
+
+### Changes
+- Moves RSS feed page template
+
+### Fixes
+- Gets rid of extra whitespace in blog post listing category links
+
 
 ## [4.11.0] - 2018-11-29
 
