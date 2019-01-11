@@ -8,8 +8,8 @@
         'title'         => 'tempertemper blog',
         'home_page_url' => $domain,
         'feed_url'      => $domain.'/events/feed.json',
-        'icon'          => $domain.'/cms/addons/feathers/voiceintheroom/img/icons/apple-touch-icon-180x180.png',
-        'favicon'       => $domain.'/cms/addons/feathers/voiceintheroom/img/icons/favicon.png',
+        'icon'          => $domain.'/cms/addons/feathers/tempertemper/img/icons/apple-touch-icon-180x180.png',
+        'favicon'       => $domain.'/cms/addons/feathers/tempertemper/img/icons/favicon.png',
         'items'         => [],
     ];
 
