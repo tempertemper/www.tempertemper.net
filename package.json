@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/tempertemper/tempertemper-website",
   "devDependencies": {
-    "@11ty/eleventy": "^0.7.0",
+    "@11ty/eleventy": "^0.7.1",
     "del": "3.*",
     "gulp": "3.9.*",
     "gulp-autoprefixer": "5.*",
@@ -41,6 +41,8 @@
     "@frctl/handlebars": "^1.1.5",
     "browser-sync": "^2.26.3",
     "markdown-it": "^8.4.2",
-    "npm": "^6.4.1"
+    "markdown-it-anchor": "^5.0.2",
+    "npm": "^6.4.1",
+    "uslug": "^1.0.4"
   }
 }
