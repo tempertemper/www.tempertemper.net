@@ -105,6 +105,10 @@
       width: 2.45em;
       background-color: transparent;
 
+      @media screen and (prefers-reduced-motion: reduce) {
+        transition: width 1ms ease, background-color 1ms ease;
+      }
+
       &:focus {
         color: $black;
         padding-right: 2.2em;
