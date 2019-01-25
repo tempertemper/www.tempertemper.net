@@ -14,6 +14,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 
+## [4.11.2] - 2019-01-25
+
+### Changes
+- Adds `autocomplete="off"` attribute to search form
+- Adds `prefers-reduced-motion` media queries to stop animations when the user has their operating system's 'Reduce motion' setting on
+
+
 ## [4.11.1] - 2019-01-04
 
 ### Adds
