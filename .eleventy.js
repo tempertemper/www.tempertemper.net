@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
   var anchor = require('markdown-it-anchor');
   var markdownIt = require("markdown-it");
   eleventyConfig.setLibrary("md", markdownIt({
+    html: true,
     typographer: true
   }).use(anchor, {slugify: uslugify}));
   var mdIntro = markdownIt({
