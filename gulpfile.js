@@ -24,7 +24,7 @@ const paths = {
     images: 'tmp/assets/img',
     fonts: 'tmp/assets/fonts'
   },
-  build: {
+  patterns: {
     styles: 'patterns/assets/css',
     scripts: 'patterns/assets/js',
     images: 'patterns/assets/img',
@@ -32,10 +32,10 @@ const paths = {
     all: 'patterns'
   },
   dist: {
-    styles: 'web/cms/addons/feathers/tempertemper/css',
-    scripts: 'web/cms/addons/feathers/tempertemper/js',
-    images: 'web/cms/addons/feathers/tempertemper/img',
-    fonts: 'web/cms/addons/feathers/tempertemper/fonts'
+    styles: 'dist/assets/css',
+    scripts: 'dist/assets/js',
+    images: 'dist/assets/img',
+    fonts: 'dist/assets/fonts'
   }
 };
 
@@ -89,21 +89,32 @@ gulp.task('clean-tmp', function () {
   return del(['tmp']);
 });
 
-// Clean build folder
-gulp.task('clean-build', function () {
-  return del([paths.build.all]);
+// Clean patterns folder
+gulp.task('clean-patterns', function () {
+  return del([paths.patterns.all]);
 });
 
 // Copy files
+// gulp.task('files', function() {
+//   gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
+//     .pipe(gulp.dest(paths.tmp.scripts))
+//     .pipe(gulp.dest(paths.dist.scripts));
+//   gulp.src('./node_modules/responsive-nav/responsive-nav.min.js')
+//     .pipe(gulp.dest(paths.tmp.scripts))
+//     .pipe(gulp.dest(paths.dist.scripts));
+//   gulp.src(paths.src.fonts)
+//     .pipe(gulp.dest(paths.tmp.fonts))
+//     .pipe(gulp.dest(paths.dist.fonts));
+// });
+
+// Copy files
 gulp.task('files', function() {
-  gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
-    .pipe(gulp.dest(paths.tmp.scripts))
-    .pipe(gulp.dest(paths.dist.scripts));
-  gulp.src('./node_modules/responsive-nav/responsive-nav.min.js')
-    .pipe(gulp.dest(paths.tmp.scripts))
+  gulp.src([
+    './node_modules/html5shiv/dist/html5shiv.min.js',
+    './node_modules/responsive-nav/responsive-nav.min.js'
+  ])
     .pipe(gulp.dest(paths.dist.scripts));
   gulp.src(paths.src.fonts)
-    .pipe(gulp.dest(paths.tmp.fonts))
     .pipe(gulp.dest(paths.dist.fonts));
 });
 
@@ -115,7 +126,7 @@ gulp.task('styles', function () {
     .pipe(autoprefixerConfig())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.dist.styles))
-    .pipe(gulp.dest(paths.tmp.styles))
+    // .pipe(gulp.dest(paths.tmp.styles))
     .pipe(browserSync.stream());
 });
 
@@ -130,26 +141,27 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(paths.tmp.scripts));
 });
 
-gulp.task('compile', [
+gulp.task('build', [
   'files',
   'scripts',
   'styles'
 ]);
 
 // Build static pattern library
-gulp.task('build', ['clean-build', 'compile'], function() {
+gulp.task('patterns', ['clean-patterns', 'build'], function() {
   const builder = fractal.web.builder();
   return builder.build().then(function(){
     console.log(`Pattern library static build complete!`);
   });
 });
 
-gulp.task('watch', ['compile'], function () {
+gulp.task('watch', ['build'], function () {
   gulp.watch(paths.src.styles, ['styles']);
   gulp.watch(paths.src.scripts, ['scripts']);
 });
 
-gulp.task('serve', ['compile', 'build', 'watch'], function(){
+// Build patten library and assets for UI dev
+gulp.task('assets', ['build', 'patterns', 'watch'], function(){
   const server = fractal.web.server({
     sync: true
   });
@@ -159,4 +171,7 @@ gulp.task('serve', ['compile', 'build', 'watch'], function(){
   });
 });
 
-gulp.task('default', ['compile']);
+
+gulp.task('serve', ['build', 'watch']);
+
+gulp.task('default', ['build']);
