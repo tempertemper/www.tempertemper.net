@@ -3,7 +3,9 @@
   "version": "4.11.0",
   "description": "tempertemper's website",
   "scripts": {
-    "start": "gulp serve",
+    "start": "eleventy --watch",
+    "build": "gulp && eleventy",
+    "assets": "gulp serve && eleventy",
     "test": "echo \"Error: no test specified\"",
     "bump:major": "gulp bump:major",
     "bump:minor": "gulp bump:minor",
@@ -21,19 +23,19 @@
   "homepage": "https://github.com/tempertemper/tempertemper-website",
   "devDependencies": {
     "@11ty/eleventy": "^0.7.1",
-    "del": "3.*",
+    "del": "^3.0.0",
     "gulp": "3.9.*",
-    "gulp-autoprefixer": "5.*",
-    "gulp-bump": "^3.1.0",
-    "gulp-concat": "2.6.*",
-    "gulp-notify": "3.*",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-bump": "^3.1.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "2.6.*",
     "gulp-uglify": "^3.0.1",
-    "html5shiv": "3.*",
+    "html5shiv": "^3.0.1",
     "modularscale-sass": "2.*",
-    "responsive-nav": "1.*",
+    "responsive-nav": "^1.0.39",
     "susy": "2.*"
   },
   "dependencies": {
@@ -42,7 +44,8 @@
     "browser-sync": "^2.26.3",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
-    "npm": "^6.4.1",
+    "npm": "^6.6.0",
+    "require-dir": "^1.2.0",
     "uslug": "^1.0.4"
   }
 }
