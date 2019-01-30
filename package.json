@@ -3,7 +3,7 @@
   "version": "4.11.0",
   "description": "tempertemper's website",
   "scripts": {
-    "start": "eleventy --watch",
+    "start": "eleventy --watch --quiet",
     "build": "gulp && eleventy",
     "assets": "gulp serve && eleventy",
     "test": "echo \"Error: no test specified\"",
