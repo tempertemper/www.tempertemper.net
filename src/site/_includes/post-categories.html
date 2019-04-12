@@ -1,0 +1,22 @@
+{%- macro postCategories(tags) -%}
+    ￼￼￼￼￼￼￼￼{%- set categories = tags.slice() %}
+    {%- set index = categories.indexOf("post") %}
+    {%- if index >= 0 %}
+        {%- set remove = categories.splice(index, 1) %}
+    {%- endif %}
+    {%- if categories.length >= 1 -%}
+        in
+        {% for category in categories %}
+            {%- if loop.length >= 2 %}
+                {%- if not loop.last %}
+                    {%- if not loop.first -%}
+                        ,
+                    {% endif %}
+                {%- else %}
+                    and
+                {% endif %}
+            {% endif %}
+            <a href="/{{ parent }}/category/{{ category | slug }}">{{ category }}</a>
+        {%- endfor %}
+    {%- endif -%}.
+{%- endmacro %}

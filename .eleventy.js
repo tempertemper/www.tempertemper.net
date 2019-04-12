@@ -3,6 +3,9 @@ module.exports = function(eleventyConfig) {
   /* Date filter */
   eleventyConfig.addFilter("date", require("./filters/dates.js") );
 
+  /* Data */
+  eleventyConfig.setDataDeepMerge(true);
+
   /* Markdown Plugins */
   var uslug = require('uslug');
   var uslugify = s => uslug(s);

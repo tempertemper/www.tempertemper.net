@@ -1,0 +1,24 @@
+{% import "post-categories.html" as postCategories %}
+
+{% if resource %}
+    {% set postType = 'resource' %}
+    {% set parent = 'resources' %}
+{% else %}
+    {% set postType = 'article' %}
+    {% set parent = 'blog' %}
+{% endif %}
+<li>
+    <h2 class="entry-title">
+        <a href="{{ post.url  | replace(".html", "") }}">{{ post.data.title }}</a>
+    </h2>
+    <p class="details">
+        Posted {{ post.data.date | date }}
+        {{- postCategories.postCategories(post.data.tags) }}
+    </p>
+    <p class="description entry-summary">
+        {{ post.data.intro }}
+    </p>
+    <div class="read-more">
+        <a href="{{ post.url }}" aria-label="Read {{ postType }} about {{ post.data.title }}">Read {{ postType }}</a>
+    </div>
+</li>
