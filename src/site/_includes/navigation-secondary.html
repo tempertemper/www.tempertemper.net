@@ -1,0 +1,13 @@
+<ul>
+    {% set nav = [
+        { title: 'Home', url: '' },
+        { title: 'Colophon', url: '/colophon' },
+        { title: 'Testimonials', url: '/testimonials' },
+        { title: 'Resources', url: '/resources' }
+    ] %}
+    {% for item in nav %}
+        <li class="{% if item.url == page.url %} active{% endif %}">
+            <a href="{{ item.url | url }}">{{ item.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

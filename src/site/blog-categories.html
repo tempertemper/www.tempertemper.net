@@ -1,0 +1,21 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: category
+  filter:
+    - all
+    - resource
+    - testimonial
+    - post
+layout: layouts/base
+permalink: /blog/category/{{ category | lower }}.html
+---
+<h1>{{ category }} articles</h1>
+
+<ol class="hfeed index-list">
+    {% set categoryList = collections[ category ] %}
+    {% for post in categoryList | reverse %}
+        {% include "post-in-list.html" %}
+    {% endfor %}
+</ol>

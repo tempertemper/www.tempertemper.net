@@ -1,0 +1,133 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>{{ page.title }}</title>
+{#
+    {% if page.intro %}
+        {% assign description = page.intro  %}
+    {% else %}
+        {% assign description = page.content | strip_html | truncate: 150 %}
+    {% endif %}
+#}
+    <meta name="description" content="{{ description }}" />
+
+    <meta property="og:site_name" content="tempertemper Web Design" />
+    <meta property="og:url" content="https://tempertemper.net" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:image" content="/assets/img/tempertemper-web-design-logo-facebook.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="article:author" content="Martin Underhill" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@tempertemper" />
+    <meta name="twitter:creator" content="@tempertemper" />
+    <meta name="twitter:title" content="{{ page.title }}" />
+    <meta name="twitter:description" content="{{ description }}" />
+    <meta name="twitter:url" content="{{page.url}}" />
+    <meta property="twitter:image" content="/assets/img/tempertemper-web-design-logo-facebook.jpg" />
+
+{#
+    if (perch_layout_var('page', true) == 'resource') {
+        $collection = 'Resources';
+    };
+    if (perch_layout_var('page', true) == 'service') {
+        $collection = 'Services';
+    };
+    if (perch_layout_var('page', true) == 'project') {
+        $collection = 'Projects';
+    };
+    if (perch_layout_var('page', true) == 'blog_post') {
+        $items = perch_blog_custom([
+            'filter'        => 'postSlug',
+            'match'         => 'eq',
+            'value'         => perch_get('s'),
+            'skip-template' => 'true',
+            'return-html'   => 'true',
+        ]);
+        $title = $items['0']['postTitle'];
+        if (isset($items['0']['excerpt']) && $items['0']['excerpt'] != '') {
+            $description = strip_tags($items['0']['excerpt']);
+        } else {
+            $description = strip_tags($items['0']['postDescHTML']);
+        }
+    };
+
+    if (perch_layout_var('page', true) == 'resource' || perch_layout_var('page', true) == 'service' || perch_layout_var('page', true) == 'project') {
+        $items = perch_collection($collection, [
+            'filter'        => 'slug',
+            'match'         => 'eq',
+            'value'         => perch_get('s'),
+            'skip-template' => 'true',
+            'return-html'   => 'true',
+        ]);
+        $title = $items['0']['title'];
+    };
+
+    if (perch_layout_var('page', true) == 'resource') {
+        if (isset($items['0']['excerpt']) && $items['0']['excerpt'] != '') {
+            $description = strip_tags($items['0']['excerpt']);
+        } else {
+            $description = strip_tags($items['0']['resource']);
+        }
+    };
+
+    if (perch_layout_var('page', true) == 'resource' || perch_layout_var('page', true) == 'blog_post') {
+        $type = 'article';
+        perch_page_attributes_extend([
+            'description' => $description,
+            'title'       => $title,
+            'type'        => $type,
+        ]);
+    };
+
+    if (perch_layout_var('page', true) == 'service' || perch_layout_var('page', true) == 'project') {
+        if (isset($items['0']['excerpt']) && $items['0']['excerpt'] != '') {
+            $description = strip_tags($items['0']['excerpt']);
+        } else {
+            $description = strip_tags($items['0']['description']);
+        }
+        perch_page_attributes_extend([
+            'description' => $description,
+            'title'       => $title,
+        ]);
+    };
+
+    perch_layout('_attributes');
+#}
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/icons/apple-touch-icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon-180x180.png" />
+    <link rel="icon" href="/assets/img/icons/favicon.png">
+    <!--[if IE]><link rel="shortcut icon" href="/assets/img/icons/favicon.ico"><![endif]-->
+    <link rel="mask-icon" href="/assets/img/icons/tempertemper.svg" color="black">
+    <meta name="theme-color" content="#0097DB">
+    <script>
+        {% include "html5shiv.min.js" %}
+        {% include "responsive-nav.min.js" %}
+        var root = document.getElementsByTagName('html')[0];
+        root.className += ' scripts ';
+    </script>
+    <style>
+        @media screen and (max-width: 60em) {
+            .scripts .nav-collapse {
+                display: none;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/style.css?v={{ site.version }}">
+    <script type="application/ld+json">
+        {
+            "@context" : "http://schema.org",
+            "@type" : "WebSite",
+            "name" : "tempertemper",
+            "alternateName" : "tempertemper Web Design",
+            "url" : "https://tempertemper.net"
+        }
+    </script>
+    <link rel="alternate" title="RSS feed of blog posts" type="application/rss+xml" href="/blog/rss" />
+    <link rel="alternate" title="JSON feed of blog posts" type="application/json" href="/blog/json" />
+</head>

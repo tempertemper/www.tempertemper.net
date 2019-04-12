@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    {% include "head.html" %}
+    <body>
+        <div class="canvas">
+            <div class="page-wrapper">
+                <a href="#main" tab-index="0" class="skip-nav visually-hidden">Skip to main content</a>
+                {% include "header.html" %}
+                <main id="main" role="main">
+                    {% if intro and not hideIntro %}
+                        <div class="intro">{{ intro | markdown | safe }}</div>
+                    {% endif %}
+                    {{ content | safe }}
+                </main>
+                {% if tags.length >= 1 %}
+                    {% if tags.includes('post') or tags.includes('resource') %}
+                        <div role="complementary">
+                            {% include "post-details.html" %}
+                            {% include "call-to-action.html" %}
+                        </div>
+                    {% elif tags.includes('testimonial') %}
+                        <div role="complementary">
+                            <a href="/testimonials" class="back">View more testimonials</a>
+                            {% include "call-to-action.html" %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+                {% include "footer.html" %}
+            </div>
+        </div>
+    </body>
+</html>

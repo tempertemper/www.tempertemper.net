@@ -1,0 +1,12 @@
+<ul>
+    {% set nav = [
+        { title: 'About', url: '/about' },
+        { title: 'Blog', url: '/blog/' },
+        { title: 'Contact', url: '/contact' }
+    ] %}
+    {% for item in nav %}
+        <li class="{% if item.url == page.url %} active{% endif %}">
+            <a href="{{ item.url | url }}">{{ item.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

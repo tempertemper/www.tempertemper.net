@@ -1,0 +1,13 @@
+---
+title: Articles by Martin Underhill
+heading: Blog
+intro: |
+    If you're interested in web development, design, tools, business or any of the other stuff I [tweet about](https://twitter.com/tempertemper), you might find this blog interesting. If you're a website owner, you may be looking for all those resources I used to post. Don't worry, they're not gone – I've moved them to their own [Resources section](/resources).
+layout: layouts/base
+---
+
+<ul class="hfeed index-list">
+    {% for post in collections.post | reverse %}
+        {% include "post-in-list.html" %}
+    {% endfor %}
+</ul>
