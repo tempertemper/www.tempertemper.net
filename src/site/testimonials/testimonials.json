@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/base.html",
+  "tags" : "testimonial",
+  "hideIntro": true,
+  "permalink": "testimonials/{{ title | lower | replace(' ', '-') | replace('’', '') | replace('?', '') | replace('–', '') | replace('--', '-') }}.html"
+}
