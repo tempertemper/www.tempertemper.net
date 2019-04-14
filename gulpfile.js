@@ -94,6 +94,11 @@ gulp.task('clean-patterns', function () {
   return del([paths.patterns.all]);
 });
 
+// Clean website build folder
+gulp.task('clean-site', function () {
+  return del('dist/');
+});
+
 // Copy files
 // gulp.task('files', function() {
 //   gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
