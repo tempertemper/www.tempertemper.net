@@ -1,19 +1,18 @@
-{% import "post-categories.html" as postCategories %}
-
-{% if resource %}
-    {% set postType = 'resource' %}
-    {% set parent = 'resources' %}
-{% else %}
-    {% set postType = 'article' %}
-    {% set parent = 'blog' %}
-{% endif %}
+{%- import "post-categories.html" as postCategories %}
+{%- if resource %}
+    {%- set postType = 'resource' %}
+    {%- set parentType = 'resources' %}
+{%- else %}
+    {%- set postType = 'article' %}
+    {%- set parentType = 'blog' %}
+{%- endif %}
 <li>
     <h2 class="entry-title">
         <a href="{{ post.url  | replace(".html", "") }}">{{ post.data.title }}</a>
     </h2>
     <p class="details">
         Posted {{ post.data.date | date }}
-        {{- postCategories.postCategories(post.data.tags) }}
+        {{- postCategories.postCategories(post.data.tags, type=postType) }}
     </p>
     <p class="description entry-summary">
         {{ post.data.intro }}

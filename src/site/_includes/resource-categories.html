@@ -1,16 +1,6 @@
-{%- macro postCategories(tags, type="") %}
-    {%- if type == 'article' %}
-        {%- set type = 'post' %}
-    {%- endif %}
-
-    {%- if type == 'resource' %}
-        {%- set parent = 'resources' %}
-    {%- else %}
-        {%- set parent = 'blog' %}
-    {%- endif %}
-
+{%- macro postCategories(tags) %}
     {%- set categories = tags.slice() %}
-    {%- set index = categories.indexOf(type) %}
+    {%- set index = categories.indexOf("resource") %}
     {%- if index >= 0 %}
         {%- set remove = categories.splice(index, 1) %}
     {%- endif %}
