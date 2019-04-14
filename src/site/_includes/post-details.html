@@ -7,7 +7,7 @@
 <aside class="post-details">
     <p>
         {% if updated %}First posted {% else %}Posted {% endif %} <span class="entry-published date" >{{ date | date }}</span>
-        {{ postCategories.postCategories(tags) }}
+        {{- postCategories.postCategories(tags) }}
     </p>
     {% if updated %}
         <p>Updated {{ updated | date }}.</p>
