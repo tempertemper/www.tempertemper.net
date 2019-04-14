@@ -1,10 +1,10 @@
-{%- macro postCategories(tags) -%}
-    ￼￼￼￼￼￼￼￼{%- set categories = tags.slice() %}
+{%- macro postCategories(tags) %}
+    {%- set categories = tags.slice() %}
     {%- set index = categories.indexOf("post") %}
     {%- if index >= 0 %}
         {%- set remove = categories.splice(index, 1) %}
     {%- endif %}
-    {%- if categories.length >= 1 -%}
+    {%- if categories.length >= 1 %}
         in
         {% for category in categories %}
             {%- if loop.length >= 2 %}
