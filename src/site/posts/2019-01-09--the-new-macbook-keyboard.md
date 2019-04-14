@@ -1,5 +1,5 @@
 ---
-title: The newest MacBook keyboard
+title: The new MacBook keyboard
 intro: |
     The new MacBook keyboard has certainly been a talking point. From the new layout to the Touch Bar and keys sticking; I both love and loathe it.
 date: 2019-01-09
