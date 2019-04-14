@@ -6,8 +6,11 @@ intro: |
 layout: layouts/base
 ---
 
+
+
 <ul class="hfeed index-list">
-    {% for post in collections.resource | sort(true, false, 'date') %}
-        <li>{{ post.data.title }}<br />{{ post.data.tags }}</li>
+    {% for post in collections.resource | reverse %}
+        {% set resource = true %}
+        {% include "post-in-list.html" %}
     {% endfor %}
 </ul>
