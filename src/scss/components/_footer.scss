@@ -2,7 +2,10 @@
   clear: both;
   font-family: $font--heading;
   padding-bottom: 1em;
-  text-align: center;
+
+  @media (min-width: $m) {
+    text-align: center;
+  }
 
   &:before {
     background-color: $black;
@@ -10,10 +13,13 @@
     display: block;
     height: 3px;
     margin-bottom: 3em;
-    margin-left: auto;
-    margin-right: auto;
     width: 10em;
     @include dark-mode ($background: $colour-primary);
+
+    @media (min-width: $m) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   address {
@@ -24,7 +30,6 @@
   .copyright {
     font-size: ms(-1);
     margin-top: 2em;
-    text-align: center;
 
     p {
       display: inline;
@@ -36,6 +41,7 @@
 
     ul {
       font-size: ms(1);
+      padding-left: 0;
     }
   }
 }
