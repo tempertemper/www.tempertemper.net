@@ -1,5 +1,8 @@
 .call-to-action {
-  text-align: center;
+
+  @media (min-width: $m) {
+    text-align: center;
+  }
 
   .primary {
     @include button-secondary;

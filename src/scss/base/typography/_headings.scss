@@ -17,7 +17,6 @@ h6 {
 
 h1 {
   @include heading-xl;
-  hyphens: auto;
 
   @media (min-width: $m) {
     text-align: center;
