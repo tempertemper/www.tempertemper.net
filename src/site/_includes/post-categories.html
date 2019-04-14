@@ -14,6 +14,7 @@
     {%- if index >= 0 %}
         {%- set remove = categories.splice(index, 1) %}
     {%- endif %}
+
     {%- if categories.length >= 1 %}
         in
         {% for category in categories %}
