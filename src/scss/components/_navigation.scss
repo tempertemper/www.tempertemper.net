@@ -28,15 +28,12 @@ nav {
   }
 
   li {
+    @include inline-nav;
     display: inline-block;
     margin-right: .5em;
 
     &:last-of-type {
       margin-right: 0;
-    }
-
-    a {
-      display: block;
     }
 
     + li {

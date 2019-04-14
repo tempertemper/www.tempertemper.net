@@ -5,7 +5,7 @@
         { title: 'Contact', url: '/contact' }
     ] %}
     {% for item in nav %}
-        <li class="{% if item.url == page.url %} active{% endif %}">
+        <li {% if item.url == page.url %}class="active"{% endif %}>
             <a href="{{ item.url | url }}">{{ item.title }}</a>
         </li>
     {% endfor %}
