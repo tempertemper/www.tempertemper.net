@@ -18,30 +18,12 @@
 }
 
 .logo {
-  display: inline-block;
+  display: inline-block; // no flexbox fallback
+  margin-right: .5em;
+  max-width: 100%;
 
-  @media (min-width: $l) {
-    margin-top: .25em;
-  }
-
-  .tt {
-    display: block !important;
-    height: 40px;
-    width: auto;
-
-    @media (min-width: $s) {
-      display: none !important;
-    }
-  }
-
-  .tempertemper {
-    display: none;
-    height: 40px;
-    width: auto;
-
-    @media (min-width: $s) {
-      display: block;
-    }
+  svg {
+    max-width: 100%;
   }
 
   @media screen and (prefers-color-scheme: dark) {
@@ -66,8 +48,4 @@
   @media screen and (prefers-reduced-motion: reduce) {
     animation: none;
   }
-}
-
-.nav-toggle {
-  float: right;
 }
