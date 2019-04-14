@@ -1,14 +1,8 @@
 <header role="banner">
-    <a href="/" class="logo" title="Return to homepage">
-        {% include "svg/tempertemper-logo--abbreviated.svg" %}
-        {% include "svg/tempertemper-logo--full.svg" %}
-    </a>
-    <div class="nav-toggle" id="nav-toggle">
-        <button>
-            {% include "svg/navigation-menu.svg" %}
-        </button>
-    </div>
-    <nav class="nav-collapse" role="navigation">
+    <nav role="navigation">
+        <a href="/" class="logo" title="Return to homepage">
+            {% include "svg/tempertemper-logo--full.svg" %}
+        </a>
         {% include "navigation-primary.html" %}
     </nav>
     <h1>
