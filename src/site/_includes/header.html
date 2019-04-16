@@ -8,6 +8,8 @@
     <h1>
         {% if heading %}
             {{ heading }}
+        {% elif category %}
+            {{ category }} articles
         {% else %}
             {{ title }}
         {% endif %}
