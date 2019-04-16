@@ -15,7 +15,7 @@
         {{- postCategories.postCategories(post.data.tags, type=postType) }}
     </p>
     <p class="description entry-summary">
-        {{ post.data.intro }}
+        {{ post.data.intro  | markdown | safe }}
     </p>
     <div class="read-more">
         <a href="{{ post.url }}" aria-label="Read {{ postType }} about {{ post.data.title }}">Read {{ postType }}</a>
