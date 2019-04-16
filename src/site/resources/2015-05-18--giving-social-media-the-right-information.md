@@ -7,7 +7,7 @@ tags:
     - Content
     - Search
     - Meta-data
-    - Social-media
+    - Social media
 ---
 
 Put some text in a box. Press enter.
