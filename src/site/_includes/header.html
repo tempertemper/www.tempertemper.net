@@ -9,7 +9,7 @@
         {% if heading %}
             {{ heading }}
         {% elif category %}
-            {{ category }} articles
+            {{ category }} {% if resources %}resources{% else %}articles{% endif %}
         {% else %}
             {{ title }}
         {% endif %}
