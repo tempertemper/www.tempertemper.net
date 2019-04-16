@@ -35,6 +35,10 @@ $font--heading: 'FS Me Web', sans-serif;
     font-weight: 200;
     line-height: 1.05;
   }
+
+  @media (min-width: $s) {
+    hyphens: none;
+  }
 }
 
 @mixin font-body {
