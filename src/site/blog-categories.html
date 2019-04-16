@@ -9,7 +9,7 @@ pagination:
     - testimonial
     - post
 layout: layouts/base
-permalink: /blog/category/{{ category | lower }}.html
+permalink: /blog/category/{{ category | lower | replace(' ', '-') }}.html
 ---
 
 <ol class="hfeed index-list">
