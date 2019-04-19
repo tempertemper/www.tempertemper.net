@@ -6,8 +6,8 @@ intro: |
 layout: layouts/base
 ---
 
-<ul class="hfeed index-list">
+<ol class="hfeed index-list">
     {% for post in collections.post | reverse %}
         {% include "post-in-list.html" %}
     {% endfor %}
-</ul>
+</ol>

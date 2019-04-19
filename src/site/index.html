@@ -4,7 +4,20 @@ heading: Web design and front-end development
 intro: |
   I’m Martin and I run tempertemper Web Design, based in Newcastle upon Tyne in the North East of England. I work with small business owners like you to create a better (or new) website that’ll deliver your message in the most effective way possible.
 layout: layouts/base
+home: true
 ---
 
-
-This is the content
+<section class="teaser">
+    <h2>From the blog</h2>
+    <ol class="index-list">
+        {% set mostRecentPost = collections.post[collections.post.length - 1] %}
+        {% set secondMostRecentPost = collections.post[collections.post.length - 2] %}
+        {% set post = mostRecentPost %}
+        {% include "post-in-list.html" %}
+        {% set post = secondMostRecentPost %}
+        {% include "post-in-list.html" %}
+    </ol>
+    <div class="read-more">
+        <a href="/blog">View more posts</a>
+    </div>
+</section>

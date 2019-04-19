@@ -7,16 +7,18 @@
     {%- set parentType = 'blog' %}
 {%- endif %}
 <li>
-    <h2 class="entry-title">
+    {% if home %}<h3>{% else %}<h2 class="entry-title">{% endif %}
         <a href="{{ post.url  | replace(".html", "") }}">{{ post.data.title }}</a>
-    </h2>
+    {% if home %}</h3>{% else %}</h2>{% endif %}
+    {% if not home %}
     <p class="details">
         Posted {{ post.data.date | date }}
         {{- postCategories.postCategories(post.data.tags, type=postType) }}
     </p>
-    <p class="description entry-summary">
+    {% endif %}
+    <div class="description entry-summary">
         {{ post.data.intro  | markdown | safe }}
-    </p>
+    </div>
     <div class="read-more">
         <a href="{{ post.url }}" aria-label="Read {{ postType }} about {{ post.data.title }}">Read {{ postType }}</a>
     </div>
