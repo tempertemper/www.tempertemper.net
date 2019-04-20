@@ -89,24 +89,17 @@ gulp.task('clean-site', function () {
 });
 
 // Copy files
-// gulp.task('files', function() {
-//   gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
-//     .pipe(gulp.dest(paths.tmp.scripts))
-//     .pipe(gulp.dest(paths.dist.scripts));
-//   gulp.src('./node_modules/responsive-nav/responsive-nav.min.js')
-//     .pipe(gulp.dest(paths.tmp.scripts))
-//     .pipe(gulp.dest(paths.dist.scripts));
-//   gulp.src(paths.src.fonts)
-//     .pipe(gulp.dest(paths.tmp.fonts))
-//     .pipe(gulp.dest(paths.dist.fonts));
-// });
-
-// Copy files
 gulp.task('files', function() {
   gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
     .pipe(gulp.dest(paths.dist.scripts));
   gulp.src(paths.src.fonts)
     .pipe(gulp.dest(paths.dist.fonts));
+});
+
+// Images
+gulp.task('images', function() {
+  gulp.src(paths.src.images)
+    .pipe(gulp.dest(paths.dist.images));
 });
 
 // Compile SCSS and autoprefix styles.
@@ -117,7 +110,6 @@ gulp.task('styles', function () {
     .pipe(autoprefixerConfig())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.dist.styles))
-    // .pipe(gulp.dest(paths.tmp.styles))
     .pipe(browserSync.stream());
 });
 
@@ -128,12 +120,13 @@ gulp.task('scripts', function() {
     ])
     .pipe(concat('production.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(paths.dist.scripts))
-    .pipe(gulp.dest(paths.tmp.scripts));
+    .pipe(gulp.dest(paths.dist.scripts));
 });
 
+// Build website
 gulp.task('build', [
   'files',
+  'images',
   'scripts',
   'styles'
 ]);
@@ -148,6 +141,9 @@ gulp.task('patterns', ['clean-patterns', 'build'], function() {
 
 gulp.task('watch', ['build'], function () {
   gulp.watch(paths.src.styles, ['styles']);
+  gulp.watch('./node_modules/html5shiv/dist/html5shiv.min.js', ['files']);
+  gulp.watch(paths.src.fonts, ['files']);
+  gulp.watch(paths.src.images, ['images']);
   gulp.watch(paths.src.scripts, ['scripts']);
 });
 
@@ -162,7 +158,5 @@ gulp.task('assets', ['build', 'patterns', 'watch'], function(){
   });
 });
 
-
 gulp.task('serve', ['build', 'watch']);
-
 gulp.task('default', ['build']);
