@@ -6,7 +6,7 @@ intro: |
 layout: layouts/base
 ---
 
-![Martin Underhill of tempertemper Web Design](/assets/img/martin-underhill-tempertemper-w900h675@2x.jpg)
+![Martin Underhill of tempertemper Web Design](/assets/img/martin-underhill-tempertemper.jpg)
 
 In 2008, I was lucky enough find that _one thing_ I was 'put here to do' and had no option but to put all of my energy into a career in the web.
 
