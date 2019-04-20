@@ -35,7 +35,6 @@
     "gulp-uglify": "^3.0.1",
     "html5shiv": "^3.0.1",
     "modularscale-sass": "2.*",
-    "responsive-nav": "^1.0.39",
     "susy": "2.*"
   },
   "dependencies": {
