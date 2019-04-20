@@ -18,12 +18,6 @@ const paths = {
     images: 'src/img/**/*',
     fonts: 'src/fonts/**/*'
   },
-  tmp: {
-    styles: 'tmp/assets/css',
-    scripts: 'tmp/assets/js',
-    images: 'tmp/assets/img',
-    fonts: 'tmp/assets/fonts'
-  },
   patterns: {
     styles: 'patterns/assets/css',
     scripts: 'patterns/assets/js',
@@ -83,11 +77,6 @@ const autoprefixerConfig = function() {
     flexbox: false
   })
 };
-
-// Clean web folder
-gulp.task('clean-tmp', function () {
-  return del(['tmp']);
-});
 
 // Clean patterns folder
 gulp.task('clean-patterns', function () {
