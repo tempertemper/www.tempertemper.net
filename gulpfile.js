@@ -103,10 +103,7 @@ gulp.task('clean-site', function () {
 
 // Copy files
 gulp.task('files', function() {
-  gulp.src([
-    './node_modules/html5shiv/dist/html5shiv.min.js',
-    './node_modules/responsive-nav/responsive-nav.min.js'
-  ])
+  gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
     .pipe(gulp.dest(paths.dist.scripts));
   gulp.src(paths.src.fonts)
     .pipe(gulp.dest(paths.dist.fonts));
