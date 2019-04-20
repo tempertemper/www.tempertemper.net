@@ -4,7 +4,7 @@ heading: Terms of business
 intro: |
     You'd like me to work with you on your project? That's great! Thanks for thinking of me and for taking the time to get in touch. Before we go any further, have a quick read of this page.
 hideIntro: true
-layout: layouts/base
+layout: base
 ---
 
 Terms and conditions are often tedious and money can be a bit of an awkward thing to talk about. Before we go any further, in an attempt to not waste anyone's time, it's a good idea to let you know how I work.
