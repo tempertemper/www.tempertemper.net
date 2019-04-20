@@ -1,5 +1,5 @@
 {
-  "layout": "layouts/post.html",
+  "layout": "post.html",
   "hideIntro": true,
   "tags": ["post"],
   "permalink": "blog/{{ title | lower | replace(' ', '-') | replace('’', '') | replace('?', '') | replace('–', '') | replace('--', '-') | replace(',', '') }}.html"

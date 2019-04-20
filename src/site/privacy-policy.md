@@ -4,7 +4,7 @@ heading: Privacy policy
 intro: |
     We value our own privacy so we're hugely respectful of yours. Have a read through our policy to find out more.
 hideIntro: true
-layout: layouts/base
+layout: base
 ---
 
 This privacy policy sets out how I (tempertemper Web Design) use and protect any information that you provide when you use this website.

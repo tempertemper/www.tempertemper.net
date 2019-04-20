@@ -26,7 +26,8 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: "src/site",
       output: "dist",
-      includes: "_includes"
+      includes: "_includes",
+      layouts: "_layouts"
     },
     templateFormats : ["njk", "html", "md"],
     htmlTemplateEngine : "njk",

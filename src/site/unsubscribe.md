@@ -4,7 +4,7 @@ heading: Unsubscribe
 intro: |
     Unsubscribe from tempertemper's Resources mailing list
 hideIntro: true
-layout: layouts/base
+layout: base
 permalink: mailing-list/unsubscribe.html
 ---
 
