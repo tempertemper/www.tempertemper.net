@@ -10,12 +10,12 @@ layout: base
 <ul class="index-list">
     {% for testimonial in collections.testimonial | sort(true, false, 'date') %}
         <li>
-            <h2><a href="{{ testimonial.url }}">{{ testimonial.data.title }}</a></h2>
+            <h2><a href="{{ testimonial.url | replace(".html", "") }}">{{ testimonial.data.title }}</a></h2>
             <blockquote>
                 &#8220;{{ testimonial.data.intro | markdown | safe  | striptags(true) }}&#8221;
             </blockquote>
             <div class="read-more">
-                <a href="{{ testimonial.url }}" aria-label="View full testimonial from {{ testimonial.data.title }}">View full testimonial</a>
+                <a href="{{ testimonial.url | replace(".html", "") }}" aria-label="View full testimonial from {{ testimonial.data.title }}">View full testimonial</a>
             </div>
         </li>
     {% endfor %}
