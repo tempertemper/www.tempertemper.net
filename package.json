@@ -3,7 +3,7 @@
   "version": "4.11.0",
   "description": "tempertemper's website",
   "scripts": {
-    "start": "gulp clean-site && gulp build && eleventy --watch --quiet",
+    "start": "gulp cleanSite && gulp buildAssets && eleventy --watch --quiet",
     "build": "gulp && eleventy",
     "assets": "gulp serve && eleventy",
     "test": "echo \"Error: no test specified\"",
@@ -24,7 +24,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.8.2",
     "del": "^4.1.0",
-    "gulp": "3.9.*",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-bump": "^3.1.3",
     "gulp-concat": "^2.6.1",

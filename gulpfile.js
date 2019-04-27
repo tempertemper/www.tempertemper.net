@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const fractal = require('./fractal.js');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const notify = require('gulp-notify');
@@ -8,15 +7,18 @@ const sourcemaps = require('gulp-sourcemaps');
 const bump = require('gulp-bump');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
-const logger = fractal.cli.console;
 const del = require('del');
+// const fractal = require('./fractal.js');
+// const logger = fractal.cli.console;
 
+// Define paths
 const paths = {
   src: {
     styles: 'src/scss/**/*.scss',
     scripts: 'src/js/**/*',
     images: 'src/img/**/*',
-    fonts: 'src/fonts/**/*'
+    fonts: 'src/fonts/**/*',
+    modules: 'node_modules/html5shiv/dist/html5shiv.min.js'
   },
   patterns: {
     styles: 'patterns/assets/css',
@@ -29,24 +31,25 @@ const paths = {
     styles: 'dist/assets/css',
     scripts: 'dist/assets/js',
     images: 'dist/assets/img',
-    fonts: 'dist/assets/fonts'
+    fonts: 'dist/assets/fonts',
+    all: 'dist'
   }
 };
 
 // Bump
-gulp.task('bump:major', function() {
+gulp.task('bump:major', () => {
   return gulp.src(['./*.json'], {base: './'})
     .pipe(bump({type: 'major'}))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('bump:minor', function() {
+gulp.task('bump:minor', () => {
   return gulp.src(['./*.json'], {base: './'})
     .pipe(bump({type: 'minor'}))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('bump:patch', function() {
+gulp.task('bump:patch', () => {
   return gulp.src(['./*.json'], {base: './'})
     .pipe(bump({type: 'patch'}))
     .pipe(gulp.dest('./'));
@@ -79,31 +82,40 @@ const autoprefixerConfig = function() {
 };
 
 // Clean patterns folder
-gulp.task('clean-patterns', function () {
+gulp.task('cleanPatterns', () => {
   return del([paths.patterns.all]);
 });
 
 // Clean website build folder
-gulp.task('clean-site', function () {
-  return del('dist/');
+gulp.task('cleanSite', () => {
+  return del(paths.dist.all);
 });
 
-// Copy files
-gulp.task('files', function() {
-  gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
+// Clean assets build folder
+gulp.task('cleanAssets', () => {
+  return del('dist/assets');
+});
+
+// Copy JavaScript files
+gulp.task('jsFiles', () => {
+  return gulp.src(paths.src.modules)
     .pipe(gulp.dest(paths.dist.scripts));
-  gulp.src(paths.src.fonts)
+});
+
+// Copy fonts
+gulp.task('fonts', () => {
+  return gulp.src(paths.src.fonts)
     .pipe(gulp.dest(paths.dist.fonts));
 });
 
 // Images
-gulp.task('images', function() {
-  gulp.src(paths.src.images)
+gulp.task('images', () => {
+  return gulp.src(paths.src.images)
     .pipe(gulp.dest(paths.dist.images));
 });
 
 // Compile SCSS and autoprefix styles.
-gulp.task('styles', function () {
+gulp.task('styles', () => {
   return gulp.src(paths.src.styles)
     .pipe(sourcemaps.init())
     .pipe(scssConfig())
@@ -114,49 +126,72 @@ gulp.task('styles', function () {
 });
 
 // Concatenate and uglify JavaScript
-gulp.task('scripts', function() {
-  return gulp.src([
-      './src/js/**/*.js'
-    ])
+gulp.task('scripts', () => {
+  return gulp.src(paths.src.scripts)
     .pipe(concat('production.js'))
     .pipe(uglify())
     .pipe(gulp.dest(paths.dist.scripts));
 });
 
-// Build website
-gulp.task('build', [
-  'files',
+// Build website assets
+gulp.task('buildAssets', gulp.parallel(
+  'jsFiles',
+  'fonts',
   'images',
   'scripts',
   'styles'
-]);
+));
 
-// Build static pattern library
-gulp.task('patterns', ['clean-patterns', 'build'], function() {
-  const builder = fractal.web.builder();
-  return builder.build().then(function(){
-    console.log(`Pattern library static build complete!`);
+gulp.task('watch', () => {
+  gulp.watch(paths.src.styles, gulp.parallel('styles'));
+  gulp.watch(paths.src.modules, gulp.parallel('jsFiles'));
+  gulp.watch(paths.src.fonts, gulp.parallel('fonts'));
+  gulp.watch(paths.src.images, gulp.parallel('images'));
+  gulp.watch(paths.src.scripts, gulp.parallel('scripts'));
+});
+
+// // Build static pattern library
+// gulp.task('patterns', ['cleanPatterns', 'build'], function() {
+//   const builder = fractal.web.builder();
+//   return builder.build().then(function(){
+//     console.log(`Pattern library static build complete!`);
+//   });
+// });
+
+// // Build patten library and assets for UI dev
+// gulp.task('assets', ['build', 'patterns', 'watch'], function(){
+//   const server = fractal.web.server({
+//     sync: true
+//   });
+//   server.on('error', err => logger.error(err.message));
+//   return server.start().then(() => {
+//     logger.success(`Fractal server is now running at ${server.url}`);
+//   });
+// });
+
+gulp.task('serve', () => {
+  // browserSync.init([paths.dist.style], {
+  browserSync.init( {
+    server: {
+      baseDir: "./dist/",
+      serveStaticOptions: {
+        extensions: ['html']
+      }
+    },
+    open: true,
+    browser: 'google chrome',
+    notify: true,
+    injectChanges: true
   });
 });
 
-gulp.task('watch', ['build'], function () {
-  gulp.watch(paths.src.styles, ['styles']);
-  gulp.watch('./node_modules/html5shiv/dist/html5shiv.min.js', ['files']);
-  gulp.watch(paths.src.fonts, ['files']);
-  gulp.watch(paths.src.images, ['images']);
-  gulp.watch(paths.src.scripts, ['scripts']);
-});
 
-// Build patten library and assets for UI dev
-gulp.task('assets', ['build', 'patterns', 'watch'], function(){
-  const server = fractal.web.server({
-    sync: true
-  });
-  server.on('error', err => logger.error(err.message));
-  return server.start().then(() => {
-    logger.success(`Fractal server is now running at ${server.url}`);
-  });
-});
 
-gulp.task('serve', ['build', 'watch']);
-gulp.task('default', ['build']);
+
+gulp.task('serveAssets', gulp.series(
+  'cleanAssets',
+  'buildAssets',
+  'watch'
+));
+
+// gulp.task('default', ['build']);
