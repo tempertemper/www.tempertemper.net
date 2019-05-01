@@ -184,10 +184,10 @@ gulp.task('serve', () => {
   });
 });
 
-gulp.task('serveAssets', gulp.series(
-  'cleanAssets',
-  'buildAssets',
-  'watch'
-));
+// gulp.task('serveAssets', gulp.series(
+//   'cleanAssets',
+//   'buildAssets',
+//   'serve'
+// ));
 
 // gulp.task('default', ['build']);
