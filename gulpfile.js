@@ -170,7 +170,6 @@ gulp.task('watch', () => {
 // });
 
 gulp.task('serve', () => {
-  // browserSync.init([paths.dist.style], {
   browserSync.init( {
     server: {
       baseDir: "./dist/",
@@ -184,9 +183,6 @@ gulp.task('serve', () => {
     injectChanges: true
   });
 });
-
-
-
 
 gulp.task('serveAssets', gulp.series(
   'cleanAssets',
