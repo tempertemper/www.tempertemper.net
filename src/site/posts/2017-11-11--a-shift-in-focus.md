@@ -3,7 +3,6 @@ title: A shift in focus
 intro: |
     "Change is the only constant", said a Greek fella a few thousand years ago. Turns out this is very true. And it happens when you least need/expect it!
 date: 2017-11-11
-template: layouts/base.html
 ---
 
 It has been a while since I've written a blog article. In fact the last significant content update my website had was back in September 2016, in the [Resources section](/resources).
