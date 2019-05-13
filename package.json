@@ -4,6 +4,7 @@
   "description": "tempertemper's website",
   "scripts": {
     "start": "gulp cleanSite && gulp buildAssets && eleventy --quiet && gulp serve",
+    "browsersync": "browser-sync start --server 'dist' --extensions 'html' --browser 'google chrome' --no-notify --files 'dist/*'",
     "build": "gulp && eleventy",
     "assets": "gulp serve && eleventy",
     "test": "echo \"Error: no test specified\"",
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/tempertemper/tempertemper-website",
   "devDependencies": {
     "@11ty/eleventy": "^0.8.2",
+    "browser-sync": "^2.26.5",
     "del": "^4.1.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.1.0",
@@ -40,7 +42,6 @@
   "dependencies": {
     "@frctl/fractal": "^1.1.7",
     "@frctl/handlebars": "^1.1.5",
-    "browser-sync": "^2.26.3",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
     "npm": "^6.9.0",

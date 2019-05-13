@@ -169,21 +169,6 @@ gulp.task('watch', () => {
 //   });
 // });
 
-gulp.task('serve', () => {
-  browserSync.init( {
-    server: {
-      baseDir: "./dist/",
-      serveStaticOptions: {
-        extensions: ['html']
-      }
-    },
-    open: true,
-    browser: 'google chrome',
-    notify: true,
-    injectChanges: true
-  });
-});
-
 // gulp.task('serveAssets', gulp.series(
 //   'cleanAssets',
 //   'buildAssets',
