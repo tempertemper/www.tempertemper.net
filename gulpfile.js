@@ -6,6 +6,7 @@ const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const bump = require('gulp-bump');
 const concat = require('gulp-concat');
+var shell = require('gulp-shell');
 const uglify = require('gulp-uglify');
 const del = require('del');
 // const fractal = require('./fractal.js');
@@ -18,7 +19,8 @@ const paths = {
     scripts: 'src/js/**/*',
     images: 'src/img/**/*',
     fonts: 'src/fonts/**/*',
-    modules: 'node_modules/html5shiv/dist/html5shiv.min.js'
+    modules: 'node_modules/html5shiv/dist/html5shiv.min.js',
+    site: 'src/site/**/*'
   },
   patterns: {
     styles: 'patterns/assets/css',
@@ -142,13 +144,47 @@ gulp.task('buildAssets', gulp.parallel(
   'styles'
 ));
 
+gulp.task('generate', shell.task('eleventy --quiet'));
+
+gulp.task('buildAll', gulp.parallel(
+  'buildAssets',
+  'generate'
+));
+
+
 gulp.task('watch', () => {
+  gulp.watch(paths.src.site, gulp.parallel('generate'));
   gulp.watch(paths.src.styles, gulp.parallel('styles'));
   gulp.watch(paths.src.modules, gulp.parallel('jsFiles'));
   gulp.watch(paths.src.fonts, gulp.parallel('fonts'));
   gulp.watch(paths.src.images, gulp.parallel('images'));
   gulp.watch(paths.src.scripts, gulp.parallel('scripts'));
 });
+
+gulp.task('serve', () => {
+  browserSync.init( {
+    server: {
+      baseDir: "./dist/",
+      serveStaticOptions: {
+        extensions: ['html']
+      }
+    },
+    open: true,
+    browser: 'google chrome',
+    notify: false,
+    injectChanges: true
+  });
+  gulp.watch(paths.src.site, gulp.parallel('generate'));
+  gulp.watch(paths.dist.all).on('change', browserSync.reload);
+  gulp.watch(paths.src.styles, gulp.parallel('styles'));
+  gulp.watch(paths.src.modules, gulp.parallel('jsFiles'));
+  gulp.watch(paths.src.fonts, gulp.parallel('fonts'));
+  gulp.watch(paths.src.images, gulp.parallel('images'));
+  gulp.watch(paths.src.scripts, gulp.parallel('scripts'));
+});
+
+
+
 
 // // Build static pattern library
 // gulp.task('patterns', ['cleanPatterns', 'build'], function() {
@@ -168,6 +204,7 @@ gulp.task('watch', () => {
 //     logger.success(`Fractal server is now running at ${server.url}`);
 //   });
 // });
+
 
 // gulp.task('serveAssets', gulp.series(
 //   'cleanAssets',
