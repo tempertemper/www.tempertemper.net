@@ -3,11 +3,7 @@
   "version": "4.11.0",
   "description": "tempertemper's website",
   "scripts": {
-    "start": "gulp cleanSite && gulp buildAssets && eleventy --quiet && gulp serve",
-    "browsersync": "browser-sync start --server 'dist' --extensions 'html' --browser 'google chrome' --no-notify --files 'dist/*'",
-    "build": "gulp && eleventy",
-    "assets": "gulp serve && eleventy",
-    "test": "echo \"Error: no test specified\"",
+    "start": "gulp cleanSite && gulp buildAll && gulp serve",
     "bump:major": "gulp bump:major",
     "bump:minor": "gulp bump:minor",
     "bump:patch": "gulp bump:patch"

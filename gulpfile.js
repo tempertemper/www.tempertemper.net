@@ -151,16 +151,6 @@ gulp.task('buildAll', gulp.parallel(
   'generate'
 ));
 
-
-gulp.task('watch', () => {
-  gulp.watch(paths.src.site, gulp.parallel('generate'));
-  gulp.watch(paths.src.styles, gulp.parallel('styles'));
-  gulp.watch(paths.src.modules, gulp.parallel('jsFiles'));
-  gulp.watch(paths.src.fonts, gulp.parallel('fonts'));
-  gulp.watch(paths.src.images, gulp.parallel('images'));
-  gulp.watch(paths.src.scripts, gulp.parallel('scripts'));
-});
-
 gulp.task('serve', () => {
   browserSync.init( {
     server: {
@@ -175,16 +165,13 @@ gulp.task('serve', () => {
     injectChanges: true
   });
   gulp.watch(paths.src.site, gulp.parallel('generate'));
-  gulp.watch(paths.dist.all).on('change', browserSync.reload);
   gulp.watch(paths.src.styles, gulp.parallel('styles'));
   gulp.watch(paths.src.modules, gulp.parallel('jsFiles'));
   gulp.watch(paths.src.fonts, gulp.parallel('fonts'));
   gulp.watch(paths.src.images, gulp.parallel('images'));
   gulp.watch(paths.src.scripts, gulp.parallel('scripts'));
+  gulp.watch(paths.dist.all).on('change', browserSync.reload);
 });
-
-
-
 
 // // Build static pattern library
 // gulp.task('patterns', ['cleanPatterns', 'build'], function() {
