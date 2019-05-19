@@ -40,19 +40,19 @@ const paths = {
 
 // Bump
 gulp.task('bump:major', () => {
-  return gulp.src(['./*.json'], {base: './'})
+  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
     .pipe(bump({type: 'major'}))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('bump:minor', () => {
-  return gulp.src(['./*.json'], {base: './'})
+  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
     .pipe(bump({type: 'minor'}))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('bump:patch', () => {
-  return gulp.src(['./*.json'], {base: './'})
+  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
     .pipe(bump({type: 'patch'}))
     .pipe(gulp.dest('./'));
 });
