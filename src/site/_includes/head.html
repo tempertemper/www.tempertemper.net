@@ -1,19 +1,17 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
-    <title>{{ page.title }}</title>
-{#
-    {% if page.intro %}
-        {% assign description = page.intro  %}
-    {% else %}
-        {% assign description = page.content | strip_html | truncate: 150 %}
-    {% endif %}
-#}
+    <title>{{ title if title else heading }}</title>
+    {% if intro -%}
+        {% set description = intro | markdown | safe | striptags(true) | escape -%}
+    {% else -%}
+        {% set description = content | striptags(true) | escape | truncate(150) -%}
+    {% endif -%}
     <meta name="description" content="{{ description }}" />
 
     <meta property="og:site_name" content="tempertemper Web Design" />
     <meta property="og:url" content="https://tempertemper.net" />
-    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:title" content="{{ title if title else heading }}" />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:image" content="/assets/img/tempertemper-web-design-logo-facebook.jpg" />
     <meta property="og:type" content="website" />
@@ -22,7 +20,7 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@tempertemper" />
     <meta name="twitter:creator" content="@tempertemper" />
-    <meta name="twitter:title" content="{{ page.title }}" />
+    <meta name="twitter:title" content="{{ title if title else heading }}" />
     <meta name="twitter:description" content="{{ description }}" />
     <meta name="twitter:url" content="{{page.url}}" />
     <meta property="twitter:image" content="/assets/img/tempertemper-web-design-logo-facebook.jpg" />
