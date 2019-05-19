@@ -116,6 +116,12 @@ gulp.task('images', () => {
     .pipe(gulp.dest(paths.dist.images));
 });
 
+// Favicons
+gulp.task('favicons', () => {
+  return gulp.src('src/img/icons/favicon.*')
+    .pipe(gulp.dest(paths.dist.all));
+});
+
 // Compile SCSS and autoprefix styles.
 gulp.task('styles', () => {
   return gulp.src(paths.src.styles)
@@ -140,6 +146,7 @@ gulp.task('buildAssets', gulp.parallel(
   'jsFiles',
   'fonts',
   'images',
+  'favicons',
   'scripts',
   'styles'
 ));
