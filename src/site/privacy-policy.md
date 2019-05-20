@@ -1,6 +1,5 @@
 ---
 title: Privacy policy
-heading: Privacy policy
 intro: |
     We value our own privacy so we're hugely respectful of yours. Have a read through our policy to find out more.
 hideIntro: true
