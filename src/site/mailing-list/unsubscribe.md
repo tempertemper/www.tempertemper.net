@@ -5,7 +5,6 @@ intro: |
     Unsubscribe from tempertemper's Resources mailing list
 hideIntro: true
 layout: base
-permalink: mailing-list/unsubscribe.html
 ---
 
 Are you sure you want to unsubscribe? It’ll be sad to see you go… If you still want to stay in touch [follow me on Twitter](https://twitter.com/tempertemper) instead.
