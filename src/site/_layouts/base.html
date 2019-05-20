@@ -10,6 +10,13 @@
                     {% if intro and not hideIntro %}
                         <div class="intro">{{ intro | markdown | safe }}</div>
                     {% endif %}
+                    {% if tags.length >= 1 -%}
+                        {% if tags.includes('post') -%}
+                            <aside class="post-details">
+                                <p class="entry-published date">{{ date | date }}</p>
+                            </aside>
+                        {% endif -%}
+                    {% endif -%}
                     {{ content | safe }}
                 </main>
                 {% if tags.length >= 1 %}
