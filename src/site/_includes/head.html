@@ -14,7 +14,14 @@
     <meta property="og:title" content="{{ heading if heading else title }}" />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:image" content="/assets/img/tempertemper-web-design-logo-facebook.jpg" />
-    <meta property="og:type" content="website" />
+    {% if tags.length >= 1 -%}
+        {% if tags.includes('post') or tags.includes('resource') -%}
+            {% set type = 'article' -%}
+        {% else -%}
+            {% set type = 'website' -%}
+        {% endif -%}
+    {% endif -%}
+    <meta property="og:type" content="{{ type }}" />
     <meta property="article:author" content="{{ site.author.name }}" />
 
     <meta name="twitter:card" content="summary" />
@@ -25,74 +32,6 @@
     <meta name="twitter:url" content="{{page.url}}" />
     <meta property="twitter:image" content="/assets/img/tempertemper-web-design-logo-facebook.jpg" />
 
-{#
-    if (perch_layout_var('page', true) == 'resource') {
-        $collection = 'Resources';
-    };
-    if (perch_layout_var('page', true) == 'service') {
-        $collection = 'Services';
-    };
-    if (perch_layout_var('page', true) == 'project') {
-        $collection = 'Projects';
-    };
-    if (perch_layout_var('page', true) == 'blog_post') {
-        $items = perch_blog_custom([
-            'filter'        => 'postSlug',
-            'match'         => 'eq',
-            'value'         => perch_get('s'),
-            'skip-template' => 'true',
-            'return-html'   => 'true',
-        ]);
-        $title = $items['0']['postTitle'];
-        if (isset($items['0']['excerpt']) && $items['0']['excerpt'] != '') {
-            $description = strip_tags($items['0']['excerpt']);
-        } else {
-            $description = strip_tags($items['0']['postDescHTML']);
-        }
-    };
-
-    if (perch_layout_var('page', true) == 'resource' || perch_layout_var('page', true) == 'service' || perch_layout_var('page', true) == 'project') {
-        $items = perch_collection($collection, [
-            'filter'        => 'slug',
-            'match'         => 'eq',
-            'value'         => perch_get('s'),
-            'skip-template' => 'true',
-            'return-html'   => 'true',
-        ]);
-        $title = $items['0']['title'];
-    };
-
-    if (perch_layout_var('page', true) == 'resource') {
-        if (isset($items['0']['excerpt']) && $items['0']['excerpt'] != '') {
-            $description = strip_tags($items['0']['excerpt']);
-        } else {
-            $description = strip_tags($items['0']['resource']);
-        }
-    };
-
-    if (perch_layout_var('page', true) == 'resource' || perch_layout_var('page', true) == 'blog_post') {
-        $type = 'article';
-        perch_page_attributes_extend([
-            'description' => $description,
-            'title'       => $title,
-            'type'        => $type,
-        ]);
-    };
-
-    if (perch_layout_var('page', true) == 'service' || perch_layout_var('page', true) == 'project') {
-        if (isset($items['0']['excerpt']) && $items['0']['excerpt'] != '') {
-            $description = strip_tags($items['0']['excerpt']);
-        } else {
-            $description = strip_tags($items['0']['description']);
-        }
-        perch_page_attributes_extend([
-            'description' => $description,
-            'title'       => $title,
-        ]);
-    };
-
-    perch_layout('_attributes');
-#}
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-touch-icon-76x76.png" />
     <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-touch-icon-120x120.png" />
