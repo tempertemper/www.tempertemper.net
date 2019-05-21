@@ -166,8 +166,7 @@ gulp.task('serve', () => {
         extensions: ['html']
       }
     },
-    open: true,
-    browser: 'google chrome',
+    open: false,
     notify: false,
     injectChanges: true
   });
