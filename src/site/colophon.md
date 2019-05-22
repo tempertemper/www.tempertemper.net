@@ -4,6 +4,7 @@ intro: |
     tempertemper was build using Eleventy, Gulp, SCSS and carefully considered HTML.
 hideIntro: true
 layout: base
+permalink: colophon.html
 ---
 
 This website was built with [Eleventy](https://www.11ty.io), [Gulp](https://gulpjs.com/), [SCSS](http://sass-lang.com) and carefully considered HTML.
