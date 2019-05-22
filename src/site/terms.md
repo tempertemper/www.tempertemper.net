@@ -28,40 +28,35 @@ Finally, if it's not the right time to start your website I'll tell you. I'll ev
 
 My fee depends on the type of work you'd like me to do and length of contract. When outlining what your project is, please give a clear expectation of what you would like me to do and the budget you have available. I'll then be able to let you know what is feasible within your budget.
 
-To give you a very rough idea of what to expect, prices for start-to-finish website design and build start at around the £2,000 mark and the average small website build I work on comes in at around £3k to £4k.
-
+To give you a very rough idea of what to expect, prices for start-to-finish website design and build start at around come in at around £5k.
 
 ### Expenses
 
 I'll sometimes have some expenses, such as [web-font licenses](/blog/webfonts), stock image licenses, travel costs, hotel costs (if early starts or late nights are needed), subsistence costs if away from home, and any project-specific equipment or software. Where possible, expenses will be included in your estimate so you’ll know well in advance. If anything unexpected crops up during the project I’ll let you know as far in advance as possible so that you can approve it.
 
-
 ### Negotiations
 
-I'm yet to come across a project with unlimited budget and am therefore well accustomed to working within the constraints of a set budget.
+I'm yet to come across a project with unlimited funds, so I'm well accustomed to working within the constraints of a set budget.
 
 If your budget won't stretch to the total estimated project price, I'm happy to work with you to reduce the scope in a way that will allow us to work together.
 
 A limited initial budget may mean a reduced initial amount of work followed by a series of regular monthly 'retainer' payments, allowing you to spread the cost (and the work) over a longer period.
 
-It's not unheard of that a client comes to me wanting A, B and C and it turns out that B isn't necessary or will detract from A and B, somehow. If I see that this is the case, I'll let you know and we can reduce the scope of the project to just A and B. Having assumed C was going to be part of the project, you may have budget remaining that you'd still like to invest, in which case I can help advise you to maximise the return on revenue spent.
-
+It's not unheard of that a client comes to me wanting A, B and C and it turns out that C isn't necessary or will detract from A and B, somehow. If I see that this is the case, I'll let you know and we can reduce the scope of the project to just A and B. Having assumed C was going to be part of the project, you may have budget remaining that you'd still like to invest, in which case I can help advise you to maximise the return on revenue spent.
 
 ### Discounts and volunteering
 
 If I were to work at a discounted rate I'd be unable to dedicate as much time to working on paid projects and my own professional development.
 
-That doesn't mean I'd never discount or waive my fee if the project is something I feel strongly about and is a genuinely unique opportunity, so if you are unable to pay a reasonable fee, but you have valid and compelling reasons why, then please let me know. I _may_ choose to involve myself with the project if I'm able to without it interfering with my paid work, but please don't come to me _expecting_ I will work for no pay and please don't be offended if I turn down an opportunity to work with you because you don't have the budget to pay me.
-
+That doesn't mean I'd never discount or waive my fee if the project is something I feel strongly about and is a genuinely unique opportunity, so if you are unable to pay a reasonable fee, but you have valid and compelling reasons why, then please let me know. I *may* choose to involve myself with the project if I'm able to without it interfering with my paid work, but please don't come to me *expecting* I will work for no pay and please don't be offended if I turn down an opportunity to work with you because you don't have the budget to pay me.
 
 ### Grants
 
 I may take a wee bit of persuading to accept commissions that are wholly or partially funded by grants. I've found that clients who aren't spending their own hard-earned cash are often less invested in their project, which can have negative a knock-on effect on my other clients.
 
-
 ### Working speculatively
 
-I believe that speculative work (where a designer is asked to work as part of a 'competition', where only the 'winner' is compensated for their work) has its place with very junior, aspiring designers/developers, but as an experienced professional I work _with_ others—not in competition with them—and require a deposit to be paid before I can begin any work.
+I believe that speculative work (where a designer is asked to work as part of a 'competition', where only the 'winner' is compensated for their work) has its place with aspiring designers/developers, but as an experienced professional I work *with* others—not in competition with them—and require a deposit to be paid before I can begin any work.
 
 
 ## Contract
@@ -70,7 +65,7 @@ I draw up a contract for every job I undertake. My contracts are in plain Englis
 
 The first contract I send you isn't necessarily the one we'll both sign. It's for you to read through carefully and make sure you're happy with everything. I'm happy to consider any amendments so if you'd like to see any changes just ask and I'll see what I can do.
 
-Once we have agreed a document and you've signed it and sent it back we're nearly ready to book a block of time in my diary! Just one more thing…
+Once we have agreed a document and you've signed it and sent it back, we're nearly ready to book a block of time in my diary! Just one more thing…
 
 
 ## Deposit
