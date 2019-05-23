@@ -65,7 +65,7 @@ const scssConfig = function() {
   .on('error', sass.logError)
   .on('error', notify.onError(function (error) {
     return {
-      title: 'SASS error',
+      title: 'SCSS error',
       message: error.message
     }
   }))
