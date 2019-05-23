@@ -37,11 +37,8 @@
     "susy": "2.*"
   },
   "dependencies": {
-    "@frctl/fractal": "^1.1.7",
-    "@frctl/handlebars": "^1.1.5",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
-    "npm": "^6.9.0",
     "require-dir": "^1.2.0",
     "uslug": "^1.0.4"
   }
