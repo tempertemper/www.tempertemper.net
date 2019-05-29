@@ -20,6 +20,6 @@
         {{ post.data.intro  | markdown | safe }}
     </div>
     <div class="read-more">
-        <a href="{{ post.url  | replace(".html", "") }}" aria-label="Read {{ postType }} about {{ post.data.title }}">Read {{ postType }}</a>
+        <a href="{{ post.url  | replace(".html", "") }}">Read ‘{{ post.data.title }}’</a>
     </div>
 </li>
