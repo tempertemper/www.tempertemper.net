@@ -8,7 +8,7 @@
 {%- endif %}
 <li>
     {% if home %}<h3>{% else %}<h2 class="entry-title">{% endif %}
-        <a href="{{ post.url  | replace(".html", "") }}">{{ post.data.title }}</a>
+        {{ post.data.title }}
     {% if home %}</h3>{% else %}</h2>{% endif %}
     {% if not home %}
     <p class="details">
