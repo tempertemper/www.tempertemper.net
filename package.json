@@ -4,6 +4,7 @@
   "description": "tempertemper's website",
   "scripts": {
     "start": "gulp cleanSite && gulp buildAll && gulp serve",
+    "build": "gulp cleanSite && gulp buildAll",
     "bump:major": "gulp bump:major",
     "bump:minor": "gulp bump:minor",
     "bump:patch": "gulp bump:patch"
