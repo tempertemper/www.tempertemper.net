@@ -6,7 +6,8 @@ const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const bump = require('gulp-bump');
 const concat = require('gulp-concat');
-const shell = require('gulp-shell');
+const notifier = require('node-notifier');
+const exec = require('child_process').exec;
 const uglify = require('gulp-uglify');
 const del = require('del');
 // const fractal = require('./fractal.js');
@@ -151,7 +152,18 @@ gulp.task('buildAssets', gulp.parallel(
   'styles'
 ));
 
-gulp.task('generate', shell.task('eleventy --quiet'));
+
+gulp.task('generate', function(callback) {
+  exec('eleventy --quiet', function (err) {
+    if (err) {
+      notifier.notify({
+        title: 'Eleventy Error',
+        message: 'Generate Failure'
+      })
+    }
+    callback(err);
+  })
+});
 
 gulp.task('buildAll', gulp.parallel(
   'buildAssets',
