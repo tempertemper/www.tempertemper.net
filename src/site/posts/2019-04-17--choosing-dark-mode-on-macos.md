@@ -5,6 +5,7 @@ intro: |
 date: 2019-04-17
 tags:
     - Design
+    - Apple
 ---
 
 It's nice to dust the cobwebs off with a user interface overhaul every now and then. iOS 7 (which was admittedly more than a superficial change), macOS Yosemite (which modernised the long-standing Aqua theme), even a fresh Sublime Text theme every now and then; I'm a sucker for a look-and-feel overhaul!

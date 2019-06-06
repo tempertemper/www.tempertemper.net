@@ -3,6 +3,8 @@ title: Reading at night with a neat iPhone hack
 intro: |
     I love reading in bed each night but even my iPhone's lowest brightness is too fierce in the dark, so here's a neat trick to make it even dim further.
 date: 2019-03-20
+tags:
+    - Apple
 ---
 
 I'm re-reading one of my favourite books at the moment: [The Silmarillion](https://itunes.apple.com/gb/book/the-silmarillion/id380680485?mt=11) by J.R.R. Tolkien. I love reading in bed each night as it helps me switch off from the day and as soon as I feel my eyelids getting heavy I know it's time to switch off and go to sleep. But my wife prefers to go straight to sleep so I can't keep the bedside lamp on, which is where my phone comes in!
