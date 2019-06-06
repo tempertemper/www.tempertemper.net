@@ -5,6 +5,7 @@ intro: |
 date: 2019-05-08
 tags:
     - Design
+    - Apple
 ---
 
 Moving from a phone without 3D Touch (iPhone 6) to one with it (iPhone XS) has been interesting. I like it a lot for a handful of reasons, but I think Apple still has some work to do.
