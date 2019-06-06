@@ -5,6 +5,7 @@ intro: |
 date: 2019-01-09
 tags:
     - Design
+    - Apple
 ---
 
 The new MacBook keyboard has been a talking point.

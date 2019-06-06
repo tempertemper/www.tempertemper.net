@@ -5,6 +5,7 @@ intro: |
 date: 2019-04-24
 tags:
     - Design
+    - Apple
 ---
 
 [Guilherme Rambo's exclusive](https://9to5mac.com/2019/04/15/ios-13-features-dark-mode/) for 9to5Mac has seemingly confirmed something I've wanted for a while: Dark Mode on iOS.
