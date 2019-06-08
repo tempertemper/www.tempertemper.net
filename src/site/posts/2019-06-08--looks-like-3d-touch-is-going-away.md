@@ -57,7 +57,3 @@ On a more trivial note, when Apple first introduced the ability to press hard on
 ## It's about features
 
 So now that I've had another think about it all, it's not 3D Touch itself that I love – it's the _features_ it facilitates. How I get to them doesn't really matter. And it's nice that _everyone_ will be able to access those features, should this all pan out as expected.
-
-
-
-
