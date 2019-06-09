@@ -22,6 +22,11 @@ module.exports = function(eleventyConfig) {
     return mdIntro.render(markdown);
   });
 
+  /* Tags */
+  eleventyConfig.addFilter("tags", function(collection) {
+    return Object.keys(collection);
+  });
+
   return {
     dir: {
       input: "src/site",
