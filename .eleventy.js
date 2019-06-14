@@ -24,7 +24,10 @@ module.exports = function(eleventyConfig) {
 
   /* Tags */
   eleventyConfig.addFilter("tags", function(collection) {
-    return Object.keys(collection);
+    const notRendered = ['all', 'post', 'resource', 'testimonial'];
+    return Object.keys(collection)
+      .filter(d => !notRendered.includes(d))
+      .sort();
   });
 
   return {
