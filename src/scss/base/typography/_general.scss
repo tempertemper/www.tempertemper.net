@@ -78,14 +78,25 @@ li + li {
 code {
   font-family: menlo, monaco, 'Lucida Console', monospace;
   font-size: .8em;
-  background-color: $colour-dark-mode-main;
-  outline: 2px solid $colour-dark-mode-main;
-  color: $colour-dark-mode-white;
+  background-color: $colour-primary-light;
+  outline: 2px solid $colour-primary-light;
+  color: $black;
 
   @include dark-mode () {
-    background-color: $colour-dark-mode-white;
-    outline: 2px solid $colour-dark-mode-white;
-    color: $black;
+    background-color: $colour-dark-mode-highlight;
+    outline: 2px solid $colour-dark-mode-highlight;
+    color: $colour-dark-mode-white;
+  }
+}
+
+pre {
+  @include dark-mode ($colour-dark-mode-highlight, $colour-dark-mode-white);
+  background-color: $colour-primary-light;
+  color: $black;
+  padding: 1em;
+
+  code {
+    outline: 2px solid transparent;
   }
 }
 
