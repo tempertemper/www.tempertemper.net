@@ -1,4 +1,4 @@
-{%- set categories = post.data.tags %}
+{%- set categories = post.data.tags | tagsOnPage %}
 {%- if categories.length >= 1 %}
     in
     {% for category in categories %}

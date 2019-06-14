@@ -22,10 +22,18 @@ module.exports = function(eleventyConfig) {
     return mdIntro.render(markdown);
   });
 
-  /* Tags */
+  /* List all tags */
   eleventyConfig.addFilter("tags", function(collection) {
     const notRendered = ['all', 'post', 'resource', 'testimonial'];
     return Object.keys(collection)
+      .filter(d => !notRendered.includes(d))
+      .sort();
+  });
+
+  /* List tags belonging to a page */
+  eleventyConfig.addFilter("tagsOnPage", function(tags) {
+    const notRendered = ['all', 'post', 'resource', 'testimonial'];
+    return tags
       .filter(d => !notRendered.includes(d))
       .sort();
   });
