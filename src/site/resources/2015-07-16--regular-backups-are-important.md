@@ -4,7 +4,7 @@ intro: |
     If your website was to to disappear somehow, restoring it is easy if you have a recent back-up somewhere. How can you back things up? Read on!
 date: 2015-07-16
 tags:
-    - Backup
+    - Admin
 ---
 
 Let's over-simplify things for a minute. Your website is a bunch of files that live somewhere on the internet.
