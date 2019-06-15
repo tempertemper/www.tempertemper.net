@@ -4,7 +4,7 @@ intro: |
     When you open a website in your web browser what you see isn't on the internet. Confused? This article will reveal all!
 date: 2014-09-04
 tags:
-    - Speed
+    - Performance
 ---
 
 Do you know how the web works? When you open a website in your web browser what you see isn't on the internet. Confused? Stick with me!
