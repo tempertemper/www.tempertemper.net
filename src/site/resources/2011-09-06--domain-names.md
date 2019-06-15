@@ -4,7 +4,7 @@ intro: |
     Deciding on your domain name (or URL) is an important starting point for any business when embarking on having a website built.
 date: 2011-09-06
 tags:
-    - Admin
+    - Website admin
     - Brand
 ---
 

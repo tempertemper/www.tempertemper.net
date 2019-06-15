@@ -4,7 +4,7 @@ intro: |
     Regular attention and TLC is good for any website, small or large. How? Read on!
 date: 2015-06-03
 tags:
-    - Admin
+    - Website admin
 ---
 
 A website is built with code. Whether it's the code that's used to display your content on your web page, the code that's used to make it all look great or the code that hooks it all up to your content management system (CMS), regular maintenance is good for any website, small or large.

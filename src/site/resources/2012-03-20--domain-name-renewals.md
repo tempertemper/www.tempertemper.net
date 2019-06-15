@@ -4,7 +4,7 @@ intro: |
     It's not often that I feel compelled to have a rant, but today I really feel it's necessary… I hope you see this as a warning, more than anything else
 date: 2012-03-20
 tags:
-    - Admin
+    - Website admin
 ---
 
 It's not often that I feel compelled to have a rant, but today I really feel it's necessary… I hope you see this as a warning, more than anything else!

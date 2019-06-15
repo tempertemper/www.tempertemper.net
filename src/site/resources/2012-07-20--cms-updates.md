@@ -4,7 +4,7 @@ intro: |
     It's important to keep your website up to date and this doesn't just stop at the content that's on there. It's likely your site will incorporate some
 date: 2012-07-20
 tags:
-    - Admin
+    - Website admin
 ---
 
 It's important to keep your website up to date and this doesn't just stop at the content that's on there. It's likely your site will incorporate some kind of content management system (CMS) that allows you to edit content.
