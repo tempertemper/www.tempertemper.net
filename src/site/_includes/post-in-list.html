@@ -1,11 +1,3 @@
-{%- import "post-categories.html" as postCategories %}
-{%- if resources %}
-    {%- set postType = 'resource' %}
-    {%- set parentType = 'resources' %}
-{%- else %}
-    {%- set postType = 'article' %}
-    {%- set parentType = 'blog' %}
-{%- endif %}
 <li>
     {% if home %}<h3>{% else %}<h2 class="entry-title">{% endif %}
         {{ post.data.title }}
@@ -13,7 +5,7 @@
     {% if not home %}
     <p class="details">
         Posted {{ post.data.date | date }}
-        {{- postCategories.postCategories(post.data.tags, type=postType) }}
+        {% include "post-categories.html" %}
     </p>
     {% endif %}
     <div class="description entry-summary">
