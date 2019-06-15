@@ -1,0 +1,16 @@
+---
+title: Categories
+intro: |
+    I write about lots of subjects. Here's a list of subject categories so that you can jump to articles and resources bundled together neatly.
+layout: base
+permalink: /categories.html
+---
+
+{% set categories = collections | tags %}
+
+{% for category in categories %}
+    <a href="category/{{ category | lower | replace(' ', '-') }}">{{ category }}</a>
+    {%- if not loop.last -%}
+        ,
+    {% endif %}
+{% endfor %}
