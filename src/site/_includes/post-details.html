@@ -1,4 +1,3 @@
-{% import "post-categories.html" as postCategories %}
 {% if tags.includes('resource') %}
     {% set parent = 'resources' %}
 {% elif tags.includes('post') %}
@@ -7,7 +6,7 @@
 <aside class="post-details">
     <p>
         {% if updated %}First posted {% else %}Posted {% endif %} <span class="entry-published date" >{{ date | date }}</span>
-        {{- postCategories.postCategories(tags) }}
+        {% include "post-categories.html" %}
     </p>
     {% if updated %}
         <p>Updated {{ updated | date }}.</p>
