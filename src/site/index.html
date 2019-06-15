@@ -1,13 +1,14 @@
 ---
 title: Thoughts on web design and front-end development
 intro: |
-    I’m Martin, an interaction designer, front-end developer and co-founder of [Frontend NE](https://2019.frontendne.co.uk). I write and speak about the web, accessibility, user-centred design and front-end development.
+    I’m Martin, an interaction designer, front-end developer and co-founder of [Frontend NE](https://2019.frontendne.co.uk). I [write](/blog/) and [speak](https://speakerdeck.com/tempertemper) about the web, accessibility, user-centred design and front-end development.
 layout: base
 home: true
 ---
 
 <section class="teaser">
-    <h2>Some recent articles</h2>
+    <h2>I like to write</h2>
+    <p>Here are a couple of my most recent articles. If you'd rather pick a subject, have a look a <a href="/categories">the types of things</a> I write about.</p>
     <ol class="index-list">
         {% set mostRecentPost = collections.post[collections.post.length - 1] %}
         {% set secondMostRecentPost = collections.post[collections.post.length - 2] %}
@@ -17,6 +18,6 @@ home: true
         {% include "post-in-list.html" %}
     </ol>
     <div class="read-more">
-        <a href="/blog/">View more posts</a>
+        <a href="/blog/">View more articles</a>
     </div>
 </section>
