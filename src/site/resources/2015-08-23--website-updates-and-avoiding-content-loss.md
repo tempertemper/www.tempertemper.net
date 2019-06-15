@@ -5,7 +5,7 @@ intro: |
 date: 2015-08-23
 tags:
     - Content
-    - Admin
+    - Website admin
 ---
 
 Your website is a bit like a house. There's the house itself, made of bricks and steel (your website) and the people who live in it, the furniture, etc. (your content).

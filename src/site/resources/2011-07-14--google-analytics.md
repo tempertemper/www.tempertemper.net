@@ -5,7 +5,7 @@ intro: |
 date: 2011-07-14
 tags:
     - Marketing
-    - Admin
+    - Website admin
 ---
 
 Analytics are a great way of seeing how all your hard work promoting your website is paying off. Your site itself should be built in a search engine friendly way, of course, but that's not the end of the line!
