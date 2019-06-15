@@ -6,7 +6,6 @@ date: 2011-08-19
 tags:
     - Marketing
     - Search
-    - Updates
 ---
 
 Search Engines like Google, Yahoo and Bing look for certain things. These are measurable things that they equate with a good user experience and, although there are hundreds of things that are measure and these are constantly changing and being upgraded, they can be divided into four broad categories: How well your site is built, how accessible it is for disabled users, how satisfying it is to use and how well marketed it is.
