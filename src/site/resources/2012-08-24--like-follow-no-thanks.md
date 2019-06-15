@@ -5,7 +5,7 @@ intro: |
 date: 2012-08-24
 tags:
     - Content
-    - Social media
+    - Marketing
 ---
 
 They may seem like the perfect way to get more of your visitors engaged with your business but having Facebook 'Like' buttons and Twitter 'Follow' buttons may actually be turning people away!
