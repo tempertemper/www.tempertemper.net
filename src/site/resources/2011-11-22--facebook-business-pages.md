@@ -5,7 +5,6 @@ intro: |
 date: 2011-11-22
 tags:
     - Marketing
-    - Social media
 ---
 
 I get a lot of questions about how and why to use Facebook businesses pages. The first thing you should know is that a Page is distinct from your normal Facebook Profile.

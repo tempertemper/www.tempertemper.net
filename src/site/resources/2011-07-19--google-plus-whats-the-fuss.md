@@ -4,7 +4,7 @@ intro: |
     Google+ is the next big social network. It has a lot of potential and is similar those we already know to be useable, but has some subtle differences.
 date: 2011-07-19
 tags:
-    - Social media
+    - Marketing
 ---
 
 Google+ is the next big social network to be thrown our way. It has a lot of potential and is similar enough those we already know to be useable, but has some subtle and cunning differences!

@@ -6,7 +6,6 @@ date: 2011-08-19
 tags:
     - Marketing
     - Search
-    - Social media
     - Updates
 ---
 
