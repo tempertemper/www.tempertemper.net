@@ -38,6 +38,10 @@ module.exports = function(eleventyConfig) {
       .sort();
   });
 
+  eleventyConfig.addFilter("getCurrentYear", function() {
+    return new Date().getFullYear();
+  });
+
   return {
     dir: {
       input: "src/site",
