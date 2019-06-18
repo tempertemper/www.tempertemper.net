@@ -4,7 +4,7 @@ intro: |
     Webforms are great but they're also a target for spam. You'll be glad to know there's an effective way to greatly reduce or even eliminate this!
 date: 2012-04-03
 tags:
-    - Admin
+    - Website admin
 ---
 
 Webforms are great- they give visitors to your website a convenient and easy way to get in touch with you. Unfortunately they're also a target for spam; but you'll be glad to know there's an effective way to greatly reduce or even eliminate this!

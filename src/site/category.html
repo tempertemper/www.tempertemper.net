@@ -12,6 +12,8 @@ layout: base
 permalink: /category/{{ category | lower | replace(' ', '-') }}.html
 ---
 
+<p>Articles and resources in the {{ category }} category. A <a href="/categories">full list of categories</a> is also available.</p>
+
 <ol class="hfeed index-list">
     {% set categoryList = collections[ category ] %}
     {% for post in categoryList | reverse %}

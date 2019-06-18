@@ -4,7 +4,7 @@ intro: |
     Passwords are often pretty easy to hack. Using a password manager like 1Password can make all the difference to being secure online.
 date: 2013-11-28
 tags:
-    - Admin
+    - Website admin
     - Security
 ---
 

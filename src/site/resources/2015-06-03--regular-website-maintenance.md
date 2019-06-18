@@ -4,7 +4,7 @@ intro: |
     Regular attention and TLC is good for any website, small or large. How? Read on!
 date: 2015-06-03
 tags:
-    - Updates
+    - Website admin
 ---
 
 A website is built with code. Whether it's the code that's used to display your content on your web page, the code that's used to make it all look great or the code that hooks it all up to your content management system (CMS), regular maintenance is good for any website, small or large.
@@ -12,8 +12,7 @@ A website is built with code. Whether it's the code that's used to display your 
 Keeping the code easy to work with is vital in the 'evolution vs revolution' approach to building a website.
 
 
-My world-famous 'wall' analogy
-------------------------------
+## My world-famous 'wall' analogy
 
 Imagine you build a wall. You now need to build it a little bit _higher_. So you could put a new layer of bricks on top and it's now higher and still pretty strong. The problem is, once you do that a few times its weakness starts to become apparent. To build the wall any higher, the whole wall needs to be knocked down and built from the ground up.
 
@@ -22,8 +21,7 @@ The way to solve this is to take a few bricks out of the existing wall and build
 To mix my metaphors slightly, to make one step forward you often have to first take _one_ step backwards, then _two_ steps forward.
 
 
-Weathering
-----------
+## Weathering
 
 Maintenance is not just useful when you need to add some functionality on your site. As time passes things change and your website will usually benefit from taking advantage of these changes.
 
@@ -50,8 +48,7 @@ Design trends usually bring with them all sorts of problems. But sometimes, as t
 Making regular design tweaks stops your site getting tired-looking and keep it useable.
 
 
-Tools of the trade
-------------------
+## Tools of the trade
 
 The tools we used to build a website change over time. Here's a quick list of some of the things that have become easier over the past year or two:
 
@@ -63,7 +60,6 @@ The tools we used to build a website change over time. Here's a quick list of so
 This has removed a lot of the faff from what I do, freeing me up to spend more time on my client's websites. But setting up the tooling to make all these efficiencies can take some time. Adding tried and tested tools steadily over time means that your website is always in a good position when work is to be carried out.
 
 
-Maintenance
------------
+## Maintenance
 
 Ask your web designer if they have any maintenance plans that mean they keep your site's software up to date. It could also be worth arranging a retainer so that they can work with you a little bit each month to add new features or make tweaks to the design, making your site better and better as time goes by. The last thing you want to do is knock the wall down and start again…!

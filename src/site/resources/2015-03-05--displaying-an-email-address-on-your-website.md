@@ -5,7 +5,7 @@ intro: |
 date: 2015-03-05
 tags:
     - Content
-    - Admin
+    - Website admin
     - Email
 ---
 

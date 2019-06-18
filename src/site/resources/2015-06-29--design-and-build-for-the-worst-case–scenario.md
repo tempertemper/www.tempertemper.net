@@ -7,7 +7,6 @@ tags:
     - Accessibility
     - Performance
     - Search
-    - Speed
 ---
 
 Performance matters. If your website loads slowly it could be costing you business.

@@ -26,7 +26,7 @@ There are only a handful of moving parts left on my site, now that number 1 has 
 
 The `prefers-reduced-motion` media query allows us to prevent those animations. As an example, here's the SCSS to show how I disabled the animation for the underscore/cursor in my logo:
 
-```
+```css
 .underscore {
   animation: blink 2s steps(20, start) infinite;
 

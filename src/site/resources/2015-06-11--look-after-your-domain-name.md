@@ -4,7 +4,7 @@ intro: |
     Look after your domain name. It's one of your most important business assets and the cost of losing it can be huge.
 date: 2015-06-11
 tags:
-    - Admin
+    - Website admin
     - Search
 ---
 
