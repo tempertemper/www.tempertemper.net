@@ -18,6 +18,10 @@ $colour-primary-darker: darken($colour-primary, 5%);
 $colour-dark-mode-main: #2C2C2C;
 $colour-dark-mode-highlight: #3D3D3D;
 $colour-dark-mode-white: #f2f2f2;
+$colour-dark-mode-black: #1f1f22;
 
 // Gerneral styles
 $border-radius-default: 5px;
+
+// Code
+$code--font: menlo, monaco, 'Lucida Console', monospace;
