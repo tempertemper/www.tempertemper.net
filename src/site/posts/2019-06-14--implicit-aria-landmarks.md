@@ -36,7 +36,7 @@ The answer lies in sectioning elements. The W3C specification says a role of `ba
 
 So only the first `header` element in this next example will get an implicit ARIA landmark role:
 
-```
+```html
 <body>
     <header>
         <h1>This is a great heading</h1>
