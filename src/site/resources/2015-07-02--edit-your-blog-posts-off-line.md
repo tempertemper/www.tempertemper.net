@@ -5,7 +5,7 @@ intro: |
 date: 2015-07-02
 tags:
     - Content
-    - Backup
+    - Website admin
 ---
 
 I've already written about why [WYSIWYG editors are a bad idea](/blog/what-you-see-isnt-what-you-get). Separation of content from style is vital on the web.

@@ -4,7 +4,7 @@ intro: |
     Email can be pretty complicated. There are three different email formats and each comes with its own pros, cons, and best use case.
 date: 2015-08-13
 tags:
-    - Admin
+    - Website admin
     - Email
 ---
 

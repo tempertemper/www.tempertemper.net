@@ -4,7 +4,8 @@ intro: |
     Analytics are a great (and free!) way of seeing how all your hard work promoting your website is paying off…
 date: 2011-07-14
 tags:
-    - Updates
+    - Marketing
+    - Website admin
 ---
 
 Analytics are a great way of seeing how all your hard work promoting your website is paying off. Your site itself should be built in a search engine friendly way, of course, but that's not the end of the line!

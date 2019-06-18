@@ -4,7 +4,8 @@ intro: |
     What's the best way to approach your website updates? Little by little or wholesale change and a grand-unveiling?
 date: 2012-08-28
 tags:
-    - Updates
+    - Website admin
+    - Marketing
 ---
 
 What's the best way to approach your website updates?

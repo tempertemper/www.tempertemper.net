@@ -4,7 +4,7 @@ intro: |
     Twitter can be a way of making friends, getting human answers to questions and can even be a good income stream for your business!
 date: 2013-01-30
 tags:
-    - Social media
+    - Marketing
 ---
 
 Twitter is more than just telling people what you're eating for breakfast. It can be a way of making friends, getting human answers to questions and can even be a good income stream for your business!
@@ -102,4 +102,4 @@ Of course you could just use one of [Twitter's official apps](https://twitter.co
 
 ### So how about you?
 
-It's not my-way-or-the-high-way so if you use Twitter in a different way to me or you think I've missed something important, why not mention it in the comments below?
+It's not my-way-or-the-high-way so if you use Twitter in a different way to me or you think I've missed something important, why not let me know [over on Twitter](https://twitter.com/tempertemper)?
