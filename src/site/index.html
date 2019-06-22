@@ -1,14 +1,14 @@
 ---
-title: Thoughts on web design and front-end development
+title: Thoughts on web design and front-end dev
 intro: |
-    I’m Martin, an interaction designer, front-end developer and co-founder of [Frontend NE](https://2019.frontendne.co.uk). I [write](/blog/) and [speak](https://speakerdeck.com/tempertemper) about the web, accessibility, user-centred design and front-end development.
+    I’m Martin, an interaction designer, front-end developer and co-founder of [Frontend NE](https://2019.frontendne.co.uk). I [write](#writing) and [speak](https://speakerdeck.com/tempertemper) about the web, accessibility, user-centred design and front-end development.
 layout: base
 home: true
 ---
 
 <section class="teaser">
-    <h2>I like to write</h2>
-    <p>Here are a couple of my most recent articles. If you'd rather pick a subject, have a look a <a href="/categories">the types of things</a> I write about.</p>
+    <h2 id="writing">Writing</h2>
+    <p>If you prefer to dive straight in rather than <a href="/blog/">see the full blog</a>, here are a couple of my most recent articles to get you started.</p>
     <ol class="index-list">
         {% set mostRecentPost = collections.post[collections.post.length - 1] %}
         {% set secondMostRecentPost = collections.post[collections.post.length - 2] %}
@@ -17,7 +17,15 @@ home: true
         {% set post = secondMostRecentPost %}
         {% include "post-in-list.html" %}
     </ol>
-    <div class="read-more">
-        <a href="/blog/">View more articles</a>
-    </div>
+</section>
+
+<section>
+    <h2 id="my-favourite-subjects">Subjects</h2>
+    <p>There are a few topics that really interest me:</p>
+    <ul>
+        <li><a href="/category/accessibility">Accessiblity</a> is about designing and building web interfaces that can be used by anyone, something I feel very strongly about.</li>
+        <li><a href="/category/design">Designing</a> smart, usable interfaces, journeys and interactions is what I do best, and I enjoy analysing others’ great design.</li>
+        <li><a href="/category/development">Front-end development</a> is a huge passion of mine; HTML and CSS in particular, but anything from git to Gulp.</li>
+    </ul>
+     <p>Or have a look at the <a href="/categories">full list of subjects</a> I write about.</p>
 </section>
