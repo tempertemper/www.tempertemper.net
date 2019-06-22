@@ -1,12 +1,15 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
-    <title>{{ heading if heading else title }}</title>
-    {% if intro -%}
-        {% set description = intro | markdown | safe | striptags(true) | escape -%}
-    {% else -%}
-        {% set description = content | striptags(true) | escape | truncate(150) -%}
-    {% endif -%}
+    <title>
+        {%- if heading -%}
+            {{ heading }}
+        {%- elif category -%}
+            {{ category }}
+        {%- else -%}
+            {{ title }}
+        {%- endif -%}
+    </title>
     <meta name="description" content="{{ description }}" />
 
     <meta property="og:site_name" content="tempertemper Web Design" />
