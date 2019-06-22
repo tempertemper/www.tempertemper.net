@@ -3,13 +3,7 @@
 .htaccess
 robots.txt
 /node_modules/
-/src/img/
 /src/fonts/
-/web/cms/addons/feathers/tempertemper/img/
-/web/cms/addons/feathers/tempertemper/fonts/
-/web/cms/resources/
-/web/downloads/
-/web/img/
 style.css.map
 favicon.ico
 /tmp/
