@@ -1,9 +1,7 @@
 .DS_Store
 .sass-cache/
-.htaccess
+style.css.map
 robots.txt
 /node_modules/
-style.css.map
 favicon.ico
-/tmp/
 /dist/
