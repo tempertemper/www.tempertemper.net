@@ -19,6 +19,10 @@ description: Articles on user experience design and front-end web development.
                 <author>{{ site.author.name }}</author>
                 <description>{{ post.data.intro  | markdown | safe }}</description>
                 <pubDate>{{ post.date | rssDate }}</pubDate>
+                {% set postTags = post.data.tags | tagsOnPage %}
+                {% if postTags.length > 0  %}
+                {% for category in postTags %}<category>{{ category }}</category>{% endfor %}
+                {% endif %}
            </item>
         {% endfor %}
     </channel>
