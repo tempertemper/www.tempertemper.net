@@ -3,7 +3,6 @@
 .htaccess
 robots.txt
 /node_modules/
-/src/fonts/
 style.css.map
 favicon.ico
 /tmp/
