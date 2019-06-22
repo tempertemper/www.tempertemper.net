@@ -1,0 +1,41 @@
+---
+permalink: feeds/blog/feed.json
+title: tempertemper
+description: Articles on user experience design and front-end web development.
+---
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "{{ title }}",
+  "home_page_url": "{{ site.url }}/blog",
+  "feed_url": "{{ site.url }}/{{ permalink }}",
+  "description": "{{ description }}",
+  "author": {
+    "name": "{{ site.author.name }}",
+    "url": "https://twitter.com/tempertemper",
+    "avatar": "{{ site.url }}/assets/img/martin-underhill-tempertemper--square-512x512.jpg"
+  },
+  "icon": "{{ site.url }}/assets/img/icons/apple-touch-icon-180x180.png",
+  "favicon": "{{ site.url }}/assets/img/icons/favicon.png",
+  "items": [
+  {%- for post in collections.post | reverse %}
+    {
+      "id": "{{ loop.revindex }}",
+      "date_published": "{{ post.date | rssDate }}",
+      {% if post.updated %}"date_modified": "{{ post.updated }}",{% endif %}
+      "title": "{{ post.data.title }}",
+      "summary": "{{ post.data.intro | markdown | safe | striptags }}",
+      {% set postTags = post.data.tags | tagsOnPage %}
+      {% if postTags.length > 0  %}
+        "tags": [{% for category in postTags %}"{{ category }}"{% if not loop.last %},{% endif %}{% endfor %}],
+      {% endif %}
+      "url": "{{ site.url }}{{ post.url | replace (".html", "") }}"
+    }
+    {%- if loop.length >= 2 -%}
+      {%- if not loop.last -%}
+      ,
+      {%- endif -%}
+  {%- endif %}
+  {%- endfor %}
+  ]
+}
+
