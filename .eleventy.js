@@ -28,6 +28,10 @@ module.exports = function(eleventyConfig) {
     templateFormats: ["njk", "md"],
   });
 
+  /* RSS */
+  const pluginRss = require("@11ty/eleventy-plugin-rss");
+  eleventyConfig.addPlugin(pluginRss);
+
   /* List all tags */
   eleventyConfig.addFilter("tags", function(collection) {
     const notRendered = ['all', 'post', 'resource', 'testimonial'];
