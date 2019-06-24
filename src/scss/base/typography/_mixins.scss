@@ -6,7 +6,7 @@ $ms-ratio: $major-third;
   font-size-adjust: .53;
   font-style: normal;
   font-weight: 200;
-  src: url('../fonts/FSMeWeb-Light.woff') format('woff2'),
+  src: url('../fonts/FSMeWeb-Light.woff2') format('woff2'),
        url('../fonts/FSMeWeb-Light.woff') format('woff');
   font-display: swap;
 }
@@ -16,7 +16,7 @@ $ms-ratio: $major-third;
   font-size-adjust: .53;
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/FSMeWeb-Regular.woff') format('woff2'),
+  src: url('../fonts/FSMeWeb-Regular.woff2') format('woff2'),
        url('../fonts/FSMeWeb-Regular.woff') format('woff');
   font-display: swap;
 }
@@ -25,10 +25,20 @@ $font--heading: 'FS Me Web', sans-serif;
 
 @mixin heading-style {
   font-family: $font--heading;
-  font-weight: 200;
-  line-height: 1.05;
+  line-height: 1.2;
   margin-bottom: .25em;
   margin-top: 1.414em;
+  font-weight: 400;
+  hyphens: auto;
+
+  @media (min-width: $xs) {
+    font-weight: 200;
+    line-height: 1.05;
+  }
+
+  @media (min-width: $s) {
+    hyphens: none;
+  }
 }
 
 @mixin font-body {
@@ -44,7 +54,11 @@ $font--heading: 'FS Me Web', sans-serif;
 }
 
 @mixin heading-xl {
-  font-size: ms(4);
+  font-size: ms(2);
+
+  @media (min-width: $xs) {
+    font-size: ms(4);
+  }
 
   @media (min-width: $m) {
     font-size: ms(6);
@@ -52,7 +66,11 @@ $font--heading: 'FS Me Web', sans-serif;
 }
 
 @mixin heading-l {
-  font-size: ms(3);
+  font-size: ms(1);
+
+  @media (min-width: $xs) {
+    font-size: ms(3);
+  }
 
   @media (min-width: $m) {
     font-size: ms(5);
@@ -60,7 +78,11 @@ $font--heading: 'FS Me Web', sans-serif;
 }
 
 @mixin heading-m {
-  font-size: ms(2);
+  font-size: ms(0);
+
+  @media (min-width: $xs) {
+    font-size: ms(2);
+  }
 
   @media (min-width: $m) {
     font-size: ms(4);
@@ -68,7 +90,11 @@ $font--heading: 'FS Me Web', sans-serif;
 }
 
 @mixin heading-s {
-  font-size: ms(1);
+  font-size: ms(-1);
+
+  @media (min-width: $xs) {
+    font-size: ms(1);
+  }
 
   @media (min-width: $m) {
     font-size: ms(3);
@@ -76,7 +102,11 @@ $font--heading: 'FS Me Web', sans-serif;
 }
 
 @mixin heading-xs {
-  font-size: ms(1);
+  font-size: ms(-1);
+
+  @media (min-width: $xs) {
+    font-size: ms(1);
+  }
 
   @media (min-width: $m) {
     font-size: ms(2);
@@ -84,7 +114,11 @@ $font--heading: 'FS Me Web', sans-serif;
 }
 
 @mixin heading-xxs {
-  font-size: ms(1);
+  font-size: ms(-1);
+
+  @media (min-width: $xs) {
+    font-size: ms(1);
+  }
 
   @media (min-width: $m) {
     font-size: ms(1);

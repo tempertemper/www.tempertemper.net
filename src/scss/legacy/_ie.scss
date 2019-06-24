@@ -54,21 +54,21 @@
     }
   }
 
-  [role="search"] {
+  // [role="search"] {
 
-    label {
+  //   label {
 
-      // Nesting needs to be this deep, unfortunately. I'll maybe add an extra class to the HTML at one point to fix this
-      // scss-lint:disable NestingDepth
-      &:before {
-        content: 'Search:';
-      }
-    }
+  //     // Nesting needs to be this deep, unfortunately. I'll maybe add an extra class to the HTML at one point to fix this
+  //     // scss-lint:disable NestingDepth
+  //     &:before {
+  //       content: 'Search:';
+  //     }
+  //   }
 
-    [type="search"] {
-      padding-left: 4.5em;
-    }
-  }
+  //   [type="search"] {
+  //     padding-left: 4.5em;
+  //   }
+  // }
 
   [role="contentinfo"] [href="https://twitter.com/tempertemper"] {
 

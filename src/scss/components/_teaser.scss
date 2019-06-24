@@ -12,7 +12,6 @@
       @include layout($wide-layout);
       @include span(3 of 6);
       @include highlight-box;
-      margin-bottom: gutter();
       display: flex;
       flex-direction: column;
 
@@ -34,12 +33,9 @@
       }
     }
 
-    ul {
-      margin-bottom: 0;
-    }
+  }
 
-    > .read-more {
-      text-align: center;
-    }
+  .index-list {
+    margin-bottom: 0;
   }
 }

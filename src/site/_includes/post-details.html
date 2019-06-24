@@ -1,0 +1,15 @@
+{% if tags.includes('resource') %}
+    {% set parent = 'resources' %}
+{% elif tags.includes('post') %}
+    {% set parent = 'blog' %}
+{% endif %}
+<aside class="post-details">
+    <p>
+        {% if updated %}First posted {% else %}Posted {% endif %} <span class="entry-published date" >{{ date | date }}</span>
+        {% include "post-categories.html" %}
+    </p>
+    {% if updated %}
+        <p>Updated {{ updated | date }}.</p>
+    {% endif %}
+    <p><a href="/{{ parent }}/" class="back">Back to {{ parent }}</a></p>
+</aside>

@@ -59,24 +59,20 @@ ol {
   @media (max-width: $l) {
     padding-left: 1.5em;
   }
+
+  ul,
+  ol {
+    padding-left: 1em;
+    margin-top: .5em;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
 }
 
 li + li {
   margin-top: .5em;
-}
-
-code {
-  font-family: menlo, monaco, 'Lucida Console', monospace;
-  font-size: .8em;
-  background-color: $colour-dark-mode-main;
-  outline: 2px solid $colour-dark-mode-main;
-  color: $colour-dark-mode-white;
-
-  @include dark-mode () {
-    background-color: $colour-dark-mode-white;
-    outline: 2px solid $colour-dark-mode-white;
-    color: $black;
-  }
 }
 
 hr {
