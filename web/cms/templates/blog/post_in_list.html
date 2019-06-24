@@ -6,10 +6,7 @@
         <p class="details">Posted <span class="entry-published date"><perch:blog id="postDateTime" format="jS F Y" /></span>
             <perch:categories id="categories" set="blog">
                 <perch:if exists="perch_item_first"> in</perch:if>
-                    <a href="/blog/category/<perch:category id="catSlug" type="slug" />">
-                        <perch:category id="catTitle" type="text" />
-                    </a>
-                <perch:if exists="perch_item_last"><perch:else />, </perch:if>
+                    <a href="/blog/category/<perch:category id="catSlug" type="slug" />"><perch:category id="catTitle" type="text" /></a><perch:if exists="perch_item_last"><perch:else />, </perch:if>
             </perch:categories>
         </p>
         <p class="description entry-summary"><perch:blog id="excerpt" type="textarea" encode="false" /></p>
