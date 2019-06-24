@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Updates Nginx example file with static site config
 - Switches inline nav dividers to after each item as it makes more sense when they wrap onto two lines
+- Uses website specific email address on contact page
 
 ### Fixes
 - Stops twitter link in footer centre aligning on mobile
