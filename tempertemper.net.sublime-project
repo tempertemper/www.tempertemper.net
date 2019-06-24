@@ -8,6 +8,7 @@
   "syntax_override": {
     "\\.changelog$": ["MarkdownEditing", "Markdown (Standard)"],
     "\\.nginx$": ["nginx", "Syntaxes", "nginx"],
-    "\\.stylelintrc$": ["JavaScript", "JSON"]
+    "\\.stylelintrc$": ["JavaScript", "JSON"],
+    "\\.html$": ["nunjucks-extended", "Syntaxes", "Nunjucks"]
   }
 }

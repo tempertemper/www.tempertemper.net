@@ -1,0 +1,33 @@
+<section class="call-to-action">
+    {% if tags.includes('post') %}
+        <h2>Keep in touch</h2>
+        <p>If you enjoyed this post, it would be great to <a href="https://twitter.com/tempertemper">hear from you on Twitter</a>. I’m always happy to answer any questions on there or have a bit of a chat.</p>
+        <a class="primary" href="https://twitter.com/tempertemper">
+            {% include "svg/twitter.svg" %}
+            <span>@tempertemper</span>
+        </a>
+    {% elif tags.includes('resource') %}
+        <h2>Never miss a resource</h2>
+        <p>Do you have a website? Not the technical type? Join to receive <strong>free</strong> tips, useful to anyone looking to get the most out of their website.</p>
+        <form id="subscribe" method="post" app="perch_forms" action="https://tempertemper.createsend.com/t/t/s/yduddd/" class="subscribe">
+            <div>
+                <label for="subscriber_name">Name:</label>
+                <input id="subscriber_name" type="text" required="true" name="cm-name" />
+            </div>
+            <div>
+                <label for="subscriber_email">Email:</label>
+                <input id="subscriber_email" type="email" required="true" name="cm-yduddd-yduddd" />
+            </div>
+            <input type="submit" value="Join!" />
+        </form>
+        <p><small>Your email won’t be passed to any third parties or used in any way that won’t be of benefit to you. Also, you can <a href="/mailing-list/unsubscribe">unsubscribe</a> at any time.</small></p>
+    {% elif tags.includes('testimonial') %}
+        <h2>Want to work with me?</h2>
+        <a class="primary" href="/contact">
+            Say hello
+        </a>
+        <div class="read-more">
+            <a href="#">Or check out more of my work</a>
+        </div>
+    {% endif %}
+</section>

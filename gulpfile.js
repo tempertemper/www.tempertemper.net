@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const fractal = require('./fractal.js');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const notify = require('gulp-notify');
@@ -7,24 +6,24 @@ const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const bump = require('gulp-bump');
 const concat = require('gulp-concat');
+const notifier = require('node-notifier');
+const exec = require('child_process').exec;
 const uglify = require('gulp-uglify');
-const logger = fractal.cli.console;
 const del = require('del');
+// const fractal = require('./fractal.js');
+// const logger = fractal.cli.console;
 
+// Define paths
 const paths = {
   src: {
     styles: 'src/scss/**/*.scss',
     scripts: 'src/js/**/*',
     images: 'src/img/**/*',
-    fonts: 'src/fonts/**/*'
+    fonts: 'src/fonts/**/*',
+    modules: 'node_modules/html5shiv/dist/html5shiv.min.js',
+    site: 'src/site/**/*'
   },
-  tmp: {
-    styles: 'tmp/assets/css',
-    scripts: 'tmp/assets/js',
-    images: 'tmp/assets/img',
-    fonts: 'tmp/assets/fonts'
-  },
-  build: {
+  patterns: {
     styles: 'patterns/assets/css',
     scripts: 'patterns/assets/js',
     images: 'patterns/assets/img',
@@ -32,28 +31,29 @@ const paths = {
     all: 'patterns'
   },
   dist: {
-    styles: 'web/cms/addons/feathers/tempertemper/css',
-    scripts: 'web/cms/addons/feathers/tempertemper/js',
-    images: 'web/cms/addons/feathers/tempertemper/img',
-    fonts: 'web/cms/addons/feathers/tempertemper/fonts'
+    styles: 'dist/assets/css',
+    scripts: 'dist/assets/js',
+    images: 'dist/assets/img',
+    fonts: 'dist/assets/fonts',
+    all: 'dist'
   }
 };
 
 // Bump
-gulp.task('bump:major', function() {
-  return gulp.src(['./*.json'], {base: './'})
+gulp.task('bump:major', () => {
+  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
     .pipe(bump({type: 'major'}))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('bump:minor', function() {
-  return gulp.src(['./*.json'], {base: './'})
+gulp.task('bump:minor', () => {
+  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
     .pipe(bump({type: 'minor'}))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('bump:patch', function() {
-  return gulp.src(['./*.json'], {base: './'})
+gulp.task('bump:patch', () => {
+  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
     .pipe(bump({type: 'patch'}))
     .pipe(gulp.dest('./'));
 });
@@ -66,7 +66,7 @@ const scssConfig = function() {
   .on('error', sass.logError)
   .on('error', notify.onError(function (error) {
     return {
-      title: 'SASS error',
+      title: 'SCSS error',
       message: error.message
     }
   }))
@@ -84,79 +84,137 @@ const autoprefixerConfig = function() {
   })
 };
 
-// Clean web folder
-gulp.task('clean-tmp', function () {
-  return del(['tmp']);
+// Clean patterns folder
+gulp.task('cleanPatterns', () => {
+  return del([paths.patterns.all]);
 });
 
-// Clean build folder
-gulp.task('clean-build', function () {
-  return del([paths.build.all]);
+// Clean website build folder
+gulp.task('cleanSite', () => {
+  return del(paths.dist.all);
 });
 
-// Copy files
-gulp.task('files', function() {
-  gulp.src('./node_modules/html5shiv/dist/html5shiv.min.js')
-    .pipe(gulp.dest(paths.tmp.scripts))
+// Clean assets build folder
+gulp.task('cleanAssets', () => {
+  return del('dist/assets');
+});
+
+// Copy JavaScript files
+gulp.task('jsFiles', () => {
+  return gulp.src(paths.src.modules)
     .pipe(gulp.dest(paths.dist.scripts));
-  gulp.src('./node_modules/responsive-nav/responsive-nav.min.js')
-    .pipe(gulp.dest(paths.tmp.scripts))
-    .pipe(gulp.dest(paths.dist.scripts));
-  gulp.src(paths.src.fonts)
-    .pipe(gulp.dest(paths.tmp.fonts))
+});
+
+// Copy fonts
+gulp.task('fonts', () => {
+  return gulp.src(paths.src.fonts)
     .pipe(gulp.dest(paths.dist.fonts));
 });
 
+// Images
+gulp.task('images', () => {
+  return gulp.src(paths.src.images)
+    .pipe(gulp.dest(paths.dist.images));
+});
+
+// Favicons
+gulp.task('favicons', () => {
+  return gulp.src('src/img/icons/favicon.*')
+    .pipe(gulp.dest(paths.dist.all));
+});
+
 // Compile SCSS and autoprefix styles.
-gulp.task('styles', function () {
+gulp.task('styles', () => {
   return gulp.src(paths.src.styles)
     .pipe(sourcemaps.init())
     .pipe(scssConfig())
     .pipe(autoprefixerConfig())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.dist.styles))
-    .pipe(gulp.dest(paths.tmp.styles))
     .pipe(browserSync.stream());
 });
 
 // Concatenate and uglify JavaScript
-gulp.task('scripts', function() {
-  return gulp.src([
-      './src/js/**/*.js'
-    ])
+gulp.task('scripts', () => {
+  return gulp.src(paths.src.scripts)
     .pipe(concat('production.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(paths.dist.scripts))
-    .pipe(gulp.dest(paths.tmp.scripts));
+    .pipe(gulp.dest(paths.dist.scripts));
 });
 
-gulp.task('compile', [
-  'files',
+// Build website assets
+gulp.task('buildAssets', gulp.parallel(
+  'jsFiles',
+  'fonts',
+  'images',
+  'favicons',
   'scripts',
   'styles'
-]);
+));
 
-// Build static pattern library
-gulp.task('build', ['clean-build', 'compile'], function() {
-  const builder = fractal.web.builder();
-  return builder.build().then(function(){
-    console.log(`Pattern library static build complete!`);
-  });
+
+gulp.task('generate', function(callback) {
+  exec('eleventy --quiet', function (err) {
+    if (err) {
+      notifier.notify({
+        title: 'Eleventy Error',
+        message: 'Generate Failure'
+      })
+    }
+    callback(err);
+  })
 });
 
-gulp.task('watch', ['compile'], function () {
-  gulp.watch(paths.src.styles, ['styles']);
-  gulp.watch(paths.src.scripts, ['scripts']);
+gulp.task('buildAll', gulp.parallel(
+  'buildAssets',
+  'generate'
+));
+
+gulp.task('serve', () => {
+  browserSync.init( {
+    server: {
+      baseDir: "./dist/",
+      serveStaticOptions: {
+        extensions: ['html']
+      }
+    },
+    open: false,
+    notify: false,
+    injectChanges: true
+  });
+  gulp.watch(paths.src.site, gulp.parallel('generate'));
+  gulp.watch(paths.src.styles, gulp.parallel('styles'));
+  gulp.watch(paths.src.modules, gulp.parallel('jsFiles'));
+  gulp.watch(paths.src.fonts, gulp.parallel('fonts'));
+  gulp.watch(paths.src.images, gulp.parallel('images'));
+  gulp.watch(paths.src.scripts, gulp.parallel('scripts'));
+  gulp.watch(paths.dist.all).on('change', browserSync.reload);
 });
 
-gulp.task('serve', ['compile', 'build', 'watch'], function(){
-  const server = fractal.web.server({
-    sync: true
-  });
-  server.on('error', err => logger.error(err.message));
-  return server.start().then(() => {
-    logger.success(`Fractal server is now running at ${server.url}`);
-  });
-});
+// // Build static pattern library
+// gulp.task('patterns', ['cleanPatterns', 'build'], function() {
+//   const builder = fractal.web.builder();
+//   return builder.build().then(function(){
+//     console.log(`Pattern library static build complete!`);
+//   });
+// });
 
-gulp.task('default', ['compile']);
+// // Build patten library and assets for UI dev
+// gulp.task('assets', ['build', 'patterns', 'watch'], function(){
+//   const server = fractal.web.server({
+//     sync: true
+//   });
+//   server.on('error', err => logger.error(err.message));
+//   return server.start().then(() => {
+//     logger.success(`Fractal server is now running at ${server.url}`);
+//   });
+// });
+
+
+// gulp.task('serveAssets', gulp.series(
+//   'cleanAssets',
+//   'buildAssets',
+//   'serve'
+// ));
+
+// gulp.task('default', ['build']);
