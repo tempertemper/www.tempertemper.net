@@ -2,9 +2,10 @@
     {% set nav = [
         { title: 'Home', url: '/' },
         { title: 'Categories', url: '/categories' },
-        { title: 'Colophon', url: '/colophon' },
         { title: 'Testimonials', url: '/testimonials' },
-        { title: 'Resources', url: '/resources' }
+        { title: 'Resources', url: '/resources' },
+        { title: 'Feeds', url: '/subscribe' },
+        { title: 'Colophon', url: '/colophon' }
     ] %}
     {% for item in nav %}
         <li {% if item.url == page.url %}class="active"{% endif %}>
