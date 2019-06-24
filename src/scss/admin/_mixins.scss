@@ -138,6 +138,10 @@
   display: inline-block;
   width: auto;
 
+  + li {
+    margin-top: 0;
+  }
+
   &:after {
     content: '/';
     display: inline-block;
