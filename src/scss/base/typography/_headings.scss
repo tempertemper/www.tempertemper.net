@@ -5,19 +5,14 @@ h4,
 h5,
 h6 {
   @include heading-style;
-
-  a {
-
-    &:link,
-    &:visited {
-      text-decoration: none;
-    }
-  }
 }
 
 h1 {
   @include heading-xl;
-  text-align: center;
+
+  @media (min-width: $m) {
+    text-align: center;
+  }
 }
 
 h2 {

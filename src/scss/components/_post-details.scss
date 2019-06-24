@@ -1,8 +1,11 @@
 .post-details {
   font-style: italic;
 
-  [role="main"] &:first-child {
-    text-align: center;
+  .date {
+
+    @media (min-width: $m) {
+      text-align: center;
+    }
   }
 
   p {

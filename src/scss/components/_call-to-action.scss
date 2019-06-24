@@ -1,5 +1,8 @@
 .call-to-action {
-  text-align: center;
+
+  @media (min-width: $m) {
+    text-align: center;
+  }
 
   .primary {
     @include button-secondary;
@@ -12,6 +15,11 @@
   form {
     margin-top: 1em;
     margin-bottom: 1em;
+
+    @media (min-width: $l) {
+      display: flex;
+      align-items: flex-end;
+    }
 
     div {
       text-align: left;

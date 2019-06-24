@@ -3,8 +3,8 @@
   "version": "4.11.2",
   "description": "tempertemper's website",
   "scripts": {
-    "start": "gulp serve",
-    "test": "echo \"Error: no test specified\"",
+    "start": "gulp cleanSite && gulp buildAll && gulp serve",
+    "build": "gulp cleanSite && gulp buildAll",
     "bump:major": "gulp bump:major",
     "bump:minor": "gulp bump:minor",
     "bump:patch": "gulp bump:patch"
@@ -20,26 +20,28 @@
   },
   "homepage": "https://github.com/tempertemper/tempertemper-website",
   "devDependencies": {
-    "del": "3.*",
-    "gulp": "3.9.*",
-    "gulp-autoprefixer": "5.*",
-    "gulp-bump": "^3.1.0",
-    "gulp-concat": "2.6.*",
-    "gulp-notify": "3.*",
+    "@11ty/eleventy": "^0.8.3",
+    "browser-sync": "^2.26.7",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-bump": "^3.1.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "2.6.*",
-    "gulp-uglify": "^3.0.1",
-    "html5shiv": "3.*",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "html5shiv": "^3.7.3",
     "modularscale-sass": "2.*",
-    "responsive-nav": "1.*",
     "susy": "2.*"
   },
   "dependencies": {
-    "@frctl/fractal": "^1.1.7",
-    "@frctl/handlebars": "^1.1.5",
-    "browser-sync": "^2.26.3",
+    "@11ty/eleventy-plugin-rss": "^1.0.6",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "markdown-it": "^8.4.2",
-    "npm": "^6.4.1"
+    "markdown-it-anchor": "^5.0.2",
+    "require-dir": "^1.2.0",
+    "uslug": "^1.0.4"
   }
 }
