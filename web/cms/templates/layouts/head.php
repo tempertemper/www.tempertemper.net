@@ -80,7 +80,9 @@
         perch_get_css();
         perch_layout('_google_sitename');
     ?>
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/rss" />
+    <link rel="alternate" title="RSS feed of blog posts" type="application/rss+xml" href="/blog/rss" />
+    <link rel="alternate" title="JSON feed of blog posts" type="application/json" href="/blog/json" />
+
 </head>
 <body class="<?php echo PerchUtil::urlify(perch_pages_navigation_text(true));?>">
     <div class="canvas">
