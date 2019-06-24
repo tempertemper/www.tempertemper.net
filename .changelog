@@ -11,10 +11,52 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+## [5.0.0] - 2019-06-24
+
+### Adds
+- Adds updated flag for updated posts
+- Adds categories section to homepage
+- Adds images and fonts to gulp build
+- New subscribe page with links to RSS, JSON feed, etc.
+- Syntax highlighting for code blocks
+- Adds new Apple category
+- Styles nested bullets
+- Uses markdown filter for post in list description
+- Adds 'edit page on GitHub' link to footer
+
+### Changes
+- Rebuilds website in [Eleventy](https://www.11ty.io) instead of [Perch](https://grabaperch.com)
+- Makes categories site-wide, rather than scoped to blog articles, resources, etc.
+- CSS cache busting using site version number
+- Updates conten pretty much all over site
+- Left-aligns page headings on small screens
+- Reworks headings for smaller screens
+- Left-aligns footer content on small screens
+- Updates to [Gulp](https://gulpjs.com/) version 4
+- Builds, serves and watches site with Gulp and [Browsersync](https://www.browsersync.io/)
+- Restyles inline code
+
+### Removes
+- Removes hamburger menu for mobile devices
+- Removes projects section
+- Removes services section
+- Removes pagination
+- Removes search
+- Removes contact form
+- Gets rid of pattern library for now
+- Removes build directory from repo (site builds in deployment pipeline)
+- Removes some categories to tidy/focus the list
+- Stops hyphenation on medium to large screens
+- Gets rid of blog and article headings as links
+
 ### Fixes
 - Fixes misaligned subscription form submit button
-
-----------
+- Sorts slightly broken RSS feed
+- Gives JSON feed a good going over
+- Sorts bottom margin on homepage teaser elements
+- Fixes broken links to woff2 files
 
 ## [4.11.2] - 2019-01-25
 
