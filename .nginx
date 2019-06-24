@@ -34,14 +34,12 @@ server {
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
     }
 
-    location = / {
-        try_files $uri @runway;
-    }
     location / {
-        try_files $uri $uri/ @runway;
-    }
-    location @runway {
-        rewrite ^ /cms/core/runway/start.php last;
+        if ($request_uri ~ ^/(.*)\.html$) {
+            return 302 /$1;
+        }
+        try_files $uri $uri.html $uri/ =404;
+        error_page 404 /404.html;
     }
 
     # Blog to Resources redirects
@@ -156,6 +154,9 @@ server {
     rewrite ^/legal/ /privacy-policy permanent;
     rewrite ^/legal/terms /terms permanent;
     rewrite ^/legal/privacy-policy /privacy-policy permanent;
+
+    # External rewrites
+    rewrite ^/youtube https://www.youtube.com/tempertemper permanent;
 }
 
 # Pattern library
