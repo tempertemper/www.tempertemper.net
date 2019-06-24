@@ -1,0 +1,28 @@
+<footer role="contentinfo">
+    <nav class="useful-links">
+        {% include "navigation-primary.html" %}
+        {% include "navigation-secondary.html" %}
+        <div class="social-media">
+            <a href="https://twitter.com/tempertemper">
+                {% include "svg/twitter.svg" %}
+                <span>@tempertemper</span>
+            </a>
+        </div>
+    </nav>
+    <div class="copyright">
+        <p>&copy;&nbsp;copyright 2009&nbsp;to&nbsp;{{ "" | getCurrentYear }}</p>
+        <address class="adr">
+            <span class="org">tempertemper Web Design Ltd.</span>,
+            <span class="extended-address">Clavering House</span>,
+            <span class="street-address">Clavering Place</span>,
+            <span class="locality">Newcastle upon Tyne</span>,
+            <span class="postal-code">NE1 3NG</span>,&nbsp;<span class="country-name">UK</span>
+        </address>
+        <p>Company number 07742506, VAT&nbsp;registration number&nbsp;219&nbsp;5624&nbsp;96</p>
+        <ul>
+            <li><a href="/privacy-policy" rel="privacypolicy">Privacy policy</a>,</li>
+            <li><a href="https://github.com/tempertemper/tempertemper-website/tree/master/{{ page.inputPath }}">Edit this page on GitHub</a>,</li>
+            <li><a href="/terms">Terms&nbsp;of&nbsp;business</a></li>
+        </ul>
+    </div>
+</footer>
