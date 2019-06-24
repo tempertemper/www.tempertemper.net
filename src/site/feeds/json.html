@@ -25,11 +25,12 @@ excludeFromSitemap: true
       {%- if post.updated %}"date_modified": "{{ post.updated }}",{%- endif %}
       "title": "{{ post.data.title }}",
       "summary": "{{ post.data.intro | markdown | safe | striptags }}",
-      "url": "{{ site.url }}{{ post.url | replace (".html", "") }}"
       {%- set postTags = post.data.tags | tagsOnPage %}
       {%- if postTags.length > 0  %}
       "tags": [{% for category in postTags %}"{{ category }}"{% if not loop.last %},{% endif %}{% endfor %}],
       {%- endif %}
+      "url": "{{ site.url }}{{ post.url | replace (".html", "") }}",
+      "content_html": {{ post.templateContent | dump | safe }}
     }
     {%- if loop.length >= 2 -%}
       {%- if not loop.last -%}
