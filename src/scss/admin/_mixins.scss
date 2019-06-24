@@ -138,14 +138,18 @@
   display: inline-block;
   width: auto;
 
-  &:before {
+  + li {
+    margin-top: 0;
+  }
+
+  &:after {
     content: '/';
     display: inline-block;
   }
 
-  &:first-child {
+  &:last-child {
 
-    &:before {
+    &:after {
       content: none;
     }
   }
