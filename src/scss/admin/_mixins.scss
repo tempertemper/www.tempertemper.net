@@ -138,14 +138,14 @@
   display: inline-block;
   width: auto;
 
-  &:before {
+  &:after {
     content: '/';
     display: inline-block;
   }
 
-  &:first-child {
+  &:last-child {
 
-    &:before {
+    &:after {
       content: none;
     }
   }
