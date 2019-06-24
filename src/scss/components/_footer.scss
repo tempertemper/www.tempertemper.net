@@ -49,8 +49,6 @@
 .useful-links {
 
   ul {
-    margin-bottom: .25em;
-    margin-top: .25em;
     padding-left: 0;
   }
 
@@ -59,7 +57,10 @@
 
     a {
       display: flex;
-      justify-content: center;
+
+      @media (min-width: $m) {
+        justify-content: center;
+      }
     }
 
     .icon-twitter {
