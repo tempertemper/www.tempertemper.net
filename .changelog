@@ -11,6 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Updates Nginx example file with static site config
+- Switches inline nav dividers to after each item as it makes more sense when they wrap onto two lines
+
+### Fixes
+- Stops twitter link in footer centre aligning on mobile
+- Fixes separation and grouping of footer nav groups
+
 ----------
 
 ## [5.0.0] - 2019-06-24
