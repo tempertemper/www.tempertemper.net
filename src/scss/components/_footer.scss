@@ -59,7 +59,10 @@
 
     a {
       display: flex;
-      justify-content: center;
+
+      @media (min-width: $m) {
+        justify-content: center;
+      }
     }
 
     .icon-twitter {
