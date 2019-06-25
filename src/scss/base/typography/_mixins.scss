@@ -1,5 +1,7 @@
-$ms-base: 1em;
-$ms-ratio: $major-third;
+$modularscale: (
+  base: 1em,
+  ratio: $major-third
+);
 
 @font-face {
   font-family: 'FS Me Web';
