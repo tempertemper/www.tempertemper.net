@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Proper solution for the notch on iPhone X, etc.
+
 ### Changes
 - Updates Nginx example file with static site config
 - Switches inline nav dividers to after each item as it makes more sense when they wrap onto two lines
