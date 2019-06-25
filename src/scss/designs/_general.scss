@@ -1,24 +1,3 @@
-html,
-body {
-  background-color: $colour-primary;
-}
-
-body {
-  padding-top: .1em;
-  padding-bottom: .1em;
-}
-
-.canvas {
-  background-color: $white;
-  min-height: 100%;
-  min-width: 100%;
-  @include dark-mode($background: $colour-dark-mode-main, $color: $colour-dark-mode-white);
-}
-
-.page-wrapper {
-  @extend %container;
-}
-
 @media (min-width: $l) {
 
   [role="main"],
