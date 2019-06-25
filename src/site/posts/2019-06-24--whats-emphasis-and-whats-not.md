@@ -41,7 +41,7 @@ Another good use case is for inner monologue:
 
 It's not speech, so quotation marks aren't appropriate; it's not described directly (e.g. "I wondered what I should make for tea that night, as I walked home from work").
 
-There are some more great examples on the [HTML Living Standard](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element)
+There are some more great examples on the [HTML Living Standard](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element).
 
 
 ## Bringing attention to content
