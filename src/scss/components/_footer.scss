@@ -56,7 +56,7 @@
     margin-top: .75em;
 
     a {
-      display: flex;
+      display: inline-flex;
 
       @media (min-width: $m) {
         justify-content: center;

@@ -8,11 +8,14 @@ All notable changes to this project will be documented in this file. The format 
 - Fixes
 
 ----------
-
 ## [Unreleased]
+----------
+
+
+## [5.0.1]
 
 ### Adds
-- Proper solution for the notch on iPhone X, etc.
+- Proper solution for the notch on iPhone X
 
 ### Changes
 - Updates Nginx example file with static site config
@@ -23,8 +26,8 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Stops twitter link in footer centre aligning on mobile
 - Fixes separation and grouping of footer nav groups
+- Stops twitter link in footer taking up full width
 
-----------
 
 ## [5.0.0] - 2019-06-24
 
