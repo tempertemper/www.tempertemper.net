@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Proper solution for the notch on iPhone X
+- Stops VAT and company number being picked up as phone numbers on iOS
 
 ### Changes
 - Updates Nginx example file with static site config
