@@ -4,14 +4,6 @@
     text-align: center;
   }
 
-  .primary {
-    @include button-secondary;
-  }
-
-  .read-more {
-    text-align: center;
-  }
-
   form {
     margin-top: 1em;
     margin-bottom: 1em;
