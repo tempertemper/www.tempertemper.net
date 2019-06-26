@@ -81,15 +81,15 @@
 }
 
 @mixin button {
-  background-color: transparent;
-  border-color: $colour-primary;
+  background-color: $colour-primary;
+  border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
-  border-style: solid;
-  border-width: 3px;
-  clear: both;
-  color: $colour-primary;
+  color: $white;
   display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-family: $font--heading;
+  font-weight: 400;
   margin-bottom: 1em;
   margin-top: 1em;
   padding: .5em 2em;
@@ -97,41 +97,29 @@
   width: auto;
   text-decoration: none;
 
-  &:hover,
-  &:focus,
-  &:active {
-    border-color: $black;
-    color: $black;
-    text-decoration: none;
-
-    @include dark-mode() {
-      border-color: $white;
-      color: $white;
-    }
+  svg {
+    margin-right: .3em;
+    margin-top: -.3em;
   }
-}
-
-@mixin button-primary {
-  @include button;
-  background-color: $colour-primary;
-  color: $white;
 
   &:link,
   &:visited {
     color: $white;
+    text-decoration: none;
   }
 
   &:hover,
   &:focus,
   &:active {
+    @include dark-mode() {
+      background-color: $white;
+      border-color: $white;
+      color: $colour-primary;
+    };
     background-color: $black;
+    border-color: $black;
     color: $white;
-    @include dark-mode($background: $white, $color: $colour-primary);
   }
-}
-
-@mixin button-secondary {
-  @include button;
 }
 
 @mixin inline-nav {
