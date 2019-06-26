@@ -12,3 +12,7 @@
 .index-list {
   @include remove-list-styling;
 }
+
+.button {
+  @include button;
+}
