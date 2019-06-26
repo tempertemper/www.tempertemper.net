@@ -9,6 +9,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 ## [Unreleased]
+----------
+
+
+## [5.0.2] - 2019-06-26
 
 ### Adds
 - New 'Getting to grips with Git' blog post
@@ -24,10 +28,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Twitter icon and text alignment in buttons
-----------
 
 
-## [5.0.1]
+## [5.0.1] - 2019-06-25
 
 ### Adds
 - Proper solution for the notch on iPhone X
