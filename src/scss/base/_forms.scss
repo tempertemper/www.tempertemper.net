@@ -36,6 +36,6 @@ textarea {
 }
 
 [type="submit"] {
-  @include button-primary;
+  @include button;
   display: block;
 }

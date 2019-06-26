@@ -1,8 +1,8 @@
 <section class="call-to-action">
     {% if tags.includes('post') %}
         <h2>Keep in touch</h2>
-        <p>If you enjoyed this post, it would be great to <a href="https://twitter.com/tempertemper">hear from you on Twitter</a>. I’m always happy to answer any questions on there or have a bit of a chat.</p>
-        <a class="primary" href="https://twitter.com/tempertemper">
+        <p>If you enjoyed this post, it would be great to hear from you. Head to Twitter and let's talk!</p>
+        <a class="button" href="https://twitter.com/tempertemper">
             {% include "svg/twitter.svg" %}
             <span>@tempertemper</span>
         </a>
@@ -23,11 +23,6 @@
         <p><small>Your email won’t be passed to any third parties or used in any way that won’t be of benefit to you. Also, you can <a href="/mailing-list/unsubscribe">unsubscribe</a> at any time.</small></p>
     {% elif tags.includes('testimonial') %}
         <h2>Want to work with me?</h2>
-        <a class="primary" href="/contact">
-            Say hello
-        </a>
-        <div class="read-more">
-            <a href="#">Or check out more of my work</a>
-        </div>
+        <a class="button" href="/contact">Say hello</a>
     {% endif %}
 </section>
