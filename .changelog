@@ -9,6 +9,18 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 ## [Unreleased]
+
+### Changes
+- Text in blog call to action
+- Button styling
+
+### Removes
+- Work link from testimonials call to action
+- Inner focus from submit buttons in Firefox
+- Gets rid of secondary button style variant
+
+### Fixes
+- Twitter icon and text alignment in buttons
 ----------
 
 
