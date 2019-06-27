@@ -33,7 +33,7 @@ permalink: feeds/blog/rss.xml
         {%- if postTags.length > 0  %}
         {% for category in postTags %}<category>{{ category }}</category>{% endfor %}
         {%- endif %}
-        <content type="html" xml:lang="en">{{ post.templateContent }}</content>
+        <content type="html" xml:lang="en">{{ post.templateContent }}&lt;p&gt;The article &lt;a rel=&quot;nofollow&quot; href=&quot;{{ site.url }}{{ post.url | replace (".html", "") }}&quot;&gt;{{ post.data.title }}&lt;/a&gt; appeared first on &lt;a rel=&quot;nofollow&quot; href=&quot;{{ site.url }}&quot;&gt;tempertemper.net&lt;/a&gt;.&lt;/p&gt;</content>
     </entry>
     {%- endfor %}
 </feed>
