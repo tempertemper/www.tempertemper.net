@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 ## [Unreleased]
+----------
+
+## [5.0.3] - 2019-06-27
 
 ### Adds
 - Adds '…appeared first on tempertemper.net' to feeds
@@ -30,8 +33,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Removes
 - Removes full stop from 'Ltd'
 - Removes weird rel attribute from privacy policy link
-
-----------
 
 
 ## [5.0.2] - 2019-06-26
