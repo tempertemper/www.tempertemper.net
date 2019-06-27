@@ -1,27 +1,41 @@
 ---
 permalink: feeds/blog/rss.xml
 ---
-<?xml version="1.0"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>{{ title }}</title>
-        <link>{{ site.url }}/blog</link>
-        <description>{{ description }}</description>
-        <atom:link href="{{ site.url }}/{{ permalink }}" rel="self" type="application/rss+xml" />
-        <pubDate>{{ collections.post | rssLastUpdatedDate }}</pubDate>
-        {% for post in collections.post | reverse %}
-            <item>
-                <title>{{ post.data.title }}</title>
-                <link>{{ site.url }}{{ post.url }}</link>
-                <guid>{{ site.url }}{{ post.url }}</guid>
-                <author>{{ site.author.name }}</author>
-                <description>{{ post.data.intro  | markdown | safe }}</description>
-                <pubDate>{{ post.date | rssDate }}</pubDate>
-                {% set postTags = post.data.tags | tagsOnPage %}
-                {% if postTags.length > 0  %}
-                {% for category in postTags %}<category>{{ category }}</category>{% endfor %}
-                {% endif %}
-           </item>
-        {% endfor %}
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ title }}</title>
+    <subtitle>{{ description }}</subtitle>
+    <link rel="alternate" type="text/html" href="{{ site.url }}/blog" />
+    <link rel="self" type="application/atom+xml" href="{{ site.url }}/{{ permalink }}" />
+    <id>{{ site.url }}/{{ permalink }}</id>
+    <updated>{{ collections.post | rssLastUpdatedDate }}</updated>
+    <rights type="html">&amp;copy; copyright 2009 to {{ "" | getCurrentYear }}, {{ site.company }}</rights>
+    <logo>{{ site.url }}/assets/img/icons/apple-touch-icon-180x180.png</logo>
+    <icon>{{ site.url }}/assets/img/icons/favicon.png</icon>
+    <author>
+        <name>{{ site.author.name }}</name>
+        <email>{{ site.author.email }}</email>
+        <uri>https://twitter.com/{{ site.author.twitter | replace("@", "") }}</uri>
+    </author>
+    {%- for post in collections.post | reverse %}
+    <entry>
+        <title>{{ post.data.title }}</title>
+        <link href="{{ site.url }}{{ post.url | replace (".html", "") }}" />
+        <id>{{ site.url }}{{ post.url | replace (".html", "") }}</id>
+        <published>{{ post.date | rssDate }}</published>
+        <updated>{%- if post.updated %}{{ post.updated  | rssDate }}{%- else %}{{ post.date | rssDate }}{%- endif %}</updated>
+        <author>
+            <name>{{ site.author.name }}</name>
+            <uri>https://twitter.com/{{ site.author.twitter | replace("@", "") }}</uri>
+        </author>
+        <summary>{{ post.data.intro | markdown | safe | striptags }}</summary>
+        {%- set postTags = post.data.tags | tagsOnPage %}
+        {%- if postTags.length > 0  %}
+        {% for category in postTags %}<category>{{ category }}</category>{% endfor %}
+        {%- endif %}
+        <content type="html" xml:lang="en"><![CDATA[
+            {{ post.templateContent | safe }}<p>The article <a rel="nofollow" href="{{ site.url }}{{ post.url | replace (".html", "") }}">{{ post.data.title }}</a> appeared first on <a rel="nofollow" href="{{ site.url }}">tempertemper.net</a>.</p>
+            ]]></content>
+    </entry>
+    {%- endfor %}
+</feed>
