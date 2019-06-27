@@ -1,13 +1,15 @@
 {
   "title": "tempertemper",
-  "version": "5.0.2",
+  "company": "tempertemper Web Design Ltd",
+  "version": "5.0.3",
   "url": "https://tempertemper.net",
   "baseurl": "",
   "repo": "http://github.com/tempertemper/tempertemper-website",
   "comments": false,
   "author": {
     "name": "Martin Underhill",
-    "twitter": "@tempertemper"
+    "twitter": "@tempertemper",
+    "email": "hello+website@tempertemper.net"
   },
   "og_locale": "en_GB"
 }
