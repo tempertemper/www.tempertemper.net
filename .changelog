@@ -11,6 +11,29 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 ----------
 
+## [5.0.3] - 2019-06-27
+
+### Adds
+- Adds '…appeared first on tempertemper.net' to feeds
+- Adds role="img" to SVGs
+
+### Changes
+- Changes RSS feed to Atom
+- Adds company name and email to global data file
+- Uses global data file for contact page email address
+
+### Fixes
+- Formats updated date properly in JSON feed
+- Fixes incorrect tabindex attribute on skip link
+- Indents logo SVG with 4 spaces for consistency with HTML
+- adds more unique ID to logo SVG title
+- Makes Twitter SVG title IDs unique and allows two per page
+- Adds role="group" to address to stop duplicate contentinfo being added implicitly
+
+### Removes
+- Removes full stop from 'Ltd'
+- Removes weird rel attribute from privacy policy link
+
 
 ## [5.0.2] - 2019-06-26
 
