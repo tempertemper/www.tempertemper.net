@@ -9,6 +9,21 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 ## [Unreleased]
+
+### Adds
+- Adds '…appeared first on tempertemper.net' to feeds
+
+### Changes
+- Changes RSS feed to Atom
+- Adds company name and email to global data file
+- Uses global data file for contact page email address
+
+### Fixes
+- Formats updated date properly in JSON feed
+
+### Removes
+- Removes full stop from 'Ltd'
+
 ----------
 
 
