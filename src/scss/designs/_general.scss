@@ -1,7 +1,8 @@
 @media (min-width: $l) {
 
   [role="main"],
-  [role="complementary"] {
+  [role="complementary"],
+  .call-to-action {
     @include layout($wide-layout);
     @include pre(1 of 6);
     width: span(4 of 6);
