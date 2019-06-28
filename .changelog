@@ -9,6 +9,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 ## [Unreleased]
+
+### Adds
+- Generic ‘Follow’ CTAs on all pages except in blog, resource and testimonials sections
+
 ----------
 
 ## [5.0.3] - 2019-06-27

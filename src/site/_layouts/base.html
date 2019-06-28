@@ -19,17 +19,26 @@
                     {% endif -%}
                     {{ content | safe }}
                 </main>
-                {% if tags.length >= 1 %}
-                    {% if tags.includes('post') or tags.includes('resource') %}
-                        <div role="complementary">
-                            {% include "post-details.html" %}
-                            {% include "call-to-action.html" %}
-                        </div>
-                    {% elif tags.includes('testimonial') %}
-                        <div role="complementary">
-                            <a href="/testimonials" class="back">View more testimonials</a>
-                            {% include "call-to-action.html" %}
-                        </div>
+                {% if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
+                    <div role="complementary">
+                        {% include "post-details.html" %}
+                    </div>
+                    {% include "call-to-action.html" %}
+                {% elif tags.length >= 1 and tags.includes('testimonial') %}
+                    <div role="complementary">
+                        <a href="/testimonials" class="back">View more testimonials</a>
+                    </div>
+                    {% include "call-to-action.html" %}
+                {% else %}
+                    {% if noCta !== true %}
+                        <section class="call-to-action">
+                            <h2>Follow me</h2>
+                            <p>Keep up with my latest articles, accessibility and usability tips, and general ramblings over on Twitter.</p>
+                            <a class="button" href="https://twitter.com/tempertemper">
+                                {% include "svg/twitter.svg" %}
+                                <span>@tempertemper</span>
+                            </a>
+                        </section>
                     {% endif %}
                 {% endif %}
                 {% include "footer.html" %}
