@@ -9,11 +9,17 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 ## [Unreleased]
+----------
+
+
+## [5.0.4] - 2019-06-30
 
 ### Adds
 - Generic ‘Follow’ CTAs on all pages except in blog, resource and testimonials sections
 
-----------
+### Removes
+- Takes 'edit on GitHub' link out of footer
+
 
 ## [5.0.3] - 2019-06-27
 
