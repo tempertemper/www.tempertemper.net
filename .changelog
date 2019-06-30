@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 ----------
 
+## [5.0.5] - 2019-06-30
+
+### Fixes
+- Refreshes all bookmark icon and fixes broken links
+- Makes RSS references in `<head>` absolute
+
 
 ## [5.0.4] - 2019-06-30
 
