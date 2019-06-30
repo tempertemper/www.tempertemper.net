@@ -64,11 +64,11 @@
         {
             "@context" : "http://schema.org",
             "@type" : "WebSite",
-            "name" : "tempertemper",
-            "alternateName" : "tempertemper Web Design",
-            "url" : "https://tempertemper.net"
+            "name" : "{{ site.title }}",
+            "alternateName" : "{{ site.company }}",
+            "url" : "{{ site.url }}"
         }
     </script>
-    <link rel="alternate" type="application/atom+xml" href="/feeds/blog/rss.xml" />
-    <link rel="alternate" type="application/json" href="/feeds/blog/feed.json" />
+    <link rel="alternate" type="application/atom+xml" href="{{ site.url }}/feeds/blog/rss.xml" />
+    <link rel="alternate" type="application/json" href="{{ site.url }}/feeds/blog/feed.json" />
 </head>
