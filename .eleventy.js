@@ -6,6 +6,12 @@ module.exports = function(eleventyConfig) {
   /* Data */
   eleventyConfig.setDataDeepMerge(true);
 
+  /* Smart quotes filter */
+  const smartypants = require("smartypants");
+  eleventyConfig.addFilter("smart", function(str) {
+    return smartypants(str, 'qDe');
+  });
+
   /* Markdown Plugins */
   var uslug = require('uslug');
   var uslugify = s => uslug(s);
