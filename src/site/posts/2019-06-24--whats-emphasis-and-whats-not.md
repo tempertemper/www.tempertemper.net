@@ -1,5 +1,5 @@
 ---
-title: What’s emphasis and what’s not
+title: What's emphasis and what's not
 intro: |
     Semantic HTML is hard. We stopped using `<i>` and `<b>` elements in favour of `<em>` and `<strong>`, but are `<i>` and `<b>` still useful?
 date: 2019-06-24

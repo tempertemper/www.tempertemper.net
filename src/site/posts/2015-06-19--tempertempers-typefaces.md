@@ -1,5 +1,5 @@
 ---
-title: tempertemper’s Typefaces
+title: tempertemper's Typefaces
 intro: |
     I rebranded tempertemper last summer. Text is so important on the web that it made perfect sense to make typography one of the first things to tackle.
 date: 2015-06-19
