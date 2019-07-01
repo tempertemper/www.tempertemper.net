@@ -1,5 +1,5 @@
 ---
-title: What’s in a browser?
+title: What's in a browser?
 intro: |
     So what's all this fuss about Internet Browsers? Maybe you, like a lot of people, you didn't realise there was a choice…
 date: 2011-07-27
