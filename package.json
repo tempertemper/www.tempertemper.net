@@ -42,6 +42,7 @@
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
     "require-dir": "^1.2.0",
+    "smartypants": "^0.1.1",
     "uslug": "^1.0.4"
   }
 }
