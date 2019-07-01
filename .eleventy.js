@@ -9,7 +9,7 @@ module.exports = function(eleventyConfig) {
   /* Smart quotes filter */
   const smartypants = require("smartypants");
   eleventyConfig.addFilter("smart", function(str) {
-    return smartypants(str, 'qDe');
+    return smartypants.smartypants(str, 'qDe');
   });
 
   /* Markdown Plugins */
