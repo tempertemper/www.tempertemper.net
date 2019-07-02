@@ -9,6 +9,18 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 ## [Unreleased]
+
+### Adds
+- New blog post: 'Design and dev should be more joined up'
+
+### Changes
+- Rewords blog post CTA
+- Moves 'back to posts' link for blog under CTA
+- Uses global data for twitter handle
+
+### Removes
+- Stop post in list link sticking to bottom of container
+
 ----------
 
 ## [5.0.5] - 2019-06-30
