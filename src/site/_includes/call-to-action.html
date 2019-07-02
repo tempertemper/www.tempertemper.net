@@ -4,7 +4,7 @@
         <p>If you enjoyed this post and want to know when the next one is published, head to Twitter and hit ‘Follow’.</p>
         <a class="button" href="https://twitter.com/tempertemper">
             {% include "svg/twitter.svg" %}
-            <span>@tempertemper</span>
+            <span>{{ site.author.twitter }}</span>
         </a>
         <p>Or read <a href="/blog/">more articles</a>.</p>
     {% elif tags.includes('resource') %}
