@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 ## [Unreleased]
+----------
+
+## [5.0.6] - 2019-07-02
 
 ### Adds
 - New blog post: 'Design and dev should be more joined up'
@@ -21,7 +24,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Removes
 - Stop post in list link sticking to bottom of container
 
-----------
 
 ## [5.0.5] - 2019-06-30
 
