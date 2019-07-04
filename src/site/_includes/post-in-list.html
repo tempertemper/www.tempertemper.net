@@ -3,6 +3,8 @@
         {{ post.data.title | smart | safe }}
     {% if home %}</h3>{% else %}</h2>{% endif %}
     {% if not home %}
+    <p>{{ post.data.title | slug | safe }}</p>
+
     <p class="details">
         Posted {{ post.data.date | date }}
         {% include "post-categories.html" %}
