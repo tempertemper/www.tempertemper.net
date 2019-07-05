@@ -14,6 +14,14 @@ All notable changes to this project will be documented in this file. The format 
 - Allows titles to use normally-typed apostrophes and converts them to nice ones on build
 - Uses slug filter for URLs but defines `remove` parameter for special characters like `+` and `'`
 - Adds filter to take a twitter handle and make it into a link to twitter
+- Moves back class to utitlity stylesheet
+- Uses paragraph tags for read more wrapper
+- Uses sans-serif font for 'post details' component
+
+### Removes
+- Removes pagination component completely
+- No more link marker for read more
+- Removes link marker styling
 
 ----------
 
