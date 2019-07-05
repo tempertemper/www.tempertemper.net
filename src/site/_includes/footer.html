@@ -2,13 +2,13 @@
     <nav class="useful-links">
         {% include "navigation-primary.html" %}
         {% include "navigation-secondary.html" %}
-        <div class="social-media">
-            <a href="https://twitter.com/tempertemper">
+        <p>
+            <a href="https://twitter.com/tempertemper" class="twitter-link">
                 {% set footer = true %}
                 {% include "svg/twitter.svg" %}
                 <span>@tempertemper</span>
             </a>
-        </div>
+        </p>
     </nav>
     <div class="copyright">
         <p>&copy;&nbsp;copyright 2009&nbsp;to&nbsp;{{ "" | getCurrentYear }}</p>
