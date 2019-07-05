@@ -28,6 +28,16 @@ module.exports = function(eleventyConfig) {
     return mdIntro.render(markdown);
   });
 
+
+  const slugify = require("slugify");
+  eleventyConfig.addFilter("slug", function(str) {
+    return slugify(str, {
+      replacement: "-",
+      remove: /[*+~.()'"‘’“”!?:@]/g,
+      lower: true
+    });
+  });
+
   /* Code syntax highlighting */
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
   eleventyConfig.addPlugin(syntaxHighlight, {
