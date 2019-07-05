@@ -1,5 +1,5 @@
 ---
-title: What’s RSS all about?
+title: What's RSS all about?
 intro: |
     So what's all this talk about RSS, feeds, subscribing, etc.?
 date: 2011-07-15

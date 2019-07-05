@@ -6,6 +6,12 @@ module.exports = function(eleventyConfig) {
   /* Data */
   eleventyConfig.setDataDeepMerge(true);
 
+  /* Smart quotes filter */
+  const smartypants = require("smartypants");
+  eleventyConfig.addFilter("smart", function(str) {
+    return smartypants.smartypants(str, 'qDe');
+  });
+
   /* Markdown Plugins */
   var uslug = require('uslug');
   var uslugify = s => uslug(s);
@@ -20,6 +26,16 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.addFilter("markdown", function(markdown) {
     return mdIntro.render(markdown);
+  });
+
+
+  const slugify = require("slugify");
+  eleventyConfig.addFilter("slug", function(str) {
+    return slugify(str, {
+      replacement: "-",
+      remove: /[*+~.()'"‘’“”!?:@]/g,
+      lower: true
+    });
   });
 
   /* Code syntax highlighting */

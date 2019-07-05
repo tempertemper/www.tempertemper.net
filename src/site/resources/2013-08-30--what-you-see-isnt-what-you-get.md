@@ -1,5 +1,5 @@
 ---
-title: What you see isn’t what you get
+title: What you see isn't what you get
 intro: |
     On the web, what you see isn't always what you get. This is why it's so important to keep your focus on content, rather than how your website will loo
 date: 2013-08-30

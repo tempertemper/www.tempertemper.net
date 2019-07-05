@@ -1,5 +1,5 @@
 {
   "layout": "base.html",
   "tags" : ["resource"],
-  "permalink": "resources/{{ title | lower | replace(' ', '-') | replace('’', '') | replace('?', '') | replace('–', '') | replace('--', '-') }}.html"
+  "permalink": "resources/{{ title | slug | safe }}.html"
 }
