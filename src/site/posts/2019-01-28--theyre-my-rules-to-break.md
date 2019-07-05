@@ -1,5 +1,5 @@
 ---
-title: They’re my rules to break
+title: They're my rules to break
 intro: |
     While I'm not one to say something publicly, only to go back on it, I learned through bitter experience last year that over-committing isn't healthy.
 date: 2019-01-28

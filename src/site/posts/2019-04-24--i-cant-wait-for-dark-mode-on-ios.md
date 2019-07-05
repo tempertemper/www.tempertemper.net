@@ -1,5 +1,5 @@
 ---
-title: I can’t wait for Dark Mode on iOS
+title: I can't wait for Dark Mode on iOS
 intro: |
     Dark Mode on iOS looks to be right around the corner. I'm already all-in on Dark Mode on my Mac but it's even more compelling on the iPhone.
 date: 2019-04-24

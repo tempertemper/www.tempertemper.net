@@ -9,6 +9,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 ## [Unreleased]
+
+### Changes
+- Allows titles to use normally-typed apostrophes and converts them to nice ones on build
+- Uses slug filter for URLs but defines `remove` parameter for special characters like `+` and `'`
+
 ----------
 
 ## [5.0.6] - 2019-07-02
