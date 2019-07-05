@@ -11,7 +11,7 @@
     <div class="description entry-summary">
         {{ post.data.intro  | markdown | safe }}
     </div>
-    <div class="read-more">
-        <a href="{{ post.url  | replace(".html", "") }}">Read ‘{{ post.data.title | smart | safe }}’</a>
-    </div>
+    <p class="read-more">
+        <a href="{{ post.url  | replace(".html", "") }}">Read {{ post.data.title | smart | safe }}</a>
+    </p>
 </li>
