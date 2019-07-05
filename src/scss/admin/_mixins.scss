@@ -31,23 +31,6 @@
   }
 }
 
-@mixin link-marker {
-
-  &:hover,
-  &:active,
-  &:focus {
-
-    &:after {
-      text-decoration: none;
-    }
-  }
-
-  &:after {
-    content: '\00a0\203A';
-    display: inline-block;
-  }
-}
-
 @mixin reverse-link-marker {
 
   &:hover,
@@ -63,20 +46,6 @@
     content: '\2039';
     display: inline-block;
     margin-right: .25em;
-  }
-}
-
-@mixin link-marker-reset {
-
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: none;
-  }
-
-  &:after,
-  &:before {
-    position: absolute;
   }
 }
 
