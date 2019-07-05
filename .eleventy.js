@@ -28,6 +28,9 @@ module.exports = function(eleventyConfig) {
     return mdIntro.render(markdown);
   });
 
+  eleventyConfig.addFilter("twitterLink", function(str) {
+    return "https://twitter.com/" + str.replace("@", "");
+  });
 
   const slugify = require("slugify");
   eleventyConfig.addFilter("slug", function(str) {
