@@ -36,13 +36,7 @@ body {
 }
 
 .read-more {
-
-  a {
-    @include link-marker;
-    display: inline-block;
-    font-family: $font--heading;
-    margin-top: 0;
-  }
+  font-family: $font--heading;
 }
 
 img {
