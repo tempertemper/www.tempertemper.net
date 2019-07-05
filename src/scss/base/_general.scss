@@ -49,14 +49,6 @@ img {
   border-radius: $border-radius-default;
 }
 
-.back {
-  @include reverse-link-marker;
-  display: inline-block;
-  font-family: $font--heading;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
 img,
 address,
 pre,
