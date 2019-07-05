@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Allows titles to use normally-typed apostrophes and converts them to nice ones on build
 - Uses slug filter for URLs but defines `remove` parameter for special characters like `+` and `'`
+- Adds filter to take a twitter handle and make it into a link to twitter
 
 ----------
 
