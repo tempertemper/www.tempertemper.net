@@ -3,10 +3,12 @@
         {% include "navigation-primary.html" %}
         {% include "navigation-secondary.html" %}
         <p>
-            <a href="https://twitter.com/tempertemper" class="twitter-link">
+            <a href="{{ site.author.twitter | twitterLink }}" class="twitter-link">
                 {% set footer = true %}
                 {% include "svg/twitter.svg" %}
-                <span>@tempertemper</span>
+                <span>
+                    {{ site.author.twitter }}
+                </span>
             </a>
         </p>
     </nav>
