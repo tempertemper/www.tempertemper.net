@@ -22,16 +22,14 @@
     <meta name="description" content="{{ description }}" />
 
     <meta property="og:site_name" content="tempertemper Web Design" />
-    <meta property="og:url" content="{{ site.url }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:title" content="{{ heading if heading else title }}" />
     <meta property="og:description" content="{{ description }}" />
-    <meta property="og:image" content="/assets/img/tempertemper-web-design-logo-facebook.jpg" />
-    {%- if tags.length >= 1 %}
-        {%- if tags.includes('post') or tags.includes('resource') %}
-            {%- set type = 'article' %}
-        {%- else %}
-            {%- set type = 'website' %}
-        {%- endif %}
+    <meta property="og:image" content="{{ site.url }}/assets/img/tempertemper-web-design-logo-facebook.jpg" />
+    {%- if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
+        {%- set type = "article" %}
+    {%- else %}
+        {%- set type = "website" %}
     {%- endif %}
     <meta property="og:type" content="{{ type }}" />
     <meta property="article:author" content="{{ site.author.name }}" />
@@ -41,8 +39,8 @@
     <meta name="twitter:creator" content="{{ site.author.twitter }}" />
     <meta name="twitter:title" content="{{ heading if heading else title }}" />
     <meta name="twitter:description" content="{{ description }}" />
-    <meta name="twitter:url" content="{{page.url}}" />
-    <meta property="twitter:image" content="/assets/img/tempertemper-web-design-logo-facebook.jpg" />
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="twitter:image" content="{{ site.url }}/assets/img/tempertemper-web-design-logo-facebook.jpg" />
 
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
     <meta name="format-detection" content="telephone=no">
