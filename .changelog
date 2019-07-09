@@ -17,6 +17,10 @@ All notable changes to this project will be documented in this file. The format 
 - Moves back class to utitlity stylesheet
 - Uses paragraph tags for read more wrapper
 - Uses sans-serif font for 'post details' component
+- Renames Atom feed as rss.xml wasn't right as it's not RSS – it's Atom
+
+### Fixes
+- Puts some Open Graph URLs straight
 
 ### Removes
 - Removes pagination component completely
