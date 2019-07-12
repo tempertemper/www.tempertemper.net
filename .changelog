@@ -19,6 +19,9 @@ All notable changes to this project will be documented in this file. The format 
 - Uses sans-serif font for 'post details' component
 - Renames Atom feed as rss.xml wasn't right as it's not RSS – it's Atom
 
+### Adds
+- Adds 'Now' page and links to it from the bottom of the 'About' page
+
 ### Fixes
 - Puts some Open Graph URLs straight
 
