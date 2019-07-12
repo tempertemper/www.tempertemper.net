@@ -46,13 +46,13 @@ In 2015 I co-founded Frontend NE, a [monthly front-end web development meetup](h
 
 ### Speaking
 
-Although I'm an introvert, I'm certainly not shy! In fact, I really enjoy presenting ideas to audiences, and do so regularly where I work in Government as well as at local design, development and tech [meetups](https://www.youtube.com/watch?v=v-Qwarwpsvc).
+Although I'm an [introvert](https://www.ted.com/talks/susan_cain_the_power_of_introverts?language=en), I'm certainly not shy! In fact, I really enjoy presenting ideas to audiences, and do so regularly where I work in Government as well as at local design, development and tech [meetups](https://www.youtube.com/watch?v=v-Qwarwpsvc).
 
 ### Teaching
 
 Accessibility is central to everything we develop in Government. I give regular workshop courses in HTML and accessibility, which are well attended by back-end developers, testers, interaction and content designers; even user researchers and business analysts have come along and learned a lot!
 
 
-## Other stuff
+## What abour right now?
 
-I love learning and I love my work but I also have a life outside of the web! When I'm not designing, coding, writing or speaking about the web, you'll find me with my family.
+I love learning and I love my work; I also have a life outside of the web! Find out what I'm up to at the moment on [my now page](/now).
