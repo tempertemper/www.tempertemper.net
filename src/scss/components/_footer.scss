@@ -52,19 +52,11 @@
     padding-left: 0;
   }
 
-  .social-media {
-    margin-top: .75em;
+  .twitter-link {
+    display: inline-flex;
 
-    a {
-      display: inline-flex;
-
-      @media (min-width: $m) {
-        justify-content: center;
-      }
-    }
-
-    .icon-twitter {
-      margin-right: .25em;
+    @media (min-width: $m) {
+      justify-content: center;
     }
   }
 

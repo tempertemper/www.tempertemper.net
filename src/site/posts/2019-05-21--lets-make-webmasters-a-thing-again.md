@@ -1,5 +1,5 @@
 ---
-title: Let’s make webmasters a thing again
+title: Let's make webmasters a thing again
 intro: |
     We used to be webmasters. CMSs then gave our clients control of their websites, but I can't help wondering if we had it right in the first place.
 date: 2019-05-21

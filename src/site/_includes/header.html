@@ -7,11 +7,11 @@
     </nav>
     <h1>
         {% if heading %}
-            {{ heading }}
+            {{ heading | smart | safe }}
         {% elif category %}
-            {{ category }}
+            {{ category | smart | safe }}
         {% else %}
-            {{ title }}
+            {{ title | smart | safe }}
         {% endif %}
     </h1>
 </header>

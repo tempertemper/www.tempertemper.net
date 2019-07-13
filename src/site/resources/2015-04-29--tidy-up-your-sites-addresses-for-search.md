@@ -1,5 +1,5 @@
 ---
-title: Tidy up your site’s addresses for search
+title: Tidy up your site's addresses for search
 intro: |
     Google have made a few changes lately. The most recent in the pipeline is the way URLs (web addresses) are displayed in their search results.
 date: 2015-04-29
