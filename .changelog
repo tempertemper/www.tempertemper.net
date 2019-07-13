@@ -21,9 +21,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Adds 'Now' page and links to it from the bottom of the 'About' page
+- New article: 'Folder sharing and the new Apple OSs'
 
 ### Fixes
 - Puts some Open Graph URLs straight
+- Corrects file name for 'Design and dev should be more joined up' article
 
 ### Removes
 - Removes pagination component completely
