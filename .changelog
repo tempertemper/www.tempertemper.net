@@ -11,6 +11,32 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 ----------
 
+
+## [5.0.7] - 2019-07-13
+
+### Adds
+- Adds 'Now' page and links to it from the bottom of the 'About' page
+- New article: 'Folder sharing and the new Apple OSs'
+
+### Changes
+- Allows titles to use normally-typed apostrophes and converts them to nice ones on build
+- Uses slug filter for URLs but defines `remove` parameter for special characters like `+` and `'`
+- Adds filter to take a twitter handle and make it into a link to twitter
+- Moves back class to utitlity stylesheet
+- Uses paragraph tags for read more wrapper
+- Uses sans-serif font for 'post details' component
+- Renames Atom feed as rss.xml wasn't right as it's not RSS – it's Atom
+
+### Removes
+- Removes pagination component completely
+- No more link marker for read more
+- Removes link marker styling
+
+### Fixes
+- Puts some Open Graph URLs straight
+- Corrects file name for 'Design and dev should be more joined up' article
+
+
 ## [5.0.6] - 2019-07-02
 
 ### Adds
