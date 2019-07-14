@@ -155,8 +155,10 @@ server {
     rewrite ^/legal/terms /terms permanent;
     rewrite ^/legal/privacy-policy /privacy-policy permanent;
     rewrite ^/blog/rss /feeds/blog/feed.xml permanent;
-    rewrite ^/feeds/blog/rss.xml /feeds/blog/feed.xml permanent;
-    rewrite ^/blog/json /feeds/blog/feed.json permanent;
+    rewrite ^/feeds/blog/rss.xml /feeds/main.xml permanent;
+    rewrite ^/feeds/blog/feed.xml /feeds/main.xml permanent;
+    rewrite ^/blog/json /feeds/main.json permanent;
+    rewrite ^/feeds/blog/feed.json /feeds/main.json permanent;
 
     # External rewrites
     rewrite ^/youtube https://www.youtube.com/tempertemper permanent;
