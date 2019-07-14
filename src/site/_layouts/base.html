@@ -12,21 +12,15 @@
                     {% endif %}
                     {% if tags.length >= 1 -%}
                         {% if tags.includes('post') -%}
-                            <aside class="post-details">
-                                <p class="entry-published date">{{ date | date }}</p>
-                            </aside>
+                            <p class="entry-published date post-details">{{ date | date }}</p>
                         {% endif -%}
                     {% endif -%}
                     {{ content | safe }}
                     {% if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
-                        <aside role="complementary" class="post-details">
-                            {% include "post-details.html" %}
-                        </aside>
+                        {% include "post-details.html" %}
                         {% include "call-to-action.html" %}
                     {% elif tags.length >= 1 and tags.includes('testimonial') %}
-                        <aside role="complementary">
-                            <a href="/testimonials" class="back">View more testimonials</a>
-                        </aside>
+                        <p><a href="/testimonials" class="back">View more testimonials</a></p>
                         {% include "call-to-action.html" %}
                     {% else %}
                         {% if noCta !== true %}
