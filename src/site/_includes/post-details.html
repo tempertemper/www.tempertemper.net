@@ -1,4 +1,4 @@
-<aside class="post-details">
+<div class="post-details">
     <p>
         {% if updated %}First posted {% else %}Posted {% endif %} <span class="entry-published date" >{{ date | date }}</span>
         {% include "post-categories.html" %}.
@@ -9,4 +9,4 @@
     {% if tags.includes('resource') %}
         <p><a href="/resources/" class="back">Back to resources</a></p>
     {% endif %}
-</aside>
+</div>
