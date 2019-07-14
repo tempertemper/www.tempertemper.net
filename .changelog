@@ -11,8 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- New article: 'Refining my writing process'
+
 ### Changes
 - Rewords homepage heading and intro, which now references the Now page
+- Reduces spacing between list items
 
 ### Fixes
 - Fixes final outstanding non-critical accessibility issues by refactoring `<aside>` and `role="complementary"`, and moving CTAs inside the `<main>` landmark
