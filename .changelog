@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.0.8] - 2019-07-14
+
 ### Adds
 - New article: 'Refining my writing process'
 
@@ -22,8 +27,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Fixes final outstanding non-critical accessibility issues by refactoring `<aside>` and `role="complementary"`, and moving CTAs inside the `<main>` landmark
-
-----------
 
 
 ## [5.0.7] - 2019-07-13
