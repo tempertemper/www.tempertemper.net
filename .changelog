@@ -17,6 +17,8 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Rewords homepage heading and intro, which now references the Now page
 - Reduces spacing between list items
+- Makes CTA alternative action sans-serif
+- Changes URL of blog feeds to be more general, until more granular subscriptions are needed
 
 ### Fixes
 - Fixes final outstanding non-critical accessibility issues by refactoring `<aside>` and `role="complementary"`, and moving CTAs inside the `<main>` landmark
