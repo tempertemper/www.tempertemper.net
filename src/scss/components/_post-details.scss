@@ -1,12 +1,6 @@
 .post-details {
   font-family: $font--heading;
-
-  .date {
-
-    @media (min-width: $m) {
-      text-align: center;
-    }
-  }
+  margin-top:3em;
 
   p {
     margin-bottom: 0;
