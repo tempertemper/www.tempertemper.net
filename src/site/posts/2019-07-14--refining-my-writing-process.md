@@ -24,7 +24,7 @@ When it comes to final edits and publishing, though, working in a CMS was fiddly
 7. Make any edits
 8. Publish the article
 9. Archive the draft by renaming the iA Writer file and moving it to a central `/articles/` folder in my iCloud Drive
-10. Add the meta-data to the file as front-matter
+10. Add the meta-data to the file as front-matter (not that it'd be used anywhere, but it means that I know how I categorised the post, what unique page description I gave it, etc.)
 11. If any updates are required, edit the archived file *and* the version on the CMS
 
 My new site is a [static build with Eleventy](https://www.11ty.io/), which has removed duplication and simplified my process:
