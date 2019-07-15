@@ -154,7 +154,7 @@ server {
     rewrite ^/legal/ /privacy-policy permanent;
     rewrite ^/legal/terms /terms permanent;
     rewrite ^/legal/privacy-policy /privacy-policy permanent;
-    rewrite ^/blog/rss /feeds/blog/feed.xml permanent;
+    rewrite ^/blog/rss /feeds/main.xml permanent;
     rewrite ^/feeds/blog/rss.xml /feeds/main.xml permanent;
     rewrite ^/feeds/blog/feed.xml /feeds/main.xml permanent;
     rewrite ^/blog/json /feeds/main.json permanent;
