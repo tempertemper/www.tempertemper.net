@@ -53,6 +53,6 @@ Although I'm an [introvert](https://www.ted.com/talks/susan_cain_the_power_of_in
 Accessibility is central to everything we develop in Government. I give regular workshop courses in HTML and accessibility, which are well attended by back-end developers, testers, interaction and content designers; even user researchers and business analysts have come along and learned a lot!
 
 
-## What abour right now?
+## What about right now?
 
 I love learning and I love my work; I also have a life outside of the web! Find out what I'm up to at the moment on [my now page](/now).
