@@ -9,7 +9,7 @@ pagination:
     - testimonial
     - post
 layout: base
-permalink: /category/{{ category | lower | replace(' ', '-') }}.html
+permalink: /category/{{ category | slug | safe }}.html
 ---
 
 <p>Articles and resources in the {{ category }} category. A <a href="/categories">full list of categories</a> is also available.</p>
