@@ -9,10 +9,31 @@ pagination:
     - testimonial
     - post
 layout: base
-permalink: /category/{{ category | lower | replace(' ', '-') }}.html
+permalink: /category/{{ category | slug | safe }}.html
 ---
 
-<p>Articles and resources in the {{ category }} category. A <a href="/categories">full list of categories</a> is also available.</p>
+{% if category == 'Accessibility' %}
+    <p>Accessibility and inclusive design are the first considerations when designing a digital product, service or website.
+{% elif category == 'Apple' %}
+    <p>Apple are a company where good design is at the centre of everything they produce, both hardware and software.
+{% elif category == 'Business' %}
+    <p>I’m a small business owner; these are tips and tricks that might come in useful for other business owners.
+{% elif category == 'Design' %}
+    <p>Interaction design, user experience design, user interface design; design is a fascinating subject.
+{% elif category == 'Development' %}
+    <p>Front-end web development, from HTML, ARIA, CSS and JavaScript to Git and good development practices.
+{% elif category == 'Markdown' %}
+    <p>For me, Markdown is the only way to write for the web.
+{% elif category == 'Performance' %}
+    <p>If a website isn’t fast, it isn’t accessible.
+{% elif category == 'Tools' %}
+    <p>The tools of the trade are important: hardware, apps, helpful features; even languages like <a href="/category/markdown">Markdown</a>.
+{% elif category == 'Workflows' %}
+    <p>I’m always looking to refine the way I work, whether it’s process or the software I use.
+{% else %}
+    <p>Articles and resources in the {{ category }} category.
+{% endif %}
+A <a href="/categories">full list of categories</a> is also available.</p>
 
 <ol class="hfeed index-list">
     {% set categoryList = collections[ category ] %}
