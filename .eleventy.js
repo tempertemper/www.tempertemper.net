@@ -36,7 +36,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("slug", function(str) {
     return slugify(str, {
       replacement: "-",
-      remove: /[*+~.()'"‘’“”!?:@]/g,
+      remove: /[*+~.,()'"‘’“”!?:@]/g,
       lower: true
     });
   });
