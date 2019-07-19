@@ -71,6 +71,14 @@ ol {
   }
 }
 
+li {
+
+  &::marker {
+    color: $colour-primary;
+    font-family: $font--heading;
+  }
+}
+
 hr {
   border-top: 2px solid $colour-primary;
   margin: 1em 0;
