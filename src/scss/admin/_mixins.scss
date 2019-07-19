@@ -49,48 +49,6 @@
   }
 }
 
-@mixin button {
-  background-color: $colour-primary;
-  border: 3px solid $colour-primary;
-  border-radius: $border-radius-default;
-  color: $white;
-  display: inline-block;
-  display: inline-flex;
-  align-items: center;
-  font-family: $font--heading;
-  font-weight: 400;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  padding: .5em 2em;
-  text-align: center;
-  width: auto;
-  text-decoration: none;
-
-  svg {
-    margin-right: .3em;
-    margin-top: -.3em;
-  }
-
-  &:link,
-  &:visited {
-    color: $white;
-    text-decoration: none;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    @include dark-mode() {
-      background-color: $white;
-      border-color: $white;
-      color: $colour-primary;
-    };
-    background-color: $black;
-    border-color: $black;
-    color: $white;
-  }
-}
-
 @mixin inline-nav {
   display: inline-block;
   width: auto;
