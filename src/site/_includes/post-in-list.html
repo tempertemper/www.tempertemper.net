@@ -1,6 +1,8 @@
 <li>
     {% if home %}<h3>{% else %}<h2 class="entry-title">{% endif %}
-        {{ post.data.title | smart | safe }}
+        <a href="{{ post.url  | replace(".html", "") }}">
+            {{ post.data.title | smart | safe }}
+        </a>
     {% if home %}</h3>{% else %}</h2>{% endif %}
     {% if not home %}
     <p class="details">
@@ -11,7 +13,4 @@
     <div class="description entry-summary">
         {{ post.data.intro  | markdown | safe }}
     </div>
-    <p class="read-more">
-        <a href="{{ post.url  | replace(".html", "") }}">Read {{ post.data.title | smart | safe }}</a>
-    </p>
 </li>
