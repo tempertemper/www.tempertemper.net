@@ -14,8 +14,7 @@ You know your website's contact page? You probably have a contact form, don't yo
 Don't believe me? Read on…
 
 
-Plain text email address
-------------------------
+## Plain text email address
 
 Presenting your email address as normal text means that it can be highlighted, copied then pasted into the `To:` box of a draft email.
 
@@ -40,8 +39,7 @@ Also, the visitor _isn't on your website_ anymore.
 Another consideration is that you may well be upsetting expectations: a visitor to your website could expect tapping an email address to open a new email in their default email app. Which segues nicely into…
 
 
-Email addresses as 'mailto' links
----------------------------------
+## Email addresses as 'mailto' links
 
 Much more convenient that plain text. No more selecting, copying and pasting! The email address is a link (called a 'mailto' link), so just click/tap it and you're away! There are complications here too.
 
@@ -53,13 +51,9 @@ What if your visitor actually _wants_ to copy and paste your email address? Mayb
 
 What happens when a mailto link is clicked or tapped? Your web browser opens your operating system's default mail app.
 
-#### Windows, Android and Mac
-
 In some cases this behaviour is fine, where your visitor (like me) uses a dedicated email app to access their emails. I use [Apple Mail](https://www.apple.com/uk/osx/apps/#mail), so clicking a link on a website would open a new email there. **Exactly what I'd want**.
 
 I'm always on the look out for new apps to improve my workflow, so if I changed my Mac's default email app to something like [Airmail](http://airmailapp.com/), that's the app that would open. This is similar on Windows and Android. Again, **just what I'd be after**.
-
-#### iOS
 
 Unfortunately, iPhone and iPad users can't change their default email app, so mailto links _always_ open Apple's Mail app.
 
@@ -69,27 +63,25 @@ This would be fine for people like me who use Mail to access emails on their iPh
 
 A lot of your website's visitors will access their emails through their web browser. In other words, they open their web browser and navigate to a page where they log in to access their emails. These visitors are back to the clunky old 'select, copy, switch, paste' scenario.
 
-#### Business email services
+### Business email services
 
 Business email services like Gmail or Office 365 offer a great experience on their web browser-based app, and many people prefer it over using a dedicated email app. They also offer loads of powerful features that you can only use via their web app.
 
-#### Personal email services
+### Personal email services
 
 Email services like Hotmail (now Outlook.com) and non-business Gmail are browser-based by default unless you actively set them up in a mail app. Others like Yahoo!Mail don't let you use any apps other than their own!
 
 A lot of people are given an email address by their phone/internet provider (Virgin, Sky, BT, etc.) which, again, are all browser-based by default.
 
 
-A quick aside about spam
-------------------------
+## A quick aside about spam
 
 Whether plain text or a mailto link, if your email address appears on your website it will be picked up by spam-bots that scour websites looking for email addresses.
 
 There are ways your web designer can go some way to disguising your email address from these spam-bots, but they're not all that effective, as the people who program the spam bots are always one step ahead.
 
 
-Contact forms
--------------
+## Contact forms
 
 Having a form on your website with a few input boxes (name, email, message – that kind of thing) is the easiest way for visitors to your website to send you a message. Here's a quick run-down of the advantages:
 
@@ -103,7 +95,6 @@ Having a form on your website with a few input boxes (name, email, message – t
 + Can keep a record of all emails sent to you in your website's database, in case you ever need that information.
 
 
-So don't display your email address!
-------------------------------------
+## So don't display your email address!
 
 The cons far outweigh the pros, when you put your email address on your website. Stick to a contact form and you can't go far wrong!
