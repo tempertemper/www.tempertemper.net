@@ -1,4 +1,4 @@
-<li>
+<li class="post-in-list">
     {% if home %}<h3>{% else %}<h2 class="entry-title">{% endif %}
         <a href="{{ post.url  | replace(".html", "") }}">
             {{ post.data.title | smart | safe }}
