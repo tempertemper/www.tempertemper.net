@@ -11,7 +11,7 @@
         {% elif post.data.tags.includes('resource') %}
             Resource
         {% endif -%}
-        posted on {{ post.data.date | date }}
+        posted {{ post.data.date | date }}
         {% include "post-categories.html" %}
     </p>
     {% endif %}
