@@ -13,10 +13,18 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - List marker styling
+- Adds post type (article or resource) to the listing detail, next to the date and categories
+- Adds slight drop shadow to images in case their edges match the website background colour
 
 ### Changes
 - Amends button hover and active styling to be more sympathetic to links
 - Uses outline for button focus state so that it's more obvious
+- Makes post listings header the link to the article
+- Refines post in list spacing
+- Refactors heading sizes and styles across site
+
+### Removes
+- Removes headings below level 3
 
 ----------
 
