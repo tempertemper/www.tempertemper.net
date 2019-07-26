@@ -27,6 +27,9 @@ All notable changes to this project will be documented in this file. The format 
 ### Removes
 - Removes headings below level 3
 
+### Fixes
+- Updates markdown-it dependency to fix vulnerability
+
 ----------
 
 
