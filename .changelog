@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.0.12] - 2019-07-26
+
 ### Adds
 - List marker styling
 - Adds post type (article or resource) to the listing detail, next to the date and categories
@@ -30,8 +35,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Updates markdown-it dependency to fix vulnerability
-
-----------
 
 
 ## [5.0.11] - 2019-07-18
