@@ -7,15 +7,16 @@
 
 @import 'base/reset',
         'base/typography',
-        'base/utility',
         'base/general',
         'base/icons',
-        'base/forms';
+        'base/buttons',
+        'base/forms',
+        'base/utility';
 
 @import 'components/header',
         'components/navigation',
-        'components/button',
         'components/date',
+        'components/post-in-list',
         'components/call-to-action',
         'components/post-details',
         'components/teaser',

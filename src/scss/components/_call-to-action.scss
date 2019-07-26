@@ -4,6 +4,14 @@
     text-align: center;
   }
 
+  h2 {
+    @include heading-l;
+
+    @media (min-width: $l) {
+      font-size: ms(5);
+    }
+  }
+
   form {
     margin-top: 1em;
     margin-bottom: 1em;

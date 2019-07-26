@@ -1,17 +1,21 @@
-<li>
+<li class="post-in-list">
     {% if home %}<h3>{% else %}<h2 class="entry-title">{% endif %}
-        {{ post.data.title | smart | safe }}
+        <a href="{{ post.url  | replace(".html", "") }}">
+            {{ post.data.title | smart | safe }}
+        </a>
     {% if home %}</h3>{% else %}</h2>{% endif %}
     {% if not home %}
     <p class="details">
-        Posted {{ post.data.date | date }}
+        {% if post.data.tags.includes('post') %}
+            Article
+        {% elif post.data.tags.includes('resource') %}
+            Resource
+        {% endif -%}
+        posted {{ post.data.date | date }}
         {% include "post-categories.html" %}
     </p>
     {% endif %}
     <div class="description entry-summary">
         {{ post.data.intro  | markdown | safe }}
     </div>
-    <p class="read-more">
-        <a href="{{ post.url  | replace(".html", "") }}">Read {{ post.data.title | smart | safe }}</a>
-    </p>
 </li>
