@@ -8,7 +8,7 @@ layout: base
 noCta: true
 ---
 
-<ul class="index-list">
+<ul class="index-list" reversed>
     {% for testimonial in collections.testimonial | sort(true, false, 'date') %}
         <li>
             <h2><a href="{{ testimonial.url | replace(".html", "") }}">{{ testimonial.data.title }}</a></h2>

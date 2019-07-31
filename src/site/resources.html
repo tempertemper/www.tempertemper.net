@@ -7,7 +7,7 @@ resources: true
 noCta: true
 ---
 
-<ul class="hfeed index-list">
+<ul class="hfeed index-list" reversed>
     {% for post in collections.resource | reverse %}
         {% include "post-in-list.html" %}
     {% endfor %}
