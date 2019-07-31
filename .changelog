@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds `<h4>`s and their styling back in
+
 ### Changes
 - Reverses blog, resources and testimonials listings, so that the highest number is the one at the top of the list
 
