@@ -5,7 +5,7 @@
   }
 
   h2 {
-    @include heading-l;
+    @include heading-xl;
 
     @media (min-width: $l) {
       font-size: ms(5);
