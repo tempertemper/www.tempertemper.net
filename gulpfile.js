@@ -74,12 +74,6 @@ const scssConfig = function() {
 
 const autoprefixerConfig = function() {
   return autoprefixer({
-    browsers: [
-      '> 1%',
-      'last 2 version',
-      'ie 8',
-      'ie 9'
-    ],
     flexbox: false
   })
 };
