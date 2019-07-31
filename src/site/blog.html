@@ -2,12 +2,12 @@
 title: Articles by Martin Underhill
 heading: Blog
 intro: |
-    If you’re interested in design and front-end dev, you’ll enjoy this blog. If you’re a website owner looking for tips, check out the [Resources](/resources). Categories is [listed elsewhere](/categories).
+    If you’re interested in design and front-end dev, you’ll enjoy this blog. If you’re a website owner looking for tips, check out the [Resources](/resources). Categories are [listed elsewhere](/categories).
 layout: base
 noCta: true
 ---
 
-<ol class="hfeed index-list">
+<ol class="hfeed index-list" reversed>
     {% for post in collections.post | reverse %}
         {% include "post-in-list.html" %}
     {% endfor %}
