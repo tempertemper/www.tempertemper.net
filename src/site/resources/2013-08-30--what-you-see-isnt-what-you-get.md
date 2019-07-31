@@ -56,13 +56,13 @@ But smartphones arrived and changed everything.
 
 Not only were they used by touching the screen, for the most part, but the screen itself was much smaller than the screens we'd been used to viewing the web on.
 
-### Tiny screens
+#### Tiny screens
 
 It's possible to read a web page on your mobile phone's screen, but it's a pain if it's just a tiny version of a site that was designed to be visited by people using desktop monitors. You have to double tap the area you want to zoom in or, or 'pinch' in until the text is at a readable size.
 
 To solve this problem, your website should be designed for [as many screen sizes as possible](http://tempertemper.net/blog/should-you-go-responsive). This may involve some design changes that go beyond simply altering the layout.
 
-### And other means
+#### And other means
 
 Your content can also be saved for reading later using services like [Instapaper](http://www.instapaper.com), [Pocket](http://getpocket.com/) or [Readability](http://www.readability.com), where your formatting is removed and your content is presented in the way the reader decides they want it to be presented. Apple's Safari browser has this functionality built in, so that the main content is taken out of a web page and displayed in a nice, readable way.
 
