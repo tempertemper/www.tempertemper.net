@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+## [5.0.13] - 2019-08-04
+
 ### Adds
 - New article: 'Website version 5'
 
@@ -20,8 +24,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Adds list semantics back on blog listings
 - Uses best practice way to [specify browsers](https://github.com/postcss/autoprefixer#browsers) in Autoprefixer
-
-----------
 
 
 ## [5.0.12] - 2019-07-26
