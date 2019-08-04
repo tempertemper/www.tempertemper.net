@@ -14,14 +14,19 @@ All notable changes to this project will be documented in this file. The format 
 ### Adds
 - Adds `<h4>`s and their styling back in
 
+----------
+
+## [5.0.13] - 2019-08-04
+
+### Adds
+- New article: 'Website version 5'
+
 ### Changes
 - Reverses blog, resources and testimonials listings, so that the highest number is the one at the top of the list
 
 ### Fixes
 - Adds list semantics back on blog listings
 - Uses best practice way to [specify browsers](https://github.com/postcss/autoprefixer#browsers) in Autoprefixer
-
-----------
 
 
 ## [5.0.12] - 2019-07-26
