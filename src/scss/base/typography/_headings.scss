@@ -8,7 +8,7 @@ h6 {
 }
 
 h1 {
-  @include heading-l;
+  @include heading-xl;
 
   @media (min-width: $m) {
     text-align: center;
@@ -16,10 +16,13 @@ h1 {
 }
 
 h2 {
+  @include heading-l;
+}
+
+h3 {
   @include heading-m;
 }
 
-h3,
 h4,
 h5,
 h6 {

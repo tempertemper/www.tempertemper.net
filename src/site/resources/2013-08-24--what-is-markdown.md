@@ -40,7 +40,7 @@ So if you were to write—say—an email using Markdown, then sent it to a famil
 
 If you want to know more about how a document is actually written, have a look at [this article on writing Markdown](/blog/markdown-cheatsheet)
 
-### Exporting
+#### Exporting
 
 Even though Markdown itself conveys the meaning of the text, it could be argued that it's not especially pretty… The beauty of Markdown is that it's understood by _loads_ of programs, so you can import markdown and the program will make the text look great. No Markdown formatting– just bold and italic words, headings, quotations, etc.
 
