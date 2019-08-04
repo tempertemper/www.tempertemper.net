@@ -53,7 +53,7 @@ $font--heading: 'FS Me Web', sans-serif;
   }
 }
 
-@mixin heading-l {
+@mixin heading-xl {
   font-size: ms(3);
   font-weight: 400;
 
@@ -67,7 +67,7 @@ $font--heading: 'FS Me Web', sans-serif;
   }
 }
 
-@mixin heading-m {
+@mixin heading-l {
   font-size: ms(2);
   font-weight: 400;
 
@@ -81,12 +81,21 @@ $font--heading: 'FS Me Web', sans-serif;
   }
 }
 
-@mixin heading-s {
+@mixin heading-m {
   font-size: ms(1);
   font-weight: 400;
 
   @media (min-width: $m) {
     font-size: ms(2);
+  }
+}
+
+@mixin heading-s {
+  font-size: ms(0);
+  font-weight: 400;
+
+  @media (min-width: $m) {
+    font-size: ms(1);
   }
 }
 

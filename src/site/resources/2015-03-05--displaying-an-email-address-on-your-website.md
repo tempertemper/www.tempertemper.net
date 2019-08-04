@@ -51,10 +51,12 @@ What if your visitor actually _wants_ to copy and paste your email address? Mayb
 
 What happens when a mailto link is clicked or tapped? Your web browser opens your operating system's default mail app.
 
+#### Windows, Android and Mac
 In some cases this behaviour is fine, where your visitor (like me) uses a dedicated email app to access their emails. I use [Apple Mail](https://www.apple.com/uk/osx/apps/#mail), so clicking a link on a website would open a new email there. **Exactly what I'd want**.
 
 I'm always on the look out for new apps to improve my workflow, so if I changed my Mac's default email app to something like [Airmail](http://airmailapp.com/), that's the app that would open. This is similar on Windows and Android. Again, **just what I'd be after**.
 
+#### iOS
 Unfortunately, iPhone and iPad users can't change their default email app, so mailto links _always_ open Apple's Mail app.
 
 This would be fine for people like me who use Mail to access emails on their iPhone/iPad. But what about people who use apps like [Gmail](https://www.gmail.com/intl/en_us/mail/help/mobile.html) or [Mailbox](http://www.mailboxapp.com/)? They'd have to follow the 'select, copy, switch apps, paste' routine, with the added obstacle of the text being a link, which, with one false move, could trigger the opening of a new email in Apple Mail. Not ideal.
@@ -63,11 +65,11 @@ This would be fine for people like me who use Mail to access emails on their iPh
 
 A lot of your website's visitors will access their emails through their web browser. In other words, they open their web browser and navigate to a page where they log in to access their emails. These visitors are back to the clunky old 'select, copy, switch, paste' scenario.
 
-### Business email services
+#### Business email services
 
 Business email services like Gmail or Office 365 offer a great experience on their web browser-based app, and many people prefer it over using a dedicated email app. They also offer loads of powerful features that you can only use via their web app.
 
-### Personal email services
+#### Personal email services
 
 Email services like Hotmail (now Outlook.com) and non-business Gmail are browser-based by default unless you actively set them up in a mail app. Others like Yahoo!Mail don't let you use any apps other than their own!
 

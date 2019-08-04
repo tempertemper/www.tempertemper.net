@@ -28,7 +28,7 @@ My mission was to rebuild my website **like-for-like** so I knew that Jekyll was
 [Gatsby.js](https://www.gatsbyjs.org/) and [Vuepress](https://vuepress.vuejs.org/) were the front-runners until I came across [Eleventy](https://www.11ty.io/). It's logical to use, light-weight, very flexible, very fast, and vanilla JavaScript all the way down.
 
 
-## Some things that have gone
+## Some things have gone
 
 There were also a few compromises I had to make as I was building the site, mainly due to time (rather than technical) constraints, and most temporary.
 
