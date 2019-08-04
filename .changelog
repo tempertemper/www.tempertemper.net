@@ -11,10 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+## [5.0.14] - 2019-08-04
+
 ### Adds
 - Adds `<h4>`s and their styling back in
 
-----------
 
 ## [5.0.13] - 2019-08-04
 
