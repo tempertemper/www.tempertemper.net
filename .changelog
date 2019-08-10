@@ -27,6 +27,12 @@ All notable changes to this project will be documented in this file. The format 
 - Adds sublime text workspace files to gitignore
 - Uses proper URL for git repo in package.json
 - Uses proper fall-back logo for IE8
+- Fixes title HTML character output
+- Fixes page title variables in document head
+- Simplifies navigation markup and styling
+- Adds ARIA labels to distinguish `<nav>` elements
+- Adds `<article>` element where appropriate
+- Makes footer text normal size
 
 ----------
 
