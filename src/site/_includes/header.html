@@ -1,17 +1,8 @@
 <header role="banner">
-    <nav role="navigation">
-        <a href="/" class="logo" title="Return to homepage">
-            {% include "svg/tempertemper-logo--full.svg" %}
-        </a>
+    <a href="/" class="logo" title="Return to homepage">
+        {% include "svg/tempertemper-logo--full.svg" %}
+    </a>
+    <nav role="navigation" aria-label="primary">
         {% include "navigation-primary.html" %}
     </nav>
-    <h1>
-        {% if heading %}
-            {{ heading | smart | safe }}
-        {% elif category %}
-            {{ category | smart | safe }}
-        {% else %}
-            {{ title | smart | safe }}
-        {% endif %}
-    </h1>
 </header>

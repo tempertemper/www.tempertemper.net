@@ -1,36 +1,19 @@
 nav {
   font-family: $font--heading;
 
-  .selected a,
-  .ancestor a {
-
-    &:link,
-    &:visited {
-      color: $colour-primary;
-    }
+  + nav {
+    margin-top: 1em;
   }
-}
-
-[role="navigation"] {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
 
   ul {
     margin-bottom: 0;
     margin-top: 0;
-    padding-left: 0;
-    list-style: none;
-    float: right; // no flexbox fallback
-    display: flex;
-    flex-wrap: wrap;
+    @include remove-list-styling;
   }
 
   li {
     @include inline-nav;
     display: inline-block;
-    margin-right: .5em;
 
     &:last-of-type {
       margin-right: 0;

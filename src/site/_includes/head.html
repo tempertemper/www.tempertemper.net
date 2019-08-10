@@ -1,15 +1,14 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
-    <title>
-        {%- if heading -%}
-            {{ heading }}
-        {%- elif category -%}
-            {{ category }}
-        {%- else -%}
-            {{ title }}
-        {%- endif -%}
-    </title>
+    {%- if heading %}
+        {%- set pageTitle = heading | smart | safe %}
+    {%- elif category %}
+        {%- set pageTitle = category | smart | safe %}
+    {%- else %}
+        {%- set pageTitle = title | smart | safe %}
+    {%- endif %}
+    <title>{{ pageTitle }} – tempertemper</title>
     {%- if intro %}
         {%- set description = intro | markdown | safe | striptags(true) | escape %}
     {%- else %}
@@ -23,7 +22,7 @@
 
     <meta property="og:site_name" content="tempertemper Web Design" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-    <meta property="og:title" content="{{ heading if heading else title }}" />
+    <meta property="og:title" content="{{ pageTitle }}" />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:image" content="{{ site.url }}/assets/img/tempertemper-web-design-logo-facebook.jpg" />
     {%- if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
@@ -37,7 +36,7 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="{{ site.author.twitter }}" />
     <meta name="twitter:creator" content="{{ site.author.twitter }}" />
-    <meta name="twitter:title" content="{{ heading if heading else title }}" />
+    <meta name="twitter:title" content="{{ pageTitle }}" />
     <meta name="twitter:description" content="{{ description }}" />
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="twitter:image" content="{{ site.url }}/assets/img/tempertemper-web-design-logo-facebook.jpg" />
