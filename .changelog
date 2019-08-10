@@ -31,7 +31,6 @@ All notable changes to this project will be documented in this file. The format 
 - Fixes page title variables in document head
 - Simplifies navigation markup and styling
 - Adds ARIA labels to distinguish `<nav>` elements
-- Adds `<article>` element where appropriate
 - Makes footer text normal size
 
 ----------
