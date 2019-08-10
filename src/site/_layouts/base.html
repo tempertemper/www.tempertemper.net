@@ -7,9 +7,6 @@
                 <a href="#main" tabindex="0" class="skip-to-content">Skip to main content</a>
                 {% include "header.html" %}
                 <main id="main" role="main">
-                    {% if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
-                        <article>
-                    {% endif %}
                     <h1>
                         {%- if heading %}
                             {{- heading | smart | safe }}
@@ -30,7 +27,6 @@
                     {{ content | safe }}
                     {% if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
                         {% include "post-details.html" %}
-                        </article>
                         {% include "call-to-action.html" %}
                     {% elif tags.length >= 1 and tags.includes('testimonial') %}
                         <p><a href="/testimonials" class="back">View more testimonials</a></p>
