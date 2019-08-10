@@ -1,3 +1,8 @@
+::selection {
+  background: $colour-primary;
+  color: $white;
+}
+
 html {
   @include font-body;
   color: $black;
@@ -69,6 +74,10 @@ ol {
   ul {
     list-style-type: disc;
   }
+
+  .details {
+    font-family: $font--heading;
+  }
 }
 
 li {
@@ -85,4 +94,9 @@ hr {
   @include dark-mode () {
     border-color: $colour-primary;
   }
+}
+
+small {
+  display: block;
+  font-size: ms(-1);
 }

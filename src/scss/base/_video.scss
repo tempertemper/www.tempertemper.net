@@ -1,0 +1,4 @@
+.wistia_responsive_padding {
+  background-color: $colour-primary-light;
+  @include dark-mode($background: $colour-dark-mode-highlight);
+}

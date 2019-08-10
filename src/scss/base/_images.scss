@@ -1,0 +1,12 @@
+img {
+  border-radius: $border-radius-default;
+  box-shadow: 0 0 .25em lighten($black, 85%);
+
+  @include dark-mode() {
+    box-shadow: 0 0 .25em $colour-dark-mode-black;
+  }
+
+  a & {
+    display: inline;
+  }
+}
