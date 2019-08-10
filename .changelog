@@ -11,8 +11,17 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Creates lib folder and moves date filter in there
+
+### Removes
+- Removes CSS Comb and Style Lint config files
+
 ### Fixes
 - Makes 'skip to content' link visible on focus
+- Fixes sublime text project config file
+- Adds sublime text workspace files to gitignore
+- Uses proper URL for git repo in package.json
 
 ----------
 
