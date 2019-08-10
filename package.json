@@ -11,14 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:tempertemper/tempertemper-website.git"
+    "url": "https://github.com/tempertemper/tempertemper-website"
   },
   "author": "Martin Underhill",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tempertemper/tempertemper-website/issues"
   },
-  "homepage": "https://github.com/tempertemper/tempertemper-website",
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
     "browser-sync": "^2.26.7",
