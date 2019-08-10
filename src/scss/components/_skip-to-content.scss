@@ -1,0 +1,16 @@
+.skip-to-content {
+  @extend %visually-hidden;
+  font-family: $font--heading;
+
+  &:focus {
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    overflow: visible;
+    clip: initial;
+    height: auto;
+    width: auto;
+    margin: 0;
+    box-shadow: .2em .2em .4em .2em $colour-dark-mode-black;
+  }
+}
