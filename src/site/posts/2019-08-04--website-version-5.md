@@ -12,7 +12,7 @@ I'm already more than a dozen releases into version 5 of my website, but I'm fin
 
 Towards the end of last year I decided to rebuild my website with a static site generator, rather than using a database-driven content management system. I had zero complaints about how my website was previously built, using the excellent [Perch CMS](https://grabaperch.com), but I felt I needed to stretch some coding muscles and freshen things up behind the scenes.
 
-With a static site generator **you** get all the advantages of a CMS – templates, data reuse, code includes, conditionals, etc., but there are *even more*:
+With a static site generator you get all the advantages of a CMS – templates, data reuse, code includes, conditionals, etc., but there are *even more*:
 
 - <b>Secure</b>: no database means nothing to hack – it's just HTML!
 - <b>Very fast</b>: no code to run when each webpage is loaded, and no database to query
@@ -34,22 +34,22 @@ There were also a few compromises I had to make as I was building the site, main
 
 ### No more forms
 
-I saw this one coming. Without some kind of server side processing forms are impossible. I'm pretty happy to replace my contact form with a `mailto:` link and my Twitter.
+I saw this one coming. Without some kind of server side processing forms are impossible. The primary focus of my site is no longer getting work, so I don't mind replacing my contact form with a `mailto:` link.
 
-I currently self-host my website with [Linode](https://www.linode.com/?r=b92d6fedd4c0b5608f758fa6becbba975ea10e7b) but I'm curious about Netlify and its [built-in form handling](https://www.netlify.com/docs/form-handling/), so it's on my to-do list.
+My site is currently self-hosted on [Linode](https://www.linode.com/?r=b92d6fedd4c0b5608f758fa6becbba975ea10e7b) but I'm curious about Netlify and its [built-in form handling](https://www.netlify.com/docs/form-handling/), so adding forms back in is definitely on my to-do list.
 
 ### No more search
 
-One thing I don't mind losing at this stage is search. Rebuilding the search with JavaScript looks like a big (and interesting!) job. I didn't want to delay the launch any longer than I had to, so search is gone for now.
+Another thing I don't mind losing at this stage is search. Rebuilding the search with JavaScript looks like a big (and interesting!) job; I didn't want to delay the launch any longer than I had to, so search is gone for now.
 
-Reintroducing it will be interesting – it used to be global, but maybe it would be more useful if it were scoped to specific areas of the site, like the blog or resources. Let's see.
+Reintroducing search will be interesting from a design as well as develoment point of view – it used to be global, but maybe it would be more useful if it were scoped to specific areas of the site, like the blog or resources. Let's see.
 
 
 ## Some things have changed
 
 ### Categories are global
 
-Blog posts used to have their own categories; resources too. I hit up against some technical challenges that were proving too time consuming to pull off without delaying things too much. But after giving it some thought, it dawned on me that the make-up of my new site is different: if someone wants to see articles on accessibility, for example, they probably also want to see resources (and talks and videos, when they start appearing) on the same topic.
+Blog posts used to have their own categories; resources too. I hit up against some technical challenges that were proving too time consuming to pull off without delaying things too much. But after giving it some thought, it dawned on me that the make-up of my new site is different: if someone wants to see articles on accessibility, for example, they're likely to want to see resources (and talks and videos, when they start appearing) on the same topic.
 
 
 ## Some things have improved
