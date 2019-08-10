@@ -7,8 +7,6 @@
     width: 500px;
   }
 
-  .nav-toggle,
-  // [role="search"],
   .useful-links,
   .copyright ul,
   .keep-in-touch,
@@ -16,21 +14,14 @@
   .read-more,
   .button,
   .subscribe,
-  .paging {
+  .paging,
+  [role="navigation"] {
     display: none;
-  }
-
-  [role="banner"] {
-    border-top: 0;
-  }
-
-  [role="contentinfo"] {
-    border-bottom: 0;
   }
 
   .logo {
     padding-left: 0;
-    width: 240px;
+    width: 230px;
   }
 
   a {

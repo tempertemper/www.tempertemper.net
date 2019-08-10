@@ -7,15 +7,18 @@
 
 @import 'base/reset',
         'base/typography',
-        'base/general',
+        'base/images',
+        'base/video',
         'base/icons',
         'base/buttons',
         'base/forms',
         'base/utility';
 
-@import 'components/header',
+@import 'components/page',
+        'components/header',
         'components/skip-to-content',
         'components/navigation',
+        'components/content',
         'components/date',
         'components/post-in-list',
         'components/call-to-action',
@@ -24,9 +27,6 @@
         'components/subscribe',
         'components/contact-form',
         'components/footer';
-
-@import 'designs/general',
-        'designs/blog';
 
 @import 'legacy/print',
         'legacy/ie';

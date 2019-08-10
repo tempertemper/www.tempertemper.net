@@ -13,15 +13,20 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Creates lib folder and moves date filter in there
+- Moves all general styling to components
+- Refines print stylesheet a bit
 
 ### Removes
 - Removes CSS Comb and Style Lint config files
+- Removes unused search stylesheet
+- Removes redundant IE8 styles
 
 ### Fixes
 - Makes 'skip to content' link visible on focus
 - Fixes sublime text project config file
 - Adds sublime text workspace files to gitignore
 - Uses proper URL for git repo in package.json
+- Uses proper fall-back logo for IE8
 
 ----------
 
