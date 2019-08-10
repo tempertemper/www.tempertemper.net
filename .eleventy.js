@@ -1,7 +1,7 @@
 module.exports = function(eleventyConfig) {
 
   /* Date filter */
-  eleventyConfig.addFilter("date", require("./filters/dates.js") );
+  eleventyConfig.addFilter("date", require("./lib/filters/dates.js") );
 
   /* Data */
   eleventyConfig.setDataDeepMerge(true);
