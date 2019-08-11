@@ -1,11 +1,7 @@
 .logo {
   display: inline-block;
   margin-right: .5em;
-  max-width: 100%;
-
-  svg {
-    max-width: 100%;
-  }
+  max-width: 9em;
 
   @media screen and (prefers-color-scheme: dark) {
 

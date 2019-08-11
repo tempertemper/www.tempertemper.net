@@ -2,6 +2,9 @@
   padding-top: 1em;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
+
+  nav {
+    margin-top: -.2em;
+  }
 }
