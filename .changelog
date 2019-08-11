@@ -32,6 +32,7 @@ All notable changes to this project will be documented in this file. The format 
 - Simplifies navigation markup and styling
 - Adds ARIA labels to distinguish `<nav>` elements
 - Makes footer text normal size
+- Aligns baselines of logo and nav in header
 
 ----------
 
