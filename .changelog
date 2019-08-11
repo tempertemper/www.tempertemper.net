@@ -13,6 +13,35 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 
+
+## [5.0.15] - 2019-08-11
+
+### Changes
+- Creates lib folder and moves date filter in there
+- Moves all general styling to components
+- Refines print stylesheet a bit
+
+### Removes
+- Removes CSS Comb and Style Lint config files
+- Removes unused search stylesheet
+- Removes redundant IE8 styles
+
+### Fixes
+- Makes 'skip to content' link visible on focus
+- Fixes sublime text project config file
+- Adds sublime text workspace files to gitignore
+- Uses proper URL for git repo in package.json
+- Uses proper fall-back logo for IE8
+- Fixes title HTML character output
+- Fixes page title variables in document head
+- Simplifies navigation markup and styling
+- Adds ARIA labels to distinguish `<nav>` elements
+- Makes footer text normal size
+- Aligns baselines of logo and nav in header
+- Corrects date on new years resolution post
+- Makes `<h1>`s full-width again
+
+
 ## [5.0.14] - 2019-08-04
 
 ### Adds

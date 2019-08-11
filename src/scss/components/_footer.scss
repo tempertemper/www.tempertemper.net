@@ -2,6 +2,7 @@
   clear: both;
   font-family: $font--heading;
   padding-bottom: 1em;
+  margin-top: 5em;
 
   @media (min-width: $m) {
     text-align: center;
@@ -28,29 +29,25 @@
   }
 
   .copyright {
-    font-size: ms(-1);
     margin-top: 2em;
+    margin-bottom: 0;
+  }
 
-    p {
-      display: inline;
-    }
+  .company-details {
+    margin-top: 0;
+  }
+
+  .utility {
+    @include remove-list-styling;
 
     li {
-      display: inline;
-    }
-
-    ul {
-      font-size: ms(1);
-      padding-left: 0;
+      @include inline-nav;
     }
   }
 }
 
-.useful-links {
-
-  ul {
-    padding-left: 0;
-  }
+.social {
+  margin-top: 1em;
 
   .twitter-link {
     display: inline-flex;
@@ -58,9 +55,5 @@
     @media (min-width: $m) {
       justify-content: center;
     }
-  }
-
-  li {
-    @include inline-nav;
   }
 }

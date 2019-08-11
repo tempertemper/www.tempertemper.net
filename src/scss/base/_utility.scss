@@ -1,12 +1,5 @@
 .visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
+  @extend %visually-hidden;
 }
 
 .index-list {
@@ -23,4 +16,8 @@
   font-family: $font--heading;
   margin-bottom: 1em;
   margin-top: 1em;
+}
+
+.read-more {
+  font-family: $font--heading;
 }

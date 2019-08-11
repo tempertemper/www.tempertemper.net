@@ -6,69 +6,15 @@
   }
 
   .logo {
-    width: 56px;
-    height: 40px;
-    background-image: url('/cms/addons/feathers/tempertemper/img/tempertemper-web-design-abbreviated-logo.png');
+    width: 230px;
+    height: 79px;
+    background-image: url('/assets/img/tempertemper-web-design-logo.png');
     background-repeat: no-repeat;
     background-size: 100%;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
   }
-
-  // This selector is in an iframe so I've got no control over its formatting
-  // scss-lint:disable SelectorFormat
-  .wistia_embed {
-    display: none;
-  }
-
-  .nav-toggle {
-    padding-top: 0;
-    padding-bottom: 0;
-    height: auto;
-
-    button {
-      height: 2em;
-      width: auto;
-      margin-top: 0;
-      margin-bottom: 0;
-
-      // Nesting needs to be this deep, unfortunately. I'll maybe add an extra class to the HTML at one point to fix this
-      // scss-lint:disable NestingDepth
-      &:before {
-        content: 'Menu';
-        color: $colour-primary;
-        text-transform: uppercase;
-      }
-    }
-
-    &.active button {
-
-      // Nesting needs to be this deep, unfortunately. I'll maybe add an extra class to the HTML at one point to fix this
-      // scss-lint:disable NestingDepth
-      &:before {
-        content: 'Close';
-        color: $colour-primary;
-        text-transform: uppercase;
-      }
-    }
-  }
-
-  // [role="search"] {
-
-  //   label {
-
-  //     // Nesting needs to be this deep, unfortunately. I'll maybe add an extra class to the HTML at one point to fix this
-  //     // scss-lint:disable NestingDepth
-  //     &:before {
-  //       content: 'Search:';
-  //     }
-  //   }
-
-  //   [type="search"] {
-  //     padding-left: 4.5em;
-  //   }
-  // }
 
   [role="contentinfo"] [href="https://twitter.com/tempertemper"] {
 

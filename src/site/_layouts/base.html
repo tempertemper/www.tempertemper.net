@@ -4,9 +4,18 @@
     <body>
         <div class="canvas">
             <div class="page-wrapper">
-                <a href="#main" tabindex="0" class="skip-nav visually-hidden">Skip to main content</a>
+                <a href="#main" tabindex="0" class="skip-to-content">Skip to main content</a>
                 {% include "header.html" %}
                 <main id="main" role="main">
+                    <h1>
+                        {%- if heading %}
+                            {{- heading | smart | safe }}
+                        {%- elif category %}
+                            {{- category | smart | safe }}
+                        {%- else %}
+                            {{- title | smart | safe }}
+                        {%- endif %}
+                    </h1>
                     {% if intro and not hideIntro %}
                         <div class="intro">{{ intro | markdown | safe }}</div>
                     {% endif %}

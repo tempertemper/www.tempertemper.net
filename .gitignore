@@ -5,3 +5,4 @@ robots.txt
 /node_modules/
 favicon.ico
 /dist/
+*.sublime-workspace
