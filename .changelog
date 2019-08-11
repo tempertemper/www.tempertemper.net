@@ -33,6 +33,8 @@ All notable changes to this project will be documented in this file. The format 
 - Adds ARIA labels to distinguish `<nav>` elements
 - Makes footer text normal size
 - Aligns baselines of logo and nav in header
+- Corrects date on new years resolution post
+- Makes `<h1>`s full-width again
 
 ----------
 

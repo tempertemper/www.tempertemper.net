@@ -5,4 +5,12 @@
     @include pre(1 of 6);
     width: span(4 of 6);
   }
+
+  h1 {
+    @include layout($wide-layout);
+    $gutter: gutter();
+    $column: span(1 of 4);
+    margin-left: -($gutter * 1.5) + -$column;
+    width: span(6 of 4);
+  }
 }
