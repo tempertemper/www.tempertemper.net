@@ -2,7 +2,7 @@
 title: A New Year's resolution for 2019
 intro: |
     2018 was a funny one. Not at all how I planned it. This year, I'm making one commitment – to write and publish a blog article each and every week.
-date: 2018-11-28
+date: 2019-01-02
 ---
 
 2018 was a funny one. Not at all how I planned it. And I had some good plans.
