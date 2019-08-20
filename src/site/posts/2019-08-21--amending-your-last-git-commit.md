@@ -2,7 +2,7 @@
 title: Amending your last Git commit
 intro: |
     Since I've started using Git on the command line, there's one 'new' thing that I've used more than any other: amending my most recent commit.
-date: 2019-08-20
+date: 2019-08-21
 tags:
     - Development
 ---
