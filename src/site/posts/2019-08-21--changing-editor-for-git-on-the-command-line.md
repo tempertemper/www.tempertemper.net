@@ -23,7 +23,7 @@ I'm much more comfortable with Nano. Its commands are familiar for a Mac user li
 
 You can change your git editor at one of three levels:
 
-1. Globally
+1. Per computer
 2. Per user
 3. Per repo
 
