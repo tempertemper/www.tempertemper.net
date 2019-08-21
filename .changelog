@@ -11,6 +11,21 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- New article: 'Amending your last Git commit'
+- New article: 'Changing editor for Git on the command line'
+
+### Changes
+- Adds newest Nginx config
+- Reduces top margin for nested lists
+
+----------
+
+
+
+
+## [5.0.15] - 2019-08-11
+
 ### Changes
 - Creates lib folder and moves date filter in there
 - Moves all general styling to components
@@ -36,7 +51,6 @@ All notable changes to this project will be documented in this file. The format 
 - Corrects date on new years resolution post
 - Makes `<h1>`s full-width again
 
-----------
 
 ## [5.0.14] - 2019-08-04
 
