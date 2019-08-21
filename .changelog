@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.1.0] - 2019-08-21
+
 ### Adds
 - New article: 'Amending your last Git commit'
 - New article: 'Changing editor for Git on the command line'
@@ -18,10 +23,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Adds newest Nginx config
 - Reduces top margin for nested lists
-
-----------
-
-
 
 
 ## [5.0.15] - 2019-08-11
