@@ -1,0 +1,705 @@
+
+
+# Redirect default Netlify subdomain to primary domain
+[[redirects]]
+  from = "https://tempertemper.netlify.com/*"
+  to = "https://tempertemper.net/:splat"
+  status = 301
+  force = true
+
+
+# Blog to Resources redirects
+[[redirects]]
+  from = "/blog/why-you-need-a-privacy-policy"
+  to = "/resources/why-you-need-a-privacy-policy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/google-gets-serious-about-ssl"
+  to = "/resources/google-gets-serious-about-ssl"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/ssl-for-everyone"
+  to = "/resources/ssl-for-everyone"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/website-updates-and-avoiding-content-loss"
+  to = "/resources/website-updates-and-avoiding-content-loss"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/types-of-email-and-when-to-use-each"
+  to = "/resources/types-of-email-and-when-to-use-each"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/regular-backups-are-important"
+  to = "/resources/regular-backups-are-important"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/edit-your-blog-posts-off-line"
+  to = "/resources/edit-your-blog-posts-off-line"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/design-and-build-for-the-worst-case-scenario"
+  to = "/resources/design-and-build-for-the-worst-case-scenario"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/look-after-your-domain-name"
+  to = "/resources/look-after-your-domain-name"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/regular-website-maintenance"
+  to = "/resources/regular-website-maintenance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/website-video"
+  to = "/resources/website-video"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/bookmark-icons"
+  to = "/resources/bookmark-icons"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/giving-social-media-the-right-information"
+  to = "/resources/giving-social-media-the-right-information"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tidy-up-your-sites-addresses-for-search"
+  to = "/resources/tidy-up-your-sites-addresses-for-search"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/mobile-friendly-markers"
+  to = "/resources/mobile-friendly-markers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/the-three-golden-rules-of-sending-marketing-emails"
+  to = "/resources/the-three-golden-rules-of-sending-marketing-emails"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/displaying-an-email-address-on-your-website"
+  to = "/resources/displaying-an-email-address-on-your-website"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/what-is-meta-data"
+  to = "/resources/what-is-meta-data"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/webfonts"
+  to = "/resources/webfonts"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/how-the-web-works"
+  to = "/resources/how-the-web-works"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/what-is-ssl-and-is-it-worth-the-bother"
+  to = "/resources/what-is-ssl-and-is-it-worth-the-bother"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/image-cropping"
+  to = "/resources/image-cropping"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/why-i-changed-my-baseline"
+  to = "/resources/why-i-changed-my-baseline"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/page-titles"
+  to = "/resources/page-titles"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/the-great-unknown"
+  to = "/resources/the-great-unknown"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/taking-a-break-without-neglecting-your-business"
+  to = "/resources/taking-a-break-without-neglecting-your-business"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/are-you-living-in-the-past"
+  to = "/resources/are-you-living-in-the-past"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/how-to-write-a-link-using-markdown"
+  to = "/resources/how-to-write-a-link-using-markdown"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/how-to-write-a-link"
+  to = "/resources/how-to-write-a-link"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/password-security"
+  to = "/resources/password-security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/how-headings-work"
+  to = "/resources/how-headings-work"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/what-is-markdown"
+  to = "/resources/what-is-markdown"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/markdown-cheatsheet"
+  to = "/resources/markdown-cheatsheet"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/how-can-twitter-help-my-business"
+  to = "/resources/how-can-twitter-help-my-business"
+  status = 301
+  force = true
+
+
+[[redirects]]
+  from = "/blog/ios-email-set-up"
+  to = "/resources/ios-email-set-up"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/android-email-set-up"
+  to = "/resources/android-email-set-up"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/contact-forms"
+  to = "/resources/contact-forms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/do-i-need-a-cms"
+  to = "/resources/do-i-need-a-cms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/should-you-go-responsive"
+  to = "/resources/should-you-go-responsive"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/disability-on-the-web"
+  to = "/resources/disability-on-the-web"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/calls-to-action"
+  to = "/resources/calls-to-action"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/links-make-the-web-go-round"
+  to = "/resources/links-make-the-web-go-round"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/making-the-most-of-your-blog-posts"
+  to = "/resources/making-the-most-of-your-blog-posts"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/image-alt-text"
+  to = "/resources/image-alt-text"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/little-by-little"
+  to = "/resources/little-by-little"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/like-follow-no-thanks"
+  to = "/resources/like-follow-no-thanks"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/google-places"
+  to = "/resources/google-places"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/cms-updates"
+  to = "/resources/cms-updates"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/page-descriptions"
+  to = "/resources/page-descriptions"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/reduce-spam"
+  to = "/resources/reduce-spam"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/domain-name-renewals"
+  to = "/resources/domain-name-renewals"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/google-history-and-your-ranking"
+  to = "/resources/google-history-and-your-ranking"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/facebook-business-pages"
+  to = "/resources/facebook-business-pages"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/writing-your-website"
+  to = "/resources/writing-your-website"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/older-browsers"
+  to = "/resources/older-browsers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/why-do-i-need-a-website"
+  to = "/resources/why-do-i-need-a-website"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/branded-email"
+  to = "/resources/branded-email"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/keywords"
+  to = "/resources/keywords"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/do-i-need-a-mobile-website"
+  to = "/resources/do-i-need-a-mobile-website"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/whats-in-a-browser"
+  to = "/resources/whats-in-a-browser"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/why-should-i-blog"
+  to = "/resources/why-should-i-blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/google-whats-the-fuss"
+  to = "/resources/google-whats-the-fuss"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/qr-readers"
+  to = "/resources/qr-readers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/the-types-of-email"
+  to = "/resources/the-types-of-email"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/google-analytics"
+  to = "/resources/google-analytics"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/apps"
+  to = "/blog/category/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/design-and-build"
+  to = "/resources/category/content"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/gathering-content"
+  to = "/resources/category/content"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/ongoing-work"
+  to = "/resources/category/updates"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/opinion"
+  to = "/blog/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/planning"
+  to = "/resources/category/admin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/resources"
+  to = "/resources/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/set-up"
+  to = "/resources/category/admin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/accessibility"
+  to = "/resources/category/accessibility"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/backup"
+  to = "/resources/category/updates"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/backups"
+  to = "/resources/category/updates"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/browsers"
+  to = "/resources/category/accessibility"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/cms"
+  to = "/resources/category/content"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/content"
+  to = "/resources/category/content"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/core-concepts"
+  to = "/resources/category/performance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/design"
+  to = "/resources/category/performance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/engagement"
+  to = "/resources/category/marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/focus"
+  to = "/resources/category/content"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/gadgets"
+  to = "/resources/category/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/google"
+  to = "/resources/category/search"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/holidays"
+  to = "/resources/category/business"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/images"
+  to = "/resources/category/content"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/keeping-in-touch"
+  to = "/resources/category/social-media"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/maintenance"
+  to = "/resources/category/updates"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/markdown"
+  to = "/resources/category/markdown"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/marketing"
+  to = "/resources/category/marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/measurement"
+  to = "/resources/category/updates"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/meta-data"
+  to = "/resources/category/meta-data"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/mobile-friendly"
+  to = "/resources/category/search"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/performance"
+  to = "/resources/category/performance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/privacy"
+  to = "/resources/category/search"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/search"
+  to = "/resources/category/search"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/security"
+  to = "/resources/category/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/seo"
+  to = "/resources/category/search"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/social"
+  to = "/resources/category/social-media"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/social-media"
+  to = "/resources/category/social-media"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/speed"
+  to = "/resources/category/performance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/twitter"
+  to = "/resources/category/social-media"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/video"
+  to = "/resources/category/content"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/work-life-balance"
+  to = "/resources/category/business"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/writing"
+  to = "/resources/category/content"
+  status = 301
+  force = true
+
+
+# Other rewites
+[[redirects]]
+  from = "/legal/"
+  to = "/privacy-policy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal/terms"
+  to = "/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal/privacy-policy"
+  to = "/privacy-policy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/rss"
+  to = "/feeds/main.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feeds/blog/rss.xml"
+  to = "/feeds/main.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feeds/blog/feed.xml"
+  to = "/feeds/main.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/json"
+  to = "/feeds/main.json"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feeds/blog/feed.json"
+  to = "/feeds/main.json"
+  status = 301
+  force = true
+
+
+# External rewrites
+[[redirects]]
+  from = "/youtube"
+  to = "https://www.youtube.com/tempertemper"
+  status = 301
+  force = true
