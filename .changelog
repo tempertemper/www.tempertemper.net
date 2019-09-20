@@ -13,6 +13,15 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 
+
+## [5.2.0] - 2019-09-20
+
+### Adds
+- Netlify config file
+- Adds redirects to netlify.toml
+- Puts canonical page link to `<head>`
+
+
 ## [5.1.2] - 2019-08-30
 
 ### Adds
