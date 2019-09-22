@@ -148,7 +148,7 @@ gulp.task('buildAssets', gulp.parallel(
 
 
 gulp.task('generate', function(callback) {
-  exec('eleventy --quiet', function (err) {
+  exec('npx eleventy --quiet', function (err) {
     if (err) {
       notifier.notify({
         title: 'Eleventy Error',
