@@ -12,11 +12,25 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 ### Adds
+- Adds robots.txt to repo
+- Adds favicon.ico to repo
+- Adds .nvmrc file
+
+### Changes
+- Upgrades to [Eleventy 0.9.0](https://github.com/11ty/eleventy/releases/tag/v0.9.0)
+- Uses project specific eleventy version (using [npx](https://www.npmjs.com/package/npx))
+- Updates del, gulp-autoprefixer and markdown-it
+
+----------
+
+
+## [5.2.0] - 2019-09-20
+
+### Adds
 - Netlify config file
 - Adds redirects to netlify.toml
 - Puts canonical page link to `<head>`
 
-----------
 
 ## [5.1.2] - 2019-08-30
 
