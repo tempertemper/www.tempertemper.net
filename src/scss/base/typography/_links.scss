@@ -17,12 +17,12 @@ a {
   @include text-link;
 
   &:focus {
-    outline: 2px solid $colour-primary-light;
+    box-shadow: 0 0 0 2px $colour-primary-light;
     background-color: $colour-primary-light;
     border-radius: .1em;
     @include dark-mode() {
       background-color: $colour-dark-mode-highlight;
-      outline: 2px solid $colour-dark-mode-highlight;
+      box-shadow: 0 0 0 2px $colour-dark-mode-highlight;
     }
   }
 
