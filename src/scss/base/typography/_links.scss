@@ -26,6 +26,22 @@ a {
     }
   }
 
+  h1 &,
+  h2 &,
+  h3 &,
+  h4 &,
+  h5 &,
+  h6 & {
+
+    &:focus {
+      box-shadow: none;
+
+      @include dark-mode() {
+        box-shadow: none;
+      }
+    }
+  }
+
   > img {
     border: 3px solid $colour-primary;
     display: block;

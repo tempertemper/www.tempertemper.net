@@ -22,7 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 - Updates del, gulp-autoprefixer and markdown-it
 
 ### Fixes
-- Uses box shadow for link focus rather than outline to fix multi-line overlap issues
+- Removes outline from heading link focus to fix multi-line overlap issues
 
 ----------
 
