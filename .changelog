@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Removes outline from heading link focus to fix multi-line overlap issues
+- Adds more redirects for categories to stop some 404s
 
 ----------
 
