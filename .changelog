@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file. The format 
 - Uses project specific eleventy version (using [npx](https://www.npmjs.com/package/npx))
 - Updates del, gulp-autoprefixer and markdown-it
 - Updates Now page
+- Puts Blog link first in primary nav
 
 ### Fixes
 - Removes outline from heading link focus to fix multi-line overlap issues
