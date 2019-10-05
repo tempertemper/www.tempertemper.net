@@ -3,18 +3,15 @@
   &:link,
   &:visited {
     color: $colour-primary;
-    text-decoration: underline;
+    @include dark-mode($color: $colour-dark-mode-primary);
   }
 
   &:hover,
   &:active,
   &:focus {
     color: $colour-primary-darker;
+    @include dark-mode($color: $colour-dark-mode-primary-darker);
   }
-}
-
-a {
-  @include text-link;
 
   &:focus {
     box-shadow: 0 0 0 2px $colour-primary-light;
@@ -25,6 +22,10 @@ a {
       box-shadow: 0 0 0 2px $colour-dark-mode-highlight;
     }
   }
+}
+
+a {
+  @include text-link;
 
   h1 &,
   h2 &,
