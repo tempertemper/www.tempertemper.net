@@ -4,16 +4,14 @@
   &:visited {
     color: $colour-primary;
     text-decoration: underline;
-
-    @include dark-mode() {
-      color: $colour-dark-mode-primary;
-    }
+    @include dark-mode($color: $colour-dark-mode-primary);
   }
 
   &:hover,
   &:active,
   &:focus {
-    color: $colour-primary-darker;
+    color: $colour-primary-lighter;
+    @include dark-mode($color: $colour-dark-mode-primary-darker);
   }
 }
 

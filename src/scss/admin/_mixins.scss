@@ -78,15 +78,24 @@
 
 @mixin highlight-box {
   background-color: $colour-primary-light;
+  @include dark-mode($background: $colour-dark-mode-highlight, $color: $colour-dark-mode-white);
   border-radius: $border-radius-default;
   padding: 1em;
-  @include dark-mode($background: $colour-dark-mode-highlight, $color: $colour-dark-mode-white);
 
   a {
+    color: $colour-primary-darker;
+    @include dark-mode($color: $colour-dark-mode-primary-lighter);
 
+    &:hover {
+      color: $colour-primary-lighter;
+      @include dark-mode($color: $colour-dark-mode-primary);
+    }
+
+    &:active,
     &:focus {
+      color: $colour-primary;
       background-color: $white;
-      @include dark-mode($background: $colour-dark-mode-main);
+      @include dark-mode($background: $colour-dark-mode-main, $color: $colour-dark-mode-primary);
     }
   }
 }
