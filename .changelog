@@ -24,6 +24,9 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Removes outline from heading link focus to fix multi-line overlap issues
 - Adds more redirects for categories to stop some 404s
+- Makes `<small>` text a different style rather than smaller
+- Amends colours in both light and dark mode, including highlight panels, to meet AAA colour contrast
+- Stops silly link underline removal in reset, then subsequent re-addition in the link stylesheet
 
 ----------
 
