@@ -10,11 +10,13 @@ $black: #0B0C0C;
 $white: #fff;
 
 // Primary colours
-$colour-primary: #0097db;
+// $colour-primary: #0097db;
+$colour-primary: #007CB8;
 $colour-primary-light: lighten($colour-primary, 53%);
 $colour-primary-darker: darken($colour-primary, 5%);
 
 // Dark mode colours
+$colour-dark-mode-primary: #009FE6;
 $colour-dark-mode-main: #2C2C2C;
 $colour-dark-mode-highlight: #3D3D3D;
 $colour-dark-mode-white: #f2f2f2;
