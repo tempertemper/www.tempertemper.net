@@ -3,7 +3,6 @@
   &:link,
   &:visited {
     color: $colour-primary;
-    text-decoration: underline;
     @include dark-mode($color: $colour-dark-mode-primary);
   }
 
