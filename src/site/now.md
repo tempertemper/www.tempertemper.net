@@ -6,8 +6,8 @@ layout: base
 permalink: now.html
 ---
 
-- Looking forward to our summer holiday in Barcelona
-- Planning the next phase of our new-house-renovations: our bedroom
+- Looking forward to Christmas in Barcelona
+- Having just finished our bedroom, moving on to renovate the kids bedroom
 - Taking more time with [my wife](https://twitter.com/energybubble), now that our youngest is (finally!) sleeping through the night and can stay overnight with my parents
 - Waking up at 5am to snatch an hour of writing before the kids surface
 - Making a concerted effort to learn JavaScript properly after nearly a decade of tentative tinkering
