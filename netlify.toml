@@ -1,3 +1,6 @@
+# Staging build command
+[context.staging]
+  command = "npm run staging"
 
 
 # Redirect default Netlify subdomain to primary domain
@@ -402,25 +405,43 @@
 
 [[redirects]]
   from = "/blog/category/apps"
-  to = "/blog/category/tools"
+  to = "/category/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/tools"
+  to = "/category/tools"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/category/design-and-build"
-  to = "/resources/category/content"
+  to = "/category/design"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/content"
+  to = "/category/content"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/category/gathering-content"
-  to = "/resources/category/content"
+  to = "/category/content"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/category/ongoing-work"
-  to = "/resources/category/updates"
+  to = "/blog/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/updates"
+  to = "/category/website-admin"
   status = 301
   force = true
 
@@ -432,7 +453,13 @@
 
 [[redirects]]
   from = "/blog/category/planning"
-  to = "/resources/category/admin"
+  to = "/category/website-admin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/admin"
+  to = "/rcategory/website-admin/"
   status = 301
   force = true
 
@@ -444,205 +471,283 @@
 
 [[redirects]]
   from = "/blog/category/set-up"
-  to = "/resources/category/admin"
+  to = "/resources/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/accessibility"
-  to = "/resources/category/accessibility"
+  to = "/category/accessibility"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/accessibility"
+  to = "/category/accessibility"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/backup"
-  to = "/resources/category/updates"
+  to = "/resources/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/blog/tag/backups"
-  to = "/resources/category/updates"
+  from = "/resources/category/updates"
+  to = "/resources/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/browsers"
-  to = "/resources/category/accessibility"
+  to = "/category/accessibility"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/cms"
-  to = "/resources/category/content"
+  to = "/category/content"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/content"
-  to = "/resources/category/content"
+  to = "/category/content"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/core-concepts"
-  to = "/resources/category/performance"
+  to = "/category/performance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/performance"
+  to = "/category/performance"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/design"
-  to = "/resources/category/performance"
+  to = "/category/design"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/engagement"
-  to = "/resources/category/marketing"
+  to = "/category/marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/marketing"
+  to = "/category/marketing"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/focus"
-  to = "/resources/category/content"
+  to = "/category/content"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/gadgets"
-  to = "/resources/category/tools"
+  to = "/category/tools"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/google"
-  to = "/resources/category/search"
+  to = "/category/search"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/search"
+  to = "/category/search"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/holidays"
-  to = "/resources/category/business"
+  to = "/category/business"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/business"
+  to = "/category/business"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/images"
-  to = "/resources/category/content"
+  to = "/category/content"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/keeping-in-touch"
-  to = "/resources/category/social-media"
+  to = "/category/marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/social-media"
+  to = "/category/marketing"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/maintenance"
-  to = "/resources/category/updates"
+  to = "/category/website-admin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/updates"
+  to = "/category/website-admin"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/markdown"
-  to = "/resources/category/markdown"
+  to = "/category/markdown"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/markdown"
+  to = "/category/markdown"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/marketing"
-  to = "/resources/category/marketing"
+  to = "/category/marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/marketing"
+  to = "/category/marketing"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/measurement"
-  to = "/resources/category/updates"
+  to = "/category/website-admin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/measurement"
+  to = "/category/website-admin"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/meta-data"
-  to = "/resources/category/meta-data"
+  to = "/category/meta-data"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/meta-data"
+  to = "/category/meta-data"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/mobile-friendly"
-  to = "/resources/category/search"
+  to = "/category/search"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/performance"
-  to = "/resources/category/performance"
+  to = "/category/performance"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/privacy"
-  to = "/resources/category/search"
+  to = "/category/privacy"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/search"
-  to = "/resources/category/search"
+  to = "/category/search"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/security"
-  to = "/resources/category/security"
+  to = "/category/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/security"
+  to = "/category/security"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/seo"
-  to = "/resources/category/search"
+  to = "/category/search"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/social"
-  to = "/resources/category/social-media"
+  to = "/category/marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/category/social-media"
+  to = "/category/marketing"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/social-media"
-  to = "/resources/category/social-media"
+  to = "/category/marketing"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/speed"
-  to = "/resources/category/performance"
+  to = "/category/performance"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/twitter"
-  to = "/resources/category/social-media"
+  to = "/category/marketing"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/video"
-  to = "/resources/category/content"
+  to = "/category/content"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/work-life-balance"
-  to = "/resources/category/business"
+  to = "/category/business"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/writing"
-  to = "/resources/category/content"
+  to = "/category/content"
   status = 301
   force = true
 

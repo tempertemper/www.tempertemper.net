@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /cv
+Sitemap: https://tempertemper.net/sitemap.xml

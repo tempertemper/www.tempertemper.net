@@ -78,7 +78,7 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       layouts: "_layouts"
     },
-    templateFormats : ["njk", "html", "md"],
+    templateFormats : ["njk", "html", "md", "txt"],
     htmlTemplateEngine : "njk",
     markdownTemplateEngine : "njk"
   };
