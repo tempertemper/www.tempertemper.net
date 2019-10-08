@@ -1,7 +1,18 @@
-# Staging build command
-[context.staging]
+# Build commands
+
+# Production build command
+[build]
+  command = "npm run build"
+
+# Non-production build command
+[context.deploy-preview]
   command = "npm run staging"
 
+[context.branch-deploy]
+  command = "npm run staging"
+
+
+# Redirects
 
 # Redirect default Netlify subdomain to primary domain
 [[redirects]]

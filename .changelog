@@ -11,6 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Makes all non-production Netlify deploys run the staging build
+
+----------
+
+
+## [5.3.0] - 2019-10-07
+
 ### Adds
 - Adds robots.txt to repo
 - Adds favicon.ico to repo
@@ -30,8 +38,6 @@ All notable changes to this project will be documented in this file. The format 
 - Makes `<small>` text a different style rather than smaller
 - Amends colours in both light and dark mode, including highlight panels, to meet AAA colour contrast
 - Stops silly link underline removal in reset, then subsequent re-addition in the link stylesheet
-
-----------
 
 
 ## [5.2.0] - 2019-09-20
