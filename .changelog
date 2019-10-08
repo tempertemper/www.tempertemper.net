@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Makes all non-production Netlify deploys run the staging build
+- Reorders list of two blog posts on homepage to be reversed
 
 ----------
 
