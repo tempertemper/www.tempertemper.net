@@ -5,6 +5,7 @@
   "scripts": {
     "start": "gulp cleanSite && gulp buildAll && gulp serve",
     "build": "gulp cleanSite && gulp buildAll",
+    "staging": "npm run build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
     "bump:major": "gulp bump:major",
     "bump:minor": "gulp bump:minor",
     "bump:patch": "gulp bump:patch"

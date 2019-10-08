@@ -15,11 +15,21 @@ All notable changes to this project will be documented in this file. The format 
 - Adds robots.txt to repo
 - Adds favicon.ico to repo
 - Adds .nvmrc file
+- Creates a `staging` auto-deployment for Netlify
 
 ### Changes
 - Upgrades to [Eleventy 0.9.0](https://github.com/11ty/eleventy/releases/tag/v0.9.0)
 - Uses project specific eleventy version (using [npx](https://www.npmjs.com/package/npx))
 - Updates del, gulp-autoprefixer and markdown-it
+- Updates Now page
+- Puts Blog link first in primary nav
+
+### Fixes
+- Removes outline from heading link focus to fix multi-line overlap issues
+- Adds more redirects for categories to stop some 404s
+- Makes `<small>` text a different style rather than smaller
+- Amends colours in both light and dark mode, including highlight panels, to meet AAA colour contrast
+- Stops silly link underline removal in reset, then subsequent re-addition in the link stylesheet
 
 ----------
 
