@@ -11,11 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.3.1] - 2019-10-09
+
 ### Changes
 - Makes all non-production Netlify deploys run the staging build
 - Reorders list of two blog posts on homepage to be reversed
-
-----------
 
 
 ## [5.3.0] - 2019-10-07
