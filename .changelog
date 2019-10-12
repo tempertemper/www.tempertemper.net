@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Removes
 - Deletes now-unnecessary nginx config file
+- Takes staging instructions out of readme file as there's no staging for this project
 
 ----------
 

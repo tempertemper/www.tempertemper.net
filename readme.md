@@ -13,11 +13,6 @@ Run `npm start` in the project root to spin up the development environment.
 Run `npm update` in the project root to update packages.
 
 
-## Staging release
-- Merge working code to `staging` branch
-- Push staging branch to trigger build and deploy to http://staging.tempertemper.net
-
-
 ## Production release
 
 - Create a release branch
