@@ -14,6 +14,11 @@
   text-align: center;
   width: auto;
   text-decoration: none;
+  @include dark-mode() {
+    color: $colour-dark-mode-main;
+    background-color: $colour-dark-mode-primary;
+    border-color: $colour-dark-mode-primary;
+  }
 
   svg {
     margin-right: .3em;
@@ -24,13 +29,18 @@
   &:visited {
     color: $white;
     text-decoration: none;
+    @include dark-mode($color: $colour-dark-mode-main);
   }
 
   &:hover,
   &:focus,
   &:active {
     border-color: $colour-primary-darker;
-    background-color: $colour-primary-darker
+    background-color: $colour-primary-darker;
+    @include dark-mode() {
+      background-color: $colour-dark-mode-primary-lighter;
+      border-color: $colour-dark-mode-primary-lighter;
+    }
   }
 
   &:focus {
@@ -39,6 +49,6 @@
 
     @include dark-mode() {
       box-shadow: 0 0 0 3px $white;
-    };
+    }
   }
 }

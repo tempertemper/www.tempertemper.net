@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Fixes
+- Fixes colour contrast on buttons and forms when on box-out panels
+
 ----------
 
 
