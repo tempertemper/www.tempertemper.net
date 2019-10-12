@@ -11,14 +11,17 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.3.2] - 2019-10-12
+
 ### Fixes
 - Fixes colour contrast on buttons and forms when on box-out panels
 
 ### Removes
 - Deletes now-unnecessary nginx config file
 - Takes staging instructions out of readme file as there's no staging for this project
-
-----------
 
 
 ## [5.3.1] - 2019-10-09
