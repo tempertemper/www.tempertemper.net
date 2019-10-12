@@ -14,6 +14,9 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Fixes colour contrast on buttons and forms when on box-out panels
 
+### Removes
+- Deletes now-unnecessary nginx config file
+
 ----------
 
 
