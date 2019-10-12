@@ -7,6 +7,7 @@ form {
 label {
   color: $colour-primary;
   font-family: $font--heading;
+  @include dark-mode($color: $colour-dark-mode-primary-lighter);
 }
 
 input,
@@ -19,6 +20,9 @@ textarea {
   margin-bottom: 1em;
   padding: .5em 1em;
   width: 100%;
+  @include dark-mode() {
+    border-color: $colour-dark-mode-primary-lighter;
+  }
 
   &:focus {
     border-color: $black;
