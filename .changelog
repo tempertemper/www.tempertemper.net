@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Updates repo name in package.json
+- Lightens highlight blue colour
+
 ----------
 
 

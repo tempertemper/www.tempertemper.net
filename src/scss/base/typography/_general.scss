@@ -1,5 +1,6 @@
 ::selection {
-  background: $colour-primary;
+  background: $colour-primary-lighter;
+  @include dark-mode($colour-dark-mode-primary-lighter);
   color: $white;
 }
 
