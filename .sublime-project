@@ -1,0 +1,13 @@
+{
+  "folders":
+  [
+    {
+      "path": "."
+    }
+  ],
+  "syntax_override":
+  {
+    "\\.changelog$": ["MarkdownEditing", "Markdown (Standard)"],
+    "\\.html$": ["nunjucks-extended", "Syntaxes", "Nunjucks"]
+  }
+}

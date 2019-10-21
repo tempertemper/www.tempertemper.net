@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.html": ["html-nunjucks", "nunjucks", "njk"],
+        "*.changelog": "markdown"
+    }
+}
