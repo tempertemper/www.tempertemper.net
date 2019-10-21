@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file. The format 
 - Gives blog posts and resources a different meta image for social media sharing than normal pages
 - Uses a png for open graph sharing instead of a jpg
 - Updates Sublime Text project config filename
+- Updates privacy policy, removing bits about cookies
 
 ### Adds
 - Adds some more open graph information for images
