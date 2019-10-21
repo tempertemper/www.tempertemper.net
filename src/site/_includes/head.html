@@ -20,11 +20,24 @@
     {%- endif %}
     <meta name="description" content="{{ description }}" />
 
+    {%- if (tags.length >= 1) and (tags.includes('post') or tags.includes('resource')) %}
+        {%- set cardType = "summary_large_image" %}
+        {%- set cardImage = site.url + "/assets/img/summary_large_image.png" %}
+    {%- else %}
+        {%- set cardType = "summary" %}
+        {%- set cardImage = site.url + "/assets/img/summary.png" %}
+    {%- endif %}
     <meta property="og:site_name" content="tempertemper Web Design" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:title" content="{{ pageTitle }}" />
     <meta property="og:description" content="{{ description }}" />
-    <meta property="og:image" content="{{ site.url }}/assets/img/tempertemper-web-design-logo-facebook.jpg" />
+    <meta property="og:image" content="{{ cardImage }}" />
+    <meta property="og:image:type" content="image/png" />
+    {%- if (tags.length >= 1) and (tags.includes('post') or tags.includes('resource')) %}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
+    {%- endif %}
+    <meta property="og:image:alt" content="A block of blue colour" />
     {%- if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
         {%- set type = "article" %}
     {%- else %}
@@ -33,13 +46,13 @@
     <meta property="og:type" content="{{ type }}" />
     <meta property="article:author" content="{{ site.author.name }}" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="{{ cardType }}" />
     <meta name="twitter:site" content="{{ site.author.twitter }}" />
     <meta name="twitter:creator" content="{{ site.author.twitter }}" />
     <meta name="twitter:title" content="{{ pageTitle }}" />
     <meta name="twitter:description" content="{{ description }}" />
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-    <meta property="twitter:image" content="{{ site.url }}/assets/img/tempertemper-web-design-logo-facebook.jpg" />
+    <meta property="twitter:image" content="{{ cardImage }}" />
 
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
     <meta name="format-detection" content="telephone=no">

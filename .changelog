@@ -11,6 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Gives blog posts and resources a different meta image for social media sharing than normal pages
+- Uses a png for open graph sharing instead of a jpg
+
+### Adds
+- Adds some more open graph information for images
+
 ----------
 
 
@@ -528,4 +535,3 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Removes
 - Gets rid of PostCSS Stylelint (for time being)
-
