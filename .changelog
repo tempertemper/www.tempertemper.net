@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Darkens Dark Mode text highlighting colour slightly
+- Changes Dark Mode highlighted text to black
+
 ----------
 
 
