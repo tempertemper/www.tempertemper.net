@@ -2,11 +2,12 @@ html,
 body {
   overflow-x: hidden;
   background-color: $colour-primary;
+  @include dark-mode($background: $colour-dark-mode-primary);
 }
 
 body {
-  padding-top: .1em;
-  padding-bottom: .1em;
+  padding-top: .25em;
+  padding-bottom: .25em;
 }
 
 .canvas {
