@@ -32,9 +32,7 @@
     @include dark-mode($color: $colour-dark-mode-main);
   }
 
-  &:hover,
-  &:focus,
-  &:active {
+  &:hover {
     border-color: $colour-primary-darker;
     background-color: $colour-primary-darker;
     @include dark-mode() {
@@ -43,12 +41,32 @@
     }
   }
 
+  &:active {
+    position: relative;
+    top: 2px;
+  }
+
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px $black;
+    background-color: $colour-primary;
+    border: 3px solid $white;
+    box-shadow: 0 0 0 2px $colour-primary;
+    border-radius: $border-radius-default;
+    text-decoration: none;
 
     @include dark-mode() {
-      box-shadow: 0 0 0 3px $white;
+      border: 3px solid $colour-dark-mode-main;
+      background-color: $colour-dark-mode-primary;
+      box-shadow: 0 0 0 2px $colour-dark-mode-primary;
+    }
+  }
+
+  &:focus:hover {
+    background-color: $colour-primary-darker;
+    background-color: $colour-primary-darker;
+    @include dark-mode() {
+      box-shadow: 0 0 0 2px $colour-dark-mode-primary-lighter;
+      background-color: $colour-dark-mode-primary-lighter;
     }
   }
 }

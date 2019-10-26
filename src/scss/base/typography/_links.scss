@@ -7,41 +7,21 @@
   }
 
   &:hover,
-  &:active,
-  &:focus {
+  &:active {
     color: $colour-primary-darker;
     @include dark-mode($color: $colour-dark-mode-primary-darker);
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px $colour-primary-light;
-    background-color: $colour-primary-light;
-    border-radius: .1em;
-    @include dark-mode() {
-      background-color: $colour-dark-mode-highlight;
-      box-shadow: 0 0 0 2px $colour-dark-mode-highlight;
-    }
+    background-color: $colour-primary-lighter;
+    color: $white;
+    text-decoration: none;
+    @include dark-mode($background: $colour-dark-mode-primary, $color: $white);
   }
 }
 
 a {
   @include text-link;
-
-  h1 &,
-  h2 &,
-  h3 &,
-  h4 &,
-  h5 &,
-  h6 & {
-
-    &:focus {
-      box-shadow: none;
-
-      @include dark-mode() {
-        box-shadow: none;
-      }
-    }
-  }
 
   > img {
     border: 3px solid $colour-primary;

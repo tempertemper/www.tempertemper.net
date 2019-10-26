@@ -15,6 +15,12 @@ All notable changes to this project will be documented in this file. The format 
 - Darkens Dark Mode text highlighting colour slightly
 - Changes Dark Mode highlighted text to black
 
+### Fixes
+- Makes focus styles for links, buttons, the logo and the 'skip to content' link much more obvious
+
+### Adds
+- Sublime Text project file syntax highlighting
+
 ----------
 
 
