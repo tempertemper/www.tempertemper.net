@@ -3,11 +3,25 @@
   margin-right: .5em;
   max-width: 9em;
 
-  @media screen and (prefers-color-scheme: dark) {
+  svg {
+    display: block;
+  }
 
-    .mark,
-    .trademark {
+  .mark path,
+  .trademark {
+    fill: $black;
+    @include dark-mode() {
       fill: $colour-dark-mode-white;
+    }
+  }
+
+  &:focus {
+
+    .underscore {
+      fill: $black;
+      @include dark-mode() {
+        fill: $colour-dark-mode-white;
+      }
     }
   }
 }

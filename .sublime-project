@@ -8,6 +8,7 @@
   "syntax_override":
   {
     "\\.changelog$": ["MarkdownEditing", "Markdown (Standard)"],
+    "\\.sublime-project$": ["JavaScript", "JSON"],
     "\\.html$": ["nunjucks-extended", "Syntaxes", "Nunjucks"]
   }
 }

@@ -11,6 +11,10 @@
     height: auto;
     width: auto;
     margin: 0;
-    box-shadow: .2em .2em .4em .2em $colour-dark-mode-black;
+    box-shadow: 0 0 .4em .2em $colour-dark-mode-black;
+    padding: 0.5em .5em;
+    @include dark-mode() {
+      box-shadow: .2em .2em .4em .2em $colour-dark-mode-black;
+    }
   }
 }
