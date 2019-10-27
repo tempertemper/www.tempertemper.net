@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.5.0] - 2019-10-27
+
 ### Changes
 - Darkens Dark Mode text highlighting colour slightly
 - Changes Dark Mode highlighted text to black
@@ -20,8 +25,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Sublime Text project file syntax highlighting
-
-----------
 
 
 ## [5.4.1] - 2019-10-21
