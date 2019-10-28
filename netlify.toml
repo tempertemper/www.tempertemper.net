@@ -812,6 +812,39 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/error"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/img/tempertemper-web-design-logo-facebook.jpg"
+  to = "/assets/img/summary.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cms/addons/feathers/tempertemper/*"
+  to = "/404"
+  status = 301
+  force = true
+
+
+# Spam rewrites
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/wp-login.php"
+  to = "/404"
+  status = 301
+  force = true
+
+
 
 # External rewrites
 [[redirects]]
