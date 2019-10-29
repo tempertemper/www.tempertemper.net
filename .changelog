@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Adds redirects to pick up some 'resources not found' from Netlify analytics
+- Adds missing 'subscribed' page for mailing list
 
 ----------
 
