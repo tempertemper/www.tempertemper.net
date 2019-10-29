@@ -10,12 +10,12 @@ home: true
     <h2 id="writing">Writing</h2>
     <p>If you prefer to dive straight in rather than <a href="/blog/">see the full blog</a>, here are a couple of my most recent articles to get you started.</p>
     <ol class="index-list" reversed>
-        {%- set mostRecentPost = collections.post[collections.post.length - 1] %}
-        {%- set secondMostRecentPost = collections.post[collections.post.length - 2] %}
-        {%- set post = mostRecentPost %}
-        {% include "post-in-list.html" %}
-        {%- set post = secondMostRecentPost %}
-        {% include "post-in-list.html" %}
+        {%- set posts = collections.post | reverse %}
+        {% for post in posts %}
+            {% if loop.index <= 2 %}
+                {% include "post-in-list.html" %}
+            {% endif %}
+        {% endfor %}
     </ol>
 </section>
 
