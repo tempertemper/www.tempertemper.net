@@ -14,6 +14,16 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.5.1] - 2019-10-30
+
+### Adds
+- Adds redirects to pick up some 'resources not found' from Netlify analytics
+- Adds missing 'subscribed' page for mailing list
+
+### Fixes
+- Changes way homepage feature posts are counted
+
+
 ## [5.5.0] - 2019-10-27
 
 ### Changes
