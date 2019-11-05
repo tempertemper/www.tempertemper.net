@@ -5,6 +5,7 @@ intro: |
 date: 2019-08-21
 tags:
     - Development
+    - Git
 ---
 
 Since I've started using Git on the command line, there's one 'new' thing that I've used more than any other: `--amend`. I can now amend the most recent commit on the branch I'm on. So far, I've used it for two things:

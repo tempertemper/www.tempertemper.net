@@ -5,6 +5,7 @@ intro: |
 date: 2019-07-26
 tags:
     - Development
+    - Git
 ---
 
 Changing your Git history isn't something we have to do very often, but I found myself needing to do just that this week. I wanted to make [my website repository public](https://github.com/tempertemper/tempertemper-website) after re-factoring my site using a [static site generator](https://www.11ty.io). I'd gleaned lots of tips by poking through other people's source code and I wanted to repay the favour.

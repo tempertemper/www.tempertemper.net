@@ -5,6 +5,7 @@ intro: |
 date: 2019-10-04
 tags:
     - Development
+    - Serverless
 ---
 
 Having [moved my website to Netlify](/blog/moving-to-netlify), I've been pretty excited about some of the features they offer, one in particular has been [Netlify Analytics](https://www.netlify.com/products/analytics/).

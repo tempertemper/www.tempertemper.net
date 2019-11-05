@@ -5,6 +5,7 @@ intro: |
 date: 2019-06-26
 tags:
     - Development
+    - Git
 ---
 
 I bit the bullet and began playing around with [Git](https://git-scm.com) back in early 2012, around the time when front-end development started getting a bit more complicated than a text editor and an FTP client.
