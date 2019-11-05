@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Fixes
+- Adds some missing redirects for a couple of resources
+- Adds a redirect for hacky-looking page visits
+
 ----------
 
 
