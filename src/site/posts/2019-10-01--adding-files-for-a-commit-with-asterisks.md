@@ -5,6 +5,7 @@ intro: |
 date: 2019-10-01
 tags:
     - Development
+    - Git
 ---
 
 One thing that has frustrated me about [using the command line for Git](https://tempertemper.net/blog/getting-to-grips-with-git) is that it is a long-winded process to stage individual files for a commit. In a GUI you just check the checkboxes next to the files you want to stage – easy. Well, I found a shortcut that I've been using a lot over the past couple of days, so thought I'd write about it.

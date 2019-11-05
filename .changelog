@@ -14,6 +14,16 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.5.2] - 2019-11-05
+
+### Adds
+- Adds 'serverless' and 'git' tags to relevant posts
+
+### Fixes
+- Adds some missing redirects for a couple of resources
+- Adds a redirect for hacky-looking page visits
+
+
 ## [5.5.1] - 2019-10-30
 
 ### Adds

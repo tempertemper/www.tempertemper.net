@@ -5,6 +5,7 @@ intro: |
 date: 2019-10-24
 tags:
     - Development
+    - Serverless
 ---
 
 I've become a bit of an unashamed fan of Netlify recently. I've been enjoying taking baby steps with the functionality they offer, and something I've been making a quite a bit of use of are their <i>Deploy Previews</i>.

@@ -5,6 +5,7 @@ intro: |
 date: 2019-10-25
 tags:
     - Development
+    - Serverless
 ---
 
 Netlify [Deploy Previews are great](/blog/netlify-deploy-previews), but sometimes it's good to have a way to demo ideas to a client, show your remote team some changes or get approval or feedback from a stakeholder *before* raising a pull/merge request.

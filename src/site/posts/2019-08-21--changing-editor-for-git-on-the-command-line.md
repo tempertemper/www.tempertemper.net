@@ -5,6 +5,7 @@ intro: |
 date: 2019-08-21
 tags:
     - Development
+    - Git
 ---
 
 Something that has been bugging me since moving from a GUI to command line git has been the default editor for writing commit messages.
