@@ -36,6 +36,18 @@
   force = true
 
 [[redirects]]
+  from = "/blog/what-search-engines-want"
+  to = "/resources/what-search-engines-want"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/what-you-see-isnt-what-you-get"
+  to = "/resources/what-you-see-isnt-what-you-get"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/ssl-for-everyone"
   to = "/resources/ssl-for-everyone"
   status = 301
@@ -254,6 +266,12 @@
 
 [[redirects]]
   from = "/blog/should-you-go-responsive"
+  to = "/resources/should-you-go-responsive"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/responsive"
   to = "/resources/should-you-go-responsive"
   status = 301
   force = true
@@ -844,6 +862,11 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/.git/HEAD"
+  to = "/404"
+  status = 301
+  force = true
 
 
 # External rewrites
