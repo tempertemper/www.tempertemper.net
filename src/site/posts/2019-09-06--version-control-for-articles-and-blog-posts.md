@@ -5,6 +5,7 @@ intro: |
 date: 2019-09-06
 tags:
     - Development
+    - Git
 ---
 
 I recently [refactored my website](/blog/website-version-5) with Eleventy, a static site generator. I've been using [GitFlow](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-flow) and [semantic versioning](http://semver.org/spec/v2.0.0.html) which has been great for general development but has felt a bit *off* for publishing articles.

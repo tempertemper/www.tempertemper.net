@@ -5,6 +5,7 @@ intro: |
 date: 2019-10-26
 tags:
     - Development
+    - Serverless
 ---
 
 Now that you're cool with [Netlify Deploy Previews](/blog/netlify-deploy-previews) and [Branch Deploys](/blog/setting-up-a-staging-site-with-netlify), you might be worried that search engines will start indexing them and you end up with duplicate content problems.

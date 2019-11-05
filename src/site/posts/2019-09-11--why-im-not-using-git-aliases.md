@@ -5,6 +5,7 @@ intro: |
 date: 2019-09-11
 tags:
     - Development
+    - Git
 ---
 
 I've found my perfect Mac set up. Over the years, I've adjusted the trackpad tracking speed so it's *just right*, [switched to Dark Mode](/blog/choosing-dark-mode-on-macos), added Hot Corners to show my desktop, set up my own keyboard shortcuts; that kind of thing.

@@ -5,6 +5,7 @@ intro: |
 date: 2019-10-03
 tags:
     - Development
+    - Serverless
 ---
 
 I've never enjoyed hosting. After all these years I'm comfortable enough poking round a server, but I'd be perfectly happy if I never had to SSH into another Linux box as long as I live. And Netlify looks like a good route into that happy place!
