@@ -4,14 +4,11 @@ const autoprefixer = require('gulp-autoprefixer');
 const notify = require('gulp-notify');
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
-const bump = require('gulp-bump');
 const concat = require('gulp-concat');
 const notifier = require('node-notifier');
 const exec = require('child_process').exec;
 const uglify = require('gulp-uglify');
 const del = require('del');
-// const fractal = require('./fractal.js');
-// const logger = fractal.cli.console;
 
 // Define paths
 const paths = {
@@ -38,25 +35,6 @@ const paths = {
     all: 'dist'
   }
 };
-
-// Bump
-gulp.task('bump:major', () => {
-  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
-    .pipe(bump({type: 'major'}))
-    .pipe(gulp.dest('./'));
-});
-
-gulp.task('bump:minor', () => {
-  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
-    .pipe(bump({type: 'minor'}))
-    .pipe(gulp.dest('./'));
-});
-
-gulp.task('bump:patch', () => {
-  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
-    .pipe(bump({type: 'patch'}))
-    .pipe(gulp.dest('./'));
-});
 
 // Sass shared config
 const scssConfig = function() {
@@ -146,7 +124,6 @@ gulp.task('buildAssets', gulp.parallel(
   'styles'
 ));
 
-
 gulp.task('generate', function(callback) {
   exec('npx eleventy --quiet', function (err) {
     if (err) {
@@ -184,31 +161,3 @@ gulp.task('serve', () => {
   gulp.watch(paths.src.scripts, gulp.parallel('scripts'));
   gulp.watch(paths.dist.all).on('change', browserSync.reload);
 });
-
-// // Build static pattern library
-// gulp.task('patterns', ['cleanPatterns', 'build'], function() {
-//   const builder = fractal.web.builder();
-//   return builder.build().then(function(){
-//     console.log(`Pattern library static build complete!`);
-//   });
-// });
-
-// // Build patten library and assets for UI dev
-// gulp.task('assets', ['build', 'patterns', 'watch'], function(){
-//   const server = fractal.web.server({
-//     sync: true
-//   });
-//   server.on('error', err => logger.error(err.message));
-//   return server.start().then(() => {
-//     logger.success(`Fractal server is now running at ${server.url}`);
-//   });
-// });
-
-
-// gulp.task('serveAssets', gulp.series(
-//   'cleanAssets',
-//   'buildAssets',
-//   'serve'
-// ));
-
-// gulp.task('default', ['build']);
