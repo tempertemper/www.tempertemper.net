@@ -4,7 +4,6 @@ const autoprefixer = require('gulp-autoprefixer');
 const notify = require('gulp-notify');
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
-const bump = require('gulp-bump');
 const concat = require('gulp-concat');
 const notifier = require('node-notifier');
 const exec = require('child_process').exec;
@@ -38,25 +37,6 @@ const paths = {
     all: 'dist'
   }
 };
-
-// Bump
-gulp.task('bump:major', () => {
-  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
-    .pipe(bump({type: 'major'}))
-    .pipe(gulp.dest('./'));
-});
-
-gulp.task('bump:minor', () => {
-  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
-    .pipe(bump({type: 'minor'}))
-    .pipe(gulp.dest('./'));
-});
-
-gulp.task('bump:patch', () => {
-  return gulp.src(['./*.json', './src/site/_data/site.json'], {base: './'})
-    .pipe(bump({type: 'patch'}))
-    .pipe(gulp.dest('./'));
-});
 
 // Sass shared config
 const scssConfig = function() {
