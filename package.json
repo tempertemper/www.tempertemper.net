@@ -1,14 +1,14 @@
 {
   "name": "tempertemper",
-  "version": "5.5.2",
+  "version": "5.5.3",
   "description": "tempertemper's website",
   "scripts": {
     "start": "gulp cleanSite && gulp buildAll && gulp serve",
     "build": "gulp cleanSite && gulp buildAll",
     "staging": "npm run build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
-    "bump:major": "gulp bump:major",
-    "bump:minor": "gulp bump:minor",
-    "bump:patch": "bump patch"
+    "bump:major": "bump major src/site/_data/site.json *.json",
+    "bump:minor": "bump minor src/site/_data/site.json *.json",
+    "bump:patch": "bump patch --commit 'Bumps version number to %s' --tag '%s' src/site/_data/site.json *.json"
   },
   "repository": {
     "type": "git",
