@@ -6,8 +6,8 @@
     "start": "gulp cleanSite && gulp buildAll && gulp serve",
     "build": "gulp cleanSite && gulp buildAll",
     "staging": "npm run build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
-    "bump:major": "bump major src/site/_data/site.json *.json",
-    "bump:minor": "bump minor src/site/_data/site.json *.json",
+    "bump:major": "bump major --commit 'Bumps version number to %s' --tag '%s' src/site/_data/site.json *.json",
+    "bump:minor": "bump minor --commit 'Bumps version number to %s' --tag '%s' src/site/_data/site.json *.json",
     "bump:patch": "bump patch --commit 'Bumps version number to %s' --tag '%s' src/site/_data/site.json *.json"
   },
   "repository": {
