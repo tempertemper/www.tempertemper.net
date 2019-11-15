@@ -868,6 +868,24 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/post.php"
+  to = "/blog/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/this-url-does-not-exist"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index2"
+  to = "/"
+  status = 301
+  force = true
+
 
 # External rewrites
 [[redirects]]
