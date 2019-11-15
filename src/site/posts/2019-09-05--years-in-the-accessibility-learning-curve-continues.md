@@ -38,7 +38,7 @@ It makes sense when you think about it – it's content that's complementary to 
 
 What's more, [Deque's documentation on the use of `<aside>` explains](https://dequeuniversity.com/rules/axe/3.3/landmark-complementary-is-top-level) that misuse can cause problems for some screen readers:
 
-> Screen reader users have the option to skip over complementary content when it appears at the top level of the accessibility API. Embedding an <aside> element in another landmark may disable screen reader functionality allowing users to navigate through complementary content
+> Screen reader users have the option to skip over complementary content when it appears at the top level of the accessibility API. Embedding an `<aside>` element in another landmark may disable screen reader functionality allowing users to navigate through complementary content
 
 I want people navigating my sites with screen readers to be fully empowered to skip (or navigate directly to, if they prefer) my complementary content, just as a sighted user can identify an advert, for example, and ignore it.
 
