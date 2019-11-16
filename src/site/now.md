@@ -1,5 +1,5 @@
 ---
-title: Now
+title: The things I'm up to right now
 intro: |
     You've seen my [blog](/blog) and [about page](/about) so you know what I'm interested in and how I ended up doing what I do, but what am I up to *right now*?
 layout: base
