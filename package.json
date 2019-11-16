@@ -1,14 +1,14 @@
 {
   "name": "tempertemper",
-  "version": "5.5.2",
+  "version": "5.5.3",
   "description": "tempertemper's website",
   "scripts": {
     "start": "gulp cleanSite && gulp buildAll && gulp serve",
     "build": "gulp cleanSite && gulp buildAll",
     "staging": "npm run build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
-    "bump:major": "gulp bump:major",
-    "bump:minor": "gulp bump:minor",
-    "bump:patch": "gulp bump:patch"
+    "bump:major": "bump major --commit 'Bumps version number to %s' --tag '%s' src/site/_data/site.json *.json",
+    "bump:minor": "bump minor --commit 'Bumps version number to %s' --tag '%s' src/site/_data/site.json *.json",
+    "bump:patch": "bump patch --commit 'Bumps version number to %s' --tag '%s' src/site/_data/site.json *.json"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,6 @@
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.0",
-    "gulp-bump": "^3.1.3",
     "gulp-concat": "^2.6.1",
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.4.0",
@@ -34,7 +33,8 @@
     "gulp-uglify": "^3.0.2",
     "html5shiv": "^3.7.3",
     "modularscale-sass": "^3.0.8",
-    "susy": "2.*"
+    "susy": "2.*",
+    "version-bump-prompt": "^5.0.6"
   },
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^1.0.7",
