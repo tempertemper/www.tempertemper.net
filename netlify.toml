@@ -23,6 +23,13 @@
 
 
 # Blog to Resources redirects
+
+[[redirects]]
+  from = "/2012-05-30-freeagent"
+  to = "/blog/freeagent"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/blog/why-you-need-a-privacy-policy"
   to = "/resources/why-you-need-a-privacy-policy"
