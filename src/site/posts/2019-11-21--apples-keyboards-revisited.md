@@ -2,7 +2,7 @@
 title: Apple's Keyboards revisited
 intro: |
     Apple released a new MacBook Pro last week and the keyboard has been revised, fixing almost all the issues the current/outgoing models have.
-date: 2019-11-19
+date: 2019-11-21
 tags:
     - Apple
     - Design
