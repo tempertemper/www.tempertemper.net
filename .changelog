@@ -10,7 +10,13 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 ## [Unreleased]
+
+### Adds
 - Redirects FreeAgent article flagged as 'not found' in Netlify Analytics
+
+### Changes
+- Uses small image Twitter card again
+- Updates Twitter card images with underscore
 
 ----------
 
