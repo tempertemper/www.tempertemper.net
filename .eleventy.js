@@ -1,4 +1,4 @@
-module.exports = function(eleventyConfig) {
+module.exports = eleventyConfig => {
 
   /* Date filter */
   eleventyConfig.addFilter("date", require("./lib/filters/dates.js") );
@@ -8,9 +8,7 @@ module.exports = function(eleventyConfig) {
 
   /* Smart quotes filter */
   const smartypants = require("smartypants");
-  eleventyConfig.addFilter("smart", function(str) {
-    return smartypants.smartypants(str, 'qDe');
-  });
+  eleventyConfig.addFilter("smart", str => smartypants.smartypants(str, 'qDe'));
 
   /* Markdown Plugins */
   var uslug = require('uslug');
@@ -24,22 +22,19 @@ module.exports = function(eleventyConfig) {
   var mdIntro = markdownIt({
     typographer: true
   });
-  eleventyConfig.addFilter("markdown", function(markdown) {
-    return mdIntro.render(markdown);
-  });
-
-  eleventyConfig.addFilter("twitterLink", function(str) {
-    return "https://twitter.com/" + str.replace("@", "");
-  });
+  eleventyConfig.addFilter("markdown", markdown => mdIntro.render(markdown));
 
   const slugify = require("slugify");
-  eleventyConfig.addFilter("slug", function(str) {
+  eleventyConfig.addFilter("slug", str => {
     return slugify(str, {
       replacement: "-",
       remove: /[*+~.,()'"‘’“”!?:@]/g,
       lower: true
     });
   });
+
+  /* Twitter URL from Twitter handle */
+  eleventyConfig.addFilter("twitterLink", str => "https://twitter.com/" + str.replace("@", ""));
 
   /* Code syntax highlighting */
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -52,7 +47,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
 
   /* List all tags */
-  eleventyConfig.addFilter("tags", function(collection) {
+  eleventyConfig.addFilter("tags", collection => {
     const notRendered = ['all', 'post', 'resource', 'testimonial'];
     return Object.keys(collection)
       .filter(d => !notRendered.includes(d))
@@ -60,16 +55,14 @@ module.exports = function(eleventyConfig) {
   });
 
   /* List tags belonging to a page */
-  eleventyConfig.addFilter("tagsOnPage", function(tags) {
+  eleventyConfig.addFilter("tagsOnPage", tags => {
     const notRendered = ['all', 'post', 'resource', 'testimonial'];
     return tags
       .filter(d => !notRendered.includes(d))
       .sort();
   });
 
-  eleventyConfig.addFilter("getCurrentYear", function() {
-    return new Date().getFullYear();
-  });
+  eleventyConfig.addFilter("getCurrentYear", () => new Date().getFullYear());
 
   return {
     dir: {
