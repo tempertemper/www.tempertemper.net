@@ -30,20 +30,15 @@ That external Magic Keyboard is worth some attention: before I wrote this, I had
 
 ## Return of the inverted 'T' arrow key arrangement
 
-This caused problems for me. It took a long time to get use to the new arrow key arrangement. Instead of pressing up, I would press the <kbd title="shift">⇧</kbd> key just above the arrows. And the *moment* I used an older inverted `T` keyboard those months of adjusted muscle memory were undone.
+This caused problems for me. It took a long time to get use to the new arrow key arrangement – instead of the `up ↑` key, my finger would gravitate to the `shift ⇧` key, just above. And the *moment* I used an older inverted `T` keyboard those months of adjusted muscle memory were undone.
 
-I design Government systems for a living and they put usability over looking sexy. The inverted `T` didn't look as nice as the newer full-height <kbd title="left">←</kbd> and <kbd title="right">→</kbd> keys, but it was 100% more useable.
+I design Government systems for a living and they put usability over looking sexy. The inverted `T` didn't look as nice as the newer full-height `left ←` and `right →` keys, but it was 100% more useable.
 
 But Apple have seen the light:
 
 > the inverted-T arrow keys enable fluid navigation whether you’re flying through lines of code, navigating spreadsheets, or gaming
 
 Is that inferring that the full-height <kbd title="left">←</kbd> and <kbd title="right">→</kbd> arrow key layout *hindered* fluid navigation?
-
-
-## More breathing space
-
-The keys on these new keyboards are slightly smaller, which means the spaces between them are bigger. This adds more distance between the Touch Bar and the top of the number keys, which will hopefully reduce those accidental presses.
 
 
 ## Hardware escape key
@@ -61,9 +56,11 @@ John Gruber at [Daring Fireball sums it up nicely](https://daringfireball.net/20
 
 The keyboard itself might have been perfected—it looks to have hit the right balance between what made the newer keyboards feel great and the practicalities that let them down so badly—but any discussion of the keyboard should also include the Touch Bar.
 
-The Touch Bar has gone unchanged, aside from being slightly less wide, to accommodate the hardware escape key.
+The Touch Bar has gone unchanged, aside from being slightly less wide to accommodate the hardware escape key.
 
-Apple have [moved away from 3D Touch on iPhones](https://tempertemper.net/blog/iphone-event-2019) but it's still a big part of Apple Watch so isn't something they're abandoning altogether. 3D Touch on the Touch Bar would add that much needed resistance, meaning fewer accidental Touch Bar presses.
+Apple have [moved away from 3D Touch on iPhones](https://tempertemper.net/blog/iphone-event-2019) but it's still a big part of Apple Watch so isn't something they're abandoning altogether, and I'm hoping it makes it into the Touch Bar. This would add much-needed resistance, meaning fewer accidental Touch Bar presses.
 
-Add 3D touch together with a Taptic Engine to provide the physical feedback you get from pressing a physical key, and you might even have the basis for a useable software keyboard!
+Finally, throw in a Taptic Engine to provide the physical feedback you get from pressing a physical key so that you know if you *have* made an accidental press.
+
+And who knows, with that Apple might even have the basis for a usable software keyboard!
 
