@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Uses small image Twitter card again
 - Updates Twitter card images with underscore
+- Updates eleventy config with ES6 function syntax
 
 ----------
 
