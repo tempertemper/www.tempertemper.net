@@ -18,6 +18,10 @@ All notable changes to this project will be documented in this file. The format 
 - Uses small image Twitter card again
 - Updates Twitter card images with underscore
 - Updates eleventy config with ES6 function syntax
+- New Safari tab icon with colour specified
+- Updates favicon, apple icon and feed icon
+- Updates legacy logo pngs to new rectangle underscore
+- Updates site logo with rectangle underscore
 
 ----------
 
