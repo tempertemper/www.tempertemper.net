@@ -62,19 +62,19 @@ In case you're interested, here are the settings I'm using:
 
 ```json
 {
-  "font_face": "Operator Mono Light", // I ♥ Operator Mono
-  "monokai_pro_minimal": false, // default: false
-  "monokai_pro_file_icons": false, // default: true
-  "monokai_pro_file_icons_monochrome": true, // default: false
-  "monokai_pro_highlight_open_folders": false, // default: false
-  "monokai_pro_sidebar_row_padding": 2, // default: 3
-  "monokai_pro_sidebar_font_size": 14, // default: 12
-  "monokai_pro_label_font_size": 12, // default: 12
-  "monokai_pro_sidebar_lighter": true, // default: false
-  "monokai_pro_small_scrollbar": true, // default: false
-  "monokai_pro_ui_font_face": "SF Compact Text Regular", // Ties it into the rest of macOS
-  "monokai_pro_style_title_bar": true, // default: false
-  "monokai_pro_panel_font_size": "16", // default: determined by Sublime Text
-  "monokai_pro_sidebar_headings": false, // default: false
+  "font_face": "Operator Mono Light",
+  "monokai_pro_minimal": false,
+  "monokai_pro_file_icons": false,
+  "monokai_pro_file_icons_monochrome": true,
+  "monokai_pro_highlight_open_folders": false,
+  "monokai_pro_sidebar_row_padding": 2,
+  "monokai_pro_sidebar_font_size": 14,
+  "monokai_pro_label_font_size": 12,
+  "monokai_pro_sidebar_lighter": true,
+  "monokai_pro_small_scrollbar": true,
+  "monokai_pro_ui_font_face": "SF Compact Text Regular",
+  "monokai_pro_style_title_bar": true,
+  "monokai_pro_panel_font_size": "16",
+  "monokai_pro_sidebar_headings": false
 }
 ```
