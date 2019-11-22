@@ -20,13 +20,8 @@
     {%- endif %}
     <meta name="description" content="{{ description }}" />
 
-    {%- if (tags.length >= 1) and (tags.includes('post') or tags.includes('resource')) %}
-        {%- set cardType = "summary_large_image" %}
-        {%- set cardImage = site.url + "/assets/img/summary_large_image.png" %}
-    {%- else %}
-        {%- set cardType = "summary" %}
-        {%- set cardImage = site.url + "/assets/img/summary.png" %}
-    {%- endif %}
+    {%- set cardType = "summary" %}
+    {%- set cardImage = site.url + "/assets/img/summary.png" %}
     <meta property="og:site_name" content="tempertemper Web Design" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:title" content="{{ pageTitle }}" />
@@ -66,7 +61,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon-180x180.png" />
     <link rel="icon" href="/assets/img/icons/favicon.png">
     <!--[if IE]><link rel="shortcut icon" href="/assets/img/icons/favicon.ico"><![endif]-->
-    <link rel="mask-icon" href="/assets/img/icons/tempertemper.svg" color="black">
+    <link rel="mask-icon" href="/assets/img/icons/tempertemper.svg" color="#0097DB">
     <meta name="theme-color" content="#0097DB">
     <script>
         {% include "html5shiv.min.js" %}

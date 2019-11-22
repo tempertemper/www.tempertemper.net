@@ -10,9 +10,22 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 ## [Unreleased]
-- Redirects FreeAgent article flagged as 'not found' in Netlify Analytics
 
 ----------
+
+## [5.5.4] - 2019-11-22
+
+### Adds
+- Redirects FreeAgent article flagged as 'not found' in Netlify Analytics
+
+### Changes
+- Uses small image Twitter card again
+- Updates Twitter card images with underscore
+- Updates eleventy config with ES6 function syntax
+- New Safari tab icon with colour specified
+- Updates favicon, apple icon and feed icon
+- Updates legacy logo pngs to new rectangle underscore
+- Updates site logo with rectangle underscore
 
 
 ## [5.5.3] - 2019-11-16
