@@ -13,8 +13,7 @@ I make websites. I also run a paperless office. You can imagine how much of my w
 The calendar/to-do reminders are ok – I set them up myself, after all. Texts are generally from my wife, who knows I might not be able to get back to her immediately if I'm at work. Phone calls are less frequent. But emails are an issue.
 
 
-How much of an issue?
----------------------
+## How much of an issue?
 
 A while back, Paul Boag wrote an article where he described [email as a beast](http://www.smashingmagazine.com/2013/07/02/taming-email-beast/) that needs to be tamed. More recently he has [revisited the problem](https://boagworld.com/working-in-web/work-smarter/) on his own blog:
 
@@ -23,8 +22,7 @@ A while back, Paul Boag wrote an article where he described [email as a beast](h
 Frightening stuff…
 
 
-What to do?
------------
+## What to do?
 
 I view email as very important but not imperative. In other words, I'll deal with every email I get, but it might not be right away. If someone needs my attention urgently, they can [call me](tel:00441914324414). But clients rarely need my attention urgently.
 
@@ -51,8 +49,7 @@ Some emails require a speedier reply than others, so even if I receive an email 
 There are always exceptions to the rule. If a client has an urgent issue and needs my attention for immediately, I have a dedicated email mailbox set up for this which sends a notification to all of my devices, no matter where I am.
 
 
-Staying in control
-------------------
+## Staying in control
 
 In order to keep in control of my working day I've had to take the step of formalising my email workflow.
 

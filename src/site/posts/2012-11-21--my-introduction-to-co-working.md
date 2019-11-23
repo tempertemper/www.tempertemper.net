@@ -7,13 +7,14 @@ tags:
     - Business
 ---
 
-A few months ago my working life was getting stressful. I started working from home at around the same time as my little girl, Elena, was born. This worked out fine for a good while, but at around 13 or 14 months old in she started walking…
+A few months ago my working life was getting stressful. I started working from home at around the same time as my little girl, Elena, was born. This worked out fine for a good while, but at around 13 or 14 months old she started walking…
 
 I went to my first co-working day out of desperation. The banging on my office's door, the stomping, falling and crying (the wee one, not me!) were interrupting my concentration. And, of course, the temptation to go and play with the baby was hard to resist!
 
-There was always the local library, but I had some other itches that needed to be scratched– it's a little isolating working from home. Twitter only goes a short way to alleviating the cabin-fever– I needed some real human conversation!
+There was always the local library, but I had some other itches that needed to be scratched – it's a little isolating working from home. Twitter only goes a short way to alleviating the cabin-fever– I needed some real human conversation!
 
 Co-working seemed like the perfect answer!
+
 
 ## More than I bargained for
 
@@ -26,6 +27,7 @@ So I looked into other co-working events that were happening locally. [Colleague
 I've met lots of great people with interesting businesses, from [keyword consultants](http://word-association.co.uk) to [alternative hairdressers](http://www.urban-halo.com)! I've been to lots of networking events and dinners in the past and they've all felt a little bit pushy and contrived. This might work for some people, but it's really not my style.
 
 I believe that relationships come first and business will follow. I've met lots of people that would be great to work with, so it's a good idea to bring some business cards, though—remember—that's not the point of it all; more a happy by-product!
+
 
 ## Highly recommended
 

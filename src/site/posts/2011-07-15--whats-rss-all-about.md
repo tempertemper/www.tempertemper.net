@@ -21,7 +21,7 @@ This article is now _very_ out of date. I have since written a [more up to date 
 
 ~~So, the next time you're on, for example, the BBC's website looking at the recipes section or your favourite football team's section, look for the little RSS button and give it a click!~~
 
-~~This next bit's for Chrome users~~
-------------------------
 
-~~This button might not work if you use Google Chrome. For some reason they haven't got round to supporting RSS as one of the defaults of the browser! Instead you have to download an extension and install it within Chrome. All seems a bit user-unfriendly (and not at all like Google!) to me, but [here's how to  do it](https://chrome.google.com/webstore/detail/nlbjncdgjeocebhnmkbbbdekmmmcbfjd).</del>
+## ~~This next bit's for Chrome users~~
+
+~~This button might not work if you use Google Chrome. For some reason they haven't got round to supporting RSS as one of the defaults of the browser! Instead you have to download an extension and install it within Chrome. All seems a bit user-unfriendly (and not at all like Google!) to me, but [here's how to  do it](https://chrome.google.com/webstore/detail/nlbjncdgjeocebhnmkbbbdekmmmcbfjd).~~

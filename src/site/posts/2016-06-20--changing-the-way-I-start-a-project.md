@@ -5,7 +5,7 @@ intro: |
 date: 2016-06-20
 ---
 
-Over the years I have [refined the ways](/blog/why-i-changed-my-baseline) I go about not only building websites, but the planning of them.
+Over the years I have [refined the ways](/resources/why-i-changed-my-baseline) I go about not only building websites, but the planning of them.
 
 
 ## How it used to be done
@@ -31,11 +31,11 @@ So any choices I give my clients are kept to things they care about: feedback on
 
 My role has become as consultative as it is technical. I start every project with a sit down (or a Skype if that’s not practical) over a good cup of coffee. We’ll talk about things like:
 
-+ Business goals
-+ Target market
-+ Existing marketing strategies
-+ Resources (both budget and who’ll be looking after the website and how often)
-+ Timescales
+- Business goals
+- Target market
+- Existing marketing strategies
+- Resources (both budget and who’ll be looking after the website and how often)
+- Timescales
 
 Following that, I spend about a day (sometimes longer, if the project is particularly complex) putting some documents together. These include a document summarising what work will be done, a project plan, prices, timescales, etc. and another more technical document detailing exactly how I recommend the website be built.
 

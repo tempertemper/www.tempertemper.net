@@ -855,6 +855,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/free-security-updates"
+  to = "/blog"
+  status = 301
+  force = true
+
 
 # Spam rewrites
 [[redirects]]
