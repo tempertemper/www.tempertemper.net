@@ -5,7 +5,7 @@ intro: |
 date: 2016-06-20
 ---
 
-Over the years I have [refined the ways](/blog/why-i-changed-my-baseline) I go about not only building websites, but the planning of them.
+Over the years I have [refined the ways](/resources/why-i-changed-my-baseline) I go about not only building websites, but the planning of them.
 
 
 ## How it used to be done
