@@ -14,8 +14,7 @@ So I was really happy to be asked by [a fellow co-worker](http://www.lauraballtr
 It has been a few years since my last post on the subject, where I talked about [how I got into co-working](https://tempertemper.net/blog/my-introduction-to-co-working), so now felt like a good time to revisit it.
 
 
-What I've been up to
---------------------
+## What I've been up to
 
 When I wrote the post, I was renting a desk at a local software development company and really enjoyed it. It was a bit of a hike to get there: a half hour's walk (or 10 minute bus journey if the weather was too nasty to walk) followed by another 30/40 minutes on the [local Metro](http://www.nexus.org.uk/metro). Plenty of time to keep up with podcasts and my reading list, but it really ate into my non-working time.
 
@@ -38,16 +37,15 @@ I've been renting a desk in a fellow web-developer's office for the last year or
 It's important to keep things fresh, so I make sure to put my name down for a [local co-working event](http://www.colleaguesontap.com/) so that I can catch up with the awesome local co-working crowd. I also like to invite an old co-worker to my office every once in a while, or meet for an afternoon's co-working in a local coffee shop.
 
 
-What I get from co-working
---------------------------
+## What I get from co-working
 
 Co-working has enabled me to make some great new client relationships and brought lots of interesting web development projects my way.
 
 The conversations that spring up naturally over the course of a day's co-working have made tempertemper a better business. Here are some quick examples of some improvements I've made:
 
-+ My contract/agreement templates are not only much more thorough than they once were, but are very easy to read. This means they're also quicker and easier to write!
-+ Written design and development processes mean I spend less time thinking about what needs to be done and more time doing it!
-+ There are solid contingency plans in place, if I'm ever unable to continue work on a project (this has never happened and—fingers crossed—will never happen, but it's reassuring for me and my clients to have these things in place).
-+ My branding is now a lot simpler and clearer, and my website has been redesigned to focus on the most important things to my clients and potential clients (I do that for clients all the time, but somehow never found time to do it for my own business!)
+- My contract/agreement templates are not only much more thorough than they once were, but are very easy to read. This means they're also quicker and easier to write!
+- Written design and development processes mean I spend less time thinking about what needs to be done and more time doing it!
+- There are solid contingency plans in place, if I'm ever unable to continue work on a project (this has never happened and—fingers crossed—will never happen, but it's reassuring for me and my clients to have these things in place).
+- My branding is now a lot simpler and clearer, and my website has been redesigned to focus on the most important things to my clients and potential clients (I do that for clients all the time, but somehow never found time to do it for my own business!)
 
 Have you tried co-working? [Follow me on Twitter](https://twitter.com/tempertemper) and let me know how it has worked for you!

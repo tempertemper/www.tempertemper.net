@@ -11,6 +11,7 @@ Dropbox is by far and away the most useful application/program I use.
 
 In fact the beauty is that it's hardy an app at all! It's a folder on your computer that, when you connect to the internet, is mirrored online. That online folder is then beamed down to all of your other devices when they connect to the internet.
 
+
 ## Synchronisation
 
 I use a few different devices when I work: I've got my iMac in the office where I do most of my work, a laptop for when I'm on the move, my smartphone that lives in my pocket most of the time, and so on.
@@ -19,9 +20,11 @@ If I'm working on a project in the office but my work takes me to another city, 
 
 You can create folders within your Dropbox folder so I keep all of my files in my Dropbox folder. All of them. From the websites I'm working on to my e-books, to my bookkeeping, invoices and.
 
+
 ## Security
 
 It's totally secure so I never have to worry about my files being accessed by anyone else. They use the same security level as banks so your files are probably safer in your Dropbox than they are on your computer! Even Dropbox employees can't see your data!
+
 
 ## Sharing
 
@@ -31,9 +34,11 @@ It has also replaced my general email attachment habits. I can share a file in m
 
 This isn't limited to email, either. It's perfectly acceptable to paste the link into a tweet, blog post, .pdf document, etc.
 
+
 ## Versions
 
 Dropbox keeps copies of every iteration of a document, so if you've made a mess of something and need to go back to the stage you were at before the problem occurred you can just head to your Dropbox and restore a previous version. The nifty bit is that this version is made the new version, so, if you decide you preferred the messy document after all, you can just head back a version again!
+
 
 ## Photos
 
@@ -43,17 +48,20 @@ The person you send the photos to will see them as a stylish gallery where they 
 
 And these aren't the watered-down (heavily compressed) versions you get on Facebook: they're the full images; the same ones that you put in the Dropbox folder, so the recipient can put the files on a USB or CD and take them to Boots for development knowing that they'll look great on their wall or mantlepiece!
 
+
 ## Uses
 
 I use Dropbox for all of my files, both work and non-work but you don't have to go all guns blazing like I have- you can use it in any way you like!
 
 You can use it to sync certain files across your computers, head to the local internet café and use it as a photo repository to clear some space on your camera's SD card, whilst on holiday, simply share a file every now and then, or even just backup or archive for some documents.
 
+
 ## How much space do I get?
 
 You start off with 2 GB of storage space. If you've been recommended by a friend and have followed the link they gave you you'll get a wee bit more space. You can also get some bonus space by completing the tasks Dropbox sets you. This will take you to around 3 GB, but there's a total of 18 GB to get for free! To get the extra 15 or so GB you need to spread the word about Dropbox. You will be given a unique link that you can share with your friends and, once they follow it, you'll be given an extra 1/2 GB for free! They'll also receive that bonus space that I mentioned at the beginning of the paragraph, just for being referred! This way you can quickly build your free space to 18 GB!
 
 If you find yourself requiring more space than this you can always pay for the service and add to the free space you've already got.
+
 
 ## How do I get started?
 

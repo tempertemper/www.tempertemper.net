@@ -7,7 +7,6 @@ tags:
     - Tools
 ---
 
-
 As a designer, I enjoy details. Markdown has lots of ways of doing the same thing and this is kind of nice, but also [makes me sweat](https://media.giphy.com/media/LRVnPYqM8DLag/giphy.gif).
 
 I've always been of the mind that each bit of syntax should be distinct. e.g. Because asterisks are used for `<strong>` emphasis, I prefer not to use them elsewhere. So I use underscores for regular emphasis (`<em>`) and `+` for lists. This also nicely avoided using dashes for lists, as they're too close to underscores for my liking: `_` versus `-`.
