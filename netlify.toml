@@ -856,8 +856,20 @@
   force = true
 
 [[redirects]]
-  from = "/blog/free-security-updates"
+  from = "/apple-touch-icon-precomposed.png"
   to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/apple-touch-icon.png"
+  to = "/assets/img/icons/apple-touch-icon-180x180.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/free-security-updates"
+  to = "/assets/img/icons/apple-touch-icon-180x180.png"
   status = 301
   force = true
 
