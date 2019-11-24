@@ -16,8 +16,7 @@ I have a Spanish friend who shoots and edits videos. He works for a UK-based com
 When I found out my friend (Dani Fernandez at [Green Siren](http://greensiren.org/cams)) was flying over recently, I asked him if he would have any spare time to shoot a 30 second video of me for my homepage. Luckily he did!
 
 
-Preparation
------------
+## Preparation
 
 So 30 seconds isn't long, is it. How difficult can it be to prepare for a 30 second video? Actually, when you think about it, that's a pretty tight time-frame to communicate everything you need to say!
 
@@ -56,8 +55,7 @@ I printed an abbreviated version of the script out on A4 paper to act as cue car
 Even simple stuff like what I'd wear was considered. My glasses are a good example of this: sometimes I wear them, sometimes I prefer contact lenses. It has happened before that I've met someone when I wasn't wearing glasses, then bumped into that person in the street some time afterwards when I _was_, and they didn't recognise me at first! (So Superman disguising himself with a pair of spectacles wasn't that daft after all!) If I was to wear my glasses in the video, would people recognise me if I wasn't wearing them? Personal brand… blah blah blah… I think I might have other-thought this one!
 
 
-In front of the camera
-----------------------
+## In front of the camera
 
 You'd think with all of that preparation it would've been a breeze to shoot. Not so!
 
@@ -72,8 +70,7 @@ But the point is, in most takes, 95% was spot on. But the 5% that could be bette
 I'm sure I would've eventually got it just right, but by that point the fun would probably have gone and the overall tone would've suffered.
 
 
-Watching it all come together
------------------------------
+## Watching it all come together
 
 Post-production was the exciting bit. Watching as the audio was made clearer, the music added, the logo faded in at the end. Great stuff.
 

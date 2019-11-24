@@ -14,11 +14,13 @@ You all know the old adage that the children of the shoemaker are the worst shod
 
 An overhaul has been on my to-do list forever but is something that I just never seem to have got round to… until now: the keen-eyed amongst you may have noticed that I've redesigned my website slightly!
 
+
 ## Daunting
 
 I've been planning it for months and initially thought a complete ground-up redesign—everything from the code to the structure and layout—and a grand re-launch would be the best way to do it. After all, isn't that the _only_ way?
 
 Well, it turns out it was such a massive task that I kept putting it off until one day it dawned on me that the best approach would be to do it bit by bit!
+
 
 ## Little by little
 
@@ -28,11 +30,13 @@ Part of the code rewriting included making the site [responsive](http://en.wikip
 
 I also gave the site a general facelift and installed a search facility to make finding that elusive article you enjoyed a few months back as easy as possible.
 
+
 ## More to come
 
 There is still a massive number of tweaks and changes to make but I'm on track and I don't imagine that to-do list will ever be complete, as more and more ideas pop up, new technologies make interesting additions possible, and specific changes become necessary to make my visitors' experiences as great as possible! There's no such thing as the finished article, so why plan to produce one?
 
 The main thing is—in my humble opinion—the website is better than it was. And it will continue to improve!
+
 
 ## What this means to you
 
@@ -40,7 +44,7 @@ Small changes made often are the best way to tackle your website. That way, it e
 
 There are a number of other benefits to website evolution (rather than revolution!):
 
-- Think of your visitors– a grand redesign may leave a lot of them feeling alienated. Familiarity is important!
+- Think of your visitors – a grand redesign may leave a lot of them feeling alienated. Familiarity is important!
 - You have frequent opportunities to tell your fans/followers on Facebook, Twitter (or whichever social media platform you use) that they should come to your site to see the latest improvement!
 - It shows that maintenance is important to you and your site is worth visiting regularly to see what upgrades have been made.
 - One way or the other it will take your web designer time and effort to make changes to your site. However, it can often work out more cost-effective to make smaller changes. You're building on what you've already got, rather than reinventing the wheel!

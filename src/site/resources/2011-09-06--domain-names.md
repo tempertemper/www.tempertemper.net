@@ -12,6 +12,7 @@ Deciding on your domain name (or URL, or web address) is an important starting p
 
 There are two parts to your domain name, and (without getting into technicalities and jargon) these are: your business name and the suffix.
 
+
 ## Availability
 
 You'll no doubt be hoping your business name with .com or .co.uk is available and there's a chance it will be. If it's not, it may already be in use or it may be owned by a holding company.
@@ -22,11 +23,13 @@ If it's owned by a holding company there's a chance you might be able to buy it 
 
 By far the most cost effective way of buying a domain name is to go for one that's available and not owned by a third party.
 
+
 ## What about changing the suffix?
 
 An alternative to thinking again about the business name part of your domain name is to change the suffix. The first suffixes that come to mind here in the UK are .com and/or .co.uk so most people want these first. But it may be that you don't mind taking .org, .eu, .biz, .info, .net, .me.uk, etc. It's entirely up to you. The only thing to remember here is that the suffix should be appropriate to your business.
 
 Here are some examples: my web address is tempertemper.net- the .net suffix is generally used by businesses that have something to do with the internet itself, so suits me as a web designer well. What about some of the other ones I mentioned? Well, .me.uk is good for personal sites, .org is generally for not-for-profit type organisations, .biz is for businesses (although, in my humble opinion, it suggests showbiz or something!), .eu is for companies that do business in the European Union, etc., etc.
+
 
 ## .com V's .co.uk
 
@@ -42,17 +45,20 @@ What you choose as your principle domain name is pretty subjective- there isn't 
 - .com addresses tend to cost about twice the price of .co.uk addresses;
 - .co.uk is that it has a minimum initial registration of 2 years.
 
+
 ## Business name format
 
 Having hyphens in your domain name is perfectly acceptable. You just have to decide whether you want to have to say "hyphen" or "dash" every time you tell someone your web address or email.
 
 A consideration is that you may want [keywords](/blog/keywords) in your domain name. Google looks favourably on this, so your search engine ranking may get a boost, but there is a downside. Filling your domain name with keywords will mean it's longer. On a human level, this can make it more difficult to remember- especially if you're giving someone your email address: martin@somemadeupdomainnamewithkeywords.com
 
+
 ## To www. or not to www.
 
 One final point you'll want to have a think about is whether you'd like the www. in front of your domain name or if you'd prefer it to read without it. It's not something you can't change in the future, but Google will treat your site as two different sites unless what's called a redirect is added (don't worry- I'll do that for you! All you have to do is choose which way you prefer), meaning the two sites it sees will be competing against each other, meaning your rankings will be diminished by about half!
 
 Oh, and don't worry: if you choose to go without, like Twitter has, you'll still end up in the right place if you type the address with the www.; Facebook is the opposite- if you type facebook.com it'll take you to www.facebook.com!
+
 
 ## Researching your domain name
 
@@ -62,9 +68,11 @@ If you want to do it yourself, type the address in your URL bar, rather than sea
 
 If you prefer, fire me an email with the domain names you're thinking of and I'll do the checking for you. This way, I can also give you my tuppence-worth on how effective they'd be!
 
+
 ## Renewing your domain name
 
 When you register your domain name you will eventually come to a point that it will expire. This is usually a year, but it can vary, depending on the suffix. You can renew your domain name for anything up to 9 years, but you will always have to renew your hosting (the space that you rent on the internet that your website lives on) every year. It's up to you what tack you take- some people just renew everything every year for a year, others prefer to know they'll have their domain name for longer than that.
+
 
 ## What if you change your mind?
 

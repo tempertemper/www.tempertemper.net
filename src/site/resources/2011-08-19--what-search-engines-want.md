@@ -10,11 +10,13 @@ tags:
 
 Search Engines like Google, Yahoo and Bing look for certain things. These are measurable things that they equate with a good user experience and, although there are hundreds of things that are measure and these are constantly changing and being upgraded, they can be divided into four broad categories: How well your site is built, how accessible it is for disabled users, how satisfying it is to use and how well marketed it is.
 
+
 ## How well the site is built
 
 The size of the files the site is made up of makes a big difference- the smaller the files are (pictures, the website code itself, etc.) the faster your site will display. This isn't a massive issue for home use as most people have broadband (although there are some areas that still only receive dial-up connections), but when they're out and about on their mobile phones, the reception can be patchy at best and they might not hang around while that 100kb image downloads to their smartphone.
 
 Things like proper use of headers, effective meta data descriptions and unique, keyword-rich page titles all help to give you a leg up in the search engine rankings.
+
 
 ## How accessible the site is
 
@@ -26,11 +28,13 @@ Semantic markup is essential. This means that the language which a webpage is wr
 
 Images must always have alternative text so screen reader users are always offered a description of what the image they don't see represents.
 
+
 ## How satisfying the site is for users
 
 Visual interest is partly measured by unique images and your site should have some on every page. User satisfaction is also tied in with fresh content- the more the content in your site changes each time it's looked at by a search engine the better. Have a look at my [article on blogs](http://tempertemper.net/blog/why-should-i-blog) for ideas on how to integrate fresh content into your site.
 
 Easy navigation is also essential. It should be as shallow as possible so that your visitors don't get lost in the deep dark depths of your site, and getting back to the home page should be 1 click of a mouse or tap of the screen.
+
 
 ## How well the site has been marketed
 
@@ -39,6 +43,7 @@ Keywords are the way people search- they type in the words that are relevant to 
 How high your site appears for the keywords searched depends on site build, accessibility and satisfaction but another big factor is how popular (and therefore how useful) your site appears to the search engines. This is measured in a number of ways, but one of the main methods Google et al use is the number of sites linking into yours. There are lots of ways to do this, but the best way is simply to write great content and people will naturally pick up on it and tell their friends. You can also promote your articles using your presence on Facebook, Twitter and other social media so that your friends and followers get the opportunity to read it and share it with their friends.
 
 Age has something to do with the rankings too- the longer it's been in existence, the more authoritative it appears to search engines.
+
 
 ## It's an ongoing job!
 

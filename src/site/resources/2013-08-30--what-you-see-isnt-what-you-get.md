@@ -22,12 +22,12 @@ Of the various types of content, copy is probably the most complex. Your CMS wil
 
 Copy can take all sorts of forms. The most obvious is a simple paragraph of text, but there are all sorts of other ways of presenting text:
 
-* Headings of [varying levels](/blog/how-headings-work) of importance
-* Emphasised text (eg. bold/italic text)
-* Bulleted lists (like this one!)
-* Numbered lists
-* Quotations
-* Links to other web pages
+- Headings of [varying levels](/blog/how-headings-work) of importance
+- Emphasised text (eg. bold/italic text)
+- Bulleted lists (like this one!)
+- Numbered lists
+- Quotations
+- Links to other web pages
 
 
 ## But how is content different from styling?
@@ -37,6 +37,7 @@ Right; bear with me here… This next bit's all about changing the way you think
 A website is a vehicle to communicate your content to your audience. Nothing more.
 
 If your content is properly written it will be accessible to pretty much everyone and everything (search engines like [Google](http://google.co.uk) come into the 'thing' category).
+
 
 ## Design versus content
 
@@ -48,7 +49,7 @@ Your web designer's role is to ensure the content you've taken so much care over
 
 ### It used to be so easy…
 
-In the not-too-distant past, the web was consumed on desktop computers. Their screens were similar in size. Then laptops arrived, but this didn't change things too much as they had pretty similar sized screens and were interacted with in the same way– keyboard and mouse.
+In the not-too-distant past, the web was consumed on desktop computers. Their screens were similar in size. Then laptops arrived, but this didn't change things too much as they had pretty similar sized screens and were interacted with in the same way – keyboard and mouse.
 
 It was a bit more like print in that you knew exactly how your website would look for pretty much everyone.
 

@@ -15,14 +15,15 @@ Now I'm sure that's true, just as it would be for any other company that deals w
 
 These approaches usually come in the form of an email or, occasionally, as a letter in the post (my receiving one of these is what has prompted this article), and the correspondence is usually very professional and above-board looking.
 
+
 ## So what's the big problem?
 
 There's a possibility they'll take your money and run, but normally these companies are able to register domain names. It's still a bad idea to go with them, though:
 
-+ I would never want to do business with a company that approached me in such a sneaky way
-+ It's usually much more expensive to re-register your domain name through one of these companies (the company that approached me were asking for more than ten times the price I'd normally expect to pay)
-+ They'll often charge a premium if you wish to move your domain name away from their control
-+ If you go ahead with the transfer and realise you were better off where you were before, there's the potential for wasted time and effort while transferring the domain name back to where it was registered before
+- I would never want to do business with a company that approached me in such a sneaky way
+- It's usually much more expensive to re-register your domain name through one of these companies (the company that approached me were asking for more than ten times the price I'd normally expect to pay)
+- They'll often charge a premium if you wish to move your domain name away from their control
+- If you go ahead with the transfer and realise you were better off where you were before, there's the potential for wasted time and effort while transferring the domain name back to where it was registered before
 
 
 ## How did they get my details!?

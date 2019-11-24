@@ -9,7 +9,8 @@ tags:
 
 Twitter is more than just telling people what you're eating for breakfast. It can be a way of making friends, getting human answers to questions and can even be a good income stream for your business!
 
-Twitter can feel daunting at first– what's all this nonsense about tweeting, hashtags!? All will be revealed!
+Twitter can feel daunting at first – what's all this nonsense about tweeting, hashtags!? All will be revealed!
+
 
 ## Gaining followers
 
@@ -44,6 +45,7 @@ This probably goes without saying, but bad language can be contentious; similarl
 
 Following people is a good way to gain followers as a lot of people like to 'follow back'. Likewise, if someone follows you, unless there's a good reason not to (check their biography, timeline, etc.) it's worth reciprocating.
 
+
 ## Getting the most out of Twitter
 
 Following people means your timeline will be nice and full. If those people are tweeting interesting things you'll get plenty out of Twitter. But how do you decide who to follow?
@@ -51,6 +53,7 @@ Following people means your timeline will be nice and full. If those people are 
 ### Search for friends
 
 Twitter allows you to search for people in a few different ways. If you're using an app on your smartphone you can usually access your device's address book to see if any of your contacts are already on Twitter. In similar fashion, you can sometimes use your Twitter app connect to other social networks to see if any of your friends there also use Twitter.
+
 
 ## Friends of friends
 
@@ -63,6 +66,7 @@ In any industry there are prominent figures that are usually fairly vocal on Twi
 ### Search
 
 Searching Twitter can also throw up some really interesting people to follow. Pop some keywords in the search box and see who comes up.
+
 
 ## Keep in touch
 

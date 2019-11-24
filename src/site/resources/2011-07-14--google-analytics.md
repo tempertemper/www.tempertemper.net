@@ -15,7 +15,6 @@ Once your website is on live on the web you'll want to know how the visitors to 
 Furthermore, any changes to the design of your site should, where possible, be informed by your analytics.
 
 
-
 ## Creating an analytics account
 
 All you need is a **Google Account**. You might already have one if you use [Google Apps for Business](/blog/switching-to-gmail), or you can create one for free from [Google's homepage](https://www.google.co.uk).
@@ -29,7 +28,6 @@ You won't see much yet, but if you go to 'Admin' you should be see a 'Create new
 + A name for the **view** in the 'URL' box. Probably just something like 'All website data'. But you might want to use the website's URL again (something like 'example.com'). The reason this is a sub-section of Property is that you might want to segment your website in the future – a good example of when this would be a good idea is if you had a promotional 'landing pages' might warrant their own view, separate to the main website's analytics.
 
 Once you've set your account name, property name and URL set your time zone, industry category, etc. and hit 'Get Tracking ID'.
-
 
 
 ## Installation
@@ -48,9 +46,6 @@ What's probably a better idea is to give your web designer access to your Analyt
 Your web designer will now receive an email where they can jump into your analytics account and grab the Tracking ID to install on your website.
 
 
-
-
-
 ## Getting the information you need
 
 Log in or, if you're already logged in click the 'Home' link a the top of the page. You'll see your newly created account with a folder icon to its side. Open it and you'll see your website.
@@ -65,8 +60,6 @@ If your analytics have been running for any amount of time, you'll notice that y
 + The device they're using
 + What web browser they use
 
-
-
 ### It doesn't stop there!
 
 Something that's worth looking at is the Bounce Rate. This is the figure that tells you how many visitors are arriving at your site and 'bouncing' straight off, without checking out any other pages. There are a few reasons for this, some out of your control, but you probably want to get this figure as low as possible.
@@ -78,7 +71,6 @@ The 'Acquisition' section shows you how people are getting to your site: whether
 'Real time' allows you to view who's on your site right now and what they're doing.
 
 Conversions allows you to set goals that allow you to measure how well your site is working. For example, if your main goal is to get your visitors to send you message via your contact form, you might set this up as a goal. You can then start tweaking your design to increases the number of visitors achieving your goal.
-
 
 
 ## Have a play

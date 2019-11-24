@@ -28,7 +28,6 @@ Even if you might not want to edit your site right away, there will probably be 
 
 Raising the baseline means expectations about the overall cost are realistic. Sure, a website can be thrown together quickly and cheaply, but it’ll be very limited in what you can do with it, will frustrate its visitors and will be difficult to maintain.
 
-
 ### Straightforward
 
 Going back to the Apple example, the initial confusion and overload my clients experienced has lowered substantially. The web is still a pretty mysterious and bewildering place for most of them, but taking care of as many options as possible on their behalf has really helped.

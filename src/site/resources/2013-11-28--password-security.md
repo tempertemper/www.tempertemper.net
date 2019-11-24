@@ -48,7 +48,7 @@ So that sounds great, but there were plenty of factors that were getting in the 
 
 ### Changes are hard
 
-So the first obstacle I encountered was the whole 'familiarity versus change' thing– I'd been doing the same thing for a very long time and changing the way I approached passwords felt like a lot of work and a bit of a learning curve.
+So the first obstacle I encountered was the whole 'familiarity versus change' thing – I'd been doing the same thing for a very long time and changing the way I approached passwords felt like a lot of work and a bit of a learning curve.
 
 ### Seems like a lot to do
 
@@ -79,7 +79,7 @@ It's necessary for me to keep not just contact information but login details of 
 
 If one of my accounts were to be compromised I would have to down tools and change all accounts that had that password or contained other passwords in order to keep further accounts being broken into.
 
-This would be a time consuming (not to mention stressful) activity that would take me away from normal client work, meaning my cash flow might take a hit and deadlines could be missed. My reputation would also be called into question– I am very careful with client details and equally true to working deadlines.
+This would be a time consuming (not to mention stressful) activity that would take me away from normal client work, meaning my cash flow might take a hit and deadlines could be missed. My reputation would also be called into question – I am very careful with client details and equally true to working deadlines.
 
 Weighing up the potential loss while I picked up the pieces of a hack against the cost of the apps made the decision a lot easier.
 
@@ -93,13 +93,15 @@ I've since known people who have had their accounts hacked and their passwords c
 
 All things considered, I gladly purchased both their app for [iOS](https://itunes.apple.com/gb/app/1password-password-manager/id568903335) (iPhone and iPad) and [Mac](https://itunes.apple.com/gb/app/1password-password-manager/id443987910?mt=12&ign-mpt=uo%3D4). (The 1Password app is also available for [Android](https://agilebits.com/onepassword/android) and [Windows](https://agilebits.com/onepassword/win) so there's probably a version for you out there.)
 
+
 ## Set some time aside
 
 After buying the apps, the next few evenings were spent brainstorming and adding all of my existing usernames and passwords to my 1Password database.
 
 I then went through them all systematically and changed the passwords in each and every account until they were all unique and hard to guess.
 
-One thing to mention is that it was by no means comprehensive– just the other night I used eBay for the first time in months and realised I still had an old-style password associated with it. It was quickly fixed!
+One thing to mention is that it was by no means comprehensive – just the other night I used eBay for the first time in months and realised I still had an old-style password associated with it. It was quickly fixed!
+
 
 ## Workflow changes
 
@@ -111,13 +113,15 @@ Signing up for a new account now is a little bit lengthier a process than it use
 
 ### Logging in
 
-Logging into an account on the web is actually easier now on my desktop computer– click the little key icon on my browser (these browser extensions are a synch to install) and enter my master password (if I'm not already logged into 1Password) and it fills the login form out for for me!
+Logging into an account on the web is actually easier now on my desktop computer – click the little key icon on my browser (these browser extensions are a synch to install) and enter my master password (if I'm not already logged into 1Password) and it fills the login form out for for me!
 
-Logging into apps on my iOS devices only has to be done once, so I don't mind heading to 1Password to copy the passwords. Logging into apps in my web browser is a little bit clunkier as I have to close it and open the 1Password app, but they've even found a work-around for that– they have their own built-in web browser that automatically fills in login forms for you!
+Logging into apps on my iOS devices only has to be done once, so I don't mind heading to 1Password to copy the passwords. Logging into apps in my web browser is a little bit clunkier as I have to close it and open the 1Password app, but they've even found a work-around for that – they have their own built-in web browser that automatically fills in login forms for you!
+
 
 ## Resources
 
-1Password don't just take your money and leave it at that– they have an [excellent blog](http://blog.agilebits.com/) which, while on the geeky side, demonstrates pretty clearly how useful the product is and gives lots of tips for keeping even more secure!
+1Password don't just take your money and leave it at that – they have an [excellent blog](http://blog.agilebits.com/) which, while on the geeky side, demonstrates pretty clearly how useful the product is and gives lots of tips for keeping even more secure!
+
 
 ## Passwords aren't perfect
 

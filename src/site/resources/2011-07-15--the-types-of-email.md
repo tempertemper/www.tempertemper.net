@@ -15,6 +15,7 @@ Unfortunately that metaphor doesn't work at all for the IMAP! IMAP is a much mor
 
 Another great feature of IMAP is that you can log into your webmail and see things exactly as you left them on your other devices. So even if you're stuck in the middle of a foreign country with no Wi-Fi signal for your smartphone you can head to the local internet café and check your mail!
 
+
 ## POP has some big drawbacks
 
 POP removes the emails from your mailbox. This means they're all on the computer you downloaded them onto.
@@ -22,6 +23,7 @@ POP removes the emails from your mailbox. This means they're all on the computer
 It's possible to use more than one device, but you can't have more than one using POP or you'll get all sorts of error messages as they conflict. If you know you'll not be using your secondary device to access any old or sent messages then you can set it up as IMAP, which will allow you to respond to any messages you get while you're away from your main computer. Once you're back at the 'mother ship' your POP setup will download the emails you've already responded to (although not the responses you sent…).
 
 Basically, if you use more than one device, forget POP.
+
 
 ## IMAP's not perfect
 

@@ -20,6 +20,7 @@ Of course you can just leave it blank, but this means searchers will be presente
 
 With that in mind, it's probably a good idea, before you write a single word for your page, to put its description together. Doing things this way really forces you to think carefully about the task the page'll be performing. You've got 200 characters to describe the page's content in an engaging fashion.
 
+
 ## Useful tips
 
 It's a good idea to include a call to action in the description. An example of this would be to put your phone number on your contact page's description. For searchers looking for your number, it saves them time clicking through to your site and looking for the number again– it's a small thing but will be greatly appreciated.
@@ -29,6 +30,7 @@ Put your brand name at the front and back of the description. This will mean it'
 Include keywords in the description. Although they won't do much, when people search for the keywords you've worked hard to optimise your page around those keywords will appear as bold in the description. Again, this lets people know your site is relevant to their search.
 
 Use one or two eye-catching symbols to make your description stand out. I repeat: "one or two"! Moderation is the key! Have a look at [this nifty website](http://copypastecharacter.com/) for characters you can copy and paste into your description.
+
 
 ## Common pitfalls
 
@@ -41,6 +43,7 @@ Remember I mentioned about including something like your phone number? It probab
 Make sure you make the most of the 200 characters. Searchers may perceive your site as content-light if there's not much in the way of description. The whole point of a website is to provide your visitors with useful content, so that's definitely something you want to convey in the description!
 
 But don't waffle! Make sure those 200 characters are all useful and relevant. Searchers have little patience so keep them engaged and interested enough to visit your site!
+
 
 ## Describe your pages!
 

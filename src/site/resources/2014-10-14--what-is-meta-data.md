@@ -11,9 +11,9 @@ Meta data is website content that isn't displayed on a webpage; data that is hid
 
 It includes things like:
 
-+ [Page descriptions](/blog/page-descriptions)
-+ [Page titles](/blog/page-titles)
-+ [Social media](/blog/giving-social-media-the-right-information) 'cards' and 'open graph' information
-+ [Bookmark icons](/blog/bookmark-icons)
+- [Page descriptions](/blog/page-descriptions)
+- [Page titles](/blog/page-titles)
+- [Social media](/blog/giving-social-media-the-right-information) 'cards' and 'open graph' information
+- [Bookmark icons](/blog/bookmark-icons)
 
 It's stuff that's not helpful to your people who are looking at your webpage, but very useful when your website is 'scanned' by search engines, social networks and other non-human visitors.

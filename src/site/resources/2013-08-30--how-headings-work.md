@@ -33,8 +33,7 @@ You can have several h2s in an article. These are the main dividers of your cont
 
 Each h2 section can be divided up in to more sections, with—you guessed it!—h3 headings.
 
-Heading level three and beyond
---------------------------------------
+## Heading level three and beyond
 
 Here are some examples of how your heading structure might look (note they all start with level 1):
 
@@ -47,14 +46,14 @@ Here are some examples of how your heading structure might look (note they all s
 * h1 h2 h3 h4 h3 h4 h2 h3 h4 h4
 * h1 h2 h3 h4 h5 h6
 
-Rules of the road
---------------------
+
+## Rules of the road
 
 There's only one rule: _Never skip a heading level_!
 
 The main reason you might be tempted to skip a level is **style**. You might like the style of the next heading level down. Your content is much [more important than the cosmetics of your site](/blog/what-you-see-isnt-what-you-get).
 
-Make your readers' experience great
--------------------------------------------
+
+## Make your readers' experience great
 
 Headings are a great way of breaking a document up, making it easier to read and digest. If your readers have a great experience they'll be more likely to come back time and time again.
