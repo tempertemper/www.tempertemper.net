@@ -22,8 +22,7 @@ Number 3 is what we're going to home in on.
 Google have written about how they use performance as [one of their ranking factors](http://googlewebmastercentral.blogspot.co.uk/2010/04/using-site-speed-in-web-search-ranking.html), and it's more important now that it has ever been. I've written before about how [mobile friendliness](/blog/mobile-friendly-markers) is something Google and other search engines are now measuring, and if your site is designed to adjust its layout to the size of the screen it's being viewed on, that's a great start. But there's more to it than that…
 
 
-So what's the worst-case scenario?
-----------------------------------
+## So what's the worst-case scenario?
 
 Designing for the web comes with a whole host of constraints that you don't get with other media, like print (which, by the way, comes with a completely different set of challenges!).
 
@@ -34,7 +33,6 @@ Another challenge unique to the web is **internet connection speed**. Even if yo
 Mobile phones are designed to be used anywhere, and it's very likely people will want to visit your site when they're in an area with low signal. If your site is designed to give a good experience to visitors with on 'Edge' or 'GPRS', it'll be blisteringly fast when they're on a decent 3G connection, 4G or wi-fi.
 
 
-It's good to be a pessimist!
-----------------------------
+## It's good to be a pessimist!
 
 Where where web development is concerned, if you prepare for the worst you'll give everyone a good experience of your site. If your message is able to be communicated in even the most hostile of environments, you know for sure it'll be delivered to someone in more optimal conditions.

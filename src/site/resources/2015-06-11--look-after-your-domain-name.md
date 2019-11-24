@@ -11,24 +11,21 @@ tags:
 Look after your domain name. It's one of your most important online business assets and the cost of losing it can be huge.
 
 
-Do it yourself
-----------------
+## Do it yourself
 
 Keeping full control of your domain name is vital. Not only will you not have to pay anyone to administer the renewal for you, you'll mitigate a wee bit of risk by removing an unnecessary link in the ‘chain’: if the person administering your domain name was to forget to renew it you stand to lose it.
 
 If someone else has registered it for you, at the very least make sure they have registered it **in your name**.
 
 
-Stay secure
---------------
+## Stay secure
 
 It seems like every month that there's news of another online service having their passwords leaked. If your password is leaked and you use the same password for other services the thieves can potentially break into your accounts that use the same password. And one of those accounts may be your domain name registration control panel.
 
 [Using a password manager](](/blog/password-security)) like 1Password will keep your domain name account logins unique and secure. It takes a wee bit of effort to make the switch, but it's well worth it for the peace of mind.
 
 
-Implications of losing it
--------------------------------
+## Implications of losing it
 
 ### Repurchasing
 
@@ -50,22 +47,21 @@ But this can only be done if you have ownership of `my-great-website.com`. If yo
 
 If your site disappears from the web, every link that anyone has ever made to your site will be broken. Not only will this hurt your search engine ranking, while you look to get your domain name back, it'll damage your reputation with people looking to visit your site via a link: clicking a link only to find the page doesn't exist is pretty frustrating.
 
-What about hosting?
--------------------
+
+## What about hosting?
 
 If your website hosting, on the other hand, was to suddenly expire, you can recover from this much easier as long as you have your domain name by:
 
-+ Restoring the site from a back-up
-+ Having a new site built using the same URL structure as the old site, to keep any search engine goodness that you’ve built up over the years
+- Restoring the site from a back-up
+- Having a new site built using the same URL structure as the old site, to keep any search engine goodness that you’ve built up over the years
 
 
-Stay in control
----------------
+## Stay in control
 
 The moral of the story is:
 
-+ Look after renewals yourself – don't entrust anyone else to do it for you
-+ Set multiple reminders so that you don't forget to renew it
-+ Protect your domain name account with a solid password
+- Look after renewals yourself – don't entrust anyone else to do it for you
+- Set multiple reminders so that you don't forget to renew it
+- Protect your domain name account with a solid password
 
 Do all of this and you'll never be in a position where you have to buy your domain back at an exorbitant price or—worse—lose all that time and effort you put into your online reputation.

@@ -9,9 +9,11 @@ tags:
 
 Every site I make will work on every modern browser. You've probably read my [article about the various different internet browsers](http://tempertemper.net/blog/whats-in-a-browser) there are available for you to use, but how does this affect you as a website owner?
 
+
 ## Software
 
 This might be obvious, but it's worth pointing out anyway… When you have a booklet printed you know that it'll look the same to everyone who reads it as it's a physical object in itself. A website can perform the same function as a printed booklet but the issue here is that readers have to view the site using a program on their computer and not everyone has the latest and greatest version of the software for viewing the internet installed on their machine…
+
 
 ## A numbers game
 
@@ -19,11 +21,13 @@ As time goes by, more and more people buy new machines with more up to date soft
 
 So number of people using older software is dwindling.
 
+
 ## Which browsers are the problem?
 
 'Older browsers' is a bit of a tricky term. By older browsers I'm really referring to Internet Explorer versions 6, 7 and 8.
 
-Internet Explorer (IE) is quite often the victim of many a web-designer hate campaign, which I'm not about to join. Don't get me wrong, I'm really not a fan– I just reckon it's part of the job to cater for (if not pander to) these browsers. Even [Microsoft themselves](http://www.ie6countdown.com/) believe that the older of their currently used browsers has has well and truly had its day!
+Internet Explorer (IE) is quite often the victim of many a web-designer hate campaign, which I'm not about to join. Don't get me wrong, I'm really not a fan – I just reckon it's part of the job to cater for (if not pander to) these browsers. Even [Microsoft themselves](http://www.ie6countdown.com/) believe that the older of their currently used browsers has has well and truly had its day!
+
 
 ## Internet Explorer 8
 
@@ -33,9 +37,11 @@ So with IE8 hogging so much of the market, it's only prudent that I ensure the w
 
 You could argue that users of older browsers like IE8 won't know any different anyway, as they won't have the website in a current browser to compare the site with! As long as your message is delivered and they are able to use the site perfectly, what's the issue!?
 
+
 ## There are ways of forcing the matter
 
 If, however, you do want IE8 to look the same as modern day browsers this will involve a lot of extra work, so expect to pay a premium for this. But this is not the only cost: it will also mean that the page has more code and, potentially, images to download so your pages will load more slowly in IE8. This could drive away visitors and it won't help your search engine ranking at all.
+
 
 ## Internet Explorers 6 and 7
 
@@ -44,6 +50,7 @@ These browsers have a very small market share. IE6 is almost redundant and IE7 i
 However, if I'm redesigning your site you may have statistics that show that a larger portion of your visitors than the average site were using one or both of these browsers to view your old site. If this is the case, it probably makes good business sense to make your site display properly for these visitors!
 
 Similarly, if I've build you a new website, you can [keep an eye](http://tempertemper.net/blog/google-analytics) on the browsers the visitors to your site are using and, if the number of IE6/7 users is higher than the average site, it would probably be worthwhile investing in making their experience better.
+
 
 ## Future-friendly
 

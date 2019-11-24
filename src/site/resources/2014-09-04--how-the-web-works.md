@@ -25,11 +25,9 @@ Doing any of these three things is called a _request_: "can I see this website p
 The website itself lives on a web server—a place on the internet where a website lives—and, when a request comes through, the server then sends (serves) the website to the person who asked to see it.
 
 
-
 ## Download
 
 Your browser then starts to receive all the files that make up the website you requested. So when you view a website, you're _literally_ viewing it on your smartphone, tablet or laptop.
-
 
 
 ## Sending and receiving
@@ -39,8 +37,6 @@ So the only time you're actually online, when you're using the web, is
 1. When you ask for something
 2. When you're sent something
 
-This is why using the internet over a broadband connection is quicker than 3G– the files from the web server are sent and received quicker on broadband, so the website appears quicker.
-
-
+This is why using the internet over a broadband connection is quicker than 3G – the files from the web server are sent and received quicker on broadband, so the website appears quicker.
 
 So the web is a back-and-forth between you and a web server. As a website owner, this is an important idea to get your head around as it informs a lot of decisions your web designer will make when designing and coding your site.

@@ -14,6 +14,7 @@ Copying and pasting a link into your text will just write link as another word i
 
 That's better than nothing as your visitors can highlight it, copy it and paste it into their web browser, but that's pretty clunky. We all know that links on the web look like text but there is something that sets them apart from the rest of the text that indicates that they're clickable/tappable and will take you somewhere else.
 
+
 ## How do I create a link then?
 
 If you know me, you'll know I've got a [bit of a thing for Markdown](/blog/what-is-markdown), so I'll be using that as an example of how to create your links. The principles hold true, regardless of what type of text editor you're using to write your website text, so hold on in there if Markdown sounds like some kind of witchcraft!
@@ -28,6 +29,7 @@ These two parts are written in two sets of brackets– the first in square brack
 ```markdown
 [text](link)
 ```
+
 
 ## A neat little trick
 
@@ -60,6 +62,7 @@ and all you have to do here type the bit just after your main website address, l
 ```
 
 Of course, if the address of the article is quite long, it's probably going to be easier to copy and paste the address from your web browser's address bar, rather than trying to remember exactly what the link was and typing it out with hyphens instead of spaces, `like-this`. That'll mean you've got your website's address at the beginning of the link, so you can just delete it. But you don't have to; it'll work one way or the other.
+
 
 ## Don't forget to test!
 

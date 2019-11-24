@@ -14,8 +14,7 @@ If these files were to disappear somehow, your website would disappear too. If y
 Of course there are folders, databases, server configuration, blah, blah, blah. But you get my point – let's not get bogged down with the gory detail!
 
 
-Backups
--------
+## Backups
 
 There are a whole host of places your website might be backed up to. Some backups happen automatically, others are more manual.
 
@@ -27,10 +26,10 @@ The chances are, the place where your website is hosted offers the ability to ba
 
 Your content management system (CMS) might offer the ability to back your site up. These backups can happen to various degrees:
 
-+ sometimes just the edited content and settings
-+ sometimes they back up all of the images and any other files you've uploaded too
-+ sometimes they back up only certain parts of the site
-+ sometimes they back up up the _whole site_
+- sometimes just the edited content and settings
+- sometimes they back up all of the images and any other files you've uploaded too
+- sometimes they back up only certain parts of the site
+- sometimes they back up up the _whole site_
 
 Depending on what other ways your site is being backed up, you mightn't need more than the first one or two. Ask your web designer what's possible and perhaps it's worth them adding a way that you can back things up yourself.
 
@@ -54,8 +53,7 @@ It's also possible to ask your web designer to manually back up your site period
 There are ways of automatically backing up your website. Your web designer should be able to configure something for you, so that your site is periodically backed up to a service like Dropbox.
 
 
-Phew
------
+## Phew
 
 Lots of options! So it's likely that if the worst happens and your website disappears from its place on the internet, there's a recent-ish back up _somewhere_. Sure, you might have to dig out the last couple of blog posts you wrote, but if you [wrote them off-line](https://tempertemper.net/blog/edit-your-blog-posts-off-line) you have even less to worry about!
 

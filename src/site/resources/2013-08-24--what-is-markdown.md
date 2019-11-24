@@ -12,6 +12,7 @@ I should start by stating how important Markdown is. It's _very_ important. It's
 
 "But what actually _is_ Markdown!?" I hear you ask… Well, it's a way of writing a document using characters like `*` `_` or `-` to format the text, which means the document can be written and/or on _any_ text editing or word processing software application.
 
+
 ## How is that different?
 
 When you write a document you'll probably be accustomed to highlighting a word, clicking the 'B' button, for example, and the highlighted text will become emboldened.
@@ -23,6 +24,7 @@ This 'what you see is what you get' priciple (or WYSIWYG for short) is how _prin
 This principle has shifted slightly as the web has become mainstream, this last decade or so. The problem on the web is, what your visitors get isn't necessary what you had in mind when you wrote your content!
 
 Separating your content from how it looks is the key to future proof articles!
+
 
 ## Plain text and up
 
@@ -42,7 +44,7 @@ If you want to know more about how a document is actually written, have a look a
 
 #### Exporting
 
-Even though Markdown itself conveys the meaning of the text, it could be argued that it's not especially pretty… The beauty of Markdown is that it's understood by _loads_ of programs, so you can import markdown and the program will make the text look great. No Markdown formatting– just bold and italic words, headings, quotations, etc.
+Even though Markdown itself conveys the meaning of the text, it could be argued that it's not especially pretty… The beauty of Markdown is that it's understood by _loads_ of programs, so you can import markdown and the program will make the text look great. No Markdown formatting – just bold and italic words, headings, quotations, etc.
 
 The most useful place that this happens is on the web. If you write a blog, the chances are you can copy and paste your Markdown text straight into your blog or website's control panel, hit 'save' and it'll convert it into HTML on your website!
 
@@ -54,11 +56,12 @@ _*By 'format' I mean the little extension you see after your file when you look 
 
 So if the maker of the word processing software you use go out of business or decide to stop supporting the format you're writing in, your content is safe as you'll have saved it as a Markdown document.
 
-What's more likely is that you change the word processing software you use. I did, way back when I bought my first Mac. I had always used Word when I used Windows machines but Pages looked like a nice option when I bought my Mac so I invested in that (a _great_ decision, by the way!). Luckily Pages understands the .doc format so I could still access all of my old documents, but had it been the other way round I'd be stuck– Word (at least at the time of writing) doesn't support the .pages format.
+What's more likely is that you change the word processing software you use. I did, way back when I bought my first Mac. I had always used Word when I used Windows machines but Pages looked like a nice option when I bought my Mac so I invested in that (a _great_ decision, by the way!). Luckily Pages understands the .doc format so I could still access all of my old documents, but had it been the other way round I'd be stuck – Word (at least at the time of writing) doesn't support the .pages format.
 
 Personally, I use a text editor called [Byword](http://bywordapp.com) to create and edit my articles. It has iPhone, iPad and Mac versions so I can begin writing a post on my phone on the way to the office and pick it straight up on my laptop when I sit down at my desk!
 
 Markdown allows you to open, edit and save a file in any word processor or text editor you like, then pick it up again in another! Flexibility is a wonderful thing!
+
 
 ## Future-proof
 
@@ -68,8 +71,9 @@ In fact, .txt files have been around since the dawn of computing. There aren't m
 
 Taking that one step further, your computer's software is written in plain .txt files. And always will be. So .txt is here to stay. Even if Microsoft and Apple disappear (unlikely but at least _possible_) your documents will still be in a readable format.
 
+
 ## Best practice
 
 So if  you want to keep your documents forever, for use in as many different contexts as possible—whether you're writing for the web or not—you should look into [using Markdown to write them](/blog/markdown-cheatsheet).
 
-Are you already using Markdown? I'd love to know how you use it– why not leave a comment below!?
+Are you already using Markdown? I'd love to know how you use it – why not leave a comment below!?

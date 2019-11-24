@@ -12,6 +12,7 @@ By branded email, I mean an email address that ends in something like @tempertem
 
 A common misconception is that you can't have a branded email unless you have a website. As long as you own the domain name, you can have a branded email!
 
+
 ## Cheap and easy to register
 
 A lot of people are under the misconception that owning your own domain name is an expensive and complicated process. It's really not. In fact, I've seen them for as low as a fiver, but—as with most things—I've generally found you get what you pay for, in terms of service, reliability and so on.
@@ -20,19 +21,23 @@ Have a good think about what domain names you'd like for your business, find out
 
 If someone else already has the domain name you're after all is not lost- you can offer to buy the domain name from them, but it may come at a premium. Or they may simply be unwilling to sell. It's usually better to forget about a domain name if it's already taken.
 
+
 ## Redirecting your branded emails
 
 You don't have to buy hosting at the same time as you register your domain name if you use email forwarding. This is where you operate from your personal email address (@gmail.com, @yahoo.co.uk, etc.) and your emails are redirected through the branded address. So when someone sends you an email to your branded address it's automatically redirected to your personal address, unbeknownst to the sender.
 
 The only drawback to this method is that any emails you send out will still be from your normal address, but it does mean that you can push ahead and advertise your new branded email address on your business cards, letterheads and the like. I say that, it's not strictly true- if you access your personal account through a desktop email program by altering your 'reply address' settings, but that's a whole other subject and varies from program to program!
 
+
 ## Hosted email accounts
 
 If you do buy hosting, you'll be able to use your branded email exclusively, instead of through your normal account. The hosting I provide for my clients comes with [lots of different options](http://tempertemper.net/blog/the-types-of-email) for access: web-based, desktop-based, etc. and this is the case for most providers. [Let me know](http://tempertemper.net/contact) if you want me to point you in the right direction.
 
+
 ## Redirect your non-branded emails
 
 You can also set up email forwarding/redirection on your non branded email address, which is helpful if you want to keep all of your emails in one place or if you've already got business cards or letterheads with your @hotmail.co.uk address on them and don't want to bin them. You can then hold off and put the new email address on the next print run of your stationery and your clients will be getting emails back from your professional-looking branded address!
+
 
 ## Still not convinced?
 

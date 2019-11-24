@@ -14,6 +14,7 @@ Like, Tweet, Follow, +1, Share… allowing your website's visitors to engage wit
 
 Like most things, they have positives and negatives and it may come as a surprise that including something as seemingly straightforward as a couple of little buttons turns out to be a fairly big decision.
 
+
 ## Advantages
 
 So why bother with buttons? Why not just a link to your Facebook/Twitter/Google+ page and let your visitor Like/Follow from there?
@@ -24,6 +25,7 @@ Another advantage is that your visitors stay on your website. Without a button t
 
 Peer pressure is alive and well! Like it or not, we're pack animals, and that little number next to the social media button tells your visitors that the article they're reading or the website they're on is worth coming back to!
 
+
 ## Disadvantages
 
 Social media buttons are easily identifiable but—let's face it—they're not necessarily the most stylish things in the world! And, unfortunately, there's next to nothing your web designer can do about this.
@@ -32,9 +34,10 @@ All social media buttons are different; sometimes they're stacked, with the numb
 
 At the time of writing, Facebook's button hasn't been updated to look nice on those high-resolution screens that are becoming the norm on mobile devices and some laptops. This reliance on a third party like Facebook or Twitter to style a part of your website isn't ideal.
 
-That raises another point– Twitter _has_ updated its button for high-definition screens. They also updated their logo recently. So if they can change the button whenever they like, the next time they do, it may not sit nicely with your website.
+That raises another point – Twitter _has_ updated its button for high-definition screens. They also updated their logo recently. So if they can change the button whenever they like, the next time they do, it may not sit nicely with your website.
 
 Oh, and another thing, don't they feel a little bit like tiny adverts?
+
 
 ## The reason I've ditched buttons
 
@@ -42,7 +45,8 @@ Most of my Facebook page's likes and Twitter profile's follows come from the soc
 
 This in itself isn't an issue as I was getting _some_ engagement via the buttons… The main reason I removed them from my site was that *they take ages to download*!
 
-I'm not going to get into technicalities– they're deceptively complex little things and do a great job of doing what they do in the shortest possible time. But they're not fast enough. One button can often take as long as a whole web page to download.
+I'm not going to get into technicalities – they're deceptively complex little things and do a great job of doing what they do in the shortest possible time. But they're not fast enough. One button can often take as long as a whole web page to download.
+
 
 ## Who cares?
 
@@ -50,12 +54,14 @@ So you might be asking yourself why its important to keep download times to a mi
 
 Mobile internet usage is [massive and growing](http://www.gpmd.co.uk/blog/2012-mobile-internet-statistics/). You don't want to exclude these people from your website. Most visitors are fairly impatient and will [abandon your page](http://blog.kissmetrics.com/wp-content/uploads/2011/04/loading-time-lrg.jpg) if it takes too long to appear in their browser.
 
+
 ## Search engines
 
 As if your users' experience on your site wasn't enough, search engines like Google measure the page-load time on your website and the quicker it loads, the more brownie points you'll get and the higher up in the rankings you'll go!
+
 
 ## What do you think?
 
 I've given the matter a lot of thought and, in the end, have decided to abandon the wee buttons on my site in favour of straightforward links that load in an instant and look nice and in-keeping with my website, but that doesn't mean you should too!
 
-I'd love to know your thoughts on the matter– let me know in the comments below!
+I'd love to know your thoughts on the matter – let me know in the comments below!

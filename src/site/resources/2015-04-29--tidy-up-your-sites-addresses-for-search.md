@@ -15,7 +15,6 @@ In fact URLs aren't going to appear at all: it's going to look more like 'breadc
 Unfortunately, Google needs some extra information to be coded into a website to get this right. Without this extra info, it'll take a guess, which might not always be correct… To guarantee Google gets it right every time, you need to add 'meta data' to each page on your website. Have a quick read of [my article about meta data](/blog/what-is-meta-data) if you're not sure what it is.
 
 
-How do I get the meta data onto my site?
----------------------------------------
+## How do I get the meta data onto my site?
 
 If you want to guarantee Google gets it right every time, speak to your web designer and they'll look into it for you. It's not a big job, but is well worth doing to make sure your entry in the search results is as useful as possible.

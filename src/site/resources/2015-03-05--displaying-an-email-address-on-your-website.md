@@ -21,14 +21,14 @@ Presenting your email address as normal text means that it can be highlighted, c
 Nice and straightforward, but how many people will actually do that? Let's break down the process:
 
 1. Select the email address you want to send an email to.
-    + With a mouse/trackpad, click the start of the address and drag your mouse over to the end of the email address. Try again, as you missed the first letter. Ok, got it.
-    + On a touch screen device this is equally as fiddly: tap and hold the first word of the email address, drag the right-hand blue marker to the end of the address. Drag it back again, as you highlighted the word after the address…
+    - With a mouse/trackpad, click the start of the address and drag your mouse over to the end of the email address. Try again, as you missed the first letter. Ok, got it.
+    - On a touch screen device this is equally as fiddly: tap and hold the first word of the email address, drag the right-hand blue marker to the end of the address. Drag it back again, as you highlighted the word after the address…
 2. Copy the email address from the page.
-    + With your mouse, right click and select 'Copy' from the menu. Or go to the 'Edit' menu at the top of the screen and find 'Copy'. Or wasn't there a keyboard shortcut? `Ctrl` + `c`. Oh, you're a Mac user? `Cmd` + `c`, then. Lots of options, but lots to remember.
-    + On your touch device, the option to 'Copy' should automatically pop up when you've highlighted the address. Unless you miss-tap, in which case you're back to square 1.
+    - With your mouse, right click and select 'Copy' from the menu. Or go to the 'Edit' menu at the top of the screen and find 'Copy'. Or wasn't there a keyboard shortcut? `Ctrl` + `c`. Oh, you're a Mac user? `Cmd` + `c`, then. Lots of options, but lots to remember.
+    - On your touch device, the option to 'Copy' should automatically pop up when you've highlighted the address. Unless you miss-tap, in which case you're back to square 1.
 3. Switch to or open your email app
-    + Search for your email app and open it. Easy.
-    + Open your web browser and find your email app amongst your bookmarks
+    - Search for your email app and open it. Easy.
+    - Open your web browser and find your email app amongst your bookmarks
 4. Compose/open a new email. Straightforward enough – just tap the icon.
 5. Paste the email address into the `To:` field. It didn't copy? Switch back to your web browser and start again. Got it now? Good stuff.
 
@@ -66,11 +66,9 @@ This would be fine for people like me who use Mail to access emails on their iPh
 A lot of your website's visitors will access their emails through their web browser. In other words, they open their web browser and navigate to a page where they log in to access their emails. These visitors are back to the clunky old 'select, copy, switch, paste' scenario.
 
 #### Business email services
-
 Business email services like Gmail or Office 365 offer a great experience on their web browser-based app, and many people prefer it over using a dedicated email app. They also offer loads of powerful features that you can only use via their web app.
 
 #### Personal email services
-
 Email services like Hotmail (now Outlook.com) and non-business Gmail are browser-based by default unless you actively set them up in a mail app. Others like Yahoo!Mail don't let you use any apps other than their own!
 
 A lot of people are given an email address by their phone/internet provider (Virgin, Sky, BT, etc.) which, again, are all browser-based by default.
@@ -87,14 +85,14 @@ There are ways your web designer can go some way to disguising your email addres
 
 Having a form on your website with a few input boxes (name, email, message – that kind of thing) is the easiest way for visitors to your website to send you a message. Here's a quick run-down of the advantages:
 
-+ No copying and pasting! Makes it as easy as possible to send a message: just fill out a form on the website and hit 'send'.
-+ You can allow the sender to do things they might not be able to in a normal email, for example, selecting an option from a dropdown menu or ticking a checkbox to join your mailing list.
-+ Keep anyone who sends you a message on your website – no opening of more apps.
-+ Allow you to offer the sender something to do: "Your message has been sent. Why not check out our blog?"
-+ Remove any educated guesswork as to the best way to present an email (plain text or mailto link).
-+ Keep your actual email address completely private, away from  the prying eyes of spam-bots.
-+ Your web designer can do all sorts of clever stuff to make sure as much spam as possible is intercepted before reaching your mailbox.
-+ Can keep a record of all emails sent to you in your website's database, in case you ever need that information.
+- No copying and pasting! Makes it as easy as possible to send a message: just fill out a form on the website and hit 'send'.
+- You can allow the sender to do things they might not be able to in a normal email, for example, selecting an option from a dropdown menu or ticking a checkbox to join your mailing list.
+- Keep anyone who sends you a message on your website – no opening of more apps.
+- Allow you to offer the sender something to do: "Your message has been sent. Why not check out our blog?"
+- Remove any educated guesswork as to the best way to present an email (plain text or mailto link).
+- Keep your actual email address completely private, away from  the prying eyes of spam-bots.
+- Your web designer can do all sorts of clever stuff to make sure as much spam as possible is intercepted before reaching your mailbox.
+- Can keep a record of all emails sent to you in your website's database, in case you ever need that information.
 
 
 ## So don't display your email address!

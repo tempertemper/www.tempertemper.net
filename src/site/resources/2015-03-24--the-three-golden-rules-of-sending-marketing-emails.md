@@ -11,9 +11,9 @@ Sending emails can be a bit of a minefield. Want to know how to avoid some commo
 
 There are 3 types of emails you can send:
 
-1. **Conversational**: These are the type of emails you'll usually send from your email mailbox. Asking a client or customer a question; that kind of thing. Written by a human being (you!).
-2. **Transactional**: These are triggered automatically when when a visitor to your website or a user of your service needs them. They're usually pre-written templates and serve a definite purpose. A good example would be a payment confirmation email when you order something online.
-3. **Group**: These are emails you send to a group of people. Typically something like a newsletter or promotional email of some sort.
+1. <b>Conversational</b>: These are the type of emails you'll usually send from your email mailbox. Asking a client or customer a question; that kind of thing. Written by a human being (you!).
+2. <b>Transactional</b>: These are triggered automatically when when a visitor to your website or a user of your service needs them. They're usually pre-written templates and serve a definite purpose. A good example would be a payment confirmation email when you order something online.
+3. <b>Group</b>: These are emails you send to a group of people. Typically something like a newsletter or promotional email of some sort.
 
 It's the **third type** of email—group email—I'll be homing in on here. We should probably flesh out the description a little bit…
 
@@ -22,8 +22,7 @@ Rarely will you need to send a group email in any context other than *marketing*
 In this article, I'm not going to get into optimal sending frequencies and all that jazz as, really, that depends on your business and your audience. Instead I'm going let you know how to send group/marketing emails and keep your recipients happy.
 
 
-The law
--------
+## The law
 
 Let's start with the legal stuff. It's against the law to send someone a group/marketing email they didn't ask for. Unfortunately—and surprisingly—this isn't the case for physical junk mail that drops through your letterbox!
 
@@ -39,14 +38,13 @@ The ICO [expands on the third point a little](https://ico.org.uk/for-the-public/
 
 This makes sense, as it's not unheard of to send a group email to ask for customer feedback or make an announcement:
 
-* I sent out a survey a year or more a go to make sure I had my clients' most up to date contact details and knew their preferred way of being contacted (phone, email, etc.).
-* It also allows for announcements: "Hi everyone, we'll be closed for 2 weeks over the Christmas period"; that kind of thing.
+- I sent out a survey a year or more a go to make sure I had my clients' most up to date contact details and knew their preferred way of being contacted (phone, email, etc.).
+- It also allows for announcements: "Hi everyone, we'll be closed for 2 weeks over the Christmas period"; that kind of thing.
 
 Of course, you wouldn't send those to people who you didn't have a "clearly defined customer relationship" with.
 
 
-Three golden rules
-------------------
+## Three golden rules
 
 It's unlikely (though entirely possible) that you'll be fined or taken to court as a result of breaking one of the three rules above. What's more at stake is your reputation, both on and off-line. I'd amend the rules slightly as the first isn't really something you'd do – why would you want to conceal your identity? Here are my 3 golden rules:
 
@@ -79,8 +77,7 @@ I would advise you automate this process. The best way to do this is to use an o
 A final word of warning: even a 'transactional' email saying "You have been removed from our mailing list. Sure you don't want to rejoin?" may get up some people's noses. Keep all of that as part of the web-based unsubscribe process and let the last email your recipient receives be the one they used to unsubscribe.
 
 
-Consequences
-------------
+## Consequences
 
 Breaking one or more of the three golden rules could have serious consequences. The obvious risk is that the recipient gets annoyed. That's one relationship tarnished, but what about if they share their frustrations with their friends, colleagues or on Twitter? Not great PR.
 
@@ -101,8 +98,7 @@ Every time an email you send is marked as spam the likelihood of your email addr
 _*It's a wee bit more complicated than just your email address, but I don't want to overload/bore you with technical stuff, so, for the purposes of this article, we can get away with 'email address'._
 
 
-Best practices
---------------
+## Best practices
 
 It's a good idea to make sure you keep recipients of your marketing emails happy. You can do this by following the three golden rules:
 

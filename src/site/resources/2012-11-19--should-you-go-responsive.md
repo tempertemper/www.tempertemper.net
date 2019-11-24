@@ -13,6 +13,7 @@ How easy will your website be to view on the small screen of an iPhone? How abou
 
 The word responsive has two meanings where websites are concerned; the obvious one being when a site reacts nicely to your clicks and taps. But ever since [Ethan Marcotte's article for A List Apart](http://www.alistapart.com/articles/responsive-web-design/) back in 2010, responsive has taken on a whole new meaning…
 
+
 ## What is a website?
 
 I'm a great believer in content being central to any website. What's the point in having a website unless you've got something to say?
@@ -20,6 +21,7 @@ I'm a great believer in content being central to any website. What's the point i
 That might be something as simple as a heading, quick paragraph, a picture and a few contact details, or it may be something a little or a lot more complex and involved.
 
 Either way, your website's content should be as easy to consume as possible.
+
 
 ## Respond!
 
@@ -33,13 +35,15 @@ Unfortunately, this single column layout is unlikely to translate well onto a ta
 
 You want your site to respond to the size of the visitor's screen so that they read your content in the best possible way!
 
+
 ## Mobile site?
 
 "But wouldn't it be better to just create a mobile specific website?" I hear you cry. Well, probably not. In some circumstances it might be the right thing to do but here are some good reasons why you should consider a responsive site instead:
 
-- A mobile specific website is twice the effort– you have to maintain two websites!
+- A mobile specific website is twice the effort – you have to maintain two websites!
 - You can run into issues with search engines if it's not handled correctly, and you could end up with penalties.
 - Truly responsive websites serve up the optimal layout, regardless of the width of the the screen you're looking at the site with. You're going to have to draw a line somewhere with a mobile specific site and say "this is where the mobile ends and the desktop begins". Who knows what the future of mobile is? That 'break-point' may have to change, which will potentially mean an entire redesign of your mobile and/or desktop website.
+
 
 ## Everyone wants to see all of your content
 
@@ -55,6 +59,7 @@ The answer a lot of (although—annoyingly—not all) websites provide is a link
 
 If there's some content you feel you can do without on your mobile site, have a think about whether it's relevant at all! The best approach to deciding what content to use on a website is to whittle it down as far as possible to deliver the most focussed experience you can.
 
+
 ## Softly softly
 
 Responsive design is a pretty involved process, involving extra maths and sometimes multiple layout designs.
@@ -67,9 +72,11 @@ You can have your site developed for mobile and desktop/laptop, meaning the same
 
 An adaptive approach means that your mobile visitors will see your content in one layout and all other visitors will see the desktop version.
 
+
 ## Extra breakpoints
 
-Of course, if you like, you can add extra breakpoints for tablet sized layouts, widescreen monitors, etc. (the latter will be more and more useful as more people use televisions and games consoles to access the web)– you're not limited to mobile and non-mobile!
+Of course, if you like, you can add extra breakpoints for tablet sized layouts, widescreen monitors, etc. (the latter will be more and more useful as more people use televisions and games consoles to access the web) – you're not limited to mobile and non-mobile!
+
 
 ## Do some digging
 
@@ -80,6 +87,7 @@ If you already have a website your [analytics](http://tempertemper.net/blog/goog
 Your analytics will also tell you how many widescreen visitors you're getting.
 
 For those that are having a website developed from scratch you probably don't have any analytics to base your decision on, but your relationship with your clients is still very valuable: how about sending them a survey asking how they access the internet? Or you could use the results of an online [survey into general smartphone usage](http://pewinternet.org/Reports/2012/Smartphone-Update-2012/Findings.aspx) to base your decision on.
+
 
 ## Responsivificate* me!
 

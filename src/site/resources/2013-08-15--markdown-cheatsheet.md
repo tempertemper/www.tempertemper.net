@@ -11,6 +11,7 @@ tags:
 
 Markdown is a [brilliant way to write content](http://tempertemper.net/blog/what-is-markdown) for the web. Here's a quick overview of the most commonly used Markdown, for your reference.
 
+
 ## Let's start with headings
 
 To make a heading, all you need to do is use # symbols before the heading itself, like this:
@@ -104,8 +105,9 @@ Surround the text you want to be the link in square brackets and—without a spa
 
 There's also a special way to [link to other pages in your site](/blog/how-to-write-a-link-using-markdown).
 
+
 ## Digging deep
 
-If you really want to get into Markdown, a great place to start is with John Gruber's Daring Fireball website– he's the guy who developed it and his [documentation](http://daringfireball.net/projects/markdown/) is extremely thorough!
+If you really want to get into Markdown, a great place to start is with John Gruber's Daring Fireball website – he's the guy who developed it and his [documentation](http://daringfireball.net/projects/markdown/) is extremely thorough!
 
 And, by the way, in case you're curious, I write all of my blog posts in Markdown. Any questions, [just ask](https://twitter.com/tempertemper)!

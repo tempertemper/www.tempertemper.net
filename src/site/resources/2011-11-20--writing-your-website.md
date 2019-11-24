@@ -11,6 +11,7 @@ Writing the copy for your site is probably one of the most important jobs you'll
 
 I'm not going to get into keywords as that has been [covered elsewhere](http://tempertemper.net/blog/keywords) on this blog. Instead I'll focus on how to tackle what you're going to write on your website.
 
+
 ## Have a clear objective
 
 Before putting pen to paper or your fingers on the keyboard, consider the purpose of your text.
@@ -18,6 +19,7 @@ Before putting pen to paper or your fingers on the keyboard, consider the purpos
 Think about your audience: who are they? What do you want them to do? Decide on three outcomes; these may include things as direct as 'they enquire about my product' or 'they share my page with their friends on Facebook' it may be something as simple as 'they read more pages on my website'.
 
 Have a think about how you can get them to achieve these objectives.
+
 
 ## Getting started
 
@@ -27,12 +29,14 @@ Once you've got what you want to write about down you can start grouping related
 
 From here it will be much easier to start to writing your content.
 
+
 ## You don't have long
 
 From the moment they start reading, you've only got two or three seconds to draw your reader into your article. Thankfully, that's a surprisingly large number of words: around 18 or so.
 
 Use these eighteen words to give your reader a reason to read on.
 These 18 words can be your header! Rather counterintuitively, long headers have been proven to be more effective that short ones, so why not make your header do the work!
+
 
 ## Don't sell your product
 
@@ -42,6 +46,7 @@ Talk to them, don't describe yourself. Engage them in this way and tell them abo
 Be careful not to go too far though! Telling your reader that you can provide them with a life of luxury and excess might be a little unbelievable. But do tell them that using your services can increase their profits or that your product will free up their time so that they can get on with the more important things in life.
 
 There's a popular analogy of selling a drill. It relays something like 'you're not selling the drill, you're selling a way to put holes in your wall to put a shelf up'. I'd argue that you could go one step further an tell them about the family picture that'll sit nicely on top of the shelf!
+
 
 ## Take no chances
 
