@@ -1,5 +1,6 @@
 {
   "layout": "base.html",
+  "hideIntro": true,
   "tags" : ["resource"],
   "permalink": "resources/{{ title | slug | safe }}.html"
 }
