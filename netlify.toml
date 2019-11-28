@@ -880,11 +880,10 @@
   force = true
 
 [[redirects]]
-  from = "/resources/types-of-email-and-when-to-use each"
+  from = "/resources/types-of-email-and-when-to-use%C2%A0each"
   to = "/resources/types-of-email-and-when-to-use-each"
   status = 301
   force = true
-
 
 # Spam rewrites
 [[redirects]]
