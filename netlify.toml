@@ -873,6 +873,18 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/testimonials/jonny-pénzes-underhill"
+  to = "/testimonials/jonny-penzes-underhill"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/types-of-email-and-when-to-use each"
+  to = "/resources/types-of-email-and-when-to-use-each"
+  status = 301
+  force = true
+
 
 # Spam rewrites
 [[redirects]]
