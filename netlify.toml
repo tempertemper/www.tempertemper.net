@@ -894,13 +894,13 @@
 
 [[redirects]]
   from = "/blog/wp-login.php"
-  to = "/404"
+  to = "/blog/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/resources/wp-login.php"
-  to = "/404"
+  to = "/resources/"
   status = 301
   force = true
 
