@@ -6,12 +6,10 @@
         {% include "navigation-secondary.html" %}
     </nav>
     <div class="social">
-        <a href="{{ site.author.twitter | twitterLink }}" class="twitter-link">
-            {% set footer = true %}
-            {% include "svg/twitter.svg" %}
-            <span>
-                {{ site.author.twitter }}
-            </span>
+        <a href="{{ site.author.twitter | twitterLink }}">
+            {%- set footer = true -%}
+            {%- include "svg/twitter.svg" -%}
+            {{ site.author.twitter }}
         </a>
     </div>
     <p class="copyright">&copy;&nbsp;copyright 2009&nbsp;to&nbsp;{{ "" | getCurrentYear }}</p>
