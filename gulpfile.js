@@ -51,9 +51,7 @@ const scssConfig = function() {
 };
 
 const autoprefixerConfig = function() {
-  return autoprefixer({
-    flexbox: false
-  })
+  return autoprefixer()
 };
 
 // Clean patterns folder

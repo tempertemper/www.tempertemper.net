@@ -49,8 +49,9 @@
 .social {
   margin-top: 1em;
 
-  .twitter-link {
+  a {
     display: inline-flex;
+    align-items: center;
 
     @media (min-width: $m) {
       justify-content: center;

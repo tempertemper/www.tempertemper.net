@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Fixes
+- Fixes weird issue where twitter icons weren't showing on iOS
+- Fixes weird issue where twitter link in footer wasn't showing on iOS
+
 ----------
 
 ## [5.5.4] - 2019-11-22
