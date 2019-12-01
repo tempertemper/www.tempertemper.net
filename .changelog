@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Adds 404 configuration in Browsersync
+- 'More posts' section after each blog post and resource
 
 ### Fixes
 - Fixes weird issue where twitter icons weren't showing on iOS
