@@ -1,10 +1,13 @@
+{%- if (tags.length >= 1 and (tags.includes('post') or tags.includes('resource'))) or home %}
+    {%- set briefPostInList = true %}
+{%- endif %}
 <li class="post-in-list">
-    {% if home %}<h3>{% else %}<h2 class="entry-title">{% endif %}
+    {% if briefPostInList %}<h3>{% else %}<h2 class="entry-title">{% endif %}
         <a href="{{ post.url  | replace(".html", "") }}">
             {{ post.data.title | smart | safe }}
         </a>
-    {% if home %}</h3>{% else %}</h2>{% endif %}
-    {% if not home %}
+    {% if briefPostInList %}</h3>{% else %}</h2>{% endif %}
+    {% if not briefPostInList %}
     <p class="details">
         {% if post.data.tags.includes('post') %}
             Article

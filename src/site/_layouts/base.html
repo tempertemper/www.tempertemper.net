@@ -28,6 +28,7 @@
                     {% if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
                         {% include "post-details.html" %}
                         {% include "call-to-action.html" %}
+                        {% include "more-posts.html" %}
                     {% elif tags.length >= 1 and tags.includes('testimonial') %}
                         <p><a href="/testimonials" class="back">View more testimonials</a></p>
                         {% include "call-to-action.html" %}
