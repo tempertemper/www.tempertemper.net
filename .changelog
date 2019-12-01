@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds 404 configuration in Browsersync
+
 ### Fixes
 - Fixes weird issue where twitter icons weren't showing on iOS
 - Fixes weird issue where twitter link in footer wasn't showing on iOS
