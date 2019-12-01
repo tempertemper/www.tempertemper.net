@@ -9,6 +9,7 @@ const notifier = require('node-notifier');
 const exec = require('child_process').exec;
 const uglify = require('gulp-uglify');
 const del = require('del');
+const fs = require("fs");
 
 // Define paths
 const paths = {
@@ -149,7 +150,18 @@ gulp.task('serve', () => {
     },
     open: false,
     notify: false,
-    injectChanges: true
+    injectChanges: true,
+    callbacks: {
+      ready: function(err, bs) {
+        const content_404 = fs.readFileSync('dist/404.html');
+
+        bs.addMiddleware("*", (req, res) => {
+          // Provides the 404 content without redirect.
+          res.write(content_404);
+          res.end();
+        });
+      }
+    }
   });
   gulp.watch(paths.src.site, gulp.parallel('generate'));
   gulp.watch(paths.src.styles, gulp.parallel('styles'));
