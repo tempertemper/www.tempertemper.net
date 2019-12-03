@@ -1,0 +1,28 @@
+{%- if tags.includes('post') %}
+    {%- set typeOfThing = 'post' %}
+    {%- set linkToList = '/blog/' %}
+{%- elif tags.includes('resource') %}
+    {%- set typeOfThing = 'resource' %}
+    {%- set linkToList = '/resources/' %}
+{%- endif %}
+<section class="teaser">
+    <h2>More {{ typeOfThing }}s</h2>
+    <p>Here are a couple more {{ typeOfThing }}s for you to enjoy. If that's not enough, have a look at <a href="{{ linkToList }}">the full list</a>.</p>
+    <ol class="hfeed index-list" reversed>
+        {%- if tags.includes('post') %}
+            {%- set posts = collections.post %}
+        {%- elif tags.includes('resource') %}
+            {%- set posts = collections.resource %}
+        {%- endif %}
+        {%- set limit = 2 %}
+        {%- for post in posts | reverse %}
+            {%- if title === post.data.title %}
+                {%- set limit = 3 %}
+            {%- else %}
+                {%- if loop.index <= limit %}
+                    {% include "post-in-list.html" %}
+                {%- endif %}
+            {%- endif %}
+        {%- endfor %}
+    </ol>
+</section>

@@ -7,7 +7,7 @@ layout: base
 permalink: colophon.html
 ---
 
-This website was built with [Eleventy](https://www.11ty.io), [Gulp](https://gulpjs.com/), [SCSS](http://sass-lang.com) and carefully considered HTML.
+This website was lovingly put together using [Eleventy, the best static site generator](/blog/website-version-5) I've come across, hands-down. The build itself is taken care of by [Gulp](https://gulpjs.com/), but I'm in the process of removing that extra dependency and moving to [npm scripts](https://css-tricks.com/why-npm-scripts/). It's all [hosted on Netlify](/blog/moving-to-netlify).
 
 
 ## Typography
@@ -17,7 +17,14 @@ This website was built with [Eleventy](https://www.11ty.io), [Gulp](https://gulp
 - Code examples: [Menlo](http://en.wikipedia.org/wiki/Menlo_%28typeface%29) by [Jim Lyles](https://www.myfonts.com/person/Jim_Lyles/)
 
 
-## Sass tools
+## Styling
 
-+ [Susy](http://susy.oddbird.net) by Oddbird
-+ [Modular Scale](https://github.com/modularscale/modularscale-sass) by [Scott Kellum](http://scottkellum.com/)
+The styling is written in [SCSS](http://sass-lang.com) with a smattering of [Post CSS](https://postcss.org). The Sass tools I'm using are:
+
+- [Susy](http://susy.oddbird.net) by Oddbird, though it's [on my to-do list](https://github.com/tempertemper/tempertemper.net/projects/1?fullscreen=true) to refactor the layout using CSS Grid
+- [Modular Scale](https://github.com/modularscale/modularscale-sass) by [Scott Kellum](http://scottkellum.com/), for a proper type scale
+
+
+## Scripts
+
+There is no JavaScript at all on this website! Analytics are taken care of by [Netlify Analytics](http://localhost:3000/blog/ditching-google-analytics-in-favour-of-netlify-analytics) and the rest is just plain old HTML and CSS.
