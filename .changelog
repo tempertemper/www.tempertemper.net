@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.5.5] - 2019-12-03
+
 ### Adds
 - Adds 404 configuration in Browsersync
 - 'More posts' section after each blog post and resource
@@ -22,7 +27,6 @@ All notable changes to this project will be documented in this file. The format 
 - Fixes weird issue where twitter icons weren't showing on iOS
 - Fixes weird issue where twitter link in footer wasn't showing on iOS
 
-----------
 
 ## [5.5.4] - 2019-11-22
 
