@@ -15,6 +15,9 @@ All notable changes to this project will be documented in this file. The format 
 - Adds 404 configuration in Browsersync
 - 'More posts' section after each blog post and resource
 
+### Changes
+- Updates colophon, adding Netlify
+
 ### Fixes
 - Fixes weird issue where twitter icons weren't showing on iOS
 - Fixes weird issue where twitter link in footer wasn't showing on iOS
