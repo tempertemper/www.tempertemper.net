@@ -885,9 +885,22 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/discrimination-on-the-web"
+  to = "/resources/disability-on-the-web"
+  status = 301
+  force = true
+
+
 # Spam rewrites
 [[redirects]]
   from = "/wp-login.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wp-login.php"
   to = "/404"
   status = 301
   force = true
