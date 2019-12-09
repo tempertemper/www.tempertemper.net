@@ -857,7 +857,7 @@
 
 [[redirects]]
   from = "/apple-touch-icon-precomposed.png"
-  to = "/blog"
+  to = "/assets/img/icons/apple-touch-icon-180x180.png"
   status = 301
   force = true
 
@@ -869,7 +869,7 @@
 
 [[redirects]]
   from = "/blog/free-security-updates"
-  to = "/assets/img/icons/apple-touch-icon-180x180.png"
+  to = "/blog/"
   status = 301
   force = true
 
@@ -888,6 +888,30 @@
 [[redirects]]
   from = "/blog/discrimination-on-the-web"
   to = "/resources/disability-on-the-web"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/dropbox-–-my-most-useful-app"
+  to = "/blog/dropbox-my-most-useful-app"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/blog/thoughts-on-3d-touch"
+  to = "/blog/thoughts-on-3d-touch"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/contact"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about/colophon"
+  to = "/colophon"
   status = 301
   force = true
 
