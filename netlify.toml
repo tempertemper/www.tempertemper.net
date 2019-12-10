@@ -892,7 +892,7 @@
   force = true
 
 [[redirects]]
-  from = "/blog/dropbox-–-my-most-useful-app"
+  from = "/blog/dropbox-%E2%80%93-my-most-useful-app"
   to = "/blog/dropbox-my-most-useful-app"
   status = 301
   force = true
