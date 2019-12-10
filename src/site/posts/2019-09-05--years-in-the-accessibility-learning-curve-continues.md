@@ -32,7 +32,7 @@ I was wrong. You see, I do most of my screen reader testing in VoiceOver, which 
 
 ## The problem
 
-`<aside>`s get an [implicit ARIA landmark role](https://tempertemper.net/blog/implicit-aria-landmark-roles) of `complementary` and it turns out you shouldn't use `role="complementary"` inside any other landmarks.
+`<aside>`s get an [implicit ARIA landmark role](/blog/implicit-aria-landmark-roles) of `complementary` and it turns out you shouldn't use `role="complementary"` inside any other landmarks.
 
 It makes sense when you think about it – it's content that's complementary to the *document itself*, not a *part* of the document. Using `<main>` as an example, once you've used the `<main>`  landmark, you've told the browser that that's the primary page content, so any `<aside>`s in there would be related to that, not the document itself.
 

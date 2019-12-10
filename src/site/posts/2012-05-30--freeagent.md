@@ -20,7 +20,7 @@ Their support team were great and reset my trial period so I made a point of fin
 
 Now I have all of my business contacts, projects, invoicing and expenses in the same place and they integrate with each other nicely, so I can find out how my cashflow's looking, what my current tax liability for the year is, what payments are currently outstanding and when they're due and so on.
 
-The invoices that are sent are based on templates but the great news is, they're customisable! You can even write your own! The templates are written using the same languages that web pages are written in, so if you'd like me to design your 'stationery' for you I'd be [happy to give you a price](http://tempertemper.net/contact).
+The invoices that are sent are based on templates but the great news is, they're customisable! You can even write your own! The templates are written using the same languages that web pages are written in, so if you'd like me to design your 'stationery' for you I'd be [happy to give you a price](/contact).
 
 There are a bunch of features I haven't explored yet so I've got a feeling that I've only scratched the surface and my workflow is already much more streamlined! Imagine how slick things are going to be in another couple of months once I've delved deeper into the software!
 

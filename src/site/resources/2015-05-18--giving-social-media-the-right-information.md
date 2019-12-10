@@ -14,7 +14,7 @@ Put some text in a box. Press enter.
 
 Writing a post on social media used to be so easy… These days, when you enter a web address into that little box some extra things happen.
 
-When you type or paste the web address (or 'URL', something like `https://tempertemper.net/about`), a whole host of other information will appear, including things like:
+When you type or paste the web address (or 'URL', something like `https://www.tempertemper.net/about`), a whole host of other information will appear, including things like:
 
 - The business or website's name
 - A title for the page being linked to

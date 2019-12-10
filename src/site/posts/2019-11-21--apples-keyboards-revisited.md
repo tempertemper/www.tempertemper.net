@@ -58,7 +58,7 @@ The keyboard itself might have been perfected—it looks to have hit the right b
 
 The Touch Bar has gone unchanged, aside from being slightly less wide to accommodate the hardware escape key.
 
-Apple have [moved away from 3D Touch on iPhones](https://tempertemper.net/blog/iphone-event-2019) but it's still a big part of Apple Watch so isn't something they're abandoning altogether, and I'm hoping it makes it into the Touch Bar. This would add much-needed resistance, meaning fewer accidental Touch Bar presses.
+Apple have [moved away from 3D Touch on iPhones](/blog/iphone-event-2019) but it's still a big part of Apple Watch so isn't something they're abandoning altogether, and I'm hoping it makes it into the Touch Bar. This would add much-needed resistance, meaning fewer accidental Touch Bar presses.
 
 Finally, throw in a Taptic Engine to provide the physical feedback you get from pressing a physical key so that you know if you *have* made an accidental press.
 
