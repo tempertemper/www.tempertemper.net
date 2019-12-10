@@ -40,4 +40,4 @@ There are a certain few typefaces/fonts that are available on every computer or 
 
 ## Typefaces and tools
 
-If you'd like to know more about the tools and building blocks I've chosen to use on tempertemper.net, have a look at [the colophon](/about/colophon).
+If you'd like to know more about the tools and building blocks I've chosen to use on this site, have a look at [the colophon](/about/colophon).

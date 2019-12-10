@@ -7,7 +7,7 @@ date: 2019-10-07
 
 I broke my golden rule this morning.
 
-As usual, I woke up at 5:30am, made myself a cup of tea and sat down with my laptop. But instead of opening [iA Writer](https://tempertemper.net/blog/in-search-of-the-best-writing-app) and working on an article, I did some freelance work.
+As usual, I woke up at 5:30am, made myself a cup of tea and sat down with my laptop. But instead of opening [iA Writer](/blog/in-search-of-the-best-writing-app) and working on an article, I did some freelance work.
 
 I've created something of [a ritual around my writing](https://zenhabits.net/the-art-of-creating-a-ritual-for-what-matters-most/) each morning. That time is treated as sacred. Or at least it was supposed to be…
 

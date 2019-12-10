@@ -21,11 +21,11 @@ Using `!=` as an example, you still type two characters, `!` and `=` but Fira Co
 
 There are *loads* of operator ligatures as well as other nice touches like the classic `Fl`/`fl` ligatures and nicely joined-up Markdown header `###` markers. The [Fira Code repo](https://github.com/tonsky/FiraCode) has an easy-to-look-at comparison of all the ligatures it uses alongside Fira Mono.
 
-But I couldn't get used to it! And I realised I didn't *want to* get used to it. [I like customisation, but I have my limits](https://tempertemper.net/blog/why-im-not-using-git-aliases), and ligatures feel like they go too far:
+But I couldn't get used to it! And I realised I didn't *want to* get used to it. [I like customisation, but I have my limits](/blog/why-im-not-using-git-aliases), and ligatures feel like they go too far:
 
 - I've been writing ligature-less operators for the longest time so I'd've had to effectively re-learn them
 - I'd then be locked in a world where I could only use coding fonts with operator ligatures, which would limit my options
-- Using ligatures for code examples on my website, presentation or [video](https://youtube.com/tempertemper) would mean most people would have to work harder to translate my fancy operators back into the ones they use every day
+- Using ligatures for code examples on my website, presentation or [video](https://www.youtube.com/tempertemper) would mean most people would have to work harder to translate my fancy operators back into the ones they use every day
 
 There are plenty of [alternatives to Fira Code](https://github.com/tonsky/FiraCode#alternatives) and as Nikita Prokopov, who made the Fira Code fork, says:
 

@@ -34,7 +34,7 @@ permalink: feeds/main.xml
         {% for category in postTags %}<category>{{ category }}</category>{% endfor %}
         {%- endif %}
         <content type="html" xml:lang="en"><![CDATA[
-            {{ post.templateContent | safe }}<p>The article <a rel="nofollow" href="{{ site.url }}{{ post.url | replace (".html", "") }}">{{ post.data.title }}</a> appeared first on <a rel="nofollow" href="{{ site.url }}">tempertemper.net</a>.</p>
+            {{ post.templateContent | safe }}<p>The article <a rel="nofollow" href="{{ site.url }}{{ post.url | replace (".html", "") }}">{{ post.data.title }}</a> appeared first on <a rel="nofollow" href="{{ site.url }}">www.tempertemper.net</a>.</p>
             ]]></content>
     </entry>
     {%- endfor %}

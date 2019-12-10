@@ -7,7 +7,7 @@ excludeFromSitemap: true
     {%- for page in collections.all | reverse %}
         {%- if not page.data.excludeFromSitemap %}
             <url>
-                <loc>https://tempertemper.net{{ page.url | replace(".html", "") }}</loc>
+                <loc>{{ site.url }}{{ page.url | replace(".html", "") }}</loc>
             </url>
         {%- endif %}
     {%- endfor %}

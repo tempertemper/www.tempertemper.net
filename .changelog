@@ -11,6 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Changes all URLs to reference site at `www.` subdomain
+
+### Fixes
+- Removes absolute URLs from blog posts and resources
+- Fixes funky URL in email resource
+
 ----------
 
 
