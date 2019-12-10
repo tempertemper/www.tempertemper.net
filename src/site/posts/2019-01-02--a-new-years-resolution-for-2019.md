@@ -59,6 +59,6 @@ If you're interested, here are some of the other things I'm looking at doing mor
 
 Towards the end of 2018, I enjoyed getting back into speaking and gave an ever-evolving talk on accessible design patterns three times at work and twice at local meet-ups. I'm giving the talk at work again in a week or so and am already giving thought to my next subject.
 
-I tried recording the talk at each of the meet-ups but neither turned out all that great, so I plan to record it especially for YouTube. Producing video content has been at the front of my mind for a while now so subscribe to my [YouTube channel](https://tempertemper.net/youtube) to be notified when I post my next video.
+I tried recording the talk at each of the meet-ups but neither turned out all that great, so I plan to record it especially for YouTube. Producing video content has been at the front of my mind for a while now so subscribe to my [YouTube channel](https://www.youtube.com/tempertemper) to be notified when I post my next video.
 
 See you here again next Wednesday morning!

@@ -7,7 +7,7 @@ tags:
     - Tools
 ---
 
-Anyone who knows me will know I like to keep things tidy. Whether it's my desk, the contents of my work bag or the files on my computer, everything has its place. This helps me [keep in control](https://tempertemper.net/blog/controlling-email) and is why I still believe RSS has its place.
+Anyone who knows me will know I like to keep things tidy. Whether it's my desk, the contents of my work bag or the files on my computer, everything has its place. This helps me [keep in control](/blog/controlling-email) and is why I still believe RSS has its place.
 
 
 ## But what _is_ RSS?

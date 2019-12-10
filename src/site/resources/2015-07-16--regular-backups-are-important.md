@@ -55,6 +55,6 @@ There are ways of automatically backing up your website. Your web designer shoul
 
 ## Phew
 
-Lots of options! So it's likely that if the worst happens and your website disappears from its place on the internet, there's a recent-ish back up _somewhere_. Sure, you might have to dig out the last couple of blog posts you wrote, but if you [wrote them off-line](https://tempertemper.net/blog/edit-your-blog-posts-off-line) you have even less to worry about!
+Lots of options! So it's likely that if the worst happens and your website disappears from its place on the internet, there's a recent-ish back up _somewhere_. Sure, you might have to dig out the last couple of blog posts you wrote, but if you [wrote them off-line](/blog/edit-your-blog-posts-off-line) you have even less to worry about!
 
 As ever, if you're not sure where you stand on this one, just [ask your web designer](contact) and they'll be able to sort something out for you.

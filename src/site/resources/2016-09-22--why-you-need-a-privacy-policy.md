@@ -51,7 +51,7 @@ It seems we're legally required to get permission from our visitors to track the
 
 A difficult question… Strictly speaking: yes. But it's more complicated than that.
 
-I'm no lawyer, so I don't want to tell you not to. What I _can_ say is that I _don't_ have a pop up that asks for permission to set cookies, or even one that simply informs the visitor I'm setting cookies. I _do_, however, have a [privacy policy](https://tempertemper.net/legal/privacy-policy) that's accessible from every page of the site (in the footer).
+I'm no lawyer, so I don't want to tell you not to. What I _can_ say is that I _don't_ have a pop up that asks for permission to set cookies, or even one that simply informs the visitor I'm setting cookies. I _do_, however, have a [privacy policy](/legal/privacy-policy) that's accessible from every page of the site (in the footer).
 
 Pop-ups are a horrible thing to inflict on users, and Google have recently blogged that they will [penalise sites with pop ups](https://webmasters.googleblog.com/2016/08/helping-users-easily-access-content-on.html).
 

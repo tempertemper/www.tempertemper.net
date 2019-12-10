@@ -7,7 +7,7 @@ tags:
     - Tools
 ---
 
-This article is now _very_ out of date. I have since written a [more up to date account of how I use RSS](https://tempertemper.net/blog/why-i-still-use-rss).
+This article is now _very_ out of date. I have since written a [more up to date account of how I use RSS](/blog/why-i-still-use-rss).
 
 ~~So what's all this talk about RSS, feeds, subscribing, etc.?~~
 
