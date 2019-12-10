@@ -23,7 +23,7 @@ The idea that quantity *equals* quality, as opposed to quantity and quality bein
 
 Rhythm is the thing I've had to keep on top of. Where I've not been poorly, tired after a difficult night's sleep because of the kids, or on holiday, I've set my alarm for 5am and spent an hour or more every morning before everyone else in the house wakes up.
 
-I've tried to keep articles [short and sweet](https://tempertemper.net/blog/settling-for-less), but inevitably some, like [my take on Dropbox](/blog/stop-the-ride-i-want-to-get-off) which started out as a simple comment, grew arms and legs and took several weeks to get just right. Shorter, snappier articles can be more timely (I'll no doubt write something about the [forthcoming Apple event](https://www.loopinsight.com/2019/08/29/apple-sends-invite-for-september-10-event/)) and are more likely to be read, but more importantly, they keep the rhythm going.
+I've tried to keep articles [short and sweet](/blog/settling-for-less), but inevitably some, like [my take on Dropbox](/blog/stop-the-ride-i-want-to-get-off) which started out as a simple comment, grew arms and legs and took several weeks to get just right. Shorter, snappier articles can be more timely (I'll no doubt write something about the [forthcoming Apple event](https://www.loopinsight.com/2019/08/29/apple-sends-invite-for-september-10-event/)) and are more likely to be read, but more importantly, they keep the rhythm going.
 
 
 ## Setting a target

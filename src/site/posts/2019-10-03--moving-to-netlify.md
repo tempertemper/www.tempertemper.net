@@ -10,7 +10,7 @@ tags:
 
 I've never enjoyed hosting. After all these years I'm comfortable enough poking round a server, but I'd be perfectly happy if I never had to SSH into another Linux box as long as I live. And Netlify looks like a good route into that happy place!
 
-My website is now [built with a static site generator](https://tempertemper.net/blog/website-version-5) and I moved it from my own server to Netlify a couple of weeks ago. So far, I've been very impressed. Here's a quick run-down of my thoughts:
+My website is now [built with a static site generator](/blog/website-version-5) and I moved it from my own server to Netlify a couple of weeks ago. So far, I've been very impressed. Here's a quick run-down of my thoughts:
 
 - [Google Lighthouse](https://web.dev/measure) for 'Best Practices' was previously sitting in the high 90s, which was fine, but now it's coming back with a perfect score
 - Deployment is easy, and I don't need a service like [DeployHQ](https://www.deployhq.com/) sitting between GitHub and my server

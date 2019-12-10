@@ -58,7 +58,7 @@ Blog posts used to have their own categories; resources too. I hit up against so
 
 Since the new set up is fully customisable I can do things like generate `id`s on heading tags, using a slug based on the heading itself. That's without modifying the core application – all through configuration.
 
-So readers can link to an article's sub-heading using a fragment identifier like `https://tempertemper.net/blog/website-version-5#ids-on-headings`. I haven't exposed them in the UI though so they're just a nice hidden extra for developers, using their browser's inspector.
+So readers can link to an article's sub-heading using a fragment identifier like `https://www.tempertemper.net/blog/website-version-5#ids-on-headings`. I haven't exposed them in the UI though so they're just a nice hidden extra for developers, using their browser's inspector.
 
 ### Public repository
 

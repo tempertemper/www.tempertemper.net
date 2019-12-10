@@ -14,7 +14,7 @@ I know people who go even further, using [Apple Script](https://developer.apple.
 
 On the other hand, I have a friend who switches on a brand-new Mac and doesn't change a thing. If a company like Apple, that cares so much about user experience and the *right* way to do things, decides that the mouse pointer should move a certain speed, that's good enough for him. One area I wholeheartedly agree with his philosophy is Git commands.
 
-In my (so far successful) quest to [ditch the GUI and dig into command line Git](https://tempertemper.net/blog/getting-to-grips-with-git) my attention has been grabbed a few times by aliases.
+In my (so far successful) quest to [ditch the GUI and dig into command line Git](/blog/getting-to-grips-with-git) my attention has been grabbed a few times by aliases.
 
 Not only do they look like a very quick way of doing things like `git remote prune origin`, but they'd stop mis-commands like `git prune remote origin` or `git prune origin`. It bugs me that pruning doesn't happen with a fetch, like it does in Tower, so aliasing `git fetch && git remote prune origin` to `gf` or something like that would be lovely. But there are a few reasons I don't want to.
 
