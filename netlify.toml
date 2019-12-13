@@ -850,6 +850,12 @@
   force = true
 
 [[redirects]]
+  from = "/assets/images/tempertemper-web-design-logo-facebook.jpg"
+  to = "/assets/img/summary.png"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/cms/addons/feathers/tempertemper/*"
   to = "/404"
   status = 301
@@ -912,6 +918,18 @@
 [[redirects]]
   from = "/about/colophon"
   to = "/colophon"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/%5D%28/blog/password-security%29"
+  to = "/resources/password-security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cms/resources/blog/internet-explorer-icon.png"
+  to = "/assets/img/summary.png"
   status = 301
   force = true
 
