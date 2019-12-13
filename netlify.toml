@@ -922,7 +922,7 @@
   force = true
 
 [[redirects]]
-  from = "%2Fresources%2F%5D%28%2Fblog%2Fpassword-security%29"
+  from = "/%2Fresources%2F%5D%28%2Fblog%2Fpassword-security%29"
   to = "/resources/password-security"
   status = 301
   force = true
