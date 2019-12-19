@@ -1,9 +1,22 @@
 ---
 title: Why 'tempertemper'?
 intro: |
-    Over the years, I've been asked where I got the name 'tempertemper' from. The answer is very simple.
+    Over the years, I've often been asked where I got the name 'tempertemper' from. The answer is very simple.
 date: 2019-12-12
+updated: 2019-12-18
 ---
+
+Starting a business is very exciting. One of the most difficult things, but also one of the most fun, is thinking up a business name. When I was coming up with my business name, I had some criteria that I wanted it to meet:
+
+1. It shouldn't include my name – if I was ever to grow it to the point where I'd want to sell, it would be weird to see something I no longer had anything to do with trading under my name
+2. It should be reasonably abstract – some of the things I started out doing might change as time went by (e.g. I no longer do print design, iOS app design, visual identity)
+3. It should be easy to read and pronounce
+4. It should be obscure enough that URLs, Twitter usernames, etc. should be easy enough to get
+5. If it's multiple words, the end of one word and the start of another shouldn't [form a new word](https://www.boredpanda.com/worst-domain-names/)
+6. It hopefully won't mean anything rude in another language
+
+
+## The idea
 
 Circa 2003, I was the guitarist and singer in a band that had been playing gigs around Newcastle. During that time, I saw a lot of other bands and picked up a lot of their CDs.
 
@@ -17,7 +30,7 @@ I came across an EP by a band I'd seen all those years ago on the Newcastle circ
 Like Radiohead did with Talking Heads' 'Radio Head', I removed the space, making it one word: 'tempertemper'. I also used all lowercase as capital `T`s look clunky ('TemperTemper'), and a capital initial ('Tempertemper') looks lopsided and places too much emphasis on the first 'temper'.
 
 
-## Easy to remember
+## Memorable
 
 I liked the repetition, alliteration and reinforcement of using the same word twice. Brands like TalkTalk used a similar device to good effect (yep, I'm ashamed to say that I'm referring to the [phone company](https://www.talktalk.co.uk), not the [excellent band](https://en.wikipedia.org/wiki/Talk_Talk)).
 
