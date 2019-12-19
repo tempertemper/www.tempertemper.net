@@ -4,7 +4,7 @@
         {% include "post-categories.html" %}
     </p>
     {% if updated %}
-        <p>Updated {{ updated | date }}.</p>
+        <p>Updated {{ updated | date }}</p>
     {% endif %}
     {% if tags.includes('resource') %}
         <p><a href="/resources/" class="back">Back to resources</a></p>
