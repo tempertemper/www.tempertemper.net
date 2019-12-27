@@ -3,6 +3,7 @@ title: Simplifying branching and deployment with GitHub Flow
 intro: |
     GitFlow is great but it's not quite right for every project. GitHub Flow is simpler and means I'll publish a feature or fix as soon as it's ready.
 date: 2019-12-14
+updated: 2019-12-27
 tags:
     - Git
     - Development
@@ -39,7 +40,7 @@ My only concern is versioning. With GitFlow, I use the release branches to:
 2. bump the version number
 3. tag the commit
 
-I've been doing 1. manually, and 2. and 3. using the [version-bump-prompt npm package](https://github.com/JS-DevTools/version-bump-prompt). I'll carry on doing this at the end of every piece of work, but for collaborative projects that's going to cause both merge conflicts and versioning issues. And if a PR needs work after the branch has been tagged, the tag will have to be deleted and re-added to the final commit.
+I've been doing 1. manually, and 2. and 3. using the [version-bump-prompt npm package](https://github.com/JS-DevTools/version-bump-prompt). I'll carry on doing this at the end of every piece of work, but for collaborative projects that's going to cause both merge conflicts and versioning issues. ~~And if a PR needs work after the branch has been tagged, the tag will have to be deleted and re-added to the final commit.~~ <b>Update:</b> I've sorted the tagging part of my process by [adding the tag *after* the PR has been merged](/blog/simplifying-branching-and-deployment-with-github-flow#the-drawbacks).
 
 I'm going to have to work out how to automate this as part of the PR/merge process. I've got a feeling that running some scripts via [GitHub Actions](https://github.com/features/actions) will be the answer, but that's another story for another blog post!
 
