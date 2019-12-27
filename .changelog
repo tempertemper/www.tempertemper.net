@@ -13,19 +13,21 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 
-## [5.6.1] - 2019-12-19
-- Removes tagging from version bump tasks
+
+## [5.6.2] - 2019-12-27
+Removes tagging from version bump tasks
+
 
 ## [5.6.1] - 2019-12-19
 
 ### Removes
-- Removes full-stop from 'updated' line at end of updated posts/resources
+Removes full-stop from 'updated' line at end of updated posts/resources
 
 
 ## [5.6.0] - 2019-12-10
 
 ### Changes
-- Changes all URLs to reference site at `www.` subdomain
+Changes all URLs to reference site at `www.` subdomain
 
 ### Fixes
 - Removes absolute URLs from blog posts and resources
@@ -39,7 +41,7 @@ All notable changes to this project will be documented in this file. The format 
 - 'More posts' section after each blog post and resource
 
 ### Changes
-- Updates colophon, adding Netlify
+Updates colophon, adding Netlify
 
 ### Fixes
 - Fixes weird issue where twitter icons weren't showing on iOS
@@ -49,7 +51,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [5.5.4] - 2019-11-22
 
 ### Adds
-- Redirects FreeAgent article flagged as 'not found' in Netlify Analytics
+Redirects FreeAgent article flagged as 'not found' in Netlify Analytics
 
 ### Changes
 - Uses small image Twitter card again
@@ -72,7 +74,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [5.5.2] - 2019-11-05
 
 ### Adds
-- Adds 'serverless' and 'git' tags to relevant posts
+Adds 'serverless' and 'git' tags to relevant posts
 
 ### Fixes
 - Adds some missing redirects for a couple of resources
@@ -86,7 +88,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds missing 'subscribed' page for mailing list
 
 ### Fixes
-- Changes way homepage feature posts are counted
+Changes way homepage feature posts are counted
 
 
 ## [5.5.0] - 2019-10-27
@@ -96,10 +98,10 @@ All notable changes to this project will be documented in this file. The format 
 - Changes Dark Mode highlighted text to black
 
 ### Fixes
-- Makes focus styles for links, buttons, the logo and the 'skip to content' link much more obvious
+Makes focus styles for links, buttons, the logo and the 'skip to content' link much more obvious
 
 ### Adds
-- Sublime Text project file syntax highlighting
+Sublime Text project file syntax highlighting
 
 
 ## [5.4.1] - 2019-10-21
@@ -118,7 +120,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [5.4.0] - 2019-10-16
 
 ### Adds
-- CV
+CV
 
 ### Changes
 - Updates repo name in package.json
@@ -128,7 +130,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [5.3.2] - 2019-10-12
 
 ### Fixes
-- Fixes colour contrast on buttons and forms when on box-out panels
+Fixes colour contrast on buttons and forms when on box-out panels
 
 ### Removes
 - Deletes now-unnecessary nginx config file
@@ -176,13 +178,13 @@ All notable changes to this project will be documented in this file. The format 
 ## [5.1.2] - 2019-08-30
 
 ### Adds
-- New article: 'Practice makes perfect'
+New article: 'Practice makes perfect'
 
 
 ## [5.1.1] - 2019-08-23
 
 ### Adds
-- New article: 'How to avoid disabled buttons'
+New article: 'How to avoid disabled buttons'
 
 
 ## [5.1.0] - 2019-08-21
@@ -227,13 +229,13 @@ All notable changes to this project will be documented in this file. The format 
 ## [5.0.14] - 2019-08-04
 
 ### Adds
-- Adds `<h4>`s and their styling back in
+Adds `<h4>`s and their styling back in
 
 
 ## [5.0.13] - 2019-08-04
 
 ### Adds
-- New article: 'Website version 5'
+New article: 'Website version 5'
 
 ### Changes
 - Reverses blog, resources and testimonials listings, so that the highest number is the one at the top of the list
@@ -260,29 +262,29 @@ All notable changes to this project will be documented in this file. The format 
 - Refactors heading sizes and styles across site
 
 ### Removes
-- Removes headings below level 3
+Removes headings below level 3
 
 ### Fixes
-- Updates markdown-it dependency to fix vulnerability
+Updates markdown-it dependency to fix vulnerability
 
 
 ## [5.0.11] - 2019-07-18
 
 ### Adds
-- New article: 'Right here, right now'
+New article: 'Right here, right now'
 
 ### Updates
 - Fleshes out some category descriptions
 - Updates Now page
 
 ### Fixes
-- Fixes some capitalisation on homepage
+Fixes some capitalisation on homepage
 
 
 ## [5.0.10] - 2019-07-17
 
 ### Adds
-- New article: 'Stop the ride, I want to get off'
+New article: 'Stop the ride, I want to get off'
 
 
 ## [5.0.9] - 2019-07-16
@@ -295,7 +297,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [5.0.8] - 2019-07-14
 
 ### Adds
-- New article: 'Refining my writing process'
+New article: 'Refining my writing process'
 
 ### Changes
 - Rewords homepage heading and intro, which now references the Now page
@@ -304,7 +306,7 @@ All notable changes to this project will be documented in this file. The format 
 - Changes URL of blog feeds to be more general, until more granular subscriptions are needed
 
 ### Fixes
-- Fixes final outstanding non-critical accessibility issues by refactoring `<aside>` and `role="complementary"`, and moving CTAs inside the `<main>` landmark
+Fixes final outstanding non-critical accessibility issues by refactoring `<aside>` and `role="complementary"`, and moving CTAs inside the `<main>` landmark
 
 
 ## [5.0.7] - 2019-07-13
@@ -335,7 +337,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [5.0.6] - 2019-07-02
 
 ### Adds
-- New blog post: 'Design and dev should be more joined up'
+New blog post: 'Design and dev should be more joined up'
 
 ### Changes
 - Rewords blog post CTA
@@ -343,7 +345,7 @@ All notable changes to this project will be documented in this file. The format 
 - Uses global data for twitter handle
 
 ### Removes
-- Stop post in list link sticking to bottom of container
+Stop post in list link sticking to bottom of container
 
 
 ## [5.0.5] - 2019-06-30
@@ -356,10 +358,10 @@ All notable changes to this project will be documented in this file. The format 
 ## [5.0.4] - 2019-06-30
 
 ### Adds
-- Generic ‘Follow’ CTAs on all pages except in blog, resource and testimonials sections
+Generic ‘Follow’ CTAs on all pages except in blog, resource and testimonials sections
 
 ### Removes
-- Takes 'edit on GitHub' link out of footer
+Takes 'edit on GitHub' link out of footer
 
 
 ## [5.0.3] - 2019-06-27
@@ -389,7 +391,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [5.0.2] - 2019-06-26
 
 ### Adds
-- New 'Getting to grips with Git' blog post
+New 'Getting to grips with Git' blog post
 
 ### Changes
 - Text in blog call to action
@@ -401,7 +403,7 @@ All notable changes to this project will be documented in this file. The format 
 - Gets rid of secondary button style variant
 
 ### Fixes
-- Twitter icon and text alignment in buttons
+Twitter icon and text alignment in buttons
 
 
 ## [5.0.1] - 2019-06-25
@@ -477,13 +479,13 @@ All notable changes to this project will be documented in this file. The format 
 ## [4.11.1] - 2019-01-04
 
 ### Adds
-- JSON feed
+JSON feed
 
 ### Changes
-- Moves RSS feed page template
+Moves RSS feed page template
 
 ### Fixes
-- Gets rid of extra whitespace in blog post listing category links
+Gets rid of extra whitespace in blog post listing category links
 
 
 ## [4.11.0] - 2018-11-29
@@ -549,7 +551,7 @@ All notable changes to this project will be documented in this file. The format 
 - underlines all links except headings
 
 ## Fixes
-- fixes `code` background when in a `pre`
+fixes `code` background when in a `pre`
 
 ## Removes
 - removes hyphenation from paragraph text so that words don't break
@@ -560,7 +562,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [4.10.1] - 2018-09-05
 
 ### Adds
-- Adds blue background colour to website that shows when the page bounces
+Adds blue background colour to website that shows when the page bounces
 
 
 ## [4.10.0] - 2018-08-29
@@ -628,4 +630,4 @@ All notable changes to this project will be documented in this file. The format 
 - Sorts out form width issue
 
 ### Removes
-- Gets rid of PostCSS Stylelint (for time being)
+Gets rid of PostCSS Stylelint (for time being)
