@@ -16,24 +16,24 @@ I love what I do and take pride in having invested time, money and a great deal 
 
 ## My ethos
 
-I work in a very consultative manner in order to deliver your message to your potential customers in the most effective way possible. I care about the final product and this means I often question or challenge ideas clients bring to me (very politely and diplomatically,  of course– I'm far from the argumentative type!). Having said that, please don't be shy with your ideas for the site– you know your business better than anyone!
+I work in a very consultative manner in order to deliver your message to your potential customers in the most effective way possible. I care about the final product and this means I often question or challenge ideas clients bring to me (very politely and diplomatically, of course – I'm far from the argumentative type!). Having said that, please don't be shy with your ideas for the site – you know your business better than anyone!
 
 The web is for everyone and, while the really technical stuff is best left to geeks like me, you'll come away from the project with a good understanding of how the web works. This is useful as you'll be responsible for the ongoing maintenance of your site's content.
 
-Your website is an ongoing work in progress. Once the project has finished we'll arrange a call 6 months down the line to go through your [analytics](/blog/google-analytics) and discuss any feedback you might have received. I believe long lasting relationships between website owners and web designers produce the most effective websites.
+Your website is an ongoing work in progress. Once the project has finished we'll arrange a call 6 months down the line to go through your [analytics](/blog/google-analytics) and discuss any feedback you might have received from visitors. I believe long lasting relationships between website owners and web designers produce the most effective websites.
 
-Finally, if it's not the right time to start your website I'll tell you. I'll even give you guidance on how to prepare things properly. Your money, wherever possible, should remain in your pocket– no sense in spending money on work that will later be undone.
+Finally, if it's not the right time to start your website I'll tell you. I'll even give you guidance on how to prepare things properly. Your money, wherever possible, should remain in your pocket – no sense in spending money on work that will later be undone.
 
 
 ## Cost
 
-My fee depends on the type of work you'd like me to do and length of contract. When outlining what your project is, please give a clear expectation of what you would like me to do and the budget you have available. I'll then be able to let you know what is feasible within your budget.
+My fee depends on the type of work you'd like me to do and length of contract. When outlining what your project is, please give a clear expectation of what you would like me to do, when you'd like it to be done by, and the budget you have available. I'll then be able to let you know what is feasible within your budget.
 
-To give you a very rough idea of what to expect, prices for start-to-finish website design and build start at around come in at around £5k.
+To give you a very rough idea of what to expect, prices for start-to-finish website design and build start at around £6k, though most projects need more and the average price is usually closer to £10k.
 
 ### Expenses
 
-I'll sometimes have some expenses, such as [web-font licenses](/blog/webfonts), stock image licenses, travel costs, hotel costs (if early starts or late nights are needed), subsistence costs if away from home, and any project-specific equipment or software. Where possible, expenses will be included in your estimate so you’ll know well in advance. If anything unexpected crops up during the project I’ll let you know as far in advance as possible so that you can approve it.
+I'll sometimes have some expenses for your project, such as [web-font licenses](/blog/webfonts), stock image licenses, travel costs, hotel costs (if early starts or late nights are needed), subsistence costs if away from home, and any project-specific equipment or software. Where possible, expenses will be included in your estimate so you’ll know well in advance. If anything unexpected crops up during the project I’ll let you know as far in advance as possible so that you can approve it.
 
 ### Negotiations
 
@@ -43,13 +43,13 @@ If your budget won't stretch to the total estimated project price, I'm happy to 
 
 A limited initial budget may mean a reduced initial amount of work followed by a series of regular monthly 'retainer' payments, allowing you to spread the cost (and the work) over a longer period.
 
-It's not unheard of that a client comes to me wanting A, B and C and it turns out that C isn't necessary or will detract from A and B, somehow. If I see that this is the case, I'll let you know and we can reduce the scope of the project to just A and B. Having assumed C was going to be part of the project, you may have budget remaining that you'd still like to invest, in which case I can help advise you to maximise the return on revenue spent.
+It's not unheard of that a client comes to me wanting `A`, `B` and `C` and it turns out that `C` isn't necessary or will detract from `A` and `B`, somehow. If I see that this is the case, I'll let you know and we can reduce the scope of the project to just `A` and `B`. Having assumed `C` was going to be part of the project, you may have budget remaining that you'd still like to invest, in which case I can help advise you to maximise the return on revenue spent.
 
 ### Discounts and volunteering
 
 If I were to work at a discounted rate I'd be unable to dedicate as much time to working on paid projects and my own professional development.
 
-That doesn't mean I'd never discount or waive my fee if the project is something I feel strongly about and is a genuinely unique opportunity, so if you are unable to pay a reasonable fee, but you have valid and compelling reasons why, then please let me know. I *may* choose to involve myself with the project if I'm able to without it interfering with my paid work, but please don't come to me *expecting* I will work for no pay and please don't be offended if I turn down an opportunity to work with you because you don't have the budget to pay me.
+That doesn't mean I'd never discount or waive my fee if the project is something I feel strongly about and is a genuinely unique opportunity, so if you are unable to pay a reasonable fee, but you have valid and compelling reasons why, then please let me know. I *may* choose to involve myself with the project if I'm able to without it interfering with my paid work, but please don't come to me *expecting* I will work for no pay. And please don't be offended if I turn down an opportunity to work with you because you don't have the budget to pay me.
 
 ### Grants
 
@@ -57,14 +57,14 @@ I may take a wee bit of persuading to accept commissions that are wholly or part
 
 ### Working speculatively
 
-I believe that speculative work (where a designer is asked to work as part of a 'competition', where only the 'winner' is compensated for their work) has its place with aspiring designers/developers, but as an experienced professional I work *with* others—not in competition with them—and require a deposit to be paid before I can begin any work.
+I believe that speculative work (where a designer is asked to work as part of a 'competition', where only the 'winner' is compensated for their work) has its place with aspiring designers/developers, but as an experienced professional I work *with* others, not in competition with them, and require a deposit to be paid before I can begin any work.
 
 
 ## Contract
 
-I draw up a contract for every job I undertake. My contracts are in plain English—as little [legalese](http://en.wikipedia.org/wiki/Legal_writing#Legalese) as I can get away with!—and ensure there will be no misunderstandings. They cover, among other things, what materials you'll give me so that I can do the job for you, a breakdown of the job itself, payment terms and details copyright ownership.
+I draw up a contract for every job I undertake. My contracts are in plain English (as little [legalese](http://en.wikipedia.org/wiki/Legal_writing#Legalese) as I can get away with!) and ensure there will be no misunderstandings. They cover, among other things, what materials you'll give me so that I can do the job for you, a breakdown of the job itself, payment terms and details of copyright ownership.
 
-The first contract I send you isn't necessarily the one we'll both sign. It's for you to read through carefully and make sure you're happy with everything. I'm happy to consider any amendments so if you'd like to see any changes just ask and I'll see what I can do.
+The first contract I send you isn't necessarily the one we'll both sign. It's for you to read through carefully and make sure you're happy with everything. I'm happy to consider any amendments, so if you'd like to see any changes just ask and I'll see what I can do.
 
 Once we have agreed a document and you've signed it and sent it back, we're nearly ready to book a block of time in my diary! Just one more thing…
 
