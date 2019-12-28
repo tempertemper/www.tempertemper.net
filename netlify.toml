@@ -948,6 +948,30 @@
   force = true
 
 [[redirects]]
+  from = "/index.php"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/download.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/license.php"
+  to = "/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ferretcareinterview.com/"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/wp-login.php"
   to = "/404"
   status = 301
