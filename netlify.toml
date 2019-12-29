@@ -984,6 +984,12 @@
   force = true
 
 [[redirects]]
+  from = "/test/wp-login.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/.git/HEAD"
   to = "/404"
   status = 301
