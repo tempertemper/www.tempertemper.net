@@ -880,6 +880,18 @@
   force = true
 
 [[redirects]]
+  from = "/apple-touch-icon-144x144.png"
+  to = "/assets/img/icons/apple-touch-icon-180x180.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/apple-touch-icon-144x144-precomposed.png"
+  to = "/assets/img/icons/apple-touch-icon-180x180.png"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/free-security-updates"
   to = "/blog/"
   status = 301
@@ -939,10 +951,46 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/dashes,-asterisks-and-plus-signs"
+  to = "/blog/dashes-asterisks-and-plus-signs"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/dropbox-â-my-most-useful-app"
+  to = "/blog/dropbox-my-most-useful-app"
+  status = 301
+  force = true
+
 
 # Spam rewrites
 [[redirects]]
   from = "/wp-login.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wp-login.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/wp-login.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/test/wp-login.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wordpress/wp-login.php"
   to = "/404"
   status = 301
   force = true
@@ -972,24 +1020,6 @@
   force = true
 
 [[redirects]]
-  from = "/blog/wp-login.php"
-  to = "/404"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/wp-login.php"
-  to = "/404"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/test/wp-login.php"
-  to = "/404"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/.git/HEAD"
   to = "/404"
   status = 301
@@ -1008,8 +1038,20 @@
   force = true
 
 [[redirects]]
+  from = "/this-post-does-not-exist"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/index2"
   to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/public/js/wind.js"
+  to = "/404"
   status = 301
   force = true
 
