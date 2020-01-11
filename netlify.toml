@@ -952,7 +952,7 @@
   force = true
 
 [[redirects]]
-  from = "/blog/dashes,-asterisks-and-plus-signs"
+  from = "/blog/dashes%2C-asterisks-and-plus-signs"
   to = "/blog/dashes-asterisks-and-plus-signs"
   status = 301
   force = true
