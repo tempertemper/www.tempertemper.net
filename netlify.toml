@@ -952,13 +952,13 @@
   force = true
 
 [[redirects]]
-  from = "/blog/dashes%2C-asterisks-and-plus-signs"
+  from = "/blog/dashes,-asterisks-and-plus-signs"
   to = "/blog/dashes-asterisks-and-plus-signs"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/blog/dropbox-â%C2%80%C2%93-my-most-useful-app"
+  from = "/blog/dropbox-%C3%A2%C2%80%C2%93-my-most-useful-app"
   to = "/blog/dropbox-my-most-useful-app"
   status = 301
   force = true
