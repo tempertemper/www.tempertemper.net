@@ -13,6 +13,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 
+## [5.6.4] - 2020-01-15
+- Applies some npm package patches
+- Upgrades Eleventy to 0.10.0
+- Upgrades Eleventy Syntax Highlighter to version 3
+- Removes unused Gulp Rename package
 
 ## [5.6.3] - 2019-12-28
 Updates terms page with more recent details and corrects some grammar.
