@@ -963,6 +963,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/mailing-list"
+  to = "/subscribe"
+  status = 301
+  force = true
+
 
 # Spam rewrites
 [[redirects]]
@@ -1058,6 +1064,24 @@
 [[redirects]]
   from = "/..."
   to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ads.txt"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/static/.gitignore"
+  to = "/404"
   status = 301
   force = true
 
