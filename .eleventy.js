@@ -39,7 +39,7 @@ module.exports = eleventyConfig => {
   /* Code syntax highlighting */
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
   eleventyConfig.addPlugin(syntaxHighlight, {
-    templateFormats: ["njk", "md"],
+    templateFormats: ["njk", "md"]
   });
 
   /* RSS */
