@@ -5,7 +5,7 @@ intro: |
 date: 2015-06-19
 tags:
     - Design
-    - brand
+    - Brand
 ---
 
 I rebranded tempertemper last summer and I must say I've been very happy with the direction it has taken.
