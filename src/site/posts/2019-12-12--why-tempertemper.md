@@ -4,6 +4,8 @@ intro: |
     Over the years, I've often been asked where I got the name 'tempertemper' from. The answer is very simple.
 date: 2019-12-12
 updated: 2019-12-18
+tags:
+    - Brand
 ---
 
 Starting a business is very exciting. One of the most difficult things, but also one of the most fun, is thinking up a business name. When I was coming up with my business name, I had some criteria that I wanted it to meet:

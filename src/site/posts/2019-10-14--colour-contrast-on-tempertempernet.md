@@ -5,6 +5,8 @@ intro: |
 date: 2019-10-14
 tags:
     - Accessibility
+    - Brand
+    - Design
 ---
 
 Over the last year I've been keen to practice what I preach where it comes to accessibility on my website. It has always been pretty solid, but it's something I never quite made the time to give *proper* attention to. This has always a rankled as I'm a big proponent of accessibility on the projects I get paid to work on, so it should be the same for my personal stuff!
