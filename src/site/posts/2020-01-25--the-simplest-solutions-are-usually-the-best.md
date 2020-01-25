@@ -2,7 +2,7 @@
 title: The simplest solutions are usually the best
 intro: |
     I've spent more than 5 years working on an icon for my brand. It has been a lot of fun and the right solution turned out to be under my nose all along!
-date: 2020-01-20
+date: 2020-01-25
 tags:
     - Design
     - Brand
