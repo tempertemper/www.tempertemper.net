@@ -19,7 +19,8 @@
         {%- endif %}
     {%- endif %}
     <meta name="description" content="{{ description }}" />
-    {% if summaryImage %}
+    {% set imageType = 'image/png' %}
+    {%- if summaryImage %}
         {%- set cardType = "summary_large_image" %}
         {%- if tags.includes('resource') %}
             {%- set imgDir = 'resources/' %}
@@ -28,20 +29,27 @@
         {%- endif %}
         {%- set cardImage = site.url + "/assets/img/" + imgDir + summaryImage %}
         {%- set imageAlt = summaryImageAlt %}
+        {%- if summaryImageType == "jpg" %}
+            {%- set imageType = 'image/jpg' %}
+        {%- endif %}
+        {%- set imageWidth = 1024 %}
+        {%- set imageHeight = 576 %}
     {%- else %}
         {%- set cardType = "summary" %}
         {%- set cardImage = site.url + "/assets/img/summary.png" %}
         {%- set imageAlt = "tempertemper’s icon – a blue square with a white rectangle/underscore in the bottom-right corner" %}
+        {%- set imageWidth = 512 %}
+        {%- set imageHeight = 512 %}
     {%- endif %}
     <meta property="og:site_name" content="tempertemper Web Design" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:title" content="{{ pageTitle }}" />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:image" content="{{ cardImage }}" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="{{ imageType }}" />
     {%- if (tags.length >= 1) and (tags.includes('post') or tags.includes('resource')) %}
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="628" />
+        <meta property="og:image:width" content="{{ imageWidth }}" />
+        <meta property="og:image:height" content="{{ imageHeight }}" />
     {%- endif %}
     <meta property="og:image:alt" content="{{ imageAlt }}" />
     {%- if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
