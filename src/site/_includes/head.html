@@ -19,9 +19,20 @@
         {%- endif %}
     {%- endif %}
     <meta name="description" content="{{ description }}" />
-
-    {%- set cardType = "summary" %}
-    {%- set cardImage = site.url + "/assets/img/summary.png" %}
+    {% if summaryImage %}
+        {%- set cardType = "summary_large_image" %}
+        {%- if tags.includes('resource') %}
+            {%- set imgDir = 'resources/' %}
+        {%- else %}
+            {%- set imgDir = 'blog/' %}
+        {%- endif %}
+        {%- set cardImage = site.url + "/assets/img/" + imgDir + summaryImage %}
+        {%- set imageAlt = summaryImageAlt %}
+    {%- else %}
+        {%- set cardType = "summary" %}
+        {%- set cardImage = site.url + "/assets/img/summary.png" %}
+        {%- set imageAlt = "tempertemper’s icon – a blue square with a white rectangle/underscore in the bottom-right corner" %}
+    {%- endif %}
     <meta property="og:site_name" content="tempertemper Web Design" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:title" content="{{ pageTitle }}" />
@@ -32,7 +43,7 @@
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
     {%- endif %}
-    <meta property="og:image:alt" content="A block of blue colour" />
+    <meta property="og:image:alt" content="{{ imageAlt }}" />
     {%- if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
         {%- set type = "article" %}
     {%- else %}
@@ -47,7 +58,8 @@
     <meta name="twitter:title" content="{{ pageTitle }}" />
     <meta name="twitter:description" content="{{ description }}" />
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-    <meta property="twitter:image" content="{{ cardImage }}" />
+    <meta name="twitter:image" content="{{ cardImage }}" />
+    <meta name="twitter:image:alt" content="{{ imageAlt }}" />
 
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
     <meta name="format-detection" content="telephone=no">
