@@ -99,7 +99,7 @@ Don't see much difference? Well, there's not! But if you look closely:
 - It now has <b>square corners</b>, making it a perfect rectangle and well and truly checking the 'simplicity' box
 - I gave it a <b>simple 4 × 1 aspect ratio</b>, which felt like the right proportions; it also fits nicely into an 8x8 square canvas
 
-Here's an animation showing the new underscore in comparison with the older shape:
+Here's a closer look at the new underscore, in comparison with its older shape:
 
 ![The old tempertemper logo animating into the new logo, to demonstrate the difference in the underscore](/assets/img/blog/tempertemper-logo--v2.1.gif)
 
