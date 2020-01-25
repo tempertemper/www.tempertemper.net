@@ -11,13 +11,16 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.7.0] - 2020-01-25
+
 ### Adds
 - Adds custom summary image option to blog posts and resources
 
 ### Fixes
 - Missing alt text for twitter image
-
-----------
 
 
 ## [5.6.4] - 2020-01-15
