@@ -223,6 +223,18 @@
   force = true
 
 [[redirects]]
+  from = "/resources/](/blog/password-security)"
+  to = "/resources/password-security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/%5D%28/blog/password-security%29"
+  to = "/resources/password-security"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/how-headings-work"
   to = "/resources/how-headings-work"
   status = 301
@@ -526,6 +538,12 @@
 [[redirects]]
   from = "/blog/tag/backup"
   to = "/resources/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/ios"
+  to = "/category/apple"
   status = 301
   force = true
 
@@ -940,12 +958,6 @@
   force = true
 
 [[redirects]]
-  from = "/resources/](/blog/password-security)"
-  to = "/resources/password-security"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/cms/resources/blog/internet-explorer-icon.png"
   to = "/assets/img/summary.png"
   status = 301
@@ -1045,6 +1057,12 @@
 
 [[redirects]]
   from = "/this-post-does-not-exist"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/this-post-does-not-exist"
   to = "/404"
   status = 301
   force = true
