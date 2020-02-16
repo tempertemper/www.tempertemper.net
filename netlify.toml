@@ -758,6 +758,18 @@
   force = true
 
 [[redirects]]
+  from = "/blog/tag/fonts"
+  to = "/category/design"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/interruptions"
+  to = "/blog/controlling-email"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/tag/social"
   to = "/category/marketing"
   status = 301
@@ -1057,13 +1069,13 @@
 
 [[redirects]]
   from = "/this-post-does-not-exist"
-  to = "/404"
+  to = "/blog/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/this-post-does-not-exist"
-  to = "/404"
+  to = "/blog/"
   status = 301
   force = true
 
