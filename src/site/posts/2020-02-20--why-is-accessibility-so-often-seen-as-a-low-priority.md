@@ -25,20 +25,32 @@ The part that jumps out at me is this:
 
 So it seems website owners are desperately trying to avoid being taken to court for tracking their visitors, while caring very little about the same consequences for being inaccessible.
 
-There's clearly a moral obligation on both fronts but website owners seem to pick and choose their legal obligations, and it got me wondering why.
+There's clearly a *moral* obligation on both fronts but website owners seem to pick and choose their *legal* obligations, and it got me wondering why.
 
 
 ## Why don't website owners prioritise accessibility?
 
-Maybe caring little for accessibility is a short-sighted financial issue – investing in designers and developers who know how to produce accessible work isn't the cheapest way of doing things and it's easy to economise here at the expense of users with access needs. But those users have money in their pockets and the door is being closed on them, which seems bananas. And a court case and a fine is expensive but unlikely, so maybe it feels worth the risk.
+Maybe caring little for accessibility is a short-sighted financial issue – investing in designers and developers who know how to produce accessible work isn't the cheapest way of doing things and it's easy to economise here at the expense of users with access needs. And a court case and a fine is expensive but unlikely, so maybe it's viewed as worth the risk.
 
-Or maybe it's not just financial short-sightedness, it could also be that annoying complacency human beings seem to have in their own (current) lack of impairments. [We're all just temporarily abled](https://uxmag.com/articles/we-re-just-temporarily-abled), so shouldn't we be building websites for our future selves?
+Perhaps it's not just financial short-sightedness – it could also be that annoying complacency human beings seem to have in their own (current) lack of impairments. [We're all just temporarily abled](https://uxmag.com/articles/we-re-just-temporarily-abled), so shouldn't we be building websites for our future selves?
 
-My biggest concern is that it's a form of able-ism; I've heard clients dismiss accessibility with a "How many blind people use the website anyway" more than once.
+I've heard clients dismiss accessibility with a "How many blind people use the website anyway" more than once.
+
+1. Accessibility isn't just about non-sighted users
+2. Plenty of disabled users use the web on a regular basis and closing the door on them is both discriminatory and potentially throwing money away ("blind people" have money they can spend on your product too!)
+3.
+
+My biggest concern is that it's a form of [ableism](https://en.wikipedia.org/wiki/Ableism).
 
 
 ## How do we fix this attitude?
 
-In an ideal world, our clients would prioritise accessibility and properly budget for it, but it's also our responsibility as designers and developers to pay more attention to producing accessible websites, and consistently practice baking accessibility into our thinking from the start of our processes, whether research, design, development or testing.
+In an ideal world, our clients would prioritise accessibility and properly budget for it, but that's not always the case. So it's also our responsibility as designers and developers to pay more attention to producing accessible websites, and consistently practice baking accessibility into our thinking from the start of our processes, whether research, design, development or testing.
 
-Ask more questions about inclusive design and accessible code, don't be afraid to make mistakes and have to correct them, play with tools like [Wave](https://wave.webaim.org) and [Axe](https://www.deque.com/axe/), [read more articles](https://a11yweekly.com), watch more speakers.
+How? Make accessibility an intrinsic part of what you do:
+
+- Ask more questions about inclusive design and accessible code
+- Don't be afraid to make mistakes – your good intentions will be appreciated and things can always be fixed
+- Play with tools like [Wave](https://wave.webaim.org) and [Axe](https://www.deque.com/axe/)
+- [Read more articles](https://a11yweekly.com)
+- [Watch more talks](https://www.youtube.com/watch?v=VxQT3aq0nzw)
