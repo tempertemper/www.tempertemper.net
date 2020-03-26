@@ -31,6 +31,12 @@
   force = true
 
 [[redirects]]
+  from = "/freeagent"
+  to = "/blog/freeagent"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/why-you-need-a-privacy-policy"
   to = "/resources/why-you-need-a-privacy-policy"
   status = 301
@@ -602,6 +608,12 @@
   force = true
 
 [[redirects]]
+  from = "/categories/category/marketing"
+  to = "/category/marketing"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/tag/focus"
   to = "/category/content"
   status = 301
@@ -1021,6 +1033,24 @@
 
 [[redirects]]
   from = "/wordpress/wp-login.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wp/"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/test/"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/backup/"
   to = "/404"
   status = 301
   force = true
