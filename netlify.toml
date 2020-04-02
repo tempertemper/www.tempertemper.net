@@ -21,6 +21,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://tempertemper.netlify.app/*"
+  to = "https://tempertemper.net/:splat"
+  status = 301
+  force = true
+
 
 # Blog to Resources redirects
 
