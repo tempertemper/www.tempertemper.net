@@ -1,11 +1,13 @@
 code,
+kbd,
 pre {
   @include dark-mode ($colour-dark-mode-black);
   background-color: $colour-dark-mode-highlight;
   color: $colour-dark-mode-white;
 }
 
-code {
+code,
+kbd {
   font-family: $code--font;
   font-size: .8em;
   border-radius: $border-radius-default/2;
