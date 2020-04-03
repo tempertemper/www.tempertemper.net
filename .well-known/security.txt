@@ -1,0 +1,10 @@
+# Security policy for tempertemper.net (https://securitytxt.org)
+
+# Security contact address
+Contact: mailto:hello@tempertemper.net
+
+# Languages spoken
+Preferred-Languages: en, es
+
+# Location of this file
+Canonical: https://www.tempertemper.net/.well-known/security.txt

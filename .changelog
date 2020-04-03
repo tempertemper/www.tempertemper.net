@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Adds custom summary image option to blog posts and resources
+- Adds [security.txt file](https://securitytxt.org)
 
 ### Fixes
 - Missing alt text for twitter image

@@ -21,6 +21,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://tempertemper.netlify.app/*"
+  to = "https://tempertemper.net/:splat"
+  status = 301
+  force = true
+
 
 # Blog to Resources redirects
 
@@ -1005,6 +1011,18 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/lets-make-webmasters-a-thing-again+2020-03-03+00:16:42+0+5"
+  to = "/blog/lets-make-webmasters-a-thing-again"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/security.txt"
+  to = "/.well-known/security.txt"
+  status = 301
+  force = true
+
 
 # Spam rewrites
 [[redirects]]
@@ -1141,6 +1159,12 @@
 
 [[redirects]]
   from = "/static/.gitignore"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/old/"
   to = "/404"
   status = 301
   force = true
