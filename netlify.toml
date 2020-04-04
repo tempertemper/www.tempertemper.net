@@ -85,6 +85,12 @@
   force = true
 
 [[redirects]]
+  from = "/resources/regular-backups-are-important/contact"
+  to = "/resources/regular-backups-are-important"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/regular-backups-are-important"
   to = "/resources/regular-backups-are-important"
   status = 301
@@ -616,6 +622,24 @@
 [[redirects]]
   from = "/categories/category/marketing"
   to = "/category/marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/category/development"
+  to = "/category/development"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/category/workflows"
+  to = "/category/workflows"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/category/brand"
+  to = "/category/brand"
   status = 301
   force = true
 
@@ -1165,6 +1189,54 @@
 
 [[redirects]]
   from = "/old/"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/public/js/image.js"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/js/comm.js"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/statics/js/admin_common.js"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/public/simpleboot/css/simplebootadmin.css"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/js/tc.js"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/data/admin/allowurl.txt"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/plus/mytag_js.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/config/AspCms_Config.asp"
   to = "/404"
   status = 301
   force = true
