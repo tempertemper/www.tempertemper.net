@@ -1,7 +1,7 @@
 ---
 title: HTML is more complicated than you think
 intro: |
-    HTML, like CSS, is easy to learn. Trouble is, if you want to write it well, it gets complicated very quickly.
+    HTML, like CSS, is easy to learn. Trouble is, if you want to write it well, it gets difficult very quickly.
 date: 2020-04-06
 categories:
     - Design
