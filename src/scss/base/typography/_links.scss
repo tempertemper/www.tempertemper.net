@@ -10,6 +10,11 @@
   &:active {
     color: $colour-primary-darker;
     @include dark-mode($color: $colour-dark-mode-primary-darker);
+
+    > code {
+      color: $colour-dark-mode-primary;
+      @include dark-mode($color: $colour-dark-mode-primary-darker);
+    }
   }
 
   &:focus {
@@ -17,6 +22,13 @@
     color: $white;
     text-decoration: none;
     @include dark-mode($background: $colour-dark-mode-primary, $color: $white);
+
+    > code {
+      background-color: $colour-primary-lighter;
+      color: $white;
+      @include dark-mode($background: $colour-dark-mode-primary);
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -32,5 +44,10 @@ a {
     &:focus {
       border-color: $black;
     }
+  }
+
+  > code {
+    @include dark-mode($color: $colour-dark-mode-primary);
+    color: $colour-dark-mode-primary-lighter;
   }
 }
