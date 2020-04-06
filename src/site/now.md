@@ -6,14 +6,11 @@ layout: base
 permalink: now.html
 ---
 
-- Enjoying playing [The Legend of Zelda](https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_A_Link_to_the_Past) with my daughter on [the most exciting Christmas present](https://twitter.com/tempertemper/status/1194334500899045377?s=21) I've bought myself in years
-- Gearing up to begin bathroom renovations
-- Enjoying a more relaxed home-life now that my youngest is in nursery full time and my [my wife](https://twitter.com/energybubble) has started work again
+- Coping with lockdown; I'm working from our bedroom while my wife home-schools the kids
+- Nearly finished the bathroom renovations – just need normal life to resume so we can get the joiner in to apply the finishes!
+- Enjoying playing [Super Mario World](https://en.wikipedia.org/wiki/Super_Mario_World) with my 8 year old daughter on [our SNES Mini](https://twitter.com/tempertemper/status/1194334500899045377?s=21)
+- Starting to record the first few videos for my mini-series on HTML fundamentals for [my YouTube channel](https://www.youtube.com/tempertemper)
 - Waking up at 5am to snatch an hour and a half of writing before the kids surface
-- Making a concerted effort to get a mini-series on HTML fundamentals recorded for [my YouTube channel](https://www.youtube.com/tempertemper)
-- Continuing my [Adventures in Git&trade;](/category/git) (last summer I ditched my GUI and went all-in on the command line)
-- Working out how to consolidate all the JavaScript I (*finally*) learned last year
-- Exploring [serverless](https://www.netlify.com) and [the JAMStack](https://jamstack.org)
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
 
