@@ -21,6 +21,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://tempertemper.netlify.app/*"
+  to = "https://tempertemper.net/:splat"
+  status = 301
+  force = true
+
 
 # Blog to Resources redirects
 
@@ -75,6 +81,12 @@
 [[redirects]]
   from = "/blog/types-of-email-and-when-to-use-each"
   to = "/resources/types-of-email-and-when-to-use-each"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/regular-backups-are-important/contact"
+  to = "/resources/regular-backups-are-important"
   status = 301
   force = true
 
@@ -614,6 +626,24 @@
   force = true
 
 [[redirects]]
+  from = "/categories/category/development"
+  to = "/category/development"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/category/workflows"
+  to = "/category/workflows"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/category/brand"
+  to = "/category/brand"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/tag/focus"
   to = "/category/content"
   status = 301
@@ -1005,6 +1035,18 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/lets-make-webmasters-a-thing-again+2020-03-03+00:16:42+0+5"
+  to = "/blog/lets-make-webmasters-a-thing-again"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/security.txt"
+  to = "/.well-known/security.txt"
+  status = 301
+  force = true
+
 
 # Spam rewrites
 [[redirects]]
@@ -1141,6 +1183,60 @@
 
 [[redirects]]
   from = "/static/.gitignore"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/old/"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/public/js/image.js"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/js/comm.js"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/statics/js/admin_common.js"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/public/simpleboot/css/simplebootadmin.css"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/js/tc.js"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/data/admin/allowurl.txt"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/plus/mytag_js.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/config/AspCms_Config.asp"
   to = "/404"
   status = 301
   force = true

@@ -14,10 +14,29 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.7.2] - 2020-04-08
+
+### Fixes
+- Increases contrast (brightens up) list markers in dark mode
+
+
+## [5.7.2] - 2020-04-05
+
+### Adds
+- Adds styling for inline `<code>` snippets inside links
+
+
+## [5.7.1] - 2020-04-03
+
+### Adds
+- Styling for `<kbd>` element
+
+
 ## [5.7.0] - 2020-01-25
 
 ### Adds
 - Adds custom summary image option to blog posts and resources
+- Adds [security.txt file](https://securitytxt.org)
 
 ### Fixes
 - Missing alt text for twitter image
