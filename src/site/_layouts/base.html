@@ -1,3 +1,9 @@
+{%- if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
+    {%- set article = true %}
+{%- endif %}
+{%- if tags.length >= 1 and tags.includes('testimonial') %}
+    {%- set testimonial = true %}
+{%- endif %}
 <!doctype html>
 <html lang="en">
     {% include "head.html" %}
@@ -7,29 +13,33 @@
                 <a href="#main" tabindex="0" class="skip-to-content">Skip to main content</a>
                 {% include "header.html" %}
                 <main id="main" role="main">
-                    <h1>
-                        {%- if heading %}
-                            {{- heading | smart | safe }}
-                        {%- elif category %}
-                            {{- category | smart | safe }}
-                        {%- else %}
-                            {{- title | smart | safe }}
-                        {%- endif %}
-                    </h1>
-                    {% if intro and not hideIntro %}
-                        <div class="intro">{{ intro | markdown | safe }}</div>
+                    {% if article %}
+                        <article>
                     {% endif %}
-                    {% if tags.length >= 1 -%}
-                        {% if tags.includes('post') -%}
-                            <p class="entry-published date post-details">{{ date | date }}</p>
+                        <h1>
+                            {%- if heading %}
+                                {{- heading | smart | safe }}
+                            {%- elif category %}
+                                {{- category | smart | safe }}
+                            {%- else %}
+                                {{- title | smart | safe }}
+                            {%- endif %}
+                        </h1>
+                        {% if intro and not hideIntro %}
+                            <div class="intro">{{ intro | markdown | safe }}</div>
+                        {% endif %}
+                        {% if tags.length >= 1 -%}
+                            {% if tags.includes('post') -%}
+                                <p class="entry-published date post-details">{{ date | date }}</p>
+                            {% endif -%}
                         {% endif -%}
-                    {% endif -%}
-                    {{ content | safe }}
-                    {% if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
+                        {{ content | safe }}
+                    {% if article %}
+                        </article>
                         {% include "post-details.html" %}
                         {% include "call-to-action.html" %}
                         {% include "more-posts.html" %}
-                    {% elif tags.length >= 1 and tags.includes('testimonial') %}
+                    {% elif testimonial %}
                         <p><a href="/testimonials" class="back">View more testimonials</a></p>
                         {% include "call-to-action.html" %}
                     {% else %}
