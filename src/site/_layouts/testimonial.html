@@ -1,0 +1,9 @@
+---
+layout: base.html
+---
+
+<h1>{{ title | smart | safe }}</h1>
+{{ content | safe }}
+
+<p><a href="/testimonials" class="back">View more testimonials</a></p>
+{% include "call-to-action.html" %}

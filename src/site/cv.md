@@ -4,7 +4,7 @@ heading: Martin Underhill
 intro: |
     Martin Underhill's CV.
 hideIntro: true
-layout: base
+layout: default
 permalink: cv.html
 excludeFromSitemap: true
 ---

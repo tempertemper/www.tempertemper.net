@@ -3,7 +3,7 @@ title: Terms of business
 intro: |
     You'd like me to work with you on your project? That's great! Thanks for thinking of me and for taking the time to get in touch. Before we go any further, have a quick read of this page.
 hideIntro: true
-layout: base
+layout: default
 permalink: terms.html
 ---
 

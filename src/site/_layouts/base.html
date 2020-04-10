@@ -1,9 +1,3 @@
-{%- if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
-    {%- set article = true %}
-{%- endif %}
-{%- if tags.length >= 1 and tags.includes('testimonial') %}
-    {%- set testimonial = true %}
-{%- endif %}
 <!doctype html>
 <html lang="en">
     {% include "head.html" %}
@@ -13,46 +7,9 @@
                 <a href="#main" tabindex="0" class="skip-to-content">Skip to main content</a>
                 {% include "header.html" %}
                 <main id="main" role="main">
-                    {% if article %}
-                        <article>
-                    {% endif %}
-                        <h1>
-                            {%- if heading %}
-                                {{- heading | smart | safe }}
-                            {%- elif category %}
-                                {{- category | smart | safe }}
-                            {%- else %}
-                                {{- title | smart | safe }}
-                            {%- endif %}
-                        </h1>
-                        {% if intro and not hideIntro %}
-                            <div class="intro">{{ intro | markdown | safe }}</div>
-                        {% endif %}
-                        {% if tags.length >= 1 -%}
-                            {% if tags.includes('post') -%}
-                                <p class="entry-published date post-details">{{ date | date }}</p>
-                            {% endif -%}
-                        {% endif -%}
-                        {{ content | safe }}
-                    {% if article %}
-                        </article>
-                        {% include "post-details.html" %}
+                    {{ content | safe }}
+                    {% if cta %}
                         {% include "call-to-action.html" %}
-                        {% include "more-posts.html" %}
-                    {% elif testimonial %}
-                        <p><a href="/testimonials" class="back">View more testimonials</a></p>
-                        {% include "call-to-action.html" %}
-                    {% else %}
-                        {% if noCta !== true %}
-                            <section class="call-to-action">
-                                <h2>Follow me</h2>
-                                <p>Keep up with my latest articles, accessibility and usability tips, and general ramblings over on Twitter.</p>
-                                <a class="button" href="{{ site.author.twitter | twitterLink }}">
-                                    {% include "svg/twitter.svg" %}
-                                    <span>{{ site.author.twitter }}</span>
-                                </a>
-                            </section>
-                        {% endif %}
                     {% endif %}
                 </main>
                 {% include "footer.html" %}

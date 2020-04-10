@@ -3,8 +3,9 @@ title: About Martin at tempertemper
 heading: About Martin
 intro: |
     It's very nice that you want to know more about me! I’m Martin and I design and build websites. I'm from Glasgow but live in Newcastle upon Tyne; married with two kids.
-layout: base
+layout: default
 permalink: about.html
+cta: true
 ---
 
 ![Martin Underhill of tempertemper Web Design](/assets/img/martin-underhill-tempertemper.jpg)

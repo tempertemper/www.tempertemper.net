@@ -2,30 +2,35 @@
 title: The web, design and front&#8209;end&nbsp;dev
 intro: |
     I’m Martin, an interaction designer, front-end development and co-founder of [Frontend NE](https://2019.frontendne.co.uk). I [write](#writing) about the web, accessibility and inclusive, user-centred design. Here's some more [about me](/about) and [what I'm up to](/now).
-layout: base
+layout: home
 home: true
+cta: true
 ---
 
-<section class="teaser">
-    <h2 id="writing">Writing</h2>
-    <p>If you prefer to dive straight in rather than <a href="/blog/">see the full blog</a>, here are a couple of my most recent articles to get you started.</p>
-    <ol class="index-list" reversed>
-        {%- set posts = collections.post | reverse %}
-        {% for post in posts %}
-            {% if loop.index <= 2 %}
-                {% include "post-in-list.html" %}
-            {% endif %}
-        {% endfor %}
-    </ol>
-</section>
+{% block posts %}
+    <section aria-label="Writing" class="teaser">
+        <h2 id="writing">Writing</h2>
+        <p>If you prefer to dive straight in rather than <a href="/blog/">see the full blog</a>, here are a couple of my most recent articles to get you started.</p>
+        <ol class="index-list" reversed>
+            {%- set posts = collections.post | reverse %}
+            {% for post in posts %}
+                {% if loop.index <= 2 %}
+                    {% include "post-in-list.html" %}
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </section>
+{% endblock %}
 
-<section>
-    <h2 id="my-favourite-subjects">Subjects</h2>
-    <p>There are a few topics that really interest me:</p>
-    <ul>
-        <li><a href="/category/accessibility">Accessiblity</a> is about designing and building web interfaces that can be used by anyone, something I feel very strongly about.</li>
-        <li><a href="/category/design">Designing</a> smart, usable interfaces, journeys and interactions is what I do best, and I enjoy analysing others’ great design.</li>
-        <li><a href="/category/development">Front-end development</a> is a huge passion of mine; HTML and CSS in particular, but anything from Git to Gulp.</li>
-    </ul>
-     <p>Or have a look at the <a href="/categories">full list of subjects</a> I write about.</p>
-</section>
+{% block subjects %}
+    <section aria-label="Subjects">
+        <h2 id="my-favourite-subjects">Subjects</h2>
+        <p>There are a few topics that really interest me:</p>
+        <ul>
+            <li><a href="/category/accessibility">Accessiblity</a> is about designing and building web interfaces that can be used by anyone, something I feel very strongly about.</li>
+            <li><a href="/category/design">Designing</a> smart, usable interfaces, journeys and interactions is what I do best, and I enjoy analysing others’ great design.</li>
+            <li><a href="/category/development">Front-end development</a> is a huge passion of mine; HTML and CSS in particular, but anything from Git to Gulp.</li>
+        </ul>
+         <p>Or have a look at the <a href="/categories">full list of subjects</a> I write about.</p>
+    </section>
+{% endblock %}
