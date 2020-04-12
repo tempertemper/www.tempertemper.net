@@ -13,7 +13,7 @@ layout: base.html
         {%- endif %}
     </h1>
     {% if intro and not hideIntro %}
-        <div class="intro">{{ intro | markdown | safe }}</div>
+        {{ intro | markdown | safe }}
     {% endif %}
     {{ content | safe }}
 </article>
