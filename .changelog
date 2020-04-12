@@ -11,8 +11,21 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Defines layouts in order to leave the base layout more manageable
+- Adds `aria-label` attributes to all `<section>` elements
+
 ### Changes
 - Updates version-bump-prompt and markdown-it-anchor packages
+- Makes base layout a wee bit more readable and adds article tags around articles
+
+### Removes
+- Removes unnecessary `<div>` surrounding intro paragraph
+
+### Fixes
+- Default paragraph margin fix
+- Removes bottom margin from buttons
+- Fixes some vulnerabilities in some node dependencies
 
 ----------
 

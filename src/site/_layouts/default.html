@@ -1,0 +1,18 @@
+---
+layout: base.html
+---
+
+<h1>
+    {%- if heading %}
+        {{- heading | smart | safe }}
+    {%- elif category %}
+        {{- category | smart | safe }}
+    {%- else %}
+        {{- title | smart | safe }}
+    {%- endif %}
+</h1>
+{% if intro and not hideIntro %}
+    {{ intro | markdown | safe }}
+{% endif %}
+{{ content | safe }}
+

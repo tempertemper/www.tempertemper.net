@@ -3,8 +3,9 @@ title: Colophon
 intro: |
     tempertemper was build using Eleventy, Gulp, SCSS and carefully considered HTML.
 hideIntro: true
-layout: base
+layout: default
 permalink: colophon.html
+cta: true
 ---
 
 This website was lovingly put together using [Eleventy, the best static site generator](/blog/website-version-5) I've come across, hands-down. The build itself is taken care of by [Gulp](https://gulpjs.com/), but I'm in the process of removing that extra dependency and moving to [npm scripts](https://css-tricks.com/why-npm-scripts/). It's all [hosted on Netlify](/blog/moving-to-netlify).

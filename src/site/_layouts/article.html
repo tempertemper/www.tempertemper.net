@@ -1,0 +1,15 @@
+---
+layout: base.html
+---
+
+<article>
+    <h1>{{ title | smart | safe }}</h1>
+    {% if tags.length >= 1 and tags.includes('post') -%}
+        <p class="entry-published date post-details">{{ date | date }}</p>
+    {% endif -%}
+    {{ content | safe }}
+</article>
+
+{% include "post-details.html" %}
+{% include "call-to-action.html" %}
+{% include "more-posts.html" %}
