@@ -1,12 +1,9 @@
 <section aria-label="Post details" class="post-details">
     <p>
-        {% if updated %}First posted {% else %}Posted {% endif %} <span class="entry-published date" >{{ date | date }}</span>
+        {% if updated %}First posted {% else %}Posted {% endif %} <span class="entry-published date" itemprop="dateCreated pubdate datePublished" datetime="{{ date | isoDate }}" >{{ date | date }}</span>
         {% include "post-categories.html" %}
+    {%- if updated -%}
+        ; updated <span itemprop="dateModified" datetime="{{ updated | isoDate }}">{{ updated | date }}</span>
+    {% endif %}
     </p>
-    {% if updated %}
-        <p>Updated {{ updated | date }}</p>
-    {% endif %}
-    {% if tags.includes('resource') %}
-        <p><a href="/resources/" class="back">Back to resources</a></p>
-    {% endif %}
 </section>

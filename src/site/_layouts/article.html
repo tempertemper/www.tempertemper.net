@@ -2,14 +2,11 @@
 layout: base.html
 ---
 
-<article>
-    <h1>{{ title | smart | safe }}</h1>
-    {% if tags.length >= 1 and tags.includes('post') -%}
-        <p class="entry-published date post-details">{{ date | date }}</p>
-    {% endif -%}
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 itemprop="title headline">{{ title | smart | safe }}</h1>
+    {% include "post-details.html" %}
     {{ content | safe }}
 </article>
 
-{% include "post-details.html" %}
 {% include "call-to-action.html" %}
 {% include "more-posts.html" %}

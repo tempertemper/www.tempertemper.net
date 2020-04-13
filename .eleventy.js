@@ -2,6 +2,7 @@ module.exports = eleventyConfig => {
 
   /* Date filter */
   eleventyConfig.addFilter("date", require("./lib/filters/dates.js") );
+  eleventyConfig.addFilter("isoDate", require("./lib/filters/isoDate.js") );
 
   /* Data */
   eleventyConfig.setDataDeepMerge(true);
