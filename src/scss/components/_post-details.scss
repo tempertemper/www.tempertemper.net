@@ -1,21 +1,9 @@
 .post-details {
   font-family: $font--heading;
-  margin-top: 3em;
+  margin-top: $section-spacing;
+  margin-bottom: $section-spacing;
 
-  h1 + & {
-    margin-bottom: 3em;
-
-    @media (min-width: $m) {
-      text-align: center;
-    }
-  }
-
-  p {
-    margin-bottom: 0;
-    margin-top: 0;
-
-    + p {
-      text-indent: 0;
-    }
+  @media (min-width: $m) {
+    text-align: center;
   }
 }

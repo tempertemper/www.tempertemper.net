@@ -2,7 +2,7 @@
   clear: both;
   font-family: $font--heading;
   padding-bottom: 1em;
-  margin-top: 5em;
+  margin-top: $section-spacing * 2;
 
   @media (min-width: $m) {
     text-align: center;
@@ -13,7 +13,7 @@
     content: '';
     display: block;
     height: 3px;
-    margin-bottom: 3em;
+    margin-bottom: $section-spacing;
     width: 10em;
     @include dark-mode ($background: $colour-primary);
 

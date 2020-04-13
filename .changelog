@@ -14,13 +14,16 @@ All notable changes to this project will be documented in this file. The format 
 ### Adds
 - Defines layouts in order to leave the base layout more manageable
 - Adds `aria-label` attributes to all `<section>` elements
+- Adds [microdata](https://schema.org/BlogPosting) to blog posts
 
 ### Changes
 - Updates version-bump-prompt and markdown-it-anchor packages
 - Makes base layout a wee bit more readable and adds article tags around articles
+- Moves blog post info above article
 
 ### Removes
 - Removes unnecessary `<div>` surrounding intro paragraph
+- Removes 'back to resources' link after resource posts
 
 ### Fixes
 - Default paragraph margin fix

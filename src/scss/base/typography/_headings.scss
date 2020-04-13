@@ -9,7 +9,7 @@ h6 {
 
 h1 {
   @include heading-xl;
-  margin-bottom: 1em;
+  margin-bottom: 3rem;
 
   @media (min-width: $m) {
     text-align: center;
