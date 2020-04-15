@@ -1,9 +1,9 @@
 <section aria-label="Post details" class="post-details">
     <p>
-        {% if updated %}First posted {% else %}Posted {% endif %} <span class="entry-published date" itemprop="dateCreated pubdate datePublished" datetime="{{ date | isoDate }}" >{{ date | date }}</span>
+        {% if updated %}First posted {% else %}Posted {% endif %} <span class="entry-published date" itemprop="dateCreated pubdate datePublished" content="{{ date | isoDate }}" >{{ date | date }}</span>
         {% include "post-categories.html" %}
     {%- if updated -%}
-        ; updated <span itemprop="dateModified" datetime="{{ updated | isoDate }}">{{ updated | date }}</span>
+        ; updated <span itemprop="dateModified" content="{{ updated | isoDate }}">{{ updated | date }}</span>
     {% endif %}
     </p>
 </section>
