@@ -28,11 +28,12 @@ $font--heading: 'FS Me Web', sans-serif;
 @mixin heading-style {
   font-family: $font--heading;
   line-height: 1.2;
+  margin-top: 1em;
   margin-bottom: .25em;
-  margin-top: 1.414em;
   hyphens: auto;
 
   @media (min-width: $xs) {
+    margin-top: 1.414em;
     line-height: 1.05;
   }
 
@@ -55,7 +56,11 @@ $font--heading: 'FS Me Web', sans-serif;
 
 @mixin heading-xl {
   font-size: ms(3);
-  font-weight: 400;
+
+  @media (max-width: $xxs) {
+    font-size: ms(1);
+    font-weight: 400;
+  }
 
   @media (min-width: $m) {
     font-size: ms(4);
@@ -69,7 +74,11 @@ $font--heading: 'FS Me Web', sans-serif;
 
 @mixin heading-l {
   font-size: ms(2);
-  font-weight: 400;
+
+  @media (max-width: $xxs) {
+    font-size: ms(0);
+    font-weight: 400;
+  }
 
   @media (min-width: $m) {
     font-size: ms(3);
@@ -85,6 +94,11 @@ $font--heading: 'FS Me Web', sans-serif;
   font-size: ms(1);
   font-weight: 400;
 
+  @media (max-width: $xxs) {
+    font-size: ms(0);
+    font-weight: 200;
+  }
+
   @media (min-width: $m) {
     font-size: ms(2);
   }
@@ -93,6 +107,10 @@ $font--heading: 'FS Me Web', sans-serif;
 @mixin heading-s {
   font-size: ms(0);
   font-weight: 400;
+
+  @media (max-width: $xxs) {
+    font-size: ms(-1);
+  }
 
   @media (min-width: $m) {
     font-size: ms(1);

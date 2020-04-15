@@ -19,6 +19,10 @@
     border-color: $colour-dark-mode-primary;
   }
 
+  @media (max-width: $xs) {
+    padding: .25em;
+  }
+
   svg {
     margin-right: .3em;
     margin-top: -.3em;

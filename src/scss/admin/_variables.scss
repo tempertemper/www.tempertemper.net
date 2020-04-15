@@ -1,4 +1,5 @@
 // Breakpoints
+$xxs: 15em;
 $xs: 25em;
 $s: 31em;
 $m: 43em;
@@ -25,8 +26,9 @@ $colour-dark-mode-highlight: #3D3D3D;
 $colour-dark-mode-white: #f2f2f2;
 $colour-dark-mode-black: #1f1f22;
 
-// Gerneral styles
+// General styles
 $border-radius-default: 5px;
+$section-spacing: 3em;
 
 // Code
 $code--font: menlo, monaco, 'Lucida Console', monospace;
