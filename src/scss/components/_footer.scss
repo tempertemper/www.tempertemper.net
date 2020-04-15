@@ -4,6 +4,10 @@
   padding-bottom: 1em;
   margin-top: $section-spacing * 2;
 
+  @media (max-width: $xxs) {
+    margin-top: $section-spacing / 2;
+  }
+
   @media (min-width: $m) {
     text-align: center;
   }
@@ -17,6 +21,10 @@
     width: 10em;
     @include dark-mode ($background: $colour-primary);
 
+    @media (max-width: $xxs) {
+      margin-bottom: $section-spacing / 2;
+    }
+
     @media (min-width: $m) {
       margin-left: auto;
       margin-right: auto;
@@ -29,7 +37,7 @@
   }
 
   .copyright {
-    margin-top: 2em;
+    margin-top: $section-spacing / 2;
     margin-bottom: 0;
   }
 
