@@ -16,6 +16,8 @@ All notable changes to this project will be documented in this file. The format 
 - Adds `aria-label` attributes to all `<section>` elements
 - Adds [microdata](https://schema.org/BlogPosting) to blog posts and resources
 - New section spacing variable to make distances between elements more uniform
+- Makes links with a role of button actionable with `space` as well as `return`
+- Stops links that look like buttons being draggable with the `draggable="false"` attribute
 
 ### Changes
 - Updates version-bump-prompt and markdown-it-anchor packages
