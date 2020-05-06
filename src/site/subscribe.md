@@ -2,7 +2,7 @@
 title: Stay in the loop
 intro: |
     There are a few ways to keep up to date with my blog articles, talks and videos:
-layout: base
+layout: default
 permalink: subscribe.html
 ---
 

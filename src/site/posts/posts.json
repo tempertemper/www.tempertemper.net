@@ -1,5 +1,5 @@
 {
-  "layout": "base.html",
+  "layout": "article.html",
   "hideIntro": true,
   "tags": ["post"],
   "permalink": "blog/{{ title | slug | safe }}.html"

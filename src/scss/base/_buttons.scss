@@ -8,7 +8,6 @@
   align-items: center;
   font-family: $font--heading;
   font-weight: 400;
-  margin-bottom: 1em;
   margin-top: 1em;
   padding: .5em 2em;
   text-align: center;
@@ -18,6 +17,10 @@
     color: $colour-dark-mode-main;
     background-color: $colour-dark-mode-primary;
     border-color: $colour-dark-mode-primary;
+  }
+
+  @media (max-width: $xs) {
+    padding: .25em;
   }
 
   svg {
@@ -68,5 +71,9 @@
       box-shadow: 0 0 0 2px $colour-dark-mode-primary-lighter;
       background-color: $colour-dark-mode-primary-lighter;
     }
+  }
+
+  &:focus:active {
+    box-shadow: none;
   }
 }

@@ -1,13 +1,14 @@
 .post-details {
   font-family: $font--heading;
-  margin-top:3em;
+  margin-top: $section-spacing;
+  margin-bottom: $section-spacing;
 
-  p {
-    margin-bottom: 0;
-    margin-top: 0;
+  @media (max-width: $xxs) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
 
-    + p {
-      text-indent: 0;
-    }
+  @media (min-width: $m) {
+    text-align: center;
   }
 }

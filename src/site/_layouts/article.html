@@ -1,0 +1,25 @@
+---
+layout: base.html
+---
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 itemprop="title headline">{{ title | smart | safe }}</h1>
+    <section aria-label="Post details" class="post-details">
+        <p>
+            {% if updated %}First posted {% else %}Posted {% endif %} <span class="entry-published date" itemprop="dateCreated pubdate datePublished" content="{{ date | isoDate }}" >{{ date | date }}</span>
+            <meta itemprop="author" content="{{ site.author.name }}" />
+            <meta itemprop="publisher" itemscope itemtype="http://schema.org/Corporation" content="{{ site.company }}" />
+            <meta itemprop="image" content="{{ site.url + "/assets/img/summary_large_image.png" }}" />
+            {% include "post-categories.html" %}
+        {%- if updated -%}
+            ; updated <span itemprop="dateModified" content="{{ updated | isoDate }}">{{ updated | date }}</span>
+        {% endif %}
+        </p>
+    </section>
+    <div itemprop="mainEntityOfPage">
+        {{ content | safe }}
+    </div>
+</article>
+
+{% include "call-to-action.html" %}
+{% include "more-posts.html" %}

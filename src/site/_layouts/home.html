@@ -1,0 +1,43 @@
+---
+layout: base.html
+---
+
+<article>
+    <h1>
+        {%- if heading %}
+            {{- heading | smart | safe }}
+        {%- elif category %}
+            {{- category | smart | safe }}
+        {%- else %}
+            {{- title | smart | safe }}
+        {%- endif %}
+    </h1>
+    {% if intro and not hideIntro %}
+        {{ intro | markdown | safe }}
+    {% endif %}
+    {{ content | safe }}
+</article>
+
+<section aria-label="Writing" class="teaser">
+    <h2 id="writing">Writing</h2>
+    <p>If you prefer to dive straight in rather than <a href="/blog/">see the full blog</a>, here are a couple of my most recent articles to get you started.</p>
+    <ol class="index-list" reversed>
+        {%- set posts = collections.post | reverse %}
+        {% for post in posts %}
+            {% if loop.index <= 2 %}
+                {% include "post-in-list.html" %}
+            {% endif %}
+        {% endfor %}
+    </ol>
+</section>
+
+<section aria-label="Subjects">
+    <h2 id="my-favourite-subjects">Subjects</h2>
+    <p>There are a few topics that really interest me:</p>
+    <ul>
+        <li><a href="/category/accessibility">Accessiblity</a> is about designing and building web interfaces that can be used by anyone, something I feel very strongly about.</li>
+        <li><a href="/category/design">Designing</a> smart, usable interfaces, journeys and interactions is what I do best, and I enjoy analysing others’ great design.</li>
+        <li><a href="/category/development">Front-end development</a> is a huge passion of mine; HTML and CSS in particular, but anything from Git to Gulp.</li>
+    </ul>
+     <p>Or have a look at the <a href="/categories">full list of subjects</a> I write about.</p>
+</section>

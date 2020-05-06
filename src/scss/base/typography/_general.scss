@@ -9,6 +9,11 @@ html {
   color: $black;
   font-size: 120%;
 
+  @media (max-width: $xxs) {
+    font-size: 100%;
+    line-height: 1.2;
+  }
+
   @media (min-width: $s) {
     font-size: 130%;
   }
