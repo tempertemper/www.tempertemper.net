@@ -1,4 +1,4 @@
-// Adapted from @jonhurrel's code on this GitHub Issue: https://github.com/alphagov/govuk_elements/pull/272
+// Adapted from @jonhurrel's code on this PR's comment thread: https://github.com/alphagov/govuk_elements/pull/272
 (function () {
   'use strict';
   function a11yClick(link) {
