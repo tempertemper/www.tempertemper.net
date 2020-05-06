@@ -2,15 +2,8 @@
 (function () {
   'use strict';
   function a11yClick(link) {
-    // If the spacebar is pressed on a focussed button, don't scroll the page down
+    // If the space key is pressed on a focussed button, don't scroll the page down and click the button
     link.addEventListener('keydown', function(event) {
-      var code = event.charCode || event.keyCode;
-      if (code === 32) {
-        event.preventDefault();
-      }
-    });
-    // When the spacebar is released on a focussed button, click the button
-    link.addEventListener('keyup', function(event) {
       var code = event.charCode || event.keyCode;
       if (code === 32) {
         event.preventDefault();
