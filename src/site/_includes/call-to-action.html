@@ -3,7 +3,7 @@
         {% if tags.includes('post') %}
             <h2 id="ctaLabel">Follow along</h2>
             <p>If you enjoyed this post and want to know when the next one is published, head to Twitter and hit ‘Follow’.</p>
-            <a class="button" href="{{ site.author.twitter | twitterLink }}">
+            <a class="button" draggable="false" role="button" href="{{ site.author.twitter | twitterLink }}">
                 {% include "svg/twitter.svg" %}
                 <span>{{ site.author.twitter }}</span>
             </a>
@@ -24,12 +24,12 @@
             <p><small>Your email won’t be passed to any third parties or used in any way that won’t be of benefit to you. Also, you can <a href="/mailing-list/unsubscribe">unsubscribe</a> at any time.</small></p>
         {% elif tags.includes('testimonial') %}
             <h2 id="ctaLabel">Want to work with me?</h2>
-            <a class="button" href="/contact">Say hello</a>
+            <a class="button" draggable="false" role="button" href="/contact">Say hello</a>
         {% endif %}
     {% else %}
         <h2 id="ctaLabel">Follow me</h2>
         <p>Keep up with my latest articles, accessibility and usability tips, and general ramblings over on Twitter.</p>
-        <a class="button" href="{{ site.author.twitter | twitterLink }}">
+        <a class="button" draggable="false" role="button" href="{{ site.author.twitter | twitterLink }}">
             {% include "svg/twitter.svg" %}
             <span>{{ site.author.twitter }}</span>
         </a>

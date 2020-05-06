@@ -72,4 +72,8 @@
       background-color: $colour-dark-mode-primary-lighter;
     }
   }
+
+  &:focus:active {
+    box-shadow: none;
+  }
 }
