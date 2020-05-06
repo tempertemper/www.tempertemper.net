@@ -28,6 +28,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Removes
 - Removes unnecessary `<div>` surrounding intro paragraph
 - Removes 'back to resources' link after resource posts
+- Removes button focus styling when active to stop messiness on Firefox
 
 ### Fixes
 - Default paragraph margin fix
