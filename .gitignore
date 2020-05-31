@@ -4,3 +4,4 @@ style.css.map
 /node_modules/
 /dist/
 *.sublime-workspace
+.netlify/
