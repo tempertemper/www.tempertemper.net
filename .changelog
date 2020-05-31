@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.9.0] - 2020-05-31
+
 ### Adds
 - Adds .netlify/ directory to .gitignore
 - New portfolio section
@@ -19,8 +24,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Updates Eleventy to version 11.0.0
 - Updates markdown-it-anchor package
-
-----------
 
 
 ## [5.8.0] - 2020-05-06
