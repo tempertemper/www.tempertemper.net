@@ -67,7 +67,7 @@ They also commented on the task list's simplicity:
 
 So, after several months of the pattern being used to good effect by our live users, we shared our work with HMRC's Design System Working Group.
 
-The Working Group reviewed our user research findings, as well as the other data we were able to gather to prove no users had any issues. They voted and agreed the pattern is
+The Working Group reviewed our user research findings, as well as the other data we were able to gather to prove no users had any issues. They voted and agreed the pattern is:
 
 - Usable
 - Consistent
