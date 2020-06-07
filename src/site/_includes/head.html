@@ -9,7 +9,9 @@
         {%- set pageTitle = title | smart | safe %}
     {%- endif %}
     <title>{{ pageTitle }} – tempertemper</title>
-    {%- if intro %}
+    {%- if description %}
+        {%- set description = description | smart | safe %}
+    {%- elif intro %}
         {%- set description = intro | markdown | safe | striptags(true) | escape %}
     {%- else %}
         {%- if category %}
