@@ -2,7 +2,7 @@
 title: A minimal task list pattern for GOV.UK
 intro: |
     One job I'm particularly proud of is the improved GOV.UK task list pattern. My stripped-back design is now part of HMRC's Design Patterns library.
-date: 2020-05-31
+date: 2019-11-28
 ---
 
 I'm a big [proponent of minimalism](/blog/minimalism-and-progressive-enhancement), and in the years I've been working on digital services in Government, I've often come across over-designed and over-engineered solutions.
@@ -74,6 +74,3 @@ The Working Group reviewed our user research findings, as well as the other data
 - Versatile
 
 So the pattern was added to the HMRC Design Patterns library and more services are now using it, gathering more user research, and when the pattern gathers enough weight it will be submitted for consideration in the [central government Design System](https://design-system.service.gov.uk/).
-
-
-
