@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Builds option to use dedicated page description in front matter, rather than sharing the `intro`
+- Removes top and bottom margin from images when they're in a `<p>` tags (when added via Markdown)
 
 ----------
 
