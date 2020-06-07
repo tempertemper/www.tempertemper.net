@@ -2,7 +2,7 @@
 title: Efficient, simple and usable GOV.UK dashboard pages
 intro: |
     In the service I've worked on for the last two years, a lot of improvements have been made. One huge win was the dashboard page.
-date: 2020-06-01
+date: 2020-04-08
 ---
 
 In the service I've worked on for the last two years, the team has made a *lot* of improvements. The central [page where the user enters their business information](/portfolio/a-minimal-task-list-pattern-for-govuk) was one big win, but another core page was also causing problems.
