@@ -6,10 +6,6 @@
 
   h2 {
     @include heading-xl;
-
-    @media (min-width: $l) {
-      font-size: ms(5);
-    }
   }
 
   form {
