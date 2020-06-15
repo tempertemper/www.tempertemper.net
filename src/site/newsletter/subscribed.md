@@ -1,11 +1,6 @@
 ---
-title: You've subscribed
-heading: You've subscribed
+title: You've subscribed successfully
 intro: |
-    You've subscribed to the Resources mailing list
-hideIntro: true
+    It's great to have you on board! What next? [Follow me on Twitter](https://twitter.com/tempertemper) and hold tight for the next newsletter!
 layout: default
 ---
-
-Welcome to the club– you're all signed up! What next? [Follow me on Twitter](https://twitter.com/tempertemper) and hold tight for the next resource!
-

@@ -1,17 +1,15 @@
 ---
-title: Unsubscribe from Resources mailing list
-heading: Unsubscribe
+title: Unsubscribe from the tempertemper newsletter
 intro: |
-    Unsubscribe from tempertemper's Resources mailing list
-hideIntro: true
+    I've always given you the option of unsubscribing, so here's how – just send your email with the form below and I'll remove your name from the list.
 layout: default
 ---
 
-Are you sure you want to unsubscribe? It’ll be sad to see you go… If you still want to stay in touch [follow me on Twitter](https://twitter.com/tempertemper) instead.
+If you still want to stay in touch, you can [follow me on Twitter](https://twitter.com/tempertemper) instead.
 
 <form id="unsubscribe" class="unsubscribe" method="post" app="perch_forms" action="https://tempertemper.createsend.com/t/t/u/yduddd/">
     <div>
-        <label for="email">Email:</label>
+        <label for="email">Your email address</label>
         <input type="email" id="email" required="true" name="cm-yduddd-yduddd" />
     </div>
     <input type="submit" value="Unsubscribe" />
