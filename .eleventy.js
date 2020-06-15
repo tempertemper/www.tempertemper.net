@@ -49,7 +49,7 @@ module.exports = eleventyConfig => {
 
   /* List all tags */
   eleventyConfig.addFilter("tags", collection => {
-    const notRendered = ['all', 'post', 'resource', 'testimonial'];
+    const notRendered = ['all', 'post', 'resource', 'testimonial', 'case_study'];
     return Object.keys(collection)
       .filter(d => !notRendered.includes(d))
       .sort();
@@ -57,7 +57,7 @@ module.exports = eleventyConfig => {
 
   /* List tags belonging to a page */
   eleventyConfig.addFilter("tagsOnPage", tags => {
-    const notRendered = ['all', 'post', 'resource', 'testimonial'];
+    const notRendered = ['all', 'post', 'resource', 'testimonial', 'case_study'];
     return tags
       .filter(d => !notRendered.includes(d))
       .sort();
