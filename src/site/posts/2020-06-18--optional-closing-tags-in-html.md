@@ -2,7 +2,7 @@
 title: Optional closing tags in HTML
 intro: |
     One of the interesting things about HTML5 is its flexibility. You don't even need a closing tag on some elements! But be careful with that.
-date: 2020-06-17
+date: 2020-06-18
 tags:
     - Development
 ---
