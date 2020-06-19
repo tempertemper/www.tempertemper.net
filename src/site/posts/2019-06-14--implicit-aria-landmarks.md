@@ -66,7 +66,7 @@ Also, the [same principle](https://www.w3.org/TR/html-aria/#footer) is *supposed
 
 ## The annoying thing
 
-Browser support is a thing in front-end development, and unfortunately/predictably if you want to [support Internet Explorer](https://www.html5accessibility.com) (and I'm not talking about IE8; I mean *any* version, including the most recent, IE11) you have to be explicit with your roles.
+Browser support is a thing in frontend development, and unfortunately/predictably if you want to [support Internet Explorer](https://www.html5accessibility.com) (and I'm not talking about IE8; I mean *any* version, including the most recent, IE11) you have to be explicit with your roles.
 
 But the thing that bugs me about all of this is that the WC3 page on [ARIA in HTML](https://www.w3.org/TR/html-aria/#h-note) tells us
 
@@ -90,4 +90,4 @@ I'll be continuing to add `role=""` attributes to elements that I want to be lan
 
 I'll also feel more comfortable using more than one `<header>` on a page, but it'll only be doing it inside either an `<article>` or `<section>` – I don't want any rogue landmarks being created!
 
-If only front-end development were easy!
+If only frontend development were easy!
