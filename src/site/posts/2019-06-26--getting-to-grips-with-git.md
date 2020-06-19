@@ -8,7 +8,7 @@ tags:
     - Git
 ---
 
-I bit the bullet and began playing around with [Git](https://git-scm.com) back in early 2012, around the time when front-end development started getting a bit more complicated than a text editor and an FTP client.
+I bit the bullet and began playing around with [Git](https://git-scm.com) back in early 2012, around the time when frontend development started getting a bit more complicated than a text editor and an FTP client.
 
 At that time, I wasn't using the command line for much, if anything; even things like compiling SCSS to CSS was done in a GUI like [CodeKit](https://codekitapp.com). So naturally I researched the best Mac app (the most excellent [Tower](https://www.git-tower.com/mac)) and stared there.
 
@@ -41,4 +41,3 @@ I'm perfectly happy dancing around on the the command line and, as I mentioned, 
 Now that it's gone I have no option but to get some muscle memory behind all of those commands I've been tentatively trialling over the last year.
 
 Command line Git, here I come!
-

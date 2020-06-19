@@ -34,7 +34,7 @@ In 2016 I made the move from websites into digital products. I worked full-time 
 
 ### Gov.uk
 
-I've been working in government since early 2018 on a [Scrum](https://www.mountaingoatsoftware.com/agile/scrum) team in the Digital Delivery Centre. I'm the team's interaction designer, building my designs as working prototypes (in HTML/CSS/JavaScript) for usability testing, and also getting very involved in our service's front-end code and accessibility testing.
+I've been working in government since early 2018 on a [Scrum](https://www.mountaingoatsoftware.com/agile/scrum) team in the Digital Delivery Centre. I'm the team's interaction designer, building my designs as working prototypes (in HTML/CSS/JavaScript) for usability testing, and also getting very involved in our service's frontend code and accessibility testing.
 
 
 ## Sharing
@@ -43,7 +43,7 @@ I'm a big believer in sharing. The web community is exceptionally generous and I
 
 ### A local meetup
 
-In 2015 I co-founded Frontend NE, a [monthly front-end web development meetup](https://frontendne.co.uk) and [annual conference](https://2019.frontendne.co.uk). The meetup gives front-end web developers a place to learn more about their craft, as well as put the web-world to rights over beer and pizza; while the conference draws folk in from further afield for a day of talks, learning and fun.
+In 2015 I co-founded Frontend NE, a [monthly frontend web development meetup](https://frontendne.co.uk) and [annual conference](https://2019.frontendne.co.uk). The meetup gives frontend web developers a place to learn more about their craft, as well as put the web-world to rights over beer and pizza; while the conference draws folk in from further afield for a day of talks, learning and fun.
 
 ### Speaking
 

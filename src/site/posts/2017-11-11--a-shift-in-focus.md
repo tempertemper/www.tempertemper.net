@@ -27,7 +27,7 @@ Any energy I put into my site was spent converting the then-blog into a stand-al
 
 ## A shift of focus
 
-So you'll notice a huge shift in focus on this website. It's no centred on freelance and on-person-agency work; instead it's all about me as a designer and front-end developer. I'll be writing about my opinions, things I've been up to, design and development challenges I've overcome, that kind of thing.
+So you'll notice a huge shift in focus on this website. It's no centred on freelance and on-person-agency work; instead it's all about me as a designer and frontend developer. I'll be writing about my opinions, things I've been up to, design and development challenges I've overcome, that kind of thing.
 
 The [Resources section](/resources) will always be there for my clients and small website owners, and I don't plan to abandon it!
 
