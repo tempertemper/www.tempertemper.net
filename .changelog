@@ -13,6 +13,8 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Adds some spacing top and bottom to pre code blocks
+- Reduces main heading (`<h1>`) size slightly
+- Uses 'development' rather than 'dev' in homepage `<h1>`
 
 ----------
 
