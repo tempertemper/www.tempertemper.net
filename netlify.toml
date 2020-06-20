@@ -10,6 +10,8 @@
 
 [context.branch-deploy]
   command = "npm run staging"
+  base = "."
+  functions = "./lib/functions"
 
 
 # Redirects
