@@ -10,8 +10,8 @@
 
     @media (min-width: $l) {
       max-width: calc(100% + 2em);
-      margin-left: -1em;
-      margin-right: -1em;
+      margin-left: calc(-1em);
+      margin-right: calc(-1em);
     }
 
     iframe,
