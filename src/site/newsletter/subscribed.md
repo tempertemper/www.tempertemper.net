@@ -1,6 +1,6 @@
 ---
-title: You've subscribed successfully
+title: Great to have you on board!
 intro: |
-    It's great to have you on board! What next? [Follow me on Twitter](https://twitter.com/tempertemper) and hold tight for the next newsletter!
+    Thanks for confirming your email. What next? [Follow me on Twitter](https://twitter.com/tempertemper) and hold tight for the next newsletter!
 layout: default
 ---
