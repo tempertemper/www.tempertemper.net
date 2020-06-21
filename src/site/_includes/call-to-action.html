@@ -1,16 +1,22 @@
-<section aria-labelledby="ctaLabel" class="call-to-action">
-    {% if tags.length >= 1 %}
-        {% if tags.includes('post') %}
-            <h2 id="ctaLabel">Get them delivered!</h2>
-            <p>If you enjoyed this and want all the latest articles delivered to your inbox every month, pop your email in the form below.</p>
-            {% include "newsletter-signup.html" %}
-        {% elif tags.includes('resource') or tags.includes('testimonial') %}
-            <h2 id="ctaLabel">Want to work with me?</h2>
-            <p>If you like what you’ve read and think we’d work together, why not reach out and say hello?</p>
-            <a class="button" draggable="false" role="button" href="/contact">Contact me now</a>
-        {% endif %}
+{%- if tags.length >= 1 and tags.includes('post') %}
+    {%- set post = true %}
+{%- elif tags.length >= 1 and tags.includes('resource') %}
+    {%- set resource = true %}
+{%- elif tags.length >= 1 and tags.includes('testimonial') %}
+    {%- set testimonial = true %}
+{%- endif %}
+{% set ctaLabel = "ctaLabel" %}
+<section aria-labelledby="{{ ctaLabel }}" class="call-to-action">
+    {% if post %}
+        <h2 id="{{ ctaLabel }}">Get them delivered!</h2>
+        <p>If you enjoyed this and want all the latest articles delivered to your inbox every month, pop your email in the form below.</p>
+        {% include "newsletter-signup.html" %}
+    {% elif resource or testimonial %}
+        <h2 id="{{ ctaLabel }}">Want to work with me?</h2>
+        <p>If you like what you’ve read and think we’d work together, why not reach out and say hello?</p>
+        <a class="button" draggable="false" role="button" href="/contact">Contact me now</a>
     {% else %}
-        <h2 id="ctaLabel">Keep in the loop</h2>
+        <h2 id="{{ ctaLabel }}">Keep in the loop</h2>
         <p>For all of my latest articles delivered to your inbox every month, pop your email in the form below.</p>
         {% include "newsletter-signup.html" %}
     {% endif %}

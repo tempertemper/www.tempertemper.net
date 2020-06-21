@@ -25,10 +25,12 @@ All notable changes to this project will be documented in this file. The format 
 - Uses 'development' rather than 'dev' in homepage `<h1>`
 - Removes hyphen from references to frontend development
 - Uses same 'contact me' CTA for resources
+- Refactors CTA conditionals
 
 ### Removes
 - Removes Campaign Monitor newsletter integration from Resources
 - Removes newsletter unsubscribe page
+
 ----------
 
 
