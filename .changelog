@@ -18,6 +18,8 @@ All notable changes to this project will be documented in this file. The format 
 - Tells Netlify to go to 'confirm email' page on newsletter signup
 - Newsletter sign up form to Blog pages
 - Newsletter sign up form as default CTA throughout site
+- Adds new YouTube embed include, using no cookie embed code
+- Styles embedded YouTube videos
 
 ### Changes
 - Adds some spacing top and bottom to pre code blocks
@@ -26,6 +28,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes hyphen from references to frontend development
 - Uses same 'contact me' CTA for resources
 - Refactors CTA conditionals
+- Used new YouTube embed for 'Why you need a privacy policy' resource's embedded video
 
 ### Removes
 - Removes Campaign Monitor newsletter integration from Resources

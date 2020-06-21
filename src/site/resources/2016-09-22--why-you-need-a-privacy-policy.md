@@ -41,7 +41,8 @@ Useful stuff! Similarly, when someone visits your site, it's likely that a cooki
 
 Of course, cookies can be used to more intrusive ends, which is why the law was passed. But the law was rather heavy-handed… Here's a great video that summarises things nicely:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/arWJA0jVPAc" frameborder="0" allowfullscreen></iframe>
+{% set youtubeVideoID = "arWJA0jVPAc" %}
+{% include "youtube-embed.html" %}
 
 And here's [the accompanying website](http://nocookielaw.com/).
 
