@@ -1,37 +1,17 @@
 <section aria-labelledby="ctaLabel" class="call-to-action">
     {% if tags.length >= 1 %}
         {% if tags.includes('post') %}
-            <h2 id="ctaLabel">Follow along</h2>
-            <p>If you enjoyed this post and want to know when the next one is published, head to Twitter and hit ‘Follow’.</p>
-            <a class="button" draggable="false" role="button" href="{{ site.author.twitter | twitterLink }}">
-                {% include "svg/twitter.svg" %}
-                <span>{{ site.author.twitter }}</span>
-            </a>
-        {% elif tags.includes('resource') %}
-            <h2 id="ctaLabel">Never miss a resource</h2>
-            <p>Do you have a website? Not the technical type? Join to receive <strong>free</strong> tips, useful to anyone looking to get the most out of their website.</p>
-            <form id="subscribe" method="post" app="perch_forms" action="https://tempertemper.createsend.com/t/t/s/yduddd/" class="subscribe">
-                <div>
-                    <label for="subscriber_name">Name:</label>
-                    <input id="subscriber_name" type="text" required="true" name="cm-name" />
-                </div>
-                <div>
-                    <label for="subscriber_email">Email:</label>
-                    <input id="subscriber_email" type="email" required="true" name="cm-yduddd-yduddd" />
-                </div>
-                <input type="submit" value="Join!" />
-            </form>
-            <p><small>Your email won’t be passed to any third parties or used in any way that won’t be of benefit to you. Also, you can <a href="/mailing-list/unsubscribe">unsubscribe</a> at any time.</small></p>
-        {% elif tags.includes('testimonial') %}
+            <h2 id="ctaLabel">Get them delivered!</h2>
+            <p>If you enjoyed this and want all the latest articles delivered to your inbox every month, pop your email in the form below.</p>
+            {% include "newsletter-signup.html" %}
+        {% elif tags.includes('resource') or tags.includes('testimonial') %}
             <h2 id="ctaLabel">Want to work with me?</h2>
-            <a class="button" draggable="false" role="button" href="/contact">Say hello</a>
+            <p>If you like what you’ve read and think we’d work together, why not reach out and say hello?</p>
+            <a class="button" draggable="false" role="button" href="/contact">Contact me now</a>
         {% endif %}
     {% else %}
-        <h2 id="ctaLabel">Follow me</h2>
-        <p>Keep up with my latest articles, accessibility and usability tips, and general ramblings over on Twitter.</p>
-        <a class="button" draggable="false" role="button" href="{{ site.author.twitter | twitterLink }}">
-            {% include "svg/twitter.svg" %}
-            <span>{{ site.author.twitter }}</span>
-        </a>
+        <h2 id="ctaLabel">Keep in the loop</h2>
+        <p>For all of my latest articles delivered to your inbox every month, pop your email in the form below.</p>
+        {% include "newsletter-signup.html" %}
     {% endif %}
 </section>

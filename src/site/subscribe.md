@@ -6,6 +6,7 @@ layout: default
 permalink: subscribe.html
 ---
 
+- Sign up to my [monthly newsletter](/newsletter/) for a round up of my latest articles
 - [Follow me on Twitter](https://twitter.com/tempertemper) where I tweet whenever something new goes up
 - Subscribe to the sites's [Atom (RSS) feed](/feeds/main.xml)
 - Subscribe to the site's [JSON feed](/feeds/main.json)

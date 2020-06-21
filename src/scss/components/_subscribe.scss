@@ -2,34 +2,13 @@
   @include boxout;
 
   @media (min-width: $m) {
+    display: flex;
+    align-items: flex-end;
 
-    div {
+    .input-group {
       @include layout($wide-layout);
-      @include span(2 of 4);
-
-      &:last-of-type {
-        @include span(last 2 of 4);
-      }
-    }
-  }
-
-  @media (min-width: $l) {
-
-    div {
-      @include layout($wide-layout);
-      @include span(3 of 8);
-
-      &:last-of-type {
-        @include span(3 of 8);
-      }
-    }
-
-    [type="submit"] {
-      @include span(last 2 of 8);
-      clear: none;
-      margin-top: 1.55em;
-      padding-left: 0;
-      padding-right: 0;
+      width: span(6 of 8);
+      margin-right: gutter();
     }
   }
 }
