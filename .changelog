@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file. The format 
 - Newsletter sign up form to Blog pages
 - Newsletter sign up form as default CTA throughout site
 - Adds new YouTube embed include, using no cookie embed code
-- Styles embedded youtube videos
+- Styles embedded YouTube videos
 
 ### Changes
 - Adds some spacing top and bottom to pre code blocks
