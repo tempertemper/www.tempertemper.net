@@ -4,13 +4,10 @@
             <h2 id="ctaLabel">Get them delivered!</h2>
             <p>If you enjoyed this and want all the latest articles delivered to your inbox every month, pop your email in the form below.</p>
             {% include "newsletter-signup.html" %}
-        {% elif tags.includes('resource') %}
-            <h2 id="ctaLabel">Never miss a resource</h2>
-            <p>Do you have a website? Not the technical type? Join to receive <strong>free</strong> tips, useful to anyone looking to get the most out of their website.</p>
-
-        {% elif tags.includes('testimonial') %}
+        {% elif tags.includes('resource') or tags.includes('testimonial') %}
             <h2 id="ctaLabel">Want to work with me?</h2>
-            <a class="button" draggable="false" role="button" href="/contact">Say hello</a>
+            <p>If you like what you’ve read and think we’d work together, why not reach out and say hello?</p>
+            <a class="button" draggable="false" role="button" href="/contact">Contact me now</a>
         {% endif %}
     {% else %}
         <h2 id="ctaLabel">Keep in the loop</h2>
