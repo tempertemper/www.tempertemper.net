@@ -24,6 +24,8 @@ pre {
   tab-size: 4;
   hyphens: none;
   border-radius: $border-radius-default;
+  margin-top: 1em;
+  margin-bottom: 1em;
 
   @media (min-width: $l) {
     margin-left: -1em;

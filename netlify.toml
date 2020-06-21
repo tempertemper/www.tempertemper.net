@@ -10,6 +10,8 @@
 
 [context.branch-deploy]
   command = "npm run staging"
+  base = "."
+  functions = "./lib/functions"
 
 
 # Redirects
@@ -1031,7 +1033,31 @@
 
 [[redirects]]
   from = "/mailing-list"
-  to = "/subscribe"
+  to = "/newsletter/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mailing-list/unsubscribe"
+  to = "/newsletter/unsubscribe"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mailing-list/unsubscribed"
+  to = "/newsletter/unsubscribed"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mailing-list/subscribe"
+  to = "/newsletter/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mailing-list/subscribed"
+  to = "/newsletter/subscribed"
   status = 301
   force = true
 

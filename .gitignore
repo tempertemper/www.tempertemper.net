@@ -5,3 +5,4 @@ style.css.map
 /dist/
 *.sublime-workspace
 .netlify/
+.env

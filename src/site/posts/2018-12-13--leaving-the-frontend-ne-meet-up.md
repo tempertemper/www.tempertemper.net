@@ -5,7 +5,7 @@ intro: |
 date: 2018-12-13
 ---
 
-In early 2015 [Colin Oakley](https://twitter.com/htmlandbacon) asked if anyone he knew fancied setting up a meet-up for front-end web developers in the Newcastle area. [Sam Beckham](https://twitter.com/samdbeckham) and I replied in the affirmative and Frontend NE was a thing.
+In early 2015 [Colin Oakley](https://twitter.com/htmlandbacon) asked if anyone he knew fancied setting up a meet-up for frontend web developers in the Newcastle area. [Sam Beckham](https://twitter.com/samdbeckham) and I replied in the affirmative and Frontend NE was a thing.
 
 Fast-forward 4 years and it’s time for me to bow out of the meet-up.
 
