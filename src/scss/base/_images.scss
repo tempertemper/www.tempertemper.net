@@ -1,6 +1,13 @@
 img {
   border-radius: $border-radius-default;
   box-shadow: 0 0 .25em lighten($black, 85%);
+  display: block;
+
+  @media (min-width: $l) {
+    max-width: calc(100% + 2em);
+    margin-left: calc(-1em);
+    margin-right: calc(-1em);
+  }
 
   @include dark-mode() {
     box-shadow: 0 0 .25em $colour-dark-mode-black;
