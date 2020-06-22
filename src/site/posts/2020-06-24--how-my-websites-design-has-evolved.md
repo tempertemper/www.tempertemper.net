@@ -1,7 +1,7 @@
 ---
 title: How my website's design has evolved
 intro: |
-    There's a thing in the web design community where we re-do our websites every couple of years. Confession time: I haven't redesigned mine since 2014.
+    My post on [portfolio redesign](/blog/why-i-havent-redesigned-my-portfolio-since-2014) got me wondering how my website has evolved. I had an enjoyable look on the WayBack Machine and took some snapshots.
 date: 2020-06-24
 tags:
     - Design
