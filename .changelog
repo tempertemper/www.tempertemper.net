@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds portfolio redirects to netlify.toml
+
+### Fixes
+- Rearranges some redirects that were added to netlify.toml randomly, so they're easier to find
+
 ----------
 
 
