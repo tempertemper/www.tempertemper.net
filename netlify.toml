@@ -1,10 +1,10 @@
 # Build commands
 
-# Production build command
+## Production build command
 [build]
   command = "npm run build"
 
-# Non-production build command
+## Non-production build command
 [context.deploy-preview]
   command = "npm run staging"
 
@@ -14,9 +14,10 @@
   functions = "./lib/functions"
 
 
-# Redirects
+# Internal redirects
 
-# Redirect default Netlify subdomain to primary domain
+## Redirect default Netlify subdomain to primary domain
+
 [[redirects]]
   from = "https://tempertemper.netlify.com/*"
   to = "https://tempertemper.net/:splat"
@@ -30,7 +31,7 @@
   force = true
 
 
-# Blog to Resources redirects
+## Blog to Resources redirects
 
 [[redirects]]
   from = "/2012-05-30-freeagent"
@@ -724,6 +725,12 @@
   force = true
 
 [[redirects]]
+  from = "/categories/category/markdown"
+  to = "/category/markdown"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/tag/marketing"
   to = "/category/marketing"
   status = 301
@@ -861,8 +868,90 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/free-security-updates"
+  to = "/blog/"
+  status = 301
+  force = true
 
-# Other rewites
+[[redirects]]
+  from = "/resources/types-of-email-and-when-to-use%C2%A0each"
+  to = "/resources/types-of-email-and-when-to-use-each"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/discrimination-on-the-web"
+  to = "/resources/disability-on-the-web"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/dropbox-%E2%80%93-my-most-useful-app"
+  to = "/blog/dropbox-my-most-useful-app"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/blog/thoughts-on-3d-touch"
+  to = "/blog/thoughts-on-3d-touch"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/dashes,-asterisks-and-plus-signs"
+  to = "/blog/dashes-asterisks-and-plus-signs"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/dropbox-%C3%A2%C2%80%C2%93-my-most-useful-app"
+  to = "/blog/dropbox-my-most-useful-app"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cms/resources/blog/internet-explorer-icon.png"
+  to = "/assets/img/summary.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/lets-make-webmasters-a-thing-again+2020-03-03+00:16:42+0+5"
+  to = "/blog/lets-make-webmasters-a-thing-again"
+  status = 301
+  force = true
+
+
+## Portfolio redirects
+
+[[redirects]]
+  from = "/portfolio.php"
+  to = "/portfolio/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/projects/"
+  to = "/portfolio/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/work/"
+  to = "/portfolio/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/projects/ems-publishing"
+  to = "/portfolio/"
+  status = 301
+  force = true
+
+
+## Other redirects
+
 [[redirects]]
   from = "/legal/"
   to = "/privacy-policy"
@@ -880,6 +969,33 @@
   to = "/privacy-policy"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/error"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/testimonials/jonny-p%C3%A9nzes-underhill"
+  to = "/testimonials/jonny-penzes-underhill"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/contact"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about/colophon"
+  to = "/colophon"
+  status = 301
+  force = true
+
+
+## Feed redirects
 
 [[redirects]]
   from = "/blog/rss"
@@ -911,11 +1027,8 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "/error"
-  to = "/404"
-  status = 301
-  force = true
+
+## Image redirects
 
 [[redirects]]
   from = "/assets/img/tempertemper-web-design-logo-facebook.jpg"
@@ -965,77 +1078,17 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "/blog/free-security-updates"
-  to = "/blog/"
-  status = 301
-  force = true
 
-[[redirects]]
-  from = "/testimonials/jonny-p%C3%A9nzes-underhill"
-  to = "/testimonials/jonny-penzes-underhill"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/types-of-email-and-when-to-use%C2%A0each"
-  to = "/resources/types-of-email-and-when-to-use-each"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/discrimination-on-the-web"
-  to = "/resources/disability-on-the-web"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/dropbox-%E2%80%93-my-most-useful-app"
-  to = "/blog/dropbox-my-most-useful-app"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/blog/thoughts-on-3d-touch"
-  to = "/blog/thoughts-on-3d-touch"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/contact"
-  to = "/contact"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/about/colophon"
-  to = "/colophon"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/cms/resources/blog/internet-explorer-icon.png"
-  to = "/assets/img/summary.png"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/dashes,-asterisks-and-plus-signs"
-  to = "/blog/dashes-asterisks-and-plus-signs"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/dropbox-%C3%A2%C2%80%C2%93-my-most-useful-app"
-  to = "/blog/dropbox-my-most-useful-app"
-  status = 301
-  force = true
+## Testimonial redirects
 
 [[redirects]]
   from = "/mailing-list"
   to = "/newsletter/"
   status = 301
   force = true
+
+
+## Newsletter redirects
 
 [[redirects]]
   from = "/mailing-list/unsubscribe"
@@ -1062,19 +1115,14 @@
   force = true
 
 [[redirects]]
-  from = "/blog/lets-make-webmasters-a-thing-again+2020-03-03+00:16:42+0+5"
-  to = "/blog/lets-make-webmasters-a-thing-again"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/security.txt"
   to = "/.well-known/security.txt"
   status = 301
   force = true
 
 
-# Spam rewrites
+## Spam redirects
+
 [[redirects]]
   from = "/wp-login.php"
   to = "/404"
@@ -1101,6 +1149,12 @@
 
 [[redirects]]
   from = "/wordpress/wp-login.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wordpress/"
   to = "/404"
   status = 301
   force = true
@@ -1156,6 +1210,12 @@
 [[redirects]]
   from = "/post.php"
   to = "/blog/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/.env"
+  to = "/404"
   status = 301
   force = true
 
@@ -1268,7 +1328,8 @@
   force = true
 
 
-# External rewrites
+# External redirects
+
 [[redirects]]
   from = "/youtube"
   to = "https://www.youtube.com/tempertemper"
