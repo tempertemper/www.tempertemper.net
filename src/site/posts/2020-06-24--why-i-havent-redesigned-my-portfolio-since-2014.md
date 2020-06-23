@@ -2,7 +2,7 @@
 title: Why I haven't 'redesigned my portfolio' since 2014
 intro: |
     There's a thing in the web design community where we re-do our websites every couple of years. Confession time: I haven't redesigned mine since 2014.
-date: 2020-06-23
+date: 2020-06-24
 tags:
     - Design
 ---
