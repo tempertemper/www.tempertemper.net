@@ -2,7 +2,7 @@
 title: How my website's design has evolved
 intro: |
     My post on [portfolio redesign](/blog/why-i-havent-redesigned-my-portfolio-since-2014) got me wondering how my website has evolved. I had an enjoyable look on the WayBack Machine and took some snapshots.
-date: 2020-06-24
+date: 2020-06-25
 tags:
     - Design
     - Brand
