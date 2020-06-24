@@ -11,10 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.10.3] - 2020-06-24
+
 ### Changes
 - Changes prism.js colour scheme to Monokai
-
-----------
 
 
 ## [5.10.2] - 2020-06-22
