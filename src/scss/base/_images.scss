@@ -2,6 +2,11 @@ img {
   border-radius: $border-radius-default;
   box-shadow: 0 0 .25em lighten($black, 85%);
   display: block;
+  background-color: $colour-primary-light;
+
+  @include dark-mode() {
+    background-color: $colour-dark-mode-highlight;
+  }
 
   @media (min-width: $l) {
     max-width: calc(100% + 2em);

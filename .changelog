@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Gives image alt text a background colour if the image fails to load
+
 ----------
 
 
