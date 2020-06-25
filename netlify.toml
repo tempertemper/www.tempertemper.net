@@ -1124,6 +1124,18 @@
 ## Spam redirects
 
 [[redirects]]
+  from = "/forums"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "*/wlwmanifest.xml"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/wp-login.php"
   to = "/404"
   status = 301
