@@ -3,6 +3,7 @@
 ## Production build command
 [build]
   command = "npm run build"
+  functions = "./lib/functions"
 
 ## Non-production build command
 [context.deploy-preview]
