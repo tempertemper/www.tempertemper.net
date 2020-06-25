@@ -1114,41 +1114,29 @@
   status = 301
   force = true
 
+
+## Spam redirects
+
 [[redirects]]
   from = "/security.txt"
   to = "/.well-known/security.txt"
   status = 301
   force = true
 
-
-## Spam redirects
-
 [[redirects]]
-  from = "/wp-login.php"
+  from = "/forums"
   to = "/404"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/blog/wp-login.php"
+  from = "*/wlwmanifest.xml"
   to = "/404"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/resources/wp-login.php"
-  to = "/404"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/test/wp-login.php"
-  to = "/404"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/wordpress/wp-login.php"
+  from = "*/wp-login.php"
   to = "/404"
   status = 301
   force = true
@@ -1226,13 +1214,7 @@
   force = true
 
 [[redirects]]
-  from = "/this-post-does-not-exist"
-  to = "/blog/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/this-post-does-not-exist"
+  from = "*/this-post-does-not-exist"
   to = "/blog/"
   status = 301
   force = true
