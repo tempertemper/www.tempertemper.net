@@ -80,7 +80,7 @@ The one thing per page rule means that:
 - Error messages were much less complicated
 - [Check answers](https://design-system.service.gov.uk/patterns/check-answers/) pages were much less complicated
 
-Not only that, but some pages posed an accessibility problem where a `<fieldset>` is being used within another `<fieldset>`. Leonie Watson details the problem in her '[Using the fieldset and legend elements](https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/)' article:
+Not only that, but some pages posed an accessibility problem where a `<fieldset>` is being used within another `<fieldset>`. Leonie Watson details the problem in her article [Using the fieldset and legend elements](https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/):
 
 > It is possible to nest one `<fieldset>` element inside another, but it is not recommended. Screen readers do not automatically indicate the end of the `<fieldset>` element, so it is impossible for screen reader users to confidently know which fields belong within which fieldset.
 
