@@ -6,6 +6,9 @@ date: 2020-06-25
 tags:
     - Design
     - Brand
+summaryImage: homepage-snapshot-2020-06.png
+summaryImageAlt: A snapshot of www.tempertemper.net as it is now
+
 ---
 
 Yesterday's post on [Why I haven't 'redesigned my portfolio' since 2014](/blog/why-i-havent-redesigned-my-portfolio-since-2014) got me thinking. How *has* my website evolved? I did some digging on the [Internet Archive WayBack Machine](https://web.archive.org/) (and filled in one or two gaps where images were missing) and the results are quite interesting.
@@ -22,7 +25,7 @@ By May 2012, after more than a year of trading, my business establishing nicely.
 
 By 2014, my brand and [the website's design had been pretty solid](https://web.archive.org/web/20140105074953/http://tempertemper.net/) for a number of years, using OCR-A for the logo and Museo Sans for all other typography, `#4485c7` as the brand colour, and the gradients and shadows had all been stripped away in line with the 'flat design' trends of the day.
 
-![Early 2014, pre-rebrand version of my website's homepage, with a ‘hamburger’ navigation menu, with an emphasis on my work, reinforced by a testimonial](/assets/img/blog/2014-01--homepage-snapshot.png)
+![Early 2014, pre-rebrand version of my website's homepage, with a ‘hamburger’ navigation menu, with an emphasis on my work, reinforced by a testimonial](/assets/img/blog/homepage-snapshot-2014-01.png)
 
 
 ## December 2014
