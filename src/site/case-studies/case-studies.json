@@ -1,5 +1,5 @@
 {
-  "layout": "default.html",
+  "layout": "case-study.html",
   "hideIntro": true,
   "tags" : ["case_study"],
   "permalink": "portfolio/{{ title | slug | safe }}.html"
