@@ -14,6 +14,19 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.10.4] - 2020-06-27
+
+### Adds
+- Adds 'more case studies' after each case study
+- Adds custom featured image for case studies
+
+### Changes
+- Gives image alt text a background colour if the image fails to load
+- Gives case studies their own page layout
+- Uses contact CTA on case studies
+- Specifies featured image on each case study
+
+
 ## [5.10.3] - 2020-06-24
 
 ### Changes
