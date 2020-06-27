@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Gives image alt text a background colour if the image fails to load
 - Gives case studies their own page layout
+- Uses contact CTA on case studies
 
 ----------
 
