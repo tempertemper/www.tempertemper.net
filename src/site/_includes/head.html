@@ -26,6 +26,8 @@
         {%- set cardType = "summary_large_image" %}
         {%- if tags.includes('resource') %}
             {%- set imgDir = 'resources/' %}
+        {%- elif tags.includes('case_study') %}
+            {%- set imgDir = 'case-studies/' %}
         {%- else %}
             {%- set imgDir = 'blog/' %}
         {%- endif %}

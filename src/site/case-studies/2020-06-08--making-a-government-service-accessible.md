@@ -3,6 +3,8 @@ title: Making a Government service accessible
 intro: |
     I worked on a Government service for nearly two and a half years, spending much of that time ensuring it was accessible. Here's how it happened.
 date: 2020-06-08
+summaryImage: colour-contrast.png
+summaryImageAlt: An image showing two banners with different colours; one that doesn't pass WCAG AA colour contrast and one other that does
 ---
 
 In March 2018 I began work as the interaction designer on a government service that was in pretty bad shape. It was a couple of years old by that point and it hadn't had the care and attention it needed, which was causing problems. That in itself would have been challenge enough, but it was also one of the largest services in HMRC.
