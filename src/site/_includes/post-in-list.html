@@ -1,6 +1,7 @@
-{%- if (tags.length >= 1 and (tags.includes('post') or tags.includes('resource'))) or home %}
+{%- if (tags.length >= 1 and (blogPost or resource or caseStudy)) or home %}
     {%- set briefPostInList = true %}
-{%- endif %}
+{%- endif -%}
+
 <li class="post-in-list">
     {% if briefPostInList %}<h3>{% else %}<h2 class="entry-title">{% endif %}
         <a href="{{ post.url  | replace(".html", "") }}">
