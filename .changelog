@@ -11,11 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.10.5] - 2020-06-28
+
 ### Changes
 - Makes contact CTA a bit less corporate sounding
 - Reduces unsubscribe message in newsletter sign up small print
-
-----------
 
 
 ## [5.10.4] - 2020-06-27
