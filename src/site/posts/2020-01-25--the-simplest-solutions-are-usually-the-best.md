@@ -14,7 +14,7 @@ I spent over five years happily tinkering with my brand, trying to find a way to
 
 My original branding was ok… I used the friendly-looking [Museo Sans](https://www.myfonts.com/fonts/exljbris/museo-sans/) as my main typeface and my logo used [OCR-A](https://www.myfonts.com/fonts/adobe/ocra/), a retro monospace font, set white on a smokey blue background with the words 'temper' and 'temper' stacked on top of one another.
 
-![The original tempertemper logo, using OCR-A in white against a blue background](/assets/img/blog/tempertemper-logo--v1.0.png)
+<img src="/assets/img/blog/tempertemper-logo--v1.0.png" alt="The original tempertemper logo, using OCR-A in white against a blue background" width="800" height="450" />
 
 It served me well for the first few years, but it was always something I was looking to overhaul. I set five rules for a re-brand:
 
@@ -31,7 +31,7 @@ My re-brand work started with the logo, with the notion that the typeface and ge
 
 I've always been a fan of [Helvetica Neue](https://www.myfonts.com/fonts/linotype/neue-helvetica/) in a bold weight, so a lot of early concepts involved that.
 
-![The first half-decent attempt at a redesign of the tempertemper logo – Helvetica Neue in smokey-blue against a white background](/assets/img/blog/tempertemper-logo--v2.0-alpha.png)
+<img src="/assets/img/blog/tempertemper-logo--v2.0-alpha.png" alt="The first half-decent attempt at a redesign of the tempertemper logo – Helvetica Neue in smokey-blue against a white background" width="800" height="450" />
 
 It was progress, but it only fully satisfied the first rule:
 
@@ -48,7 +48,7 @@ Furthermore, the way the `r` of the first `temper` met the `t` of the second (th
 
 So in the summer of 2014 I called in my good friend [Ant Barker](https://designbyant.co.uk), who I've collaborated with on countless client projects. He built upon the work I'd been doing and came up with something we were both very happy with!
 
-![The redesigned tempertemper logo, set in FS-Me in black with a bright blue underscore immediately after the second r, against a white background](/assets/img/blog/tempertemper-logo--v2.0.png)
+<img src="/assets/img/blog/tempertemper-logo--v2.0.png" alt="The redesigned tempertemper logo, set in FS-Me in black with a bright blue underscore immediately after the second r, against a white background" width="800" height="450" />
 
 1. It was presented as one word
 2. An underscore, which represents a cursor, tying it into both coding and writing
@@ -91,7 +91,7 @@ One day, on the bus home from work, I scrolled to a blog post by [Amy Hupe](http
 
 Here's where I landed with the new design:
 
-![The most recent iteration on the tempertemper logo in black with a thickened, non-rounded rectangle underscore, on a white background](/assets/img/blog/tempertemper-logo--v2.1.png)
+<img src="/assets/img/blog/tempertemper-logo--v2.1.png" alt="The most recent iteration on the tempertemper logo in black with a thickened, non-rounded rectangle underscore, on a white background" width="800" height="450" />
 
 Don't see much difference? Well, there's not! But if you look closely:
 
@@ -101,13 +101,13 @@ Don't see much difference? Well, there's not! But if you look closely:
 
 Here's a closer look at the new underscore, in comparison with its older shape:
 
-![The old tempertemper logo animating into the new logo, to demonstrate the difference in the underscore](/assets/img/blog/tempertemper-logo--v2.1.gif)
+<img src="/assets/img/blog/tempertemper-logo--v2.1.gif" alt="The old tempertemper logo animating into the new logo, to demonstrate the difference in the underscore" width="800" height="450" />
 
 ### How's that icon looking?
 
 So the change to the logo is pretty low-key. The biggest change is how that translates to an icon. So instead of the `tt_` icon, you'll be seeing something else:
 
-![The new tempertemper icon in black on white, showing the 8 by 8 grid it was designed on; then coloured examples, first a blue square with a black underscore and a white square with a blue underscore on a black background, then a blue square with a white underscore and a black square with a blue underscore on a white background](/assets/img/blog/tempertemper-logo--v2.1--icon.png)
+<img src="/assets/img/blog/tempertemper-logo--v2.1--icon.png" alt="The new tempertemper icon in black on white, showing the 8 by 8 grid it was designed on; then coloured examples, first a blue square with a black underscore and a white square with a blue underscore on a black background, then a blue square with a white underscore and a black square with a blue underscore on a white background" width="800" height="450" />
 
 So it's a simple and very flexible icon; what's more:
 
