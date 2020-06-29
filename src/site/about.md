@@ -8,7 +8,11 @@ permalink: about.html
 cta: true
 ---
 
-![Martin Underhill of tempertemper Web Design](/assets/img/martin-underhill-tempertemper.jpg)
+<picture>
+  <source srcset="/assets/img/martin-underhill-tempertemper.webp" type="image/webp">
+  <source srcset="/assets/img/martin-underhill-tempertemper.jpg" type="image/jpeg">
+  <img src="/assets/img/martin-underhill-tempertemper.jpg" alt="Martin Underhill of tempertemper Web Design">
+</picture>
 
 ## My career in the web
 
