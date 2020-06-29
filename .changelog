@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds changes default image styling to accommodate intrinsic aspect ratio
+- Swaps all Markdown image references to HMTL with width and height attributes set
+
 ### Changes
 - Makes About page picture a progressively enhanced WebP
 

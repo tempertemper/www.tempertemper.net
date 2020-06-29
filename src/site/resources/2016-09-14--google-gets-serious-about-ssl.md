@@ -37,11 +37,11 @@ It's this last point that's important to us here.
 
 At present, if your site is served securely, Chrome displays a nice **padlock** icon and highlights the 'https://' part of the address; all in a lovely positive feeling **green** colour:
 
-![A website served securely, showing a green padlock](/assets/img/resources/tempertemper-ssl.png)
+<img src="/assets/img/resources/tempertemper-ssl.png" alt="A website served securely, showing a green padlock" width="800" height="450" />
 
 If it's not, you just see a grey 'information' symbol: the letter 'i' in a circle:
 
-![A website served non-securely, showing a grey information icon](/assets/img/resources/newcastle-city-council-ssl.png)
+<img src="/assets/img/resources/newcastle-city-council-ssl.png" alt="A website served non-securely, showing a grey information icon" width="800" height="450" />
 
 From January 2017, this will continue to be the case for your average non-secure web page but on pages that ask for passwords or credit card information Chrome will go even further. It'll highlight pages that ask for passwords, etc. with a "Not secure" label next to the 'i'.
 

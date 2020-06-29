@@ -13,7 +13,7 @@ With a circular crop, which is what services like Twitter do, the 8 × 8 grid th
 
 The position on the x-axis is fine; it's the height. It just needs lifting slightly. Lifting it a row on the 8 × 8 grid is too much – that brings the top of the rectangle onto the centre, which is too high. Half of that amount works really well, which is where a 16 × 16 grid comes in.
 
-![The tempertemper icon before switching to a 16 × 16 grid, where the underscore sits too close to the edge of the circle, and after, where it's positioned nicely](/assets/img/blog/tempertemper-logo--v2.1--icon--round.png)
+<img src="/assets/img/blog/tempertemper-logo--v2.1--icon--round.png" alt="The tempertemper icon before switching to a 16 × 16 grid, where the underscore sits too close to the edge of the circle, and after, where it's positioned nicely" width="800" height="450" />
 
 It's worth mentioning that the 16 × 16 grid doesn't quite work on a square or rounded square canvas, so I won't be switching to the new grid completely. The 8 × 8 grid is perfect for those uses – super simple and nicely positioned/proportioned.
 
