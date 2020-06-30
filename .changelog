@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.11.0] - 2020-06-30
+
 ### Adds
 - Adds changes default image styling to accommodate intrinsic aspect ratio
 - Swaps all Markdown image references to HMTL with width and height attributes set
@@ -18,8 +23,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Makes About page picture a progressively enhanced WebP
-
-----------
 
 
 ## [5.10.5] - 2020-06-28
