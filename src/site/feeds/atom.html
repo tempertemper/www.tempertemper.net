@@ -19,7 +19,7 @@ permalink: feeds/main.xml
     </author>
     {%- for post in collections.post | reverse %}
     <entry>
-        <title>{{ post.data.title | smart | safe }}</title>
+        <title>{{ post.data.title | smart | safe | replace("&nbsp;", " ") }}</title>
         <link href="{{ site.url }}{{ post.url | replace (".html", "") }}" />
         <id>{{ site.url }}{{ post.url | replace (".html", "") }}</id>
         <published>{{ post.date | rssDate }}</published>
