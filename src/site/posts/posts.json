@@ -2,5 +2,5 @@
   "layout": "article.html",
   "hideIntro": true,
   "tags": ["post"],
-  "permalink": "blog/{{ title | slug | safe }}.html"
+  "permalink": "blog/{{ customURL if customURL else title | slug | safe }}.html"
 }
