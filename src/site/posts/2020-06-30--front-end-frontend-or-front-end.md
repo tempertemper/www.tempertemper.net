@@ -1,5 +1,6 @@
 ---
-title: "'Front-end', 'frontend' or 'front end'?"
+title: "'Front-end', 'frontend' or 'front&nbsp;end'?"
+customURL: front-end-front-end-or-front-end
 intro: |
     As a frontend developer, something has always bothered me. How on earth do you spell 'frontend'!? Or should that be 'front-end'? Or 'front end'…?
 date: 2020-06-30
@@ -8,7 +9,7 @@ tags:
     - Development
 ---
 
-As a frontend developer, something has always bothered me. How do you spell 'frontend'!? So at the weekend, I ran [my first Twitter Poll](https://twitter.com/tempertemper/status/1276605361605263361?s=21), asking:
+As a frontend&nbsp;developer, something has always bothered me. How do you spell 'frontend'!? So at the weekend, I ran [my first Twitter Poll](https://twitter.com/tempertemper/status/1276605361605263361?s=21), asking:
 
 > So is it ‘front-end', ‘frontend’ or 'front end’?
 

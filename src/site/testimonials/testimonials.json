@@ -2,5 +2,5 @@
   "layout": "testimonial.html",
   "tags" : "testimonial",
   "hideIntro": true,
-  "permalink": "testimonials/{{ title | slug | safe }}.html"
+  "permalink": "testimonials/{{ customURL if customURL else title | slug | safe }}.html"
 }
