@@ -2,5 +2,5 @@
   "layout": "case-study.html",
   "hideIntro": true,
   "tags" : ["case_study"],
-  "permalink": "portfolio/{{ title | slug | safe }}.html"
+  "permalink": "portfolio/{{ customURL if customURL else title | slug | safe | replace("&nbsp;", "-") }}.html"
 }
