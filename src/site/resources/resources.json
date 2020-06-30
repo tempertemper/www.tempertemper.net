@@ -2,5 +2,5 @@
   "layout": "article.html",
   "hideIntro": true,
   "tags" : ["resource"],
-  "permalink": "resources/{{ customURL if customURL else title | slug | safe | replace("&nbsp;", "-") }}.html"
+  "permalink": "resources/{{ customURL if customURL else title | slug | safe }}.html"
 }
