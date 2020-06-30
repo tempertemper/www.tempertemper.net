@@ -34,7 +34,7 @@ I was playing in a band at the time and thought it would be cool to draw the thr
 
 You probably know [I'm a bit of a minimalist](/blog/minimalism-and-progressive-enhancement), and I *love* the idea of boiling something down to as low a fidelity as possible while keeping the essence of the original. So every now and again I update my Twitter avatar with something seasonal: a Star Wars outfit on May the 4th or some kind of scary costume at Halloween.
 
-<img src="/assets/img/blog/tempertemper-logo--pixel-avatars.png" alt="Five examples of my pixellated avatars, one with a Boba Fett (from Star Wars) helmet, one with a Christmas jumper, one with a scarf and gloves, one with a longboard, and one with a Halloween wolfman costume" width="800" height="450" />
+<img src="/assets/img/blog/tempertemper-logo--pixel-avatars.png" alt="Five examples of my pixellated avatars, one with a Boba Fett (from Star Wars) helmet, one with a Christmas jumper, one with a scarf and gloves, one with a longboard, and one with a Halloween wolfman costume" width="800" height="450" loading="lazy" />
 
 
 ## A better fit
