@@ -33,7 +33,7 @@ A pattern library was a clear place to begin to ensure all interface elements ha
 - combinations of those components
 - whole-page previews
 
-<img src="/assets/img/case-studies/evaluagent--pattern-library.png" alt="EvaluAgent product pattern library intro page, showing a folder system containing the patterns and documenting things such as pattern status labels" width="800" height="450" />
+<img src="/assets/img/case-studies/evaluagent--pattern-library.png" alt="EvaluAgent product pattern library intro page, showing a folder system containing the patterns and documenting things such as pattern status labels" width="800" height="450" loading="lazy" />
 
 A design system was built around the pattern library, but that's another case study for another day!
 
@@ -43,7 +43,7 @@ Typography, type scales, etc. are straightforward to control with CSS, but when 
 
 For our v2.0 releases, a handful of interface icons were needed, so instead of using a 3rd party library, it made sense to design a small bespoke icon set to cover use cases like date pickers, filters, information, search, etc. All icons used the same overall style and tone, a common canvas size, and stroke widths were equal. App icons and Gamification badges were more detailed, so a grid was used for those.
 
-<img src="/assets/img/case-studies/evaluagent--icons.png" alt="EvaluAgent app icons with a grid overlaying each" width="800" height="450" />
+<img src="/assets/img/case-studies/evaluagent--icons.png" alt="EvaluAgent app icons with a grid overlaying each" width="800" height="450" loading="lazy" />
 
 ### Common language
 
@@ -53,11 +53,11 @@ In order to do this, I was able to gain insight from users via the EvaluAgent cl
 
 A good example of this is the concept of 'home'. Each app would have a 'home screen' that the user can return to via the in-app menu in the header.
 
-<img src="/assets/img/case-studies/evaluagent--app-navigation.png" alt="EvaluAgent in-app navigation" width="800" height="450" />
+<img src="/assets/img/case-studies/evaluagent--app-navigation.png" alt="EvaluAgent in-app navigation" width="800" height="450" loading="lazy" />
 
 This would be distinct from the first page the user sees when first logging in, which was referred to as the product's 'landing page', where they choose which app to navigate to.
 
-<img src="/assets/img/case-studies/evaluagent--app-landing-page.png" alt="EvaluAgent landing page" width="800" height="450" />
+<img src="/assets/img/case-studies/evaluagent--app-landing-page.png" alt="EvaluAgent landing page" width="800" height="450" loading="lazy" />
 
 An example of where I had planned to make changes were with the name 'Gamification'. This is how the product team might refer to it internally; it may even be how clients understood it, but it wouldn't mean much to the end user. I had planned to conduct some research to establish how users would think of this app.
 
@@ -66,17 +66,17 @@ An example of where I had planned to make changes were with the name 'Gamificati
 
 Reaching the app would be straightforward when the user first logs in – they are presented with their landing page, and select the app they wish to open. But what happens if a user is already in an app? For that, there's an app switcher item in every page header, which was influenced by Google's app switcher:
 
-<img src="/assets/img/case-studies/evaluagent--app-switcher.png" alt="EvaluAgent app switcher" width="800" height="450" />
+<img src="/assets/img/case-studies/evaluagent--app-switcher.png" alt="EvaluAgent app switcher" width="800" height="450" loading="lazy" />
 
 It's possible that a user had one app, in which case the app switcher would be removed from the header, and they would also bypass the landing page and see their app's home screen on log in.
 
-<img src="/assets/img/case-studies/evaluagent--login-journey.png" alt="EvaluAgent login journey diagram, showing the login page, followed by a conditional contract select page for customers with multiple contracts, then either the landing page for customers with multiple apps, or the app homepage for those with only one" width="800" height="261" />
+<img src="/assets/img/case-studies/evaluagent--login-journey.png" alt="EvaluAgent login journey diagram, showing the login page, followed by a conditional contract select page for customers with multiple contracts, then either the landing page for customers with multiple apps, or the app homepage for those with only one" width="800" height="261" loading="lazy" />
 
 Within each app, the navigation bar in the header, which you have seen in the Gamification 'Home' example above, is how the user would reach each 'section' of the app (Challenges, Badges, Rewards, Profile and return Home in Gamification).
 
 However, there was a strong user need for a sense of place within each app; users were often getting lost, having to return to the home screen and start again to find their place. I employed breadcrumbs to inform the user how far they'd 'drilled down' into a particular section, but also give them a method of navigating back 'up' to a 'higher' level.
 
-<img src="/assets/img/case-studies/evaluagent--breadcrumbs.png" alt="Breadcrumbs" width="800" height="450" />
+<img src="/assets/img/case-studies/evaluagent--breadcrumbs.png" alt="Breadcrumbs" width="800" height="450" loading="lazy" />
 
 
 ## Distinguishing each app
@@ -85,21 +85,21 @@ Now that we had consistency of interface, language and navigation, I had to thin
 
 So each app was centred around a single colour, taking inspiration from other suites of apps like Microsoft Office (Blue for Word, Green for Excel, etc.). Light and dark variants on that colour were needed to communicate meaning in different ways, as well as blacks, whites and greys.
 
-<img src="/assets/img/case-studies/evaluagent--colour-palette-examples.png" alt="Colour palette examples, including hexadecimal values, for off-white, lightest, lighter, light, primary, dark, darker, darkest for Dashboard, Gamification and Quality" width="800" height="518" />
+<img src="/assets/img/case-studies/evaluagent--colour-palette-examples.png" alt="Colour palette examples, including hexadecimal values, for off-white, lightest, lighter, light, primary, dark, darker, darkest for Dashboard, Gamification and Quality" width="800" height="518" loading="lazy" />
 
 There are a limited number of distinct colours to choose from, which would mean as the suite expanded a basic set of blue, green, red, yellow, etc. would need to diversify into turquoise, orange, purple, and so on. I was satisfied this wouldn't be an issue, as, even if two colours were similar, it wasn't solely colour that was differentiating the apps.
 
 The Dashboard app, for example, would consist of a series of 'cards' containing graphs and statistics.
 
-<img src="/assets/img/case-studies/evaluagent--dashboard.png" alt="Dashboard app, showing doughnut charts and key numbers for CSat, calls logged and more example 'cards'" width="800" height="450" />
+<img src="/assets/img/case-studies/evaluagent--dashboard.png" alt="Dashboard app, showing doughnut charts and key numbers for CSat, calls logged and more example 'cards'" width="800" height="450" loading="lazy" />
 
 Gamification was to be more visually engaging, with cartoon avatars to represent the agent, and larger cards containing badges.
 
-<img src="/assets/img/case-studies/evaluagent--gamification.png" alt="Gamification app home page, showing the agent's avatar, points and team as well as the challenges they're currently involved in" width="800" height="450" />
+<img src="/assets/img/case-studies/evaluagent--gamification.png" alt="Gamification app home page, showing the agent's avatar, points and team as well as the challenges they're currently involved in" width="800" height="450" loading="lazy" />
 
 Quality was arguably the driest of the apps in this example, consisting mainly of forms as the user either built or filled out a scorecard.
 
-<img src="/assets/img/case-studies/evaluagent--quality.png" alt="The Quality app's scorecard builder, showing a part-built scorecard with details such as pass percentage, start and end dates" width="800" height="450" />
+<img src="/assets/img/case-studies/evaluagent--quality.png" alt="The Quality app's scorecard builder, showing a part-built scorecard with details such as pass percentage, start and end dates" width="800" height="450" loading="lazy" />
 
 
 ## A solid version 2
