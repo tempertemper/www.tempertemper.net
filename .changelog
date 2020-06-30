@@ -11,6 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Allows post/resource/testimonial/case study URL override parameter in front matter
+
+### Fixes
+- Inserts non-breaking space into recent article title to fix problematic wrapping
+- Removes non breaking spaces (which aren't valid) from titles in feeds
+- Strips non breaking spaces from post/resource/testimonial/case study permalinks
+
 ----------
 
 
