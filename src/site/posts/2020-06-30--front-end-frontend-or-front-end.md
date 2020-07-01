@@ -1,5 +1,5 @@
 ---
-title: "'frontend', 'front&#8209;end' or 'front&nbsp;end'?"
+title: "'Frontend', 'front&#8209;end' or 'front&nbsp;end'?"
 customURL: frontend-front-end-or-front-end
 intro: |
     As a frontend developer, something has always bothered me. How on earth do you spell 'frontend'!? Or should that be 'front-end'? Or 'front end'…?
