@@ -5,7 +5,6 @@ intro: |
     As a frontend developer, something has always bothered me. How on earth do you spell 'frontend'!? Or should that be 'front-end'? Or 'front end'…?
 date: 2020-06-30
 tags:
-    - Content
     - Development
 ---
 
