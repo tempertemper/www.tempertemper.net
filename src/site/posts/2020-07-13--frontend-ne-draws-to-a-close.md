@@ -53,6 +53,6 @@ It'll be something I happily remember for the rest of my life.
 
 The coronavirus pandemic struck earlier this year, which meant we had to postpone our final meet-up on the 2nd of April. In early March it was getting to the point where large social gatherings felt like a bad idea, even if the government hadn't come out and said as much yet. So there's still one more meet-up to go!
 
-We don't know what it'll look like or when it'll be, but, having had some time to reflect, I'm excited to announce that I'll be back for the last meet-up!
+We don't know what it'll look like or when it'll be, but, having had some time to reflect, I'm excited to announce that I'll be back for one last hurrah!
 
-It'll be good to see you after all this time, and great to be involved in making the last meet-up one to remember.
+It might even be next year, but it'll be good to see you after all this time, and great to be involved in making the final meet-up one to remember.
