@@ -36,10 +36,6 @@ blockquote {
   @include dark-mode() {
     border-left-color: $colour-dark-mode-highlight;
   }
-
-  p {
-    display: inline;
-  }
 }
 
 cite {
