@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.11.2] - 2020-07-15
+
+### Removes
+- Stops paragraphs in `<blockquotes>` being inline
+
+
 ## [5.11.1] - 2020-06-30
 
 ### Adds
