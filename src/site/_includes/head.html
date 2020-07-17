@@ -24,12 +24,14 @@
     {% set imageType = 'image/png' %}
     {%- if summaryImage %}
         {%- set cardType = "summary_large_image" %}
-        {%- if tags.includes('resource') %}
+        {%- if (tags.length >= 1) and tags.includes('resource') %}
             {%- set imgDir = 'resources/' %}
-        {%- elif tags.includes('case_study') %}
+        {%- elif (tags.length >= 1) and tags.includes('case_study') %}
             {%- set imgDir = 'case-studies/' %}
-        {%- else %}
+        {%- elif (tags.length >= 1) and tags.includes('post') %}
             {%- set imgDir = 'blog/' %}
+        {%- else %}
+            {%- set imgDir = '' %}
         {%- endif %}
         {%- set cardImage = site.url + "/assets/img/" + imgDir + summaryImage %}
         {%- set imageAlt = summaryImageAlt %}
