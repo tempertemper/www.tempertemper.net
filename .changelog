@@ -14,6 +14,13 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.11.3] - 2020-07-17
+
+### Adds
+- Adds ability to add large social images to any page via front matter
+- Adds large summary images to homepage and about page
+
+
 ## [5.11.2] - 2020-07-15
 
 ### Removes
