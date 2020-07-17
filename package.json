@@ -1,6 +1,6 @@
 {
   "name": "tempertemper",
-  "version": "5.11.2",
+  "version": "5.11.3",
   "description": "tempertemper's website",
   "scripts": {
     "start": "gulp cleanSite && gulp buildAll && gulp serve",
