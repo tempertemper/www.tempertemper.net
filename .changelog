@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Fixes
+- Updates browsersync to 2.26.10 to fix security vulnerability
+
 ----------
 
 
