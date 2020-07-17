@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds ability to add large social images to any page via front matter
+- Adds large summary images to homepage and about page
+
 ----------
 
 
