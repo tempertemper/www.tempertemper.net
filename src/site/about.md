@@ -6,6 +6,9 @@ intro: |
 layout: default
 permalink: about.html
 cta: true
+summaryImage: martin-underhill-tempertemper.jpg
+summaryImageAlt: Martin Underhill of tempertemper Web Design
+summaryImageType: jpg
 ---
 
 <picture>
