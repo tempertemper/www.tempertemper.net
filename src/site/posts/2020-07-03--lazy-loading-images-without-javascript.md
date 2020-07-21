@@ -6,6 +6,7 @@ date: 2020-07-03
 tags:
     - Development
     - Performance
+    - HTML
 ---
 
 When you've got loads of images on a page, you might not want the browser to fetch them all at once.
