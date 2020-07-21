@@ -24,7 +24,7 @@ An image is just an opening tag. No closing tag; no content inside. This type of
 
 So they're just a tag with some [attributes](/blog/an-introduction-to-html-attributes) and a forward slash right before the end.
 
-It's not just images. You'll have used plenty of `<input />` elements, I'm sure. And up there in your document's `<head>`, there're probably plenty of `<meta />` elements and the odd `<link />`. You might even use `<hr />` and `<br />` every now and again (I have opinions on those, but those are other articles for other days…).
+It's not just images. You'll have used plenty of `<input />` elements, I'm sure. And up there in your document's `<head>`, there're probably plenty of `<meta />` elements and the odd `<link />`. You might even use `<br />` and `<hr />` every now and again (although, I have opinions on break tags and [horizontal rules](/blog/using-horizontal-rules-in-html)).
 
 
 ## Optional, but highly recommended, trailing slash
