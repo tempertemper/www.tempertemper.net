@@ -6,6 +6,7 @@ date: 2020-07-06
 tags:
     - Development
     - Performance
+    - HTML
 summaryImage: image-aspect-ratio.png
 summaryImageAlt: A screengrab of the image on my About page loading in, showing that the browser has calculated the aspect ratio and left space for the image to load into
 ---
