@@ -11,10 +11,41 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.11.3] - 2020-07-17
+
+### Adds
+- Adds ability to add large social images to any page via front matter
+- Adds large summary images to homepage and about page
+
+
+## [5.11.2] - 2020-07-15
+
+### Removes
+- Stops paragraphs in `<blockquotes>` being inline
+
+
+## [5.11.1] - 2020-06-30
+
+### Adds
+- Allows post/resource/testimonial/case study URL override parameter in front matter
+- Inserts non-breaking space into recent article title to fix problematic wrapping
+
+### Fixes
+- Removes non breaking spaces (which aren't valid) from titles in feeds
+
+
+## [5.11.0] - 2020-06-30
+
+### Adds
+- Adds changes default image styling to accommodate intrinsic aspect ratio
+- Swaps all Markdown image references to HMTL with width and height attributes set
+- Adds lazy loading attribute to after-the-fold images
+
 ### Changes
 - Makes About page picture a progressively enhanced WebP
-
-----------
 
 
 ## [5.10.5] - 2020-06-28

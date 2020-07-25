@@ -125,7 +125,11 @@ textarea {
   resize: vertical;
 }
 
-img,
+img {
+  height: auto;
+  width: 100%;
+}
+
 svg {
   height: auto;
   max-width: 100%;

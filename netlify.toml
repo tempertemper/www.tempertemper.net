@@ -923,6 +923,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/front-end-front-end-or-front-end"
+  to = "/blog/frontend-front-end-or-front-end"
+  status = 301
+  force = true
+
 
 ## Portfolio redirects
 
