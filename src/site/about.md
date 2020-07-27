@@ -12,9 +12,9 @@ summaryImageType: jpg
 ---
 
 <picture>
-  <source srcset="/assets/img/martin-underhill-tempertemper.webp" type="image/webp">
-  <source srcset="/assets/img/martin-underhill-tempertemper.jpg" type="image/jpeg">
-  <img src="/assets/img/martin-underhill-tempertemper.jpg" alt="Martin Underhill of tempertemper Web Design" width="800" height="450">
+    <source srcset="/assets/img/martin-underhill-tempertemper.webp" type="image/webp">
+    <source srcset="/assets/img/martin-underhill-tempertemper.jpg" type="image/jpeg">
+    <img src="/assets/img/martin-underhill-tempertemper.jpg" alt="Martin Underhill of tempertemper Web Design, holding a cup of tea and looking to his left, smiling." width="800" height="450">
 </picture>
 
 ## My career in the web
