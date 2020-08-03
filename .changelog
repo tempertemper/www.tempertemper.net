@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Updates browsersync to 2.26.10 to fix security vulnerability
+- Takes trailing slash from newsletter URLs
 
 ----------
 
