@@ -14,6 +14,17 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.11.4] - 2020-08-03
+
+### Adds
+- Adds unsubscribe page
+- Adds link to unsubscribe page to newsletter signup form
+
+### Fixes
+- Updates browsersync to 2.26.10 to fix security vulnerability
+- Takes trailing slash from newsletter URLs
+
+
 ## [5.11.3] - 2020-07-17
 
 ### Adds
