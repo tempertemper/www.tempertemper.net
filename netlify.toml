@@ -474,6 +474,12 @@
   force = true
 
 [[redirects]]
+  from = "/category/"
+  to = "/categories"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/category/apps"
   to = "/category/tools"
   status = 301
@@ -602,6 +608,24 @@
 [[redirects]]
   from = "/resources/category/performance"
   to = "/category/performance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/performance"
+  to = "/category/performance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/category/performance"
+  to = "/category/performance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/category/git"
+  to = "/category/git"
   status = 301
   force = true
 
@@ -774,12 +798,6 @@
   force = true
 
 [[redirects]]
-  from = "/blog/tag/performance"
-  to = "/category/performance"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/blog/tag/privacy"
   to = "/category/privacy"
   status = 301
@@ -799,6 +817,12 @@
 
 [[redirects]]
   from = "/resources/category/security"
+  to = "/category/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/category/security"
   to = "/category/security"
   status = 301
   force = true
@@ -926,6 +950,24 @@
 [[redirects]]
   from = "/blog/front-end-front-end-or-front-end"
   to = "/blog/frontend-front-end-or-front-end"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feeds/blog/an-introduction-to-html-attributes"
+  to = "/blog/an-introduction-to-html-attributes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/blog/an-introduction-to-html-attributes"
+  to = "/blog/an-introduction-to-html-attributes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about%E2%80%AC"
+  to = "/about"
   status = 301
   force = true
 
@@ -1312,6 +1354,18 @@
 
 [[redirects]]
   from = "/config/AspCms_Config.asp"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "*/eval-stdin.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/admin/"
   to = "/404"
   status = 301
   force = true
