@@ -14,6 +14,12 @@
   base = "."
   functions = "./lib/functions"
 
+# Allow fonts to be used by other domains (disable CORS)
+[[headers]]
+  for = "/assets/fonts/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
 
 # Internal redirects
 
