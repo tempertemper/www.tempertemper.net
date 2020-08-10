@@ -30,7 +30,7 @@ By 2014, my brand and [the website's design had been pretty solid](https://web.a
 
 ## December 2014
 
-Following a rebrand in the summer of 2014, the [site's design took a marked turn to the minimal](https://web.archive.org/web/20141222071353/https://tempertemper.net/), with a 'hamburger' navigation menu (don't judge me – we all make mistakes!) and big, bold headings in the new brand font, FS-Me.
+Following a [rebrand](/blog/the-simplest-solutions-are-usually-the-best#bringing-in-the-big-guns) in the summer of 2014, the [site's design took a marked turn to the minimal](https://web.archive.org/web/20141222071353/https://tempertemper.net/), with a 'hamburger' navigation menu (don't judge me – we all make mistakes!) and big, bold headings in the new brand font, FS-Me.
 
 <img src="/assets/img/blog/homepage-snapshot-2014-12.png" alt="2014 version of my website's homepage with the main heading “Web design in a language you can understand”, going straight into examples of my work" width="800" height="450" loading="lazy" />
 
