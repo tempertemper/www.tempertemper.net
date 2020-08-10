@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds humans.txt file
+- New date filter to Eleventy config
+
 ----------
 
 
