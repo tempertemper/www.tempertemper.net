@@ -5,6 +5,7 @@ intro: |
 date: 2020-02-28
 tags:
     - Design
+    - Brand
 ---
 
 Since my post on [refining my brand](/blog/the-simplest-solutions-are-usually-the-best), I've encountered a tiny issue that I wasn't able to ignore.
