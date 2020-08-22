@@ -6,6 +6,7 @@ date: 2019-06-14
 tags:
     - Development
     - Accessibility
+updated: 2020-08-24
 ---
 
 ARIA roles are a way to define various landmarks on a webpage; things like:
@@ -61,7 +62,9 @@ The browser knows the main page header is the first `<header>` and not the secon
 
 In my testing (on VoiceOver on macOS 10.14.5), this only seems to work with `<article>` and `<section>` elements. `<main>`, `<nav>` and `<aside>` don't scope their nested `<header>` as the specs suggest they should, so the document gets two implicit `role="banner"` elements. This is bad.
 
-Also, the [same principle](https://www.w3.org/TR/html-aria/#footer) is *supposed* to be true for the `<footer>` element, but it doesn't add *any* `role="contentinfo"` implicitly.
+Also, the [same principle](https://www.w3.org/TR/html-aria/#footer) is *supposed* to be true for the `<footer>` element, but it doesn't add `role="contentinfo"` implicitly.
+
+<b>Update:</b> Turns out this was a bug with VoiceOver/Safari and has [since been fixed](/blog/webkit-has-fixed-the-implicit-role-on-footers)!
 
 
 ## The annoying thing
