@@ -1,0 +1,5 @@
+{
+  "layout": "skills.html",
+  "tags" : ["skills"],
+  "permalink": "skills/{{ customURL if customURL else title | slug | safe }}.html"
+}

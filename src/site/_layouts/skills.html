@@ -1,0 +1,10 @@
+---
+layout: base.html
+---
+
+<article>
+    <h1>{{ title | smart | safe }}</h1>
+    {{ content | safe }}
+</article>
+
+{% include "call-to-action.html" %}
