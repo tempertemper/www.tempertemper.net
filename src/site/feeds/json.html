@@ -16,6 +16,9 @@ permalink: feeds/main.json
   "favicon": "{{ site.url }}/assets/img/icons/favicon.png",
   "items": [
   {%- for post in collections.post | reverse %}
+    {%- set postContent = post.templateContent %}
+    {%- set commonContent = '<p>The article <a rel="nofollow" href="' + site.url + post.url | replace (".html", "") + '">' + post.data.title + '</a> appeared first on <a rel="nofollow" href="' + site.url + '">www.tempertemper.net</a>.</p>' %}
+    {%- set content = [postContent, commonContent] %}
     {
       "id": "{{ loop.revindex }}",
       "date_published": "{{ post.date | rssDate }}",
@@ -27,7 +30,7 @@ permalink: feeds/main.json
       "tags": [{% for category in postTags %}"{{ category }}"{% if not loop.last %},{% endif %}{% endfor %}],
       {%- endif %}
       "url": "{{ site.url }}{{ post.url | replace (".html", "") }}",
-      "content_html": {{ post.templateContent | dump | safe }}
+      "content_html": {{ content | join | dump | safe }}
     }
     {%- if loop.length >= 2 -%}
       {%- if not loop.last -%}
