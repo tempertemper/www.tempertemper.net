@@ -18,6 +18,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Uses smart filter for apostrophes, etc. in post titles in the common feed content
+- Styles `header`, `navigation`, `main` and `footer` elements rather than their equivalent ARIA roles
+
+### Removes
+- Removes `aria-hidden` attribute where there's already a `hidden` attribute
+- Removes explicit ARIA roles of `banner`, `navigation`, `main` and `contentinfo`
 
 ----------
 

@@ -1,6 +1,6 @@
 @media (min-width: $l) {
 
-  [role="main"] {
+  main {
     @include layout($wide-layout);
     @include pre(1 of 6);
     width: span(4 of 6);
