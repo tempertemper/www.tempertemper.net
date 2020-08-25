@@ -27,7 +27,10 @@ permalink: feeds/main.json
       "tags": [{% for category in postTags %}"{{ category }}"{% if not loop.last %},{% endif %}{% endfor %}],
       {%- endif %}
       "url": "{{ site.url }}{{ post.url | replace (".html", "") }}",
-      "content_html": {{ post.templateContent | dump | safe }}
+      {%- set postContent = post.templateContent %}
+      {%- set commonContent = '<p>The article <a rel="nofollow" href="' + site.url + post.url | replace (".html", "") + '">' + post.data.title | smart | safe | replace("&nbsp;", " ") + '</a> appeared first on <a rel="nofollow" href="' + site.url + '">www.tempertemper.net</a>.</p>\n' %}
+      {%- set content = [postContent, commonContent] %}
+      "content_html": {{ content | join | dump | safe }}
     }
     {%- if loop.length >= 2 -%}
       {%- if not loop.last -%}

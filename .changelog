@@ -14,6 +14,22 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.11.7] - 2020-08-25
+
+### Adds
+- Adds common post-blog post content to json feed
+- Adds humans.txt file
+- New date filter to Eleventy config
+
+### Changes
+- Uses smart filter for apostrophes, etc. in post titles in the common feed content
+- Styles `header`, `navigation`, `main` and `footer` elements rather than their equivalent ARIA roles
+
+### Removes
+- Removes `aria-hidden` attribute where there's already a `hidden` attribute
+- Removes explicit ARIA roles of `banner`, `navigation`, `main` and `contentinfo`
+
+
 ## [5.11.6] - 2020-08-08
 
 ### Adds
