@@ -12,8 +12,12 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 ### Adds
+- Adds common post-blog post content to json feed
 - Adds humans.txt file
 - New date filter to Eleventy config
+
+### Changes
+- Uses smart filter for apostrophes, etc. in post titles in the common feed content
 
 ----------
 
