@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.11.7] - 2020-08-25
+
 ### Adds
 - Adds common post-blog post content to json feed
 - Adds humans.txt file
@@ -23,8 +28,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Removes
 - Removes `aria-hidden` attribute where there's already a `hidden` attribute
 - Removes explicit ARIA roles of `banner`, `navigation`, `main` and `contentinfo`
-
-----------
 
 
 ## [5.11.6] - 2020-08-08
