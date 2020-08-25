@@ -28,7 +28,7 @@ permalink: feeds/main.json
       {%- endif %}
       "url": "{{ site.url }}{{ post.url | replace (".html", "") }}",
       {%- set postContent = post.templateContent %}
-      {%- set commonContent = '<p>The article <a rel="nofollow" href="' + site.url + post.url | replace (".html", "") + '">' + post.data.title | smart | safe | replace("&nbsp;", " ") + '</a> appeared first on <a rel="nofollow" href="' + site.url + '">www.tempertemper.net</a>.</p>' %}
+      {%- set commonContent = '<p>The article <a rel="nofollow" href="' + site.url + post.url | replace (".html", "") + '">' + post.data.title | smart | safe | replace("&nbsp;", " ") + '</a> appeared first on <a rel="nofollow" href="' + site.url + '">www.tempertemper.net</a>.</p>\n' %}
       {%- set content = [postContent, commonContent] %}
       "content_html": {{ content | join | dump | safe }}
     }
