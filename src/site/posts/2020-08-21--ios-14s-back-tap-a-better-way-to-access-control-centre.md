@@ -69,7 +69,7 @@ I understand the theory: the battery and WiFi icons are in that corner, so it ma
 
 Couple that unintuitiveness with the fact that a swipe-down from *anywhere else* at top of the screen gives you Notification Centre and you've got a user experience issue.
 
-More than the theory and the two-features-being-acessed-in-almost-exactly-the-same-way thing, though, it's a pain to get to that top corner. Getting to that corner with your right hand means adjusting your grip of the phone considerably (more-so with the larger Max form factor), or using your free hand to swipe down.
+More than the theory and the two-features-being-accessed-in-almost-exactly-the-same-way thing, though, it's a pain to get to that top corner. Getting to that corner with your right hand means adjusting your grip of the phone considerably (more-so with the larger Max form factor), or using your free hand to swipe down.
 
 I'm right-handed but use my phone predominantly left-handed, which makes it impossible to reach that opposite corner without using my right hand. There are a lot of left-handed folk out there who must have the same problem!
 
