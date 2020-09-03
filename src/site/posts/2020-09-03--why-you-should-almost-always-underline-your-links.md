@@ -8,17 +8,17 @@ tags:
     - Accessibility
 ---
 
-A link should look like all the rest of the text around it, but with a couple of differences. It should maybe have a bit of colour, and it should almost *definitely* have an underline. Let me explain why.
+A link should look like all the rest of the text around it, but with a couple of differences. It should maybe have a bit of colour, and it should almost definitely have an underline. Let me explain why.
 
 
 ## Handwriting versus digital text
 
-First up, let's think about how we use underlines in the wild. I bet you've used them when taking notes by hand:
+First up, let's think about how we use underlines in the wild. You've probably used them when taking notes by hand:
 
 - to highlight/emphasise words or phrases
 - to mark headings
 
-When writing hand, underlining is the easiest way to draw attention to text. I bet you'd make a right old mess trying to write in italics, overwriting some text several times to make it look bold could get very tedious, and if your writing isn't consistently the exact same size, larger text for headings might be difficult to pick out.
+When writing by hand, underlining is the easiest way to draw attention to text. I bet you'd make a right old mess trying to write in italics, overwriting some text several times to make it look bold could get very tedious, and if your writing isn't consistently the exact same size, larger text for headings might be difficult to pick out.
 
 With a digital format like HTML, using italics, bold or a larger text size is not only much more effective visually, but it's easy to do.
 
@@ -31,7 +31,7 @@ The conventions established at the outset of the web are essentially what we sho
 
 - emphasis is conveyed with italic or bold text
 - headings are differentiated by larger, bold text
-- links are highlighted with an underline
+- links are marked with an underline
 
 Do some usability testing and you'll quickly see that using an underline for anything other than a link on the web is problematic. Users will assume underlined content is a link and wonder why it's broken when they press it and nothing happens.
 
@@ -40,7 +40,7 @@ Do some usability testing and you'll quickly see that using an underline for any
 
 ## Alternatives
 
-Over the years, as web designers have attempted to add some flair to their interfaces, we've seen a couple of other link designs crop up:
+Over the years, as web designers have attempted to add some flair to their interfaces, we've seen a couple of other link designs crop up regularly:
 
 - A heavier font
 - A different colour
@@ -52,7 +52,7 @@ But both of these approaches can suffer from accessibility issues.
 The problem with making links bold is that they look like strongly [emphasised text](/blog/whats-emphasis-and-whats-not). This means visitors will be:
 
 - less likely interact with them, not realising they're links
-- confused it they inadvertently follow one, having thought it was emphasised text, not a link
+- confused if they inadvertently press one, having thought it was emphasised text, not a link
 
 There's also the issue that [bold fonts can be more difficult to read](https://pressbooks.ulib.csuohio.edu/accessibility/chapter/chapter-2-4-formatting-font-for-readability/), so if a bold-styled link covers a longer phrase, you might be causing accessibility problems.
 
@@ -66,22 +66,24 @@ Then there are people with less than perfect eyesight, who rely on decent contra
 
 > Only about 35 percent of all adults have 20/20 vision without glasses, contact lenses or corrective surgery. With corrective measures, approximately 75 percent of adults have this degree of visual acuity while the other 25 percent of the population just doesn't see very well
 
-So 4.5% is looking more like 25%, which is a *lot* of people!
+If we add 75% of our original 4.5% (the percentage of people with some form of colour blindness who have 20/20 vision), that's going to be a *lot* of people that could struggle to make out a link amongst its surrounding text.
 
 Finally, remember that the web can be viewed on any number of devices, with wildly different screen qualities; cheap monitors and tired old displays, and all of those dropped phones and tablets with cracked glass and dead pixels.
+
+Using colour alone to convey meaning is a bad idea.
 
 
 ## Combinations
 
-Using colour alone to convey meaning is a bad idea, and using a combination of colour and bold text is *better* but there are still pretty heavy downsides when we start mixing visual meaning.
+A combination of colour and bold text is *better* but there are still those pretty hefty downsides when we start mixing visual metaphors (bold is emphasis, etc.).
 
-If you want to make your links accessible *and* engaging, the best combination is *colour and an underline*. But remember to check the contrast ratio of your colour for:
+If you want to make your links accessible *and* engaging, the best combination is *colour and an underline*, just like the default browser styling. But remember to [check the contrast ratio of your colours](https://webaim.org/resources/linkcontrastchecker/):
 
-- the link against the background it's on
-- the link against the regular text it sits within
-- the non-link text against its background
+1. The non-link text against its background
+2. The link text against its background
+3. The link in comparison to the regular text it sits within
 
-Tools like the [WebAIM Link Contrast Checker](https://webaim.org/resources/linkcontrastchecker/) make this really simple.
+The third can be mitigated with the underline, as long as the first and second are ok.
 
 
 ## Exceptions
