@@ -4,6 +4,7 @@ layout: base.html
 
 <article>
     <h1>{{ title | smart | safe }}</h1>
+    {{ intro | markdown | safe }}
     {{ content | safe }}
 </article>
 
