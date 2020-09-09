@@ -24,6 +24,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Gives navigation links a minimum height to be better touch targets
+- Uses margin to separate navigation items rather than padding
 
 
 ## [5.11.8] - 2020-09-09
