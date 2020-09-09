@@ -14,6 +14,18 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.11.9] - 2020-09-09
+
+### Changes
+- Gives footer address a different role – presentation rather than group
+
+### Removes
+- Removes navigation link dividers
+
+### Fixes
+- Gives navigation links a minimum height to be better touch targets
+
+
 ## [5.11.8] - 2020-09-09
 
 ### Changes
