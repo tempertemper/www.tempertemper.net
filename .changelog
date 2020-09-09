@@ -11,6 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Uses lighter background for code in light mode
+
+### Fixes
+- Addresses colour contrast for inline code inside links
+- Tidies focus styling for inline code inside links
+- Fixes colour contrast for syntax highlighted code in both light and dark modes
+
 ----------
 
 
