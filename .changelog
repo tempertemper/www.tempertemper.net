@@ -14,6 +14,17 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.11.8] - 2020-09-09
+
+### Changes
+- Uses lighter background for code in light mode
+
+### Fixes
+- Addresses colour contrast for inline code inside links
+- Tidies focus styling for inline code inside links
+- Fixes colour contrast for syntax highlighted code in both light and dark modes
+
+
 ## [5.11.7] - 2020-08-25
 
 ### Adds
