@@ -1,7 +1,7 @@
 ---
 title: Styling underlines with CSS
 intro: |
-    If you're not underlining your links, you should be. They can look a bit boring, but did you know that CSS now allows us to style them?
+    Never mind `border-bottom` for making your links a bit more visually engaging, here's how to do it properly with `text-decoration`.
 date: 2020-09-09
 tags:
     - CSS
