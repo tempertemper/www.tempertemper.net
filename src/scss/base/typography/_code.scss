@@ -1,9 +1,11 @@
 code,
 kbd,
 pre {
-  @include dark-mode ($colour-dark-mode-black);
-  background-color: $colour-dark-mode-highlight;
-  color: $colour-dark-mode-white;
+  background-color: $colour-dark-mode-white;
+
+  @include dark-mode() {
+    @include dark-mode ($colour-dark-mode-black, $colour-dark-mode-white);
+  }
 }
 
 code,
@@ -41,11 +43,15 @@ pre {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #69676c;
+  color: $colour-code-grey;
+
+  @include dark-mode() {
+    color: $colour-dark-mode-code-grey;
+  }
 }
 
 .token.punctuation {
-  color: #f8f8f2;
+  color: inherit;
 }
 
 .token.property,
