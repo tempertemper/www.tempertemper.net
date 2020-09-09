@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.11.9] - 2020-09-09
+
 ### Changes
 - Gives footer address a different role – presentation rather than group
 
@@ -19,8 +24,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Gives navigation links a minimum height to be better touch targets
-
-----------
 
 
 ## [5.11.8] - 2020-09-09
