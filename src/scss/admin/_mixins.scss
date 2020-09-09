@@ -70,9 +70,11 @@
   }
 
   a {
-    display: inline-block;
+    display: inline-flex;
     padding-left: .1em;
     padding-right: .1em;
+    min-height: 48px;
+    align-items: center;
   }
 }
 
