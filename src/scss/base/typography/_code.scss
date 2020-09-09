@@ -59,12 +59,20 @@ pre {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #fc608d;
+  color: $colour-code-magenta;
+
+  @include dark-mode() {
+    color: $colour-dark-mode-code-magenta;
+  }
 }
 
 .token.boolean,
 .token.number {
-  color: #9587e3;
+  color: $colour-code-purple;
+
+  @include dark-mode() {
+    color: $colour-dark-mode-code-purple;
+  }
 }
 
 .token.selector,
@@ -73,7 +81,11 @@ pre {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #5bd4e6;
+  color: $colour-code-cyan;
+
+  @include dark-mode() {
+    color: $colour-dark-mode-code-cyan;
+  }
 }
 
 .token.operator,
@@ -82,22 +94,38 @@ pre {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: #5bd4e6;
+  color: $colour-code-cyan;
+
+  @include dark-mode() {
+    color: $colour-dark-mode-code-cyan;
+  }
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function {
-  color: #fce766;
+  color: $colour-code-yellow;
+
+  @include dark-mode() {
+    color: $colour-dark-mode-code-yellow;
+  }
 }
 
 .token.keyword {
-  color: #fc608d;
+  color: $colour-code-magenta;
+
+  @include dark-mode() {
+    color: $colour-dark-mode-code-magenta;
+  }
 }
 
 .token.regex,
 .token.important {
-  color: #fce766;
+  color: $colour-code-yellow;
+
+  @include dark-mode() {
+    color: $colour-dark-mode-code-yellow;
+  }
 }
 
 .token.important,
