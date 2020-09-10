@@ -30,7 +30,7 @@ It's not emphasis, it's like another voice.
 My wife is Spanish, so if I were writing about our frequent visits to Barcelona, where she's from, I'd use `<i>` to mark up a Spanish word. Notice I also used the `lang` attribute so that screen readers know which language we're using.
 
 ```html
-<p>When we visit my wife's family in Barcelona, we always go out for <i lang="es">tapas</i> and a few drinks.</p>
+<p>When we visit my wife’s family in Barcelona, we always go out for <i lang="es">tapas</i> and a few drinks.</p>
 ```
 
 Another good use case is for inner monologue:
