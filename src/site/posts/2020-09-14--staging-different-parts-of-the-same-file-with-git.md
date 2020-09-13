@@ -32,7 +32,7 @@ To open up the patch mode, you need to first tell Git what file you want to have
 git add -p path/to/file.html
 ```
 
-(You could use the more explicit `--patch` flag instead of `-p`, but I like to keep it brief.
+You could use the more explicit `--patch` flag instead of `-p`, but I like to keep it brief.
 
 
 ## Inside the file
@@ -64,7 +64,7 @@ e - manually edit the current hunk
 ? - print help
 ```
 
-What if I told you that you only really need a couple of those options?
+But what if I told you that you only really need a couple of those options?
 
 
 ### Start with a couple and build from there
@@ -76,15 +76,15 @@ The two options that you should hone in on to start with are pretty obvious:
 
 The only other command that might come in useful is <kbd>s</kbd>, which is used to [split a hunk down further](/blog/splitting-a-hunk-in-gits-patch-mode).
 
-So you move through the hunks of code with <kbd>y</kbd>) and <kbd>n</kbd>, and if a hunk is too big, using <kbd>s</kbd> should be enough to then carry on with <kbd>y</kbd>) and 'no' <kbd>n</kbd>.
+So you move through the hunks of code with <kbd>y</kbd> and <kbd>n</kbd>, and if a hunk is too big, using <kbd>s</kbd> should be enough to then carry on with <kbd>y</kbd> and <kbd>n</kbd>.
 
 As you get used to these options, you could make things more efficient by experimenting with <kbd>a</kbd>, <kbd>d</kbd> and some of the others. I'm yet to brave some of them (like <kbd>e</kbd>), but will write about them when I do.
 
 
 ## Back to the command prompt
 
-Once the whole file has been gone through, you exit patch mode and a quick `git status` will show that the file you've just gone through and staged parts of is *both added and not added* to the staging area, which is what we want.
+Once every hunk in the file has been reviewed, you land back on the command prompt, outside of patch mode. A quick `git status` will show that the file you've just gone through and staged parts of is *both added and not added* to the staging area, which is what we'd expect.
 
 Follow it all up with a `git commit -m "This is my commit message"` and that's it!
 
-Learning Git's patch mode can be done bit by bit, and starting with the basic options and building from there has really helped me.
+Git's patch mode looks daunting but can be learned bit by bit, starting with the basic options and building from there.
