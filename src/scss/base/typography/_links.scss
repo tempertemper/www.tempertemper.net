@@ -1,4 +1,5 @@
 @mixin text-link {
+  border-radius: $border-radius-default/2;
 
   &:link,
   &:visited {
@@ -46,8 +47,18 @@ a {
     }
   }
 
+  &:focus > code {
+    background-color: $colour-primary;
+    padding-top: .22em;
+    padding-bottom: .04em;
+  }
+
   > code {
-    @include dark-mode($color: $colour-dark-mode-primary);
-    color: $colour-dark-mode-primary-lighter;
+    color: $colour-primary-darker;
+
+    @include dark-mode() {
+      @include dark-mode($color: $colour-dark-mode-primary);
+      color: $colour-dark-mode-primary-lighter;
+    }
   }
 }

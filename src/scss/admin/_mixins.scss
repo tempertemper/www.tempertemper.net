@@ -55,24 +55,13 @@
 
   + li {
     margin-top: 0;
-  }
-
-  &:after {
-    content: '/';
-    display: inline-block;
-  }
-
-  &:last-child {
-
-    &:after {
-      content: none;
-    }
+    margin-left: .5em;
   }
 
   a {
-    display: inline-block;
-    padding-left: .1em;
-    padding-right: .1em;
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
   }
 }
 

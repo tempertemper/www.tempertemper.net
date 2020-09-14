@@ -8,7 +8,7 @@ tags:
     - Accessibility
 ---
 
-We all know that we should be using `<em>` and `<strong>` to emphasise and strongly emphasise words and phrases; we've looked at `<i>` and `<b>` tags with distain. But should that be the case?
+We all know that we should be using `<em>` and `<strong>` to emphasise and strongly emphasise words and phrases; we've looked at `<i>` and `<b>` tags with disdain. But should that be the case?
 
 Don't get me wrong – `<i>` and `<b>` aren't elements I reach for very often; it's not like I'll be campaigning for them to be included in the [Markdown](/resources/markdown-cheatsheet)  spec any time soon. But they're worth knowing about as they do have their uses.
 
@@ -30,7 +30,7 @@ It's not emphasis, it's like another voice.
 My wife is Spanish, so if I were writing about our frequent visits to Barcelona, where she's from, I'd use `<i>` to mark up a Spanish word. Notice I also used the `lang` attribute so that screen readers know which language we're using.
 
 ```html
-<p>When we visit my wife's family in Barcelona, we always go out for <i lang="es">tapas</i> and a few drinks.</p>
+<p>When we visit my wife’s family in Barcelona, we always go out for <i lang="es">tapas</i> and a few drinks.</p>
 ```
 
 Another good use case is for inner monologue:
