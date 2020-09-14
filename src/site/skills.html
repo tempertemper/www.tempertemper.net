@@ -1,0 +1,24 @@
+---
+title: Things I do
+heading: Skills
+intro: |
+    I do a few things *really* well. I do a lot of other things too, but these are the things I like to shout about.
+layout: default
+noCta: true
+listing: true
+---
+
+<ul class="index-list">
+    {% for skill in collections.skills | ordered %}
+        <li class="post-in-list">
+            <h2 class="entry-title">
+                <a href="{{ skill.url  | replace(".html", "") }}">
+                    {{ skill.data.title | smart | safe }}
+                </a>
+            </h2>
+            <div class="description entry-summary">
+                {{ skill.data.intro  | markdown | safe }}
+            </div>
+        </li>
+    {% endfor %}
+</ul>
