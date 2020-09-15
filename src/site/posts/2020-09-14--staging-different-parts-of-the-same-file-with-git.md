@@ -74,7 +74,7 @@ The two options that you should hone in on to start with are pretty obvious:
 1. 'yes' (<kbd>y</kbd>)
 2. 'no' (<kbd>n</kbd>)
 
-The only other command that might come in useful is <kbd>s</kbd>, which is used to split a hunk down further.
+The only other command that might come in useful is <kbd>s</kbd>, which is used to [split a hunk down further](/blog/splitting-a-hunk-in-gits-patch-mode).
 
 So you move through the hunks of code with <kbd>y</kbd> and <kbd>n</kbd>, and if a hunk is too big, using <kbd>s</kbd> should be enough to then carry on with <kbd>y</kbd> and <kbd>n</kbd>.
 
