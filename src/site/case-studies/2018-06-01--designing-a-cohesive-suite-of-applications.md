@@ -35,7 +35,7 @@ A pattern library was a clear place to begin to ensure all interface elements ha
 
 <img src="/assets/img/case-studies/evaluagent--pattern-library.png" alt="EvaluAgent product pattern library intro page, showing a folder system containing the patterns and documenting things such as pattern status labels" width="800" height="450" loading="lazy" />
 
-A design system was built around the pattern library, but that's another case study for another day!
+A design system was built around the pattern library, but that's [another case study](/portfolio/establishing-a-design-system).
 
 ### Icons
 
