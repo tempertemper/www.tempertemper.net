@@ -38,6 +38,51 @@
   force = true
 
 
+## Services to Skills redirects
+
+[[redirects]]
+  from = "/services"
+  to = "/skills/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/usability-design"
+  to = "/skills/user-experience-design"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/ux-design"
+  to = "/skills/user-experience-design"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/design"
+  to = "/skills/user-interface-design"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/perch"
+  to = "/skills/perch-cms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/front-end-development"
+  to = "/skills/frontend-development"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/*"
+  to = "/skills/:splat"
+  status = 301
+  force = true
+
+
 ## Blog to Resources redirects
 
 [[redirects]]
