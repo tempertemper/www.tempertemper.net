@@ -331,7 +331,6 @@
   status = 301
   force = true
 
-
 [[redirects]]
   from = "/blog/ios-email-set-up"
   to = "/resources/ios-email-set-up"
@@ -525,10 +524,21 @@
   force = true
 
 [[redirects]]
+  from = "/blog/discrimination-on-the-web"
+  to = "/resources/disability-on-the-web"
+  status = 301
+  force = true
+
+
+## Category redirects
+
+[[redirects]]
   from = "/category/"
   to = "/categories"
   status = 301
   force = true
+
+### From blog categories
 
 [[redirects]]
   from = "/blog/category/apps"
@@ -537,20 +547,8 @@
   force = true
 
 [[redirects]]
-  from = "/blog/category/tools"
-  to = "/category/tools"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/blog/category/design-and-build"
   to = "/category/design"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/category/content"
-  to = "/category/content"
   status = 301
   force = true
 
@@ -567,12 +565,6 @@
   force = true
 
 [[redirects]]
-  from = "/resources/category/updates"
-  to = "/category/website-admin"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/blog/category/opinion"
   to = "/blog/"
   status = 301
@@ -581,12 +573,6 @@
 [[redirects]]
   from = "/blog/category/planning"
   to = "/category/website-admin"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/category/admin"
-  to = "/rcategory/website-admin/"
   status = 301
   force = true
 
@@ -603,26 +589,34 @@
   force = true
 
 [[redirects]]
-  from = "/blog/tag/accessibility"
-  to = "/category/accessibility"
+  from = "/blog/category/*"
+  to = "/category/:splat"
+  status = 301
+  force = true
+
+### From resource categories
+
+[[redirects]]
+  from = "/resources/category/social-media"
+  to = "/category/marketing"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/resources/category/accessibility"
-  to = "/category/accessibility"
+  from = "/resources/category/updates"
+  to = "/category/website-admin"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/blog/tag/backup"
-  to = "/resources/"
+  from = "/resources/category/social-media"
+  to = "/category/marketing"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/blog/tag/ios"
-  to = "/category/apple"
+  from = "/resources/category/admin"
+  to = "/rcategory/website-admin/"
   status = 301
   force = true
 
@@ -633,94 +627,20 @@
   force = true
 
 [[redirects]]
-  from = "/blog/tag/browsers"
-  to = "/category/accessibility"
+  from = "/resources/category/*"
+  to = "/category/:splat"
   status = 301
   force = true
 
+### From categories
+
 [[redirects]]
-  from = "/blog/tag/cms"
-  to = "/category/content"
+  from = "/categories/category/*"
+  to = "/category/:splat"
   status = 301
   force = true
 
-[[redirects]]
-  from = "/blog/tag/content"
-  to = "/category/content"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/core-concepts"
-  to = "/category/performance"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/category/performance"
-  to = "/category/performance"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/performance"
-  to = "/category/performance"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/category/performance"
-  to = "/category/performance"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/category/git"
-  to = "/category/git"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/design"
-  to = "/category/design"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/engagement"
-  to = "/category/marketing"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/category/marketing"
-  to = "/category/marketing"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/category/marketing"
-  to = "/category/marketing"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/category/development"
-  to = "/category/development"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/category/workflows"
-  to = "/category/workflows"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/category/brand"
-  to = "/category/brand"
-  status = 301
-  force = true
+### From tags
 
 [[redirects]]
   from = "/blog/tag/focus"
@@ -741,19 +661,7 @@
   force = true
 
 [[redirects]]
-  from = "/resources/category/search"
-  to = "/category/search"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/blog/tag/holidays"
-  to = "/category/business"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/category/business"
   to = "/category/business"
   status = 301
   force = true
@@ -771,110 +679,20 @@
   force = true
 
 [[redirects]]
-  from = "/resources/category/social-media"
-  to = "/category/marketing"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/blog/tag/maintenance"
   to = "/category/website-admin"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/resources/category/updates"
-  to = "/category/website-admin"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/markdown"
-  to = "/category/markdown"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/category/markdown"
-  to = "/category/markdown"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/category/markdown"
-  to = "/category/markdown"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/marketing"
-  to = "/category/marketing"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/category/marketing"
-  to = "/category/marketing"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/blog/tag/measurement"
   to = "/category/website-admin"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/measurement"
-  to = "/category/website-admin"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/meta-data"
-  to = "/category/meta-data"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/category/meta-data"
-  to = "/category/meta-data"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/mobile-friendly"
   to = "/category/search"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/privacy"
-  to = "/category/privacy"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/search"
-  to = "/category/search"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/tag/security"
-  to = "/category/security"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/category/security"
-  to = "/category/security"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/categories/category/security"
-  to = "/category/security"
   status = 301
   force = true
 
@@ -898,12 +716,6 @@
 
 [[redirects]]
   from = "/blog/tag/social"
-  to = "/category/marketing"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/category/social-media"
   to = "/category/marketing"
   status = 301
   force = true
@@ -945,6 +757,51 @@
   force = true
 
 [[redirects]]
+  from = "/blog/tag/backup"
+  to = "/resources/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/ios"
+  to = "/category/apple"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/browsers"
+  to = "/category/accessibility"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/cms"
+  to = "/category/content"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/core-concepts"
+  to = "/category/performance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/engagement"
+  to = "/category/marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/*"
+  to = "/category/:splat"
+  status = 301
+  force = true
+
+
+## Other blog post redirects
+
+[[redirects]]
   from = "/blog/free-security-updates"
   to = "/blog/"
   status = 301
@@ -953,12 +810,6 @@
 [[redirects]]
   from = "/resources/types-of-email-and-when-to-use%C2%A0each"
   to = "/resources/types-of-email-and-when-to-use-each"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/discrimination-on-the-web"
-  to = "/resources/disability-on-the-web"
   status = 301
   force = true
 
@@ -987,12 +838,6 @@
   force = true
 
 [[redirects]]
-  from = "/cms/resources/blog/internet-explorer-icon.png"
-  to = "/assets/img/summary.png"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/blog/lets-make-webmasters-a-thing-again+2020-03-03+00:16:42+0+5"
   to = "/blog/lets-make-webmasters-a-thing-again"
   status = 301
@@ -1013,12 +858,6 @@
 [[redirects]]
   from = "/blog/blog/an-introduction-to-html-attributes"
   to = "/blog/an-introduction-to-html-attributes"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/about%E2%80%AC"
-  to = "/about"
   status = 301
   force = true
 
@@ -1051,6 +890,12 @@
 
 
 ## Other redirects
+
+[[redirects]]
+  from = "/about%E2%80%AC"
+  to = "/about"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/legal/"
@@ -1131,6 +976,12 @@
 ## Image redirects
 
 [[redirects]]
+  from = "/cms/resources/blog/internet-explorer-icon.png"
+  to = "/assets/img/summary.png"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/assets/img/tempertemper-web-design-logo-facebook.jpg"
   to = "/assets/img/summary.png"
   status = 301
@@ -1179,16 +1030,13 @@
   force = true
 
 
-## Testimonial redirects
+## Newsletter redirects
 
 [[redirects]]
   from = "/mailing-list"
   to = "/newsletter/"
   status = 301
   force = true
-
-
-## Newsletter redirects
 
 [[redirects]]
   from = "/mailing-list/unsubscribe"
