@@ -1,3 +1,15 @@
 User-agent: *
 Disallow: /cv
 Sitemap: https://www.tempertemper.net/sitemap.xml
+
+Disallow: /assets/img/case-studies/evaluagent--app-landing-page.png
+Disallow: /assets/img/case-studies/evaluagent--app-navigation.png
+Disallow: /assets/img/case-studies/evaluagent--app-switcher.png
+Disallow: /assets/img/case-studies/evaluagent--breadcrumbs.png
+Disallow: /assets/img/case-studies/evaluagent--colour-palette-examples.png
+Disallow: /assets/img/case-studies/evaluagent--dashboard.png
+Disallow: /assets/img/case-studies/evaluagent--gamification.png
+Disallow: /assets/img/case-studies/evaluagent--icons.png
+Disallow: /assets/img/case-studies/evaluagent--login-journey.png
+Disallow: /assets/img/case-studies/evaluagent--pattern-library.png
+Disallow: /assets/img/case-studies/evaluagent--quality.png
