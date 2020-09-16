@@ -13,3 +13,7 @@ Disallow: /assets/img/case-studies/evaluagent--icons.png
 Disallow: /assets/img/case-studies/evaluagent--login-journey.png
 Disallow: /assets/img/case-studies/evaluagent--pattern-library.png
 Disallow: /assets/img/case-studies/evaluagent--quality.png
+
+Disallow: /assets/img/case-studies/design-system--experiments.png
+Disallow: /assets/img/case-studies/design-system--prototype.png
+Disallow: /assets/img/case-studies/design-system--sketch-library.png
