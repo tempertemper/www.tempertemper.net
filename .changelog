@@ -11,10 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.11.10] - 2020-09-16
+
 ### Adds
 - Skills/services section, covering user experience design, frontend development, accessibility, user interface design, HTML email, and Perch CMS
-
-----------
 
 
 ## [5.11.9] - 2020-09-09
