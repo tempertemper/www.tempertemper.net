@@ -51,4 +51,4 @@ I've set Back Tap up and it's working [just as I'd hoped](https://www.tempertemp
 
 This one came from nowhere! It has always been a bit hit and miss using emojis with [Predictive emoji](https://support.apple.com/en-gb/HT202332) on Apple's keyboard: type a word and hope that it appears as one of the three emoji replacement suggestions.
 
-Now, the [emoji keyboard has a search input](https://twitter.com/tempertemper/status/1306887761450938368?s=21) just above it. Start typing and you get six emojis matching your search keyword. Is the emoji you were after not there? Just scroll to the right to see more. A proper search.
+Now, the [emoji keyboard has a search input](https://twitter.com/tempertemper/status/1306596353871474688?s=20) just above it. Start typing and you get six emojis matching your search keyword. Is the emoji you were after not there? Just scroll to the right to see more. A proper search.
