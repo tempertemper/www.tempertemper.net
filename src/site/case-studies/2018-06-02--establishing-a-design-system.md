@@ -42,6 +42,7 @@ Sketch also lends itself well to experimentation, where new ideas can be thrown 
 
 Each of those came from some time trying different variants and weighing up the various usability pros and cons of each. Trying new ideas about is easy with a UI app like Sketch.
 
+
 ## From mockups to code
 
 Static mockups in Sketch played a huge role in the design system I created, both at the outset and on an ongoing basis, whenever something new was needed. But a design system doesn't stop at the visuals. I needed a central place to document each component.
@@ -70,7 +71,7 @@ Integration was where I had the most contact as they would take my production-re
 
 The interface was built in [Vue.js](https://vuejs.org) so the code in the pattern library was deliberately kept JavaScript free. This meant:
 
-- it would be technology agnostic and future proof: if the engineers moved to a new frontend framework the library would no require any updates
+- it would be technology agnostic and future proof: if the engineers moved to a new frontend framework the library would require no updates
 - maintenance would be simpler, as all JavaScript enhancements would be taken care of by the framework; states (for example 'open' and 'closed') were documented as a 'variant' in the pattern library
 
 
