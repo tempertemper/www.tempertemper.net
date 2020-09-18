@@ -5,6 +5,8 @@ intro: |
 date: 2020-09-18
 tags:
     - Apple
+summaryImage: ios-14.jpg
+summaryImageAlt: The number ‘14’ in a white app icon, on top of overlapping circles of grey, blue and orange
 ---
 
 iOS software updates usually land at 6pm here in the UK; that's 10am where Apple are based. iOS 14 didn't arrive until [just after 9pm](https://twitter.com/tempertemper/status/1306323655538995203?s=21), then update itself took an hour to download and process, and another half an hour to install.
