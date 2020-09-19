@@ -2,7 +2,7 @@
 title: 3D touch is gone on Apple Watch
 intro: |
     I noticed it when I went to try out the new Faces that arrived with watchOS 7: the new Apple Watch operating system has removed 3D Touch entirely!
-date: 2020-09-18
+date: 2020-09-17
 tags:
     - Apple
 ---
