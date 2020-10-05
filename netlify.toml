@@ -820,6 +820,13 @@
   force = true
 
 [[redirects]]
+  from = "/blog/dropbox-%C3%A2%E2%82%AC%E2%80%9C-my-most-useful-app"
+  to = "/blog/dropbox-my-most-useful-app"
+  status = 301
+  force = true
+
+
+[[redirects]]
   from = "/blog/blog/thoughts-on-3d-touch"
   to = "/blog/thoughts-on-3d-touch"
   status = 301
@@ -1266,6 +1273,30 @@
 [[redirects]]
   from = "/admin/"
   to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wp-content/*"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wp-includes/*"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*/humans.txt"
+  to = "/humans.txt"
   status = 301
   force = true
 
