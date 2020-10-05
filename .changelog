@@ -16,6 +16,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [5.12.0] - 2020-09-16
 
+### Removes
+- Removes footer address's ARIA role
+
+
+## [5.12.0] - 2020-09-16
+
 ### Adds
 - Skills/services section, covering user experience design, frontend development, accessibility, user interface design, HTML email, and Perch CMS
 
