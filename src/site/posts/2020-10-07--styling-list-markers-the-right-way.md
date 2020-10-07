@@ -5,6 +5,7 @@ intro: |
 date: 2020-10-07
 tags:
     - CSS
+    - Development
 ---
 
 Styling list markers has always been a bit of a fight. Even simple styling like changing the colour of the bullets/numbers, or making them bigger involved a fair bit of CSS.
