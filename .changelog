@@ -10,9 +10,14 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 ## [Unreleased]
-- Makes form labels the normal text colour rather than blue
 
 ----------
+
+
+## [5.12.2] - 2020-10-08
+
+### Changes
+- Makes form labels the normal text colour rather than blue
 
 
 ## [5.12.1] - 2020-10-05
