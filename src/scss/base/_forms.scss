@@ -5,9 +5,8 @@ form {
 }
 
 label {
-  color: $colour-primary;
   font-family: $font--heading;
-  @include dark-mode($color: $colour-dark-mode-primary-lighter);
+  @include dark-mode($color: $colour-dark-mode-white);
 }
 
 input,
