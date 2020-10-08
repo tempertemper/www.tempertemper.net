@@ -3,6 +3,7 @@ title: Using nvm on macOS
 intro: |
   I upgraded node on my laptop and things broke… But I found a way to change the node version, to keep projects alive until there's time to upgrade all those packages and config.
 date: 2019-09-23
+updated: 2020-10-08
 tags:
   - Development
 ---
