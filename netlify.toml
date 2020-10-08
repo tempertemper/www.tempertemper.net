@@ -825,6 +825,11 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/using-nvm"
+  to = "/blog/using-nvm-on-macos"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/blog/thoughts-on-3d-touch"
