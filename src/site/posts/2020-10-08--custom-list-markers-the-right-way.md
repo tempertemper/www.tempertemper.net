@@ -1,7 +1,7 @@
 ---
 title: Custom unordered list markers, done right
 intro: |
-    Did you know it's simple to choose any icon you like for your unordered/bulleted lists? We can now use any Unicode character without hacky CSS!
+    Did you know you can choose any icon you like for unordered/bulleted lists with a single line of CSS? Any Unicode character; no hacky CSS!
 date: 2020-10-08
 tags:
     - Development
