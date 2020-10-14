@@ -1,5 +1,5 @@
 ---
-title: Frontend Development
+title: Frontend development
 intro: |
     I'm a frontend developer with a strong focus on accessible HTML and CSS and some JavaScript enhancements to improve usability.
 order: 3
