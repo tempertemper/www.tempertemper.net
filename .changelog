@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Updates to node version 12.13.1
+- Updates eleventy to 0.11.1
 - Updates eleventy plugins packages
 - Updates Markdown-it packages
 - Updates Browsersync, Del and Version Bump npm packages
