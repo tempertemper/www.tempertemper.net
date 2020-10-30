@@ -7,7 +7,7 @@ date: 2020-10-30
 
 Data seems to be all companies care about at the moment. Facebook and Google's business models are centred on the collection of their users' data, but I see more and more smaller organisations obsessing over data, or at least data *collection*.
 
-I can see why it's useful, of course. As a designer, I know that data can be a driver for change, or to inform or validate a design. But for me, personally, I just don't care about bounce rates, time on each page, what browser and operating system visitors are using. I know that my website:
+I can see why it's useful, of course. As a designer, I know that data can be a driver for change, or to inform or validate a design. But for me, personally, I just don't care about bounce rates, time on each page, or what browser and operating system visitors are using. I write my blog posts, and I know my users will have a decent experience, as my website:
 
 - loads very fast
 - uses progressive enhancement to ensure it works in as many places as possible
@@ -16,14 +16,14 @@ I can see why it's useful, of course. As a designer, I know that data can be a d
 - is accessible to screen readers and other assistive technology
 - respects users' system-wide preferences (Dark Mode, reducing motion, etc.)
 
-I don't need to know where people are when they open my newsletter (that's creepy…), or even if they open it at all! I know that my newsletter:
+Email campaigns are another place I see a lot of often unnecessary data collection. I don't need to know where people are when they open my newsletter (that's creepy…), or even if they open it at all! I know that my users want it (they have to confirm their email when they subscribe) and the newsletter itself:
 
 - is a simple, resilient, single column layout that works across every common email app (or web app)
 - is responsive, to maintain legibility on smaller screens
 - respects preferences like Dark Mode
 - uses semantic markup, so is accessible to screen readers
 
-The only metrics I tend keep an eye on are:
+The only metrics I tend keep an eye on, across my website and newsletter are:
 
 - the number of unique visitors I get on my website
 - the total number of pages viewed
