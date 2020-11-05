@@ -26,7 +26,7 @@
 
     > code {
       background-color: $colour-primary-lighter;
-      color: $white;
+      color: inherit;
       @include dark-mode($background: $colour-dark-mode-primary);
       padding-bottom: 0;
     }
@@ -48,7 +48,6 @@ a {
   }
 
   &:focus > code {
-    background-color: $colour-primary;
     padding-top: .22em;
     padding-bottom: .04em;
   }
