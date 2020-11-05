@@ -2,7 +2,7 @@
 title: The tempertemper newsletter
 intro: |
     A while ago, I realised I didn't have a great way to get all my articles out to people who want to read them. That's where my newsletter comes in.
-date: 2020-11-02
+date: 2020-11-05
 ---
 
 A few months ago I realised I didn't have a great mechanism for getting all the blog posts I've been writing out to people who wanted to read them.
