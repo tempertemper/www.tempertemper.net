@@ -3,6 +3,7 @@ title: Opening links in a new tab or window is better avoided
 intro: |
     A link to an external source opening in a new tab or window is something that appears innocuous but really isn't as straightforward it seems.
 date: 2020-09-21
+updated: 2020-10-21
 tags:
     - Design
     - Development
@@ -62,7 +63,7 @@ This is a biggie, [backed up by UK government research](https://design.tax.servi
 
 > some users struggle to get back to a service because the back button does not work in the new window or tab
 
-The user can't use the back button if a new tab has been opened since the new page is the first in that tab's history; the content the user might want to go back to is in a different tab.
+The user can't use the back button if a new tab has been opened since the new page is the first in that tab's history (although more on that later); the content the user might want to go back to is in a different tab.
 
 Navigating back a page is a fundamental to the way the web works: most users know they can go back to the page they came from. In fact, browsers and operating systems offer multiple ways for users to go back a page:
 
@@ -119,10 +120,30 @@ On mobile devices it gets even worse. You may have to scroll back up a little to
 
 I'd argue swiping/tapping back is a lot easier than that!
 
+#### Browsers to the rescue
+Some web browsers have addressed the issue, as [Šime Vidas points out](https://twitter.com/simevidas/status/1318275647337267201?s=21):
+
+> the back button *does* work with links that open in a new tab on Android … pressing the back button closes the new tab, so the previous page (the opener) becomes the active tab again
+
+This behaviour is there in Safari for both iOS and macOS and it is a good solution as it:
+
+- brings the user back to the page they came from
+- removes the clutter of the now-read linked-to page
+- takes care of the fiddliness of closing the tab and finding the opening page again
+- still makes sense when following links with an "opens in new tab" warning, as we see a new tab opening
+
+Unfortunately I didn't find this behaviour in Chrome, Firefox, Edge or Opera Mini for iOS; Opera Touch presented a back button but it takes the user back to a blank tab, rather than closing the tab and going back to the previous. On desktop/laptop browsers other than Safari, the behaviour isn't present. So there's a lack of consensus, which means it can't be relied upon.
+
+Furthermore, if the user doesn't realise this behaviour is there (I didn't!) or notice that the back button is active on this new tab, they're in the same situation as everybody else.
+
+And, having seen the new tab opening, either explicitly in their browser or via an animation on a mobile browser, how many people who use the back button may expect to be taken back but for the opened tab to remain open?
+
+It's not a perfect solution, but I'm not sure one exists.
+
 
 ## Don't link to any articles outside your website
 
-OK, so opening a link in a new tab is probably not a great idea, either from an implementation or a user experience point of view. So let's go to the other extreme and refrain from linking to any content outside our own website.
+OK, so opening a link in a new tab is probably not a great idea, either from an implementation, user experience, or consistency-of-experience point of view. So let's go to the other extreme and refrain from linking to any content outside our own website.
 
 That means we don't have to worry about writing HTML (and remembering to add those fancy attributes!), scripting our solution, or even how it affects our visitors. But consider this:
 
