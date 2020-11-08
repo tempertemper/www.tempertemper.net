@@ -18,6 +18,11 @@ All notable changes to this project will be documented in this file. The format 
 - Updates Markdown-it packages
 - Updates Browsersync, Del and Version Bump npm packages
 
+### Fixes
+- Tweaks top padding on code in links
+- Matches code in links' colours to rest of link
+- Makes link text black on focus in Dark Mode, passing AA colour contrast
+
 ----------
 
 
