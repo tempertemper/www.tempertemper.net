@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file. The format 
 - Matches code in links' colours to rest of link
 - Makes link text black on focus in Dark Mode, passing AA colour contrast
 - Adds title to YouTube embed iframe for improved accessibility
+- Increases colour contrast for selected in Dark Mode
 
 ----------
 
