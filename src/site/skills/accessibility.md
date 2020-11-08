@@ -20,7 +20,7 @@ There are hundreds of considerations that go into designing an accessible interf
 
 This means screen reader and voice control software that access a website can interpret the contents correctly, giving their users as good an experience anyone else:
 
-CSS plays a part too; not only should we code in a way that doesn't harm the experience for users of assistive technology, but users that have activated settings like [dark mode](/blog/dark-mode-websites-on-macos-mojave) or [reduced motion](/blog/reducing-motion) in their operating system's preferences should be respected.
+CSS plays a part too; not only should we code in a way that doesn't harm the experience for users of assistive technology, but users that have activated settings like [Dark Mode](/blog/dark-mode-websites-on-macos-mojave) or [reduced motion](/blog/reducing-motion) in their operating system's preferences should be respected.
 
 JavaScript should be an enhancement, where all content is available and accessible where it is blocked or fails to load.
 

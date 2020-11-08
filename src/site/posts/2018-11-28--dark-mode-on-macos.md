@@ -1,5 +1,5 @@
 ---
-title: Dark mode websites on macOS Mojave
+title: Dark Mode websites on macOS Mojave
 intro: |
     macOS Mojave comes with a Dark Mode feature, but how do we get our websites to do the same? Turns out there's a handy CSS media query that does the job!
 date: 2018-11-28

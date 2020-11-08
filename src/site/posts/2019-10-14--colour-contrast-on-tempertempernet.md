@@ -66,7 +66,7 @@ $colour-primary: #007CBA; // HSB(200,100,73)
 $colour-primary-lighter: #008DD1; // HSB(200,100,82)
 $colour-primary-darker: #0073AB; // HSB(200,100,67)
 
-// Dark mode colours
+// Dark Mode colours
 $colour-dark-mode-primary: #00A0F0; // HSB(200,100,94)
 $colour-dark-mode-primary-lighter: #19B3FF; // HSB(200,90,100)
 $colour-dark-mode-primary-darker: #008FD6; // HSB(200,100,84)
