@@ -41,6 +41,7 @@ Useful stuff! Similarly, when someone visits your site, it's likely that a cooki
 
 Of course, cookies can be used to more intrusive ends, which is why the law was passed. But the law was rather heavy-handed… Here's a great video that summarises things nicely:
 
+{% set youtubeVideoTitle = "The stupid EU cookie law in 2½ minutes (video)" %}
 {% set youtubeVideoID = "arWJA0jVPAc" %}
 {% include "youtube-embed.html" %}
 
