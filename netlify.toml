@@ -1084,18 +1084,6 @@
 ## Spam redirects
 
 [[redirects]]
-  from = "*/*.sql"
-  to = "/404"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "*/*.sql.gz"
-  to = "/404"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/security.txt"
   to = "/.well-known/security.txt"
   status = 301
