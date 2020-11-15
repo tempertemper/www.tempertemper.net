@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 ### Changes
+- Makes homepage blog posts 'featured' rather than the most recent two
 - Updates to node version 12.13.1
 - Updates eleventy to 0.11.1
 - Updates eleventy plugins packages
@@ -25,6 +26,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds title to YouTube embed iframe for improved accessibility
 - Increases colour contrast for selected in Dark Mode
 - Corrects references to Dark Mode to use title case
+- Corrects typos of 'accessibility'
 
 ----------
 
