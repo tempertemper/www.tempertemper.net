@@ -218,6 +218,12 @@
   force = true
 
 [[redirects]]
+  from = "/resources/displaying-an-email-address-on..."
+  to = "/resources/displaying-an-email-address-on-your-website"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/what-is-meta-data"
   to = "/resources/what-is-meta-data"
   status = 301
