@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.13.0] - 2020-11-15
+
 ### Changes
 - Makes homepage blog posts 'featured' rather than the most recent two
 - Updates to node version 12.13.1
@@ -27,8 +32,6 @@ All notable changes to this project will be documented in this file. The format 
 - Increases colour contrast for selected in Dark Mode
 - Corrects references to Dark Mode to use title case
 - Corrects typos of 'accessibility'
-
-----------
 
 
 ## [5.12.2] - 2020-10-08
