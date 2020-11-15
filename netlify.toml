@@ -218,6 +218,12 @@
   force = true
 
 [[redirects]]
+  from = "/resources/displaying-an-email-address-on..."
+  to = "/resources/displaying-an-email-address-on-your-website"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/what-is-meta-data"
   to = "/resources/what-is-meta-data"
   status = 301
@@ -1076,6 +1082,18 @@
 
 
 ## Spam redirects
+
+[[redirects]]
+  from = "*/*.sql"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "*/*.sql.gz"
+  to = "/404"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/security.txt"
