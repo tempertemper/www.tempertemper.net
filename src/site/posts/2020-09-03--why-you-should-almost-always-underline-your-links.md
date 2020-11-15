@@ -6,6 +6,7 @@ date: 2020-09-03
 tags:
     - Design
     - Accessibility
+featured: true
 ---
 
 A link should look like all the rest of the text around it, but with a couple of differences. It should maybe have a bit of colour, and it should almost definitely have an underline. Let me explain why.

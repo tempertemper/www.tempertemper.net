@@ -16,7 +16,7 @@ Yesterday's post on [Why I haven't 'redesigned my portfolio' since 2014](/blog/w
 
 ## May 2012
 
-By May 2012, after more than a year of trading, my business establishing nicely. I was starting to win freelance work with local agencies to supplement the then-core business of designing, building and maintaining small business's websites. The design was very 2012, with plenty of heavy gradients and drop shadows, and a few accessiblity no-nos (like no clear `<h1>`) sprinkled in for good measure. But at that point I was so busy with client work that my website had to take a bit of a backseat.
+By May 2012, after more than a year of trading, my business establishing nicely. I was starting to win freelance work with local agencies to supplement the then-core business of designing, building and maintaining small business's websites. The design was very 2012, with plenty of heavy gradients and drop shadows, and a few accessibility no-nos (like no clear `<h1>`) sprinkled in for good measure. But at that point I was so busy with client work that my website had to take a bit of a backseat.
 
 <img src="/assets/img/blog/homepage-snapshot-2012-05.jpg" alt="May 2012, with a gradient background in the header, lots of drop shadows and heavy use of the Courier New typewriter font" width="800" height="450" />
 

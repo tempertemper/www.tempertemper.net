@@ -76,6 +76,7 @@ What's more, if the CSS is telling the image to be `width: 100%;` or `max-width:
 
 So you can carry on reading that paragraph under it the image—or even click that link!—without worrying about the contents jumping down.
 
+{% set youtubeVideoTitle = "Image loading behaviour when aspect ratio is derived from size attributes (video)" %}
 {% set youtubeVideoID = "iHCopqc8kWc" %}
 {% include "youtube-embed.html" %}
 

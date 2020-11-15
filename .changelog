@@ -14,6 +14,26 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.13.0] - 2020-11-15
+
+### Changes
+- Makes homepage blog posts 'featured' rather than the most recent two
+- Updates to node version 12.13.1
+- Updates eleventy to 0.11.1
+- Updates eleventy plugins packages
+- Updates Markdown-it packages
+- Updates Browsersync, Del and Version Bump npm packages
+
+### Fixes
+- Tweaks top padding on code in links
+- Matches code in links' colours to rest of link
+- Makes link text black on focus in Dark Mode, passing AA colour contrast
+- Adds title to YouTube embed iframe for improved accessibility
+- Increases colour contrast for selected in Dark Mode
+- Corrects references to Dark Mode to use title case
+- Corrects typos of 'accessibility'
+
+
 ## [5.12.2] - 2020-10-08
 
 ### Changes
