@@ -20,11 +20,11 @@ layout: base.html
 
 <section aria-label="Writing" class="teaser">
     <h2 id="writing">Writing</h2>
-    <p>If you prefer to dive straight in rather than <a href="/blog/">see the full blog</a>, here are a couple of my most recent articles to get you started.</p>
+    <p>If you prefer to dive straight in rather than <a href="/blog/">see the full blog</a>, here are a couple of my favourite articles from the last few months to get you started.</p>
     <ol class="index-list" reversed>
         {%- set posts = collections.post | reverse %}
         {% for post in posts %}
-            {% if loop.index <= 2 %}
+            {% if post.data.featured === true %}
                 {% include "post-in-list.html" %}
             {% endif %}
         {% endfor %}

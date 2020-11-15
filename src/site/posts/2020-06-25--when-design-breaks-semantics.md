@@ -7,6 +7,7 @@ tags:
     - Design
     - Development
     - Accessibility
+featured: true
 ---
 
 Semantic HTML is great. If you see a list, it'll be marked up as a list. If you see a heading that's bigger than all the others on the page, it'll be an `<h1>`. Great. Everyone wins.
