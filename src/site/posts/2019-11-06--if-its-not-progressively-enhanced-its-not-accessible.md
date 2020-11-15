@@ -1,7 +1,7 @@
 ---
 title: If it's not progressively enhanced, it's not accessible
 intro: |
-    In his latest article, Adam Silver summarises the many ways JavaScript can fail, which, to me, is an accessibilty issue.
+    In his latest article, Adam Silver summarises the many ways JavaScript can fail, which, to me, is an accessibility issue.
 date: 2019-11-06
 tags:
     - Accessibility

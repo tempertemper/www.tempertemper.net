@@ -25,6 +25,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds title to YouTube embed iframe for improved accessibility
 - Increases colour contrast for selected in Dark Mode
 - Corrects references to Dark Mode to use title case
+- Corrects typos of 'accessibility'
 
 ----------
 
