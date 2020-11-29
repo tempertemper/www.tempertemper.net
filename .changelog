@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Fixes
+- Prevents hanging list markers in blockquotes
+
 ----------
 
 

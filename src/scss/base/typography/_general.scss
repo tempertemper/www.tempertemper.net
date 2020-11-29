@@ -36,6 +36,11 @@ blockquote {
   @include dark-mode() {
     border-left-color: $colour-dark-mode-highlight;
   }
+
+  ul,
+  ol {
+    padding-left: 1em;
+  }
 }
 
 cite {
