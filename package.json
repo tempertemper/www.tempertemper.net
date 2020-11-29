@@ -1,6 +1,6 @@
 {
   "name": "tempertemper",
-  "version": "5.13.0",
+  "version": "5.13.1",
   "description": "tempertemper's website",
   "scripts": {
     "start": "gulp cleanSite && gulp buildAll && gulp serve",
@@ -39,8 +39,8 @@
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
     "dotenv": "^8.2.0",
-    "markdown-it": "^12.0.1",
-    "markdown-it-anchor": "^6.0.0",
+    "markdown-it": "^12.0.2",
+    "markdown-it-anchor": "^6.0.1",
     "node-fetch": "^2.6.1",
     "require-dir": "^1.2.0",
     "smartypants": "^0.1.1",

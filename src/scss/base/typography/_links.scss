@@ -54,6 +54,8 @@ a {
 
   > code {
     color: $colour-primary-darker;
+    padding-left: 0;
+    padding-right: 0;
 
     @include dark-mode() {
       @include dark-mode($color: $colour-dark-mode-primary);
