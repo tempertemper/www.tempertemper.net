@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Prevents hanging list markers in blockquotes
+- Removes left and right padding on inline code in links to prevent gaps in underline
 
 ----------
 
