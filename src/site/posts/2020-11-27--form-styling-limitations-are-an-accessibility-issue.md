@@ -3,6 +3,10 @@ title: Form styling limitations are an accessibility issue
 intro: |
     A summary of the things missing in CSS got me thinking about how lack of some form styling may have seriously damaged accessibility on the web
 date: 2020-11-27
+tags:
+    - Accessibility
+    - Development
+    - CSS
 ---
 
 I enjoyed a [brief summary of the things people are looking for in CSS](https://css-tricks.com/whats-missing-from-css/) from Chris Coyier on CSS-Tricks:
