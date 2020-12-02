@@ -4,7 +4,6 @@ intro: |
     Respecting your users' preferences with `prefers-reduced-motion` is great, but what about users with older operating systems and browsers?
 date: 2020-12-02
 tags:
-    - Design
     - Development
     - Accessibility
 ---
