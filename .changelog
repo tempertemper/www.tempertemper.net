@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Fixes
+- Stops blinking of logo cursor on OSs that don't have a 'reduce motion' preference
+
 ----------
 
 
