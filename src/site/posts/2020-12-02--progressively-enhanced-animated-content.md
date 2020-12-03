@@ -16,7 +16,7 @@ I'm a big fan of [Patrick H. Lauke's progressively enhanced approach](https://co
 - the user has an operating system and browser that is able to reduce motion
 - the user hasn't turned on the reduced motion setting
 
-So instead of this SCSS:
+So instead of this SCSS, that I use to make the underscore on my logo blink:
 
 ```css
 .underscore {
