@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.13.2] - 2020-12-03
+
+### Fixes
+- Stops blinking of logo cursor on OSs that don't have a 'reduce motion' preference
+
+
 ## [5.13.1] - 2020-11-29
 
 ### Fixes
