@@ -10,7 +10,7 @@ tags:
 
 It's all very well knowing the [principles behind writing a link](/blog/how-to-write-a-link), but how do you _actually_ write a link?
 
-Copying and pasting a link into your text will just write link as another word in your article. I'll use that last link as an example– if I copy and paste it into this paragraph it looks like this: http://tempertemper.net/blog/how-to-write-a-link
+Copying and pasting a link into your text will just write link as another word in your article. I'll use that last link as an example– if I copy and paste it into this paragraph it looks like this: /blog/how-to-write-a-link
 
 That's better than nothing as your visitors can highlight it, copy it and paste it into their web browser, but that's pretty clunky. We all know that links on the web look like text but there is something that sets them apart from the rest of the text that indicates that they're clickable/tappable and will take you somewhere else.
 

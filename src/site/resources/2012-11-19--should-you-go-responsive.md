@@ -7,7 +7,7 @@ tags:
     - Accessibility
 ---
 
-Accessibility is central to the web. It's not just [less able visitors](http://tempertemper.net/blog/discrimination-on-the-web) you should be considering, but the multitude of devices people access the internet on nowadays.
+Accessibility is central to the web. It's not just [less able visitors](/blog/discrimination-on-the-web) you should be considering, but the multitude of devices people access the internet on nowadays.
 
 How easy will your website be to view on the small screen of an iPhone? How about a widescreen television? What about all the sizes in between?
 
@@ -82,7 +82,7 @@ Of course, if you like, you can add extra breakpoints for tablet sized layouts, 
 
 So whether you've already got a website or you're looking to have your first website developed, a responsive layout is an important part of the plan.
 
-If you already have a website your [analytics](http://tempertemper.net/blog/google-analytics) will tell you how many of your visitors are using mobile devices, so you'll be able to make an informed decision on the mobile front.
+If you already have a website your [analytics](/blog/google-analytics) will tell you how many of your visitors are using mobile devices, so you'll be able to make an informed decision on the mobile front.
 
 Your analytics will also tell you how many widescreen visitors you're getting.
 
@@ -95,6 +95,6 @@ So responsive design is becoming more and more important as the small-screen mar
 
 Whether that's a fully responsive site or a step towards improving your visitors experience with an adaptive approach, catering for as wide an audience as possible makes great business sense!
 
-[Send me a message](http://tempertemper.net/contact) if you'd like to know more about how your website could be made responsive.
+[Send me a message](/contact) if you'd like to know more about how your website could be made responsive.
 
 *I might have made that word up too :)

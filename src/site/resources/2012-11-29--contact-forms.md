@@ -28,14 +28,14 @@ You might also be keen to ensure that certain fields of the form are filled out.
 
 Contact forms can be a security risk. They're an easy way for hackers to break into your site and cause damage, which can take time to resolve.
 
-The [security that come with a robust Content Management System (CMS)](http://tempertemper.net/blog/cms-updates) gives you peace of mind that you've done everything you can to minimise the chances of your website being hacked.
+The [security that come with a robust Content Management System (CMS)](/blog/cms-updates) gives you peace of mind that you've done everything you can to minimise the chances of your website being hacked.
 
 
 ## Why a CMS is important
 
 "I want a form but I'm not interested in managing the content on my website…"
 
-A CMS not only provides security, fool-proof validation and the necessary software to process the information sent to you via your contact form, it also provides a [platform for adding controllable paragraphs and pages](http://tempertemper.net/blog/do-i-need-a-cms) to your website in the future.
+A CMS not only provides security, fool-proof validation and the necessary software to process the information sent to you via your contact form, it also provides a [platform for adding controllable paragraphs and pages](/blog/do-i-need-a-cms) to your website in the future.
 
 Having the CMS installed adds some initial cost but this only has to be done once and opens the door to all kinds of interesting and engaging possibilities for your website!
 

@@ -65,7 +65,7 @@ It was going to set me back £50 for the apps I needed…
 
 ## So what happened?
 
-In the months leading up to moving to 1Password I had, by chance, encountered a few interesting articles on [Twitter](http://twitter.com/tempertemper) and through [RSS feeds](http://tempertemper.net/blog/whats-rss-all-about). [This one from XKCD](http://xkcd.com/936/) was one of them; it basically says "changing it to a few unconnected words will mean your password something like 550 years longer to crack", by which point you probably won't care very much anyway!
+In the months leading up to moving to 1Password I had, by chance, encountered a few interesting articles on [Twitter](http://twitter.com/tempertemper) and through [RSS feeds](/blog/whats-rss-all-about). [This one from XKCD](http://xkcd.com/936/) was one of them; it basically says "changing it to a few unconnected words will mean your password something like 550 years longer to crack", by which point you probably won't care very much anyway!
 
 There were a few other factors that led to me taking the plunge…
 

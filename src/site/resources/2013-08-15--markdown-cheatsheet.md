@@ -9,7 +9,7 @@ tags:
     - Markdown
 ---
 
-Markdown is a [brilliant way to write content](http://tempertemper.net/blog/what-is-markdown) for the web. Here's a quick overview of the most commonly used Markdown, for your reference.
+Markdown is a [brilliant way to write content](/blog/what-is-markdown) for the web. Here's a quick overview of the most commonly used Markdown, for your reference.
 
 
 ## Let's start with headings

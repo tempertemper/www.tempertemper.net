@@ -12,7 +12,7 @@ Alt text? "What's-a-one-of-them", I hear you cry! Well, it's someone that every 
 
 Isn't the picture enough? Well, yes, it is for most of us, but accessibility's everything on the web – what about your sight impaired visitors that are having your page read to them by their screen reader? Your pictures are an important part of your content and as such should be described to those who can't see them. And don't forget, it's not just less-abled amongst us: advancing technology will bring with it things like the ability for your car to read you the details of a website while you drive – your eyes are on the road so it's all going to be audio! Apple's [Siri](http://www.apple.com/uk/iphone/features/siri.html) has already begun to pave the way for this.
 
-Search engines are also unable to look at a picture so they need some kind of descriptive text so that they know what's going on. You'll get brownie points for this as it's one of the [things that search engines use to mark a site](http://tempertemper.net/blog/what-search-engines-want) is accessibility.
+Search engines are also unable to look at a picture so they need some kind of descriptive text so that they know what's going on. You'll get brownie points for this as it's one of the [things that search engines use to mark a site](/blog/what-search-engines-want) is accessibility.
 
 
 ## So what does alt text look like?

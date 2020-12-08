@@ -17,7 +17,7 @@ A common misconception is that you can't have a branded email unless you have a 
 
 A lot of people are under the misconception that owning your own domain name is an expensive and complicated process. It's really not. In fact, I've seen them for as low as a fiver, but—as with most things—I've generally found you get what you pay for, in terms of service, reliability and so on.
 
-Have a good think about what domain names you'd like for your business, find out which, if any, are available. and buy the one you want! [Give me a shout](http://tempertemper.net/contact) if you'd like me to help you with the buying process. I have one piece of advice for you though- if you submit your query to a domain name availability checker, or even Google, be prepared to buy it there and then. I've lost out and been held to ransom over a personal domain name that I checked and didn't buy quick enough. This was possibly just bad luck, but (call me cynical!) I suspect the search results are sold to unscrupulous companies who try to make money this way.
+Have a good think about what domain names you'd like for your business, find out which, if any, are available. and buy the one you want! [Give me a shout](/contact) if you'd like me to help you with the buying process. I have one piece of advice for you though- if you submit your query to a domain name availability checker, or even Google, be prepared to buy it there and then. I've lost out and been held to ransom over a personal domain name that I checked and didn't buy quick enough. This was possibly just bad luck, but (call me cynical!) I suspect the search results are sold to unscrupulous companies who try to make money this way.
 
 If someone else already has the domain name you're after all is not lost- you can offer to buy the domain name from them, but it may come at a premium. Or they may simply be unwilling to sell. It's usually better to forget about a domain name if it's already taken.
 
@@ -31,7 +31,7 @@ The only drawback to this method is that any emails you send out will still be f
 
 ## Hosted email accounts
 
-If you do buy hosting, you'll be able to use your branded email exclusively, instead of through your normal account. The hosting I provide for my clients comes with [lots of different options](http://tempertemper.net/blog/the-types-of-email) for access: web-based, desktop-based, etc. and this is the case for most providers. [Let me know](http://tempertemper.net/contact) if you want me to point you in the right direction.
+If you do buy hosting, you'll be able to use your branded email exclusively, instead of through your normal account. The hosting I provide for my clients comes with [lots of different options](/blog/the-types-of-email) for access: web-based, desktop-based, etc. and this is the case for most providers. [Let me know](/contact) if you want me to point you in the right direction.
 
 
 ## Redirect your non-branded emails

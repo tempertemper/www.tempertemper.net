@@ -29,7 +29,7 @@ Lists of site navigation links are one thing but it's likely there are less 'for
 
 The beauty of the web is that the information you want to convey might be spread across several different places – rather than rewriting other people's articles it's much more useful to simply link to them. This in itself has a benefit for the original author as each link to their article is counted as a 'vote' that search engines use to decide how to rank their page.
 
-So, as I mention in the 'What should a link look like?' section of my article on [how links work](http://tempertemper.net/blog/links-make-the-web-go-round), links should be readable (none of all that http:// nonsense!) and provide a clue as to where they lead.
+So, as I mention in the 'What should a link look like?' section of my article on [how links work](/blog/links-make-the-web-go-round), links should be readable (none of all that http:// nonsense!) and provide a clue as to where they lead.
 
 
 ## Your links

@@ -7,7 +7,7 @@ tags:
     - Accessibility
 ---
 
-Every site I make will work on every modern browser. You've probably read my [article about the various different internet browsers](http://tempertemper.net/blog/whats-in-a-browser) there are available for you to use, but how does this affect you as a website owner?
+Every site I make will work on every modern browser. You've probably read my [article about the various different internet browsers](/blog/whats-in-a-browser) there are available for you to use, but how does this affect you as a website owner?
 
 
 ## Software
@@ -49,7 +49,7 @@ These browsers have a very small market share. IE6 is almost redundant and IE7 i
 
 However, if I'm redesigning your site you may have statistics that show that a larger portion of your visitors than the average site were using one or both of these browsers to view your old site. If this is the case, it probably makes good business sense to make your site display properly for these visitors!
 
-Similarly, if I've build you a new website, you can [keep an eye](http://tempertemper.net/blog/google-analytics) on the browsers the visitors to your site are using and, if the number of IE6/7 users is higher than the average site, it would probably be worthwhile investing in making their experience better.
+Similarly, if I've build you a new website, you can [keep an eye](/blog/google-analytics) on the browsers the visitors to your site are using and, if the number of IE6/7 users is higher than the average site, it would probably be worthwhile investing in making their experience better.
 
 
 ## Future-friendly

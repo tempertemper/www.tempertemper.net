@@ -56,4 +56,4 @@ This has generated a bit of a buzz around it, which has been a great way of mark
 
 Google+ is easier to use, more flexible, more user friendly, more inclusive and prettier than its main rival, Facebook. Only time will tell whether it overtakes Facebook in popularity, but there have been reports that in recent months Facebook has not grown for the first time in its history, so maybe its time for something new!
 
-If you would like an invite, I'd be happy to send you one- send me a [quick message](http://tempertemper.net/contact) and be sure to include your email address- that's how I'll request you!
+If you would like an invite, I'd be happy to send you one- send me a [quick message](/contact) and be sure to include your email address- that's how I'll request you!

@@ -41,7 +41,7 @@ Reader is also a great feature. At the click of a button it takes the text from 
 
 Chrome is very slick. It looks particularly good in Windows as it removes the top bar from the window, giving you more space to view the web. It updates itself in the background so you never have to worry about it being out of date (great for security and your browsing experience).
 
-The only place it falls down is its [RSS](http://tempertemper.net/blog/whats-rss-all-about) support, which is non-existent. You have to install an extension to make this work, which seems very strange to me, as RSS is a fundamental feature on the web and lots of people won't be interested in installing add-ons and plug-ins to make things work. The only other way of doing it is a rather archaic 'right click, "copy link as...", paste into RSS reader', which assumes some knowledge of RSS, ie. which reader you want to use, where to paste the link in your reader, etc. Bananas!
+The only place it falls down is its [RSS](/blog/whats-rss-all-about) support, which is non-existent. You have to install an extension to make this work, which seems very strange to me, as RSS is a fundamental feature on the web and lots of people won't be interested in installing add-ons and plug-ins to make things work. The only other way of doing it is a rather archaic 'right click, "copy link as...", paste into RSS reader', which assumes some knowledge of RSS, ie. which reader you want to use, where to paste the link in your reader, etc. Bananas!
 
 [Download Chrome here](http://www.google.com/chrome/intl/en-GB/landing_tv.html).
 

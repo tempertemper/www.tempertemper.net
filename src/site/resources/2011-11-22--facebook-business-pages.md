@@ -26,7 +26,7 @@ Here's the biggie- if you want a 'Like' button on your website it can only be fo
 
 ## Always public
 
-Fan pages are always public, so even people with no Facebook profiles can see them and keep an eye on your news. Even subscribe to the [RSS feed](http://tempertemper.net/blog/whats-rss-all-about) to be kept up to date without having to visiting the page.
+Fan pages are always public, so even people with no Facebook profiles can see them and keep an eye on your news. Even subscribe to the [RSS feed](/blog/whats-rss-all-about) to be kept up to date without having to visiting the page.
 
 Pages also help with your website's search engine rankings as they're public.
 
