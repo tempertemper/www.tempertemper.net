@@ -43,7 +43,7 @@ Deafness can also be a big issue if you rely heavily on audio/video content. Tra
 
 Accessibility is a very broad subject and less able users are just the tip of the iceberg.
 
-How accessible is your site to visitors using a touch screen device like an iPad? How quickly does it download on a mobile network? How well does it work on [older internet browsers](/resources/older-browsers)? How easy is your site to use on a [small screen](/resources/responsive)?
+How accessible is your site to visitors using a touch screen device like an iPad? How quickly does it download on a mobile network? How well does it work on [older internet browsers](/resources/older-browsers)? How easy is your site to use on a [small screen](/resources/should-you-go-responsive)?
 
 
 ## Another reason, as if you needed one
