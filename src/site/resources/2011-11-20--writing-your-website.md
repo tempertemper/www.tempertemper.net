@@ -9,7 +9,7 @@ tags:
 
 Writing the copy for your site is probably one of the most important jobs you'll carry out for your website.
 
-I'm not going to get into keywords as that has been [covered elsewhere](/blog/keywords) on this blog. Instead I'll focus on how to tackle what you're going to write on your website.
+I'm not going to get into keywords as that has been [covered elsewhere](/resources/keywords) on this blog. Instead I'll focus on how to tackle what you're going to write on your website.
 
 
 ## Have a clear objective

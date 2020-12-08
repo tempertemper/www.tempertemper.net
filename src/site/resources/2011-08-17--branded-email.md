@@ -31,7 +31,7 @@ The only drawback to this method is that any emails you send out will still be f
 
 ## Hosted email accounts
 
-If you do buy hosting, you'll be able to use your branded email exclusively, instead of through your normal account. The hosting I provide for my clients comes with [lots of different options](/blog/the-types-of-email) for access: web-based, desktop-based, etc. and this is the case for most providers. [Let me know](/contact) if you want me to point you in the right direction.
+If you do buy hosting, you'll be able to use your branded email exclusively, instead of through your normal account. The hosting I provide for my clients comes with [lots of different options](/resources/the-types-of-email) for access: web-based, desktop-based, etc. and this is the case for most providers. [Let me know](/contact) if you want me to point you in the right direction.
 
 
 ## Redirect your non-branded emails

@@ -7,18 +7,18 @@ date: 2014-01-09
 
 In my recent website redesign I made the decision to provide only basic support for Internet Explorer 8. Internet Explorer versions 6 and 7 haven't been a concern for a while (except in edge cases) but version 8 is still around.
 
-To help make this informed decision I looked were my [analytics](/blog/google-analytics) which told me that I only had a few visitors a month using old-ish browsers like IE8. I decided that, in order to keep the maintenance of my site as efficient as possible, I would make very few allowances for IE8 and earlier.
+To help make this informed decision I looked were my [analytics](/resources/google-analytics) which told me that I only had a few visitors a month using old-ish browsers like IE8. I decided that, in order to keep the maintenance of my site as efficient as possible, I would make very few allowances for IE8 and earlier.
 
 
 ## But shouldn't it all just work?
 
 Web design is a funny one. The functionality of a site (processing forms, generating the content for a page, etc.), in very simplistic terms, either works or it doesn't.
 
-How the website _looks_ is a completely different story. This is all down to the [web browser](/blog/whats-in-a-browser) you're viewing the site in ([Firefox](http://www.mozilla.org/en-US/firefox/features/), for example) and operating system and hardware the web browser is running on (Windows 8 on a PC, or iOS7 on iPad for example).
+How the website _looks_ is a completely different story. This is all down to the [web browser](/resources/whats-in-a-browser) you're viewing the site in ([Firefox](http://www.mozilla.org/en-US/firefox/features/), for example) and operating system and hardware the web browser is running on (Windows 8 on a PC, or iOS7 on iPad for example).
 
 Over the years, [web standards](/blog/blue-beanie-day) have become the norm, so modern browsers display the same web page in a very similar way. Each does have its quirks, though, so your website might look slightly different on [Opera](http://www.opera.com/) to how it does on [Chrome](http://www.google.co.uk/chrome).
 
-Of course, not everyone is running (or able to run) the most recent version of their chosen web browser and, as [I've mentioned in the past](/blog/older-browsers), older browsers were on the way to supporting, but not fully compliant with, web standards. So they may be less capable than their more up to date siblings, which means your website might be missing one or two features (nothing vital – just nice-to-have cosmetics like rounded corners) on these browsers.
+Of course, not everyone is running (or able to run) the most recent version of their chosen web browser and, as [I've mentioned in the past](/resources/older-browsers), older browsers were on the way to supporting, but not fully compliant with, web standards. So they may be less capable than their more up to date siblings, which means your website might be missing one or two features (nothing vital – just nice-to-have cosmetics like rounded corners) on these browsers.
 
 And there's not just that – each browser and platform can have a different screen size: smartphones, tablets, and laptop and desktop computers come in all sorts of sizes, then you've got viewing your phone or tablet device in landscape or portrait. This massive variety of screen sizes should be designed for, with the layout of your site adjusting accordingly.
 

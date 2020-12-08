@@ -19,7 +19,7 @@ Search engines score your website according to how a real visitor would experien
 
 Number 3 is what we're going to home in on.
 
-Google have written about how they use performance as [one of their ranking factors](http://googlewebmastercentral.blogspot.co.uk/2010/04/using-site-speed-in-web-search-ranking.html), and it's more important now that it has ever been. I've written before about how [mobile friendliness](/blog/mobile-friendly-markers) is something Google and other search engines are now measuring, and if your site is designed to adjust its layout to the size of the screen it's being viewed on, that's a great start. But there's more to it than that…
+Google have written about how they use performance as [one of their ranking factors](http://googlewebmastercentral.blogspot.co.uk/2010/04/using-site-speed-in-web-search-ranking.html), and it's more important now that it has ever been. I've written before about how [mobile friendliness](/resources/mobile-friendly-markers) is something Google and other search engines are now measuring, and if your site is designed to adjust its layout to the size of the screen it's being viewed on, that's a great start. But there's more to it than that…
 
 
 ## So what's the worst-case scenario?

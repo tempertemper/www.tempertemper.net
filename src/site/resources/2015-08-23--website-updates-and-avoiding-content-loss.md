@@ -28,7 +28,7 @@ You have a few choices to avoid losing content:
 
 ### 1. Make the changes twice
 
-If you [write your content off-line](/blog/edit-your-blog-posts-off-line) you'll be able to re-upload the changes when the newer site is put live. Don't forget though – set up a reminder in your calendar!
+If you [write your content off-line](/resources/edit-your-blog-posts-off-line) you'll be able to re-upload the changes when the newer site is put live. Don't forget though – set up a reminder in your calendar!
 
 ### 2. Let your web designer know
 

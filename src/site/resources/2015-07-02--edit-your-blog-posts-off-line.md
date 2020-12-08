@@ -8,7 +8,7 @@ tags:
     - Website admin
 ---
 
-I've already written about why [WYSIWYG editors are a bad idea](/blog/what-you-see-isnt-what-you-get). Separation of content from style is vital on the web.
+I've already written about why [WYSIWYG editors are a bad idea](/resources/what-you-see-isnt-what-you-get). Separation of content from style is vital on the web.
 
 It's your **web designer's job** to take your content and design and build the best website to convey its message to your visitors. You shouldn't have to give this a second thought. He or she will anticipate as many variations of content type (paragraphs, headings, images, lists, quotes, etc.), content length (how long are the paragraphs? How many bullet points?), and so on, at lots of screen widths on multiple devices as possible. If there is something they haven't anticipated it's usually just a case of writing some more code to cater for it.
 
@@ -35,7 +35,7 @@ Writing posts in a dedicated app like Byword means your work is automatically sa
 
 ## But what about formatting?
 
-Maybe you already edit your posts in a separate app. A lot of people do this in Microsoft Word or Apple's Pages. Makes sure you don't use the default formatting though – most word processing apps like these support [Markdown](/blog/what-is-markdown) to a greater or lesser extent, so make sure you're writing in Markdown. That way, when you copy and paste the contents of your post to the text box in your CMS and hit 'save' it will all be output to the site properly.
+Maybe you already edit your posts in a separate app. A lot of people do this in Microsoft Word or Apple's Pages. Makes sure you don't use the default formatting though – most word processing apps like these support [Markdown](/resources/what-is-markdown) to a greater or lesser extent, so make sure you're writing in Markdown. That way, when you copy and paste the contents of your post to the text box in your CMS and hit 'save' it will all be output to the site properly.
 
 
 ## Backup

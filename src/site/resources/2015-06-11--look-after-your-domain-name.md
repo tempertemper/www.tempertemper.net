@@ -22,7 +22,7 @@ If someone else has registered it for you, at the very least make sure they have
 
 It seems like every month that there's news of another online service having their passwords leaked. If your password is leaked and you use the same password for other services the thieves can potentially break into your accounts that use the same password. And one of those accounts may be your domain name registration control panel.
 
-[Using a password manager](](/blog/password-security)) like 1Password will keep your domain name account logins unique and secure. It takes a wee bit of effort to make the switch, but it's well worth it for the peace of mind.
+[Using a password manager](/resources/password-security) like 1Password will keep your domain name account logins unique and secure. It takes a wee bit of effort to make the switch, but it's well worth it for the peace of mind.
 
 
 ## Implications of losing it

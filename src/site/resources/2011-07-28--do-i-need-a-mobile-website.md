@@ -9,7 +9,7 @@ tags:
 
 Like most technology, the internet is changing; and one of the biggest changes in recent years has been the use of smartphones. It sort of started when Apple introduced its iPhone back in 2007 and since then it's grown and grown as more manufacturers have jumped on the bandwagon.
 
-So the mobile internet is big news. I've noticed big companies like PizzaExpress are now using things like mobile-specific [QR codes](/blog/qr-readers) on their tables in order to give customers extra information at the scan of a barcode; more and more are offering free wi-fi to their customers.
+So the mobile internet is big news. I've noticed big companies like PizzaExpress are now using things like mobile-specific [QR codes](/resources/qr-readers) on their tables in order to give customers extra information at the scan of a barcode; more and more are offering free wi-fi to their customers.
 
 
 ## Big news
@@ -33,7 +33,7 @@ Thankfully, getting things to look ok in the aforementioned browser is (usually)
 
 ## Budget
 
-It's a big job in itself, so you have to think carefully about whether your budget will stretch that far, and, if it will, whether it's a wise investment, based on your calculations as to how many potential customers you'll be gaining, or whether your money would be better spent on [a blog for your site](/blog/why-should-i-blog), or an advert in the local paper. Like most 'upgrades' to your site, it's always something you can come back to at a later date.
+It's a big job in itself, so you have to think carefully about whether your budget will stretch that far, and, if it will, whether it's a wise investment, based on your calculations as to how many potential customers you'll be gaining, or whether your money would be better spent on [a blog for your site](/resources/why-should-i-blog), or an advert in the local paper. Like most 'upgrades' to your site, it's always something you can come back to at a later date.
 
 A restaurant may be a good example: you need to consider people who find themselves in your area and are looking for somewhere to eat. An easy way to do this is to use their phone to search for the restaurants in the local area. If they find your restaurant and are presented with a site that is perfectly optimised for their mobile device - easy to read, well laid out, etc. - this will reflect well on your business. They'll be able to find what they're looking for more easily and could be more likely to call you to book a table!
 

@@ -50,7 +50,7 @@ What you choose as your principle domain name is pretty subjective- there isn't 
 
 Having hyphens in your domain name is perfectly acceptable. You just have to decide whether you want to have to say "hyphen" or "dash" every time you tell someone your web address or email.
 
-A consideration is that you may want [keywords](/blog/keywords) in your domain name. Google looks favourably on this, so your search engine ranking may get a boost, but there is a downside. Filling your domain name with keywords will mean it's longer. On a human level, this can make it more difficult to remember- especially if you're giving someone your email address: martin@somemadeupdomainnamewithkeywords.com
+A consideration is that you may want [keywords](/resources/keywords) in your domain name. Google looks favourably on this, so your search engine ranking may get a boost, but there is a downside. Filling your domain name with keywords will mean it's longer. On a human level, this can make it more difficult to remember- especially if you're giving someone your email address: martin@somemadeupdomainnamewithkeywords.com
 
 
 ## To www. or not to www.

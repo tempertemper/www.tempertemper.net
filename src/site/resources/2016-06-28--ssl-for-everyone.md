@@ -9,11 +9,11 @@ tags:
 
 Every now and then something big happens on the web. Sometimes it’s really obvious, like when a website’s layout changes so that it’s easy to view on a mobile phone. Sometimes it’s a bit subtler, but still very important.
 
-So a few years ago I wrote an article about why I began doing [one or two important things on every website](/blog/why-i-changed-my-baseline) I build. This is still true: a website that doesn’t adjust to the size of the screen it’s being viewed on just isn’t a website in my eyes.
+So a few years ago I wrote an article about why I began doing [one or two important things on every website](/resources/why-i-changed-my-baseline) I build. This is still true: a website that doesn’t adjust to the size of the screen it’s being viewed on just isn’t a website in my eyes.
 
 SSL is another one of those ‘everyone should have it’ things.
 
-But what _is_ SSL? Have a quick read of the [article I wrote](/blog/what-is-ssl-and-is-it-worth-the-bother) on SSL. In summary, it **secures the information sent to and from your device** to the web server where the site you’re visiting lives.
+But what _is_ SSL? Have a quick read of the [article I wrote](/resources/what-is-ssl-and-is-it-worth-the-bother) on SSL. In summary, it **secures the information sent to and from your device** to the web server where the site you’re visiting lives.
 
 Ok, but that’s bit abstract… How about something more relatable? SSL prevents anyone intercepting information you send via a form: credit card details or even just your email address.
 
@@ -36,7 +36,7 @@ As with any kind of software, things change over time. Bad guys find ways around
 
 That’s why I run regular SSL tests on my clients websites to make sure they’re still A rated.
 
-An upgrade might mean your website won’t work in very [old browsers](/blog/older-browsers) that just don’t have the built-in security to support SSL properly. This is almost always perfectly fine though, as there are so few people using those browsers that they probably don’t account for any traffic to your site anyway.
+An upgrade might mean your website won’t work in very [old browsers](/resources/older-browsers) that just don’t have the built-in security to support SSL properly. This is almost always perfectly fine though, as there are so few people using those browsers that they probably don’t account for any traffic to your site anyway.
 
 
 ## No downsides then?

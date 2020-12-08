@@ -29,7 +29,7 @@ Some websites go even further and have a branded certificate (like [PayPal](http
 
 ## What does SSL actually do?
 
-SSL is a way of encrypting data that's sent over the internet. To understand how data is sent, it's worth looking at [what happens when you load a website](/blog/how-the-web-works):
+SSL is a way of encrypting data that's sent over the internet. To understand how data is sent, it's worth looking at [what happens when you load a website](/resources/how-the-web-works):
 
 1. You type a website address into your web browser's address bar, find a site on a search engine or follow a link to a site
 2. A bunch of files and folders that make up a website are sent to your web browser from the place on the internet where your website lives (the server)

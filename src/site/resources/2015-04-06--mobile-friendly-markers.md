@@ -10,7 +10,7 @@ tags:
 
 You might have noticed that if you search for something on Google on your phone there's a new 'Mobile friendly' label.
 
-No? Don't worry, it's quite subtle. Open your phone's web browser and search Google for something. If the website is mobile friendly it'll have a wee 'Mobile-friendly' marker before the [page description](/blog/page-descriptions).
+No? Don't worry, it's quite subtle. Open your phone's web browser and search Google for something. If the website is mobile friendly it'll have a wee 'Mobile-friendly' marker before the [page description](/resources/page-descriptions).
 
 <img src="/assets/img/resources/screenshot-mobile-friendly.png" alt="Screenshot from mobile phone showing 'mobile friendly' marker in search results" width="800" height="848" />
 

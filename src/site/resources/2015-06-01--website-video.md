@@ -9,7 +9,7 @@ tags:
 
 At long last I've had a video shot for tempertemper.net!
 
-I've mentioned the [Shoemaker's children thing](/blog/little-by-little) before. I have to make a concerted effort to spend time on my own website, and one of the things that has been on my to-do list for ages is to introduce video. But it seemed big, scary, time consuming and expensive. So I've been putting it off.
+I've mentioned the [Shoemaker's children thing](/resources/little-by-little) before. I have to make a concerted effort to spend time on my own website, and one of the things that has been on my to-do list for ages is to introduce video. But it seemed big, scary, time consuming and expensive. So I've been putting it off.
 
 I have a Spanish friend who shoots and edits videos. He works for a UK-based company from his office in Spain, but he often flies to the North East to shoot new footage to work with.
 

@@ -8,7 +8,7 @@ tags:
     - Email
 ---
 
-Email can be tricky. I've previously written about [the dos and don'ts of sending marketing emails](/blog/the-three-golden-rules-of-sending-marketing-emails), but not about the different email formats you can use.
+Email can be tricky. I've previously written about [the dos and don'ts of sending marketing emails](/resources/the-three-golden-rules-of-sending-marketing-emails), but not about the different email formats you can use.
 
 This goes for _any_ type of email you send, whether:
 
@@ -25,22 +25,22 @@ There are three different types/formats of email, and each has its pros, cons an
 
 ## Plain text email
 
-Plain text emails are just that – plain old text. No formatting, nothing. You could use [Markdown](/blog/what-is-markdown) to give your text some meaning (lists, emphasis, etc.) and you can be sure that copying and pasting the text will always be reliable.
+Plain text emails are just that – plain old text. No formatting, nothing. You could use [Markdown](/resources/what-is-markdown) to give your text some meaning (lists, emphasis, etc.) and you can be sure that copying and pasting the text will always be reliable.
 
 Unfortunately, it looks a bit boring. You're limited to one font, you can't make text bold or italic – pretty unglamorous! And, in general, people are used to emails looking a little bit prettier.
 
-So, while I'm a [big fan of writing in plain text](/blog/edit-your-blog-posts-off-line), I prefer to stick to rich text for my day to day emails.
+So, while I'm a [big fan of writing in plain text](/resources/edit-your-blog-posts-off-line), I prefer to stick to rich text for my day to day emails.
 
 
 ## Rich text email
 
-Rich text emails are a kind of half-way house. They allow you to make text bold and italic, you can change the colour of text, resize it, and so on. You're even able to change the font you're using, though [this comes with its own limitations](/blog/webfonts): the font you choose has to be available on the recipient's computer or they'll get a fall-back chosen by their machine.
+Rich text emails are a kind of half-way house. They allow you to make text bold and italic, you can change the colour of text, resize it, and so on. You're even able to change the font you're using, though [this comes with its own limitations](/resources/webfonts): the font you choose has to be available on the recipient's computer or they'll get a fall-back chosen by their machine.
 
 A quick aside: just because you _can_ doesn't mean you _should_. There's [nothing worse](http://sixrevisions.com/graphics-design/comic-sans-the-font-everyone-loves-to-hate/) that receiving an email written in Comic Sans. Well, maybe _sending_ an email written in Comic Sans…
 
 Err on the side of default. Out of the box, most email programs and operating systems use a black 'sans-serif' font (the type without little kicks and flicks) in a fairly legible size. This is perfectly fine, as far as I'm concerned.
 
-Limitations include the lack of control over backgrounds, links have to be pasted straight into the email you go see the full URL on the page (like `https://www.tempertemper.net/blog/types-of-email-and-when-to-use-each`) and, like plain text, images are sent as attachments, which can be a bit clunky.
+Limitations include the lack of control over backgrounds, links have to be pasted straight into the email you go see the full URL on the page (like `https://www.tempertemper.net/resources/types-of-email-and-when-to-use-each`) and, like plain text, images are sent as attachments, which can be a bit clunky.
 
 Copying and pasting rich text emails from one app/program to another, or even one email to another inside the same program, is often pretty messy. My biggest bug-bear is when I'm copying and pasting a nicely formatted bulleted or numbered lists – they never seem to make the journey from one email to the other in one piece! There's always some deleting and re-formatting to do.
 
@@ -75,7 +75,7 @@ For this reason, it's always a good idea to write a plain text fall-back for you
 For group/marketing emails, any [email sending service](https://www.campaignmonitor.com) worth its salt will automatically generate a plain text fall-back email, so if the HTML email fails, the plain text version will definitely get through. You'll probably be able to edit this, so make sure you check it before sending and do some tidying up:
 
 - Some text might need to be rewritten as your images won't make it through
-- Some formatting might need adjusting. [Markdown](/blog/markdown-cheatsheet) is a great is perfect for this
+- Some formatting might need adjusting. [Markdown](/resources/markdown-cheatsheet) is a great is perfect for this
 - Links will be 'exposed', so you'll probably have to rewrite some sentences that had links in them
 
 

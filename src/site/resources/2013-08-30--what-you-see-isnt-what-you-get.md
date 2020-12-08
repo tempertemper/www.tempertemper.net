@@ -22,7 +22,7 @@ Of the various types of content, copy is probably the most complex. Your CMS wil
 
 Copy can take all sorts of forms. The most obvious is a simple paragraph of text, but there are all sorts of other ways of presenting text:
 
-- Headings of [varying levels](/blog/how-headings-work) of importance
+- Headings of [varying levels](/resources/how-headings-work) of importance
 - Emphasised text (eg. bold/italic text)
 - Bulleted lists (like this one!)
 - Numbered lists
@@ -41,7 +41,7 @@ If your content is properly written it will be accessible to pretty much everyon
 
 ## Design versus content
 
-As the content producer for your website, the responsibility for making your documents accessible lies with you. And, remember, that's a good thing as you'll be reaching the [widest possible audience](/blog/disability-on-the-web)!
+As the content producer for your website, the responsibility for making your documents accessible lies with you. And, remember, that's a good thing as you'll be reaching the [widest possible audience](/resources/disability-on-the-web)!
 
 ### Your web designer's job
 
@@ -61,17 +61,17 @@ Not only were they used by touching the screen, for the most part, but the scree
 
 It's possible to read a web page on your mobile phone's screen, but it's a pain if it's just a tiny version of a site that was designed to be visited by people using desktop monitors. You have to double tap the area you want to zoom in or, or 'pinch' in until the text is at a readable size.
 
-To solve this problem, your website should be designed for [as many screen sizes as possible](/blog/should-you-go-responsive). This may involve some design changes that go beyond simply altering the layout.
+To solve this problem, your website should be designed for [as many screen sizes as possible](/resources/should-you-go-responsive). This may involve some design changes that go beyond simply altering the layout.
 
 #### And other means
 
 Your content can also be saved for reading later using services like [Instapaper](http://www.instapaper.com), [Pocket](http://getpocket.com/) or [Readability](http://www.readability.com), where your formatting is removed and your content is presented in the way the reader decides they want it to be presented. Apple's Safari browser has this functionality built in, so that the main content is taken out of a web page and displayed in a nice, readable way.
 
-Then there's those [with sight impairments](/blog/disability-on-the-web) who don't actually _see_ your website at all! It is read to them by their screen reader.
+Then there's those [with sight impairments](/resources/disability-on-the-web) who don't actually _see_ your website at all! It is read to them by their screen reader.
 
 So how your website looks is by the by in a lot of cases!
 
-So it's even more important to ensure your content is properly [marked up](/blog/what-is-markdown) so they know which words you've placed emphasis on, which phrases are headings, rather than paragraphs, etc.
+So it's even more important to ensure your content is properly [marked up](/resources/what-is-markdown) so they know which words you've placed emphasis on, which phrases are headings, rather than paragraphs, etc.
 
 ### Redesign
 
@@ -87,7 +87,7 @@ Another great reason not to focus on how your content looks is that every web br
 
 An example might be useful here… If you write a heading for a blog post and the last word wraps onto a new line, you might think about losing a word so that the design feels tidier.
 
-But, after painstakingly deciding how to write the heading using less words, you might look at the same webpage in a different [web browser](/blog/whats-in-a-browser) or on a different operating system (Windows as opposed to your iPad) the text may be 'rendered' slightly differently, pushing the last word onto a different line anyway! So all of your attention to the detail of the design was for nought.
+But, after painstakingly deciding how to write the heading using less words, you might look at the same webpage in a different [web browser](/resources/whats-in-a-browser) or on a different operating system (Windows as opposed to your iPad) the text may be 'rendered' slightly differently, pushing the last word onto a different line anyway! So all of your attention to the detail of the design was for nought.
 
 Couple this with the nature of a website—adapting to as many different screen sizes as possible to offer the best possible experience—there's no avoiding a lone word on its own line at one screen width or the other!
 

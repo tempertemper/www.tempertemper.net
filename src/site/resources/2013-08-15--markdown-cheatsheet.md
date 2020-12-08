@@ -9,7 +9,7 @@ tags:
     - Markdown
 ---
 
-Markdown is a [brilliant way to write content](/blog/what-is-markdown) for the web. Here's a quick overview of the most commonly used Markdown, for your reference.
+Markdown is a [brilliant way to write content](/resources/what-is-markdown) for the web. Here's a quick overview of the most commonly used Markdown, for your reference.
 
 
 ## Let's start with headings
@@ -95,7 +95,7 @@ If there's a definite order to your list items they should probably be numbered,
 
 ## Links
 
-Links are a [hugely important part of the web](/blog/links-make-the-web-go-round). Here's how to link to other web pages in your articles:
+Links are a [hugely important part of the web](/resources/links-make-the-web-go-round). Here's how to link to other web pages in your articles:
 
 ```markdown
 Sentences [containing links](https://twitter.com/tempertemper) are great.
@@ -103,7 +103,7 @@ Sentences [containing links](https://twitter.com/tempertemper) are great.
 
 Surround the text you want to be the link in square brackets and—without a space—write or paste the link to the page you're referencing in normal brackets. Piece of cake!
 
-There's also a special way to [link to other pages in your site](/blog/how-to-write-a-link-using-markdown).
+There's also a special way to [link to other pages in your site](/resources/how-to-write-a-link-using-markdown).
 
 
 ## Digging deep

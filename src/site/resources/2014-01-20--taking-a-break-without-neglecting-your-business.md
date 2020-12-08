@@ -33,7 +33,7 @@ But that's the issue. Every now and then—however rare—a client has an _urgen
 
 ## Taking my laptop
 
-My office is a [co-working space](http://tempertemper/blog/my-introduction-to-co-working) and has been for the past year or so. I'm therefore very used to working from my laptop.
+My office is a [co-working space](/blog/my-introduction-to-co-working) and has been for the past year or so. I'm therefore very used to working from my laptop.
 
 So it makes sense to me to just take my laptop on holiday with me so that I could get a little bit of work done each day (perhaps an hour or two from a café over breakfast) and then get on with taking a well-deserved break.
 

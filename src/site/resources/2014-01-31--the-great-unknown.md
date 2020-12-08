@@ -13,7 +13,7 @@ The reason they want to be the best, in very simple terms, is that the more user
 
 It's not just Google, of course: Microsoft's [Bing](http://www.bing.com/) is their biggest competitor at the minute.
 
-I've blogged before about the [things search engines use to rank a web page](/blog/what-search-engines-want) for a particular search and—two and a half years later!—the principles still hold true. If you've got a well built, well thought through website with great content and you market it well you're on your way to top marks from Google and Bing.
+I've blogged before about the [things search engines use to rank a web page](/resources/what-search-engines-want) for a particular search and—two and a half years later!—the principles still hold true. If you've got a well built, well thought through website with great content and you market it well you're on your way to top marks from Google and Bing.
 
 The number of criteria search engines use to decide whether a page is going to rank highly in their search results or not is huge, and the specifics are never made public.
 

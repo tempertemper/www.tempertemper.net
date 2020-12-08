@@ -40,7 +40,7 @@ Yes and no. It's plain text. So a word that you want to embolden or italicise wo
 
 So if you were to write—say—an email using Markdown, then sent it to a family member who has no idea what Markdown is, they'd have a good idea of what you're trying to convey with those double asterisks around a word as it'll _look_ like it has been emphasised!
 
-If you want to know more about how a document is actually written, have a look at [this article on writing Markdown](/blog/markdown-cheatsheet)
+If you want to know more about how a document is actually written, have a look at [this article on writing Markdown](/resources/markdown-cheatsheet)
 
 #### Exporting
 
@@ -74,6 +74,6 @@ Taking that one step further, your computer's software is written in plain .txt 
 
 ## Best practice
 
-So if  you want to keep your documents forever, for use in as many different contexts as possible—whether you're writing for the web or not—you should look into [using Markdown to write them](/blog/markdown-cheatsheet).
+So if  you want to keep your documents forever, for use in as many different contexts as possible—whether you're writing for the web or not—you should look into [using Markdown to write them](/resources/markdown-cheatsheet).
 
 Are you already using Markdown? I'd love to know how you use it – why not leave a comment below!?
