@@ -9,7 +9,7 @@ tags:
 
 I love co-working.
 
-So I was really happy to be asked by [a fellow co-worker](http://www.lauraballtranslator.eu/) to be part of a [panel on co-working](http://iti-conference.org.uk/programme/farewell-to-isolation-co-working-as-a-new-way-of-life-and-a-business-tool/) at the ITI Conference 2015. The event went really well and loads of great ideas were shared from those of us on the stage, as well as in the subsequent Q&A with the audience.
+So I was really happy to be asked by [a fellow co-worker](https://twitter.com/lauratranslator) to be part of a [panel on co-working](https://www.iti.org.uk/discover/learn-and-develop/training/iti-conferences.html) at the ITI Conference 2015. The event went really well and loads of great ideas were shared from those of us on the stage, as well as in the subsequent Q&A with the audience.
 
 It has been a few years since my last post on the subject, where I talked about [how I got into co-working](/blog/my-introduction-to-co-working), so now felt like a good time to revisit it.
 

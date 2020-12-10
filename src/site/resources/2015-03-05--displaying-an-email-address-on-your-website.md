@@ -59,7 +59,7 @@ I'm always on the look out for new apps to improve my workflow, so if I changed 
 #### iOS
 Unfortunately, iPhone and iPad users can't change their default email app, so mailto links _always_ open Apple's Mail app.
 
-This would be fine for people like me who use Mail to access emails on their iPhone/iPad. But what about people who use apps like [Gmail](https://www.gmail.com/intl/en_us/mail/help/mobile.html) or [Mailbox](http://www.mailboxapp.com/)? They'd have to follow the 'select, copy, switch apps, paste' routine, with the added obstacle of the text being a link, which, with one false move, could trigger the opening of a new email in Apple Mail. Not ideal.
+This would be fine for people like me who use Mail to access emails on their iPhone/iPad. But what about people who use apps like [Gmail](https://www.gmail.com/intl/en_us/mail/help/mobile.html)? They'd have to follow the 'select, copy, switch apps, paste' routine, with the added obstacle of the text being a link, which, with one false move, could trigger the opening of a new email in Apple Mail. Not ideal.
 
 ### Browser-based email apps
 
