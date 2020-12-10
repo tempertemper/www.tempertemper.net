@@ -41,11 +41,11 @@ The beanie is a doff of the cap (pun intended!) to [Jeffrey Zeldman][7], who app
 
 I'd love to know your take on web standards! Give me a shout on [Twitter](https://twitter.com/tempertemper).
 
-[1]:  /blog/whats-in-a-browser
-[2]:  /blog/do-i-need-a-mobile-website
+[1]:  /resources/whats-in-a-browser
+[2]:  /resources/do-i-need-a-mobile-website
 [3]:  http://en.wikipedia.org/wiki/Arab_Spring
-[4]:  /blog/disability-on-the-web
-[5]:  /blog/disability-on-the-web
+[4]:  /resources/disability-on-the-web
+[5]:  /resources/disability-on-the-web
 [6]:  http://www.zeldman.com/bbd/
 [7]:  http://en.wikipedia.org/wiki/Jeffrey_Zeldman
 [8]:  http://www.amazon.com/exec/obidos/tg/detail/-/0321616952/jeffreyzeldmanprA/
