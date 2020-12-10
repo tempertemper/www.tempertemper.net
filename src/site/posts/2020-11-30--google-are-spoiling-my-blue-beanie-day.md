@@ -7,7 +7,7 @@ tags:
     - Development
 ---
 
-Back in 2012, I wrote about [Blue Beanie Day](https://www.tempertemper.net/blog/blue-beanie-day) which covered:
+Back in 2012, I wrote about [Blue Beanie Day](/blog/blue-beanie-day) which covered:
 
 - the financial benefits of web standards, as code complexity and cross-browser bugs reduce
 - web standards as a facilitator of free speech

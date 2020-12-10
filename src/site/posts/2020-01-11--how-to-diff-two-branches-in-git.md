@@ -8,7 +8,7 @@ tags:
     - Development
 ---
 
-After posting my article on [rebasing versus merging](https://www.tempertemper.net/blog/git-rebase-versus-merge) in Git, I decided to do a bit of digging around `git log`, and it turns out it can solve the issues I was having with merging: quickly and cleanly seeing what I've done relative to master.
+After posting my article on [rebasing versus merging](/blog/git-rebase-versus-merge) in Git, I decided to do a bit of digging around `git log`, and it turns out it can solve the issues I was having with merging: quickly and cleanly seeing what I've done relative to master.
 
 
 ## Branch diffs

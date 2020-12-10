@@ -44,7 +44,7 @@ But with the App Library, I've moved all of these apps away from the Home screen
 
 ## Back Tap
 
-I've set Back Tap up and it's working [just as I'd hoped](https://www.tempertemper.net/blog/ios-14s-back-tap-a-better-way-to-access-control-centre). I like it a lot!
+I've set Back Tap up and it's working [just as I'd hoped](/blog/ios-14s-back-tap-a-better-way-to-access-control-centre). I like it a lot!
 
 
 ## Emoji search

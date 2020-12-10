@@ -10,7 +10,7 @@ summaryImage: webp--gradient.png
 summaryImageAlt: A comparison of gradients from JPEG and WebP compression, showing that the WebP gradient is much smoother, subtler and less blocky than JPEG.
 ---
 
-In my [roundup of the most interesting features announced at WWDC 2020](https://www.tempertemper.net/blog/wwdc-2020-roundup) I mentioned that Safari would now be supporting image aspect ratios. Something else I noticed in their [Safari 14 release notes](https://developer.apple.com/documentation/safari-release-notes/safari-14-beta-release-notes#Media) is that WebP would now be supported.
+In my [roundup of the most interesting features announced at WWDC 2020](/blog/wwdc-2020-roundup) I mentioned that Safari would now be supporting image aspect ratios. Something else I noticed in their [Safari 14 release notes](https://developer.apple.com/documentation/safari-release-notes/safari-14-beta-release-notes#Media) is that WebP would now be supported.
 
 Shortly afterwards, I read a short [CSS-Tricks article about WebP support in iOS 14](https://css-tricks.com/webp-image-support-coming-to-ios-14/) and I sprung into action!
 
