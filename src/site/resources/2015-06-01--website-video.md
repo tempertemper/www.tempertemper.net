@@ -13,7 +13,7 @@ I've mentioned the [Shoemaker's children thing](/resources/little-by-little) bef
 
 I have a Spanish friend who shoots and edits videos. He works for a UK-based company from his office in Spain, but he often flies to the North East to shoot new footage to work with.
 
-When I found out my friend (Dani Fernandez at [Green Siren](http://greensiren.org/cams)) was flying over recently, I asked him if he would have any spare time to shoot a 30 second video of me for my homepage. Luckily he did!
+When I found out my friend (Dani Fernandez at [Green Siren](//greensiren.org)) was flying over recently, I asked him if he would have any spare time to shoot a 30 second video of me for my homepage. Luckily he did!
 
 
 ## Preparation

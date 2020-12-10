@@ -26,7 +26,7 @@ I don't know about you, but I really don't enjoy writing directly into that text
 5. I prefer not to clutter my list of posts in my CMS control panel with ideas for posts and half-written drafts
 6. One false click and you risk losing everything you've typed
 
-I use an app called [Byword](http://bywordapp.com/) to write my blog posts. It's a full-screen (point 1 solved!), distraction free (point 2) editing environment. I've got Byword on all of my devices and it syncs automatically via iCloud or Dropbox (point 3) and when I open the app it takes me straight to the post I was last editing (point 4). Whenever I come up with a new post I just hit the `+` button to create a new post and a new file is added that I can come back to at any point (point 5).
+I use an app called [Byword](https://bywordapp.com/) to write my blog posts. It's a full-screen (point 1 solved!), distraction free (point 2) editing environment. I've got Byword on all of my devices and it syncs automatically via iCloud or Dropbox (point 3) and when I open the app it takes me straight to the post I was last editing (point 4). Whenever I come up with a new post I just hit the `+` button to create a new post and a new file is added that I can come back to at any point (point 5).
 
 Point 6 warrants a bit more explanation. How often have you been writing something in a text box on a website, for example filling out the feedback form, only to press the wrong key and submit the form. Or—worse—you're automatically logged out half way through a post or upon submitting the post. The _entire post is gone_ and you've lost the post you worked so hard on. Some web browsers (like Safari) will do their best to auto-save the contents of the text box, so that you can go back to the page without losing that much, but more often than not I find I go back to the page and there's a blank text area staring back at me… Not much fun.
 
@@ -56,4 +56,4 @@ Writing your blog posts off-line means:
 - you have the ability to edit on your laptop, tablet, phone or anywhere else you have access to your files
 - you can open an app and start writing straight away
 
-With all of those advantages, why not look into using an app like Byword (or [IA Writer](https://ia.net/writer/mac) or [Ulysses](http://ulyssesapp.com/)) to write your posts?
+With all of those advantages, why not look into using an app like Byword (or [IA Writer](https://ia.net/writer) or [Ulysses](https://ulysses.app/)) to write your posts?

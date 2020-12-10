@@ -26,7 +26,7 @@ The question to ask yourself is whether it's appropriate that you get on board a
 
 So you need to have a think about your visitors. Whether they're likely to visit your website on a smartphone or from their desktop/laptop computer at home. That figure of 8.09% mobile internet users from January represents about 5 million people.
 
-It's similar to ensuring your website is viewable to the 2.6% of the UK population that view the internet through [Internet Explorer 6 - a decade-old browser](http://www.ie6countdown.com/) - they have to have a decent experience of your site. It won't be as nice as it looks on most people's browsers as some of the most basic technology isn't there, but that's still 1.6 million people you have to present your brand and information to.
+It's similar to ensuring your website is viewable to the 2.6% of the UK population that view the internet through [Internet Explorer 6 - a decade-old browser](http://www.ie6death.com/) - they have to have a decent experience of your site. It won't be as nice as it looks on most people's browsers as some of the most basic technology isn't there, but that's still 1.6 million people you have to present your brand and information to.
 
 Thankfully, getting things to look ok in the aforementioned browser is (usually) a relatively simple task, once you know how it works and how to bend it to your will. I include this in every website I make. Mobile optimisation, on the other hand, is a much more involved process. You're effectively having your site styled again from scratch and the images you use have to be resized to fit. Navigation can't be as it is on your main site- it's generally better to use a drop-down list, for example.
 

@@ -17,7 +17,7 @@ This might be obvious, but it's worth pointing out anyway… When you have a boo
 
 ## A numbers game
 
-As time goes by, more and more people buy new machines with more up to date software installed on them. Bingo. On top of that, more and more people are being persuaded to change to better browsers like Google's [Chrome](http://www.google.com/chrome/intl/en-GB/landing_tv.html) or Mozilla's [Firefox](http://europe.mozilla.org/en/).
+As time goes by, more and more people buy new machines with more up to date software installed on them. Bingo. On top of that, more and more people are being persuaded to change to better browsers like Google's [Chrome](https://www.google.com/chrome/) or Mozilla's [Firefox](https://www.mozilla.org/firefox/new/).
 
 So number of people using older software is dwindling.
 
@@ -26,7 +26,7 @@ So number of people using older software is dwindling.
 
 'Older browsers' is a bit of a tricky term. By older browsers I'm really referring to Internet Explorer versions 6, 7 and 8.
 
-Internet Explorer (IE) is quite often the victim of many a web-designer hate campaign, which I'm not about to join. Don't get me wrong, I'm really not a fan – I just reckon it's part of the job to cater for (if not pander to) these browsers. Even [Microsoft themselves](http://www.ie6countdown.com/) believe that the older of their currently used browsers has has well and truly had its day!
+Internet Explorer (IE) is quite often the victim of many a web-designer hate campaign, which I'm not about to join. Don't get me wrong, I'm really not a fan – I just reckon it's part of the job to cater for (if not pander to) these browsers. Even [Microsoft themselves](http://www.ie6death.com/) believe that the older of their currently used browsers has has well and truly had its day!
 
 
 ## Internet Explorer 8

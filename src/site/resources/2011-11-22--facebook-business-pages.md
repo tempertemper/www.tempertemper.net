@@ -48,4 +48,4 @@ Facebook's terms of services say profiles are for individuals so it's be a night
 
 ## It's a piece of cake to set up
 
-Have a look here to set up your [Facebook business page](http://www.facebook.com/pages/create.php).
+Have a look here to set up your [Facebook business page](https://www.facebook.com/business/pages).

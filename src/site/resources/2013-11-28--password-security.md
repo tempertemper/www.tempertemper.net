@@ -58,20 +58,20 @@ It's true that remembering where I had accounts, logging into each one and gener
 
 ### It's not free
 
-Every great product has to have some way of making money otherwise it won't be around long. Some companies, like [Apple](http://www.apple.com/uk/), make their money by selling products, others like [Facebook](http://www.facebook.com) and [Google](http://www.google.co.uk) sell their users' data to advertisers, others like [Evernote](http://evernote.com) or [Dropbox](http://www.dropbox.com) rely on their users paying monthly or yearly subscriptions. 1Password charge a one-off fee for the purchase of their software.
+Every great product has to have some way of making money otherwise it won't be around long. Some companies, like [Apple](https://www.apple.com/), make their money by selling products, others like [Facebook](https://www.facebook.com) and [Google](https://www.google.com) sell their users' data to advertisers, others like [Evernote](https://evernote.com) or [Dropbox](https://www.dropbox.com) rely on their users paying monthly or yearly subscriptions. 1Password charge a one-off fee for the purchase of their software.
 
 It was going to set me back £50 for the apps I needed…
 
 
 ## So what happened?
 
-In the months leading up to moving to 1Password I had, by chance, encountered a few interesting articles on [Twitter](http://twitter.com/tempertemper) and through [RSS feeds](/blog/whats-rss-all-about). [This one from XKCD](http://xkcd.com/936/) was one of them; it basically says "changing it to a few unconnected words will mean your password something like 550 years longer to crack", by which point you probably won't care very much anyway!
+In the months leading up to moving to 1Password I had, by chance, encountered a few interesting articles on [Twitter](https://twitter.com/tempertemper) and through [RSS feeds](/blog/whats-rss-all-about). [This one from XKCD](https://xkcd.com/936/) was one of them; it basically says "changing it to a few unconnected words will mean your password something like 550 years longer to crack", by which point you probably won't care very much anyway!
 
 There were a few other factors that led to me taking the plunge…
 
 ### Responsibility to my clients
 
-Even though I had personally never had an account hacked, signing up to the [Data Protection Act](http://www.ico.org.uk/) means I have a legal (if not already moral) responsibility to keep my client's details as safe as possible.
+Even though I had personally never had an account hacked, signing up to the [Data Protection Act](https://ico.org.uk/) means I have a legal (if not already moral) responsibility to keep my client's details as safe as possible.
 
 It's necessary for me to keep not just contact information but login details of all kinds, so that I can edit and maintain my clients' websites, domain names, etc. Sensitive stuff that deserves to be as protected as possible!
 
@@ -91,7 +91,7 @@ I've since known people who have had their accounts hacked and their passwords c
 
 ## Enough messing about
 
-All things considered, I gladly purchased both their app for [iOS](https://itunes.apple.com/gb/app/1password-password-manager/id568903335) (iPhone and iPad) and [Mac](https://itunes.apple.com/gb/app/1password-password-manager/id443987910?mt=12&ign-mpt=uo%3D4). (The 1Password app is also available for [Android](https://agilebits.com/onepassword/android) and [Windows](https://agilebits.com/onepassword/win) so there's probably a version for you out there.)
+All things considered, I gladly purchased both their app for [iOS](https://1password.com/downloads/ios/) (iPhone and iPad) and [Mac](https://1password.com/downloads/mac/). (The 1Password app is also available for [Android](https://1password.com/downloads/android/) and [Windows](https://1password.com/downloads/windows/) so there's probably a version for you out there.)
 
 
 ## Set some time aside
@@ -120,7 +120,7 @@ Logging into apps on my iOS devices only has to be done once, so I don't mind he
 
 ## Resources
 
-1Password don't just take your money and leave it at that – they have an [excellent blog](http://blog.agilebits.com/) which, while on the geeky side, demonstrates pretty clearly how useful the product is and gives lots of tips for keeping even more secure!
+1Password don't just take your money and leave it at that – they have an [excellent blog](https://blog.1password.com/) which, while on the geeky side, demonstrates pretty clearly how useful the product is and gives lots of tips for keeping even more secure!
 
 
 ## Passwords aren't perfect

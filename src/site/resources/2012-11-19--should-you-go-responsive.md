@@ -86,7 +86,7 @@ If you already have a website your [analytics](/resources/google-analytics) will
 
 Your analytics will also tell you how many widescreen visitors you're getting.
 
-For those that are having a website developed from scratch you probably don't have any analytics to base your decision on, but your relationship with your clients is still very valuable: how about sending them a survey asking how they access the internet? Or you could use the results of an online [survey into general smartphone usage](http://pewinternet.org/Reports/2012/Smartphone-Update-2012/Findings.aspx) to base your decision on.
+For those that are having a website developed from scratch you probably don't have any analytics to base your decision on, but your relationship with your clients is still very valuable: how about sending them a survey asking how they access the internet? Or you could use the results of an online [survey into general smartphone usage](https://www.pewresearch.org/internet/2012/09/11/smartphone-ownership-update-september-2012/) to base your decision on.
 
 
 ## Responsivificate* me!

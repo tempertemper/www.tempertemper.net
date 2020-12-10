@@ -48,7 +48,7 @@ But what if your website doesn't process card payments?
 
 - How about the password you submit when you log into your content management system (CMS)? It would be pretty damaging if someone got hold of those and was able to log into your CMS and change your site's content.
 - Someone might want to send you a sensitive message over your contact form – perhaps telling you how your business has helped them in a very personal way. It would be reassuring for them to know that you were doing everything you could to keep their message private.
-- Even if there's not a [PCI compliance](https://www.pcisecuritystandards.org/) requirement to have SSL, the [Data Protection](http://ico.org.uk/for_organisations/data_protection/the_guide) probably requires that you treat your customers' contact details (that are sent in a contact form) with care.
+- Even if there's not a [PCI compliance](https://www.pcisecuritystandards.org/) requirement to have SSL, the [Data Protection](https://ico.org.uk/for-organisations/) probably requires that you treat your customers' contact details (that are sent in a contact form) with care.
 - When a visitor sees that little padlock their trust in your site is likely to increase. Even if they don't know what it actually means, its association with other sites they have confidence in.
 
 Even without all of that, there's the search engine ranking boost!

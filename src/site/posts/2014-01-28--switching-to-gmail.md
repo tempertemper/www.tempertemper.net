@@ -59,7 +59,7 @@ There are also lots of other useful-looking features such as Chat, categories, M
 
 As with everything, I should mention that there are some downsides, beyond the privacy issue mentioned at the start of this article:
 
-- Gmail is a paid service (it's good value though, as it comes alongside a bunch of pretty [useful looking apps](http://www.google.co.uk/enterprise/apps/business/)), but at less than a fiver a month it's worth it for me.
+- Gmail is a paid service (it's good value though, as it comes alongside a bunch of pretty [useful looking apps](https://workspace.google.co.uk/)), but at less than a fiver a month it's worth it for me.
 Set up can be a bit of a pain and, once it's all ready to use, getting your emails in there is a bit of an arduous process.
 You can send and receive emails from more than one
 - There are some fundamental concepts that are different from what you'll be used to as a non-gmail user. For example, there's no such thing folders. Emails are 'labelled' instead, but visually they look just like folders. The confusion comes when an email has more than one label– you’ll see the same email in two folders. Takes a bit of getting used to and, as I said earlier, it’s a blog post in itself– watch this space!

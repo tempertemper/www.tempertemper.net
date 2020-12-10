@@ -15,7 +15,7 @@ Unfortunately Windows users are by far in the majority and Microsoft haven't giv
 
 The good news is it isn't your only option – there are other programs out there that you can use to browse the internet, but make your experience of the internet a lot richer, faster and more secure!
 
-There are five big players. Internet Explorer is the 'out of the box' browser for Windows and [Safari](http://www.apple.com/uk/safari/) is it's Mac counterpart. You'll probably know about [Chrome](http://www.google.com/chrome/intl/en-GB/landing_tv.html) if you use Google as your search tool (you probably do): they still push that annoying 'download Chrome' button at the top right of the window. [Firefox](http://europe.mozilla.org/en/) is the fourth browser and Opera is the fifth.
+There are five big players. Internet Explorer is the 'out of the box' browser for Windows and [Safari](http://www.apple.com/uk/safari/) is it's Mac counterpart. You'll probably know about [Chrome](https://www.google.com/chrome/) if you use Google as your search tool (you probably do): they still push that annoying 'download Chrome' button at the top right of the window. [Firefox](https://www.mozilla.org/firefox/new/) is the fourth browser and Opera is the fifth.
 
 ## Firefox
 
@@ -25,7 +25,7 @@ Firefox is my favourite browser. It's fast, secure and offers and adheres to int
 
 It is by far the most customisable browser, so if you want to have your own background picture behind your bookmark buttons at the top of the browser you can. There are thousands of extensions and gizmos that you can install to make your experience of the internet as great as possible.
 
-[Download Firefox here](http://europe.mozilla.org/en/).
+[Download Firefox here](https://www.mozilla.org/firefox/new/).
 
 ## Safari
 
@@ -43,7 +43,7 @@ Chrome is very slick. It looks particularly good in Windows as it removes the to
 
 The only place it falls down is its [RSS](/blog/whats-rss-all-about) support, which is non-existent. You have to install an extension to make this work, which seems very strange to me, as RSS is a fundamental feature on the web and lots of people won't be interested in installing add-ons and plug-ins to make things work. The only other way of doing it is a rather archaic 'right click, "copy link as...", paste into RSS reader', which assumes some knowledge of RSS, ie. which reader you want to use, where to paste the link in your reader, etc. Bananas!
 
-[Download Chrome here](http://www.google.com/chrome/intl/en-GB/landing_tv.html).
+[Download Chrome here](https://www.google.com/chrome/).
 
 ## Opera
 
@@ -55,7 +55,7 @@ Opera is kind of a one stop shop- as well as being an internet browser, it has e
 
 So now we're on to the dreaded subject of Internet Explorer (IE)…
 
-With IE9, Microsoft have finally got it right. Sort of. IE9 is good. If you're a windows user and you can't imagine clicking anything other than the big blue 'e' to connect to the internet, I'd try one more time to persuade you to use a different browser like [Firefox](http://europe.mozilla.org/en/) then finally concede defeat!
+With IE9, Microsoft have finally got it right. Sort of. IE9 is good. If you're a windows user and you can't imagine clicking anything other than the big blue 'e' to connect to the internet, I'd try one more time to persuade you to use a different browser like [Firefox](https://www.mozilla.org/firefox/new/) then finally concede defeat!
 
 It renders pages the way they are designed without many extra 'hacks' needed from your friendly neighbourhood web designer and it supports _most_ of the new internet standards, as the rest of the good browsers do. It's also fairly secure. But not the quickest at loading webpages…
 
@@ -67,15 +67,15 @@ Which brings us to version 8. It's ok. It needs a few extra prompts to make sure
 
 Security is one of my biggest issues and IE8 isn't the most secure of browsers. Don't trust it with any of your credit card details or passwords as it's relatively easy for someone who knows how to intercept them, when compared to a modern browser.
 
-The good news is, although you can't upgrade to version 9, you can install one of the better browsers, like [Firefox](http://europe.mozilla.org/en/) or [Opera](http://www.opera.com/), on your Windows XP or Vista machine and benefit from all of the lovely things the modern internet has to offer. Ditch IE8 – it's old hat.
+The good news is, although you can't upgrade to version 9, you can install one of the better browsers, like [Firefox](https://www.mozilla.org/firefox/new/) or [Opera](http://www.opera.com/), on your Windows XP or Vista machine and benefit from all of the lovely things the modern internet has to offer. Ditch IE8 – it's old hat.
 
 ## Internet Explorers 6 & 7
 
-I'm not going to bang on about these two for long as it'll only get me down! They're hardly worth considering anymore as they're so out of date. And you'll only have them if you run Windows XP. If so, skip the IE upgrade and get yourself a good browser like [Chrome](http://www.google.com/chrome/intl/en-GB/landing_tv.html) or [Safari](http://www.apple.com/uk/safari/).
+I'm not going to bang on about these two for long as it'll only get me down! They're hardly worth considering anymore as they're so out of date. And you'll only have them if you run Windows XP. If so, skip the IE upgrade and get yourself a good browser like [Chrome](https://www.google.com/chrome/) or [Safari](http://www.apple.com/uk/safari/).
 
 A quick overview of why IE6 and & are bad starts with, most importantly, security. If IE8's not great, these two are terrible. As far as how they interpret a webpage, they look awful, particularly version 6, and they need a _lot_ of extra work to display and function properly. And they're slow.
 
-Luckily lots of big internet companies like Google and Wordpress have dropped support for IE6, which means you can't use their products in this browser (Google Docs, Gmail, Wordpress's blog, etc.), forcing people to upgrade or change browser. In fact, Microsoft have even introduced a website that charts and encourages the decline of [IE6](http://www.ie6countdown.com/)!
+Luckily lots of big internet companies like Google and Wordpress have dropped support for IE6, which means you can't use their products in this browser (Google Docs, Gmail, Wordpress's blog, etc.), forcing people to upgrade or change browser. In fact, Microsoft have even introduced a website that charts and encourages the decline of [IE6](http://www.ie6death.com/)!
 
 Internet Explorer 7 is also on the way out. Not quite as little-used as 6, but not far off! The best advice is to drop IE, whatever the version.
 
@@ -87,7 +87,7 @@ I hope that's been informative, and if you're not using Safari, Opera, Chrome or
 
 ## Quick links to downloads
 
-- [Download Firefox here](http://europe.mozilla.org/en/)
+- [Download Firefox here](https://www.mozilla.org/firefox/new/)
 - [Download Opera here](http://www.opera.com/)
 - [Download Safari here](http://www.apple.com/uk/safari/)
-- [Download Chrome here](http://www.google.com/chrome/intl/en-GB/landing_tv.html)
+- [Download Chrome here](https://www.google.com/chrome/)
