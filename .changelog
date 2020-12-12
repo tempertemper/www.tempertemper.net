@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.13.3] - 2020-12-12
+
 ### Fixes
 - Removes internal absolute URLs
 - Removes a few stray `http://localhost:3000` links
@@ -20,8 +25,6 @@ All notable changes to this project will be documented in this file. The format 
 - Tidies up blue beanie article's link formatting
 - Changes all internal blog URLs that are now resources, to prevent reliance on redirects
 - Removes websites from testimonials which no longer have a website
-
-----------
 
 
 ## [5.13.2] - 2020-12-03
