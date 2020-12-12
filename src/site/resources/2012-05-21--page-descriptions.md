@@ -29,7 +29,7 @@ Put your brand name at the front and back of the description. This will mean it'
 
 Include keywords in the description. Although they won't do much, when people search for the keywords you've worked hard to optimise your page around those keywords will appear as bold in the description. Again, this lets people know your site is relevant to their search.
 
-Use one or two eye-catching symbols to make your description stand out. I repeat: "one or two"! Moderation is the key! Have a look at [this nifty website](http://copypastecharacter.com/) for characters you can copy and paste into your description.
+Use one or two eye-catching symbols to make your description stand out. I repeat: "one or two"! Moderation is the key! Have a look at [this nifty website](https://copychar.cc) for characters you can copy and paste into your description.
 
 
 ## Common pitfalls

@@ -3,7 +3,7 @@ title: Malin Bond
 company: Muscle Sense
 intro: |
     I wanted my website to be simple, clear and easy to navigate. Martin had great ideas and suggestions and has been so easy to work with.
-website: http://musclesense.co.uk
+website: https://musclesense.co.uk
 date: 2013-05-17
 feature: false
 ---

@@ -11,7 +11,7 @@ Accessibility is central to the web. It's not just [less able visitors](/resourc
 
 How easy will your website be to view on the small screen of an iPhone? How about a widescreen television? What about all the sizes in between?
 
-The word responsive has two meanings where websites are concerned; the obvious one being when a site reacts nicely to your clicks and taps. But ever since [Ethan Marcotte's article for A List Apart](http://www.alistapart.com/articles/responsive-web-design/) back in 2010, responsive has taken on a whole new meaning…
+The word responsive has two meanings where websites are concerned; the obvious one being when a site reacts nicely to your clicks and taps. But ever since [Ethan Marcotte's article for A List Apart](https://www.alistapart.com/articles/responsive-web-design/) back in 2010, responsive has taken on a whole new meaning…
 
 
 ## What is a website?

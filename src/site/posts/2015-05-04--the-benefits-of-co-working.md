@@ -16,7 +16,7 @@ It has been a few years since my last post on the subject, where I talked about 
 
 ## What I've been up to
 
-When I wrote the post, I was renting a desk at a local software development company and really enjoyed it. It was a bit of a hike to get there: a half hour's walk (or 10 minute bus journey if the weather was too nasty to walk) followed by another 30/40 minutes on the [local Metro](http://www.nexus.org.uk/metro). Plenty of time to keep up with podcasts and my reading list, but it really ate into my non-working time.
+When I wrote the post, I was renting a desk at a local software development company and really enjoyed it. It was a bit of a hike to get there: a half hour's walk (or 10 minute bus journey if the weather was too nasty to walk) followed by another 30/40 minutes on the [local Metro](https://www.nexus.org.uk/metro). Plenty of time to keep up with podcasts and my reading list, but it really ate into my non-working time.
 
 ### Co-working space
 
@@ -34,7 +34,7 @@ I've been renting a desk in a fellow web-developer's office for the last year or
 
 ### Keeping my eye in
 
-It's important to keep things fresh, so I make sure to put my name down for a [local co-working event](http://www.colleaguesontap.com/) so that I can catch up with the awesome local co-working crowd. I also like to invite an old co-worker to my office every once in a while, or meet for an afternoon's co-working in a local coffee shop.
+It's important to keep things fresh, so I make sure to put my name down for a [local co-working event](https://www.colleaguesontap.com/) so that I can catch up with the awesome local co-working crowd. I also like to invite an old co-worker to my office every once in a while, or meet for an afternoon's co-working in a local coffee shop.
 
 
 ## What I get from co-working

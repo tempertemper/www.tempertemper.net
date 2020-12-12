@@ -3,7 +3,7 @@ title: Ant Barker
 company: Design by Ant
 intro: |
     Martin is a rare breed: technically gifted … yet perfectly approachable and profoundly confident in managing clients directly without baffling them with science.
-website: http://antbarker.com/
+website: https://antbarker.com/
 date: 2012-03-16
 feature: false
 ---

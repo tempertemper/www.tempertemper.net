@@ -40,4 +40,4 @@ You might run into conflicts if you've used the staging branch for experimental 
 git push -f origin my-great-feature:staging
 ```
 
-Even better, if you've set up [automatic deployments to your staging branch with something like Netlify](http://localhost:3000/blog/setting-up-a-staging-site-with-netlify), the work will appear on your staging site automatically!
+Even better, if you've set up [automatic deployments to your staging branch with something like Netlify](/blog/setting-up-a-staging-site-with-netlify), the work will appear on your staging site automatically!

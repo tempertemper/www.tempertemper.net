@@ -22,7 +22,7 @@ The marker isn't in your face, but it takes up room on Google's results page. Ro
 
 ### Webmaster blog post
 
-As well as including a marker on mobile friendly websites, Google also [wrote a blog post](http://googlewebmastercentral.blogspot.co.uk/2015/02/finding-more-mobile-friendly-search.html) on their Webmaster Central Blog detailing how their search algorithm is being adapted to account for mobile usage.
+As well as including a marker on mobile friendly websites, Google also [wrote a blog post](https://developers.google.com/search/blog/2015/02/finding-more-mobile-friendly-search) on their Webmaster Central Blog detailing how their search algorithm is being adapted to account for mobile usage.
 
 ### Mobile-friendly test
 
@@ -46,7 +46,7 @@ The fact that Google's search-bots are now able to detect how your site looks op
 - <b>Text size</b>: is the text large enough to be read easily?
 - <b>Clutter</b>: is their enough space between content?
 - <b>Distraction</b>: repetitive animations or too much visual 'noise' can cause visitors problems
-- <b>Colour choices</b>: are there colours on your website that mean [colour blind visitors](http://www.colourblindawareness.org/colour-blindness/) will have trouble viewing your content?
+- <b>Colour choices</b>: are there colours on your website that mean [colour blind visitors](//www.colourblindawareness.org/colour-blindness/) will have trouble viewing your content?
 
 
 ## What next?

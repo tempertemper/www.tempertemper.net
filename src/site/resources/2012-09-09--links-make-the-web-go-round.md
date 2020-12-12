@@ -40,7 +40,7 @@ Whenever you reference someone or something it's a good idea to link out to them
 
 ## What should a link look like?
 
-By what your link looks like I mean what your website's visitor will see. Not the link itself – that horrible looking "http://www.example.com/blah" bit with its forward slashes, colons, dots, dashes, hash symbols, question marks and all manner of other nasties – but the nice readable link that hides the actual working link.
+By what your link looks like I mean what your website's visitor will see. Not the link itself – that horrible looking "https://www.example.com/blah" bit with its forward slashes, colons, dots, dashes, hash symbols, question marks and all manner of other nasties – but the nice readable link that hides the actual working link.
 
 So let's start by covering what not to do: A link should never look like "click here" or something similar!
 

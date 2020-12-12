@@ -65,4 +65,4 @@ If you find yourself requiring more space than this you can always pay for the s
 
 ## How do I get started?
 
-[Head to Dropbox](http://db.tt/oPFZPCzH) to sign up and install the app. The link I've just given you is a referral too, so you'll get an extra bonus space for using that rather than simply going to Dropbox's normal homepage! The account that referred you will also get some space so it's a win-win situation!
+[Head to Dropbox](https://db.tt/oPFZPCzH) to sign up and install the app. The link I've just given you is a referral too, so you'll get an extra bonus space for using that rather than simply going to Dropbox's normal homepage! The account that referred you will also get some space so it's a win-win situation!

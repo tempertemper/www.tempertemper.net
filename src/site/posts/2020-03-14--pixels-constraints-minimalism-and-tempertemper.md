@@ -28,7 +28,7 @@ So it's safe to say I have a lot of nostalgia wrapped up in pixels, and am a big
 
 ## Minimalism
 
-Fast-forward a decade or so to the early 2000s, I was working in a call centre when a spreadsheet containing a quiz was being circulated. These kinds of things did the rounds every so often to relieve the tedium, but this one really grabbed my attention. It involved tiny, pixellated drawings of famous bands and musicians which, after some investigation, turned out to be 'Minipops', taken from a website called [Flip flop flyin'](http://www.flipflopflyin.com/minipops/index.html).
+Fast-forward a decade or so to the early 2000s, I was working in a call centre when a spreadsheet containing a quiz was being circulated. These kinds of things did the rounds every so often to relieve the tedium, but this one really grabbed my attention. It involved tiny, pixellated drawings of famous bands and musicians which, after some investigation, turned out to be 'Minipops', taken from a website called [Flip flop flyin'](//www.flipflopflyin.com/minipops/index.html).
 
 I was playing in a band at the time and thought it would be cool to draw the three of us in the same format, and the tiny version of me is the avatar I use on [Twitter](https://twitter.com/tempertemper), all my Slack teams, and most other places on the web.
 

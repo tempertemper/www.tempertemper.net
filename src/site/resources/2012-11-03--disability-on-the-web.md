@@ -14,7 +14,7 @@ There are a couple of takes on this when it comes to the web:
 1. Everybody is entitled to access the wealth of information on the web, including your website
 2. You don't want to lose sales by making it difficult or impossible for less able visitors to access your website
 
-The first is clearly the more sensible reason – internet access is considered a [basic human right](http://news.bbc.co.uk/1/hi/8548190.stm) by the majority of people. Web access is beneficial on so many levels, from access to knowledge and breaking news to the cheapest deals on your car insurance!
+The first is clearly the more sensible reason – internet access is considered a [basic human right](//news.bbc.co.uk/1/hi/8548190.stm) by the majority of people. Web access is beneficial on so many levels, from access to knowledge and breaking news to the cheapest deals on your car insurance!
 
 If this wasn't enough, reason number two provides a more hard-nosed business reason for making your website accessible to less-abled users.
 
@@ -23,7 +23,7 @@ I'm going to rein in my enthusiasm and save you the gory the details on what mak
 
 ## Disability isn't a barrier
 
-The internet is an apparently visual medium, so when I mention that blind people use the internet, many people think I'm having them on until I explain that they 'view' the web with a screen reader. A screen reader is a [program that reads a web page](http://en.wikipedia.org/wiki/Screen_reader) to the user. Don't forget that your pictures, videos and so on should have a [text-based explanation](/resources/image-alt-text) alongside them.
+The internet is an apparently visual medium, so when I mention that blind people use the internet, many people think I'm having them on until I explain that they 'view' the web with a screen reader. A screen reader is a [program that reads a web page](https://en.wikipedia.org/wiki/Screen_reader) to the user. Don't forget that your pictures, videos and so on should have a [text-based explanation](/resources/image-alt-text) alongside them.
 
 Motor impairments are another type of disability that would seemingly impose a barrier to internet access but, again, this just isn't the case! While a mouse might be impossible to use, so keyboard equivalents of mouse commands should always be possible.
 

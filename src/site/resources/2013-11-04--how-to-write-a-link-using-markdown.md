@@ -52,7 +52,7 @@ So if you were linking to your contact page it would look like this:
 Links to pages within a particular section of your site often have a couple of forward slashes, for example:
 
 ```
-http://www.my-great-website.com/blog/my-great-article
+https://www.my-great-website.com/blog/my-great-article
 ```
 
 and all you have to do here type the bit just after your main website address, leaving something like:

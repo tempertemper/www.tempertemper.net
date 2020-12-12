@@ -26,7 +26,7 @@ In this article, I'm not going to get into optimal sending frequencies and all t
 
 Let's start with the legal stuff. It's against the law to send someone a group/marketing email they didn't ask for. Unfortunately—and surprisingly—this isn't the case for physical junk mail that drops through your letterbox!
 
-[According to Ofcom](http://consumers.ofcom.org.uk/phone/tackling-nuisance-calls-and-messages/marketing-emails/) there are three rules for 'marketing' emails:
+[According to Ofcom](https://www.ofcom.org.uk/phones-telecoms-and-internet/advice-for-consumers/problems/tackling-nuisance-calls-and-messages/marketing-emails) there are three rules for 'marketing' emails:
 
 1. the sender must not conceal their identity
 2. they must provide a valid address where you can opt out of receiving further emails
@@ -72,7 +72,7 @@ Once someone has unsubscribed you should take every care not to send them anothe
 
 So the first thing that must happen is that they're removed from your mailing list. Send another email out to them and relations could really sour, and that 'Spam' or 'Junk' button is much more likely to be pressed.
 
-I would advise you automate this process. The best way to do this is to use an online email list management service like [Campaign Monitor](https://www.campaignmonitor.com/) or [Mailchimp](http://mailchimp.com/): click the unsubscribe link and you're off the list. Easy.
+I would advise you automate this process. The best way to do this is to use an online email list management service like [Campaign Monitor](https://www.campaignmonitor.com/) or [Mailchimp](https://mailchimp.com/): click the unsubscribe link and you're off the list. Easy.
 
 A final word of warning: even a 'transactional' email saying "You have been removed from our mailing list. Sure you don't want to rejoin?" may get up some people's noses. Keep all of that as part of the web-based unsubscribe process and let the last email your recipient receives be the one they used to unsubscribe.
 
@@ -91,7 +91,7 @@ As part of their service, all of these companies provide automatic junk email fi
 
 The easiest way to build their spam filters is to **use their own data**. So they'll be looking for any email addresses* that have been marked as spam by their users. It goes a bit deeper than just your email address, but I don't want to get too techie.
 
-They also purchase spam **information from third parties** like [DNSBL](http://www.dnsbl.info/) or [Spamhaus](http://www.spamhaus.org/) to make their filters even more accurate.
+They also purchase spam **information from third parties** like [DNSBL](https://www.dnsbl.info) or [Spamhaus](https://www.spamhaus.org) to make their filters even more accurate.
 
 Every time an email you send is marked as spam the likelihood of your email address appearing on a blacklist somewhere increases. This makes it more likely that your emails will be filtered straight out of people's inboxes, and this goes for _all_ emails you send, whether group, transactional or conversational.
 

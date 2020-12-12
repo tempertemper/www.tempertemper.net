@@ -36,7 +36,7 @@ Right; bear with me here… This next bit's all about changing the way you think
 
 A website is a vehicle to communicate your content to your audience. Nothing more.
 
-If your content is properly written it will be accessible to pretty much everyone and everything (search engines like [Google](http://google.co.uk) come into the 'thing' category).
+If your content is properly written it will be accessible to pretty much everyone and everything (search engines like [Google](https://google.co.uk) come into the 'thing' category).
 
 
 ## Design versus content
@@ -65,7 +65,7 @@ To solve this problem, your website should be designed for [as many screen sizes
 
 #### And other means
 
-Your content can also be saved for reading later using services like [Instapaper](http://www.instapaper.com), [Pocket](http://getpocket.com/) or [Readability](https://en.wikipedia.org/wiki/Readability_(service)), where your formatting is removed and your content is presented in the way the reader decides they want it to be presented. Apple's Safari browser has this functionality built in, so that the main content is taken out of a web page and displayed in a nice, readable way.
+Your content can also be saved for reading later using services like [Instapaper](https://www.instapaper.com/), [Pocket](https://getpocket.com/) or [Readability](https://en.wikipedia.org/wiki/Readability_(service)), where your formatting is removed and your content is presented in the way the reader decides they want it to be presented. Apple's Safari browser has this functionality built in, so that the main content is taken out of a web page and displayed in a nice, readable way.
 
 Then there's those [with sight impairments](/resources/disability-on-the-web) who don't actually _see_ your website at all! It is read to them by their screen reader.
 

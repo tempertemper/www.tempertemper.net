@@ -22,7 +22,7 @@ Things like proper use of headers, effective meta data descriptions and unique, 
 
 Disabled people use the internet, just as they use restaurants, museums and other publicly available amenities; inclusivity is a necessity. Even those who have sight impairments have a technology called screen readers to help them 'see' a web page.
 
-Making your website accessible by the disabled has been a legal requirement for more than a decade and the [Equality Act 2010](http://www.legislation.gov.uk/ukpga/2010/15/contents) has reinforced that requirement.
+Making your website accessible by the disabled has been a legal requirement for more than a decade and the [Equality Act 2010](https://www.legislation.gov.uk/ukpga/2010/15/contents) has reinforced that requirement.
 
 Semantic markup is essential. This means that the language which a webpage is written in, HTML, is meaningful and appropriate to its use, for example (and this is the big one!) tables are used for tables of data, rather than to lay a page out. This means that those being read the page by their screen reader will not be able to tell what's what.
 

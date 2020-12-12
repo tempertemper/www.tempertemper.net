@@ -15,7 +15,7 @@ It's the stuff of George Orwell's '1984'. Only even sneakier…
 
 So, wherever possible, I choose to avoid Google's services and products: it all feels a little bit creepy.
 
-Google's search is unavoidable though– [Bing](http://www.bing.com/) and [Duck Duck Go](https://duckduckgo.com/) just don't stand up alongside Google's powerful search engine. Aside from search, I use no other Google services (that I’m aware of!).
+Google's search is unavoidable though – [Bing](https://www.bing.com/) and [Duck Duck Go](https://duckduckgo.com/) just don't stand up alongside Google's powerful search engine. Aside from search, I use no other Google services (that I’m aware of!).
 
 Until now…
 

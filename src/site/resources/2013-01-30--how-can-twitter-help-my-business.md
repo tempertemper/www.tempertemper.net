@@ -100,7 +100,7 @@ This is probably a blog post in itself so I won't delve too deep, but I hope tha
 
 ### Get yourself a good app
 
-Twitter's all about the apps. The easiest way to use it is to get yourself a good app. I use an app called [Tweetbot](http://tapbots.com/software/tweetbot/) on my phone which makes life a lot easier. There are others, such as [Twitterific](http://twitterrific.com/ios) that do a great job too.
+Twitter's all about the apps. The easiest way to use it is to get yourself a good app. I use an app called [Tweetbot](https://tapbots.com/tweetbot/) on my phone which makes life a lot easier. There are others, such as [Twitterific](https://twitterrific.com/ios) that do a great job too.
 
 Of course you could just use one of [Twitter's official apps](https://twitter.com/download) or their [website](https://twitter.com), but I've found the 3rd party apps like Tweetbot offer a much richer experience of Twitter.
 

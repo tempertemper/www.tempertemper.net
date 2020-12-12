@@ -3,7 +3,7 @@ title: Ian Blackburn
 company: Life Saving Training
 intro: |
     Martin's ability to explain technical detail so that we could understand all the options available and make well informed decisions is a tremendous asset. We couldn't be happier with the results!
-website: http://www.lifesavingtraining.co.uk
+website: https://www.lifesavingtraining.co.uk
 date: 2014-03-21
 feature: false
 ---

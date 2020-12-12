@@ -17,7 +17,7 @@ I'm a big fan of typography. I think this is because I'm a web designer and [the
 
 ## FS Me
 
-The typeface I used for the new logo is [FS Me](http://www.fontsmith.com/fonts/fs-me), and I chose it for the following reasons:
+The typeface I used for the new logo is [FS Me](https://www.fontsmith.com/fonts/fs-me), and I chose it for the following reasons:
 
 - I'm an [accessibility nut](/resources/disability-on-the-web), and FS Me was designed to be as legible as possible to _anyone_
 - Because it's so legible, it makes scanning headlines on my site very easy

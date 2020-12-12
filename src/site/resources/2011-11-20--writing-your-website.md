@@ -50,6 +50,6 @@ There's a popular analogy of selling a drill. It relays something like 'you're n
 
 ## Take no chances
 
-If you really can't spend the time needed to write effective copy for your website all is not lost! There are professional copywriters (not to be confused with [copyright](http://en.wikipedia.org/wiki/Copyright)!) who will do the job for you.
+If you really can't spend the time needed to write effective copy for your website all is not lost! There are professional copywriters (not to be confused with [copyright](https://en.wikipedia.org/wiki/Copyright)!) who will do the job for you.
 
 I'm happy to provide you with any pointers you might need when writing your copy, or if you prefer, I can put you in touch with a pro who can do the job for you.

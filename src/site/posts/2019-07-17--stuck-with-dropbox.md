@@ -92,7 +92,7 @@ The wi-fi icon tells me if I'm connected to a wi-fi network, but that doesn't ne
 
 One thing Dropbox is excellent for was giving every file its own URL that can be sent over email. The recipient just follows the link and downloads the file. I've used that a *lot* over the years – I'd be working out of a folder in Dropbox anyway so when I was ready to share some work I'd just right click and click 'Copy Dropbox Link'. Easy.
 
-But I'm thinking back to the last time used it and struggling. I send most files, large or small, in Slack, Trello or a tool like that. The odd time where email is the only way I can send something, I use Apple's Mail Drop, where [attachments are stored in iCloud](http://osxdaily.com/2014/11/14/use-mail-drop-email-large-files-mac-os-x/) for 30 days instead of being sent over email.
+But I'm thinking back to the last time used it and struggling. I send most files, large or small, in Slack, Trello or a tool like that. The odd time where email is the only way I can send something, I use Apple's Mail Drop, where [attachments are stored in iCloud](https://osxdaily.com/2014/11/14/use-mail-drop-email-large-files-mac-os-x/) for 30 days instead of being sent over email.
 
 If I *really* need to send a link [it's possible with iCloud](https://www.macrumors.com/how-to/share-files-stored-in-icloud-drive/) as long as the recipient has an Apple ID. If they don't, that's where Dropbox comes in. Though if Dropbox weren't running on my Mac I'd be able to use its web interface or a similar tool like WeTransfer, so this feature isn't something I couldn't work around.
 

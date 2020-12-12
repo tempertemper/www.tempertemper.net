@@ -54,7 +54,7 @@ What happens when a mailto link is clicked or tapped? Your web browser opens you
 #### Windows, Android and Mac
 In some cases this behaviour is fine, where your visitor (like me) uses a dedicated email app to access their emails. I use [Apple Mail](https://www.apple.com/uk/osx/apps/#mail), so clicking a link on a website would open a new email there. **Exactly what I'd want**.
 
-I'm always on the look out for new apps to improve my workflow, so if I changed my Mac's default email app to something like [Airmail](http://airmailapp.com/), that's the app that would open. This is similar on Windows and Android. Again, **just what I'd be after**.
+I'm always on the look out for new apps to improve my workflow, so if I changed my Mac's default email app to something like [Airmail](https://airmailapp.com), that's the app that would open. This is similar on Windows and Android. Again, **just what I'd be after**.
 
 #### iOS
 Unfortunately, iPhone and iPad users can't change their default email app, so mailto links _always_ open Apple's Mail app.

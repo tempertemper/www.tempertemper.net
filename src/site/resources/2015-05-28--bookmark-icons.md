@@ -39,9 +39,9 @@ Apple allows you to save/bookmark a website straight to your iPhone/iPad's homes
 
 Your web browser is a smart piece of software. It knows which websites you visit most often and will offer you 'suggested' sites. Every browser handles this slightly differently: some use a tiny screenshot, but others use an icon to represent each site on their 'speed dial'.
 
-Ever heard of 'read later' services like [Readability](https://en.wikipedia.org/wiki/Readability_(service)) or Apple's [Reading list](http://computers.tutsplus.com/tutorials/quick-tip-how-to-use-safaris-reading-list--mac-47349). A bookmark icon helps your article stand out from the crowd in people's reading lists.
+Ever heard of 'read later' services like [Readability](https://en.wikipedia.org/wiki/Readability_(service)) or Apple's [Reading list](https://computers.tutsplus.com/tutorials/quick-tip-how-to-use-safaris-reading-list--mac-47349). A bookmark icon helps your article stand out from the crowd in people's reading lists.
 
-I'm sure there are lots of other bits of software that use bookmark icons. RSS readers like [Reeder](http://reederapp.com),
+I'm sure there are lots of other bits of software that use bookmark icons. RSS readers like [Reeder](https://reederapp.com),
 
 
 ## Lots of places

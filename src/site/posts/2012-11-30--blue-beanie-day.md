@@ -23,7 +23,7 @@ So the bottom line for your business is that web standards save you money!
 
 ## The bigger picture
 
-Without  getting too political, web standards are in keeping with the idea of the web as the great leveller. It makes information available to everyone and gives a voice to those who would normally be [unable to express themselves](http://en.wikipedia.org/wiki/Arab_Spring), which is a pretty amazing and hugely important thing, if you stop and think about the implications.
+Without  getting too political, web standards are in keeping with the idea of the web as the great leveller. It makes information available to everyone and gives a voice to those who would normally be [unable to express themselves](https://en.wikipedia.org/wiki/Arab_Spring), which is a pretty amazing and hugely important thing, if you stop and think about the implications.
 
 Web standards allow communication with the broadest possible audience: freedom of speech at its most powerful!
 
@@ -39,8 +39,8 @@ But we're reaching a point where a consensus has been reached on how we should w
 
 ## What's that got to do with blue beanies though?
 
-The [blue beanie thing is a way of raising awareness](http://www.zeldman.com/bbd/) of the importance of web standards, as well as celebrating them.
+The [blue beanie thing is a way of raising awareness](https://www.zeldman.com/bbd/) of the importance of web standards, as well as celebrating them.
 
-The beanie is a doff of the cap (pun intended!) to [Jeffrey Zeldman](http://en.wikipedia.org/wiki/Jeffrey_Zeldman), who appeared on the front cover of his excellent book [Designing With Web Standards](https://en.wikipedia.org/wiki/Designing_with_Web_Standards).
+The beanie is a doff of the cap (pun intended!) to [Jeffrey Zeldman](https://en.wikipedia.org/wiki/Jeffrey_Zeldman), who appeared on the front cover of his excellent book [Designing With Web Standards](https://en.wikipedia.org/wiki/Designing_with_Web_Standards).
 
 I'd love to know your take on web standards! Give me a shout on [Twitter](https://twitter.com/tempertemper).

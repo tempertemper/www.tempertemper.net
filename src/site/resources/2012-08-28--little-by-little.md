@@ -26,7 +26,7 @@ Well, it turns out it was such a massive task that I kept putting it off until o
 
 So I started by overhauling the code. The bottom line here is that most pages now load in less than half the time they took before the redesign.
 
-Part of the code rewriting included making the site [responsive](http://en.wikipedia.org/wiki/Responsive_Web_Design), which means the content (pictures and text) changes width and position depending on the size of the internet browser it's being viewed in; it displays as a single column on little smartphone screens, adapts to a wider, multi-column layout on bigger laptop or desktop computers, as well as catering for everything in-between! So no matter what type of computer/device you use to view the site, you'll get a layout tailored for you!
+Part of the code rewriting included making the site [responsive](https://en.wikipedia.org/wiki/Responsive_Web_Design), which means the content (pictures and text) changes width and position depending on the size of the internet browser it's being viewed in; it displays as a single column on little smartphone screens, adapts to a wider, multi-column layout on bigger laptop or desktop computers, as well as catering for everything in-between! So no matter what type of computer/device you use to view the site, you'll get a layout tailored for you!
 
 I also gave the site a general facelift and installed a search facility to make finding that elusive article you enjoyed a few months back as easy as possible.
 

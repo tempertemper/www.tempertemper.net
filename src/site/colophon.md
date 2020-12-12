@@ -14,18 +14,18 @@ This website was lovingly put together using [Eleventy, the best static site gen
 ## Typography
 
 - Headings, labels, buttons, etc.: [FS Me](https://www.fontshop.com/families/fs-me) by [Jason Smith](https://www.fontshop.com/designers/jason-smith)
-- Most other text: [Georgia](http://en.wikipedia.org/wiki/Georgia_(typeface)) by [Matthew Carter](http://en.wikipedia.org/wiki/Matthew_Carter)
-- Code examples: [Menlo](http://en.wikipedia.org/wiki/Menlo_%28typeface%29) by [Jim Lyles](https://www.myfonts.com/person/Jim_Lyles/)
+- Most other text: [Georgia](https://en.wikipedia.org/wiki/Georgia_(typeface)) by [Matthew Carter](https://en.wikipedia.org/wiki/Matthew_Carter)
+- Code examples: [Menlo](https://en.wikipedia.org/wiki/Menlo_%28typeface%29) by [Jim Lyles](https://www.myfonts.com/person/Jim_Lyles/)
 
 
 ## Styling
 
-The styling is written in [SCSS](http://sass-lang.com) with a smattering of [Post CSS](https://postcss.org). The Sass tools I'm using are:
+The styling is written in [SCSS](https://sass-lang.com) with a smattering of [Post CSS](https://postcss.org). The Sass tools I'm using are:
 
-- [Susy](http://susy.oddbird.net) by Oddbird, though it's [on my to-do list](https://github.com/tempertemper/tempertemper.net/projects/1?fullscreen=true) to refactor the layout using CSS Grid
-- [Modular Scale](https://github.com/modularscale/modularscale-sass) by [Scott Kellum](http://scottkellum.com/), for a proper type scale
+- [Susy](https://www.oddbird.net/susy/) by Oddbird, though it's [on my to-do list](https://github.com/tempertemper/tempertemper.net/projects/1?fullscreen=true) to refactor the layout using CSS Grid
+- [Modular Scale](https://github.com/modularscale/modularscale-sass) by [Scott Kellum](https://scottkellum.com), for a proper type scale
 
 
 ## Scripts
 
-There is no JavaScript at all on this website! Analytics are taken care of by [Netlify Analytics](http://localhost:3000/blog/ditching-google-analytics-in-favour-of-netlify-analytics) and the rest is just plain old HTML and CSS.
+There is no JavaScript at all on this website! Analytics are taken care of by [Netlify Analytics](/blog/ditching-google-analytics-in-favour-of-netlify-analytics) and the rest is just plain old HTML and CSS.

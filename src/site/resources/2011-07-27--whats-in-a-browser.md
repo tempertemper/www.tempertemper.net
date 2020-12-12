@@ -15,13 +15,13 @@ Unfortunately Windows users are by far in the majority and Microsoft haven't giv
 
 The good news is it isn't your only option – there are other programs out there that you can use to browse the internet, but make your experience of the internet a lot richer, faster and more secure!
 
-There are five big players. Internet Explorer is the 'out of the box' browser for Windows and [Safari](http://www.apple.com/uk/safari/) is it's Mac counterpart. You'll probably know about [Chrome](https://www.google.com/chrome/) if you use Google as your search tool (you probably do): they still push that annoying 'download Chrome' button at the top right of the window. [Firefox](https://www.mozilla.org/firefox/new/) is the fourth browser and Opera is the fifth.
+There are five big players. Internet Explorer is the 'out of the box' browser for Windows and [Safari](https://www.apple.com/safari/) is it's Mac counterpart. You'll probably know about [Chrome](https://www.google.com/chrome/) if you use Google as your search tool (you probably do): they still push that annoying 'download Chrome' button at the top right of the window. [Firefox](https://www.mozilla.org/firefox/new/) is the fourth browser and Opera is the fifth.
 
 ## Firefox
 
 Firefox is my favourite browser. It's fast, secure and offers and adheres to internet standards. Even better, it updates itself so it'll never be out of date!
 
-[Mozilla](http://www.mozilla.org/en-US/) who make it are a non-profit company too, so they've got the best interests of the internet at heart; not making boatloads of cash (I'm looking at you, Microsoft, Apple and Google…).
+[Mozilla](https://www.mozilla.org/) who make it are a non-profit company too, so they've got the best interests of the internet at heart; not making boatloads of cash (I'm looking at you, Microsoft, Apple and Google…).
 
 It is by far the most customisable browser, so if you want to have your own background picture behind your bookmark buttons at the top of the browser you can. There are thousands of extensions and gizmos that you can install to make your experience of the internet as great as possible.
 
@@ -35,7 +35,7 @@ What's even better is that, if you use a Mac and an iPhone, iPad or iPod, you ca
 
 Reader is also a great feature. At the click of a button it takes the text from a webpage and converts it into a highly legible style that resembles a piece of paper with black text on a greyed out background. Click the button again; Reader disappears and the webpage reappears!
 
-[Download Safari here](http://www.apple.com/uk/safari/).
+[Download Safari here](https://www.apple.com/safari/).
 
 ## Chrome
 
@@ -49,7 +49,7 @@ The only place it falls down is its [RSS](/blog/whats-rss-all-about) support, wh
 
 Opera is kind of a one stop shop- as well as being an internet browser, it has email, RSS and chat integration as well as being a fast and secure browser that displays webpages properly, in line with web-standards! It feels extremely solid to use, which is never a bad thing. Feel free to download and enjoy!
 
-[Download Opera here](http://www.opera.com/).
+[Download Opera here](https://www.opera.com/).
 
 ## Internet Explorer 9
 
@@ -67,15 +67,15 @@ Which brings us to version 8. It's ok. It needs a few extra prompts to make sure
 
 Security is one of my biggest issues and IE8 isn't the most secure of browsers. Don't trust it with any of your credit card details or passwords as it's relatively easy for someone who knows how to intercept them, when compared to a modern browser.
 
-The good news is, although you can't upgrade to version 9, you can install one of the better browsers, like [Firefox](https://www.mozilla.org/firefox/new/) or [Opera](http://www.opera.com/), on your Windows XP or Vista machine and benefit from all of the lovely things the modern internet has to offer. Ditch IE8 – it's old hat.
+The good news is, although you can't upgrade to version 9, you can install one of the better browsers, like [Firefox](https://www.mozilla.org/firefox/new/) or [Opera](https://www.opera.com/), on your Windows XP or Vista machine and benefit from all of the lovely things the modern internet has to offer. Ditch IE8 – it's old hat.
 
 ## Internet Explorers 6 & 7
 
-I'm not going to bang on about these two for long as it'll only get me down! They're hardly worth considering anymore as they're so out of date. And you'll only have them if you run Windows XP. If so, skip the IE upgrade and get yourself a good browser like [Chrome](https://www.google.com/chrome/) or [Safari](http://www.apple.com/uk/safari/).
+I'm not going to bang on about these two for long as it'll only get me down! They're hardly worth considering anymore as they're so out of date. And you'll only have them if you run Windows XP. If so, skip the IE upgrade and get yourself a good browser like [Chrome](https://www.google.com/chrome/) or [Safari](https://www.apple.com/safari/).
 
 A quick overview of why IE6 and & are bad starts with, most importantly, security. If IE8's not great, these two are terrible. As far as how they interpret a webpage, they look awful, particularly version 6, and they need a _lot_ of extra work to display and function properly. And they're slow.
 
-Luckily lots of big internet companies like Google and Wordpress have dropped support for IE6, which means you can't use their products in this browser (Google Docs, Gmail, Wordpress's blog, etc.), forcing people to upgrade or change browser. In fact, Microsoft have even introduced a website that charts and encourages the decline of [IE6](http://www.ie6death.com/)!
+Luckily lots of big internet companies like Google and Wordpress have dropped support for IE6, which means you can't use their products in this browser (Google Docs, Gmail, Wordpress's blog, etc.), forcing people to upgrade or change browser. In fact, Microsoft have even introduced a website that charts and encourages the decline of [IE6](//www.ie6death.com/)!
 
 Internet Explorer 7 is also on the way out. Not quite as little-used as 6, but not far off! The best advice is to drop IE, whatever the version.
 
@@ -88,6 +88,6 @@ I hope that's been informative, and if you're not using Safari, Opera, Chrome or
 ## Quick links to downloads
 
 - [Download Firefox here](https://www.mozilla.org/firefox/new/)
-- [Download Opera here](http://www.opera.com/)
-- [Download Safari here](http://www.apple.com/uk/safari/)
+- [Download Opera here](https://www.opera.com/)
+- [Download Safari here](https://www.apple.com/safari/)
 - [Download Chrome here](https://www.google.com/chrome/)

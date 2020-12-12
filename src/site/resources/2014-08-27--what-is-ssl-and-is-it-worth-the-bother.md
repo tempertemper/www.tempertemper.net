@@ -8,14 +8,14 @@ tags:
     - Search
 ---
 
-You may have heard. A short while ago, [Google announced](http://googlewebmastercentral.blogspot.co.uk/2014/08/https-as-ranking-signal.html) that they look favourably on websites that use SSL.
+You may have heard. A short while ago, [Google announced](https://developers.google.com/search/blog/2014/08/https-as-ranking-signal) that they look favourably on websites that use SSL.
 
 So SSL is good for your search rankings! But what on earth is SSL!?
 
 
 ## What is SSL?
 
-Don't worry – I don't think going into the technicalities of SSL is particularly useful. It stands for [Secure Sockets Layer](http://en.wikipedia.org/wiki/Secure_Sockets_Layer) but that's not all that helpful either. A couple of things _are_ useful to know, though:
+Don't worry – I don't think going into the technicalities of SSL is particularly useful. It stands for [Secure Sockets Layer](https://en.wikipedia.org/wiki/Secure_Sockets_Layer) but that's not all that helpful either. A couple of things _are_ useful to know, though:
 
 1. How to recognise a website that uses SSL
 2. What SSL does

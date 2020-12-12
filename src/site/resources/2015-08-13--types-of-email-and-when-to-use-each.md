@@ -36,7 +36,7 @@ So, while I'm a [big fan of writing in plain text](/resources/edit-your-blog-pos
 
 Rich text emails are a kind of half-way house. They allow you to make text bold and italic, you can change the colour of text, resize it, and so on. You're even able to change the font you're using, though [this comes with its own limitations](/resources/webfonts): the font you choose has to be available on the recipient's computer or they'll get a fall-back chosen by their machine.
 
-A quick aside: just because you _can_ doesn't mean you _should_. There's [nothing worse](http://sixrevisions.com/graphics-design/comic-sans-the-font-everyone-loves-to-hate/) that receiving an email written in Comic Sans. Well, maybe _sending_ an email written in Comic Sans…
+A quick aside: just because you _can_ doesn't mean you _should_. There's [nothing worse](https://www.webfx.com/blog/web-design/comic-sans-the-font-everyone-loves-to-hate/) that receiving an email written in Comic Sans. Well, maybe _sending_ an email written in Comic Sans…
 
 Err on the side of default. Out of the box, most email programs and operating systems use a black 'sans-serif' font (the type without little kicks and flicks) in a fairly legible size. This is perfectly fine, as far as I'm concerned.
 

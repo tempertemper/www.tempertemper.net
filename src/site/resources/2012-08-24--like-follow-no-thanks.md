@@ -52,7 +52,7 @@ I'm not going to get into technicalities – they're deceptively complex little 
 
 So you might be asking yourself why its important to keep download times to a minimum. Well, it's not all that important for those of us sitting at home using our super-fast broadband, but consider those in areas where the internet connection isn't all that swish. Or what about people visiting your website on their mobile?
 
-Mobile internet usage is [massive and growing](http://www.gpmd.co.uk/blog/2012-mobile-internet-statistics/). You don't want to exclude these people from your website. Most visitors are fairly impatient and will [abandon your page](http://blog.kissmetrics.com/wp-content/uploads/2011/04/loading-time-lrg.jpg) if it takes too long to appear in their browser.
+Mobile internet usage is [massive and growing](https://www.gpmd.co.uk/blog/2012-mobile-internet-statistics/). You don't want to exclude these people from your website. Most visitors are fairly impatient and will [abandon your page](//blog.kissmetrics.com/wp-content/uploads/2011/04/loading-time-lrg.jpg) if it takes too long to appear in their browser.
 
 
 ## Search engines

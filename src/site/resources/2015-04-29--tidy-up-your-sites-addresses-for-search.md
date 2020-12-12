@@ -8,7 +8,7 @@ tags:
     - Meta-data
 ---
 
-Google have made a few changes lately. The most recent change that's in the pipeline is [the way URLs (web addresses) are displayed](http://googlewebmastercentral.blogspot.se/2015/04/better-presentation-of-urls-in-search.html) in their search results.
+Google have made a few changes lately. The most recent change that's in the pipeline is [the way URLs (web addresses) are displayed](https://developers.google.com/search/blog/2015/04/better-presentation-of-urls-in-search) in their search results.
 
 In fact URLs aren't going to appear at all: it's going to look more like 'breadcrumbs'. Like this `Business name › About › Team`, for example, rather than `www.mygreatbusiness.com/about/team`.
 

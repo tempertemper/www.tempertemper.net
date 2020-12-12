@@ -77,7 +77,7 @@ As a website owner you probably have the ability to log into a control panel and
 
 ## Where Google goes others follow
 
-Google lead the way in search, world wide. Changes they make to their algorithms are usually copied by rivals like [Bing](http://www.bing.com) and [DuckDuckGo](https://duckduckgo.com).
+Google lead the way in search, world wide. Changes they make to their algorithms are usually copied by rivals like [Bing](https://www.bing.com) and [DuckDuckGo](https://duckduckgo.com).
 
 SSL is good for the web and, while Google are pioneering this move, other browsers (Firefox, Opera, Safari, Edge) are likely to follow their lead and begin issuing warnings about un-securely served websites.
 
