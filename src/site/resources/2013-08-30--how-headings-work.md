@@ -51,7 +51,7 @@ Here are some examples of how your heading structure might look (note they all s
 
 There's only one rule: _Never skip a heading level_!
 
-The main reason you might be tempted to skip a level is **style**. You might like the style of the next heading level down. Your content is much [more important than the cosmetics of your site](/blog/what-you-see-isnt-what-you-get).
+The main reason you might be tempted to skip a level is **style**. You might like the style of the next heading level down. Your content is much [more important than the cosmetics of your site](/resources/what-you-see-isnt-what-you-get).
 
 
 ## Make your readers' experience great

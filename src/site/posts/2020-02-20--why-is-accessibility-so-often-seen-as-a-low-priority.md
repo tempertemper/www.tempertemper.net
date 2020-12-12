@@ -13,7 +13,7 @@ In the more recent article, Chris Coyier transcribes a discussion on [how diffic
 
 > under the Equality Act 2010, it’s not legal to create an inaccessible website, but what we’ve found is that government isn’t generally enforcing that as a law.
 
-While (to my knowledge) we've not seen any law suits for this in the UK yet, in October 2019, [Domino's Pizza were successfully sued](http://www.webaxe.org/supreme-court-favors-digital-accessibility-dominos-case/) under the Americans with Disabilities Act of 1990 (ADA). But despite this precedent and the *possibility* of legal action here in the UK, accessibility is consistently treated as an afterthought, and even then it's often dismissed as a nice-to-have.
+While (to my knowledge) we've not seen any law suits for this in the UK yet, in October 2019, [Domino's Pizza were successfully sued](//www.webaxe.org/supreme-court-favors-digital-accessibility-dominos-case/) under the Americans with Disabilities Act of 1990 (ADA). But despite this precedent and the *possibility* of legal action here in the UK, accessibility is consistently treated as an afterthought, and even then it's often dismissed as a nice-to-have.
 
 This attitude is in contrast to an [earlier CSS-Tricks article on cookies](https://css-tricks.com/why-every-website-wants-you-to-accept-its-cookies/):
 

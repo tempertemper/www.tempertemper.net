@@ -58,7 +58,7 @@ As for the body text itself, I'd've like to have lightened its weight for Dark M
 
 All this might be a bit moot as it might not catch on. It's a brand-new, as-yet unreleased addition to a web designer's design toolkit, and it's only in one browser on one operating system.
 
-Admittedly, Apple's upgrade adoption rates are pretty great, but Safari on Mac is still only a small fraction of the overall browser usage ([1.36% worldwide](http://gs.statcounter.com/browser-version-market-share/desktop-mobile-tablet/worldwide/#monthly-201810-201810-bar)).
+Admittedly, Apple's upgrade adoption rates are pretty great, but Safari on Mac is still only a small fraction of the overall browser usage ([1.36% worldwide](https://gs.statcounter.com/browser-version-market-share/desktop-mobile-tablet/worldwide/#monthly-201810-201810-bar)).
 
 At the time of writing, neither Chrome nor Firefox (nor Opera) for Mac have adopted Dark Mode for their browser itself, so it's unlikely that they'll be supporting the `prefers-color-scheme` media query any time soon.
 

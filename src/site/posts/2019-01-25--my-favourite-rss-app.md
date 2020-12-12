@@ -8,16 +8,16 @@ tags:
     - Tools
 ---
 
-I've [talked about RSS before](/blog/why-i-still-use-rss). I love it. I know most people ditched it a long time ago,  when [Google closed their Reader](https://googleblog.blogspot.com/2013/03/a-second-spring-of-cleaning.html) service, favouring Twitter as a means to keep up with [their favourite bloggers](https://twitter.com/daringfireball), but some RSS die-hards like me moved to one of the many emerging paid services like [Feed HQ](https://feedhq.org) or [Feed Wrangler](https://feedwrangler.net/welcome.html).
+I've [talked about RSS before](/blog/why-i-still-use-rss). I love it. I know most people ditched it a long time ago,  when [Google closed their Reader](https://googleblog.blogspot.com/2013/03/a-second-spring-of-cleaning.html) service, favouring Twitter as a means to keep up with [their favourite bloggers](https://twitter.com/daringfireball), but some RSS die-hards like me moved to one of the many emerging paid services like [Feed HQ](https://feedhq.org) or [Feed Wrangler](https://feedwrangler.net).
 
 I'm not one for using web applications in-browser. I don't think I ever opened my web browser sifted through the articles in my RSS feed there – I always use a native app on my phone or desktop where possible, and that very much applies to RSS.
 
 
 ## RSS apps
 
-My app of choice was always [Reeder](http://www.reederapp.com/ios/). It was simple and did everything I needed it to, but as iOS was updated, the user interface began to feel a bit tired; when I finally decided to have a look what else was out there its feature set did too.
+My app of choice was always [Reeder](https://www.reederapp.com/ios/). It was simple and did everything I needed it to, but as iOS was updated, the user interface began to feel a bit tired; when I finally decided to have a look what else was out there its feature set did too.
 
-So, [as I did with my writing app](/blog/in-search-of-the-best-writing-app), I started having a look at what else was out there. One stood out: [Lire](http://lireapp.com). I'm slightly ashamed to admit it was for superficial reasons at first – I *really* like its app icon (my RSS reader has always been one of the four apps in my dock and ugly icon sitting there would make me sad) and the interface in general feels very up to date. I was right to follow my instincts though – on top of all of the usual options (e.g. send to Instapaper) and some nice unexpected ones (great Siri Shortcuts support), it has one feature that  really stood out: full article downloading.
+So, [as I did with my writing app](/blog/in-search-of-the-best-writing-app), I started having a look at what else was out there. One stood out: [Lire](https://lireapp.com). I'm slightly ashamed to admit it was for superficial reasons at first – I *really* like its app icon (my RSS reader has always been one of the four apps in my dock and ugly icon sitting there would make me sad) and the interface in general feels very up to date. I was right to follow my instincts though – on top of all of the usual options (e.g. send to Instapaper) and some nice unexpected ones (great Siri Shortcuts support), it has one feature that  really stood out: full article downloading.
 
 
 ## How things used to work
@@ -77,7 +77,7 @@ So pre-fetching articles is a great idea:
 - There's no cruft to negotiate – just the article to read
 - You can download all of the articles and go through them at your leisure, on- or off-line
 
-But what if pre-fetching the article is a bad thing? I linked to Daring Fireball's Twitter feed above; [the blog itself](http://daringfireball.net) is often a quote from another article with some commentary on it; the link is often to the source, rather than the Daring Fireball post itself. In that case, I *don't want to see the full article* – I want the TL;DR John Gruber has written. Luckily there's the option to turn the automatic full text view off on a feed-by-feed basis.
+But what if pre-fetching the article is a bad thing? I linked to Daring Fireball's Twitter feed above; [the blog itself](https://daringfireball.net) is often a quote from another article with some commentary on it; the link is often to the source, rather than the Daring Fireball post itself. In that case, I *don't want to see the full article* – I want the TL;DR John Gruber has written. Luckily there's the option to turn the automatic full text view off on a feed-by-feed basis.
 
 In fact, the whole app is packed full of settings: themes, quick actions for the article listings, there's even a tip jar in there!
 
@@ -119,6 +119,6 @@ Lists and Favourites/Likes could probably be useful for keeping things organised
 
 ## Wrap-up
 
-Nothing beats RSS for keeping up with blog posts and news, and [Lire](http://lireapp.com) is a great RSS app. The full-article fetching isn't unique to Lire, but that together with all of its other features, its good looks and a responsive developer behind it all is all I need!
+Nothing beats RSS for keeping up with blog posts and news, and [Lire](https://lireapp.com) is a great RSS app. The full-article fetching isn't unique to Lire, but that together with all of its other features, its good looks and a responsive developer behind it all is all I need!
 
 Do you still use RSS? What app are you using? I'd love to [hear from you](https://twitter.com/tempertemper)!

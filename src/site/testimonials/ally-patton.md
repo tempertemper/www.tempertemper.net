@@ -3,7 +3,6 @@ title: Ally Patton
 company: Lefkoe Method facilitator
 intro: |
     He's a pleasure to work with and the website is even better than I expected … Thank you Martin for all your hard work.
-website: http://allypatton.com
 date: 2011-07-15
 feature: false
 ---

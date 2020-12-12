@@ -18,7 +18,7 @@ After using iOS 14 for a full day, my first impressions are actually better than
 
 ## Widgets
 
-The feature that I've enjoyed the most but kind of just shrugged my shoulders about when it was [announced back in June](http://localhost:3000/blog/wwdc-2020-roundup#ios-14) is widgets.
+The feature that I've enjoyed the most but kind of just shrugged my shoulders about when it was [announced back in June](/blog/wwdc-2020-roundup#ios-14) is widgets.
 
 First up, they're more useful than they used to be. Not only that, but the size options make them more or less detailed, depending on how important the information is to you.
 
@@ -44,7 +44,7 @@ But with the App Library, I've moved all of these apps away from the Home screen
 
 ## Back Tap
 
-I've set Back Tap up and it's working [just as I'd hoped](https://www.tempertemper.net/blog/ios-14s-back-tap-a-better-way-to-access-control-centre). I like it a lot!
+I've set Back Tap up and it's working [just as I'd hoped](/blog/ios-14s-back-tap-a-better-way-to-access-control-centre). I like it a lot!
 
 
 ## Emoji search

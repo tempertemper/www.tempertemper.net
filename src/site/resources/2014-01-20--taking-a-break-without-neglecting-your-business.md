@@ -15,7 +15,7 @@ I'm sure most small business owners can identify with the whole 'switching off' 
 
 ## Assistance
 
-One solution would be to hire a [Virtual Assistant (VA)](http://en.wikipedia.org/wiki/Virtual_assistant) to look after my email inbox and answer my calls while I'm away, dealing with non-technical enquiries, informing clients that I'll be a little later than normal in getting back to them, and contacting me if someone requires immediate attention.
+One solution would be to hire a [Virtual Assistant (VA)](https://en.wikipedia.org/wiki/Virtual_assistant) to look after my email inbox and answer my calls while I'm away, dealing with non-technical enquiries, informing clients that I'll be a little later than normal in getting back to them, and contacting me if someone requires immediate attention.
 
 A VA may eventually be a necessary arm of my business, but at the moment it's not something I need.
 
@@ -33,7 +33,7 @@ But that's the issue. Every now and then—however rare—a client has an _urgen
 
 ## Taking my laptop
 
-My office is a [co-working space](http://tempertemper/blog/my-introduction-to-co-working) and has been for the past year or so. I'm therefore very used to working from my laptop.
+My office is a [co-working space](/blog/my-introduction-to-co-working) and has been for the past year or so. I'm therefore very used to working from my laptop.
 
 So it makes sense to me to just take my laptop on holiday with me so that I could get a little bit of work done each day (perhaps an hour or two from a café over breakfast) and then get on with taking a well-deserved break.
 
@@ -46,11 +46,11 @@ Aside from that, experience has taught me that it does too much. I end up gettin
 
 What I've decided to do is to leave my laptop behind, and that's where an iPad comes in!
 
-The other morning, the [Retina iPad Mini](http://www.apple.com/uk/ipad-mini/) I ordered a few days before was delivered to my office.
+The other morning, the [Retina iPad Mini](https://www.apple.com/ipad-mini/) I ordered a few days before was delivered to my office.
 
 The advantages, beyond its ultra-portability (200mm x 134.7mm x 7.5mm and only 331g) are that I can keep on top of my emails, to-do list, social media, write blog posts, etc. while I'm away. I can even make an emergency amendment to some code, though the capabilities of code-editing software for iPad is pretty limited, so it this would only be in extreme circumstances.
 
-There'll be no nasty surprises or thousands of emails waiting for me when I get back (and therefore no [Schrödinger's cat](http://en.wikipedia.org/wiki/Schr%C3%B6dinger's_cat) style apprehension), and clients with issues that need dealing with right away will be looked after.
+There'll be no nasty surprises or thousands of emails waiting for me when I get back (and therefore no [Schrödinger's cat](https://en.wikipedia.org/wiki/Schr%C3%B6dinger's_cat) style apprehension), and clients with issues that need dealing with right away will be looked after.
 
 
 ## What do you do?

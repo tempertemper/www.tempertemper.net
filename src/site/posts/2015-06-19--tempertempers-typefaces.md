@@ -12,14 +12,14 @@ I rebranded tempertemper last summer and I must say I've been very happy with th
 
 The first thing I did was work on a new logo. This provided a starting point for the typeface/fonts I would use as part of my new-look brand.
 
-I'm a big fan of typography. I think this is because I'm a web designer and [the web is 95% text/typography](https://ia.net/know-how/the-web-is-all-about-typography-period). Even images are [underpinned by text](/blog/image-alt-text) on the web!
+I'm a big fan of typography. I think this is because I'm a web designer and [the web is 95% text/typography](https://ia.net/know-how/the-web-is-all-about-typography-period). Even images are [underpinned by text](/resources/image-alt-text) on the web!
 
 
 ## FS Me
 
-The typeface I used for the new logo is [FS Me](http://www.fontsmith.com/fonts/fs-me), and I chose it for the following reasons:
+The typeface I used for the new logo is [FS Me](https://www.fontsmith.com/fonts/fs-me), and I chose it for the following reasons:
 
-- I'm an [accessibility nut](/blog/disability-on-the-web), and FS Me was designed to be as legible as possible to _anyone_
+- I'm an [accessibility nut](/resources/disability-on-the-web), and FS Me was designed to be as legible as possible to _anyone_
 - Because it's so legible, it makes scanning headlines on my site very easy
 - I pride tempertemper on being an approachable organisation, and FS Me is a friendly font with bags of character
 - Simplicity is one of tempertemper's core values, and FS Me conveys this nicely, without being childlike or unrefined
@@ -36,7 +36,7 @@ FS Me looked gorgeous as smaller body text on my MacBook Pro's high definition (
 
 Georgia was designed in the '90s specifically to be used on computer screens, so looks great and is easy to read no matter what device you're using.
 
-There are a certain few typefaces/fonts that are available on every computer or mobile device, from an ancient laptops running Windows XP, Android smartphones, brand new Microsoft Surface tablets, to the most recent MacBook. Georgia is one of them and it's gorgeous. Because it's already installed in _everyone's_ device, there's [one less thing to be downloaded](/blog/webfonts) when people view my website, meaning it loads  that wee bit faster.
+There are a certain few typefaces/fonts that are available on every computer or mobile device, from an ancient laptops running Windows XP, Android smartphones, brand new Microsoft Surface tablets, to the most recent MacBook. Georgia is one of them and it's gorgeous. Because it's already installed in _everyone's_ device, there's [one less thing to be downloaded](/resources/webfonts) when people view my website, meaning it loads  that wee bit faster.
 
 
 ## Typefaces and tools

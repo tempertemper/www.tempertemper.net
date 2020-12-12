@@ -3,7 +3,6 @@ title: Cat Johnson
 company: Cat Johnson Make Up Artist
 intro: |
     Martin put me totally at ease, understood my vision for the site and came up with some great ideas. I am so happy with the the finished product and it includes everything I aspired for.
-website: http://catjohnson.co.uk/
 date: 2012-05-17
 feature: false
 ---

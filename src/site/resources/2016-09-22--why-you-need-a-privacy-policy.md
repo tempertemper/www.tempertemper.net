@@ -45,7 +45,7 @@ Of course, cookies can be used to more intrusive ends, which is why the law was 
 {% set youtubeVideoID = "arWJA0jVPAc" %}
 {% include "youtube-embed.html" %}
 
-And here's [the accompanying website](http://nocookielaw.com/).
+And here's [the accompanying website](https://nocookielaw.com/).
 
 It seems we're legally required to get permission from our visitors to track their information.
 
@@ -66,7 +66,7 @@ So we agree that a privacy policy is necessary. It's [the very least you need to
 
 You could write your own policy. Or find someone else's and amend it, but that all sounds like a lot of work. A quick web search will present you with a number of online tools that will generate a policy for you. All you have to do is fill out a questionnaire.
 
-I've tried a few tools over the years and one of the best I've found is at [PrivacyPolicies.com](http://privacypolicies.com). There's a small one-off fee if your website is for commercial use (and if it's your business's website, it's commercial) but it's well worth it for the effort it will save you.
+I've tried a few tools over the years and one of the best I've found is at [PrivacyPolicies.com](https://www.privacypolicies.com). There's a small one-off fee if your website is for commercial use (and if it's your business's website, it's commercial) but it's well worth it for the effort it will save you.
 
 
 ## Conclusion

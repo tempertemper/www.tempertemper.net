@@ -7,7 +7,7 @@ tags:
     - Security
 ---
 
-I've written about SSL a few times before. About [what it is](/blog/what-is-ssl-and-is-it-worth-the-bother) and [why I recommend it](/blog/ssl-for-everyone) for every site I build.
+I've written about SSL a few times before. About [what it is](/resources/what-is-ssl-and-is-it-worth-the-bother) and [why I recommend it](/resources/ssl-for-everyone) for every site I build.
 
 Google has been serious about SSL for a while. Serving websites over an encrypted connection sounds great, but when the biggest search engine in the world starts taking action you know it's worth taking action.
 
@@ -20,7 +20,7 @@ So how are they doing it? Reducing your search ranking for not using SSL would h
 
 Everyone knows Google do search. It's a hugely popular search engine and to many it's synonymous with search (the verb 'to google' [entered the Oxford English Dictionary in 2006](https://en.wikipedia.org/wiki/Google_(verb)). But Google have [lots of other products](https://www.google.com/intl/en_us/about/products/).
 
-I'm almost certain you'll've heard of **Chrome**. But don't worry if you haven't – it's a [web browser](/blog/whats-in-a-browser) made by Google. And it's by far and away the most used web browser in the world, with [usage currently sitting at just over 58%](https://www.w3counter.com/globalstats.php?year=2016&month=8) globally. Its closest competitor is Apple's Safari at 12.7%.
+I'm almost certain you'll've heard of **Chrome**. But don't worry if you haven't – it's a [web browser](/resources/whats-in-a-browser) made by Google. And it's by far and away the most used web browser in the world, with [usage currently sitting at just over 58%](https://www.w3counter.com/globalstats.php?year=2016&month=8) globally. Its closest competitor is Apple's Safari at 12.7%.
 
 So Chrome is a very big deal indeed.
 
@@ -77,7 +77,7 @@ As a website owner you probably have the ability to log into a control panel and
 
 ## Where Google goes others follow
 
-Google lead the way in search, world wide. Changes they make to their algorithms are usually copied by rivals like [Bing](http://www.bing.com) and [DuckDuckGo](https://duckduckgo.com).
+Google lead the way in search, world wide. Changes they make to their algorithms are usually copied by rivals like [Bing](https://www.bing.com) and [DuckDuckGo](https://duckduckgo.com).
 
 SSL is good for the web and, while Google are pioneering this move, other browsers (Firefox, Opera, Safari, Edge) are likely to follow their lead and begin issuing warnings about un-securely served websites.
 

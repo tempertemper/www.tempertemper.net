@@ -3,7 +3,7 @@ title: James Mann
 company: EMS Publishing
 intro: |
     Working with Martin has been enlightening and enjoyable. I was a beginner to web creation, but I immediately felt in safe hands.
-website: http://www.emspublishing.co.uk
+website: https://www.emspublishing.co.uk
 date: 2013-06-05
 feature: false
 ---

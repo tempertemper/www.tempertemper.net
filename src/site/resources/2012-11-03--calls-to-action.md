@@ -23,7 +23,7 @@ Give your visitors a reason why your product or service will benefit them first,
 
 Perhaps most importantly, you're able to measure how many visitors are clicking on your call to action!
 
-Your [website analytics](http://tempertemper.net/blog/google-analytics) will provide you with detailed information on how effective your calls to action are. They also allow you to make a change (maybe the colour, the positioning, etc.) and keep an eye on how that affects how your users interact with your call to action.
+Your [website analytics](/resources/google-analytics) will provide you with detailed information on how effective your calls to action are. They also allow you to make a change (maybe the colour, the positioning, etc.) and keep an eye on how that affects how your users interact with your call to action.
 
 
 ## How well are you doing?

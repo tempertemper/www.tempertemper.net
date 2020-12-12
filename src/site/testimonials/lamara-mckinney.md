@@ -3,7 +3,7 @@ title: Lamara McKinney
 company: Sharow Church of England School
 intro: |
     Martin took the time to understand our needs … A professional collaboration throughout led to a fantastic website.
-website: http://www.sharow.n-yorks.sch.uk/
+website: //www.sharow.n-yorks.sch.uk/
 date: 2012-03-22
 feature: false
 ---

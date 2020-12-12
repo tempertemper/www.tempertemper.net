@@ -8,7 +8,7 @@ tags:
     - Marketing
 ---
 
-Make the most of your blog posts! The better the post the more visitors you'll get and the [better you'll do in search engine results](http://tempertemper.net/blog/why-should-i-blog).
+Make the most of your blog posts! The better the post the more visitors you'll get and the [better you'll do in search engine results](/resources/why-should-i-blog).
 
 So here are a few tips to keep in mind when writing your posts or articles.
 

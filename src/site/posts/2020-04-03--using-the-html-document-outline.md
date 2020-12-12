@@ -9,7 +9,7 @@ tags:
     - Accessibility
 ---
 
-A lot has been written about why the proposed [HTML5 document outline wasn't successful](http://html5doctor.com/computer-says-no-to-html5-document-outline/), but I'm not going to talk about that. Instead I'll focus on how the document outline in HTML has always worked, and what a document outline even is!
+A lot has been written about why the proposed [HTML5 document outline wasn't successful](//html5doctor.com/computer-says-no-to-html5-document-outline/), but I'm not going to talk about that. Instead I'll focus on how the document outline in HTML has always worked, and what a document outline even is!
 
 
 ## What is a document outline?

@@ -17,6 +17,6 @@ A simple email address on your website can be encrypted (and always is, for my c
 
 Your email mailbox will have a filtering system built in to catch any spam emails you receive from those that have managed to get a hold of your email address, in spite of its encryption, but there is no such filter for your webforms as they are all sent from your own website, via your own servers and are therefore seen as safe, which is where a filtering system comes in.
 
-If you've been receiving a few too many spam emails via your contact form, you don't want to spend time discerning spam from non-spam comments on your blog, or you don't want to have to face any spam at any point down the line, please [give me a shout](http://tempertemper.net/contact) and I'll be happy to set a filtering service up for you.
+If you've been receiving a few too many spam emails via your contact form, you don't want to spend time discerning spam from non-spam comments on your blog, or you don't want to have to face any spam at any point down the line, please [give me a shout](/contact) and I'll be happy to set a filtering service up for you.
 
 I should mention that I don't take any commission for the admin of your account- I charge you what it costs me and will invoice you along with your yearly domain name and hosting renewal, so that it's all taken care of at once.

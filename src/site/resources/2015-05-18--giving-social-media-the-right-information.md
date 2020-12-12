@@ -28,9 +28,9 @@ When you type or paste the web address (or 'URL', something like `https://www.te
 
 It's worth mentioning that it's not just social networks that pull snippets of information and photos from websites. **Search engines** do the same! Think of the things that are displayed when you carry out a search:
 
-- The page's [title](/blog/page-titles)
-- A [description](/blog/page-descriptions) of the page
-- The page's [address/URL](/blog/tidy-up-your-sites-addresses-for-search)
+- The page's [title](/resources/page-titles)
+- A [description](/resources/page-descriptions) of the page
+- The page's [address/URL](/resources/tidy-up-your-sites-addresses-for-search)
 
 If you're searching for, say, a new drill at your local DIY shop, maybe the search will present you with an 'out of 5 stars' review rating, a price, availability, the shop's opening hours. You get the idea. This is all along the same lines.
 
@@ -48,7 +48,7 @@ That's very nice of them, but:
 
 You guessed it! You can tell them **exactly** what details you want them to display!
 
-Unfortunately, this requires [a bit of extra coding](/blog/what-is-meta-data). Also, different social networks look for different bits of code, so you have to choose which you want to cater for. Here are some examples:
+Unfortunately, this requires [a bit of extra coding](/resources/what-is-meta-data). Also, different social networks look for different bits of code, so you have to choose which you want to cater for. Here are some examples:
 
 - Twitter use 'Twitter Cards'
 - Facebook use something called 'Open Graph'

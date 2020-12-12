@@ -3,7 +3,6 @@ title: Martin Deane
 company: MyITEC
 intro: |
     Martin himself has overseen the overall user experience, interface design and the frontend code. He's is easy to work with, professional and never fails to produce a quality end result; we’re looking forward to working with him on the next phase of MyITEC!
-website: http://myitec.com
 date: 2016-02-02
 feature: false
 ---

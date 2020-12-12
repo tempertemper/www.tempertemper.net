@@ -37,7 +37,7 @@ Following a [rebrand](/blog/the-simplest-solutions-are-usually-the-best#bringing
 
 ## June 2018
 
-A [snapshot of the site from June 2018](https://web.archive.org/web/20160207074445/https://tempertemper.net/), just before I completely [rebuilt the it](https://www.tempertemper.net/blog/website-version-5), shows that I abandoned the misguided hamburger menu, and added a video to introduce myself to my potential clients. But otherwise little had changed in nearly four years.
+A [snapshot of the site from June 2018](https://web.archive.org/web/20160207074445/https://tempertemper.net/), just before I completely [rebuilt the it](/blog/website-version-5), shows that I abandoned the misguided hamburger menu, and added a video to introduce myself to my potential clients. But otherwise little had changed in nearly four years.
 
 <img src="/assets/img/blog/homepage-snapshot-2018-06.png" alt="2018 version of my website’s homepage, with the simple heading “I make websites”, followed by a video introduction" width="800" height="450" loading="lazy" />
 

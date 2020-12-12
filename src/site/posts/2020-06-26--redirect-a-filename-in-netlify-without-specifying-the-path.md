@@ -8,7 +8,7 @@ tags:
     - Serverless
 ---
 
-I check my [Netlify Analytics](https://www.tempertemper.net/blog/ditching-google-analytics-in-favour-of-netlify-analytics) every now and again to see what pages people are looking for but not finding, so that I can fix things with redirect in my `netlify.toml` file.
+I check my [Netlify Analytics](/blog/ditching-google-analytics-in-favour-of-netlify-analytics) every now and again to see what pages people are looking for but not finding, so that I can fix things with redirect in my `netlify.toml` file.
 
 Most of the human redirects have been fixed, so it's all just spambots now, looking for `/wp-login.php` or `.env`; none of which exist on my server. The latest bot has been looking for a `wlwmanifest.xml`, and it's really going for it! So much so that it has taken over 14 of my 15 slots in my Netlify Analytics dashboard, so I can't see much. I see the following (double initial forward slashes sic):
 

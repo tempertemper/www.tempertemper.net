@@ -56,18 +56,18 @@ Your CMS will probably not be able to tell that the subject of your photo is on 
 
 There are a number of great photo editors out there:
 
-+ [Photoshop](http://www.adobe.com/uk/products/photoshop.html)
-+ [Pixelmator](http://www.pixelmator.com)
-+ [Pixlr](http://pixlr.com/)
-+ [Paint.net](http://www.getpaint.net)
-+ [Gimp](http://www.gimp.org)
-+ [Acorn](http://www.flyingmeat.com/acorn/)
++ [Photoshop](https://www.adobe.com/uk/products/photoshop)
++ [Pixelmator](https://www.pixelmator.com)
++ [Pixlr](https://pixlr.com/)
++ [Paint.net](https://www.getpaint.net)
++ [Gimp](https://www.gimp.org)
++ [Acorn](https://flyingmeat.com/acorn/)
 
 …but I find these a bit overkill for simply resizing an image.
 
-Mac users have [iPhoto](http://www.apple.com/uk/mac/iphoto/), which does a decent job of cropping an image. The built-in Camera app on iPhone/iPad does a pretty good job too.
+Mac users have [iPhoto](https://www.apple.com/macos/photos/), which does a decent job of cropping an image. The built-in Camera app on iPhone/iPad does a pretty good job too.
 
-Windows users can crop an image using Windows' [Paint](http://windows.microsoft.com/en-gb/windows7/crop-a-picture-using-paint) and Android users can use their camera app.
+Windows users can crop an image using Windows' [Paint](https://answers.microsoft.com/en-us/windows/forum/windows_10-other_settings-winpc/how-can-i-crop-a-photo-in-ms10-paint/cc3df426-a82e-401f-a38e-636ea82ea297) and Android users can use their camera app.
 
 All you have to do is crop the image to the approximate shape of the image that will be output by the CMS. Don't worry if you don't know the exact ratio/dimensions – doing it by eye is fine. All we're looking to do is stop any important bits of the photo being lost when the CMS does its work.
 
