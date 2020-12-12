@@ -24,7 +24,7 @@ Everyone had their laptops and tablets hooked up to the free wi-fi, excellent co
 
 So I looked into other co-working events that were happening locally. [Colleagues on Tap](https://www.colleaguesontap.com/) jumped out and turned out to be a great set up with an informal group discussion scheduled after lunch. The local [Jelly](https://www.uk-jelly.org.uk) is also well worth a look.
 
-I've met lots of great people with interesting businesses, from [keyword consultants](https://word-association.co.uk) to [alternative hairdressers](https://www.urban-halo.com)! I've been to lots of networking events and dinners in the past and they've all felt a little bit pushy and contrived. This might work for some people, but it's really not my style.
+I've met lots of great people with interesting businesses, from [keyword consultants](//word-association.co.uk) to [alternative hairdressers](https://www.urban-halo.com)! I've been to lots of networking events and dinners in the past and they've all felt a little bit pushy and contrived. This might work for some people, but it's really not my style.
 
 I believe that relationships come first and business will follow. I've met lots of people that would be great to work with, so it's a good idea to bring some business cards, though—remember—that's not the point of it all; more a happy by-product!
 

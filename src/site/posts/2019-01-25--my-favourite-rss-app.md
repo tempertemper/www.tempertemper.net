@@ -8,7 +8,7 @@ tags:
     - Tools
 ---
 
-I've [talked about RSS before](/blog/why-i-still-use-rss). I love it. I know most people ditched it a long time ago,  when [Google closed their Reader](https://googleblog.blogspot.com/2013/03/a-second-spring-of-cleaning.html) service, favouring Twitter as a means to keep up with [their favourite bloggers](https://twitter.com/daringfireball), but some RSS die-hards like me moved to one of the many emerging paid services like [Feed HQ](https://feedhq.org) or [Feed Wrangler](https://feedwrangler.net/welcome.html).
+I've [talked about RSS before](/blog/why-i-still-use-rss). I love it. I know most people ditched it a long time ago,  when [Google closed their Reader](https://googleblog.blogspot.com/2013/03/a-second-spring-of-cleaning.html) service, favouring Twitter as a means to keep up with [their favourite bloggers](https://twitter.com/daringfireball), but some RSS die-hards like me moved to one of the many emerging paid services like [Feed HQ](https://feedhq.org) or [Feed Wrangler](https://feedwrangler.net).
 
 I'm not one for using web applications in-browser. I don't think I ever opened my web browser sifted through the articles in my RSS feed there – I always use a native app on my phone or desktop where possible, and that very much applies to RSS.
 

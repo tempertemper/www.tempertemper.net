@@ -35,7 +35,7 @@ The type of app/program you use to access your RSS feeds varies. Sometimes it's 
 
 It's one thing having your RSS feeds collected by an app on your laptop, but, if you're anything like me, you'll like to pick up whichever of your devices is to hand and check for any new blog posts. If you pick up your phone, you don't want to have to filter through articles you've already read on your tablet.
 
-This is where 'cloud' services like [Feed Wrangler](https://feedwrangler.net/welcome.html) or [Feedly](https://feedly.com/i/welcome) come in. You can access your feeds by logging into your account on their website, or most have their own apps. Alternatively you can access them through a third party app like Reeder (I use Feed Wrangler in conjunction with Reeder because Feed Wrangler is good at filtering out posts I know I don't want to see, and Reeder offers a great reading experience).
+This is where 'cloud' services like [Feed Wrangler](https://feedwrangler.net) or [Feedly](https://feedly.com) come in. You can access your feeds by logging into your account on their website, or most have their own apps. Alternatively you can access them through a third party app like Reeder (I use Feed Wrangler in conjunction with Reeder because Feed Wrangler is good at filtering out posts I know I don't want to see, and Reeder offers a great reading experience).
 
 
 ## So what's wrong with social media?
