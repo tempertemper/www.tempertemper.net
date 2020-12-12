@@ -15,7 +15,7 @@ The calendar/to-do reminders are ok – I set them up myself, after all. Texts a
 
 ## How much of an issue?
 
-A while back, Paul Boag wrote an article where he described [email as a beast](http://www.smashingmagazine.com/2013/07/02/taming-email-beast/) that needs to be tamed. More recently he has [revisited the problem](https://boagworld.com/working-in-web/work-smarter/) on his own blog:
+A while back, Paul Boag wrote an article where he described [email as a beast](https://www.smashingmagazine.com/2013/07/02/taming-email-beast/) that needs to be tamed. More recently he has [revisited the problem](https://boagworld.com/working-in-web/work-smarter/) on his own blog:
 
 > “People have their email clients [checking] for email every 5 minutes. This equates to 24,192 interruptions a year. Even taking into account public holidays and vacation time. Let’s say that only half of those [checks] contain incoming email and each email interrupts you for only one minute. That means you waste 12,096 minutes per year. That is a staggering 25 days a year wasted through interruptions.”
 

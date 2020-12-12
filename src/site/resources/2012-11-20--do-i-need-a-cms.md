@@ -35,7 +35,7 @@ The beauty of a bespoke website is that there's always a middle ground. If budge
 
 ## Security
 
-A CMS isn't just for content updates – it can also serve as a robust framework for common security weak-points like [contact forms](/blog/cms-updates), so if you want a contact form on your site (a great way to encourage visitors to get in touch) I'd recommend a CMS installation that can be built upon at a later date to protect your site against any potentially crippling security breaches.
+A CMS isn't just for content updates – it can also serve as a robust framework for common security weak-points like [contact forms](/resources/cms-updates), so if you want a contact form on your site (a great way to encourage visitors to get in touch) I'd recommend a CMS installation that can be built upon at a later date to protect your site against any potentially crippling security breaches.
 
 
 ## What's best for me?

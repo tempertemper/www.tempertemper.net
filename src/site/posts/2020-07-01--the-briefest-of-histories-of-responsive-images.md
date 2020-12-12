@@ -33,4 +33,4 @@ Since then, we've been given the `srcset=""` attribute for images, where we can 
 
 As displaying images on the web has become more challenging, the level control we have over them has grown accordingly. CSS-Tricks have recently published a [complete guide to `srcset=""` and `<picture>`](https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/) which demonstrates how complex it can be.
 
-For me, I try to keep my website image-light, only using them where absolutely necessary. I'm not one for arbitrary [hero images on blog posts](https://www.tempertemper.net/resources/hero-images-pros-and-cons) and prefer to let the words do the talking. Hopefully that's enough!
+For me, I try to keep my website image-light, only using them where absolutely necessary. I'm not one for arbitrary [hero images on blog posts](/resources/hero-images-pros-and-cons) and prefer to let the words do the talking. Hopefully that's enough!

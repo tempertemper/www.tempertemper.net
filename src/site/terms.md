@@ -62,7 +62,7 @@ I believe that speculative work (where a designer is asked to work as part of a 
 
 ## Contract
 
-I draw up a contract for every job I undertake. My contracts are in plain English (as little [legalese](http://en.wikipedia.org/wiki/Legal_writing#Legalese) as I can get away with!) and ensure there will be no misunderstandings. They cover, among other things, what materials you'll give me so that I can do the job for you, a breakdown of the job itself, payment terms and details of copyright ownership.
+I draw up a contract for every job I undertake. My contracts are in plain English (as little [legalese](https://en.wikipedia.org/wiki/Legal_writing#Legalese) as I can get away with!) and ensure there will be no misunderstandings. They cover, among other things, what materials you'll give me so that I can do the job for you, a breakdown of the job itself, payment terms and details of copyright ownership.
 
 The first contract I send you isn't necessarily the one we'll both sign. It's for you to read through carefully and make sure you're happy with everything. I'm happy to consider any amendments, so if you'd like to see any changes just ask and I'll see what I can do.
 

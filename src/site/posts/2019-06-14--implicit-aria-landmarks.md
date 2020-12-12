@@ -26,7 +26,7 @@ Some of these landmarks can be used a few times, for example, there may be prima
 - There can only be one main content area
 - One page footer is all you need
 
-So far so good. But what about [implicit mappings](https://a11yproject.com/posts/aria-landmark-roles/#html5-implicit-mappings-of-landmark-roles)? This means that a `<header>` should automatically be interpreted as having a `role="banner"` and a `<footer>` should get a `role="contentinfo"`, but that can't be right if we're [allowed to use multiple](http://html5doctor.com/the-header-element/) `<header>`s and `<footer>`s…
+So far so good. But what about [implicit mappings](https://a11yproject.com/posts/aria-landmark-roles/#html5-implicit-mappings-of-landmark-roles)? This means that a `<header>` should automatically be interpreted as having a `role="banner"` and a `<footer>` should get a `role="contentinfo"`, but that can't be right if we're [allowed to use multiple](//html5doctor.com/the-header-element/) `<header>`s and `<footer>`s…
 
 
 ## The theory

@@ -44,7 +44,7 @@ If a user sees a button and tells their voice control software (e.g. [Dragon](ht
 
 You'd think non-sighted users using screen reader software would be told there's a link, and that'd be fine, but there's also the issue of *consistency* for those users. Sometimes to go to the next page they use a button, sometimes a link, and that inconsistency can create unnecessary questions.
 
-It's also worth considering sighted (or low-vision) users who can see what's on the screen but also use a screen reader. According to Simply Accessible, some [people with dyslexia use screen readers](http://simplyaccessible.com/article/user-needs-dyslexia/) in order to better understand the content:
+It's also worth considering sighted (or low-vision) users who can see what's on the screen but also use a screen reader. According to Simply Accessible, some [people with dyslexia use screen readers](//simplyaccessible.com/article/user-needs-dyslexia/) in order to better understand the content:
 
 > Some dyslexic users benefit greatly from using a screen reader in addition to scanning a page visually
 

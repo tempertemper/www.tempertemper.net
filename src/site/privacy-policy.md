@@ -43,7 +43,7 @@ I'm committed to ensuring that your information is secure. Among other things, I
 
 A cookie is a small file which is placed on your computer's hard drive. I think these are intrusive, unnecessary and provide information that I would never use, so I don't use cookies.
 
-I do glean *some* totally anonymous information from visitors via [server logs](https://www.netlify.com/gdpr/), which allow me to see very broad numbers on which pages get the most visitors. All information is discarded within 30 days.
+I do glean *some* totally anonymous information from visitors via [server logs](https://www.netlify.com/gdpr-ccpa), which allow me to see very broad numbers on which pages get the most visitors. All information is discarded within 30 days.
 
 Not using cookies also means I don't have to annoy you with those awful pop up banners!
 

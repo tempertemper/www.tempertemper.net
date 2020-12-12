@@ -8,7 +8,7 @@ tags:
     - Accessibility
 ---
 
-The feature I'm looking forward to the most in iOS 14 wasn't even mentioned in the [WWDC presentation](http://localhost:3000/blog/wwdc-2020-roundup#ios-14) this year. It's called Back Tap.
+The feature I'm looking forward to the most in iOS 14 wasn't even mentioned in the [WWDC presentation](/blog/wwdc-2020-roundup#ios-14) this year. It's called Back Tap.
 
 [9To5Mac said](https://9to5mac.com/2020/06/24/how-to-use-iphone-back-tap-controls-ios-14/
 ) that  Back Tap:

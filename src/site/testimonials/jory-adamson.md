@@ -3,7 +3,6 @@ title: Jory Adamson
 company: Jory Adamson Personal Training
 intro: |
     Martin has been a pleasure to work with… delivers to promise and takes time to consider my needs.
-website: http://joryadamson.com
 date: 2011-05-15
 feature: false
 ---

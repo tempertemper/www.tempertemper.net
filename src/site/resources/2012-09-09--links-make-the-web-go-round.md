@@ -16,14 +16,14 @@ I'm sure you are familiar with the way the web works, but I'm writing this artic
 
 If someone links to your site it means the page they're linking to is worth telling people about; this link could be on Facebook, Twitter or some other social network, or it could be on a blog post they've written or a page on which they list useful resources.
 
-Search engines use a whole host of criteria to decide [how good your site is](http://tempertemper.net/blog/what-search-engines-want) and, therefore, how high to rank it when someone searches for keywords that it contains, and links leading to your site are a massive factor!
+Search engines use a whole host of criteria to decide [how good your site is](/resources/what-search-engines-want) and, therefore, how high to rank it when someone searches for keywords that it contains, and links leading to your site are a massive factor!
 
 
 ## How do I get links?
 
-The best way to get links is to [write great content](http://tempertemper.net/blog/why-should-i-blog) on a great website that people want to tell everyone about!
+The best way to get links is to [write great content](/resources/why-should-i-blog) on a great website that people want to tell everyone about!
 
-Promote your new blog post, testimonial, gallery entry, revamped/rewritten page or [new look site](http://tempertemper.net/blog/little-by-little) on Facebook, Twitter and any other social networks you maintain. This will increase your website's exposure and hopefully win you a few shares, likes, retweets and so on.
+Promote your new blog post, testimonial, gallery entry, revamped/rewritten page or [new look site](/resources/little-by-little) on Facebook, Twitter and any other social networks you maintain. This will increase your website's exposure and hopefully win you a few shares, likes, retweets and so on.
 
 
 ## Your website
@@ -40,7 +40,7 @@ Whenever you reference someone or something it's a good idea to link out to them
 
 ## What should a link look like?
 
-By what your link looks like I mean what your website's visitor will see. Not the link itself – that horrible looking "http://www.example.com/blah" bit with its forward slashes, colons, dots, dashes, hash symbols, question marks and all manner of other nasties – but the nice readable link that hides the actual working link.
+By what your link looks like I mean what your website's visitor will see. Not the link itself – that horrible looking "https://www.example.com/blah" bit with its forward slashes, colons, dots, dashes, hash symbols, question marks and all manner of other nasties – but the nice readable link that hides the actual working link.
 
 So let's start by covering what not to do: A link should never look like "click here" or something similar!
 

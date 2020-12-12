@@ -3,7 +3,7 @@ title: Tammy Sanders
 company: Devine Intermodal
 intro: |
     Martin was extremely professional and punctual on timelines & deliverables. His communication was superb and I feel that he definitely went the "extra mile" to ensure that we were happy with the finished product.
-website: http://www.devineintermodal.com/
+website: //www.devineintermodal.com/
 date: 2013-04-10
 feature: false
 ---

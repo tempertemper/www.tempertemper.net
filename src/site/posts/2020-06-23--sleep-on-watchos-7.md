@@ -11,7 +11,7 @@ tags:
 
 The WWDC 2020 Keynote has been and gone, and Apple have announced [some interesting new features](/blog/wwdc-2020-roundup) but one of the stand-outs for me was native sleep tracking on watchOS.
 
-Earlier this year, [I wrote about the two features I'd love to see in watchOS7](https://www.tempertemper.net/blog/what-watchos-7-might-have-in-store); both would have been great, but I'm very happy indeed with the one we're getting: Sleep.
+Earlier this year, [I wrote about the two features I'd love to see in watchOS7](/blog/what-watchos-7-might-have-in-store); both would have been great, but I'm very happy indeed with the one we're getting: Sleep.
 
 Having watched the WWDC Keynote, read [Apple's watchOS 7 preview page](https://www.apple.com/watchos/watchos-preview/) and read [their press release](https://www.apple.com/uk/newsroom/2020/06/watchos-7-adds-significant-personalization-health-and-fitness-features-to-apple-watch/), here's what it does and why I'm happy.
 

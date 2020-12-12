@@ -7,11 +7,11 @@ tags:
     - Accessibility
 ---
 
-Accessibility is central to the web. It's not just [less able visitors](http://tempertemper.net/blog/discrimination-on-the-web) you should be considering, but the multitude of devices people access the internet on nowadays.
+Accessibility is central to the web. It's not just [less able visitors](/resources/discrimination-on-the-web) you should be considering, but the multitude of devices people access the internet on nowadays.
 
 How easy will your website be to view on the small screen of an iPhone? How about a widescreen television? What about all the sizes in between?
 
-The word responsive has two meanings where websites are concerned; the obvious one being when a site reacts nicely to your clicks and taps. But ever since [Ethan Marcotte's article for A List Apart](http://www.alistapart.com/articles/responsive-web-design/) back in 2010, responsive has taken on a whole new meaning…
+The word responsive has two meanings where websites are concerned; the obvious one being when a site reacts nicely to your clicks and taps. But ever since [Ethan Marcotte's article for A List Apart](https://www.alistapart.com/articles/responsive-web-design/) back in 2010, responsive has taken on a whole new meaning…
 
 
 ## What is a website?
@@ -82,11 +82,11 @@ Of course, if you like, you can add extra breakpoints for tablet sized layouts, 
 
 So whether you've already got a website or you're looking to have your first website developed, a responsive layout is an important part of the plan.
 
-If you already have a website your [analytics](http://tempertemper.net/blog/google-analytics) will tell you how many of your visitors are using mobile devices, so you'll be able to make an informed decision on the mobile front.
+If you already have a website your [analytics](/resources/google-analytics) will tell you how many of your visitors are using mobile devices, so you'll be able to make an informed decision on the mobile front.
 
 Your analytics will also tell you how many widescreen visitors you're getting.
 
-For those that are having a website developed from scratch you probably don't have any analytics to base your decision on, but your relationship with your clients is still very valuable: how about sending them a survey asking how they access the internet? Or you could use the results of an online [survey into general smartphone usage](http://pewinternet.org/Reports/2012/Smartphone-Update-2012/Findings.aspx) to base your decision on.
+For those that are having a website developed from scratch you probably don't have any analytics to base your decision on, but your relationship with your clients is still very valuable: how about sending them a survey asking how they access the internet? Or you could use the results of an online [survey into general smartphone usage](https://www.pewresearch.org/internet/2012/09/11/smartphone-ownership-update-september-2012/) to base your decision on.
 
 
 ## Responsivificate* me!
@@ -95,6 +95,6 @@ So responsive design is becoming more and more important as the small-screen mar
 
 Whether that's a fully responsive site or a step towards improving your visitors experience with an adaptive approach, catering for as wide an audience as possible makes great business sense!
 
-[Send me a message](http://tempertemper.net/contact) if you'd like to know more about how your website could be made responsive.
+[Send me a message](/contact) if you'd like to know more about how your website could be made responsive.
 
 *I might have made that word up too :)

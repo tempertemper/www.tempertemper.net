@@ -8,16 +8,16 @@ tags:
     - Markdown
 ---
 
-It's all very well knowing the [principles behind writing a link](/blog/how-to-write-a-link), but how do you _actually_ write a link?
+It's all very well knowing the [principles behind writing a link](/resources/how-to-write-a-link), but how do you _actually_ write a link?
 
-Copying and pasting a link into your text will just write link as another word in your article. I'll use that last link as an example– if I copy and paste it into this paragraph it looks like this: http://tempertemper.net/blog/how-to-write-a-link
+Copying and pasting a link into your text will just write link as another word in your article. I'll use that last link as an example– if I copy and paste it into this paragraph it looks like this: /resources/how-to-write-a-link
 
 That's better than nothing as your visitors can highlight it, copy it and paste it into their web browser, but that's pretty clunky. We all know that links on the web look like text but there is something that sets them apart from the rest of the text that indicates that they're clickable/tappable and will take you somewhere else.
 
 
 ## How do I create a link then?
 
-If you know me, you'll know I've got a [bit of a thing for Markdown](/blog/what-is-markdown), so I'll be using that as an example of how to create your links. The principles hold true, regardless of what type of text editor you're using to write your website text, so hold on in there if Markdown sounds like some kind of witchcraft!
+If you know me, you'll know I've got a [bit of a thing for Markdown](/resources/what-is-markdown), so I'll be using that as an example of how to create your links. The principles hold true, regardless of what type of text editor you're using to write your website text, so hold on in there if Markdown sounds like some kind of witchcraft!
 
 A link is made up of two main parts:
 
@@ -52,7 +52,7 @@ So if you were linking to your contact page it would look like this:
 Links to pages within a particular section of your site often have a couple of forward slashes, for example:
 
 ```
-http://www.my-great-website.com/blog/my-great-article
+https://www.my-great-website.com/blog/my-great-article
 ```
 
 and all you have to do here type the bit just after your main website address, leaving something like:

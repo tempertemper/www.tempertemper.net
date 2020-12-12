@@ -3,7 +3,6 @@ title: Steph Black
 company: Steph Black Ceramic Artist
 intro: |
     It was a pleasure to work with Martin. He is concise, detailed, very affable but, more importantly, he listens.
-website: http://stephblack.co.uk/
 date: 2011-07-18
 feature: false
 ---

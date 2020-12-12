@@ -31,7 +31,7 @@ With this in mind, it's important to integrate your blog with your site. Not onl
 
 ## Keeping your visitors up to speed
 
-A great way of keeping people coming back to your site is an RSS feed. Your blog will generally have a way to subscribe to future posts - [Have a look at my article about RSS feeds here](http://tempertemper.net/blog/whats-rss-all-about). By subscribing, you'll know about every new recipe that's posted, or your football team's latest signing without having to visit the website! You'll be 'fed' a header and a snippet of the text and can decide whether it's a subject you're interested in and click the link you're given to the article on the site if you want to find out more.
+A great way of keeping people coming back to your site is an RSS feed. Your blog will generally have a way to subscribe to future posts - [Have a look at my article about RSS feeds here](/blog/whats-rss-all-about). By subscribing, you'll know about every new recipe that's posted, or your football team's latest signing without having to visit the website! You'll be 'fed' a header and a snippet of the text and can decide whether it's a subject you're interested in and click the link you're given to the article on the site if you want to find out more.
 
 
 ## Links between sites

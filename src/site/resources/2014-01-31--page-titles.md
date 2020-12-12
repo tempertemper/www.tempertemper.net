@@ -9,7 +9,7 @@ tags:
     - Meta-data
 ---
 
-A page title is [thought to be](/blog/the-great-unknown) one of the most important things on your page for being found on search engines. Page titles are [another one of those things ](/blog/page-descriptions) that do most of their work behind the scenes on a website.
+A page title is [thought to be](/resources/the-great-unknown) one of the most important things on your page for being found on search engines. Page titles are [another one of those things ](/resources/page-descriptions) that do most of their work behind the scenes on a website.
 
 But what _is_ a page title!? Well, you’ll have come across them in a few places:
 

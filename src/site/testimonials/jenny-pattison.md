@@ -3,7 +3,6 @@ title: Jenny Pattison
 company: JPG Design Studio
 intro: |
     Martin went above and beyond my expectations. It was great working with Martin and I would highly recommend him.
-website: http://lcf24d.org/
 date: 2015-09-30
 feature: false
 ---

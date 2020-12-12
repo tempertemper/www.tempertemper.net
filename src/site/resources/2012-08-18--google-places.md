@@ -15,4 +15,4 @@ It works in tandem with Google Maps to give searchers an overview of your busine
 
 Google verifies your address by sending you out a little postcard with a unique code on it. When it arrives through your door, all you have to do is enter the code at the web address they specify and you're away!
 
-So what are you waiting for! Head to [Google Places](http://www.google.com/places/) and set your profile up now to give your business that vital visibility boost!
+So what are you waiting for! Head to [Google Places](https://www.google.com/business/) and set your profile up now to give your business that vital visibility boost!

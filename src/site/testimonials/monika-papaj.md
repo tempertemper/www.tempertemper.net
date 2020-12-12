@@ -3,7 +3,6 @@ title: Monika Papaj
 company: Life Saving Training
 intro: |
     I couldn't have chosen a better person! … Martin was really helpful, amazingly patient, full of ideas and at the same time open to suggestions.
-website: http://monikapapaj.co.uk
 date: 2012-05-14
 feature: false
 ---

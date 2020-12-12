@@ -44,7 +44,7 @@ As with colour contrast, `display: none;` and [restyling lists](https://www.scot
 - browser compatibility with certain elements and attributes (`<datalist>` sounds like a great idea but comes with some accessibility drawbacks)
 - assistive tech like Dragon or NVDA compatibility with certain elements and attributes ([`type="number"`](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/), for example)
 - the user experience of certain elements – just because we *can* use an element doesn't mean we *should* (e.g. `<select multiple>` when something like `<input type="checkbox" />` probably provides better usability)
-- Giving extra information for search engines and other machines via [microformats](http://microformats.org) and [microdata](https://schema.org)
+- Giving extra information for search engines and other machines via [microformats](//microformats.org) and [microdata](https://schema.org)
 - Social media cards with [Open Graph](https://ogp.me) and [Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
 - responsive design (`<meta name="viewport" content="initial-scale=1, width=device-width" />`, `<picture>` and `srcset=""`)
 - catering for new devices, like iPhones X and above with their 'notches' ([`viewport-fit=cover`](https://webkit.org/blog/7929/designing-websites-for-iphone-x/))

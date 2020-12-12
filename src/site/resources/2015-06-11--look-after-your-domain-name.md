@@ -22,7 +22,7 @@ If someone else has registered it for you, at the very least make sure they have
 
 It seems like every month that there's news of another online service having their passwords leaked. If your password is leaked and you use the same password for other services the thieves can potentially break into your accounts that use the same password. And one of those accounts may be your domain name registration control panel.
 
-[Using a password manager](](/blog/password-security)) like 1Password will keep your domain name account logins unique and secure. It takes a wee bit of effort to make the switch, but it's well worth it for the peace of mind.
+[Using a password manager](/resources/password-security) like 1Password will keep your domain name account logins unique and secure. It takes a wee bit of effort to make the switch, but it's well worth it for the peace of mind.
 
 
 ## Implications of losing it
@@ -33,7 +33,7 @@ Once your domain has expired it is put back on the marketplace and someone else 
 
 ### Search engines
 
-Your online reputation is important. That's basically what search engine optimisation (SEO) is – how strong your reputation is in the eyes of search engines. In 1998 Tim Berners Lee [wrote an article](http://www.w3.org/Provider/Style/URI.html) saying:
+Your online reputation is important. That's basically what search engine optimisation (SEO) is – how strong your reputation is in the eyes of search engines. In 1998 Tim Berners Lee [wrote an article](https://www.w3.org/Provider/Style/URI.html) saying:
 
 > “Cool URIs don't change”
 
