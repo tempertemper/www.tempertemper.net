@@ -3,7 +3,6 @@ title: Phil Wilsdon
 company: Rombus Computers
 intro: |
     Martin seamlessly integrated with our development team and optimised the CSS on our websites to provide cross platform functionality.
-website: http://rombus.com
 date: 2012-10-08
 feature: false
 ---

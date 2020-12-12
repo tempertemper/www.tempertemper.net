@@ -3,7 +3,6 @@ title: John Ruiz
 company: JJR Plastering
 intro: |
     Martin was really easy to work with … and his customer care is excellent. I am very happy with my website and would recommend tempertemper to anyone.
-website: http://jjrplastering.co.uk
 date: 2012-09-10
 feature: false
 ---

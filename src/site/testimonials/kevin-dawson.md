@@ -3,7 +3,6 @@ title: Kevin Dawson
 company: Dawson Weath Management
 intro: |
     I was very impressed with both his knowledge and professionalism during our meetings and would have no problem in recommending any of his services.
-website: http://www.dawsonwealth.com/
 date: 2011-05-17
 feature: false
 ---
