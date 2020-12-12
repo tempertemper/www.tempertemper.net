@@ -11,6 +11,16 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Fixes
+- Removes internal absolute URLs
+- Removes a few stray `http://localhost:3000` links
+- Uses `https://` or `//` in links to avoid mixed content warnings
+- Fixes broken external URLs
+- Uses newer github repo URL to prevent redirect
+- Tidies up blue beanie article's link formatting
+- Changes all internal blog URLs that are now resources, to prevent reliance on redirects
+- Removes websites from testimonials which no longer have a website
+
 ----------
 
 
