@@ -34,7 +34,7 @@ A suite of [web apps for contact centres](https://www.evaluagent.com); I was res
 ## Frontend NE – Director
 <i>2015 to present</i>
 
-I'm a founder of [Frontend NE](https://frontendne.co.uk), a monthly meet-up started to create a community around frontend development in the North East. We held our our first [conference in 2018](https://2018.frontendne.co.uk) and [our second earlier this year](https://2019.frontendne.co.uk).
+I'm a founder of [Frontend NE](https://www.frontendne.co.uk), a monthly meet-up started to create a community around frontend development in the North East. We held our our first [conference in 2018](https://2018.frontendne.co.uk) and [our second earlier this year](https://2019.frontendne.co.uk).
 
 
 ## tempertemper – Owner

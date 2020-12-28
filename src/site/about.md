@@ -50,7 +50,7 @@ I'm a big believer in sharing. The web community is exceptionally generous and I
 
 ### A local meetup
 
-In 2015 I co-founded Frontend NE, a [monthly frontend web development meetup](https://frontendne.co.uk) and [annual conference](https://2019.frontendne.co.uk). The meetup gives frontend web developers a place to learn more about their craft, as well as put the web-world to rights over beer and pizza; while the conference draws folk in from further afield for a day of talks, learning and fun.
+In 2015 I co-founded Frontend NE, a [monthly frontend web development meetup](https://www.frontendne.co.uk) and [annual conference](https://2019.frontendne.co.uk). The meetup gives frontend web developers a place to learn more about their craft, as well as put the web-world to rights over beer and pizza; while the conference draws folk in from further afield for a day of talks, learning and fun.
 
 ### Speaking
 

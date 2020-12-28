@@ -29,11 +29,11 @@ So the time I had always put into organising the meet-up became harder and harde
 
 ## Coming up for air
 
-After months of refusing to entertain that Frontend NE might be one of the things that had to give, I made up my mind some time in August. It felt timely that the decision was made just after we had booked Robin Hall and Ade-Lee Adebiyi to talk on [looking after your mental wellbeing](https://frontendne.co.uk/events/2018-10-04).
+After months of refusing to entertain that Frontend NE might be one of the things that had to give, I made up my mind some time in August. It felt timely that the decision was made just after we had booked Robin Hall and Ade-Lee Adebiyi to talk on [looking after your mental wellbeing](https://www.frontendne.co.uk/events/2018-10-04).
 
-[December's meet-up](https://frontendne.co.uk/events/2018-12-06) has just passed and it was the first I haven't been involved in. It wasn't without a tinge of sadness that I headed straight home from work, rather that to Frontend NE, but it felt *right*.
+[December's meet-up](https://www.frontendne.co.uk/events/2018-12-06) has just passed and it was the first I haven't been involved in. It wasn't without a tinge of sadness that I headed straight home from work, rather that to Frontend NE, but it felt *right*.
 
-The month since [my final meetup](https://frontendne.co.uk/events/2018-11-01) has been everything I hoped it would be. I've had some breathing space (well, as much breathing space as being a father of two allows!) for the first time in recent memory. Instead of organising speakers, sponsors, pizzas, drinks, hands-on-deck, I've been able to start one or two of those pet projects that have been in my sights for years. I've had that wee bit more time to spend with the kids; a wee bit more to be with my wife.
+The month since [my final meetup](https://www.frontendne.co.uk/events/2018-11-01) has been everything I hoped it would be. I've had some breathing space (well, as much breathing space as being a father of two allows!) for the first time in recent memory. Instead of organising speakers, sponsors, pizzas, drinks, hands-on-deck, I've been able to start one or two of those pet projects that have been in my sights for years. I've had that wee bit more time to spend with the kids; a wee bit more to be with my wife.
 
 
 ## Thanks and see you at the conference
