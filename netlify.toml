@@ -535,6 +535,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/resources/discrimination-on-the-web"
+  to = "/resources/disability-on-the-web"
+  status = 301
+  force = true
+
 
 ## Category redirects
 
