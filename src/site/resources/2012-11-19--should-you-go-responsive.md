@@ -7,7 +7,7 @@ tags:
     - Accessibility
 ---
 
-Accessibility is central to the web. It's not just [less able visitors](/resources/discrimination-on-the-web) you should be considering, but the multitude of devices people access the internet on nowadays.
+Accessibility is central to the web. It's not just [less able visitors](/resources/disability-on-the-web) you should be considering, but the multitude of devices people access the internet on nowadays.
 
 How easy will your website be to view on the small screen of an iPhone? How about a widescreen television? What about all the sizes in between?
 

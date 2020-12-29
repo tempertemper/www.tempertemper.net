@@ -19,7 +19,7 @@ I used to like the hyphen because:
 
 Hyphenating was a nice middle ground.
 
-I remember a conversation over a couple of beers with my friends Sam and Colin when we were first discussing [starting a meet-up for frontend developers in the North East](https://sam.beckham.io/wrote/starting-a-meetup/). We were going to call it [Frontend NE](https://frontendne.co.uk), but should it be hyphenated? All one word? We all agreed it shouldn't have a space, so that was *something*.
+I remember a conversation over a couple of beers with my friends Sam and Colin when we were first discussing [starting a meet-up for frontend developers in the North East](https://sam.beckham.io/wrote/starting-a-meetup/). We were going to call it [Frontend NE](https://www.frontendne.co.uk), but should it be hyphenated? All one word? We all agreed it shouldn't have a space, so that was *something*.
 
 We decided to go with one word because:
 
