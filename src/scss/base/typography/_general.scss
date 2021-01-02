@@ -28,13 +28,18 @@ html {
 }
 
 blockquote {
-  border-left: .75em solid $colour-primary-light;
+  border-left: .25em solid $colour-primary-lighter;
+  font-style: italic;
   margin-left: 0;
   margin-right: 0;
-  padding: .5em 0 .5em 1em;
+  padding: .25em 0 .25em .75em;
+
+  @media (min-width: $l) {
+    margin-left: -1em;
+  }
 
   @include dark-mode() {
-    border-left-color: $colour-dark-mode-highlight;
+    border-left-color: $colour-dark-mode-primary;
   }
 
   ul,
