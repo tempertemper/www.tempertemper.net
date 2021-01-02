@@ -11,11 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.13.4] - 2021-01-02
+
 ### Changes
 - Restyles `<blockquote>` with italics, a thinner line and hanging line on larger screens
 - increases font size to reduce line length on medium screens
-
-----------
 
 
 ## [5.13.3] - 2020-12-12
