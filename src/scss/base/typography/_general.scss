@@ -28,11 +28,11 @@ html {
 }
 
 blockquote {
-  border-left: .25em solid $colour-primary-lighter;
+  border-left: .15em solid $colour-primary-lighter;
   font-style: italic;
   margin-left: 0;
   margin-right: 0;
-  padding: .25em 0 .25em .75em;
+  padding: .25em 0 .25em .85em;
 
   @media (min-width: $l) {
     margin-left: -1em;
