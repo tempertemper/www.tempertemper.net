@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Adds border to focussed links
+- Uses underline for focussed links
+- Thins `<blockquote>` marker line slightly
+
 ----------
 
 
