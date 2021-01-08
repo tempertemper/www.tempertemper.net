@@ -20,7 +20,6 @@
     [headers.values]
     Access-Control-Allow-Origin = "*"
 
-
 # Internal redirects
 
 ## Redirect default Netlify subdomain to primary domain
