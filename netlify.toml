@@ -19,9 +19,6 @@
   for = "/assets/fonts/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
-  for = "/*"
-    [headers.values]
-    Content-Type = "text/vtt"
 
 # Internal redirects
 
