@@ -11,10 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.13.6] - 2021-01-08
+
 ### Adds
 - Adds video styling, in line with image styling
-
-----------
 
 
 ## [5.13.5] - 2021-01-07
