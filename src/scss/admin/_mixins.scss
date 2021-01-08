@@ -114,3 +114,15 @@
     width: 100%+$spacing+$spacing;
   }
 }
+
+@mixin embedded-media {
+  border-radius: $border-radius-default;
+  background-color: $colour-primary-light;
+  @include dark-mode($background: $colour-dark-mode-highlight);
+  display: block;
+  box-shadow: 0 0 .25em lighten($black, 85%);
+
+  @include dark-mode() {
+    box-shadow: 0 0 .25em $colour-dark-mode-black;
+  }
+}
