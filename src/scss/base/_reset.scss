@@ -29,6 +29,7 @@ code {
 }
 
 img,
+video,
 address,
 pre,
 .map {
@@ -125,7 +126,8 @@ textarea {
   resize: vertical;
 }
 
-img {
+img,
+video {
   height: auto;
   width: 100%;
 }
