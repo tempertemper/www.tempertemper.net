@@ -21,3 +21,14 @@
 .read-more {
   font-family: $font--heading;
 }
+
+img,
+video {
+
+  &.natural-dimensions {
+    margin-right: 0;
+    margin-left: 0;
+    width: auto;
+    max-width: 100%;
+  }
+}
