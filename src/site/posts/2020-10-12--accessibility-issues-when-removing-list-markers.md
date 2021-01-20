@@ -27,7 +27,7 @@ It would never have been too much of an issue if lists were used sparingly, but 
 
 There are bound to be occasions when you want a list to be read out properly on VoiceOver but visual list markers don't make sense. An in-line navigation group is be a good example, where a screen reader user would find it useful to know how many items they had to go through, but bullets would look odd, with those items all in a row.
 
-Scott O'Hara offers a [solid HTML-based solution](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html), but if CSS is the culprit, the fix should also be with CSS, which is where [the real fix](https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/) comes in:
+Scott O'Hara offers a [solid HTML-based solution](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html#a-fix-for-the-fix) by adding `role="list"` to the `<ul>` or `<ol>`, but if CSS is the culprit, the fix should also be with CSS, which is where [the real fix](https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/) comes in:
 
 ```css
 li {
