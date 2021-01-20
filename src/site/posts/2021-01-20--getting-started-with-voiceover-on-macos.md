@@ -7,7 +7,7 @@ tags:
     - Accessibility
     - Apple
 summaryImage: voiceover.png
-summaryImageAlt: The VoiceOver caption panel, saying "VoiceOver on Safari, Getting started with VoiceOver for macOS, window, Getting started with VoiceOver for macOS, web content has keyboard focus"
+summaryImageAlt: The VoiceOver caption panel, saying "VoiceOver on Safari, Getting started on VoiceOver for macOS, window, Getting started with VoiceOver on macOS, web content has keyboard focus"
 ---
 
 An understanding of how screen readers work is an important part of the journey for anyone who works on digital products. It gives us an appreciation for the many ways people use the web, and there are two solid things you can do:
