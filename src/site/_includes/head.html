@@ -48,7 +48,7 @@
         {%- set imageHeight = 512 %}
     {%- endif %}
     <meta property="og:site_name" content="tempertemper Web Design" />
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url | replace('.html', '') }}" />
     <meta property="og:title" content="{{ pageTitle }}" />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:image" content="{{ cardImage }}" />
@@ -71,7 +71,7 @@
     <meta name="twitter:creator" content="{{ site.author.twitter }}" />
     <meta name="twitter:title" content="{{ pageTitle }}" />
     <meta name="twitter:description" content="{{ description }}" />
-    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url | replace('.html', '') }}" />
     <meta name="twitter:image" content="{{ cardImage }}" />
     <meta name="twitter:image:alt" content="{{ imageAlt }}" />
 
