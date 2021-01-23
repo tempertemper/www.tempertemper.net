@@ -15,6 +15,9 @@ All notable changes to this project will be documented in this file. The format 
 - lightens logo underscore
 - Changes 'light' Light Mode colour variable to 'lightest' and introduces new 'light'
 
+### Fixes
+- Fixes scrollbar colour in Light Mode so that it's dark against the white background instead of white
+
 ----------
 
 
