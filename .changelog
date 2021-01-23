@@ -11,6 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- lightens logo underscore
+- Changes 'light' Light Mode colour variable to 'lightest' and introduces new 'light'
+- Uses original brand blue for top and bottom strips
+
+### Fixes
+- Fixes scrollbar colour in Light Mode so that it's dark against the white background instead of white
+
 ----------
 
 
