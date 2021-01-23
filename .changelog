@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - lightens logo underscore
+- Changes 'light' Light Mode colour variable to 'lightest' and introduces new 'light'
 
 ----------
 
