@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.13.7] - 2021-01-23
+
 ### Changes
 - lightens logo underscore
 - Changes 'light' Light Mode colour variable to 'lightest' and introduces new 'light'
@@ -18,8 +23,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Fixes scrollbar colour in Light Mode so that it's dark against the white background instead of white
-
-----------
 
 
 ## [5.13.6] - 2021-01-08
