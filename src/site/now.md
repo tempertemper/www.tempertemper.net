@@ -6,9 +6,10 @@ layout: default
 permalink: now.html
 ---
 
+- Bracing for a few weeks without a kitchen as we have the new one installed; portable hobs bought, a big tub ready for doing the washing-up in the bath, and lots of meals batch-cooked and frozen
 - After a tumultuous 2020, really settling into my new role as Principal Experience Designer at Sage
 - Sharing my 'office' with my 9 year old daughter now that the school has been closed again
-- Preparing myself for my 4 year old son inevitably bursting into the room during serious meetings, now that the nursery has been closed
-- Finishing the organisation of a new kitchen, due for installation in February; which hopefully won't be prevented by a full lockdown
+- Happy I'm back up to three 10 kilometre runs per week again after a bit of a dip over the festive season (and there's still a bit of Christmas over-indulgence to work off!)
+- Still missing The Sopranos, but enjoying our new lockdown box set viewing: The Wire
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
