@@ -17,6 +17,7 @@ summaryImageType: jpg
     <img src="/assets/img/martin-underhill-tempertemper.jpg" alt="Martin Underhill of tempertemper Web Design, holding a cup of tea and looking to his left, smiling." width="800" height="450">
 </picture>
 
+
 ## My career in the web
 
 I love the web. It's [for everyone](https://twitter.com/timberners_lee/status/228960085672599552). Anyone can access information and anyone can have a voice.
