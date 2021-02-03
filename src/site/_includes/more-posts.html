@@ -14,8 +14,8 @@
     {%- set linkToList = '/portfolio/' %}
     {%- set items = collections.case_study %}
 {%- endif %}
-<section aria-label="Further reading" class="teaser">
-    <h2>More {{ typeOfThing }}</h2>
+<section aria-labelledby="further-reading-heading" class="teaser">
+    <h2 id="further-reading-heading">More {{ typeOfThing }}</h2>
     <p>Here are a couple more {{ typeOfThing }} for you to enjoy. If that's not enough, have a look at <a href="{{ linkToList }}">the full list</a>.</p>
     <ol class="hfeed index-list" reversed>
         {%- set limit = 2 %}
