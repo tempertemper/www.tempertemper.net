@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Uses `aria-labelledby` instead of `aria-label` for sections where appropriate
+
+### Fixes
+- Uses same text testimonial 'read more' visually and programmatically
+
 ----------
 
 
