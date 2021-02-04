@@ -18,6 +18,9 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Uses same text testimonial 'read more' visually and programmatically
 
+### Removes
+- Removes unused contact form CSS
+
 ----------
 
 
