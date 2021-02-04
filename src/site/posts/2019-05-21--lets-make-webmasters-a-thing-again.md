@@ -14,7 +14,7 @@ Lately, I've been wondering whether we didn't have it right in the first place.
 
 ## How much control should our clients have?
 
-Every time I encounter Wordpress I get a wee bit sad. Let's look past the generic themes, the awful markup and the hundreds of kilobytes of unused CSS and JavaScript – it allows our clients to change pretty much anything they want to, rightly or wrongly.
+Every time I encounter Wordpress I get a wee bit sad. Let's look past the generic themes, the awful markup and the hundreds of kilobytes of unused CSS and JavaScript -- it allows our clients to change pretty much anything they want to, rightly or wrongly.
 
 They can upload images with unchecked file-sizes and design-breaking aspect ratios, write an ill-informed 20 word heading or 6 paragraphs of intro text, install plugins unchecked; maybe even use `<strong>` tags as headers, capitals for emphasis, you name it! Not long after the reins are handed over, the site's design and potentially all of your best SEO guidance can go down the pan.
 
@@ -45,7 +45,7 @@ The more experience I gained as a web designer, the longer I spent in conversati
 
 And while a wee bit of time was saved on the UI design as I wasn't designing for too many unknowns, when requirements were complex it could often be time consuming to develop.
 
-Then there was the training – it's invariably a good idea to spend some time taking the owner through their CMS, showing them how to update page content, add blog posts, and so on. Screen-casts were a great tool here, so there was always a reminder.
+Then there was the training -- it's invariably a good idea to spend some time taking the owner through their CMS, showing them how to update page content, add blog posts, and so on. Screen-casts were a great tool here, so there was always a reminder.
 
 ### Changing needs
 
@@ -60,9 +60,9 @@ I think a more collaborative approach to delivering fresh content is necessary i
 
 It also means conversations around content happen little and often, and are *always* relevant; there's no effort put into designing (either the site or the CMS) for content that *might* be added.
 
-Accountability is a big thing too – in my experience, clients appreciate a periodic nudge: "Hi! Any new blog posts for me to upload?"
+Accountability is a big thing too -- in my experience, clients appreciate a periodic nudge: "Hi! Any new blog posts for me to upload?"
 
-I'm not saying to go back to email – email is messy; a difficult tool for keeping conversations organised. The good news is there are lots of [great, and often free, tools](https://trello.com) that we can use to deliver and have a conversation around content. But the principle is the same as it used to be:
+I'm not saying to go back to email -- email is messy; a difficult tool for keeping conversations organised. The good news is there are lots of [great, and often free, tools](https://trello.com) that we can use to deliver and have a conversation around content. But the principle is the same as it used to be:
 
 1. The client sends through some content to be added to their website
 2. You, the webmaster, ask some questions about the content, for example:

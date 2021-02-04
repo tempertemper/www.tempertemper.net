@@ -13,7 +13,7 @@ The up-coming Apple operating systems, iOS 13 (and iPad OS) and macOS Catalina, 
 
 ## Sharing folders in the file system
 
-This is one thing that iCloud Drive really has been missing – the ability to share a folder full of files (or more folders!) with someone else. I operate on a paperless basis, both at home and at work; I invested in a [decent scanner](https://www.scansnapit.com/products/scansnap-s1300i/) and use a consistent file naming convention that makes it easy to find a document I've scanned.
+This is one thing that iCloud Drive really has been missing -- the ability to share a folder full of files (or more folders!) with someone else. I operate on a paperless basis, both at home and at work; I invested in a [decent scanner](https://www.scansnapit.com/products/scansnap-s1300i/) and use a consistent file naming convention that makes it easy to find a document I've scanned.
 
 This is fine if it's just me that needs access to these thousands of documents, but there are two people that run our household, so my wife currently has to rely on me if she needs a bill for proof of address or something like that.
 

@@ -1,5 +1,5 @@
 ---
-title: Hero images – pros and cons
+title: Hero images -- pros and cons
 intro: |
     Hero images are those big images at the top of a blog post. They have some compelling benefits, but there are some things to consider.
 date: 2019-11-25
@@ -11,7 +11,7 @@ Hero images are those big images at the top of a web page. They can be used on h
 
 As with any design, there are pros and cons, but the thing you should keep in mind as you read this article is: *do you need an image* at the top of your blog post? A big, bold, typographically interesting, and well written heading can do a lot of the work an image might otherwise have done.
 
-It's also worth mentioning that I'm not talking about images you might use throughout your article to illustrate various points your making – it's that big one at the top that, together with the heading, sums up the contents of your article.
+It's also worth mentioning that I'm not talking about images you might use throughout your article to illustrate various points your making -- it's that big one at the top that, together with the heading, sums up the contents of your article.
 
 
 ## The advantages of hero images
@@ -52,7 +52,7 @@ Not only do you have a blog post to write, which is a lot of work in itself, but
 
 None of these is a great solution.
 
-A great way around this is to outsource or delegate the sourcing of blog hero images to your brand manager or designer. This means you have to pay someone—something that should be factored into the ongoing cost of your website—but it allows you to post that article you've taken time to write, knowing that it's going to look great.
+A great way around this is to outsource or delegate the sourcing of blog hero images to your brand manager or designer. This means you have to pay someone---something that should be factored into the ongoing cost of your website---but it allows you to post that article you've taken time to write, knowing that it's going to look great.
 
 
 ## What to do

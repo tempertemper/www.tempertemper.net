@@ -1,20 +1,20 @@
 ---
 title: Disability on the web
 intro: |
-    Just like in 'real' life, your visitors come in all shapes and sizes. Inclusivity is—rightly—front and centre for businesses these days.
+    Just like in 'real' life, your visitors come in all shapes and sizes. Inclusivity is---rightly---front and centre for businesses these days.
 date: 2012-11-03
 tags:
     - Accessibility
 ---
 
-Just like in 'real' life, your visitors come in all shapes and sizes. Inclusivity is—rightly—front and centre for businesses these days.
+Just like in 'real' life, your visitors come in all shapes and sizes. Inclusivity is---rightly---front and centre for businesses these days.
 
 There are a couple of takes on this when it comes to the web:
 
 1. Everybody is entitled to access the wealth of information on the web, including your website
 2. You don't want to lose sales by making it difficult or impossible for less able visitors to access your website
 
-The first is clearly the more sensible reason – internet access is considered a [basic human right](//news.bbc.co.uk/1/hi/8548190.stm) by the majority of people. Web access is beneficial on so many levels, from access to knowledge and breaking news to the cheapest deals on your car insurance!
+The first is clearly the more sensible reason -- internet access is considered a [basic human right](//news.bbc.co.uk/1/hi/8548190.stm) by the majority of people. Web access is beneficial on so many levels, from access to knowledge and breaking news to the cheapest deals on your car insurance!
 
 If this wasn't enough, reason number two provides a more hard-nosed business reason for making your website accessible to less-abled users.
 
@@ -32,7 +32,7 @@ Both of these groups can be catered for with well-written web pages. By that I m
 
 ## Some other considerations
 
-What about much more common barriers – partially sighted visitors may find the text on your site difficult to read if the size is too small or the contrast with the background isn't sufficient. Tiny dark grey text on a lighter grey background might not be the best idea!
+What about much more common barriers -- partially sighted visitors may find the text on your site difficult to read if the size is too small or the contrast with the background isn't sufficient. Tiny dark grey text on a lighter grey background might not be the best idea!
 
 Important content such as [calls to action](/resources/calls-to-action) should take the many forms of colour blindness into consideration or you stand to confuse your colour blind visitors.
 

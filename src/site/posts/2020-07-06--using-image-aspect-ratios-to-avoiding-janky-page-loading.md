@@ -61,8 +61,8 @@ The hack is possible because vertical padding is calculated based on the *width*
 
 The problems here are:
 
-- extra markup – you'll need a `<div class="image-wrapper">` around *every* image on your site
-- extra styling – the CSS above
+- extra markup -- you'll need a `<div class="image-wrapper">` around *every* image on your site
+- extra styling -- the CSS above
 - all images would be stuck with the same aspect ratio (16:9 in the above example)
 - any images with a different aspect ratio (say 4:3) would need:
     - a dedicated class in the HTML
@@ -74,7 +74,7 @@ The problems here are:
 
 What's more, if the CSS is telling the image to be `width: 100%;` or `max-width: 100%;`, it knows the width, which allows it to set a height using the aspect ratio it has gleaned from the `width` and `height` in the markup.
 
-So you can carry on reading that paragraph under it the image—or even click that link!—without worrying about the contents jumping down.
+So you can carry on reading that paragraph under it the image---or even click that link!---without worrying about the contents jumping down.
 
 {% set youtubeVideoTitle = "Image loading behaviour when aspect ratio is derived from size attributes (video)" %}
 {% set youtubeVideoID = "iHCopqc8kWc" %}

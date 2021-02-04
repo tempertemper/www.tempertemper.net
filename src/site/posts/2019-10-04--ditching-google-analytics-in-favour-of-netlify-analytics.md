@@ -10,7 +10,7 @@ tags:
 
 Having [moved my website to Netlify](/blog/moving-to-netlify), I've been pretty excited about some of the features they offer, one in particular has been [Netlify Analytics](https://www.netlify.com/products/analytics/).
 
-Ditching Google Analytics has been incredibly satisfying; although it's free of charge, I've never been comfortable with it. Mainly because it's a Google product (i.e. intrusive and creepy), but also because I don't really care about a lot of the information it provides. My visitors' location, browser, OS, general behaviour, is their business. Real-time information is fun, but—again—uninteresting to me. I can see why some businesses really would want to know all of this, but all I want are:
+Ditching Google Analytics has been incredibly satisfying; although it's free of charge, I've never been comfortable with it. Mainly because it's a Google product (i.e. intrusive and creepy), but also because I don't really care about a lot of the information it provides. My visitors' location, browser, OS, general behaviour, is their business. Real-time information is fun, but---again---uninteresting to me. I can see why some businesses really would want to know all of this, but all I want are:
 
 - Some basic numbers that show me which pages are more popular
 - Where people are coming to my site from
@@ -26,7 +26,7 @@ My visitors' privacy is important to me, so not only does this switch mean there
 
 ## Performance
 
-Performance is high on my list of priorities for my site and analytics running on the server rather than in the browser means there's no burden or performance hit on the user – it's all just server logs.
+Performance is high on my list of priorities for my site and analytics running on the server rather than in the browser means there's no burden or performance hit on the user -- it's all just server logs.
 
 
 ## Extras

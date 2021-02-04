@@ -1,13 +1,13 @@
 ---
 title: Blue Beanie Day
 intro: |
-    The web is very young and is still developing—as well as growing—at a rapid pace. For a long time it was pretty fragmented; a mismatch of all sorts of different technologies being used to display a website and provide functionality.
+    The web is very young and is still developing---as well as growing---at a rapid pace. For a long time it was pretty fragmented; a mismatch of all sorts of different technologies being used to display a website and provide functionality.
 date: 2012-11-30
 tags:
     - Development
 ---
 
-The web is very young and is still developing—as well as growing—at a rapid pace. For a long time it was pretty fragmented; a mismatch of all sorts of different technologies being used to display a website and provide functionality.
+The web is very young and is still developing---as well as growing---at a rapid pace. For a long time it was pretty fragmented; a mismatch of all sorts of different technologies being used to display a website and provide functionality.
 
 Over the last couple of few years, many valiant people have been on a quest for some kind of standardisation, and that's what blue beanie day's all about!
 

@@ -23,7 +23,7 @@ It has become expected of businesses that they have an online presence. Without 
 
 The internet is the first place that most people go to look for your business and your website provides them with a tangible introduction to you and what you do, as well as a convenient and efficient way to get in touch.
 
-Potential clients you meet that are interested to find out a bit more about you would be lost without your website. A phone call or a trip to see you may do the trick, but both of these things tend to come once they've  decided to use your product or services. The internet represents a convenient way of quickly finding out all of the information they need and—crucially—forming an impression of your business and being able to make the first contact there and then; all from the comfort of their home or office at any time they please, day or night.
+Potential clients you meet that are interested to find out a bit more about you would be lost without your website. A phone call or a trip to see you may do the trick, but both of these things tend to come once they've  decided to use your product or services. The internet represents a convenient way of quickly finding out all of the information they need and---crucially---forming an impression of your business and being able to make the first contact there and then; all from the comfort of their home or office at any time they please, day or night.
 
 
 ## Existing Clients
@@ -35,4 +35,4 @@ Your website can be a good resource to stay in regular contact with your existin
 
 I specialise in making websites for small businesses and startups. My client base includes various health practitioners, including a yoga practice. You're welcome to take a look at my work to see some examples of the style of website your business could benefit from.
 
-I take a keen interest in products, services and people at the heart of each project I work on, ensuring a true reflection of your business and its values. I also make sure that all my sites are user friendly, helping you to organise your content as concisely as possible, which encourages visitors to stay longer and learn more. I believe these two factors are the key to making the end product—your website—as successful as possible.
+I take a keen interest in products, services and people at the heart of each project I work on, ensuring a true reflection of your business and its values. I also make sure that all my sites are user friendly, helping you to organise your content as concisely as possible, which encourages visitors to stay longer and learn more. I believe these two factors are the key to making the end product---your website---as successful as possible.

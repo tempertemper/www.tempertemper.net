@@ -18,6 +18,6 @@ This is partly because I haven't rebranded, but mainly because I don't see the p
 - can cause usability issues that will need to be addressed
 - can cause accessibility issues that will need fixing
 
-That said, fair play to you if you have the time and inclination – it can be fun and it's great to see write-ups of the design rationale and development challenges faced.
+That said, fair play to you if you have the time and inclination -- it can be fun and it's great to see write-ups of the design rationale and development challenges faced.
 
 For me, though, I'll keep on iterating.

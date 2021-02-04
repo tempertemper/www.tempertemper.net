@@ -13,9 +13,9 @@ After posting my article on [rebasing versus merging](/blog/git-rebase-versus-me
 
 ## Branch diffs
 
-We're talking about commits here, so a `git diff` isn't what we're after – that would give us the unstaged changes in the files themselves. We want a higher-level overview of the changes we've already made and commmitted on a branch.
+We're talking about commits here, so a `git diff` isn't what we're after -- that would give us the unstaged changes in the files themselves. We want a higher-level overview of the changes we've already made and commmitted on a branch.
 
-`git log` does more than I first thought – you can use it to view *only the commits that're different* from the base branch. Very useful! This is how:
+`git log` does more than I first thought -- you can use it to view *only the commits that're different* from the base branch. Very useful! This is how:
 
 ```git
 git log master..

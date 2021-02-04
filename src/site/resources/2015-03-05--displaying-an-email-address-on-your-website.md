@@ -29,7 +29,7 @@ Nice and straightforward, but how many people will actually do that? Let's break
 3. Switch to or open your email app
     - Search for your email app and open it. Easy.
     - Open your web browser and find your email app amongst your bookmarks
-4. Compose/open a new email. Straightforward enough – just tap the icon.
+4. Compose/open a new email. Straightforward enough -- just tap the icon.
 5. Paste the email address into the `To:` field. It didn't copy? Switch back to your web browser and start again. Got it now? Good stuff.
 
 Visitors to your website want things to be easy. Although that process is fairly straightforward, it presents a **barrier**.
@@ -83,11 +83,11 @@ There are ways your web designer can go some way to disguising your email addres
 
 ## Contact forms
 
-Having a form on your website with a few input boxes (name, email, message – that kind of thing) is the easiest way for visitors to your website to send you a message. Here's a quick run-down of the advantages:
+Having a form on your website with a few input boxes (name, email, message -- that kind of thing) is the easiest way for visitors to your website to send you a message. Here's a quick run-down of the advantages:
 
 - No copying and pasting! Makes it as easy as possible to send a message: just fill out a form on the website and hit 'send'.
 - You can allow the sender to do things they might not be able to in a normal email, for example, selecting an option from a dropdown menu or ticking a checkbox to join your mailing list.
-- Keep anyone who sends you a message on your website – no opening of more apps.
+- Keep anyone who sends you a message on your website -- no opening of more apps.
 - Allow you to offer the sender something to do: "Your message has been sent. Why not check out our blog?"
 - Remove any educated guesswork as to the best way to present an email (plain text or mailto link).
 - Keep your actual email address completely private, away from  the prying eyes of spam-bots.

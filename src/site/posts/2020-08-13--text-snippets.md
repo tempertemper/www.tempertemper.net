@@ -27,7 +27,7 @@ I've used Text Replacement on my iPhone for a long time, where TextExpander wasn
 
 I didn't use TextExpander for anything particularly powerful; just small conveniences like autocompleting an email address here, or adding an email signature there.
 
-Even then, there weren't *that many* snippets on my iOS device – just often-typed words; especially those that contained <kbd>@</kbd> signs and other fiddly punctuation.
+Even then, there weren't *that many* snippets on my iOS device -- just often-typed words; especially those that contained <kbd>@</kbd> signs and other fiddly punctuation.
 
 The convention I used was either double initial letter or an abbreviation that I knew wouldn't clash with a real word, so:
 
@@ -55,7 +55,7 @@ On top of that, I mapped a few custom emojis to emoticons that aren't part of Ap
 - <kbd>:o</kbd> for 'surprised face with open mouth' (😮)
 - <kbd>:\\</kbd> for 'confused face' (😕)
 
-(If you're thinking of following suite, be sure to use a backslash for that last one – a forward slash will start getting in the way when typing the <kbd>https://</kbd> part of URLs!)
+(If you're thinking of following suite, be sure to use a backslash for that last one -- a forward slash will start getting in the way when typing the <kbd>https://</kbd> part of URLs!)
 
 And finally, I've got a bunch text shortcuts set up to output frequently used emojis that don't visually map to combinations of colons, semicolons, brackets, etc., such as:
 

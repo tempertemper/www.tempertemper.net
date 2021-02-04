@@ -98,7 +98,7 @@ That would mean you:
 - Won't run into issues because a project needs an older version of node than the one running globally
 - Don't have to worry about forgetting to switch back to the global version when you're finished work on that project
 
-Well, all you have to do is add a script to your Bash or Zsh config file (depending on which shell you use – those two are pretty popular). The script checks for an .nvmrc file; if there is one, it switches to the specified version of node automatically. When you move out of the folder again, it reverts back to the global version.
+Well, all you have to do is add a script to your Bash or Zsh config file (depending on which shell you use -- those two are pretty popular). The script checks for an .nvmrc file; if there is one, it switches to the specified version of node automatically. When you move out of the folder again, it reverts back to the global version.
 
 #### If using Zsh
 1. Add [this script](https://github.com/nvm-sh/nvm#zsh) to the bottom of your ~/.zshrc file:

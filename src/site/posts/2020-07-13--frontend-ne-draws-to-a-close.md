@@ -9,7 +9,7 @@ summaryImageAlt: The Frontend NE logo, consisting of a rectangle on top of a les
 
 Frontend NE has been a part of my life for five and a half years; for all but one of those it was massive. Earlier this year, we announced it was time to stop once and for all, but it had come in stages for me.
 
-I've written about how, on the back of 45 meet-ups and a [wildly successful conference](https://2018.frontendne.co.uk), I stepped back from the meet-up. Although it was a sad decision, it was absolutely the right one – in the summer, I had started to [burn out](https://en.wikipedia.org/wiki/Occupational_burnout) and it was starting to have a real effect on my family.
+I've written about how, on the back of 45 meet-ups and a [wildly successful conference](https://2018.frontendne.co.uk), I stepped back from the meet-up. Although it was a sad decision, it was absolutely the right one -- in the summer, I had started to [burn out](https://en.wikipedia.org/wiki/Occupational_burnout) and it was starting to have a real effect on my family.
 
 We agreed that it would have to be fully 'out' as:
 

@@ -34,7 +34,7 @@ I was wrong. You see, I do most of my screen reader testing in VoiceOver, which 
 
 `<aside>`s get an [implicit ARIA landmark role](/blog/implicit-aria-landmark-roles) of `complementary` and it turns out you shouldn't use `role="complementary"` inside any other landmarks.
 
-It makes sense when you think about it – it's content that's complementary to the *document itself*, not a *part* of the document. Using `<main>` as an example, once you've used the `<main>`  landmark, you've told the browser that that's the primary page content, so any `<aside>`s in there would be related to that, not the document itself.
+It makes sense when you think about it -- it's content that's complementary to the *document itself*, not a *part* of the document. Using `<main>` as an example, once you've used the `<main>`  landmark, you've told the browser that that's the primary page content, so any `<aside>`s in there would be related to that, not the document itself.
 
 What's more, [Deque's documentation on the use of `<aside>` explains](https://dequeuniversity.com/rules/axe/3.3/landmark-complementary-is-top-level) that misuse can cause problems for some screen readers:
 
@@ -58,7 +58,7 @@ So here's how we'd alter the earlier example:
 </body>
 ```
 
-Basically, as soon as you've defined any landmark on the page, you've ruled out using an `<aside>` in there – `<aside>`s have to be children of the `<body>` element (with as many `<div>`s in between as you like) or you're making life difficult for screen reader users.
+Basically, as soon as you've defined any landmark on the page, you've ruled out using an `<aside>` in there -- `<aside>`s have to be children of the `<body>` element (with as many `<div>`s in between as you like) or you're making life difficult for screen reader users.
 
 Here's a quick run-down of the sectioning elements that you shouldn't use an `<aside>` inside of:
 
@@ -69,7 +69,7 @@ Here's a quick run-down of the sectioning elements that you shouldn't use an `<a
 - `<nav>`
 - `<section>`
 
-It's worth mentioning that it *is* safe to use `<articles>`s, `<footer>`s, `<header>`s, `<nav>`s, and `<section>`s (not `<main>` – only one of those is allowed per page) *inside* an `<aside>`.
+It's worth mentioning that it *is* safe to use `<articles>`s, `<footer>`s, `<header>`s, `<nav>`s, and `<section>`s (not `<main>` -- only one of those is allowed per page) *inside* an `<aside>`.
 
 
 ## Avoiding this kind of thing in future

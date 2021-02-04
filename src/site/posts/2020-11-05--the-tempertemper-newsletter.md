@@ -47,7 +47,7 @@ I don't want to bombard people, and I don't want to hold myself to too frequent 
 I had toyed with bimonthly to really take the pressure off, but:
 
 - how would I describe it? "Bimonthly" is ambiguous: does it mean twice a month or every two months?
-- recipients could feel the emails landed randomly – which month is the delivery month again?
+- recipients could feel the emails landed randomly -- which month is the delivery month again?
 - missing every other month breaks a rhythm, and people like rhythm
 - every two months is too long a gap
 

@@ -33,7 +33,7 @@ Once your domain has expired it is put back on the marketplace and someone else 
 
 ### Search engines
 
-Your online reputation is important. That's basically what search engine optimisation (SEO) is – how strong your reputation is in the eyes of search engines. In 1998 Tim Berners Lee [wrote an article](https://www.w3.org/Provider/Style/URI.html) saying:
+Your online reputation is important. That's basically what search engine optimisation (SEO) is -- how strong your reputation is in the eyes of search engines. In 1998 Tim Berners Lee [wrote an article](https://www.w3.org/Provider/Style/URI.html) saying:
 
 > “Cool URIs don't change”
 
@@ -60,8 +60,8 @@ If your website hosting, on the other hand, was to suddenly expire, you can reco
 
 The moral of the story is:
 
-- Look after renewals yourself – don't entrust anyone else to do it for you
+- Look after renewals yourself -- don't entrust anyone else to do it for you
 - Set multiple reminders so that you don't forget to renew it
 - Protect your domain name account with a solid password
 
-Do all of this and you'll never be in a position where you have to buy your domain back at an exorbitant price or—worse—lose all that time and effort you put into your online reputation.
+Do all of this and you'll never be in a position where you have to buy your domain back at an exorbitant price or---worse---lose all that time and effort you put into your online reputation.

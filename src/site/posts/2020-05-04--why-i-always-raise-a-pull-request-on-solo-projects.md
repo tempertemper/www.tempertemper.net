@@ -59,7 +59,7 @@ The projects I work on on my own are not always personal projects. If I'm workin
 
 ### Task history
 
-It's dead easy to look through your closed PRs to see what work has been done. This can be really useful if, for example, you're looking for a particular piece of code that you removed but might want again. There should be many fewer PRs than commits, so it's not only much easier to remember the block of work where the code was removed, narrowing your search down first; you can then sift through the commits inside the PR. The alternative—filtering through thousands of individual, ungrouped commits—is not much fun.
+It's dead easy to look through your closed PRs to see what work has been done. This can be really useful if, for example, you're looking for a particular piece of code that you removed but might want again. There should be many fewer PRs than commits, so it's not only much easier to remember the block of work where the code was removed, narrowing your search down first; you can then sift through the commits inside the PR. The alternative---filtering through thousands of individual, ungrouped commits---is not much fun.
 
 ### Task management
 

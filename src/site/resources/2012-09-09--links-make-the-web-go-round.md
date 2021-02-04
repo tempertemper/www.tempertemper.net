@@ -28,19 +28,19 @@ Promote your new blog post, testimonial, gallery entry, revamped/rewritten page 
 
 ## Your website
 
-Your website is like a miniature web – important pages like your home page, about page and contact page are linked together by your main navigation; secondary navigation paves the way to less vital, but still very useful pages like your privacy policy, terms and conditions and so on; links throughout the text of each page take your visitors to various useful places within and outside of your site.
+Your website is like a miniature web -- important pages like your home page, about page and contact page are linked together by your main navigation; secondary navigation paves the way to less vital, but still very useful pages like your privacy policy, terms and conditions and so on; links throughout the text of each page take your visitors to various useful places within and outside of your site.
 
 Keeping your site's internal linking nice and tidy is very important! Not only will it let your visitors know that there are more pages that are worth a look, but it tells search engines there's same thing, which they'll give you points for!
 
 
 ## Linking out
 
-Whenever you reference someone or something it's a good idea to link out to them – it gives them a credit for their work as well as a little bit of a leg-up with Google and the other search engines.
+Whenever you reference someone or something it's a good idea to link out to them -- it gives them a credit for their work as well as a little bit of a leg-up with Google and the other search engines.
 
 
 ## What should a link look like?
 
-By what your link looks like I mean what your website's visitor will see. Not the link itself – that horrible looking "https://www.example.com/blah" bit with its forward slashes, colons, dots, dashes, hash symbols, question marks and all manner of other nasties – but the nice readable link that hides the actual working link.
+By what your link looks like I mean what your website's visitor will see. Not the link itself -- that horrible looking "https://www.example.com/blah" bit with its forward slashes, colons, dots, dashes, hash symbols, question marks and all manner of other nasties -- but the nice readable link that hides the actual working link.
 
 So let's start by covering what not to do: A link should never look like "click here" or something similar!
 

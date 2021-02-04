@@ -60,4 +60,4 @@ A pretty obvious feature that I didn't list in my article is a silent alarm. I w
 
 > To help users wake up, Apple Watch offers a silent haptic alarm or gentle sounds
 
-I sometimes wake up before my alarm, and Apple have thought of that too – you'll get a notification asking if you'd like to turn your alarm off if you get up before it sounds. Details, details, details!
+I sometimes wake up before my alarm, and Apple have thought of that too -- you'll get a notification asking if you'd like to turn your alarm off if you get up before it sounds. Details, details, details!

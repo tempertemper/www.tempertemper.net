@@ -22,7 +22,7 @@ I've seen break tags used for all sorts of things, some I can totally understand
 
 ### Creating line breaks
 
-That's right: I'm about to tell you not to use an element that's *specifically for creating line breaks* to create line breaks. I have reasons though – hear me out!
+That's right: I'm about to tell you not to use an element that's *specifically for creating line breaks* to create line breaks. I have reasons though -- hear me out!
 
 A good example is an address. Typically, a contact address is displayed over multiple lines, so you'd be forgiven for thinking a series of break tags feels like a sensible markup pattern to reach for.
 
@@ -145,7 +145,7 @@ As I alluded to earlier, break tags are not your typical `display: block;` style
 
 Increasing the `line-height` of the `<br />`s would force the `line-height` of of the text it sits on the end of to increase too; the second `<br />` would live on its own line and would have the same `line-height` as the first line of text. Then the second line of text doesn't have a break tag on the end of it, so it would have a *different* `line-height`: whatever `<p>` elements have been styled with.
 
-Did that make sense? Don't worry if not – it just illustrates that it's not something you want to be getting yourself into!
+Did that make sense? Don't worry if not -- it just illustrates that it's not something you want to be getting yourself into!
 
 
 ## The right way to use break tags

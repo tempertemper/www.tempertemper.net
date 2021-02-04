@@ -8,7 +8,7 @@ tags:
     - Git
 ---
 
-Sometimes I need to find a commit. It's easy if the commit I'm looking for was very recent – a quick `git log` will do the job.
+Sometimes I need to find a commit. It's easy if the commit I'm looking for was very recent -- a quick `git log` will do the job.
 
 If the commit I'm after was a few weeks ago, it's likely that I'm going to have some scrolling to do. `git log` is quite noisy, so I might add `--oneline` to keep it easy to scan.
 

@@ -11,7 +11,7 @@ Let's over-simplify things for a minute. Your website is a bunch of files that l
 
 If these files were to disappear somehow, your website would disappear too. If you have your website's files stored somewhere else, you've got a backup: all you have to is have the files put back on the internet and your site will reappear.
 
-Of course there are folders, databases, server configuration, blah, blah, blah. But you get my point – let's not get bogged down with the gory detail!
+Of course there are folders, databases, server configuration, blah, blah, blah. But you get my point -- let's not get bogged down with the gory detail!
 
 
 ## Backups

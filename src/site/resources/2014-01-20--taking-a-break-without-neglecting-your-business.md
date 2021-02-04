@@ -24,11 +24,11 @@ A VA may eventually be a necessary arm of my business, but at the moment it's no
 
 Another option would be to completely disconnect, set up auto-responders to let enquirers know when I'll be back in the office and deal with things when I return to work.
 
-Sounds nice – I'm fairly comfortable with all-or-nothing approaches and I wouldn't have too much of an issue, at a personal level, with going cold-turkey for a week or fortnight.
+Sounds nice -- I'm fairly comfortable with all-or-nothing approaches and I wouldn't have too much of an issue, at a personal level, with going cold-turkey for a week or fortnight.
 
 Clients themselves are often very happy to hang on that week or two to have their question answered as things are seldom urgent.
 
-But that's the issue. Every now and then—however rare—a client has an _urgent_ request. I have to be ready to help them deal with any problems on their server or something else that might be beyond their technical expertise, so switching off entirely would be irresponsible.
+But that's the issue. Every now and then---however rare---a client has an _urgent_ request. I have to be ready to help them deal with any problems on their server or something else that might be beyond their technical expertise, so switching off entirely would be irresponsible.
 
 
 ## Taking my laptop

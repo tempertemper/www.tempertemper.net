@@ -15,7 +15,7 @@ There are 3 types of emails you can send:
 2. <b>Transactional</b>: These are triggered automatically when when a visitor to your website or a user of your service needs them. They're usually pre-written templates and serve a definite purpose. A good example would be a payment confirmation email when you order something online.
 3. <b>Group</b>: These are emails you send to a group of people. Typically something like a newsletter or promotional email of some sort.
 
-It's the **third type** of email—group email—I'll be homing in on here. We should probably flesh out the description a little bit…
+It's the **third type** of email---group email---I'll be homing in on here. We should probably flesh out the description a little bit…
 
 Rarely will you need to send a group email in any context other than *marketing*. Even if you're not asking for business directly, it's likely that you're sending the emails in order to reinforce your authority in your field and demonstrate value to your customers and clients. The ultimate goal here is repeat business and referrals. And it's a good idea. I do it: your clients and anyone that has signed up to your mailing list get great value tips and tricks and you keep yourself at the forefront of their minds.
 
@@ -24,7 +24,7 @@ In this article, I'm not going to get into optimal sending frequencies and all t
 
 ## The law
 
-Let's start with the legal stuff. It's against the law to send someone a group/marketing email they didn't ask for. Unfortunately—and surprisingly—this isn't the case for physical junk mail that drops through your letterbox!
+Let's start with the legal stuff. It's against the law to send someone a group/marketing email they didn't ask for. Unfortunately---and surprisingly---this isn't the case for physical junk mail that drops through your letterbox!
 
 [According to Ofcom](https://www.ofcom.org.uk/phones-telecoms-and-internet/advice-for-consumers/problems/tackling-nuisance-calls-and-messages/marketing-emails) there are three rules for 'marketing' emails:
 
@@ -46,7 +46,7 @@ Of course, you wouldn't send those to people who you didn't have a "clearly defi
 
 ## Three golden rules
 
-It's unlikely (though entirely possible) that you'll be fined or taken to court as a result of breaking one of the three rules above. What's more at stake is your reputation, both on and off-line. I'd amend the rules slightly as the first isn't really something you'd do – why would you want to conceal your identity? Here are my 3 golden rules:
+It's unlikely (though entirely possible) that you'll be fined or taken to court as a result of breaking one of the three rules above. What's more at stake is your reputation, both on and off-line. I'd amend the rules slightly as the first isn't really something you'd do -- why would you want to conceal your identity? Here are my 3 golden rules:
 
 ### Rule 1: Always ask permission
 
@@ -58,7 +58,7 @@ Even if you believe your marketing email is as useful as they come (and it may w
 
 ### Rule 2: Always offer an easy opt-out
 
-It may be that the recipient was happy to receive your emails at first. They probably signed up to your mailing list. But for some reason they no longer want them (by the way, _never take this personally_ – that's a dangerous rabbit hole to go down). With a clear **unsubscribe** link this is easy.
+It may be that the recipient was happy to receive your emails at first. They probably signed up to your mailing list. But for some reason they no longer want them (by the way, _never take this personally_ -- that's a dangerous rabbit hole to go down). With a clear **unsubscribe** link this is easy.
 
 Without an unsubscribe link, what will the recipient do? Well, they could email you to ask you to remove them from the list. But how many people will _actually do this_? Having to explain themselves will inevitably prove too too much effort or potentially confrontational, and you'll end up having your email routinely deleted.
 
