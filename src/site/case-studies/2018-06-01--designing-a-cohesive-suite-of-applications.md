@@ -7,7 +7,7 @@ summaryImage: evaluagent--dashboard.png
 summaryImageAlt: An example of a product I redesigned, showing doughnut charts and key numbers for CSat, calls logged and more example 'cards'
 ---
 
-When I started work at EvaluAgent in early 2017, the whole team was working full tilt on the back-end rebuild of their products, a suite of applications to measure, report and encourage good quality customer services in contact centres. What they didn't have was an interface!
+When I started work at EvaluAgent in early 2017, the whole team was working full tilt on the backend rebuild of their products, a suite of applications to measure, report and encourage good quality customer services in contact centres. What they didn't have was an interface!
 
 Like many products' version 1, the existing user interface (UI) was densely packed; as the product grew and features were added, they had been built into the existing design and it was quickly becoming unusable. But there was another problem: each of the existing apps looked different. Some looked like [Bootstrap version 3](https://getbootstrap.com/docs/3.4/), other were completely custom designed; there was very little that told the users that these apps were app provided by the same company.
 

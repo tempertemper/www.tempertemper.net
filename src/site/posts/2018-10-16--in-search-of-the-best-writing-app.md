@@ -37,9 +37,9 @@ And I want an app on each of my devices -- be that a Mac, iPad or Phone.
 
 ## A syncing mechanism
 
-It's kind of a given these days, but worth mentioning. I need a 'back-end' that automatically sends my work to [the cloud](https://www.memecreator.org/static/images/memes/3918621.jpg) and pushes it down to all of my other devices.
+It's kind of a given these days, but worth mentioning. I need a 'backend' that automatically sends my work to [the cloud](https://www.memecreator.org/static/images/memes/3918621.jpg) and pushes it down to all of my other devices.
 
-I like iCloud, so if I can use it as my back-end I will, but Dropbox is a decent fallback.
+I like iCloud, so if I can use it as my backend I will, but Dropbox is a decent fallback.
 
 ## No proprietary formats or features
 
