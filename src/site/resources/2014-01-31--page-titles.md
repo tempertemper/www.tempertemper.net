@@ -34,9 +34,9 @@ You've got a limited number of characters. Anything beyond that number will be i
 
 The first few words of your page title are the most important. Not only will only the first few words be visible in that tiny tab at the top of your browser, but search engines give them more weight.
 
-An example of front loading would be something like "Best pies in London – visit MegaPie!". Ok that's a terrible example—the pressure got to me—but it shows that 'best', 'pies', 'London' and MegaPie are important to the website owner, in that order. 'Best', 'pies' and 'London' are more important to the website owner than the brand itself, 'MegaPie' as searchers are more likely to be looking for "the best pie in London" or "London pies" than MegaPie itself.
+An example of front loading would be something like "Best pies in London – visit MegaPie!". Ok that's a terrible example---the pressure got to me---but it shows that 'best', 'pies', 'London' and MegaPie are important to the website owner, in that order. 'Best', 'pies' and 'London' are more important to the website owner than the brand itself, 'MegaPie' as searchers are more likely to be looking for "the best pie in London" or "London pies" than MegaPie itself.
 
 
 ## Over to you
 
-When writing or preparing your website, make sure you give less obvious areas like page titles as much attention as you do the contents of the page itself and—you never know—you could fly straight to the top of the rankings!
+When writing or preparing your website, make sure you give less obvious areas like page titles as much attention as you do the contents of the page itself and---you never know---you could fly straight to the top of the rankings!

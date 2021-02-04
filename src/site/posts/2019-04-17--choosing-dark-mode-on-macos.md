@@ -12,7 +12,7 @@ It's nice to dust the cobwebs off with a user interface overhaul every now and t
 
 So when macOS Mojave was released late last year I wanted to try Dark Mode right away.
 
-As a developer I'm used to working in apps with a dark background—I've used a dark theme in my text editor for as long as I can remember and terminal comes with a default white text on a black background—but it still felt a bit disorienting when the *whole operating system* was dark.
+As a developer I'm used to working in apps with a dark background---I've used a dark theme in my text editor for as long as I can remember and terminal comes with a default white text on a black background---but it still felt a bit disorienting when the *whole operating system* was dark.
 
 In fact, I think I might have quickly abandoned it in favour of the familiar light grey UI 'chrome' but for one thing: the menu bar.
 

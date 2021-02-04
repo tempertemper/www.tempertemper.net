@@ -52,7 +52,7 @@ Not only do you have a blog post to write, which is a lot of work in itself, but
 
 None of these is a great solution.
 
-A great way around this is to outsource or delegate the sourcing of blog hero images to your brand manager or designer. This means you have to pay someone—something that should be factored into the ongoing cost of your website—but it allows you to post that article you've taken time to write, knowing that it's going to look great.
+A great way around this is to outsource or delegate the sourcing of blog hero images to your brand manager or designer. This means you have to pay someone---something that should be factored into the ongoing cost of your website---but it allows you to post that article you've taken time to write, knowing that it's going to look great.
 
 
 ## What to do

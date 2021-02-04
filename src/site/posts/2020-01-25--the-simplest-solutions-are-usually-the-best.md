@@ -80,7 +80,7 @@ The iteration of my logo started with the idea that I needed a more illustrative
 
 I started with blue fire icon, which was a (tenuous) [reference to tempering steel](/blog/why-tempertemper), where metal is heated up then rapidly cooled down in order to increase its durability and efficiency. The fire icon went through revision after revision as I *wanted* to like it, but it wasn't right.
 
-The more icons I tried—a rocket ship (too start-upy), a star (too audacious), a lightening bolt (too flashy), a broadcast symbol (too RSS)—the more I felt simpler was the way to go.
+The more icons I tried---a rocket ship (too start-upy), a star (too audacious), a lightening bolt (too flashy), a broadcast symbol (too RSS)---the more I felt simpler was the way to go.
 
 I spent hours looking through the [thousands of Unicode characters](https://www.compart.com/en/unicode/category/So) for some kind of punctuation. An asterisk looked nice but could suggest there might be some small print – not questions I wanted to raise in people's minds. Curly braces (`{}`) had the right tone but have been done to death. Square brackets? A caret (`^`)? A triangle? Square? Circle? An arrow? Nah.
 

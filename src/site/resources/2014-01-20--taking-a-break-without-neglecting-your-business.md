@@ -28,7 +28,7 @@ Sounds nice – I'm fairly comfortable with all-or-nothing approaches and I woul
 
 Clients themselves are often very happy to hang on that week or two to have their question answered as things are seldom urgent.
 
-But that's the issue. Every now and then—however rare—a client has an _urgent_ request. I have to be ready to help them deal with any problems on their server or something else that might be beyond their technical expertise, so switching off entirely would be irresponsible.
+But that's the issue. Every now and then---however rare---a client has an _urgent_ request. I have to be ready to help them deal with any problems on their server or something else that might be beyond their technical expertise, so switching off entirely would be irresponsible.
 
 
 ## Taking my laptop

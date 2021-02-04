@@ -86,7 +86,7 @@ Which brings me on to money. I _like_ paying for apps.
 
 ## Active development
 
-One of the features—if you can call it that—I look for in any app is the sign of a solid business model. If the app costs money, that's good! The developer will have an incentive to keep working on the app.
+One of the features---if you can call it that---I look for in any app is the sign of a solid business model. If the app costs money, that's good! The developer will have an incentive to keep working on the app.
 
 I've been in touch with the developer of Lire on Twitter a few times to report the odd bug, [suggest a feature](https://twitter.com/tempertemper/status/1067770395443507201) and they have always been super responsive. A good sign.
 

@@ -13,4 +13,4 @@ One post every week was ambitious.
 
 While I'm not one to say something publicly, only to go back on it, I learned through bitter experience last year that over-committing isn't healthy.
 
-I've found that I prefer slightly longer-form articles—around 1500 words—to short, snappy posts (although this one is shaping up to be just that!). That may change as the year progresses, but for now I'm going to cut myself a bit of slack and aim for fortnightly posts with, perhaps, the odd shorter post in between.
+I've found that I prefer slightly longer-form articles---around 1500 words---to short, snappy posts (although this one is shaping up to be just that!). That may change as the year progresses, but for now I'm going to cut myself a bit of slack and aim for fortnightly posts with, perhaps, the odd shorter post in between.

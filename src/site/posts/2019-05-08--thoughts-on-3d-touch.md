@@ -26,7 +26,7 @@ Using it to turn in the torch is a great feature that I use all the time. Raise 
 
 Similarly, a hard press on the camera icon is a great way to take a quick snap. I do find it a bit odd that you can still access the camera by swiping left from the lock screen though.
 
-It's a very minor gripe, but a 3D Touch is a more deliberate gesture, where—together with raise or touch to wake—I often find that I've accidentally opened the camera with an inadvertent leftward swipe. Why not just disable the now-unnecessary swiping route into the camera for 3D Touch enabled devices?
+It's a very minor gripe, but a 3D Touch is a more deliberate gesture, where---together with raise or touch to wake---I often find that I've accidentally opened the camera with an inadvertent leftward swipe. Why not just disable the now-unnecessary swiping route into the camera for 3D Touch enabled devices?
 
 
 ## Keyboard cursor

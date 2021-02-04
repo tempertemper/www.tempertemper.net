@@ -15,7 +15,7 @@ In this article I won't bog you down with how to actually write links in your CM
 
 ## Navigation
 
-Your navigation is a series of links and—in your navigation of all places—it's absolutely vital your users know where they'll end up. So-called '[mystery meat](https://en.wikipedia.org/wiki/Mystery_meat)' navigation is a terrible idea. Creative, cryptic or obscure navigation items cause problems…
+Your navigation is a series of links and---in your navigation of all places---it's absolutely vital your users know where they'll end up. So-called '[mystery meat](https://en.wikipedia.org/wiki/Mystery_meat)' navigation is a terrible idea. Creative, cryptic or obscure navigation items cause problems…
 
 As Paul Boag points out in a [great little blog post from early 2012](https://boagworld.com/usability/does-your-labelling-cause-confusion/):
 

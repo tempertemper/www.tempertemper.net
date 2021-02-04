@@ -1,13 +1,13 @@
 ---
 title: Disability on the web
 intro: |
-    Just like in 'real' life, your visitors come in all shapes and sizes. Inclusivity is—rightly—front and centre for businesses these days.
+    Just like in 'real' life, your visitors come in all shapes and sizes. Inclusivity is---rightly---front and centre for businesses these days.
 date: 2012-11-03
 tags:
     - Accessibility
 ---
 
-Just like in 'real' life, your visitors come in all shapes and sizes. Inclusivity is—rightly—front and centre for businesses these days.
+Just like in 'real' life, your visitors come in all shapes and sizes. Inclusivity is---rightly---front and centre for businesses these days.
 
 There are a couple of takes on this when it comes to the web:
 

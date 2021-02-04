@@ -26,7 +26,7 @@ So I looked into other co-working events that were happening locally. [Colleague
 
 I've met lots of great people with interesting businesses, from [keyword consultants](//word-association.co.uk) to [alternative hairdressers](https://www.urban-halo.com)! I've been to lots of networking events and dinners in the past and they've all felt a little bit pushy and contrived. This might work for some people, but it's really not my style.
 
-I believe that relationships come first and business will follow. I've met lots of people that would be great to work with, so it's a good idea to bring some business cards, though—remember—that's not the point of it all; more a happy by-product!
+I believe that relationships come first and business will follow. I've met lots of people that would be great to work with, so it's a good idea to bring some business cards, though---remember---that's not the point of it all; more a happy by-product!
 
 
 ## Highly recommended

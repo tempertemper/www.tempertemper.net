@@ -9,7 +9,7 @@ tags:
 
 It's not often that I feel compelled to have a rant, but today I really feel it's necessary… I hope you see this as a warning, more than anything else!
 
-There are some unscrupulous businesses out there. Some of these target the owners of domain names when it's nearly time to renew the name, saying things like—and I quote—"Registering your name with us will ensure you retain exclusive rights to it on the web".
+There are some unscrupulous businesses out there. Some of these target the owners of domain names when it's nearly time to renew the name, saying things like---and I quote---"Registering your name with us will ensure you retain exclusive rights to it on the web".
 
 Now I'm sure that's true, just as it would be for any other company that deals with domain name registration. I'm not implying that they'd steal your domain name and hold it to ransom. Rather, it's misleading. Your domain name would be perfectly safe just where it's registered already, but these companies are trying to poach your business by making you feel scared you'll lose your domain name if you don't go with them.
 

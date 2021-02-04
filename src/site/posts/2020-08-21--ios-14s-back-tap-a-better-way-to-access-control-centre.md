@@ -101,4 +101,4 @@ Circling back to that 9To5Mac quote, that Back Tap is going to be useful for **a
 - Scroll Up and Scroll Down will be very useful for users with impaired motor function
 - VoiceOver and Speak Screen will help users with Dyslexia read certain page content
 
-First and foremost, Back Tap is an accessibility feature—it's in the Accessibility section of Settings, after all—but it's one of those great features that was designed and built for users with access needs, but winds up providing a better experience for *everyone*. I can't wait!
+First and foremost, Back Tap is an accessibility feature---it's in the Accessibility section of Settings, after all---but it's one of those great features that was designed and built for users with access needs, but winds up providing a better experience for *everyone*. I can't wait!

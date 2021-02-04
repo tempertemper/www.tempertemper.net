@@ -31,7 +31,7 @@ The next level of header you'll be using is h2. This'll probably come after some
 
 You can have several h2s in an article. These are the main dividers of your content.
 
-Each h2 section can be divided up in to more sections, with—you guessed it!—h3 headings.
+Each h2 section can be divided up in to more sections, with---you guessed it!---h3 headings.
 
 ## Heading level three and beyond
 

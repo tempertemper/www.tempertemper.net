@@ -13,7 +13,7 @@ Around the time that last article went up, I bumped into a friend-and-long-time-
 
 But I was very happy doing what I had been doing for the previous seven years!
 
-Another chance meeting and a few persuasive chats over coffee and I was sold. It was a massive decision for me and my family and—I'll be honest—I'm still adjusting to employment. But it was the right decision.
+Another chance meeting and a few persuasive chats over coffee and I was sold. It was a massive decision for me and my family and---I'll be honest---I'm still adjusting to employment. But it was the right decision.
 
 
 ## Why no blogging?

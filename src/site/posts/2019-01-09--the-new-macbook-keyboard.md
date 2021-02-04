@@ -46,7 +46,7 @@ A lot of people make heavy use of <kbd>esc</kbd>, so replacing it with a virtual
 
 However, I have two issues, the first a hardware issue and the second software:
 
-1. The Touch Bar is embedded in the top case as part of the keyboard, but the height of the keys—and Touch Bar—is so shallow now that it's not obvious to the touch, so I often find myself reaching up with my left hand and pressing the aluminium just above the escape 'key'. This is solved by taking my eyes off the screen and looking at where I'm pressing. Not ideal.
+1. The Touch Bar is embedded in the top case as part of the keyboard, but the height of the keys---and Touch Bar---is so shallow now that it's not obvious to the touch, so I often find myself reaching up with my left hand and pressing the aluminium just above the escape 'key'. This is solved by taking my eyes off the screen and looking at where I'm pressing. Not ideal.
 2. If the <kbd>esc</kbd> key is held it triggers repeatedly until it released. This is expected behaviour (e.g. holding the space bar inserts spaces until you let go) and fine with a hardware key as there is some resistance, but where they key is virtual, simply resting a finger on it will cause it to activate rapidly. This is both annoying and can feel buggy if you don't realise what's going on. Introducing 3D Touch (or is that Force Touch…?) would be a good way of requiring a more deliberate press. And introducing haptic (Taptic?) feedback to the Touch Bar would give you an idea of what's going on.
 
 ### Bigger keys
@@ -68,7 +68,7 @@ To make matters worse, using a keyboard with the older layout [immediately undoe
 
 For all the complaints, there are many things I love about the new keyboard. Overall, I'm very pleased with the direction Apple have taken and look forward to seeing how it matures as a piece of hardware.
 
-The clickiness is amazing and makes the old keyboards feel cheap; like typing on little sponges. The premium feel is also achieved by the amazing balance – press anywhere on a key—even in the very corner—and it clicks just as if you'd pressed it in the centre.
+The clickiness is amazing and makes the old keyboards feel cheap; like typing on little sponges. The premium feel is also achieved by the amazing balance – press anywhere on a key---even in the very corner---and it clicks just as if you'd pressed it in the centre.
 
 With the addition of Taptic feedback and 3D Touch, the Touch Bar would be a proper part of the keyboard.
 
@@ -77,7 +77,7 @@ Some wishful thinking:
 - Once Apple move to their own 'A' series processors from Intel and battery life gets better, perhaps they'll increase the depth of the keys with the extra space they gain with a thinner battery
 - Apple see the error of their ways with the arrow keys and make the left and right arrows half-height again
 
-I don't think either of those things will happen—the batteries will remain the same size to allow a longer between charges, but I can dream.
+I don't think either of those things will happen---the batteries will remain the same size to allow a longer between charges, but I can dream.
 
 If only my keyboard had the silicone membrane that the newest iteration has, I'd feel a lot better.
 

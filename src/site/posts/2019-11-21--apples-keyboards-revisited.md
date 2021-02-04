@@ -54,7 +54,7 @@ John Gruber at [Daring Fireball sums it up nicely](https://daringfireball.net/20
 
 > We got it all: a return of scissor key mechanisms in lieu of butterfly switches, a return of the inverted-T arrow key arrangement, and a hardware Escape key.
 
-The keyboard itself might have been perfected—it looks to have hit the right balance between what made the newer keyboards feel great and the practicalities that let them down so badly—but any discussion of the keyboard should also include the Touch Bar.
+The keyboard itself might have been perfected---it looks to have hit the right balance between what made the newer keyboards feel great and the practicalities that let them down so badly---but any discussion of the keyboard should also include the Touch Bar.
 
 The Touch Bar has gone unchanged, aside from being slightly less wide to accommodate the hardware escape key.
 

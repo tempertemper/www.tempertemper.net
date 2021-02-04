@@ -9,7 +9,7 @@ tags:
 
 A good friend of mine looks after the website for a company that sells parts for machinery. Thousands of parts.
 
-He came to me asking for some CSS help with the layout in a mega-menu, which I helped out with, but—me being me—I couldn't stop myself pointing out some issues with the design of the mega-menu itself…
+He came to me asking for some CSS help with the layout in a mega-menu, which I helped out with, but---me being me---I couldn't stop myself pointing out some issues with the design of the mega-menu itself…
 
 The menu was made up of two parts:
 

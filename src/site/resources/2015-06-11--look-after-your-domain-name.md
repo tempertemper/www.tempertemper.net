@@ -64,4 +64,4 @@ The moral of the story is:
 - Set multiple reminders so that you don't forget to renew it
 - Protect your domain name account with a solid password
 
-Do all of this and you'll never be in a position where you have to buy your domain back at an exorbitant price or—worse—lose all that time and effort you put into your online reputation.
+Do all of this and you'll never be in a position where you have to buy your domain back at an exorbitant price or---worse---lose all that time and effort you put into your online reputation.

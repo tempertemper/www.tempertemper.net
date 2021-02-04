@@ -14,7 +14,7 @@ I like Safari. It's fast, doesn't burn through my laptop's battery like Chrome d
 
 But I have a bad habit. I leave a *lot* of tabs open at any given time. And that means I have to scan through a lot of tabs to find the one I'm looking for. Scanning text is pretty hard – you have to read at least one word from each of the tabs, and when they're moving as you scroll through, it's even trickier!
 
-Chrome and Firefox have a solution: icons (favicons, to give them their proper name) in the tabs; this makes it quick and easy to identify that page you're looking for. Safari *used* to show favicons, but they removed them in—I assume—a bid to keep the UI as clean as possible.
+Chrome and Firefox have a solution: icons (favicons, to give them their proper name) in the tabs; this makes it quick and easy to identify that page you're looking for. Safari *used* to show favicons, but they removed them in---I assume---a bid to keep the UI as clean as possible.
 
 In August of last year [Daring Fireball wondered](https://daringfireball.net/2017/08/safari_should_display_favicons_in_its_tabs) how many users were choosing Chrome over Safari simply because it showed favicons in the tab:
 

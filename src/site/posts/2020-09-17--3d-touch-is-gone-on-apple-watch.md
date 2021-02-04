@@ -17,4 +17,4 @@ But progress is progress, and with that, 3D Touch is no more. It still works on 
 
 MacRumours have good round up of [how Apple have replace 3D Touch](https://www.macrumors.com/guide/watchos-7-force-touch-gone/); spoiler alert: they've replaced each long press thoughtfully, using long presses, icons or buttons where most appropriate.
 
-A couple of years ago I managed to crack my watch's screen, which meant I had to replace the device. Since then—and I know Apple designed those screens to be pressed with force—I've been slightly nervous about pushing hard on the glass. The new ways to access the features 3D Touch used to activate are nicely thought through, so, all things told, I'm not sad Apple have removed it.
+A couple of years ago I managed to crack my watch's screen, which meant I had to replace the device. Since then---and I know Apple designed those screens to be pressed with force---I've been slightly nervous about pushing hard on the glass. The new ways to access the features 3D Touch used to activate are nicely thought through, so, all things told, I'm not sad Apple have removed it.

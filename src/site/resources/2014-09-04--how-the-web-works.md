@@ -14,7 +14,7 @@ It's worth mentioning what the web isn't. It isn't driving to you're friend's ne
 
 ## Making a request
 
-The first thing you do when you want to view a website is look for it or find it. There are—broadly—three ways to get to a website:
+The first thing you do when you want to view a website is look for it or find it. There are---broadly---three ways to get to a website:
 
 1. Type a **website address** into your web browser's address bar
 2. Type a **search** into a search engine like Google or Bing, then click through to the website you want from there
@@ -22,7 +22,7 @@ The first thing you do when you want to view a website is look for it or find it
 
 Doing any of these three things is called a _request_: "can I see this website please?".
 
-The website itself lives on a web server—a place on the internet where a website lives—and, when a request comes through, the server then sends (serves) the website to the person who asked to see it.
+The website itself lives on a web server---a place on the internet where a website lives---and, when a request comes through, the server then sends (serves) the website to the person who asked to see it.
 
 
 ## Download

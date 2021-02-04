@@ -55,7 +55,7 @@ That's a pretty big assumption! Why would you discriminate against your mobile v
 
 I use an iPad for general web-browsing when I'm at home and there's nothing more frustrating that arriving at a site that I regularly use on my desktop computer only to find that I can't perform a certain task as I'm on a mobile-friendly version of the site.
 
-The answer a lot of (although—annoyingly—not all) websites provide is a link to the 'full website'. But that means you have to look for a link that may not be there, click through, wait for yet another page to load… A bit of a nightmare if you're not on a wireless network! Plus you're giving your visitors more hoops to jump through  which ups the chances of them abandoning your site altogether.
+The answer a lot of (although---annoyingly---not all) websites provide is a link to the 'full website'. But that means you have to look for a link that may not be there, click through, wait for yet another page to load… A bit of a nightmare if you're not on a wireless network! Plus you're giving your visitors more hoops to jump through  which ups the chances of them abandoning your site altogether.
 
 If there's some content you feel you can do without on your mobile site, have a think about whether it's relevant at all! The best approach to deciding what content to use on a website is to whittle it down as far as possible to deliver the most focussed experience you can.
 

@@ -56,7 +56,7 @@ Even without all of that, there's the search engine ranking boost!
 
 ## Sounds great, but what's the catch?
 
-Sounds great, doesn't it? It's not without its downsides though. The SSL certificate itself comes at a cost – the basic certificate is fairly affordable—and as you'd expect—the souped-up certificate with your company's name alongside it less so.
+Sounds great, doesn't it? It's not without its downsides though. The SSL certificate itself comes at a cost – the basic certificate is fairly affordable---and as you'd expect---the souped-up certificate with your company's name alongside it less so.
 
 The SSL encryption also makes the connection between the server and the person viewing your website slightly slower.
 

@@ -32,7 +32,7 @@ For web development, I use Firefox as:
 - they have some great developer-centric [extensions like Axe](https://www.deque.com/axe/), that Safari doesn't
 - I like to separate my general browsing from my development work
 
-Google's 'G Suite' productivity web apps often crash, and have features that don't work well on Safari or Firefox; videos on YouTube—another Google-owned company—often throw an error on Safari on my Mac. All of this means that I have to open Chrome (or another Chromium-based browser, like Opera or, more recently, Edge) to do what I need to do.
+Google's 'G Suite' productivity web apps often crash, and have features that don't work well on Safari or Firefox; videos on YouTube---another Google-owned company---often throw an error on Safari on my Mac. All of this means that I have to open Chrome (or another Chromium-based browser, like Opera or, more recently, Edge) to do what I need to do.
 
 Then I see Google [proposing un-agreed-upon elements for Chrome](https://adactio.com/journal/15357), their search engine favouring sites built with their [proprietary, JavaScript-based AMP pages](https://www.theregister.com/2017/05/19/open_source_insider_google_amp_bad_bad_bad/).
 

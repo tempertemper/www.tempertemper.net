@@ -13,7 +13,7 @@ Dictating an idea is easy in Apple's Voice Memos app, but that seems to be where
 
 Apple's software's certainly capable of transcribing – I sometimes dictate a blog post by opening iA Writer and hitting the dictation button on the keyboard, but I focus too much on the text that's being produced to the point that it's not much quicker than typing.
 
-When Apple revamped Voice Memos in iOS 12 I searched in vain for an 'export to text' option of some sort; when iOS 13 arrived this year I had another look but—again—no sign of any transcription features.
+When Apple revamped Voice Memos in iOS 12 I searched in vain for an 'export to text' option of some sort; when iOS 13 arrived this year I had another look but---again---no sign of any transcription features.
 
 I thought I might be able to hack my way around it. Maybe a Siri Shortcut that transcribed a memo? Nope. Maybe I could play a memo on my Mac (now the they sync to Voice Memos on Catalina) with my phone held up to the speaker, iA Writer open and dictation enabled? Really…?
 

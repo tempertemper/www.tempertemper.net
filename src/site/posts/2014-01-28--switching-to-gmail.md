@@ -24,7 +24,7 @@ Until now…
 
 This was clearly not something I took lightly but I made the decision to migrate my business email to Google's [Gmail](https://mail.google.com) service earlier this week.
 
-I had been considering it for over a year for my own email. It has a number of benefits over standard [IMAP](/resources/the-types-of-email) email—though it works in a very similar fashion—the main ones being:
+I had been considering it for over a year for my own email. It has a number of benefits over standard [IMAP](/resources/the-types-of-email) email---though it works in a very similar fashion---the main ones being:
 
 - The search function is fantastic. This has a lot to do with the way Gmail organises email files that it stores. It's a little bit technical, and one for another blog post, but, suffice to say, it makes searching your emails a breeze.
 - The idea of losing five years worth of emails is a little bit frightening to me. Whilst this was very unlikely where my emails where previously, it was a possibility. Google's servers are incredibly robust, with backup after backup, so the chances of losing any data are as low as it is possible.

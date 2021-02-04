@@ -28,7 +28,7 @@ Peer pressure is alive and well! Like it or not, we're pack animals, and that li
 
 ## Disadvantages
 
-Social media buttons are easily identifiable but—let's face it—they're not necessarily the most stylish things in the world! And, unfortunately, there's next to nothing your web designer can do about this.
+Social media buttons are easily identifiable but---let's face it---they're not necessarily the most stylish things in the world! And, unfortunately, there's next to nothing your web designer can do about this.
 
 All social media buttons are different; sometimes they're stacked, with the number on top of the button, sometimes they're in-line, with the number to the right of the button. Most have similar options, but none are identical, so it's difficult to create a consistent style for your site. The colour schemes may also clash with your website's style. In short, the buttons can look 'stuck on'.
 

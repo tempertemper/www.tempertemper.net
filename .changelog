@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. The format 
 - Makes Prism.js CSS a bit more efficient
 - Makes `<video>`, `<img>` and YouTube CSS a bit more efficient
 - Renames legacy SCSS folder to 'etc'
+- Uses `---` instead of an em-dash (`—`) so that they're legible in a monospace font
 
 ### Fixes
 - Uses same text testimonial 'read more' visually and programmatically

@@ -72,7 +72,7 @@ Searching Twitter can also throw up some really interesting people to follow. Po
 
 Twitter is, for me, one of the best ways to keep in touch with other business owners you meet. People I meet at [co-working](/blog/my-introduction-to-co-working), conferences; anywhere, really!
 
-For me, business is about people. A corporate veneer can be off-putting for me, and Twitter's informal feel—as cheesy as it sounds—lends itself to presenting its users as human beings with character and feelings. As daft as it seems, I enjoy seeing pictures of people I do business with's Sunday lunch or family days out; and hearing about how excited they are when they book their holiday or how they deal with things when their washing machine breaks is all part of it too.
+For me, business is about people. A corporate veneer can be off-putting for me, and Twitter's informal feel---as cheesy as it sounds---lends itself to presenting its users as human beings with character and feelings. As daft as it seems, I enjoy seeing pictures of people I do business with's Sunday lunch or family days out; and hearing about how excited they are when they book their holiday or how they deal with things when their washing machine breaks is all part of it too.
 
 Twitter keeps people in one another's thoughts, so if they need your expertise at any point, you're only a tweet away!
 
