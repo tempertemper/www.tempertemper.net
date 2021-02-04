@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 - Updates Susy from version 2 to 3
 - Makes Prism.js CSS a bit more efficient
 - Makes `<video>`, `<img>` and YouTube CSS a bit more efficient
+- Renames legacy SCSS folder to 'etc'
 
 ### Fixes
 - Uses same text testimonial 'read more' visually and programmatically
