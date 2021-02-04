@@ -65,7 +65,7 @@ Although I'm an [introvert](https://www.ted.com/talks/susan_cain_the_power_of_in
 
 ### Teaching
 
-Accessibility was central to everything I did in Government, and I'm bringing that mindset to Sage. For years now, I've given regular workshop courses in HTML and accessibility, which have always been well attended by back-end developers, testers, interaction and content designers; even user researchers, business analysts and product owners have also come along and learned a lot!
+Accessibility was central to everything I did in Government, and I'm bringing that mindset to Sage. For years now, I've given regular workshop courses in HTML and accessibility, which have always been well attended by backend developers, testers, interaction and content designers; even user researchers, business analysts and product owners have also come along and learned a lot!
 
 
 ## What about right now?
