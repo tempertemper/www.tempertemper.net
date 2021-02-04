@@ -121,6 +121,10 @@
   @include dark-mode($background: $colour-dark-mode-highlight);
   display: block;
   box-shadow: 0 0 .25em lighten($black, 85%);
+  margin-bottom: 1em;
+  margin-top: 1em;
+  height: auto;
+  width: 100%;
 
   @media (min-width: $l) {
     width: calc(100% + 2em);
