@@ -33,4 +33,4 @@ You can even use three asterisks for extra strong (which would output `<strong><
 
 So now that I'm not using underscores in my Markdown, does that mean I should start using dashes for lists…?
 
-(I think I will – most Markdown writing apps insert `- ` with the `⌘` + `l` keyboard shortcut.)
+(I think I will -- most Markdown writing apps insert `- ` with the `⌘` + `l` keyboard shortcut.)

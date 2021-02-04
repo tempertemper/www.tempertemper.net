@@ -1,7 +1,7 @@
 ---
 title: Using the HTML document outline
 intro: |
-    What is a document outline? Sounds complicated, but it's really not – it's just headings! Find out more about them and why they're a good idea.
+    What is a document outline? Sounds complicated, but it's really not -- it's just headings! Find out more about them and why they're a good idea.
 date: 2020-04-03
 tags:
     - Design
@@ -16,7 +16,7 @@ A lot has been written about why the proposed [HTML5 document outline wasn't suc
 
 A document outline is a way of dividing up a document and using those divisions to create a hierarchy.
 
-The simplest way to think of it is also the way that screen readers present the outline – as a list with a bunch of sub-lists. So here's a list, as an example:
+The simplest way to think of it is also the way that screen readers present the outline -- as a list with a bunch of sub-lists. So here's a list, as an example:
 
 - Fruit I like
     - Bananas
@@ -55,7 +55,7 @@ The first rule doesn't need any more explanation, but the second probably does. 
             - `<h4>`
     - `<h2>`
 
-That makes sense because the `<h4>` is part of the 'section' created by `<h3>`, and the `<h3>` is in turn part of its parent `<h2>` – when you're done with the `<h4>`, you're actually moving out of the section created by it's 'grandparent' `<h2>`, into another `<h2>`.
+That makes sense because the `<h4>` is part of the 'section' created by `<h3>`, and the `<h3>` is in turn part of its parent `<h2>` -- when you're done with the `<h4>`, you're actually moving out of the section created by it's 'grandparent' `<h2>`, into another `<h2>`.
 
 
 ## Why use an outline?
@@ -80,12 +80,12 @@ A document well broken-up by headings allows the reader to make an informed choi
 
 ### Mental bookmarks
 
-Remember that people don't always have time to read a whole article – they're standing at a busy bus stop; they're taking a minute while the kids play in the other room. Headings give a sense of place, providing mental bookmarks to come back to, should the reader's bus arrive or they need to sort out a squabble. The headings allow them to quickly find their place, where a thousand words of paragraph text would be tricky.
+Remember that people don't always have time to read a whole article -- they're standing at a busy bus stop; they're taking a minute while the kids play in the other room. Headings give a sense of place, providing mental bookmarks to come back to, should the reader's bus arrive or they need to sort out a squabble. The headings allow them to quickly find their place, where a thousand words of paragraph text would be tricky.
 
 
 ## Screen readers
 
-Scouting ahead via headings is even easier for users who access a web page in a non-visual way via screen reader user – they can easily bring up a list-style outline, and even jump to a particular section if they like. In fact, this is the most popular way a screen reader user navigates a page, according to the [WebAIM Screen Reader User Survey #8](https://webaim.org/projects/screenreadersurvey8/#heading) (August - September 2019).
+Scouting ahead via headings is even easier for users who access a web page in a non-visual way via screen reader user -- they can easily bring up a list-style outline, and even jump to a particular section if they like. In fact, this is the most popular way a screen reader user navigates a page, according to the [WebAIM Screen Reader User Survey #8](https://webaim.org/projects/screenreadersurvey8/#heading) (August - September 2019).
 
 > The usefulness of proper heading structures is very high, with 86.1% of respondents finding heading levels very or somewhat useful.
 
@@ -98,7 +98,7 @@ A quick comparison with users [who navigate by landmarks](https://webaim.org/pro
 
 ## Good for everyone
 
-As ever, accessibility is not just about users with access needs – it's about everyone. With the recent lockdown due to the Coronavirus outbreak, Gary Hustwit's film Objectified was [made available for free](https://www.ohyouprettythings.com/free) and, among the hundreds of great quotes, one from Dan Formose from [Smart Design](https://smartdesignworldwide.com) stands out:
+As ever, accessibility is not just about users with access needs -- it's about everyone. With the recent lockdown due to the Coronavirus outbreak, Gary Hustwit's film Objectified was [made available for free](https://www.ohyouprettythings.com/free) and, among the hundreds of great quotes, one from Dan Formose from [Smart Design](https://smartdesignworldwide.com) stands out:
 
 > we don’t care [about the average user]. What we really need to do to design is look at the extremes. The weakest, or the person with arthritis, or the athlete, or the fastest, or the strongest person. Because if we understand what the extremes are, the middle will take care of itself
 

@@ -20,7 +20,7 @@ Fear not! This is where your content management system (CMS) steps in!
 
 ### Size
 
-When you upload an image to your website, your CMS should resize it to pre-determined dimensions. Oh, and you don't have to worry about what the dimensions will be – your web designer should've taken care of that.
+When you upload an image to your website, your CMS should resize it to pre-determined dimensions. Oh, and you don't have to worry about what the dimensions will be -- your web designer should've taken care of that.
 
 This means the image is exactly the right size for your web page, and no bigger. So the loading time is as short as possible.
 
@@ -28,7 +28,7 @@ This means the image is exactly the right size for your web page, and no bigger.
 
 It's perfectly normal that your web designer will have decided that a certain image shape (with a set height and width) works best for the overall design of your site.
 
-This shape could be a square. It could be a stubby rectangle – sort of like a postcard. It might even be a longer rectangle, more letterbox-shaped.
+This shape could be a square. It could be a stubby rectangle -- sort of like a postcard. It might even be a longer rectangle, more letterbox-shaped.
 
 The rectangle the image is cropped to could be either portrait (taller than it is wide) or landscape (wider than it is tall), depending on what the photo's purpose is. If it's a picture of you, for your About page, it's more likely to be portrait, but if it's for your homepage, it might be more likely to be landscape.
 
@@ -45,7 +45,7 @@ Your CMS could handle this in one of two ways:
 
 Option 1 would look terrible, so option 2 (cropping) is normally the way to handle image resizing.
 
-Losing these edges might not be a problem if the subject of your photo is smack-bang in the centre, but what happens if your subject is on the left hand side? Yep – they'll be chopped in half!
+Losing these edges might not be a problem if the subject of your photo is smack-bang in the centre, but what happens if your subject is on the left hand side? Yep -- they'll be chopped in half!
 
 
 ## Preparing for the crop
@@ -69,7 +69,7 @@ Mac users have [iPhoto](https://www.apple.com/macos/photos/), which does a decen
 
 Windows users can crop an image using Windows' [Paint](https://answers.microsoft.com/en-us/windows/forum/windows_10-other_settings-winpc/how-can-i-crop-a-photo-in-ms10-paint/cc3df426-a82e-401f-a38e-636ea82ea297) and Android users can use their camera app.
 
-All you have to do is crop the image to the approximate shape of the image that will be output by the CMS. Don't worry if you don't know the exact ratio/dimensions – doing it by eye is fine. All we're looking to do is stop any important bits of the photo being lost when the CMS does its work.
+All you have to do is crop the image to the approximate shape of the image that will be output by the CMS. Don't worry if you don't know the exact ratio/dimensions -- doing it by eye is fine. All we're looking to do is stop any important bits of the photo being lost when the CMS does its work.
 
 If you want to get it exactly right, just [ask your web designer](/contact) what ratio or dimensions they've used for your site's photos and they'll keep you right.
 

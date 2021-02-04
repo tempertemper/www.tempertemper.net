@@ -7,7 +7,7 @@ tags:
     - Content
 ---
 
-Your website is there for a reason. This reason varies from site to site – maybe it sells goods that you want your visitors to buy; maybe it's a tool to drive social interaction via a blog, Facebook or Twitter; maybe it's there to encourage visitors to call you. You get the idea.
+Your website is there for a reason. This reason varies from site to site -- maybe it sells goods that you want your visitors to buy; maybe it's a tool to drive social interaction via a blog, Facebook or Twitter; maybe it's there to encourage visitors to call you. You get the idea.
 
 But it's no good hoping your visitors will guess what you want them to do. Let them know and you'll see a massive difference in your website's usefulness!
 

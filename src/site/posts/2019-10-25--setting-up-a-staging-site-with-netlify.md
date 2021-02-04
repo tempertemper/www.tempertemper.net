@@ -10,14 +10,14 @@ tags:
 
 Netlify [Deploy Previews are great](/blog/netlify-deploy-previews), but sometimes it's good to have a way to demo ideas to a client, show your remote team some changes or get approval or feedback from a stakeholder *before* raising a pull/merge request.
 
-Since moving my website to Netlify, setting up a staging site is something I was putting off – it looked fiddly and it wasn't super explicit in Netlify's documentation. Happily, it turned out to be pretty straightforward, once I took a few leaps of faith, and to save you the same uncertainty here's how to do it.
+Since moving my website to Netlify, setting up a staging site is something I was putting off -- it looked fiddly and it wasn't super explicit in Netlify's documentation. Happily, it turned out to be pretty straightforward, once I took a few leaps of faith, and to save you the same uncertainty here's how to do it.
 
 <i>Note: I'm going to do this for a branch called `staging`, but you can use whatever subdomain you like, as long as the branch name matches the subdomain. So if your site is example.com, you could set up a bananas.example.com subdomain if the branch you want to deploy is named `bananas`.</i>
 
 
 ## Create a staging branch if you don't already have one
 
-In your local Git repo, use something like `git checkout -b staging` to create and checkout a staging branch, if you don't have one already. Then push it to your remote with something along the lines of `git push -u origin staging` (which also sets creates a link between the two branches, local and remote, with the `-u` flag – you're probably going to be using this branch a fair bit so `git push` and `git pull` without specifying a remote will be useful!).
+In your local Git repo, use something like `git checkout -b staging` to create and checkout a staging branch, if you don't have one already. Then push it to your remote with something along the lines of `git push -u origin staging` (which also sets creates a link between the two branches, local and remote, with the `-u` flag -- you're probably going to be using this branch a fair bit so `git push` and `git pull` without specifying a remote will be useful!).
 
 
 ## Set up Branch deploys for your staging branch

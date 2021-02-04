@@ -26,7 +26,7 @@ So number of people using older software is dwindling.
 
 'Older browsers' is a bit of a tricky term. By older browsers I'm really referring to Internet Explorer versions 6, 7 and 8.
 
-Internet Explorer (IE) is quite often the victim of many a web-designer hate campaign, which I'm not about to join. Don't get me wrong, I'm really not a fan – I just reckon it's part of the job to cater for (if not pander to) these browsers. Even [Microsoft themselves](//www.ie6death.com/) believe that the older of their currently used browsers has has well and truly had its day!
+Internet Explorer (IE) is quite often the victim of many a web-designer hate campaign, which I'm not about to join. Don't get me wrong, I'm really not a fan -- I just reckon it's part of the job to cater for (if not pander to) these browsers. Even [Microsoft themselves](//www.ie6death.com/) believe that the older of their currently used browsers has has well and truly had its day!
 
 
 ## Internet Explorer 8

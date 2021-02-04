@@ -35,7 +35,7 @@ Writing posts in a dedicated app like Byword means your work is automatically sa
 
 ## But what about formatting?
 
-Maybe you already edit your posts in a separate app. A lot of people do this in Microsoft Word or Apple's Pages. Makes sure you don't use the default formatting though – most word processing apps like these support [Markdown](/resources/what-is-markdown) to a greater or lesser extent, so make sure you're writing in Markdown. That way, when you copy and paste the contents of your post to the text box in your CMS and hit 'save' it will all be output to the site properly.
+Maybe you already edit your posts in a separate app. A lot of people do this in Microsoft Word or Apple's Pages. Makes sure you don't use the default formatting though -- most word processing apps like these support [Markdown](/resources/what-is-markdown) to a greater or lesser extent, so make sure you're writing in Markdown. That way, when you copy and paste the contents of your post to the text box in your CMS and hit 'save' it will all be output to the site properly.
 
 
 ## Backup

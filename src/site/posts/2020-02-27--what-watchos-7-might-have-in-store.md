@@ -17,7 +17,7 @@ I was pretty [pleased with watchOS 6](/blog/some-brief-thoughts-on-watchos-6) wh
 
 Sleep tracking would be a huge addition to watchOS. I would *love* a simple built-in sleep tracker to show me patterns in my bedtime and wake up time, keep tabs on the quality of my sleep, and do it all in a privacy-first manner.
 
-I want it to hook up to my Health app, so that when I look at Sleep I get a real view of how I've been sleeping – relying on the Clock app for that data, as I currently do, is next to useless.
+I want it to hook up to my Health app, so that when I look at Sleep I get a real view of how I've been sleeping -- relying on the Clock app for that data, as I currently do, is next to useless.
 
 Like workout-detection, sleep tracking should happen automatically. Currently, I have to adjust my Bedtime in the Clock app, which is clunky and easily forgotten about. 
 
@@ -43,9 +43,9 @@ This is the other side of the coin. I couldn't have said it better.
 
 From the list, there are a few things I definitely don't think Apple will have on their product roadmap:
 
-- <b>Third Party Watch Faces</b> – Apple care deeply about how things look, and the watch face is one central place they'll never relinquish control beyond Complications
-- <b>Customise Your Activity Rings</b> – the three rings they chose (Move, Exercise and Stand) feel very deliberate, and how else will people in Sharing compare their rings like-for-like?
-- <b>Data Export</b> – Apple want you to stay with them. They won't allow fitness data export, much in the same way they'll never offer iMessage export
+- <b>Third Party Watch Faces</b> -- Apple care deeply about how things look, and the watch face is one central place they'll never relinquish control beyond Complications
+- <b>Customise Your Activity Rings</b> -- the three rings they chose (Move, Exercise and Stand) feel very deliberate, and how else will people in Sharing compare their rings like-for-like?
+- <b>Data Export</b> -- Apple want you to stay with them. They won't allow fitness data export, much in the same way they'll never offer iMessage export
 
 
 

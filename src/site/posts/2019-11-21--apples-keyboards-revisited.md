@@ -30,7 +30,7 @@ That external Magic Keyboard is worth some attention: before I wrote this, I had
 
 ## Return of the inverted 'T' arrow key arrangement
 
-This caused problems for me. It took a long time to get use to the new arrow key arrangement – instead of the `up ↑` key, my finger would gravitate to the `shift ⇧` key, just above. And the *moment* I used an older inverted `T` keyboard those months of adjusted muscle memory were undone.
+This caused problems for me. It took a long time to get use to the new arrow key arrangement -- instead of the `up ↑` key, my finger would gravitate to the `shift ⇧` key, just above. And the *moment* I used an older inverted `T` keyboard those months of adjusted muscle memory were undone.
 
 I design Government systems for a living and they put usability over looking sexy. The inverted `T` didn't look as nice as the newer full-height `left ←` and `right →` keys, but it was 100% more useable.
 

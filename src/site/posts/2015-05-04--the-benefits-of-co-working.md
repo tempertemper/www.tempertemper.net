@@ -22,7 +22,7 @@ When I wrote the post, I was renting a desk at a local software development comp
 
 So I found a dedicated co-working space that was only a half an hour's walk from my front door in the centre of Newcastle.
 
-There, people would drop in whenever they needed to, or others, like me, had more long-term desk rentals so were there a few days each week. Nobody had a fixed desk, rather you would turn up and choose your spot for the day. For me, this kept things from getting stale – literally a fresh perspective every day!
+There, people would drop in whenever they needed to, or others, like me, had more long-term desk rentals so were there a few days each week. Nobody had a fixed desk, rather you would turn up and choose your spot for the day. For me, this kept things from getting stale -- literally a fresh perspective every day!
 
 But the set-up began to change, and eventually the co-working space was rented to a well-known games development company and the co-workers moved to a less comfortable office.
 

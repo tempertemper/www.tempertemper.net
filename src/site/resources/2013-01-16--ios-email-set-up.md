@@ -22,7 +22,7 @@ The next screen needs some information:
 - Name (your full name: this is the 'sender information' that recipients of your email see)
 - Email (the email address of the account you're setting up)
 - Password (the password associated with the email account you're setting up. I'll have sent you this)
-- Description (your 'friendly name' for the email account – something like "My account" or "My business account", or just the name of your business, for example)
+- Description (your 'friendly name' for the email account -- something like "My account" or "My business account", or just the name of your business, for example)
 
 Tap 'Next' in the top right once everything has been entered and it will check your account exists.
 
@@ -42,7 +42,7 @@ Once you've done all of that, hit 'Next' in the top-right of the screen and it w
 
 On the next screen make sure that Mail is set to 'on' and Notes is set to 'off'.
 
-Click 'Save' and it will add your account. Your mailbox is now set up to download emails to your iPhone/iPad! But don't stop there – there are some extra details to sort out!
+Click 'Save' and it will add your account. Your mailbox is now set up to download emails to your iPhone/iPad! But don't stop there -- there are some extra details to sort out!
 
 
 ## Download settings
@@ -58,7 +58,7 @@ Firstly, that your email download settings are the way you want them:
 
 ## Folder mapping
 
-Folder what!? Bear with me – this bit's important!
+Folder what!? Bear with me -- this bit's important!
 
 By default all of your drafts, sent items and deleted items are stored on your phone, but that's no good if you want to pick up a draft you started on your phone on your laptop, or you're on your laptop and you want to double check what you said in that email you sent from your phone last week. So we want to use the drafts, sent and trash mailboxes on your server instead, so that they can be accessed from anywhere, just like your inbox.
 

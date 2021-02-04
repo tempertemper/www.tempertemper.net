@@ -18,7 +18,7 @@ My original branding was ok… I used the friendly-looking [Museo Sans](https://
 
 It served me well for the first few years, but it was always something I was looking to overhaul. I set five rules for a re-brand:
 
-1. I had always _written_ 'tempertemper' as one word, so the logo should follow this – no separation
+1. I had always _written_ 'tempertemper' as one word, so the logo should follow this -- no separation
 2. The logo should include some kind of icon or motif that I could use separately
 3. It should work well against a white background, which my original logo never really did
 4. It should convert well to work against a dark/black background, which my original logo definitely never did
@@ -31,7 +31,7 @@ My re-brand work started with the logo, with the notion that the typeface and ge
 
 I've always been a fan of [Helvetica Neue](https://www.myfonts.com/fonts/linotype/neue-helvetica/) in a bold weight, so a lot of early concepts involved that.
 
-<img src="/assets/img/blog/tempertemper-logo--v2.0-alpha.png" alt="The first half-decent attempt at a redesign of the tempertemper logo – Helvetica Neue in smokey-blue against a white background" width="800" height="450" loading="lazy" />
+<img src="/assets/img/blog/tempertemper-logo--v2.0-alpha.png" alt="The first half-decent attempt at a redesign of the tempertemper logo -- Helvetica Neue in smokey-blue against a white background" width="800" height="450" loading="lazy" />
 
 It was progress, but it only fully satisfied the first rule:
 
@@ -39,7 +39,7 @@ It was progress, but it only fully satisfied the first rule:
 2. There was no motif/icon
 3. As the bold letterforms were more distinct, it worked better than the original logo against a white background, but it wasn't great; changing it to black was better but it lost character
 4. Similarly, it worked *ok* on a black background; again, it was better in white, but felt a bit lifeless
-5. Although beautiful, Helvetica Neue can feel a bit aloof – classy but far from approachable
+5. Although beautiful, Helvetica Neue can feel a bit aloof -- classy but far from approachable
 
 Furthermore, the way the `r` of the first `temper` met the `t` of the second (the ear of the `r` is thicker than the crossbar of the `t`) didn't sit right with me; this was especially true of black text on a white background. Also, Helvetica Neue's lowercase `a` and uppercase `R` are *incredibly* elegant, so a logo without them felt like a missed opportunity!
 
@@ -82,7 +82,7 @@ I started with blue fire icon, which was a (tenuous) [reference to tempering ste
 
 The more icons I tried---a rocket ship (too start-upy), a star (too audacious), a lightening bolt (too flashy), a broadcast symbol (too RSS)---the more I felt simpler was the way to go.
 
-I spent hours looking through the [thousands of Unicode characters](https://www.compart.com/en/unicode/category/So) for some kind of punctuation. An asterisk looked nice but could suggest there might be some small print – not questions I wanted to raise in people's minds. Curly braces (`{}`) had the right tone but have been done to death. Square brackets? A caret (`^`)? A triangle? Square? Circle? An arrow? Nah.
+I spent hours looking through the [thousands of Unicode characters](https://www.compart.com/en/unicode/category/So) for some kind of punctuation. An asterisk looked nice but could suggest there might be some small print -- not questions I wanted to raise in people's minds. Curly braces (`{}`) had the right tone but have been done to death. Square brackets? A caret (`^`)? A triangle? Square? Circle? An arrow? Nah.
 
 One day, on the bus home from work, I scrolled to a blog post by [Amy Hupe](https://amyhupe.co.uk) in my Twitter timeline that used a great big square full-stop as its icon, and it hit me: *the underscore was right all along*! All it needed was some tweaking and it could be used as a stand-alone icon in its own right.
 

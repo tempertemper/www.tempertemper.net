@@ -95,7 +95,7 @@ By that same logic, I had considered Notification Centre for the triple Back Tap
 
 ## Accessibility
 
-Circling back to that 9To5Mac quote, that Back Tap is going to be useful for **all** users is exactly right – it'll be very handy for most users, but likely much more so for those with certain access needs; for example:
+Circling back to that 9To5Mac quote, that Back Tap is going to be useful for **all** users is exactly right -- it'll be very handy for most users, but likely much more so for those with certain access needs; for example:
 
 - Magnifier and Zoom will prove very handy for the likes of my 70 year old parents
 - Scroll Up and Scroll Down will be very useful for users with impaired motor function

@@ -61,8 +61,8 @@ The hack is possible because vertical padding is calculated based on the *width*
 
 The problems here are:
 
-- extra markup – you'll need a `<div class="image-wrapper">` around *every* image on your site
-- extra styling – the CSS above
+- extra markup -- you'll need a `<div class="image-wrapper">` around *every* image on your site
+- extra styling -- the CSS above
 - all images would be stuck with the same aspect ratio (16:9 in the above example)
 - any images with a different aspect ratio (say 4:3) would need:
     - a dedicated class in the HTML

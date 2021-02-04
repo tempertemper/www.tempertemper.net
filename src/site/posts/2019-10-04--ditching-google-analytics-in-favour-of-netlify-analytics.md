@@ -26,7 +26,7 @@ My visitors' privacy is important to me, so not only does this switch mean there
 
 ## Performance
 
-Performance is high on my list of priorities for my site and analytics running on the server rather than in the browser means there's no burden or performance hit on the user – it's all just server logs.
+Performance is high on my list of priorities for my site and analytics running on the server rather than in the browser means there's no burden or performance hit on the user -- it's all just server logs.
 
 
 ## Extras

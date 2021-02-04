@@ -24,7 +24,7 @@ Even then, there can be plenty of images to fetch and display. Maybe the visitor
 
 ## Enter lazy loading
 
-Lazy loading has been around for a long time. The image's `src=""` attribute contains a placeholder image which is swapped out with JavaScript when the user scrolls close to it. But I've never been comfortable with that – what if the script fails and the visitor is left without an image? Not a great experience.
+Lazy loading has been around for a long time. The image's `src=""` attribute contains a placeholder image which is swapped out with JavaScript when the user scrolls close to it. But I've never been comfortable with that -- what if the script fails and the visitor is left without an image? Not a great experience.
 
 Progressive enhancement is the key, and the HTML-only `loading="lazy"` attribute is all that's needed:
 

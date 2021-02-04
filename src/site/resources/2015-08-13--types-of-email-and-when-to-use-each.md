@@ -25,9 +25,9 @@ There are three different types/formats of email, and each has its pros, cons an
 
 ## Plain text email
 
-Plain text emails are just that – plain old text. No formatting, nothing. You could use [Markdown](/resources/what-is-markdown) to give your text some meaning (lists, emphasis, etc.) and you can be sure that copying and pasting the text will always be reliable.
+Plain text emails are just that -- plain old text. No formatting, nothing. You could use [Markdown](/resources/what-is-markdown) to give your text some meaning (lists, emphasis, etc.) and you can be sure that copying and pasting the text will always be reliable.
 
-Unfortunately, it looks a bit boring. You're limited to one font, you can't make text bold or italic – pretty unglamorous! And, in general, people are used to emails looking a little bit prettier.
+Unfortunately, it looks a bit boring. You're limited to one font, you can't make text bold or italic -- pretty unglamorous! And, in general, people are used to emails looking a little bit prettier.
 
 So, while I'm a [big fan of writing in plain text](/resources/edit-your-blog-posts-off-line), I prefer to stick to rich text for my day to day emails.
 
@@ -42,7 +42,7 @@ Err on the side of default. Out of the box, most email programs and operating sy
 
 Limitations include the lack of control over backgrounds, links have to be pasted straight into the email you go see the full URL on the page (like `https://www.tempertemper.net/resources/types-of-email-and-when-to-use-each`) and, like plain text, images are sent as attachments, which can be a bit clunky.
 
-Copying and pasting rich text emails from one app/program to another, or even one email to another inside the same program, is often pretty messy. My biggest bug-bear is when I'm copying and pasting a nicely formatted bulleted or numbered lists – they never seem to make the journey from one email to the other in one piece! There's always some deleting and re-formatting to do.
+Copying and pasting rich text emails from one app/program to another, or even one email to another inside the same program, is often pretty messy. My biggest bug-bear is when I'm copying and pasting a nicely formatted bulleted or numbered lists -- they never seem to make the journey from one email to the other in one piece! There's always some deleting and re-formatting to do.
 
 But this format is pretty much the standard for conversational emails.
 
@@ -53,7 +53,7 @@ HTML email is by far the most flexible format: you can have a header, a footer, 
 
 Sounds great, doesn't it!? The big downside is that HTML emails require a **lot of coding** and even more **testing** to make sure they'll work properly in your recipient's email program.
 
-Because of this, these are rarely a good idea for conversational emails – things get really messy as the email is replied to and forwarded on. And getting the formatting into your email program in the first place is often a painful process. Best avoided.
+Because of this, these are rarely a good idea for conversational emails -- things get really messy as the email is replied to and forwarded on. And getting the formatting into your email program in the first place is often a painful process. Best avoided.
 
 Where they _excel_, however, is **single use emails**.
 
@@ -61,7 +61,7 @@ Where they _excel_, however, is **single use emails**.
 
 <b>Group/marketing</b> emails are an ideal place to use HTML email. In fact, if you sent a plain or rich text email to your mailing list, some eyebrows will be raised.
 
-Like transactional emails, you'll probably want a header with your logo and strap line, a footer. You can do all sorts of great stuff with your main content – a perfectly designed message with images and website-style links, a strong call to action button at the bottom; pretty much anything you like!
+Like transactional emails, you'll probably want a header with your logo and strap line, a footer. You can do all sorts of great stuff with your main content -- a perfectly designed message with images and website-style links, a strong call to action button at the bottom; pretty much anything you like!
 
 
 ## Combinations

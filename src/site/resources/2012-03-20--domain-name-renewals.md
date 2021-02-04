@@ -33,7 +33,7 @@ Your registry details are usually publicly available. This includes your contact
 
 ## What does a genuine renewal notice look like?
 
-If the renewal notice is from your domain name registration company, then it's legitimate! Otherwise, ignore all approaches. To double check, log into your control panel and check your renewals – it'll be obvious if it's coming up and you can do it there and then, knowing that things will carry on just as they were.
+If the renewal notice is from your domain name registration company, then it's legitimate! Otherwise, ignore all approaches. To double check, log into your control panel and check your renewals -- it'll be obvious if it's coming up and you can do it there and then, knowing that things will carry on just as they were.
 
 
 ## Be vigilant

@@ -16,7 +16,7 @@ As a developer I'm used to working in apps with a dark background---I've used a 
 
 In fact, I think I might have quickly abandoned it in favour of the familiar light grey UI 'chrome' but for one thing: the menu bar.
 
-Yosemite introduced the dark menu bar and I've always preferred it. Mainly because I use a MacBook Pro which has a black bezel around the screen, and the black menu bar felt *right* as it felt more like a part of the hardware than the app being used. This separation made sense to me as the battery percentage, date and time, wifi icon, etc. aren't part of the app you're using – they're system-wide. Also, having the app name and its menu items up there felt more distinct from the rest of the UI, making it easier to know which of the many apps I'm normally running currently had focus.
+Yosemite introduced the dark menu bar and I've always preferred it. Mainly because I use a MacBook Pro which has a black bezel around the screen, and the black menu bar felt *right* as it felt more like a part of the hardware than the app being used. This separation made sense to me as the battery percentage, date and time, wifi icon, etc. aren't part of the app you're using -- they're system-wide. Also, having the app name and its menu items up there felt more distinct from the rest of the UI, making it easier to know which of the many apps I'm normally running currently had focus.
 
 I've since found out there's a way to [run the light theme with a dark menu bar](//osxdaily.com/2018/10/15/dark-menu-dock-light-theme-macos/):
 

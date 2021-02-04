@@ -91,6 +91,6 @@ But as you can see, this isn't the case.
 
 I'll be continuing to add `role=""` attributes to elements that I want to be landmarks. Assuming the browser will add them for me means some could be missed.
 
-I'll also feel more comfortable using more than one `<header>` on a page, but it'll only be doing it inside either an `<article>` or `<section>` – I don't want any rogue landmarks being created!
+I'll also feel more comfortable using more than one `<header>` on a page, but it'll only be doing it inside either an `<article>` or `<section>` -- I don't want any rogue landmarks being created!
 
 If only frontend development were easy!

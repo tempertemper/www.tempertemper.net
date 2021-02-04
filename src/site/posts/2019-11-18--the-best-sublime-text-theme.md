@@ -8,7 +8,7 @@ tags:
     - Design
 ---
 
-I've recently [started using Operator Mono](/blog/operator-mono-and-why-i-want-italics-in-my-code-editor) as my coding font and was frustrated to learn that I couldn't use it with any old colour scheme – it has to be one that supports italics.
+I've recently [started using Operator Mono](/blog/operator-mono-and-why-i-want-italics-in-my-code-editor) as my coding font and was frustrated to learn that I couldn't use it with any old colour scheme -- it has to be one that supports italics.
 
 So the hunt was on to find a colour scheme that felt comfortable and also supported italics. I tried a whole bunch and the colour scheme I landed on was one that felt a bit nostalgic: [Monokai Pro](https://monokai.pro). Monokai is the default font on Sublime Text and was *everywhere* back in 2011, when it seemed like the whole world moved to Sublime.
 
@@ -32,11 +32,11 @@ I've used [One Dark theme](https://packagecontrol.io/packages/Theme%20-%20One%20
 
 Like Goldilocks, I'm a bit of a fuss-pot, so aside from italics support, there are a few things I want from a theme:
 
-- A dark grey background without much in the way of colour – I want it to feel like my other Dark Mode apps on macOS
+- A dark grey background without much in the way of colour -- I want it to feel like my other Dark Mode apps on macOS
 - Icons in the sidebar/file-tree make it feel too busy, so if the theme uses these I want to be able to turn them off
 - Arrows ([preferably chevrons](/blog/which-way-is-that-arrow-pointing)) instead of folder icons to represent folders
 - Control over the sidebar spacing, font size and ideally the font itself
-- No old-Chrome style sloping tabs – they always felt out of place on Chrome, never mind being aped by other apps
+- No old-Chrome style sloping tabs -- they always felt out of place on Chrome, never mind being aped by other apps
 
 
 ## The contenders
@@ -52,7 +52,7 @@ I still really like Ayu, I just want a grey variant. And the option to turn side
 
 I should read documentation more. As I've said, I like Monokai Pro a lot, but I totally missed that it was a *theme*, not just a colour scheme! It turns out it's quite a theme, too:
 
-- The colour filters listed above carry through to the whole UI – very cohesive!
+- The colour filters listed above carry through to the whole UI -- very cohesive!
 - You can choose the sidebar font, its size and spacing
 - You can turn off icons in the sidebar
 - The Spectrum theme feels very in keeping with the rest of my OS in Dark Mode

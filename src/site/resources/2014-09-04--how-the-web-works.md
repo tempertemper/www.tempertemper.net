@@ -37,6 +37,6 @@ So the only time you're actually online, when you're using the web, is
 1. When you ask for something
 2. When you're sent something
 
-This is why using the internet over a broadband connection is quicker than 3G – the files from the web server are sent and received quicker on broadband, so the website appears quicker.
+This is why using the internet over a broadband connection is quicker than 3G -- the files from the web server are sent and received quicker on broadband, so the website appears quicker.
 
 So the web is a back-and-forth between you and a web server. As a website owner, this is an important idea to get your head around as it informs a lot of decisions your web designer will make when designing and coding your site.

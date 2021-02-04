@@ -10,9 +10,9 @@ tags:
 
 I'm a fan of small and seemingly trivial changes that make a big difference, so Safari tabs getting icons in macOS Mojave was cause for celebration.
 
-I like Safari. It's fast, doesn't burn through my laptop's battery like Chrome does; I like that bookmarks, favourite and history sync with my iPhone; I like iCloud tabs; I love autofill via my Keychain. It's my go-to for all my general web browsing. (Not for web development, though – I use Chrome or Firefox interchangeably for work.)
+I like Safari. It's fast, doesn't burn through my laptop's battery like Chrome does; I like that bookmarks, favourite and history sync with my iPhone; I like iCloud tabs; I love autofill via my Keychain. It's my go-to for all my general web browsing. (Not for web development, though -- I use Chrome or Firefox interchangeably for work.)
 
-But I have a bad habit. I leave a *lot* of tabs open at any given time. And that means I have to scan through a lot of tabs to find the one I'm looking for. Scanning text is pretty hard – you have to read at least one word from each of the tabs, and when they're moving as you scroll through, it's even trickier!
+But I have a bad habit. I leave a *lot* of tabs open at any given time. And that means I have to scan through a lot of tabs to find the one I'm looking for. Scanning text is pretty hard -- you have to read at least one word from each of the tabs, and when they're moving as you scroll through, it's even trickier!
 
 Chrome and Firefox have a solution: icons (favicons, to give them their proper name) in the tabs; this makes it quick and easy to identify that page you're looking for. Safari *used* to show favicons, but they removed them in---I assume---a bid to keep the UI as clean as possible.
 

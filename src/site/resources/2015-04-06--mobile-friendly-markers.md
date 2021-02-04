@@ -51,6 +51,6 @@ The fact that Google's search-bots are now able to detect how your site looks op
 
 ## What next?
 
-Have you already got a mobile friendly website? If you're not sure, just run your website through the [testing tool](https://www.google.com/webmasters/tools/mobile-friendly/). If it passes, congratulations – enjoy the boost in your search engine ranking! If not, talk to your web designer about how you can get your website displaying nicely on smaller mobile screens as well as larger laptop/desktop screens.
+Have you already got a mobile friendly website? If you're not sure, just run your website through the [testing tool](https://www.google.com/webmasters/tools/mobile-friendly/). If it passes, congratulations -- enjoy the boost in your search engine ranking! If not, talk to your web designer about how you can get your website displaying nicely on smaller mobile screens as well as larger laptop/desktop screens.
 
 My mantra still holds true. In fact, more-so than ever! If you write, design and build your website for human beings, your search engine rank will take care of itself.

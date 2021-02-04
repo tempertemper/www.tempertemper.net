@@ -34,7 +34,7 @@ All social media buttons are different; sometimes they're stacked, with the numb
 
 At the time of writing, Facebook's button hasn't been updated to look nice on those high-resolution screens that are becoming the norm on mobile devices and some laptops. This reliance on a third party like Facebook or Twitter to style a part of your website isn't ideal.
 
-That raises another point – Twitter _has_ updated its button for high-definition screens. They also updated their logo recently. So if they can change the button whenever they like, the next time they do, it may not sit nicely with your website.
+That raises another point -- Twitter _has_ updated its button for high-definition screens. They also updated their logo recently. So if they can change the button whenever they like, the next time they do, it may not sit nicely with your website.
 
 Oh, and another thing, don't they feel a little bit like tiny adverts?
 
@@ -45,7 +45,7 @@ Most of my Facebook page's likes and Twitter profile's follows come from the soc
 
 This in itself isn't an issue as I was getting _some_ engagement via the buttons… The main reason I removed them from my site was that *they take ages to download*!
 
-I'm not going to get into technicalities – they're deceptively complex little things and do a great job of doing what they do in the shortest possible time. But they're not fast enough. One button can often take as long as a whole web page to download.
+I'm not going to get into technicalities -- they're deceptively complex little things and do a great job of doing what they do in the shortest possible time. But they're not fast enough. One button can often take as long as a whole web page to download.
 
 
 ## Who cares?
@@ -64,4 +64,4 @@ As if your users' experience on your site wasn't enough, search engines like Goo
 
 I've given the matter a lot of thought and, in the end, have decided to abandon the wee buttons on my site in favour of straightforward links that load in an instant and look nice and in-keeping with my website, but that doesn't mean you should too!
 
-I'd love to know your thoughts on the matter – let me know in the comments below!
+I'd love to know your thoughts on the matter -- let me know in the comments below!

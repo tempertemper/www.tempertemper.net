@@ -17,7 +17,7 @@ Well, I'm please to say that tempertemper.net is now [WCAG Standard](https://www
 
 Over the course of this year, I've been busy fixing all sorts of  small accessibility issues on tempertemper.net but colour contrast felt a bit more complicated (you'll soon find out why), so I put it off. But I've finally bitten the bullet and addressed it, and I'm pretty pleased with the results.
 
-It's all about that blue I use for my brand. It comes from an for-screen approximation of the CMYK (print) value for pure cyan – `CMYK(255,0,0,0)`. That was something I thought was quite clever: I'd never have to pay the printers extra for a Pantone colour to avoid [those tiny dots](https://www.formaxprinting.com/blog/2018/09/printing-lingo-what-is-4-color-process-printing/). But I don't remember the last time I actually had anything printed, so I'm not sure how useful that has actually proved!
+It's all about that blue I use for my brand. It comes from an for-screen approximation of the CMYK (print) value for pure cyan -- `CMYK(255,0,0,0)`. That was something I thought was quite clever: I'd never have to pay the printers extra for a Pantone colour to avoid [those tiny dots](https://www.formaxprinting.com/blog/2018/09/printing-lingo-what-is-4-color-process-printing/). But I don't remember the last time I actually had anything printed, so I'm not sure how useful that has actually proved!
 
 
 ## The problem with cyan
@@ -47,7 +47,7 @@ I spent a long time trying colour after colour but anything that satisfied two o
 
 ## The web is about flexibility
 
-Designing for the web is an exercise in letting go of things looking exactly the same everywhere – we have different screen sizes, operating systems, browsers, screen resolutions; the list goes on. Colour is one of the most wildly variable things, even when you look at higher-end displays where a 2015 MacBook Pro has a very different feel to a brand new MacBook Pro with True Tone.
+Designing for the web is an exercise in letting go of things looking exactly the same everywhere -- we have different screen sizes, operating systems, browsers, screen resolutions; the list goes on. Colour is one of the most wildly variable things, even when you look at higher-end displays where a 2015 MacBook Pro has a very different feel to a brand new MacBook Pro with True Tone.
 
 Is it easy to tell the difference between the blue I'm using with a dark background and the blue I'm using with a light background? Maybe. One's brighter and the other's duller. But they'll always *be used in isolation*. Just as no *normal* user resizes the screen to see how a site might adjust for mobile, nobody (except the likes of me) is opening their System Preferences window over a website and toggling between light and dark modes.
 
@@ -75,11 +75,11 @@ $colour-dark-mode-primary-darker: #008FD6; // HSB(200,100,84)
 
 ## As close it's possible to get is good enough
 
-It has to be said that the slightly darkened blue looks a bit less vibrant than the original against a white background. I'm conscious of this but not too worried – there was always going to be a compromise somewhere.
+It has to be said that the slightly darkened blue looks a bit less vibrant than the original against a white background. I'm conscious of this but not too worried -- there was always going to be a compromise somewhere.
 
 I'm also aware that the lighter blue on a light background and the darker blue agains a dark background doesn't quite meet AAA, but I only use these for hover states, where they user has already identified a link or clickable area.
 
 
 ## Users first
 
-So I'm ok with using two variants of that cyan if it means a better experience for some users of my site. And if I ever decide to get a run of business cards again, I'm going to steam ahead with `CMYK(255,0,0,0)` anyway – it's close enough!
+So I'm ok with using two variants of that cyan if it means a better experience for some users of my site. And if I ever decide to get a run of business cards again, I'm going to steam ahead with `CMYK(255,0,0,0)` anyway -- it's close enough!

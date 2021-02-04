@@ -40,7 +40,7 @@ You want your site to respond to the size of the visitor's screen so that they r
 
 "But wouldn't it be better to just create a mobile specific website?" I hear you cry. Well, probably not. In some circumstances it might be the right thing to do but here are some good reasons why you should consider a responsive site instead:
 
-- A mobile specific website is twice the effort – you have to maintain two websites!
+- A mobile specific website is twice the effort -- you have to maintain two websites!
 - You can run into issues with search engines if it's not handled correctly, and you could end up with penalties.
 - Truly responsive websites serve up the optimal layout, regardless of the width of the the screen you're looking at the site with. You're going to have to draw a line somewhere with a mobile specific site and say "this is where the mobile ends and the desktop begins". Who knows what the future of mobile is? That 'break-point' may have to change, which will potentially mean an entire redesign of your mobile and/or desktop website.
 
@@ -75,7 +75,7 @@ An adaptive approach means that your mobile visitors will see your content in on
 
 ## Extra breakpoints
 
-Of course, if you like, you can add extra breakpoints for tablet sized layouts, widescreen monitors, etc. (the latter will be more and more useful as more people use televisions and games consoles to access the web) – you're not limited to mobile and non-mobile!
+Of course, if you like, you can add extra breakpoints for tablet sized layouts, widescreen monitors, etc. (the latter will be more and more useful as more people use televisions and games consoles to access the web) -- you're not limited to mobile and non-mobile!
 
 
 ## Do some digging

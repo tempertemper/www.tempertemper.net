@@ -46,7 +46,7 @@ Of course, you wouldn't send those to people who you didn't have a "clearly defi
 
 ## Three golden rules
 
-It's unlikely (though entirely possible) that you'll be fined or taken to court as a result of breaking one of the three rules above. What's more at stake is your reputation, both on and off-line. I'd amend the rules slightly as the first isn't really something you'd do – why would you want to conceal your identity? Here are my 3 golden rules:
+It's unlikely (though entirely possible) that you'll be fined or taken to court as a result of breaking one of the three rules above. What's more at stake is your reputation, both on and off-line. I'd amend the rules slightly as the first isn't really something you'd do -- why would you want to conceal your identity? Here are my 3 golden rules:
 
 ### Rule 1: Always ask permission
 
@@ -58,7 +58,7 @@ Even if you believe your marketing email is as useful as they come (and it may w
 
 ### Rule 2: Always offer an easy opt-out
 
-It may be that the recipient was happy to receive your emails at first. They probably signed up to your mailing list. But for some reason they no longer want them (by the way, _never take this personally_ – that's a dangerous rabbit hole to go down). With a clear **unsubscribe** link this is easy.
+It may be that the recipient was happy to receive your emails at first. They probably signed up to your mailing list. But for some reason they no longer want them (by the way, _never take this personally_ -- that's a dangerous rabbit hole to go down). With a clear **unsubscribe** link this is easy.
 
 Without an unsubscribe link, what will the recipient do? Well, they could email you to ask you to remove them from the list. But how many people will _actually do this_? Having to explain themselves will inevitably prove too too much effort or potentially confrontational, and you'll end up having your email routinely deleted.
 

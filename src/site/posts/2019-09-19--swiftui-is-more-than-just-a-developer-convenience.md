@@ -1,7 +1,7 @@
 ---
 title: SwiftUI is more than just a developer convenience
 intro: |
-    Apple announced SwiftUI at this year's WWDC; I reckon it's more than just a developer convenience – it's a tactical move on Apple's part.
+    Apple announced SwiftUI at this year's WWDC; I reckon it's more than just a developer convenience -- it's a tactical move on Apple's part.
 date: 2019-09-19
 tags:
     - Apple
@@ -13,7 +13,7 @@ Apple announced [SwiftUI](https://www.cultofmac.com/629988/swiftui-wwdc-2019/) a
 
 > For an app to work on all three platforms, the developer needs to produce three separate versions of the user interface code. SwiftUI promises to change all this, because the same framework is native on all Apple platforms
 
-Most talk has been about the obvious – it will encourage developers of iOS apps to also build a Mac and Watch app. And it's that, of course, but I reckon there's a tactical angle from Apple too.
+Most talk has been about the obvious -- it will encourage developers of iOS apps to also build a Mac and Watch app. And it's that, of course, but I reckon there's a tactical angle from Apple too.
 
 A lot of developers who build an iOS app do so in something like [Ionic](https://ionicframework.com) or [Xamarin](https://dotnet.microsoft.com/apps/xamarin) instead of using native code for each platform. That means that they can reach both iOS and Android markets using one codebase and a few UI customisations for each.
 

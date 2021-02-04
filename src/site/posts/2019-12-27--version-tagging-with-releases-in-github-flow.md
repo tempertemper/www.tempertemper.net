@@ -13,7 +13,7 @@ In order to keep things as simple as possible and release work as soon as it's d
 
 ## Why tag?
 
-If it presents a problem, couldn't tagging just be dropped from the process? This is always a good way to approach a problem – maybe I was over-engineering things before!
+If it presents a problem, couldn't tagging just be dropped from the process? This is always a good way to approach a problem -- maybe I was over-engineering things before!
 
 Tagging definitely *could* be removed, but I think tags serve a useful purpose: they provide nice way to see a snapshot of a codebase at a particular point in time with something like:
 
@@ -29,7 +29,7 @@ git branch -d branch-name
 
 <i>(Use a capital `-D` to force the delete if you've committed changes.)</i>
 
-I use Netlify, so I could just use [Deploy Previews](/blog/netlify-deploy-previews) to check out what my website looked like at a particular release, but I'd have to dig through the .changelog file to get the date, then find it in the Deploys list. Deploy Previews don't allow you to play around with the code itself, either – just the generated website. But my real issue with this is that it's proprietary and separate from the codebase – if Netlify ever falls out of favour I'd lose those snapshots. With tags, they're always going to be there.
+I use Netlify, so I could just use [Deploy Previews](/blog/netlify-deploy-previews) to check out what my website looked like at a particular release, but I'd have to dig through the .changelog file to get the date, then find it in the Deploys list. Deploy Previews don't allow you to play around with the code itself, either -- just the generated website. But my real issue with this is that it's proprietary and separate from the codebase -- if Netlify ever falls out of favour I'd lose those snapshots. With tags, they're always going to be there.
 
 
 ## How to tag with GitFlow
@@ -50,9 +50,9 @@ The solution with GitHub Flow is to move the tagging step of the process from th
 
 This is a good idea because:
 
-- I often forget to run `git push --tags`, and wonder why my tags aren't appearing on the remote repo – not a huge problem when I'm working on my own, but with a team it's not something I want to forget
+- I often forget to run `git push --tags`, and wonder why my tags aren't appearing on the remote repo -- not a huge problem when I'm working on my own, but with a team it's not something I want to forget
 - You can view the Releases in a handy timeline in the Releases section of your repo, alongside Commits, Branches and Contributors
-- You can do more than just tag in a Release – you can give your release a title, message (including images!), and add other files (like a database)
+- You can do more than just tag in a Release -- you can give your release a title, message (including images!), and add other files (like a database)
 - Each Release gets [its own URL](https://github.com/tempertemper/tempertemper.net/releases/tag/v5.6.1) that you can tweet, send to your boss, etc.
 
 

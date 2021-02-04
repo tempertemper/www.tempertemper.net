@@ -48,4 +48,4 @@ You've probably seen an email address on a website before, clicked it, hoping to
 
 That's a great idea in theory, but what if you don't use your system's default email program? Windows users who use Gmail or Hotmail via their internet browser will be directed to Outlook Express, for example. What's Outlook Express? And are you going to set your email up on it, just to send an email? Of course you're not! Your browser-based email's the way you usually send your mail! That can be confusing and can lead to visitors throwing in the towel and leaving your site.
 
-Contact forms represent a great way for a message to be sent directly from your website, without the need for any email programs at all – quick, simple and direct, and a great overall experience for your users!
+Contact forms represent a great way for a message to be sent directly from your website, without the need for any email programs at all -- quick, simple and direct, and a great overall experience for your users!

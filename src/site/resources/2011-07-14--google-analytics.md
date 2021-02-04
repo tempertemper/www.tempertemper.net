@@ -25,7 +25,7 @@ You won't see much yet, but if you go to 'Admin' you should be see a 'Create new
 
 + A name for the **account**. This account can contain multiple websites, so it should be something like your company's name.
 + A name for the **property**. This is the website you'll be installing the analytics on, like 'example.com'. This is a sub-section of Account as your company might have several distinct websites (properties).
-+ A name for the **view** in the 'URL' box. Probably just something like 'All website data'. But you might want to use the website's URL again (something like 'example.com'). The reason this is a sub-section of Property is that you might want to segment your website in the future – a good example of when this would be a good idea is if you had a promotional 'landing pages' might warrant their own view, separate to the main website's analytics.
++ A name for the **view** in the 'URL' box. Probably just something like 'All website data'. But you might want to use the website's URL again (something like 'example.com'). The reason this is a sub-section of Property is that you might want to segment your website in the future -- a good example of when this would be a good idea is if you had a promotional 'landing pages' might warrant their own view, separate to the main website's analytics.
 
 Once you've set your account name, property name and URL set your time zone, industry category, etc. and hit 'Get Tracking ID'.
 

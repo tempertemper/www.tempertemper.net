@@ -108,6 +108,6 @@ There's also a special way to [link to other pages in your site](/resources/how-
 
 ## Digging deep
 
-If you really want to get into Markdown, a great place to start is with John Gruber's Daring Fireball website – he's the guy who developed it and his [documentation](https://daringfireball.net/projects/markdown/) is extremely thorough!
+If you really want to get into Markdown, a great place to start is with John Gruber's Daring Fireball website -- he's the guy who developed it and his [documentation](https://daringfireball.net/projects/markdown/) is extremely thorough!
 
 And, by the way, in case you're curious, I write all of my blog posts in Markdown. Any questions, [just ask](https://twitter.com/tempertemper)!

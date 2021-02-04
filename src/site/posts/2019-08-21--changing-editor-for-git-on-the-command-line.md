@@ -12,7 +12,7 @@ Something that has been bugging me since moving from a GUI to command line git h
 
 Most of the time I use a `-m` flag and type the message in the command, between `"`s, e.g. `git commit -m "This is the commit message"`. But when I [amend a commit](/blog/fixing-your-last-git-commit) or just run `git commit` on its own (I can sometimes be a bit trigger-happy with that <kbd title="Return">⏎</kbd> key!) [I'm in VIM](https://www.freecodecamp.org/news/one-out-of-every-20-000-stack-overflow-visitors-is-just-trying-to-exit-vim-5a6b6175e7b6/)…
 
-From there I have to remember to hit `i` to insert text, then when I'm ready, hit `esc`, then `:`, then `wq` to write and quit. I'm not *opposed* to Vim; I've even got it on my 'Things to learn' list, but now's not the time to learn it – learning Git on the command line is quite enough right now!
+From there I have to remember to hit `i` to insert text, then when I'm ready, hit `esc`, then `:`, then `wq` to write and quit. I'm not *opposed* to Vim; I've even got it on my 'Things to learn' list, but now's not the time to learn it -- learning Git on the command line is quite enough right now!
 
 
 ## Enter Nano
@@ -32,7 +32,7 @@ I'm the only person who uses my Mac, so option 1 would work, but it feels like t
 
 I'm a big fan of [.editorconfig files](https://editorconfig.org) but being *too* prescriptive about how another developer edits a project isn't right. Option 3 is out.
 
-So option 2 strikes the right balance – it's about *me*, not about my Mac or the project.
+So option 2 strikes the right balance -- it's about *me*, not about my Mac or the project.
 
 
 ## Making the switch

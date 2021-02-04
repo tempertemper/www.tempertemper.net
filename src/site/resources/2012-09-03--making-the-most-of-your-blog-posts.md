@@ -46,6 +46,6 @@ So you're ready to upload your blogpost for all to see? Don't post right away! C
 
 It sounds like a bit of a drag, but it's a really good idea to set aside some time to write a post. Blogging regularly will keep your audience engaged.
 
-How often you post depends on what kind of blog you're running – it might be that posting daily is appropriate, but in most cases once or twice a week is a good amount.
+How often you post depends on what kind of blog you're running -- it might be that posting daily is appropriate, but in most cases once or twice a week is a good amount.
 
-I'd love to know what your experiences with blogging have been – why not let me know in the comments below?
+I'd love to know what your experiences with blogging have been -- why not let me know in the comments below?

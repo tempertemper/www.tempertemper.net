@@ -19,7 +19,7 @@ But the most interesting change was **Dark Mode**.
 
 ## What's so great about Dark Mode?
 
-Novelty is a thing, and Dark Mode is new and shiny. It feels a bit like iOS 7 or Yosemite on the Mac, where the whole system user interface was overhauled – a fresh, clean, exciting new experience.
+Novelty is a thing, and Dark Mode is new and shiny. It feels a bit like iOS 7 or Yosemite on the Mac, where the whole system user interface was overhauled -- a fresh, clean, exciting new experience.
 
 Accessibility is also a thing. Light text on a dark background has been shown to [tire the eyes less](https://usabilitygeek.com/light-dark-ui-usability-perspective/) than the dark text on a light background.
 
@@ -41,7 +41,7 @@ Will Moore from 1Password wrote an excellent article on [Dark Mode](https://blog
 
 The first thing I worked on was my Dark Mode colour palette. White text on a black background is way too stark a contrast, making it difficult to read anything beyond headings; not helped by using a [serif font body copy](/blog/tempertempers-typefaces), the letterforms of which start to blur into one another. So I tried darkening the blue I use for tempertemper (`#0097db`), but it felt too cold. Darkening a complementary colour (orange) left it feeling a bit muddy. In the end, I borrowed the background colours from Apple's Dark Mode itself, to provide some consistency with the rest of the apps running on my Mac.
 
-It's worth mentioning that I used the Graphite colours (System Preferences → General → Accent colour) to ensure it was neutral – non-Graphite colours use Desktop Tinting, which tints the grey to match the colours from your desktop picture.
+It's worth mentioning that I used the Graphite colours (System Preferences → General → Accent colour) to ensure it was neutral -- non-Graphite colours use Desktop Tinting, which tints the grey to match the colours from your desktop picture.
 
 With the background taken care of, I turned my attention to the  text itself. I softened the white text colour to a very light grey to reduce the contrast further as pure white was still slightly stark.
 

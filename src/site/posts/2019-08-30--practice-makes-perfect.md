@@ -30,4 +30,4 @@ I've tried to keep articles [short and sweet](/blog/settling-for-less), but inev
 
 I have a lot of articles on the go at any given time (I have about 40 half-written at the moment) so there's no shortage of material. A concerted effort to get some of those finished up and published, alongside any new material I come up with, should leave me in good shape for 52 posts by the end of the year.
 
-One way or the other, I'm happy with my output so far – 30 posts so far this year is already almost double my record (16 in 2012). More than anything though, I'm enjoying the writing itself, and hopefully I'll be getting slightly better at it with every post!
+One way or the other, I'm happy with my output so far -- 30 posts so far this year is already almost double my record (16 in 2012). More than anything though, I'm enjoying the writing itself, and hopefully I'll be getting slightly better at it with every post!

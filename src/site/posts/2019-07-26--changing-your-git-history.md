@@ -47,7 +47,7 @@ A quick check of the config file in my history tree showed that the passwords ha
 
 ## Now for the remote
 
-Ok, so it worked nicely locally. At this point I did a `fetch` and it was crazy – thousands of commits behind locally and thousands ahead remotely. Instead of doing any pushing and pulling at this stage, I headed to the **first step** of the documentation on the BFG website.
+Ok, so it worked nicely locally. At this point I did a `fetch` and it was crazy -- thousands of commits behind locally and thousands ahead remotely. Instead of doing any pushing and pulling at this stage, I headed to the **first step** of the documentation on the BFG website.
 
 1. Run `git clone --mirror https://github.com/tempertemper/tempertemper-website.git` on the remote repository
 2. Copy the folder it creates locally to somewhere else as a back-up
@@ -56,8 +56,8 @@ Ok, so it worked nicely locally. At this point I did a `fetch` and it was crazy 
 5. Clean up with `git reflog expire --expire=now --all && git gc --prune=now --aggressive`
 6. Run the folder deleting command: `bfg --delete-folders core /Users/martin/Sites/tempertemper-website.git`
 7. Clean up again: `git reflog expire --expire=now --all && git gc --prune=now --aggressive`
-8. Now the leap of faith – it worked locally so it *should* be ok to push. There's a backup of this 'mirror' anyway, from step 2, so a push from that would put things back the way they were. Ready? Run `git push`
+8. Now the leap of faith -- it worked locally so it *should* be ok to push. There's a backup of this 'mirror' anyway, from step 2, so a push from that would put things back the way they were. Ready? Run `git push`
 
-At this point, I went back to my working repo and did another fetch. Everything was back to zero – nothing ahead, nothing behind. Success!
+At this point, I went back to my working repo and did another fetch. Everything was back to zero -- nothing ahead, nothing behind. Success!
 
 You can probably clear up once with the `git gc` command, rather than running it after each `bfg` command, but doing it after each step worked for me and it took 5 seconds each time, so that's what I'll be doing if I ever have to do this again.

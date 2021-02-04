@@ -13,7 +13,7 @@ Moving from a phone without 3D Touch (iPhone 6) to one with it (iPhone XS) has b
 
 ## Shortcuts and peek and pop
 
-Using 3D Touch on an app icon on the home screen is great – I can jump straight to a new email draft, go straight to the document scanner in Notes (I use this all the time for business expenses), choose the book I want to read in Apple Books; very convenient.
+Using 3D Touch on an app icon on the home screen is great -- I can jump straight to a new email draft, go straight to the document scanner in Notes (I use this all the time for business expenses), choose the book I want to read in Apple Books; very convenient.
 
 It's available in lots of apps too, for example I can even have a quick look at a text message without marking it as read, with peek and pop. I love this feature as I often want to see what a message says but to have some kind of reminder to come back to it later. I dread to think how many messages I've received that I've read, not been able to reply to at the time, then forgotten altogether because they weren't flagged as unread anymore.
 

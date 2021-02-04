@@ -9,7 +9,7 @@ tags:
 
 Twitter is more than just telling people what you're eating for breakfast. It can be a way of making friends, getting human answers to questions and can even be a good income stream for your business!
 
-Twitter can feel daunting at first – what's all this nonsense about tweeting, hashtags!? All will be revealed!
+Twitter can feel daunting at first -- what's all this nonsense about tweeting, hashtags!? All will be revealed!
 
 
 ## Gaining followers

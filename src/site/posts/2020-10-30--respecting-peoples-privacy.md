@@ -55,6 +55,6 @@ A nice side effect of not tracking visitors to my website is that I don't need o
 
 I'm not saying don't use in-depth analytics to measure the use of your website, success of a social media promotion, or effectiveness of an email campaign; I just think that privacy-invasive tracking code is too frequently dumped in without a second thought, and often left there long beyond its intended use (all those short-lived Facebook and LinkedIn marketing campaigns…).
 
-None of the information gathered by companies like Google stays with them – it's all sold on to their customers, and their business models depend on that. The alternatives may not always be free, but if they respect users' privacy I think it's worth the outlay.
+None of the information gathered by companies like Google stays with them -- it's all sold on to their customers, and their business models depend on that. The alternatives may not always be free, but if they respect users' privacy I think it's worth the outlay.
 
 Like anything I approach, I start with the minimal. If I find I need more ('need' being the operative word), I'll add more, but only when I reach that point, never before.

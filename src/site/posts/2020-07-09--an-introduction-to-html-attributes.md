@@ -45,7 +45,7 @@ It's worth mentioning two things here:
 
 ## Multiple attributes
 
-Of course, we're not limited to just one attribute per tag – we can use multiple! Just separate them with spaces:
+Of course, we're not limited to just one attribute per tag -- we can use multiple! Just separate them with spaces:
 
 ```html
 <div id="boxout" class="boxout">
@@ -72,13 +72,13 @@ And there are a million more (well, maybe not quite a *million*) that are used i
 
 Did you spot the odd ones out in that last list? That's right: I didn't put values (`=""`) on `required` and `reversed`. That's because they're what's known as <i>boolean</i> attributes.
 
-That's when an attribute represents a toggle – if it exists, it's true; if it doesn't, it's false:
+That's when an attribute represents a toggle -- if it exists, it's true; if it doesn't, it's false:
 
 ```html
 <form novalidate="true">
 ```
 
-Here, we're telling the form not to validate any of its inputs – let the user put a phone number in the email field, or leave the name input empty; we'll validate it all on the backend.
+Here, we're telling the form not to validate any of its inputs -- let the user put a phone number in the email field, or leave the name input empty; we'll validate it all on the backend.
 
 Of course, we can also write it without quotes:
 

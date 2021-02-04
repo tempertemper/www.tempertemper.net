@@ -49,7 +49,7 @@ Your web designer's role is to ensure the content you've taken so much care over
 
 ### It used to be so easy…
 
-In the not-too-distant past, the web was consumed on desktop computers. Their screens were similar in size. Then laptops arrived, but this didn't change things too much as they had pretty similar sized screens and were interacted with in the same way – keyboard and mouse.
+In the not-too-distant past, the web was consumed on desktop computers. Their screens were similar in size. Then laptops arrived, but this didn't change things too much as they had pretty similar sized screens and were interacted with in the same way -- keyboard and mouse.
 
 It was a bit more like print in that you knew exactly how your website would look for pretty much everyone.
 

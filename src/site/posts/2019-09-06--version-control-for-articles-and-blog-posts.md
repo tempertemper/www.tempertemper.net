@@ -38,7 +38,7 @@ When I was working on the rebuild of my site I would bundle a few feature update
 
 If we're versioning our articles, there's the question of *how*; the way I version is with major, minor and patch, where the first number in the `*.*.*` sequence is major, the second minor and the third patch.
 
-1. <b>Major</b> updates is for something big – a wholesale refactor, rebrand, etc.
+1. <b>Major</b> updates is for something big -- a wholesale refactor, rebrand, etc.
 2. <b>Minor</b> is something obvious by nothing major like a rearranged homepage layout, the introduction of a secondary, supporting brand colour, etc.
 3. A patch is a small code refactor or a small feature that’ll go, for the most part, unnoticed: rewording some paragraph content,
 
@@ -47,7 +47,7 @@ Is an article a minor change or a patch? Maybe it's neither…
 
 ## Is an article a feature?
 
-If I was changing a header or any other content on the site, I'd cut a relase. Why? Because it's *design*. I'm a big advocate of [content design](https://gds.blog.gov.uk/2014/03/14/what-we-mean-when-we-talk-about-content-design/), so rewording an introductory paragraph or the text on a button is definitely design work – it can have a profound (or subtle) effect on how users interact with a website.
+If I was changing a header or any other content on the site, I'd cut a relase. Why? Because it's *design*. I'm a big advocate of [content design](https://gds.blog.gov.uk/2014/03/14/what-we-mean-when-we-talk-about-content-design/), so rewording an introductory paragraph or the text on a button is definitely design work -- it can have a profound (or subtle) effect on how users interact with a website.
 
 But repeating content that fits inside a template, like articles, resources, testimonials and so on, isn't *design*. It's *editorial*.
 

@@ -44,7 +44,7 @@ If you want to know more about how a document is actually written, have a look a
 
 #### Exporting
 
-Even though Markdown itself conveys the meaning of the text, it could be argued that it's not especially pretty… The beauty of Markdown is that it's understood by _loads_ of programs, so you can import markdown and the program will make the text look great. No Markdown formatting – just bold and italic words, headings, quotations, etc.
+Even though Markdown itself conveys the meaning of the text, it could be argued that it's not especially pretty… The beauty of Markdown is that it's understood by _loads_ of programs, so you can import markdown and the program will make the text look great. No Markdown formatting -- just bold and italic words, headings, quotations, etc.
 
 The most useful place that this happens is on the web. If you write a blog, the chances are you can copy and paste your Markdown text straight into your blog or website's control panel, hit 'save' and it'll convert it into HTML on your website!
 
@@ -56,7 +56,7 @@ _*By 'format' I mean the little extension you see after your file when you look 
 
 So if the maker of the word processing software you use go out of business or decide to stop supporting the format you're writing in, your content is safe as you'll have saved it as a Markdown document.
 
-What's more likely is that you change the word processing software you use. I did, way back when I bought my first Mac. I had always used Word when I used Windows machines but Pages looked like a nice option when I bought my Mac so I invested in that (a _great_ decision, by the way!). Luckily Pages understands the .doc format so I could still access all of my old documents, but had it been the other way round I'd be stuck – Word (at least at the time of writing) doesn't support the .pages format.
+What's more likely is that you change the word processing software you use. I did, way back when I bought my first Mac. I had always used Word when I used Windows machines but Pages looked like a nice option when I bought my Mac so I invested in that (a _great_ decision, by the way!). Luckily Pages understands the .doc format so I could still access all of my old documents, but had it been the other way round I'd be stuck -- Word (at least at the time of writing) doesn't support the .pages format.
 
 Personally, I use a text editor called [Byword](https://bywordapp.com) to create and edit my articles. It has iPhone, iPad and Mac versions so I can begin writing a post on my phone on the way to the office and pick it straight up on my laptop when I sit down at my desk!
 
@@ -76,4 +76,4 @@ Taking that one step further, your computer's software is written in plain .txt 
 
 So if  you want to keep your documents forever, for use in as many different contexts as possible---whether you're writing for the web or not---you should look into [using Markdown to write them](/resources/markdown-cheatsheet).
 
-Are you already using Markdown? I'd love to know how you use it – why not leave a comment below!?
+Are you already using Markdown? I'd love to know how you use it -- why not leave a comment below!?

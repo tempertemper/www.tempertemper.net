@@ -10,7 +10,7 @@ tags:
 
 I've been thinking a fair bit about my [coding environment](/blog/ligatures-in-coding-fonts) lately. I even [moved to VSCode again, briefly](https://twitter.com/tempertemper/status/1188745942285082625?s=20). Why? Well, I have a series of bite-sized videos on HTML fundamentals ready to record for [my YouTube channel](https://youtube.com/tempertemper) and I want to make sure they look great.
 
-I know my videos won't be all-singing, all-dancing right out of the gates---recording video like this is new to me and I'll get better at it over time---but I always enjoy tutorials that pay attention to details like the typeface they use. [Operator Mono](https://www.typography.com/blog/introducing-operator) has long been a favourite typeface of mine and would help my tutorials stand out – it has tonnes of character, and that's before we even get to the italics!
+I know my videos won't be all-singing, all-dancing right out of the gates---recording video like this is new to me and I'll get better at it over time---but I always enjoy tutorials that pay attention to details like the typeface they use. [Operator Mono](https://www.typography.com/blog/introducing-operator) has long been a favourite typeface of mine and would help my tutorials stand out -- it has tonnes of character, and that's before we even get to the italics!
 
 
 ## Italics in code

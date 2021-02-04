@@ -1,7 +1,7 @@
 ---
 title: A New Year's resolution for 2019
 intro: |
-    2018 was a funny one. Not at all how I planned it. This year, I'm making one commitment – to write and publish a blog article each and every week.
+    2018 was a funny one. Not at all how I planned it. This year, I'm making one commitment -- to write and publish a blog article each and every week.
 date: 2019-01-02
 ---
 
@@ -44,9 +44,9 @@ So this year I'm going to write and publish one article each week. A week feels 
 
 Ok, so it's a good idea. But we need some ground rules.
 
-- Articles can be about anything – they're likely to be about design and frontend development but I'm not going to hold a good idea back if it's outside of those subjects
-- An article can be long or short – if a point *can* be delivered in 200 words, it *should* be delivered in 200 words
-- Articles will be published at the same time each week – Wednesday morning feels right, so let's go with that
+- Articles can be about anything -- they're likely to be about design and frontend development but I'm not going to hold a good idea back if it's outside of those subjects
+- An article can be long or short -- if a point *can* be delivered in 200 words, it *should* be delivered in 200 words
+- Articles will be published at the same time each week -- Wednesday morning feels right, so let's go with that
 - I'll try to write one article each week, in line with the publishing schedule, but if inspiration takes me and I come up with more, I'm allowed to keep articles in my back pocket. This will also help prevent any [dip in quality](https://twitter.com/KevnGibsn/status/1080788095912607744)
 - This article counts as number 1!
 

@@ -48,7 +48,7 @@ In this example, there're only 4 lines that are of use:
 All the rest is noise:
 
 - I probably don't care how many commits ahead of the remote branch I am at this point
-- The instructions are repetitive – the `git add <file>...` command is listed twice
+- The instructions are repetitive -- the `git add <file>...` command is listed twice
 - The instructions are unnecessary once you know how to stage files, discard changes and commit all changes
 - I know what branch I'm on as it says it right there on the line where I typed the command
 

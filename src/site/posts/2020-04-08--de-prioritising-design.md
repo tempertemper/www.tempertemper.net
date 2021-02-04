@@ -20,7 +20,7 @@ So the idea was that you'd choose your brand from the list on the left and the p
 
 The problem was that it all looked the same!
 
-When you opened the menu, the first item in column 1 was selected by default, and the `selected` styling was *exactly the same as* the headings in the groups on the right. So, at a glance, it was impossible to tell how to use the menu – it all looked like groups of links with headings.
+When you opened the menu, the first item in column 1 was selected by default, and the `selected` styling was *exactly the same as* the headings in the groups on the right. So, at a glance, it was impossible to tell how to use the menu -- it all looked like groups of links with headings.
 
 So if you clicked an item under the apparent heading in the first column and all of the content to the right would change. The 'heading' would also move to the item you clicked. All very disorienting.
 
@@ -38,13 +38,13 @@ I wryly asked him if he had any user testing testing supported his hypothesis, o
 
 ## Making assumptions and underinvesting
 
-This had the smell of a design job done without a designer, where the developer is left to an apparently straightforward design task. But I know this wasn't the case here – a designer had handed my friend compositions to follow.
+This had the smell of a design job done without a designer, where the developer is left to an apparently straightforward design task. But I know this wasn't the case here -- a designer had handed my friend compositions to follow.
 
 Instead of blaming the designer, though, which is all too common a theme in both design and development, I'm going to give them the benefit of the doubt and assume their hands were tied by too-tight timescales.
 
 Over and over again, I see website owners and stakeholders justify their lack of investment in design with firmly held but more-than-likely incorrect assumptions about how people use their site.
 
-That's not to say their industry knowledge is always wrong – it can be *hugely* informative and forms a big part in shaping a product. It's just that underinvesting in design leads to decisions like that mega-menu's problematic visual structure. Waving concerns away with "our users will know what to do" is a way of justifying the underinvestment.
+That's not to say their industry knowledge is always wrong -- it can be *hugely* informative and forms a big part in shaping a product. It's just that underinvesting in design leads to decisions like that mega-menu's problematic visual structure. Waving concerns away with "our users will know what to do" is a way of justifying the underinvestment.
 
 Our mega-menu issue is a good example of a design that just needed a *wee bit* of extra time to:
 

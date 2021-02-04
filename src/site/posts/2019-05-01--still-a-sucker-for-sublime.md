@@ -16,7 +16,7 @@ As well as being a significantly cheaper commitment than Dreamweaver and the Cre
 
 Not long afterwards I attended a co-working event where someone was using a slick-looking, lightening-fast editor called Sublime Text. I delayed using it for a wee while as there was a bit of a learning curve involved in the set-up/configuration, but when found some time I was hooked!
 
-Over the years I've tried some other editors – I spent a few months using [Atom](https://atom.io) when it was fairly new; ditto for [VS Code](https://code.visualstudio.com). I even [revisited VS Code](https://twitter.com/tempertemper/status/1082565116045000704) recently. But Atom was slow and VS Code had (has) something about it that doesn't feel quite *Mac* enough. I've always ended up coming back to Sublime Text (now on version 3).
+Over the years I've tried some other editors -- I spent a few months using [Atom](https://atom.io) when it was fairly new; ditto for [VS Code](https://code.visualstudio.com). I even [revisited VS Code](https://twitter.com/tempertemper/status/1082565116045000704) recently. But Atom was slow and VS Code had (has) something about it that doesn't feel quite *Mac* enough. I've always ended up coming back to Sublime Text (now on version 3).
 
 Admittedly, there was a lot I enjoyed about the other editors I tried, but luckily Sublime had some options or plugins that enabled these features when I switched back.
 

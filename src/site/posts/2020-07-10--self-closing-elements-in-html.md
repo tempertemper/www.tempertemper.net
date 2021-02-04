@@ -14,7 +14,7 @@ I covered the most common type of element in my [article on tags versus elements
 - a closing tag
 - all of the content in between
 
-But I'm sure you've used an image before, and they don't look like that! This is where the distinction between tags and elements gets a bit blurry – some elements *are* tags!
+But I'm sure you've used an image before, and they don't look like that! This is where the distinction between tags and elements gets a bit blurry -- some elements *are* tags!
 
 An image is just an opening tag. No closing tag; no content inside. This type of element is known as 'self-closing' (or sometimes 'void') and look like this:
 

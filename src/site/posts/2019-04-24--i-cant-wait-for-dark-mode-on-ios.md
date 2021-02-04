@@ -39,6 +39,6 @@ A black UI in every app would mean you don't know where the notch starts and sto
 
 ### The watch
 
-OLED works beautifully on the Apple Watch – there's some distance between where the screen ends and the edge of the glass; thanks to the OLED and cunning use of the UI, it feels truly edge-to-edge.
+OLED works beautifully on the Apple Watch -- there's some distance between where the screen ends and the edge of the glass; thanks to the OLED and cunning use of the UI, it feels truly edge-to-edge.
 
 A black UI throughout iOS would have a similar effect as there'd be no obvious line at the edge of the screen, as there is at the moment where the white UI of, say, Mail meets the black bezel where the glass curves round.

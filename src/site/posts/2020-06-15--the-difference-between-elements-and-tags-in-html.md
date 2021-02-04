@@ -47,6 +47,6 @@ An element (usually) consists of two tags: the opening tag and the closing tag. 
 </blockquote>
 ```
 
-In that example, the `<blockquote>` element contains a paragraph of text with an emphasised word, but it can be a lot, lot more – think of the `<html>` element, which contains an entire webpage and all of its behind-the-scenes metadata!
+In that example, the `<blockquote>` element contains a paragraph of text with an emphasised word, but it can be a lot, lot more -- think of the `<html>` element, which contains an entire webpage and all of its behind-the-scenes metadata!
 
 So if you're ever talking to someone about an HTML element, you're talking about *the whole thing*, where if you're talking bout a tag, you're referring to just the bits where an element begins and ends.

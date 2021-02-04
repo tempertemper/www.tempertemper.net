@@ -10,7 +10,7 @@ tags:
 
 I make websites. I also run a paperless office. You can imagine how much of my working day is spent using a computer. Now I don't know about you, but I get a lot of notifications: calendar and to-do list reminders, text messages, phone calls, emails…
 
-The calendar/to-do reminders are ok – I set them up myself, after all. Texts are generally from my wife, who knows I might not be able to get back to her immediately if I'm at work. Phone calls are less frequent. But emails are an issue.
+The calendar/to-do reminders are ok -- I set them up myself, after all. Texts are generally from my wife, who knows I might not be able to get back to her immediately if I'm at work. Phone calls are less frequent. But emails are an issue.
 
 
 ## How much of an issue?

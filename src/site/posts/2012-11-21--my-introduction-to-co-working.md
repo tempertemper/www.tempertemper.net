@@ -1,7 +1,7 @@
 ---
 title: My introduction to co-working
 intro: |
-    Co-working is a great way to escape the isolation of home-working, make business contacts and boost your creativity with a change of scenery– read on to find out more…
+    Co-working is a great way to escape the isolation of home-working, make business contacts and boost your creativity with a change of scenery-- read on to find out more…
 date: 2012-11-21
 tags:
     - Business
@@ -11,7 +11,7 @@ A few months ago my working life was getting stressful. I started working from h
 
 I went to my first co-working day out of desperation. The banging on my office's door, the stomping, falling and crying (the wee one, not me!) were interrupting my concentration. And, of course, the temptation to go and play with the baby was hard to resist!
 
-There was always the local library, but I had some other itches that needed to be scratched – it's a little isolating working from home. Twitter only goes a short way to alleviating the cabin-fever– I needed some real human conversation!
+There was always the local library, but I had some other itches that needed to be scratched -- it's a little isolating working from home. Twitter only goes a short way to alleviating the cabin-fever-- I needed some real human conversation!
 
 Co-working seemed like the perfect answer!
 

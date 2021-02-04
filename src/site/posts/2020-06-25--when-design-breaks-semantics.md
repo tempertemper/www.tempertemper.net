@@ -19,7 +19,7 @@ But what happens when an element looks like something else? Why would we do that
 
 A link should look like all the rest of the text around it, but with an underline (and maybe a bit of colour to draw the eye). As far as its functionality goes, it should take the user to another place.
 
-A button, on the other hand, should perform some kind of action. They can submit a form or trigger a JavaScript action, like revealing a drop-down or adding an item to your shopping cart. What it *shouldn't do* is link to a new page – that's a link's job!
+A button, on the other hand, should perform some kind of action. They can submit a form or trigger a JavaScript action, like revealing a drop-down or adding an item to your shopping cart. What it *shouldn't do* is link to a new page -- that's a link's job!
 
 Buttons should look like buttons; chiefly using a background colour that 'lifts' them from the rest of the page, but maybe with some rounded corners, a border, or a gradient instead of a solid background colour. They *don't* look like links.
 
@@ -69,9 +69,9 @@ Adding the `draggable="false"` attribute to button-links ensures they behave mor
 
 ### Keyboard behaviour
 
-Keyboard users know how to interact with a button – they use the Return key or the spacebar to press it.
+Keyboard users know how to interact with a button -- they use the Return key or the spacebar to press it.
 
-Links are slightly different – Return follows the link when it has focus, but hitting the spacebar will scroll the page down… So if a keyboard user presses space on your link-button, expecting it to activate, they're going to get something they didn't expect.
+Links are slightly different -- Return follows the link when it has focus, but hitting the spacebar will scroll the page down… So if a keyboard user presses space on your link-button, expecting it to activate, they're going to get something they didn't expect.
 
 So we need to activate the 'button' when the spacebar is pressed, instead of scrolling the page. JavaScript to the rescue!
 

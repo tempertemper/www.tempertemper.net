@@ -15,7 +15,7 @@ It's the stuff of George Orwell's '1984'. Only even sneakier…
 
 So, wherever possible, I choose to avoid Google's services and products: it all feels a little bit creepy.
 
-Google's search is unavoidable though – [Bing](https://www.bing.com/) and [Duck Duck Go](https://duckduckgo.com/) just don't stand up alongside Google's powerful search engine. Aside from search, I use no other Google services (that I’m aware of!).
+Google's search is unavoidable though -- [Bing](https://www.bing.com/) and [Duck Duck Go](https://duckduckgo.com/) just don't stand up alongside Google's powerful search engine. Aside from search, I use no other Google services (that I’m aware of!).
 
 Until now…
 
@@ -62,7 +62,7 @@ As with everything, I should mention that there are some downsides, beyond the p
 - Gmail is a paid service (it's good value though, as it comes alongside a bunch of pretty [useful looking apps](https://workspace.google.co.uk/)), but at less than a fiver a month it's worth it for me.
 Set up can be a bit of a pain and, once it's all ready to use, getting your emails in there is a bit of an arduous process.
 You can send and receive emails from more than one
-- There are some fundamental concepts that are different from what you'll be used to as a non-gmail user. For example, there's no such thing folders. Emails are 'labelled' instead, but visually they look just like folders. The confusion comes when an email has more than one label– you’ll see the same email in two folders. Takes a bit of getting used to and, as I said earlier, it’s a blog post in itself– watch this space!
+- There are some fundamental concepts that are different from what you'll be used to as a non-gmail user. For example, there's no such thing folders. Emails are 'labelled' instead, but visually they look just like folders. The confusion comes when an email has more than one label-- you’ll see the same email in two folders. Takes a bit of getting used to and, as I said earlier, it’s a blog post in itself-- watch this space!
 - Google use every opportunity they can to ram Google+ down your throat.
 
 
