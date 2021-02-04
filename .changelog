@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Uses `aria-labelledby` instead of `aria-label` for sections where appropriate
 - Updates Susy from version 2 to 3
+- Makes Prism.js CSS a bit more efficient
 
 ### Fixes
 - Uses same text testimonial 'read more' visually and programmatically
