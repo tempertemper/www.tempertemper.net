@@ -3,7 +3,9 @@
 }
 
 %container {
-  @include container(50em);
+  max-width: 50em;
+  margin-right: auto;
+  margin-left: auto;
   padding-left: .5em;
   padding-right: .5em;
 }

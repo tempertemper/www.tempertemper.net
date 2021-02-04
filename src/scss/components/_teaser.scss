@@ -9,8 +9,8 @@
     }
 
     li {
-      @include layout($wide-layout);
-      @include span(3 of 6);
+      width: span(3 of 6);
+      margin-right: gutter();
       @include highlight-box;
 
       & > :first-child {
@@ -19,7 +19,7 @@
       }
 
       &:nth-of-type(2n) {
-        @include span(last 3 of 6);
+        margin-right: 0;
       }
 
       + li {

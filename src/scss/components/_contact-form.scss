@@ -4,11 +4,11 @@
   @media (min-width: $m) {
 
     div {
-      @include layout($wide-layout);
-      @include span(2 of 4);
+      width: span(2 of 4);
+      margin-right: gutter();
 
       &:last-of-type {
-        @include span(last 2 of 4);
+        margin-right: 0;
       }
     }
   }
@@ -16,11 +16,10 @@
   @media (min-width: $l) {
 
     div {
-      @include layout($wide-layout);
-      @include span(4 of 8);
+      width: span(4 of 8);
 
       &:last-of-type {
-        @include span(last 4 of 8);
+        margin-right: 0;
       }
     }
   }
