@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Removes
 - Removes unused contact form CSS
+- Removes unused `textarea` CSS
 - Removes unused Wistia video class
 - Removes 'back' utility class
 
