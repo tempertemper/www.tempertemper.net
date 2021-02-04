@@ -36,7 +36,7 @@ The whole thing has been one hell of a ride!
 - Those exciting early days when it just kept growing, beyond our expectations
 - Meeting some truly amazing people, some of whom I now call friends
 - The thrill when a well-known speaker agreed to make the trip to Newcastle to talk at the meet-up
-- Creating a hub that the local front-end community could rally around
+- Creating a hub that the local frontend community could rally around
 - The huge financial risk, and stepping into the unknown with that first conference
 - The relief and satisfaction of a job well done at the conference after-parties
 - The stress of broken projectors, catering hiccups and one terrible sound engineer
