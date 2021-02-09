@@ -3,6 +3,7 @@ title: Choosing a stash from the list
 intro: |
     Viewing all of a Git repository's stashes and choosing one from the list is the next step I took in my Git stash on the command line journey.
 date: 2021-02-04
+updated: 2021-02-09
 tags:
     - Git
 ---
@@ -13,7 +14,7 @@ tags:
 git stash list
 ```
 
-This brings up a list of all of the stashes in your current repository; to choose a particular stash, all you have to do is find the index of the stash:
+This brings up a list of all of the stashes in your current repository (which is much easier understand if you've [named your stashes](/blog/giving-your-stash-a-name)); to choose a particular stash, all you have to do is find the index of the stash:
 
 1. View your list of stashes
 2. Copy the stash index number (which looks something like `stash@{2}`)

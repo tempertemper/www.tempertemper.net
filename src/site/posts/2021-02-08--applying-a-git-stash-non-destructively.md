@@ -1,7 +1,7 @@
 ---
 title: Applying a Git stash non-destructively
 intro: |
-    I almost always want to delete a stash when I apply it, but if for some reason you need to keep the stash around, Git lets you do that.
+    You'll almost always want to delete a stash when you apply it, but if for some reason you need to keep the stash around, Git lets you do that.
 date: 2021-02-08
 tags:
     - Git
