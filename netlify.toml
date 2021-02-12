@@ -1367,6 +1367,12 @@
   force = true
 
 [[redirects]]
+  from = "/admin.php"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/wp-admin/*"
   to = "/404"
   status = 301
