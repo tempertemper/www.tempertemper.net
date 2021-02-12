@@ -1157,6 +1157,12 @@
   force = true
 
 [[redirects]]
+  from = "/sitemap.txt"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/forums"
   to = "/404"
   status = 301
