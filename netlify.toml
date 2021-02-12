@@ -169,6 +169,12 @@
   force = true
 
 [[redirects]]
+  from = "/blog/domain-names"
+  to = "/resources/domain-names"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/regular-website-maintenance"
   to = "/resources/regular-website-maintenance"
   status = 301
@@ -540,6 +546,24 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/imap-for-your-mac"
+  to = "/resources/the-types-of-email"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/pop-for-your-mac/"
+  to = "/resources/the-types-of-email"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/markdown-is-great"
+  to = "/resources/what-is-markdown"
+  status = 301
+  force = true
+
 
 ## Category redirects
 
@@ -548,6 +572,13 @@
   to = "/categories"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/search"
+  to = "/categories"
+  status = 301
+  force = true
+
 
 ### From blog categories
 
@@ -600,10 +631,17 @@
   force = true
 
 [[redirects]]
+  from = "/blog/category/setup"
+  to = "/resources/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/category/*"
   to = "/category/:splat"
   status = 301
   force = true
+
 
 ### From resource categories
 
@@ -884,6 +922,24 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/giving-your-stash-a-name"
+  to = "/blog/giving-your-git-stash-a-name"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/giving-your-stash-a-name"
+  to = "/blog/giving-your-git-stash-a-name"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/blog/scroll-bounce-page-background-colour"
+  to = "/blog/scroll-bounce-page-background-colour"
+  status = 301
+  force = true
+
 
 ## Portfolio redirects
 
@@ -907,6 +963,12 @@
 
 [[redirects]]
   from = "/projects/ems-publishing"
+  to = "/portfolio/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/projects/gusto-research"
   to = "/portfolio/"
   status = 301
   force = true
@@ -1095,6 +1157,12 @@
   force = true
 
 [[redirects]]
+  from = "/sitemap.txt"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/forums"
   to = "/404"
   status = 301
@@ -1168,6 +1236,12 @@
 
 [[redirects]]
   from = "/post.php"
+  to = "/blog/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/post"
   to = "/blog/"
   status = 301
   force = true
@@ -1288,6 +1362,12 @@
 
 [[redirects]]
   from = "/admin/"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/admin.php"
   to = "/404"
   status = 301
   force = true
