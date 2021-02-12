@@ -10,7 +10,7 @@ tags:
 
 We all know that we should be using `<em>` and `<strong>` to emphasise and strongly emphasise words and phrases; we've looked at `<i>` and `<b>` tags with disdain. But should that be the case?
 
-Don't get me wrong – `<i>` and `<b>` aren't elements I reach for very often; it's not like I'll be campaigning for them to be included in the [Markdown](/resources/markdown-cheatsheet)  spec any time soon. But they're worth knowing about as they do have their uses.
+Don't get me wrong -- `<i>` and `<b>` aren't elements I reach for very often; it's not like I'll be campaigning for them to be included in the [Markdown](/resources/markdown-cheatsheet)  spec any time soon. But they're worth knowing about as they do have their uses.
 
 A quick caveat: if you're writing an HTML email and you want some important text to look italic or bold, you're probably best going old school and using `<i>` and `<b>` tags as they have the best cross-email client support. Where HTML email is concerned, rules and good practices are often out the window!
 

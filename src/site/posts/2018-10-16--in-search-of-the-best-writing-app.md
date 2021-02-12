@@ -32,14 +32,14 @@ To do that I need two things:
 I don't like web apps. There's something weird about opening my web browser to do write, edit code, and other work-y things. I've tried to get used to it; in fact, I've _had to_ try as lots of places I've worked in and clients I've worked with use Google Drive and Google Docs extensively. Why? Well…
 
 
-And I want an app on each of my devices – be that a Mac, iPad or Phone.
+And I want an app on each of my devices -- be that a Mac, iPad or Phone.
 
 
 ## A syncing mechanism
 
-It's kind of a given these days, but worth mentioning. I need a 'back-end' that automatically sends my work to [the cloud](https://www.memecreator.org/static/images/memes/3918621.jpg) and pushes it down to all of my other devices.
+It's kind of a given these days, but worth mentioning. I need a 'backend' that automatically sends my work to [the cloud](https://www.memecreator.org/static/images/memes/3918621.jpg) and pushes it down to all of my other devices.
 
-I like iCloud, so if I can use it as my back-end I will, but Dropbox is a decent fallback.
+I like iCloud, so if I can use it as my backend I will, but Dropbox is a decent fallback.
 
 ## No proprietary formats or features
 
@@ -53,11 +53,11 @@ Writing apps that come with some weird proprietary format or hidden/obfuscated f
 
 ### Just plain text
 
-I don't want any gimmickry where things stop looking like plain text. I don't want links to be the link text with an underline, hiding the link itself away – that's what HTML's for!
+I don't want any gimmickry where things stop looking like plain text. I don't want links to be the link text with an underline, hiding the link itself away -- that's what HTML's for!
 
 I *want* the square brackets followed by round brackets with the 'ugly' URL in full view!
 
-Don't get me wrong, though, a good writing app should make emphasised text italic, strongly emphasised text bold, underline that URL in the round brackets, indent each item in a list. But that's an *enhancement* of the plain text – I'll always have exactly the text I wrote in full view.
+Don't get me wrong, though, a good writing app should make emphasised text italic, strongly emphasised text bold, underline that URL in the round brackets, indent each item in a list. But that's an *enhancement* of the plain text -- I'll always have exactly the text I wrote in full view.
 
 ## Smarts
 

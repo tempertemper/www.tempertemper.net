@@ -26,14 +26,14 @@ So number of people using older software is dwindling.
 
 'Older browsers' is a bit of a tricky term. By older browsers I'm really referring to Internet Explorer versions 6, 7 and 8.
 
-Internet Explorer (IE) is quite often the victim of many a web-designer hate campaign, which I'm not about to join. Don't get me wrong, I'm really not a fan – I just reckon it's part of the job to cater for (if not pander to) these browsers. Even [Microsoft themselves](//www.ie6death.com/) believe that the older of their currently used browsers has has well and truly had its day!
+Internet Explorer (IE) is quite often the victim of many a web-designer hate campaign, which I'm not about to join. Don't get me wrong, I'm really not a fan -- I just reckon it's part of the job to cater for (if not pander to) these browsers. Even [Microsoft themselves](//www.ie6death.com/) believe that the older of their currently used browsers has has well and truly had its day!
 
 
 ## Internet Explorer 8
 
 There are still a massive number IE8 users. This is due to the massive number of people and organisations using Windows XP, since it's the highest version of IE available to these users. Windows 7 ships with IE8 as its default browser too, so these users have to upgrade to IE9 or above manually, which is a big ask for the majority of users. Good one, Microsoft…
 
-So with IE8 hogging so much of the market, it's only prudent that I ensure the websites I build display properly on this browser. They won't look as polished as they will in current browsers, as IE8 doesn't understand a lot of commands that have been—necessarily—introduced over the last 3 years. Things like rounded corners, gradients and drop-shadows involve only a line or two of code in modern browsers but they need an awful lot more in IE8!
+So with IE8 hogging so much of the market, it's only prudent that I ensure the websites I build display properly on this browser. They won't look as polished as they will in current browsers, as IE8 doesn't understand a lot of commands that have been---necessarily---introduced over the last 3 years. Things like rounded corners, gradients and drop-shadows involve only a line or two of code in modern browsers but they need an awful lot more in IE8!
 
 You could argue that users of older browsers like IE8 won't know any different anyway, as they won't have the website in a current browser to compare the site with! As long as your message is delivered and they are able to use the site perfectly, what's the issue!?
 

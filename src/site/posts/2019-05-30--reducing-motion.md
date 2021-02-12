@@ -9,7 +9,7 @@ tags:
     - Accessibility
 ---
 
-There has never been a lot of animation on my website, and that was a very deliberate decision. Accessibility is very high on my list of priorities when designing and developing a website, and motion and balance (vestibular) disorders—permanent or temporary—mean that animation can be very uncomfortable for some people.
+There has never been a lot of animation on my website, and that was a very deliberate decision. Accessibility is very high on my list of priorities when designing and developing a website, and motion and balance (vestibular) disorders---permanent or temporary---mean that animation can be very uncomfortable for some people.
 
 That said, I do have some animation on my website. No parallax scrolling or items flying into view as you scroll down the page; certainly not! But I've taken steps to reduce it by:
 

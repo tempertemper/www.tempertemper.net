@@ -15,7 +15,7 @@ I used to present my clients with a list of features and the associated prices. 
 
 ## How has it changed?
 
-The real issue was that I was being hired to do something my clients weren’t good at or, in the most part, even interested in – they wanted me to tell them what was best!
+The real issue was that I was being hired to do something my clients weren’t good at or, in the most part, even interested in -- they wanted me to tell them what was best!
 
 I remembered that when Steve Jobs returned to Apple in the late ‘90s, one of the changes he made was to reduce their product line by 70%. This made it easier for people considering buying an Apple product:
 

@@ -7,9 +7,9 @@ tags:
     - Development
 ---
 
-In the same way I enjoy [trying out a new text editor](/blog/still-a-sucker-for-sublime) every now and then, I do the same with my code colour scheme and font – a change just freshens things up a bit.
+In the same way I enjoy [trying out a new text editor](/blog/still-a-sucker-for-sublime) every now and then, I do the same with my code colour scheme and font -- a change just freshens things up a bit.
 
-For a long time, I've used [Mozilla's Fira Mono](https://mozilla.github.io/Fira/) and have been very happy with it – I have no trouble distinguishing similar characters (`0`s and `O`s, `1`s and `l`s), it renders nicely on macOS and is comfortable to read.
+For a long time, I've used [Mozilla's Fira Mono](https://mozilla.github.io/Fira/) and have been very happy with it -- I have no trouble distinguishing similar characters (`0`s and `O`s, `1`s and `l`s), it renders nicely on macOS and is comfortable to read.
 
 But my head was turned by a fork of Fira Mono called Fira Code; it's pretty much exactly the same but with one killer feature: ligatures. Coding ligatures are the 'correct' way of writing operators, for example:
 

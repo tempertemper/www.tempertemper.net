@@ -14,7 +14,7 @@ It's worth mentioning what the web isn't. It isn't driving to you're friend's ne
 
 ## Making a request
 
-The first thing you do when you want to view a website is look for it or find it. There are—broadly—three ways to get to a website:
+The first thing you do when you want to view a website is look for it or find it. There are---broadly---three ways to get to a website:
 
 1. Type a **website address** into your web browser's address bar
 2. Type a **search** into a search engine like Google or Bing, then click through to the website you want from there
@@ -22,7 +22,7 @@ The first thing you do when you want to view a website is look for it or find it
 
 Doing any of these three things is called a _request_: "can I see this website please?".
 
-The website itself lives on a web server—a place on the internet where a website lives—and, when a request comes through, the server then sends (serves) the website to the person who asked to see it.
+The website itself lives on a web server---a place on the internet where a website lives---and, when a request comes through, the server then sends (serves) the website to the person who asked to see it.
 
 
 ## Download
@@ -37,6 +37,6 @@ So the only time you're actually online, when you're using the web, is
 1. When you ask for something
 2. When you're sent something
 
-This is why using the internet over a broadband connection is quicker than 3G – the files from the web server are sent and received quicker on broadband, so the website appears quicker.
+This is why using the internet over a broadband connection is quicker than 3G -- the files from the web server are sent and received quicker on broadband, so the website appears quicker.
 
 So the web is a back-and-forth between you and a web server. As a website owner, this is an important idea to get your head around as it informs a lot of decisions your web designer will make when designing and coding your site.

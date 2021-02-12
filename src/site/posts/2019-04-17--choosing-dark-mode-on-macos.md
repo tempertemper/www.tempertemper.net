@@ -12,11 +12,11 @@ It's nice to dust the cobwebs off with a user interface overhaul every now and t
 
 So when macOS Mojave was released late last year I wanted to try Dark Mode right away.
 
-As a developer I'm used to working in apps with a dark background—I've used a dark theme in my text editor for as long as I can remember and terminal comes with a default white text on a black background—but it still felt a bit disorienting when the *whole operating system* was dark.
+As a developer I'm used to working in apps with a dark background---I've used a dark theme in my text editor for as long as I can remember and terminal comes with a default white text on a black background---but it still felt a bit disorienting when the *whole operating system* was dark.
 
 In fact, I think I might have quickly abandoned it in favour of the familiar light grey UI 'chrome' but for one thing: the menu bar.
 
-Yosemite introduced the dark menu bar and I've always preferred it. Mainly because I use a MacBook Pro which has a black bezel around the screen, and the black menu bar felt *right* as it felt more like a part of the hardware than the app being used. This separation made sense to me as the battery percentage, date and time, wifi icon, etc. aren't part of the app you're using – they're system-wide. Also, having the app name and its menu items up there felt more distinct from the rest of the UI, making it easier to know which of the many apps I'm normally running currently had focus.
+Yosemite introduced the dark menu bar and I've always preferred it. Mainly because I use a MacBook Pro which has a black bezel around the screen, and the black menu bar felt *right* as it felt more like a part of the hardware than the app being used. This separation made sense to me as the battery percentage, date and time, wifi icon, etc. aren't part of the app you're using -- they're system-wide. Also, having the app name and its menu items up there felt more distinct from the rest of the UI, making it easier to know which of the many apps I'm normally running currently had focus.
 
 I've since found out there's a way to [run the light theme with a dark menu bar](//osxdaily.com/2018/10/15/dark-menu-dock-light-theme-macos/):
 

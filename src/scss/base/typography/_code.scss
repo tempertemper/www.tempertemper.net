@@ -40,104 +40,86 @@ pre {
   }
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: $colour-code-grey;
+.token {
 
-  @include dark-mode() {
-    color: $colour-dark-mode-code-grey;
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: $colour-code-grey;
+
+    @include dark-mode() {
+      color: $colour-dark-mode-code-grey;
+    }
   }
-}
 
-.token.punctuation {
-  color: inherit;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: $colour-code-magenta;
-
-  @include dark-mode() {
-    color: $colour-dark-mode-code-magenta;
+  &.punctuation {
+    color: inherit;
   }
-}
 
-.token.boolean,
-.token.number {
-  color: $colour-code-purple;
+  &.property,
+  &.tag,
+  &.constant,
+  &.symbol,
+  &.deleted,
+  &.keyword {
+    color: $colour-code-magenta;
 
-  @include dark-mode() {
-    color: $colour-dark-mode-code-purple;
+    @include dark-mode() {
+      color: $colour-dark-mode-code-magenta;
+    }
   }
-}
 
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: $colour-code-cyan;
+  &.boolean,
+  &.number {
+    color: $colour-code-purple;
 
-  @include dark-mode() {
-    color: $colour-dark-mode-code-cyan;
+    @include dark-mode() {
+      color: $colour-dark-mode-code-purple;
+    }
   }
-}
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: $colour-code-cyan;
+  &.selector,
+  &.attr-name,
+  &.string,
+  &.char,
+  &.builtin,
+  &.inserted,
+  &.operator,
+  &.entity,
+  &.url,
+  .language-css &.string,
+  .style &.string,
+  &.variable {
+    color: $colour-code-cyan;
 
-  @include dark-mode() {
-    color: $colour-dark-mode-code-cyan;
+    @include dark-mode() {
+      color: $colour-dark-mode-code-cyan;
+    }
   }
-}
 
-.token.atrule,
-.token.attr-value,
-.token.function {
-  color: $colour-code-yellow;
+  &.atrule,
+  &.attr-value,
+  &.function,
+  &.regex,
+  &.important {
+    color: $colour-code-yellow;
 
-  @include dark-mode() {
-    color: $colour-dark-mode-code-yellow;
+    @include dark-mode() {
+      color: $colour-dark-mode-code-yellow;
+    }
   }
-}
 
-.token.keyword {
-  color: $colour-code-magenta;
-
-  @include dark-mode() {
-    color: $colour-dark-mode-code-magenta;
+  &.important,
+  &.bold {
+    font-weight: bold;
   }
-}
 
-.token.regex,
-.token.important {
-  color: $colour-code-yellow;
-
-  @include dark-mode() {
-    color: $colour-dark-mode-code-yellow;
+  &.italic {
+    font-style: italic;
   }
-}
 
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
+  &.entity {
+    cursor: help;
+  }
 }

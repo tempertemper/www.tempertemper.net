@@ -23,9 +23,9 @@ You've got all of the usual things, like the main page with the newsfeed ('Strea
 
 The first place where it makes Facebook feel a bit clunky is in the Stream. There are filters down the left that you can apply to see posts from the Circles you want to see. Very slick.
 
-The circles themselves look lovely – your list of friends sits at the top and the circles underneath. Drag a friend and drop them in a circle, or create a new circle for that person. You can delete people from a circle, add them to multiple circles or move them from one to another. All satisfyingly animated!
+The circles themselves look lovely -- your list of friends sits at the top and the circles underneath. Drag a friend and drop them in a circle, or create a new circle for that person. You can delete people from a circle, add them to multiple circles or move them from one to another. All satisfyingly animated!
 
-This is also where a bit of Twitter comes in – you can follow someone's feed without actually being followed back. This is also a bit like Facebook's 'Pages', but with the potential to be 'liked' back.
+This is also where a bit of Twitter comes in -- you can follow someone's feed without actually being followed back. This is also a bit like Facebook's 'Pages', but with the potential to be 'liked' back.
 
 Back to the the stream, and whenever you write a post, be it a link, text (status update), photo, video, etc., you are given the option to decide which circles to share it with. Every tweet you post on Twitter is public. Facebook is very complicated indeed- you have to go to a settings page and edit your privacy settings. And what's more, they keep changing the goal posts. What Google+ does is gives you the opportunity, with every post, to decide who it should be seen by- all circles, particular circles, individuals only, extended circles (friends of friends), public, and so on. This means your boss will never see that post about you being in bed hung-over after a great night out, when you've called in sick to work!
 

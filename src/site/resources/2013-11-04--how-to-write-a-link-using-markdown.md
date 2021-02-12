@@ -10,7 +10,7 @@ tags:
 
 It's all very well knowing the [principles behind writing a link](/resources/how-to-write-a-link), but how do you _actually_ write a link?
 
-Copying and pasting a link into your text will just write link as another word in your article. I'll use that last link as an example– if I copy and paste it into this paragraph it looks like this: /resources/how-to-write-a-link
+Copying and pasting a link into your text will just write link as another word in your article. I'll use that last link as an example-- if I copy and paste it into this paragraph it looks like this: /resources/how-to-write-a-link
 
 That's better than nothing as your visitors can highlight it, copy it and paste it into their web browser, but that's pretty clunky. We all know that links on the web look like text but there is something that sets them apart from the rest of the text that indicates that they're clickable/tappable and will take you somewhere else.
 
@@ -24,7 +24,7 @@ A link is made up of two main parts:
 1. The text that your visitors will read
 2. The address of the page that you want your visitors go to
 
-These two parts are written in two sets of brackets– the first in square brackets [like this] and the second in normal brackets (like this). Oh, and the two sets of brackets should touch one another like this:
+These two parts are written in two sets of brackets-- the first in square brackets [like this] and the second in normal brackets (like this). Oh, and the two sets of brackets should touch one another like this:
 
 ```markdown
 [text](link)

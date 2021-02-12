@@ -14,6 +14,29 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.14.0] - 2021-02-12
+
+### Changes
+- Uses `aria-labelledby` instead of `aria-label` for sections where appropriate
+- Updates Susy from version 2 to 3
+- Makes Prism.js CSS a bit more efficient
+- Makes `<video>`, `<img>` and YouTube CSS a bit more efficient
+- Renames legacy SCSS folder to 'etc'
+- Uses `---` instead of an em-dash (`—`) so that they're legible in a monospace font
+- Uses `--` instead of an en-dash (`–`) so that they're legible in a monospace font
+
+### Fixes
+- Uses same text testimonial 'read more' visually and programmatically
+- Corrects references to 'back-end' to 'backend'
+- Corrects references to 'front-end' to 'frontend'
+
+### Removes
+- Removes unused contact form CSS
+- Removes unused `textarea` CSS
+- Removes unused Wistia video class
+- Removes 'back' utility class
+
+
 ## [5.13.7] - 2021-01-23
 
 ### Changes

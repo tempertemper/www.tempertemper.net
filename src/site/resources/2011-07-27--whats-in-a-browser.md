@@ -7,13 +7,13 @@ tags:
     - Accessibility
 ---
 
-So what's all this fuss about Internet Browsers? Maybe, like a lot of people, you didn't realise there was a choice: if you're a windows user, you click the big blue 'e' to connect to the internet, and if you're a Mac user you click the little compass on your dock – that's all there is to it!
+So what's all this fuss about Internet Browsers? Maybe, like a lot of people, you didn't realise there was a choice: if you're a windows user, you click the big blue 'e' to connect to the internet, and if you're a Mac user you click the little compass on your dock -- that's all there is to it!
 
 First up, if you're a Mac user, you're in luck. Safari (the little compass) is an excellent internet browser: fast, secure and modern. Exactly what you'd expect from Apple.
 
 Unfortunately Windows users are by far in the majority and Microsoft haven't given you the best start with that blue 'e'. The program's called Internet Explorer and it's probably not your best option by a long way.
 
-The good news is it isn't your only option – there are other programs out there that you can use to browse the internet, but make your experience of the internet a lot richer, faster and more secure!
+The good news is it isn't your only option -- there are other programs out there that you can use to browse the internet, but make your experience of the internet a lot richer, faster and more secure!
 
 There are five big players. Internet Explorer is the 'out of the box' browser for Windows and [Safari](https://www.apple.com/safari/) is it's Mac counterpart. You'll probably know about [Chrome](https://www.google.com/chrome/) if you use Google as your search tool (you probably do): they still push that annoying 'download Chrome' button at the top right of the window. [Firefox](https://www.mozilla.org/firefox/new/) is the fourth browser and Opera is the fifth.
 
@@ -31,7 +31,7 @@ It is by far the most customisable browser, so if you want to have your own back
 
 Even though it ships with a Mac, you can still download it for Windows if you like. It loads quickly and renders pages the way they're intended. It's also very secure. It updates along with your Software updates if you use a Mac and you'll be reminded to update it alongside iTunes if you use Windows, so you'll never be left with an out of date version.
 
-What's even better is that, if you use a Mac and an iPhone, iPad or iPod, you can sync your bookmarks across your all of your devices. For me the best feature is the lack of scroll bars on the right of the page – they only appear when you scroll so there's more room to look at the website you're on!
+What's even better is that, if you use a Mac and an iPhone, iPad or iPod, you can sync your bookmarks across your all of your devices. For me the best feature is the lack of scroll bars on the right of the page -- they only appear when you scroll so there's more room to look at the website you're on!
 
 Reader is also a great feature. At the click of a button it takes the text from a webpage and converts it into a highly legible style that resembles a piece of paper with black text on a greyed out background. Click the button again; Reader disappears and the webpage reappears!
 
@@ -67,7 +67,7 @@ Which brings us to version 8. It's ok. It needs a few extra prompts to make sure
 
 Security is one of my biggest issues and IE8 isn't the most secure of browsers. Don't trust it with any of your credit card details or passwords as it's relatively easy for someone who knows how to intercept them, when compared to a modern browser.
 
-The good news is, although you can't upgrade to version 9, you can install one of the better browsers, like [Firefox](https://www.mozilla.org/firefox/new/) or [Opera](https://www.opera.com/), on your Windows XP or Vista machine and benefit from all of the lovely things the modern internet has to offer. Ditch IE8 – it's old hat.
+The good news is, although you can't upgrade to version 9, you can install one of the better browsers, like [Firefox](https://www.mozilla.org/firefox/new/) or [Opera](https://www.opera.com/), on your Windows XP or Vista machine and benefit from all of the lovely things the modern internet has to offer. Ditch IE8 -- it's old hat.
 
 ## Internet Explorers 6 & 7
 

@@ -1,5 +1,5 @@
 ---
-title: Dropbox – my most useful app
+title: Dropbox -- my most useful app
 intro: |
     Dropbox is by far and away the most useful application/program I use. It's totally streamlined the way I run tempertemper, freeing me from the shackles of my desktop computer and allowing me to take my work on the road at a moment's notice!
 date: 2012-04-27
@@ -42,9 +42,9 @@ Dropbox keeps copies of every iteration of a document, so if you've made a mess 
 
 ## Photos
 
-There's a great photo sharing function on Dropbox. Again, the recipient doesn't have to use Dropbox to view and download the photos, which is great. Email them a link (or send it on Facebook or Twitter– whatever!) and they head to a page where you've dropped all of the photos you want to share with them.
+There's a great photo sharing function on Dropbox. Again, the recipient doesn't have to use Dropbox to view and download the photos, which is great. Email them a link (or send it on Facebook or Twitter-- whatever!) and they head to a page where you've dropped all of the photos you want to share with them.
 
-The person you send the photos to will see them as a stylish gallery where they can click the thumbnail and scroll through the photos. They can then download as many or as few as they like too– it's up to them!
+The person you send the photos to will see them as a stylish gallery where they can click the thumbnail and scroll through the photos. They can then download as many or as few as they like too-- it's up to them!
 
 And these aren't the watered-down (heavily compressed) versions you get on Facebook: they're the full images; the same ones that you put in the Dropbox folder, so the recipient can put the files on a USB or CD and take them to Boots for development knowing that they'll look great on their wall or mantlepiece!
 

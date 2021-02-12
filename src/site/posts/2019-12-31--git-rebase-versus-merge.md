@@ -24,7 +24,7 @@ Now that I've been using the command line for Git for over 6 months, I've begun 
 
 ## Cons of merging
 
-- <b>Clutter</b> – merging one branch into another creates a merge commit, so there will be merge commits whenever work has been merged in
+- <b>Clutter</b> -- merging one branch into another creates a merge commit, so there will be merge commits whenever work has been merged in
 - It can be <b>difficult to find the new work</b> with `git log`, as the commits may be peppered amongst other work in the timeline; this is especially true if changes have been made sporadically over a long-ish running branch
 
 
@@ -37,7 +37,7 @@ Now that I've been using the command line for Git for over 6 months, I've begun 
 ## Cons of rebasing
 
 - Rebasing <b>rewrites history</b>, so even if commits that are being merged in were made after those in the feature branch they're placed before (under) them
-- <b>You can't push commits to the remote</b> as, after a rebase, the histories are different – a force push (`git push -f origin example-branch`) is needed to which overwrite the history on the remote with that of the local
+- <b>You can't push commits to the remote</b> as, after a rebase, the histories are different -- a force push (`git push -f origin example-branch`) is needed to which overwrite the history on the remote with that of the local
 - Another personal one: fixing any conflicts is totally unfamiliar
 
 

@@ -1,6 +1,6 @@
 {
   "name": "tempertemper",
-  "version": "5.13.7",
+  "version": "5.14.0",
   "description": "tempertemper's website",
   "scripts": {
     "start": "gulp cleanSite && gulp buildAll && gulp serve",
@@ -32,7 +32,7 @@
     "gulp-uglify": "^3.0.2",
     "html5shiv": "^3.7.3",
     "modularscale-sass": "^3.0.10",
-    "susy": "2.*",
+    "susy": "^3.0.6",
     "version-bump-prompt": "^6.1.0"
   },
   "dependencies": {

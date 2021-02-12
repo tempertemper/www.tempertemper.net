@@ -13,7 +13,7 @@ I enjoyed [an article on disabled-state buttons](https://uxmovement.com/buttons/
 
 I totally agree that using a transparent button rather than a grey one is *better*, but it still comes with a lot of the downsides a greyed-out button does.
 
-Greying a button out or making it slightly transparent leaves the user without a comparison point – how do they *know* the button is greyed out or transparent? If they don't have a button right next to it that is enabled, they might not realise it's not the enabled colour. They've got their memory of course, but relying on users' ability to recall and compare an enabled colour from memory is a risky strategy.
+Greying a button out or making it slightly transparent leaves the user without a comparison point -- how do they *know* the button is greyed out or transparent? If they don't have a button right next to it that is enabled, they might not realise it's not the enabled colour. They've got their memory of course, but relying on users' ability to recall and compare an enabled colour from memory is a risky strategy.
 
 And remember that with colour we're talking about the 'ideal' user:
 
@@ -26,11 +26,11 @@ The [GOV.UK Design System](https://design-system.service.gov.uk/components/butto
 
 > Disabled buttons have poor contrast and can confuse some users, so avoid them if possible.
 
-To me, disabled buttons (whether greyed out or transparent) feel like over-designing – one of those occasions where simpler is better.
+To me, disabled buttons (whether greyed out or transparent) feel like over-designing -- one of those occasions where simpler is better.
 
 **Validation** is the first tool I'd reach for, and it would work in the vast majority of cases for buttons that submit a form.
 
-Do we really need to change the button at all? Wouldn't the example of the Expedia login form in [Anthony's article](https://uxmovement.com/buttons/why-you-shouldnt-gray-out-disabled-buttons/) work just as well with the 'Sign in' button in its normal state, and for empty fields to be highlighted using validation if the user clicks the button or hits <kbd title="Return">⏎</kbd> too soon? Any data entered would be stored safely in the back-end, so nothing would be lost, and empty fields would be highlighted as empty.
+Do we really need to change the button at all? Wouldn't the example of the Expedia login form in [Anthony's article](https://uxmovement.com/buttons/why-you-shouldnt-gray-out-disabled-buttons/) work just as well with the 'Sign in' button in its normal state, and for empty fields to be highlighted using validation if the user clicks the button or hits <kbd title="Return">⏎</kbd> too soon? Any data entered would be stored safely in the backend, so nothing would be lost, and empty fields would be highlighted as empty.
 
 This approach works well with both short and longer forms, although other user experience issues can creep in when there are lots of inputs to validate or conditionally revealed inputs. In these cases, I'd suggest breaking the longer form down into smaller chunks; not only does this normally solve complex validation messages, it reduces the cognitive load on the person filling out the form and allows data to be saved steadily as they progress through the series of forms.
 

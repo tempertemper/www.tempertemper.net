@@ -24,10 +24,8 @@
         'components/call-to-action',
         'components/post-details',
         'components/teaser',
-        'components/video',
         'components/subscribe',
-        'components/contact-form',
         'components/footer';
 
-@import 'legacy/print',
-        'legacy/ie';
+@import 'etc/print',
+        'etc/ie';

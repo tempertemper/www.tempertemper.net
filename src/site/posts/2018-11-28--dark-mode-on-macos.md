@@ -19,7 +19,7 @@ But the most interesting change was **Dark Mode**.
 
 ## What's so great about Dark Mode?
 
-Novelty is a thing, and Dark Mode is new and shiny. It feels a bit like iOS 7 or Yosemite on the Mac, where the whole system user interface was overhauled – a fresh, clean, exciting new experience.
+Novelty is a thing, and Dark Mode is new and shiny. It feels a bit like iOS 7 or Yosemite on the Mac, where the whole system user interface was overhauled -- a fresh, clean, exciting new experience.
 
 Accessibility is also a thing. Light text on a dark background has been shown to [tire the eyes less](https://usabilitygeek.com/light-dark-ui-usability-perspective/) than the dark text on a light background.
 
@@ -41,7 +41,7 @@ Will Moore from 1Password wrote an excellent article on [Dark Mode](https://blog
 
 The first thing I worked on was my Dark Mode colour palette. White text on a black background is way too stark a contrast, making it difficult to read anything beyond headings; not helped by using a [serif font body copy](/blog/tempertempers-typefaces), the letterforms of which start to blur into one another. So I tried darkening the blue I use for tempertemper (`#0097db`), but it felt too cold. Darkening a complementary colour (orange) left it feeling a bit muddy. In the end, I borrowed the background colours from Apple's Dark Mode itself, to provide some consistency with the rest of the apps running on my Mac.
 
-It's worth mentioning that I used the Graphite colours (System Preferences → General → Accent colour) to ensure it was neutral – non-Graphite colours use Desktop Tinting, which tints the grey to match the colours from your desktop picture.
+It's worth mentioning that I used the Graphite colours (System Preferences → General → Accent colour) to ensure it was neutral -- non-Graphite colours use Desktop Tinting, which tints the grey to match the colours from your desktop picture.
 
 With the background taken care of, I turned my attention to the  text itself. I softened the white text colour to a very light grey to reduce the contrast further as pure white was still slightly stark.
 
@@ -62,7 +62,7 @@ Admittedly, Apple's upgrade adoption rates are pretty great, but Safari on Mac i
 
 At the time of writing, neither Chrome nor Firefox (nor Opera) for Mac have adopted Dark Mode for their browser itself, so it's unlikely that they'll be supporting the `prefers-color-scheme` media query any time soon.
 
-I'm surprised iOS 12 didn't come with a Dark Mode too, especially as the iPhones X, XS and XS Max come equipped with OLED, which provides true black (those black pixels don't get switched on!). Many app makers have [tweaked their dark themes to use true black](https://9to5mac.com/2018/10/18/tweetbot-true-dark-mode-gifs/), so that they look great on the OLED iPhones. A system-wide Dark Theme, as well as looking nice and being easier on the eye at night, would also conserve battery—in similar fashion to Apple Watch and Watch OS—by only switching on the pixels it needs to. Surely it can't be too far around the corner. And I imagine `prefers-color-scheme`  media queries will ship with it. Of course, that'll mean the grey I've used will have to be a black on small screens, but I'll cross that bridge when I get to it!
+I'm surprised iOS 12 didn't come with a Dark Mode too, especially as the iPhones X, XS and XS Max come equipped with OLED, which provides true black (those black pixels don't get switched on!). Many app makers have [tweaked their dark themes to use true black](https://9to5mac.com/2018/10/18/tweetbot-true-dark-mode-gifs/), so that they look great on the OLED iPhones. A system-wide Dark Theme, as well as looking nice and being easier on the eye at night, would also conserve battery---in similar fashion to Apple Watch and Watch OS---by only switching on the pixels it needs to. Surely it can't be too far around the corner. And I imagine `prefers-color-scheme`  media queries will ship with it. Of course, that'll mean the grey I've used will have to be a black on small screens, but I'll cross that bridge when I get to it!
 
 Safari on iPhone currently accounts for nearly 13% of browsing world-wide, so totalling 14% with Safari for Mac thrown in there, support for supports `prefers-color-scheme` would be significant. At that point we'll start to see more web designers thinking about a Dark Mode theme for the sites they design and build. Maybe even Windows will follow suit and offer a Dark Mode of some sort. And at one point I hope Chrome and Firefox will also jump on board.
 

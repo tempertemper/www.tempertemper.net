@@ -48,7 +48,7 @@ So what semantic meaning does a horizontal rule have? I really like [MDN's defin
 
 They're often used in novels as a thematic break within a chapter; not a new chapter, but a much stronger division than a new paragraph would provide.
 
-And that's why I rarely use them – they're made for long-form content that wouldn't be suited to the way I write for the web. I know there are a handful publishers who make their books available on the web, but I've never been comfortable reading this way. Give me an .epub any day.
+And that's why I rarely use them -- they're made for long-form content that wouldn't be suited to the way I write for the web. I know there are a handful publishers who make their books available on the web, but I've never been comfortable reading this way. Give me an .epub any day.
 
 
 ## How a horizontal rule should look
@@ -59,4 +59,4 @@ Wikipedia defines [how a horizontal rule should look](https://en.wikipedia.org/w
 
 > Space between paragraphs in a section break is sometimes accompanied by an asterism (either proper ⁂ or manual * * *), a horizontal rule, fleurons, or other ornamental symbols
 
-So it's up to you! Don't feel you have to use that default 1px line – use something a bit more creative. Or it's possible that, like me, you'll probably never reach for an `<hr />` again, now that you know their intended use!
+So it's up to you! Don't feel you have to use that default 1px line -- use something a bit more creative. Or it's possible that, like me, you'll probably never reach for an `<hr />` again, now that you know their intended use!

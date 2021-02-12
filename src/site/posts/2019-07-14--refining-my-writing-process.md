@@ -11,7 +11,7 @@ I'm in the process of writing an article about the recent rebuild of my website,
 
 My site used to be built with [a CMS called Perch](https://grabaperch.com), which was great when I was doing more client work, where Perch was my CMS of choice and I could try new features with myself as the guinea pig. Perch is great. But it being a database-driven CMS presented a bit of a hurdle when it came to writing and posting articles.
 
-I've written about [my writing app of choice](/blog/in-search-of-the-best-writing-app), iA Writer; that's where my writing workflow starts. There's no extra thinking involved when putting some new ideas down – I just open a new document and start typing. And every article I work on is automatically saved in iCloud so I can pick up exactly where I left off, even from another device.
+I've written about [my writing app of choice](/blog/in-search-of-the-best-writing-app), iA Writer; that's where my writing workflow starts. There's no extra thinking involved when putting some new ideas down -- I just open a new document and start typing. And every article I work on is automatically saved in iCloud so I can pick up exactly where I left off, even from another device.
 
 It was the stages after that where things got fiddly using a CMS: final edits, publishing, making updates, archiving files, etc.
 

@@ -13,7 +13,7 @@ Since I've started using Git on the command line, there's one 'new' thing that I
 1. Fixing typos in a commit message
 2. Adding missed files into a commit
 
-First up, a big thank you to my friend [Sam Beckham](https://twitter.com/samdbeckham) for putting me on to `--amend` – it has been invaluable.
+First up, a big thank you to my friend [Sam Beckham](https://twitter.com/samdbeckham) for putting me on to `--amend` -- it has been invaluable.
 
 
 ## Typos
@@ -25,7 +25,7 @@ A simple `git commit --amend` opens up the last commit in my editor, allowing me
 
 ## Adding missed files
 
-This one's pretty common too – I'll have been working on a bunch of files but only select few make sense as a single commit. I'll stage (`add`) them, commit, then realise I missed one. Luckily, it's possible to add a file (or several files) to that last commit:
+This one's pretty common too -- I'll have been working on a bunch of files but only select few make sense as a single commit. I'll stage (`add`) them, commit, then realise I missed one. Luckily, it's possible to add a file (or several files) to that last commit:
 
 1. First, add the file(s):
     - For all remaining unstaged files, use `git add .`

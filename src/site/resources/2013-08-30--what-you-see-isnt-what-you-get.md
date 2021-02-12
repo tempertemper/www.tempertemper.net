@@ -49,7 +49,7 @@ Your web designer's role is to ensure the content you've taken so much care over
 
 ### It used to be so easy…
 
-In the not-too-distant past, the web was consumed on desktop computers. Their screens were similar in size. Then laptops arrived, but this didn't change things too much as they had pretty similar sized screens and were interacted with in the same way – keyboard and mouse.
+In the not-too-distant past, the web was consumed on desktop computers. Their screens were similar in size. Then laptops arrived, but this didn't change things too much as they had pretty similar sized screens and were interacted with in the same way -- keyboard and mouse.
 
 It was a bit more like print in that you knew exactly how your website would look for pretty much everyone.
 
@@ -89,7 +89,7 @@ An example might be useful here… If you write a heading for a blog post and th
 
 But, after painstakingly deciding how to write the heading using less words, you might look at the same webpage in a different [web browser](/resources/whats-in-a-browser) or on a different operating system (Windows as opposed to your iPad) the text may be 'rendered' slightly differently, pushing the last word onto a different line anyway! So all of your attention to the detail of the design was for nought.
 
-Couple this with the nature of a website—adapting to as many different screen sizes as possible to offer the best possible experience—there's no avoiding a lone word on its own line at one screen width or the other!
+Couple this with the nature of a website---adapting to as many different screen sizes as possible to offer the best possible experience---there's no avoiding a lone word on its own line at one screen width or the other!
 
 
 ## The moral of the story

@@ -8,7 +8,7 @@ tags:
     - Git
 ---
 
-One thing that has frustrated me about [using the command line for Git](/blog/getting-to-grips-with-git) is that it is a long-winded process to stage individual files for a commit. In a GUI you just check the checkboxes next to the files you want to stage – easy. Well, I found a shortcut that I've been using a lot over the past couple of days, so thought I'd write about it.
+One thing that has frustrated me about [using the command line for Git](/blog/getting-to-grips-with-git) is that it is a long-winded process to stage individual files for a commit. In a GUI you just check the checkboxes next to the files you want to stage -- easy. Well, I found a shortcut that I've been using a lot over the past couple of days, so thought I'd write about it.
 
 Imagine we have made changes to the following 4 files:
 
@@ -37,7 +37,7 @@ It would be cool if we could just type `git add file4` and it would know what we
 
 So if we want to stage that fourth file in our list above, we could use the double asterisk to look through all directories, going as many levels as it can, until it finds a file that matches: `git add **/file4.html`.
 
-We could make that even quicker by sticking a single asterisk after the `4`: `git add **/file4*` – that second asterisk tells git not to worry about anything after the '4'.
+We could make that even quicker by sticking a single asterisk after the `4`: `git add **/file4*` -- that second asterisk tells git not to worry about anything after the '4'.
 
 And we could be even lazier by typing `git add **/*4*` if we knew that would get us a match!
 
@@ -54,7 +54,7 @@ Since we know those three files are the only ones with an `an/` in their path, w
 
 To stage files with something in common, like just the HTML files (one, two and four), we could run `git add **/*html`.
 
-We can even combine those two things – to get the HTML files in the directories that share the `an/` path, running `git add **/an/*html` will stage files one and two, but not four.
+We can even combine those two things -- to get the HTML files in the directories that share the `an/` path, running `git add **/an/*html` will stage files one and two, but not four.
 
 This has saved me a load of time, so hopefully it will you too!
 

@@ -15,7 +15,7 @@ The description meta tag doesn't do much for your search engine position. What i
 
 Of course you can just leave it blank, but this means searchers will be presented with a result that doesn't look right and probably leave it well alone. There are a few other very good reasons to make use of the tag too:
 
-- Each page's description should be written with the searcher in mind– what can you write that'll entice them to click through to your site?
+- Each page's description should be written with the searcher in mind-- what can you write that'll entice them to click through to your site?
 - It probably goes without saying that each page should have its own description tag. One size doesn't fit all and each page is more than likely performing its own unique function within your website.
 
 With that in mind, it's probably a good idea, before you write a single word for your page, to put its description together. Doing things this way really forces you to think carefully about the task the page'll be performing. You've got 200 characters to describe the page's content in an engaging fashion.
@@ -23,7 +23,7 @@ With that in mind, it's probably a good idea, before you write a single word for
 
 ## Useful tips
 
-It's a good idea to include a call to action in the description. An example of this would be to put your phone number on your contact page's description. For searchers looking for your number, it saves them time clicking through to your site and looking for the number again– it's a small thing but will be greatly appreciated.
+It's a good idea to include a call to action in the description. An example of this would be to put your phone number on your contact page's description. For searchers looking for your number, it saves them time clicking through to your site and looking for the number again-- it's a small thing but will be greatly appreciated.
 
 Put your brand name at the front and back of the description. This will mean it's always visible to the searcher, reassuring them that they're in the right hands.
 

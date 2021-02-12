@@ -10,14 +10,6 @@
   @include button;
 }
 
-.back {
-  @include reverse-link-marker;
-  display: inline-block;
-  font-family: $font--heading;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
 .read-more {
   font-family: $font--heading;
 }

@@ -7,7 +7,7 @@ date: 2019-08-30
 
 I do a lot of reading on the Metro, on the way to work. A while back, I read an article that quoted something that really stuck in my head.
 
-> The ceramics teacher announced on opening day that he was dividing the class into two groups. All those on the left side of the studio, he said, would be graded solely on the quantity of work they produced, all those on the right solely on its quality … Well, came grading time and a curious fact emerged: the works of highest quality were all produced by the group being graded for quantity. It seems that while the "quantity" group was busily churning out piles of work—and learning from their mistakes—the "quality" group had sat theorizing about perfection, and in the end had little more to show for their efforts than grandiose theories and a pile of dead clay.
+> The ceramics teacher announced on opening day that he was dividing the class into two groups. All those on the left side of the studio, he said, would be graded solely on the quantity of work they produced, all those on the right solely on its quality … Well, came grading time and a curious fact emerged: the works of highest quality were all produced by the group being graded for quantity. It seems that while the "quantity" group was busily churning out piles of work---and learning from their mistakes---the "quality" group had sat theorizing about perfection, and in the end had little more to show for their efforts than grandiose theories and a pile of dead clay.
 
 I must've read it just as I reached my stop because, although it struck a chord, I completely forgot where I'd read it. Very frustrating.
 
@@ -30,4 +30,4 @@ I've tried to keep articles [short and sweet](/blog/settling-for-less), but inev
 
 I have a lot of articles on the go at any given time (I have about 40 half-written at the moment) so there's no shortage of material. A concerted effort to get some of those finished up and published, alongside any new material I come up with, should leave me in good shape for 52 posts by the end of the year.
 
-One way or the other, I'm happy with my output so far – 30 posts so far this year is already almost double my record (16 in 2012). More than anything though, I'm enjoying the writing itself, and hopefully I'll be getting slightly better at it with every post!
+One way or the other, I'm happy with my output so far -- 30 posts so far this year is already almost double my record (16 in 2012). More than anything though, I'm enjoying the writing itself, and hopefully I'll be getting slightly better at it with every post!

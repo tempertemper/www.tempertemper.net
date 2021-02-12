@@ -1,11 +1,6 @@
-$default: (
-  columns: 4,
-  gutters: .25,
-  math: fluid,
-);
-
-$wide-layout: (
-  columns: 6,
-  gutters: .25,
-  math: fluid,
+$susy: (
+  'columns': susy-repeat(6),
+  'gutters': 0.25,
+  'container-spread': 'narrow',
+  'spread': 'narrow',
 );

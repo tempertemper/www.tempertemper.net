@@ -10,9 +10,9 @@ summaryImage: tempertemper-logo--pixel-avatars.png
 summaryImageAlt: Five examples of my pixellated avatars, one with a Boba Fett (from Star Wars) helmet, one with a Christmas jumper, one with a scarf and gloves, one with a longboard, and one with a Halloween wolfman costume
 ---
 
-My high school 'work experience' placement was in an IT department of a large organisation. I spent the first week driving from office to office fixing hardware; it was fine, but not really my thing. The second week, however, was a different story – I was tasked with drawing icons for their in-house software application. Nobody in the office seemed to have wanted to do this, so it was pushed my way with no small amount of relief.
+My high school 'work experience' placement was in an IT department of a large organisation. I spent the first week driving from office to office fixing hardware; it was fine, but not really my thing. The second week, however, was a different story -- I was tasked with drawing icons for their in-house software application. Nobody in the office seemed to have wanted to do this, so it was pushed my way with no small amount of relief.
 
-For a week, I happily churned out icon after icon, thinking about what the best way to represent each part of the interface was and working with their drawing tool. This was around 1993, so the icons weren't the crisp vectors we're used to today – it was all about clever use of *pixels*, working within the very tight grid with a limited colour palette.
+For a week, I happily churned out icon after icon, thinking about what the best way to represent each part of the interface was and working with their drawing tool. This was around 1993, so the icons weren't the crisp vectors we're used to today -- it was all about clever use of *pixels*, working within the very tight grid with a limited colour palette.
 
 
 ## Pixels
@@ -45,4 +45,4 @@ You've probably seen that I've [tweaked my brand recently](/blog/the-simplest-so
 
 One of the reasons I'm so happy with the brand tweak is that the underscore now provides a 'bridge' to those pixel-art style social media avatars and the pixellated Christmas cards I've sent to my clients over the years.
 
-The pixels were always a bit random – something I liked that didn't really fit with my brand. But now that the underscore is a 1:4 rectangle, rather than a rounded underscore taken from the FS-Me font I use for the logotype, it makes a bit more sense if I use squares and rectangles and pixels elsewhere!
+The pixels were always a bit random -- something I liked that didn't really fit with my brand. But now that the underscore is a 1:4 rectangle, rather than a rounded underscore taken from the FS-Me font I use for the logotype, it makes a bit more sense if I use squares and rectangles and pixels elsewhere!

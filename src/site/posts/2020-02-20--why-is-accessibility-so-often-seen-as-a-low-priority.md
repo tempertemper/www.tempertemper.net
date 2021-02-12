@@ -30,9 +30,9 @@ There's clearly a *moral* obligation on both fronts but website owners seem to p
 
 ## Why don't website owners prioritise accessibility?
 
-Maybe caring little for accessibility is a short-sighted financial issue – investing in designers and developers who know how to produce accessible work isn't the cheapest way of doing things and it's easy to economise here at the expense of users with access needs. And a court case and a fine is expensive but unlikely, so maybe it's viewed as worth the risk.
+Maybe caring little for accessibility is a short-sighted financial issue -- investing in designers and developers who know how to produce accessible work isn't the cheapest way of doing things and it's easy to economise here at the expense of users with access needs. And a court case and a fine is expensive but unlikely, so maybe it's viewed as worth the risk.
 
-Perhaps it's not just financial short-sightedness – it could also be that annoying complacency human beings seem to have in their own (current) lack of impairments. [We're all just temporarily abled](https://uxmag.com/articles/we-re-just-temporarily-abled), so shouldn't we be building websites for our future selves?
+Perhaps it's not just financial short-sightedness -- it could also be that annoying complacency human beings seem to have in their own (current) lack of impairments. [We're all just temporarily abled](https://uxmag.com/articles/we-re-just-temporarily-abled), so shouldn't we be building websites for our future selves?
 
 I've heard clients dismiss accessibility with a "How many blind people use the website anyway" more than once.
 
@@ -50,7 +50,7 @@ In an ideal world, our clients would prioritise accessibility and properly budge
 How? Make accessibility an intrinsic part of what you do:
 
 - Ask more questions about inclusive design and accessible code
-- Don't be afraid to make mistakes – your good intentions will be appreciated and things can always be fixed
+- Don't be afraid to make mistakes -- your good intentions will be appreciated and things can always be fixed
 - Play with tools like [Wave](https://wave.webaim.org) and [Axe](https://www.deque.com/axe/)
 - [Read more articles](https://a11yweekly.com)
 - [Watch more talks](https://www.youtube.com/watch?v=VxQT3aq0nzw)

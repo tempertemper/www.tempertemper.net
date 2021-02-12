@@ -13,7 +13,7 @@ A couple of recent articles got me thinking. The first was [Why is CSS frustrati
 
 > CSS is pretty easy to pick up. Maybe it’s because of this that it has gained the reputation of being simple. It is simple in the sense of “not complex”, but that doesn’t mean it’s easy. Mistaking “simple” for “easy” will only lead to heartache.
 
-The other was a roundup by Dave Rupert – [HTML: The Inaccessible Parts](https://daverupert.com/2020/02/html-the-inaccessible-parts/). Here he starts with:
+The other was a roundup by Dave Rupert -- [HTML: The Inaccessible Parts](https://daverupert.com/2020/02/html-the-inaccessible-parts/). Here he starts with:
 
 > by just using a suitable HTML element instead of a generic `div` or `span` we can have a big Accessibility impact
 
@@ -28,7 +28,7 @@ He then goes on to list the problems with some of that more 'suitable' HTML:
 
 What makes CSS frustrating is that it's easy to pick up and make default browser styling much more interesting, but you can quickly run into unexpected behaviour, complexity and browser compatibility issues.
 
-It's a similar story with HTML – it's super simple to start writing content, marking it up with HTML and seeing how things look in your browser. It's even more exciting when you apply that basic CSS that you've written.
+It's a similar story with HTML -- it's super simple to start writing content, marking it up with HTML and seeing how things look in your browser. It's even more exciting when you apply that basic CSS that you've written.
 
 Unfortunately HTML, like CSS, can present unexpected behaviour, complexity and browser compatibility issues.
 
@@ -43,7 +43,7 @@ As with colour contrast, `display: none;` and [restyling lists](https://www.scot
 - ARIA `label`s, `role`s, etc.
 - browser compatibility with certain elements and attributes (`<datalist>` sounds like a great idea but comes with some accessibility drawbacks)
 - assistive tech like Dragon or NVDA compatibility with certain elements and attributes ([`type="number"`](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/), for example)
-- the user experience of certain elements – just because we *can* use an element doesn't mean we *should* (e.g. `<select multiple>` when something like `<input type="checkbox" />` probably provides better usability)
+- the user experience of certain elements -- just because we *can* use an element doesn't mean we *should* (e.g. `<select multiple>` when something like `<input type="checkbox" />` probably provides better usability)
 - Giving extra information for search engines and other machines via [microformats](//microformats.org) and [microdata](https://schema.org)
 - Social media cards with [Open Graph](https://ogp.me) and [Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
 - responsive design (`<meta name="viewport" content="initial-scale=1, width=device-width" />`, `<picture>` and `srcset=""`)

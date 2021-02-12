@@ -13,12 +13,12 @@ Around the time that last article went up, I bumped into a friend-and-long-time-
 
 But I was very happy doing what I had been doing for the previous seven years!
 
-Another chance meeting and a few persuasive chats over coffee and I was sold. It was a massive decision for me and my family and—I'll be honest—I'm still adjusting to employment. But it was the right decision.
+Another chance meeting and a few persuasive chats over coffee and I was sold. It was a massive decision for me and my family and---I'll be honest---I'm still adjusting to employment. But it was the right decision.
 
 
 ## Why no blogging?
 
-My blog used to be focussed on my clients – tips, tricks and resources to explain foreign (and often technical) concepts to them in layperson's terms. It also served as a good point of entry for potential clients who were searching for solutions to problems I might have answered on my blog. Marketing, of a kind!
+My blog used to be focussed on my clients -- tips, tricks and resources to explain foreign (and often technical) concepts to them in layperson's terms. It also served as a good point of entry for potential clients who were searching for solutions to problems I might have answered on my blog. Marketing, of a kind!
 
 So I was now an employee, and while I still continued to work with a clutch of my favourite clients, I wasn't taking any new work on. So the resources-style blog wasn't something that needed much attention.
 

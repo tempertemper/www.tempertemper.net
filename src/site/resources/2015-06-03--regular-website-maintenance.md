@@ -29,7 +29,7 @@ Maintenance is not just useful when you need to add some functionality on your s
 
 As time passes **web browsers** can do all sorts of cool new things. Some are not all that useful but others can make browsing your website easier and faster.
 
-When the **CMS software** your site is built with is updated, it's not just control panel cosmetics and security issues that are released – new improved ways of doing things are also introduced. Coding these in will often make it quicker for you to update your website's content. Or things that were 'hacked'  in might suddenly become easier to pull off.
+When the **CMS software** your site is built with is updated, it's not just control panel cosmetics and security issues that are released -- new improved ways of doing things are also introduced. Coding these in will often make it quicker for you to update your website's content. Or things that were 'hacked'  in might suddenly become easier to pull off.
 
 ### Technology changes
 

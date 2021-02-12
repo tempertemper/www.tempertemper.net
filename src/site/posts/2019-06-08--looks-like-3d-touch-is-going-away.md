@@ -42,9 +42,9 @@ The exception may be Apple Watch, where 3D Touch is more ubiquitous, rather than
 
 ## Some things will have to change
 
-There's one area where 3D Touch and a long press do very distinct things: the home screen. If long press on an app icon will bring up a Quick Actions menu, how will we invoke jiggle mode to move and delete apps? That has been a feature in iOS [since iOS 4](https://www.cnet.com/news/apple-wins-patent-for-ios-app-folders-and-jiggle-mode/), so people are very used to it. But it's not something we do very often so—I'll be honest—I don't really care how I access it!
+There's one area where 3D Touch and a long press do very distinct things: the home screen. If long press on an app icon will bring up a Quick Actions menu, how will we invoke jiggle mode to move and delete apps? That has been a feature in iOS [since iOS 4](https://www.cnet.com/news/apple-wins-patent-for-ios-app-folders-and-jiggle-mode/), so people are very used to it. But it's not something we do very often so---I'll be honest---I don't really care how I access it!
 
-What I *do* care about is the new keyboard cursor mode – a 3D Touch anywhere on the keyboard and I can use the keyboard space as a trackpad. Before I bought my iPhone XS I was using my iPhone 6 with iOS 12 and was quite happy with the long press on the space bar to activate the track pad, so going back to that would be fine. Though I wonder if this might cause problems with QuickPath swipe typing.
+What I *do* care about is the new keyboard cursor mode -- a 3D Touch anywhere on the keyboard and I can use the keyboard space as a trackpad. Before I bought my iPhone XS I was using my iPhone 6 with iOS 12 and was quite happy with the long press on the space bar to activate the track pad, so going back to that would be fine. Though I wonder if this might cause problems with QuickPath swipe typing.
 
 There are some extra things you can do when in trackpad mode to select blocks of text with a further force touch, but I'd be willing to lose that on non 3D Touch devices as I've never quite gotten used to it.
 
@@ -56,4 +56,4 @@ On a more trivial note, when Apple first introduced the ability to press hard on
 
 ## It's about features
 
-So now that I've had another think about it all, it's not 3D Touch itself that I love – it's the _features_ it facilitates. How I get to them doesn't really matter. And it's nice that _everyone_ will be able to access those features, should this all pan out as expected.
+So now that I've had another think about it all, it's not 3D Touch itself that I love -- it's the _features_ it facilitates. How I get to them doesn't really matter. And it's nice that _everyone_ will be able to access those features, should this all pan out as expected.

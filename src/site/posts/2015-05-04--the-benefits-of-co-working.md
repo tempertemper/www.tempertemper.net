@@ -22,7 +22,7 @@ When I wrote the post, I was renting a desk at a local software development comp
 
 So I found a dedicated co-working space that was only a half an hour's walk from my front door in the centre of Newcastle.
 
-There, people would drop in whenever they needed to, or others, like me, had more long-term desk rentals so were there a few days each week. Nobody had a fixed desk, rather you would turn up and choose your spot for the day. For me, this kept things from getting stale – literally a fresh perspective every day!
+There, people would drop in whenever they needed to, or others, like me, had more long-term desk rentals so were there a few days each week. Nobody had a fixed desk, rather you would turn up and choose your spot for the day. For me, this kept things from getting stale -- literally a fresh perspective every day!
 
 But the set-up began to change, and eventually the co-working space was rented to a well-known games development company and the co-workers moved to a less comfortable office.
 
@@ -45,7 +45,7 @@ The conversations that spring up naturally over the course of a day's co-working
 
 - My contract/agreement templates are not only much more thorough than they once were, but are very easy to read. This means they're also quicker and easier to write!
 - Written design and development processes mean I spend less time thinking about what needs to be done and more time doing it!
-- There are solid contingency plans in place, if I'm ever unable to continue work on a project (this has never happened and—fingers crossed—will never happen, but it's reassuring for me and my clients to have these things in place).
+- There are solid contingency plans in place, if I'm ever unable to continue work on a project (this has never happened and---fingers crossed---will never happen, but it's reassuring for me and my clients to have these things in place).
 - My branding is now a lot simpler and clearer, and my website has been redesigned to focus on the most important things to my clients and potential clients (I do that for clients all the time, but somehow never found time to do it for my own business!)
 
 Have you tried co-working? [Follow me on Twitter](https://twitter.com/tempertemper) and let me know how it has worked for you!

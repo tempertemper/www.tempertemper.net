@@ -30,7 +30,7 @@ That external Magic Keyboard is worth some attention: before I wrote this, I had
 
 ## Return of the inverted 'T' arrow key arrangement
 
-This caused problems for me. It took a long time to get use to the new arrow key arrangement – instead of the `up ↑` key, my finger would gravitate to the `shift ⇧` key, just above. And the *moment* I used an older inverted `T` keyboard those months of adjusted muscle memory were undone.
+This caused problems for me. It took a long time to get use to the new arrow key arrangement -- instead of the `up ↑` key, my finger would gravitate to the `shift ⇧` key, just above. And the *moment* I used an older inverted `T` keyboard those months of adjusted muscle memory were undone.
 
 I design Government systems for a living and they put usability over looking sexy. The inverted `T` didn't look as nice as the newer full-height `left ←` and `right →` keys, but it was 100% more useable.
 
@@ -54,7 +54,7 @@ John Gruber at [Daring Fireball sums it up nicely](https://daringfireball.net/20
 
 > We got it all: a return of scissor key mechanisms in lieu of butterfly switches, a return of the inverted-T arrow key arrangement, and a hardware Escape key.
 
-The keyboard itself might have been perfected—it looks to have hit the right balance between what made the newer keyboards feel great and the practicalities that let them down so badly—but any discussion of the keyboard should also include the Touch Bar.
+The keyboard itself might have been perfected---it looks to have hit the right balance between what made the newer keyboards feel great and the practicalities that let them down so badly---but any discussion of the keyboard should also include the Touch Bar.
 
 The Touch Bar has gone unchanged, aside from being slightly less wide to accommodate the hardware escape key.
 

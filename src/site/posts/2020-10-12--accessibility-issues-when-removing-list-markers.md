@@ -18,7 +18,7 @@ You'd think that when the user reaches a list, VoiceOver would:
 3. step through each item in turn, counting as it goes
 4. announce the end of the list
 
-That happens when the list has bullets or numbers, of course, but if those visual markers are removed, VoiceOver, not unreasonably, does likewise when it reads the list out. In other words, Apple decided that if something doesn't *look* like a list—even if it's marked up as a list—it shouldn't be *read* as a list.
+That happens when the list has bullets or numbers, of course, but if those visual markers are removed, VoiceOver, not unreasonably, does likewise when it reads the list out. In other words, Apple decided that if something doesn't *look* like a list---even if it's marked up as a list---it shouldn't be *read* as a list.
 
 It would never have been too much of an issue if lists were used sparingly, but us web developers love a list, which can get very noisy for screen reader users. With so many lists, and some that don't even *look* like lists, Apple's call starts to make sense.
 
@@ -46,4 +46,4 @@ VoiceOver views a zero-width space (`\200B`) as a valid bullet character, so it 
 
 The lesson here is to be more deliberate with our lists. Not everything that consists of multiple items is necessarily a list. And if something *definitely is* a list, carefully consider if it's actually a good idea to remove the markers.
 
-Sometimes a list—rightly—makes it through that scrutiny and out into the wild, which is where that CSS fix comes in handy.
+Sometimes a list---rightly---makes it through that scrutiny and out into the wild, which is where that CSS fix comes in handy.

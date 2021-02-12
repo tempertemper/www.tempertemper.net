@@ -27,7 +27,7 @@ A common approach is for the arrow to point **right when the content is closed**
 
 The right-pointing arrow indicates there is something else to progress to; the downwards arrow leads the eye towards the newly revealed content. This is how the `<details>` and `<summary>` elements work [before any extra styling](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details).
 
-A downside to this method is that the user might expect to be taken to a new page – links that take you back a page often have a left-pointing arrow, so they might reasonably assume that progressing to the next step in a process might have a right-pointing arrow.
+A downside to this method is that the user might expect to be taken to a new page -- links that take you back a page often have a left-pointing arrow, so they might reasonably assume that progressing to the next step in a process might have a right-pointing arrow.
 
 ### Down/up
 

@@ -66,7 +66,7 @@ Even if there are no validation errors, not having a closing `</li>`, for exampl
 
 ## Time spent second-guessing
 
-Just as the nesting in CSS or JavaScript would look off without a closing bracket (don't try it – you'll *definitely* break things!), nested HTML that's missing *some* closing tags and not others lacks some visual order. I start to second-guess my code, which means I'm spending extra time writing it.
+Just as the nesting in CSS or JavaScript would look off without a closing bracket (don't try it -- you'll *definitely* break things!), nested HTML that's missing *some* closing tags and not others lacks some visual order. I start to second-guess my code, which means I'm spending extra time writing it.
 
 
 ## So let's close our HTML elements
