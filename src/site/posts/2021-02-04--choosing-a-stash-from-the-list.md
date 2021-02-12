@@ -14,7 +14,7 @@ tags:
 git stash list
 ```
 
-This brings up a list of all of the stashes in your current repository (which is much easier understand if you've [named your stashes](/blog/giving-your-stash-a-name)); to choose a particular stash, all you have to do is find the index of the stash:
+This brings up a list of all of the stashes in your current repository (which is much easier understand if you've [named your stashes](/blog/giving-your-git-stash-a-name)); to choose a particular stash, all you have to do is find the index of the stash:
 
 1. View your list of stashes
 2. Copy the stash index number (which looks something like `stash@{2}`)

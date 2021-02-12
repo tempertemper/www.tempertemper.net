@@ -7,7 +7,7 @@ tags:
     - Git
 ---
 
-It's a good idea to [name our stashes](/blog/giving-your-stash-a-name) if some time is likely to pass between stashing and picking up the work again, but sometimes we need *even more* information, which is where the `show` command comes in:
+It's a good idea to [name our stashes](/blog/giving-your-git-stash-a-name) if some time is likely to pass between stashing and picking up the work again, but sometimes we need *even more* information, which is where the `show` command comes in:
 
 ```git
 git stash show

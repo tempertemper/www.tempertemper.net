@@ -884,6 +884,18 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/giving-your-stash-a-name"
+  to = "/blog/giving-your-git-stash-a-name"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/giving-your-stash-a-name"
+  to = "/blog/giving-your-git-stash-a-name"
+  status = 301
+  force = true
+
 
 ## Portfolio redirects
 
