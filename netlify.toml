@@ -896,6 +896,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/blog/scroll-bounce-page-background-colour"
+  to = "/blog/scroll-bounce-page-background-colour"
+  status = 301
+  force = true
+
 
 ## Portfolio redirects
 
