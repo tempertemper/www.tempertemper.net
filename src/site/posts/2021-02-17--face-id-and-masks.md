@@ -1,7 +1,7 @@
 ---
 title: Face ID and masks
 intro: |
-    I love Face ID, but now that we're all wearing masks in public our passcodes a seeing a lot more use. Luckily, Apple have a solution in the pipeline.
+    Face ID is great, but now that we're all wearing masks in public our passcodes are seeing a lot more use. Luckily, Apple have a solution in the pipeline.
 date: 2021-02-17
 tags:
     - Apple
