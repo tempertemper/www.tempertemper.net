@@ -13,7 +13,7 @@ Well, mostly… I've written about [the problem sunglasses present](/blog/face-i
 
 Paying for stuff hasn't been much of an issue as I have an Apple Watch, but if I want to check my shopping list or text my wife when I'm browsing the supermarket aisles, I have to type my password or surreptitiously lower my mask to get past my lock screen.
 
-When the new iPad Air with [Touch ID integrated in the lock button](https://appleinsider.com/articles/20/10/04/power-button-touch-id-on-the-ipad-air-4-was-an-incredible-feat) was announced, I thought Apple might integrate a fall-back Touch ID sensor in the same place in the iPhones 14, but I guess:
+When the new iPad Air with [Touch ID integrated in the lock button](https://appleinsider.com/articles/20/10/04/power-button-touch-id-on-the-ipad-air-4-was-an-incredible-feat) was announced, I thought Apple might integrate a fall-back Touch ID sensor in the same place in the iPhones 12, but I guess:
 
 - hardware design and manufacturing lead-time is *much* longer than the 9 or 10 months between the onset of the pandemic and the new phones being released
 - it's almost certainly an expensive thing to add, and the amount of use it would get would make an increased handset cost (or reduced profit margins!) a difficult sell
