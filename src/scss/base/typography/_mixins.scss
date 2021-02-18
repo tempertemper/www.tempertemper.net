@@ -56,10 +56,10 @@ $font--heading: 'FS Me Web', sans-serif;
 
 @mixin heading-xl {
   font-size: ms(3);
+  font-weight: 400;
 
   @media (max-width: $xxs) {
     font-size: ms(1);
-    font-weight: 400;
   }
 
   @media (min-width: $m) {
@@ -74,10 +74,10 @@ $font--heading: 'FS Me Web', sans-serif;
 
 @mixin heading-l {
   font-size: ms(2);
+  font-weight: 400;
 
   @media (max-width: $xxs) {
     font-size: ms(0);
-    font-weight: 400;
   }
 
   @media (min-width: $m) {
