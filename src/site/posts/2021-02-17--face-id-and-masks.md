@@ -3,6 +3,7 @@ title: Face ID and masks
 intro: |
     Face ID is great, but now that we're all wearing masks in public our passcodes are seeing a lot more use. Luckily, Apple have a solution in the pipeline.
 date: 2021-02-17
+updated: 2021-02-18
 tags:
     - Apple
 ---
@@ -11,7 +12,7 @@ I've had a Face ID iPhone for a couple of years now; I love it, and couldn't ima
 
 Well, mostly… I've written about [the problem sunglasses present](/blog/face-id-and-sunglasses), but the COVID-19 pandemic has introduced a new (and very necessary!) barrier to Face ID: masks.
 
-Paying for stuff hasn't been much of an issue as I have an Apple Watch, but if I want to check my shopping list or text my wife when I'm browsing the supermarket aisles, I have to type my password or surreptitiously lower my mask to get past my lock screen.
+Paying for stuff hasn't been much of an issue as I have an Apple Watch, but if I want to check my shopping list or text my wife when I'm browsing the supermarket aisles, I have to [type my passcode](/blog/custom-numeric-passcodes-on-iphone) or surreptitiously lower my mask to get past my lock screen.
 
 When the new iPad Air with [Touch ID integrated in the lock button](https://appleinsider.com/articles/20/10/04/power-button-touch-id-on-the-ipad-air-4-was-an-incredible-feat) was announced, I thought Apple might integrate a fall-back Touch ID sensor in the same place in the iPhones 12, but I guess:
 
