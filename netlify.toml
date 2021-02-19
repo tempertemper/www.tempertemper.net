@@ -14,23 +14,14 @@
   base = "."
   functions = "./lib/functions"
 
-# Allow fonts to be used by other domains (disable CORS)
+
+# Allow fonts to be used by other domains (disable CORS), also cache fonts
 [[headers]]
   for = "/assets/fonts/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
-
-
-# Cache font files
-[[headers]]
-  for = "*.woff"
-  [headers.values]
     Cache-Control = "public, max-age=604800"
 
-[[headers]]
-  for = "*.woff2
-  [headers.values]
-    Cache-Control = "public, max-age=604800"
 
 # Internal redirects
 
