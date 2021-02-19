@@ -20,6 +20,18 @@
     [headers.values]
     Access-Control-Allow-Origin = "*"
 
+
+# Cache font files
+[[headers]]
+  for = "*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "*.woff2
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
 # Internal redirects
 
 ## Redirect default Netlify subdomain to primary domain
