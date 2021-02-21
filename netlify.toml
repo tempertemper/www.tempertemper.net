@@ -20,7 +20,7 @@
   for = "/assets/fonts/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, max-age=31536000"
 
 
 # Internal redirects
