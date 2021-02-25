@@ -1,5 +1,5 @@
 ---
-title: Renaming the 'master' branch on GitHub
+title: How to rename the 'master' branch on GitHub
 intro: |
     So renaming `master` to `main` is a good idea, but how do we do it? Fortunately, it's really straightforward if your repository lives on GitHub.
 date: 2021-02-25

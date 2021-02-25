@@ -943,6 +943,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/renaming-the-master-branch-on-github"
+  to = "/blog/how-to-rename-the-master-branch-on-github"
+  status = 301
+  force = true
+
 
 ## Portfolio redirects
 
