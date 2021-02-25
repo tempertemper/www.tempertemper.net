@@ -854,6 +854,12 @@
 ## Other blog post redirects
 
 [[redirects]]
+  from = "/blog/renaming-the-master-branch-on-github"
+  to = "/blog/how-to-rename-the-master-branch-on-github"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/free-security-updates"
   to = "/blog/"
   status = 301
