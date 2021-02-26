@@ -6,6 +6,8 @@ date: 2021-02-24
 tags:
     - Git
     - Development
+summaryImage: blackout.png
+summaryImageAlt: A completely black image
 updated: 2021-02-25
 ---
 
