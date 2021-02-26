@@ -6,6 +6,7 @@ date: 2021-02-25
 tags:
     - Git
     - Development
+updated: 2021-02-26
 ---
 
 So [renaming `master` to `main` is a good idea](/blog/empathy-and-renaming-my-master-branch-to-main), but how do we do it? It's really easy if you're using GitHub:
@@ -26,4 +27,4 @@ You can just blindly copy and paste that code block to run all three, but let's 
 
 1. First we rename the local branch from `master` to `main`, to match what we've just done on the remote repo: `git branch -m master main`
 2. Next, we get the most up to date info from the remote repo (in other words, the fact that `master` is gone and there's a 'new' `main` branch): `git fetch origin`
-3. Lastly, we set the 'upstream' branch to `main` for your local `main` branch, so that pushing and pulling without specifying the branch is possible `git branch -u origin/main main`
+3. Lastly, we [set the 'upstream' branch](/blog/setting-an-upstream-git-branch) to `main` for your local `main` branch, so that pushing and pulling without specifying the branch is possible `git branch -u origin/main main`
