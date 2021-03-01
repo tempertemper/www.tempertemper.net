@@ -1,5 +1,6 @@
 ---
 title: Google+ what's the fuss?
+customURL: google-plus-whats-the-fuss
 intro: |
     Google+ is the next big social network. It has a lot of potential and is similar those we already know to be useable, but has some subtle differences.
 date: 2011-07-19
