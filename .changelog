@@ -11,6 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Uses npm packages and npm scripts to compile site rather than Gulp
+- Uses command line to concatenate JavaScript, rather than npm package
+
+### Removes
+- Removes Gulp as a dependency
+- Removes empty, unnecessary build.js file
+
 ----------
 
 
