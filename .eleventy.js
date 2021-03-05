@@ -80,6 +80,20 @@ module.exports = eleventyConfig => {
     return yyyy + '/' + mm + '/' + dd;
   });
 
+  /* Localhost server config */
+  eleventyConfig.setBrowserSyncConfig({
+    port: 3000,
+    watch: true,
+    server: {
+      baseDir: "./dist/",
+      serveStaticOptions: {
+        extensions: ["html"]
+      }
+    },
+    open: false,
+    notify: false
+  });
+
   return {
     dir: {
       input: "src/site",
