@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds SVG favicon
 - Makes theme-color value lowercase for better legibility
 - Updates humans.txt file to reflect Gulp removal
+- Updates colophon file to reflect Gulp removal
 
 ### Adds
 - Adds webmanifest file with icons for Android
