@@ -28,4 +28,4 @@ The styling is written in [SCSS](https://sass-lang.com) with a smattering of [Po
 
 ## Scripts
 
-There is no JavaScript at all on this website! Analytics are taken care of by [Netlify Analytics](/blog/ditching-google-analytics-in-favour-of-netlify-analytics) and the rest is just plain old HTML and CSS.
+There is only a tiny amount of JavaScript on this website; used to enhance some keyboard behaviour on [links that look like buttons](/blog/when-design-breaks-semantics) for better accessibility. Analytics are taken care of on the server-side by [Netlify Analytics](/blog/ditching-google-analytics-in-favour-of-netlify-analytics) and the rest is just plain old HTML and CSS.
