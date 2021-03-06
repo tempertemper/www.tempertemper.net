@@ -11,6 +11,18 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Changes favicon location
+- Adds SVG favicon
+- Makes theme-color value lowercase for better legibility
+
+### Adds
+- Adds webmanifest file with icons for Android
+
+### Removes
+- Gets rid of all but one apple-touch-icon
+- Removes Safari mask-icon
+
 ----------
 
 
