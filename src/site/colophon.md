@@ -8,7 +8,7 @@ permalink: colophon.html
 cta: true
 ---
 
-This website was lovingly put together using [Eleventy, the best static site generator](/blog/website-version-5) I've come across, hands-down. The build itself is taken care of by [Gulp](https://gulpjs.com/), but I'm in the process of removing that extra dependency and moving to [npm scripts](https://css-tricks.com/why-npm-scripts/). It's all [hosted on Netlify](/blog/moving-to-netlify).
+This website was lovingly put together using [Eleventy, the best static site generator](/blog/website-version-5) I've come across, hands-down. The build itself is taken care of by [npm scripts](https://css-tricks.com/why-npm-scripts/), and it's all [hosted on Netlify](/blog/moving-to-netlify).
 
 
 ## Typography
@@ -28,4 +28,4 @@ The styling is written in [SCSS](https://sass-lang.com) with a smattering of [Po
 
 ## Scripts
 
-There is no JavaScript at all on this website! Analytics are taken care of by [Netlify Analytics](/blog/ditching-google-analytics-in-favour-of-netlify-analytics) and the rest is just plain old HTML and CSS.
+There is only a tiny amount of JavaScript on this website; used to enhance some keyboard behaviour on [links that look like buttons](/blog/when-design-breaks-semantics) for better accessibility. Analytics are taken care of on the server-side by [Netlify Analytics](/blog/ditching-google-analytics-in-favour-of-netlify-analytics) and the rest is just plain old HTML and CSS.
