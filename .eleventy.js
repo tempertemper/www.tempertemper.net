@@ -101,7 +101,7 @@ module.exports = eleventyConfig => {
       includes: "_includes",
       layouts: "_layouts"
     },
-    templateFormats : ["njk", "html", "md", "txt", "webmanifest"],
+    templateFormats : ["njk", "html", "md", "txt", "webmanifest", "ico"],
     htmlTemplateEngine : "njk",
     markdownTemplateEngine : "njk"
   };
