@@ -8,7 +8,7 @@ summaryImage: cowsay.png
 summaryImageAlt: An ASCII art cow, known as 'cowsay', with a speech bubble saying "Emojis are more accessible than ASCII art"
 ---
 
-I love those old-school ASCII art characters. They're full of character and pre-emoji charm. Remember using a colon and a closing bracket for a smiley face? Or my personal favourite, the shrug:
+I love those old-school ASCII art drawings. They're full of character and pre-emoji charm. Remember using a colon and a closing bracket for a smiley face? Or my personal favourite, the shrug:
 
 ```
 ¯\_(ツ)_/¯
