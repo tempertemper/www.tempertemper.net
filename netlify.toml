@@ -1100,32 +1100,56 @@
   force = true
 
 [[redirects]]
+  from = "/assets/img/icons/favicon.png"
+  to = "/favicon.ico"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/apple-touch-icon-precomposed.png"
-  to = "/assets/img/icons/apple-touch-icon-180x180.png"
+  to = "/assets/img/icons/apple-touch-icon.png"
   status = 301
   force = true
 
 [[redirects]]
   from = "/apple-touch-icon.png"
-  to = "/assets/img/icons/apple-touch-icon-180x180.png"
+  to = "/assets/img/icons/apple-touch-icon.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/apple-touch-icon-76x76.png"
+  to = "/assets/img/icons/apple-touch-icon.png"
   status = 301
   force = true
 
 [[redirects]]
   from = "/apple-touch-icon-114x114.png"
-  to = "/assets/img/icons/apple-touch-icon-180x180.png"
+  to = "/assets/img/icons/apple-touch-icon.png"
   status = 301
   force = true
 
 [[redirects]]
   from = "/apple-touch-icon-144x144.png"
-  to = "/assets/img/icons/apple-touch-icon-180x180.png"
+  to = "/assets/img/icons/apple-touch-icon.png"
   status = 301
   force = true
 
 [[redirects]]
   from = "/apple-touch-icon-144x144-precomposed.png"
-  to = "/assets/img/icons/apple-touch-icon-180x180.png"
+  to = "/assets/img/icons/apple-touch-icon.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/apple-touch-icon-120x120.png"
+  to = "/assets/img/icons/apple-touch-icon.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/apple-touch-icon-120x120-precomposed.png"
+  to = "/assets/img/icons/apple-touch-icon.png"
   status = 301
   force = true
 
