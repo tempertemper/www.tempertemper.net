@@ -39,7 +39,7 @@ That takes everything you've changed and makes a 'stash' with it.
 But it doesn't stash anything new, so if you have any untracked files, they won't be stashed. To include untracked files in your stash, add the `--include-untracked` flag; luckily there's a shorthand:
 
 ```git
-git stash --u
+git stash -u
 ```
 
 
