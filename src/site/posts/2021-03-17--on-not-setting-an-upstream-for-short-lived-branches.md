@@ -1,7 +1,7 @@
 ---
 title: On not setting an upstream for short-lived branches
 intro: |
-    I like the extra effort
+    I only set upstream Git branches when I need to push and pull a lot, otherwise I prefer to write out my target branch manually. Here's why…
 date: 2021-03-17
 tags:
     - Git
