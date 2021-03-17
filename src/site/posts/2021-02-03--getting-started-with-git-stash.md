@@ -5,6 +5,7 @@ intro: |
 date: 2021-02-03
 tags:
     - Git
+    - Development
 ---
 
 Normally, switching branches when there are some uncommitted changes is fine; the modified files just follow me when I checkout another branch. But sometimes I get this:
