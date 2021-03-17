@@ -5,6 +5,7 @@ intro: |
 date: 2021-02-05
 tags:
     - Git
+    - Development
 ---
 
 Out of the box, `git stash` will automatically name the stash as follows:

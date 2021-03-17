@@ -5,6 +5,7 @@ intro: |
 date: 2021-02-10
 tags:
     - Git
+    - Development
 ---
 
 It's a good idea to [name our stashes](/blog/giving-your-git-stash-a-name) if some time is likely to pass between stashing and picking up the work again, but sometimes we need *even more* information, which is where the `show` command comes in:

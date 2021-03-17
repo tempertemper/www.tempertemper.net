@@ -5,6 +5,7 @@ intro: |
 date: 2021-02-08
 tags:
     - Git
+    - Development
 ---
 
 `git stash pop` grabs a stash and dumps the changes on your current branch. It also *deletes* the stash. It can sometimes be useful to keep the stash if it's something that you want to reapply on another branch.
