@@ -5,6 +5,7 @@ intro: |
 date: 2021-02-09
 tags:
     - Git
+    - Development
 ---
 
 If you've [applied a stash non-destructively](applying-a-git-stash-non-destructively) you might eventually want to clear things down to keep your stash list tidy.

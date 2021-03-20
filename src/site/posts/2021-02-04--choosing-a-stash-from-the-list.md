@@ -6,6 +6,7 @@ date: 2021-02-04
 updated: 2021-02-09
 tags:
     - Git
+    - Development
 ---
 
 [Git stash is easy to get started with](/blog/getting-started-with-git-stash) but what if you stash more than once? You might want to have a look at your stashes:
