@@ -1,12 +1,12 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
-    {%- if heading %}
-        {%- set pageTitle = heading | smart | safe %}
+    {%- if title %}
+        {%- set pageTitle = title | smart | safe %}
     {%- elif category %}
         {%- set pageTitle = category | smart | safe %}
     {%- else %}
-        {%- set pageTitle = title | smart | safe %}
+        {%- set pageTitle = heading | smart | safe %}
     {%- endif %}
     <title>{{ pageTitle }} – tempertemper</title>
     {%- if description %}
