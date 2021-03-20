@@ -14,6 +14,18 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.15.2] - 2021-03-20
+
+### Adds
+- User manual for Martin Underhill
+
+### Changes
+- Updates a few npm packages
+
+### Fixes
+- Updates Eleventy version to fix security vulnerabilities
+
+
 ## [5.15.1] - 2021-03-06
 
 ### Changes
