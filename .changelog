@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.15.2] - 2021-03-20
+
 ### Adds
 - User manual for Martin Underhill
 
@@ -19,8 +24,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Updates Eleventy version to fix security vulnerabilities
-
-----------
 
 
 ## [5.15.1] - 2021-03-06
