@@ -10,13 +10,13 @@
 
   form {
 
+    @media (min-width: $m) {
+      text-align: left;
+    }
+
     @media (min-width: $l) {
       display: flex;
       align-items: flex-end;
-    }
-
-    div {
-      text-align: left;
     }
   }
 }
