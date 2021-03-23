@@ -13,22 +13,13 @@
       margin-right: gutter();
       @include highlight-box;
 
-      & > :first-child {
-        margin-bottom: 0;
-        margin-top: 0;
-      }
-
       &:nth-of-type(2n) {
         margin-right: 0;
       }
-
-      + li {
-        margin-top: 0;
-      }
     }
-  }
 
-  .index-list {
-    margin-bottom: 0;
+    h3 {
+      margin-top: 0;
+    }
   }
 }
