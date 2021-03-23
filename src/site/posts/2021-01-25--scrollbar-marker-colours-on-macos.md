@@ -47,7 +47,7 @@ It turns out that the scroll marker colour is chosen based on the `background-co
 
 The [solution was to use two background blues](https://github.com/tempertemper/tempertemper.net/commit/d2dad35f7b332897a7aafecc1b5dcdae7307c3cc), just as I'd used different colours for the canvas: one for Light Mode and another for Dark Mode.
 
-<img src="/assets/img/blog/light-and-dark-blue.png" alt="Two blocks of the colour blue, side by side; one very slightly lighter than the other" width="800" height="450" loading="lazy" />
+<img src="/assets/img/blog/light-and-dark-blue.png" alt="Two blocks of the colour blue, side by side; one very slightly lighter than the other" width="800" height="450" loading="lazy" decoding="async" />
 
 The lighter blue (`#09adfc`) is considered a 'light' colour, so a dark scroll marker is produced, contrasting nicely with the white canvas that overlays it.
 
