@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Adds async decoding attribute to all images
+- Adds `aria-current` attribute to navigation for current page
 
 ### Changes
 - Flattens form text alignment styling

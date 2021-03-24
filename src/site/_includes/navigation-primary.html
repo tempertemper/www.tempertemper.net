@@ -6,8 +6,8 @@
         { title: 'Contact', url: '/contact' }
     ] %}
     {%- for item in nav %}
-        <li {% if item.url == page.url %}class="active"{% endif %}>
-            <a href="{{ item.url | url }}">{{ item.title }}</a>
+        <li {%- if item.url == page.url %} class="active"{% endif %}>
+            <a href="{{ item.url | url }}" {%- if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
         </li>
     {%- endfor %}
 </ul>
