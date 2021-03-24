@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Adds async decoding attribute to all images
+- Adds `aria-current` attribute to navigation for current page
 
 ### Changes
 - Flattens form text alignment styling
@@ -21,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes some unnecessary form margin
 - Removes some unnecessary footer margin styling
 - Removes some unnecessary blog post list styling
+- Removes `active` page class from navigation
 
 ----------
 
