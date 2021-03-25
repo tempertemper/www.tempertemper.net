@@ -5,12 +5,15 @@
     @if ($background != null and $color != null) {
       background-color: $background;
       color: $color;
+      @content;
     }
     @else if ($background != null and $color == null) {
       background-color: $background;
+      @content;
     }
     @else if ($color != null and $background == null) {
       color: $color;
+      @content;
     }
     @else {
       @content;
