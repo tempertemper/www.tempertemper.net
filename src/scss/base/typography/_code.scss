@@ -2,7 +2,11 @@ code,
 kbd,
 pre {
   background-color: $colour-dark-mode-white;
-  @include dark-mode ($colour-dark-mode-black, $colour-dark-mode-white);
+
+  @include dark-mode ($colour-dark-mode-black, $colour-dark-mode-white) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 code,
