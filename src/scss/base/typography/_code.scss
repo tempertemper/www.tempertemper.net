@@ -1,12 +1,18 @@
 code,
-kbd,
-pre {
-  background-color: $colour-dark-mode-white;
-
+kbd {
+  background-color: $colour-code-background;
+  color: $colour-code-magenta;
   @include dark-mode ($colour-dark-mode-black, $colour-dark-mode-white) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+}
+
+pre code,
+pre {
+  background-color: $colour-code-background;
+  color: $black;
+  @include dark-mode ($colour-dark-mode-code-background, $colour-dark-mode-white);
 }
 
 code,
