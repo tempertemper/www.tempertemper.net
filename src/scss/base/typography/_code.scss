@@ -2,10 +2,7 @@ code,
 kbd,
 pre {
   background-color: $colour-dark-mode-white;
-
-  @include dark-mode() {
-    @include dark-mode ($colour-dark-mode-black, $colour-dark-mode-white);
-  }
+  @include dark-mode ($colour-dark-mode-black, $colour-dark-mode-white);
 }
 
 code,
