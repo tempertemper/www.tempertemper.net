@@ -2,7 +2,12 @@ code,
 kbd {
   background-color: $colour-code-background;
   color: $colour-code-magenta;
-  @include dark-mode ($colour-dark-mode-black, $colour-dark-mode-white) {
+  font-family: $code--font;
+  font-size: .8em;
+  border-radius: $border-radius-default/2;
+  padding: 0.1em;
+
+  @include dark-mode ($colour-dark-mode-code-background, $colour-dark-mode-code-magenta) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -10,20 +15,13 @@ kbd {
 
 pre code,
 pre {
-  background-color: $colour-code-background;
   color: $black;
-  @include dark-mode ($colour-dark-mode-code-background, $colour-dark-mode-white);
-}
-
-code,
-kbd {
-  font-family: $code--font;
-  font-size: .8em;
-  border-radius: $border-radius-default/2;
-  padding: 0.1em;
+  @include dark-mode ($color: $colour-dark-mode-white);
 }
 
 pre {
+  background-color: $colour-code-background;
+  @include dark-mode ($background: $colour-dark-mode-code-background);
   padding: 1em;
   white-space: pre-wrap;
   word-spacing: normal;
