@@ -5,7 +5,7 @@
   }
 
   .teaser {
-    @extend %clearfix;
+    @include clearfix;
 
     li {
       float: left;
