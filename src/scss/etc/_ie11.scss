@@ -1,0 +1,42 @@
+@mixin full-width-reset {
+
+  @media (min-width: $l) {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+_:-ms-fullscreen,
+:root {
+
+  .logo {
+
+    svg {
+      height: 40px;
+    }
+  }
+
+  .teaser {
+
+    @media (min-width: $l) {
+
+      .index-list {
+        @include full-width-reset;
+      }
+    }
+  }
+
+  @media (min-width: $l) {
+
+    h1 {
+        @include full-width-reset;
+    }
+  }
+
+  @mixin boxout {
+
+    @media (min-width: $l) {
+      @include full-width-reset;
+    }
+  }
+}

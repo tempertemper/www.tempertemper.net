@@ -3,7 +3,6 @@
   @media (min-width: $m) {
 
     .index-list {
-      @include full-width;
       display: flex;
       flex-wrap: wrap;
     }
@@ -20,6 +19,13 @@
 
     h3 {
       margin-top: 0;
+    }
+  }
+
+  @media (min-width: $l) {
+
+    .index-list {
+      @include full-width;
     }
   }
 }

@@ -16,12 +16,23 @@ All notable changes to this project will be documented in this file. The format 
 - Adds `aria-current` attribute to navigation for current page
 - Adds coloured text to inline code
 - Adds explicit light mode code background colour variable
+- Adds Internet Explorer 11 stylesheet to fix layout issues
+- Adds Internet Explorer 10 specific style sheet
 
 ### Changes
 - Flattens form text alignment styling
 - Allows content to be passed into every dark mode mixin
 - Thins dark mode code text out slightly
 - Deepens contrast for dark mode code blocks
+- Separates Internet Explorer stylesheets into versions
+
+### Fixes
+- Moves breakpoint media query out of `full-width` mixin
+- Fixes Internet Explorer 9 targeting
+- Internet Explorer 9 layout fixes
+- Fixes Internet Explorer 8 targeting
+- Internet Explorer 8 layout fixes
+- Fixes logo height on Internet Explorer 9, 10 and 11
 
 ### Removes
 - Removes some unnecessary form margin
