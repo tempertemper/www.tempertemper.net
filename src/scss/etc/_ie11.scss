@@ -7,7 +7,7 @@
 }
 
 _:-ms-fullscreen,
-:root .ie11up {
+:root {
 
   .teaser {
 
@@ -23,6 +23,13 @@ _:-ms-fullscreen,
 
     h1 {
         @include full-width-reset;
+    }
+  }
+
+  @mixin boxout {
+
+    @media (min-width: $l) {
+      @include full-width-reset;
     }
   }
 }
