@@ -29,6 +29,7 @@ All notable changes to this project will be documented in this file. The format 
 - Moves breakpoint media query out of `full-width` mixin
 - Fixes Internet Explorer 9 targeting
 - Internet Explorer 9 layout fixes
+- Fixes Internet Explorer 8 targeting
 
 ### Removes
 - Removes some unnecessary form margin
