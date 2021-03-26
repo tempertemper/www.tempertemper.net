@@ -30,6 +30,7 @@ All notable changes to this project will be documented in this file. The format 
 - Fixes Internet Explorer 9 targeting
 - Internet Explorer 9 layout fixes
 - Fixes Internet Explorer 8 targeting
+- Internet Explorer 8 layout fixes
 
 ### Removes
 - Removes some unnecessary form margin
