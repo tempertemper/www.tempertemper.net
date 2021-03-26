@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.15.3] - 2021-03-26
+
 ### Adds
 - Adds async decoding attribute to all images
 - Adds `aria-current` attribute to navigation for current page
@@ -40,8 +45,6 @@ All notable changes to this project will be documented in this file. The format 
 - Removes some unnecessary blog post list styling
 - Removes `active` page class from navigation
 - Removes unnecessary dark mode code wrapper media query for code blocks
-
-----------
 
 
 ## [5.15.2] - 2021-03-20
