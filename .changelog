@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds `aria-current` attribute to navigation for current page
 - Adds coloured text to inline code
 - Adds explicit light mode code background colour variable
+- Adds Internet Explorer 11 stylesheet to fix layout issues
 
 ### Changes
 - Flattens form text alignment styling

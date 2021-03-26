@@ -1,0 +1,28 @@
+@mixin full-width-reset {
+
+  @media (min-width: $l) {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+_:-ms-fullscreen,
+:root .ie11up {
+
+  .teaser {
+
+    @media (min-width: $l) {
+
+      .index-list {
+        @include full-width-reset;
+      }
+    }
+  }
+
+  @media (min-width: $l) {
+
+    h1 {
+        @include full-width-reset;
+    }
+  }
+}
