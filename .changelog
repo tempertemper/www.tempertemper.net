@@ -32,6 +32,7 @@ All notable changes to this project will be documented in this file. The format 
 - Internet Explorer 9 layout fixes
 - Fixes Internet Explorer 8 targeting
 - Internet Explorer 8 layout fixes
+- Fixes logo height on Internet Explorer 9, 10 and 11
 
 ### Removes
 - Removes some unnecessary form margin
