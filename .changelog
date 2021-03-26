@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 - Allows content to be passed into every dark mode mixin
 - Thins dark mode code text out slightly
 - Deepens contrast for dark mode code blocks
+- Separates Internet Explorer stylesheets into versions
 
 ### Fixes
 - Moves breakpoint media query out of `full-width` mixin
