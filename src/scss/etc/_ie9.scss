@@ -1,0 +1,21 @@
+@media screen and (min-width:0\0) and (min-resolution: .001dpcm) {
+
+  .logo {
+
+    svg {
+      height: 40px;
+    }
+  }
+
+  .navigation {
+    float: right;
+  }
+
+  .teaser {
+    @include clearfix;
+
+    li {
+      float: left;
+    }
+  }
+}

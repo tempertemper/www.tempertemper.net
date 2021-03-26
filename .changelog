@@ -14,6 +14,39 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.15.3] - 2021-03-26
+
+### Adds
+- Adds async decoding attribute to all images
+- Adds `aria-current` attribute to navigation for current page
+- Adds coloured text to inline code
+- Adds explicit light mode code background colour variable
+- Adds Internet Explorer 11 stylesheet to fix layout issues
+- Adds Internet Explorer 10 specific style sheet
+
+### Changes
+- Flattens form text alignment styling
+- Allows content to be passed into every dark mode mixin
+- Thins dark mode code text out slightly
+- Deepens contrast for dark mode code blocks
+- Separates Internet Explorer stylesheets into versions
+
+### Fixes
+- Moves breakpoint media query out of `full-width` mixin
+- Fixes Internet Explorer 9 targeting
+- Internet Explorer 9 layout fixes
+- Fixes Internet Explorer 8 targeting
+- Internet Explorer 8 layout fixes
+- Fixes logo height on Internet Explorer 9, 10 and 11
+
+### Removes
+- Removes some unnecessary form margin
+- Removes some unnecessary footer margin styling
+- Removes some unnecessary blog post list styling
+- Removes `active` page class from navigation
+- Removes unnecessary dark mode code wrapper media query for code blocks
+
+
 ## [5.15.2] - 2021-03-20
 
 ### Adds

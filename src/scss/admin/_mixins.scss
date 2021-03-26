@@ -5,12 +5,15 @@
     @if ($background != null and $color != null) {
       background-color: $background;
       color: $color;
+      @content;
     }
     @else if ($background != null and $color == null) {
       background-color: $background;
+      @content;
     }
     @else if ($color != null and $background == null) {
       color: $color;
+      @content;
     }
     @else {
       @content;
@@ -93,13 +96,10 @@
 }
 
 @mixin full-width {
-
-  @media (min-width: $l) {
-    $gutter: gutter();
-    $column: span(1 of 4);
-    margin-left: -($gutter * 1.5) + -$column;
-    width: span(6 of 6) + span(3 of 6) + ($gutter * 1.263);
-  }
+  $gutter: gutter();
+  $column: span(1 of 4);
+  margin-left: -($gutter * 1.5) + -$column;
+  width: span(6 of 6) + span(3 of 6) + ($gutter * 1.263);
 }
 
 @mixin boxout {
