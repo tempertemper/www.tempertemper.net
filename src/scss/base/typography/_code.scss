@@ -1,22 +1,27 @@
 code,
-kbd,
-pre {
-  background-color: $colour-dark-mode-white;
-
-  @include dark-mode() {
-    @include dark-mode ($colour-dark-mode-black, $colour-dark-mode-white);
-  }
-}
-
-code,
 kbd {
+  background-color: $colour-code-background;
+  color: $colour-code-magenta;
   font-family: $code--font;
   font-size: .8em;
   border-radius: $border-radius-default/2;
   padding: 0.1em;
+
+  @include dark-mode ($colour-dark-mode-code-background, $colour-dark-mode-code-magenta) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+pre code,
+pre {
+  color: $black;
+  @include dark-mode ($color: $colour-dark-mode-white);
 }
 
 pre {
+  background-color: $colour-code-background;
+  @include dark-mode ($background: $colour-dark-mode-code-background);
   padding: 1em;
   white-space: pre-wrap;
   word-spacing: normal;

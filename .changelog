@@ -14,15 +14,21 @@ All notable changes to this project will be documented in this file. The format 
 ### Adds
 - Adds async decoding attribute to all images
 - Adds `aria-current` attribute to navigation for current page
+- Adds coloured text to inline code
+- Adds explicit light mode code background colour variable
 
 ### Changes
 - Flattens form text alignment styling
+- Allows content to be passed into every dark mode mixin
+- Thins dark mode code text out slightly
+- Deepens contrast for dark mode code blocks
 
 ### Removes
 - Removes some unnecessary form margin
 - Removes some unnecessary footer margin styling
 - Removes some unnecessary blog post list styling
 - Removes `active` page class from navigation
+- Removes unnecessary dark mode code wrapper media query for code blocks
 
 ----------
 
