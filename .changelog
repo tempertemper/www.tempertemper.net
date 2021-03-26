@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds coloured text to inline code
 - Adds explicit light mode code background colour variable
 - Adds Internet Explorer 11 stylesheet to fix layout issues
+- Adds Internet Explorer 10 specific style sheet
 
 ### Changes
 - Flattens form text alignment styling
