@@ -21,7 +21,7 @@
   &:focus {
     background-color: $colour-primary-lighter;
     color: $white;
-    box-shadow: 0 0 0 2px $colour-primary;
+    box-shadow: 0 0 0 2px $colour-primary-lighter;
     @include dark-mode() {
       background-color: $colour-dark-mode-primary;
       box-shadow: 0 0 0 2px $colour-dark-mode-primary;
