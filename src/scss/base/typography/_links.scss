@@ -60,10 +60,6 @@ a {
     color: $colour-primary-darker;
     padding-left: 0;
     padding-right: 0;
-
-    @include dark-mode() {
-      @include dark-mode($color: $colour-dark-mode-primary);
-      color: $colour-dark-mode-primary-lighter;
-    }
+    @include dark-mode($color: $colour-dark-mode-primary-lighter);
   }
 }
