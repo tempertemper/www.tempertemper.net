@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Changes inline code colour to blue
+- Gets light mode link code passing AA colour contrast
 
 ----------
 
