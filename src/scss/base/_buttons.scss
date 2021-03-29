@@ -51,25 +51,21 @@
 
   &:focus {
     outline: none;
-    background-color: $colour-primary;
-    border: 3px solid $white;
-    box-shadow: 0 0 0 2px $colour-primary;
+    box-shadow: 0 0 0 3px $black;
     border-radius: $border-radius-default;
     text-decoration: none;
+    border-color: $colour-primary;
 
     @include dark-mode() {
-      border: 3px solid $colour-dark-mode-main;
-      background-color: $colour-dark-mode-primary;
-      box-shadow: 0 0 0 2px $colour-dark-mode-primary;
+      box-shadow: 0 0 0 3px $white;
+      border-color: $colour-dark-mode-primary;
     }
   }
 
   &:focus:hover {
-    background-color: $colour-primary-darker;
-    background-color: $colour-primary-darker;
+    border-color: $colour-primary-darker;
     @include dark-mode() {
-      box-shadow: 0 0 0 2px $colour-dark-mode-primary-lighter;
-      background-color: $colour-dark-mode-primary-lighter;
+      border-color: $colour-dark-mode-primary-lighter;
     }
   }
 

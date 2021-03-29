@@ -10,23 +10,24 @@ label {
 }
 
 input {
-  @include dark-mode($background: $colour-dark-mode-main, $color: $colour-dark-mode-white);
   border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
   display: block;
   font-family: georgia, serif;
   margin-bottom: 1em;
-  padding: .5em 1em;
+  padding: .5em .75em;
   width: 100%;
-  @include dark-mode() {
-    border-color: $colour-dark-mode-primary-lighter;
+  @include dark-mode($background: $colour-dark-mode-main, $color: $colour-dark-mode-white) {
+    border-color: $colour-dark-mode-primary;
   }
 
   &:focus {
-    border-color: $black;
+    box-shadow: 0 0 0 3px $black;
+    border-color: $colour-primary;
 
     @include dark-mode() {
-      border-color: $white;
+      box-shadow: 0 0 0 3px $white;
+      border-color: $colour-dark-mode-primary;
     }
   }
 }
