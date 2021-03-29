@@ -16,7 +16,7 @@ input {
   display: block;
   font-family: georgia, serif;
   margin-bottom: 1em;
-  padding: .5em 1em;
+  padding: .5em .75em;
   width: 100%;
   @include dark-mode() {
     border-color: $colour-dark-mode-primary-lighter;
