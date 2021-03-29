@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.15.4] - 2021-03-29
+
 ### Changes
 - Changes inline code colour to blue
 - Gets light mode link code passing AA colour contrast
@@ -19,8 +24,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Matches the outline to the background for focused links in Light Mode
-
-----------
 
 
 ## [5.15.3] - 2021-03-26
