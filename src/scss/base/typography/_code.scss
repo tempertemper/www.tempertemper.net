@@ -1,13 +1,13 @@
 code,
 kbd {
   background-color: $colour-code-background;
-  color: $colour-code-magenta;
+  color: $colour-primary-darker;
   font-family: $code--font;
   font-size: .8em;
   border-radius: $border-radius-default/2;
   padding: 0.1em;
 
-  @include dark-mode ($colour-dark-mode-code-background, $colour-dark-mode-code-magenta) {
+  @include dark-mode ($colour-dark-mode-code-background, $colour-dark-mode-primary-lighter) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
