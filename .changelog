@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Adds
 - Uses HTML validation to stop sign-up form being triggered with no data
 - Prevents double form submission
+- Adds autocomplete attribute for email on sign-up form
 
 ----------
 
