@@ -13,7 +13,7 @@ When you [rename your Git branch](/blog/empathy-and-renaming-my-master-branch-to
 In Netlify, it's pretty straightforward to change the deployment branch to `main` (or `primary` or whatever you like!); just head to your site in the control panel then:
 
 1. Navigate to 'Site settings' from the main menu
-2. Choose 'Continuous Deployment' (inconsistent case sic) in the side menu, in the 'Build & deploy' grouping
+2. Choose 'Continuous Deployment' ([inconsistent case](/blog/sentence-case-versus-title-case) sic) in the side menu, in the 'Build & deploy' grouping
 3. Scroll to 'Deploy contexts', the second section down the page
 4. Where you see 'Production branch' with the old branch name, hit the 'Edit settings' button
 5. Change the value 'Production branch' to the new branch name and save the changes
