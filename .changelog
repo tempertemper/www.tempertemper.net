@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.15.5] - 2021-03-31
+
 ### Changes
 - Stops sign-up form validating on email format, using `inputmode="email"` instead of `type="email"`
 
@@ -18,8 +23,6 @@ All notable changes to this project will be documented in this file. The format 
 - Uses HTML validation to stop sign-up form being triggered with no data
 - Prevents double form submission
 - Adds autocomplete attribute for email on sign-up form
-
-----------
 
 
 ## [5.15.4] - 2021-03-29
