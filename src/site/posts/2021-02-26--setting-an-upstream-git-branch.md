@@ -3,6 +3,7 @@ title: Setting an upstream Git branch
 intro: |
     There's no such thing as syncing in Git, but setting an upstream branch is about as close as it gets.
 date: 2021-02-26
+updated: 2021-04-01
 tags:
     - Git
     - Development
@@ -44,6 +45,12 @@ The flag to set an upstream branch is `--set-upstream-to`; that's a lot to type!
 git push -u origin my-great-feature
 ```
 
-This creates a branch on your remote called `my-great-feature` and---crucially---links it to your currently checked out local branch via the `-u` flag. If the `my-great-feature` branch already exists, it just creates the link between it and your local branch.
+This creates a branch on your remote called `my-great-feature` and links it to your currently checked out local branch via the `-u` flag. If the `my-great-feature` branch already exists up on your remote, it just creates the link between it and your local branch.
 
-From there on in, when you push and pull from your local `my-great-feature` branch, you won't need to tell Git the name of the the remote repo and branch you're pushing/pulling to/from: all you need is `git push` and `git pull`!
+It's worth mentioning here that your local branch has to be called `my-great-feature` for this to work. If you want your remote branch to have a different name to your local branch, say `our-great-feature`, you need to be explicit:
+
+```git
+git push -u origin my-great-feature:our-great-feature
+```
+
+From there on in, when you push and pull from your local `my-great-feature` branch, you won't need to tell Git the name of the the remote repo and branch you're pushing/pulling to/from again: all you need is `git push` and `git pull`!
