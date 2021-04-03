@@ -24,9 +24,8 @@ So I converted the image on my [About page](/about) to WebP, taking Geoff Graham
 
 ```html
 <picture>
-    <source srcset="/assets/img/martin-underhill-tempertemper.webp" type="image/webp">
-    <source srcset="/assets/img/martin-underhill-tempertemper.jpg" type="image/jpeg">
-    <img src="/assets/img/martin-underhill-tempertemper.jpg" alt="Martin Underhill of tempertemper Web Design, holding a cup of tea and looking to his left, smiling." width="800" height="450">
+    <source srcset="/assets/img/martin-underhill-tempertemper.webp" type="image/webp" />
+    <img src="/assets/img/martin-underhill-tempertemper.jpg" alt="Martin Underhill of tempertemper Web Design, holding a cup of tea and looking to his left, smiling." width="800" height="450" />
 </picture>
 ```
 
