@@ -21,10 +21,11 @@
   &:focus {
     background-color: $colour-primary-lighter;
     color: $white;
-    box-shadow: 0 0 0 2px $colour-primary-lighter;
+    box-shadow: 0 0 0 1px $colour-primary-lighter,  0 0 0 4px $black;
+    box-decoration-break: clone;
     @include dark-mode() {
       background-color: $colour-dark-mode-primary;
-      box-shadow: 0 0 0 2px $colour-dark-mode-primary;
+      box-shadow: 0 0 0 1px $colour-dark-mode-primary, 0 0 0 4px $white;
       color: $black;
     }
 

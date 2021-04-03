@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+- Adds focus outline to links, consistent with form focus styling
+
 ----------
 
 
