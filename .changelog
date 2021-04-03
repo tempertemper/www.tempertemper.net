@@ -11,11 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.15.6] - 2021-04-03
+
 ### Changes
 - Adds focus outline to links, consistent with form focus styling
 - Adds focus outline to 'skip to main content' link, consistent with other focus styling
-
-----------
 
 
 ## [5.15.5] - 2021-03-31
