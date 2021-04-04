@@ -5,7 +5,7 @@ kbd {
   font-family: $code--font;
   font-size: .8em;
   border-radius: $border-radius-default/2;
-  padding: 0.1em;
+  padding: .1em .1em .05em;
   @include dark-mode ($colour-dark-mode-code-background, $colour-dark-mode-primary-darker);
 }
 

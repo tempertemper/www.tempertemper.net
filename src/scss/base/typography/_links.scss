@@ -10,7 +10,7 @@
   &:hover,
   &:active {
     color: $colour-primary-darker;
-    @include dark-mode($color: $colour-dark-mode-primary-darker);
+    @include dark-mode($color: $colour-dark-mode-primary-lighter);
 
     > code {
       color: $colour-dark-mode-primary;
@@ -19,21 +19,11 @@
   }
 
   &:focus {
-    background-color: $colour-primary-lighter;
-    color: $white;
-    box-shadow: 0 0 0 1px $colour-primary-lighter,  0 0 0 4px $black;
+    background-color: $white;
+    box-shadow: 0 0 0 1px $white,  0 0 0 4px $black;
     box-decoration-break: clone;
-    @include dark-mode() {
-      background-color: $colour-dark-mode-primary;
-      box-shadow: 0 0 0 1px $colour-dark-mode-primary, 0 0 0 4px $white;
-      color: $black;
-    }
-
-    > code {
-      background-color: $colour-primary-lighter;
-      color: inherit;
-      @include dark-mode($background: $colour-dark-mode-primary);
-      padding-bottom: 0;
+    @include dark-mode($background: $colour-dark-mode-main) {
+      box-shadow: 0 0 0 1px $colour-dark-mode-main, 0 0 0 4px $white;
     }
   }
 }
@@ -41,26 +31,10 @@
 a {
   @include text-link;
 
-  > img {
-    border: 3px solid $colour-primary;
-    display: block;
-
-    &:hover,
-    &:active,
-    &:focus {
-      border-color: $black;
-    }
-  }
-
-  &:focus > code {
-    padding-top: .21em;
-    padding-bottom: .04em;
-  }
-
   > code {
     color: $colour-primary-darker;
+    @include dark-mode($color: $colour-dark-mode-primary);
     padding-left: 0;
     padding-right: 0;
-    @include dark-mode($color: $colour-dark-mode-primary);
   }
 }
