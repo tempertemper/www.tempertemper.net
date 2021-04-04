@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.15.7] - 2021-04-04
+
 ### Changes
 - Link focus only adds outline, no colour changes
 - Renames lightest Light Mode colour variable to be consistent with Dark Mode
@@ -24,8 +29,6 @@ All notable changes to this project will be documented in this file. The format 
 - Removes unnecessary image link styling
 - Gets rid of AAA primary colour for Light Mode
 - Removes unused `colour-primary-light` colour variable
-
-----------
 
 
 ## [5.15.6] - 2021-04-03
