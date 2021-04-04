@@ -31,22 +31,6 @@
 a {
   @include text-link;
 
-  > img {
-    border: 3px solid $colour-primary;
-    display: block;
-
-    &:hover,
-    &:active,
-    &:focus {
-      border-color: $black;
-    }
-  }
-
-  &:focus > code {
-    padding-top: .21em;
-    padding-bottom: .04em;
-  }
-
   > code {
     color: $colour-primary-darker;
     @include dark-mode($color: $colour-dark-mode-primary);
