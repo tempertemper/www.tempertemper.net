@@ -10,7 +10,7 @@
   &:hover,
   &:active {
     color: $colour-primary-darker;
-    @include dark-mode($color: $colour-dark-mode-primary-darker);
+    @include dark-mode($color: $colour-dark-mode-primary-lighter);
 
     > code {
       color: $colour-dark-mode-primary;

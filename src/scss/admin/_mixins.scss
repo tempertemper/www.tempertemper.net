@@ -69,23 +69,15 @@
 }
 
 @mixin highlight-box {
-  background-color: $colour-primary-lightest;
-  @include dark-mode($background: $colour-dark-mode-highlight, $color: $colour-dark-mode-white);
+  background-color: $colour-primary-highlight;
+  @include dark-mode($background: $colour-dark-mode-highlight);
   border-radius: $border-radius-default;
   padding: 1em;
 
   a {
-    color: $colour-primary-darker;
-    @include dark-mode($color: $colour-dark-mode-primary-lighter);
-
-    &:hover,
-    &:active {
-      color: $colour-primary-lighter;
-      @include dark-mode($color: $colour-dark-mode-primary);
-    }
 
     &:focus {
-      background-color: $colour-primary-lightest;
+      background-color: $colour-primary-highlight;
       @include dark-mode($background: $colour-dark-mode-highlight);
     }
   }
@@ -113,7 +105,7 @@
 
 @mixin embedded-media {
   border-radius: $border-radius-default;
-  background-color: $colour-primary-lightest;
+  background-color: $colour-primary-highlight;
   @include dark-mode($background: $colour-dark-mode-highlight);
   display: block;
   box-shadow: 0 0 .25em lighten($black, 85%);

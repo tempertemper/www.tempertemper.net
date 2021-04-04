@@ -38,8 +38,7 @@
   &:hover {
     border-color: $colour-primary-darker;
     background-color: $colour-primary-darker;
-    @include dark-mode() {
-      background-color: $colour-dark-mode-primary-lighter;
+    @include dark-mode($background: $colour-dark-mode-primary-lighter) {
       border-color: $colour-dark-mode-primary-lighter;
     }
   }
