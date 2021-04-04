@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Removes
 - Removes unnecessary image link styling
+- Gets rid of AAA primary colour for Light Mode
 
 ----------
 

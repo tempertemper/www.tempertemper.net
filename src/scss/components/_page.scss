@@ -2,7 +2,7 @@ html,
 body {
   overflow-x: hidden;
   background-color: $colour-primary-light;
-  @include dark-mode($background: $colour-original);
+  @include dark-mode($background: $colour-primary);
 }
 
 body {
