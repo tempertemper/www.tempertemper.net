@@ -13,10 +13,17 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Link focus only adds outline, no colour changes
+- Renames lightest Light Mode colour variable to be consistent with Dark Mode
+- Lightens Light Mode hightlight colour slightly
+- Uses `colour-primary` for every default state in Light Mode
+- Simplifies `::selection` colours
+- Simplifies hidden page background colour styling
+- All Dark Mode hover states lighten the blue
 
 ### Removes
 - Removes unnecessary image link styling
 - Gets rid of AAA primary colour for Light Mode
+- Removes unused `colour-primary-light` colour variable
 
 ----------
 

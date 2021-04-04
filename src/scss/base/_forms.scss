@@ -23,11 +23,9 @@ input {
 
   &:focus {
     box-shadow: 0 0 0 3px $black;
-    border-color: $colour-primary;
 
     @include dark-mode() {
       box-shadow: 0 0 0 3px $white;
-      border-color: $colour-dark-mode-primary;
     }
   }
 }
