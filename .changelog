@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.16.0] - 2021-04-05
+
 ### Adds
 - Creates new main colour variable for consistency with Dark Mode colour palette
 - Adds anti-aliasing to dark mode text
@@ -29,8 +34,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Removes
 - Tidies up Dark Mode @includes
-
-----------
 
 
 ## [5.15.7] - 2021-04-04
