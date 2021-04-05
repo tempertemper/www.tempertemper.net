@@ -1,12 +1,13 @@
 ::selection {
   background: $colour-primary;
-  @include dark-mode($color: $black);
-  color: $white;
+  @include dark-mode($colour: $colour-black);
+  @include high-contrast($background: $colour-dark-mode-primary-lighter);
+  color: $colour-white;
 }
 
 html {
   @include font-body;
-  color: $black;
+  color: $colour-black;
   font-size: 120%;
 
   @media (max-width: $xxs) {
@@ -28,7 +29,7 @@ html {
 }
 
 blockquote {
-  border-left: .15em solid $colour-primary-lighter;
+  border-left: .15em solid $colour-primary;
   font-style: italic;
   margin-left: 0;
   margin-right: 0;
@@ -40,6 +41,9 @@ blockquote {
 
   @include dark-mode() {
     border-left-color: $colour-dark-mode-primary;
+  }
+  @include high-contrast() {
+    border-left-color: $colour-dark-mode-primary-lighter;
   }
 
   ul,
@@ -96,15 +100,19 @@ li {
   &::marker {
     color: $colour-primary;
     font-family: $font--heading;
-    @include dark-mode($color: $colour-dark-mode-primary);
+    @include dark-mode($colour: $colour-dark-mode-primary);
+    @include high-contrast($colour: $colour-dark-mode-primary-lighter);
   }
 }
 
 hr {
   border-top: 2px solid $colour-primary;
   margin: 1em 0;
-  @include dark-mode () {
+  @include dark-mode() {
     border-color: $colour-primary;
+  }
+  @include high-contrast() {
+    border-color: $colour-dark-mode-primary-lighter;
   }
 }
 

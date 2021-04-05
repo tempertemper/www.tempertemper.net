@@ -14,7 +14,7 @@
 
   .mark path,
   .trademark {
-    fill: $black;
+    fill: $colour-black;
     @include dark-mode() {
       fill: $colour-dark-mode-white;
     }

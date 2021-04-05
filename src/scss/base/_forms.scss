@@ -6,10 +6,11 @@ form {
 
 label {
   font-family: $font--heading;
-  @include dark-mode($color: $colour-dark-mode-white);
+  @include dark-mode($colour: $colour-dark-mode-white);
 }
 
 input {
+  background-color: $colour-main;
   border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
   display: block;
@@ -17,15 +18,18 @@ input {
   margin-bottom: 1em;
   padding: .5em .75em;
   width: 100%;
-  @include dark-mode($background: $colour-dark-mode-main, $color: $colour-dark-mode-white) {
+  @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white) {
     border-color: $colour-dark-mode-primary;
+  }
+  @include high-contrast($background: $colour-high-contrast-main) {
+    border-color: $colour-dark-mode-primary-lighter;
   }
 
   &:focus {
-    box-shadow: 0 0 0 3px $black;
+    box-shadow: 0 0 0 3px $colour-black;
 
     @include dark-mode() {
-      box-shadow: 0 0 0 3px $white;
+      box-shadow: 0 0 0 3px $colour-white;
     }
   }
 }
