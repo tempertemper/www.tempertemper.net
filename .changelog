@@ -14,6 +14,28 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.16.0] - 2021-04-05
+
+### Adds
+- Creates new main colour variable for consistency with Dark Mode colour palette
+- Adds anti-aliasing to dark mode text
+- Adds high contrast mode
+
+### Changes
+- Uses `colour-` prefix for `$black` colour variable
+- Uses `colour-` prefix for `$white` colour variable
+- Renames `$colour-primary-highlight` to `$colour-highlight`
+
+### Fixes
+- Corrects spelling of 'colour' in dark mode mixin
+- Makes scroll markers in light mode dark again
+- Removes letter spacing in dark mode to fix multi-word link underlines
+- Fixes spacing inconsistency with `@includes`
+
+### Removes
+- Tidies up Dark Mode @includes
+
+
 ## [5.15.7] - 2021-04-04
 
 ### Changes

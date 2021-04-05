@@ -1,18 +1,41 @@
-@mixin dark-mode($background: null, $color: null) {
+@mixin dark-mode($background: null, $colour: null) {
 
-  @media screen and (prefers-color-scheme: dark) {
+  @media screen and (prefers-color-scheme: dark), screen and (prefers-contrast: more) {
 
-    @if ($background != null and $color != null) {
+    @if ($background != null and $colour != null) {
       background-color: $background;
-      color: $color;
+      color: $colour;
       @content;
     }
-    @else if ($background != null and $color == null) {
+    @else if ($background != null and $colour == null) {
       background-color: $background;
       @content;
     }
-    @else if ($color != null and $background == null) {
-      color: $color;
+    @else if ($colour != null and $background == null) {
+      color: $colour;
+      @content;
+    }
+    @else {
+      @content;
+    }
+  }
+}
+
+@mixin high-contrast($background: null, $colour: null) {
+
+  @media screen and (prefers-contrast: more) {
+
+    @if ($background != null and $colour != null) {
+      background-color: $background;
+      color: $colour;
+      @content;
+    }
+    @else if ($background != null and $colour == null) {
+      background-color: $background;
+      @content;
+    }
+    @else if ($colour != null and $background == null) {
+      color: $colour;
       @content;
     }
     @else {
@@ -69,16 +92,18 @@
 }
 
 @mixin highlight-box {
-  background-color: $colour-primary-highlight;
+  background-color: $colour-highlight;
   @include dark-mode($background: $colour-dark-mode-highlight);
+  @include high-contrast($background: $colour-high-contrast-highlight);
   border-radius: $border-radius-default;
   padding: 1em;
 
   a {
 
     &:focus {
-      background-color: $colour-primary-highlight;
+      background-color: $colour-highlight;
       @include dark-mode($background: $colour-dark-mode-highlight);
+      @include high-contrast($background: $colour-high-contrast-highlight);
     }
   }
 }
@@ -105,10 +130,11 @@
 
 @mixin embedded-media {
   border-radius: $border-radius-default;
-  background-color: $colour-primary-highlight;
+  background-color: $colour-highlight;
   @include dark-mode($background: $colour-dark-mode-highlight);
+  @include high-contrast($background: $colour-high-contrast-highlight);
   display: block;
-  box-shadow: 0 0 .25em lighten($black, 85%);
+  box-shadow: 0 0 .25em lighten($colour-black, 85%);
   margin-bottom: 1em;
   margin-top: 1em;
   height: auto;
