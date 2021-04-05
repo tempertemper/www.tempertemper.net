@@ -1,12 +1,12 @@
 ::selection {
   background: $colour-primary;
-  @include dark-mode($colour: $black);
+  @include dark-mode($colour: $colour-black);
   color: $white;
 }
 
 html {
   @include font-body;
-  color: $black;
+  color: $colour-black;
   font-size: 120%;
 
   @media (max-width: $xxs) {

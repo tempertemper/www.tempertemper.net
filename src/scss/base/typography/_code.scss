@@ -11,7 +11,7 @@ kbd {
 
 pre code,
 pre {
-  color: $black;
+  color: $colour-black;
   @include dark-mode ($colour: $colour-dark-mode-white);
 }
 

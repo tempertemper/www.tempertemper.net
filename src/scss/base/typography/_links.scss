@@ -15,7 +15,7 @@
 
   &:focus {
     background-color: $white;
-    box-shadow: 0 0 0 1px $white,  0 0 0 4px $black;
+    box-shadow: 0 0 0 1px $white,  0 0 0 4px $colour-black;
     box-decoration-break: clone;
     @include dark-mode($background: $colour-dark-mode-main) {
       box-shadow: 0 0 0 1px $colour-dark-mode-main, 0 0 0 4px $white;

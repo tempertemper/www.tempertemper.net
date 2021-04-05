@@ -10,7 +10,7 @@
     height: auto;
     width: auto;
     margin: 0;
-    box-shadow: 0 0 0 3px $black, 0 0 .4em .0em $colour-dark-mode-black;
+    box-shadow: 0 0 0 3px $colour-black, 0 0 .4em .0em $colour-dark-mode-black;
     padding: 0.5em .5em;
 
     @include dark-mode() {

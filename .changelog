@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Uses `colour-` prefix for `$black` colour variable
+
 ### Fixes
 - Corrects spelling of 'colour' in dark mode mixin
 
