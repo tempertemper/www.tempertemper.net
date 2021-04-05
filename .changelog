@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Creates new main colour variable for consistency with Dark Mode colour palette
+- Adds anti-aliasing to dark mode text
 
 ### Changes
 - Uses `colour-` prefix for `$black` colour variable
@@ -22,6 +23,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Corrects spelling of 'colour' in dark mode mixin
 - Makes scroll markers in light mode dark again
+- Removes letter spacing in dark mode to fix multi-word link underlines
 
 ### Removes
 - Tidies up Dark Mode @includes

@@ -50,7 +50,8 @@ $font--heading: 'FS Me Web', sans-serif;
 
   @include dark-mode () {
     line-height: 1.7;
-    word-spacing: .05em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
