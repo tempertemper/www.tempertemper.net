@@ -6,20 +6,20 @@ kbd {
   font-size: .8em;
   border-radius: $border-radius-default/2;
   padding: .1em .1em .05em;
-  @include dark-mode ($colour-dark-mode-code-background, $colour-dark-mode-primary-darker);
+  @include dark-mode($colour-dark-mode-code-background, $colour-dark-mode-primary-darker);
   @include high-contrast($colour-high-contrast-code-background, $colour-dark-mode-primary-lighter);
 }
 
 pre code,
 pre {
   color: $colour-black;
-  @include dark-mode ($colour: $colour-dark-mode-white);
+  @include dark-mode($colour: $colour-dark-mode-white);
 }
 
 pre {
   background-color: $colour-code-background;
-  @include dark-mode ($background: $colour-dark-mode-code-background);
-  @include high-contrast ($background: $colour-high-contrast-code-background);
+  @include dark-mode($background: $colour-dark-mode-code-background);
+  @include high-contrast($background: $colour-high-contrast-code-background);
   padding: 1em;
   white-space: pre-wrap;
   word-spacing: normal;

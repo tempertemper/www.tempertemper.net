@@ -108,10 +108,10 @@ li {
 hr {
   border-top: 2px solid $colour-primary;
   margin: 1em 0;
-  @include dark-mode () {
+  @include dark-mode() {
     border-color: $colour-primary;
   }
-  @include high-contrast () {
+  @include high-contrast() {
     border-color: $colour-dark-mode-primary-lighter;
   }
 }
