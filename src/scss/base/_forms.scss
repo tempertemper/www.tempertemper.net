@@ -10,6 +10,7 @@ label {
 }
 
 input {
+  background-color: $colour-main;
   border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
   display: block;
