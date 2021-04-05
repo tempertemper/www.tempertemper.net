@@ -30,7 +30,7 @@
   &:visited {
     color: $white;
     text-decoration: none;
-    @include dark-mode($color: $colour-dark-mode-main);
+    @include dark-mode($colour: $colour-dark-mode-main);
   }
 
   &:hover {

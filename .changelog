@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Fixes
+- Corrects spelling of 'colour' in dark mode mixin
+
 ### Removes
 - Tidies up Dark Mode @includes
 

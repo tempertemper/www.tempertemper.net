@@ -4,13 +4,13 @@
   &:link,
   &:visited {
     color: $colour-primary;
-    @include dark-mode($color: $colour-dark-mode-primary);
+    @include dark-mode($colour: $colour-dark-mode-primary);
   }
 
   &:hover,
   &:active {
     color: $colour-primary-darker;
-    @include dark-mode($color: $colour-dark-mode-primary-lighter);
+    @include dark-mode($colour: $colour-dark-mode-primary-lighter);
   }
 
   &:focus {
@@ -28,7 +28,7 @@ a {
 
   > code {
     // color: $colour-primary-darker;
-    // @include dark-mode($color: $colour-dark-mode-primary);
+    // @include dark-mode($colour: $colour-dark-mode-primary);
     padding-left: 0;
     padding-right: 0;
   }

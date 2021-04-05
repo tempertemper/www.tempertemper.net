@@ -12,7 +12,7 @@ kbd {
 pre code,
 pre {
   color: $black;
-  @include dark-mode ($color: $colour-dark-mode-white);
+  @include dark-mode ($colour: $colour-dark-mode-white);
 }
 
 pre {
@@ -48,7 +48,7 @@ pre {
   &.doctype,
   &.cdata {
     color: $colour-code-grey;
-    @include dark-mode($color: $colour-dark-mode-code-grey);
+    @include dark-mode($colour: $colour-dark-mode-code-grey);
   }
 
   &.punctuation {
@@ -62,13 +62,13 @@ pre {
   &.deleted,
   &.keyword {
     color: $colour-code-magenta;
-    @include dark-mode($color: $colour-dark-mode-code-magenta);
+    @include dark-mode($colour: $colour-dark-mode-code-magenta);
   }
 
   &.boolean,
   &.number {
     color: $colour-code-purple;
-    @include dark-mode($color: $colour-dark-mode-code-purple);
+    @include dark-mode($colour: $colour-dark-mode-code-purple);
   }
 
   &.selector,
@@ -84,7 +84,7 @@ pre {
   .style &.string,
   &.variable {
     color: $colour-code-cyan;
-    @include dark-mode($color: $colour-dark-mode-code-cyan);
+    @include dark-mode($colour: $colour-dark-mode-code-cyan);
   }
 
   &.atrule,
@@ -93,7 +93,7 @@ pre {
   &.regex,
   &.important {
     color: $colour-code-yellow;
-    @include dark-mode($color: $colour-dark-mode-code-yellow);
+    @include dark-mode($colour: $colour-dark-mode-code-yellow);
   }
 
   &.important,

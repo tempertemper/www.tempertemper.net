@@ -1,18 +1,18 @@
-@mixin dark-mode($background: null, $color: null) {
+@mixin dark-mode($background: null, $colour: null) {
 
   @media screen and (prefers-color-scheme: dark) {
 
-    @if ($background != null and $color != null) {
+    @if ($background != null and $colour != null) {
       background-color: $background;
-      color: $color;
+      color: $colour;
       @content;
     }
-    @else if ($background != null and $color == null) {
+    @else if ($background != null and $colour == null) {
       background-color: $background;
       @content;
     }
-    @else if ($color != null and $background == null) {
-      color: $color;
+    @else if ($colour != null and $background == null) {
+      color: $colour;
       @content;
     }
     @else {
