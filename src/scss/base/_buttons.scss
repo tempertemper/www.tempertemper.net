@@ -13,9 +13,7 @@
   text-align: center;
   width: auto;
   text-decoration: none;
-  @include dark-mode() {
-    color: $colour-dark-mode-main;
-    background-color: $colour-dark-mode-primary;
+  @include dark-mode($colour-dark-mode-primary, $colour-dark-mode-main) {
     border-color: $colour-dark-mode-primary;
   }
 
@@ -51,7 +49,6 @@
   &:focus {
     outline: none;
     box-shadow: 0 0 0 3px $black;
-    border-radius: $border-radius-default;
     text-decoration: none;
     border-color: $colour-primary;
 

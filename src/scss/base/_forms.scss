@@ -17,7 +17,7 @@ input {
   margin-bottom: 1em;
   padding: .5em .75em;
   width: 100%;
-  @include dark-mode($background: $colour-dark-mode-main, $color: $colour-dark-mode-white) {
+  @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white) {
     border-color: $colour-dark-mode-primary;
   }
 

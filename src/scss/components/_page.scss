@@ -10,7 +10,7 @@ body {
 }
 
 .canvas {
-  @include dark-mode($background: $colour-dark-mode-main, $color: $colour-dark-mode-white);
+  @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white);
   background-color: $white;
   min-height: 100%;
   min-width: 100%;
