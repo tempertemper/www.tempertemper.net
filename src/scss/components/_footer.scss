@@ -19,7 +19,8 @@
     height: 3px;
     margin-bottom: $section-spacing;
     width: 10em;
-    @include dark-mode ($background: $colour-primary);
+    @include dark-mode ($background: $colour-dark-mode-primary);
+    @include high-contrast ($background: $colour-dark-mode-primary-lighter);
 
     @media (max-width: $xxs) {
       margin-bottom: $section-spacing / 2;

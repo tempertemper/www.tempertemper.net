@@ -21,6 +21,9 @@ input {
   @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white) {
     border-color: $colour-dark-mode-primary;
   }
+  @include high-contrast($background: $colour-high-contrast-main) {
+    border-color: $colour-dark-mode-primary-lighter;
+  }
 
   &:focus {
     box-shadow: 0 0 0 3px $colour-black;

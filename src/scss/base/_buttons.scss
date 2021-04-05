@@ -16,6 +16,9 @@
   @include dark-mode($colour-dark-mode-primary, $colour-dark-mode-main) {
     border-color: $colour-dark-mode-primary;
   }
+  @include high-contrast($colour-dark-mode-primary-lighter, $colour-high-contrast-main) {
+    border-color: $colour-dark-mode-primary-lighter;
+  }
 
   @media (max-width: $xs) {
     padding: .25em;
@@ -31,6 +34,7 @@
     color: $colour-white;
     text-decoration: none;
     @include dark-mode($colour: $colour-dark-mode-main);
+    @include high-contrast($colour: $colour-high-contrast-main);
   }
 
   &:hover {
@@ -38,6 +42,9 @@
     background-color: $colour-primary-darker;
     @include dark-mode($background: $colour-dark-mode-primary-lighter) {
       border-color: $colour-dark-mode-primary-lighter;
+    }
+    @include high-contrast($background: $colour-dark-mode-primary) {
+      border-color: $colour-dark-mode-primary;
     }
   }
 
@@ -51,10 +58,12 @@
     box-shadow: 0 0 0 3px $colour-black;
     text-decoration: none;
     border-color: $colour-primary;
-
     @include dark-mode() {
       box-shadow: 0 0 0 3px $colour-white;
       border-color: $colour-dark-mode-primary;
+    }
+    @include high-contrast() {
+      border-color: $colour-dark-mode-primary-lighter;
     }
   }
 
@@ -62,6 +71,9 @@
     border-color: $colour-primary-darker;
     @include dark-mode() {
       border-color: $colour-dark-mode-primary-lighter;
+    }
+    @include high-contrast() {
+      border-color: $colour-dark-mode-primary;
     }
   }
 

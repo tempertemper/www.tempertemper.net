@@ -1,6 +1,7 @@
 ::selection {
   background: $colour-primary;
   @include dark-mode($colour: $colour-black);
+  @include high-contrast($background: $colour-dark-mode-primary-lighter);
   color: $colour-white;
 }
 
@@ -40,6 +41,9 @@ blockquote {
 
   @include dark-mode() {
     border-left-color: $colour-dark-mode-primary;
+  }
+  @include high-contrast() {
+    border-left-color: $colour-dark-mode-primary-lighter;
   }
 
   ul,
@@ -97,6 +101,7 @@ li {
     color: $colour-primary;
     font-family: $font--heading;
     @include dark-mode($colour: $colour-dark-mode-primary);
+    @include high-contrast($colour: $colour-dark-mode-primary-lighter);
   }
 }
 
@@ -105,6 +110,9 @@ hr {
   margin: 1em 0;
   @include dark-mode () {
     border-color: $colour-primary;
+  }
+  @include high-contrast () {
+    border-color: $colour-dark-mode-primary-lighter;
   }
 }
 

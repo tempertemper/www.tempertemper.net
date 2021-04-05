@@ -1,6 +1,29 @@
 @mixin dark-mode($background: null, $colour: null) {
 
-  @media screen and (prefers-color-scheme: dark) {
+  @media screen and (prefers-color-scheme: dark), screen and (prefers-contrast: more) {
+
+    @if ($background != null and $colour != null) {
+      background-color: $background;
+      color: $colour;
+      @content;
+    }
+    @else if ($background != null and $colour == null) {
+      background-color: $background;
+      @content;
+    }
+    @else if ($colour != null and $background == null) {
+      color: $colour;
+      @content;
+    }
+    @else {
+      @content;
+    }
+  }
+}
+
+@mixin high-contrast($background: null, $colour: null) {
+
+  @media screen and (prefers-contrast: more) {
 
     @if ($background != null and $colour != null) {
       background-color: $background;
@@ -71,6 +94,7 @@
 @mixin highlight-box {
   background-color: $colour-highlight;
   @include dark-mode($background: $colour-dark-mode-highlight);
+  @include high-contrast($background: $colour-high-contrast-highlight);
   border-radius: $border-radius-default;
   padding: 1em;
 
@@ -79,6 +103,7 @@
     &:focus {
       background-color: $colour-highlight;
       @include dark-mode($background: $colour-dark-mode-highlight);
+      @include high-contrast($background: $colour-high-contrast-highlight);
     }
   }
 }
@@ -107,6 +132,7 @@
   border-radius: $border-radius-default;
   background-color: $colour-highlight;
   @include dark-mode($background: $colour-dark-mode-highlight);
+  @include high-contrast($background: $colour-high-contrast-highlight);
   display: block;
   box-shadow: 0 0 .25em lighten($colour-black, 85%);
   margin-bottom: 1em;
