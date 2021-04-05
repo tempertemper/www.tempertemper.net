@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Corrects spelling of 'colour' in dark mode mixin
+- Makes scroll markers in light mode dark again
 
 ### Removes
 - Tidies up Dark Mode @includes
