@@ -25,7 +25,7 @@ input {
     box-shadow: 0 0 0 3px $colour-black;
 
     @include dark-mode() {
-      box-shadow: 0 0 0 3px $white;
+      box-shadow: 0 0 0 3px $colour-white;
     }
   }
 }

@@ -11,7 +11,7 @@ body {
 
 .canvas {
   @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white);
-  background-color: $white;
+  background-color: $colour-white;
   min-height: 100%;
   min-width: 100%;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);

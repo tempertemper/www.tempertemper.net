@@ -14,7 +14,7 @@
     padding: 0.5em .5em;
 
     @include dark-mode() {
-      box-shadow: 0 0 0 3px $white, .2em .2em .4em .1em $colour-dark-mode-black;
+      box-shadow: 0 0 0 3px $colour-white, .2em .2em .4em .1em $colour-dark-mode-black;
     }
   }
 }

@@ -2,7 +2,7 @@
   background-color: $colour-primary;
   border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
-  color: $white;
+  color: $colour-white;
   display: inline-block;
   display: inline-flex;
   align-items: center;
@@ -28,7 +28,7 @@
 
   &:link,
   &:visited {
-    color: $white;
+    color: $colour-white;
     text-decoration: none;
     @include dark-mode($colour: $colour-dark-mode-main);
   }
@@ -53,7 +53,7 @@
     border-color: $colour-primary;
 
     @include dark-mode() {
-      box-shadow: 0 0 0 3px $white;
+      box-shadow: 0 0 0 3px $colour-white;
       border-color: $colour-dark-mode-primary;
     }
   }

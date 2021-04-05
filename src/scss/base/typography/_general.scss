@@ -1,7 +1,7 @@
 ::selection {
   background: $colour-primary;
   @include dark-mode($colour: $colour-black);
-  color: $white;
+  color: $colour-white;
 }
 
 html {
