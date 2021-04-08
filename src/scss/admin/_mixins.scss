@@ -134,7 +134,7 @@
   @include dark-mode($background: $colour-dark-mode-highlight);
   @include high-contrast($background: $colour-high-contrast-highlight);
   display: block;
-  box-shadow: 0 0 .25em lighten($colour-black, 85%);
+  box-shadow: 0 0 .25em lighten($colour-black, 50%);
   margin-bottom: 1em;
   margin-top: 1em;
   height: auto;
@@ -147,6 +147,6 @@
   }
 
   @include dark-mode() {
-    box-shadow: 0 0 .25em $colour-dark-mode-black;
+    box-shadow: 0 0 .25em $colour-black;
   }
 }
