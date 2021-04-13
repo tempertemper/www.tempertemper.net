@@ -3,6 +3,7 @@ title: Using Git switch to change branches
 intro: |
     Since upgrading to macOS Big Sur, I've noticed that `git switch` works. But why do we need it when we've got `git checkout`?
 date: 2021-04-12
+updated: 2021-04-13
 tags:
     - Git
     - Development
@@ -66,12 +67,12 @@ I mentioned that, as well as switching branches, `git checkout` allows you to ju
 git checkout abc1234
 ```
 
-You can also discard untracked changes to a file; for example, if I've made some changes to my homepage that I don't want to keep, I'd restore the file to its pre-edited state with:
+You can also discard untracked changes to a file; for example, if I've made some changes to my homepage that I don't want to keep, I might restore the file to its pre-edited state with:
 
 ```git
 git checkout index.html
 ```
 
-You can't do either of those things with `git switch`. And that's a good thing in my eyes: one command should do one thing.
+You can't do either of those things with `git switch`. And that's a good thing in my eyes: one command should do one thing (which is why [I also use `git restore`](/blog/git-restore-to-discard-changes)).
 
 I'll be using `git switch` to change branches in future.
