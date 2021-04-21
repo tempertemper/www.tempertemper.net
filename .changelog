@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.16.1] - 2021-04-21
+
+### Changes
+- Darkens embedded media drop-shadow
+
+
 ## [5.16.0] - 2021-04-05
 
 ### Adds
