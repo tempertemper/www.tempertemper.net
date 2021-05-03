@@ -986,6 +986,42 @@
 ## Other redirects
 
 [[redirects]]
+  from = "/blog/imap-for-your-mobile-device"
+  to = "/resources/the-types-of-email"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/2012-04-28-evernote"
+  to = "/blog/evernote"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/imap-for-your-pc"
+  to = "/resources/the-types-of-email"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/mac-email-setup"
+  to = "/resources/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.php/subscribe"
+  to = "/newsletter/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.php/like-follow-no-thanks"
+  to = "/resources/like-follow-no-thanks"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/resources/google-whats-the-fuss"
   to = "/resources/google-plus-whats-the-fuss"
   status = 301
