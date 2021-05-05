@@ -67,4 +67,4 @@ To avoid the problems inherit with `aria-label` on a `<section>`, we can use `ar
 
 ## Summing up
 
-So a `<section>` is a custom landmark, when `<header>`, `<nav>`, `<main>`, `<footer>`, etc. aren't appropriate. All you need to do is give it some semantic meaning with `aria-label` or (better) `aria-labelledby` and screen reader users will be able to jump right to it, just like a sighted user would.
+A `<section>` is a custom landmark, when `<header>`, `<nav>`, `<main>`, `<footer>`, etc. aren't appropriate. All you need to do is give it some semantic meaning with ARIA and screen reader users will be able to jump right to it, just like a sighted user can.
