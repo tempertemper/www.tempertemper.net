@@ -117,7 +117,7 @@ Don't see much difference? Well, there's not! But if you look closely:
 
 Here's a closer look at the new underscore, in comparison with its older shape:
 
-<img src="/assets/img/blog/tempertemper-logo--v2.1.gif" alt="The old tempertemper logo animating into the new logo, to demonstrate the difference in the underscore" width="800" height="450" loading="lazy" decoding="async" />
+<img src="/assets/img/blog/tempertemper-logo--v2.1--underscore.gif" alt="The old tempertemper logo animating into the new logo, to demonstrate the difference in the underscore" width="800" height="450" loading="lazy" decoding="async" />
 
 ### How's that icon looking?
 

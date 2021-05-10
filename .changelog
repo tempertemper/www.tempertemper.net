@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Makes brand underscore gif filename more explicit
+
 ### Adds
 - Adds AVIF image to about page
 - Adds AVIF images to focus outline post
