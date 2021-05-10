@@ -12,9 +12,8 @@ summaryImageType: jpg
 ---
 
 <picture>
-    <source srcset="/assets/img/martin-underhill-tempertemper.avif" type="image/avif">
-    <source srcset="/assets/img/martin-underhill-tempertemper.webp" type="image/webp">
-    <source srcset="/assets/img/martin-underhill-tempertemper.jpg" type="image/jpeg">
+    <source srcset="/assets/img/martin-underhill-tempertemper.avif" type="image/avif" />
+    <source srcset="/assets/img/martin-underhill-tempertemper.webp" type="image/webp" />
     <img src="/assets/img/martin-underhill-tempertemper.jpg" alt="Martin Underhill of tempertemper Web Design, holding a cup of tea and looking to his left, smiling." width="800" height="450" decoding="async" />
 </picture>
 
