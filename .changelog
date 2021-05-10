@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Adds
 - Adds AVIF image to about page
 - Adds AVIF images to focus outline post
+- Adds AVIF images to website evolution post
 
 ### Removes
 - Removes duplicate jpg from source element on about page
