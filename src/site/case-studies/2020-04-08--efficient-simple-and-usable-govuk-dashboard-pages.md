@@ -20,13 +20,21 @@ We observed essential content being missed time and time again in user testing, 
 
 This was especially apparent when a user's annual renewal was due – they would have to scroll down the page, likely past their screen's 'fold', negotiating the rest of the content (and clutter!), before arriving at the button to start their renewal.
 
-<img src="/assets/img/case-studies/dashboard--old--renewal-due.png" alt="Old 'renewal due' dashboard, showing the 'Start your renewal' button at the bottom of the page" width="800" height="700" loading="lazy" decoding="async" />
+<picture>
+    <source srcset="/assets/img/case-studies/dashboard--old--renewal-due.avif" type="image/avif" />
+    <source srcset="/assets/img/case-studies/dashboard--old--renewal-due.webp" type="image/webp" />
+    <img src="/assets/img/case-studies/dashboard--old--renewal-due.png" alt="Old 'renewal due' dashboard, showing the 'Start your renewal' button at the bottom of the page" width="800" height="700" loading="lazy" decoding="async" />
+</picture>
 
 Interviews with the government caseworkers who dealt with our users confirmed that users were failing to renew, which was causing lots of unnecessary work, so fixing this was a priority for all involved.
 
 We moved the most vital information to the very top of the page, following an [inverted pyramid](https://vanseodesign.com/web-design/inverted-pyramid-design/) design, so the user would see that first.
 
-<img src="/assets/img/case-studies/dashboard--new--renewal-due.png" alt="New 'renewal due' dashboard, showing the 'Start your renewal' button at the top of the page" width="800" height="571" loading="lazy" decoding="async" />
+<picture>
+    <source srcset="/assets/img/case-studies/dashboard--new--renewal-due.avif" type="image/avif" />
+    <source srcset="/assets/img/case-studies/dashboard--new--renewal-due.webp" type="image/webp" />
+    <img src="/assets/img/case-studies/dashboard--new--renewal-due.png" alt="New 'renewal due' dashboard, showing the 'Start your renewal' button at the top of the page" width="800" height="571" loading="lazy" decoding="async" />
+</picture>
 
 The remaining content on the page was sorted by priority:
 
@@ -56,7 +64,11 @@ My hypothesis was that the user would know to do those things via the "Check or 
 
 I also removed a checkmark design for the application progress/status which not only failed WCAG 2.1 AA colour contrast, but contained confusing language, wasn't clear what  and didn't provide any extra information that the page heading didn't already.
 
-<img src="/assets/img/case-studies/dashboard--old--application-complete-but-not-submitted.png" alt="Application complete but not submitted, showing a progress indicator: 'Completed' in white text on green with a checkmark alongside, 'Not submitted' in black on white, and 'Decision pending' in white text on light grey" width="800" height="489" loading="lazy" decoding="async" />
+<picture>
+    <source srcset="/assets/img/case-studies/dashboard--old--application-complete-but-not-submitted.avif" type="image/avif" />
+    <source srcset="/assets/img/case-studies/dashboard--old--application-complete-but-not-submitted.webp" type="image/webp" />
+    <img src="/assets/img/case-studies/dashboard--old--application-complete-but-not-submitted.png" alt="Application complete but not submitted, showing a progress indicator: 'Completed' in white text on green with a checkmark alongside, 'Not submitted' in black on white, and 'Decision pending' in white text on light grey" width="800" height="489" loading="lazy" decoding="async" />
+</picture>
 
 
 ## Using established patterns

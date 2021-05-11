@@ -22,9 +22,13 @@ All notable changes to this project will be documented in this file. The format 
 - Adds AVIF and WebP images to brand details post
 - Adds AVIF and WebP images to pixels post
 - Adds AVIF image to animated gif post
+- Adds AVIF and WebP images to case studies
 
 ### Removes
 - Removes duplicate jpg from source element on about page
+
+### Fixes
+- Corrects some typos in case study filenames: 'tast' to 'task'
 
 ----------
 
