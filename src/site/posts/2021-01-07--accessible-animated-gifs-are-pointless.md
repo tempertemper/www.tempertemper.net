@@ -112,6 +112,9 @@ Using [the native `<video>` element isn't without its pitfalls](https://scottvin
 
 And here's an image that conveys exactly the same meaning and even energy as the animated version:
 
-<img class="natural-dimensions" src="/assets/img/blog/bmo-static.jpg" alt="A static image of BMO from Adventure Time, dancing happily" width="400" height="300" loading="lazy" decoding="async" />
+<picture>
+    <source srcset="/assets/img/blog/bmo-static.avif" type="image/avif" />
+    <img class="natural-dimensions" src="/assets/img/blog/bmo-static.jpg" alt="A static image of BMO from Adventure Time, dancing happily" width="400" height="300" loading="lazy" decoding="async" />
+</picture>
 
 With a plain old JPEG, PNG or [WebP](/blog/using-webp-images), we don't have to worry about the five second rule, the play/pause issues, and the file size issues pale in comparison. Sure, it's a bit less *fun* for some users, but I'm always happy to make 'compromises' if it means including everyone!

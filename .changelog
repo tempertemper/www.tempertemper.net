@@ -11,6 +11,25 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Makes brand underscore gif filename more explicit
+
+### Adds
+- Adds AVIF image to about page
+- Adds AVIF images to focus outline post
+- Adds AVIF and WebP images to website evolution post
+- Adds AVIF and WebP images to brand tweak post
+- Adds AVIF and WebP images to brand details post
+- Adds AVIF and WebP images to pixels post
+- Adds AVIF image to animated gif post
+- Adds AVIF and WebP images to case studies
+
+### Removes
+- Removes duplicate jpg from source element on about page
+
+### Fixes
+- Corrects some typos in case study filenames: 'tast' to 'task'
+
 ----------
 
 
