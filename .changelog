@@ -17,10 +17,11 @@ All notable changes to this project will be documented in this file. The format 
 ### Adds
 - Adds AVIF image to about page
 - Adds AVIF images to focus outline post
-- Adds AVIF images to website evolution post
-- Adds AVIF images to brand tweak post
-- Adds AVIF images to brand details post
-- Adds AVIF images to pixels post
+- Adds AVIF and WebP images to website evolution post
+- Adds AVIF and WebP images to brand tweak post
+- Adds AVIF and WebP images to brand details post
+- Adds AVIF and WebP images to pixels post
+- Adds AVIF image to animated gif post
 
 ### Removes
 - Removes duplicate jpg from source element on about page
