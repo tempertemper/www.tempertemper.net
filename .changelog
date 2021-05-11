@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds AVIF images to website evolution post
 - Adds AVIF images to brand tweak post
 - Adds AVIF images to brand details post
+- Adds AVIF images to pixels post
 
 ### Removes
 - Removes duplicate jpg from source element on about page
