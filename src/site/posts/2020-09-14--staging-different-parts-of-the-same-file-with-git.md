@@ -32,7 +32,13 @@ To open up the patch mode, you need to first tell Git what file you want to have
 git add -p path/to/file.html
 ```
 
-You could use the more explicit `--patch` flag instead of `-p`, but I like to keep it brief.
+Or you could cycle through every changed file by leaving out the file name/path:
+
+```git
+git add -p
+```
+
+<i>You could use the more explicit `--patch` flag instead of `-p`, but I like to keep it brief.</i>
 
 
 ## Inside the file
