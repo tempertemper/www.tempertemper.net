@@ -854,6 +854,12 @@
 ## Other blog post redirects
 
 [[redirects]]
+  from = "/blog/styling-underlines-with-css.html"
+  to = "/blog/styling-underlines-with-css"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/free-security-updates"
   to = "/blog/"
   status = 301
@@ -978,6 +984,12 @@
 
 [[redirects]]
   from = "/projects/gusto-research"
+  to = "/portfolio/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/portfolio/gusto-research"
   to = "/portfolio/"
   status = 301
   force = true
