@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.16.2] - 2021-05-13
+
 ### Changes
 - Makes brand underscore gif filename more explicit
 
@@ -29,8 +34,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Corrects some typos in case study filenames: 'tast' to 'task'
-
-----------
 
 
 ## [5.16.1] - 2021-04-21
