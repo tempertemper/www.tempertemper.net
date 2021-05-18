@@ -3,6 +3,7 @@ title: AVIF image compression is incredible
 intro: |
     WebP images are now supported in all modern web browsers, but the emerging AVIF format promises to be even better; I'm pleased to tell you it is!
 date: 2021-05-17
+updated: 2021-05-18
 tags:
     - Development
 ---
@@ -68,7 +69,7 @@ This code:
 
 ## Limited operating system and app support
 
-AVIF isn't an export option in many image processing apps yet. I've tried Pixelmator Pro, Acorn, Figma, Sketch, and Affinity Designer, but their most advanced export format is WebP.
+AVIF isn't an export option in many image processing apps yet. I've tried Pixelmator Pro, Acorn, Figma, Sketch, and Affinity Designer, but their most advanced export format is WebP. There are [other ways to convert images to AVIF](/blog/converting-images-to-avif-in-2021), but to get the same visual control is much more laborious.
 
 It's also not a supported format on macOS yet, which makes viewing the AVIFs in Finder awkward (I've been opening them in Opera). I found one or two bits of software that would allow Finder to display AVIFs, but I'm happy with my browser-based workaround for the time being.
 
