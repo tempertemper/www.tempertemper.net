@@ -53,9 +53,9 @@ All the rest is noise:
 - I know what branch I'm on as it says it right there on the line where I typed the command
 
 
-# Enter `-short`
+# Enter `--short`
 
-Seems like cheating, but just appending the `-short` flag to your `git status` command makes things *a lot* easier to look at. Even better, you can even shorten `-short` to `-s`!
+Seems like cheating, but just appending the `--short` flag to your `git status` command makes things *a lot* easier to look at. Even better, you can even shorten `--short` to `-s`!
 
 ```git
 git status -s
