@@ -105,6 +105,18 @@
       @include dark-mode($background: $colour-dark-mode-highlight);
       @include high-contrast($background: $colour-high-contrast-highlight);
     }
+
+    &:focus:not(:focus-visible) {
+      background-color: transparent;
+      @include dark-mode($background: transparent);
+      @include high-contrast($background: transparent);
+    }
+
+    &:focus-visible {
+      background-color: $colour-highlight;
+      @include dark-mode($background: $colour-dark-mode-highlight);
+      @include high-contrast($background: $colour-high-contrast-highlight);
+    }
   }
 }
 

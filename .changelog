@@ -11,6 +11,15 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- `:focus-visible` enhancement for links
+- `:focus-visible` enhancement for buttons
+- `:focus-visible` enhancement for tables
+
+### Removes
+- Removes button focus combination styles (focus + hover, focus + active)
+- Removes unnecessary text underline styling removal for link-button focus
+
 ----------
 
 
