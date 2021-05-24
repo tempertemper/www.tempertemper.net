@@ -5,6 +5,7 @@ intro: |
 date: 2021-05-18
 tags:
     - Development
+    - Performance
 ---
 
 I've covered how great [AVIF image compression](/blog/avif-image-compression-is-incredible) is, but the big downside (for now, anyway) is that it isn't offered as an export option in any of the image software I use.

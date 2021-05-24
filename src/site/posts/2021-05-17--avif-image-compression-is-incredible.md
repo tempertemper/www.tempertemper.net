@@ -6,6 +6,7 @@ date: 2021-05-17
 updated: 2021-05-18
 tags:
     - Development
+    - Performance
 ---
 
 I've [written about WebP images](/blog/using-webp-images), which are now supported in all modern web browsers, but I've been meaning to look into AVIF images for a while. AVIF promises to be a superior image compression algorithm, and having tried it I can say that it's incredible!
