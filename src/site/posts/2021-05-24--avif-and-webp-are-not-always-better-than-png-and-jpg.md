@@ -209,4 +209,4 @@ It looks like [the Eleventy Image plugin](https://www.11ty.dev/docs/plugins/imag
 
 I have a couple of projects that would benefit from Eleventy Image, so I'll no doubt write about it at some point. Though I'll be carefully monitoring how it increases the build time, and weighing up whether it's worth adding yet another dependency.
 
-All things told, AVIF and WebP are very much worth adding, but only if they're not bigger than their source files.
+All things told, I feel AVIF and WebP are very much worth adding, but only if they're not bigger than their source files.
