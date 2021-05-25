@@ -13,6 +13,26 @@
       box-shadow: 0 0 0 4px $colour-white;
     }
   }
+
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+    @include dark-mode() {
+      box-shadow: none;
+    }
+    @include high-contrast() {
+      box-shadow: none;
+    }
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 4px $colour-black;
+    @include dark-mode() {
+      box-shadow: 0 0 0 4px $colour-white;
+    }
+    @include high-contrast() {
+      box-shadow: 0 0 0 4px $colour-white;
+    }
+  }
 }
 
 table {
