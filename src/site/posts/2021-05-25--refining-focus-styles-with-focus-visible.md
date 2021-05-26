@@ -1,7 +1,7 @@
 ---
 title: Refining focus styles with focus-visible
 intro: |
-    `:focus-visible` shows focus styles only when an element has keyboard focus, and not with a click, which can make our interfaces much cleaner.
+    `:focus-visible` triggers only on keyboard focus; not on click. This can make our interfaces cleaner, but should it replace `:focus` completely?
 date: 2021-05-25
 tags:
     - CSS
