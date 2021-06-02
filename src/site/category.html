@@ -35,7 +35,7 @@ permalink: /category/{{ category | slug | safe }}.html
 {% endif %}
 A <a href="/categories">full list of categories</a> is also available.</p>
 
-<ol class="hfeed index-list">
+<ol class="hfeed index-list" reversed>
     {% set categoryList = collections[ category ] %}
     {% for post in categoryList | reverse %}
         {% include "post-in-list.html" %}
