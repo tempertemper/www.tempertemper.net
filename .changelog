@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds dark mode meta tags to document head
+- Adds fixes for HTML dark mode for Safari
+
 ----------
 
 
