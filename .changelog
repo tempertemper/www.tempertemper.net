@@ -11,11 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.16.5] - 2021-06-03
+
 ### Adds
 - Adds dark mode meta tags to document head
 - Adds fixes for HTML dark mode for Safari
-
-----------
 
 
 ## [5.16.4] - 2021-05-25
