@@ -2,7 +2,7 @@
   border-radius: $border-radius-default/2;
 
   &:link,
-  &:visited {
+  &:visited:visited {
     color: $colour-primary;
     @include dark-mode($colour: $colour-dark-mode-primary);
     @include high-contrast($colour: $colour-dark-mode-primary-lighter);
