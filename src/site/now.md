@@ -6,11 +6,10 @@ layout: default
 permalink: now.html
 ---
 
-- Working hard on a presentation for [the Technically podcast](https://technica11y.org) on the 5th of May, where I take a deep dive into the `<section>` element
-- Enjoying the sunny weather, even if there has been the odd wet spell; the kids being able to go out and play in the garden makes life so much easier
-- Happy with the slightly more relaxed lockdown rules; even if, working from home and the father of two young children, I don't really benefit much from them, it's good to know the hospitalisations and deaths are coming right down
-- My wife has had her first COVID-19 vaccination and I'm next: just need to find a free slot at a local vaccination centre on a date that works
-- Still enjoying this new kitchen: the half-size diswasher is *perfect* and, having taken a bit of a leap of faith with the induction hob, I'd happily never use a gas hob again!
-- Having finished The Wire (that last season was a bit far-fetched but somehow managed not to ruin the story as a whole), we've discovered Fargo. Almost finished season 2 and it's *amazing*
+- After a bit of a rainy blip (maybe 3 weeks is more than a blip…) in May, really enjoying the sunny weather again; I'm trying to make a point of working from the garden when I can
+- Glad to have seen my parents in person for the first time in many months
+- Getting impatient to fly to Barcelona to visit my wife's family once travelling gets easier; it has been a year and a half since we last saw them all
+- Happy that my wife and I have had our first COVID-19 vaccinations (both Astra Zenica) with minimal side effects; next jabs in July!
+- Exhausted but satisfied, now that I've finished all the outstanding paint jobs that were weighing on me following all of the work we've had done in the house (new cupboard under the stairs, kitchen skirting boards, boxing for pipes in the kitchen, and so on)
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
