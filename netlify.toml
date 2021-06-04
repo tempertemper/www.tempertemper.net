@@ -582,6 +582,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/category/gmail"
+  to = "/category/email"
+  status = 301
+  force = true
+
 
 ### From blog categories
 
@@ -920,6 +926,12 @@
   force = true
 
 [[redirects]]
+  from = "/blog/front-end-frontend-or-front-end"
+  to = "/blog/frontend-front-end-or-front-end"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/feeds/blog/an-introduction-to-html-attributes"
   to = "/blog/an-introduction-to-html-attributes"
   status = 301
@@ -1228,6 +1240,24 @@
 [[redirects]]
   from = "/assets/img/icons/apple-touch-icon-180x180.png"
   to = "/assets/img/icons/apple-touch-icon.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/img/case-studies/tast-list--incomplete-state.png"
+  to = "/assets/img/case-studies/task-list--incomplete-state.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/img/case-studies/tast-list--plain-text.png"
+  to = "/assets/img/case-studies/task-list--plain-text.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/img/case-studies/tast-list--black-no-blanks.png"
+  to = "/assets/img/case-studies/task-list--black-no-blanks.png"
   status = 301
   force = true
 
