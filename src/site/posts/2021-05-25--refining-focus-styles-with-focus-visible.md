@@ -3,6 +3,7 @@ title: Refining focus styles with focus-visible
 intro: |
     `:focus-visible` triggers only on keyboard focus; not on click. This can make our interfaces cleaner, but should it replace `:focus` completely?
 date: 2021-05-25
+updated: 2021-06-03
 tags:
     - CSS
     - Development
@@ -30,7 +31,7 @@ The good news is that `:focus-visible` is [supported in every modern browser exc
 
 `:focus-visible` is actually a tricky progressive enhancement. It's not as simple as removing `:focus` styles in favour of `:focus-visible` as that would mean there were no focus styles styles on some browsers, notably Safari.
 
-I worried that, because Safari's visual click behaviour with `:focus` is already very nice, `:focus-visible` might not be very in their list of priorities. The good news is that [support was added in Safari Technology Preivew 122](https://developer.apple.com/safari/technology-preview/release-notes/#r122), although I'm not seeing that support in testing (using version 124) so there may be a bug or two still to iron out.
+I worried that, because Safari's visual click behaviour with `:focus` is already very nice, `:focus-visible` might not be very in their list of priorities. The good news is that [support was added in Safari Technology Preivew 122](https://developer.apple.com/safari/technology-preview/release-notes/#r122), although it has to be activated in the Develop menu's Experimental Features list.
 
 We need to:
 
