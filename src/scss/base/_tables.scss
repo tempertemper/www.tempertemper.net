@@ -1,6 +1,8 @@
+@use "sass:math";
+
 .table-wrapper {
   overflow: auto;
-  border-radius: $border-radius-default/2;
+  border-radius: math.div($border-radius-default, 2);
   margin-top: 1em;
   margin-bottom: 1em;
 

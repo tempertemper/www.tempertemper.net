@@ -1,9 +1,11 @@
+@use "sass:math";
+
 code,
 kbd {
   background-color: $colour-code-background;
   font-family: $code--font;
   font-size: .8em;
-  border-radius: $border-radius-default/2;
+  border-radius: math.div($border-radius-default, 2);
   padding: .1em .1em .05em;
   @include dark-mode($colour-dark-mode-code-background);
   @include high-contrast($colour-high-contrast-code-background,);

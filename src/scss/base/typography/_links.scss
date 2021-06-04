@@ -1,5 +1,7 @@
+@use "sass:math";
+
 @mixin text-link {
-  border-radius: $border-radius-default/2;
+  border-radius: math.div($border-radius-default, 2);
 
   &:link,
   &:visited:visited {
