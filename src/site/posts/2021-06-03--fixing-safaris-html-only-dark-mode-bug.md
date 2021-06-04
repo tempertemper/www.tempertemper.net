@@ -1,7 +1,7 @@
 ---
 title: Fixing Safari's HTML-only Dark Mode bug
 intro: |
-    Aside from the current lack of Firefox support, there's a bug in Safari.
+    A bug with link text colours in Safari's HTML-only Dark Mode theme means we need a bit of extra code. Here's how to patch things until it's fixed.
 date: 2021-06-03
 tags:
     - CSS
