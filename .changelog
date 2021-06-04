@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Fixes
+- Uses `math.div()` syntax for division in Sass, ready for Dart Sass 2.0.0
+
 ----------
 
 
