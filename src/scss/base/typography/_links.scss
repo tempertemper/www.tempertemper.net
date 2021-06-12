@@ -1,5 +1,3 @@
-@use "sass:math";
-
 @mixin text-link {
   border-radius: math.div($border-radius-default, 2);
   text-decoration-thickness: .08em;
