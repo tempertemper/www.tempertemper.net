@@ -11,14 +11,17 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.16.7] - 2021-06-12
+
 ### Changes
-- Thickens default link unlerlines slightly
+- Thickens default link underlines slightly
 
 ### Fixes
 - Makes link underlines in `h2`s a normal thickness on Chromium browsers
 - Refines Sass `math` usage
-
-----------
 
 
 ## [5.16.6] - 2021-06-04
