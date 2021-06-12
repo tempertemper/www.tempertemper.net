@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Thickens default link unlerlines slightly
+
+### Fixes
+- Makes link underlines in `h2`s a normal thickness on Chromium browsers
+
 ----------
 
 
