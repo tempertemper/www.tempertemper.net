@@ -1,7 +1,6 @@
-@use "sass:math";
-
 @mixin text-link {
   border-radius: math.div($border-radius-default, 2);
+  text-decoration-thickness: .08em;
 
   &:link,
   &:visited:visited {
@@ -60,5 +59,9 @@ a {
   > code {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  h2 & {
+    text-decoration-thickness: .06em;
   }
 }
