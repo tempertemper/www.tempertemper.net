@@ -11,14 +11,17 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.16.8] - 2021-06-13
+
 ### Changes
 - Adds large default social media image option
 - Adds generic large social media image to select posts
 
 ### Fixes
 - Adds image type of `jpg` automatically where the summary image is a JPEG
-
-----------
 
 
 ## [5.16.7] - 2021-06-12
