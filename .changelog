@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Adds large default social media image option
+
 ### Fixes
 - Adds image type of `jpg` to posts where the summary image is a JPEG
 
