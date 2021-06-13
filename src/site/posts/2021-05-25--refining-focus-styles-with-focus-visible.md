@@ -7,6 +7,7 @@ updated: 2021-06-03
 tags:
     - CSS
     - Development
+summaryImage: large
 ---
 
 The `:focus` pseudo selector has always been a bit of a pain. In lots of browsers, an item is considered focused when it is clicked with a pointing device like a mouse or trackpad. This means there's a flash of a link or button's focus styling when it's activated:

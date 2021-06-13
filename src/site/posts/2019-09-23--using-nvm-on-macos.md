@@ -6,6 +6,7 @@ date: 2019-09-23
 updated: 2020-10-08
 tags:
   - Development
+summaryImage: large
 ---
 
 I recently (accidentally!) upgraded to version 12 of [node](https://nodejs.org/en/) on my Mac; unsurprisingly it broke things. A few of my projects still run Gulp version 3, which isn't compatible with node 12 and above.

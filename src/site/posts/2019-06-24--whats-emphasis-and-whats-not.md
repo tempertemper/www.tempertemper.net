@@ -6,6 +6,7 @@ date: 2019-06-24
 tags:
     - Development
     - Accessibility
+summaryImage: large
 ---
 
 We all know that we should be using `<em>` and `<strong>` to emphasise and strongly emphasise words and phrases; we've looked at `<i>` and `<b>` tags with disdain. But should that be the case?

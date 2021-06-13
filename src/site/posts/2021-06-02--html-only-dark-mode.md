@@ -8,6 +8,7 @@ tags:
     - CSS
     - HTML
     - Accessibility
+summaryImage: large
 ---
 
 Progressive enhancement is the most resilient way to design and build for the web. Lots of things can go wrong:

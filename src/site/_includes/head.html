@@ -21,29 +21,36 @@
         {%- endif %}
     {%- endif %}
     <meta name="description" content="{{ description }}" />
-    {% set imageType = 'image/png' %}
+    {%- set imageType = 'image/png' %}
     {%- if summaryImage %}
         {%- set cardType = "summary_large_image" %}
-        {%- if (tags.length >= 1) and tags.includes('resource') %}
-            {%- set imgDir = 'resources/' %}
-        {%- elif (tags.length >= 1) and tags.includes('case_study') %}
-            {%- set imgDir = 'case-studies/' %}
-        {%- elif (tags.length >= 1) and tags.includes('post') %}
-            {%- set imgDir = 'blog/' %}
+        {%- if summaryImage == "large" %}
+            {%- set cardImage = site.url + "/assets/img/summary_large_image.png" %}
+            {%- set imageAlt = "tempertemper’s logo: a blue rectange with a white rectangle/underscore in the bottom-right corner" %}
+            {%- set imageWidth = 1200 %}
+            {%- set imageHeight = 628 %}
         {%- else %}
-            {%- set imgDir = '' %}
+            {%- if (tags.length >= 1) and tags.includes('resource') %}
+                {%- set imgDir = 'resources/' %}
+            {%- elif (tags.length >= 1) and tags.includes('case_study') %}
+                {%- set imgDir = 'case-studies/' %}
+            {%- elif (tags.length >= 1) and tags.includes('post') %}
+                {%- set imgDir = 'blog/' %}
+            {%- else %}
+                {%- set imgDir = '' %}
+            {%- endif %}
+            {%- set cardImage = site.url + "/assets/img/" + imgDir + summaryImage %}
+            {%- set imageAlt = summaryImageAlt %}
+            {%- if summaryImage.includes(".jpg") %}
+                {%- set imageType = 'image/jpg' %}
+            {%- endif %}
+            {%- set imageWidth = 1024 %}
+            {%- set imageHeight = 576 %}
         {%- endif %}
-        {%- set cardImage = site.url + "/assets/img/" + imgDir + summaryImage %}
-        {%- set imageAlt = summaryImageAlt %}
-        {%- if summaryImageType == "jpg" %}
-            {%- set imageType = 'image/jpg' %}
-        {%- endif %}
-        {%- set imageWidth = 1024 %}
-        {%- set imageHeight = 576 %}
     {%- else %}
         {%- set cardType = "summary" %}
         {%- set cardImage = site.url + "/assets/img/summary.png" %}
-        {%- set imageAlt = "tempertemper’s icon – a blue square with a white rectangle/underscore in the bottom-right corner" %}
+        {%- set imageAlt = "tempertemper’s icon: a blue square with a white rectangle/underscore in the bottom-right corner" %}
         {%- set imageWidth = 512 %}
         {%- set imageHeight = 512 %}
     {%- endif %}

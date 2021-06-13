@@ -7,6 +7,7 @@ tags:
     - Development
     - Performance
     - HTML
+summaryImage: large
 ---
 
 When you've got loads of images on a page, you might not want the browser to fetch them all at once.
