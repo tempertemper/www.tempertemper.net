@@ -6,6 +6,7 @@ date: 2021-01-08
 tags:
     - Accessibility
 summaryImage: bmo.jpg
+summaryImageType: jpg
 summaryImageAlt: BMO from Adventure Time, dancing happily
 ---
 
