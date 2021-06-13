@@ -7,6 +7,7 @@ tags:
     - CSS
     - Development
     - Design
+summaryImage: large
 ---
 
 

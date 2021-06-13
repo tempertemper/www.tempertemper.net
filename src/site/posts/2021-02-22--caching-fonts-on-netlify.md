@@ -7,6 +7,7 @@ tags:
     - Development
     - Performance
     - Serverless
+summaryImage: large
 ---
 
 I'm not sure what took me so long to notice, but [FS-Me, the custom font I use](/blog/tempertempers-typefaces) on my website wasn't caching. I wrongly assumed it would be done automatically and didn't notice the 'flash of unstyled text' (known as FOUT) since I have FS-Me installed locally.

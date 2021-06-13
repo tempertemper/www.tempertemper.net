@@ -7,6 +7,7 @@ categories:
     - Design
     - Development
     - Accessibility
+summaryImage: large
 ---
 
 A couple of recent articles got me thinking. The first was [Why is CSS frustrating](https://css-tricks.com/why-is-css-frustrating/) by Robin Rendle at CSS-Tricks which references a [Jeremy Keith post](https://adactio.com/journal/12571) from a couple of years ago.

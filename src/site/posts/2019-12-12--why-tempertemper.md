@@ -6,6 +6,7 @@ date: 2019-12-12
 tags:
     - Brand
 updated: 2019-12-18
+summaryImage: large
 ---
 
 Starting a business is very exciting. One of the most difficult things, but also one of the most fun, is thinking up a business name. When I was coming up with my business name, I had some criteria that I wanted it to meet:

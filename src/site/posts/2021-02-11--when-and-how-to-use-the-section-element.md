@@ -6,6 +6,7 @@ date: 2021-02-11
 tags:
     - HTML
     - Accessibility
+summaryImage: large
 ---
 
 HTML5 brought with it some questions, like "what on earth is a `<section>` element for!?". The answer isn't as obvious as you might have hoped, but it's definitely straightforward.
