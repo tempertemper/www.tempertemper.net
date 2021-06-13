@@ -8,6 +8,7 @@ tags:
     - Development
     - HTML
     - CSS
+summaryImage: large
 ---
 
 I make a point of not adding 'just in case' CSS to my website. Until last week's article about [AVIF and WebP file sizes sometimes being bigger than their source PNG or JPEG](/blog/avif-and-webp-are-not-always-better-than-png-and-jpg) there were no tables, so before I could publish I needed to write some HTML and CSS!

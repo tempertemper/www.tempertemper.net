@@ -5,6 +5,7 @@ intro: |
 date: 2021-04-02
 tags:
     - Accessibility
+summaryImage: large
 ---
 
 Whether you call them italics and bold or `<em>` and `<strong>`, we're talking about *emphasis* and the HTML used to communicate it.

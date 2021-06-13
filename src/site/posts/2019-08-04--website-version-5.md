@@ -6,6 +6,7 @@ date: 2019-08-04
 tags:
     - Development
     - Design
+summaryImage: large
 ---
 
 I'm already more than a dozen releases into version 5 of my website, but I'm finally ready to 'officially' announce it!

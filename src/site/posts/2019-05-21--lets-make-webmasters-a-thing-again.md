@@ -3,6 +3,7 @@ title: Let's make webmasters a thing again
 intro: |
     We used to be webmasters. CMSs then gave our clients control of their websites, but I can't help wondering if we had it right in the first place.
 date: 2019-05-21
+summaryImage: large
 ---
 
 Back in the day we used to be webmasters. We'd make a website and when the owner wanted to change something we'd get an email, have a bit of to and fro, then do the honours.

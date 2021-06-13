@@ -7,6 +7,7 @@ tags:
     - HTML
     - Accessibility
     - Development
+summaryImage: large
 ---
 
 [Like emphasis](/blog/bold-and-italics-arent-read-by-screen-readers), strikethrough text (`<s>`) doesn't get read out by screen reader software. This is true of all [inline text-level semantic elements](https://www.brucelawson.co.uk/2018/screenreader-support-for-text-level-semantics/), but it's worth drawing particular attention to strikethough.

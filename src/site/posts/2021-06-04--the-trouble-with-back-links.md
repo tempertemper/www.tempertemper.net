@@ -6,6 +6,7 @@ date: 2021-06-04
 tags:
     - HTML
     - Development
+summaryImage: large
 ---
 
 You'd think that adding a back link to a web page would be straightforward. Well, it turn out that it's not.

@@ -7,6 +7,7 @@ updated: 2020-10-21
 tags:
     - Design
     - Development
+summaryImage: large
 ---
 
 I've had several very similar conversations with clients and stakeholders over the years about opening links to other websites in a new tab or window.
