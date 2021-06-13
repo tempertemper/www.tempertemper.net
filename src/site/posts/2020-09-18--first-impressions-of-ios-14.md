@@ -6,7 +6,6 @@ date: 2020-09-18
 tags:
     - Apple
 summaryImage: ios-14.jpg
-summaryImageType: jpg
 summaryImageAlt: The number ‘14’ in a white app icon, on top of overlapping circles of grey, blue and orange
 ---
 

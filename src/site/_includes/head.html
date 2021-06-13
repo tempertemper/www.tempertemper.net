@@ -41,7 +41,7 @@
             {%- endif %}
             {%- set cardImage = site.url + "/assets/img/" + imgDir + summaryImage %}
             {%- set imageAlt = summaryImageAlt %}
-            {%- if summaryImageType == "jpg" %}
+            {%- if summaryImage.includes(".jpg") %}
                 {%- set imageType = 'image/jpg' %}
             {%- endif %}
             {%- set imageWidth = 1024 %}
