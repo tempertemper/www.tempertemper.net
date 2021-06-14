@@ -69,4 +69,4 @@ The twist at the end of this story is that Keynote 11 landed last month and [it 
 
 Keynote is *great*. Really great. It has none of the downsides of Google Slides or Deckset, and with the ability to present with the slides in one window and the presenter notes in another it's now usable for remote presentations.
 
-I already miss the code syntax highlighting that Deckset does so well, and I'm yet to collaborate on a slide deck, so we'll see how that goes (it didn't work all that well last time I tried it, but that was [four or five years ago](https://wiki2.org/en/Keynote_(presentation_software)#Version_history)). For now, though, I'm just happy that building a slide deck is fast, easy and solid again!
+I already miss the code syntax highlighting that Deckset does so well (though [there is a work-around](/blog/styling-code-snippets-in-keynote)), and I'm yet to collaborate on a slide deck, so we'll see how that goes (it didn't work all that well last time I tried it, but that was [four or five years ago](https://wiki2.org/en/Keynote_(presentation_software)#Version_history)). For now, though, I'm just happy that building a slide deck is fast, easy and solid again!
