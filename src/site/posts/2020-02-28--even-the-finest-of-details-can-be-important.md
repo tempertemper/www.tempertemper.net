@@ -6,6 +6,8 @@ date: 2020-02-28
 tags:
     - Design
     - Brand
+summaryImage: tempertemper-logo--v2.1--icon--round.png
+summaryImageAlt: The tempertemper icon before switching to a 16 × 16 grid, where the underscore sits too close to the edge of the circle, and after, where it's positioned nicely.
 ---
 
 Since my post on [refining my brand](/blog/the-simplest-solutions-are-usually-the-best), I've encountered a tiny issue that I wasn't able to ignore.

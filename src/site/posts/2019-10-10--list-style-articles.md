@@ -1,7 +1,7 @@
 ---
 title: List-style articles
 intro: |
-    I've noticed a lot of draft articles building up that don't get very much further than that initial outline. I wonder whether
+    I've noticed a lot of rough outlines clogging up my drafts; rather than risking not publishing, maybe an outline-style might be the right approach sometimes?
 date: 2019-10-10
 ---
 

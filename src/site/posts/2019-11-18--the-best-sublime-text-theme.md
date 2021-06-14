@@ -6,6 +6,8 @@ date: 2019-11-18
 tags:
     - Development
     - Design
+summaryImage: monokai-pro.jpg
+summaryImageAlt: The Monokai Pro logo on a dark background, consisting of a hexagon with an chunky, angular, orange letter ‘M’ inside.
 ---
 
 I've recently [started using Operator Mono](/blog/operator-mono-and-why-i-want-italics-in-my-code-editor) as my coding font and was frustrated to learn that I couldn't use it with any old colour scheme -- it has to be one that supports italics.
