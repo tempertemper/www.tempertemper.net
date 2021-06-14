@@ -18,9 +18,8 @@
     display: block;
     height: 3px;
     margin-bottom: $section-spacing;
-    width: 10em;
-    @include dark-mode($background: $colour-dark-mode-primary);
-    @include high-contrast($background: $colour-dark-mode-primary-lighter);
+    max-width: 10em;
+    @include dark-mode($background: $colour-dark-mode-white);
 
     @media (max-width: $xxs) {
       margin-bottom: math.div($section-spacing, 2);
