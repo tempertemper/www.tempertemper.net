@@ -106,8 +106,9 @@ li {
 }
 
 hr {
-  border-top: 2px solid $colour-primary;
+  border-top: 3px solid $colour-primary;
   margin: 1em 0;
+  max-width: 10em;
   @include dark-mode() {
     border-color: $colour-primary;
   }
