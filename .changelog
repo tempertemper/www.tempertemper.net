@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Refines `<hr>` styling
+- Uses white for `<hr>` and footer divider colour in dark mode
 
 ### Fixes
 - Uses `max-width` for footer divider
