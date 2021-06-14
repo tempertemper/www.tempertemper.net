@@ -14,6 +14,16 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.16.9] - 2021-06-14
+
+### Changes
+- Refines `<hr>` styling
+- Uses white for `<hr>` and footer divider colour in dark mode
+
+### Fixes
+- Uses `max-width` for footer divider
+
+
 ## [5.16.8] - 2021-06-13
 
 ### Changes
