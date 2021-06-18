@@ -57,24 +57,6 @@
   }
 }
 
-@mixin reverse-link-marker {
-
-  &:hover,
-  &:active,
-  &:focus {
-
-    &:before {
-      text-decoration: none;
-    }
-  }
-
-  &:before {
-    content: '\2039';
-    display: inline-block;
-    margin-right: .25em;
-  }
-}
-
 @mixin inline-nav {
   display: inline-block;
   width: auto;
