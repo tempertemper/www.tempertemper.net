@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- New lighter blue for High Contrast
+
+### Changes
+- Lightens blue on hover in High Contrast Mode
+
 ### Removes
 - Removes an unused `reverse-list-marker` mixin
 
