@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [5.16.10] - 2021-06-18
+
 ### Adds
 - New lighter blue for High Contrast
 
@@ -19,8 +24,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Removes
 - Removes an unused `reverse-list-marker` mixin
-
-----------
 
 
 ## [5.16.9] - 2021-06-14
