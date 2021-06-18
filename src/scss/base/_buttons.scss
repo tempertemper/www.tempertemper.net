@@ -43,8 +43,8 @@
     @include dark-mode($background: $colour-dark-mode-primary-lighter) {
       border-color: $colour-dark-mode-primary-lighter;
     }
-    @include high-contrast($background: $colour-dark-mode-primary) {
-      border-color: $colour-dark-mode-primary;
+    @include high-contrast($background: $colour-high-contrast-primary-lighter) {
+      border-color: $colour-high-contrast-primary-lighter;
     }
   }
 
