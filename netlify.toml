@@ -1543,6 +1543,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/using-image-aspect-ratios-to-avoiding-janky-page-loading&sa=U&ved=2ahUKEwieg_XFjtrwAhVPe8AKHZ_2CwsQtwIwKHoECBMQAQ&usg=AOvVaw1-93vA3o7ylVnpCBPwlen6"
+  to = "/blog/using-image-aspect-ratios-to-avoiding-janky-page-loading"
+  status = 301
+  force = true
+
 
 # External redirects
 
