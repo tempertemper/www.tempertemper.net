@@ -6,7 +6,6 @@ date: 2020-09-03
 tags:
     - Design
     - Accessibility
-featured: true
 summaryImage: large
 ---
 

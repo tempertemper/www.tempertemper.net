@@ -10,6 +10,7 @@ tags:
     - CSS
 summaryImage: light-dark-contrast.jpg
 summaryImageAlt: Three screenshots of the tempertemper.net homepage, showing Light Mode, Dark Mode, and the Increased Contrast version with white text on a black background.
+featured: true
 ---
 
 A couple of years ago [I revised the colours on this website](/blog/colour-contrast-on-tempertempernet) in order to satisfy the [enhanced contrast WCAG success criterion](https://www.w3.org/TR/WCAG21/#contrast-enhanced). It turned out to be more problematic than I had anticipated.
