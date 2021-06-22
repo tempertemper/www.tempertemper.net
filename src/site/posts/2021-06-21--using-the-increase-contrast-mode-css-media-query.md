@@ -3,6 +3,7 @@ title: Using the Increased Contrast Mode CSS media query
 intro: |
     Satisfying the enhanced contrast AAA WCAG rule can be limiting; luckily `prefers-contrast: more` allows us more freedom with our default themes.
 date: 2021-06-21
+updated: 2021-06-22
 tags:
     - Accessibility
     - Design
@@ -10,6 +11,7 @@ tags:
     - CSS
 summaryImage: light-dark-contrast.jpg
 summaryImageAlt: Three screenshots of the tempertemper.net homepage, showing Light Mode, Dark Mode, and the Increased Contrast version with white text on a black background.
+featured: true
 ---
 
 A couple of years ago [I revised the colours on this website](/blog/colour-contrast-on-tempertempernet) in order to satisfy the [enhanced contrast WCAG success criterion](https://www.w3.org/TR/WCAG21/#contrast-enhanced). It turned out to be more problematic than I had anticipated.
@@ -65,6 +67,8 @@ To avoid repetition in my CSS, I used my Dark Mode theme as the basis for Increa
   /* Increased Contrast Mode styles go here */
 }
 ```
+
+I've written about [the SCSS mixins I use](/blog/sass mixins for increased contrast mode), separately.
 
 
 ## Cutting myself some slack
