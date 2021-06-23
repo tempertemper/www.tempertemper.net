@@ -6,11 +6,13 @@ layout: default
 permalink: now.html
 ---
 
-- After a bit of a rainy blip (maybe 3 weeks is more than a blip…) in May, really enjoying the sunny weather again; I'm trying to make a point of working from the garden when I can
-- Settling into a healthy routine of [a daily cold shower](https://www.bbc.co.uk/programmes/m000v83f), no alcohol, yoga each evening, and a 5 kilometre run every other day
-- Glad to have seen my parents in person for the first time in months and months, now that lockdown restrictions are lifting
-- Getting impatient to fly to Barcelona to visit my wife's family; it has been a year and a half since we last saw them all
-- Happy that my wife and I have had our first COVID-19 vaccinations (both Astra Zenica) with minimal side effects; next jabs in July!
-- Exhausted but satisfied, now that I've finished all the outstanding paint jobs that were weighing on me following all of the work we've had done in the house (new cupboard under the stairs, kitchen skirting boards, boxing for pipes in the kitchen, and so on)
+- Really enjoying the sunny weather
+- Settling into a healthy routine of
+    - [a daily cold shower](https://www.bbc.co.uk/programmes/m000v83f)
+    - a 5 kilometre run every day
+    - no alcohol
+    - no rubbish (chocolate, cakes, biscuits)
+- Organising a holiday to Barcelona; it has been more than a year and a half since we last saw my wife's family!
+- Happy that my wife and I are only a week or so away from our second COVID-19 vaccinations (both Astra Zenica)
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
