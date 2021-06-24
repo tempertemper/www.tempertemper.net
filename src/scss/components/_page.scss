@@ -5,11 +5,6 @@ body {
   @include dark-mode($background: $colour-primary);
 }
 
-body {
-  padding-top: .25em;
-  padding-bottom: .25em;
-}
-
 .canvas {
   @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white);
   @include high-contrast($background: $colour-high-contrast-main);

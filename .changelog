@@ -14,6 +14,18 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [5.16.11] - 2021-06-24
+
+### Adds
+- Adds light and dark mode theme colours
+
+### Changes
+- Uses white underline for PWA/bookmark icons
+
+### Removes
+- Removes the blue stripes at the top and bottom of every page
+
+
 ## [5.16.10] - 2021-06-18
 
 ### Adds
