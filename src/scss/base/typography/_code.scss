@@ -9,6 +9,10 @@ kbd {
   @include high-contrast($colour-high-contrast-code-background,);
 }
 
+code {
+  font-weight: inherit;
+}
+
 pre code,
 pre {
   color: $colour-black;

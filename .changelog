@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds Bold and Italic FS-Me weights
+
+### Changes
+- Uses FS-Me instead of Georgia for body text
+
 ### Removes
 - Gets rid of unused `cite` styling
 - Removes Light font weight

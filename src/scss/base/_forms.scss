@@ -5,7 +5,6 @@ form {
 }
 
 label {
-  font-family: $font--heading;
   @include dark-mode($colour: $colour-dark-mode-white);
 }
 
