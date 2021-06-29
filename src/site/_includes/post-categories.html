@@ -12,9 +12,9 @@
                     ,
                 {% endif %}
             {%- else %}
-                and
-            {% endif %}
-        {% endif %}
+                and&nbsp;
+            {%- endif -%}
+        {%- endif -%}
         <a href="/category/{{ category | slug }}">{{ category }}</a>
     {%- endfor %}
 {%- endif -%}
