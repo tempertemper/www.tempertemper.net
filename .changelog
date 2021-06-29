@@ -27,6 +27,7 @@ All notable changes to this project will be documented in this file. The format 
 - Makes logo slightly bigger
 - Lightens some code styling CSS
 - Narrows overall site width slightly
+- Limits width of common typography elements
 
 ### Removes
 - Gets rid of unused `cite` styling

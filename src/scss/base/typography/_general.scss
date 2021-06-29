@@ -109,3 +109,10 @@ small {
   font-size: ms(0);
   font-style: italic;
 }
+
+p,
+ul,
+ol,
+blockquote {
+  max-width: 30em;
+}
