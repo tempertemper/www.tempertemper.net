@@ -26,6 +26,7 @@ All notable changes to this project will be documented in this file. The format 
 - Uses mixin to make pictures, etc. wider than rest of content
 - Makes logo slightly bigger
 - Lightens some code styling CSS
+- Narrows overall site width slightly
 
 ### Removes
 - Gets rid of unused `cite` styling
