@@ -44,19 +44,6 @@
   }
 }
 
-@mixin clearfix {
-
-  &:before,
-  &:after {
-    content: ' ';
-    display: table;
-  }
-
-  &:after {
-    clear: both;
-  }
-}
-
 @mixin inline-nav {
   display: inline-block;
   width: auto;
@@ -102,12 +89,6 @@
   }
 }
 
-@mixin full-width {
-  $gutter: gutter();
-  $column: span(1 of 4);
-  width: span(6 of 6) + span(3 of 6) + ($gutter * 1.263);
-}
-
 @mixin overspill {
   width: calc(100% + 2em);
   margin-left: calc(-1em);
@@ -116,7 +97,6 @@
 
 @mixin boxout {
   @include highlight-box;
-  @include clearfix;
 
   @media (min-width: $l) {
     @include overspill;

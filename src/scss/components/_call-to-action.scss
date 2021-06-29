@@ -3,12 +3,4 @@
   h2 {
     @include heading-xl;
   }
-
-  form {
-
-    @media (min-width: $l) {
-      display: flex;
-      align-items: flex-end;
-    }
-  }
 }

@@ -3,20 +3,19 @@
   @media (min-width: $m) {
 
     .index-list {
-      display: flex;
-      flex-wrap: wrap;
       max-width: none;
       @include overspill;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 0em 1em;
+      grid-auto-flow: row;
+      grid-template-areas:
+      ". .";
     }
 
     li {
-      width: span(3 of 6);
-      margin-right: gutter();
       @include highlight-box;
-
-      &:nth-of-type(2n) {
-        margin-right: 0;
-      }
     }
 
     h3 {

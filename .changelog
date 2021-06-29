@@ -28,10 +28,12 @@ All notable changes to this project will be documented in this file. The format 
 - Lightens some code styling CSS
 - Narrows overall site width slightly
 - Limits width of common typography elements
+- Uses CSS Grid instead of Susy
 
 ### Removes
 - Gets rid of unused `cite` styling
 - Removes Light font weight
+- Removes Susy as a dependency
 
 ### Fixes
 - Makes button links' visited state visible
