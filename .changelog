@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 - Uses bold font for headings
 - Uses bold font for buttons
 - Uses an italic font for post details
+- Left-aligns whole site and tidies spacing
 
 ### Removes
 - Gets rid of unused `cite` styling

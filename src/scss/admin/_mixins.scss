@@ -105,7 +105,6 @@
 @mixin full-width {
   $gutter: gutter();
   $column: span(1 of 4);
-  margin-left: -($gutter * 1.5) + -$column;
   width: span(6 of 6) + span(3 of 6) + ($gutter * 1.263);
 }
 

@@ -5,6 +5,7 @@
     .index-list {
       display: flex;
       flex-wrap: wrap;
+      max-width: none;
     }
 
     li {
@@ -19,13 +20,6 @@
 
     h3 {
       margin-top: 0;
-    }
-  }
-
-  @media (min-width: $l) {
-
-    .index-list {
-      @include full-width;
     }
   }
 }
