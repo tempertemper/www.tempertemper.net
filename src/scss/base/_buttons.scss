@@ -29,8 +29,8 @@
     margin-top: -.3em;
   }
 
-  &:link,
-  &:visited {
+  &:link:link,
+  &:visited:visited {
     color: $colour-white;
     text-decoration: none;
     @include dark-mode($colour: $colour-dark-mode-main);
