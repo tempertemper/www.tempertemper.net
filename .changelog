@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Removes
 - Gets rid of unused `cite` styling
+- Removes Light font weight
 
 ----------
 
