@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file. The format 
 - Increases code font size slightly to match x-height of FS-Me
 - Moves Updated date in post details onto a new line
 - Attaches the 'and' to the last category in a list of categories
+- Uses bold font for headings
 
 ### Removes
 - Gets rid of unused `cite` styling
