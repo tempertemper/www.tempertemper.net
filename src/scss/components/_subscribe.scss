@@ -1,9 +1,17 @@
 .subscribe {
   @include boxout;
 
+  [type="submit"] {
+    margin-bottom: .25em;
+  }
+
   @media (min-width: $m) {
     display: flex;
     align-items: flex-end;
+
+    [id="email"] {
+      margin-bottom: .25em;
+    }
 
     .input-group {
       width: span(3 of 4);
