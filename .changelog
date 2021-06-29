@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Uses FS-Me instead of Georgia for body text
+- Increases code font size slightly to match x-height of FS-Me
 
 ### Removes
 - Gets rid of unused `cite` styling
