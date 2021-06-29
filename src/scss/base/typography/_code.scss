@@ -1,8 +1,6 @@
 code,
 kbd {
   background-color: $colour-code-background;
-  font-family: $code--font;
-  font-size: .9em;
   border-radius: math.div($border-radius-default, 2);
   padding: .1em .1em .05em;
   @include dark-mode($colour-dark-mode-code-background);
@@ -10,6 +8,8 @@ kbd {
 }
 
 code {
+  font-family: $code--font;
+  font-size: .9em;
   font-weight: inherit;
 }
 

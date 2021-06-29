@@ -25,6 +25,7 @@ All notable changes to this project will be documented in this file. The format 
 - Left-aligns whole site and tidies spacing
 - Uses mixin to make pictures, etc. wider than rest of content
 - Makes logo slightly bigger
+- Lightens some code styling CSS
 
 ### Removes
 - Gets rid of unused `cite` styling
