@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file. The format 
 - Attaches the 'and' to the last category in a list of categories
 - Uses bold font for headings
 - Uses bold font for buttons
+- Uses an italic font for post details
 
 ### Removes
 - Gets rid of unused `cite` styling
