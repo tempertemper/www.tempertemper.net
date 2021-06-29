@@ -68,7 +68,7 @@ To avoid repetition in my CSS, I used my Dark Mode theme as the basis for Increa
 }
 ```
 
-I've written about [the SCSS mixins I use](/blog/sass mixins for increased contrast mode), separately.
+I've written about [the SCSS mixins I use](/blog/sass-mixins-for-increased-contrast-mode-and-dark-mode), separately.
 
 
 ## Cutting myself some slack
