@@ -11,10 +11,10 @@ layout: base.html
             <meta itemprop="publisher" itemscope itemtype="https://schema.org/Corporation" content="{{ site.company }}" />
             <meta itemprop="image" content="{{ site.url + "/assets/img/summary_large_image.png" }}" />
             {% include "post-categories.html" %}
-        </p>
         {%- if updated -%}
-            <p>Updated <span itemprop="dateModified" content="{{ updated | isoDate }}">{{ updated | date }}</span></p>
-        {%- endif -%}
+            ; updated <span itemprop="dateModified" content="{{ updated | isoDate }}">{{ updated | date }}</span>
+        {% endif %}
+        </p>
     </section>
     <div itemprop="mainEntityOfPage">
         {{ content | safe }}
