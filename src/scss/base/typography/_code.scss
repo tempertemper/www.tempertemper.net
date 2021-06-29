@@ -36,8 +36,7 @@ pre {
   margin-bottom: 1em;
 
   @media (min-width: $l) {
-    margin-left: -1em;
-    margin-right: -1em;
+    @include overspill;
   }
 
   code {
