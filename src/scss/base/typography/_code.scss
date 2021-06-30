@@ -1,7 +1,7 @@
 code,
 kbd {
   background-color: $colour-code-background;
-  border-radius: math.div($border-radius-default, 2);
+  border-radius: $border-radius-small;
   padding: .1em .1em .05em;
   @include dark-mode($colour-dark-mode-code-background);
   @include high-contrast($colour-high-contrast-code-background,);

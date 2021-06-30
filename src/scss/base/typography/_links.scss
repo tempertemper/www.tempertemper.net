@@ -1,5 +1,5 @@
 @mixin text-link {
-  border-radius: math.div($border-radius-default, 2);
+  border-radius: $border-radius-small;
   text-decoration-thickness: .08em;
 
   &:link,
