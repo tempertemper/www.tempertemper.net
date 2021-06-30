@@ -32,6 +32,7 @@ All notable changes to this project will be documented in this file. The format 
 - Uses CSS Grid instead of Susy
 - Stops code blocks in lists being broader than the list box
 - Uses a percentage unit for `<small>` text resizing, rather than Modular Scale
+- Tidies footer up a bit
 
 ### Removes
 - Gets rid of unused `cite` styling
