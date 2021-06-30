@@ -1,6 +1,9 @@
 $modularscale: (
   base: 1em,
-  ratio: $major-third
+  ratio: $major-third,
+  $m: (
+    ratio: $golden
+  )
 );
 
 @font-face {
@@ -65,15 +68,11 @@ $modularscale: (
   font-size: ms(3);
 
   @media (max-width: $xxs) {
-    font-size: ms(1);
+    font-size: ms(2);
   }
 
   @media (min-width: $m) {
-    font-size: ms(4);
-  }
-
-  @media (min-width: $l) {
-    font-size: ms(5);
+    @include ms-respond(font-size, 3);
   }
 }
 
@@ -81,15 +80,11 @@ $modularscale: (
   font-size: ms(2);
 
   @media (max-width: $xxs) {
-    font-size: ms(0);
+    font-size: ms(1);
   }
 
   @media (min-width: $m) {
-    font-size: ms(2);
-  }
-
-  @media (min-width: $l) {
-    font-size: ms(4);
+    @include ms-respond(font-size, 2);
   }
 }
 
@@ -101,7 +96,7 @@ $modularscale: (
   }
 
   @media (min-width: $m) {
-    font-size: ms(2);
+    @include ms-respond(font-size, 1);
   }
 }
 
@@ -113,7 +108,7 @@ $modularscale: (
   }
 
   @media (min-width: $m) {
-    font-size: ms(1);
+    @include ms-respond(font-size, 0);
   }
 }
 

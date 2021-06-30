@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Adds Bold and Italic FS-Me weights
+- Adds new breakpoint dependent type scale
 
 ### Changes
 - Uses FS-Me instead of Georgia for body text
