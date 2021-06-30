@@ -1,5 +1,17 @@
 .teaser {
 
+  li {
+    @include highlight-box;
+
+    + li {
+      margin-top: 1em;
+    }
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
   @media (min-width: $m) {
 
     .index-list {
@@ -14,11 +26,7 @@
       ". .";
     }
 
-    li {
-      @include highlight-box;
-    }
-
-    h3 {
+    li + li {
       margin-top: 0;
     }
   }
