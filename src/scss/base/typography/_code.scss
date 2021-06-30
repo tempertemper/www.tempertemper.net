@@ -39,6 +39,15 @@ pre {
     @include overspill;
   }
 
+  @media (min-width: $l) {
+
+    li & {
+      width: auto;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
   code {
     display: block;
     padding: 0;

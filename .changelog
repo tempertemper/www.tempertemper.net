@@ -29,6 +29,7 @@ All notable changes to this project will be documented in this file. The format 
 - Narrows overall site width slightly
 - Limits width of common typography elements
 - Uses CSS Grid instead of Susy
+- Stops code blocks in lists being broader than the list box
 
 ### Removes
 - Gets rid of unused `cite` styling
