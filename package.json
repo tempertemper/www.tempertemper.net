@@ -15,7 +15,7 @@
     "build:site": "npm run shiv && npx @11ty/eleventy",
     "build": "npm run clear && npm run build:assets && npm run build:site",
     "serve": "npm run shiv && npx @11ty/eleventy --serve --quiet",
-    "watch:css": "onchange 'src/scss' --exclude src/scss/etc/ie8.scss --exclude src/scss/etc/ie9.scss -- npm run styles && npm run autoprefixer",
+    "watch:css": "onchange 'src/scss' --exclude 'src/scss/etc/ie8.scss' --exclude 'src/scss/etc/ie9.scss' -- npm run styles && npm run autoprefixer",
     "watch:img": "onchange 'src/img' -- npm run img",
     "watch:fonts": "onchange 'src/fonts' -- npm run fonts",
     "watch:js": "onchange 'src/js' -- npm run js",
