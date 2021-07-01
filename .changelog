@@ -50,6 +50,7 @@ All notable changes to this project will be documented in this file. The format 
 - Deletes typography SCSS includes file, using main includes file instead
 - Removes some unused classes from print stylesheet
 - Removes IE stylesheet with IE10 and IE11 specific styles
+- Removes sourcemaps from production CSS
 
 ### Fixes
 - Makes button links' visited state visible
