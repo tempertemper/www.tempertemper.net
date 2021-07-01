@@ -35,6 +35,7 @@ All notable changes to this project will be documented in this file. The format 
 - Uses a percentage unit for `<small>` text resizing, rather than Modular Scale
 - Tidies footer up a bit
 - Simplifies division maths by introducing new border radius variable
+- Moves IE8 and IE9 styles into separate stylesheets to save CSS weight
 
 ### Removes
 - Gets rid of unused `cite` styling
