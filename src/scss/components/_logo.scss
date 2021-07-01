@@ -1,8 +1,6 @@
 .logo {
   display: inline-block;
   margin-right: .5em;
-  max-width: 10em;
-  max-height: 1.5em; // Fix for IE11
   margin-bottom: .5em;
 
   @media (min-width: $xs) {
@@ -11,6 +9,8 @@
 
   svg {
     display: block;
+    max-width: 270px;
+    max-height: 40px; // Fix for IE11
   }
 
   .mark path,
