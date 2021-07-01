@@ -42,6 +42,7 @@ All notable changes to this project will be documented in this file. The format 
 - Gets rid of unused `cite` styling
 - Removes Light font weight
 - Removes Susy as a dependency
+- Deletes typography SCSS includes file, using main includes file instead
 
 ### Fixes
 - Makes button links' visited state visible

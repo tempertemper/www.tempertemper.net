@@ -4,7 +4,11 @@
         'admin/placeholders';
 
 @import 'base/reset',
-        'base/typography',
+        'base/typography/mixins',
+        'base/typography/general',
+        'base/typography/headings',
+        'base/typography/links',
+        'base/typography/code',
         'base/images',
         'base/video',
         'base/icons',
