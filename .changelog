@@ -44,6 +44,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes Light font weight
 - Removes Susy as a dependency
 - Deletes typography SCSS includes file, using main includes file instead
+- Removes some unused classes from print stylesheet
 
 ### Fixes
 - Makes button links' visited state visible
