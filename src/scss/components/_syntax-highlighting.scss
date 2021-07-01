@@ -1,0 +1,70 @@
+.token {
+
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: $colour-code-grey;
+    @include dark-mode($colour: $colour-dark-mode-code-grey);
+  }
+
+  &.punctuation {
+    color: inherit;
+  }
+
+  &.property,
+  &.tag,
+  &.constant,
+  &.symbol,
+  &.deleted,
+  &.keyword {
+    color: $colour-code-magenta;
+    @include dark-mode($colour: $colour-dark-mode-code-magenta);
+    @include high-contrast($colour: $colour-high-contrast-code-magenta);
+  }
+
+  &.boolean,
+  &.number {
+    color: $colour-code-purple;
+    @include dark-mode($colour: $colour-dark-mode-code-purple);
+    @include high-contrast($colour: $colour-high-contrast-code-purple);
+  }
+
+  &.selector,
+  &.attr-name,
+  &.string,
+  &.char,
+  &.builtin,
+  &.inserted,
+  &.operator,
+  &.entity,
+  &.url,
+  .language-css &.string,
+  .style &.string,
+  &.variable {
+    color: $colour-code-cyan;
+    @include dark-mode($colour: $colour-dark-mode-code-cyan);
+  }
+
+  &.atrule,
+  &.attr-value,
+  &.function,
+  &.regex,
+  &.important {
+    color: $colour-code-yellow;
+    @include dark-mode($colour: $colour-dark-mode-code-yellow);
+  }
+
+  &.important,
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.entity {
+    cursor: help;
+  }
+}

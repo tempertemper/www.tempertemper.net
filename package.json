@@ -4,7 +4,7 @@
   "description": "tempertemper's website",
   "scripts": {
     "clear": "rm -rf dist",
-    "styles": "sass src/scss/styles.scss --style=compressed dist/assets/css/styles.css",
+    "styles": "sass --style=compressed src/scss/styles.scss dist/assets/css/styles.css && sass --style=compressed src/scss/enhanced.scss dist/assets/css/enhanced.css",
     "styles:legacy": "sass --no-source-map src/scss/etc/ie8.scss dist/assets/css/ie8.css && sass --no-source-map src/scss/etc/ie9.scss dist/assets/css/ie9.css",
     "autoprefixer": "postcss -u autoprefixer -r dist/assets/css/*.css",
     "img": "mkdir -p dist/assets/img/ && cp -a src/img/. dist/assets/img/",
