@@ -39,6 +39,7 @@ All notable changes to this project will be documented in this file. The format 
 - Moves IE8 and IE9 styles into separate stylesheets to save CSS weight
 - Uses one SCSS stylesheet for IE10 and IE11
 - Uses more generic scripts.js for main JavaScript file
+- Uses plural for styles file
 
 ### Removes
 - Gets rid of unused `cite` styling
