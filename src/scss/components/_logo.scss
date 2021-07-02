@@ -21,16 +21,3 @@
     }
   }
 }
-
-@keyframes blink {
-
-  to {
-    visibility: hidden;
-  }
-}
-
-.underscore {
-  @media screen and (prefers-reduced-motion: no-preference) {
-    animation: blink 2s steps(20, start) infinite;
-  }
-}
