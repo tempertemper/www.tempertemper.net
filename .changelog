@@ -59,6 +59,7 @@ All notable changes to this project will be documented in this file. The format 
 - Stops bullets being off-screen at certain screen widths
 - Reduces space at bottom of subscribe form
 - Adds self closing forward slashes consistently in document head
+- Stops autoprefixer adding inline sourcemaps
 
 ----------
 
