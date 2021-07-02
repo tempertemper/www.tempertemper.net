@@ -44,6 +44,7 @@ All notable changes to this project will be documented in this file. The format 
 - Moves code syntax highlighting to nice-to-have stylesheet
 - Moves print styles into own async-loaded stylesheet
 - Uses default browserslist config
+- Uses SVG fill to colour logo underline
 
 ### Removes
 - Gets rid of unused `cite` styling
