@@ -45,7 +45,7 @@ All notable changes to this project will be documented in this file. The format 
 - Moves print styles into own async-loaded stylesheet
 - Uses default browserslist config
 - Uses SVG fill to colour logo underline
-- Moves logo animation to enhanced CSS stylesheet
+- Moves logo animation inside the SVG itself
 
 ### Removes
 - Gets rid of unused `cite` styling
