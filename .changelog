@@ -55,6 +55,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes some unused classes from print stylesheet
 - Removes IE stylesheet with IE10 and IE11 specific styles
 - Removes sourcemaps from production CSS
+- Removes unnecessary em and strong styling
 
 ### Fixes
 - Makes button links' visited state visible
