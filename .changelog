@@ -43,6 +43,7 @@ All notable changes to this project will be documented in this file. The format 
 - Uses plural for styles file
 - Moves code syntax highlighting to nice-to-have stylesheet
 - Moves print styles into own async-loaded stylesheet
+- Uses default browserslist config
 
 ### Removes
 - Gets rid of unused `cite` styling
