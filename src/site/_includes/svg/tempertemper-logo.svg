@@ -1,15 +1,12 @@
 <svg class="tempertemper" width="270" height="40" viewBox="0 0 270 40" role="img" version="1.1" aria-labelledby="logo-title">
     <style>
       @keyframes blink {
-        0% { opacity: 1; }
-        89.9% { opacity: 1; }
-        90% { opacity: 0; }
-        99.9% { opacity: 0; }
+        89.9% {opacity: 1;}
+        90% {opacity: 0;}
+        99.9% {opacity: 0;}
       }
       @media screen and (prefers-reduced-motion: no-preference) {
-        rect {
-          animation: blink 2s steps(20, start) infinite;
-        }
+        rect {animation: blink 2s steps(20, start) infinite;}
       }
     </style>
     <title id="logo-title">tempertemper Web Design</title>
