@@ -1,39 +1,20 @@
 $modularscale: (
   base: 1em,
-  ratio: $major-third
+  ratio: $major-third,
+  $m: (
+    ratio: $golden
+  )
 );
 
-@font-face {
-  font-family: 'FS Me Web';
-  font-size-adjust: .53;
-  font-style: normal;
-  font-weight: 200;
-  src: url('../fonts/FSMeWeb-Light.woff2') format('woff2'),
-       url('../fonts/FSMeWeb-Light.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'FS Me Web';
-  font-size-adjust: .53;
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/FSMeWeb-Regular.woff2') format('woff2'),
-       url('../fonts/FSMeWeb-Regular.woff') format('woff');
-  font-display: swap;
-}
-
-$font--heading: 'FS Me Web', sans-serif;
-
 @mixin heading-style {
-  font-family: $font--heading;
   line-height: 1.2;
   margin-top: 1em;
   margin-bottom: .25em;
+  letter-spacing: -.03em;
+  font-weight: 700;
   hyphens: auto;
 
   @media (min-width: $xs) {
-    margin-top: 1.414em;
     line-height: 1.05;
   }
 
@@ -43,9 +24,7 @@ $font--heading: 'FS Me Web', sans-serif;
 }
 
 @mixin font-body {
-  font-family: Georgia, serif;
   font-style: normal;
-  font-weight: 400;
   line-height: 1.5;
 
   @include dark-mode() {
@@ -57,64 +36,49 @@ $font--heading: 'FS Me Web', sans-serif;
 
 @mixin heading-xl {
   font-size: ms(3);
-  font-weight: 400;
+
+  @media (max-width: $xxs) {
+    font-size: ms(2);
+  }
+
+  @media (min-width: $m) {
+    @include ms-respond(font-size, 3);
+  }
+}
+
+@mixin heading-l {
+  font-size: ms(2);
 
   @media (max-width: $xxs) {
     font-size: ms(1);
   }
 
   @media (min-width: $m) {
-    font-size: ms(4);
-    font-weight: 200;
-  }
-
-  @media (min-width: $l) {
-    font-size: ms(5);
-  }
-}
-
-@mixin heading-l {
-  font-size: ms(2);
-  font-weight: 400;
-
-  @media (max-width: $xxs) {
-    font-size: ms(0);
-  }
-
-  @media (min-width: $m) {
-    font-size: ms(2);
-    font-weight: 200;
-  }
-
-  @media (min-width: $l) {
-    font-size: ms(4);
+    @include ms-respond(font-size, 2);
   }
 }
 
 @mixin heading-m {
   font-size: ms(1);
-  font-weight: 400;
 
   @media (max-width: $xxs) {
     font-size: ms(0);
-    font-weight: 200;
   }
 
   @media (min-width: $m) {
-    font-size: ms(2);
+    @include ms-respond(font-size, 1);
   }
 }
 
 @mixin heading-s {
   font-size: ms(0);
-  font-weight: 400;
 
   @media (max-width: $xxs) {
     font-size: ms(-1);
   }
 
   @media (min-width: $m) {
-    font-size: ms(1);
+    @include ms-respond(font-size, 0);
   }
 }
 

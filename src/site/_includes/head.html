@@ -84,21 +84,30 @@
 
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
     <meta name="disabled-adaptations" content="watch" />
-    <meta name="format-detection" content="telephone=no">
-    <meta name="color-scheme" content="dark light">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="color-scheme" content="dark light" />
 
-    <link rel="canonical" href="{{ site.url }}{{ page.url | replace('.html', '') }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace('.html', '') }}" />
 
-    <link rel="icon" href="/favicon.ico">
-    <link rel="icon" href="/assets/img/icons/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/assets/img/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#2c2c2c" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#2c2c2c" media="(prefers-color-scheme: dark)" />
     <script>
         {% include "html5shiv.min.js" %}
     </script>
-    <link rel="stylesheet" href="/assets/css/style.css?v={{ site.version }}">
+    <link rel="preload" href="/assets/fonts/FSMeWeb-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/FSMeWeb-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/FSMeWeb-Italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/css/styles.css?v={{ site.version }}" />
+    <link rel="preload" href="/assets/css/enhanced.css?v={{ site.version }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/assets/css/enhanced.css?v={{ site.version }}" /></noscript>
+    <link rel="preload" href="/assets/css/print.css?v={{ site.version }}" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print" />
+    <noscript><link rel="stylesheet" media="print" href="/assets/css/print.css?v={{ site.version }}" /></noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/assets/css/ie8.css" /><![endif]-->
+    <!--[if IE 9]><link rel="stylesheet" type="text/css" href="/assets/css/ie9.css" /><![endif]-->
     <script type="application/ld+json">
         {
             "@context" : "https://schema.org",

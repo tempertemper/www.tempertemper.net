@@ -14,6 +14,62 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.0.0] - 2021-07-03
+
+### Adds
+- Adds Bold and Italic FS-Me weights
+- Adds new breakpoint dependent type scale
+- Gives teaser items highlight box on small screens
+- New fonts SCSS stylesheet
+- Creates separate async stylesheet with nice to have styles
+
+### Changes
+- Uses FS-Me instead of Georgia for body text
+- Increases code font size slightly to match x-height of FS-Me
+- Moves Updated date in post details onto a new line
+- Attaches the 'and' to the last category in a list of categories
+- Uses bold font for headings
+- Uses bold font for buttons
+- Uses an italic font for post details
+- Left-aligns whole site and tidies spacing
+- Uses mixin to make pictures, etc. wider than rest of content
+- Makes logo slightly bigger
+- Lightens some code styling CSS
+- Narrows overall site width slightly
+- Limits width of common typography elements
+- Uses CSS Grid instead of Susy
+- Stops code blocks in lists being broader than the list box
+- Uses a percentage unit for `<small>` text resizing, rather than Modular Scale
+- Tidies footer up a bit
+- Simplifies division maths by introducing new border radius variable
+- Moves IE8 and IE9 styles into separate stylesheets to save CSS weight
+- Uses one SCSS stylesheet for IE10 and IE11
+- Uses more generic scripts.js for main JavaScript file
+- Uses plural for styles file
+- Moves code syntax highlighting to nice-to-have stylesheet
+- Moves print styles into own async-loaded stylesheet
+- Uses default browserslist config
+- Uses SVG fill to colour logo underline
+- Moves logo animation inside the SVG itself
+
+### Removes
+- Gets rid of unused `cite` styling
+- Removes Light font weight
+- Removes Susy as a dependency
+- Deletes typography SCSS includes file, using main includes file instead
+- Removes some unused classes from print stylesheet
+- Removes IE stylesheet with IE10 and IE11 specific styles
+- Removes sourcemaps from production CSS
+- Removes unnecessary em and strong styling
+
+### Fixes
+- Makes button links' visited state visible
+- Stops bullets being off-screen at certain screen widths
+- Reduces space at bottom of subscribe form
+- Adds self closing forward slashes consistently in document head
+- Stops autoprefixer adding inline sourcemaps
+
+
 ## [5.16.12] - 2021-06-27
 
 ### Changes

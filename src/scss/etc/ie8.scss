@@ -1,0 +1,22 @@
+.page-wrapper {
+  width: 500px;
+  font-size: 1.2em;
+}
+
+.logo {
+  width: 270px;
+  max-width: none;
+  height: 40px;
+  background-image: url('/assets/img/tempertemper-web-design-logo.png');
+  background-repeat: no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.footer [href="https://twitter.com/tempertemper"] {
+
+  &:before {
+    content: 'Twitter:';
+  }
+}

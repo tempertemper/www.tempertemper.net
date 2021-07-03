@@ -6,8 +6,8 @@
   display: inline-block;
   display: inline-flex;
   align-items: center;
-  font-family: $font--heading;
-  font-weight: 400;
+  font-family: inherit;
+  font-weight: 700;
   margin-top: 1em;
   padding: .5em 2em;
   text-align: center;
@@ -29,8 +29,8 @@
     margin-top: -.3em;
   }
 
-  &:link,
-  &:visited {
+  &:link:link,
+  &:visited:visited {
     color: $colour-white;
     text-decoration: none;
     @include dark-mode($colour: $colour-dark-mode-main);

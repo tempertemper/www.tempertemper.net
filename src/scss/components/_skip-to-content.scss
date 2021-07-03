@@ -1,6 +1,5 @@
 .skip-to-content {
   @extend %visually-hidden;
-  font-family: $font--heading;
 
   &:focus {
     top: .5em;

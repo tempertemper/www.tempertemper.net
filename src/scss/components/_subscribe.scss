@@ -1,13 +1,21 @@
 .subscribe {
   @include boxout;
 
-  @media (min-width: $m) {
-    display: flex;
-    align-items: flex-end;
+  [type="submit"] {
+    margin-bottom: .25em;
+  }
 
-    .input-group {
-      width: span(3 of 4);
-      margin-right: gutter();
+  @media (min-width: $m) {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0em 1em;
+    grid-template-areas:
+    ". .";
+    align-items: end;
+
+    [id="email"] {
+      margin-bottom: .25em;
     }
   }
 }

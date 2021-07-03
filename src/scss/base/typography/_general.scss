@@ -6,6 +6,7 @@
 }
 
 html {
+  font-family: 'FS Me Web', sans-serif;
   @include font-body;
   color: $colour-black;
   font-size: 120%;
@@ -52,28 +53,6 @@ blockquote {
   }
 }
 
-cite {
-  display: block;
-  font-family: $font--heading;
-  margin-top: 1em;
-}
-
-strong {
-  font-weight: 700;
-
-  em {
-    font-style: italic;
-  }
-}
-
-em {
-  font-style: italic;
-
-  strong {
-    font-weight: 700;
-  }
-}
-
 ul,
 ol {
 
@@ -89,17 +68,12 @@ ol {
   ul {
     list-style-type: disc;
   }
-
-  .details {
-    font-family: $font--heading;
-  }
 }
 
 li {
 
   &::marker {
     color: $colour-primary;
-    font-family: $font--heading;
     @include dark-mode($colour: $colour-dark-mode-primary);
     @include high-contrast($colour: $colour-dark-mode-primary-lighter);
   }
@@ -116,6 +90,13 @@ hr {
 
 small {
   display: block;
-  font-size: ms(0);
+  font-size: 100%;
   font-style: italic;
+}
+
+p,
+ul,
+ol,
+blockquote {
+  max-width: 30em;
 }
