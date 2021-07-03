@@ -1,5 +1,5 @@
 ---
-title: Styling code snippets in keynote
+title: Styling code snippets in Keynote
 intro: |
     No sooner than I had published my story on why I like Keynote, I spotted a post in my RSS feeds on how to highlight code syntax in Keynote.
 date: 2021-06-15
