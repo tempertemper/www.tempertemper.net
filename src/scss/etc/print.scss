@@ -1,0 +1,56 @@
+body {
+  font-size: 10pt;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+.utility,
+form,
+.subscribe,
+.navigation {
+  display: none;
+}
+
+.logo {
+  padding-left: 0;
+  width: 270px;
+  height: 40px;
+}
+
+a {
+
+  &:link,
+  &:visited {
+    color: inherit;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  page-break-after: avoid;
+}
+
+ul,
+img,
+blockquote,
+pre {
+  page-break-inside: avoid;
+}
+
+p,
+ul,
+ol {
+
+  [href^=http] {
+    font-weight: 700;
+
+    &:after {
+      content: ' <' attr(href) '> ';
+    }
+  }
+}

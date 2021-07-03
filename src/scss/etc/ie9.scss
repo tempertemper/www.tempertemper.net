@@ -1,0 +1,27 @@
+.logo {
+
+  svg {
+    height: 40px;
+  }
+}
+
+.navigation {
+  float: right;
+}
+
+.teaser {
+
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  li {
+    float: left;
+  }
+}

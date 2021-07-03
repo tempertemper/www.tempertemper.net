@@ -5,7 +5,6 @@ form {
 }
 
 label {
-  font-family: $font--heading;
   @include dark-mode($colour: $colour-dark-mode-white);
 }
 
@@ -14,10 +13,10 @@ input {
   border: 3px solid $colour-primary;
   border-radius: $border-radius-default;
   display: block;
-  font-family: georgia, serif;
   margin-bottom: 1em;
   padding: .5em .75em;
   width: 100%;
+  line-height: 1.2;
   @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white) {
     border-color: $colour-dark-mode-primary;
   }
@@ -32,10 +31,6 @@ input {
       box-shadow: 0 0 0 3px $colour-white;
     }
   }
-}
-
-input {
-  line-height: 1.2;
 }
 
 [type="submit"] {

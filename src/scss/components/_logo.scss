@@ -1,7 +1,6 @@
 .logo {
   display: inline-block;
   margin-right: .5em;
-  max-width: 9em;
   margin-bottom: .5em;
 
   @media (min-width: $xs) {
@@ -10,6 +9,8 @@
 
   svg {
     display: block;
+    max-width: 270px;
+    max-height: 40px; // Fix for IE11
   }
 
   .mark path,
@@ -18,22 +19,5 @@
     @include dark-mode() {
       fill: $colour-dark-mode-white;
     }
-  }
-
-  .underscore {
-    fill: $colour-primary;
-  }
-}
-
-@keyframes blink {
-
-  to {
-    visibility: hidden;
-  }
-}
-
-.underscore {
-  @media screen and (prefers-reduced-motion: no-preference) {
-    animation: blink 2s steps(20, start) infinite;
   }
 }

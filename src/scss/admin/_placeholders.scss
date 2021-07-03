@@ -1,13 +1,13 @@
-%clearfix {
-  @include clearfix;
-}
-
 %container {
-  max-width: 50em;
+  max-width: 40em;
   margin-right: auto;
   margin-left: auto;
   padding-left: .5em;
   padding-right: .5em;
+  @media (min-width: $m) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
 }
 
 %visually-hidden {

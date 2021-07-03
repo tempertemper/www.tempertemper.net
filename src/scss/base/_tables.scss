@@ -1,7 +1,7 @@
 .table-wrapper {
   @include heading-style;
   overflow: auto;
-  border-radius: math.div($border-radius-default, 2);
+  border-radius: $border-radius-small;
   margin-top: 1em;
   margin-bottom: 1em;
 

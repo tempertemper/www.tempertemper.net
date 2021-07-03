@@ -1,14 +1,10 @@
 .post-details {
-  font-family: $font--heading;
-  margin-top: $section-spacing;
-  margin-bottom: $section-spacing;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-style: italic;
 
   @media (max-width: $xxs) {
     margin-top: 1em;
     margin-bottom: 1em;
-  }
-
-  @media (min-width: $m) {
-    text-align: center;
   }
 }
