@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.0.0] - 2021-07-03
+
 ### Adds
 - Adds Bold and Italic FS-Me weights
 - Adds new breakpoint dependent type scale
@@ -63,8 +68,6 @@ All notable changes to this project will be documented in this file. The format 
 - Reduces space at bottom of subscribe form
 - Adds self closing forward slashes consistently in document head
 - Stops autoprefixer adding inline sourcemaps
-
-----------
 
 
 ## [5.16.12] - 2021-06-27
