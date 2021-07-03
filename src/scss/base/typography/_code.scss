@@ -37,9 +37,6 @@ pre {
 
   @media (min-width: $l) {
     @include overspill;
-  }
-
-  @media (min-width: $l) {
 
     li & {
       width: auto;

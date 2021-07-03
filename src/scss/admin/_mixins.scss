@@ -45,11 +45,10 @@
 }
 
 @mixin inline-nav {
-  display: inline-block;
-  width: auto;
+  display: flex;
+  flex-direction: row;
 
-  + li {
-    margin-top: 0;
+  li + li {
     margin-left: .5em;
   }
 

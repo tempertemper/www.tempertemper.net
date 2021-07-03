@@ -16,7 +16,6 @@
 
     .index-list {
       max-width: none;
-      @include overspill;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
@@ -28,6 +27,13 @@
 
     li + li {
       margin-top: 0;
+    }
+  }
+
+  @media (min-width: $l) {
+
+    .index-list {
+      @include overspill;
     }
   }
 }
