@@ -12,7 +12,7 @@
     "autoprefixer:dev": "postcss -u autoprefixer -r --map dist/assets/css/styles.css dist/assets/css/enhanced.css",
     "img": "mkdir -p dist/assets/img/ && cp -a src/img/. dist/assets/img/",
     "fonts": "mkdir -p dist/assets/fonts/ && cp -a src/fonts/. dist/assets/fonts/",
-    "js": "mkdir -p dist/assets/js/ && cat src/js/* > dist/assets/js/scripts.js && uglifyjs dist/assets/js/scripts.js -m -o dist/assets/js/scripts.js",
+    "js": "cat src/js/* > src/site/_includes/scripts.js && uglifyjs src/site/_includes/scripts.js -m -o src/site/_includes/scripts.js",
     "shiv": "cp node_modules/html5shiv/dist/html5shiv.min.js src/site/_includes/html5shiv.min.js",
     "build:assets": "npm run styles && npm run autoprefixer && npm run img && npm run fonts && npm run js && npm run styles:print && npm run styles:legacy",
     "build:devassets": "npm run styles:dev && npm run autoprefixer:dev && npm run img && npm run fonts && npm run js && npm run styles:print && npm run styles:legacy",
