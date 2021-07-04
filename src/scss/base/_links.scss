@@ -1,0 +1,12 @@
+a {
+  @include text-link;
+
+  > code {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  h2 & {
+    text-decoration-thickness: .06em;
+  }
+}

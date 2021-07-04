@@ -11,7 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
 - Makes global JavaScript inline rather than an extra file request
+- Moves page SCSS from /components/ to /base/
+- Moves link mixins to admin/mixins/_general.scss
+- Divides some stylesheets into critical and non-critical
+- Renames styles.css critical.css
+- Renames enhanced.scss non-critical.css
 
 ----------
 
