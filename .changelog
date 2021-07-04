@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Removes
+- Removes unnecessary or overridden CSS reset properties
+- Comments out currently unused styles in CSS reset
+
 ----------
 
 
