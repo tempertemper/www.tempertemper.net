@@ -1,30 +1,18 @@
 @import '../../node_modules/modularscale-sass/stylesheets/modularscale',
         'admin/variables',
-        'admin/mixins',
+        'admin/mixins/general',
+        'admin/mixins/typography',
         'admin/placeholders';
 
 @import 'base/reset',
         'base/typography/fonts',
-        'base/typography/mixins',
         'base/typography/general',
         'base/typography/headings',
         'base/typography/links',
-        'base/typography/code',
-        'base/images',
-        'base/video',
-        'base/icons',
-        'base/buttons',
-        'base/forms',
-        'base/tables',
-        'base/utility';
+        'base/images';
 
 @import 'components/page',
         'components/header',
         'components/logo',
         'components/skip-to-content',
-        'components/navigation',
-        'components/post-in-list',
-        'components/post-details',
-        'components/teaser',
-        'components/subscribe',
-        'components/footer';
+        'components/navigation';

@@ -22,15 +22,7 @@ p {
   }
 }
 
-pre,
-code {
-  font-size: inherit;
-  font-weight: 400;
-}
-
-address,
-pre,
-.map {
+address {
   margin-bottom: 1em;
   margin-top: 1em;
 }
@@ -40,47 +32,35 @@ ol {
   padding-left: 0;
 }
 
-pre,
 body,
 html,
-fieldset,
+// fieldset,
 input {
   margin: 0;
   padding: 0;
 }
 
-address,
-cite {
+// cite,
+address {
   font-style: normal;
 }
 
-:focus {
-  outline: none;
-}
-
-a img,
 img,
-iframe,
-fieldset {
+// fieldset,
+iframe {
   border: 0;
 }
 
-legend {
-  color: $colour-black;
-  padding: 0;
-}
+// legend {
+//   padding: 0;
+// }
 
-input,
-textarea,
-select {
+// textarea,
+// select,
+input {
   font-family: inherit;
   font-size: 100%;
   margin: 0;
-  padding: 1px;
-}
-
-select {
-  padding: 0;
 }
 
 table {
@@ -92,17 +72,17 @@ table {
   cursor: pointer;
 }
 
-[type="search"] {
-  -webkit-appearance: none;
-  border-radius: $border-radius-default;
-  box-shadow: none;
-}
+// [type="search"] {
+//   -webkit-appearance: none;
+//   border-radius: $border-radius-default;
+//   box-shadow: none;
+// }
 
+// textarea,
+// [type="tel"],
+// [type="url"],
 [type="text"],
-[type="email"],
-[type="tel"],
-[type="url"],
-textarea {
+[type="email"] {
   -webkit-appearance: none;
 }
 
@@ -115,9 +95,9 @@ button {
   background-image: none;
 }
 
-nav .selected {
-  cursor: default;
-}
+// nav .selected {
+//   cursor: default;
+// }
 
 textarea {
   overflow-y: auto;
