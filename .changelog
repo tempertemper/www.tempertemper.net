@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.0.2] - 2021-07-05
+
 ### Changes
 - Makes global JavaScript inline rather than an extra file request
 - Moves page SCSS from /components/ to /base/
@@ -24,8 +29,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Removes
 - Removes unused responsive nav code
-
-----------
 
 
 ## [6.0.1] - 2021-07-04
