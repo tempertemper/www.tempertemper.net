@@ -7,3 +7,4 @@
 .netlify/
 .env
 /src/site/_includes/critical.css
+/src/site/_includes/scripts.js

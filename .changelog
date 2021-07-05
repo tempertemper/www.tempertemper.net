@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file. The format 
 - Renames enhanced.scss non-critical.css
 - Inlines the critical CSS in the documents head
 - Moves HTML5 Shiv to separate stylesheet in conditional comments
+- Removes scripts.js from build folder and adds to .gitignore
 
 ### Removes
 - Removes unused responsive nav code
