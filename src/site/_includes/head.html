@@ -100,7 +100,7 @@
     <link rel="preload" href="/assets/fonts/FSMeWeb-Bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/FSMeWeb-Italic.woff2" as="font" type="font/woff2" crossorigin />
     {%- set css %}{%- include "critical.css" %}{% endset %}
-    <style>{{ css | safe | replace("", "") }}</style>
+    <style>{{- css | safe | replace("", "") -}}</style>
     <link rel="preload" href="/assets/css/non-critical.css?v={{ site.version }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="/assets/css/non-critical.css?v={{ site.version }}" /></noscript>
     <link rel="preload" href="/assets/css/print.css?v={{ site.version }}" as="style" media="print" onload="this.onload=null;this.rel='stylesheet'" />
