@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file. The format 
 - Renames styles.css critical.css
 - Renames enhanced.scss non-critical.css
 - Inlines the critical CSS in the documents head
+- Moves HTML5 Shiv to separate stylesheet in conditional comments
 
 ### Removes
 - Removes unused responsive nav code
