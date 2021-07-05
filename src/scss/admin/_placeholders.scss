@@ -1,4 +1,4 @@
-%container {
+@mixin container {
   max-width: 40em;
   margin-right: auto;
   margin-left: auto;
@@ -10,7 +10,7 @@
   }
 }
 
-%visually-hidden {
+@mixin visually-hidden {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);

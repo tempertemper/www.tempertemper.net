@@ -1,3 +1,5 @@
+a{b:c;} // Added to stop the <0xfeff> character that's appearing at the start of the stylesheet breaking the first rule
+
 html {
   box-sizing: border-box;
 }

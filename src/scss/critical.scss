@@ -5,14 +5,14 @@
         'admin/placeholders';
 
 @import 'base/reset',
-        'base/typography/fonts',
-        'base/typography/general',
-        'base/typography/headings',
-        'base/typography/links',
+        'base/page',
+        'base/typography/fonts--critical',
+        'base/typography/general--critical',
+        'base/typography/headings--critical',
+        'base/links',
         'base/images';
 
-@import 'components/page',
-        'components/header',
+@import 'components/header',
         'components/logo',
         'components/skip-to-content',
         'components/navigation';
