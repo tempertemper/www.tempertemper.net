@@ -1,8 +1,10 @@
 .DS_Store
 .sass-cache/
-style.css.map
+*.css.map
 /node_modules/
 /dist/
 *.sublime-workspace
 .netlify/
 .env
+/src/site/_includes/critical.css
+/src/site/_includes/scripts.js

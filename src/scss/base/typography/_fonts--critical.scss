@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'FS Me Web';
+  font-size-adjust: .53;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/FSMeWeb-Regular.woff2') format('woff2'),
+       url('/assets/fonts/FSMeWeb-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FS Me Web';
+  font-size-adjust: .53;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/FSMeWeb-Bold.woff2') format('woff2'),
+       url('/assets/fonts/FSMeWeb-Bold.woff') format('woff');
+  font-display: swap;
+}

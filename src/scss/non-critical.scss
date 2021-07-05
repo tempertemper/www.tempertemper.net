@@ -4,7 +4,10 @@
         'admin/mixins/typography',
         'admin/placeholders';
 
-@import 'base/code',
+@import 'base/typography/fonts--non-critical',
+        'base/typography/general--non-critical',
+        'base/typography/headings--non-critical',
+        'base/code',
         'base/video',
         'base/icons',
         'base/buttons',

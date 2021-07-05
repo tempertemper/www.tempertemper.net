@@ -14,6 +14,23 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.0.2] - 2021-07-05
+
+### Changes
+- Makes global JavaScript inline rather than an extra file request
+- Moves page SCSS from /components/ to /base/
+- Moves link mixins to admin/mixins/_general.scss
+- Divides some stylesheets into critical and non-critical
+- Renames styles.css critical.css
+- Renames enhanced.scss non-critical.css
+- Inlines the critical CSS in the documents head
+- Moves HTML5 Shiv to separate stylesheet in conditional comments
+- Removes scripts.js from build folder and adds to .gitignore
+
+### Removes
+- Removes unused responsive nav code
+
+
 ## [6.0.1] - 2021-07-04
 
 ### Changes
