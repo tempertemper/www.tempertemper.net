@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file. The format 
 - Divides some stylesheets into critical and non-critical
 - Renames styles.css critical.css
 - Renames enhanced.scss non-critical.css
+- Inlines the critical CSS in the documents head
 
 ### Removes
 - Removes unused responsive nav code

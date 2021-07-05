@@ -1,5 +1,5 @@
 .skip-to-content {
-  @extend %visually-hidden;
+  @include visually-hidden;
 
   &:focus {
     top: .5em;

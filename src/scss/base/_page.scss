@@ -15,5 +15,5 @@ body {
 }
 
 .page-wrapper {
-  @extend %container;
+  @include container;
 }
