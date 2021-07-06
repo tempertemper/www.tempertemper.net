@@ -6,7 +6,8 @@ date: 2019-08-04
 tags:
     - Development
     - Design
-summaryImage: large
+summaryImage: version-5.png
+summaryImageAlt: The number 5, set in very dark grey FS-Me light against a white background.
 ---
 
 I'm already more than a dozen releases into version 5 of my website, but I'm finally ready to 'officially' announce it!
