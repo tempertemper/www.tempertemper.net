@@ -860,6 +860,18 @@
 ## Other blog post redirects
 
 [[redirects]]
+  from = "/blog/high-contrast-mode"
+  to = "/blog/using-the-increased-contrast-mode-css-media-query"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/high-contrast-mode"
+  to = "/blog/using-the-increased-contrast-mode-css-media-query"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/styling-underlines-with-css.html"
   to = "/blog/styling-underlines-with-css"
   status = 301
@@ -1096,6 +1108,18 @@
 [[redirects]]
   from = "/about/colophon"
   to = "/colophon"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/js/production.js"
+  to = "/404"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/css/style.css"
+  to = "/404"
   status = 301
   force = true
 
