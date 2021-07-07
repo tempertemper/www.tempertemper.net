@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Uses `<ul>` rather than `<ol>` for featured blog posts
+- Moves post in list styling to critical CSS to stop layout shift
 
 ----------
 
