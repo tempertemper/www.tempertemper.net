@@ -11,13 +11,13 @@ I use big headings on my website. Some of those headings, like those on the [blo
 
 People don't generally jump from browser to browser, comparing a website to ensure it looks the same everywhere, but when 'thicker' is actually 'too thick', even in isolation, there's a problem.
 
-I wondered whether it might be the default thickness; once I manually specified a value with `text-decoration-thickness` it would rectify itself.
+I wondered whether it might be something to do with a different default thickness; once I manually specified a value with `text-decoration-thickness` (which has [great browser support](https://caniuse.com/mdn-css_properties_text-decoration-thickness)) it would hopefully rectify itself.
 
-Unfortunately it didn't. It seems the way Chromium browsers calculate `text-decoration-thickness` is different. I tried pixels, ems, and all the others, but those underlines are always thicker in Edge, Chrome and Opera.
+Unfortunately it didn't. It seems the way Chromium browsers *calculate* `text-decoration-thickness` is different, so it doesn't matter whether you override the default value or set it manually. And the units don't seem to make any difference either: I tried pixels, ems, you name it; those underlines always looked ungainly in Edge, Chrome and Opera.
 
-I considered looking into how the calculation is done, and even exploring *why* it's that way, but life is currently too hectic to delve that deep. I accepted that it's not right and looked for a fix.
+I considered delving into how the calculation is done, and even exploring *why* it's that way, but life is currently too hectic, and sometimes it's enough to accept something for what it is and try to fix it.
 
-It's only really second level headings with links in them that look unwieldy. `<h1>`s never have links, and the slightly thicker underline doesn't look too odd on `<h3>`s and below, so I targeted links in `<h2>`s:
+It was only really second level headings with links in them that were too chunky. `<h1>`s on this site never have links, and the slightly thicker underline doesn't look wrong on `<h3>`s and below, so I targeted links in `<h2>`s:
 
 ```css
 h2 a {
@@ -25,4 +25,9 @@ h2 a {
 }
 ```
 
-The underline still looks different cross-browser but with this value it's neither too thick nor too thin anywhere. A bit of a pain that I have to add it at all, but sometimes the web is messy like that.
+The underline still looks different cross-browser but this value seems to hit the sweet spot. It's neither:
+
+- too thick on Chromium browsers and right everywhere else
+- proportional in Chromium and too thin on other browsers
+
+It's a pain that we still have to think about these kinds of things, but I suppose non-standard browser behaviour is in much better shape than it was only a few short years ago. And the fact that we've got fine control over things like underlines makes me very happy indeed.
