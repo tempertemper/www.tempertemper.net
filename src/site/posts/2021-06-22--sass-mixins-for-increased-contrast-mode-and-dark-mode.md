@@ -8,7 +8,7 @@ tags:
     - Development
 ---
 
-When I [added a high contrast version of my website](/blog/high-contrast-mode) I used an almost-identical [SCSS (Sass) mixin](https://sass-lang.com/documentation/at-rules/mixin) to the one I use for Dark Mode. It's a riff on [the mixin Will Moore from 1Password wrote about](https://blog.1password.com/from-dark-to-light-and-back-again/) in late 2018, and here's how it looks:
+When I [added a high contrast version of my website](/blog/using-the-increased-contrast-mode-css-media-query) I used an almost-identical [SCSS (Sass) mixin](https://sass-lang.com/documentation/at-rules/mixin) to the one I use for Dark Mode. It's a riff on [the mixin Will Moore from 1Password wrote about](https://blog.1password.com/from-dark-to-light-and-back-again/) in late 2018, and here's how it looks:
  
 ```scss
 @mixin high-contrast($background: null, $colour: null) {
