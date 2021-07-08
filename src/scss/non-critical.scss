@@ -13,10 +13,9 @@
         'base/buttons',
         'base/forms',
         'base/tables',
-        'base/utility';
+        'base/utility--non-critical';
 
 @import 'components/syntax-highlighting',
-        'components/post-in-list',
         'components/post-details',
         'components/teaser',
         'components/subscribe',

@@ -14,6 +14,17 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.0.3] - 2021-07-08
+
+### Removes
+- Removes 'Read more' link from testimonials
+
+### Fixes
+- Uses `<ul>` rather than `<ol>` for featured blog posts
+- Moves post in list styling to critical CSS to stop layout shift
+- Adds index list marker removal to critical CSS to stop flash
+
+
 ## [6.0.2] - 2021-07-05
 
 ### Changes

@@ -21,14 +21,14 @@ layout: base.html
 <section aria-labelledby="writing" class="teaser">
     <h2 id="writing">Writing</h2>
     <p>If you prefer to dive straight in rather than <a href="/blog/">see the full blog</a>, here are a couple of my favourite articles to get you started:</p>
-    <ol class="index-list" reversed>
+    <ul class="index-list" reversed>
         {%- set posts = collections.post | reverse %}
         {% for post in posts %}
             {% if post.data.featured === true %}
                 {% include "post-in-list.html" %}
             {% endif %}
         {% endfor %}
-    </ol>
+    </ul>
 </section>
 
 <section aria-labelledby="my-favourite-subjects">
