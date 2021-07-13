@@ -1,4 +1,4 @@
-{
+module.exports = {
   "title": "tempertemper",
   "company": "tempertemper Web Design Ltd",
   "version": "6.0.3",

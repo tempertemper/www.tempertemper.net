@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Updates npm version to 16.4.2 via nvm
+- Uses JavaScript for global data file, rather than JSON
 
 ----------
 
