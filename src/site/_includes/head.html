@@ -88,9 +88,13 @@
     <meta name="color-scheme" content="dark light" />
 
     <link rel="canonical" href="{{ site.url }}{{ page.url | replace('.html', '') }}" />
-
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" href="/assets/img/icons/icon.svg" type="image/svg+xml" />
+    {%- if site.env == 'development' %}
+        <link rel="icon" href="/favicon--dev.ico" />
+        <link rel="icon" href="/assets/img/icons/favicon--dev.svg" type="image/svg+xml" />
+    {%- else %}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/img/icons/favicon.svg" type="image/svg+xml" />
+    {%- endif %}
     <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
