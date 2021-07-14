@@ -104,7 +104,7 @@ Here's an example; first up an animation. I've used an MP4 and the `<video>` ele
 
 Using [the native `<video>` element isn't without its pitfalls](https://scottvinkle.me/blogs/work/how-accessible-is-the-html-video-player), but for the purpose I've used here it should stand up well:
 
-<video title="An animation of BMO from Adventure Time, dancing happily" controls loop muted disablePictureInPicture preload="none" poster="/assets/img/blog/bmo-static.jpg" class="natural-dimensions" width="400" height="300" loading="lazy">
+<video title="An animation of BMO from Adventure Time, dancing happily" controls loop muted controlslist="nofullscreen nodownload noremoteplayback" disablePictureInPicture preload="none" poster="/assets/img/blog/bmo-static.jpg" class="natural-dimensions" width="400" height="300" loading="lazy">
     <source src="/assets/img/blog/bmo-animated.mp4" type="video/mp4" />
     <track label="English" kind="captions" srclang="en" src="/assets/img/blog/bmo.vtt" />
     This was supposed to be an animation of BMO from Adventure Time dancing happily. Unfortunately, your web browser does not support the video element.

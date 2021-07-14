@@ -14,6 +14,19 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.0.4] - 2021-07-14
+
+### Adds
+- Adds more fine grained video controls control for Chromium browsers
+- Adds ELEVENTY_ENV environment variable to global data file
+- Adds development environment specific favicons
+
+### Changes
+- Updates npm version to 16.4.2 via nvm
+- Uses JavaScript for global data file, rather than JSON
+- Renames svg favicon from 'icon' to 'favicon'
+
+
 ## [6.0.3] - 2021-07-08
 
 ### Removes
