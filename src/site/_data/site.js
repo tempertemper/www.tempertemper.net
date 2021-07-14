@@ -11,5 +11,6 @@ module.exports = {
     "twitter": "@tempertemper",
     "email": "hello+website@tempertemper.net"
   },
+  "env": process.env.ELEVENTY_ENV || "not_development",
   "og_locale": "en_GB"
 }
