@@ -5,6 +5,7 @@ intro: |
 date: 2021-07-08
 tags:
     - Development
+    - Tools
 ---
 
 This is another one of those notes-to-self blog posts, for something I do every now and then, but not enough that I know how to do it off the top of my head.
