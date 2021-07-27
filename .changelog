@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds basic details/summary styling
+
+### Changes
+- Abstracts overspill reset to mixin
+
 ----------
 
 

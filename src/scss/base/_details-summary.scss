@@ -1,0 +1,43 @@
+summary {
+  text-decoration: underline;
+  display: inline-block;
+  color: $colour-primary;
+  cursor: pointer;
+  position: relative;
+  padding-left: 1em;
+  @include high-contrast($colour: $colour-dark-mode-primary-lighter);
+  @include text-link;
+
+  &:focus-visible {
+    outline: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    border-width: 7px 0 7px 12px;
+    border-left-color: inherit;
+  }
+
+  details[open] > &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: transparent;
+    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    border-width: 12px 7px 0 7px;
+    border-top-color: inherit;
+  }
+}

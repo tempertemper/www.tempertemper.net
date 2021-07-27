@@ -149,6 +149,12 @@
   margin-right: calc(-1em);
 }
 
+@mixin overspill-reset {
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 @mixin boxout {
   @include highlight-box;
 
