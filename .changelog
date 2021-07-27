@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Fixes overspill width issue
+- Prevents hanging list numbers being hidden at certain screen widths
 
 ----------
 
