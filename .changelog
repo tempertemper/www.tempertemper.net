@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.0.5] - 2021-07-28
+
 ### Adds
 - Adds basic details/summary styling
 
@@ -20,8 +25,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Fixes overspill width issue
 - Prevents hanging list numbers being hidden at certain screen widths
-
-----------
 
 
 ## [6.0.4] - 2021-07-14
