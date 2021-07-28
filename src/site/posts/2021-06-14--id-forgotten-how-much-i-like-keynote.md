@@ -5,6 +5,7 @@ intro: |
 date: 2021-06-14
 tags:
     - Apple
+    - Tools
 summaryImage: keynote.png
 summaryImageAlt: The Keynote app icon for macOS, set against a bright blue background.
 ---
