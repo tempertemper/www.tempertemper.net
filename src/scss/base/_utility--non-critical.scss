@@ -10,9 +10,7 @@ img,
 video {
 
   &.natural-dimensions {
-    margin-right: 0;
-    margin-left: 0;
-    width: auto;
+    @include overspill-reset;
     max-width: 100%;
   }
 }

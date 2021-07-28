@@ -39,9 +39,7 @@ pre {
     @include overspill;
 
     li & {
-      width: auto;
-      margin-left: 0;
-      margin-right: 0;
+      @include overspill-reset;
     }
   }
 

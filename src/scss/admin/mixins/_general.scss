@@ -144,9 +144,13 @@
 }
 
 @mixin overspill {
-  width: calc(100% + 2em);
   margin-left: calc(-1em);
   margin-right: calc(-1em);
+}
+
+@mixin overspill-reset {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @mixin boxout {
