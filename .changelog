@@ -17,6 +17,10 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Abstracts overspill reset to mixin
 
+### Fixes
+- Fixes overspill width issue
+- Prevents hanging list numbers being hidden at certain screen widths
+
 ----------
 
 
