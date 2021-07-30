@@ -47,6 +47,7 @@
 @mixin inline-nav {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 
   li + li {
     margin-left: .5em;

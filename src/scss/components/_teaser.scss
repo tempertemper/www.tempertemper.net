@@ -5,6 +5,10 @@
 
     + li {
       margin-top: 1em;
+
+      @media (min-width: $m) {
+        margin-top: 0;
+      }
     }
   }
 
@@ -12,9 +16,10 @@
     margin-top: 0;
   }
 
-  @media (min-width: $m) {
+  .index-list {
+    max-width: none;
 
-    .index-list {
+    @media (min-width: $m) {
       max-width: none;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -23,17 +28,10 @@
       grid-auto-flow: row;
       grid-template-areas:
       ". .";
-    }
 
-    li + li {
-      margin-top: 0;
-    }
-  }
-
-  @media (min-width: $l) {
-
-    .index-list {
-      @include overspill;
+      @media (min-width: $l) {
+        @include overspill;
+      }
     }
   }
 }
