@@ -11,11 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-### Adds
-- New GitHub Action to automatically tag branch on merge to `main`
-
 ----------
 
+
+## [6.0.6] - 2021-08-01
+
+### Adds
+- New GitHub Action to automatically tag branch on merge to `main`
 
 ## [6.0.5] - 2021-07-28
 
