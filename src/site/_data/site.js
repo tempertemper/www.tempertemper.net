@@ -1,7 +1,7 @@
 module.exports = {
   "title": "tempertemper",
   "company": "tempertemper Web Design Ltd",
-  "version": "6.0.6",
+  "version": "6.0.7",
   "url": "https://www.tempertemper.net",
   "baseurl": "",
   "repo": "https://github.com/tempertemper/tempertemper-website",
