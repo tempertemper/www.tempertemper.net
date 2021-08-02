@@ -1,4 +1,5 @@
 module.exports = eleventyConfig => {
+  eleventyConfig.setUseGitIgnore(false);
 
   /* Date filter */
   eleventyConfig.addFilter("date", require("./lib/filters/dates.js") );
