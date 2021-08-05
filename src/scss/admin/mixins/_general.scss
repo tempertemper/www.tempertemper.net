@@ -71,11 +71,15 @@
     @include high-contrast($colour: $colour-dark-mode-primary-lighter);
   }
 
-  &:hover:hover,
-  &:active {
+  &:hover:hover {
     color: $colour-primary-darker;
     @include dark-mode($colour: $colour-dark-mode-primary-lighter);
     @include high-contrast($colour: $colour-high-contrast-primary-lighter);
+  }
+
+  &:active:active {
+    color: $colour-black;
+    @include dark-mode($colour: $colour-dark-mode-white);
   }
 
   &:focus {
@@ -94,10 +98,10 @@
     background-color: transparent;
     box-shadow: none;
     box-decoration-break: slice;
-    @include dark-mode($background: $colour-dark-mode-main) {
+    @include dark-mode($background: transparent) {
       box-shadow: none;
     }
-    @include high-contrast($background: $colour-high-contrast-main) {
+    @include high-contrast($background: transparent) {
       box-shadow: none;
     }
   }
