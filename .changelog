@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.0.8] - 2021-08-05
+
+### Adds
+- Styles links' active states
+
+
 ## [6.0.7] - 2021-08-02
 
 ### Fixes
