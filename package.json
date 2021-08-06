@@ -49,7 +49,7 @@
     "autoprefixer": "^10.3.1",
     "dotenv": "^10.0.0",
     "html5shiv": "^3.7.3",
-    "markdown-it": "^12.0.6",
+    "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^7.1.0",
     "modularscale-sass": "^3.0.10",
     "node-fetch": "^2.6.1",
