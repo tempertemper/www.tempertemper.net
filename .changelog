@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Updates Sass version to 1.37.5
+- Updates Eleventy syntax highlight plugin to 3.1.2
 - Gets Sass sourcemaps working with critical CSS in dev
 
 ----------
