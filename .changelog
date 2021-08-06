@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file. The format 
 - Updates Sass version to 1.37.5
 - Updates Eleventy syntax highlight plugin to 3.1.2
 - Updates Autoprefixer to 10.3.1
+- Updates Uglify to 3.14.1
 - Gets Sass sourcemaps working with critical CSS in dev
 
 ----------
