@@ -1,25 +1,3 @@
 .subscribe {
   @include boxout;
-
-  @media (min-width: $m) {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0em 1em;
-    grid-template-areas:
-    ". .";
-    align-items: end;
-
-    [id="email"] {
-      margin-bottom: .25em;
-    }
-  }
-
-  @media (min-width: $l) {
-    width: calc(100% + 2em); // Fixes boxout clash with Grid layout
-  }
-
-  [type="submit"] {
-    margin-bottom: .25em;
-  }
 }
