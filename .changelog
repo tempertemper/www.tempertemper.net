@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.0.11] - 2021-08-07
+
 ### Changes
 - Uses a block layout for subscribe forms
 
@@ -18,7 +23,6 @@ All notable changes to this project will be documented in this file. The format 
 - Makes button text wrap on very small screens
 - Stops outline focus rings appearing
 
-----------
 
 ## [6.0.10] - 2021-08-06
 
