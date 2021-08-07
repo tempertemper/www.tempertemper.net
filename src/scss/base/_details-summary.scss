@@ -8,10 +8,6 @@ summary {
   @include high-contrast($colour: $colour-dark-mode-primary-lighter);
   @include text-link;
 
-  &:focus-visible {
-    outline: 0;
-  }
-
   &::before {
     content: "";
     position: absolute;

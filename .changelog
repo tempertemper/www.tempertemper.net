@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Makes button text wrap on very small screens
+- Stops outline focus rings appearing
 
 ----------
 
