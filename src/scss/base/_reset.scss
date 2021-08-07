@@ -116,3 +116,8 @@ iframe {
 ::-moz-focus-inner {
   border: 0;
 }
+
+:focus,
+:focus-visible {
+  outline: 0;
+}
