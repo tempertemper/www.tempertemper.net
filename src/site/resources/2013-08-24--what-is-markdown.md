@@ -1,5 +1,5 @@
 ---
-title: What is markdown?
+title: What is Markdown?
 intro: |
     Markdown is a way of writing a document, but what's so special about it? And what actually is it?
 date: 2013-08-24
@@ -44,7 +44,7 @@ If you want to know more about how a document is actually written, have a look a
 
 #### Exporting
 
-Even though Markdown itself conveys the meaning of the text, it could be argued that it's not especially pretty… The beauty of Markdown is that it's understood by _loads_ of programs, so you can import markdown and the program will make the text look great. No Markdown formatting -- just bold and italic words, headings, quotations, etc.
+Even though Markdown itself conveys the meaning of the text, it could be argued that it's not especially pretty… The beauty of Markdown is that it's understood by _loads_ of programs, so you can import Markdown and the program will make the text look great. No Markdown formatting -- just bold and italic words, headings, quotations, etc.
 
 The most useful place that this happens is on the web. If you write a blog, the chances are you can copy and paste your Markdown text straight into your blog or website's control panel, hit 'save' and it'll convert it into HTML on your website!
 
