@@ -562,6 +562,12 @@
   force = true
 
 [[redirects]]
+  from = "/blog/pop-for-your-pc/"
+  to = "/resources/the-types-of-email"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/markdown-is-great"
   to = "/resources/what-is-markdown"
   status = 301
@@ -1288,6 +1294,12 @@
 [[redirects]]
   from = "/assets/img/case-studies/tast-list--black-no-blanks.png"
   to = "/assets/img/case-studies/task-list--black-no-blanks.png"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/img/icons/icon.svg"
+  to = "/assets/img/icons/favicon.svg"
   status = 301
   force = true
 
