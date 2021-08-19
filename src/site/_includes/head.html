@@ -107,8 +107,7 @@
     <style>{{- css | safe | replace("", "") -}}</style>
     <link rel="preload" href="/assets/css/non-critical.css?v={{ site.version }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="/assets/css/non-critical.css?v={{ site.version }}" /></noscript>
-    <link rel="preload" href="/assets/css/print.css?v={{ site.version }}" as="style" media="print" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" media="print" href="/assets/css/print.css?v={{ site.version }}" /></noscript>
+    <link rel="stylesheet" media="print" href="/assets/css/print.css?v={{ site.version }}" />
     <!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/assets/css/ie8.css" /><![endif]-->
     <!--[if IE 9]><link rel="stylesheet" type="text/css" href="/assets/css/ie9.css" /><![endif]-->
     <script type="application/ld+json">
