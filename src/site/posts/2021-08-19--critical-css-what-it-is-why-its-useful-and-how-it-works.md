@@ -1,5 +1,5 @@
 ---
-title: "Critical CSS: why it's good and how it works"
+title: "Critical CSS: what it is, why it's useful, and how it works"
 intro: |
     With Critical CSS, we can give our visitors the most important styling as early as possible and the rest when it's ready. Here's why and how to do it.
 date: 2021-08-19
