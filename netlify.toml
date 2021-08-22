@@ -872,6 +872,12 @@
   force = true
 
 [[redirects]]
+  from = "/blog/critical-css-what-it-is-why-its-useful-and-how-it-works"
+  to = "/blog/critical-css-why-its-good-and-how-it-works"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/high-contrast-mode"
   to = "/blog/using-the-increased-contrast-mode-css-media-query"
   status = 301
