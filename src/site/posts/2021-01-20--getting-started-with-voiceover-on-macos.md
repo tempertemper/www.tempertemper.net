@@ -30,13 +30,17 @@ Firefox used to be impossible to use with VoiceOver, but [Mozilla began to chang
 
 So if you're looking to experience the same thing as almost all *actual* VoiceOver users, Safari is what you should test with.
 
+### Make the tab key useful
+
+[Highlighting *all* controls on a web page](/blog/how-to-use-the-keyboard-to-navigate-on-safari) is really useful. It isn't something every user will have switched on, but it makes a page more usable, and can uncover some extra issues if you're a software tester.
+
 
 ## Activate VoiceOver
 
 FIrst you need to turn VoiceOver on. The default keyboard shortcut is <kbd>⌘</kbd> (Command) + <kbd>F5</kbd>, but, unfortunately, <kbd>F5</kbd> can be a bit tricky:
 
 - If your keyboard doesn't have a Touch Bar, you need to use the <kbd>fn</kbd> (Function) key too: <kbd>⌘</kbd> + <kbd>fn</kbd> + <kbd>F5</kbd>
-- If your keyboard does have a Touch Bar, getting access to the Function keys might be more difficult. In System Preferences → Keyboard → Keyboard, you need to ensure either 'Touch Bar shows' or 'Press and hold Fn key to' (or 'Press Fn key to' if you're on macOS Catalina or earlier) is set to 'F1, F2, etc. keys'. If this configuration doesn't work for you (it doesn't for me), it's probably best to remap the shortcut to activate VoiceOver
+- If your keyboard does have a Touch Bar, getting access to the Function keys might be more difficult. In System Preferences → Keyboard → Keyboard, you need to ensure either 'Touch Bar shows' or 'Press and hold Fn key to' (or 'Press Fn key to' if you're on macOS Catalina or earlier) is set to 'F1, F2, etc. keys'. If this configuration doesn't work for you (it doesn't for me), it's probably best to remap the shortcut to activate VoiceOver.
 
 ### Remapping the VoiceOver modifier
 
