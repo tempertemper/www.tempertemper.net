@@ -3,6 +3,7 @@ html {
   @include font-body;
   color: $colour-black;
   font-size: 120%;
+  font-feature-settings: "liga";
 
   @media (max-width: $xxs) {
     font-size: 100%;
