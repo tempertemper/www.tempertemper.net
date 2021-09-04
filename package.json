@@ -1,6 +1,6 @@
 {
   "name": "tempertemper",
-  "version": "6.0.14",
+  "version": "6.0.15",
   "description": "tempertemper's website",
   "scripts": {
     "clear": "rm -rf dist",
