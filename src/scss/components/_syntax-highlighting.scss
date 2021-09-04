@@ -1,5 +1,9 @@
 .token {
 
+  &.comment {
+    font-style: italic;
+  }
+
   &.comment,
   &.prolog,
   &.doctype,
