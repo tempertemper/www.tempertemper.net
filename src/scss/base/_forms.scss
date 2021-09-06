@@ -25,6 +25,7 @@ input {
   }
 
   &:focus {
+    outline: none;
     box-shadow: 0 0 0 3px $colour-black;
 
     @include dark-mode() {

@@ -83,6 +83,7 @@
   }
 
   &:focus {
+    outline: none;
     background-color: $colour-white;
     box-shadow: 0 0 0 1px $colour-white, 0 0 0 4px $colour-black;
     box-decoration-break: clone;
