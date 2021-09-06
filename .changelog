@@ -11,10 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.0.16] - 2021-09-06
+
 ### Fixes
 - Reduces specificity of HTML dark mode Safari link colour fix
-
-----------
 
 
 ## [6.0.15] - 2021-09-03
