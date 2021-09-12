@@ -10,7 +10,7 @@ listing: true
 ---
 
 <ol class="hfeed index-list" reversed>
-    {% for post in collections.post | reverse %}
-        {% include "post-in-list.html" %}
-    {% endfor %}
+    {%- for post in collections.post | reverse %}
+        {%- include "post-in-list.html" %}
+    {%- endfor %}
 </ol>
