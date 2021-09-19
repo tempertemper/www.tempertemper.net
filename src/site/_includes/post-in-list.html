@@ -3,7 +3,7 @@
 {%- endif -%}
 
 <li class="post-in-list">
-    {% if briefPostInList %}<h3>{% else %}<h2 class="entry-title">{% endif %}
+    {%- if briefPostInList %}<h3>{% else %}<h2 class="entry-title">{% endif %}
         <a href="{{ post.url  | replace(".html", "") }}">
             {{ post.data.title | smart | safe }}
         </a>

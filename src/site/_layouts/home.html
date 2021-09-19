@@ -12,10 +12,10 @@ layout: base.html
             {{- title | smart | safe }}
         {%- endif %}
     </h1>
-    {% if intro and not hideIntro %}
-        {{ intro | markdown | safe }}
-    {% endif %}
-    {{ content | safe }}
+    {%- if intro and not hideIntro %}
+        {{- intro | markdown | safe }}
+    {%- endif %}
+    {{- content | safe }}
 </article>
 
 <section aria-labelledby="writing" class="teaser">
@@ -23,11 +23,11 @@ layout: base.html
     <p>If you prefer to dive straight in rather than <a href="/blog/">see the full blog</a>, here are a couple of my favourite articles to get you started:</p>
     <ul class="index-list" reversed>
         {%- set posts = collections.post | reverse %}
-        {% for post in posts %}
-            {% if post.data.featured === true %}
-                {% include "post-in-list.html" %}
-            {% endif %}
-        {% endfor %}
+        {%- for post in posts %}
+            {%- if post.data.featured === true %}
+                {%- include "post-in-list.html" -%}
+            {%- endif %}
+        {%- endfor %}
     </ul>
 </section>
 

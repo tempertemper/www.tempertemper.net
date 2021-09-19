@@ -9,7 +9,7 @@ listing: true
 ---
 
 <ol class="index-list" reversed>
-    {% for caseStudy in collections.case_study | reverse %}
+    {%- for caseStudy in collections.case_study | reverse %}
         <li class="post-in-list">
             <h2 class="entry-title">
                 <a href="{{ caseStudy.url  | replace(".html", "") }}">
@@ -20,5 +20,5 @@ listing: true
                 {{ caseStudy.data.intro  | markdown | safe }}
             </div>
         </li>
-    {% endfor %}
+    {%- endfor %}
 </ol>

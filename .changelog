@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.0.18] - 2021-09-19
+
+### Removes
+- Gets rid of some unnecessary whitespace
+
+
 ## [6.0.17] - 2021-09-06
 
 ### Fixes
