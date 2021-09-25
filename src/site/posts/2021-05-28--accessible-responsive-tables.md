@@ -101,7 +101,7 @@ For now, dropping `:focus` would mean there were no focus styles styles in some 
 
 ## Accessible name
 
-The [fifth Fule of ARIA Use](https://www.w3.org/TR/using-aria/#fifthrule) states:
+The [fifth Rule of ARIA Use](https://www.w3.org/TR/using-aria/#fifthrule) states:
 
 > All interactive elements must have an accessible name
 
