@@ -6,7 +6,10 @@ a {
     padding-right: 0;
   }
 
-  h2 & {
-    text-decoration-thickness: .06em;
+  @media (min-width: $m) {
+
+    h2 & {
+      text-decoration-thickness: .06em;
+    }
   }
 }
