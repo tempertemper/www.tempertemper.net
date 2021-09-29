@@ -15,14 +15,14 @@ I've been using iOS 15 for [just over a week](https://twitter.com/tempertemper/s
 - Weather:
     - Loads more detail in the redesigned Weather app! No more guessing what numbers mean, and lots more useful information, including map overlays
     - No more disorienting scroll-snap past the relatively small header area in Weather
-    - Weather notifications, so I know when to bring the washing in!
+    - Weather notifications, so I know when to bring the washing in from the line!
 - Maps:
-    - The Maps redesign looks great; the higher contrast makes at-a-glance reference while driving easier
-    - Maps can now zoom out to view the earth as a globe, which is great for showing the kids
+    - The redesign looks great; the higher contrast makes at-a-glance reference while driving easier
+    - You can now zoom all the way out to view the earth as a globe, which is great for showing the kids how places on the map actually relate to one another
 - Multiple photos in Messages appear in a fan, which is much easier to look at and flick through; [turns out carousels *can* be useful](https://shouldiuseacarousel.com)!
 - Safari:
-    - Address bar at the bottom in Safari
-    - Swipe on the address bar to switch tabs in Safari
+    - The address bar is now at the bottom of the screen, very much in range of my thumb
+    - Swiping on the address bar to switch tabs is really handy
     - Swipe left from the right-most tab to open a new tab
     - Tab overview is now really useful
     - Extensions look great; I've been using [Noir](https://apps.apple.com/us/app/noir-dark-mode-for-safari/id1581140954), which forces a Dark Mode theme on websites that don't already have a Dark Mode variant
