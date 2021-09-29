@@ -8,7 +8,7 @@ tags:
     - Performance
     - HTML
 summaryImage: image-aspect-ratio.png
-summaryImageAlt: A screengrab of the image on my About page loading in, showing that the browser has calculated the aspect ratio and left space for the image to load into
+summaryImageAlt: A screengrab of the image on my About page loading in, showing that the browser has calculated the aspect ratio and left space for the image to load into.
 ---
 
 In last week's [roundup of the most interesting features announced at WWDC 2020](/blog/wwdc-2020-roundup) I mentioned that Safari would now be supporting image aspect ratios, but what does that mean?

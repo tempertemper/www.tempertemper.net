@@ -6,7 +6,7 @@ date: 2021-01-08
 tags:
     - Accessibility
 summaryImage: bmo.jpg
-summaryImageAlt: BMO from Adventure Time, dancing happily
+summaryImageAlt: BMO from Adventure Time, dancing happily.
 ---
 
 Animated GIFs (or video files that behave just like animated GIFs) are everywhere you look: from social media and messaging services, to email and even on websites. So how do we use them accessibly? I'm afraid to say, the most accessible way to use animated GIFs is probably not to use them at all.

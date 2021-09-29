@@ -6,7 +6,7 @@ date: 2021-09-27
 tags:
     - Apple
 summaryImage: sunglasses-emoji.png
-summaryImageAlt: The ‘Smiling face with sunglasses’ emoji
+summaryImageAlt: The ‘Smiling face with sunglasses’ emoji.
 ---
 
 I've written about Face ID a few times over the years, and one post in particular covers a downside that it [doesn't recognise me with sunglasses on](/blog/face-id-and-sunglasses). Well, that "doesn't" can change to the past tense, because iOS 15 has fixed it!
