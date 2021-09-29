@@ -7,7 +7,7 @@ tags:
     - Design
     - Brand
 summaryImage: tempertemper-logo--pixel-avatars.png
-summaryImageAlt: Five examples of my pixellated avatars, one with a Boba Fett (from Star Wars) helmet, one with a Christmas jumper, one with a scarf and gloves, one with a longboard, and one with a Halloween wolfman costume
+summaryImageAlt: Five examples of my pixellated avatars, one with a Boba Fett (from Star Wars) helmet, one with a Christmas jumper, one with a scarf and gloves, one with a longboard, and one with a Halloween wolfman costume.
 ---
 
 My high school 'work experience' placement was in an IT department of a large organisation. I spent the first week driving from office to office fixing hardware; it was fine, but not really my thing. The second week, however, was a different story -- I was tasked with drawing icons for their in-house software application. Nobody in the office seemed to have wanted to do this, so it was pushed my way with no small amount of relief.

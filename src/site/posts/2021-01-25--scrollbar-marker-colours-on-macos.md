@@ -7,7 +7,7 @@ tags:
     - Accessibility
     - CSS
 summaryImage: light-and-dark-blue.png
-summaryImageAlt: Two blocks of the colour blue, side by side; one very slightly lighter than the other
+summaryImageAlt: Two blocks of the colour blue, side by side; one very slightly lighter than the other.
 ---
 
 The other day, a colleague of mine asked why I didn't have scrollbars on my website (thanks for the heads-up, Sam!). I was confused: there *were* scrollbars, weren't there?

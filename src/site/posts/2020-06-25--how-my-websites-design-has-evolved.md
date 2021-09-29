@@ -7,7 +7,7 @@ tags:
     - Design
     - Brand
 summaryImage: homepage-snapshot-2020-06.png
-summaryImageAlt: A snapshot of www.tempertemper.net as it is now
+summaryImageAlt: A snapshot of www.tempertemper.net as it is now.
 
 ---
 

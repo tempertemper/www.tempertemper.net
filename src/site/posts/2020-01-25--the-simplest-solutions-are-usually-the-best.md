@@ -7,7 +7,7 @@ tags:
     - Design
     - Brand
 summaryImage: tempertemper-logo--v2.1.png
-summaryImageAlt: The new tempertemper logo with a thickened, square-cornered underscore
+summaryImageAlt: The new tempertemper logo with a thickened, square-cornered underscore.
 ---
 
 I spent over five years happily tinkering with my brand, trying to find a way to tie in a stand-alone icon that I was happy. Now five years is a long time, but this story starts before that, with my original brand.

@@ -10,7 +10,7 @@ tags:
     - Markdown
     - Tools
 summaryImage: pandoc.png
-summaryImageAlt: The Markdown logo, a capital ‘M’ and an arrow pointing down, and the Jira logo, a diamond made of two interlocking left and right pointing arrow-heads, followed by the word ‘Jira’
+summaryImageAlt: The Markdown logo, a capital ‘M’ and an arrow pointing down, and the Jira logo, a diamond made of two interlocking left and right pointing arrow-heads, followed by the word ‘Jira’.
 ---
 
 I use [Jira](https://www.atlassian.com/software/jira) a fair amount at work. It's a very powerful software package but, unlike most of Atlassian's other products which use [Markdown](/resources/what-is-markdown), Jira uses creaky old Textile; in fact it goes further than that: it uses [its own variant of creaky old Textile](https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=all)!
