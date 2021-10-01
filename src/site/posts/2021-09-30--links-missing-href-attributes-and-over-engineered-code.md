@@ -8,7 +8,7 @@ tags:
     - Accessibility
     - Development
     - HTML
-summaryImage: href.png
+summaryImage: href.png?cache
 summaryImageAlt: The HTML for a link with the href attribute and its value scored out.
 ---
 
