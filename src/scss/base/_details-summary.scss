@@ -5,7 +5,7 @@ summary {
   cursor: pointer;
   position: relative;
   padding-left: 1em;
-  @include high-contrast($colour: $colour-dark-mode-primary-lighter);
+  @include high-contrast($colour: $colour-dark-mode-primary-light);
   @include text-link;
 
   &::before {

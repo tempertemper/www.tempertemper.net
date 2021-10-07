@@ -14,6 +14,18 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.0.19] - 2021-10-07
+
+### Adds
+- New 'darker' primary colour variable
+
+### Changes
+- Renames 'lighter' and 'darker' variable names to 'light' and 'dark'
+
+### Fixes
+- Darkens text links slightly
+
+
 ## [6.0.18] - 2021-09-19
 
 ### Removes
