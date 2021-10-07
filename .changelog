@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.0.19] - 2021-10-07
+
 ### Adds
 - New 'darker' primary colour variable
 
@@ -19,8 +24,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Darkens text links slightly
-
-----------
 
 
 ## [6.0.18] - 2021-09-19
