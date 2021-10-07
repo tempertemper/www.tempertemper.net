@@ -69,7 +69,7 @@
 
   &:link,
   &:visited {
-    color: $colour-primary;
+    color: $colour-primary-darker;
     @include dark-mode($colour: $colour-dark-mode-primary);
     @include high-contrast($colour: $colour-dark-mode-primary-light);
   }

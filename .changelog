@@ -11,8 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- New 'darker' primary colour variable
+
 ### Changes
 - Renames 'lighter' and 'darker' variable names to 'light' and 'dark'
+
+### Fixes
+- Darkens text links slightly
 
 ----------
 
