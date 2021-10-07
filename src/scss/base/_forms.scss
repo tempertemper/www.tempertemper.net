@@ -21,7 +21,7 @@ input {
     border-color: $colour-dark-mode-primary;
   }
   @include high-contrast($background: $colour-high-contrast-main) {
-    border-color: $colour-dark-mode-primary-lighter;
+    border-color: $colour-dark-mode-primary-light;
   }
 
   &:focus {

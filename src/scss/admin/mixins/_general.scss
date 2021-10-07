@@ -61,20 +61,23 @@
 }
 
 @mixin text-link {
-  border-radius: $border-radius-small;
-  text-decoration-thickness: .08em;
+
+  &:link {
+    border-radius: $border-radius-small;
+    text-decoration-thickness: .08em;
+  }
 
   &:link,
   &:visited {
     color: $colour-primary;
     @include dark-mode($colour: $colour-dark-mode-primary);
-    @include high-contrast($colour: $colour-dark-mode-primary-lighter);
+    @include high-contrast($colour: $colour-dark-mode-primary-light);
   }
 
   &:hover {
-    color: $colour-primary-darker;
-    @include dark-mode($colour: $colour-dark-mode-primary-lighter);
-    @include high-contrast($colour: $colour-high-contrast-primary-lighter);
+    color: $colour-primary-dark;
+    @include dark-mode($colour: $colour-dark-mode-primary-light);
+    @include high-contrast($colour: $colour-high-contrast-primary-light);
   }
 
   &:active {
