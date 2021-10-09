@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.0.20] - 2021-10-09
+
 ### Adds
 - Adds Sublime Text project file
 
@@ -22,8 +27,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Makes logo responsive again
-
-----------
 
 
 ## [6.0.19] - 2021-10-07
