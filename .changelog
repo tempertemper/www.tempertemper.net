@@ -11,9 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Updates markdown-it-anchor package
+
 ### Fixes
 - Makes logo responsive again
-
 
 ----------
 
