@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds Sublime Text project file
+
 ### Changes
 - Updates markdown-it-anchor package
 - Uses primary blue for Twitter icon
