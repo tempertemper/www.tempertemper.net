@@ -14,6 +14,21 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.0.20] - 2021-10-09
+
+### Adds
+- Adds Sublime Text project file
+
+### Changes
+- Updates markdown-it-anchor package
+- Uses primary blue for Twitter icon
+- Uses base font size for code
+- Uses default underline thickness
+
+### Fixes
+- Makes logo responsive again
+
+
 ## [6.0.19] - 2021-10-07
 
 ### Adds
