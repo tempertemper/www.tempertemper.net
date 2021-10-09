@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file. The format 
 - Updates markdown-it-anchor package
 - Uses primary blue for Twitter icon
 - Uses base font size for code
+- Uses default underline thickness
 
 ### Fixes
 - Makes logo responsive again
