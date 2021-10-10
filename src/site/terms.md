@@ -1,32 +1,66 @@
 ---
 title: Terms of business
 intro: |
-    YSo you'd like me to work with you on your project? That's great! Thanks for thinking of me and for taking the time to get in touch. Before we go any further, have a quick read of this page.
+    So you'd like me to work with you on your project? That's great! Thanks for thinking of me and for taking the time to get in touch. Before we go any further, have a quick read of this page.
 hideIntro: true
 layout: default
 permalink: terms.html
 ---
 
-Terms and conditions are often tedious and money can be a bit of an awkward thing to talk about. Before we go any further, in an attempt to not waste anyone's time, it's a good idea to let you know how I work.
+Terms and conditions are often tedious, and money can be a bit of an awkward thing to talk about. Before we go any further, in an attempt to not waste anyone's time, it's a good idea to let you know how I work.
 
 I love what I do and take pride in having invested time, money and a great deal of energy into developing my skills as a user experience designer, frontend developer and accessibility specialist. I'm constantly reading up on the latest developments in the web industry, brushing up my skills and challenging myself wherever possible.
 
-It's often reassuring to know that you're working with a professional, but after many years as a freelance/contractor, I am now employed full-time. This means any projects I take on have to be flexible enough to accommodate my evenings-and-weekends availability.
+In recent years, I've been taking on fewer and fewer projects. I'm absolutely open to chatting about yours, but it's only fair to let you know that I may not be in a position to take it on in the immediate future.
 
 
 ## My approach
 
-I work in a very consultative manner in order to deliver your content to your users in the most effective way possible. I care about the final product and this means I often question or challenge ideas clients bring to me (very politely and diplomatically, of course; I'm far from the argumentative type!). Having said that, please don't be shy with *your* ideas: you know your business better than anyone!
-
 ### Website projects
 
-The web is for everyone and, while the really technical stuff is best left to geeks like me, you'll come away from the project with a good understanding of how the web works. This is useful as you're be responsible for the ongoing maintenance of your site's content.
+I work in a very consultative manner in order to deliver your content to your users in the most effective way possible. I care about the final product and this means I often question or challenge ideas clients bring to me (very politely and diplomatically, of course; I'm far from the argumentative type!). Having said that, please don't be shy with *your* ideas: you know your business better than anyone!
 
-Your website is an ongoing work in progress. Once the project has finished we'll arrange a call 6 months down the line to go through your [analytics](/blog/google-analytics) and discuss any feedback you might have received from visitors. I believe long lasting relationships between website owners and web designers produce the most effective websites.
+The initial website project delivery is just the start. Your website should be evolve as:
 
-Finally, if it's not the right time to start your website I'll tell you. I'll even give you guidance on how to prepare things properly. Your money, wherever possible, should remain in your pocket – no sense in spending money on work that will later be undone.
+- you find out more about your visitors' needs
+- web browsers introduce new features
+
+To accommodate this shifting landscape, I work with my clients on an ongoing basis to make improvements and maintain their website's code-base. Long lasting, collaborative relationships between website owners and web designers produce the most effective websites.
+
+Finally, if it's not the right time to start your website I'll tell you. I'll even give you guidance on how to prepare things properly. Your money, wherever possible, should remain in your pocket; there's no sense investing in work that won't bring you a return.
+
+### Freelance
+
+I am happy to augment any design, frontend development, or multi-disciplinary team, either by integrating with the team, or by picking up work they don't have time for.
 
 ### Consultation
+
+As well as delivering website projects and working as a freelance, I also provide consultation, and tend to focus on my specialist area of accessibility, where I can:
+
+- audit a product or service, finding accessibility issues, pinpointing the cause, and providing direction for a solution
+- steer design and/or frontend development teams in accessibility best practices
+- give advice and direction for positive change in accessibility on a departmental or organisational level
+
+### Presentations, workshops, and training
+
+I have been giving talks, workshops, and training for years to groups, large and small; my presentation style is informal and engaging.
+
+
+## Ways of working
+
+I have worked with people all across the world on projects of all sizes.
+
+### My location
+
+I generally work remotely. Where absolutely necessary I will travel to your location; otherwise I will participate fully via video calls like [Zoom](https://zoom.us/), and messaging services like [Slack](https://slack.com).
+
+### Asynchronicity
+
+Working remotely is not just about location; it's about being timezone agnostic and asynchronous:
+
+- Replies to emails and other messages will be timely but not immediate
+- Calls should be pre-agreed
+- Work should be tracked via tickets in a service like [Jira](https://www.atlassian.com/software/jira) or [GitHub](https://github.com)
 
 
 ## Cost
@@ -35,22 +69,28 @@ My fee depends on the type of work you'd like me to do and length of contract. W
 
 To give you a very rough idea of my prices:
 
-- Start to finish website projects can usually be costed as a project, which usually comes in at between £6,000+VAT to £12,000+VAT
+- Start to finish small website projects are usually costed as a project, which usually comes in at between £6,000+VAT to £12,000+VAT
 - For consultation/freelance projects, my day rate starts at £550+VAT
+
+I do not work on an hourly basis.
 
 ### Ongoing maintenance
 
-Many projects, especially website design and build, require some ongoing maintenance. This covers things like:
+As mentioned, many projects require some ongoing maintenance. This covers things like:
 
 - Keeping the codebase current, removing or refining older code that may be deprecated
 - Keeping up with browser advances
 - Keeping up to date with the latest search engine requirements
 
+### Ongoing retainers
+
+As well as maintaining your website, I often work with clients on a regular basis to chip away at their to-do list. I usually set up a [Trello](https://trello.com) board, or something similar, where we can add ideas, discuss them, then carry out work steadily each month.
+
 ### Expenses
 
 I'll sometimes have some expenses for your project, such as travel costs, hotel costs (if early starts or late nights are needed), subsistence costs if away from home, and any project-specific equipment or software.
 
-These expenses can either be included in your estimate so you’ll know in advance, or taken care of in my day rate, if keeping things simple is better for you.
+These expenses are usually included in the project price, but if you prefer these to be explicit, they can be itemised on your estimate and invoice.
 
 Licensing costs that you may incur, for example [web-fonts](/blog/webfonts) and stock image licenses, will be paid by you directly.
 
@@ -70,11 +110,16 @@ It's not unheard of that a client comes to me wanting `A`, `B` and `C` and it tu
 
 If I were to work at a discounted rate I'd be unable to dedicate as much time to working on paid projects and my own professional development.
 
-That doesn't mean I'd never discount or waive my fee if the project is something I feel strongly about and is a genuinely unique opportunity, so if you are unable to pay a reasonable fee, but you have valid and compelling reasons why, then please let me know. I *may* choose to involve myself with the project if I'm able to without it interfering with my paid work, but please don't come to me *expecting* I will work for no pay. And please don't be offended if I turn down an opportunity to work with you because you don't have the budget to pay me.
+That doesn't mean I'd never discount or waive my fee if the project is something I feel strongly about and is a genuinely unique opportunity, so if you are unable to pay a reasonable fee and have valid and compelling reasons why, then please let me know. I *may* choose to involve myself with the project if I'm able to without it interfering with my paid work, but please:
+
+- don't expect me to agree to unpaid work
+- don't be offended if I turn down an opportunity to work with you
 
 ### Grants
 
-I may take a wee bit of persuading to accept commissions that are wholly or partially funded by grants. I've found that clients who aren't spending their own hard-earned cash are often less invested in their project, which can have negative a knock-on effect on my other clients.
+I am unlikely to accept commissions that are wholly or partially funded by grants. In my experience, I've found that clients who aren't spending their own hard-earned cash are often less invested in their project, which can have negative a knock-on effect on my other clients.
+
+Where funding is involved and I agree to provide an estimate, the time to produce the estimate will be billable in advance.
 
 ### Working speculatively
 
@@ -87,12 +132,12 @@ I draw up a contract for every job I undertake. My contracts are in plain Englis
 
 The first contract I send you isn't necessarily the one we'll both sign. It's for you to read through carefully and make sure you're happy with everything. I'm happy to consider any amendments, so if you'd like to see any changes just ask and I'll see what I can do.
 
-Once we have agreed a document and you've signed it and sent it back, we're nearly ready to book a block of time in my diary! Just one more thing…
+Once we have agreed the project scope and price, and we've both signed it, we're *nearly* ready to book a block of time in my diary! Just one more thing…
 
 
 ## Deposit
 
-As I've already mentioned, I require a deposit for every piece of work I undertake, large or small. This is typically 50% of the estimated project cost or a week's time in advance (depending on how we've agreed to work).
+I require a deposit for *every* piece of work I undertake, large or small. This is typically 50% of the estimated project cost or a block of time in advance.
 
 Once the deposit has cleared in my account and the contract has been signed, we're ready to go!
 
