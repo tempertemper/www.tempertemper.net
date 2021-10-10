@@ -16,7 +16,6 @@ Interaction design is where it gets *really* interesting for me; controlling the
 - More detailed mock-ups and basic prototypes in software like Sketch and Figma
 - Code-based prototypes (built with HTML, CSS and JavaScript)
 
-I'm a solid content designer, content design being inextricable from these user journeys. The language used can greatly affect how a user progresses through a service, as well as how they interact with individual elements on a page.
+Although not my specialism, I have a solid grasp of content design and strategy; especially in areas such as page structure and prioritisation, and information architecture. The language used in an interface can greatly affect how the user progresses through a service, as well as how they interact with individual elements on a page, and this is fascinating to me.
 
 User research is often counted as part of user experience design, and I've done my fair share, but I prefer to work with the information gleaned *by* a user researcher (as well as customer satisfaction scores, analytics and other performance metrics) to inform, iterate and validate my designs.
-
