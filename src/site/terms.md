@@ -115,13 +115,13 @@ That doesn't mean I'd never discount or waive my fee if the project is something
 - don't expect me to agree to unpaid work
 - don't be offended if I turn down an opportunity to work with you
 
-### Grants
+### Grants and funding
 
 I am unlikely to accept commissions that are wholly or partially funded by grants. In my experience, I've found that clients who aren't spending their own hard-earned cash are often less invested in their project, which can have negative a knock-on effect on my other clients.
 
 Where funding is involved and I agree to provide an estimate, the time to produce the estimate will be billable in advance.
 
-### Working speculatively
+### Speculative work
 
 I believe that speculative work (where a designer is asked to work as part of a 'competition', where only the 'winner' is compensated for their work) can have a place for aspiring designers/developers, but as an experienced professional I work *with* others, not in competition with them, and require a deposit to be paid before I can begin any work.
 
