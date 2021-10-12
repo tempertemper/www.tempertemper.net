@@ -14,6 +14,13 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.0.21] - 2021-10-12
+
+### Changes
+- Simplifies code for details/summary styling
+- Loosens line height on headings slightly
+
+
 ## [6.0.20] - 2021-10-09
 
 ### Adds
