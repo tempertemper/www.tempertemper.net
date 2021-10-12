@@ -61,10 +61,7 @@
 }
 
 @mixin text-link {
-
-  &:link {
-    border-radius: $border-radius-small;
-  }
+  border-radius: $border-radius-small;
 
   &:link,
   &:visited {
