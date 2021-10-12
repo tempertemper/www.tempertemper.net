@@ -17,8 +17,8 @@ But surely Face ID would make it just as convenient for people without an Apple 
 
 On my phone, Face ID unlocks it when it recognises me, but when I need to do something like authorise a transaction the phone needs *active* confirmation to prevent accidental purchases. This is done with two things:
 
-- a Face ID check
-- a double tap of the side button
+1. A Face ID check
+2. A double tap of the side button
 
 Currently on the Mac, these two steps are taken care of in one move: laying my finger on the Touch ID sensor.
 
