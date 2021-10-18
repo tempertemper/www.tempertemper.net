@@ -64,4 +64,4 @@ As if your users' experience on your site wasn't enough, search engines like Goo
 
 I've given the matter a lot of thought and, in the end, have decided to abandon the wee buttons on my site in favour of straightforward links that load in an instant and look nice and in-keeping with my website, but that doesn't mean you should too!
 
-I'd love to know your thoughts on the matter -- let me know in the comments below!
+I'd love to know your thoughts on the matter [over on Twitter](https://twitter.com/tempertemper)!

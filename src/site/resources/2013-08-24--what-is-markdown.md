@@ -75,5 +75,3 @@ Taking that one step further, your computer's software is written in plain `.txt
 ## Best practice
 
 So if  you want to keep your documents forever, for use in as many different contexts as possible---whether you're writing for the web or not---you should look into [using Markdown to write them](/resources/markdown-cheatsheet).
-
-Are you already using Markdown? I'd love to know how you use it -- why not leave a comment below!?
