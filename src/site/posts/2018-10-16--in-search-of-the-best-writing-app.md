@@ -7,7 +7,7 @@ tags:
     - Tools
 ---
 
-Before I start, spoiler alert: I've found it. But how and why I decided on my favourite writing app is hopefully worth reading.
+Spoiler alert: I've found it. But how and why I decided on my favourite writing app is hopefully worth reading.
 
 Before I even started, I have a few prerequisites:
 

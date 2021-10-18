@@ -55,4 +55,4 @@ There'll be no nasty surprises or thousands of emails waiting for me when I get 
 
 ## What do you do?
 
-How do you deal with time-off in your business? Do you outsource, switch off completely or carry on working? I'd love to know in the comments below.
+How do you deal with time-off in your business? Do you outsource, switch off completely or carry on working? Let me know [over on Twitter](https://twitter.com/tempertemper)!
