@@ -6,6 +6,9 @@ date: 2021-10-25
 tags:
     - HTML
     - Accessibility
+    - Design
+summaryImage: invalid-code.png
+summaryImageAlt: An example question from GOV.UK asking “How would you prefer to be contacted?” with the radio button “Email” selected, showing a conditional text input labelled “Email address”.
 ---
 
 I worked in UK government for a number of years, and every service I worked on contained conditional questions; in other words, questions that would only be asked if a previous question had been answered in a certain way.
