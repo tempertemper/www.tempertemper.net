@@ -1597,6 +1597,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/using-the-html-document-outlinehttps://www.a11yproject.com/posts/2019-02-15-creating-valid-and-accessible-links/"
+  to = "/blog/using-the-html-document-outline"
+  status = 301
+  force = true
+
 
 # External redirects
 
