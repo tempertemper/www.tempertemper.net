@@ -1,8 +1,3 @@
-html {
-  background-color: $colour-primary-light;
-  @include dark-mode($background: $colour-primary);
-}
-
 body {
   background-color: $colour-main;
   @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white);

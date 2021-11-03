@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Removes
 - Removes unnecessary `.canvas` element, now that Safari doesn't show background colour on scroll bounce
 - Removes hidden horizontal scroll from page
+- Removes scroll bounce colour for Chrome and Firefox on macOS
 
 ----------
 
