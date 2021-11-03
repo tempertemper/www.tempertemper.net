@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Removes
+- Removes unnecessary `.canvas` element, now that Safari doesn't show background colour on scroll bounce
+
 ----------
 
 
