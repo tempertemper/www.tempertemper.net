@@ -2,17 +2,15 @@
 <html lang="en">
     {% include "head.html" %}
     <body>
-        <div class="page-wrapper">
-            <a href="#main" tabindex="0" class="skip-to-content">Skip to main content</a>
-            {% include "header.html" %}
-            <main id="main">
-                {{ content | safe }}
-                {% if cta %}
-                    {% include "call-to-action.html" %}
-                {% endif %}
-            </main>
-            {% include "footer.html" %}
-        </div>
+        <a href="#main" tabindex="0" class="skip-to-content">Skip to main content</a>
+        {% include "header.html" %}
+        <main id="main">
+            {{ content | safe }}
+            {% if cta %}
+                {% include "call-to-action.html" %}
+            {% endif %}
+        </main>
+        {% include "footer.html" %}
         <script>{% include "scripts.js" %}</script>
         <style>
           @media screen and (prefers-color-scheme: dark) {

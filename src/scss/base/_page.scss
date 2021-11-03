@@ -3,8 +3,5 @@ body {
   @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white);
   @include high-contrast($background: $colour-high-contrast-main);
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-}
-
-.page-wrapper {
   @include container;
 }
