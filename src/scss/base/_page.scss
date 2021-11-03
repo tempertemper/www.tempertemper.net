@@ -4,7 +4,6 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   background-color: $colour-main;
   @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white);
   @include high-contrast($background: $colour-high-contrast-main);
