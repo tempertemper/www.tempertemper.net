@@ -13,9 +13,11 @@
         {% include "footer.html" %}
         <script>{% include "scripts.js" %}</script>
         <style>
-          @media screen and (prefers-color-scheme: dark) {
-            :where(a:link) {color: #9e9eff;}
-            :where(a:visited) {color: #d0adf0;}
+          @supports (color-scheme: dark light) {
+            @media screen and (prefers-color-scheme: dark) {
+              :where(a:link) {color: #9e9eff;}
+              :where(a:visited) {color: #d0adf0;}
+            }
           }
         </style>
     </body>
