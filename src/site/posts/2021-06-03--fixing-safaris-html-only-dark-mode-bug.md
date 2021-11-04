@@ -3,6 +3,7 @@ title: Fixing Safari's HTML-only Dark Mode bug
 intro: |
     A bug with link text colours in Safari's HTML-only Dark Mode theme means we need a bit of extra code. Here's how to patch things until it's fixed.
 date: 2021-06-03
+updated: 2021-11-04
 tags:
     - CSS
     - HTML
@@ -20,35 +21,23 @@ It's a similar story with visited links, where Safari uses a failing `#551a8b` (
 
 ## Fixing the bug
 
-I want to use the `name="color=scheme"` meta element in my HTML, so the way I've implemented it on my website is to add a `<style>` block to the bottom of each page, before the closing `</html>` tag (so that it doesn't block any rendering):
+I want to use `<meta name="color-scheme" content="dark light" />` element in my HTML, so the way I've implemented it on my website is to add a `<style>` block to the bottom of each page, before the closing `</html>` tag (so that it doesn't block any rendering):
 
 ```html
 <style>
-  @media screen and (prefers-color-scheme: dark) {
-    a {
-      color: #9e9eff;
-    }
-    a:visited {
-      color: #d0adf0;
+  @supports (color-scheme: dark light) {
+    @media screen and (prefers-color-scheme: dark) {
+      :where(a:link) {color: #9e9eff;}
+      :where(a:visited) {color: #d0adf0;}
     }
   }
 </style>
 ```
 
-These styles are then overridden in my CSS, so that they look nice and on-brand:
+Aside from increasing the contrast of links and visited links in Dark Mode, using the same colour values as Chrome, this:
 
-```css
-@media screen and (prefers-color-scheme: dark) {
-  a:link,
-  a:visited:visited {
-    color: #00a0f0;
-  }
-}
-```
+- wraps it all in a `@supports` at-rule so that the contained styles don't get used for browsers like Firefox that support `prefers-color-scheme` but not HTML-only dark mode; `#9e9eff` and `#d0adf0` have low contrast ratios against a white background ([2.38 to 1](https://webaim.org/resources/contrastchecker/?fcolor=9E9EFF&bcolor=FFFFFF) and [1.92 to 1](https://webaim.org/resources/contrastchecker/?fcolor=D0ADF0&bcolor=FFFFFF), respectively)
+- uses [the `:where` pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:where) which is nice to use for 'default' styles since it <q>always has 0 specificity</q>, so doesn't need any special overrides in the CSS (for example, chaining the pseudo-class in the selector like `:link:link {}`)
 
-<i>Note to self, I really should get round to adding visited link styling at some point.</i>
-
-The `:link` pseudo class overrides the naked `a` on-page styling, and the chained `:visited` pseudo class overrides the unchained `:visited` pseudo class.
-
-I'm not very happy with that code though. It's ugly and unnecessary, so I hope the WebKit team fix that bug soon so that I can tidy things up. But in the meantime, Safari users with low vision will be able to discern links in Dark Mode when the CSS fails to load.
+I hope the WebKit team fix that bug soon so that I can tidy things up, but in the meantime Safari users with low vision will be able to discern links in Dark Mode when the CSS fails to load.
 
