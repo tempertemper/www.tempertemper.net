@@ -14,6 +14,14 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.0.22] - 2021-11-04
+
+### Removes
+- Removes unnecessary `.canvas` and `.page-wrapper` elements, now that Safari doesn't show background colour on scroll bounce
+- Removes hidden horizontal scroll from page
+- Removes scroll bounce colour for Chrome and Firefox on macOS
+
+
 ## [6.0.21] - 2021-10-12
 
 ### Changes
