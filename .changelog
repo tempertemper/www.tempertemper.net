@@ -12,6 +12,9 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 - Moves Button mixin to /admin/ in SCSS structure
+- Adds shadow to bottom of buttons
+- Reworks padding of buttons
+- Matches input and button line heights
 
 ----------
 
