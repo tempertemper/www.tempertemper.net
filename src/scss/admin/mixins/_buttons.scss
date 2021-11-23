@@ -15,7 +15,7 @@
   width: auto;
   text-decoration: none;
   box-shadow: 0 3px $colour-primary-dark;
-  @include dark-mode($colour-dark-mode-primary, $colour-dark-mode-main) {
+  @include dark-mode($colour: $colour-dark-mode-main) {
     box-shadow: 0 3px $colour-dark-mode-primary-dark;
   }
   @include high-contrast($colour-dark-mode-primary-light, $colour-high-contrast-main);

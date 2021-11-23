@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 - Reworks padding of buttons
 - Matches input and button line heights
 - Removes unused primary light colour variable
+- Darkens Dark Mode background and reuses primary colour variable in Dark mode
 
 ----------
 

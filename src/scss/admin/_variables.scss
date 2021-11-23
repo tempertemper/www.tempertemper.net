@@ -17,12 +17,12 @@ $colour-main: $colour-white;
 
 // Dark mode colours
 $colour-dark-mode-primary-light: #19b3ff;
-$colour-dark-mode-primary: #00a0f0;
+$colour-dark-mode-primary: $colour-primary;
 $colour-dark-mode-primary-dark: #006394;
-$colour-dark-mode-white: #f2f2f2;
 $colour-dark-mode-black: #1f1f22;
+$colour-dark-mode-white: #f2f2f2;
 $colour-dark-mode-highlight: #3d3d3d;
-$colour-dark-mode-main: #2c2c2c;
+$colour-dark-mode-main: #262626;
 
 // High contrast colours
 $colour-high-contrast-primary-light: #4dc4ff;
