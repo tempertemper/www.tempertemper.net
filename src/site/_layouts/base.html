@@ -3,24 +3,24 @@
     {% include "head.html" %}
     <body>
         <div class="wrapper">
-        <a href="#main" tabindex="0" class="skip-to-content">Skip to main content</a>
-        {% include "header.html" %}
-        <main id="main">
-            {{ content | safe }}
-            {% if cta %}
-                {% include "call-to-action.html" %}
-            {% endif %}
-        </main>
-        {% include "footer.html" %}
-        <script>{% include "scripts.js" %}</script>
-        <style>
-          @supports (color-scheme: dark light) {
-            @media screen and (prefers-color-scheme: dark) {
-              :where(a:link) {color: #9e9eff;}
-              :where(a:visited) {color: #d0adf0;}
-            }
-          }
-        </style>
+            <a href="#main" tabindex="0" class="skip-to-content">Skip to main content</a>
+            {% include "header.html" %}
+            <main id="main">
+                {{ content | safe }}
+                {% if cta %}
+                    {% include "call-to-action.html" %}
+                {% endif %}
+            </main>
+            {% include "footer.html" %}
+            <script>{% include "scripts.js" %}</script>
+            <style>
+              @supports (color-scheme: dark light) {
+                @media screen and (prefers-color-scheme: dark) {
+                  :where(a:link) {color: #9e9eff;}
+                  :where(a:visited) {color: #d0adf0;}
+                }
+              }
+            </style>
         </div>
     </body>
 </html>

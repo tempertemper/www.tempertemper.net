@@ -14,6 +14,22 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.1.0] - 2021-11-23
+
+### Adds
+- Differentiates `<kbd>` styling from `<code>`
+- Adds shadow to bottom of buttons
+
+### Changes
+- Moves Button mixin to /admin/ in SCSS structure
+- Reworks padding of buttons
+- Matches input and button line heights
+- Darkens Dark Mode background and reuses primary colour variable in Dark mode
+
+### Removes
+- Removes unused primary light colour variable
+
+
 ## [6.0.22] - 2021-11-04
 
 ### Removes

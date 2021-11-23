@@ -16,9 +16,6 @@ blockquote {
     margin-left: -1em;
   }
 
-  @include dark-mode() {
-    border-left-color: $colour-dark-mode-primary;
-  }
   @include high-contrast() {
     border-left-color: $colour-dark-mode-primary-light;
   }
@@ -50,7 +47,6 @@ li {
 
   &::marker {
     color: $colour-primary;
-    @include dark-mode($colour: $colour-dark-mode-primary);
     @include high-contrast($colour: $colour-dark-mode-primary-light);
   }
 }
