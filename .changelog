@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds shadow to bottom of buttons
 - Reworks padding of buttons
 - Matches input and button line heights
+- Removes unused primary light colour variable
 
 ----------
 
