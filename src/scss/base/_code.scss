@@ -1,10 +1,21 @@
 code,
 kbd {
-  background-color: $colour-code-background;
   border-radius: $border-radius-small;
   padding: .1em .1em .05em;
+  margin-right: .1em; // For when immediately followed by punctuation
+}
+
+code {
+  background-color: $colour-code-background;
   @include dark-mode($colour-dark-mode-code-background);
   @include high-contrast($colour-high-contrast-code-background,);
+}
+
+kbd {
+  box-shadow: 0 0 0 1px $colour-grey, 0 2px 0 1px $colour-grey;
+  @include dark-mode() {
+    box-shadow: 0 0 0 1px $colour-dark-mode-grey, 0 2px 0 1px $colour-dark-mode-grey;
+  }
 }
 
 code {
