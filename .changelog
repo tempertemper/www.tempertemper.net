@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+- Updates node version to 16.13.1
+- Updates Eleventy version to 0.12.1
+- Minor version updates some other packages
+
 ----------
 
 
