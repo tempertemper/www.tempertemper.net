@@ -1,4 +1,4 @@
-<ul>
+    <ul>
     {% set nav = [
         { title: 'Home', url: '/' },
         { title: 'Categories', url: '/categories' },
@@ -10,7 +10,7 @@
     ] %}
     {% for item in nav %}
         <li>
-            <a href="{{ item.url | url }}" {%- if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+            <a href="{{ item.url | url }}" {%- if item.url == page.url | replace(".html", "") %} aria-current="page"{% endif %}>{{ item.title }}</a>
         </li>
     {% endfor %}
 </ul>
