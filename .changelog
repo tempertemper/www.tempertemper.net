@@ -11,10 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.1.2] - 2021-12-20
+
 ### Adds
 - Makes local 404s redirect to proper page
-
-----------
 
 
 ## [6.1.1] - 2021-12-09
