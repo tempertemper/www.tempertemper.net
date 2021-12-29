@@ -10,7 +10,10 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 ## [Unreleased]
+
+### Changes
 - Refines code in newsletter CTA to prevent repetition
+- Simplifies unnecessarily complicated CTA aria-labelledby code
 
 ----------
 
