@@ -7,19 +7,19 @@
 {%- elif tags.length >= 1 and tags.includes('case_study') %}
     {%- set caseStudy = true %}
 {%- endif %}
-{% set ctaLabel = "ctaLabel" %}
-<section aria-labelledby="{{ ctaLabel }}" class="call-to-action">
-    {% if post %}
-        <h2 id="{{ ctaLabel }}">Subscribe</h2>
-        <p>If you enjoyed reading this and want a monthly roundup of my articles delivered to your inbox, just enter your email below.</p>
-        {% include "newsletter-signup.html" %}
-    {% elif resource or testimonial or caseStudy %}
-        <h2 id="{{ ctaLabel }}">Hire me</h2>
+<section aria-labelledby="ctaLabel" class="call-to-action">
+    {% if resource or testimonial or caseStudy %}
+        <h2 id="ctaLabel">Hire me</h2>
         <p>If you like what you’ve read and think we’d work well together, I’d love to hear from you.</p>
         <a class="button" draggable="false" role="button" href="/contact">Contact me now</a>
     {% else %}
-        <h2 id="{{ ctaLabel }}">Subscribe</h2>
-        <p>For a monthly roundup of my articles delivered to your inbox, enter your email below.</p>
+        <h2 id="ctaLabel">Subscribe</h2>
+        <p>I send a newsletter on the last day of every month, containing:</p>
+        <ul>
+            <li>A roundup of the articles I’ve posted</li>
+            <li>A hot pick from my archives</li>
+            <li>Some interesting posts from around the web</li>
+        </ul>
         {% include "newsletter-signup.html" %}
     {% endif %}
 </section>
