@@ -6,14 +6,14 @@ layout: default
 permalink: now.html
 ---
 
-- Still enjoying a daily routine of:
-    - morning [press-ups](https://www.bbc.co.uk/programmes/m000vp09)
-    - [a cold shower](https://www.bbc.co.uk/programmes/m000v83f)
-    - a 5 kilometre run
-- Managing to keep clear of sugary treats like chocolate, cakes, biscuits
-- Avoiding alcohol; even though my consumption was modest (around [10 units per week](https://www.nhs.uk/live-well/alcohol-support/calculating-alcohol-units/)) and limited to the weekend, stopping has meant better sleep and not waking up with a slightly heavy head
-- Happy to be twice-vaccinated (Astra Zenica) but staying cautious: continuing to wear a mask indoors and avoiding crowds
-- Trying out a [standing desk](https://twitter.com/tempertemper/status/1436331696408911898?s=21) with a converter that sits on top of my normal desk
-- Having played the guitar for over two decades, recently I've had a call to teach myself to [play the bass](https://twitter.com/tempertemper/status/1449290497822965763)
+- Following the Christmas weekend of laziness and overindulgence, I'm:
+    - getting back to avoiding sugary treats (my mum's chocolate cheesecake was too good to resist…)
+    - abstaining from alcohol again; after a few days of even a pretty modest [12-ish units per day](https://www.nhs.uk/live-well/alcohol-support/calculating-alcohol-units/), I'm sleeping better and feeling less sluggish in the mornings
+    - restarting my daily 5 kilometre run (even after only a few days off it has felt harder than normal; both the run itself and motivating myself to do it)
+- Still taking [a cold shower every morning](https://www.bbc.co.uk/programmes/m000v83f), although with winter's arrival the water is too cold to stand still in without giving me brain freeze…
+- Keeping up the morning [press-ups](https://www.bbc.co.uk/programmes/m000vp09)
+- Happy to have gotten my COVID-19 booster but still steering clear of busy places and socialising indoors; probably mostly out of habit, as I normally only leave the house to exercise
+- Starting to prefer [my standing desk](https://twitter.com/tempertemper/status/1436331696408911898?s=21) to sitting
+- Having played (rhythm) guitar for over two decades, [I bought myself a bass](https://twitter.com/tempertemper/status/1449290497822965763) and am getting very into *theory*, which I thought would never happen!
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
