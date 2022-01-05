@@ -12,5 +12,6 @@ video {
   &.natural-dimensions {
     @include overspill-reset;
     max-width: 100%;
+    width: auto;
   }
 }
