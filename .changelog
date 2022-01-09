@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Fixes case study tag with underline
+- Uses post-in-list template for case studies
 
 ----------
 
