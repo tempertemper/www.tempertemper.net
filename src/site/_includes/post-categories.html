@@ -15,6 +15,6 @@
                 and&nbsp;
             {%- endif -%}
         {%- endif -%}
-        <a href="/category/{{ category | slug }}">{{ category }}</a>
+        <a href="/category/{{ category | slugify }}">{{ category }}</a>
     {%- endfor %}
 {%- endif -%}

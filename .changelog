@@ -11,10 +11,15 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Uses `slugify` filter instead of `slug`
+
+### Removes
+- Removes `eleventyConfig.setDataDeepMerge(true)`
+
 ### Fixes
 - Fixes case study tag with underline
 - Uses post-in-list template for case studies
-- Removes `eleventyConfig.setDataDeepMerge(true)`
 
 ----------
 

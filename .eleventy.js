@@ -28,7 +28,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter("markdown", markdown => mdIntro.render(markdown));
 
   const slugify = require("slugify");
-  eleventyConfig.addFilter("slug", str => {
+  eleventyConfig.addFilter("slugify", str => {
     return slugify(str, {
       replacement: "-",
       remove: /[*+~.,–—()'"‘’“”!?:;@]/g,
