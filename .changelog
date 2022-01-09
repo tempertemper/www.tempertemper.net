@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.2.0] - 2022-01-09
+
 ### Changes
 - Updates to Eleventy 1.0
 - Uses `slugify` filter instead of `slug`
@@ -22,8 +27,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Fixes case study tag with underline
 - Uses post-in-list template for case studies
-
-----------
 
 
 ## [6.1.3] - 2021-12-29
