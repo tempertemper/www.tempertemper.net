@@ -9,9 +9,6 @@ module.exports = eleventyConfig => {
   require('dotenv').config()
   const { ELEVENTY_ENV } = process.env
 
-  /* Data */
-  eleventyConfig.setDataDeepMerge(true);
-
   /* Smart quotes filter */
   const smartypants = require("smartypants");
   eleventyConfig.addFilter("smart", str => smartypants.smartypants(str, 'qDe'));
