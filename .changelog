@@ -12,10 +12,12 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 ### Changes
+- Updates to Eleventy 1.0
 - Uses `slugify` filter instead of `slug`
 
 ### Removes
 - Removes `eleventyConfig.setDataDeepMerge(true)`
+- Removes markdown-it dependency as it's in Eleventy already
 
 ### Fixes
 - Fixes case study tag with underline
