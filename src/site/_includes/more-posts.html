@@ -8,11 +8,11 @@
     {%- set typeOfThing = 'resources' %}
     {%- set linkToList = '/resources/' %}
     {%- set items = collections.resource %}
-{%- elif tags.includes('case_study') %}
+{%- elif tags.includes('case-study') %}
     {%- set caseStudy = true %}
     {%- set typeOfThing = 'case studies' %}
     {%- set linkToList = '/portfolio/' %}
-    {%- set items = collections.case_study %}
+    {%- set items = collections['case-study'] %}
 {%- endif %}
 <section aria-labelledby="further-reading-heading" class="teaser">
     <h2 id="further-reading-heading">More {{ typeOfThing }}</h2>

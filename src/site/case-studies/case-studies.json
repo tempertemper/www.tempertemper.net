@@ -1,6 +1,6 @@
 {
   "layout": "case-study.html",
   "hideIntro": true,
-  "tags" : ["case_study"],
+  "tags" : ["case-study"],
   "permalink": "portfolio/{{ customURL if customURL else title | slug | safe }}.html"
 }
