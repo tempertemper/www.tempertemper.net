@@ -30,9 +30,10 @@ module.exports = eleventyConfig => {
   const slugify = require("slugify");
   eleventyConfig.addFilter("slugify", str => {
     return slugify(str, {
-      replacement: "-",
-      remove: /[*+~.,–—()'"‘’“”!?:;@]/g,
-      lower: true
+      customReplacements: [
+        ['+', ' plus '],
+        ['@', ' at ']
+      ]
     });
   });
 
