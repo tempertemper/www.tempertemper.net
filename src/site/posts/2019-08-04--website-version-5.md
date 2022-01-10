@@ -44,7 +44,7 @@ My site is currently self-hosted on [Linode](https://www.linode.com/?r=b92d6fedd
 
 Another thing I don't mind losing at this stage is search. Rebuilding the search with JavaScript looks like a big (and interesting!) job; I didn't want to delay the launch any longer than I had to, so search is gone for now.
 
-Reintroducing search will be interesting from a design as well as develoment point of view -- it used to be global, but maybe it would be more useful if it were scoped to specific areas of the site, like the blog or resources. Let's see.
+Reintroducing search will be interesting from a design as well as development point of view -- it used to be global, but maybe it would be more useful if it were scoped to specific areas of the site, like the blog or resources. Let's see.
 
 
 ## Some things have changed

@@ -1,5 +1,5 @@
 ---
-title: Hero images -- pros and cons
+title: Hero images – pros and cons
 intro: |
     Hero images are those big images at the top of a blog post. They have some compelling benefits, but there are some things to consider.
 date: 2019-11-25
