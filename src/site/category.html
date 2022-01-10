@@ -9,7 +9,7 @@ pagination:
     - testimonial
     - post
 layout: default
-permalink: /category/{{ category | slug | safe }}.html
+permalink: /category/{{ category | slugify | safe }}.html
 ---
 
 {% if category == 'Accessibility' %}

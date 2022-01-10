@@ -9,9 +9,6 @@ module.exports = eleventyConfig => {
   require('dotenv').config()
   const { ELEVENTY_ENV } = process.env
 
-  /* Data */
-  eleventyConfig.setDataDeepMerge(true);
-
   /* Smart quotes filter */
   const smartypants = require("smartypants");
   eleventyConfig.addFilter("smart", str => smartypants.smartypants(str, 'qDe'));
@@ -31,11 +28,12 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter("markdown", markdown => mdIntro.render(markdown));
 
   const slugify = require("slugify");
-  eleventyConfig.addFilter("slug", str => {
+  eleventyConfig.addFilter("slugify", str => {
     return slugify(str, {
-      replacement: "-",
-      remove: /[*+~.,–—()'"‘’“”!?:;@]/g,
-      lower: true
+      customReplacements: [
+        ['+', ' plus '],
+        ['@', ' at ']
+      ]
     });
   });
 
@@ -54,7 +52,7 @@ module.exports = eleventyConfig => {
 
   /* List all tags */
   eleventyConfig.addFilter("tags", collection => {
-    const notRendered = ['all', 'post', 'resource', 'testimonial', 'case_study', 'skills'];
+    const notRendered = ['all', 'post', 'resource', 'testimonial', 'case-study', 'skills'];
     return Object.keys(collection)
       .filter(d => !notRendered.includes(d))
       .sort();
@@ -62,7 +60,7 @@ module.exports = eleventyConfig => {
 
   /* List tags belonging to a page */
   eleventyConfig.addFilter("tagsOnPage", tags => {
-    const notRendered = ['all', 'post', 'resource', 'testimonial', 'case_study', 'skills'];
+    const notRendered = ['all', 'post', 'resource', 'testimonial', 'case-study', 'skills'];
     return tags
       .filter(d => !notRendered.includes(d))
       .sort();
