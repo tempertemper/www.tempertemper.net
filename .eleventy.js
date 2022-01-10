@@ -33,7 +33,9 @@ module.exports = eleventyConfig => {
       customReplacements: [
         ['+', ' plus '],
         ['@', ' at ']
-      ]
+      ],
+      remove: /[*~.,–—()'"‘’“”!?:;]/g,
+      lower: true
     });
   });
 
