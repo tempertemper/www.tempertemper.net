@@ -19,7 +19,7 @@ But, of course, there is a very good reason that we all have to do this: **safet
 
 ## So what's that got to do with passwords?
 
-I should probably explain what [1Password](https://agilebits.com/onepassword) actually is, shouldn't I!? Basically, it's a password manager. You add each of your online accounts to a list and generate a unique, ridiculously long (and therefore secure) password. The long and short is, it's a bit more of a pain to use but the security benefits and peace of mind are more than worth it! See where I was going with the seatbelt analogy now?
+I should probably explain what [1Password](https://1password.com) actually is, shouldn't I!? Basically, it's a password manager. You add each of your online accounts to a list and generate a unique, ridiculously long (and therefore secure) password. The long and short is, it's a bit more of a pain to use but the security benefits and peace of mind are more than worth it! See where I was going with the seatbelt analogy now?
 
 Before I go any further, I should probably point out that I have **no affiliation with 1Password**.
 

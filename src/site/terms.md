@@ -92,7 +92,7 @@ I'll sometimes have some expenses for your project, such as travel costs, hotel 
 
 These expenses are usually included in the project price, but if you prefer these to be explicit, they can be itemised on your estimate and invoice.
 
-Licensing costs that you may incur, for example [web-fonts](/blog/webfonts) and stock image licenses, will be paid by you directly.
+Licensing costs that you may incur, for example [web-fonts](/resources/webfonts) and stock image licenses, will be paid by you directly.
 
 If anything unexpected crops up during the project I’ll let you know as far in advance as possible so that you can approve it.
 

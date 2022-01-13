@@ -40,7 +40,7 @@ This is where 'cloud' services like [Feed Wrangler](https://feedwrangler.net) or
 
 ## So what's wrong with social media?
 
-A lot of people have [ditched RSS](https://www.google.com/reader/about/) recently, in favour of services like Twitter. In fact, most companies whose RSS feeds I subscribe to also publish links to their articles on their social media accounts. I often come across really interesting articles on Twitter that people I follow have written or retweeted.
+A lot of people have ditched RSS recently, in favour of services like Twitter. In fact, most companies whose RSS feeds I subscribe to also publish links to their articles on their social media accounts. I often come across really interesting articles on Twitter that people I follow have written or retweeted.
 
 It's just that, in general, I prefer to separate articles blog feeds from the chit-chat of social media. I could miss an important announcement very easily on Twitter, where I would have to deliberately dismiss it in my RSS reader.
 

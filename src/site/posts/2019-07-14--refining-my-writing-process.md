@@ -33,7 +33,7 @@ It was the stages after that where things got fiddly using a CMS: final edits, p
 
 ## My new file-based process
 
-My new site is a [static build with Eleventy](https://www.11ty.io/), which has removed duplication and simplified my process:
+My new site is a [static build with Eleventy](https://www.11ty.dev/), which has removed duplication and simplified my process:
 
 1. Write the article in iA Writer
 2. When it's ready, create a new branch for it in my site's repository

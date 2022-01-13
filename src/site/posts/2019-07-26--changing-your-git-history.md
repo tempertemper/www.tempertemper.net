@@ -9,7 +9,7 @@ tags:
 updated: 2021-03-04
 ---
 
-Changing my Git history isn't something I have to do very often, but earlier this week I decided to make [my website repository (repo) public](https://github.com/tempertemper/tempertemper-website) after re-factoring my site using a [static site generator](https://www.11ty.io). I've gleaned lots of tips by poking through other people's source code over the years, and I wanted to repay the favour.
+Changing my Git history isn't something I have to do very often, but earlier this week I decided to make [my website repository (repo) public](https://github.com/tempertemper/tempertemper.net) after re-factoring my site using a [static site generator](https://www.11ty.dev). I've gleaned lots of tips by poking through other people's source code over the years, and I wanted to repay the favour.
 
 The problem with making my code public was that I was migrating from a database driven content management system (CMS) called [Perch](https://grabaperch.com), and my deployment setup meant pushing the files that powered Perch (in a `/core/` directory) as well as a config file full of database credentials, the Perch license, and some API keys. Sharing the source files, license and API keys, no matter how buried in the Git history, isn't a great idea.
 

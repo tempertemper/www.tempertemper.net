@@ -8,7 +8,7 @@ tags:
     - HTML
 ---
 
-There's not much you can do with an unordered list, but when the order *matters*, you might find yourself in a situation where you need to reverse the order. And that's where the `reversed` [HTML attribute](blog/an-introduction-to-html-attributes) comes in.
+There's not much you can do with an unordered list, but when the order *matters*, you might find yourself in a situation where you need to reverse the order. And that's where the `reversed` [HTML attribute](/blog/an-introduction-to-html-attributes) comes in.
 
 Lists count up from 1 by default: 1, 2, 3… But what if it makes more sense to count *down*? 3, 2, 1…
 

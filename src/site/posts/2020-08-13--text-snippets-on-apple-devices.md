@@ -20,7 +20,7 @@ If you're not sure what Text Replacement is, head to:
 - Settings → General → Keyboard → Text Replacement (iOS)
 - System Preferences → Keyboard → Text (macOS)
 
-I've used Text Replacement on my iPhone for a long time, where TextExpander wasn't available system-wide. I had tried the [TextExpander Custom Keyboard](https://www.imore.com/best-custom-keyboards-ios-8) but it didn't run well on the iPhone 6 I was using at the time, and the colour scheme and goofy TextExpander [logo on the keyboard](https://textexpander.com/help/mobile/images/switch_keyboard.png) didn't help. So I used Text Replacement on my phone and TextExpander on my Mac.
+I've used Text Replacement on my iPhone for a long time, where TextExpander wasn't available system-wide. I had tried the [TextExpander Custom Keyboard](https://www.imore.com/best-custom-keyboards-ios-8) but it didn't run well on the iPhone 6 I was using at the time, and the colour scheme and goofy TextExpander [logo on the keyboard](https://textexpander.com/blog/textexpander-tip-try-our-ios-keyboard-and-one-tap-text-snippet-keys) didn't help. So I used Text Replacement on my phone and TextExpander on my Mac.
 
 
 ## Text snippets
@@ -42,7 +42,7 @@ So when it came to dropping TextExpander, I just added the more hefty snippets t
 - <kbd>llorem</kbd> to output a bunch of [lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum) text
 
 
-##  Emoji overrides
+## Emoji overrides
 
 Another good use that I found for Text Replacement is to override Apple's default emojis, for example:
 
@@ -95,7 +95,7 @@ And I've got a bunch of semi-often used symbol characters set up too; stuff like
 
 As I mentioned, I used to have TextExpander on my Mac and Text Replacement on my phone. Any time I wanted to add, remove or change something that would be useful on both devices, I'd have to update both.
 
-Moving to Text Replacement only was going to make that easier, or at least it was *supposed* to. In fact, it [didn't sync across devices](https://blog.macstadium.com/blog/science-confirmed-text-replacements-do-not-sync) at first.
+Moving to Text Replacement only was going to make that easier, or at least it was *supposed* to. In fact, it [didn't sync across devices](https://www.macstadium.com/blog/science-confirmed-text-replacements-do-not-sync) at first.
 
 Happily, Apple made a change in late 2017 that meant [the snippets *did* sync](https://daringfireball.net/linked/2017/12/04/stucki-text-replacement-syncing), and that more or less coincided with TextExpander's monthly billing, so I took the plunge and went all-in with Apple's Text Replacement.
 
