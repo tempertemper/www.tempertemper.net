@@ -95,7 +95,7 @@ And I've got a bunch of semi-often used symbol characters set up too; stuff like
 
 As I mentioned, I used to have TextExpander on my Mac and Text Replacement on my phone. Any time I wanted to add, remove or change something that would be useful on both devices, I'd have to update both.
 
-Moving to Text Replacement only was going to make that easier, or at least it was *supposed* to. In fact, it [didn't sync across devices](https://blog.macstadium.com/blog/science-confirmed-text-replacements-do-not-sync) at first.
+Moving to Text Replacement only was going to make that easier, or at least it was *supposed* to. In fact, it [didn't sync across devices](https://www.macstadium.com/blog/science-confirmed-text-replacements-do-not-sync) at first.
 
 Happily, Apple made a change in late 2017 that meant [the snippets *did* sync](https://daringfireball.net/linked/2017/12/04/stucki-text-replacement-syncing), and that more or less coincided with TextExpander's monthly billing, so I took the plunge and went all-in with Apple's Text Replacement.
 

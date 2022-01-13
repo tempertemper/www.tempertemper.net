@@ -7,7 +7,7 @@ tags:
     - Apple
 ---
 
-In spite of [my recent enthusiasm](blog/thoughts-on-3d-touch) for 3D Touch, since [late last year](https://www.macrumors.com/2018/10/23/apple-to-expand-haptic-touch-over-time/) there have been murmurs that it is on its way out. With the release of iOS 13, I think they might be right.
+In spite of [my recent enthusiasm](/blog/thoughts-on-3d-touch) for 3D Touch, since [late last year](https://www.macrumors.com/2018/10/23/apple-to-expand-haptic-touch-over-time/) there have been murmurs that it is on its way out. With the release of iOS 13, I think they might be right.
 
 ## WWDC 2019
 

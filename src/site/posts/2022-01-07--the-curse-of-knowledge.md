@@ -5,7 +5,7 @@ intro: |
 date: 2022-01-07
 ---
 
-I really enjoyed Ben Myers' article [Ben's Humane Guide to Technical Blogging](https://www.benmyers.dev/blog/humane-blogging/); I found myself nodding in agreement all the way through, but it was his sixth point that really stuck with me:
+I really enjoyed Ben Myers' article [Ben's Humane Guide to Technical Blogging](https://benmyers.dev/blog/humane-blogging/); I found myself nodding in agreement all the way through, but it was his sixth point that really stuck with me:
 
 > You'll be amazed what some people don't know yet … The curse of knowledge is such a real phenomenon in creating technical content, and few topics are "too" basic for someone to find helpful. You never know who will be one of today's lucky 10,000 thanks to you.
 

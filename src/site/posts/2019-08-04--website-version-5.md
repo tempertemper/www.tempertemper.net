@@ -27,7 +27,7 @@ Another nice side-effect has been that it has streamlined my [blog writing proce
 
 My mission was to rebuild my website **like-for-like** so I knew that Jekyll wasn't the tool to use -- I've used it a lot over the years and I knew there would be a few places where I'd hit up against its limitations. Plus I didn't really want the Ruby dependency; for that reason [Hugo](https://gohugo.io/) was out too -- I wanted to keep it all JavaScript.
 
-[Gatsby.js](https://www.gatsbyjs.org/) and [Vuepress](https://vuepress.vuejs.org/) were the front-runners until I came across [Eleventy](https://www.11ty.io/). It's logical to use, light-weight, very flexible, very fast, and vanilla JavaScript all the way down.
+[Gatsby.js](https://www.gatsbyjs.com/) and [Vuepress](https://vuepress.vuejs.org/) were the front-runners until I came across [Eleventy](https://www.11ty.dev/). It's logical to use, light-weight, very flexible, very fast, and vanilla JavaScript all the way down.
 
 
 ## Some things have gone
@@ -38,7 +38,7 @@ There were also a few compromises I had to make as I was building the site, main
 
 I saw this one coming. Without some kind of server side processing forms are impossible. The primary focus of my site is no longer getting work, so I don't mind replacing my contact form with a `mailto:` link.
 
-My site is currently self-hosted on [Linode](https://www.linode.com/?r=b92d6fedd4c0b5608f758fa6becbba975ea10e7b) but I'm curious about Netlify and its [built-in form handling](https://www.netlify.com/docs/form-handling/), so adding forms back in is definitely on my to-do list.
+My site is currently self-hosted on [Linode](https://www.linode.com/?r=b92d6fedd4c0b5608f758fa6becbba975ea10e7b) but I'm curious about Netlify and its [built-in form handling](https://docs.netlify.com/forms/setup), so adding forms back in is definitely on my to-do list.
 
 ### No more search
 
@@ -64,7 +64,7 @@ So readers can link to an article's sub-heading using a fragment identifier like
 
 ### Public repository
 
-Since there're no passwords or keys in config, and no closed-source code in the new build of my site (I've made sure [none of that code](/blog/changing-your-git-history) is available in my repo's history), the GitHub repo [is now public](https://github.com/tempertemper/tempertemper-website). So if you're curious how I've put it all together you can have a look! You can also suggest a change to a page via the 'Edit this page on GitHub' link in every footer.
+Since there're no passwords or keys in config, and no closed-source code in the new build of my site (I've made sure [none of that code](/blog/changing-your-git-history) is available in my repo's history), the GitHub repo [is now public](https://github.com/tempertemper/tempertemper.net). So if you're curious how I've put it all together you can have a look! You can also suggest a change to a page via the 'Edit this page on GitHub' link in every footer.
 
 ### Better code syntax highlighting
 

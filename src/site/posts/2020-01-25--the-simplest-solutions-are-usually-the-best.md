@@ -83,7 +83,7 @@ The square canvas version of the logo used the two `t`s and the underscore, whic
 - Letter-based icons feel too easy! I wanted a single shape/mark
 - It wasn't all that distinguishable at very small sizes
 - It drew attention to the `t`s as initial letters of two separate words; something I'd be looking to avoid
-- Some people [think of cars](https://www.audi.co.uk/models/tt/tt-coupe.html) when they see two `t`s
+- Some people [think of cars](https://en.wikipedia.org/wiki/Audi_TT) when they see two `t`s
 
 
 ### Working on a new icon

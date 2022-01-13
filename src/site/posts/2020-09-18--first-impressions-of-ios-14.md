@@ -29,7 +29,7 @@ In some cases (Calendar and Fitness) widgets have replaced the app itself on my 
 
 ## App Library
 
-I've never really liked folders on the Home screen. I can see why [Apple took until iOS 4 to add them](https://www.macworld.com/article/1152168/ios4folders.html): they're fiddly and ugly, but they're *very functional*. iOS was a worse place without them, but that doesn't mean I have to *like* them!
+I've never really liked folders on the Home screen. I can see why [Apple took until iOS 4 to add them](https://www.macworld.com/article/206116/ios4folders.html): they're fiddly and ugly, but they're *very functional*. iOS was a worse place without them, but that doesn't mean I have to *like* them!
 
 For years I've kept apps in folders:
 

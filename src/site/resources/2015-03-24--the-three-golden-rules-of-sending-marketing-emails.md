@@ -52,7 +52,7 @@ It's unlikely (though entirely possible) that you'll be fined or taken to court 
 
 I have to be very careful that [email doesn't consume my working day](/blog/controlling-email) and for that reason I don't subscribe to any email newsletters. I use other channels like [Twitter](https://twitter.com/tempertemper/) to keep up with industry news, goings on in other small businesses I care about, and to provide a bit of [light entertainment](https://youtu.be/8oVfIFrpslI).
 
-So if I receive an email that I didn't ask for I'll unsubscribe straight away. Not with any malice or irritation, just with an eye on keeping my working day as efficient as possible. Chances are I've got the sender on a [list on Twitter](https://support.twitter.com/articles/76460-using-twitter-lists) anyway.
+So if I receive an email that I didn't ask for I'll unsubscribe straight away. Not with any malice or irritation, just with an eye on keeping my working day as efficient as possible. Chances are I've got the sender on a [list on Twitter](https://help.twitter.com/en/using-twitter/twitter-lists) anyway.
 
 Even if you believe your marketing email is as useful as they come (and it may well be) you run the risk of your hard work being ignored or being marked as spam if the recipient didn't explicitly ask to be included on your sending list.
 

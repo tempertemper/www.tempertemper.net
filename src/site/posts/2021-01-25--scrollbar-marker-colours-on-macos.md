@@ -17,7 +17,7 @@ I've been using Dark Mode since it landed in macOS Mojave back in 2018, where th
 
 ## The problem
 
-You know that satisfying bounce when you scroll up or down and hit the top or bottom of the page? It happens in Safari and Chrome (and Chrome-alike browsers like Opera and Edge), so I [added a colourful background behind the main page canvas](blog/scroll-bounce-page-background-colour), to match my brand. Something along these lines:
+You know that satisfying bounce when you scroll up or down and hit the top or bottom of the page? It happens in Safari and Chrome (and Chrome-alike browsers like Opera and Edge), so I [added a colourful background behind the main page canvas](/blog/scroll-bounce-page-background-colour), to match my brand. Something along these lines:
 
 ```css
 html {

@@ -18,7 +18,7 @@ So how are they doing it? Reducing your search ranking for not using SSL would h
 
 ## Enter Google Chrome
 
-Everyone knows Google do search. It's a hugely popular search engine and to many it's synonymous with search (the verb 'to google' [entered the Oxford English Dictionary in 2006](https://en.wikipedia.org/wiki/Google_(verb)). But Google have [lots of other products](https://www.google.com/intl/en_us/about/products/).
+Everyone knows Google do search. It's a hugely popular search engine and to many it's synonymous with search (the verb 'to google' [entered the Oxford English Dictionary in 2006](https://en.wikipedia.org/wiki/Google_(verb)). But Google have [lots of other products](https://about.google/intl/en_us/products).
 
 I'm almost certain you'll've heard of **Chrome**. But don't worry if you haven't -- it's a [web browser](/resources/whats-in-a-browser) made by Google. And it's by far and away the most used web browser in the world, with [usage currently sitting at just over 58%](https://www.w3counter.com/globalstats.php?year=2016&month=8) globally. Its closest competitor is Apple's Safari at 12.7%.
 
