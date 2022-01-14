@@ -73,6 +73,11 @@ module.exports = eleventyConfig => {
     return collection.sort((a, b) => a.data.order - b.data.order);
   });
 
+  /* Add limit for output */
+  eleventyConfig.addFilter("limit", (arr, limit) => {
+    return arr.slice(0, limit);
+  });
+
   /* Get current year for footer */
   eleventyConfig.addFilter("getCurrentYear", () => new Date().getFullYear());
 
