@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - New 'limit' filter to .eleventyconfig.js to limit the number of looped items output
+- New filter to remove current post from post list output
 
 ----------
 

@@ -78,6 +78,13 @@ module.exports = eleventyConfig => {
     return arr.slice(0, limit);
   });
 
+  /* Remove current post from output */
+  eleventyConfig.addFilter("removeCurrent", (arr, title) => {
+    return arr.filter(item => {
+      return item.url && item.data.title !== title;
+    });
+  });
+
   /* Get current year for footer */
   eleventyConfig.addFilter("getCurrentYear", () => new Date().getFullYear());
 
