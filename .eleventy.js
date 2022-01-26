@@ -85,6 +85,18 @@ module.exports = eleventyConfig => {
     });
   });
 
+  /* If promoted posts in frontmatter, output them first */
+  eleventyConfig.addFilter("promoteRelated", (arr, related) => {
+    // console.log(related);
+    const relatedPosts = arr.filter(item => {
+      return item.url && (related || []).includes(item.url.replace("/blog/", "").replace(".html", ""));
+    });
+    const unrelatedPosts = arr.filter(item => {
+      return item.url && !(related || []).includes(item.url.replace("/blog/", "").replace(".html", ""));
+    });
+    return relatedPosts.concat(unrelatedPosts);
+  });
+
   /* Get current year for footer */
   eleventyConfig.addFilter("getCurrentYear", () => new Date().getFullYear());
 
