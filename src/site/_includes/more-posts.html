@@ -18,15 +18,8 @@
     <h2 id="further-reading-heading">More {{ typeOfThing }}</h2>
     <p>Here are a couple more {{ typeOfThing }} for you to enjoy. If that’s not enough, have a look at <a href="{{ linkToList }}">the full list</a>.</p>
     <ol class="hfeed index-list" reversed>
-        {%- set limit = 2 %}
-        {%- for post in items | reverse %}
-            {%- if title === post.data.title %}
-                {%- set limit = 3 %}
-            {%- else %}
-                {%- if loop.index <= limit %}
-                    {% include "post-in-list.html" %}
-                {%- endif %}
-            {%- endif %}
+        {%- for post in collections.post | reverse | removeCurrent(title) | promoteRelated(related) | limit(2) %}
+            {% include "post-in-list.html" %}
         {%- endfor %}
     </ol>
 </section>

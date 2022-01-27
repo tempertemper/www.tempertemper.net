@@ -4,6 +4,8 @@ intro: I've just set up a new Mac, and keyboard navigation is pretty limited by 
 date: 2020-10-05
 tags:
     - Accessibility
+related:
+    - how-to-use-the-keyboard-to-navigate-on-safari
 ---
 
 I've just been setting up a new Mac and there's a setting I turn on every time but can never quite remember how to find. So this post serves to remind me in the future, and will hopefully show you something useful that you didn't know was there.

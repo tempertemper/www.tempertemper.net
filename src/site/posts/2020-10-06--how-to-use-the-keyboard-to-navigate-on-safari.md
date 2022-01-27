@@ -5,6 +5,8 @@ intro: |
 date: 2020-10-06
 tags:
     - Accessibility
+related:
+    - using-the-keyboard-to-navigate-on-macos
 ---
 
 One of the best starting points when testing a web page's accessibility is to put your mouse to one side and use your keyboard to get around.

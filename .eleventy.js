@@ -73,6 +73,29 @@ module.exports = eleventyConfig => {
     return collection.sort((a, b) => a.data.order - b.data.order);
   });
 
+  /* Add limit for output */
+  eleventyConfig.addFilter("limit", (arr, limit) => {
+    return arr.slice(0, limit);
+  });
+
+  /* Remove current post from output */
+  eleventyConfig.addFilter("removeCurrent", (arr, title) => {
+    return arr.filter(item => {
+      return item.url && item.data.title !== title;
+    });
+  });
+
+  /* If promoted posts in frontmatter, output them first */
+  eleventyConfig.addFilter("promoteRelated", (arr, related) => {
+    const relatedPosts = arr.filter(item => {
+      return item.url && (related || []).includes(item.url.replace("/blog/", "").replace(".html", ""));
+    });
+    const unrelatedPosts = arr.filter(item => {
+      return item.url && !(related || []).includes(item.url.replace("/blog/", "").replace(".html", ""));
+    });
+    return relatedPosts.concat(unrelatedPosts);
+  });
+
   /* Get current year for footer */
   eleventyConfig.addFilter("getCurrentYear", () => new Date().getFullYear());
 
