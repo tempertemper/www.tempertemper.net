@@ -7,19 +7,22 @@ $modularscale: (
 );
 
 @mixin heading-style {
-  line-height: 1.2;
   margin-top: 1em;
   margin-bottom: .25em;
   letter-spacing: -.03em;
   font-weight: 700;
   hyphens: auto;
 
-  @media (min-width: $xs) {
-    line-height: 1.1;
-  }
-
   @media (min-width: $s) {
     hyphens: none;
+  }
+}
+
+@mixin heading-line-height-large {
+  line-height: 1.2;
+
+  @media (min-width: $xs) {
+    line-height: 1.1;
   }
 }
 
@@ -36,6 +39,7 @@ $modularscale: (
 
 @mixin heading-xl {
   font-size: ms(3);
+  @include heading-line-height-large;
 
   @media (max-width: $xxs) {
     font-size: ms(2);
@@ -48,6 +52,7 @@ $modularscale: (
 
 @mixin heading-l {
   font-size: ms(2);
+  @include heading-line-height-large;
 
   @media (max-width: $xxs) {
     font-size: ms(1);
@@ -60,6 +65,7 @@ $modularscale: (
 
 @mixin heading-m {
   font-size: ms(1);
+  @include heading-line-height-large;
 
   @media (max-width: $xxs) {
     font-size: ms(0);
@@ -72,6 +78,7 @@ $modularscale: (
 
 @mixin heading-s {
   font-size: ms(0);
+  line-height: 1.4;
 
   @media (max-width: $xxs) {
     font-size: ms(-1);
