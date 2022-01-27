@@ -11,12 +11,15 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.2.1] - 2022-01-27
+
 ### Adds
 - New 'limit' filter to .eleventyconfig.js to limit the number of looped items output
 - New filter to remove current post from post list output
 - New filter to output related posts first in post lists
-
-----------
 
 
 ## [6.2.0] - 2022-01-09
