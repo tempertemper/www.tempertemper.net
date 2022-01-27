@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Increases line height for small headings
+- Increases spacing to the left and right of `kbd` elements
 
 ----------
 
