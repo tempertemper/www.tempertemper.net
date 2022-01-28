@@ -11,7 +11,15 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+
 ----------
+
+
+## [6.2.2] - 2022-01-28
+
+### Changes
+- Increases line height for small headings
+- Increases spacing to the left and right of `kbd` elements
 
 
 ## [6.2.1] - 2022-01-27
