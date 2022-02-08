@@ -1,0 +1,14 @@
+---
+title: Blog posts by year
+intro: |
+    I've written a lot over the years! Head to a year to find the blog posts I wrote then:
+layout: default
+permalink: /blog/years.html
+---
+
+<p>
+    {%- set years = collections.post | getYears %}
+    {%- for year in years | reverse %}
+        <a href="/blog/year/{{ year }}">{{ year }}</a>{%- if not loop.last -%}, {%- else -%}.{% endif %}
+    {%- endfor %}
+</p>

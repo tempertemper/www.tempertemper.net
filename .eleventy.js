@@ -85,6 +85,20 @@ module.exports = eleventyConfig => {
     });
   });
 
+  /* Get all the years that blog posts were posted */
+  eleventyConfig.addFilter("getYears", (arr) => {
+    const dates = arr.map(post => post.date.getFullYear());
+    const uniqueYears = [...new Set(dates)];
+    return uniqueYears;
+  });
+
+  /* Filter items by year */
+  eleventyConfig.addFilter("filterByYear", (arr, year) => {
+    return arr.filter(item => {
+      return item.date.getFullYear() == year;
+    })
+  });
+
   /* If promoted posts in frontmatter, output them first */
   eleventyConfig.addFilter("promoteRelated", (arr, related) => {
     const relatedPosts = arr.filter(item => {
