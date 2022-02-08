@@ -865,6 +865,13 @@
 
 ## Other blog post redirects
 
+
+[[redirects]]
+  from = "/blog/going-all-in-on-icloud-password"
+  to = "/blog/going-all-in-on-icloud-passwords"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/blog/using-pandoc-to-convert-markdown-to-textile-in-sublime-text"
   to = "/blog/using-pandoc-to-convert-markdown-to-jiras-textile-in-sublime-text"

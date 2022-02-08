@@ -1,5 +1,5 @@
 ---
-title: Going all-in on iCloud Password
+title: Going all-in on iCloud Passwords
 intro: 1Password's subscription push, one-size-fits-all Electron app, and Apple's efforts with their password manager mean it's time for a change.
 date: 2022-02-08
 tags:
