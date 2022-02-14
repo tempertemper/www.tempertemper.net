@@ -1,0 +1,34 @@
+---js
+{
+  pagination: {
+    data: "collections.all",
+    size: 1,
+    alias: "year",
+    before: function(data) {
+      const dates = data.map(post => post.date.getFullYear());
+      const uniqueYears = [...new Set(dates)];
+      return uniqueYears;
+    }
+  },
+  layout: "default",
+  permalink: "/blog/year/{{ year }}.html"
+}
+---
+
+<ol class="hfeed index-list" reversed>
+    {% set yearList = collections.post | filterByYear(year) %}
+    {% for post in yearList | reverse %}
+        {%- include "post-in-list.html" %}
+    {% endfor %}
+</ol>
+
+<h2>Other years</h2>
+<p>
+    {% set currentYear = year %}
+    {%- set years = collections.post | getYears %}
+    {%- for year in years | reverse %}
+        {% if year !== currentYear %}
+            <a href="/blog/year/{{ year }}">{{ year }}</a>{%- if not loop.last -%}, {%- else -%}.{% endif %}
+        {% endif %}
+    {%- endfor %}
+</p>
