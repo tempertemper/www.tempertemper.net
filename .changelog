@@ -11,10 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+## [6.3.0] - 2022-02-14
+
 ### Adds
 - Groups blog posts by year, with a page for each
-
-----------
 
 
 ## [6.2.2] - 2022-01-28
