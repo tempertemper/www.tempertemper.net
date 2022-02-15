@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Removes
+- Removes margin and padding from code in links
+
 ----------
 
 ## [6.3.0] - 2022-02-14
