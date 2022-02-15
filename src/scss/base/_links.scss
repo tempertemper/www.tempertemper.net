@@ -1,6 +1,10 @@
 a {
   @include text-link;
 
+  p & {
+    padding-top: .25em;
+  }
+
   > code {
     padding: 0;
     margin-right: 0;
