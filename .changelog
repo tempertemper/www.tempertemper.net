@@ -13,6 +13,16 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 
+
+## [6.3.1] - 2022-02-15
+
+### Changes
+- Adds a little more headroom to focused links in paragraph text
+
+### Removes
+- Removes margin and padding from code in links
+
+
 ## [6.3.0] - 2022-02-14
 
 ### Adds
