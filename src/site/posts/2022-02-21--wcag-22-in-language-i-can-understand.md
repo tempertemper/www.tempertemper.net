@@ -5,6 +5,8 @@ intro: A follow-up to my post on the Web Content Accessibility Guidelines 2.1, l
 date: 2022-02-21
 tags:
     - Accessibility
+summaryImage: wcag-2-2.png
+summaryImageAlt: The letters ‘WCAG’ with ‘2.2’ underneath.
 related: wcag-but-in-language-i-can-understand
 ---
 
