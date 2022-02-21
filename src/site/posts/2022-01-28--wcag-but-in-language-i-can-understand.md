@@ -78,7 +78,7 @@ Auto playing audio that lasts more than 3 seconds can be turned down or stopped.
 
 #### 1.4.3 Contrast (Minimum) and 1.4.11 Non-text Contrast
 
-Text has a contrast ratio of 4.5 to 1. Large text can be a 3 to 1 ratio if it's over 24px or bold and over 18.66px.
+Text has a contrast ratio of 4.5 to 1. Large text can be a 3 to 1 ratio if it's over 24px, or bold and over 19px.
 
 Usable components like form fields and buttons, and graphics like pie charts and line graphs should have a contrast ratio of 3 to 1.
 
