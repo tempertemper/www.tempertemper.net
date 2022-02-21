@@ -6,6 +6,7 @@ tags:
     - Accessibility
 summaryImage: wcag.png
 summaryImageAlt: The letters ‘WCAG’ with ‘2.1 AA’ underneath.
+related: wcag-22-in-language-i-can-understand
 ---
 
 The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG21/) make for difficult reading, so I thought I'd write a short article on each success criterion, explaining it in easy to understand language.
@@ -155,7 +156,7 @@ There's visible keyboard focus styling to indicate which element you're currentl
 ### Input Modalities
 
 #### 2.5.1 Pointer Gestures
-All actions that are carried out using a gesture, like a swipe, pinch, or drag, can also be done with a button or buttons.
+All actions that are carried out using a gesture (swiping, pinching, and so on) or drawing, can also be done with a button or buttons.
 
 #### 2.5.2 Pointer Cancellation
 Actions (like pressing a button) aren't triggered on mouse-down; rather on mouse-up.
