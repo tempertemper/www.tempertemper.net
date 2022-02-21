@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 - Changes button link call to action to a link
 - Removes `.button` utility class
+- Removes some link styling from button mixin
 
 ----------
 
