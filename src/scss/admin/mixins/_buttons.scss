@@ -11,9 +11,7 @@
   margin-top: 1em;
   padding: .5em 1em; // Older browsers
   padding: calc(.5em + 3px) 1em .5em;
-  text-align: center;
   width: auto;
-  text-decoration: none;
   box-shadow: 0 3px $colour-primary-dark;
   @include dark-mode($colour: $colour-dark-mode-main) {
     box-shadow: 0 3px $colour-dark-mode-primary-dark;
@@ -27,14 +25,6 @@
   svg {
     margin-right: .3em;
     margin-top: -.3em;
-  }
-
-  &:link,
-  &:visited {
-    color: $colour-white;
-    text-decoration: none;
-    @include dark-mode($colour: $colour-dark-mode-main);
-    @include high-contrast($colour: $colour-high-contrast-main);
   }
 
   &:focus {

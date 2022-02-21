@@ -14,6 +14,14 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.3.3] - 2022-02-21
+
+### Removes
+- Changes button link call to action to a link
+- Removes `.button` utility class
+- Removes some link styling from button mixin
+
+
 ## [6.3.2] - 2022-02-16
 
 ### Fixes
