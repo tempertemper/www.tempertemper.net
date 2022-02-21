@@ -25,28 +25,6 @@ Again, that caveat:
 Before I dive in, it's worth mentioning that 2.2 hasn't quite made it to final release yet, so there's an outside chance that things could change between now and release. But at this stage, if something were to change, it's likely to be small tweaks and adjustments rather than anything major.
 
 
-## 3.3.7 Accessible Authentication
-
-If the user is required to enter a password, there's at least one way for them to do it without relying on memory. A simple way would be the ability to copy and paste a password into the right form field or, even better, for the password manager to fill out the log-in details automatically. Also: avoid [CAPTCHAS](https://en.wikipedia.org/wiki/CAPTCHA)!
-
-
-## 2.5.7 Dragging Movements
-
-An action that is achieved by dragging from one point to another (for example, drag-and-drop for reordering) can also be performed using individual clicks or by pressing buttons.
-
-This is related to [2.1.1 Keyboard](/blog/wcag-but-in-language-i-can-understand#211-keyboard) and [2.5.1 Pointer Gestures](/blog/wcag-but-in-language-i-can-understand#251-pointer-gestures).
-
-
-## 3.2.6 Consistent Help
-
-Some form of help is available from every page, whether contact details, a contact form, a link to a contact page, or a link to help documentation.
-
-
-## 2.4.13 Page Break Navigation
-
-The number of pages in an ebook can change dramatically depending on what fits on each page; this is down to font choice, size, spacing, the device size, and so on. There should a way to mark each page according to those in the physical book, so that if someone were to say "Turn to page 100", *everyone* knows where page 100 is.
-
-
 ## 2.4.11 Focus Appearance (Minimum)
 
 The focus indicators for keyboard users are easy to spot: they have a contrast ratio of 3 to 1 (or higher) with their contents, their surroundings, and also the unfocused state.
@@ -59,9 +37,16 @@ There are a couple of ways the indicator can look, but an outline is the simples
 The only AAA requirement in 2.2. This is the same as the Minimum requirement, only it requires a 4.5 to 1 contrast ratio, and the outline must be at least 2 pixels thick.
 
 
-## 3.2.7 Visible Controls
+## 2.4.13 Page Break Navigation
 
-When an action can be performed on something, the action buttons are always visible; not, for example, hidden and only revealed on hover or keyboard focus.
+The number of pages in an ebook can change dramatically depending on what fits on each page; this is down to font choice, size, spacing, the device size, and so on. There should a way to mark each page according to those in the physical book, so that if someone were to say "Turn to page 100", *everyone* knows where page 100 is.
+
+
+## 2.5.7 Dragging Movements
+
+An action that is achieved by dragging from one point to another (for example, drag-and-drop for reordering) can also be performed using individual clicks or by pressing buttons.
+
+This is related to [2.1.1 Keyboard](/blog/wcag-but-in-language-i-can-understand#211-keyboard) and [2.5.1 Pointer Gestures](/blog/wcag-but-in-language-i-can-understand#251-pointer-gestures).
 
 
 ## 2.5.8 Target Size (Minimum)
@@ -71,6 +56,21 @@ When an action can be performed on something, the action buttons are always visi
 Anything clickable should be at least 24 by 24 pixels, except links within a sentence which will just be the size of the text.
 
 
+## 3.2.6 Consistent Help
+
+Some form of help is available from every page, whether contact details, a contact form, a link to a contact page, or a link to help documentation.
+
+
+## 3.2.7 Visible Controls
+
+When an action can be performed on something, the action buttons are always visible; not, for example, hidden and only revealed on hover or keyboard focus.
+
+
+## 3.3.7 Accessible Authentication
+
+If the user is required to enter a password, there's at least one way for them to do it without relying on memory. A simple way would be the ability to copy and paste a password into the right form field or, even better, for the password manager to fill out the log-in details automatically. Also: avoid [CAPTCHAS](https://en.wikipedia.org/wiki/CAPTCHA)!
+
+
 ## 3.3.8 Redundant Entry
 
 If the user as already given some information, it's either:
@@ -78,3 +78,4 @@ If the user as already given some information, it's either:
 - not asked for again
 - pre-populated in the subsequent field
 - available to select in a dropdown
+
