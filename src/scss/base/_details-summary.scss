@@ -1,5 +1,4 @@
 summary {
-  cursor: pointer;
   @include text-link;
   color: $colour-primary-darker;
   @include dark-mode($colour: $colour-primary);
