@@ -11,10 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.3.4] - 2022-02-23
+
 ### Changes
 - Removes hand-style mouse pointer from buttons
-
-----------
 
 
 ## [6.3.3] - 2022-02-21
