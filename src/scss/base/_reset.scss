@@ -67,11 +67,6 @@ table {
   border-collapse: collapse;
 }
 
-[type="submit"] {
-  -webkit-appearance: none;
-  cursor: pointer;
-}
-
 // [type="search"] {
 //   -webkit-appearance: none;
 //   border-radius: $border-radius-default;
@@ -82,7 +77,8 @@ table {
 // [type="tel"],
 // [type="url"],
 [type="text"],
-[type="email"] {
+[type="email"],
+[type="submit"] {
   -webkit-appearance: none;
 }
 
