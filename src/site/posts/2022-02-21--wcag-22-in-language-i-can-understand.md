@@ -7,7 +7,9 @@ tags:
     - Accessibility
 summaryImage: wcag-2-2.png
 summaryImageAlt: The letters ‘WCAG’ with ‘2.2’ underneath.
-related: wcag-but-in-language-i-can-understand
+related:
+    - wcag-but-in-language-i-can-understand
+    - wcag-aaa-in-language-i-can-understand
 ---
 
 I organised my [breakdown of the Web Content Accessibility Guidelines (WCAG) 2.1 AA](/blog/wcag-but-in-language-i-can-understand) using their POUR (Perceivable, Operable, Understandable, Robust) grouping, but since there are only nine criteria in the up-coming version 2.2 I'll just list them one by one.
