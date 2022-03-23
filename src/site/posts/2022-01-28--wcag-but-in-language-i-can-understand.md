@@ -6,7 +6,9 @@ tags:
     - Accessibility
 summaryImage: wcag.png
 summaryImageAlt: The letters ‘WCAG’ with ‘2.1 AA’ underneath.
-related: wcag-22-in-language-i-can-understand
+related:
+    - wcag-2-2-in-language-i-can-understand
+    - wcag-aaa-in-language-i-can-understand
 ---
 
 The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG21/) make for difficult reading, so I thought I'd write a short article on each success criterion, explaining it in easy to understand language.
