@@ -42,7 +42,7 @@ Images should have descriptive (`alt`) text.
 Any audio-only content should also be conveyed in text. Any video content with no audio track should also be described in text, but could also be described with audio.
 
 #### 1.2.2 Captions (Prerecorded)
-The audio in videos should be captioned if it doesn't already appear in text on the page (like a transcript).
+The audio in videos should be captioned.
 
 #### 1.2.3 Audio Description or Media Alternative (Prerecorded), and 1.2.5 Audio Description (Prerecorded)
 Actions, descriptions, and other important non-audio content in videos should be described in captions or a separate audio track.
