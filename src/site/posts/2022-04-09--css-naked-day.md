@@ -2,8 +2,11 @@
 title: CSS Naked Day
 intro: CSS Naked Day is a day when all website owners should strip their site of CSS to expose the 'naked' HTML underneath.
 date: 2022-04-09
+updated: 2022-04-09
 tags:
     - Accessibility
+summaryImage: css-naked-day.png
+summaryImageAlt: A screenshot of this page as it looked on CSS Naked Day without any styling, showing sensibly ordered, semantic, readable content.
 ---
 
 [CSS Naked Day](https://css-naked-day.github.io) is a day when all website owners should strip their site of CSS to expose the 'naked' HTML underneath.
@@ -24,3 +27,11 @@ So without all the styling styling:
 - operability and interactions should all still function as expected
 
 If your site becomes unusable in any way, you’ll know you’ve got some work to do!
+
+Update: here's how this post looked on CSS Naked Day:
+
+<picture>
+    <source srcset="/assets/img/blog/css-naked-day.avif" type="image/avif" />
+    <source srcset="/assets/img/blog/css-naked-day.webp" type="image/webp" />
+    <img src="/assets/img/blog/css-naked-day.png" alt="A screenshot of this page as it looked on CSS Naked Day without any styling, showing sensibly ordered, semantic, readable content" width="800" height="450" loading="lazy" decoding="async" />
+</picture>
