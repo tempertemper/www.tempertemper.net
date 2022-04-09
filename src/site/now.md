@@ -6,13 +6,11 @@ layout: default
 permalink: now.html
 ---
 
-- Worried about the current situation in Ukraine
-- Finally getting over a filthy cold that has lasted two weeks; would've sworn it was COVID-19 but for continually testing negative
-- Missing my [cold showers](https://www.bbc.co.uk/programmes/m000v83f) and daily run – can't wait to feel better
-- Still enjoying [Wordle](https://www.powerlanguage.co.uk/wordle/)
-- Gearing up to tackle the renovation of our yard: paving, and repointing the sandstone walls
+- Having avoided it for two years, COVID-19 finally caught up with me after a trip to the office! It felt like a mild-ish flu, which was unpleasant but far from the more serious symptoms some others have experienced
+- Back to the [daily cold showers](https://www.bbc.co.uk/programmes/m000v83f), now that Covid is out of my system
+- Looking forward to going out for a run after several weeks of recuperation; just need to shift this lingering COVID-19-induced cough
+- Very happy with the [new paving in our yard](https://twitter.com/tempertemper/status/1512728020141977601)
 - Continuing to [stand up at work](https://twitter.com/tempertemper/status/1436331696408911898?s=21); can't see myself going back to a sitting desk set up now!
-- Concerned that COVID-19 restrictions being completely lifted in the UK has happened too soon
 - Getting into scales and music theory on [my bass guitar](https://twitter.com/tempertemper/status/1449290497822965763) (having played rhythm guitar for over two decades, I never saw that coming!)
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
