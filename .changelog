@@ -14,6 +14,14 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.3.6] - 2022-04-25
+
+### Changes
+- Updates to Eleventy 1.0.1
+- Updates to node 16.14.2
+- Updates npm packages
+
+
 ## [6.3.5] - 2022-02-23
 
 ### Adds
