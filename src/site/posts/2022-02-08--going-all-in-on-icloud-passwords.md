@@ -4,6 +4,8 @@ intro: 1Password's subscription push, one-size-fits-all Electron app, and Apple'
 date: 2022-02-08
 tags:
     - Apple
+related:
+    - i-deleted-1password
 ---
 
 A big reason a lot of people update their operating system is [new emojis](https://twitter.com/gruber/status/1306413329544605698); iOS 15.4 Beta has recently been released and, for the first time in a while, [there's a clutch of new emojis](https://twitter.com/tempertemper/status/1487307750602420224). I'll be updating as soon as it's released, but not (solely!) because of the emojis.
