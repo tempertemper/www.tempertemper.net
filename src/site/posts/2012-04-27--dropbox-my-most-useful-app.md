@@ -5,6 +5,12 @@ intro: |
 date: 2012-04-27
 tags:
     - Tools
+related:
+    - stop-the-ride-i-want-to-get-off
+---
+
+<i>A decade on from writing this article we now have better alternatives and, after years of [dissatisfaction with Dropbox](/blog/stop-the-ride-i-want-to-get-off), I no longer use it.</i>
+
 ---
 
 Dropbox is by far and away the most useful application/program I use.
