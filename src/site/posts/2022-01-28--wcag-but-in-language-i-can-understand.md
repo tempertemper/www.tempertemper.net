@@ -88,7 +88,7 @@ Usable components like form fields and buttons, and graphics like pie charts and
 
 Text is actual text; not images of text.
 
-#### 1.4.4 Resize text, 1.4.10 Reflow and 1.4.12 Text Spacing
+#### 1.4.4 Resize text, 1.4.10 Reflow, and 1.4.12 Text Spacing
 
 The page is fully responsive. The content adjusts and is readable and usable:
 
@@ -212,7 +212,7 @@ Important forms like a legal agreement or submitting financial information offer
 
 ## Robust
 
-Can machines (browsers, screen readers, etc.) read the code.
+Can machines (browsers, screen readers, etc.) read the code?
 
 ### Compatible
 
