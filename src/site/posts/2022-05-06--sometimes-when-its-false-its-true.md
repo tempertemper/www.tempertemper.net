@@ -4,6 +4,9 @@ intro: Boolean attributes in HTML are quirky, and it's worth knowing how they wo
 date: 2022-05-06
 tags:
     - HTML
+    - Development
+related:
+    - booleans-in-aria
 ---
 
 A short posts on boolean [attributes in HTML](/blog/an-introduction-to-html-attributes). What's a boolean attribute? Something that can only be `true` or false `false`; things like:
