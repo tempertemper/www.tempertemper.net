@@ -6,6 +6,7 @@ tags:
     - Development
 related:
     - sometimes-when-its-false-its-true
+updated: 2022-05-11
 ---
 
 [HTML booleans are bit quirky](/blog/sometimes-when-its-false-its-true) but, to complicate things, booleans in ARIA work differently, even though they're both attributes that are added to [an opening HTML tag](/blog/the-difference-between-elements-and-tags-in-html#tags).
@@ -41,3 +42,7 @@ HTML doesn't have this extra nuance.
 ## Stricter syntax
 
 Because ARIA attributes cares about their values, a boolean ARIA attribute doesn't work at all unless it has a value. Even `aria-required`, which is only really useful when it's set to `true`, and doesn't have any extra values on top of `true` and `false`, needs to be written out in full.
+
+---
+
+<b>Update</b>: for a more in-depth look booleans, the ARIA and HTML specifications, how we can set them with JavaScript, check out [Hidde de Vries's article](https://hidde.blog/boolean-attributes-in-html-and-aria-whats-the-difference/).
