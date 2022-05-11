@@ -24,6 +24,12 @@ blockquote {
   ol {
     padding-left: 1em;
   }
+
+  ul:only-child,
+  ol:only-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 ul,
