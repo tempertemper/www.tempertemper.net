@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.3.7] - 2022-05-11
+
+### Changes
+- Removes margin from blockquotes that contain only a list
+
+
 ## [6.3.6] - 2022-04-25
 
 ### Changes
