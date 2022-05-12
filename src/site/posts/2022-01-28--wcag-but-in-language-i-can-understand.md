@@ -183,11 +183,11 @@ Any parts of the page that are in a different language to the page itself are ma
 
 ### Predictable
 
-#### 3.2.1 On Focus
-Nothing unexpected changes when something on the page receives keyboard focus.
+#### 3.2.1 On Focus and 3.2.2 On Input
+Nothing unexpected changes when:
 
-#### 3.2.2 On Input
-Nothing unexpected changes when the value of a form field, like an `<option>` in a `<select>`, is chosen.
+- something on the page receives keyboard focus, like a `<button>`
+- the value of a form field, like an `<option>` in a `<select>`, is chosen
 
 #### 3.2.3 Consistent Navigation
 Navigation is consistent from page to page.
