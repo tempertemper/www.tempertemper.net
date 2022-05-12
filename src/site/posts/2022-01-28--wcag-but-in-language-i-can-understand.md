@@ -176,10 +176,10 @@ Can people understand the content?
 ### Readable
 
 #### 3.1.1 Language of Page
-There's a `lang` attribute on the `<html>` element.
+There's a `lang` attribute on the `<html>` element that matches the language of the page.
 
 #### 3.1.2 Language of Parts
-Any parts of the page that are in a different language to the page itself are marked up with the appropriate `lang` value. Names and phrases *derived* from other languages don't need this.
+Any parts of the page that are in a different language to the page itself are marked up with the appropriate `lang` value. Names and phrases *derived* from other languages, like "Déjà vu" in English, don't need this.
 
 ### Predictable
 
