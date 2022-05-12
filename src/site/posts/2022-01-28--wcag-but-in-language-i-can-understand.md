@@ -197,14 +197,11 @@ Things that carry out a particular function should always look and work the same
 
 ### Input Assistance
 
-#### 3.3.1 Error Identification
-Error or validation messages should be communicated in text.
+#### 3.3.1 Error Identification and 3.3.3 Error Suggestion
+Error/validation messages should be communicated in text, and should provide suggestions to help the user successfully proceed.
 
 #### 3.3.2 Labels or Instructions
 As much help as is needed is offered to prevent triggering a form error; the form label may be enough, but hint text may also be required.
-
-#### 3.3.3 Error Suggestion
-Error messages provide suggestions to help the user successfully proceed.
 
 #### 3.3.4 Error Prevention (Legal, Financial, Data)
 Important forms like a legal agreement or submitting financial information offer the opportunity to check the information entered before sending.

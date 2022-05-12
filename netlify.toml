@@ -865,7 +865,6 @@
 
 ## Other blog post redirects
 
-
 [[redirects]]
   from = "/blog/going-all-in-on-icloud-password"
   to = "/blog/going-all-in-on-icloud-passwords"
@@ -1003,6 +1002,19 @@
   to = "/blog/how-to-rename-the-master-branch-on-github"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/blog/wcag-but-in-language-i-can-understand#331-error-identification"
+  to = "/blog/wcag-but-in-language-i-can-understand#331-error-identification-and-333-error-suggestion"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-but-in-language-i-can-understand#333-error-suggestion"
+  to = "/blog/wcag-but-in-language-i-can-understand#331-error-identification-and-333-error-suggestion"
+  status = 301
+  force = true
+
 
 
 ## Portfolio redirects
