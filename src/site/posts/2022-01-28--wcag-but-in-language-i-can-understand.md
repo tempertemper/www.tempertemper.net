@@ -2,6 +2,7 @@
 title: WCAG, but in language I can understand
 intro: An as-close-to-a-single-paragraph-as-I-can-manage summary of each rule in the Web Content Accessibility Guidelines, version 2.1, level AA.
 date: 2022-01-28
+updated: 2022-05-12
 tags:
     - Accessibility
 summaryImage: wcag.png
@@ -9,6 +10,7 @@ summaryImageAlt: The letters ‘WCAG’ with ‘2.1 AA’ underneath.
 related:
     - wcag-2-2-in-language-i-can-understand
     - wcag-aaa-in-language-i-can-understand
+featured: true
 ---
 
 The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG21/) make for difficult reading, so I thought I'd write a short article on each success criterion, explaining it in easy to understand language.
