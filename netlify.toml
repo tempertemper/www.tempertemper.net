@@ -865,7 +865,6 @@
 
 ## Other blog post redirects
 
-
 [[redirects]]
   from = "/blog/going-all-in-on-icloud-password"
   to = "/blog/going-all-in-on-icloud-passwords"
@@ -1001,6 +1000,36 @@
 [[redirects]]
   from = "/blog/renaming-the-master-branch-on-github"
   to = "/blog/how-to-rename-the-master-branch-on-github"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-but-in-language-i-can-understand#331-error-identification"
+  to = "/blog/wcag-but-in-language-i-can-understand#331-error-identification-and-333-error-suggestion"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-but-in-language-i-can-understand#333-error-suggestion"
+  to = "/blog/wcag-but-in-language-i-can-understand#331-error-identification-and-333-error-suggestion"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-but-in-language-i-can-understand#321-on-focus"
+  to = "/blog/wcag-but-in-language-i-can-understand#321-on-focus-and-322-on-input"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-but-in-language-i-can-understand#322-on-input"
+  to = "/blog/wcag-but-in-language-i-can-understand#321-on-focus-and-322-on-input"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/123-audio-description-or-media-alternative-prerecorded-and-125-audio-description-prerecorded"
+  to = "/blog/wcag-but-in-language-i-can-understand#125-audio-description-prerecorded"
   status = 301
   force = true
 

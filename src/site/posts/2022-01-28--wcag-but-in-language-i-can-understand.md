@@ -2,6 +2,7 @@
 title: WCAG, but in language I can understand
 intro: An as-close-to-a-single-paragraph-as-I-can-manage summary of each rule in the Web Content Accessibility Guidelines, version 2.1, level AA.
 date: 2022-01-28
+updated: 2022-05-12
 tags:
     - Accessibility
 summaryImage: wcag.png
@@ -9,6 +10,7 @@ summaryImageAlt: The letters ‘WCAG’ with ‘2.1 AA’ underneath.
 related:
     - wcag-2-2-in-language-i-can-understand
     - wcag-aaa-in-language-i-can-understand
+featured: true
 ---
 
 The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG21/) make for difficult reading, so I thought I'd write a short article on each success criterion, explaining it in easy to understand language.
@@ -44,10 +46,10 @@ Any audio-only content should also be conveyed in text. Any video content with n
 #### 1.2.2 Captions (Prerecorded)
 The audio in videos should be captioned.
 
-#### 1.2.3 Audio Description or Media Alternative (Prerecorded), and 1.2.5 Audio Description (Prerecorded)
+#### 1.2.5 Audio Description (Prerecorded)
 Actions, descriptions, and other important non-audio content in videos should be described in captions or a separate audio track.
 
-<i>(1.2.3 allows for a text-based alternative, like a screenplay, but only captions meet AA, so 1.2.5 supersedes 1.2.3.)</i>
+<i>(The level A 1.2.3 Audio Description or Media Alternative (Prerecorded) allows for a text-based alternative, like a screenplay, but only captions meet AA, so 1.2.5 trumps 1.2.3.)</i>
 
 #### 1.2.4 Captions (Live)
 Live videos that include audio should be captioned.
@@ -176,18 +178,18 @@ Can people understand the content?
 ### Readable
 
 #### 3.1.1 Language of Page
-There's a `lang` attribute on the `<html>` element.
+There's a `lang` attribute on the `<html>` element that matches the language of the page.
 
 #### 3.1.2 Language of Parts
-Any parts of the page that are in a different language to the page itself are marked up with the appropriate `lang` value. Names and phrases *derived* from other languages don't need this.
+Any parts of the page that are in a different language to the page itself are marked up with the appropriate `lang` value. Names and phrases *derived* from other languages, like "Déjà vu" in English, don't need this.
 
 ### Predictable
 
-#### 3.2.1 On Focus
-Nothing unexpected changes when something on the page receives keyboard focus.
+#### 3.2.1 On Focus and 3.2.2 On Input
+Nothing unexpected changes when:
 
-#### 3.2.2 On Input
-Nothing unexpected changes when the value of a form field, like an `<option>` in a `<select>`, is chosen.
+- something on the page receives keyboard focus, like a `<button>`
+- the value of a form field, like an `<option>` in a `<select>`, is chosen
 
 #### 3.2.3 Consistent Navigation
 Navigation is consistent from page to page.
@@ -197,14 +199,11 @@ Things that carry out a particular function should always look and work the same
 
 ### Input Assistance
 
-#### 3.3.1 Error Identification
-Error or validation messages should be communicated in text.
+#### 3.3.1 Error Identification and 3.3.3 Error Suggestion
+Error/validation messages should be communicated in text, and should provide suggestions to help the user successfully proceed.
 
 #### 3.3.2 Labels or Instructions
 As much help as is needed is offered to prevent triggering a form error; the form label may be enough, but hint text may also be required.
-
-#### 3.3.3 Error Suggestion
-Error messages provide suggestions to help the user successfully proceed.
 
 #### 3.3.4 Error Prevention (Legal, Financial, Data)
 Important forms like a legal agreement or submitting financial information offer the opportunity to check the information entered before sending.
