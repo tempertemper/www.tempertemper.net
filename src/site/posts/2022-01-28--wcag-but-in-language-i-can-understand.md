@@ -44,10 +44,10 @@ Any audio-only content should also be conveyed in text. Any video content with n
 #### 1.2.2 Captions (Prerecorded)
 The audio in videos should be captioned.
 
-#### 1.2.3 Audio Description or Media Alternative (Prerecorded), and 1.2.5 Audio Description (Prerecorded)
+#### 1.2.5 Audio Description (Prerecorded)
 Actions, descriptions, and other important non-audio content in videos should be described in captions or a separate audio track.
 
-<i>(1.2.3 allows for a text-based alternative, like a screenplay, but only captions meet AA, so 1.2.5 supersedes 1.2.3.)</i>
+<i>(The level A 1.2.3 Audio Description or Media Alternative (Prerecorded) allows for a text-based alternative, like a screenplay, but only captions meet AA, so 1.2.5 trumps 1.2.3.)</i>
 
 #### 1.2.4 Captions (Live)
 Live videos that include audio should be captioned.

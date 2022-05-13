@@ -1027,6 +1027,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/123-audio-description-or-media-alternative-prerecorded-and-125-audio-description-prerecorded"
+  to = "/blog/wcag-but-in-language-i-can-understand#125-audio-description-prerecorded"
+  status = 301
+  force = true
+
 
 ## Portfolio redirects
 
