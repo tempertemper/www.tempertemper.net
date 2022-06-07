@@ -25,10 +25,16 @@ blockquote {
     padding-left: 1em;
   }
 
-  ul:only-child,
-  ol:only-child {
+  *:first-child {
     margin-top: 0;
+  }
+
+  *:last-child {
     margin-bottom: 0;
+  }
+
+  img:last-child {
+    margin-bottom: .5em;
   }
 }
 
