@@ -21,7 +21,7 @@ A lot has been written about link wording, so if [a link is a promise](https://w
 
 Some icons are very widely used and it is assumed that all of our users know what they mean. But I'm not sure that's fair. *I* know what will happen when I press a 'B' button above a text editor, or the button with the [floppy disk icon](https://www.hanselman.com/blog/the-floppy-disk-means-save-and-14-other-old-people-icons-that-dont-make-sense-anymore), but will everyone?
 
-Per Axborn explored the [international differences around the meaning of the checkmark icon](https://twitter.com/axbom/status/1437687684508659713?s=21&t=TsIMCi7SN7UzfotcnaZSAg) on Twitter:
+Per Axbom explored the [international differences around the meaning of the checkmark icon](https://twitter.com/axbom/status/1437687684508659713?s=21&t=TsIMCi7SN7UzfotcnaZSAg) on Twitter:
 
 > Struggling with an icon (as one does). The struggle here is that the check mark is common for "ok/ready/done". In Sweden it has historically been used to mark wrong answers on tests. The opposite, really.
 
