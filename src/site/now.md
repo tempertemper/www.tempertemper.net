@@ -6,12 +6,13 @@ layout: default
 permalink: now.html
 ---
 
-- Only just over Covid. It was relatively mild, no doubt due to vaccination, but it lingered, taking 6 weeks for me to feel 100% again; even then I still have a lingering sore throat
-- Continuing to keep a low profile, as I've heard many accounts of people coming down with Covid again within a month or two -- this pandemic is not over…
-- Back to the [daily cold showers](https://www.bbc.co.uk/programmes/m000v83f)
-- Running again (I can't tell you how much I've missed this)
-- After [standing for to work](https://twitter.com/tempertemper/status/1436331696408911898?s=21) for around 6 months, I'm all-in, and have got rid of my office chair!
-- Took my guitar and amp to a friends house and had my first jam in 14 years!
-- Very happy with the [new paving in our yard](https://twitter.com/tempertemper/status/1512728020141977601); now for the guttering and outside pipe work
+- Well over Covid now, but I still feel that lingering grottiness and slightly sore throat when I've had a bad night's sleep; annoying that it's not quite shifting, even though my initial symptoms were relatively mild
+- Running again (I can't tell you how much I've missed this, after a few months with Covid)
+- Back from our first trip abroad in 2½ years! Port de Pollença in Mallorca is as beautiful place!
+- After taxis, trains, planes, and airport lounges, I'm accustomed to being in public places, and mainly without a mask; not sure that's a good thing
+- Still going with the [daily cold showers](https://www.bbc.co.uk/programmes/m000v83f)
+- Continuing to [stand, rather than sit, to work](https://twitter.com/tempertemper/status/1436331696408911898?s=21)
+- Really digging into my guitar and bass after so many years of having no time to spare
+- On the home stretch with the house renovations, having just had a beyond-repair part of the 120 year old roof replaced; just the garden path to go!
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
