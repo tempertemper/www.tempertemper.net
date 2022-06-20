@@ -64,7 +64,7 @@ Information or relationships between content that is visual is also conveyed thr
 The visual presentation of the content matches what's read out by a screen reader.
 
 #### 1.3.3 Sensory Characteristics
-Nothing is referred to by its colour, size, position, shape, and so on.
+Nothing is referred to just by its colour, size, position, shape, and so on.
 
 #### 1.3.4 Orientation
 Rotating a device from portrait to landscape doesn't stop everything being perfectly readable and usable.
