@@ -1,6 +1,6 @@
 ---
 title: Icon-only links fail WCAG
-intro: Icon-only buttons don't fail the Web Content Accessibility Guidelines (WCAG), Even though I wish they did, but what about icon-only links?
+intro: Icon-only buttons don't fail the Web Content Accessibility Guidelines (WCAG), even though I wish they did, but what about icon-only links?
 date: 2022-06-20
 tags:
     - Accessibility
