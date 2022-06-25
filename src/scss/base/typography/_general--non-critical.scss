@@ -14,7 +14,12 @@ blockquote {
 
   @media (min-width: $l) {
     margin-left: -1em;
+
+    blockquote {
+      margin-left: 0;
+    }
   }
+
 
   @include high-contrast() {
     border-left-color: $colour-dark-mode-primary-light;

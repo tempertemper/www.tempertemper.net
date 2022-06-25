@@ -14,7 +14,13 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
-## [6.3.9] - 2022-06-07
+## [6.3.10] - 2022-06-25
+
+### Changes
+- Adds support for nested blockquotes
+
+
+## [6.3.9] - 2022-06-24
 
 ### Changes
 - Amends the accessible text for the logo, which links to homepage
