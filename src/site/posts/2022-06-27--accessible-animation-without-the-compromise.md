@@ -2,13 +2,14 @@
 title: Accessible animation without the compromise
 intro: Accessible animated GIFs are rubbish. Instead of compromising our animations in order to meet WCAG, we should be checking what our users prefer.
 date: 2022-06-27
+updated: 2022-06-28
 tags:
     - Accessibility
     - Design
     - Development
 ---
 
-I've written about how [accessible animated GIFs are a bit rubbish](/blog/accessible-animated-gifs-are-pointless), and I stand by that. It's better just to use a static image than compromise the experience of the animation in order to make it accessible.
+I've written about how [accessible animated content can be a bit rubbish](/blog/accessible-animated-gifs-are-pointless), and I stand by that. It's better just to use a static image than compromise the experience of the animation in order to make it accessible.
 
 To recap why they're less than ideal, meeting [WCAG'S Pause, Stop, Hide](https://www.w3.org/TR/WCAG21/#pause-stop-hide) means you lose the essence of an animated GIF, as it:
 
@@ -48,6 +49,8 @@ We can do that by [using the picture element and some nice progressive enhanceme
     <img src="static-image.jpg" alt="A description that applies to both the image and animation" />
 </picture>
 ```
+
+<i>Note: using `<picture>` is a great approach for most animated GIFs (or GIF-style videos), but the message should always be the same as the static image; no users should miss out on the meaning of the content because they can't see the animation.</i>
 
 This means:
 
