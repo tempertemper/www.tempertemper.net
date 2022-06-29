@@ -1,8 +1,8 @@
 ---
-title: Accessible animation without the compromise
+title: Accessible animated content without the compromise
 intro: Accessible animated GIFs are rubbish. Instead of compromising our animations in order to meet WCAG, we should be checking what our users prefer.
 date: 2022-06-27
-updated: 2022-06-28
+updated: 2022-06-29
 tags:
     - Accessibility
     - Design
