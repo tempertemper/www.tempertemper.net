@@ -1033,6 +1033,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/accessible-animation-without-the-compromise"
+  to = "/blog/accessible-animated-content-without-the-compromise"
+  status = 301
+  force = true
+
 
 ## Portfolio redirects
 
