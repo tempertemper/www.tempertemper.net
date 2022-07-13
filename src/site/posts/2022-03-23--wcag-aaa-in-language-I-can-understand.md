@@ -8,7 +8,7 @@ summaryImage: wcag-aaa.png
 summaryImageAlt: The letters ‘WCAG’ with ‘AAA’ underneath.
 related:
     - wcag-but-in-language-i-can-understand
-    - wcag-2-2-in-language-i-can-understand
+    - bag-some-aaa-wins-where-you-can
 ---
 
 In this final part of my makes-sense-to-Martin summary of the Web Content Accessibility Guidelines (WCAG), I cover the often hard to meet AAA rules (success criteria); it follows on from my posts on [WCAG 2.1 AA](/blog/wcag-but-in-language-i-can-understand) and [WCAG 2.2](/blog/wcag-2-2-in-language-i-can-understand).
