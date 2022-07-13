@@ -44,6 +44,6 @@ Some success criteria need a bit more effort to integrate but are very much wort
 Using CSS's [User Preference Media Features](https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences), we can provide styling specific to when users have set certain operating system preferences:
 
 - [1.4.6 Contrast (Enhanced)](https://www.w3.org/TR/WCAG21/#contrast-enhanced) is notoriously hard to meet as it's often at odds with brand guidelines, but using [Increased Contrast Mode](/blog/using-the-increased-contrast-mode-css-media-query) is a good compromise, allowing us to hit those higher contrast ratios, even if it might go slightly off-brand
-- [`prefers-reduced-contrast`](/blog/accessible-animated-content-without-the-compromise) is a mechanism to remove animation, helping us to comply with [2.3.3 Animation from Interactions](https://www.w3.org/TR/WCAG21/#animation-from-interactions)
+- [`prefers-reduced-motion`](/blog/accessible-animated-content-without-the-compromise) is a mechanism to remove animation, helping us to comply with [2.3.3 Animation from Interactions](https://www.w3.org/TR/WCAG21/#animation-from-interactions)
 
 *Full* AAA compliance might be out of reach for most projects, but bagging as many AAA success criteria as possible can be pretty straightforward, and is definitely where we should be aiming.
