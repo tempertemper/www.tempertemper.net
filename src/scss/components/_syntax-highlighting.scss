@@ -7,7 +7,8 @@
   &.comment,
   &.prolog,
   &.doctype,
-  &.cdata {
+  &.cdata,
+  &.url {
     color: $colour-code-grey;
     @include dark-mode($colour: $colour-dark-mode-code-grey);
   }
@@ -42,7 +43,7 @@
   &.inserted,
   &.operator,
   &.entity,
-  &.url,
+  &.url .url,
   .language-css &.string,
   .style &.string,
   &.variable {
@@ -70,5 +71,10 @@
 
   &.entity {
     cursor: help;
+  }
+
+  &.url .content {
+    color: $colour-black;
+    @include dark-mode($colour: $colour-dark-mode-white);
   }
 }
