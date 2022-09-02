@@ -5,7 +5,7 @@
         <div class="wrapper">
             <a href="#main" tabindex="0" class="skip-to-content">Skip to main content</a>
             {% include "header.html" %}
-            <main id="main">
+            <main id="main" tabindex="-1">
                 {{ content | safe }}
                 {% if cta %}
                     {% include "call-to-action.html" %}
