@@ -7,7 +7,7 @@ tags:
     - Accessibility
 ---
 
-There's some great stuff coming up in version 2.2 of the Web Content Accessibility Guidelines (WCAG), but there's one rule that's particularly difficult to understand: [2.4.11 Focus Appearance (Minimum)](https://www.w3.org/TR/WCAG22/#focus-appearance-minimum).
+There's some great stuff coming up in version 2.2 of the Web Content Accessibility Guidelines (WCAG), but there's one rule that's particularly difficult to understand: [2.4.11 Focus Appearance](https://www.w3.org/TR/WCAG22/#focus-appearance-minimum).
 
 I cover it in my [over-simplified explanation of WCAG 2.2](/blog/wcag-2-2-in-language-i-can-understand), but this is one where it's worth going into more detail.
 
