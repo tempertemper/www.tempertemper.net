@@ -1,5 +1,5 @@
 ---
-title:  Minimum focus appearance explained
+title:  Focus appearance explained
 intro: There's some great stuff coming up in WCAG 2.2, but there's one rule that's particularly difficult to understand, so here it is in a bit more detail.
 date: 2022-09-02
 updated: 2022-09-22
