@@ -2,35 +2,27 @@
 title:  Minimum focus appearance explained
 intro: There's some great stuff coming up in WCAG 2.2, but there's one rule that's particularly difficult to understand, so here it is in a bit more detail.
 date: 2022-09-02
+updated: 2022-09-22
 tags:
     - Accessibility
 ---
 
 There's some great stuff coming up in version 2.2 of the Web Content Accessibility Guidelines (WCAG), but there's one rule that's particularly difficult to understand: [2.4.11 Focus Appearance (Minimum)](https://www.w3.org/TR/WCAG22/#focus-appearance-minimum).
 
-WCAG says:
-
-> When user interface components receive keyboard focus, all of the following are true:
->
-> - Contrasting area: There is an area of the focus indicator that has a contrast ratio of at least 3:1 between the colors in the focused and unfocused states.
-> - Minimum area: The contrasting area is at least as large as:
->     - Outline: the area of a 1 CSS pixel thick perimeter of the unfocused component, or
->     - Shape: the area of a 4 CSS pixel thick line along the shortest side of a minimum bounding box of the unfocused component, and no thinner than 2 CSS pixels.
-> - Adjacent contrast: The contrasting area also has a contrast ratio of least 3:1 against adjacent colors in the focused component, or the contrasting area has a thickness of at least 2 CSS pixels.
-> - Not fully obscured: The item with focus is not entirely hidden by author-created content.
-
-There's a *lot* packed in there! I cover it in my [over-simplified explanation of WCAG 2.2](/blog/wcag-2-2-in-language-i-can-understand), but this is one where it's worth going into more detail.
+I cover it in my [over-simplified explanation of WCAG 2.2](/blog/wcag-2-2-in-language-i-can-understand), but this is one where it's worth going into more detail.
 
 
 ## What the rule applies to
 
-The rule applies to 'interface components', which means:
+The rule applies to 'user interface components', which means:
 
 - form fields
 - links
 - buttons
 
-Essentially, any element you typically interact with. This can also include things like [horizontally-scrolling tables](/blog/accessible-responsive-tables).
+Essentially, any element you typically interact with.
+
+<i>Note: this can also include things like [horizontally-scrolling tables](/blog/accessible-responsive-tables).</i>
 
 
 ## Indicator style
@@ -60,8 +52,3 @@ The colour of the focus indicator is important too, so that it stands out nicely
 There's a wee bit of flexibility here, but I'd keep it simple and use those three rules. If you *really* want to know, the contrast ratio can be less than 3:1 against the element that has focus, and the element in its unfocused state, but the indicator must be at least 2px thick.
 
 An example would be a button, where the indicator might be the same colour as the button (1:1), but if the button *grows* by 2px along all four edges, that's allowed. *There still has to be enough contrast against the background*, though: you need to be able to see that the element is bigger!
-
-
-## Always visible
-
-When tabbing to a focusable item, the element should be visible; not covered by a 'sticky' footer element, for example. This ensures keyboard users can see the item that currently has focus.
