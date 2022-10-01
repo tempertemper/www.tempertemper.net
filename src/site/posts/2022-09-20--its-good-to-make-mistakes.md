@@ -7,7 +7,7 @@ tags:
     - Design
 ---
 
-Like all five year olds, my son did something the other day, and I I had to correct him. Afterwards he said he felt embarrassed, so I reassured him that it was OK to have done it, and that we all have to learn somehow.
+Like all five year olds, my son did something the other day, and I had to correct him. Afterwards he said he felt embarrassed, so I reassured him that it was OK to have done it, and that we all have to learn somehow.
 
 As a designer and developer, particularly looking back now through my lens as an accessibility specialist, I've made countless mistakes.
 
