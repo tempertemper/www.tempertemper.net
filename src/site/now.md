@@ -6,13 +6,12 @@ layout: default
 permalink: now.html
 ---
 
-- Back from our first trip abroad in 2½ years! Port de Pollença in Mallorca is as beautiful place!
-- Well over Covid now, but I still feel that lingering grottiness and slightly sore throat when I've had a bad night's sleep; annoying that it's not quite shifting after all this time, even though my initial symptoms were relatively mild
-- Running again (I can't tell you how much I've missed this, after a few months with Covid)
-- Cycling! [I bought a bike](https://twitter.com/tempertemper/status/1546555003560771585) through my company's Cycle to Work scheme and I've been enjoying the odd evening ride in the local countryside, running errands, and will be heading to the office on it next week
+- After catching Covid in late March (with relatively mild symptoms), the lingering grottiness and slightly sore throat have *finally* shifted after more than six months
+- In a good rhythm with running when working from home, and [cycling to the office](https://twitter.com/tempertemper/status/1546555003560771585) once a week or so
 - Still going with the [daily cold showers](https://www.bbc.co.uk/programmes/m000v83f)
 - Continuing to [stand, rather than sit, to work](https://twitter.com/tempertemper/status/1436331696408911898?s=21)
-- Really digging into my guitar and bass after so many years of having no time to spare for
-- I thought the home renovations were nearly over, we're finalising plans for our loft to be converted to hobby room!
+- Really digging into my guitar and bass after so many years of having no time to spare for anything other than work and childcare
+- Enjoying following the football again; all this extra time as the kids get more independent is great!
+- On the home stretch of home improvements: after a bit of a false start, the loft conversion is due to be finished over the course of the next few weeks
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
