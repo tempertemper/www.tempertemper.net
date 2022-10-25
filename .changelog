@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.3.13] - 2022-10-25
+
+### Fixes
+- Updates node and some packages to latest versions
+
+
 ## [6.3.12] - 2022-09-02
 
 ### Fixes
