@@ -7,9 +7,9 @@ tags:
     - Design
 ---
 
-Adding descriptive text to images is a great way to ensure people who can't see the screen understand what the image is communicating. Unsurprisingly there's a success criterion in the Web Content Accessibility Guidelines (WCAG) to ensure we add descriptive text: [1.1.1 Non-text Content](https://www.w3.org/TR/WCAG21/#non-text-content). But what about people with low vision who *can* see the screen but need a decent amount of contrast to distinguish shapes and lines easily?
+Adding descriptive text to images is a great way to ensure people who can't see the screen understand what the image is communicating. Unsurprisingly there's a success criterion in the Web Content Accessibility Guidelines (WCAG) to ensure we add descriptive text: [1.1.1 Non-text Content](https://www.w3.org/TR/WCAG21/#non-text-content), but what about people with low vision who *can* see the screen but need a decent amount of contrast to distinguish shapes and lines easily?
 
-There are a couple of success criteria in WCAG that cover this if you're aiming for AA compliance:
+There are a couple of success criteria in WCAG that cover contrast, if you're aiming for AA compliance:
 
 - [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG21/#contrast-minimum), which covers text
 - [1.4.11 Non-text Contrast](https://www.w3.org/TR/WCAG21/#non-text-contrast), which covers elements that aren't text
@@ -21,17 +21,17 @@ Text contrast is straightforward enough, but non-text contrast is trickier. 1.4.
 So an image can contain elements that don't provide enough contrast, as long as without those parts it still conveys the same meaning.
 
 
-## How to check if an image is okay
+## How to check if an image has enough contrast
 
-We need to understand how the image would look to someone with a visual impairment who needs a decent amount of contrast. To do this we merge or remove the shapes or areas of an image that don't have enough contrast (that 3 to 1 ratio) with their immediate surroundings.
+We need to understand how an image would look to someone with a visual impairment who needs a decent amount of contrast. To do this we need to remove the parts of the image that don't have enough contrast (that 3 to 1 ratio) with their immediate surroundings.
 
-To identify the bits of an image that might be problematic, [a colour picker tool](https://superhighfives.com/pika) or contrast analyser plugin for your drawing tool (Figma, Sketch, and the rest) comes in handy. This can be time consuming at first, but you should soon develop a good feel for low contrast elements before too long; then the tools are just there to check your intuition.
+To identify the bits of an image that might be problematic, [a colour picker tool](https://superhighfives.com/pika) or contrast analyser plugin for your drawing tool (Figma, Sketch, and the rest) comes in handy. Checking contrast can be time consuming at first, but you should soon develop a good feel for low contrast elements; then the tools are just there to check your intuition.
 
 Once we know which bits of the image are too-low contrast, we need to decide if the image still makes sense without them. There are a few ways of doing this:
 
 - For vector images like an illustration, remove/hide the shapes that don't meet at least a 3 to 1 contrast ratio against their immediate surroundings
 - For raster images like a photo, use the colour fill tool to make the low contrast bits the same colour as their surroundings; messy but effective
-- Use a filter to increase the contrast of the image, usually as high as it will go, and problematic objects will usually both turn black or white
+- Use a filter to increase the contrast of the image, usually to as high as it will go, and problematic objects will usually both turn black or white
 - Use your imagination (again, this comes with practice)
 
 If the image still makes sense without the bits you've removed, you're in good shape.
