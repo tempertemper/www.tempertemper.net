@@ -14,7 +14,8 @@
   }
 
   &.punctuation {
-    color: inherit;
+    color: $colour-code-grey;
+    @include dark-mode($colour: $colour-dark-mode-code-grey);
   }
 
   &.property,
