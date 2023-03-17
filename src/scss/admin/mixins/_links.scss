@@ -1,0 +1,63 @@
+@mixin text-link {
+  border-radius: $border-radius-small;
+
+  &:link,
+  &:visited {
+    color: $colour-primary-darker;
+    @include dark-mode($colour: $colour-primary);
+    @include high-contrast($colour: $colour-dark-mode-primary-light);
+  }
+
+  &:hover {
+    color: $colour-primary-dark;
+    @include dark-mode($colour: $colour-dark-mode-primary-light);
+    @include high-contrast($colour: $colour-high-contrast-primary-light);
+  }
+
+  &:active {
+    color: $colour-black;
+    @include dark-mode($colour: $colour-dark-mode-white);
+  }
+
+  &:focus {
+    background-color: $colour-white;
+    outline: 3px solid $colour-black;
+    outline-offset: 1px;
+    box-decoration-break: clone;
+    @include dark-mode($background: $colour-dark-mode-main) {
+      outline: 3px solid $colour-white;
+      outline-offset: 1px;
+    }
+    @include high-contrast($background: $colour-high-contrast-main) {
+      outline: 3px solid $colour-white;
+      outline-offset: 1px;
+    }
+  }
+
+  &:focus:not(:focus-visible) {
+    background-color: transparent;
+    outline: none;
+    box-decoration-break: slice;
+    @include dark-mode($background: transparent) {
+      outline: none;
+    }
+    @include high-contrast($background: transparent) {
+      outline: none;
+    }
+  }
+
+  &:focus-visible {
+    background-color: $colour-white;
+    outline: 3px solid $colour-black;
+    outline-offset: 1px;
+    box-decoration-break: clone;
+    @include dark-mode($background: $colour-dark-mode-main) {
+      outline: 3px solid $colour-white;
+      outline-offset: 1px;
+    }
+    @include high-contrast($background: $colour-high-contrast-main) {
+      outline: 3px solid $colour-white;
+      outline-offset: 1px;
+    }
+  }
+}
