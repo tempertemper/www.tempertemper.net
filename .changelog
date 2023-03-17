@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Uses `outline` for link focus styling, rather than `box-shadow`
 - Uses `outline` for button focus styling, rather than `box-shadow`
+- Uses `outline` for input focus styling, rather than `box-shadow`
 
 
 ## [6.3.16] - 2022-12-30
