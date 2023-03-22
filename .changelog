@@ -14,6 +14,17 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.3.17] - 2023-03-17
+
+### Changes
+- Gives links their own SCSS file
+
+### Fixes
+- Uses `outline` for link focus styling, rather than `box-shadow`
+- Uses `outline` for button focus styling, rather than `box-shadow`
+- Uses `outline` for input focus styling, rather than `box-shadow`
+
+
 ## [6.3.16] - 2022-12-30
 
 ### Fixes

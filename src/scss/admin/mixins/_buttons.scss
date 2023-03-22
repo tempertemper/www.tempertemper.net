@@ -2,6 +2,7 @@
   background-color: $colour-primary;
   border-radius: $border-radius-default;
   border: none;
+  border-bottom: solid 3px $colour-primary-dark;
   color: $colour-white;
   display: inline-block; // Older browsers
   display: inline-flex;
@@ -12,9 +13,8 @@
   padding: .5em 1em; // Older browsers
   padding: calc(.5em + 3px) 1em .5em;
   width: auto;
-  box-shadow: 0 3px $colour-primary-dark;
   @include dark-mode($colour: $colour-dark-mode-main) {
-    box-shadow: 0 3px $colour-dark-mode-primary-dark;
+    border-bottom: solid 3px $colour-dark-mode-primary-dark;
   }
   @include high-contrast($colour-dark-mode-primary-light, $colour-high-contrast-main);
 
@@ -28,24 +28,23 @@
   }
 
   &:focus {
-    outline: none;
-    box-shadow: 0 3px $colour-primary-dark, 0 3px 0 3px $colour-black, 0 0 0 3px $colour-black;
+    outline: 3px solid $colour-black;
     @include dark-mode() {
-      box-shadow: 0 3px $colour-dark-mode-primary-dark, 0 3px 0 3px $colour-white, 0 0 0 3px $colour-white;
+      outline: 3px solid $colour-white;
     }
   }
 
   &:focus:not(:focus-visible) {
-    box-shadow: 0 3px $colour-primary-dark;
+    outline: none;
     @include dark-mode() {
-      box-shadow: 0 3px $colour-dark-mode-primary-dark;
+      outline: none;
     }
   }
 
   &:focus-visible {
-    box-shadow: 0 3px $colour-primary-dark, 0 3px 0 3px $colour-black, 0 0 0 3px $colour-black;
+    outline: 3px solid $colour-black;
     @include dark-mode() {
-      box-shadow: 0 3px $colour-dark-mode-primary-dark, 0 3px 0 3px $colour-white, 0 0 0 3px $colour-white;
+      outline: 3px solid $colour-white;
     }
   }
 
@@ -57,10 +56,9 @@
 
   &:active {
     position: relative;
-    top: 2px;
-  }
-
-  &:active:active { // Chained to override non-focus box-shadow
-    box-shadow: none;
+    top: 3px;
+    border-bottom: none;
+    margin-bottom: 3px;
+    // border-top: solid 2px transparent;
   }
 }

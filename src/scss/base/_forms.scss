@@ -23,11 +23,10 @@ input {
   }
 
   &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px $colour-black;
-
+    outline: solid 3px $colour-black;
+    outline-offset: 0px;
     @include dark-mode() {
-      box-shadow: 0 0 0 3px $colour-white;
+      outline: solid 3px $colour-white;
     }
   }
 }
