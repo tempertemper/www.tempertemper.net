@@ -1,18 +1,18 @@
 ---
 title: The difference between Increased Contrast Mode and Windows High Contrast Mode (Forced Colours Mode)
 customURL: the-difference-between-increased-contrast-mode-and-windows-high-contrast-mode
-intro: Increased contrast
+intro: I've written about Increased Contrast Mode and Windows High Contrast Mode, but what's the difference? And where does Forced Colours Mode come in?
 date: 2023-03-27
 tags:
     - Accessibility
     - CSS
 ---
 
-A year or two ago I wrote about [Increased Contrast Mode](https://www.tempertemper.net/blog/using-the-increased-contrast-mode-css-media-query). Using the `prefers-contrast: more` meant I could meet the Web Content Accessibility Guidelines' (WCAG) [AAA contrast thresholds](https://www.w3.org/TR/WCAG21/#contrast-enhanced), rather than just [AA](https://www.w3.org/TR/WCAG21/#contrast-enhanced), for users who configure their operating systems to increase the contrast.
+A year or two ago I wrote about [Increased Contrast Mode](https://www.tempertemper.net/blog/using-the-increased-contrast-mode-css-media-query). Using `prefers-contrast: more` meant I could meet the Web Content Accessibility Guidelines' (WCAG) [AAA contrast threshold](https://www.w3.org/TR/WCAG21/#contrast-enhanced), rather than just [AA](https://www.w3.org/TR/WCAG21/#contrast-enhanced), for users who configure their operating systems to increase the contrast.
 
 The problem here is that Windows users don't have an 'Increase contrast' toggle in their system settings; instead they have Windows High Contrast Mode (WHCM) which applies a pre-designed theme to the operating system, including web content.
 
-Before talking about WHCM, it's worth recapping that what Increased Contrast Mode looks like is entirely up to the designer/developer; it's just a CSS media query where you can put a bunch of high-contrast override styles:
+Before talking about WHCM, it's worth recapping that what Increased Contrast Mode looks like is entirely up to the designer/developer; it's just a CSS media query where you can write a bunch of high-contrast override styles:
 
 ```css
 @media (prefers-contrast: more) {
@@ -27,9 +27,9 @@ WHCM, on the other hand, is a <i>Forced Colours Mode</i>, which means it doesn't
 > High contrast mode uses the CSS media feature, `forced-colors`. When `forced-colors` is set to `active`, the user agent will apply a limited color palette to the component.
 
 
-## Customising the forced colour themes
+## Customising WHCM/Forced Colours Mode themes
 
-So WHCM, like Increased Contrast Mode, has a [well supported](https://caniuse.com/mdn-css_at-rules_media_forced-colors) CSS media query:
+WHCM, like Increased Contrast Mode, has a [well supported](https://caniuse.com/mdn-css_at-rules_media_forced-colors) CSS media query:
 
 ```css
 @media (forced-colors: active) {
@@ -37,7 +37,7 @@ So WHCM, like Increased Contrast Mode, has a [well supported](https://caniuse.co
 }
 ```
 
-Unlike Increased Contrast Mode, though, [WHCM only allows certain things to be styled](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors), like:
+Unlike Increased Contrast Mode, though, WHCM only allows [a handful of carefully selected things to be styled](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors), such as:
 
 - Text colour
 - Background colour
@@ -52,7 +52,7 @@ I have a high contrast theme for platforms that support `prefers-contrast` but I
 
 By not defining any styles in a `forced-colors` wrapper, when WHCM is applied it uses the theme the user has chosen. This felt important for a number of reasons:
 
-- A WHCM theme applies to *everything*, so it feels right that websites should look the same as the rest of the operating system, to meet users' expectations
+- A WHCM theme applies to *everything*, so it feels right that websites should look the same as the rest of the operating system, meeting users' expectations
 - There are several WHCM themes; some have dark backgrounds and some have light backgrounds, and there's no way to detect whether the user has a light or dark Forced Colours theme applied, in order to ensure consistency
 - Although WHCM has 'high contrast' in the name, some people might create their own custom themes for some other reason, maybe:
     - a theme that works for their type of colour blindness
