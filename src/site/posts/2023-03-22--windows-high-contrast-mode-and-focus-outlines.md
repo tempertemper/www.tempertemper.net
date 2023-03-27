@@ -3,6 +3,7 @@ title: "Windows high contrast mode and focus outlines or: My focus indicators we
 customURL: windows-high-contrast-mode-and-focus-outlines
 intro: In order to make my website's keyboard focus outlines pretty in Safari, I inadvertently broke things for people who use Windows High Contrast Mode.
 date: 2023-03-22
+updated: 2023-03-27
 tags:
     - Accessibility
     - Development
@@ -74,3 +75,8 @@ One thing I did worry about was WHCM's support for `:focus-visible`, rather than
 So my `border-box` to `outline` fix looks a bit ugly, but fewer and fewer people will see it as they upgrade to iOS/iPadOS 16.4 (no doubt only [because of the new emoji](https://twitter.com/gruber/status/1306413329544605698)), and see the notification in macOS that tells them that Safari is ready to update.
 
 It's looking like a matter of days away but, even if it were months or years, I'd rather my focus outlines were visible to everyone and slightly ugly looking for some, than pretty everywhere but for some people completely invisible.
+
+
+## Update
+
+Since publishing this article, I've discovered a workaround (thanks to [Matt Deeprose](https://oldbytes.space/@vleguru), and [Darek Kay](https://fosstodon.org/@darekkay)) which allows [styling with `border-box` *and* using a transparent `outline`](https://stackoverflow.com/questions/52589391/css-box-shadow-vs-outline/52616313#52616313) instead of removing it. If Safari 16.4 wasn't so close I might use this, but I'm happier to have removed a few lines of code and not add any extra complexity, no matter how small, to my codebase.
