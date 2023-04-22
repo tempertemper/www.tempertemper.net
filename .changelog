@@ -14,10 +14,16 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.3.19] - 2023-04-22
+
+### Changes
+- Changes font used for `<kbd>` elements to make the text more readable
+
+
 ## [6.3.18] - 2023-04-22
 
 ### Changes
-Makes unordered list markers slightly bigger
+- Makes unordered list markers slightly bigger
 
 
 ## [6.3.17] - 2023-03-17
