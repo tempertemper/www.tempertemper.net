@@ -69,6 +69,14 @@ li {
     color: $colour-primary;
     @include high-contrast($colour: $colour-dark-mode-primary-light);
   }
+
+  ul &::marker {
+    font-size: 1.5em;
+  }
+
+  ul ol &::marker {
+    font-size: 1em;
+  }
 }
 
 hr {
