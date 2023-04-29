@@ -2,6 +2,7 @@
 title: VoiceOver's Trackpad Commander on Mac
 intro: Did you know there's a way to make VoiceOver on a Mac behave like VoiceOver on an iPhone or iPad? No? Let me introduce you to Trackpad Commander!
 date: 2023-04-21
+updated: 2023-04-29
 tags:
     - Accessibility
     - Apple
@@ -20,15 +21,65 @@ Essentially, by turning on the Trackpad Commander you're switching from a purely
 
 Sensibly, the gestures are all the same as on iOS/iPadOS. So if you're already used to using VoiceOver on an iPhone or iPad, you'll be fine.
 
-If you haven't used VoiceOver on an Apple touch-screen device before, the good news is it's very simple! Here are the basic commands:
+If you haven't used VoiceOver on an Apple touch-screen device before, the good news is it's pretty simple. Here are the basic commands for Trackpad Commander on macOS:
 
-- <b>Flick right with one finger</b>: Move to next bit of content on the page
-- <b>Flick left with one finger</b>: Move to previous bit of content on the page
-- <b>Rotate two fingers clockwise</b>: Change to the next item in the Rotor (headings, landmarks, and so on)
-- <b>Rotate two fingers anticlockwise</b>: Change to the previous item in the Rotor (headings, landmarks, and so on)
-- <b>Flick down with one finger</b>: Jump to next instance of the item selected in the rotor
-- <b>Flick up with one finger</b>: Jump to previous instance of the item selected in the rotor
-
+<section class="table-wrapper" aria-labelledby="caption" tabindex="0">
+    <table>
+        <caption id="caption">Basic Trackpad Commander commands</caption>
+        <thead>
+            <tr>
+                <th>Gesture</th>
+                <th>Command</th>
+                <th>Keyboard equivalent</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>Flick right with one finger</td>
+            <td>Move to next bit of content on the page</td>
+            <td><kbd>⌃</kbd> (Control) + <kbd>⌥</kbd> (Option) + <kbd>→</kbd> (Right arrow key)</td>
+        </tr>
+        <tr>
+            <td>Flick left with one finger</td>
+            <td>Move to previous bit of content on the page</td>
+            <td><kbd>⌃</kbd> + <kbd>⌥</kbd> + <kbd>←</kbd> (Left arrow key)</td>
+        </tr>
+        <tr>
+            <td>Flick right with two fingers</td>
+            <td>Move to next content area (or 'Window Spot', see below)</td>
+            <td><kbd>⌃</kbd> + <kbd>⌥</kbd> + <kbd>⇧</kbd> (Shift) + <kbd>→</kbd></td>
+        </tr>
+        <tr>
+            <td>Flick left with two fingers</td>
+            <td>Move to previous content area</td>
+            <td><kbd>⌃</kbd> + <kbd>⌥</kbd> + <kbd>⇧</kbd> + <kbd>←</kbd></td>
+        </tr>
+        <tr>
+            <td>Double tap with one finger</td>
+            <td>Activate an interactive item (like a button or link)</td>
+            <td><kbd>⌃</kbd> + <kbd>⌥</kbd> + <kbd>Space</kbd></td>
+        </tr>
+        <tr>
+            <td>Rotate two fingers clockwise</td>
+            <td>Change to the next content type in the Rotor (headings, landmarks, and so on)</td>
+            <td><kbd>⌃</kbd> + <kbd>⌥</kbd> + <kbd>u</kbd>, then <kbd>→</kbd> to cycle forwards through rotor items</td>
+        </tr>
+        <tr>
+            <td>Rotate two fingers anticlockwise</td>
+            <td>Change to the previous content type in the Rotor (headings, landmarks, and so on)</td>
+            <td><kbd>⌃</kbd> + <kbd>⌥</kbd> + <kbd>u</kbd>, then <kbd>←</kbd> to cycle backwards through rotor items</td>
+        </tr>
+        <tr>
+            <td>Flick down with one finger</td>
+            <td>Jump to next instance of the content type selected in the Rotor</td>
+            <td>In the Rotor, <kbd>↓</kbd> (Down arrow key) to move to next instance of the current content type, then <kbd>⏎</kbd> (Enter/Return) to go to it</td>
+        </tr>
+        <tr>
+            <td>Flick up with one finger</td>
+            <td>Jump to previous instance of the content type selected in the Rotor</td>
+            <td>In the Rotor, <kbd>↑</kbd> (Up arrow key) to move to previous instance of the current content type, then <kbd>⏎</kbd> to go to it</td>
+        </tr>
+    </table>
+</section>
 
 ## No trackpad pointer with Trackpad Commander!
 
