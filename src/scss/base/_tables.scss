@@ -49,19 +49,11 @@ caption {
   }
 }
 
-th {
-  text-align: left;
-  font-weight: 400;
-}
-
-td {
-  border: 1px solid white;
-}
-
 th,
 td {
   padding: .25em .75em;
   vertical-align: text-top;
+  border: 1px solid white;
 
   &:first-of-type {
     border-left: none;
@@ -70,6 +62,16 @@ td {
   &:last-of-type {
     border-right: none;
   }
+}
+
+th {
+  text-align: left;
+  border-top: none;
+}
+
+td {
+  font-weight: 400;
+  border: 1px solid white;
 }
 
 tr {
