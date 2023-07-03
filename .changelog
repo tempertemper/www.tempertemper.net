@@ -13,6 +13,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 
+## [6.3.22] - 2023-07-03
+
+## Adds
+- Adds .toml files to editorconfig
+
 
 ## [6.3.21] - 2023-07-03
 
