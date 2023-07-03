@@ -9,6 +9,9 @@ module.exports = eleventyConfig => {
   require('dotenv').config()
   const { ELEVENTY_ENV } = process.env
 
+  /* Files */
+  eleventyConfig.addPassthroughCopy({ "src/img": "assets/img" });
+
   /* Smart quotes filter */
   const smartypants = require("smartypants");
   eleventyConfig.addFilter("smart", str => smartypants.smartypants(str, 'qDe'));
