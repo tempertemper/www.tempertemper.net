@@ -1691,7 +1691,7 @@
   force = true
 
 [[redirects]]
-    from = "/playground"
-    to = "https://playground.tempertemper.net"
-    status = 301
-    force = true
+  from = "/playground"
+  to = "https://playground.tempertemper.net"
+  status = 301
+  force = true
