@@ -1689,3 +1689,9 @@
   to = "https://www.youtube.com/tempertemper"
   status = 301
   force = true
+
+[[redirects]]
+    from = "/playground"
+    to = "https://playground.tempertemper.net"
+    status = 301
+    force = true

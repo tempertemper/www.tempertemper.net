@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.3.21] - 2023-07-03
+
+## Adds
+- Redirects www.tempertemper.net/playground to playground.tempertemper.net
+
+
 ## [6.3.20] - 2023-04-29
 
 ### Changes
