@@ -35,7 +35,7 @@ layout: default
 
 - Public praise (directed at me) makes me uncomfortable
 - Feedback is sometimes awkward but should always be done face to face; if it is honest and direct, it will be received gratefully
-- Don't worry about offending me: I'm pretty think skinned, and besides, learning is what life is about and feedback accelerates growth
+- Don't worry about offending me: I'm pretty thick skinned, and besides, learning is what life is about and feedback accelerates growth
 
 
 ## Things I need
