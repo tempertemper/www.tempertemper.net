@@ -125,29 +125,9 @@ module.exports = eleventyConfig => {
     return yyyy + '/' + mm + '/' + dd;
   });
 
-  /* Localhost server config */
-  const fs = require("fs");
-  eleventyConfig.setBrowserSyncConfig({
+  // Localhost server config
+  eleventyConfig.setServerOptions({
     port: 3000,
-    watch: true,
-    server: {
-      baseDir: "./dist/",
-      serveStaticOptions: {
-        extensions: ["html"]
-      }
-    },
-    open: false,
-    notify: false,
-    callbacks: {
-      ready: function(err, bs) {
-        bs.addMiddleware("*", (req, res) => {
-          const content_404 = fs.readFileSync('dist/404.html');
-          res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
-          res.write(content_404);
-          res.end();
-        });
-      }
-    }
   });
 
   return {

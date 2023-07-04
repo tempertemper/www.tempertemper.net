@@ -11,9 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-- Generates images through Eleventy rather than command line in package.json scripts
 
 ----------
+
+
+## [6.4.0] - 2023-07-04
+
+### Changes
+- Updates to Eleventy 2.0.1
 
 
 ## [6.3.23] - 2023-07-03
