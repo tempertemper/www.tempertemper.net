@@ -11,8 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-
 ----------
+
+
+## [6.4.3] - 2023-07-10
+
+### Changes
+- Generates fonts through Eleventy rather than npm scripts
 
 
 ## [6.4.2] - 2023-07-05
