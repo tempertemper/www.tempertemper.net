@@ -6,32 +6,37 @@
   margin-bottom: 1em;
 
   &:focus {
-    box-shadow: 0 0 0 4px $colour-black;
+    outline: 3px solid $colour-black;
+    outline-offset: 1px;
     @include dark-mode() {
-      box-shadow: 0 0 0 4px $colour-white;
+      outline: 3px solid $colour-white;
+      outline-offset: 1px;
     }
     @include high-contrast() {
-      box-shadow: 0 0 0 4px $colour-white;
+      outline: 3px solid $colour-white;
+      outline-offset: 1px;
     }
   }
 
   &:focus:not(:focus-visible) {
-    box-shadow: none;
+    outline: none;
     @include dark-mode() {
-      box-shadow: none;
+      outline: none;
     }
     @include high-contrast() {
-      box-shadow: none;
+      outline: none;
     }
   }
 
   &:focus-visible {
     box-shadow: 0 0 0 4px $colour-black;
     @include dark-mode() {
-      box-shadow: 0 0 0 4px $colour-white;
+      outline: 3px solid $colour-white;
+      outline-offset: 1px;
     }
     @include high-contrast() {
-      box-shadow: 0 0 0 4px $colour-white;
+      outline: 3px solid $colour-white;
+      outline-offset: 1px;
     }
   }
 }
