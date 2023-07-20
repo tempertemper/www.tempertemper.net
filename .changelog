@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.4.4] - 2023-07-20
+
+### Fixes
+- Stops honeypot form field taking keyboard focus
+
+
 ## [6.4.3] - 2023-07-10
 
 ### Changes
