@@ -1041,13 +1041,31 @@
 
 [[redirects]]
   from = "/blog/wcag-2-2-in-language-i-can-understand#2411-focus-appearance-minimum"
-  to = "/blog/wcag-2-2-in-language-i-can-understand#2411-focus-appearance"
+  to = "/blog/wcag-2-2-in-language-i-can-understand#2413-focus-appearance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-2-2-in-language-i-can-understand#2411-focus-appearance"
+  to = "/blog/wcag-2-2-in-language-i-can-understand#2413-focus-appearance"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/wcag-2-2-in-language-i-can-understand#2412-focus-appearance-enhanced"
-  to = "/blog/wcag-2-2-in-language-i-can-understand#2411-focus-appearance"
+  to = "/blog/wcag-2-2-in-language-i-can-understand#2413-focus-appearance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-2-2-in-language-i-can-understand#2412-focus-not-obscured-minimum"
+  to = "/blog/wcag-2-2-in-language-i-can-understand#2411-focus-not-obscured-minimum"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-2-2-in-language-i-can-understand#2413-focus-not-obscured-enhanced"
+  to = "/blog/wcag-2-2-in-language-i-can-understand#2412-focus-not-obscured-enhanced"
   status = 301
   force = true
 
@@ -1065,7 +1083,25 @@
 
 [[redirects]]
   from = "/blog/wcag-2-2-in-language-i-can-understand#338-redundant-entry"
-  to = "/blog/wcag-2-2-in-language-i-can-understand#339-redundant-entry"
+  to = "/blog/wcag-2-2-in-language-i-can-understand#337-redundant-entry"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-2-2-in-language-i-can-understand#339-redundant-entry"
+  to = "/blog/wcag-2-2-in-language-i-can-understand#337-redundant-entry"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-2-2-in-language-i-can-understand#337-accessible-authentication"
+  to = "/blog/wcag-2-2-in-language-i-can-understand#338-accessible-authentication-minimum"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/wcag-2-2-in-language-i-can-understand#338-accessible-authentication-no-exception"
+  to = "/blog/wcag-2-2-in-language-i-can-understand#338-accessible-authentication-enhanced"
   status = 301
   force = true
 
