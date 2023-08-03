@@ -10,7 +10,7 @@ related:
     - rolling-your-own-links
 ---
 
-I've written about what to do when [links need to look like buttons](/blog/when-design-breaks-semantics) and [buttons need to look like links](/blog/rolling-your-own-links), but it's sometimes tricky to know whether an element should be a button or a link in the first place.
+I've written about what to do when [links need to look like buttons](/blog/when-design-breaks-semantics) and [buttons need to look like links](/blog/if-you-need-a-link-dont-use-a-button), but it's sometimes tricky to know whether an element should be a button or a link in the first place.
 
 Eric Eggert's [excellent piece on buttons versus links](https://yatil.net/blog/buttons-vs-links) says that a link:
 
