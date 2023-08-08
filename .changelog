@@ -11,7 +11,17 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+
 ----------
+
+
+## [6.4.6] - 2023-08-08
+
+### Adds
+- Adds links to Mastodon
+
+### Removes
+- Removes references to Twitter
 
 
 ## [6.4.5] - 2023-07-20
