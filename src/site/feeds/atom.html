@@ -15,7 +15,7 @@ permalink: feeds/main.xml
     <author>
         <name>{{ site.author.name }}</name>
         <email>{{ site.author.email }}</email>
-        <uri>https://twitter.com/{{ site.author.twitter | replace("@", "") }}</uri>
+        <uri>https://mastodon.social/@tempertemper</uri>
     </author>
     {%- for post in collections.post | reverse %}
     <entry>
@@ -26,7 +26,7 @@ permalink: feeds/main.xml
         <updated>{%- if post.updated %}{{ post.updated  | rssDate }}{%- else %}{{ post.date | rssDate }}{%- endif %}</updated>
         <author>
             <name>{{ site.author.name }}</name>
-            <uri>https://twitter.com/{{ site.author.twitter | replace("@", "") }}</uri>
+            <uri>https://mastodon.social/@tempertemper</uri>
         </author>
         <summary>{{ post.data.intro | markdown | safe | striptags }}</summary>
         {%- set postTags = post.data.tags | tagsOnPage %}

@@ -43,9 +43,6 @@ module.exports = eleventyConfig => {
     });
   });
 
-  /* Twitter URL from Twitter handle */
-  eleventyConfig.addFilter("twitterLink", str => "https://twitter.com/" + str.replace("@", ""));
-
   /* Code syntax highlighting */
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
   eleventyConfig.addPlugin(syntaxHighlight, {
