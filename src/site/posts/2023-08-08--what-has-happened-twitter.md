@@ -2,6 +2,8 @@
 title: What has happened Twitter!?
 intro: Twitter, for all its flaws, was my social media platform of choice, but since it has been taken over it has gone from bad to worse, and I'm out.
 date: 2023-08-08
+summaryImage: twitter-divebomb.png
+summaryImageAlt: The classic white on light blue Twitter bird icon, instead of soaring up and to the right, pointing diagonally downwards, as if dive-bombing.
 ---
 
 Twitter, for all its flaws, was my social media platform of choice. Over the years I've used it to get up to the minute news about local services, won freelance work, and met people who I count as firm friends; all solely through Twitter.
