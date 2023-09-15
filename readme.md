@@ -4,7 +4,10 @@
 ## Development environment
 
 ### Set up
-Run `npm install` in the project root to install the node packages.
+
+- Clone the remote repo with `git clone git@github.com:tempertemper/www.tempertemper.net.git`
+- Ensure you are on the [correct version of node](https://www.tempertemper.net/blog/using-nvm-on-macos)
+- Run `npm install` (or `npm i`) in the project root to install the node packages.
 
 ### Running
 Run `npm start` in the project root to spin up the development environment.
@@ -15,14 +18,14 @@ Run `npm update` in the project root to update packages.
 
 ## Production release
 
-- Create a release branch from `develop`, for example `git checkout -b release/1.0.0`
+This repository uses [GitHub Flow](https://www.tempertemper.net/blog/simplifying-branching-and-deployment-with-github-flow).
+
 - Update the `.changelog` file with details of what has been added/changed/fixed/removed
 - Bump the version number accordingly:
     - For a major: `npm run bump:major`
     - For a minor: `npm run bump:minor`
     - For a patch: `npm run bump:patch`
-- Push the changes to the remote for PR (Pull Request)
-- Deal with the merge on the remote; this will trigger a deployment to https://www.tempertemper.net
-- Once merged, tag the `main` branch with the new version number
-- Pull the updated `main` branch down and delete the release branch
-- Merge the updated `main` branch into `develop`, push the updates (the changelog and version number updates) to the remote
+- Push the changes to the remote
+- Raise a PR (Pull Request) on the remote
+- Once all tests have passed, merge the PR; this will trigger a deployment to [www.tempertemper.net](https://www.tempertemper.net) and [automatically tag the merge commit with the version number](https://www.tempertemper.net/blog/version-tagging-with-releases-in-github-flow)
+- Run `git switch main && git pull -p && git branch -d name-of-branch` locally
