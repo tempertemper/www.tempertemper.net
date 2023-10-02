@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 - Fixes broken Mastodon link in footer
+- Fixes weird list item spacing
 
 ----------
 
