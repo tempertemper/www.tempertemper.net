@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="social">
-        <a href="{{ site.author.mastodon }}">
+        <a href="https://mastodon.social/{{ site.author.mastodon | replace('@mastodon.social','')}}">
             {%- include "svg/mastodon.svg" -%}
             Follow me on Mastodon
         </a>
