@@ -42,7 +42,7 @@ FIrst you need to turn VoiceOver on. The default keyboard shortcut is <kbd>⌘</
 - If your keyboard doesn't have a Touch Bar, you need to use the <kbd>fn</kbd> (Function) key too: <kbd>⌘</kbd> + <kbd>fn</kbd> + <kbd>F5</kbd>
 - If your keyboard does have a Touch Bar, getting access to the Function keys might be more difficult. In System Preferences → Keyboard → Keyboard, you need to ensure either 'Touch Bar shows' or 'Press and hold Fn key to' (or 'Press Fn key to' if you're on macOS Catalina or earlier) is set to 'F1, F2, etc. keys'. If this configuration doesn't work for you (it doesn't for me), it's probably best to remap the shortcut to activate VoiceOver.
 
-### Remapping the VoiceOver modifier
+### Remapping the VoiceOver shortcut
 
 To remap the VoiceOver shortcut, head to System Preferences → Keyboard → Shortcuts → Accessibility → Turn VoiceOver on or off.  I change the shortcut to <kbd>⌘</kbd> + <kbd>§</kbd>.
 
