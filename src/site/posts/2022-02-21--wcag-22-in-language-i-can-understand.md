@@ -82,9 +82,9 @@ If the user is required to log in, they don't have to remember a password, for e
 It also allows photo recognition, like [CAPTCHAs](https://en.wikipedia.org/wiki/CAPTCHA) and user-uploaded picture recognition.
 
 
-## 3.3.8 Accessible Authentication (Enhanced)
+## 3.3.9 Accessible Authentication (Enhanced)
 
-Almost the same as 3.3.7 Accessible Authentication, but CAPTCHAs and user-uploaded pictures can't be included in the log-in process.
+Almost the same as 3.3.8 Accessible Authentication (Minimum), but CAPTCHAs and user-uploaded pictures can't be included in the log-in process.
 
 
 ## 4.1.1 Parsing
