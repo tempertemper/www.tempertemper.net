@@ -14,6 +14,11 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.0] - 2024-02-29
+
+- Adds newsletter archive section
+
+
 ## [6.4.10] - 2023-10-02
 
 - Fixes broken Mastodon link in footer

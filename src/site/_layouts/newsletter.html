@@ -1,0 +1,14 @@
+---
+layout: base.html
+---
+
+<article>
+    <h1>{{ title | smart | safe }}</h1>
+    {{ content | safe }}
+</article>
+<br />
+<p><a href="/newsletter/archive"><span aria-hidden="true">←</span> Back to newsletter archive</a></p>
+
+{% include "call-to-action.html" %}
+
+

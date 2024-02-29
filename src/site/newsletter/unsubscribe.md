@@ -3,6 +3,7 @@ title: Unsubscribe from the newsletter
 intro: |
     Every tempertemper newsletter contains a link to unsubscribe. Just dig out any email I've sent you and you can remove yourself from the list.
 permalink: /newsletter/unsubscribe.html
+override:tags: false
 layout: default
 ---
 
