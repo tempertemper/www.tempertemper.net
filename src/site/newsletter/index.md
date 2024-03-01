@@ -10,7 +10,9 @@ layout: default
 If you enjoy [my blog](/blog/), pop your email in the form to receive a monthly email containing:
 
 - links to my newest articles
-- links to interesting older articles from my blog
-- links to my favourite recent articles and videos from around the web
+- a link to an interesting older articles from my blog
+- links to recently read/watched articles/videos from around the web
+
+[View the full newsletter archive](/newsletter/archive)
 
 {% include "newsletter-signup.html" %}
