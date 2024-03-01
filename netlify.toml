@@ -1232,6 +1232,12 @@
   force = true
 
 [[redirects]]
+  from = "/subscribe"
+  to = "/keep-in-touch"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/testimonials/jonny-p%C3%A9nzes-underhill"
   to = "/testimonials/jonny-penzes-underhill"
   status = 301
