@@ -11,10 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-- Renames Subscribe page 'Keep in touch'
-- Links to newsletter archive from main newsletter page
 
 ----------
+
+
+## [6.5.1] - 2024-03-01
+
+- Renames Subscribe page 'Keep in touch'
+- Links to newsletter archive from main newsletter page
 
 
 ## [6.5.0] - 2024-02-29
