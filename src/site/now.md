@@ -9,9 +9,8 @@ permalink: now.html
 - Enjoying the challenge of a 16 kilometre (each way) [cycle to the office](https://twitter.com/tempertemper/status/1546555003560771585) twice a week
 - When not at the office, getting up and going for a run every morning at 5/5:30am
 - Continuing to [stand, rather than sit, for work](https://mastodon.social/@tempertemper/110281662026715175), and absolutely smitten with my new [Apple Studio Display](https://www.apple.com/uk/studio-display/)
-- Nearly three years into the [daily cold showers](https://www.bbc.co.uk/programmes/m000v83f)
-- Enjoying watching my football team when I can (I've been to one match so far this season)
-- Still enjoying Pokémon Go (I'm currently level 42), even though the kids' interest has waned slightly…
-- Just over a nasty bout of scarlet fever. Not fun!
+- Nearly three years into the [daily cold showers](https://www.bbc.co.uk/programmes/m000v83f); the didn't stop me getting scarlet fever, covid, and a horrible cold over the winter months, but a shower without a minute on cold at the end doesn't feel right anymore
+- Enjoying watching my football team when I can (I've managed to get tickets for two matches so far this season)
+- Still enjoying Pokémon Go (I'm currently level 43), even though the kids' interest has waned slightly…
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
