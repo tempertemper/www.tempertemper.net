@@ -15,19 +15,27 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.2] - 2024-03-11
+
+### Changes
+- Uses non-italic text for blockquotes
+
 ## [6.5.1] - 2024-03-01
 
+### Changes
 - Renames Subscribe page 'Keep in touch'
 - Links to newsletter archive from main newsletter page
 
 
 ## [6.5.0] - 2024-02-29
 
+### Adds
 - Adds newsletter archive section
 
 
 ## [6.4.10] - 2023-10-02
 
+### Fixes
 - Fixes broken Mastodon link in footer
 - Fixes weird list item spacing
 
