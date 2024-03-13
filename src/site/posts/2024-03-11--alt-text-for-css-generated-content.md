@@ -8,7 +8,7 @@ tags:
     - CSS
 ---
 
-There's an interesting feature in [Safari 17.4](https://webkit.org/blog/15063/webkit-features-in-safari-17-4), released last week, that allows content added with CSS (via the `::before` pseudo element and the `content` property) to have 'alt' text. I'm not sure how I feel about this.
+There's an interesting feature in [Safari 17.4](https://webkit.org/blog/15063/webkit-features-in-safari-17-4), released last week. It now supports ['alt' text for content added with CSS](https://caniuse.com/mdn-css_properties_content_alt_text) (via the `::before` pseudo element and the `content` property). I'm not sure how I feel about this.
 
 On the one hand it's great because it gives developers more control over their output but, on the other hand, I question why content is able to be added to the page with CSS at all; isn't that HTML's job!?
 
@@ -84,7 +84,7 @@ These are all work-arounds that give our users a less than straightforward exper
 
 ## What if CSS doesn't load?
 
-The accessibility issue for speech recognition software users is fixed, of course, if the [CSS fails to load](/blog/css-naked-day). The bad news here would be if content added via the CSS `content` property was integral to the user's understanding.
+It's an edge case, but possible, that the CSS fails to load; leaving the user with a [style-free page](/blog/css-naked-day). The good news is that this would remove the label/name mismatch issue for speech recognition software but the bad news here would be if content added via the CSS `content` property was integral to the user's understanding.
 
 
 ## No semantics
@@ -99,14 +99,17 @@ The output of anything entered in the `content` is limited to text. The example 
 
 But that will be rendered plan text rather than HTML, so the accessible name will be `<span class="aria-hidden"> Info:</span>` rather than nothing, as we might have hoped by using that code.
 
-I think this is the right behaviour, but it doesn't change that adding content to the page via CSS in the first place is problematic.
+For the record, this is the right behaviour in my opinion, but it doesn't change that adding content to the page via CSS in the first place is problematic.
 
 
 ## Time travel
 
-Of course all of that is just a whinge. Adding the alt text to `content` is the right thing to do since [backwards-compatibility is a central design principle of CSS](https://www.w3.org/TR/CSS22/intro.html#design-principles).
+Of course all of that is just a whinge. Adding the alt text to `content` is the right thing to do since:
 
-The real fix for this would be to go back in time, Terminator style, and tear up the proposal for `content` to allow anything other than decoration. Of course, that would come with its own downsides, but that's another post in an alternative timeline.
+- the output of `content` is already accessible
+- backwards-compatibility is a [central design principle of CSS](https://www.w3.org/TR/CSS22/intro.html#design-principles).
+
+The *real* fix for this would be to go back in time, Terminator style, and tear up the proposal for `content` to allow anything other than decoration. Of course, that would come with its own downsides, but that's another post in an alternative timeline.
 
 
 ## So what do we do?
