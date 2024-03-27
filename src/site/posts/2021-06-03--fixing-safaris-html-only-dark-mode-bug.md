@@ -12,9 +12,9 @@ tags:
 
 Aside from the lack of Firefox support, [there's a bug in Safari](https://bugs.webkit.org/show_bug.cgi?id=209851) that makes it difficult to see links in browser's [HTML-only dark mode](/blog/html-only-dark-mode).
 
-The problem is that the blue colour used for links is the same as that used in Light Mode (`#0000ee`), which has a [1.99 to 1 contrast ratio](https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=121212) against the dark page background `#121212`. This means it doesn't meet the AA Web Content Accessibility Guidelines (WCAG) [Contrast (Minimum) success criterion (SC)](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+The problem is that the blue colour used for links is the same as that used in Light Mode (`#0000ee`), which has a [1.99 to 1 contrast ratio](https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=121212) against the dark page background `#121212`. This means it doesn't meet the AA Web Content Accessibility Guidelines (WCAG) [Contrast (Minimum) success criterion (SC)](https://www.w3.org/TR/WCAG/#contrast-minimum).
 
-Chromium browsers (Chrome, Edge, Opera, Brave, etc.) use `#9e9eff` for links, which is a [7.84 to 1 contrast ratio](https://webaim.org/resources/contrastchecker/?fcolor=9E9EFF&bcolor=121212), satisfying not only Contrast (Minimum), but the level AAA [Contrast (Enhanced) SC](https://www.w3.org/TR/WCAG21/#contrast-enhanced).
+Chromium browsers (Chrome, Edge, Opera, Brave, etc.) use `#9e9eff` for links, which is a [7.84 to 1 contrast ratio](https://webaim.org/resources/contrastchecker/?fcolor=9E9EFF&bcolor=121212), satisfying not only Contrast (Minimum), but the level AAA [Contrast (Enhanced) SC](https://www.w3.org/TR/WCAG/#contrast-enhanced).
 
 It's a similar story with visited links, where Safari uses a failing `#551a8b` (a [1.7 to 1 contrast ratio](https://webaim.org/resources/contrastchecker/?fcolor=551A8B&bcolor=121212)) and Chromium browsers use an excellent AAA `#d0adf0` (a [9.73 to 1 contrast ratio](https://webaim.org/resources/contrastchecker/?fcolor=D0ADF0&bcolor=121212)).
 

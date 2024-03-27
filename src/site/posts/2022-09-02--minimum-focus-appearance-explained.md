@@ -38,7 +38,7 @@ The focus indicator must:
 
 ## Colour contrast
 
-The contrast of the focus indicator is covered already in [1.4.11 Non-text Contrast](https://www.w3.org/TR/WCAG21/#non-text-contrast), so it must provide at least a 3:1 contrast ratio against:
+The contrast of the focus indicator is covered already in [1.4.11 Non-text Contrast](https://www.w3.org/TR/WCAG/#non-text-contrast), so it must provide at least a 3:1 contrast ratio against:
 
 - 3:1 against the background it sits on
 - 3:1 against the element (e.g. a button) that has focus

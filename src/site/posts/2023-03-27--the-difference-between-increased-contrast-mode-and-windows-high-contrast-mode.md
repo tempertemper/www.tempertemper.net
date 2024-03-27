@@ -8,7 +8,7 @@ tags:
     - CSS
 ---
 
-A year or two ago I wrote about [Increased Contrast Mode](https://www.tempertemper.net/blog/using-the-increased-contrast-mode-css-media-query). Using `prefers-contrast: more` meant I could meet the Web Content Accessibility Guidelines' (WCAG) [AAA contrast threshold](https://www.w3.org/TR/WCAG21/#contrast-enhanced), rather than just [AA](https://www.w3.org/TR/WCAG21/#contrast-enhanced), for users who configure their operating systems to increase the contrast.
+A year or two ago I wrote about [Increased Contrast Mode](https://www.tempertemper.net/blog/using-the-increased-contrast-mode-css-media-query). Using `prefers-contrast: more` meant I could meet the Web Content Accessibility Guidelines' (WCAG) [AAA contrast threshold](https://www.w3.org/TR/WCAG/#contrast-enhanced), rather than just [AA](https://www.w3.org/TR/WCAG/#contrast-enhanced), for users who configure their operating systems to increase the contrast.
 
 The problem here is that Windows users don't have an 'Increase contrast' toggle in their system settings; instead they have Windows High Contrast Mode (WHCM) which applies a pre-designed theme to the operating system, including web content.
 
