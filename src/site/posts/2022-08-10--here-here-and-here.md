@@ -44,7 +44,7 @@ This can be especially awkward for screen reader users, as outlined by GOV.UK in
 
 Once the user has figured out that the links go to some songs I like, the next question is *which* songs?
 
-The Web Content Accessibility Guidelines (WCAG), in [Link Purpose (Link Only)](https://www.w3.org/TR/WCAG21/#link-purpose-link-only), require:
+The Web Content Accessibility Guidelines (WCAG), in [Link Purpose (Link Only)](https://www.w3.org/TR/WCAG/#link-purpose-link-only), require:
 
 > A mechanism is available to allow the purpose of each link to be identified from link text alone
 

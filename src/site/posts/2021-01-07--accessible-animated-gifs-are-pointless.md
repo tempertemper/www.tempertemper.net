@@ -19,7 +19,7 @@ Let's start with what people expect of an animated GIF:
 
 This simplicity, immediacy and repetition is part of their popularity; we can reply to someone's message with a funny looping clip from our favourite film, or illustrate a point with a cute snippet from a cartoon series from our youth.
 
-But the reasons for their appeal are also why they cause accessibility issues, failing the [very minimum level of accessibility conformance](https://www.w3.org/TR/WCAG21/#cc1) (level A) as they don't meet the [Pause, Stop, Hide success criterion](https://www.w3.org/TR/WCAG21/#pause-stop-hide), which says:
+But the reasons for their appeal are also why they cause accessibility issues, failing the [very minimum level of accessibility conformance](https://www.w3.org/TR/WCAG/#cc1) (level A) as they don't meet the [Pause, Stop, Hide success criterion](https://www.w3.org/TR/WCAG/#pause-stop-hide), which says:
 
 > For any moving, blinking or scrolling information that (1) starts automatically, (2) lasts more than five seconds, and (3) is presented in parallel with other content, there is a mechanism for the user to pause, stop, or hide it
 
@@ -57,17 +57,17 @@ It’s likely the image will have loaded in before it comes into the viewport, s
 
 Be sure to add a text alternative to the GIF so that screen reader users (and search engines) know what message it's conveying.
 
-This is pretty straightforward if you're in charge of the code and can add `alt=""` text, describing the contents of the animated GIF, but with third party platforms like Slack, for example, your GIFs you add may fail to meet the [Audio-only and Video-only (Prerecorded) success criterion](https://www.w3.org/TR/WCAG21/#audio-only-and-video-only-prerecorded):
+This is pretty straightforward if you're in charge of the code and can add `alt=""` text, describing the contents of the animated GIF, but with third party platforms like Slack, for example, your GIFs you add may fail to meet the [Audio-only and Video-only (Prerecorded) success criterion](https://www.w3.org/TR/WCAG/#audio-only-and-video-only-prerecorded):
 
 > Either an alternative for time-based media or an audio track is provided that presents equivalent information for prerecorded video-only content
 
-<i>(Animated GIFs arguably fall under [Non-text Content](https://www.w3.org/TR/WCAG21/#non-text-content), not satisfying <q>text alternatives at least provide descriptive identification of the non-text content</q>, but it amounts to the same thing)</i>
+<i>(Animated GIFs arguably fall under [Non-text Content](https://www.w3.org/TR/WCAG/#non-text-content), not satisfying <q>text alternatives at least provide descriptive identification of the non-text content</q>, but it amounts to the same thing)</i>
 
 To pick on Twitter again, they do a *reasonable* job here, overlaying an uploaded image with a slightly cryptic "+ALT" button. Changing this button's label to something like "Add description" would be much clearer, but I'd like to see them go one step further and present a dialog asking the user to describe the image they've just uploaded. It'd add friction to uploading media, but it would mean non sighted users would know what the image was.
 
 ### Careful with flashing images
 
-If we're going to use an animated GIF, we should be sure than we meet the ['Three Flashes or Below Threshold' success criterion](https://www.w3.org/TR/WCAG21/#three-flashes-or-below-threshold) so that:
+If we're going to use an animated GIF, we should be sure than we meet the ['Three Flashes or Below Threshold' success criterion](https://www.w3.org/TR/WCAG/#three-flashes-or-below-threshold) so that:
 
 > Web pages do not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds
 

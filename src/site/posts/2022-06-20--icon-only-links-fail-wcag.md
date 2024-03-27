@@ -10,11 +10,11 @@ summaryImageAlt: A big question mark character with an underline to indicate tha
 
 I've written about how I wish the Web Content Accessibility Guidelines (WCAG) would [prohibit icon-only buttons](/blog/what-i-wish-was-in-wcag-prohibit-icon-only-buttons), but what about icon-only *links*?
 
-You might think they're governed by the same rules, but there's a difference. You might think that links, like buttons, are governed by [Headings and Labels](https://www.w3.org/TR/WCAG21/#headings-and-labels), but links have their own dedicated [Link Purpose (In Context)](https://www.w3.org/TR/WCAG21/#link-purpose-in-context) success criterion which says this:
+You might think they're governed by the same rules, but there's a difference. You might think that links, like buttons, are governed by [Headings and Labels](https://www.w3.org/TR/WCAG/#headings-and-labels), but links have their own dedicated [Link Purpose (In Context)](https://www.w3.org/TR/WCAG/#link-purpose-in-context) success criterion which says this:
 
 > The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link context
 
-Unlike Headings and Labels, which uses the term 'label', Link Purpose (In Context) very specifically talks about "the link text". This is an important distinction, as [WCAG defines labels as](https://www.w3.org/TR/WCAG21/#dfn-labels):
+Unlike Headings and Labels, which uses the term 'label', Link Purpose (In Context) very specifically talks about "the link text". This is an important distinction, as [WCAG defines labels as](https://www.w3.org/TR/WCAG/#dfn-labels):
 
 > text or other component with a text alternative that is presented to a user to identify a component
 

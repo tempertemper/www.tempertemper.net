@@ -23,7 +23,7 @@ Instead, I've decided to write a single article summing up each success criterio
 - It's far from a full explanation; you've got [WCAG itself](https://www.w3.org/TR/WCAG21/) and [Understanding WCAG](https://www.w3.org/WAI/WCAG21/Understanding/) for that:
     - There's plenty of over-simplification in order to get to the essence of each rule
     - Lots of exceptions that criteria mention are missing in the name of brevity
-    - There are very few measurements (for example the actual text spacing values in [1.4.12 Text Spacing](https://www.w3.org/TR/WCAG21/#text-spacing))
+    - There are very few measurements (for example the actual text spacing values in [1.4.12 Text Spacing](https://www.w3.org/TR/WCAG/#text-spacing))
 - Some success criteria have been grouped as they kind of feel like the same thing
 - I haven't gone into why each criterion is helpful
 - There are very few examples, except where they help keep things brief

@@ -41,7 +41,7 @@ And then there's people who use speech recognition software, who often have to g
 
 ### Disabled buttons
 
-WCAG says that disabled buttons don't have to meet the [required levels of contrast](https://www.w3.org/TR/WCAG21/#contrast-minimum), in order to be more easily discernable by users with visual impairments:
+WCAG says that disabled buttons don't have to meet the [required levels of contrast](https://www.w3.org/TR/WCAG/#contrast-minimum), in order to be more easily discernable by users with visual impairments:
 
 > The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for … Text or images of text that are part of an inactive user interface component
 
@@ -50,7 +50,7 @@ So is it okay to leave some visually impaired users wondering what that difficul
 
 ### Animation
 
-WCAG says [auto-playing animation is fine](https://www.w3.org/TR/WCAG21/#pause-stop-hide) as long as one of the following conditions is met:
+WCAG says [auto-playing animation is fine](https://www.w3.org/TR/WCAG/#pause-stop-hide) as long as one of the following conditions is met:
 
 - it can be stopped
 - it doesn't last more than five seconds

@@ -19,7 +19,7 @@ I've done lots of work in big organisations, and they're notorious for using acr
 - missed parts of conversations while trying to figure out what an acronym means, or surreptitiously look it up
 - interrupt to ask someone to clarify an acronym
 
-As it happens, Acronyms are covered by the Web Content Accessibility Guidelines (WCAG) in [3.1.4 Abbreviations](https://www.w3.org/TR/WCAG21/#abbreviations), which requires that:
+As it happens, Acronyms are covered by the Web Content Accessibility Guidelines (WCAG) in [3.1.4 Abbreviations](https://www.w3.org/TR/WCAG/#abbreviations), which requires that:
 
 > A mechanism for identifying the expanded form or meaning of abbreviations [including acronyms and initialisms] is available.
 

@@ -20,7 +20,7 @@ The outlines (actually using `box-shadow`, rather than `outline`, so that the ou
 - high contrast against the blue button or input border they surround
 - 3px thick, increasing the input's overall size slightly
 
-This ensures that I'm not [communicating meaning solely with colour](https://www.w3.org/TR/WCAG21/#use-of-color) and preempts the up-coming [Focus Appearance (Minimum) success criterion](https://www.w3.org/TR/WCAG22/#focus-appearance-minimum) in WCAG 2.2.
+This ensures that I'm not [communicating meaning solely with colour](https://www.w3.org/TR/WCAG/#use-of-color) and preempts the up-coming [Focus Appearance (Minimum) success criterion](https://www.w3.org/TR/WCAG22/#focus-appearance-minimum) in WCAG 2.2.
 
 But what about links? The link focus styling was now different to forms and buttons; it changed the background colour of the link to a blue but didn't add an outline:
 

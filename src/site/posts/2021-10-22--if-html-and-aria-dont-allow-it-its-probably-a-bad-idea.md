@@ -17,11 +17,11 @@ There is a [variant of the Radio form component in the GOV.UK Design System](htt
 
 > Keep it simple. If the related question is complicated or has more than one part, show it on the next page in the process instead.
 
-The problem here is that it's open to interpretation; one person's definition of 'simple' might be another's 'complicated'. Crossing the line means failing the [On Input success criterion](https://www.w3.org/TR/WCAG21/#on-input) from the Web Content Accessibility Guidelines (WCAG), which says:
+The problem here is that it's open to interpretation; one person's definition of 'simple' might be another's 'complicated'. Crossing the line means failing the [On Input success criterion](https://www.w3.org/TR/WCAG/#on-input) from the Web Content Accessibility Guidelines (WCAG), which says:
 
 > Changing the setting of any user interface component [for example choosing a radio button] does not automatically cause a change of context unless the user has been advised of the behavior before using the component.
 
-A ['change of context' is described](https://www.w3.org/TR/WCAG21/#dfn-change-of-context) by WCAG as:
+A ['change of context' is described](https://www.w3.org/TR/WCAG/#dfn-change-of-context) by WCAG as:
 
 > major changes in the content of the Web page that, if made without user awareness, can disorient users
 

@@ -7,12 +7,12 @@ tags:
     - Design
 ---
 
-Adding descriptive text to images is a great way to ensure people who can't see the screen understand what the image is communicating. Unsurprisingly there's a success criterion in the Web Content Accessibility Guidelines (WCAG) to ensure we add descriptive text: [1.1.1 Non-text Content](https://www.w3.org/TR/WCAG21/#non-text-content), but what about people with low vision who *can* see the screen but need a decent amount of contrast to distinguish shapes and lines easily?
+Adding descriptive text to images is a great way to ensure people who can't see the screen understand what the image is communicating. Unsurprisingly there's a success criterion in the Web Content Accessibility Guidelines (WCAG) to ensure we add descriptive text: [1.1.1 Non-text Content](https://www.w3.org/TR/WCAG/#non-text-content), but what about people with low vision who *can* see the screen but need a decent amount of contrast to distinguish shapes and lines easily?
 
 There are a couple of success criteria in WCAG that cover contrast, if you're aiming for AA compliance:
 
-- [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG21/#contrast-minimum), which covers text
-- [1.4.11 Non-text Contrast](https://www.w3.org/TR/WCAG21/#non-text-contrast), which covers elements that aren't text
+- [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG/#contrast-minimum), which covers text
+- [1.4.11 Non-text Contrast](https://www.w3.org/TR/WCAG/#non-text-contrast), which covers elements that aren't text
 
 Text contrast is straightforward enough, but non-text contrast is trickier. 1.4.11 requires a 3 to 1 contrast ratio for certain non-text elements, including images (which count as "Graphical Objects"), and it talks specifically about:
 

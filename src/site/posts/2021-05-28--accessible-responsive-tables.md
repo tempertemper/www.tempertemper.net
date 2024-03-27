@@ -19,7 +19,7 @@ This can be a really effective approach, but when comparison of table data is ce
 
 The alternative might surprise you: present the table more or less as-is on mobile; no layout adjustment necessary!
 
-But is that really responsive? And what about accessibility? Responsive websites are basically about avoiding scrolling in two directions, and the [Reflow Success Criterion](https://www.w3.org/TR/WCAG21/#reflow) (SC) in the Web Content Accessibility Guildelines (WCAG)says content should be:
+But is that really responsive? And what about accessibility? Responsive websites are basically about avoiding scrolling in two directions, and the [Reflow Success Criterion](https://www.w3.org/TR/WCAG/#reflow) (SC) in the Web Content Accessibility Guildelines (WCAG)says content should be:
 
 > presented without loss of information or functionality, and without requiring scrolling in two dimensions
 
@@ -53,7 +53,7 @@ And we need some CSS to make the table scroll inside its container:
 
 That's great if you're using a mouse or a touch screen where you can scroll the table left and right within its container, but what about keyboard users?
 
-The [Keyboard SC](https://www.w3.org/TR/WCAG21/#keyboard) says:
+The [Keyboard SC](https://www.w3.org/TR/WCAG/#keyboard) says:
 
 > All functionality of the content is operable through a keyboard interface
 
@@ -112,11 +112,11 @@ In order to do this, we need to:
 1. give our container a 'role', either explicitly with the `role="region"` attribute, or by changing the element to a `<section>`
 2. label our container, either with `aria-label`, or `aria-labelledby` and a corresponding element (in this case, the `<caption>` element is an ideal label)
 
-This will satisfy the [Name, Role, Value SC](https://www.w3.org/TR/WCAG21/#name-role-value) which demands:
+This will satisfy the [Name, Role, Value SC](https://www.w3.org/TR/WCAG/#name-role-value) which demands:
 
 > For all user interface components … the name and role can be programmatically determined
 
-<i>A [user interface component is defined](https://www.w3.org/TR/WCAG21/#dfn-user-interface-components) as: <q>a part of the content that is perceived by users as a single control for a distinct function</q>.</i>
+<i>A [user interface component is defined](https://www.w3.org/TR/WCAG/#dfn-user-interface-components) as: <q>a part of the content that is perceived by users as a single control for a distinct function</q>.</i>
 
 So our markup looks more like this:
 

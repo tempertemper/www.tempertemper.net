@@ -52,7 +52,7 @@ This is related to [2.1.1 Keyboard](/blog/wcag-but-in-language-i-can-understand#
 
 ## 2.5.8 Target Size (Minimum)
 
-<i>[2.5.5 Target Size](https://www.w3.org/TR/WCAG21/#target-size) has been renamed slightly: 2.5.5 Target Size (Enhanced) and a new Minimum requirement has been added at level AA.</i>
+<i>[2.5.5 Target Size](https://www.w3.org/TR/WCAG/#target-size) has been renamed slightly: 2.5.5 Target Size (Enhanced) and a new Minimum requirement has been added at level AA.</i>
 
 Anything clickable should be at least 24 by 24 pixels, except links within a sentence which will just be the size of the text.
 

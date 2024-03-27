@@ -8,7 +8,7 @@ tags:
 ---
 
 
-The first rule in the Web Content Accessibility Guidelines (WCAG) requires us to [describe non-text content](https://www.w3.org/TR/WCAG21/#non-text-content) like images:
+The first rule in the Web Content Accessibility Guidelines (WCAG) requires us to [describe non-text content](https://www.w3.org/TR/WCAG/#non-text-content) like images:
 
 > All non-text content … has a text alternative that serves the equivalent purpose, except … If non-text content is pure decoration
 

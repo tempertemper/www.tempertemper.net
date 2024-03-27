@@ -11,7 +11,7 @@ tags:
 
 I've written about how [accessible animated content can be a bit rubbish](/blog/accessible-animated-gifs-are-pointless), and I stand by that. It's better just to use a static image than compromise the experience of the animation in order to make it accessible.
 
-To recap why they're less than ideal, meeting [WCAG'S Pause, Stop, Hide](https://www.w3.org/TR/WCAG21/#pause-stop-hide) means you lose the essence of an animated GIF, as it:
+To recap why they're less than ideal, meeting [WCAG'S Pause, Stop, Hide](https://www.w3.org/TR/WCAG/#pause-stop-hide) means you lose the essence of an animated GIF, as it:
 
 - shouldn't animate automatically
 - shouldn't loop indefinitely (stops within 5 seconds)
