@@ -10,7 +10,7 @@ summaryImageAlt: A big blue button on a grey background; the button is labelled 
 
 I had a conversation this week where I was asked a great question: what was one thing I wished WCAG included? For me it would be to ensure that every button's label has visible text.
 
-WCAG requires we [provide a visible label buttons on our buttons](https://www.w3.org/TR/WCAG21/#headings-and-labels), but this can be with a 'text alternative' like an image or icon. In turn, [these icons need an accessible name](https://www.w3.org/TR/WCAG21/#text-alternatives), which is great for people like screen reader users, but what about people who can see the icon but don't have access to its accessible text?
+WCAG requires we [provide a visible label buttons on our buttons](https://www.w3.org/TR/WCAG/#headings-and-labels), but this can be with a 'text alternative' like an image or icon. In turn, [these icons need an accessible name](https://www.w3.org/TR/WCAG/#text-alternatives), which is great for people like screen reader users, but what about people who can see the icon but don't have access to its accessible text?
 
 
 ## Icon meaning

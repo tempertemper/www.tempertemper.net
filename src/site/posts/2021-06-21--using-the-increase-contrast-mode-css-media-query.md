@@ -13,7 +13,7 @@ summaryImage: light-dark-contrast.jpg
 summaryImageAlt: Three screenshots of the tempertemper.net homepage, showing Light Mode, Dark Mode, and the Increased Contrast version with white text on a black background.
 ---
 
-A couple of years ago [I revised the colours on this website](/blog/colour-contrast-on-tempertempernet) in order to satisfy the [enhanced contrast WCAG success criterion](https://www.w3.org/TR/WCAG21/#contrast-enhanced). It turned out to be more problematic than I had anticipated.
+A couple of years ago [I revised the colours on this website](/blog/colour-contrast-on-tempertempernet) in order to satisfy the [enhanced contrast WCAG success criterion](https://www.w3.org/TR/WCAG/#contrast-enhanced). It turned out to be more problematic than I had anticipated.
 
 Even though the text on my website is always larger than 18.66px, meaning I don't have to hit a 7 to 1 contrast ratio, the 4.5 to 1 constraint was still causing problems:
 
@@ -72,7 +72,7 @@ I've written about [the SCSS mixins I use](/blog/sass-mixins-for-increased-contr
 
 ## Cutting myself some slack
 
-By giving visitors to my website who require increased contrast the 'enhanced' level of contrast, and all others the ['minimum' level](https://www.w3.org/TR/WCAG21/#contrast-minimum) in both Light and Dark Mode, I was able to:
+By giving visitors to my website who require increased contrast the 'enhanced' level of contrast, and all others the ['minimum' level](https://www.w3.org/TR/WCAG/#contrast-minimum) in both Light and Dark Mode, I was able to:
 
 - Make the colours vibrant again
 - Reduce code complexity
