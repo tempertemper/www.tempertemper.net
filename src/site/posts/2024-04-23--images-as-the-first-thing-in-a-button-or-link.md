@@ -13,7 +13,7 @@ Here's an example of some problematic code:
 
 ```html
 <button>
-    <img src="bin-icon.svg alt="Bin" />
+    <img src="bin-icon.svg" alt="Bin" />
     Delete
 </button>
 ```
@@ -66,7 +66,7 @@ Easy! We just leave the icon visually and hide it accessibly:
 
 ```html
 <button>
-    <img src="bin-icon.svg alt="" />
+    <img src="bin-icon.svg" alt="" />
     Delete
 </button>
 ```
