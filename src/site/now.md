@@ -10,7 +10,7 @@ permalink: now.html
 - When not at the office, getting up and going for a run every morning at 5am
 - Continuing to [stand, rather than sit, for work](https://mastodon.social/@tempertemper/110281662026715175), and absolutely smitten with my new [Apple Studio Display](https://www.apple.com/uk/studio-display/)
 - Three years into the [daily cold showers](https://www.bbc.co.uk/programmes/m000v83f); a shower without a minute on cold at the end doesn't feel right anymore
-- Enjoying watching my football team when I can (I've managed to get tickets for three matches so far this season)
-- Still enjoying Pokémon Go (I'm currently level 43), even though the kids' interest has waned slightly…
+- Enjoying watching [my football team](https://www.newcastleunited.com) when I can (I've managed to get tickets for three matches so far this season)
+- Still enjoying Pokémon Go (I'm currently level 44), even though the kids' interest has waned slightly…
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
