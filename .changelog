@@ -15,6 +15,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.3] - 2024-06-08
+
+### Changes
+- Removes ligatures from code
+
+
 ## [6.5.2] - 2024-03-11
 
 ### Changes
