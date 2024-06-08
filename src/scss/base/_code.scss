@@ -5,6 +5,8 @@ kbd {
 }
 
 code {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0;
   margin-right: .1em; // For when immediately followed by punctuation
   background-color: $colour-code-background;
   @include dark-mode($colour-dark-mode-code-background);
