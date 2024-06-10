@@ -6,6 +6,7 @@ tags:
     - Accessibility
 summaryImage: keyboard.png
 summaryImageAlt: The keyboard icon from macOS’s Settings app; a very simply drawn white keyboard over a grey ‘squircle’ app icon background.
+related: getting-started-with-voiceover-on-macos
 ---
 
 Some people use the keyboard to get around their computer, whether their laptop or mobile device. Understanding how to do this is important for both accessibility testing and understanding how to design and develop with keyboard-only users in mind.
