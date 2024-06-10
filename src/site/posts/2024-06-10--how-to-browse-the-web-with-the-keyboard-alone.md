@@ -1,6 +1,6 @@
 ---
 title: How to browse the web with the keyboard alone
-intro: asdf
+intro: Some people use the keyboard to get around their computer. Knowing how to do this is important for accessibility testing and to inform design.
 date: 2024-06-10
 tags:
     - Accessibility
@@ -9,7 +9,7 @@ summaryImageAlt: The keyboard icon from macOS’s Settings app; a very simply dr
 related: getting-started-with-voiceover-on-macos
 ---
 
-Some people use the keyboard to get around their computer, whether their laptop or mobile device. Understanding how to do this is important for both accessibility testing and understanding how to design and develop with keyboard-only users in mind.
+Some people use the keyboard to get around their computer, whether their laptop or mobile device. Knowing how to do this is important for both accessibility testing and understanding how to design and develop with keyboard-only users in mind.
 
 The good news in that there are very few keys you need to use:
 
