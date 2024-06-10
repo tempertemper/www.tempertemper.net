@@ -9,6 +9,7 @@ tags:
     - Apple
 summaryImage: voiceover.png
 summaryImageAlt: The VoiceOver caption panel, saying "VoiceOver on Safari, Getting started on VoiceOver for macOS, window, Getting started with VoiceOver on macOS, web content has keyboard focus".
+related: how-to-browse-the-web-with-the-keyboard-alone
 ---
 
 An understanding of how screen readers work is an important part of the journey for anyone who works on digital products. It gives us an appreciation for the many ways people use the web, and there are two solid things you can do:
@@ -148,7 +149,7 @@ If you want to come out of the web content and back up to that top level to, for
 
 ## Interacting with the web content
 
-A screen reader user is [likely to move from one form-field to the next using VO + <kbd>→</kbd>](/blog/screen-reader-users-and-the-tab-key) but when filling out the form they fall back on keyboard-only behaviour, for example:
+A screen reader user is [likely to move from one form-field to the next using VO + <kbd>→</kbd>](/blog/screen-reader-users-and-the-tab-key) but when filling out the form they fall back on [keyboard-only behaviour](/blog/how-to-browse-the-web-with-the-keyboard-alone), for example:
 
 - <kbd>Space</kbd> to press a button or check a checkbox
 - Numbers, letters, and other characters to type in a `<textarea>` or text `<input>`
