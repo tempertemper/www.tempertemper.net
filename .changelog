@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Adds optional 'last updated' to default page template
+- Adds updated date to Now page, Privacy policy, and Terms of business
 
 
 ## [6.5.3] - 2024-06-08

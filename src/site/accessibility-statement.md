@@ -3,6 +3,7 @@ title: Accessibility statement
 intro: |
     I want this website to be usable by as many people as possible, regardless of device, browser, network speed, or ability.
 layout: default
+updated: 2024-06-24
 permalink: accessibility-statement.html
 ---
 
