@@ -13,9 +13,6 @@ layout: base.html
         {{- title | smart | safe }}
     {%- endif %}
 </h1>
-{%- if updated %}
-    <p class="post-details">Last updated <span itemprop="dateModified" content="{{ updated | isoDate }}">{{ updated | date }}</span></p>
-{% endif %}
 {% if intro and not hideIntro %}
     {{ intro | markdown | safe }}
 {% endif %}

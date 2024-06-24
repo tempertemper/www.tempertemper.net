@@ -4,7 +4,6 @@ intro: |
     I value my own privacy so I'm hugely respectful of yours. Have a read through this policy to find out more.
 hideIntro: true
 layout: default
-updated: 2020-06-14
 permalink: privacy-policy.html
 ---
 
