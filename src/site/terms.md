@@ -4,6 +4,7 @@ intro: |
     So you'd like me to work with you on your project? That's great! Thanks for thinking of me and for taking the time to get in touch. Before we go any further, have a quick read of this page.
 hideIntro: true
 layout: default
+updated: 2019-12-28
 permalink: terms.html
 ---
 
