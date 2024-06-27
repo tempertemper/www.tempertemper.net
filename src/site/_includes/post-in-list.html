@@ -11,11 +11,13 @@
     {% if not briefPostInList %}
     <p class="details">
         {% if post.data.tags.includes('post') %}
-            Article
+            Article posted
         {% elif post.data.tags.includes('resource') %}
-            Resource
+            Resource posted
+        {% else -%}
+            Posted
         {% endif -%}
-        posted {{ post.data.date | date }}
+        {{ post.data.date | date }}
         {% include "post-categories.html" %}
     </p>
     {% endif %}

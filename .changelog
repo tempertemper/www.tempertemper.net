@@ -15,6 +15,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.5] - 2024-06-27
+
+### Fixes
+- Adds capital letter to 'posted' details in case study list
+
+
 ## [6.5.4] - 2024-06-24
 
 ### Adds
