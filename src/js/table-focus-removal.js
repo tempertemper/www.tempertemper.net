@@ -1,19 +1,17 @@
-// Get the table's width
-const container = document.querySelector(".table-wrapper");
-const containerWidth = container.offsetWidth;
-// console.log("The table is " + tableWidth + " pixels wide.");
+// Grab each of the table elements on the page
+const tables = document.querySelectorAll("table");
 
-// Get the table's container's width
-const table = document.querySelector("table");
-const tableWidth = table.offsetWidth;
-// console.log("The container is " + containerWidth + " pixels wide.");
+// Cycle through each table in turn
+tables.forEach((tableInstance) => {
 
-// Compare the table's width and its container's width; if the table is smaller (i.e. the screen is nice and large), remove the tabindex attribute so that keyboard users don't tab onto it when they don't need to
-(function() {
-  if (tableWidth < containerWidth) {
-    // console.log("The table is smaller than its container");
-    container.removeAttribute("tabindex");
-  // } else {
-  //   console.log("The table is bigger than its container");
+  // Get the table's container and its width
+  const containerWidth = tableInstance.parentElement.offsetWidth;
+
+  // Get the table's width
+  const tableWidth = tableInstance.offsetWidth;
+
+  // If the table is the same size or smaller than its container, remove the tabindex attribute
+  if (tableWidth <= containerWidth) {
+    tableInstance.parentElement.removeAttribute("tabindex");
   }
-})();
+});
