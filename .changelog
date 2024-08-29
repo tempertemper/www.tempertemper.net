@@ -15,6 +15,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.6] - 2024-08-29
+
+### Changes
+- Removes `tabindex` from table if it's not needed
+
+
 ## [6.5.5] - 2024-06-27
 
 ### Fixes
