@@ -1,7 +1,6 @@
 ---
 title: Getting started with VoiceOver on macOS
-intro: |
-    Understanding how screen readers work is important for anyone who works on digital products. Here's how to get started with VoiceOver on macOS.
+intro: Understanding how screen readers work is important for anyone who works on digital products. Here's how to get started with VoiceOver on macOS.
 date: 2021-01-20
 updated: 2024-06-07
 tags:
@@ -20,6 +19,8 @@ An understanding of how screen readers work is an important part of the journey 
 The first involves some research and planning, which can be huge barriers, unless you work for an organisation that has access to a panel of volunteers, or know someone personally who uses a screen reader and doesn't mind giving you a demo.
 
 The second might seem daunting, but, thinking back, it only took me around an hour of fumbling to get to grips with VoiceOver on my Mac.
+
+<i>VoiceOver is an Apple-only product; if you're a Windows user [NVDA is a great screen reader](/blog/getting-started-with-nvda) to get started with there.</i>
 
 Page contents:
 
