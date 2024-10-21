@@ -19,7 +19,6 @@ blockquote {
     }
   }
 
-
   @include high-contrast() {
     border-left-color: $colour-dark-mode-primary-light;
   }
@@ -81,6 +80,10 @@ li {
 
 dt {
   font-weight: 700;
+
+  kbd {
+    font-weight: 400;
+  }
 }
 
 hr {

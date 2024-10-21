@@ -15,6 +15,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.7] - 2024-10-21
+
+### Changes
+- Makes `kbd` elements in `dt` normal font weight
+
+
 ## [6.5.6] - 2024-08-29
 
 ### Changes
