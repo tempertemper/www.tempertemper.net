@@ -15,6 +15,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.8] - 2024-10-22
+
+### Changes
+- Adds security headers
+
+
 ## [6.5.7] - 2024-10-21
 
 ### Changes

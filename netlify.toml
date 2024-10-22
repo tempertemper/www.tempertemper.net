@@ -14,8 +14,18 @@
   base = "."
   functions = "./lib/functions"
 
+## Prevent XSS and embedding in iframes
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Content-Security-Policy = "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; img-src 'self'; media-src 'self'; object-src 'none'; script-src 'self'; style-src 'self'"
+    Referrer-Policy = "same-origin"
+    Strict-Transport-Security = "max-age=15768000"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
 
-# Allow fonts to be used by other domains (disable CORS), also cache fonts
+## Allow fonts to be used by other domains (disable CORS), also cache fonts
 [[headers]]
   for = "/assets/fonts/*"
     [headers.values]
