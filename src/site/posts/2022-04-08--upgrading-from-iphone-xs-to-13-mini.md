@@ -6,7 +6,7 @@ tags:
     - Apple
 ---
 
-After three and a half years using an iPhone XS, my home upgrade chain kicked in: my wife broke her phone, so she inherits mine (as she cares considerably than me about new Apple tech!) and I get the latest model.
+After three and a half years using an iPhone XS, my home upgrade chain kicked in: my wife broke her phone, so she inherits mine (as she cares considerably less than me about new Apple tech!) and I get the latest model.
 
 I thought long and hard at what's currently available and ended up going for what turned out to be the cheapest [non-home-button phone](/blog/upgrading-from-a-home-button-to-a-face-id-iphone) in the line-up: the iPhone 13 Mini.
 
