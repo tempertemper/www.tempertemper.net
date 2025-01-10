@@ -3,6 +3,7 @@ title: A monthly newsletter on the web, design and frontend dev
 intro: |
     I write and talk and read about subjects like accessibility, Git, minimalist design, CSS, and Apple software. Once a month, I'll share this with you!
 permalink: /newsletter/index.html
+hideIntro: false
 override:tags: false
 layout: default
 ---
