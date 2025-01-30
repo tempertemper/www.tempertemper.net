@@ -1,7 +1,7 @@
 ---
 title: Ensure your project works in every browser and for every user
-intro: The iframe element is a way to embed one website inside of another. Useful for things like maps or videos, but not so much for other content.
-date: 2024-12-29
+intro: Going through my backlog of blog ideas, I spotted a quote that I thought was worth sharing.
+date: 2025-01-30
 tags:
     - Accessibility
 ---
