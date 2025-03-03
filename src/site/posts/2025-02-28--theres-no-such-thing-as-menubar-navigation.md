@@ -48,11 +48,11 @@ Links to other places use the `<a>` element ([don't forget the `href` attribute]
 
 ## You're probably never going to need a menubar
 
-While navigation is super common on the web, menus are, or at least should be, few and far between. Again, from MDN Docs:
+While navigation is super common on the web, menubars are, or at least should be, few and far between. Again, from MDN Docs:
 
 > Menubars behave like native operating system menubars, such as the menubars containing pull down menus, commonly found at the top of many desktop application windows.
 
-We're talking about websites, so "operating system menubars" aren't really needed very much. In fact, the only application I can think of for a menubar is a browser-based app that mimics a native application, such as Google Docs where that File/Edit/View/Insert/etc. menu is definitely relevant.
+We're talking about websites, so "operating system menubars" aren't really needed very much. In fact, the only application I can think of for a menubar is a browser-based app that mimics a native application, such as Google Docs where that File/Edit/View/Insert/etc. menubar is definitely relevant.
 
 
 ## Confusing for keyboard users
