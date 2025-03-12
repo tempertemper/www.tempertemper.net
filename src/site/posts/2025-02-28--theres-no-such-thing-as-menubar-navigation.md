@@ -4,6 +4,9 @@ intro: A problem markup and interaction pattern I encounter a lot is a result of
 date: 2025-02-28
 tags:
     - Accessibility
+    - Development
+related:
+    - how-button-groups-should-work-for-keyboard-users
 ---
 
 There's a problem markup and interaction pattern I encounter again and again. Developers search the web with the intention of creating the most accessible navigation, and often end up on [this example of navigation from the W3C](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-navigation/). But **this is not how navigation should work**.
