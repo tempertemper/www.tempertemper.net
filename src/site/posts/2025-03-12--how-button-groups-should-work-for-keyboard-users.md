@@ -7,6 +7,7 @@ tags:
     - Development
 related:
     - theres-no-such-thing-as-menubar-navigation
+    - how-navigation-should-work-for-keyboard-users
 ---
 
 I've written about [the difference between navigation and menubars](/blog/theres-no-such-thing-as-menubar-navigation), where I mention that menubars should be few and far between on the web. But menubars are part of a larger family of 'button groups', which are fairly common.
