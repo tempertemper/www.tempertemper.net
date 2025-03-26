@@ -18,8 +18,8 @@ permalink: feeds/main.json
   {%- for post in collections.post | reverse %}
     {
       "id": "{{ loop.revindex }}",
-      "date_published": "{{ post.date | rssDate }}",
-      {%- if post.updated %}"date_modified": "{{ post.updated | rssDate }}",{%- endif %}
+      "date_published": "{{ post.date | dateToRfc822 }}",
+      {%- if post.updated %}"date_modified": "{{ post.updated | dateToRfc822 }}",{%- endif %}
       "title": "{{ post.data.title | smart | safe | replace("&nbsp;", " ") }}",
       "summary": "{{ post.data.intro | markdown | safe | striptags }}",
       {%- set postTags = post.data.tags | tagsOnPage %}
