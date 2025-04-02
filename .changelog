@@ -15,14 +15,6 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
-## [6.6.0] - 2025-03-26
-
- ### Changes
- - Updates node version to 22.14.0
- - Upgrades to Eleventy version 3.0.0
- - Upgrades a bunch of packages, including Eleventy plugins
-
-
 ## [6.5.8] - 2024-10-22
 
 ### Changes
