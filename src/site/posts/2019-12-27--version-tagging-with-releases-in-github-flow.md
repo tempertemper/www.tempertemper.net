@@ -58,6 +58,6 @@ This is a good idea because:
 
 ## Almost there
 
-Fixing tagging doesn't solve all my challenges with switching to GitHub Flow for certain projects. I'll still have issues with: conflicts in the .changelog file when multiple people are working on the same codebase. Again, I've got a feeling that this can be solved with [GitHub Actions](https://github.com/features/actions) to build the changelog automatically.
+Fixing tagging doesn't solve all my challenges with switching to GitHub Flow for certain projects. I'll still have issues with conflicts in the .changelog file when multiple people are working on the same codebase. Again, I've got a feeling that this can be solved with [GitHub Actions](https://github.com/features/actions) to build the changelog automatically.
 
 I'll also see if I can use Actions to automate each Release, but for now I'll be doing it manually.

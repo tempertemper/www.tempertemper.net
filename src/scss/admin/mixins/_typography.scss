@@ -19,11 +19,7 @@ $modularscale: (
 }
 
 @mixin heading-line-height-large {
-  line-height: 1.2;
-
-  @media (min-width: $xs) {
-    line-height: 1.1;
-  }
+  line-height: 1.025;
 }
 
 @mixin font-body {

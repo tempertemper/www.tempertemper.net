@@ -75,7 +75,7 @@ So now a keyboard user can view the whole table on small screens, just like ever
 We just need a wee bit more CSS to ensure our tables get an outline when focused:
 
 ```css
-.table-wrapper:focus {
+.table-container:focus {
   outline: 3px solid rebeccapurple;
 }
 ```
@@ -87,15 +87,15 @@ The [`:focus-visible` pseudo class is a great new addition to CSS](/blog/refinin
 For now, dropping `:focus` would mean there were no focus styles styles in some browsers, so we need to keep our focus styling and override it if `:focus-visible` is supported:
 
 ```css
-.table-wrapper:focus {
+.table-container:focus {
   outline: 3px solid rebeccapurple;
 }
 
-.table-wrapper:focus:not(:focus-visible) {
+.table-container:focus:not(:focus-visible) {
   outline: none;
 }
 
-.table-wrapper:focus-visible {
+.table-container:focus-visible {
   outline: 3px solid rebeccapurple;
 }
 ```
