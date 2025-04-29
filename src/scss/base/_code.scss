@@ -65,4 +65,13 @@ pre {
   }
 }
 
+pre {
+  overflow: auto;
+}
+
+pre code {
+  width: auto;
+  text-wrap: nowrap;
+}
+
 // For syntax highlighting, see ../../components/_syntax-highlighting.scss
