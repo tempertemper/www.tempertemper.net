@@ -1,17 +1,24 @@
 // Grab each of the codeblock elements on the page
-const codeblocks = document.querySelectorAll("pre");
+const codeblocks = document.querySelectorAll("code");
 
 // Cycle through each codeblock in turn
 codeblocks.forEach((codeblockInstance) => {
 
   // Get the codeblock's container and its width
-  const containerWidth = codeblockInstance.parentElement.offsetWidth;
+  const containerWidth = codeblockInstance.parentElement.clientWidth;
 
-  // Get the codeblock's width
-  const codeblockWidth = codeblockInstance.offsetWidth;
+  // Loop through the children
+  const codeblockChildren = codeblockInstance.querySelectorAll("span");
+
+  // Get the widest child
+  let biggestWidth = -1;
+  codeblockChildren.forEach((child) => {
+    const right = child.getBoundingClientRect().right;
+    if (right > biggestWidth) biggestWidth = right;
+  })
 
   // If the codeblock is the same size or smaller than its container, remove the tabindex attribute
-  if (codeblockWidth <= containerWidth) {
+  if (biggestWidth <= containerWidth) {
     codeblockInstance.parentElement.removeAttribute("tabindex");
   }
 });
