@@ -1,24 +1,24 @@
-// Grab each of the codeblock elements on the page
-const codeblocks = document.querySelectorAll("code");
+// Grab each of the codeblock elements on the page (no inline code)
+const codeblocks = document.querySelectorAll("pre code");
 
 // Cycle through each codeblock in turn
 codeblocks.forEach((codeblockInstance) => {
 
-  // Get the codeblock's container and its width
-  const containerWidth = codeblockInstance.parentElement.clientWidth;
+  // Codeblocks always live in a pre element; get the pre's inner width. This is the same space the codeblock takes up, but the codeblock's measurements don't take this full width into account; only the space that is actually taken up
+  const codeblockWidth = codeblockInstance.parentElement.clientWidth;
 
-  // Loop through the children
+  // Loop through the lines of code in the codeblock
   const codeblockChildren = codeblockInstance.querySelectorAll("span");
 
-  // Get the widest child
-  let biggestWidth = -1;
+  // Get the widest line of code
+  let widestLine = -1;
   codeblockChildren.forEach((child) => {
     const right = child.getBoundingClientRect().right;
-    if (right > biggestWidth) biggestWidth = right;
+    if (right > widestLine) widestLine = right;
   })
 
-  // If the codeblock is the same size or smaller than its container, remove the tabindex attribute
-  if (biggestWidth <= containerWidth) {
+  // If the the widest line of code is the same size or smaller than the codeblock, remove the tabindex attribute as scrolling is not necessary
+  if (widestLine <= codeblockWidth) {
     codeblockInstance.parentElement.removeAttribute("tabindex");
   }
 });
