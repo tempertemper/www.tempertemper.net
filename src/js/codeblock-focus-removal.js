@@ -1,24 +1,51 @@
-// Grab each of the codeblock elements on the page (no inline code)
+function findWidestRight(element) {
+  let maxRight = 0;
+  let widestElement;
+
+  function traverse(node) {
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      const style = window.getComputedStyle(node);
+      const rightValue = node.getBoundingClientRect().right;
+
+      if (rightValue > maxRight) {
+        maxRight = rightValue;
+        widestElement = node;
+      }
+
+      for (let i = 0; i < node.childNodes.length; i++) {
+        traverse(node.childNodes[i]);
+      }
+    } else if (node.nodeType === Node.TEXT_NODE) {
+      return;
+    }
+  }
+
+  traverse(element);
+
+  return { maxRight, widestElement };
+}
+
 const codeblocks = document.querySelectorAll("pre code");
 
-// Cycle through each codeblock in turn
-codeblocks.forEach((codeblockInstance) => {
+codeblocks.forEach((codeblock, i) => {
 
-  // Codeblocks always live in a pre element; get the pre's inner width. This is the same space the codeblock takes up, but the codeblock's measurements don't take this full width into account; only the space that is actually taken up
-  const codeblockWidth = codeblockInstance.parentElement.clientWidth;
+  // console.log(codeblock.getBoundingClientRect());
+  const codeblockWidth = codeblock.getBoundingClientRect().width;
+  const codeblockLeft = codeblock.getBoundingClientRect().left;
 
-  // Loop through the lines of code in the codeblock
-  const codeblockChildren = codeblockInstance.querySelectorAll("span");
+  // console.log(`codeblock ${i + 1} is ${codeblockWidth} wide`);
 
-  // Get the widest line of code
-  let widestLine = -1;
-  codeblockChildren.forEach((child) => {
-    const right = child.getBoundingClientRect().right;
-    if (right > widestLine) widestLine = right;
-  })
+  // console.log(`Codeblock ${i + 1}’s left is ${codeblockLeft}px`);
 
-  // If the the widest line of code is the same size or smaller than the codeblock, remove the tabindex attribute as scrolling is not necessary
-  if (widestLine <= codeblockWidth) {
-    codeblockInstance.parentElement.removeAttribute("tabindex");
+  const { maxRight: widestRight, widestElement: element } =
+    findWidestRight(codeblock);
+  // console.log(`Widest child of ${i + 1} is ${widestRight}px`);
+
+  const actualWidestRight = widestRight - codeblockLeft;
+  // console.log(`Actual width of ${i + 1} is ${actualWidestRight}px`);
+
+  console.log(element)
+  if (actualWidestRight <= codeblockWidth) {
+    codeblock.parentElement.removeAttribute("tabindex");
   }
 });
