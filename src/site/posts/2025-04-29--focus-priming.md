@@ -6,7 +6,7 @@ tags:
     - Accessibility
 ---
 
-What's it called when you click somewhere on a webpage? Most people either won't care, either because it doesn't seem to do anything, or they can't click because they don't use a mouse or trackpad.
+What's it called when you click somewhere on a webpage? Most people won't care, either because it doesn't seem to do anything, or they can't click because they don't use a mouse or trackpad.
 
 But *I care* because I use it when testing the accessibility of web pages. If I click somewhere and then press <kbd>⇥</kbd> (Tab), keyboard focus is placed on the next interactive element (link, form field, etc.) after where I clicked.
 
