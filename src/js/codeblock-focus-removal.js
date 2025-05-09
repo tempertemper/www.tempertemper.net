@@ -1,51 +1,66 @@
-function findWidestRight(element) {
-  let maxRight = 0;
-  let widestElement;
+function shouldRemoveTabIndex(preElement) {
+  const codeElement = document.querySelector("pre");
+  if (!codeElement) return false;
 
-  function traverse(node) {
-    if (node.nodeType === Node.ELEMENT_NODE) {
-      const style = window.getComputedStyle(node);
-      const rightValue = node.getBoundingClientRect().right;
+  const lines = preElement.innerText
+    .split("\n")
+    .filter((line) => line.trim() !== "");
 
-      if (rightValue > maxRight) {
-        maxRight = rightValue;
-        widestElement = node;
-      }
+  // Get the container width
+  const containerWidth = preElement.clientWidth;
 
-      for (let i = 0; i < node.childNodes.length; i++) {
-        traverse(node.childNodes[i]);
-      }
-    } else if (node.nodeType === Node.TEXT_NODE) {
-      return;
+  // Create a temporary span to measure text width accurately
+  const measureSpan = document.createElement("span");
+  measureSpan.style.position = "absolute";
+  measureSpan.style.visibility = "hidden";
+  measureSpan.style.whiteSpace = "pre"; // Important: preserve whitespace
+  measureSpan.style.font = window.getComputedStyle(codeElement).font;
+  document.body.appendChild(measureSpan);
+
+  // Find the widest line
+  let maxWidth = 0;
+  let widestLine = "";
+
+  // Iterate through each line and measure its width
+  lines.forEach((line) => {
+    measureSpan.textContent = line;
+    const lineWidth = measureSpan.getBoundingClientRect().width;
+
+    if (lineWidth > maxWidth) {
+      maxWidth = lineWidth;
+      widestLine = line;
     }
-  }
+  });
 
-  traverse(element);
-
-  return { maxRight, widestElement };
+  // Clean up
+  document.body.removeChild(measureSpan);
+  
+  // Return true if we should remove the tabIndex (no scrolling needed)
+  return maxWidth <= containerWidth;
 }
 
-const codeblocks = document.querySelectorAll("pre code");
+// Process all pre elements on the page
+function processAllCodeBlocks() {
+  const preElements = document.querySelectorAll("pre");
 
-codeblocks.forEach((codeblock, i) => {
+  preElements.forEach((preElement) => {
+    // Check if this pre element already has a tabIndex
+    const hasTabIndex = preElement.hasAttribute("tabindex");
 
-  // console.log(codeblock.getBoundingClientRect());
-  const codeblockWidth = codeblock.getBoundingClientRect().width;
-  const codeblockLeft = codeblock.getBoundingClientRect().left;
+    if (hasTabIndex && shouldRemoveTabIndex(preElement)) {
+      preElement.removeAttribute("tabindex");
+    } else if (!hasTabIndex && !shouldRemoveTabIndex(preElement)) {
+      preElement.setAttribute("tabindex", "0");
+    }
+  });
+}
 
-  // console.log(`codeblock ${i + 1} is ${codeblockWidth} wide`);
+// Run when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", processAllCodeBlocks);
 
-  // console.log(`Codeblock ${i + 1}’s left is ${codeblockLeft}px`);
-
-  const { maxRight: widestRight, widestElement: element } =
-    findWidestRight(codeblock);
-  // console.log(`Widest child of ${i + 1} is ${widestRight}px`);
-
-  const actualWidestRight = widestRight - codeblockLeft;
-  // console.log(`Actual width of ${i + 1} is ${actualWidestRight}px`);
-
-  console.log(element)
-  if (actualWidestRight <= codeblockWidth) {
-    codeblock.parentElement.removeAttribute("tabindex");
-  }
+// Also run on window resize
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(processAllCodeBlocks, 250);
 });
