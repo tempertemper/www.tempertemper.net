@@ -43,6 +43,6 @@ pre {
   font-weight: 700;
 }
 
-[href^=http]:after {
+[href^=http]::after {
   content: ' <' attr(href) '> ';
 }
