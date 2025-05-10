@@ -18,12 +18,9 @@ form,
   height: 40px;
 }
 
-a {
-
-  &:link,
-  &:visited {
-    color: inherit;
-  }
+a:link,
+a:visited {
+  color: inherit;
 }
 
 h1,
@@ -42,15 +39,10 @@ pre {
   page-break-inside: avoid;
 }
 
-p,
-ul,
-ol {
+[href^=http] {
+  font-weight: 700;
+}
 
-  [href^=http] {
-    font-weight: 700;
-
-    &:after {
-      content: ' <' attr(href) '> ';
-    }
-  }
+[href^=http]::after {
+  content: ' <' attr(href) '> ';
 }

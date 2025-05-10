@@ -12,6 +12,7 @@ module.exports = eleventyConfig => {
   /* Files and fonts */
   eleventyConfig.addPassthroughCopy({ "src/img": "assets/img" });
   eleventyConfig.addPassthroughCopy({ "src/fonts": "assets/fonts" });
+  eleventyConfig.addPassthroughCopy({ "src/css": "assets/css" });
 
   /* Smart quotes filter */
   const smartypants = require("smartypants");

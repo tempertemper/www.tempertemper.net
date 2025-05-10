@@ -34,7 +34,7 @@ li {
   list-style-type: none;
 }
 
-li:before {
+li::before {
   content: "\200B";
 }
 ```

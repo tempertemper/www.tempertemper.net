@@ -12,7 +12,7 @@
     max-width: none;
   }
 
-  &:before {
+  &::before {
     background-color: $colour-black;
     content: '';
     display: block;
