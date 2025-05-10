@@ -15,6 +15,47 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.14] - 2025-05-10
+
+### Removes
+- Removes HTML5 shiv
+- Removes Internet Explorer styling
+
+
+## [6.5.13] - 2025-05-10
+
+### Adds
+- Adds tabindex to codeblocks and makes them scroll horizontally
+- Dynamically removes tabindex from codeblocks when they don't need to scroll horizontally
+
+### Removes
+- Removes tiny right margin when code is in a pre
+
+
+## [6.5.12] - 2025-04-02
+
+### Changes
+- Tightens up leading for headings slightly
+
+
+## [6.5.11] - 2025-03-12
+
+### Changes
+- Fixes some npm vulnerabilities
+
+
+## [6.5.10] - 2025-01-10
+
+- Strips whitespace from intro in default page template
+- Fixes intro not outputting to newsletter listing and subscribe pages
+
+
+## [6.5.9] - 2024-10-23
+
+### Removes
+Removes content security policy http header
+
+
 ## [6.5.8] - 2024-10-22
 
 ### Changes
