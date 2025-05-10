@@ -1,11 +1,3 @@
-$modularscale: (
-  base: 1em,
-  ratio: $major-third,
-  $m: (
-    ratio: $golden
-  )
-);
-
 @mixin heading-style {
   margin-top: 1em;
   margin-bottom: .25em;
@@ -34,54 +26,54 @@ $modularscale: (
 }
 
 @mixin heading-xl {
-  font-size: ms(3);
+  font-size: $major-third-3;
   @include heading-line-height-large;
 
   @media (max-width: $xxs) {
-    font-size: ms(2);
+    font-size: $major-third-2;
   }
 
   @media (min-width: $m) {
-    @include ms-respond(font-size, 3);
+    font-size: $golden-3;
   }
 }
 
 @mixin heading-l {
-  font-size: ms(2);
+  font-size: $major-third-2;
   @include heading-line-height-large;
 
   @media (max-width: $xxs) {
-    font-size: ms(1);
+    font-size: $major-third-1;
   }
 
   @media (min-width: $m) {
-    @include ms-respond(font-size, 2);
+    font-size: $golden-2;
   }
 }
 
 @mixin heading-m {
-  font-size: ms(1);
+  font-size: $major-third-1;
   @include heading-line-height-large;
 
   @media (max-width: $xxs) {
-    font-size: ms(0);
+    font-size: 1em;
   }
 
   @media (min-width: $m) {
-    @include ms-respond(font-size, 1);
+    font-size: $golden-1;
   }
 }
 
 @mixin heading-s {
-  font-size: ms(0);
+  font-size: 1em;
   line-height: 1.4;
 
   @media (max-width: $xxs) {
-    font-size: ms(-1);
+    font-size: $major-third-minus-1;
   }
 
   @media (min-width: $m) {
-    @include ms-respond(font-size, 0);
+    font-size: 1em;
   }
 }
 
