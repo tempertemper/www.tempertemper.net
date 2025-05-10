@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Builds print CSS with eleventy rather than with package.json scripts
 - Uses a double colon for before and after CSS
+- Updates browserslist-db
 
 ### Removes
 - Removes HTML5 shiv
