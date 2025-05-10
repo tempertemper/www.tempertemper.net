@@ -25,6 +25,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Removes
 - Removes HTML5 shiv
 - Removes Internet Explorer styling
+- Removes unused pattern library
 
 
 ## [6.5.13] - 2025-05-10
