@@ -1,3 +1,5 @@
+@use './variables--layout' as layoutVariables;
+
 @mixin container {
   max-width: 40em;
   margin-right: auto;
@@ -5,12 +7,12 @@
   padding-left: .5em;
   padding-right: .5em;
 
-  @media (min-width: $m) {
+  @media (min-width: layoutVariables.$m) {
     padding-left: 1em;
     padding-right: 1em;
   }
 
-  @media (min-width: $l) {
+  @media (min-width: layoutVariables.$l) {
     padding-left: 2em;
     padding-right: 2em;
   }

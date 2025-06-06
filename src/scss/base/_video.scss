@@ -1,5 +1,7 @@
+@use '../admin/mixins--general' as generalMixins;
+
 video {
-  @include embedded-media;
+  @include generalMixins.embedded-media;
 }
 
 .youtube-video {
@@ -7,7 +9,7 @@ video {
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  @include embedded-media;
+  @include generalMixins.embedded-media;
 
   iframe,
   object,

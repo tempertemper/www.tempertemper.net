@@ -1,9 +1,11 @@
+@use '../admin/variables--layout' as layoutVariables;
+
 .post-details {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   font-style: italic;
 
-  @media (max-width: $xxs) {
+  @media (max-width: layoutVariables.$xxs) {
     margin-top: 1em;
     margin-bottom: 1em;
   }

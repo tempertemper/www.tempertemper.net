@@ -1,20 +1,14 @@
-@import 'admin/variables',
-        'admin/mixins/general',
-        'admin/mixins/typography',
-        'admin/mixins/links',
-        'admin/placeholders';
+@use 'base/reset';
+@use 'base/page';
+@use 'base/typography/fonts--critical';
+@use 'base/typography/general--critical';
+@use 'base/typography/headings--critical';
+@use 'base/links';
+@use 'base/images';
+@use 'base/utility--critical';
 
-@import 'base/reset',
-        'base/page',
-        'base/typography/fonts--critical',
-        'base/typography/general--critical',
-        'base/typography/headings--critical',
-        'base/links',
-        'base/images',
-        'base/utility--critical';
-
-@import 'components/header',
-        'components/logo',
-        'components/skip-to-content',
-        'components/navigation',
-        'components/post-in-list';
+@use 'components/header';
+@use 'components/logo';
+@use 'components/skip-to-content';
+@use 'components/navigation';
+@use 'components/post-in-list';

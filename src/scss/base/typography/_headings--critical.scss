@@ -1,17 +1,19 @@
+@use '../../admin/mixins--typography' as typographyMixins;
+
 h1,
 h2,
 h3 {
-  @include heading-style;
+  @include typographyMixins.heading-style;
 }
 
 h1 {
-  @include heading-xl;
+  @include typographyMixins.heading-xl;
 }
 
 h2 {
-  @include heading-l;
+  @include typographyMixins.heading-l;
 }
 
 h3 {
-  @include heading-m;
+  @include typographyMixins.heading-m;
 }

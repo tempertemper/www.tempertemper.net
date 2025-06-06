@@ -1,0 +1,69 @@
+@use '../admin/variables--colour' as colourVariables;
+@use '../admin/variables--general' as generalVariables;
+@use '../admin/variables--layout' as layoutVariables;
+@use '../admin/mixins--general' as generalMixins;
+
+@mixin button {
+  background-color: colourVariables.$colour-primary;
+  border-radius: generalVariables.$border-radius-default;
+  border: none;
+  border-bottom: solid 3px colourVariables.$colour-primary-dark;
+  color: colourVariables.$colour-white;
+  display: inline-block; // Older browsers
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 700;
+  margin-top: 1em;
+  padding: .5em 1em; // Older browsers
+  padding: calc(.5em + 3px) 1em .5em;
+  width: auto;
+  @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-main) {
+    border-bottom: solid 3px colourVariables.$colour-dark-mode-primary-dark;
+  }
+  @include generalMixins.high-contrast(colourVariables.$colour-dark-mode-primary-light, colourVariables.$colour-high-contrast-main);
+
+  @media (max-width: layoutVariables.$xs) {
+    padding: .25em;
+  }
+
+  svg {
+    margin-right: .3em;
+    margin-top: -.3em;
+  }
+
+  &:focus {
+    outline: 3px solid colourVariables.$colour-black;
+    @include generalMixins.dark-mode() {
+      outline: 3px solid colourVariables.$colour-white;
+    }
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+    @include generalMixins.dark-mode() {
+      outline: none;
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid colourVariables.$colour-black;
+    @include generalMixins.dark-mode() {
+      outline: 3px solid colourVariables.$colour-white;
+    }
+  }
+
+  &:hover {
+    background-color: colourVariables.$colour-primary-dark;
+    @include generalMixins.dark-mode($background: colourVariables.$colour-dark-mode-primary-light);
+    @include generalMixins.high-contrast($background: colourVariables.$colour-high-contrast-primary-light);
+  }
+
+  &:active {
+    position: relative;
+    top: 3px;
+    border-bottom: none;
+    margin-bottom: 3px;
+    // border-top: solid 2px transparent;
+  }
+}

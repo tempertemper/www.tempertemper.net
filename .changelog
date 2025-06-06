@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 - Upgrades a bunch of packages
 - Removes deprecated lighten() Sass function
 - Removes deprecated mixed declarations in Sass
+- Removes deprecated file includes in Sass, using @use instead
 
 
 ## [6.5.15] - 2025-05-10

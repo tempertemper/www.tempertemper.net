@@ -1,5 +1,7 @@
+@use '../admin/mixins--general' as generalMixins;
+
 img {
-  @include embedded-media;
+  @include generalMixins.embedded-media;
 
   a & {
     display: inline;

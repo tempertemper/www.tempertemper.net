@@ -1,9 +1,12 @@
+@use '../admin/mixins--typography' as typographyMixins;
+@use '../admin/mixins--general' as generalMixins;
+
 nav {
 
   ul {
     margin-bottom: 0;
     margin-top: 0;
-    @include remove-list-styling;
-    @include inline-nav;
+    @include typographyMixins.remove-list-styling;
+    @include generalMixins.inline-nav;
   }
 }

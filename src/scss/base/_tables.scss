@@ -1,41 +1,47 @@
+@use '../admin/variables--colour' as colourVariables;
+@use '../admin/variables--general' as generalVariables;
+@use '../admin/variables--layout' as layoutVariables;
+@use '../admin/mixins--general' as generalMixins;
+@use '../admin/mixins--typography' as typographyMixins;
+
 .table-wrapper {
   overflow: auto;
-  border-radius: $border-radius-small;
+  border-radius: generalVariables.$border-radius-small;
   margin-top: 1em;
   margin-bottom: 1em;
-  @include heading-style;
+  @include typographyMixins.heading-style;
 
   &:focus {
-    outline: 3px solid $colour-black;
+    outline: 3px solid colourVariables.$colour-black;
     outline-offset: 1px;
-    @include dark-mode() {
-      outline: 3px solid $colour-white;
+    @include generalMixins.dark-mode() {
+      outline: 3px solid colourVariables.$colour-white;
       outline-offset: 1px;
     }
-    @include high-contrast() {
-      outline: 3px solid $colour-white;
+    @include generalMixins.high-contrast() {
+      outline: 3px solid colourVariables.$colour-white;
       outline-offset: 1px;
     }
   }
 
   &:focus:not(:focus-visible) {
     outline: none;
-    @include dark-mode() {
+    @include generalMixins.dark-mode() {
       outline: none;
     }
-    @include high-contrast() {
+    @include generalMixins.high-contrast() {
       outline: none;
     }
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 4px $colour-black;
-    @include dark-mode() {
-      outline: 3px solid $colour-white;
+    box-shadow: 0 0 0 4px colourVariables.$colour-black;
+    @include generalMixins.dark-mode() {
+      outline: 3px solid colourVariables.$colour-white;
       outline-offset: 1px;
     }
-    @include high-contrast() {
-      outline: 3px solid $colour-white;
+    @include generalMixins.high-contrast() {
+      outline: 3px solid colourVariables.$colour-white;
       outline-offset: 1px;
     }
   }
@@ -47,9 +53,9 @@ table {
 
 caption {
   margin-top: .5em;
-  @include heading-s;
+  @include typographyMixins.heading-s;
 
-  @media (min-width: $xs) {
+  @media (min-width: layoutVariables.$xs) {
     margin-top: .5em;
   }
 }

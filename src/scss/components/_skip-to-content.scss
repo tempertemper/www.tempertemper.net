@@ -1,5 +1,10 @@
+@use '../admin/placeholders' as placeholders;
+@use '../admin/variables--colour' as colourVariables;
+@use '../admin/mixins--general' as generalMixins;
+
+
 .skip-to-content {
-  @include visually-hidden;
+  @include placeholders.visually-hidden;
 
   &:focus {
     top: .5em;
@@ -9,11 +14,11 @@
     height: auto;
     width: auto;
     margin: 0;
-    box-shadow: 0 0 0 3px $colour-black, 0 0 .4em .0em $colour-dark-mode-black;
+    box-shadow: 0 0 0 3px colourVariables.$colour-black, 0 0 .4em .0em colourVariables.$colour-dark-mode-black;
     padding: 0.5em .5em;
 
-    @include dark-mode() {
-      box-shadow: 0 0 0 3px $colour-white, .2em .2em .4em .1em $colour-dark-mode-black;
+    @include generalMixins.dark-mode() {
+      box-shadow: 0 0 0 3px colourVariables.$colour-white, .2em .2em .4em .1em colourVariables.$colour-dark-mode-black;
     }
   }
 }

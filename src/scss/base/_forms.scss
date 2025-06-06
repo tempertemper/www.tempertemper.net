@@ -1,3 +1,8 @@
+@use '../admin/variables--colour' as colourVariables;
+@use '../admin/variables--general' as generalVariables;
+@use '../admin/mixins--general' as generalMixins;
+@use '../admin/mixins--buttons' as buttonsMixins;
+
 form {
   width: 100%;
   margin-bottom: 1em;
@@ -5,28 +10,28 @@ form {
 }
 
 label {
-  @include dark-mode($colour: $colour-dark-mode-white);
+  @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-white);
 }
 
 input {
-  background-color: $colour-main;
-  border: 3px solid $colour-primary;
-  border-radius: $border-radius-default;
+  background-color: colourVariables.$colour-main;
+  border: 3px solid colourVariables.$colour-primary;
+  border-radius: generalVariables.$border-radius-default;
   display: block;
   margin-bottom: 1em;
   padding: .5em .75em;
   width: 100%;
   line-height: 1.2;
-  @include dark-mode($colour-dark-mode-main, $colour-dark-mode-white);
-  @include high-contrast($background: $colour-high-contrast-main) {
-    border-color: $colour-dark-mode-primary-light;
+  @include generalMixins.dark-mode(colourVariables.$colour-dark-mode-main, colourVariables.$colour-dark-mode-white);
+  @include generalMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
+    border-color: colourVariables.$colour-dark-mode-primary-light;
   }
 
   &:focus {
-    outline: solid 3px $colour-black;
+    outline: solid 3px colourVariables.$colour-black;
     outline-offset: 0px;
-    @include dark-mode() {
-      outline: solid 3px $colour-white;
+    @include generalMixins.dark-mode() {
+      outline: solid 3px colourVariables.$colour-white;
     }
   }
 }
@@ -35,5 +40,5 @@ input {
   display: block;
   font-size: inherit;
   line-height: 1.2;
-  @include button;
+  @include buttonsMixins.button;
 }
