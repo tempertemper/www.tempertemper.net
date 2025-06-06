@@ -1,3 +1,5 @@
+@use '../admin/mixins--general' as generalMixins;
+
 .subscribe {
-  @include boxout;
+  @include generalMixins.boxout;
 }

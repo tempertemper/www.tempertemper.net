@@ -1,0 +1,71 @@
+@use './variables--general' as generalVariables;
+@use './variables--colour' as colourVariables;
+@use './mixins--general' as generalMixins;
+
+
+@mixin text-link {
+  border-radius:generalVariables.$border-radius-small;
+
+  &:link,
+  &:visited {
+    color: colourVariables.$colour-primary-darker;
+    @include generalMixins.dark-mode($colour: colourVariables.$colour-primary);
+    @include generalMixins.high-contrast($colour: colourVariables.$colour-dark-mode-primary-light);
+  }
+
+  &:hover {
+    color: colourVariables.$colour-primary-dark;
+    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-primary-light);
+    @include generalMixins.high-contrast($colour: colourVariables.$colour-high-contrast-primary-light);
+  }
+
+  &:active {
+    color: colourVariables.$colour-black;
+    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-white);
+  }
+
+  &:focus {
+    background-color: colourVariables.$colour-white;
+    outline: 3px solid colourVariables.$colour-black;
+    outline-offset: 1px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    @include generalMixins.dark-mode($background: colourVariables.$colour-dark-mode-main) {
+      outline: 3px solid colourVariables.$colour-white;
+      outline-offset: 1px;
+    }
+    @include generalMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
+      outline: 3px solid colourVariables.$colour-white;
+      outline-offset: 1px;
+    }
+  }
+
+  &:focus:not(:focus-visible) {
+    background-color: transparent;
+    outline: none;
+    -webkit-box-decoration-break: slice;
+    box-decoration-break: slice;
+    @include generalMixins.dark-mode($background: transparent) {
+      outline: none;
+    }
+    @include generalMixins.high-contrast($background: transparent) {
+      outline: none;
+    }
+  }
+
+  &:focus-visible {
+    background-color: colourVariables.$colour-white;
+    outline: 3px solid colourVariables.$colour-black;
+    outline-offset: 1px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    @include generalMixins.dark-mode($background: colourVariables.$colour-dark-mode-main) {
+      outline: 3px solid colourVariables.$colour-white;
+      outline-offset: 1px;
+    }
+    @include generalMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
+      outline: 3px solid colourVariables.$colour-white;
+      outline-offset: 1px;
+    }
+  }
+}

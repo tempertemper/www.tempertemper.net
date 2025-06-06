@@ -1,6 +1,8 @@
+@use '../../admin/mixins--typography' as typographyMixins;
+
 h4,
 h5,
 h6 {
-  @include heading-style;
-  @include heading-s;
+  @include typographyMixins.heading-style;
+  @include typographyMixins.heading-s;
 }

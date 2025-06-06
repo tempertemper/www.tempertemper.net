@@ -1,5 +1,8 @@
+@use '../admin/mixins--links' as linksMixins;
+@use '../admin/variables--layout' as layoutVariables;
+
 a {
-  @include text-link;
+  @include linksMixins.text-link;
 
   p & {
     padding-top: .25em;
@@ -10,7 +13,7 @@ a {
     margin-right: 0;
   }
 
-  @media (min-width: $m) {
+  @media (min-width: layoutVariables.$m) {
 
     h2 & {
       text-decoration-thickness: .06em;

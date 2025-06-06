@@ -1,7 +1,12 @@
+@use '../admin/variables--colour' as colourVariables;
+@use '../admin/variables--general' as generalVariables;
+@use '../admin/mixins--general' as generalMixins;
+@use '../admin/mixins--typography' as typographyMixins;
+
 .footer {
   clear: both;
   padding-bottom: 1em;
-  margin-top: $section-spacing;
+  margin-top: generalVariables.$section-spacing;
 
   nav {
     margin-top: 1em;
@@ -13,13 +18,13 @@
   }
 
   &::before {
-    background-color: $colour-black;
+    background-color: colourVariables.$colour-black;
     content: '';
     display: block;
     height: 3px;
-    margin-bottom: $section-spacing;
+    margin-bottom: generalVariables.$section-spacing;
     max-width: 10em;
-    @include dark-mode($background: $colour-dark-mode-white);
+    @include generalMixins.dark-mode($background: colourVariables.$colour-dark-mode-white);
   }
 
   address {
@@ -36,14 +41,14 @@
   }
 
   .copyright {
-    margin-top: $section-spacing;
+    margin-top: generalVariables.$section-spacing;
   }
 
   .utility {
-    @include remove-list-styling;
+    @include typographyMixins.remove-list-styling;
 
     li {
-      @include inline-nav;
+      @include generalMixins.inline-nav;
     }
   }
 }

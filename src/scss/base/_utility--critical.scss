@@ -1,3 +1,5 @@
+@use '../admin/mixins--typography' as typographyMixins;
+
 .index-list {
-  @include remove-list-styling;
+  @include typographyMixins.remove-list-styling;
 }

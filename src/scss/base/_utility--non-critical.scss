@@ -1,12 +1,16 @@
+@use '../admin/mixins--general' as generalMixins;
+@use '../admin/placeholders' as placeholders;
+
+
 .visually-hidden {
-  @include visually-hidden;
+  @include placeholders.visually-hidden;
 }
 
 img,
 video {
 
   &.natural-dimensions {
-    @include overspill-reset;
+    @include generalMixins.overspill-reset;
     max-width: 100%;
     width: auto;
   }

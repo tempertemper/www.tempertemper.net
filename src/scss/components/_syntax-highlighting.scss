@@ -1,3 +1,6 @@
+@use '../admin/variables--colour' as colourVariables;
+@use '../admin/mixins--general' as generalMixins;
+
 .token {
 
   &.comment {
@@ -9,13 +12,13 @@
   &.doctype,
   &.cdata,
   &.url {
-    color: $colour-code-grey;
-    @include dark-mode($colour: $colour-dark-mode-code-grey);
+    color: colourVariables.$colour-code-grey;
+    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-grey);
   }
 
   &.punctuation {
-    color: $colour-code-grey;
-    @include dark-mode($colour: $colour-dark-mode-code-grey);
+    color: colourVariables.$colour-code-grey;
+    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-grey);
   }
 
   &.property,
@@ -24,16 +27,16 @@
   &.symbol,
   &.deleted,
   &.keyword {
-    color: $colour-code-magenta;
-    @include dark-mode($colour: $colour-dark-mode-code-magenta);
-    @include high-contrast($colour: $colour-high-contrast-code-magenta);
+    color: colourVariables.$colour-code-magenta;
+    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-magenta);
+    @include generalMixins.high-contrast($colour: colourVariables.$colour-high-contrast-code-magenta);
   }
 
   &.boolean,
   &.number {
-    color: $colour-code-purple;
-    @include dark-mode($colour: $colour-dark-mode-code-purple);
-    @include high-contrast($colour: $colour-high-contrast-code-purple);
+    color: colourVariables.$colour-code-purple;
+    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-purple);
+    @include generalMixins.high-contrast($colour: colourVariables.$colour-high-contrast-code-purple);
   }
 
   &.selector,
@@ -48,8 +51,8 @@
   .language-css &.string,
   .style &.string,
   &.variable {
-    color: $colour-code-cyan;
-    @include dark-mode($colour: $colour-dark-mode-code-cyan);
+    color: colourVariables.$colour-code-cyan;
+    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-cyan);
   }
 
   &.atrule,
@@ -57,8 +60,8 @@
   &.function,
   &.regex,
   &.important {
-    color: $colour-code-yellow;
-    @include dark-mode($colour: $colour-dark-mode-code-yellow);
+    color: colourVariables.$colour-code-yellow;
+    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-yellow);
   }
 
   &.important,
@@ -75,7 +78,7 @@
   }
 
   &.url .content {
-    color: $colour-black;
-    @include dark-mode($colour: $colour-dark-mode-white);
+    color: colourVariables.$colour-black;
+    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-white);
   }
 }

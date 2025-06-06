@@ -1,0 +1,100 @@
+@use './variables--typography' as typographyVariables;
+@use './variables--layout' as layoutVariables;
+@use './mixins--general' as generalMixins;
+
+@mixin heading-style {
+  margin-top: 1em;
+  margin-bottom: .25em;
+  letter-spacing: -.03em;
+  font-weight: 700;
+  hyphens: auto;
+}
+
+@mixin heading-line-height-large {
+  line-height: 1.025;
+}
+
+@mixin font-body {
+  font-style: normal;
+  line-height: 1.5;
+
+  @include generalMixins.dark-mode() {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@mixin heading-xl {
+  font-size: typographyVariables.$major-third-3;
+  @include heading-line-height-large;
+
+  @media (max-width: layoutVariables.$xxs) {
+    font-size: typographyVariables.$major-third-2;
+  }
+
+  @media (min-width: layoutVariables.$s) {
+    hyphens: none;
+  }
+
+  @media (min-width: layoutVariables.$m) {
+    font-size: typographyVariables.$golden-3;
+  }
+}
+
+@mixin heading-l {
+  font-size: typographyVariables.$major-third-2;
+  @include heading-line-height-large;
+
+  @media (max-width: layoutVariables.$xxs) {
+    font-size: typographyVariables.$major-third-1;
+  }
+
+  @media (min-width: layoutVariables.$m) {
+    font-size: typographyVariables.$golden-2;
+  }
+}
+
+@mixin heading-m {
+  font-size: typographyVariables.$major-third-1;
+  @include heading-line-height-large;
+
+  @media (max-width: layoutVariables.$xxs) {
+    font-size: 1em;
+  }
+
+  @media (min-width: layoutVariables.$m) {
+    font-size: typographyVariables.$golden-1;
+  }
+}
+
+@mixin heading-s {
+  font-size: 1em;
+  line-height: 1.4;
+
+  @media (max-width: layoutVariables.$xxs) {
+    font-size: typographyVariables.$major-third-minus-1;
+  }
+
+  @media (min-width: layoutVariables.$m) {
+    font-size: 1em;
+  }
+}
+
+@mixin remove-list-styling {
+  list-style: none;
+  padding-left: 0;
+
+  li::before {
+    content: "\200B";
+    position: absolute;
+  }
+
+  ul {
+    list-style-type: disc;
+
+    ul {
+      padding-left: 1.5em;
+    }
+  }
+}

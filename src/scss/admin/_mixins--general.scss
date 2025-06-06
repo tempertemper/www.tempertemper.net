@@ -1,3 +1,8 @@
+@use './variables--general' as generalVariables;
+@use './variables--colour' as colourVariables;
+@use './variables--layout' as layoutVariables;
+
+
 @mixin dark-mode($background: null, $colour: null) {
 
   @media screen and (prefers-color-scheme: dark), screen and (prefers-contrast: more) {
@@ -61,18 +66,18 @@
 }
 
 @mixin highlight-box {
-  background-color: $colour-highlight;
-  @include dark-mode($background: $colour-dark-mode-highlight);
-  @include high-contrast($background: $colour-high-contrast-highlight);
-  border-radius: $border-radius-default;
+  background-color: colourVariables.$colour-highlight;
+  border-radius: generalVariables.$border-radius-default;
   padding: 1em;
+  @include dark-mode($background: colourVariables.$colour-dark-mode-highlight);
+  @include high-contrast($background: colourVariables.$colour-high-contrast-highlight);
 
   a {
 
     &:focus {
-      background-color: $colour-highlight;
-      @include dark-mode($background: $colour-dark-mode-highlight);
-      @include high-contrast($background: $colour-high-contrast-highlight);
+      background-color: colourVariables.$colour-highlight;
+      @include dark-mode($background: colourVariables.$colour-dark-mode-highlight);
+      @include high-contrast($background: colourVariables.$colour-high-contrast-highlight);
     }
 
     &:focus:not(:focus-visible) {
@@ -82,9 +87,9 @@
     }
 
     &:focus-visible {
-      background-color: $colour-highlight;
-      @include dark-mode($background: $colour-dark-mode-highlight);
-      @include high-contrast($background: $colour-high-contrast-highlight);
+      background-color: colourVariables.$colour-highlight;
+      @include dark-mode($background: colourVariables.$colour-dark-mode-highlight);
+      @include high-contrast($background: colourVariables.$colour-high-contrast-highlight);
     }
   }
 }
@@ -102,28 +107,28 @@
 @mixin boxout {
   @include highlight-box;
 
-  @media (min-width: $l) {
+  @media (min-width: layoutVariables.$l) {
     @include overspill;
   }
 }
 
 @mixin embedded-media {
-  border-radius: $border-radius-default;
-  background-color: $colour-highlight;
-  @include dark-mode($background: $colour-dark-mode-highlight);
-  @include high-contrast($background: $colour-high-contrast-highlight);
+  border-radius: generalVariables.$border-radius-default;
+  background-color: colourVariables.$colour-highlight;
   display: block;
-  box-shadow: 0 0 .25em lighten($colour-black, 50%);
+  box-shadow: 0 0 .25em colourVariables.$colour-grey;
   margin-bottom: 1em;
   margin-top: 1em;
   height: auto;
   width: 100%;
+  @include dark-mode($background: colourVariables.$colour-dark-mode-highlight);
+  @include high-contrast($background: colourVariables.$colour-high-contrast-highlight);
 
-  @media (min-width: $l) {
+  @media (min-width: layoutVariables.$l) {
     @include overspill;
   }
 
   @include dark-mode() {
-    box-shadow: 0 0 .25em $colour-black;
+    box-shadow: 0 0 .25em colourVariables.$colour-black;
   }
 }

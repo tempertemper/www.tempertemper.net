@@ -1,24 +1,28 @@
+@use '../../admin/variables--colour' as colourVariables;
+@use '../../admin/variables--layout' as layoutVariables;
+@use '../../admin/mixins--typography' as typographyMixins;
+
 html {
   font-family: 'FS Me Web', sans-serif;
-  @include font-body;
-  color: $colour-black;
+  color: colourVariables.$colour-black;
   font-size: 120%;
   font-feature-settings: "liga";
+  @include typographyMixins.font-body;
 
-  @media (max-width: $xxs) {
+  @media (max-width: layoutVariables.$xxs) {
     font-size: 100%;
     line-height: 1.2;
   }
 
-  @media (min-width: $s) {
+  @media (min-width: layoutVariables.$s) {
     font-size: 130%;
   }
 
-  @media (min-width: $m) {
+  @media (min-width: layoutVariables.$m) {
     font-size: 150%;
   }
 
-  @media (min-width: $xl) {
+  @media (min-width: layoutVariables.$xl) {
     font-size: 180%;
   }
 }
