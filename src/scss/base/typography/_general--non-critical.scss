@@ -1,8 +1,8 @@
 ::selection {
   background: $colour-primary;
+  color: $colour-white;
   @include dark-mode($colour: $colour-black);
   @include high-contrast($background: $colour-dark-mode-primary-light);
-  color: $colour-white;
 }
 
 blockquote {

@@ -62,10 +62,10 @@
 
 @mixin highlight-box {
   background-color: $colour-highlight;
-  @include dark-mode($background: $colour-dark-mode-highlight);
-  @include high-contrast($background: $colour-high-contrast-highlight);
   border-radius: $border-radius-default;
   padding: 1em;
+  @include dark-mode($background: $colour-dark-mode-highlight);
+  @include high-contrast($background: $colour-high-contrast-highlight);
 
   a {
 
@@ -110,14 +110,14 @@
 @mixin embedded-media {
   border-radius: $border-radius-default;
   background-color: $colour-highlight;
-  @include dark-mode($background: $colour-dark-mode-highlight);
-  @include high-contrast($background: $colour-high-contrast-highlight);
   display: block;
   box-shadow: 0 0 .25em $colour-grey;
   margin-bottom: 1em;
   margin-top: 1em;
   height: auto;
   width: 100%;
+  @include dark-mode($background: $colour-dark-mode-highlight);
+  @include high-contrast($background: $colour-high-contrast-highlight);
 
   @media (min-width: $l) {
     @include overspill;

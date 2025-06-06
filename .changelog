@@ -20,6 +20,8 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Updates node version to 22.14.0
 - Upgrades a bunch of packages
+- Removes deprecated lighten() Sass function
+- Removes deprecated mixed declarations in Sass
 
 
 ## [6.5.15] - 2025-05-10

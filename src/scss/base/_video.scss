@@ -3,11 +3,11 @@ video {
 }
 
 .youtube-video {
-  @include embedded-media;
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
+  @include embedded-media;
 
   iframe,
   object,

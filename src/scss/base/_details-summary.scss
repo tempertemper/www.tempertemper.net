@@ -1,6 +1,6 @@
 summary {
-  @include text-link;
   color: $colour-primary-darker;
+  @include text-link;
   @include dark-mode($colour: $colour-primary);
   @include high-contrast($colour: $colour-dark-mode-primary-light);
 }

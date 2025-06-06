@@ -1,9 +1,9 @@
 html {
   font-family: 'FS Me Web', sans-serif;
-  @include font-body;
   color: $colour-black;
   font-size: 120%;
   font-feature-settings: "liga";
+  @include font-body;
 
   @media (max-width: $xxs) {
     font-size: 100%;

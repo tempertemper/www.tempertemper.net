@@ -1,9 +1,9 @@
 .table-wrapper {
-  @include heading-style;
   overflow: auto;
   border-radius: $border-radius-small;
   margin-top: 1em;
   margin-bottom: 1em;
+  @include heading-style;
 
   &:focus {
     outline: 3px solid $colour-black;
@@ -46,8 +46,8 @@ table {
 }
 
 caption {
-  @include heading-s;
   margin-top: .5em;
+  @include heading-s;
 
   @media (min-width: $xs) {
     margin-top: .5em;

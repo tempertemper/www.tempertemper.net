@@ -37,8 +37,6 @@ pre {
 
 pre {
   background-color: $colour-code-background;
-  @include dark-mode($background: $colour-dark-mode-code-background);
-  @include high-contrast($background: $colour-high-contrast-code-background);
   padding: 1em;
   white-space: pre-wrap;
   word-spacing: normal;
@@ -51,6 +49,8 @@ pre {
   border-radius: $border-radius-default;
   margin-top: 1em;
   margin-bottom: 1em;
+  @include dark-mode($background: $colour-dark-mode-code-background);
+  @include high-contrast($background: $colour-high-contrast-code-background);
 
   @media (min-width: $l) {
     @include overspill;
