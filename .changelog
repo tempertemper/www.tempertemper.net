@@ -15,6 +15,13 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.16] - 2025-06-06
+
+### Changes
+- Updates node version to 22.14.0
+- Upgrades a bunch of packages
+
+
 ## [6.5.15] - 2025-05-10
 
 ### Removes
