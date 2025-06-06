@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes deprecated lighten() Sass function
 - Removes deprecated mixed declarations in Sass
 - Removes deprecated file includes in Sass, using @use instead
+- Removes autoprefixer, ensuring the few necessary vendor prefixes are in the CSS
 
 
 ## [6.5.15] - 2025-05-10

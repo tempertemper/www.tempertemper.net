@@ -28,6 +28,7 @@
     background-color: colourVariables.$colour-white;
     outline: 3px solid colourVariables.$colour-black;
     outline-offset: 1px;
+    -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     @include generalMixins.dark-mode($background: colourVariables.$colour-dark-mode-main) {
       outline: 3px solid colourVariables.$colour-white;
@@ -42,6 +43,7 @@
   &:focus:not(:focus-visible) {
     background-color: transparent;
     outline: none;
+    -webkit-box-decoration-break: slice;
     box-decoration-break: slice;
     @include generalMixins.dark-mode($background: transparent) {
       outline: none;
@@ -55,6 +57,7 @@
     background-color: colourVariables.$colour-white;
     outline: 3px solid colourVariables.$colour-black;
     outline-offset: 1px;
+    -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     @include generalMixins.dark-mode($background: colourVariables.$colour-dark-mode-main) {
       outline: 3px solid colourVariables.$colour-white;
