@@ -15,6 +15,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.17] - 2025-06-07
+
+### Changes
+- Makes table tabindex removal work on window resize
+
+
 ## [6.5.16] - 2025-06-06
 
 ### Changes
