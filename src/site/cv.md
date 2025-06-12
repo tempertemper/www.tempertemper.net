@@ -23,6 +23,7 @@ I've led high-impact initiatives across global teams, delivered WCAG-compliant s
 ### Accessibility Lead
 
 Sage Group plc (FTSE 100), Global (11,000 employees across 20 countries)
+<br />
 <i>August 2020 to present, remote and hybrid</i>
 
 - Founded and scaled Sage's accessibility discipline as its first Accessibility Specialist, embedding inclusive design and development practices across the organisation
@@ -44,6 +45,7 @@ Sage Group plc (FTSE 100), Global (11,000 employees across 20 countries)
 ### Senior Interaction Designer
 
 HM Revenue & Customs (HMRC), UK Government Digital Delivery Centre
+<br />
 <i>March 2018 to August 2020, office-based and remote</i>
 
 - Designed accessible, user-centred services in line with Government Digital Service (GDS) standards
@@ -57,6 +59,7 @@ HM Revenue & Customs (HMRC), UK Government Digital Delivery Centre
 ### Director and Co-founder
 
 [Frontend NE](https://www.frontendne.co.uk), North East England
+<br />
 <i>January 2015 to March 2020</i>
 
 - Co-founded and directed Frontend NE, a thriving community-driven meet-up and conference focused on frontend development
@@ -67,6 +70,7 @@ HM Revenue & Customs (HMRC), UK Government Digital Delivery Centre
 ### Senior digital product designer
 
 EvaluAgent
+<br />
 <i>February 2017 to March 2018, remote</i>
 
 - Led a full redesign of a web-based contact centre suite, [creating a cohesive, user-friendly experience across multiple applications](https://www.tempertemper.net/portfolio/designing-a-cohesive-suite-of-applications)
@@ -76,7 +80,8 @@ EvaluAgent
 ### Freelance user experience designer and frontend developer
 
 [tempertemper Web Design Ltd](https://www.tempertemper.net)
-*Full time from February 2011 to February 2017; part time to present*
+<br />
+<i>Full time from February 2011 to February 2017; part time to present</i>
 
 - Founded and operated a successful freelance practice delivering UX design, frontend development, and accessibility expertise to startups and small businesses
 - Worked across diverse sectors and client needs, adapting quickly to different team structures, tech stacks, and project goals
@@ -87,6 +92,7 @@ EvaluAgent
 ### BA(Hons) English
 
 Teesside University, Middlesbrough, United Kingdom
+<br />
 <i>1997 to 2000</i>
 
 ### Self-directed education
