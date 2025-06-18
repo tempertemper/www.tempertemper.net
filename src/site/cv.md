@@ -13,9 +13,9 @@ excludeFromSitemap: true
 <br />
 [+44 7968 854087](tel:00447968854087)
 
-I'm a seasoned digital product designer and frontend developer with a strong track record of embedding accessibility and user-centred design practices in large organisations, public sector teams, and startups.
+I'm an accessibility leader and inclusive design specialist with a strong track record of embedding accessibility at scale in global organisations, public sector teams, and startups.
 
-I've led high-impact initiatives across global teams, delivered WCAG-compliant services, and contributed patterns to major design systems. I'm an experienced leader and an engaging communicator, and regularly give talks and run workshops, both internally and across the wider tech community.
+I've built high-impact accessibility programmes, led cross-functional teams, and shaped design systems and product strategies to deliver inclusive, WCAG-compliant experiences. Known for driving cultural change, I combine hands-on technical knowledge with executive-level influence, and regularly share insights through talks, workshops, and my widely-read blog.
 
 
 ## Employment
