@@ -50,6 +50,10 @@
     font-size: typographyVariables.$major-third-1;
   }
 
+  @media (min-width: layoutVariables.$s) {
+    hyphens: none;
+  }
+
   @media (min-width: layoutVariables.$m) {
     font-size: typographyVariables.$golden-2;
   }

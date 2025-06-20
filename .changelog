@@ -15,6 +15,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.18] - 2025-06-19
+
+### Changes
+- Prevents `h2`s and `th`s hyphenating
+
+
 ## [6.5.17] - 2025-06-07
 
 ### Changes
