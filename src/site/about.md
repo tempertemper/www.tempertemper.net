@@ -47,16 +47,18 @@ I also got very involved in the frontend code and accessibility testing of the s
 
 ### Sage
 
-My most recent move took me to Sage, where I'm a principal experience designer, using my specialism in accessibility to improve the digital culture and whole product line-up. I work with designers, product teams, and the design system team, either one to one or in groups. I'm also building a community around accessibility, where people can learn, share and ask questions.
+Since 2020 I’ve been leading accessibility at Sage, a global tech company with over 11,000 employees. I was brought in as their first accessibility specialist and have built the discipline from the ground up. We now have a thriving accessibility community and a Champions network to increase the core accessibility team's influence.
+
+From education through knowledge sharing, training, and workshops to working closely with teams to explore accessible approaches to design and code; I'm proud to have helped make accessibility part of the way Sage works.
 
 
 ## Sharing
 
-I'm a big believer in sharing. The web community is exceptionally generous and I owe my career to blog posts I've Googled, Stack Overflow, talks I've seen, and help from people I've met along the way.
+I'm a big believer in sharing. The web community is exceptionally generous and I owe my career to blog posts, Stack Overflow, talks on YouTube, and help from people I've met along the way.
 
 ### A local meetup
 
-In 2015 I co-founded Frontend NE, a [monthly frontend web development meetup](https://www.frontendne.co.uk) and [annual conference](https://2019.frontendne.co.uk). The meetup gave frontend web developers a place to learn more about their craft, as well as put the web-world to rights over beer and pizza; while the conference drew folk in from further afield for a day of talks, learning and fun.
+In 2015 I co-founded Frontend NE, a [monthly frontend web development meetup](https://www.frontendne.co.uk) and [annual conference](https://2019.frontendne.co.uk). The meetup gave frontend web developers a place to learn more about their craft, as well as put the web-world to rights over beer and pizza; while the conferences drew folk in from further afield for a day of talks, learning and fun.
 
 ### Speaking
 
