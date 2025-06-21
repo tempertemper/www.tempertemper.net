@@ -62,11 +62,11 @@ In 2015 I co-founded Frontend NE, a [monthly frontend web development meetup](ht
 
 ### Speaking
 
-Although I'm an [introvert](https://www.ted.com/talks/susan_cain_the_power_of_introverts?language=en), I'm certainly not shy! In fact, I really enjoy presenting ideas to audiences, and do so regularly at work, as well as at local design, development and tech [meetups](https://www.youtube.com/watch?v=v-Qwarwpsvc).
+Although I'm an [introvert](https://www.ted.com/talks/susan_cain_the_power_of_introverts?language=en), I'm certainly not shy! In fact, I really enjoy presenting ideas to audiences, and do so regularly at work, as well externally at [tech meetups](https://youtu.be/rMFoX0gzLfA).
 
 ### Teaching
 
-Accessibility was central to everything I did in Government, and I'm bringing that mindset to Sage. For years now, I've given regular workshop courses in HTML and accessibility, which have always been well attended by backend developers, testers, interaction and content designers; even user researchers, business analysts and product owners have also come along and learned a lot!
+Accessibility was central to everything I did in Government, and I brought that mindset to my colleagues at Sage. For years now, I've given regular workshop courses in HTML and accessibility, which have always been well attended by backend developers, testers, interaction and content designers; even user researchers, business analysts and product owners have also come along and learned a lot!
 
 
 ## What about right now?
