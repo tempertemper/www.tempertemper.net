@@ -15,6 +15,13 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.19] - 2025-06-25
+
+### Changes
+- Adds a divider mixin
+- Uses divider styling to separate CTA from page content above
+
+
 ## [6.5.18] - 2025-06-19
 
 ### Changes

@@ -132,3 +132,8 @@
     box-shadow: 0 0 .25em colourVariables.$colour-black;
   }
 }
+
+@mixin divider {
+  border-top: 2px solid colourVariables.$colour-primary;
+  margin: 2em 0;
+}
