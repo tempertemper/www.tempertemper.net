@@ -1,0 +1,5 @@
+@use '../admin/mixins--general' as generalMixins;
+
+.call-to-action {
+  @include generalMixins.divider;
+}

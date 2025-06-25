@@ -90,15 +90,6 @@ dt {
   }
 }
 
-hr {
-  border-top: 2px solid colourVariables.$colour-black;
-  margin: 1em 0;
-  max-width: 10em;
-  @include generalMixins.dark-mode() {
-    border-color: colourVariables.$colour-dark-mode-white;
-  }
-}
-
 small {
   display: block;
   font-size: 100%;
