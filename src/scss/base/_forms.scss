@@ -19,7 +19,7 @@ input {
   display: block;
   margin-bottom: 1em;
   padding: .5em .75em;
-  width: calc(100% - 1em);
+  width: 100%;
   line-height: 1.2;
   @include generalMixins.dark-mode(colourVariables.$colour-dark-mode-main, colourVariables.$colour-dark-mode-white);
   @include generalMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
