@@ -10,6 +10,8 @@ module.exports = {
     "name": "Martin Underhill",
     "twitter": "@tempertemper",
     "mastodon": "@tempertemper@mastodon.social",
+    "linkedin": "tempertemper",
+    "blusky": "tempertemper.bsky.social",
     "email": "hello+website@tempertemper.net"
   },
   "env": process.env.ELEVENTY_ENV || "not_development",
