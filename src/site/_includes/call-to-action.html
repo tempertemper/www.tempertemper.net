@@ -9,11 +9,19 @@
 {%- elif tags.length >= 1 and tags.includes('newsletter') %}
     {%- set newsletter = true %}
 {%- endif %}
+{%- if consultancy %}
+    {%- set consultancy = true %}
+{%- endif %}
+
 <section aria-labelledby="ctaLabel" class="call-to-action">
     {% if resource or testimonial or caseStudy %}
         <h2 id="ctaLabel">Hire me</h2>
         <p>If you like what you’ve read and think we’d work well together, I’d love to hear from you.</p>
         <a href="/contact">Contact me now</a>
+    {% elif consultancy %}
+        <h2 id="ctaLabel">Let’s chat</h2>
+        <p>If you’re looking for help with accessibility, whether it’s a one-off audit, a longer-term partnership, or something in between, I’d love to hear from you.</p>
+        <p><a href="/contact">Get in touch</a> or drop me a message on <a href="https://www.linkedin.com/in/tempertemper/">LinkedIn</a>.</p>
     {% elif newsletter %}
         <h2 id="ctaLabel">Accessibility in your inbox</h2>
         <p>If you enjoyed reading that newsletter, why not sign up for more?</p>
