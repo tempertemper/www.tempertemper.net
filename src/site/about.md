@@ -2,7 +2,7 @@
 title: About Martin at tempertemper
 heading: About Martin
 intro: |
-    It's very nice that you want to know more about me! I’m Martin and I design and build websites. I'm from Glasgow but live in Newcastle upon Tyne; married with two kids.
+    It's very nice that you want to know more about me! I’m Martin and I [help companies design and build accessible websites and apps](/consultancy). I'm from Glasgow but live in Newcastle upon Tyne; married with two kids and two cats.
 layout: default
 permalink: about.html
 cta: true
@@ -58,13 +58,13 @@ I'm a big believer in sharing. The web community is exceptionally generous and I
 
 ### A local meetup
 
-In 2015 I co-founded Frontend NE, a [monthly frontend web development meetup](https://www.frontendne.co.uk) and [annual conference](https://2019.frontendne.co.uk). The meetup gave frontend web developers a place to learn more about their craft, as well as put the web-world to rights over beer and pizza; while the conferences drew folk in from further afield for a day of talks, learning and fun.
+In 2015 I co-founded Frontend NE, a [monthly frontend web development meetup](https://www.frontendne.co.uk) and [annual conference](https://2019.frontendne.co.uk). Across 56 meetups and 6 years, with 82 speakers, we gave over 3,500 frontend web developers a place to learn more about their craft, while the conferences drew folk in from further afield for a day of learning and fun.
 
 ### Speaking
 
 Although I'm an [introvert](https://www.ted.com/talks/susan_cain_the_power_of_introverts?language=en), I'm certainly not shy! In fact, I really enjoy presenting ideas to audiences, and do so regularly at work, as well externally at [tech meetups](https://youtu.be/rMFoX0gzLfA).
 
-### Teaching
+### Training and coaching
 
 Accessibility was central to everything I did in Government, and I brought that mindset to my colleagues at Sage. For years now, I've given regular workshop courses in HTML and accessibility, which have always been well attended by backend developers, testers, interaction and content designers; even user researchers, business analysts and product owners have also come along and learned a lot!
 

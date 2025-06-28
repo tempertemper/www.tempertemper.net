@@ -58,5 +58,11 @@
   a {
     display: inline-flex;
     align-items: center;
+    margin-right: 0.5em;
+  }
+
+  svg {
+    display: inline-block;
+    margin-right: .25em;
   }
 }
