@@ -11,14 +11,19 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.5.20] - 2025-06-28
+
 ### Adds
 - Adds LinkedIn link to footer
 - New Consultancy page
+
+### Changes
 - References Consultancy page on other key pages
 - Revises Contact page and adds link to Bluesky
 - Revises some homepage and About page content
-
-----------
 
 
 ## [6.5.19] - 2025-06-25
