@@ -38,10 +38,6 @@
     hyphens: auto;
   }
 
-  @media (min-width: layoutVariables.$s) {
-    outline: 2px solid red;
-  }
-
   @media (min-width: layoutVariables.$m) {
     font-size: typographyVariables.$golden-3;
   }
