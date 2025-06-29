@@ -1,5 +1,6 @@
 ---
-title: Why 'tempertemper'?
+title: Why 'temper&shy;temper'?
+customURL: why-tempertemper
 intro: |
     Over the years, I've often been asked where I got the name 'tempertemper' from. The answer is very simple.
 date: 2019-12-12
