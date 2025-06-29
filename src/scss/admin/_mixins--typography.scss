@@ -7,7 +7,7 @@
   margin-bottom: .25em;
   letter-spacing: -.03em;
   font-weight: 700;
-  hyphens: auto;
+  hyphens: none;
 }
 
 @mixin heading-line-height-large {
@@ -28,13 +28,18 @@
 @mixin heading-xl {
   font-size: typographyVariables.$major-third-3;
   @include heading-line-height-large;
+  hyphens: manual;
 
   @media (max-width: layoutVariables.$xxs) {
     font-size: typographyVariables.$major-third-2;
   }
 
+  @media (max-width: layoutVariables.$xs) {
+    hyphens: auto;
+  }
+
   @media (min-width: layoutVariables.$s) {
-    hyphens: none;
+    outline: 2px solid red;
   }
 
   @media (min-width: layoutVariables.$m) {
@@ -50,8 +55,8 @@
     font-size: typographyVariables.$major-third-1;
   }
 
-  @media (min-width: layoutVariables.$s) {
-    hyphens: none;
+  @media (max-width: layoutVariables.$xs) {
+    hyphens: auto;
   }
 
   @media (min-width: layoutVariables.$m) {
