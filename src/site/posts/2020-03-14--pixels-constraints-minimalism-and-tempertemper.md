@@ -1,5 +1,6 @@
 ---
-title: Pixels, constraints, minimalism and tempertemper
+title: Pixels, constraints, minimalism, and temper&shy;temper
+customURL: pixels-constraints-minimalism-and-tempertemper
 intro: |
     As a designer, I thrive on constraints; as a minimalist, I enjoy boiling something down to its essence. Happily, my brand now allows room for pixel art.
 date: 2020-03-14
