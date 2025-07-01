@@ -2,7 +2,7 @@
 title: Accessibility
 intro: |
     Accessibility is intrinsic to everything I work on, whether a design or the HTML, CSS and JavaScript a web page is built with.
-order: 2
+order: 1
 ---
 
 When designing an interface, it's vital that the visuals cater for the broadest possible audience, ensuring:
