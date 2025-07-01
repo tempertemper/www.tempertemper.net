@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Removes
+- Removes UI design, HTML email, and Perch CMS from Skills
+- Redirects removed pages to equivalent existing pages
+
 ----------
 
 
