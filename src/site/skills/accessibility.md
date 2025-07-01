@@ -1,23 +1,26 @@
 ---
 title: Accessibility
-intro: |
-    Accessibility is intrinsic to everything I work on, whether a design or the HTML, CSS and JavaScript a web page is built with.
-order: 2
+intro: I help teams design and build accessible, inclusive products through training, auditing, strategy, and hands-on support.
+order: 1
 ---
 
-When designing an interface, it's vital that the visuals cater for the broadest possible audience, ensuring:
+My background in [user experience design](/skills/user-experience-design) and [frontend development](/skills/frontend-development) naturally led me to accessibility.
 
-- colour contrast thresholds are met
-- focus states for links, forms and buttons are obvious
-- the typefaces used won't prove problematic for visitor with dyslexia
-- text size isn't too small for some users to read
+When designing and building a digital product, it must work for everyone, and that includes disabled people. Accessibility ensures that product teams consider a wide range of abilities and perspectives:
 
-There are hundreds of considerations that go into designing an accessible interface, and the code is no different:
+- Designers, in how they handle visuals, content, components, patterns, and interaction flows
+- Developers, to make sure the HTML (and ARIA), CSS, and JavaScript work seamlessly with assistive technologies like keyboard navigation and screen readers
+- User researchers, who may need support when testing with disabled users
+- QA testers, to go beyond automated tools like axe DevTools and include manual testing with assistive tech
+- Product owners to support in the prioritisation of accessibility fixes
+- Product managers, to help shape accessible project priorities
 
-- semantic HTML must be used
-- ARIA enhancements should be used where needed
-- CSS and JavaScript should not interfere with users' experience of the page
+But my work doesn’t stop at the hands-on product level. I also:
 
-This means assistive technology like screen reader and speech recognition software can interpret page contents correctly, giving their users as good an experience anyone else.
-
-Not only should we code in a way that doesn't harm the experience for users of assistive technology, but users that have activated settings like [Dark Mode](/blog/dark-mode-websites-on-macos-mojave) or [reduced motion](/blog/reducing-motion) in their operating system's preferences should be respected.
+- Run training sessions and workshops tailored to different disciplines
+- Give talks on accessibility, from broad overviews to deep-dives
+- Host drop-in ‘surgery’ sessions for questions, blockers, and advice
+- Audit products for accessibility issues and categorise them clearly for teams to action
+- Track progress on audit findings
+- Write design system documentation and accessibility guidance
+- Help shape accessibility strategy across products and organisations

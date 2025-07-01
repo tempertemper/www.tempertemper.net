@@ -71,18 +71,36 @@
 
 [[redirects]]
   from = "/services/design"
-  to = "/skills/user-interface-design"
+  to = "/skills/user-experience-design"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/skills/user-interface-design"
+  to = "/skills/user-experience-design"
   status = 301
   force = true
 
 [[redirects]]
   from = "/services/perch"
-  to = "/skills/perch-cms"
+  to = "/blog/everything-has-its-time"
   status = 301
   force = true
 
 [[redirects]]
+from = "/skills/perch-cms"
+to = "/blog/everything-has-its-time"
+status = 301
+force = true
+
+[[redirects]]
   from = "/services/front-end-development"
+  to = "/skills/frontend-development"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/skills/html-email"
   to = "/skills/frontend-development"
   status = 301
   force = true

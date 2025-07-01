@@ -14,6 +14,17 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.5.22] - 2025-07-01
+
+### Removes
+- Removes UI design, HTML email, and Perch CMS from Skills
+- Redirects removed pages to equivalent existing pages
+
+### Changes
+- Reorders skills, prioritising accessibility
+- Revamps content for Skills section
+
+
 ## [6.5.21] - 2025-06-29
 
 ### Changes
