@@ -2,6 +2,8 @@
     {%- set post = true %}
 {%- elif tags.length >= 1 and tags.includes('resource') %}
     {%- set resource = true %}
+{%- elif tags.length >= 1 and tags.includes('skills') %}
+    {%- set skill = true %}
 {%- elif tags.length >= 1 and tags.includes('testimonial') %}
     {%- set testimonial = true %}
 {%- elif tags.length >= 1 and tags.includes('case-study') %}
@@ -14,7 +16,7 @@
 {%- endif %}
 
 <section aria-labelledby="ctaLabel" class="call-to-action">
-    {% if resource or testimonial or caseStudy %}
+    {% if resource or testimonial or caseStudy or skill %}
         <h2 id="ctaLabel">Hire me</h2>
         <p>If you like what you’ve read and think we’d work well together, I’d love to hear from you.</p>
         <a href="/contact">Contact me now</a>
