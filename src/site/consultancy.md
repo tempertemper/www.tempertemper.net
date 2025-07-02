@@ -25,7 +25,7 @@ Helping you embed accessibility at scale, from internal governance to team workf
 
 ### Design system integration
 
-Making sure accessibility is baked into your components, patterns, and guidance.z
+Making sure accessibility is baked into your components, patterns, and guidance.
 
 ### Audits and advice
 
