@@ -29,7 +29,7 @@ Attendance was relatively modest but the sessions worked really well and I recei
         <source srcset="/assets/img/case-studies/gaad-2021.webp" type="image/webp" />
         <img src="/assets/img/case-studies/gaad-2021.jpg" alt="A Teams meeting showing some HTML in the main presentation area and some people at the bottom." width="1024" height="576" loading="lazy" decoding="async" />
     </picture>
-    <figcaption>An online presentation by Martin Underhill at GAAD 2023.</figcaption>
+    <figcaption>An online presentation by Martin Underhill at GAAD 2021.</figcaption>
 </figure>
 
 
@@ -54,7 +54,7 @@ The day was a success! We had 388 cumulative attendances across all sessions; th
         <source srcset="/assets/img/case-studies/gaad-2022.webp" type="image/webp" />
         <img src="/assets/img/case-studies/gaad-2022.jpg" alt="A Teams meeting showing an obscured screen and only a very small viewing area, and some people at the bottom." width="1024" height="576" loading="lazy" decoding="async" />
     </picture>
-    <figcaption>The online empathy lab at GAAD 2023 simulating tunnel vision, hosted by Martin Underhill and Jonny Parker.</figcaption>
+    <figcaption>The online empathy lab at GAAD 2022 simulating tunnel vision, hosted by Martin Underhill and Jonny Parker.</figcaption>
 </figure>
 
 
