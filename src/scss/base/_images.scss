@@ -1,3 +1,4 @@
+@use '../admin/variables--layout' as layoutVariables;
 @use '../admin/mixins--general' as generalMixins;
 
 img {
@@ -10,5 +11,21 @@ img {
   p & {
     margin-top: 0;
     margin-bottom:  0;
+  }
+}
+
+figcaption {
+  margin-top: -.5em;
+  font-style: italic;
+}
+
+figure {
+
+  @media (min-width: layoutVariables.$l) {
+    @include generalMixins.overspill;
+
+    img {
+      @include generalMixins.overspill-reset;
+    }
   }
 }
