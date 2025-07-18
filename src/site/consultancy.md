@@ -11,34 +11,28 @@ I support organisations of all sizes, from early-stage startups to global compan
 
 ## What I offer
 
-I tailor my support to each team's needs. That might include:
+I tailor my support to each team’s needs, drawing on experience from a FTSE 100 company with nearly 11,000 employees across 23 countries. That might include:
 
-- Strategy and programme design
-- Design system integration
-- Accessibility audits
-- Workshops and capability-building
-- Advisory and coaching
+- <b>Strategy and programme design</b>, embedding accessibility at scale, from governance to workflows and culture
+- <b>Design system integration</b>, baking accessibility into your components, patterns, and guidance
+- <b>Audits and advice</b>, providing manual reviews of websites, apps, and design systems, with coaching to help teams find solutions that fit technical constraints, business goals, and user needs
+- <b>Workshops and capability-building</b>, with hands-on training for designers, developers, researchers, QA testers, and product managers
 
-### Strategy and programme design
 
-Helping you embed accessibility at scale, from internal governance to team workflows and culture change. I've done this at a FTSE 100 company, with nearly 11,000 employees over 23 countries.
+## Typical engagement
 
-### Design system integration
+The length of an engagement depends on the size and complexity of your organisation. A typical partnership begins with <b>discovery and audit</b>, where I learn how your business operates (the people, teams, culture, and workflows) and audit key products and identify barriers to accessibility. From there, I provide support across:
 
-Making sure accessibility is baked into your components, patterns, and guidance.
-
-### Audits and advice
-
-Manual reviews of websites, apps, and design systems. Rather than providing actionable recommendations I coach teams to find the right solution for them, taking technical/architectural constraints, business requirements, and users into consideration.
-
-### Workshops and capability-building
-
-Training for designers, developers, researchers, QA testers, and product managers on process and techniques for prevention and remediation.
+- <b>Awareness and culture</b>, establishing community spaces and regular touch points, and giving presentations to build awareness
+- <b>Training and upskilling</b>, with hands-on coaching and workshops tailored to different roles
+- <b>Process and policy integration</b>, embedding accessibility into team workflows, and guiding teams to the tools and practices that will help
+- <b>Documentation and guidance</b>, creating clear, practical resources in your design system, intranet, or team wikis to help teams work accessibly
+- <b>Compliance and metrics</b>, establishing KPIs and tracking progress over time
 
 
 ## How I work
 
-I'm remote-first and flexible, but I'm happy to travel occasionally if there's value in being in the room with others. I work closely with teams, not just delivering a report, but helping them understand and act on it. My goal is to build confidence and capability, not dependency.
+I'm remote-first and flexible, but I'm happy to travel occasionally if there's value in being in the room with others. I work closely with teams to make accessibility part of their everyday work; helping them learn, collaborate, and keep improving, not just handing over a list of fixes. My goal is to build confidence and capability, not dependency.
 
 
 ## Who I work with
