@@ -16,19 +16,7 @@
 {%- endif %}
 
 <section aria-labelledby="ctaLabel" class="call-to-action">
-    {% if resource or testimonial or caseStudy or skill %}
-        <h2 id="ctaLabel">Hire me</h2>
-        <p>If you like what you’ve read and think we’d work well together, I’d love to hear from you.</p>
-        <a href="/contact">Contact me now</a>
-    {% elif consultancy %}
-        <h2 id="ctaLabel">Let’s chat</h2>
-        <p>If you’re looking for help with accessibility, whether it’s a one-off audit, a longer-term partnership, or something in between, I’d love to hear from you.</p>
-        <p><a href="/contact">Get in touch</a> or drop me a message on <a href="https://www.linkedin.com/in/tempertemper/">LinkedIn</a>.</p>
-    {% elif newsletter %}
-        <h2 id="ctaLabel">Accessibility in your inbox</h2>
-        <p>If you enjoyed reading that newsletter, why not sign up for more?</p>
-        {% include "newsletter-signup.html" %}
-    {% else %}
+    {% if home or post or contact %}
         <h2 id="ctaLabel">Accessibility in your inbox</h2>
         <p>I send an accessibility-centric newsletter on the last day of every month, containing:</p>
         <ul>
@@ -37,5 +25,13 @@
             <li>Some interesting posts from around the web</li>
         </ul>
         {% include "newsletter-signup.html" %}
+    {% elif newsletter %}
+        <h2 id="ctaLabel">Accessibility in your inbox</h2>
+        <p>If you enjoyed reading that newsletter, why not sign up for more?</p>
+        {% include "newsletter-signup.html" %}
+    {% else %}
+        <h2 id="ctaLabel">Let’s chat!</h2>
+        <p>If you’re looking for ongoing accessibility support or a longer-term partnership to meet legal requirements like the Equality Act and the European Accessibility Act, I’d love to hear from you.</p>
+        <p><a href="/contact">Get in touch</a> or drop me a message on <a href="https://www.linkedin.com/in/tempertemper/">LinkedIn</a>.</p>
     {% endif %}
 </section>
