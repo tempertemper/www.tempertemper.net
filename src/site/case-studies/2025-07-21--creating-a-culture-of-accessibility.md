@@ -6,11 +6,11 @@ summaryImage: empathy-lab.jpg
 summaryImageAlt: Martin Underhill directing a small accessibility empathy lab, working with a man who has visual impairment goggles on, while a woman next to them puts on motor impairment gloves.
 ---
 
-When I joined Sage, I became the company’s first dedicated digital accessibility hire. At the time, there was almost no awareness of accessibility across the business, let alone any processes or practices in place to support it. I wasn’t coming in as part of a centrally funded programme or top-down initiative; I was hired by the VP of user experience design in Sage’s largest product division. He recognised the skill gap and wanted to take action.
+When I joined Sage, I became the company's first dedicated digital accessibility hire. At the time, there was almost no awareness of accessibility across the business, let alone any processes or practices in place to support it. I wasn't coming in as part of a centrally funded programme or top-down initiative; I was hired by the VP of user experience design in Sage's largest product division. He recognised the skill gap and wanted to take action.
 
-That sponsorship gave me a strong start within the design function, but it was clear from the beginning that this wasn’t a design-only problem. Building accessible products meant influencing other disciplines too (engineering, QA, product management) and working closely with both senior leaders and delivery teams to build shared ownership of accessibility.
+That sponsorship gave me a strong start within the design function, but it was clear from the beginning that this wasn't a design-only problem. Building accessible products meant influencing other disciplines too (engineering, QA, product management) and working closely with both senior leaders and delivery teams to build shared ownership of accessibility.
 
-At the same time, I had the opportunity to extend my reach beyond product and into the wider business. With my VP’s support, I worked with teams across Sage to make accessibility part of how the whole organisation operates.
+At the same time, I had the opportunity to extend my reach beyond product and into the wider business. With my VP's support, I worked with teams across Sage to make accessibility part of how the whole organisation operates.
 
 This was never going to be solved with a quick fix or a checklist; it needed a cultural shift.
 
@@ -28,9 +28,9 @@ This wasn't about ticking boxes against WCAG guidelines; the goal was to shift t
 
 ## What I did to build a culture of accessibility
 
-I didn’t build a culture of accessibility by handing out WCAG checklists or pointing at regulations. I built it by working closely with teams, forming relationships, and making accessibility part of everyday thinking and doing.
+I didn't build a culture of accessibility by handing out WCAG checklists or pointing at regulations. I built it by working closely with teams, forming relationships, and making accessibility part of everyday thinking and doing.
 
-The steps I took didn’t follow a rigid framework, but they did follow a natural arc. I focused first on building skills and knowledge, then helped teams put that knowledge into practice. From there, I looked upwards and outwards to influence leadership and the wider business. I supported and grew the community, then added structure and accountability to keep us on track.
+The steps I took didn't follow a rigid framework, but they did follow a natural arc. I focused first on building skills and knowledge, then helped teams put that knowledge into practice. From there, I looked upwards and outwards to influence leadership and the wider business. I supported and grew the community, then added structure and accountability to keep us on track.
 
 ### 1. Build knowledge and capability
 
@@ -64,15 +64,15 @@ I knew that making accessibility stick meant building a community. I ran weekly 
 
 Setting up an Accessibility Champions network worked well. Champions supported their colleagues, shared knowledge, answered questions, and helped keep accessibility visible. They also got involved with running empathy labs and worked on projects with the accessibility specialists. They had access to extra training and certification, and we set up platforms for them to use each other for advice, encouragement, or backup when things got tough.
 
-I also organised a monthly community meetup where someone would share something they’d learned: a presentation, a short workshop, or even just a few tips. It gave people a platform, boosted confidence, and encouraged a culture of shared learning.
+I also organised a monthly community meetup where someone would share something they'd learned: a presentation, a short workshop, or even just a few tips. It gave people a platform, boosted confidence, and encouraged a culture of shared learning.
 
 ### 5. Add structure and accountability
 
-To make sure we stayed on track, I introduced regular audits and tracking, and pushed for comprehensive automated testing. axe-core was integrated into every dev team’s process, with monthly spot checks to monitor performance and maintain a zero-error baseline.
+To make sure we stayed on track, I introduced regular audits and tracking, and pushed for comprehensive automated testing. axe-core was integrated into every dev team's process, with monthly spot checks to monitor performance and maintain a zero-error baseline.
 
 Alongside automation, I led manual accessibility audits across the product portfolio. We tracked progress with a burndown approach and resolved 40% of the issues identified.
 
-These results, along with the automated test scores, were published centrally so every team could see how others were doing. That visibility introduced a sense of healthy competition and some gentle pressure to improve. The goal wasn’t to catch teams out. It was to make accessibility a shared responsibility, not something handed off to specialists after the fact.
+These results, along with the automated test scores, were published centrally so every team could see how others were doing. That visibility introduced a sense of healthy competition and some gentle pressure to improve. The goal wasn't to catch teams out. It was to make accessibility a shared responsibility, not something handed off to specialists after the fact.
 
 
 ## Impact
@@ -85,9 +85,9 @@ The Accessibility Champions network has grown to more than forty people, strateg
 
 Late-stage fixes are the exception rather than the rule; teams avoid expensive rework by catching issues early, saving time and effort across disciplines.
 
-The company has also reduced the legal and reputational risks that come with inaccessibility. Accessibility isn't just the right thing to do; [it’s the law](/blog/making-sense-of-accessibility-and-the-law).
+The company has also reduced the legal and reputational risks that come with inaccessibility. Accessibility isn't just the right thing to do; [it's the law](/blog/making-sense-of-accessibility-and-the-law).
 
-Sage isn’t just ticking compliance boxes; it’s building better products for more people.
+Sage isn't just ticking compliance boxes; it's building better products for more people.
 
 
 ## Five Tips for Building a Strong Accessibility Culture
@@ -106,7 +106,7 @@ Competing project priorities and tight delivery timescales can make accessibilit
 
 ### Be curious
 
-Accessibility is complex and constantly evolving. Stay curious; acknowledge you don’t know everything, and be ready to learn from others, including people with disabilities.
+Accessibility is complex and constantly evolving. Stay curious; acknowledge you don't know everything, and be ready to learn from others, including people with disabilities.
 
 Avoid the [Dunning–Kruger effect](https://en.wikipedia.org/wiki/Dunning–Kruger_effect). Question your understanding often and lean on accessibility specialists, Champions, and the wider community for guidance.
 
@@ -114,7 +114,7 @@ Be prepared to make mistakes and learn the hard way; every setback is an opportu
 
 ### Hustle
 
-Creating a culture of accessibility doesn’t just happen; you have to make it happen. Sometimes that means getting creative to find the right moment to start a conversation, get someone engaged, or secure budget for things like empathy lab equipment, community events, or even building a team (mine grew to a small-but-mighty six).
+Creating a culture of accessibility doesn't just happen; you have to make it happen. Sometimes that means getting creative to find the right moment to start a conversation, get someone engaged, or secure budget for things like empathy lab equipment, community events, or even building a team (mine grew to a small-but-mighty six).
 
 It also means keeping accessibility visible: running events, sharing stories, making connections, and looking for allies. Culture shifts when people see accessibility as part of the everyday, not an add-on.
 
@@ -127,12 +127,12 @@ Cultural change takes time. Progress can be slow and setbacks frequent. Focus on
 
 Creating a culture of accessibility is a marathon, not a sprint. It takes consistent effort, patience, and collaboration across all levels of an organisation.
 
-I learned that building strong relationships matters just as much as technical knowledge. When people feel supported and respected, they’re more open to change and willing to tackle accessibility challenges.
+I learned that building strong relationships matters just as much as technical knowledge. When people feel supported and respected, they're more open to change and willing to tackle accessibility challenges.
 
 Senior leadership buy-in is crucial, but so is empowering the people on the ground, including designers, developers, and testers, who actually do the work day to day.
 
 Accessibility Champions help keep teams accountable and prevent standards from slipping, making sure accessibility stays front and centre in everyday work.
 
-Mistakes are inevitable. What matters is how you respond to them; openly sharing lessons learned turns setbacks into growth opportunities, not roadblocks. An accessibility community provides a vital support network where knowledge is shared, challenges are discussed, and people learn from each other’s experiences.
+Mistakes are inevitable. What matters is how you respond to them; openly sharing lessons learned turns setbacks into growth opportunities, not roadblocks. An accessibility community provides a vital support network where knowledge is shared, challenges are discussed, and people learn from each other's experiences.
 
 Finally, accessibility is about people. Keeping the focus on real users and their experiences helps keep momentum and purpose alive, even when the work gets tough.
