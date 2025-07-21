@@ -1,7 +1,7 @@
 ---
 title: "Scaling accessibility awareness at Sage: five years of GAAD"
 intro: How I used Global Accessibility Awareness Day (GAAD) to grow Sage's accessibility community and strengthen leadership engagement.
-date: 2025-07-19
+date: 2025-06-19
 summaryImage: gaad.png
 summaryImageAlt: The GAAD logo, white on a dark blue background, with the letters ‘G’, ‘A’, ‘A’, ‘D’ inside a circle a keyboard at the bottom right.
 ---
