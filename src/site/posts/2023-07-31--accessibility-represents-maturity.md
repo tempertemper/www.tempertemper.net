@@ -19,7 +19,7 @@ The truth of it, though, is that accessibility actually makes it *easier* to mov
 - narrows down design choices, making the ideation much more time-efficient
 - promotes the use of a design system, which streamlines the whole design and development process
 - makes it easier for *everyone* to use an interface or complete a task, removing the need for [extra work-arounds for some groups of users](https://webaim.org/blog/accessibility-lipstick-on-a-usability-pig/)
-- opens designers up to fresh approaches to meeting a user needs
+- opens designers up to fresh approaches to meeting user needs
 - removes a great deal of the re-work that's necessary when the accessibility penny finally drops
 
 Twitter, where one of Musk's first moves was to [lay off the entire accessibility team](https://www.wired.com/story/twitter-layoffs-accessibility/), is an example of a company that's heading in exactly the wrong direction.
