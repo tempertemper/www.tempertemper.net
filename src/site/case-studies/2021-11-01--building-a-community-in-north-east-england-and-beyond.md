@@ -1,6 +1,6 @@
 ---
 title: Building a community in North East England and beyond
-intro: In 2025 I co-founded Frontend NE, a meet-up for frontend developers in the North East of England, welcoming over 3,000 attendees over five years.
+intro: In 2015 I co-founded Frontend NE, a meet-up for frontend developers in the North East of England, welcoming over 3,000 attendees over five years.
 date: 2021-11-01
 summaryImage: frontend-ne-conference.jpg
 summaryImageAlt: Ania Bebb talking to a packed crown at the Frontend NE conference in 2019.
