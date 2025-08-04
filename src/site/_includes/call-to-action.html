@@ -11,9 +11,6 @@
 {%- elif tags.length >= 1 and tags.includes('newsletter') %}
     {%- set newsletter = true %}
 {%- endif %}
-{%- if consultancy %}
-    {%- set consultancy = true %}
-{%- endif %}
 
 <section aria-labelledby="ctaLabel" class="call-to-action">
     {% if home or post or contact %}

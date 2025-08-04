@@ -13,6 +13,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ----------
 
+## [6.6.2] - 2025-08-04
+
+### Changes
+- Adds Nova config for jinja/nunjucks
+- Adds full Services section, including websites and contracting
+- Refactors Skills section slightly, and amends the content
+
 
 ## [6.6.1] - 2025-07-27
 

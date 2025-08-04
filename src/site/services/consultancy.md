@@ -1,10 +1,7 @@
 ---
 title: Accessibility consulting
+customURL: consultancy
 intro: I'm Martin, an accessibility consultant helping product teams design and build digital experiences that everyone can use.
-layout: default
-permalink: consultancy.html
-consultancy: true
-cta: true
 ---
 
 I support organisations of all sizes, from early-stage startups to global companies, with practical, strategic guidance on building accessibility into their work.
@@ -40,6 +37,6 @@ I'm remote-first and flexible, but I'm happy to travel occasionally if there's v
 I typically partner with:
 
 - Product organisations looking to improve or scale their accessibility practices
-- Startups or new products within a wider ecosystem who want to get accessibility right from the start
+- Startups or new products within a wider ecosystem that want to get accessibility right from the start
 - Organisations facing regulatory requirements or internal accessibility goals
 - Design system and platform teams

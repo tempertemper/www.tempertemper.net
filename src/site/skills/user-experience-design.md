@@ -1,7 +1,6 @@
 ---
 title: User experience design
 intro: From the overall structure to the elements that make up a page, making sure a website is easy to use is the most important aspect of design.
-order: 2
 ---
 
 Call it user experience design, UX, usability design, user-centred design (UCD), it amounts to the same thing; giving people a great experience, whether they notice or not. And by 'people' I mean *everyone*, so [accessibility](/skills/accessibility) is at the heart of everything I work on.
@@ -18,3 +17,5 @@ Interaction design is where it gets *really* interesting for me; designing the w
 Although not my specialism, I have a solid grasp of content design and strategy; especially in areas such as page structure and prioritisation, and information architecture. The language used in an interface can greatly affect how the user progresses through a service, as well as how they interact with individual elements on a page, and this is fascinating to me.
 
 User research is often counted as part of user experience design, and I've done my fair share, but I prefer to work with the information gleaned *by* a user researcher (as well as customer satisfaction scores, analytics and other performance metrics) to inform, iterate and validate my designs.
+
+I often work as part of a multi-disciplinary team on public sector or design-led projects; [here's how that usually works](/services/contracting).

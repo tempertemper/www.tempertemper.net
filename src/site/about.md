@@ -2,7 +2,7 @@
 title: About Martin at tempertemper
 heading: About Martin
 intro: |
-    It's very nice that you want to know more about me! I’m Martin and I [help companies design and build accessible websites and apps](/consultancy). I'm from Glasgow but live in Newcastle upon Tyne; married with two kids and two cats.
+    It's very nice that you want to know more about me! I’m Martin and I [help companies design and build accessible websites and apps](/services/consultancy). I'm from Glasgow but live in Newcastle upon Tyne; married with two kids and two cats.
 layout: default
 permalink: about.html
 cta: true

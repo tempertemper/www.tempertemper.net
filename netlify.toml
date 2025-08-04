@@ -49,13 +49,7 @@
   force = true
 
 
-## Services to Skills redirects
-
-[[redirects]]
-  from = "/services"
-  to = "/skills/"
-  status = 301
-  force = true
+## Services and Skills redirects
 
 [[redirects]]
   from = "/services/usability-design"
@@ -106,8 +100,8 @@ force = true
   force = true
 
 [[redirects]]
-  from = "/services/*"
-  to = "/skills/:splat"
+  from = "/consultancy"
+  to = "/services/consultancy"
   status = 301
   force = true
 
