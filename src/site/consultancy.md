@@ -40,6 +40,6 @@ I'm remote-first and flexible, but I'm happy to travel occasionally if there's v
 I typically partner with:
 
 - Product organisations looking to improve or scale their accessibility practices
-- Startups or new products within a wider ecosystem who want to get accessibility right from the start
+- Startups or new products within a wider ecosystem that want to get accessibility right from the start
 - Organisations facing regulatory requirements or internal accessibility goals
 - Design system and platform teams
