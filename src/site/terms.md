@@ -15,36 +15,11 @@ I love what I do and take pride in having invested time, money and a great deal 
 In recent years, I've been taking on fewer and fewer projects. I'm absolutely open to chatting about yours, but it's only fair to let you know that I may not be in a position to take it on in the immediate future.
 
 
-## My approach
+## The work I carry out
 
-### Website projects
-
-I work in a very consultative manner in order to deliver your content to your users in the most effective way possible. I care about the final product and this means I often question or challenge ideas clients bring to me (very politely and diplomatically, of course; I'm far from the argumentative type!). Having said that, please don't be shy with *your* ideas: you know your business better than anyone!
-
-The initial website project delivery is just the start. Your website should be evolve as:
-
-- you find out more about your visitors' needs
-- web browsers introduce new features
-
-To accommodate this shifting landscape, I work with my clients on an ongoing basis to make improvements and maintain their website's code-base. Long lasting, collaborative relationships between website owners and web designers produce the most effective websites.
-
-Finally, if it's not the right time to start your website I'll tell you. I'll even give you guidance on how to prepare things properly. Your money, wherever possible, should remain in your pocket; there's no sense investing in work that won't bring you a return.
-
-### Freelance
-
-I am happy to augment any design, frontend development, or multi-disciplinary team, either by integrating with the team, or by picking up work they don't have time for.
-
-### Consultation
-
-As well as delivering website projects and working as a freelance, I also provide consultation, and tend to focus on my specialist area of accessibility, where I can:
-
-- audit a product or service, finding accessibility issues, pinpointing the cause, and providing direction for a solution
-- steer design and/or frontend development teams in accessibility best practices
-- give advice and direction for positive change in accessibility on a departmental or organisational level
-
-### Presentations, workshops, and training
-
-I have been giving talks, workshops, and training for years to groups, large and small; my presentation style is informal and engaging.
+- [Accessibility consultant](/consulting)
+- [Contracting/Freelance accessibility or interaction design](/freelance)
+- [Website design and build](/websites)
 
 
 ## Ways of working
@@ -68,24 +43,7 @@ Working remotely is not just about location; it's about being timezone agnostic 
 
 My fee depends on the type of work you'd like me to do and length of contract. When outlining what your project is, please give a clear expectation of **what** you would like me to do, **when** you'd like it to be done by, and the **budget** you have available.
 
-To give you a very rough idea of my prices:
-
-- Start to finish small website projects are usually costed as a project, which usually comes in at between £6,000+VAT to £12,000+VAT
-- For consultation/freelance projects, my day rate starts at £550+VAT
-
-I do not work on an hourly basis.
-
-### Ongoing maintenance
-
-As mentioned, many projects require some ongoing maintenance. This covers things like:
-
-- Keeping the codebase current, removing or refining older code that may be deprecated
-- Keeping up with browser advances
-- Keeping up to date with the latest search engine requirements
-
-### Ongoing retainers
-
-As well as maintaining your website, I often work with clients on a regular basis to chip away at their to-do list. I usually set up a [Trello](https://trello.com) board, or something similar, where we can add ideas, discuss them, then carry out work steadily each month.
+I do not work on an hourly basis; instead I work to a day rate or project cost.
 
 ### Expenses
 
@@ -145,6 +103,19 @@ Once the deposit has cleared in my account and the contract has been signed, we'
 ### Consultation days
 
 Sometimes the requirements and scope of a project are not known. If this is the case, I can work with you to produce them. My time for this is billable by the day, must be paid for up front, and is separate to any potential future project costs.
+
+
+## Ongoing maintenance
+
+Many (most) projects require some ongoing maintenance. This covers things like:
+
+- Keeping the codebase current, removing or refining older code that may be deprecated
+- Keeping up with advances in browsers, operating systems, and assistive technology
+- Keeping up to date with the latest search engine requirements
+
+### Retainers
+
+As well as maintaining your website, I often work with clients on an ongoing basis to chip away at their to-do list. I usually set up a [Trello](https://trello.com) board, or something similar, where we can add ideas, discuss them, then carry out work steadily each month.
 
 
 ## What next?
