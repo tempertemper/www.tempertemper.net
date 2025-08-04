@@ -1,7 +1,6 @@
 ---
 title: User experience design
 intro: From the overall structure to the elements that make up a page, making sure a website is easy to use is the most important aspect of design.
-order: 2
 ---
 
 Call it user experience design, UX, usability design, user-centred design (UCD), it amounts to the same thing; giving people a great experience, whether they notice or not. And by 'people' I mean *everyone*, so [accessibility](/skills/accessibility) is at the heart of everything I work on.

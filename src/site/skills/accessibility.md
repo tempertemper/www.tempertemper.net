@@ -1,7 +1,6 @@
 ---
 title: Accessibility
 intro: I help teams design and build accessible, inclusive products through training, auditing, strategy, and hands-on support.
-order: 1
 ---
 
 My background in [user experience design](/skills/user-experience-design) and [frontend development](/skills/frontend-development) naturally led me to accessibility.

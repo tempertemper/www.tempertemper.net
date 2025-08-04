@@ -1,7 +1,6 @@
 ---
 title: Frontend development
 intro: I'm a frontend developer with a strong focus on accessible HTML and CSS and some JavaScript enhancements to improve usability.
-order: 3
 ---
 
 I'm a [front of the frontend developer](/blog/front-of-the-frontend) and I write well-structured, semantic HTML so that the sites I build are [accessible](/skills/accessibility) to all users and straightforward for other developers to maintain.

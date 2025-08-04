@@ -1,10 +1,7 @@
 ---
 title: Accessibility consulting
+customURL: consultancy
 intro: I'm Martin, an accessibility consultant helping product teams design and build digital experiences that everyone can use.
-layout: default
-permalink: consultancy.html
-consultancy: true
-cta: true
 ---
 
 I support organisations of all sizes, from early-stage startups to global companies, with practical, strategic guidance on building accessibility into their work.

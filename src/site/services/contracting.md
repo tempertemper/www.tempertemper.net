@@ -1,9 +1,7 @@
 ---
-title: Freelance and contract work
+title: Contract and freelance work
+customURL: contracting
 intro: I take on freelance and contract roles in accessibility and interaction design; mainly in the public sector, and happy to work inside IR35.
-hideIntro: true
-layout: default
-permalink: freelance.html
 ---
 
 Alongside my consultancy work, I occasionally take on freelance and contract roles; mainly in the public sector, but I'm open to private sector projects too.
