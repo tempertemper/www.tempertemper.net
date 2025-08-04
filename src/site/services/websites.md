@@ -4,7 +4,7 @@ customURL: websites
 intro: How I approach website projects; what to expect when working together, from planning and delivery to handover and long-term support.
 ---
 
-These days, I work primarily as an [accessibility consultant](/consultancy); I rarely take on website builds, and I don't actively look for that kind of work anymore. That said, I occasionally make exceptions, usually for clients I already know, or when a build forms part of a broader accessibility engagement.
+These days, I work primarily as an [accessibility consultant](/services/consultancy); I rarely take on website builds, and I don't actively look for that kind of work anymore. That said, I occasionally make exceptions, usually for clients I already know, or when a build forms part of a broader accessibility engagement.
 
 If we do work together on a website, here's how I approach things.
 
