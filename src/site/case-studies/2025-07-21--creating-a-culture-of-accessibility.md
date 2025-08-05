@@ -88,7 +88,7 @@ The burndown results, along with the automated test scores, were published centr
 
 ## Impact
 
-Not, the end of my time at Sage, hundreds of people are actively thinking and talking about accessibility in their day-to-day work. The accessibility community has grown to nearly 800 members; a sign of how far awareness and interest had come. The company has also invested thousands of pounds in accessibility equipment for empathy labs across multiple offices, and funded community events like [Global Accessibility Awareness Day (GAAD)](/portfolio/scaling-accessibility-awareness-at-sage-five-years-of-gaad).
+Now, the end of my time at Sage, hundreds of people are actively thinking and talking about accessibility in their day-to-day work. The accessibility community has grown to nearly 800 members; a sign of how far awareness and interest had come. The company has also invested thousands of pounds in accessibility equipment for empathy labs across multiple offices, and funded community events like [Global Accessibility Awareness Day (GAAD)](/portfolio/scaling-accessibility-awareness-at-sage-five-years-of-gaad).
 
 Accessibility is now baked into workflows, design systems, and governance processes. Teams consider it from the start, hold each other accountable as work progresses, and lean on specialists where needed.
 
