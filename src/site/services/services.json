@@ -2,5 +2,6 @@
   "layout": "default.html",
   "permalink": "services/{{ customURL if customURL else title | slugify | safe }}.html",
   "cta": true,
+  "tags" : ["service"],
   "hideIntro": true
 }
