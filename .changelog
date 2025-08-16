@@ -14,6 +14,19 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.6.4] - 2025-08-16
+
+### Fixes
+- Changed `<published>` and `<updated>` dates to RFC-3339 format (was RFC-822)
+- Fixed `<category>` elements to use `term` attribute instead of text content
+- Corrected feed `<link rel="self">` to match canonical URL
+- Added `<link rel="alternate" type="text/html">` for better reader support
+- Deduplicated `<updated>` values using bumpSeconds filter
+- Stripped `<iframe>` elements from feed content for compatibility
+- Removed non-HTML `<quote>` elements, replaced with `<q>`
+- Updates site redirects in netlify.toml to use www. prefix
+
+
 ## [6.6.3] - 2025-08-05
 
 ### Fixes
