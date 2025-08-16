@@ -35,19 +35,31 @@
 # Internal redirects
 
 ## Redirect default Netlify subdomain to primary domain
-
 [[redirects]]
   from = "https://tempertemper.netlify.com/*"
-  to = "https://tempertemper.net/:splat"
+  to = "https://www.tempertemper.net/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://tempertemper.netlify.app/*"
-  to = "https://tempertemper.net/:splat"
+  to = "https://www.tempertemper.net/:splat"
   status = 301
   force = true
 
+## Canonicalise apex to www
+[[redirects]]
+  from = "https://tempertemper.net/*"
+  to = "https://www.tempertemper.net/:splat"
+  status = 301
+  force = true
+
+## Catch any stray http apex requests
+[[redirects]]
+  from = "http://tempertemper.net/*"
+  to = "https://www.tempertemper.net/:splat"
+  status = 301
+  force = true
 
 ## Services and Skills redirects
 
