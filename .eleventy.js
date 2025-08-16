@@ -127,6 +127,19 @@ module.exports = eleventyConfig => {
     return yyyy + '/' + mm + '/' + dd;
   });
 
+  /* Prevent duplicate updated values in feeds */
+  eleventyConfig.addFilter("bumpSeconds", (date, seconds) => {
+    const d = new Date(date);
+    d.setSeconds(d.getSeconds() + (seconds || 0));
+    return d;
+  });
+
+  /* Strip iframes from feed; improves reader compatibility */
+  eleventyConfig.addTransform("sanitise-feed-html", (content, outputPath) => {
+    if (!outputPath || !outputPath.endsWith("/feeds/main.xml")) return content;
+    return content.replace(/<iframe\b[^>]*>.*?<\/iframe>/gis, "");
+  });
+
   // Localhost server config
   eleventyConfig.setServerOptions({
     port: 3000,

@@ -1,42 +1,40 @@
 ---
-permalink: feeds/main.json
+permalink: /feeds/main.json
+eleventyExcludeFromCollections: true
 ---
 {
   "version": "https://jsonfeed.org/version/1",
-  "title": "{{ title }}",
-  "home_page_url": "{{ site.url }}",
-  "feed_url": "{{ site.url }}/{{ permalink }}",
-  "description": "{{ description }}",
+  "title": {{ title | dump }},
+  "home_page_url": {{ site.url | dump }},
+  "feed_url": {{ (page.url | absoluteUrl(site.url)) | dump }},
+  "description": {{ description | dump }},
   "author": {
-    "name": "{{ site.author.name }}",
+    "name": {{ site.author.name | dump }},
     "url": "https://mastodon.social/@tempertemper",
-    "avatar": "{{ site.url }}/assets/img/martin-underhill-tempertemper--square-512x512.jpg"
+    "avatar": {{ (site.url ~ "/assets/img/martin-underhill-tempertemper--square-512x512.jpg") | dump }}
   },
-  "icon": "{{ site.url }}/assets/img/tempertemper-feed.png",
-  "favicon": "{{ site.url }}/assets/img/icons/favicon.png",
+  "icon": {{ (site.url ~ "/assets/img/tempertemper-feed.png") | dump }},
+  "favicon": {{ (site.url ~ "/assets/img/icons/favicon.png") | dump }},
   "items": [
   {%- for post in collections.post | reverse %}
+    {%- set idx = loop.index0 -%}
+    {%- set fullUrl = site.url ~ (post.url | replace(".html","")) -%}
+    {%- set postContent = post.templateContent -%}
+    {%- set commonContent = '<p>The article <a rel="nofollow" href="' + fullUrl + '">' + (post.data.title | smart | safe | replace("&nbsp;", " ") | replace("&shy;","")) + '</a> appeared first on <a rel="nofollow" href="' + site.url + '">www.tempertemper.net</a>.</p>\n' -%}
+    {%- set content = [postContent, commonContent] -%}
     {
-      "id": "{{ loop.revindex }}",
-      "date_published": "{{ post.date | dateToRfc822 }}",
-      {%- if post.updated %}"date_modified": "{{ post.updated | dateToRfc822 }}",{%- endif %}
-      "title": "{{ post.data.title | smart | safe | replace("&nbsp;", " ") }}",
-      "summary": "{{ post.data.intro | markdown | safe | striptags }}",
-      {%- set postTags = post.data.tags | tagsOnPage %}
-      {%- if postTags.length > 0  %}
-      "tags": [{% for category in postTags %}"{{ category }}"{% if not loop.last %},{% endif %}{% endfor %}],
-      {%- endif %}
-      "url": "{{ site.url }}{{ post.url | replace (".html", "") }}",
-      {%- set postContent = post.templateContent %}
-      {%- set commonContent = '<p>The article <a rel="nofollow" href="' + site.url + post.url | replace (".html", "") + '">' + post.data.title | smart | safe | replace("&nbsp;", " ") + '</a> appeared first on <a rel="nofollow" href="' + site.url + '">www.tempertemper.net</a>.</p>\n' %}
-      {%- set content = [postContent, commonContent] %}
-      "content_html": {{ content | join | dump | safe }}
-    }
-    {%- if loop.length >= 2 -%}
-      {%- if not loop.last -%}
-      ,
+      "id": {{ fullUrl | dump }},
+      "date_published": {{ (post.date | dateToRfc3339) | dump }},
+      "date_modified": {{ (((post.data.updated or post.date) | bumpSeconds(idx)) | dateToRfc3339) | dump }},
+      "title": {{ (post.data.title | smart | safe | replace("&nbsp;", " ") | replace("&shy;","")) | dump }},
+      "summary": {{ (post.data.intro | markdown | safe | striptags) | dump }},
+      {%- set postTags = post.data.tags | tagsOnPage -%}
+      {%- if postTags and postTags.length > 0 -%}
+      "tags": [{% for category in postTags %}{{ category | dump }}{% if not loop.last %},{% endif %}{% endfor %}],
       {%- endif -%}
-  {%- endif %}
+      "url": {{ fullUrl | dump }},
+      "content_html": {{ content | join | dump | safe }}
+    }{% if not loop.last %},{% endif %}
   {%- endfor %}
   ]
 }
