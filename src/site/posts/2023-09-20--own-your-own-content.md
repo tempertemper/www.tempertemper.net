@@ -12,6 +12,6 @@ For a long time I've been conscious that Twitter owned the content we all posted
 
 I watched as people took advantage of the [longer character count](https://daringfireball.net/2017/11/twitter_280) and [threaded Tweets](https://www.vox.com/culture/2017/12/15/16771922/twitter-new-threading-feature) to post much longer-form thoughts directly to Twitter, glad that any content I produced that was worth anything lived safely on my own website.
 
-I won't be using it again, but I have no intention of deleting my Twitter profile or any tweets: I'm not about to break any links to my tweets (after all, [<quote>Cool URIs don't change</quote>](https://www.w3.org/Provider/Style/URI)); I'll leave that to Twitter.
+I won't be using it again, but I have no intention of deleting my Twitter profile or any tweets: I'm not about to break any links to my tweets (after all, [<q>Cool URIs don't change</q>](https://www.w3.org/Provider/Style/URI)); I'll leave that to Twitter.
 
 Meanwhile, I've downloaded an archive of my tweets, and one day I might get round to publishing them on a subdomain of my own site for posterity. I guess in theory Twitter could ask me to take them down but I'm a very small fish and, sadly, I doubt they've got the staff.
