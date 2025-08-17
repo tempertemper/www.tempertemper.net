@@ -1,5 +1,13 @@
 @use '../admin/mixins--general' as generalMixins;
 
 .call-to-action {
+  margin: 2em 0;
+}
+
+.call-to-action:not(.highlight) {
   @include generalMixins.divider;
+}
+
+.highlight {
+  @include generalMixins.boxout;
 }

@@ -54,6 +54,11 @@
       @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-highlight);
     }
   }
+
+  > h2,
+  > h3 {
+    margin-top: .25em;
+  }
 }
 
 @mixin overspill {
@@ -76,39 +81,38 @@
 
 @mixin boxes-in-list {
 
-  li {
-    @include typographyMixins.remove-list-styling;
-    @include highlight-box;
-
-    + li {
-      margin-top: 1em;
-
-      @media (min-width: layoutVariables.$m) {
-        margin-top: 0;
-      }
-    }
-  }
-
-  h3 {
-    margin-top: 0;
-  }
-
-  ul {
+  ul,
+  ol {
     max-width: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-left: 0;
 
     @media (min-width: layoutVariables.$m) {
-      max-width: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
-      gap: 0em 1em;
-      grid-auto-flow: row;
-      grid-template-areas:
-      ". .";
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     @media (min-width: layoutVariables.$l) {
       @include overspill;
+    }
+  }
+
+  li {
+    flex: 1 1 calc((100% - 1em) / 2);
+    min-width: 0;
+
+    &:first-child:nth-last-child(3) {
+      flex-basis: 100%;
+    }
+
+    @include typographyMixins.remove-list-styling;
+    @include highlight-box;
+
+    h2 {
+      @include typographyMixins.heading-m;
     }
   }
 }
@@ -136,5 +140,4 @@
 
 @mixin divider {
   border-top: 2px solid colourVariables.$colour-primary;
-  margin: 2em 0;
 }

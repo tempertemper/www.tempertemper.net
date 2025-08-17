@@ -1,6 +1,7 @@
 @use '../admin/variables--layout' as layoutVariables;
 @use '../admin/mixins--general' as generalMixins;
 
-.teaser {
+.teaser,
+.more-posts {
   @include generalMixins.boxes-in-list;
 }

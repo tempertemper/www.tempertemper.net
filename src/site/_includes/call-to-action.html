@@ -12,20 +12,22 @@
     {%- set newsletter = true %}
 {%- endif %}
 
-<section aria-labelledby="ctaLabel" class="call-to-action">
-    {% if home or post or contact %}
+{% set other = not (home or post or contact or newsletter) %}
+<section aria-labelledby="ctaLabel" class="call-to-action{% if other %} highlight{% endif %}">
+    {% if home or post or contact or newsletter %}
         <h2 id="ctaLabel">Accessibility in your inbox</h2>
-        <p>I send an accessibility-centric newsletter on the last day of every month, containing:</p>
-        <ul>
-            <li>A roundup of the articles I’ve posted</li>
-            <li>A hot pick from my archives</li>
-            <li>Some interesting posts from around the web</li>
-        </ul>
-        {% include "newsletter-signup.html" %}
-    {% elif newsletter %}
-        <h2 id="ctaLabel">Accessibility in your inbox</h2>
-        <p>If you enjoyed reading that newsletter, why not sign up for more?</p>
-        {% include "newsletter-signup.html" %}
+        {% if home or post or contact %}
+            <p>I send an accessibility-centric newsletter on the last day of every month, containing:</p>
+            <ul>
+                <li>A roundup of the articles I’ve posted</li>
+                <li>A hot pick from my archives</li>
+                <li>Some interesting posts from around the web</li>
+            </ul>
+            {% include "newsletter-signup.html" %}
+        {% else %}
+            <p>If you enjoyed reading that newsletter, why not sign up for more?</p>
+            {% include "newsletter-signup.html" %}
+        {% endif %}
     {% else %}
         <h2 id="ctaLabel">Let’s chat!</h2>
         <p>If you’re looking for ongoing accessibility support or a longer-term partnership to meet legal requirements like the Equality Act and the European Accessibility Act, I’d love to hear from you.</p>
