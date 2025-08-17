@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 - Refines box highlight SCSS
 - Highlights non-newsletter-sign-up calls to action
 - Adds services to homepage in place of blog subjects
+- Moves index files into their respective folders
 
 ### Fixes
 - Bring Sass declarations in line with CSS
