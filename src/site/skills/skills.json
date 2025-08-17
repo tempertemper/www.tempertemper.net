@@ -2,5 +2,6 @@
   "layout": "default.html",
   "hideIntro": true,
   "cta": true,
+  "tags" : ["skill"],
   "permalink": "skills/{{ customURL if customURL else title | slugify | safe }}.html"
 }

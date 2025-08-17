@@ -59,7 +59,7 @@ module.exports = eleventyConfig => {
 
   /* List all tags */
   eleventyConfig.addFilter("tags", collection => {
-    const notRendered = ['all', 'post', 'resource', 'testimonial', 'case-study', 'newsletter', 'skills'];
+    const notRendered = ['all', 'post', 'resource', 'testimonial', 'case-study', 'newsletter', 'skill', 'service'];
     return Object.keys(collection)
       .filter(d => !notRendered.includes(d))
       .sort();

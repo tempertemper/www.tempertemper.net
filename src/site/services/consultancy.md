@@ -1,7 +1,7 @@
 ---
 title: Accessibility consulting
 customURL: consultancy
-intro: I'm Martin, an accessibility consultant helping product teams design and build digital experiences that everyone can use.
+intro: Strategic, hands-on support to embed accessibility into your teams, products, and processes; and make it a lasting part of how you work.
 ---
 
 I support organisations of all sizes, from early-stage startups to global companies, with practical, strategic guidance on building accessibility into their work.
