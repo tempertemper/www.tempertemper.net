@@ -4,10 +4,10 @@ eleventyExcludeFromCollections: true
 ---
 {
   "version": "https://jsonfeed.org/version/1",
-  "title": {{ title | dump }},
+  "title": {{ title | smart | replace("&nbsp;", " ") | replace("&shy;","") | trim | dump }},
   "home_page_url": {{ site.url | dump }},
   "feed_url": {{ (page.url | absoluteUrl(site.url)) | dump }},
-  "description": {{ description | dump }},
+  "description": {{ description | trim | dump }},
   "author": {
     "name": {{ site.author.name | dump }},
     "url": "https://mastodon.social/@tempertemper",
@@ -19,21 +19,23 @@ eleventyExcludeFromCollections: true
   {%- for post in collections.post | reverse %}
     {%- set idx = loop.index0 -%}
     {%- set fullUrl = site.url ~ (post.url | replace(".html","")) -%}
+    {%- set postTitle = post.data.title | smart | replace("&nbsp;", " ") | replace("&shy;","") | trim -%}
+    {%- set postSummary = post.data.intro | markdown | striptags | trim -%}
     {%- set postContent = post.templateContent -%}
-    {%- set commonContent = '<p>The article <a rel="nofollow" href="' + fullUrl + '">' + (post.data.title | smart | safe | replace("&nbsp;", " ") | replace("&shy;","")) + '</a> appeared first on <a rel="nofollow" href="' + site.url + '">www.tempertemper.net</a>.</p>\n' -%}
-    {%- set content = [postContent, commonContent] -%}
+    {%- set commonContent = '<p>The article <a rel="nofollow" href="' + fullUrl + '">' + postTitle + '</a> appeared first on <a rel="nofollow" href="' + site.url + '">www.tempertemper.net</a>.</p>\n' -%}
+    {%- set content = [postContent, commonContent] | join -%}
     {
       "id": {{ fullUrl | dump }},
       "date_published": {{ (post.date | dateToRfc3339) | dump }},
       "date_modified": {{ (((post.data.updated or post.date) | bumpSeconds(idx)) | dateToRfc3339) | dump }},
-      "title": {{ (post.data.title | smart | safe | replace("&nbsp;", " ") | replace("&shy;","")) | dump }},
-      "summary": {{ (post.data.intro | markdown | safe | striptags) | dump }},
+      "title": {{ postTitle | dump }},
+      "summary": {{ postSummary | dump }},
       {%- set postTags = post.data.tags | tagsOnPage -%}
       {%- if postTags and postTags.length > 0 -%}
       "tags": [{% for category in postTags %}{{ category | dump }}{% if not loop.last %},{% endif %}{% endfor %}],
       {%- endif -%}
       "url": {{ fullUrl | dump }},
-      "content_html": {{ content | join | dump | safe }}
+      "content_html": {{ content | dump | safe }}
     }{% if not loop.last %},{% endif %}
   {%- endfor %}
   ]
