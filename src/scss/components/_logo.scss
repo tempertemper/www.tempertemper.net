@@ -1,4 +1,4 @@
-@use '../admin/mixins--general' as generalMixins;
+@use '../admin/mixins--modes' as modeMixins;
 @use '../admin/variables--layout' as layoutVariables;
 @use '../admin/variables--colour' as colourVariables;
 
@@ -18,7 +18,7 @@
   .mark path,
   .trademark {
     fill: colourVariables.$colour-black;
-    @include generalMixins.dark-mode() {
+    @include modeMixins.dark-mode() {
       fill: colourVariables.$colour-dark-mode-white;
     }
   }

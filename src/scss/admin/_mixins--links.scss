@@ -1,6 +1,6 @@
 @use './variables--general' as generalVariables;
 @use './variables--colour' as colourVariables;
-@use './mixins--general' as generalMixins;
+@use './mixins--modes' as modeMixins;
 
 
 @mixin text-link {
@@ -9,19 +9,19 @@
   &:link,
   &:visited {
     color: colourVariables.$colour-primary-darker;
-    @include generalMixins.dark-mode($colour: colourVariables.$colour-primary);
-    @include generalMixins.high-contrast($colour: colourVariables.$colour-dark-mode-primary-light);
+    @include modeMixins.dark-mode($colour: colourVariables.$colour-primary);
+    @include modeMixins.high-contrast($colour: colourVariables.$colour-dark-mode-primary-light);
   }
 
   &:hover {
     color: colourVariables.$colour-primary-dark;
-    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-primary-light);
-    @include generalMixins.high-contrast($colour: colourVariables.$colour-high-contrast-primary-light);
+    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-primary-light);
+    @include modeMixins.high-contrast($colour: colourVariables.$colour-high-contrast-primary-light);
   }
 
   &:active {
     color: colourVariables.$colour-black;
-    @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-white);
+    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-white);
   }
 
   &:focus {
@@ -30,11 +30,11 @@
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @include generalMixins.dark-mode($background: colourVariables.$colour-dark-mode-main) {
+    @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-main) {
       outline: 3px solid colourVariables.$colour-white;
       outline-offset: 1px;
     }
-    @include generalMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
+    @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
       outline: 3px solid colourVariables.$colour-white;
       outline-offset: 1px;
     }
@@ -45,10 +45,10 @@
     outline: none;
     -webkit-box-decoration-break: slice;
     box-decoration-break: slice;
-    @include generalMixins.dark-mode($background: transparent) {
+    @include modeMixins.dark-mode($background: transparent) {
       outline: none;
     }
-    @include generalMixins.high-contrast($background: transparent) {
+    @include modeMixins.high-contrast($background: transparent) {
       outline: none;
     }
   }
@@ -59,11 +59,11 @@
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @include generalMixins.dark-mode($background: colourVariables.$colour-dark-mode-main) {
+    @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-main) {
       outline: 3px solid colourVariables.$colour-white;
       outline-offset: 1px;
     }
-    @include generalMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
+    @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
       outline: 3px solid colourVariables.$colour-white;
       outline-offset: 1px;
     }

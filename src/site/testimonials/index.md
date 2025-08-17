@@ -1,12 +1,11 @@
 ---
 title: Testimonials for Martin at tempertemper
 heading: Compliments
-intro: |
-    What people are saying about Martin Underhill at tempertemper
-hideIntro: true
+intro: What people are saying about Martin Underhill at tempertemper
 layout: default
+permalink: testimonials/index.html
 noCta: true
-listing: true
+override:tags: false
 ---
 
 <ul class="index-list" reversed>

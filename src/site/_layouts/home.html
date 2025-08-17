@@ -18,6 +18,25 @@ layout: base.html
     {{- content | safe }}
 </article>
 
+<section aria-labelledby="expertise" class="teaser">
+    <h2 id="expertise">How I can help</h2>
+    <p>Whether you need help building accessibility into your team, support delivering a digital service, or a new website built from scratch, I can help.</p>
+    <div class="highlight-boxes">
+        <ul>
+        {%- for service in collections.service %}
+            <li>
+                <h2>
+                    <a href="{{ service.url  | replace(".html", "") }}">
+                        {{- service.data.title -}}
+                    </a>
+                </h2>
+                {{ service.data.intro | smart | safe }}
+            </li>
+        {%- endfor %}
+        </ul>
+    </div>
+</section>
+
 <section aria-labelledby="writing" class="teaser">
     <h2 id="writing">Writing</h2>
     <p>I write a <em>lot</em>! You can dive straight to <a href="/blog/">my blog here</a>, but here are a couple of hand-picked articles to get you started:</p>
@@ -29,15 +48,4 @@ layout: base.html
             {%- endif %}
         {%- endfor %}
     </ul>
-</section>
-
-<section aria-labelledby="my-favourite-subjects">
-    <h2 id="my-favourite-subjects">Subjects</h2>
-    <p>There are a few topics that really interest me:</p>
-    <ul>
-        <li><a href="/category/accessibility">Accessibility</a> is about designing and building web interfaces that can be used by everyone, something I feel very strongly about</li>
-        <li><a href="/category/design">Designing</a> smart, usable interfaces, journeys and interactions is what I do best, and I enjoy analysing others’ great design</li>
-        <li><a href="/category/development">Frontend development</a> is a huge passion of mine; HTML and CSS in particular, but anything from Git to npm</li>
-    </ul>
-     <p>Have a look at the <a href="/categories">full list of subjects</a> I write about.</p>
 </section>

@@ -14,6 +14,20 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.6.6] - 2025-08-17
+
+### Changes
+- Makes services and skills boxes
+- Makes a specific mixin for dark and high contrast modes
+- Refines box highlight SCSS
+- Highlights non-newsletter-sign-up calls to action
+- Adds services to homepage in place of blog subjects
+- Moves index files into their respective folders
+
+### Fixes
+- Bring Sass declarations in line with CSS
+
+
 ## [6.6.5] - 2025-08-17
 
 ### Changes
