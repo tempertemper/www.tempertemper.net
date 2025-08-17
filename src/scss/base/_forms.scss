@@ -1,7 +1,7 @@
 @use '../admin/variables--colour' as colourVariables;
 @use '../admin/variables--general' as generalVariables;
-@use '../admin/mixins--general' as generalMixins;
 @use '../admin/mixins--buttons' as buttonsMixins;
+@use '../admin/mixins--modes' as modeMixins;
 
 form {
   margin-bottom: 1em;
@@ -9,7 +9,7 @@ form {
 }
 
 label {
-  @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-white);
+  @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-white);
 }
 
 input {
@@ -20,15 +20,15 @@ input {
   padding: .5em .75em;
   width: 100%;
   line-height: 1.2;
-  @include generalMixins.dark-mode(colourVariables.$colour-dark-mode-main, colourVariables.$colour-dark-mode-white);
-  @include generalMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
+  @include modeMixins.dark-mode(colourVariables.$colour-dark-mode-main, colourVariables.$colour-dark-mode-white);
+  @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
     border-color: colourVariables.$colour-dark-mode-primary-light;
   }
 
   &:focus {
     outline: solid 3px colourVariables.$colour-black;
     outline-offset: 0px;
-    @include generalMixins.dark-mode() {
+    @include modeMixins.dark-mode() {
       outline: solid 3px colourVariables.$colour-white;
     }
   }

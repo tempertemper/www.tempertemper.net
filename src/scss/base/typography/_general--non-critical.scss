@@ -1,12 +1,12 @@
 @use '../../admin/variables--colour' as colourVariables;
 @use '../../admin/variables--layout' as layoutVariables;
-@use '../../admin/mixins--general' as generalMixins;
+@use '../../admin/mixins--modes' as modeMixins;
 
 ::selection {
   background: colourVariables.$colour-primary;
   color: colourVariables.$colour-white;
-  @include generalMixins.dark-mode($colour: colourVariables.$colour-black);
-  @include generalMixins.high-contrast($background: colourVariables.$colour-dark-mode-primary-light);
+  @include modeMixins.dark-mode($colour: colourVariables.$colour-black);
+  @include modeMixins.high-contrast($background: colourVariables.$colour-dark-mode-primary-light);
 }
 
 blockquote {
@@ -23,7 +23,7 @@ blockquote {
     }
   }
 
-  @include generalMixins.high-contrast() {
+  @include modeMixins.high-contrast() {
     border-left-color: colourVariables.$colour-dark-mode-primary-light;
   }
 
@@ -69,7 +69,7 @@ li {
 
   &::marker {
     color: colourVariables.$colour-primary;
-    @include generalMixins.high-contrast($colour: colourVariables.$colour-dark-mode-primary-light);
+    @include modeMixins.high-contrast($colour: colourVariables.$colour-dark-mode-primary-light);
   }
 
   ul &::marker {

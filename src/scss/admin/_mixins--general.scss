@@ -1,58 +1,16 @@
 @use './variables--general' as generalVariables;
 @use './variables--colour' as colourVariables;
 @use './variables--layout' as layoutVariables;
-
-
-@mixin dark-mode($background: null, $colour: null) {
-
-  @media screen and (prefers-color-scheme: dark), screen and (prefers-contrast: more) {
-
-    @if ($background != null and $colour != null) {
-      background-color: $background;
-      color: $colour;
-      @content;
-    }
-    @else if ($background != null and $colour == null) {
-      background-color: $background;
-      @content;
-    }
-    @else if ($colour != null and $background == null) {
-      color: $colour;
-      @content;
-    }
-    @else {
-      @content;
-    }
-  }
-}
-
-@mixin high-contrast($background: null, $colour: null) {
-
-  @media screen and (prefers-contrast: more) {
-
-    @if ($background != null and $colour != null) {
-      background-color: $background;
-      color: $colour;
-      @content;
-    }
-    @else if ($background != null and $colour == null) {
-      background-color: $background;
-      @content;
-    }
-    @else if ($colour != null and $background == null) {
-      color: $colour;
-      @content;
-    }
-    @else {
-      @content;
-    }
-  }
-}
+@use './mixins--typography' as typographyMixins;
+@use './mixins--modes' as modeMixins;
 
 @mixin inline-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+
+  & {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   li + li {
     margin-left: .5em;
@@ -66,30 +24,34 @@
 }
 
 @mixin highlight-box {
-  background-color: colourVariables.$colour-highlight;
-  border-radius: generalVariables.$border-radius-default;
-  padding: 1em;
-  @include dark-mode($background: colourVariables.$colour-dark-mode-highlight);
-  @include high-contrast($background: colourVariables.$colour-high-contrast-highlight);
+
+  & {
+    background-color: colourVariables.$colour-highlight;
+    border-radius: generalVariables.$border-radius-default;
+    padding: 1em;
+  }
+
+  @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-highlight);
+  @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-highlight);
 
   a {
 
     &:focus {
       background-color: colourVariables.$colour-highlight;
-      @include dark-mode($background: colourVariables.$colour-dark-mode-highlight);
-      @include high-contrast($background: colourVariables.$colour-high-contrast-highlight);
+      @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-highlight);
+      @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-highlight);
     }
 
     &:focus:not(:focus-visible) {
       background-color: transparent;
-      @include dark-mode($background: transparent);
-      @include high-contrast($background: transparent);
+      @include modeMixins.dark-mode($background: transparent);
+      @include modeMixins.high-contrast($background: transparent);
     }
 
     &:focus-visible {
       background-color: colourVariables.$colour-highlight;
-      @include dark-mode($background: colourVariables.$colour-dark-mode-highlight);
-      @include high-contrast($background: colourVariables.$colour-high-contrast-highlight);
+      @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-highlight);
+      @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-highlight);
     }
   }
 }
@@ -112,6 +74,45 @@
   }
 }
 
+@mixin boxes-in-list {
+
+  li {
+    @include typographyMixins.remove-list-styling;
+    @include highlight-box;
+
+    + li {
+      margin-top: 1em;
+
+      @media (min-width: layoutVariables.$m) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  ul {
+    max-width: none;
+
+    @media (min-width: layoutVariables.$m) {
+      max-width: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 0em 1em;
+      grid-auto-flow: row;
+      grid-template-areas:
+      ". .";
+    }
+
+    @media (min-width: layoutVariables.$l) {
+      @include overspill;
+    }
+  }
+}
+
 @mixin embedded-media {
   border-radius: generalVariables.$border-radius-default;
   background-color: colourVariables.$colour-highlight;
@@ -121,14 +122,14 @@
   margin-top: 1em;
   height: auto;
   width: 100%;
-  @include dark-mode($background: colourVariables.$colour-dark-mode-highlight);
-  @include high-contrast($background: colourVariables.$colour-high-contrast-highlight);
+  @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-highlight);
+  @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-highlight);
 
   @media (min-width: layoutVariables.$l) {
     @include overspill;
   }
 
-  @include dark-mode() {
+  @include modeMixins.dark-mode() {
     box-shadow: 0 0 .25em colourVariables.$colour-black;
   }
 }

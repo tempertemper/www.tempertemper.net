@@ -2,6 +2,7 @@
 @use '../admin/variables--general' as generalVariables;
 @use '../admin/variables--layout' as layoutVariables;
 @use '../admin/mixins--general' as generalMixins;
+@use '../admin/mixins--modes' as modeMixins;
 
 @mixin button {
   background-color: colourVariables.$colour-primary;
@@ -18,10 +19,10 @@
   padding: .5em 1em; // Older browsers
   padding: calc(.5em + 3px) 1em .5em;
   width: auto;
-  @include generalMixins.dark-mode($colour: colourVariables.$colour-dark-mode-main) {
+  @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-main) {
     border-bottom: solid 3px colourVariables.$colour-dark-mode-primary-dark;
   }
-  @include generalMixins.high-contrast(colourVariables.$colour-dark-mode-primary-light, colourVariables.$colour-high-contrast-main);
+  @include modeMixins.high-contrast(colourVariables.$colour-dark-mode-primary-light, colourVariables.$colour-high-contrast-main);
 
   @media (max-width: layoutVariables.$xs) {
     padding: .25em;
@@ -34,29 +35,29 @@
 
   &:focus {
     outline: 3px solid colourVariables.$colour-black;
-    @include generalMixins.dark-mode() {
+    @include modeMixins.dark-mode() {
       outline: 3px solid colourVariables.$colour-white;
     }
   }
 
   &:focus:not(:focus-visible) {
     outline: none;
-    @include generalMixins.dark-mode() {
+    @include modeMixins.dark-mode() {
       outline: none;
     }
   }
 
   &:focus-visible {
     outline: 3px solid colourVariables.$colour-black;
-    @include generalMixins.dark-mode() {
+    @include modeMixins.dark-mode() {
       outline: 3px solid colourVariables.$colour-white;
     }
   }
 
   &:hover {
     background-color: colourVariables.$colour-primary-dark;
-    @include generalMixins.dark-mode($background: colourVariables.$colour-dark-mode-primary-light);
-    @include generalMixins.high-contrast($background: colourVariables.$colour-high-contrast-primary-light);
+    @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-primary-light);
+    @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-primary-light);
   }
 
   &:active {

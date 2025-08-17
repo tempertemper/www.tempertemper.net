@@ -1,0 +1,45 @@
+@mixin dark-mode($background: null, $colour: null) {
+
+  @media screen and (prefers-color-scheme: dark), screen and (prefers-contrast: more) {
+
+    @if ($background != null and $colour != null) {
+      background-color: $background;
+      color: $colour;
+      @content;
+    }
+    @else if ($background != null and $colour == null) {
+      background-color: $background;
+      @content;
+    }
+    @else if ($colour != null and $background == null) {
+      color: $colour;
+      @content;
+    }
+    @else {
+      @content;
+    }
+  }
+}
+
+@mixin high-contrast($background: null, $colour: null) {
+
+  @media screen and (prefers-contrast: more) {
+
+    @if ($background != null and $colour != null) {
+      background-color: $background;
+      color: $colour;
+      @content;
+    }
+    @else if ($background != null and $colour == null) {
+      background-color: $background;
+      @content;
+    }
+    @else if ($colour != null and $background == null) {
+      color: $colour;
+      @content;
+    }
+    @else {
+      @content;
+    }
+  }
+}
