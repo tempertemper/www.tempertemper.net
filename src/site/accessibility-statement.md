@@ -7,9 +7,8 @@ updated: 2024-06-24
 permalink: accessibility-statement.html
 ---
 
-- It meets the [Web Content Accessibility Guidelines (WCAG) version 2.1](https://www.w3.org/TR/WCAG21/) at level AA
-- A good number of AAA success criteria in WCAG 2.2 have also been met
-- All of the success criteria (A, AA, and AAA) in the up-coming [WCAG version 2.2](https://www.w3.org/TR/WCAG22/) are satisfied
+- It meets the [Web Content Accessibility Guidelines (WCAG) version 2.2](https://www.w3.org/TR/WCAG/) to level AA
+- A good number of AAA success criteria have also been met
 
 I'm not going to go into the work I've done on things like keyboard focus indicators, colour contrast, respecting user preferences, and so on; there's too much to list, and one feature is not necessarily more important than another.
 

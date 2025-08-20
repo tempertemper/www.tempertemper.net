@@ -4,7 +4,7 @@ customURL: websites
 intro: Accessible websites that are fast, easy to use, and built to last; thoughtfully designed to be both clear and delightful.
 ---
 
-These days, I work primarily as an [accessibility consultant](/services/consultancy), but my background is in website builds and I enjoy the occasional website project. If we do work together on a website, here's how I approach things.
+I work primarily as an [accessibility consultant](/services/consultancy), but my background is in website builds and I enjoy the occasional website project. If we do work together on a website, here's how I approach things.
 
 
 ## How I work
