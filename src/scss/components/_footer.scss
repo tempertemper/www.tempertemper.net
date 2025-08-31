@@ -18,16 +18,6 @@
     max-width: none;
   }
 
-  &::before {
-    background-color: colourVariables.$colour-black;
-    content: '';
-    display: block;
-    height: 3px;
-    margin-bottom: generalVariables.$section-spacing;
-    max-width: 10em;
-    @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-white);
-  }
-
   address {
     margin-bottom: 0;
     margin-top: 0;
@@ -47,24 +37,23 @@
 
   .utility {
     @include typographyMixins.remove-list-styling;
-
-    li {
-      @include generalMixins.inline-nav;
-    }
   }
 }
 
 .social {
 
+  li + li {
+    margin-top: .25em;
+  }
+
   a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    margin-right: 0.5em;
+    gap: .25em;
+
   }
 
   svg {
-    display: inline-block;
-    margin-right: .25em;
     margin-top: -.25em;
   }
 }

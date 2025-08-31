@@ -14,6 +14,15 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.6.7] - 2025-08-31
+
+### Changes
+- Removes line above footer
+- Stacks footer social icons
+- Takes 'home' out of footer nav
+- Takes colophon out of footer nav
+
+
 ## [6.6.6] - 2025-08-17
 
 ### Changes
