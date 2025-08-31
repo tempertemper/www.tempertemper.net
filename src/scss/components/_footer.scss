@@ -37,24 +37,23 @@
 
   .utility {
     @include typographyMixins.remove-list-styling;
-
-    li {
-      @include generalMixins.inline-nav;
-    }
   }
 }
 
 .social {
 
+  li + li {
+    margin-top: .25em;
+  }
+
   a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    margin-right: 0.5em;
+    gap: .25em;
+
   }
 
   svg {
-    display: inline-block;
-    margin-right: .25em;
     margin-top: -.25em;
   }
 }

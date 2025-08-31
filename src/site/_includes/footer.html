@@ -1,14 +1,18 @@
 <footer class="footer">
-    <div class="social">
-        <a href="https://mastodon.social/{{ site.author.mastodon | replace('@mastodon.social','')}}">
-            {%- include "svg/mastodon.svg" -%}
-            Follow me on Mastodon
-        </a>
-        <a href="https://www.linkedin.com/in//{{ site.author.linkedin }}/">
-            {%- include "svg/linkedin.svg" -%}
-            View my LinkedIn profile
-        </a>
-    </div>
+    <ul class="utility social">
+        <li>
+            <a href="https://mastodon.social/{{ site.author.mastodon | replace('@mastodon.social','')}}">
+                {%- include "svg/mastodon.svg" -%}
+                Follow me on Mastodon
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in//{{ site.author.linkedin }}/">
+                {%- include "svg/linkedin.svg" -%}
+                View my LinkedIn profile
+            </a>
+        </li>
+    </ul>
     <nav aria-label="repeated primary">
         {% include "navigation-primary.html" %}
     </nav>
