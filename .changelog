@@ -14,6 +14,21 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.6.8] - 2025-03-03
+
+### Changes
+- Moves redirects to much more readable _redirects file
+- Adds modern security headers (CSP, HSTS, Referrer Policy, Permissions Policy, etc.)
+- Updates img-src directive in CSP to allow inline SVGs via data:
+- Sets long-term caching and immutable flag for fonts
+
+### Fixes
+- Fixes some indentation and typos in netlify.toml
+
+### Removes
+- Removes deprecated X-XSS-Protection header
+
+
 ## [6.6.7] - 2025-08-31
 
 ### Changes
