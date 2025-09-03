@@ -713,7 +713,7 @@
 
 [[redirects]]
   from = "/resources/category/admin"
-  to = "/rcategory/website-admin/"
+  to = "/category/website-admin/"
   status = 301
   force = true
 
