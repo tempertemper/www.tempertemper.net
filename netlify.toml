@@ -94,10 +94,10 @@
   force = true
 
 [[redirects]]
-from = "/skills/perch-cms"
-to = "/blog/everything-has-its-time"
-status = 301
-force = true
+  from = "/skills/perch-cms"
+  to = "/blog/everything-has-its-time"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/services/front-end-development"
