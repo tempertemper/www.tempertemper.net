@@ -145,6 +145,9 @@ module.exports = eleventyConfig => {
     port: 3000,
   });
 
+  // Build redirects file to site
+  eleventyConfig.addPassthroughCopy("_redirects");
+
   return {
     dir: {
       input: "src/site",
