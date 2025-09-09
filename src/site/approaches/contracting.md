@@ -1,10 +1,11 @@
 ---
-title: Contract and freelance work
+title: Contract and freelance
 customURL: contracting
 intro: Embedded support for public sector projects and other design-led teams; focused on interaction design and accessibility, tailored to how your team works.
+order: 3
 ---
 
-Alongside my [consultancy work](/services/consultancy), I occasionally take on contract and freelance roles; mainly in the public sector, but I'm open to private sector projects too.
+Alongside my [consultancy work](/approaches/consultancy), I occasionally take on contract and freelance roles; mainly in the public sector, but I'm open to private sector projects too.
 
 That might mean embedding within a design, frontend, or multi-disciplinary team; taking on an interim position, covering a short-term gap, or picking up work a team doesn't have time for. I'm comfortable joining existing teams and fitting into established ways of working.
 

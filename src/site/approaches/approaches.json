@@ -1,0 +1,7 @@
+{
+  "layout": "default.html",
+  "permalink": "approaches/{{ customURL if customURL else title | slugify | safe }}.html",
+  "cta": true,
+  "tags" : ["approach"],
+  "hideIntro": true
+}

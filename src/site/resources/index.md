@@ -8,6 +8,8 @@ permalink: resources/index.html
 override:tags: false
 ---
 
+I tend not to write much here anymore. For articles on design, frontend development, and accessibility, [head to my blog](/blog/).
+
 <ol class="hfeed index-list" reversed>
     {%- for post in collections.resource | reverse %}
         {%- include "post-in-list.html" %}

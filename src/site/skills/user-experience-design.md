@@ -20,4 +20,4 @@ Although not my specialism, I have a solid grasp of content design and strategy;
 
 User research is often counted as part of user experience design, and I've done my fair share, but I prefer to work with the information gleaned *by* a user researcher (as well as customer satisfaction scores, analytics and other performance metrics) to inform, iterate and validate my designs.
 
-I often work as part of a multi-disciplinary team on public sector or design-led projects; [here's how that usually works](/services/contracting).
+I often work as part of a multi-disciplinary team on public sector or design-led projects; [here's how that usually works](/approaches/contracting).
