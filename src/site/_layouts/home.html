@@ -23,18 +23,22 @@ layout: base.html
     <p>Whether you need help building accessibility into your team, support delivering a digital service, or a new website built from scratch, I can help.</p>
     <div class="highlight-boxes">
         <ul>
-        {%- for service in collections.service %}
-            <li>
-                <h2>
-                    <a href="{{ service.url  | replace(".html", "") }}">
-                        {{- service.data.title -}}
-                    </a>
-                </h2>
-                {{ service.data.intro | smart | safe }}
-            </li>
+        {%- set services = collections.service | ordered -%}
+        {%- set shown = 0 -%}
+        {%- for service in services %}
+            {%- if service.data.featured and shown < 3 %}
+                {%- set shown = shown + 1 -%}
+                <li>
+                    <h2>
+                        <a href="{{ service.url | replace('.html', '') }}">{{ service.data.title }}</a>
+                    </h2>
+                    {{ service.data.intro | smart | safe }}
+                </li>
+            {%- endif %}
         {%- endfor %}
         </ul>
     </div>
+    <a href="/services/">View all services</a>
 </section>
 
 <section aria-labelledby="writing" class="teaser">
