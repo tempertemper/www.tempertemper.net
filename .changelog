@@ -27,6 +27,7 @@ All notable changes to this project will be documented in this file. The format 
 - Outputs 3 featured services to homepage
 - Reworks Contact page content
 - Reworks Keep in touch page content
+- Redirects old Consulting and Contracting pages to the new URLs
 
 ### Removes
 - Takes Categories out of footer nav
@@ -35,6 +36,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Stops footer social links being full width
+- Fixes a couple of redirects
 
 
 ## [6.6.8] - 2025-09-03

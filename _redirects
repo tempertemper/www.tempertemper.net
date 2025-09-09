@@ -7,8 +7,9 @@
 /skills/perch-cms                 /blog/everything-has-its-time      301!
 /services/front-end-development   /skills/frontend-development       301!
 /skills/html-email                /skills/frontend-development       301!
-/consultancy                      /services/consultancy              301!
-
+/services/consultancy             /approaches/consultancy            301!
+/services/contracting             /approaches/contracting            301!
+/consultancy                      /approaches/consultancy            301!
 
 # === Blog → Resources (one-offs) ===
 /2012-05-30-freeagent                                 /blog/freeagent                                  301!
@@ -198,15 +199,6 @@
 /blog/minimum-focus-appearance-explained         /blog/focus-appearance-explained               301!
 
 
-# === Portfolio ===
-/portfolio.php                   /portfolio/          301!
-/projects/                       /portfolio/          301!
-/work/                           /portfolio/          301!
-/projects/ems-publishing         /portfolio/          301!
-/projects/gusto-research         /portfolio/          301!
-/portfolio/gusto-research        /portfolio/          301!
-
-
 # === Other page and asset redirects ===
 /blog/imap-for-your-mobile-device            /resources/the-types-of-email               301!
 /2012-04-28-evernote                         /blog/evernote                              301!
@@ -269,8 +261,8 @@
 /security.txt                       /.well-known/security.txt 301!
 /sitemap.txt                        /sitemap.xml              301!
 /forums                             /404                      301!
-*/wlwmanifest.xml                   /404                      301!
-*/wp-login.php                      /404                      301!
+/*/wlwmanifest.xml                  /404                      301!
+/*/wp-login.php                     /404                      301!
 /wordpress/                         /404                      301!
 /wp/                                /404                      301!
 /test/                              /404                      301!
@@ -279,12 +271,12 @@
 /download.php                       /404                      301!
 /license.php                        /terms                    301!
 /ferretcareinterview.com/           /404                      301!
-/. git/HEAD                         /404                      301!
+/.git/HEAD                          /404                      301!
 /post.php                           /blog/                    301!
 /blog/post                          /blog/                    301!
-/. env                              /404                      301!
+/.env                               /404                      301!
 /this-url-does-not-exist            /404                      301!
-*/this-post-does-not-exist          /blog/                    301!
+/*/this-post-does-not-exist         /blog/                    301!
 /index2                             /                         301!
 /public/js/wind.js                  /404                      301!
 /...                                /                         301!
@@ -300,13 +292,13 @@
 /data/admin/allowurl.txt            /404                      301!
 /plus/mytag_js.php                  /404                      301!
 /config/AspCms_Config.asp           /404                      301!
-*/eval-stdin.php                    /404                      301!
+/*/eval-stdin.php                   /404                      301!
 /admin/                             /404                      301!
 /admin.php                          /404                      301!
 /wp-admin/*                         /404                      301!
 /wp-content/*                       /404                      301!
 /wp-includes/*                      /404                      301!
-*/humans.txt                        /humans.txt               301!
+/*/humans.txt                       /humans.txt               301!
 /blog/using-image-aspect-ratios-to-avoiding-janky-page-loading&sa=U&ved=2ahUKEwieg_XFjtrwAhVPe8AKHZ_2CwsQtwIwKHoECBMQAQ&usg=AOvVaw1-93vA3o7ylVnpCBPwlen6 /blog/using-image-aspect-ratios-to-avoiding-janky-page-loading 301!
 /blog/using-the-html-document-outlinehttps://www.a11yproject.com/posts/2019-02-15-creating-valid-and-accessible-links/ /blog/using-the-html-document-outline 301!
 
