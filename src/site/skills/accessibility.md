@@ -24,4 +24,4 @@ But my work doesn't stop at the hands-on product level. I also:
 - Write design system documentation and accessibility guidance
 - Help shape accessibility strategy across products and organisations
 
-If you're looking for help embedding accessibility in your team or product, take a look at [my consultancy services](/services/consultancy).
+If you're looking for help embedding accessibility in your team or product, take a look at [my consultancy services](/approaches/consultancy).

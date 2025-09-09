@@ -14,6 +14,29 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.6.8] - 2025-09-09
+
+### Adds
+- New Services section, listing the services I offer
+- Links to blog from top of Resources page
+
+### Changes
+- Moves existing services to 'approaches'
+- Changes order of approaches, putting Contracting last
+- Makes highlight box in an odd number full width rather than the first
+- Outputs 3 featured services to homepage
+- Reworks Contact page content
+- Reworks Keep in touch page content
+
+### Removes
+- Takes Categories out of footer nav
+- Takes Keep in touch out of footer nav
+- Takes Resources out of footer nav
+
+### Fixes
+- Stops footer social links being full width
+
+
 ## [6.6.7] - 2025-08-31
 
 ### Changes
