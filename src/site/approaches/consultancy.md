@@ -5,7 +5,9 @@ intro: Strategic, hands-on support to embed accessibility into your teams, produ
 order: 1
 ---
 
-I support organisations of all sizes, from early-stage startups to global companies, with practical, strategic guidance on building accessibility into their work. I work closely with teams to make accessibility part of their everyday practice; helping them learn, collaborate, and keep improving, not just handing over a list of fixes. My goal is to build confidence and capability, not dependency.
+I support organisations of all sizes, from early-stage startups to global companies, with practical, strategic guidance on building accessibility into their work.
+
+My approach is collaborative and approachable, making accessibility feel practical and achievable rather than daunting. Working closely with teams, I help make accessibility part of everyday practice; encouraging learning, collaboration, and continuous improvement rather than just handing over a list of fixes. The goal is to build confidence and capability, not dependency.
 
 
 ## What I offer

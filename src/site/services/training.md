@@ -23,7 +23,7 @@ Workshops are more interactive than training. They focus on applying accessibili
 
 Sessions can be as short as an hour or run as a half-day or full-day. Workshops often need more time, sometimes a half or full day. For bigger topics or broader groups, training can be delivered as a series of linked sessions, each focused on a different area or role.
 
-All sessions can be delivered remotely or in person, depending on what works best for your teams.
+All sessions can be delivered remotely or in person, depending on what works best for your teams; my style is informal and friendly, making them approachable and engaging for groups of any size.
 
 
 ## Mentoring and coaching

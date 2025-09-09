@@ -15,6 +15,8 @@ Typical culture and community work includes:
 - Creating resources, playbooks, or intranet hubs that help teams find the guidance they need, when they need it
 - Advising on recognition and incentives that reward accessibility contributions and encourage long-term engagement
 
+My style is friendly and informal, which helps these kinds of groups and initiatives feel approachable and encourages people to take part.
+
 ## Delivery
 
 Culture change takes time. Some organisations start with a [standalone project](/approaches/projects), such as running a GAAD event or piloting a champions network. Others take a [longer consultancy approach](/approaches/consultancy), building community step by step until accessibility is embedded in everyday practice, often alongside broader [strategy and guidance](/services/strategy).

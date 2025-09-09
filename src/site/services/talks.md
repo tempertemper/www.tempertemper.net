@@ -13,11 +13,11 @@ Talks work well when you want to spark interest, start a conversation, or motiva
 
 Talks can be short, around 20 to 30 minutes, or run for up to an hour with time for questions and discussion. They can be delivered remotely or in person, depending on what works best for your audience.
 
+My style is informal and engaging, making sessions accessible and relevant for groups large and small; a recent example is my talk [Creating a Culture of Accessibility](https://www.youtube.com/watch?v=rMFoX0gzLfA) at Natter in Manchester.
+
 
 ## Topics
 
 I cover a wide range of themes, from the basics of universal design to the legal and commercial drivers behind accessibility. Talks draw on my experience leading accessibility programmes, my work advising teams on processes, and my background in hands-on design and development.
-
-A recent example is my talk [Creating a Culture of Accessibility](https://www.youtube.com/watch?v=rMFoX0gzLfA) at Natter in Manchester.
 
 Talks are often a first step. They build momentum and can lead to [training, workshops](/services/training), or consultancy when teams want to go deeper.
