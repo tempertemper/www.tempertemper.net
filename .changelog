@@ -14,6 +14,19 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.6.10] - 2025-09-12
+
+### Changes
+- New photo for About page
+
+### Adds
+- New square crop image for smaller screens
+
+### Fixes
+- Fixes broken Resource details paragraph on Resources list page
+- Ensures correct collection type is output in 'more posts'
+
+
 ## [6.6.9] - 2025-09-09
 
 ### Adds
