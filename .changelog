@@ -22,6 +22,9 @@ All notable changes to this project will be documented in this file. The format 
 ### Adds
 - New square crop image for smaller screens
 
+### Fixes
+- Fixes broken Resource details paragraph on Resources list page
+
 
 ## [6.6.9] - 2025-09-09
 
