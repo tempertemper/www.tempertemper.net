@@ -16,9 +16,12 @@
 {%- endif %}
 <section aria-labelledby="further-reading-heading" class="more-posts">
     <h2 id="further-reading-heading">More {{ typeOfThing }}</h2>
-    <p>Here are a couple more {{ typeOfThing }} for you to enjoy. If that’s not enough, have a look at <a href="{{ linkToList }}">the full list</a>.</p>
+    <p>
+        Here are a couple more {{ typeOfThing }} for you to enjoy.
+        If that’s not enough, have a look at <a href="{{ linkToList }}">the full list</a>.
+    </p>
     <ol class="index-list" reversed>
-        {%- for post in collections.post | reverse | removeCurrent(title) | promoteRelated(related) | limit(2) %}
+        {%- for post in items | reverse | removeCurrent(title) | promoteRelated(related) | limit(2) %}
             {% include "post-in-list.html" %}
         {%- endfor %}
     </ol>
