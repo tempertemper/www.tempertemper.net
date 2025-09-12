@@ -69,9 +69,8 @@ I also got very involved in the frontend code and accessibility testing of the s
 
 ### Sage
 
-From 2020 to 2025 I led accessibility at Sage, a global tech company with over 11,000 employees. I was brought in as their first accessibility specialist and built the discipline from the ground up. Sage now has a thriving accessibility community and a Champions network to increase the core accessibility team's influence.
+From 2020 to 2025 I led accessibility at Sage, a global tech company with over 11,000 employees. I was brought in as their first accessibility specialist and built the discipline from the ground up. Sage now has a thriving accessibility community and a Champions network that extends the core team's influence, and I'm proud to have helped make accessibility part of the organisation works.
 
-From education through knowledge sharing, training, and workshops, to working closely with teams to explore accessible approaches to design and code; I'm proud to have helped make accessibility part of the way Sage works.
 
 ### Accessibility consultant
 
