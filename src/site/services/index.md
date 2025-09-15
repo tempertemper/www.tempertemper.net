@@ -6,9 +6,9 @@ override:tags: false
 cta: false
 ---
 
-I work with organisations of all sizes to make their digital products, processes, and culture more accessible and user-friendly. Whether you need strategic direction, a specialist embedded in your team, or a clearly defined project, there are [different approaches](/approaches/) we can take.
+I work with organisations of all sizes to make their digital products, processes, and culture more accessible and user-friendly. Whether you need strategic direction, a specialist embedded in your team, or a shorter, clearly defined project, there are [different approaches](/approaches/) we can take.
 
-The services I offer cover a range of needs, including accessibility audits, training and workshops, and strategic guidance.
+The services I offer cover a range of needs:
 
 <div class="highlight-boxes">
     <ul>
