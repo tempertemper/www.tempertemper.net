@@ -35,4 +35,6 @@ Reviews are a lighter alternative to a full audit. They focus on a specific jour
 
 Accessibility is not just about identifying issues but making sure they get fixed. After an audit or review, I follow up to confirm progress, validate fixes, and ensure the changes have had the intended effect. I take an approachable, collaborative style into these follow-ups, so teams feel supported rather than policed.
 
+I can also provide ongoing [coaching and mentoring](/services/coaching) to help teams build skills as they work through fixes.
+
 Audits and reviews give you a clear picture of where things stand and a practical path forward. Whether it’s a comprehensive audit or a lighter review, the outcome is the same; actionable insight that helps your teams make meaningful improvements.

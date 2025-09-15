@@ -8,7 +8,7 @@ featured: true
 
 Sometimes organisations need more than [audits](/services/audits) or [training](/services/training); they need clear direction. Without a strategy, accessibility work can end up patchy, dependent on individuals, and hard to sustain. A well-defined approach gives your organisation structure, accountability, and a way to measure progress.
 
-I work with leadership teams, product managers, and product owners to shape the frameworks that make accessibility stick. This isn't about fixing a single product, it's about creating the conditions for accessibility to succeed across your organisation, often alongside [building culture and community](/services/culture).
+I work with leadership teams, product managers, and product owners to shape the frameworks that make accessibility stick. This isn't about fixing a single product, it's about creating the conditions for accessibility to succeed across your organisation, often alongside [building culture and community](/services/culture) and [coaching](/services/coaching).
 
 Typical strategy and guidance work includes:
 
