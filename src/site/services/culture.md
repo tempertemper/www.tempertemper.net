@@ -2,14 +2,14 @@
 title: Culture and community
 customURL: culture
 intro: Support to build a culture of accessibility through champions, community, and everyday practice.
-order: 5
+order: 6
 ---
 
 Accessibility lasts when it becomes part of an organisation's culture. I help you create the structures, networks, and shared practices that make accessibility a natural part of everyday work.
 
 Typical culture and community work includes:
 
-- Setting up, [training](/services/training), and supporting accessibility champions within product teams, such as designers, developers, and QAs
+- Setting up, [training](/services/training), [coaching](/services/coaching) and supporting accessibility champions within product teams, such as designers, developers, and QAs
 - Running accessibility learning groups, drop-in sessions, and shared spaces in Slack or Teams to share knowledge and solve problems together
 - Planning and delivering events such as [Global Accessibility Awareness Day (GAAD)](/portfolio/scaling-accessibility-awareness-at-sage-five-years-of-gaad), often including [talks](/services/talks) to build momentum and visibility
 - Creating resources, playbooks, or intranet hubs that help teams find the guidance they need, when they need it

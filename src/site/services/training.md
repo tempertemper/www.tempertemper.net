@@ -25,9 +25,4 @@ Sessions can be as short as an hour or run as a half-day or full-day. Workshops 
 
 All sessions can be delivered remotely or in person, depending on what works best for your teams; my style is informal and friendly, making them approachable and engaging for groups of any size.
 
-
-## Mentoring and coaching
-
-These sessions are a strong starting point, but lasting change comes with practice. I offer mentoring and coaching to support individuals and teams as they put accessibility into action, building confidence and capability over time.
-
-Training and workshops give your teams the knowledge, skills, and confidence to make accessibility part of everyday practice. With mentoring and coaching to reinforce learning, accessibility becomes something your teams can carry forward long after the sessions are over, often sparking broader initiatives like [building culture and community](/services/culture) through champions networks and shared spaces.
+With [coaching and mentoring](/services/coaching) for individuals or small groups, teams can keep building confidence as they apply what they’ve learned.

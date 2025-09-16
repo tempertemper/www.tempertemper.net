@@ -15,7 +15,7 @@ My approach is collaborative and approachable, making accessibility feel practic
 I tailor my support to each team’s needs, drawing on experience from a FTSE 100 company with nearly 11,000 employees across 23 countries. That might include:
 
 - [Audits and reviews](/services/audits) of websites, apps, and design systems, with follow-up support to prioritise fixes and guide delivery teams
-- [Training and workshops](/services/training) to build capability across roles, from designers and developers to product managers
+- [Training and workshops](/services/training) to build capability across roles, with [mentoring and coaching](/services/coaching) for ongoing support
 - [Strategic guidance](/services/strategy), to embed accessibility into policies, programmes, and everyday practice
 
 
