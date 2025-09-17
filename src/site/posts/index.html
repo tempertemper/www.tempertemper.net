@@ -11,6 +11,8 @@ permalink: blog/index.html
 override:tags: false
 ---
 
+<div id="search" class="search"></div>
+
 <ol class="hfeed index-list" reversed>
     {%- for post in collections.post | reverse %}
         {%- include "post-in-list.html" %}
