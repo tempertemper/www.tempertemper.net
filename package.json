@@ -41,7 +41,6 @@
     "onchange": "^7.1.0",
     "require-dir": "^1.2.0",
     "sass": "^1.86.0",
-    "smartypants": "^0.2.2",
     "uglify-js": "^3.19.3",
     "uslug": "^1.0.4",
     "version-bump-prompt": "^6.1.0"

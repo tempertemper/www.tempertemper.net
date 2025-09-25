@@ -1,13 +1,25 @@
-module.exports = eleventyConfig => {
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const markdownIt = require("markdown-it");
+const anchor = require("markdown-it-anchor");
+const slugify = require("slugify");
+const uslug = require("uslug");
+
+const dates = require("./lib/filters/dates.js");
+const isoDate = require("./lib/filters/isoDate.js");
+const smartQuotes = require("./lib/filters/smart-quotes.js");
+
+require("dotenv").config();
+
+module.exports = (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
 
   /* Date filter */
-  eleventyConfig.addFilter("date", require("./lib/filters/dates.js") );
-  eleventyConfig.addFilter("isoDate", require("./lib/filters/isoDate.js") );
+  eleventyConfig.addFilter("date", dates);
+  eleventyConfig.addFilter("isoDate", isoDate);
 
   /* Get development environment variable */
-  require('dotenv').config()
-  const { ELEVENTY_ENV } = process.env
+  const { ELEVENTY_ENV } = process.env;
 
   /* Files and fonts */
   eleventyConfig.addPassthroughCopy({ "src/img": "assets/img" });
@@ -15,66 +27,77 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy({ "src/css": "assets/css" });
 
   /* Smart quotes filter */
-  const smartypants = require("smartypants");
-  eleventyConfig.addFilter("smart", str => smartypants.smartypants(str, 'qDe'));
+  eleventyConfig.addFilter("smart", smartQuotes);
 
   /* Markdown Plugins */
-  var uslug = require('uslug');
-  var uslugify = s => uslug(s);
-  var anchor = require('markdown-it-anchor');
-  var markdownIt = require("markdown-it");
-  eleventyConfig.setLibrary("md", markdownIt({
-    html: true,
-    typographer: true
-  }).use(anchor, {slugify: uslugify, tabIndex: false}));
+  var uslugify = (s) => uslug(s);
+  eleventyConfig.setLibrary(
+    "md",
+    markdownIt({
+      html: true,
+      typographer: true,
+    }).use(anchor, { slugify: uslugify, tabIndex: false })
+  );
   var mdIntro = markdownIt({
-    typographer: true
+    typographer: true,
   });
-  eleventyConfig.addFilter("markdown", markdown => mdIntro.render(markdown));
+  eleventyConfig.addFilter("markdown", (markdown) => mdIntro.render(markdown));
 
-  const slugify = require("slugify");
-  eleventyConfig.addFilter("slugify", str => {
+  eleventyConfig.addFilter("slugify", (str) => {
     return slugify(str, {
       customReplacements: [
-        ['+', ' plus '],
-        ['@', ' at ']
+        ["+", " plus "],
+        ["@", " at "],
       ],
       remove: /[*~.,–—()'"‘’“”!?:;]/g,
-      lower: true
+      lower: true,
     });
   });
 
   /* Code syntax highlighting */
-  const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
   eleventyConfig.addPlugin(syntaxHighlight, {
     templateFormats: ["njk", "md"],
     preAttributes: {
       tabindex: 0,
-    }
+    },
   });
 
   /* RSS */
-  const pluginRss = require("@11ty/eleventy-plugin-rss");
   eleventyConfig.addPlugin(pluginRss);
 
   /* List all tags */
-  eleventyConfig.addFilter("tags", collection => {
-    const notRendered = ['all', 'post', 'resource', 'testimonial', 'case-study', 'newsletter', 'skill', 'service'];
+  eleventyConfig.addFilter("tags", (collection) => {
+    const notRendered = [
+      "all",
+      "post",
+      "resource",
+      "testimonial",
+      "case-study",
+      "newsletter",
+      "skill",
+      "service",
+    ];
     return Object.keys(collection)
-      .filter(d => !notRendered.includes(d))
+      .filter((d) => !notRendered.includes(d))
       .sort();
   });
 
   /* List tags belonging to a page */
-  eleventyConfig.addFilter("tagsOnPage", tags => {
-    const notRendered = ['all', 'post', 'resource', 'testimonial', 'case-study', 'newsletter', 'skills'];
-    return tags
-      .filter(d => !notRendered.includes(d))
-      .sort();
+  eleventyConfig.addFilter("tagsOnPage", (tags) => {
+    const notRendered = [
+      "all",
+      "post",
+      "resource",
+      "testimonial",
+      "case-study",
+      "newsletter",
+      "skills",
+    ];
+    return tags.filter((d) => !notRendered.includes(d)).sort();
   });
 
   /* Sort by order in front matter */
-  eleventyConfig.addFilter("ordered", collection => {
+  eleventyConfig.addFilter("ordered", (collection) => {
     return collection.sort((a, b) => a.data.order - b.data.order);
   });
 
@@ -85,32 +108,42 @@ module.exports = eleventyConfig => {
 
   /* Remove current post from output */
   eleventyConfig.addFilter("removeCurrent", (arr, title) => {
-    return arr.filter(item => {
+    return arr.filter((item) => {
       return item.url && item.data.title !== title;
     });
   });
 
   /* Get all the years that blog posts were posted */
   eleventyConfig.addFilter("getYears", (arr) => {
-    const dates = arr.map(post => post.date.getFullYear());
+    const dates = arr.map((post) => post.date.getFullYear());
     const uniqueYears = [...new Set(dates)];
     return uniqueYears;
   });
 
   /* Filter items by year */
   eleventyConfig.addFilter("filterByYear", (arr, year) => {
-    return arr.filter(item => {
+    return arr.filter((item) => {
       return item.date.getFullYear() == year;
-    })
+    });
   });
 
   /* If promoted posts in frontmatter, output them first */
   eleventyConfig.addFilter("promoteRelated", (arr, related) => {
-    const relatedPosts = arr.filter(item => {
-      return item.url && (related || []).includes(item.url.replace("/blog/", "").replace(".html", ""));
+    const relatedPosts = arr.filter((item) => {
+      return (
+        item.url &&
+        (related || []).includes(
+          item.url.replace("/blog/", "").replace(".html", "")
+        )
+      );
     });
-    const unrelatedPosts = arr.filter(item => {
-      return item.url && !(related || []).includes(item.url.replace("/blog/", "").replace(".html", ""));
+    const unrelatedPosts = arr.filter((item) => {
+      return (
+        item.url &&
+        !(related || []).includes(
+          item.url.replace("/blog/", "").replace(".html", "")
+        )
+      );
     });
     return relatedPosts.concat(unrelatedPosts);
   });
@@ -121,10 +154,10 @@ module.exports = eleventyConfig => {
   /* Get current date */
   eleventyConfig.addFilter("getCurrentDate", () => {
     const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, "0");
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
     const yyyy = today.getFullYear();
-    return yyyy + '/' + mm + '/' + dd;
+    return yyyy + "/" + mm + "/" + dd;
   });
 
   /* Prevent duplicate updated values in feeds */
@@ -153,10 +186,10 @@ module.exports = eleventyConfig => {
       input: "src/site",
       output: "dist",
       includes: "_includes",
-      layouts: "_layouts"
+      layouts: "_layouts",
     },
-    templateFormats : ["njk", "html", "md", "txt", "webmanifest", "ico"],
-    htmlTemplateEngine : "njk",
-    markdownTemplateEngine : "njk"
+    templateFormats: ["njk", "html", "md", "txt", "webmanifest", "ico"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
   };
 };
