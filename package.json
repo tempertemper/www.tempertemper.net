@@ -1,6 +1,6 @@
 {
   "name": "tempertemper",
-  "version": "6.6.11",
+  "version": "6.6.12",
   "description": "tempertemper's website",
   "scripts": {
     "clear": "rm -rf dist",
@@ -42,7 +42,6 @@
     "pagefind": "^1.4.0",
     "require-dir": "^1.2.0",
     "sass": "^1.86.0",
-    "smartypants": "^0.2.2",
     "uglify-js": "^3.19.3",
     "uslug": "^1.0.4",
     "version-bump-prompt": "^6.1.0"
