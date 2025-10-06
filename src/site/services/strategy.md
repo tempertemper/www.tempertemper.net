@@ -2,7 +2,7 @@
 title: Strategy and guidance
 customURL: strategy
 intro: Strategic support to help you shape accessibility policies, programmes, and processes that last.
-order: 1
+order: 7
 featured: true
 ---
 
@@ -17,7 +17,7 @@ Typical strategy and guidance work includes:
 - Running maturity assessments to understand your current position, using frameworks such as the [Digital Accessibility Maturity Model (DAMM)](https://www.levelaccess.com/blog/the-digital-accessibility-maturity-model-introduction-to-damm/)
 - Designing accessibility programmes and roadmaps that set priorities and plan activity over time
 - Advising on roles, responsibilities, and ownership across teams
-- Embedding accessibility into design systems, delivery processes, and procurement
+- Embedding accessibility into [design systems](/services/design-systems), delivery processes, and procurement
 - Defining organisational metrics, including KPIs and OKRs, to measure progress and create accountability
 - Establishing product-level measurement, such as [audits](/services/audits) and spot-checks, with clear reporting and MI to track accessibility in practice
 

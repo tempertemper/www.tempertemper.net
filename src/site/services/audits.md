@@ -2,7 +2,7 @@
 title: Audits and reviews
 customURL: audits
 intro: Accessibility audits that show how your product measures up and what to prioritise for the biggest impact.
-order: 2
+order: 1
 featured: true
 ---
 
