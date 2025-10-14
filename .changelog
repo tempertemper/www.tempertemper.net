@@ -14,6 +14,13 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.6.14] - 2025-10-14
+
+### Fixes
+- Replaces version-bump-prompt with native node scripts
+- Updates auto-tag GitHub Workflow script
+
+
 ## [6.6.13] - 2025-10-06
 
 ### Adds
