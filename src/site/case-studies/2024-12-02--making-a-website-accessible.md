@@ -1,6 +1,6 @@
 ---
 title: Making a website accessible
-intro: blah
+intro: Through my long-term partnership with Gusto Research, I collaborated with a creative designer to refresh their brand and rebuild an accessible website that showcases their expertise.
 date: 2024-12-02
 summaryImage: gusto-research--colour-contrast--after.jpg
 summaryImageAlt: The redesigned Gusto website's homepage header area, with the heading “We Turn Questions Into Clarity” and an introductory sentence. There is an image of two men talking, which is cropped by a big speech bubble. There is a banner across the top announcing their new ‘LightShed’ content.
