@@ -8,22 +8,18 @@ summaryImageAlt: The redesigned Gusto website's homepage header area, with the h
 
 Gusto Research are a client I've been working with since 2013, long before I was an accessibility specialist. I picked up the project as part of a complete redesign of their brand identity by [Ant Barker](https://www.designbyant.co.uk/), who brought me in as 'the website guy' as his skills lie in visual identity, print design, and marketing strategy.
 
-The old site must have been a decade old by that point, and full of security issues, so it was a 'knock it down and start again' scenario. The result of the project was a smart-looking, responsive website.
-
-Another decade passed and, although Gusto's site had seen many updates over the years, the brand was beginning to feel like it needed freshening up.
+The old site must have been a decade old by that point, and full of security issues, so it was a knock-it-down-and-start-again scenario; the result was a smart-looking, responsive website. Another decade passed and, although Gusto's site had seen many updates over the years, the brand was beginning to feel like it needed freshening up.
 
 Back in 2013 I had rebuilt the site with [Perch](/blog/everything-has-its-time) and in the intervening years I refactored it using Eleventy and DecapCMS, so the platform was modern, secure, and well maintained. A good starting position.
 
-With the technical side solid, attention turned to accessibility and user experience, and over the years I had built a long list of accessibility fixes I wanted to make. I had been chipping away at [as I learned more about the specialism](/blog/years-in-the-accessibility-learning-curve-continues), [picked up new performance techniques](/blog/avif-image-compression-is-incredible), etc., but to do it properly required larger refactoring exercises, and some re-thinking of brand elements.
+With the technical side solid, attention turned to accessibility and user experience, and over the years I had built a long list of accessibility fixes I wanted to make. I had been chipping away at [as I learned more about the specialism](/blog/years-in-the-accessibility-learning-curve-continues), [picked up new performance techniques](/blog/avif-image-compression-is-incredible), and so on, but to do it properly required larger refactoring exercises, and some re-thinking of brand elements.
 
 So when the time came for refresh, I pushed it as a great opportunity to clear the decks and get the site not just compliant with the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/wcag/), but a [good experience for *all* users](/blog/accessibility-doesnt-stop-at-wcag-compliance).
-
-Even with a solid technical foundation, the site had accumulated design and content decisions that did not fully align with accessibility rules and best practice. The refresh allowed me to address those gaps and bring the overall user experience in line with current accessibility expectations.
 
 
 ## A collaborative approach
 
-I've been working with Ant for years (he even [designed my logo](/blog/the-simplest-solutions-are-usually-the-best)). He is extremely talented at branding and visual design, and I'm excellent at user experience design and some of the more technical aspects of looking after clients and websites; we're a good complement. Our process on this project was typical:
+I've been working with Ant for years (he even [designed my logo](/blog/the-simplest-solutions-are-usually-the-best)). He is extremely talented at branding and visual design, and I'm excellent at user experience design and some of the more technical aspects of looking after clients and websites; we're an excellent complement! Our process on this project was typical of many others:
 
 1. Ant puts together some website concepts
 2. We go through them together and I flag any usability and/or accessibility concerns
@@ -37,7 +33,7 @@ Rewinding to step 2, in my feedback I usually cover things like:
 - Navigation and paths through the website
 - Avoiding patterns that may cause issues for some users
 
-Here are a few examples of issues with the Gusto project and how we put them right.
+Here are a few examples of issues with this recent Gusto project and how we put them right.
 
 ### Colour contrast
 
@@ -62,7 +58,7 @@ Ant was happy to darken the blue very slightly from `#01a0e4` to `#019ddf`, whic
         <source srcset="/assets/img/case-studies/gusto-research--colour-contrast--after.webp" type="image/webp" />
         <img src="/assets/img/case-studies/gusto-research--colour-contrast--after.jpg" alt="The Gusto website's homepage header area, which uses bright blue heading text against a white background, and very dark blue for other text on white." width="1024" height="576" loading="lazy" decoding="async" />
     </picture>
-    <figcaption>The lighter blue was darkened slightly to <code>#019ddf</code> to provide a 3.04:1 contrast ratio, meaning large text met the required threshold. Smaller text always uses a much darker blue, usually <code>#0e2c5c</code>.</figcaption>
+    <figcaption>The lighter blue was darkened slightly to <code>#019ddf</code> to provide a 3.04:1 contrast ratio, meaning large text met the required threshold. Smaller text uses a much darker colour, usually <code>#0e2c5c</code>.</figcaption>
 </figure>
 
 
@@ -84,7 +80,7 @@ I explained that it would be a good idea to add:
 - so that each 'sub' page in the header and footer navigation didn't look (long page names) and feel (structurally/hierarchically) messy
 - to ensure consistency with other pages the have multiple sub-pages, for example the Team page
 
-The client was agreed, so Ant put together a mock-up for the new page and [I brought it to life](https://www.gustoresearch.com/expertise/).
+The client agreed, so Ant put together a mock-up for the new page and [I brought it to life](https://www.gustoresearch.com/expertise/).
 
 
 ### Heading/header markup
@@ -97,7 +93,7 @@ The problem with refactoring the markup was that it would mean a great deal of t
 
 ### A lot more besides!
 
-The rebuild touched almost every part of the site, from refactoring templates and tightening semantics to [updating focus styling](/blog/windows-high-contrast-mode-and-focus-outlines) and fully modernising the codebase. It laid the groundwork for a site that is stronger, more consistent, and easier to maintain.
+The rebuild touched almost every part of the site, from refactoring templates and tightening semantics to [updating focus styling](/blog/windows-high-contrast-mode-and-focus-outlines) and fully modernising the codebase. It laid the groundwork for a site that is more consistent, and easier to maintain.
 
 
 ## What was delivered
