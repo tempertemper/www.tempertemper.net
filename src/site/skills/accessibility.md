@@ -14,14 +14,13 @@ When designing and building a digital product, it must work for everyone, and th
 - Product owners to support in the prioritisation of accessibility fixes
 - Product managers, to help shape accessible project priorities
 
-But my work doesn't stop at the hands-on product level. I also:
+Beyond hands-on product work, I also:
 
-- Run training sessions and workshops tailored to different disciplines
-- Give talks on accessibility, from broad overviews to deep-dives
+- Run [training sessions and workshops](/services/training) tailored to different disciplines
+- Give [talks on accessibility](/services/talks), from broad overviews to deep-dives
 - Host drop-in 'surgery' sessions for questions, blockers, and advice
-- Audit products for accessibility issues and categorise them clearly for teams to action
-- Track progress on audit findings
-- Write design system documentation and accessibility guidance
-- Help shape accessibility strategy across products and organisations
+- [Audit products for accessibility issues](/services/audits), categorising findings clearly for teams to action, and provide ongoing monitoring
+- Write [design system documentation](/services/design-systems) and accessibility guidance
+- Help shape [accessibility strategy](/services/strategy) across products and organisations
 
 If you're looking for help embedding accessibility in your team or product, take a look at [my consultancy services](/approaches/consultancy).

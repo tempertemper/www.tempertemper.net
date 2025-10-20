@@ -1,6 +1,6 @@
 {
   "name": "tempertemper",
-  "version": "6.6.12",
+  "version": "6.6.14",
   "description": "tempertemper's website",
   "scripts": {
     "clear": "rm -rf dist",
@@ -16,9 +16,11 @@
     "watch": "run-p watch:css watch:js",
     "start": "npm run clear && npm run build:assets && run-p serve watch",
     "staging": "npm run build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
-    "bump:major": "bump major --commit 'Bumps version number to %s' src/site/_data/site.js *.json",
-    "bump:minor": "bump minor --commit 'Bumps version number to %s' src/site/_data/site.js *.json",
-    "bump:patch": "bump patch --commit 'Bumps version number to %s' src/site/_data/site.js *.json"
+    "version": "node scripts/sync-site-version.js",
+    "_bump:commit": "git add package*.json src/site/_data/site.js && git commit -m \"Bumps version number to $npm_package_version\"",
+    "bump:patch": "npm version patch --no-git-tag-version && npm run _bump:commit",
+    "bump:minor": "npm version minor --no-git-tag-version && npm run _bump:commit",
+    "bump:major": "npm version major --no-git-tag-version && npm run _bump:commit"
   },
   "repository": {
     "type": "git",
@@ -43,7 +45,6 @@
     "require-dir": "^1.2.0",
     "sass": "^1.86.0",
     "uglify-js": "^3.19.3",
-    "uslug": "^1.0.4",
-    "version-bump-prompt": "^6.1.0"
+    "uslug": "^1.0.4"
   }
 }

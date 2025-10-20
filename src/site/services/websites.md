@@ -2,7 +2,7 @@
 title: Website design and build
 customURL: websites
 intro: Accessible websites that are fast, easy to use, and built to last; thoughtfully designed to be both clear and delightful.
-order: 7
+order: 8
 ---
 
 I work primarily as an [accessibility consultant](/approaches/consultancy), but I enjoy the occasional website project.
@@ -10,7 +10,9 @@ I work primarily as an [accessibility consultant](/approaches/consultancy), but 
 
 ## Approach
 
-I design and build fast, accessible websites that look great and work well across all browsers and devices. Every site is built from scratch using clean, semantic HTML, modern CSS, and just enough JavaScript to do the job. I typically use [Eleventy](https://www.11ty.dev/), which keeps sites lightweight, quick to load, and easy to maintain.
+I design and build fast, accessible websites that look great and work well across all browsers and devices. [Here's an example](/portfolio/making-a-website-accessible) from my long-standing client, Gusto Research.
+
+Every site is built from scratch using clean, semantic HTML, modern CSS, and just enough JavaScript to do the job. I typically use [Eleventy](https://www.11ty.dev/), which keeps sites lightweight, quick to load, and easy to maintain.
 
 I can also work with existing websites, for example, to improve accessibility, refresh design, or restructure content, when a full rebuild isn't the right step.
 
