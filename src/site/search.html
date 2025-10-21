@@ -63,15 +63,19 @@ permalink: search.html
     statusContainer.textContent =
       `${filtered.length} result${filtered.length > 1 ? "s" : ""} for “${query}”`;
 
+    const list = document.createElement("ul");
+    list.className = "index-list";
+
     for (const data of filtered) {
-      const item = document.createElement("article");
-      item.className = "result";
-      item.innerHTML = `
-        <h2><a href="${data.url}">${data.meta?.title || data.url}</a></h2>
-        <p>${data.excerpt}</p>
+      list.innerHTML += `
+        <li>
+          <h2><a href="${data.url}">${data.meta?.title || data.url}</a></h2>
+          <p>${data.excerpt}</p>
+        </li>
       `;
-      resultsContainer.appendChild(item);
     }
+
+    resultsContainer.appendChild(list);
   }
 
   (function initFromUrl() {
