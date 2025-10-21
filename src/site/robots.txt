@@ -15,3 +15,4 @@ Disallow: /assets/img/case-studies/evaluagent--quality.png
 
 Disallow: /cv
 Disallow: /pagefind/
+Disallow: /search?
