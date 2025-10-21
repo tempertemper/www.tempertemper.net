@@ -42,17 +42,37 @@ permalink: search.html
     }
 
     const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const wordMatch = new RegExp(`\\b${safeQuery}\\b`, "i");
-    const inUrl = new RegExp(safeQuery, "i");
+    const hasPunct = /[^\w]/u.test(query);
+    const isWordOnly = !hasPunct;
+
+    const contentRe = isWordOnly
+      ? new RegExp(`\\b${safeQuery}\\w*`, "iu")
+      : new RegExp(safeQuery, "iu");
+
+    const urlRe = new RegExp(safeQuery, "iu");
+
+    const normalise = (s) =>
+      (s || "")
+        .toLowerCase()
+        .normalize("NFKD")
+        .replace(/[^\p{L}\p{N}_]+/gu, "");
+
+    const normalisedQuery = normalise(query);
 
     const filtered = [];
     for (const result of searchResults.results) {
       const data = await result.data();
-      if (
-        wordMatch.test(data.content || "") ||
-        wordMatch.test(data.meta?.title || "") ||
-        inUrl.test(data.url || "")
-      ) filtered.push(data);
+
+      const matchesLiteral =
+        contentRe.test(data.content || "") ||
+        contentRe.test(data.meta?.title || "") ||
+        urlRe.test(data.url || "");
+
+      const matchesNormalised =
+        normalise(data.meta?.title).includes(normalisedQuery) ||
+        normalise(data.content).includes(normalisedQuery);
+
+      if (matchesLiteral || matchesNormalised) filtered.push(data);
     }
 
     if (!filtered.length) {
@@ -68,7 +88,7 @@ permalink: search.html
 
     for (const data of filtered) {
       list.innerHTML += `
-        <li>
+        <li class="index-list__item">
           <h2><a href="${data.url}">${data.meta?.title || data.url}</a></h2>
           <p>${data.excerpt}</p>
         </li>
