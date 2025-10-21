@@ -100,8 +100,7 @@ permalink: search.html
 
 <script>
   document.addEventListener("keydown", (event) => {
-    const isMac = navigator.platform.toUpperCase().includes("MAC");
-    const modifierPressed = isMac ? event.metaKey : event.ctrlKey;
+    const modifierPressed = event.metaKey || event.ctrlKey;
 
     if (modifierPressed && event.key.toLowerCase() === "f") {
       event.preventDefault();
