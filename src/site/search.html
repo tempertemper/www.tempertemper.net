@@ -1,0 +1,88 @@
+---
+title: Search
+intro: asdf
+hideIntro: true
+layout: default
+permalink: search.html
+---
+
+<form id="search-form" role="search">
+    <label class="visually-hidden" for="search">Search the site</label>
+    <input id="search" name="search" type="search" autocomplete="off" />
+    <button type="submit">Search</button>
+</form>
+
+<div id="status" role="status" aria-live="polite"></div>
+<div id="results" class="results"></div>
+
+<script type="module">
+  const pagefind = await import("/pagefind/pagefind.js");
+
+  const form = document.getElementById("search-form");
+  const input = document.getElementById("search");
+  const resultsContainer = document.getElementById("results");
+  const statusContainer = document.getElementById("status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const query = input.value.trim();
+    resultsContainer.innerHTML = "";
+    statusContainer.textContent = "";
+    if (!query) return;
+
+    const searchResults = await pagefind.search(query);
+
+    if (!searchResults || !searchResults.results?.length) {
+      statusContainer.textContent = `No results for “${query}”`;
+      return;
+    }
+
+    const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const wordMatch = new RegExp(`\\b${safeQuery}\\b`, "i");
+    const inUrl = new RegExp(safeQuery, "i");
+
+    const filtered = [];
+    for (const result of searchResults.results) {
+      const data = await result.data();
+      if (
+        wordMatch.test(data.content || "") ||
+        wordMatch.test(data.meta?.title || "") ||
+        inUrl.test(data.url || "")
+      ) {
+        filtered.push(data);
+      }
+    }
+
+    if (!filtered.length) {
+      statusContainer.textContent = `No results for “${query}”`;
+      return;
+    }
+
+    statusContainer.textContent =
+      `${filtered.length} result${filtered.length > 1 ? "s" : ""} for “${query}”`;
+
+    for (const data of filtered) {
+      const item = document.createElement("article");
+      item.className = "result";
+      item.innerHTML = `
+        <h2><a href="${data.url}">${data.meta?.title || data.url}</a></h2>
+        <p>${data.excerpt}</p>
+      `;
+      resultsContainer.appendChild(item);
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("keydown", (event) => {
+    const isMac = navigator.platform.toUpperCase().includes("MAC");
+    const modifierPressed = isMac ? event.metaKey : event.ctrlKey;
+
+    if (modifierPressed && event.key.toLowerCase() === "f") {
+      event.preventDefault();
+      const input = document.getElementById("search");
+      if (input) input.focus();
+    }
+  });
+</script>

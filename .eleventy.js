@@ -184,9 +184,10 @@ module.exports = (eleventyConfig) => {
 
   // Index site for search
   eleventyConfig.on("eleventy.after", () => {
-	execSync(`npx pagefind --site dist --glob \"**/*.html\"`, {
-	  encoding: "utf-8",
-	});
+    execSync(
+      `npx pagefind --site dist --glob "**/*.html"`,
+      { encoding: "utf-8" }
+    );
   });
 
   return {
