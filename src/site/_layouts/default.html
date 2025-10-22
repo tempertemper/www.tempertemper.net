@@ -16,7 +16,14 @@ layout: base.html
 {%- if updated %}
     <p class="post-details">Last updated <span itemprop="dateModified" content="{{ updated | isoDate }}">{{ updated | date }}</span></p>
 {% endif %}
+{%- set isAbout = page.url == "/about.html" -%}
+{%- if isAbout -%}
+    <article data-pagefind-body>
+{%- endif %}
 {%- if intro and not hideIntro %}
     {{- intro | markdown | safe }}
 {%- endif %}
 {{ content | safe }}
+{%- if isAbout -%}
+    </article>
+{%- endif %}

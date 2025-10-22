@@ -1,7 +1,11 @@
-.post-in-list {
+li {
 
   .details {
     margin-bottom: .5em;
+
+    + p {
+      margin-top: 0;
+    }
   }
 }
 

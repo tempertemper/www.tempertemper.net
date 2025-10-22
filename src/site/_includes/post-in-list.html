@@ -2,13 +2,13 @@
     {%- set briefPostInList = true %}
 {%- endif -%}
 
-<li class="post-in-list">
+<li>
     {%- if briefPostInList %}<h3>{% else %}<h2 class="entry-title">{% endif %}
         <a href="{{ post.url  | replace(".html", "") }}">
             {{ post.data.title | smart | safe }}
         </a>
-    {% if briefPostInList %}</h3>{% else %}</h2>{% endif %}
-    {% if not briefPostInList %}
+    {%- if briefPostInList %}</h3>{% else %}</h2>{% endif %}
+    {%- if not briefPostInList %}
     <p class="details">
         {%- if post.data.tags.includes('post') %}
             Article posted
@@ -20,7 +20,7 @@
         {{ post.data.date | date }}
         {% include "post-categories.html" %}
     </p>
-    {% endif %}
+    {%- endif %}
     <div class="description entry-summary">
         {{ post.data.intro  | markdown | safe }}
     </div>

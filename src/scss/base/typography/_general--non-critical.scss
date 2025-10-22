@@ -95,3 +95,18 @@ small {
   font-size: 100%;
   font-style: italic;
 }
+
+mark {
+  background-color: colourVariables.$colour-primary;
+  // color: colourVariables.$colour-white;
+  @include modeMixins.dark-mode(
+    $colour: colourVariables.$colour-white,
+    $background: colourVariables.$colour-dark-mode-primary-darker
+  );
+  @include modeMixins.high-contrast(
+    $colour: colourVariables.$colour-black,
+    $background: colourVariables.$colour-dark-mode-primary-light
+  );
+
+  // background-color: colourVariables.$colour-dark-mode-primary;
+}
