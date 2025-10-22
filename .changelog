@@ -14,6 +14,18 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.7.0] - 2025-10-22
+
+### Adds
+- Adds a search page driven by Pagefind
+- Styles mark element
+- Adds link to search page from footer with JavaScript
+- Hijacks Command+F shortcut on search page to put focus in search box
+
+### Fixes
+- Makes post in list output a bit more uniform/tidy
+
+
 ## [6.6.14] - 2025-10-14
 
 ### Fixes
