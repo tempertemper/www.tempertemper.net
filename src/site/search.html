@@ -83,36 +83,17 @@ permalink: search.html
     statusContainer.textContent =
       `${filtered.length} result${filtered.length > 1 ? "s" : ""} for “${query}”`;
 
-    function getType(meta, url) {
-      if (meta?.type) return meta.type;
-      if (meta?.tags?.length) {
-        const tag = String(meta.tags[0]).toLowerCase();
-        if (["blog", "case study", "resource", "newsletter", "about"].includes(tag)) return tag;
-      }
-      try {
-        const path = new URL(url, window.location.origin).pathname.toLowerCase();
-        if (path.startsWith("/blog/")) return "Blog";
-        if (path.startsWith("/portfolio/")) return "Portfolio";
-        if (path.startsWith("/resources/")) return "Resources";
-        if (path.startsWith("/newsletter/")) return "Newsletters";
-      } catch {}
-      return "";
-    }
-
     const list = document.createElement("ul");
     list.className = "index-list";
 
     for (const data of filtered) {
-      const typeLabel = getType(data.meta, data.url);
       list.innerHTML += `
         <li>
           <h2><a href="${data.url}">${data.meta?.title || data.url}</a></h2>
-          ${typeLabel ? `<p class="details">Found in ${typeLabel}</p>` : ""}
           <p>…${data.excerpt}…</p>
         </li>
       `;
     }
-
     resultsContainer.appendChild(list);
   }
 
