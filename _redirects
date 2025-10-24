@@ -97,7 +97,6 @@
 
 # === Category redirects ===
 /category/                        /categories                         301!
-/search                           /categories                         301!
 /category/gmail                   /category/email                     301!
 /blog/category/apps               /category/tools                     301!
 /blog/category/design-and-build   /category/design                    301!
