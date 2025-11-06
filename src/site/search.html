@@ -15,6 +15,7 @@ permalink: search.html
 <div id="results" class="results"></div>
 
 <script type="module">
+  // Absolute bundle path for current origin
   const bp = new URL("/pagefind/", location.origin).href;
   window.__pagefind__bundlePath = bp;
 
@@ -59,24 +60,41 @@ permalink: search.html
     s = s.replace(/\s+/g, " ").trim();
 
     // Normalise ellipses
-    s = s.replace(/\.{3}/g, "…");     // ... -> …
-    s = s.replace(/ ?… ?/g, "…");     // remove surrounding spaces
-    s = s.replace(/^…+/, "").replace(/…+$/, ""); // strip existing edge ellipses
+    s = s.replace(/\.{3}/g, "…");         // ... -> …
+    s = s.replace(/ ?… ?/g, "…");         // trim spaces around …
+    s = s.replace(/^…+/, "").replace(/…+$/, ""); // strip edge …
 
     return s;
   };
   const addEllipses = (s) => (s ? `…${s}…` : "");
 
-  // Quick readiness check
-  const ok = await fetch(bp + "pagefind-entry.json", { method:"HEAD", cache:"no-store" }).then(r=>r.ok).catch(()=>false);
-  if (!ok) { statusEl.textContent = "Search unavailable."; throw new Error("Missing pagefind-entry.json"); }
+  // Quick readiness check so failures are obvious
+  try {
+    const ok = await fetch(bp + "pagefind-entry.json", { method:"HEAD", cache:"no-store" }).then(r => r.ok);
+    if (!ok) throw new Error("Missing " + bp + "pagefind-entry.json");
+  } catch (e) {
+    statusEl.textContent = "Search unavailable.";
+    console.error(e);
+    throw e;
+  }
 
+  // Load Pagefind from the same base
   let pagefind;
   try {
     const mod = await import(bp + "pagefind.js");
     pagefind = mod?.default ?? mod;
   } catch (e) {
-    statusEl.textContent = "Search unavailable."; throw e;
+    statusEl.textContent = "Search unavailable.";
+    console.error("Failed to load Pagefind module:", e);
+    throw e;
+  }
+
+  // Warm the worker/WASM (no hits) to reduce first-search latency
+  const warm = () => pagefind.search("\uE000").catch(() => {});
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(warm, { timeout: 2000 });
+  } else {
+    setTimeout(warm, 0);
   }
 
   async function performSearch(query, updateUrl = true) {
@@ -95,11 +113,14 @@ permalink: search.html
     try {
       searchResults = await pagefind.search(query);
     } catch (err) {
-      statusEl.textContent = "Search failed. See console."; console.error(err); return;
+      statusEl.textContent = "Search failed. See console.";
+      console.error("[Pagefind] search error:", err);
+      return;
     }
 
     if (!searchResults?.results?.length) {
-      statusEl.textContent = `No results for “${query}”`; return;
+      statusEl.textContent = `No results for “${query}”`;
+      return;
     }
 
     const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -126,7 +147,7 @@ permalink: search.html
 
       if (!matchesLiteral && !matchesNormalised) continue;
 
-      // Excerpt with cleanup
+      // Excerpt with cleanup and fallback
       let ex = "";
       try {
         const res = await r.excerpt({ length: 180 });
@@ -146,7 +167,7 @@ permalink: search.html
 
       if (ex) {
         const p = document.createElement("p");
-        p.innerHTML = addEllipses(ex); // preserves <mark>, ensures single leading/trailing ellipsis
+        p.innerHTML = addEllipses(ex); // keep <mark>, enforce single leading/trailing …
         li.appendChild(p);
       }
 
