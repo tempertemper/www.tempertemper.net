@@ -19,11 +19,41 @@
   for = "/*"
     [headers.values]
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Strict-Transport-Security = "max-age=31536000"
+    Strict-Transport-Security = "max-age=63072000"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     Permissions-Policy = "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), hid=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), usb=(), screen-wake-lock=(), xr-spatial-tracking=(), browsing-topics=()"
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data:; media-src 'self'; font-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data:; media-src 'self'; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; connect-src 'self' blob:; worker-src 'self' blob:; form-action 'self'"
+
+## Search stuff
+
+# Pagefind index shards — cache hard
+[[headers]]
+  for = "/pagefind/index/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/pagefind/fragment/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+# Already recommended earlier
+[[headers]]
+  for = "/pagefind/*.pagefind"
+  [headers.values]
+  Content-Type = "application/wasm"
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/pagefind/pagefind-entry.json"
+  [headers.values]
+  Cache-Control = "public, max-age=300, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/pagefind/*.js"
+  [headers.values]
+  Cache-Control = "public, max-age=604800"
 
 ## Allow fonts to be used by other domains (disable CORS), also cache fonts
 [[headers]]
