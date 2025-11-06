@@ -199,10 +199,18 @@ permalink: search.html
     if (q) { input.value = q; performSearch(q, false); }
   });
 
-  form.addEventListener("submit", (e) => {
+  let pending = false;
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    performSearch(input.value.trim(), true);
+    if (pending) return;
+    pending = true;
+    try {
+      await performSearch(input.value.trim(), true);
+    } finally {
+      pending = false;
+    }
   });
+
 </script>
 
 <script>
