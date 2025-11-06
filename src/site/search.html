@@ -15,7 +15,11 @@ permalink: search.html
 <div id="results" class="results"></div>
 
 <script type="module">
-  const pagefind = await import("/pagefind/pagefind.js");
+
+  window.__pagefind__bundlePath = "/pagefind/";
+
+  const mod = await import("/pagefind/pagefind.js");
+  const pagefind = mod?.default ?? mod;
 
   const form = document.getElementById("search-form");
   const input = document.getElementById("search");
