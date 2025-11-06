@@ -1,7 +1,8 @@
 {
   "name": "tempertemper",
-  "version": "6.7.1",
+  "version": "6.7.3",
   "description": "tempertemper's website",
+  "type": "module",
   "scripts": {
     "clear": "rm -rf dist",
     "scss": "sass --style=compressed --no-source-map src/scss/critical.scss src/site/_includes/critical.css && sass --style=compressed --no-source-map src/scss/non-critical.scss dist/assets/css/non-critical.css",

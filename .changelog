@@ -14,6 +14,29 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.7.3] - 2025-11-06
+
+### Changes
+- Separates Eleventy config into separate files
+- Modernises JavaScript syntax to use ES module import/export
+
+
+## [6.7.2] - 2025-11-06
+
+### Adds
+- Prefetch search for faster initial loading
+- Prevents a double click on search button submitting another query
+- Updates CSP headers for search
+
+### Fixes
+- Gets search working on production
+
+### Changes
+- Speeds up search
+- Adds full stops to results sentences
+- Increases STS time for site
+
+
 ## [6.7.1] - 2025-10-24
 
 ### Fixes

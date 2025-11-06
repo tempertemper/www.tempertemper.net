@@ -1,13 +1,14 @@
-const fs = require("fs");
+import { readFile, writeFile } from 'node:fs/promises';
+import pkg from '../package.json' with { type: 'json' };
 
-const pkg = JSON.parse(fs.readFileSync("package.json", "utf8"));
+const sitePath = new URL('../src/site/_data/site.js', import.meta.url);
 const version = pkg.version;
 
-const sitePath = "src/site/_data/site.js";
-let content = fs.readFileSync(sitePath, "utf8");
+let content = await readFile(sitePath, 'utf8');
 
-// replace the existing version value
-content = content.replace(/"version":\s*"[^"]+"/, `"version": "${version}"`);
+// replace the existing version value (single or double quotes)
+content = content.replace(/version:\s*['"][^'"]+['"]/, `version: '${version}'`);
 
-fs.writeFileSync(sitePath, content, "utf8");
+await writeFile(sitePath, content, 'utf8');
+
 console.log(`site.js updated to ${version}`);
