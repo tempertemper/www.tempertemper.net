@@ -1,0 +1,16 @@
+---
+pagination:
+  data: collections.postsByYear
+  size: 1
+  alias: yearGroup
+layout: default
+permalink: "archives/{{ yearGroup.year }}/index.html"
+---
+<h1>Posts from {{ yearGroup.year }}</h1>
+
+<ul>
+  {% for post in yearGroup.posts | reverse %}
+    <li>
+        {{ post.data.date | date }}: <a href="{{ post.url }}">{{ post.data.title }}</a></li>
+  {% endfor %}
+</ul>

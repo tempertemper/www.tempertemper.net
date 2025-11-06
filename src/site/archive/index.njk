@@ -1,0 +1,11 @@
+---
+layout: default
+title: Archives
+permalink: /archives/index.html
+---
+
+<ul>
+  {% for group in collections.postsByYear %}
+    <li><a href="/archives/{{ group.year }}/">{{ group.year }}</a></li>
+  {% endfor %}
+</ul>
