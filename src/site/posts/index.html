@@ -7,14 +7,67 @@ description: A blog for designers and frontend web developers. Covering topics s
 layout: default
 noCta: true
 listing: true
-permalink: blog/index.html
 override:tags: false
+permalink: "blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+pagination:
+    data: collections.post
+    size: 10
+    alias: posts
+    reverse: true
+    generatePageOnEmptyData: true
 ---
+<style>
+    .pagination__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2em;
+        margin-top: 2em;
+    }
+</style>
 
 <div id="search" class="search"></div>
 
 <ol class="hfeed index-list" reversed>
-    {%- for post in collections.post | reverse %}
+    {%- for post in posts %} 
         {%- include "post-in-list.html" %}
     {%- endfor %}
+
+    
+    {% if pagination.pageLinks.length > 1 %}
+    <div class="pagination__wrapper">
+        <div>
+            <p>
+                Showing
+                <span>
+                    {{ (pagination.pageNumber * pagination.size) + 1 }}
+                </span>
+                to
+                <span >
+                    {% if pagination.nextPageLink %}
+                        {{ (pagination.pageNumber * pagination.size) + pagination.size }}
+                    {% else %}
+                        {{ collections.all.length }}
+                    {% endif %}
+                </span>
+                of
+                <span>{{ collections.all.length }}</span>
+                results
+            </p>
+        </div>
+        <nav class="pagination">
+            {% if pagination.previousPageLink %}
+                <a  href="{{ pagination.previousPageHref }}">Previous</a>
+            {% else %}
+                <span >Previous</span>
+            {% endif %}
+            {% if pagination.nextPageLink %}
+                <a  href="{{ pagination.nextPageHref}}">Next</a>
+            {% else %}
+                <span >Next</span>
+            {% endif %}
+        </nav>
+    </div>
+    {% endif %}
 </ol>
