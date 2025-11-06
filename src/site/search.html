@@ -60,9 +60,9 @@ permalink: search.html
     s = s.replace(/\s+/g, " ").trim();
 
     // Normalise ellipses
-    s = s.replace(/\.{3}/g, "…");         // ... -> …
-    s = s.replace(/ ?… ?/g, "…");         // trim spaces around …
-    s = s.replace(/^…+/, "").replace(/…+$/, ""); // strip edge …
+    s = s.replace(/\.{3}/g, "…");                   // ... -> …
+    s = s.replace(/ ?… ?/g, "…");                   // trim spaces around …
+    s = s.replace(/^…+/, "").replace(/…+$/, "");    // strip edge …
 
     return s;
   };
@@ -119,7 +119,7 @@ permalink: search.html
     }
 
     if (!searchResults?.results?.length) {
-      statusEl.textContent = `No results for “${query}”`;
+      statusEl.textContent = `No results for “${query}”.`;
       return;
     }
 
@@ -167,7 +167,7 @@ permalink: search.html
 
       if (ex) {
         const p = document.createElement("p");
-        p.innerHTML = addEllipses(ex); // keep <mark>, enforce single leading/trailing …
+        p.innerHTML = addEllipses(ex);
         li.appendChild(p);
       }
 
@@ -178,8 +178,8 @@ permalink: search.html
 
     const items = list.children.length;
     statusEl.textContent = items
-      ? `${items} result${items > 1 ? "s" : ""} for “${query}”`
-      : `No results for “${query}”`;
+      ? `${items} result${items > 1 ? "s" : ""} for “${query}”.`
+      : `No results for “${query}”.`;
   }
 
   // Init from URL
