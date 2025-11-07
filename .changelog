@@ -14,6 +14,15 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.7.5] - 2025-11-07
+
+### Changes
+- Changes font-display from swap to optional
+- Removes pagefind (search) CSS
+- Stops browser synthesising bold fonts
+- A few CSS efficiencies
+
+
 ## [6.7.4] - 2025-11-07
 
 ### Adds

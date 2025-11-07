@@ -3,23 +3,13 @@
 @use '../admin/variables--colour' as colourVariables;
 
 .logo {
-  display: inline-block;
-  margin-right: .5em;
-  margin-bottom: .5em;
-
-  @media (min-width: layoutVariables.$xs) {
-    margin-bottom: 0;
-  }
 
   svg {
     display: block;
-  }
+    color: colourVariables.$colour-black;
 
-  .mark path,
-  .trademark {
-    fill: colourVariables.$colour-black;
     @include modeMixins.dark-mode() {
-      fill: colourVariables.$colour-dark-mode-white;
+      color: colourVariables.$colour-dark-mode-white;
     }
   }
 }
