@@ -1,10 +1,15 @@
+@use '../admin/variables--layout' as layoutVariables;
+
 .header {
   padding-top: 1em;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: .5em;
+  flex-direction: column;
 
-  nav {
-    margin-top: -.2em;
+  @media (min-width: layoutVariables.$l) {
+    flex-direction: row;
+    align-items: center;
   }
 }

@@ -7,15 +7,12 @@ html {
   color: colourVariables.$colour-black;
   font-size: 120%;
   font-feature-settings: "liga";
+  font-synthesis-weight: none;
   @include typographyMixins.font-body;
 
   @media (max-width: layoutVariables.$xxs) {
     font-size: 100%;
     line-height: 1.2;
-  }
-
-  @media (min-width: layoutVariables.$s) {
-    font-size: 130%;
   }
 
   @media (min-width: layoutVariables.$m) {
