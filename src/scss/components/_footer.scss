@@ -23,6 +23,12 @@
     display: block;
   }
 
+  a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: flex-start;
+  }
+
   nav {
 
     ul {
@@ -54,16 +60,6 @@
 
 .social {
 
-  li + li {
-    margin-top: .25em;
-  }
-
-  a {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: .5em;
-  }
-
   svg {
     $icon-width: 1.5em;
     width: $icon-width;
@@ -71,5 +67,6 @@
     flex: 0 0 $icon-width;
     align-self: flex-start;
     display: block;
+    margin-right: .5em;
   }
 }
