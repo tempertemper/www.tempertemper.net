@@ -54,10 +54,6 @@ table {
 caption {
   margin-top: .5em;
   @include typographyMixins.heading-s;
-
-  @media (min-width: layoutVariables.$xs) {
-    margin-top: .5em;
-  }
 }
 
 th,

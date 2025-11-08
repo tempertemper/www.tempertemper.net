@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+- Fixes search file 404
+- Makes prefetch/preload for search scripts smarter
+- Rearranges footer layout
+- Makes some minor CSS efficiencies
+
 ----------
 
 
