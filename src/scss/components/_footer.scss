@@ -1,5 +1,6 @@
 @use '../admin/variables--colour' as colourVariables;
 @use '../admin/variables--general' as generalVariables;
+@use '../admin/variables--layout' as layoutVariables;
 @use '../admin/mixins--general' as generalMixins;
 @use '../admin/mixins--typography' as typographyMixins;
 @use '../admin/mixins--modes' as  modeMixins;
@@ -8,15 +9,6 @@
   clear: both;
   padding-bottom: 1em;
   margin-top: generalVariables.$section-spacing;
-
-  nav {
-    margin-top: 1em;
-  }
-
-  ul,
-  ol {
-    max-width: none;
-  }
 
   address {
     margin-bottom: 0;
@@ -31,29 +23,56 @@
     display: block;
   }
 
-  .copyright {
-    margin-top: generalVariables.$section-spacing;
+  a {
+    min-height: 24px;
+    display: inline-flex;
+    align-items: flex-start;
+
+    @media (pointer: coarse) {
+      padding-block: 12px;
+      margin-block: -12px;
+      outline-offset: 4px;
+    }
   }
 
-  .utility {
+  nav {
+
+    ul {
+      margin-top: 0;
+    }
+
+    @media (min-width: layoutVariables.$xxs) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 1em;
+
+      & > ul:nth-child(1) { grid-column: 1 / -1; }
+    }
+
+    @media (min-width: layoutVariables.$m) {
+      grid-template-columns: repeat(4, 1fr);
+
+      & > ul:nth-child(1) { grid-column: 1 / span 2; }
+      & > ul:nth-child(2) { grid-column: 3; }
+      & > ul:nth-child(3) { grid-column: 4; }
+    }
+  }
+
+  ul {
     @include typographyMixins.remove-list-styling;
   }
 }
 
 .social {
 
-  li + li {
-    margin-top: .25em;
-  }
-
-  a {
-    display: inline-flex;
-    align-items: center;
-    gap: .25em;
-
-  }
-
   svg {
-    margin-top: -.25em;
+    $icon-width: 1.5em;
+    width: $icon-width;
+    height: auto;
+    flex: 0 0 $icon-width;
+    align-self: flex-start;
+    display: block;
+    margin-right: .5em;
   }
 }

@@ -1,4 +1,8 @@
 @use '../admin/variables--layout' as layoutVariables;
+@use '../admin/variables--colour' as colourVariables;
+@use '../admin/mixins--typography' as typographyMixins;
+@use '../admin/mixins--general' as generalMixins;
+@use '../admin/mixins--modes' as modeMixins;
 
 .header {
   padding-top: 1em;
@@ -11,5 +15,24 @@
   @media (min-width: layoutVariables.$l) {
     flex-direction: row;
     align-items: center;
+  }
+
+  nav ul {
+    margin-bottom: 0;
+    margin-top: 0;
+    @include typographyMixins.remove-list-styling;
+    @include generalMixins.inline-nav;
+  }
+}
+
+.logo {
+
+  svg {
+    display: block;
+    color: colourVariables.$colour-black;
+
+    @include modeMixins.dark-mode() {
+      color: colourVariables.$colour-dark-mode-white;
+    }
   }
 }
