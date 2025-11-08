@@ -11,12 +11,15 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.7.6] - 2025-11-08
+
 - Fixes search file 404
 - Makes prefetch/preload for search scripts smarter
 - Rearranges footer layout
 - Makes some minor CSS efficiencies
-
-----------
 
 
 ## [6.7.5] - 2025-11-07
