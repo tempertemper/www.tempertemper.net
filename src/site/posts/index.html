@@ -6,9 +6,10 @@ intro: |
 description: A blog for designers and frontend web developers. Covering topics such as accessibility, the web, Git, and design from interesting companies such as Apple.
 layout: default
 noCta: true
+hideIntro: false
 listing: true
 override:tags: false
-permalink: "blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}.html{% else %}index.html{% endif %}"
 pagination:
     data: collections.post
     size: 10
@@ -16,58 +17,31 @@ pagination:
     reverse: true
     generatePageOnEmptyData: true
 ---
-<style>
-    .pagination__wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 2em;
-        margin-top: 2em;
-    }
-</style>
-
-<div id="search" class="search"></div>
 
 <ol class="hfeed index-list" reversed>
-    {%- for post in posts %} 
+    {%- for post in posts %}
         {%- include "post-in-list.html" %}
     {%- endfor %}
-
-    
-    {% if pagination.pageLinks.length > 1 %}
-    <div class="pagination__wrapper">
-        <div>
-            <p>
-                Showing
-                <span>
-                    {{ (pagination.pageNumber * pagination.size) + 1 }}
-                </span>
-                to
-                <span >
-                    {% if pagination.nextPageLink %}
-                        {{ (pagination.pageNumber * pagination.size) + pagination.size }}
-                    {% else %}
-                        {{ collections.all.length }}
-                    {% endif %}
-                </span>
-                of
-                <span>{{ collections.all.length }}</span>
-                results
-            </p>
-        </div>
-        <nav class="pagination">
-            {% if pagination.previousPageLink %}
-                <a  href="{{ pagination.previousPageHref }}">Previous</a>
-            {% else %}
-                <span >Previous</span>
-            {% endif %}
-            {% if pagination.nextPageLink %}
-                <a  href="{{ pagination.nextPageHref}}">Next</a>
-            {% else %}
-                <span >Next</span>
-            {% endif %}
-        </nav>
-    </div>
-    {% endif %}
 </ol>
+
+<div class="pagination">
+    <p>I've written {{ collections.all.length }} posts; this is page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}.</p>
+
+    <nav aria-label="pagination">
+        {%- set hrefs = pagination.hrefs %}
+        {%- set isFirst = pagination.pageNumber == 0 %}
+        {%- set isLast  = pagination.pageNumber == (hrefs.length - 1) %}
+        {%- if hrefs.length > 1 %}
+                Go to page:
+                {%- if not isFirst %}
+                    <a href="{{ hrefs[0] | replace('.html', '') }}">First</a>,
+                    <a href="{{ pagination.previousPageHref | replace('.html', '') }}">Previous</a>
+                    {%- if not isLast %}, {% endif %}
+                {%- endif %}
+                {%- if not isLast %}
+                    <a href="{{ pagination.nextPageHref | replace('.html', '') }}">Next</a>,
+                    <a href="{{ hrefs[hrefs.length - 1] | replace('.html', '') }}">Last</a>
+                {%- endif %}
+        {%- endif %}
+    </nav>
+</div>
