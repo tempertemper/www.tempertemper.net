@@ -25,22 +25,28 @@ pagination:
 </ol>
 
 <div class="pagination">
-    <p>I've written {{ collections.all.length }} posts; this is page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}.</p>
+    <p>I've written {{ collections.all.length }} posts; this is page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}. Go to:</p>
 
     <nav aria-label="pagination">
         {%- set hrefs = pagination.hrefs %}
         {%- set isFirst = pagination.pageNumber == 0 %}
         {%- set isLast  = pagination.pageNumber == (hrefs.length - 1) %}
         {%- if hrefs.length > 1 %}
-                Go to page:
                 {%- if not isFirst %}
-                    <a href="{{ hrefs[0] | replace('.html', '') }}">First</a>,
-                    <a href="{{ pagination.previousPageHref | replace('.html', '') }}">Previous</a>
-                    {%- if not isLast %}, {% endif %}
+                    <a href="{{ hrefs[0] | replace('.html', '') }}">
+                        <span aria-hidden="true">⇤</span>First
+                    </a>
+                    <a href="{{ pagination.previousPageHref | replace('.html', '') }}">
+                        <span aria-hidden="true">←</span>Previous
+                    </a>
                 {%- endif %}
                 {%- if not isLast %}
-                    <a href="{{ pagination.nextPageHref | replace('.html', '') }}">Next</a>,
-                    <a href="{{ hrefs[hrefs.length - 1] | replace('.html', '') }}">Last</a>
+                    <a href="{{ pagination.nextPageHref | replace('.html', '') }}">
+                        Next<span aria-hidden="true">→</span>
+                    </a>
+                    <a href="{{ hrefs[hrefs.length - 1] | replace('.html', '') }}">
+                        Last<span aria-hidden="true">⇥</span>
+                    </a>
                 {%- endif %}
         {%- endif %}
     </nav>
