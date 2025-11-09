@@ -1,5 +1,5 @@
 @use '../admin/mixins--links' as linksMixins;
-@use '../admin/variables--layout' as layoutVariables;
+@use '../admin/variables';
 
 a {
   @include linksMixins.text-link;
@@ -13,7 +13,7 @@ a {
     margin-right: 0;
   }
 
-  @media (min-width: layoutVariables.$m) {
+  @media (min-width: variables.$m) {
 
     h2 & {
       text-decoration-thickness: .06em;

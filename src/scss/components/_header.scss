@@ -1,10 +1,37 @@
+@use '../admin/variables';
+@use '../admin/mixins--typography' as typographyMixins;
+@use '../admin/mixins--general' as generalMixins;
+@use '../admin/mixins--modes' as modeMixins;
+
 .header {
   padding-top: 1em;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: .5em;
+  flex-direction: column;
 
-  nav {
-    margin-top: -.2em;
+  @media (min-width: variables.$l) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  nav ul {
+    margin-bottom: 0;
+    margin-top: 0;
+    @include typographyMixins.remove-list-styling;
+    @include generalMixins.inline-nav;
+  }
+}
+
+.logo {
+
+  svg {
+    display: block;
+    color: variables.$colour-black;
+
+    @include modeMixins.dark-mode() {
+      color: variables.$colour-dark-mode-white;
+    }
   }
 }

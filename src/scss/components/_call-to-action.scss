@@ -2,10 +2,10 @@
 
 .call-to-action {
   margin: 2em 0;
-}
 
-.call-to-action:not(.highlight) {
-  @include generalMixins.divider;
+  &:not(.highlight) {
+    @include generalMixins.divider;
+  }
 }
 
 .highlight {

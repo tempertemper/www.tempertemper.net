@@ -1,21 +1,20 @@
-@use '../../admin/variables--colour' as colourVariables;
-@use '../../admin/variables--layout' as layoutVariables;
+@use '../../admin/variables' as variables;
 @use '../../admin/mixins--modes' as modeMixins;
 
 ::selection {
-  background: colourVariables.$colour-primary;
-  color: colourVariables.$colour-white;
-  @include modeMixins.dark-mode($colour: colourVariables.$colour-black);
-  @include modeMixins.high-contrast($background: colourVariables.$colour-dark-mode-primary-light);
+  background: variables.$colour-primary;
+  color: variables.$colour-white;
+  @include modeMixins.dark-mode($colour: variables.$colour-black);
+  @include modeMixins.high-contrast($background: variables.$colour-dark-mode-primary-light);
 }
 
 blockquote {
-  border-left: .15em solid colourVariables.$colour-primary;
+  border-left: .15em solid variables.$colour-primary;
   margin-left: 0;
   margin-right: 0;
   padding: .25em 0 .25em .85em;
 
-  @media (min-width: layoutVariables.$l) {
+  @media (min-width: variables.$l) {
     margin-left: -1em;
 
     blockquote {
@@ -24,7 +23,7 @@ blockquote {
   }
 
   @include modeMixins.high-contrast() {
-    border-left-color: colourVariables.$colour-dark-mode-primary-light;
+    border-left-color: variables.$colour-dark-mode-primary-light;
   }
 
   ul,
@@ -48,7 +47,7 @@ blockquote {
 ul,
 ol {
 
-  @media (max-width: layoutVariables.$l) {
+  @media (max-width: variables.$l) {
     padding-left: 1.5em;
   }
 
@@ -68,8 +67,8 @@ ol {
 li {
 
   &::marker {
-    color: colourVariables.$colour-primary;
-    @include modeMixins.high-contrast($colour: colourVariables.$colour-dark-mode-primary-light);
+    color: variables.$colour-primary;
+    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
   }
 
   ul &::marker {
@@ -97,16 +96,16 @@ small {
 }
 
 mark {
-  background-color: colourVariables.$colour-primary;
-  // color: colourVariables.$colour-white;
+  background-color: variables.$colour-primary;
+  // color: variables.$colour-white;
   @include modeMixins.dark-mode(
-    $colour: colourVariables.$colour-white,
-    $background: colourVariables.$colour-dark-mode-primary-darker
+    $colour: variables.$colour-white,
+    $background: variables.$colour-dark-mode-primary-darker
   );
   @include modeMixins.high-contrast(
-    $colour: colourVariables.$colour-black,
-    $background: colourVariables.$colour-dark-mode-primary-light
+    $colour: variables.$colour-black,
+    $background: variables.$colour-dark-mode-primary-light
   );
 
-  // background-color: colourVariables.$colour-dark-mode-primary;
+  // background-color: variables.$colour-dark-mode-primary;
 }

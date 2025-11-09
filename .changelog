@@ -14,6 +14,70 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.7.8] - 2025-11-09
+
+### Changes
+- Simplifies to one SCSS variable file
+- Rearranges one or two SCSS rules for efficiency
+
+### Removes
+- Removes placeholders file
+
+
+## [6.7.7] - 2025-11-09
+
+### Fixes
+- Fixes custom slugify characters
+- Trims whitespace with slugify
+
+
+## [6.7.6] - 2025-11-08
+
+- Fixes search file 404
+- Makes prefetch/preload for search scripts smarter
+- Rearranges footer layout
+- Makes some minor CSS efficiencies
+
+
+## [6.7.5] - 2025-11-07
+
+### Changes
+- Changes font-display from swap to optional
+- Removes pagefind (search) CSS
+- Stops browser synthesising bold fonts
+- A few CSS efficiencies
+
+
+## [6.7.4] - 2025-11-07
+
+### Adds
+- Forces all HTTP resources to be fetched securely
+- Tightens isolation between browsing contexts with COOP and CORP HTTP headers
+
+
+## [6.7.3] - 2025-11-06
+
+### Changes
+- Separates Eleventy config into separate files
+- Modernises JavaScript syntax to use ES module import/export
+
+
+## [6.7.2] - 2025-11-06
+
+### Adds
+- Prefetch search for faster initial loading
+- Prevents a double click on search button submitting another query
+- Updates CSP headers for search
+
+### Fixes
+- Gets search working on production
+
+### Changes
+- Speeds up search
+- Adds full stops to results sentences
+- Increases STS time for site
+
+
 ## [6.7.1] - 2025-10-24
 
 ### Fixes

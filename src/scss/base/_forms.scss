@@ -1,5 +1,4 @@
-@use '../admin/variables--colour' as colourVariables;
-@use '../admin/variables--general' as generalVariables;
+@use '../admin/variables';
 @use '../admin/mixins--buttons' as buttonsMixins;
 @use '../admin/mixins--modes' as modeMixins;
 
@@ -9,27 +8,27 @@ form {
 }
 
 label {
-  @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-white);
+  @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-white);
 }
 
 input {
-  background-color: colourVariables.$colour-main;
-  border: 3px solid colourVariables.$colour-primary;
-  border-radius: generalVariables.$border-radius-default;
+  background-color: variables.$colour-main;
+  border: 3px solid variables.$colour-primary;
+  border-radius: variables.$border-radius-default;
   display: block;
   padding: .5em .75em;
   width: 100%;
   line-height: 1.2;
-  @include modeMixins.dark-mode(colourVariables.$colour-dark-mode-main, colourVariables.$colour-dark-mode-white);
-  @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
-    border-color: colourVariables.$colour-dark-mode-primary-light;
+  @include modeMixins.dark-mode(variables.$colour-dark-mode-main, variables.$colour-dark-mode-white);
+  @include modeMixins.high-contrast($background: variables.$colour-high-contrast-main) {
+    border-color: variables.$colour-dark-mode-primary-light;
   }
 
   &:focus {
-    outline: solid 3px colourVariables.$colour-black;
+    outline: solid 3px variables.$colour-black;
     outline-offset: 0px;
     @include modeMixins.dark-mode() {
-      outline: solid 3px colourVariables.$colour-white;
+      outline: solid 3px variables.$colour-white;
     }
   }
 }

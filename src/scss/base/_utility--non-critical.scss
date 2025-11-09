@@ -1,9 +1,7 @@
 @use '../admin/mixins--general' as generalMixins;
-@use '../admin/placeholders' as placeholders;
-
 
 .visually-hidden {
-  @include placeholders.visually-hidden;
+  @include generalMixins.visually-hidden;
 }
 
 img,

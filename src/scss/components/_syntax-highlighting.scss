@@ -1,4 +1,4 @@
-@use '../admin/variables--colour' as colourVariables;
+@use '../admin/variables';
 @use '../admin/mixins--modes' as modeMixins;
 
 .token {
@@ -12,13 +12,13 @@
   &.doctype,
   &.cdata,
   &.url {
-    color: colourVariables.$colour-code-grey;
-    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-grey);
+    color: variables.$colour-code-grey;
+    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-grey);
   }
 
   &.punctuation {
-    color: colourVariables.$colour-code-grey;
-    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-grey);
+    color: variables.$colour-code-grey;
+    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-grey);
   }
 
   &.property,
@@ -27,16 +27,16 @@
   &.symbol,
   &.deleted,
   &.keyword {
-    color: colourVariables.$colour-code-magenta;
-    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-magenta);
-    @include modeMixins.high-contrast($colour: colourVariables.$colour-high-contrast-code-magenta);
+    color: variables.$colour-code-magenta;
+    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-magenta);
+    @include modeMixins.high-contrast($colour: variables.$colour-high-contrast-code-magenta);
   }
 
   &.boolean,
   &.number {
-    color: colourVariables.$colour-code-purple;
-    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-purple);
-    @include modeMixins.high-contrast($colour: colourVariables.$colour-high-contrast-code-purple);
+    color: variables.$colour-code-purple;
+    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-purple);
+    @include modeMixins.high-contrast($colour: variables.$colour-high-contrast-code-purple);
   }
 
   &.selector,
@@ -51,8 +51,8 @@
   .language-css &.string,
   .style &.string,
   &.variable {
-    color: colourVariables.$colour-code-cyan;
-    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-cyan);
+    color: variables.$colour-code-cyan;
+    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-cyan);
   }
 
   &.atrule,
@@ -60,8 +60,8 @@
   &.function,
   &.regex,
   &.important {
-    color: colourVariables.$colour-code-yellow;
-    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-code-yellow);
+    color: variables.$colour-code-yellow;
+    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-yellow);
   }
 
   &.important,
@@ -78,7 +78,7 @@
   }
 
   &.url .content {
-    color: colourVariables.$colour-black;
-    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-white);
+    color: variables.$colour-black;
+    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-white);
   }
 }
