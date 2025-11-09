@@ -52,6 +52,7 @@ pre {
   border-radius: variables.$border-radius-default;
   margin-top: 1em;
   margin-bottom: 1em;
+  overflow: auto;
   @include modeMixins.dark-mode($background: variables.$colour-dark-mode-code-background);
   @include modeMixins.high-contrast($background: variables.$colour-high-contrast-code-background);
 
@@ -66,17 +67,10 @@ pre {
   code {
     display: block;
     padding: 0;
+    width: auto;
+    text-wrap: nowrap;
+    margin-right: 0;
   }
-}
-
-pre {
-  overflow: auto;
-}
-
-pre code {
-  width: auto;
-  text-wrap: nowrap;
-  margin-right: 0;
 }
 
 // For syntax highlighting, see ../../components/_syntax-highlighting.scss

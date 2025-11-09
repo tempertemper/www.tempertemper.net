@@ -1,9 +1,9 @@
-@use '../admin/placeholders' as placeholders;
 @use '../admin/variables';
 @use '../admin/mixins--modes' as modeMixins;
+@use '../admin/mixins--general' as generalMixins;
 
 .skip-to-content {
-  @include placeholders.visually-hidden;
+  @include generalMixins.visually-hidden;
 
   &:focus {
     top: .5em;

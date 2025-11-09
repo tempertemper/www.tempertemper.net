@@ -12,6 +12,8 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 - Simplifies to one SCSS variable file
+- Rearranges one or two SCSS rules for efficiency
+- Removes placeholders file
 
 ----------
 

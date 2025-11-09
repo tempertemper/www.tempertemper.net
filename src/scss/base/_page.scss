@@ -1,6 +1,6 @@
 @use '../admin/variables';
 @use '../admin/mixins--modes' as modeMixins;
-@use '../admin/placeholders' as placeholders;
+@use '../admin/mixins--general' as generalMixins;
 
 body {
   background-color: variables.$colour-main;
@@ -10,5 +10,5 @@ body {
 
 .wrapper {
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-  @include placeholders.container;
+  @include generalMixins.container;
 }
