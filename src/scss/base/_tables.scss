@@ -1,25 +1,23 @@
-@use '../admin/variables--colour' as colourVariables;
-@use '../admin/variables--general' as generalVariables;
-@use '../admin/variables--layout' as layoutVariables;
+@use '../admin/variables';
 @use '../admin/mixins--modes' as modeMixins;
 @use '../admin/mixins--typography' as typographyMixins;
 
 .table-wrapper {
   overflow: auto;
-  border-radius: generalVariables.$border-radius-small;
+  border-radius: variables.$border-radius-small;
   margin-top: 1em;
   margin-bottom: 1em;
   @include typographyMixins.heading-style;
 
   &:focus {
-    outline: 3px solid colourVariables.$colour-black;
+    outline: 3px solid variables.$colour-black;
     outline-offset: 1px;
     @include modeMixins.dark-mode() {
-      outline: 3px solid colourVariables.$colour-white;
+      outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
     @include modeMixins.high-contrast() {
-      outline: 3px solid colourVariables.$colour-white;
+      outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
   }
@@ -35,13 +33,13 @@
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 4px colourVariables.$colour-black;
+    box-shadow: 0 0 0 4px variables.$colour-black;
     @include modeMixins.dark-mode() {
-      outline: 3px solid colourVariables.$colour-white;
+      outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
     @include modeMixins.high-contrast() {
-      outline: 3px solid colourVariables.$colour-white;
+      outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
   }

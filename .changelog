@@ -14,6 +14,16 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.7.8] - 2025-11-09
+
+### Changes
+- Simplifies to one SCSS variable file
+- Rearranges one or two SCSS rules for efficiency
+
+### Removes
+- Removes placeholders file
+
+
 ## [6.7.7] - 2025-11-09
 
 ### Fixes

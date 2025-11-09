@@ -1,5 +1,4 @@
-@use './variables--typography' as typographyVariables;
-@use './variables--layout' as layoutVariables;
+@use './variables' as variables;
 @use './mixins--modes' as modeMixins;
 
 @mixin heading-style {
@@ -37,60 +36,60 @@
 @mixin heading-xl {
 
   & {
-    font-size: typographyVariables.$major-third-3;
+    font-size: variables.$major-third-3;
     hyphens: manual;
   }
 
   @include heading-line-height-large;
 
-  @media (max-width: layoutVariables.$xxs) {
-    font-size: typographyVariables.$major-third-2;
+  @media (max-width: variables.$xxs) {
+    font-size: variables.$major-third-2;
   }
 
-  @media (max-width: layoutVariables.$xs) {
+  @media (max-width: variables.$xs) {
     hyphens: auto;
   }
 
-  @media (min-width: layoutVariables.$m) {
-    font-size: typographyVariables.$golden-3;
+  @media (min-width: variables.$m) {
+    font-size: variables.$golden-3;
   }
 }
 
 @mixin heading-l {
 
   & {
-    font-size: typographyVariables.$major-third-2;
+    font-size: variables.$major-third-2;
   }
 
   @include heading-line-height-large;
 
-  @media (max-width: layoutVariables.$xxs) {
-    font-size: typographyVariables.$major-third-1;
+  @media (max-width: variables.$xxs) {
+    font-size: variables.$major-third-1;
   }
 
-  @media (max-width: layoutVariables.$xs) {
+  @media (max-width: variables.$xs) {
     hyphens: auto;
   }
 
-  @media (min-width: layoutVariables.$m) {
-    font-size: typographyVariables.$golden-2;
+  @media (min-width: variables.$m) {
+    font-size: variables.$golden-2;
   }
 }
 
 @mixin heading-m {
 
   & {
-    font-size: typographyVariables.$major-third-1;
+    font-size: variables.$major-third-1;
   }
 
   @include heading-line-height-large;
 
-  @media (max-width: layoutVariables.$xxs) {
+  @media (max-width: variables.$xxs) {
     font-size: 1em;
   }
 
-  @media (min-width: layoutVariables.$m) {
-    font-size: typographyVariables.$golden-1;
+  @media (min-width: variables.$m) {
+    font-size: variables.$golden-1;
   }
 }
 
@@ -101,11 +100,11 @@
     line-height: 1.4;
   }
 
-  @media (max-width: layoutVariables.$xxs) {
-    font-size: typographyVariables.$major-third-minus-1;
+  @media (max-width: variables.$xxs) {
+    font-size: variables.$major-third-minus-1;
   }
 
-  @media (min-width: layoutVariables.$m) {
+  @media (min-width: variables.$m) {
     font-size: 1em;
   }
 }
