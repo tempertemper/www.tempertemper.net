@@ -12,15 +12,16 @@ export default function(config) {
   // Smart quotes
   config.addFilter('smart', smartQuotes);
 
-  // Slugify with your custom rules
+  // Slugify with custom rules
+  slugifyLib.extend({
+    '+': ' plus ',
+    '@': ' at ',
+  });
   config.addFilter('slugify', (str) =>
     slugifyLib(str, {
-      customReplacements: [
-        ['+', ' plus '],
-        ['@', ' at '],
-      ],
       remove: /[*~.,–—()'"‘’“”!?:;]/g,
       lower: true,
+      trim: true,
     })
   );
 
