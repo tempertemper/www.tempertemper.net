@@ -1,4 +1,4 @@
-@use '../admin/variables--layout' as layoutVariables;
+@use '../admin/variables';
 @use '../admin/mixins--general' as generalMixins;
 
 img {
@@ -21,7 +21,7 @@ figcaption {
 
 figure {
 
-  @media (min-width: layoutVariables.$l) {
+  @media (min-width: variables.$l) {
     @include generalMixins.overspill;
 
     img {

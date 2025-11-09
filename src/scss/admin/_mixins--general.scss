@@ -1,6 +1,4 @@
-@use './variables--general' as generalVariables;
-@use './variables--colour' as colourVariables;
-@use './variables--layout' as layoutVariables;
+@use './variables' as variables;
 @use './mixins--typography' as typographyMixins;
 @use './mixins--modes' as modeMixins;
 
@@ -26,20 +24,20 @@
 @mixin highlight-box {
 
   & {
-    background-color: colourVariables.$colour-highlight;
-    border-radius: generalVariables.$border-radius-default;
+    background-color: variables.$colour-highlight;
+    border-radius: variables.$border-radius-default;
     padding: 1em;
   }
 
-  @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-highlight);
-  @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-highlight);
+  @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
+  @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
 
   a {
 
     &:focus {
-      background-color: colourVariables.$colour-highlight;
-      @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-highlight);
-      @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-highlight);
+      background-color: variables.$colour-highlight;
+      @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
+      @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
     }
 
     &:focus:not(:focus-visible) {
@@ -49,9 +47,9 @@
     }
 
     &:focus-visible {
-      background-color: colourVariables.$colour-highlight;
-      @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-highlight);
-      @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-highlight);
+      background-color: variables.$colour-highlight;
+      @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
+      @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
     }
   }
 
@@ -74,7 +72,7 @@
 @mixin boxout {
   @include highlight-box;
 
-  @media (min-width: layoutVariables.$l) {
+  @media (min-width: variables.$l) {
     @include overspill;
   }
 }
@@ -89,13 +87,13 @@
     gap: 1em;
     padding-left: 0;
 
-    @media (min-width: layoutVariables.$m) {
+    @media (min-width: variables.$m) {
       flex-direction: row;
       justify-content: space-between;
       flex-wrap: wrap;
     }
 
-    @media (min-width: layoutVariables.$l) {
+    @media (min-width: variables.$l) {
       @include overspill;
     }
   }
@@ -114,26 +112,26 @@
 }
 
 @mixin embedded-media {
-  border-radius: generalVariables.$border-radius-default;
-  background-color: colourVariables.$colour-highlight;
+  border-radius: variables.$border-radius-default;
+  background-color: variables.$colour-highlight;
   display: block;
-  box-shadow: 0 0 .25em colourVariables.$colour-grey;
+  box-shadow: 0 0 .25em variables.$colour-grey;
   margin-bottom: 1em;
   margin-top: 1em;
   height: auto;
   width: 100%;
-  @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-highlight);
-  @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-highlight);
+  @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
+  @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
 
-  @media (min-width: layoutVariables.$l) {
+  @media (min-width: variables.$l) {
     @include overspill;
   }
 
   @include modeMixins.dark-mode() {
-    box-shadow: 0 0 .25em colourVariables.$colour-black;
+    box-shadow: 0 0 .25em variables.$colour-black;
   }
 }
 
 @mixin divider {
-  border-top: 2px solid colourVariables.$colour-primary;
+  border-top: 2px solid variables.$colour-primary;
 }

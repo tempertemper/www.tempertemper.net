@@ -1,41 +1,40 @@
-@use './variables--general' as generalVariables;
-@use './variables--colour' as colourVariables;
+@use './variables' as variables;
 @use './mixins--modes' as modeMixins;
 
 
 @mixin text-link {
-  border-radius:generalVariables.$border-radius-small;
+  border-radius:variables.$border-radius-small;
 
   &:link,
   &:visited {
-    color: colourVariables.$colour-primary-darker;
-    @include modeMixins.dark-mode($colour: colourVariables.$colour-primary);
-    @include modeMixins.high-contrast($colour: colourVariables.$colour-dark-mode-primary-light);
+    color: variables.$colour-primary-darker;
+    @include modeMixins.dark-mode($colour: variables.$colour-primary);
+    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
   }
 
   &:hover {
-    color: colourVariables.$colour-primary-dark;
-    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-primary-light);
-    @include modeMixins.high-contrast($colour: colourVariables.$colour-high-contrast-primary-light);
+    color: variables.$colour-primary-dark;
+    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-primary-light);
+    @include modeMixins.high-contrast($colour: variables.$colour-high-contrast-primary-light);
   }
 
   &:active {
-    color: colourVariables.$colour-black;
-    @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-white);
+    color: variables.$colour-black;
+    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-white);
   }
 
   &:focus {
-    background-color: colourVariables.$colour-white;
-    outline: 3px solid colourVariables.$colour-black;
+    background-color: variables.$colour-white;
+    outline: 3px solid variables.$colour-black;
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-main) {
-      outline: 3px solid colourVariables.$colour-white;
+    @include modeMixins.dark-mode($background: variables.$colour-dark-mode-main) {
+      outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
-    @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
-      outline: 3px solid colourVariables.$colour-white;
+    @include modeMixins.high-contrast($background: variables.$colour-high-contrast-main) {
+      outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
   }
@@ -54,17 +53,17 @@
   }
 
   &:focus-visible {
-    background-color: colourVariables.$colour-white;
-    outline: 3px solid colourVariables.$colour-black;
+    background-color: variables.$colour-white;
+    outline: 3px solid variables.$colour-black;
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-main) {
-      outline: 3px solid colourVariables.$colour-white;
+    @include modeMixins.dark-mode($background: variables.$colour-dark-mode-main) {
+      outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
-    @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-main) {
-      outline: 3px solid colourVariables.$colour-white;
+    @include modeMixins.high-contrast($background: variables.$colour-high-contrast-main) {
+      outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
   }

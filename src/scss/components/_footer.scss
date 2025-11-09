@@ -1,6 +1,4 @@
-@use '../admin/variables--colour' as colourVariables;
-@use '../admin/variables--general' as generalVariables;
-@use '../admin/variables--layout' as layoutVariables;
+@use '../admin/variables';
 @use '../admin/mixins--general' as generalMixins;
 @use '../admin/mixins--typography' as typographyMixins;
 @use '../admin/mixins--modes' as  modeMixins;
@@ -8,7 +6,7 @@
 .footer {
   clear: both;
   padding-bottom: 1em;
-  margin-top: generalVariables.$section-spacing;
+  margin-top: variables.$section-spacing;
 
   address {
     margin-bottom: 0;
@@ -42,7 +40,7 @@
       margin-top: 0;
     }
 
-    @media (min-width: layoutVariables.$xxs) {
+    @media (min-width: variables.$xxs) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;
@@ -51,7 +49,7 @@
       & > ul:nth-child(1) { grid-column: 1 / -1; }
     }
 
-    @media (min-width: layoutVariables.$m) {
+    @media (min-width: variables.$m) {
       grid-template-columns: repeat(4, 1fr);
 
       & > ul:nth-child(1) { grid-column: 1 / span 2; }

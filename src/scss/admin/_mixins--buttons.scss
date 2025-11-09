@@ -1,15 +1,13 @@
-@use '../admin/variables--colour' as colourVariables;
-@use '../admin/variables--general' as generalVariables;
-@use '../admin/variables--layout' as layoutVariables;
+@use '../admin/variables';
 @use '../admin/mixins--general' as generalMixins;
 @use '../admin/mixins--modes' as modeMixins;
 
 @mixin button {
-  background-color: colourVariables.$colour-primary;
-  border-radius: generalVariables.$border-radius-default;
+  background-color: colourVariablesvariablescolour-primary;
+  border-radius: variables.$border-radius-default;
   border: none;
-  border-bottom: solid 3px colourVariables.$colour-primary-dark;
-  color: colourVariables.$colour-white;
+  border-bottom: solid 3px variables.$colour-primary-dark;
+  color: variables.$colour-white;
   display: inline-block; // Older browsers
   display: inline-flex;
   align-items: center;
@@ -19,12 +17,12 @@
   padding: .5em 1em; // Older browsers
   padding: calc(.5em + 3px) 1em .5em;
   width: auto;
-  @include modeMixins.dark-mode($colour: colourVariables.$colour-dark-mode-main) {
-    border-bottom: solid 3px colourVariables.$colour-dark-mode-primary-dark;
+  @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-main) {
+    border-bottom: solid 3px variables.$colour-dark-mode-primary-dark;
   }
-  @include modeMixins.high-contrast(colourVariables.$colour-dark-mode-primary-light, colourVariables.$colour-high-contrast-main);
+  @include modeMixins.high-contrast(variables.$colour-dark-mode-primary-light, variables.$colour-high-contrast-main);
 
-  @media (max-width: layoutVariables.$xs) {
+  @media (max-width: variables.$xs) {
     padding: .25em;
   }
 
@@ -34,9 +32,9 @@
   }
 
   &:focus {
-    outline: 3px solid colourVariables.$colour-black;
+    outline: 3px solid variables.$colour-black;
     @include modeMixins.dark-mode() {
-      outline: 3px solid colourVariables.$colour-white;
+      outline: 3px solid variables.$colour-white;
     }
   }
 
@@ -48,16 +46,16 @@
   }
 
   &:focus-visible {
-    outline: 3px solid colourVariables.$colour-black;
+    outline: 3px solid variables.$colour-black;
     @include modeMixins.dark-mode() {
-      outline: 3px solid colourVariables.$colour-white;
+      outline: 3px solid variables.$colour-white;
     }
   }
 
   &:hover {
-    background-color: colourVariables.$colour-primary-dark;
-    @include modeMixins.dark-mode($background: colourVariables.$colour-dark-mode-primary-light);
-    @include modeMixins.high-contrast($background: colourVariables.$colour-high-contrast-primary-light);
+    background-color: variables.$colour-primary-dark;
+    @include modeMixins.dark-mode($background: variables.$colour-dark-mode-primary-light);
+    @include modeMixins.high-contrast($background: variables.$colour-high-contrast-primary-light);
   }
 
   &:active {

@@ -1,5 +1,5 @@
 @use '../admin/placeholders' as placeholders;
-@use '../admin/variables--colour' as colourVariables;
+@use '../admin/variables';
 @use '../admin/mixins--modes' as modeMixins;
 
 .skip-to-content {
@@ -13,11 +13,11 @@
     height: auto;
     width: auto;
     margin: 0;
-    box-shadow: 0 0 0 3px colourVariables.$colour-black, 0 0 .4em .0em colourVariables.$colour-dark-mode-black;
+    box-shadow: 0 0 0 3px variables.$colour-black, 0 0 .4em .0em variables.$colour-dark-mode-black;
     padding: 0.5em .5em;
 
     @include modeMixins.dark-mode() {
-      box-shadow: 0 0 0 3px colourVariables.$colour-white, .2em .2em .4em .1em colourVariables.$colour-dark-mode-black;
+      box-shadow: 0 0 0 3px variables.$colour-white, .2em .2em .4em .1em variables.$colour-dark-mode-black;
     }
   }
 }

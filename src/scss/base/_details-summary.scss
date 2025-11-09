@@ -1,10 +1,10 @@
-@use '../admin/variables--colour' as colourVariables;
+@use '../admin/variables';
 @use '../admin/mixins--modes' as modeMixins;
 @use '../admin/mixins--links' as linksMixins;
 
 summary {
-  color: colourVariables.$colour-primary-darker;
+  color: variables.$colour-primary-darker;
   @include linksMixins.text-link;
-  @include modeMixins.dark-mode($colour: colourVariables.$colour-primary);
-  @include modeMixins.high-contrast($colour: colourVariables.$colour-dark-mode-primary-light);
+  @include modeMixins.dark-mode($colour: variables.$colour-primary);
+  @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
 }
