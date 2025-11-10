@@ -4,14 +4,22 @@ intro: Do you have a website? Not the technical type? Read on to receive free ti
 layout: default
 resources: true
 noCta: true
-permalink: resources/index.html
 override:tags: false
+permalink: "resources/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}.html{% else %}index.html{% endif %}"
+pagination:
+    data: collections.resource
+    size: 10
+    alias: resources
+    reverse: true
+    generatePageOnEmptyData: true
 ---
 
 I tend not to write much here anymore. For articles on design, frontend development, and accessibility, [head to my blog](/blog/).
 
 <ol class="hfeed index-list" reversed>
-    {%- for post in collections.resource | reverse %}
+    {%- for post in resources %}
         {%- include "post-in-list.html" %}
     {%- endfor %}
 </ol>
+
+{%- include "pagination.html" %}

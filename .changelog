@@ -14,6 +14,14 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.8.0] - 2025-11-10
+
+### Adds
+- Paginates blog listing page
+- Paginates resource listing page
+- Adds styling for pagination
+
+
 ## [6.7.8] - 2025-11-09
 
 ### Changes

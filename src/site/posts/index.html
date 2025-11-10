@@ -6,15 +6,22 @@ intro: |
 description: A blog for designers and frontend web developers. Covering topics such as accessibility, the web, Git, and design from interesting companies such as Apple.
 layout: default
 noCta: true
+hideIntro: false
 listing: true
-permalink: blog/index.html
 override:tags: false
+permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}.html{% else %}index.html{% endif %}"
+pagination:
+    data: collections.post
+    size: 10
+    alias: posts
+    reverse: true
+    generatePageOnEmptyData: true
 ---
 
-<div id="search" class="search"></div>
-
 <ol class="hfeed index-list" reversed>
-    {%- for post in collections.post | reverse %}
+    {%- for post in posts %}
         {%- include "post-in-list.html" %}
     {%- endfor %}
 </ol>
+
+{%- include "pagination.html" %}

@@ -89,7 +89,26 @@
 
     <link href="https://mastodon.social/@tempertemper" rel="me">
 
-    <link rel="canonical" href="{{ site.url }}{{ page.url | replace('.html', '') }}" />
+    {%- if pagination and pagination.pageNumber > 0 %}
+        {%- set resource = page.url.startsWith('/resources/') -%}
+        {%- set blog = page.url.startsWith('/blog/') -%}
+        {%- if resource -%}
+            {%- set typeOfThing = 'resources' %}
+        {%- elif blog -%}
+            {%- set typeOfThing = 'blog' %}
+        {%- endif -%}
+        <meta name="robots" content="noindex,follow">
+        <link rel="canonical" href="{{ site.url }}/{{ typeOfThing }}/">
+        {%- if pagination and pagination.previousPageHref -%}
+            <link rel="prev" href="{{ pagination.previousPageHref | replace('.html','') }}">
+        {%- endif -%}
+        {%- if pagination and pagination.nextPageHref -%}
+            <link rel="next" href="{{ pagination.nextPageHref | replace('.html','') }}">
+        {%- endif -%}
+    {%- else %}
+        <link rel="canonical" href="{{ site.url }}{{ page.url | replace('.html', '') }}" />
+    {%- endif %}
+
     {%- if site.env == 'development' %}
         <link rel="icon" href="/favicon--dev.ico" />
         <link rel="icon" href="/assets/img/icons/favicon--dev.svg" type="image/svg+xml" />

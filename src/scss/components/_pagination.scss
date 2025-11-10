@@ -1,0 +1,18 @@
+@use '../admin/variables';
+
+.pagination {
+  margin-top: variables.$section-spacing;
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    column-gap: .75em;
+    flex-wrap: wrap;
+
+    a {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}
