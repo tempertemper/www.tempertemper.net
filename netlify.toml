@@ -58,6 +58,13 @@
   [headers.values]
   Cache-Control = "public, max-age=604800"
 
+[[headers]]
+  for = "/pagefind/wasm.en.pagefind"
+  [headers.values]
+    Content-Type = "application/wasm"
+    Content-Encoding = "br"
+    Cache-Control = "public, max-age=31536000, immutable"
+
 ## Allow fonts to be used by other domains (disable CORS), also cache fonts
 [[headers]]
   for = "/assets/fonts/*"
