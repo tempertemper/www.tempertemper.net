@@ -14,6 +14,18 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.8.1] - 2025-11-10
+
+### Fixes
+- Fixes broken button colour
+
+### Removes
+- Removes some non-flexbox fallbacks
+
+### Changes
+- Moves some button styling to the reset
+
+
 ## [6.8.0] - 2025-11-10
 
 ### Adds
