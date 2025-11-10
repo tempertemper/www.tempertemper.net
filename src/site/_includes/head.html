@@ -89,9 +89,16 @@
 
     <link href="https://mastodon.social/@tempertemper" rel="me">
 
-    {%- if pagination.pageNumber > 0 %}
+    {%- if pagination and pagination.pageNumber > 0 %}
+        {%- set resource = page.url.startsWith('/resources/') -%}
+        {%- set blog = page.url.startsWith('/blog/') -%}
+        {%- if resource -%}
+            {%- set typeOfThing = 'resources' %}
+        {%- elif blog -%}
+            {%- set typeOfThing = 'blog' %}
+        {%- endif -%}
         <meta name="robots" content="noindex,follow">
-        <link rel="canonical" href="{{ site.url }}/blog/">
+        <link rel="canonical" href="{{ site.url }}/{{ typeOfThing }}/">
         {%- if pagination and pagination.previousPageHref -%}
             <link rel="prev" href="{{ pagination.previousPageHref | replace('.html','') }}">
         {%- endif -%}
