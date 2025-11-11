@@ -1,75 +1,53 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
-    {%- if title %}
-        {%- set pageTitle = title | smart | safe %}
-    {%- elif category %}
-        {%- set pageTitle = category | smart | safe %}
-    {%- else %}
-        {%- set pageTitle = heading | smart | safe %}
-    {%- endif %}
+    {%- if title %} {%- set pageTitle = title | smart | safe %} {%- elif
+    category %} {%- set pageTitle = category | smart | safe %} {%- else %} {%-
+    set pageTitle = heading | smart | safe %} {%- endif %}
     <title>{{ pageTitle }} – tempertemper</title>
-    {%- if description %}
-        {%- set description = description | smart | safe %}
-    {%- elif intro %}
-        {%- set description = intro | markdown | safe | striptags(true) | escape %}
-    {%- else %}
-        {%- if category %}
-            {%- set description = "Articles and resources in the " + category + " category." %}
-        {%- else %}
-            {%- set description = content | striptags(true) | escape | truncate(150) %}
-        {%- endif %}
-    {%- endif %}
+    {%- if description %} {%- set description = description | smart | safe %}
+    {%- elif intro %} {%- set description = intro | markdown | safe |
+    striptags(true) | escape %} {%- else %} {%- if category %} {%- set
+    description = "Articles and resources in the " + category + " category." %}
+    {%- else %} {%- set description = content | striptags(true) | escape |
+    truncate(150) %} {%- endif %} {%- endif %}
     <meta name="description" content="{{ description }}" />
-    {%- set imageType = 'image/png' %}
-    {%- if summaryImage %}
-        {%- set cardType = "summary_large_image" %}
-        {%- if summaryImage == "large" %}
-            {%- set cardImage = site.url + "/assets/img/summary_large_image.png" %}
-            {%- set imageAlt = "tempertemper’s logo: a blue rectangle with a white rectangle/underscore in the bottom-right corner" %}
-            {%- set imageWidth = 1200 %}
-            {%- set imageHeight = 628 %}
-        {%- else %}
-            {%- if (tags.length >= 1) and tags.includes('resource') %}
-                {%- set imgDir = 'resources/' %}
-            {%- elif (tags.length >= 1) and tags.includes('case-study') %}
-                {%- set imgDir = 'case-studies/' %}
-            {%- elif (tags.length >= 1) and tags.includes('post') %}
-                {%- set imgDir = 'blog/' %}
-            {%- else %}
-                {%- set imgDir = '' %}
-            {%- endif %}
-            {%- set cardImage = site.url + "/assets/img/" + imgDir + summaryImage %}
-            {%- set imageAlt = summaryImageAlt %}
-            {%- if summaryImage.includes(".jpg") %}
-                {%- set imageType = 'image/jpg' %}
-            {%- endif %}
-            {%- set imageWidth = 1024 %}
-            {%- set imageHeight = 576 %}
-        {%- endif %}
-    {%- else %}
-        {%- set cardType = "summary" %}
-        {%- set cardImage = site.url + "/assets/img/summary.png" %}
-        {%- set imageAlt = "tempertemper’s icon: a blue square with a white rectangle/underscore in the bottom-right corner" %}
-        {%- set imageWidth = 512 %}
-        {%- set imageHeight = 512 %}
-    {%- endif %}
+    {%- set imageType = 'image/png' %} {%- if summaryImage %} {%- set cardType =
+    "summary_large_image" %} {%- if summaryImage == "large" %} {%- set cardImage
+    = site.url + "/assets/img/summary_large_image.png" %} {%- set imageAlt =
+    "tempertemper’s logo: a blue rectangle with a white rectangle/underscore in
+    the bottom-right corner" %} {%- set imageWidth = 1200 %} {%- set imageHeight
+    = 628 %} {%- else %} {%- if (tags.length >= 1) and tags.includes('resource')
+    %} {%- set imgDir = 'resources/' %} {%- elif (tags.length >= 1) and
+    tags.includes('case-study') %} {%- set imgDir = 'case-studies/' %} {%- elif
+    (tags.length >= 1) and tags.includes('post') %} {%- set imgDir = 'blog/' %}
+    {%- else %} {%- set imgDir = '' %} {%- endif %} {%- set cardImage = site.url
+    + "/assets/img/" + imgDir + summaryImage %} {%- set imageAlt =
+    summaryImageAlt %} {%- if summaryImage.includes(".jpg") %} {%- set imageType
+    = 'image/jpg' %} {%- endif %} {%- set imageWidth = 1024 %} {%- set
+    imageHeight = 576 %} {%- endif %} {%- else %} {%- set cardType = "summary"
+    %} {%- set cardImage = site.url + "/assets/img/summary.png" %} {%- set
+    imageAlt = "tempertemper’s icon: a blue square with a white
+    rectangle/underscore in the bottom-right corner" %} {%- set imageWidth = 512
+    %} {%- set imageHeight = 512 %} {%- endif %}
     <meta property="og:site_name" content="tempertemper Web Design" />
-    <meta property="og:url" content="{{ site.url }}{{ page.url | replace('.html', '') }}" />
+    <meta
+        property="og:url"
+        content="{{ site.url }}{{ page.url | replace('.html', '') }}"
+    />
     <meta property="og:title" content="{{ pageTitle }}" />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:image" content="{{ cardImage }}" />
     <meta property="og:image:type" content="{{ imageType }}" />
-    {%- if (tags.length >= 1) and (tags.includes('post') or tags.includes('resource')) %}
-        <meta property="og:image:width" content="{{ imageWidth }}" />
-        <meta property="og:image:height" content="{{ imageHeight }}" />
+    {%- if (tags.length >= 1) and (tags.includes('post') or
+    tags.includes('resource')) %}
+    <meta property="og:image:width" content="{{ imageWidth }}" />
+    <meta property="og:image:height" content="{{ imageHeight }}" />
     {%- endif %}
     <meta property="og:image:alt" content="{{ imageAlt }}" />
-    {%- if tags.length >= 1 and (tags.includes('post') or tags.includes('resource')) %}
-        {%- set type = "article" %}
-    {%- else %}
-        {%- set type = "website" %}
-    {%- endif %}
+    {%- if tags.length >= 1 and (tags.includes('post') or
+    tags.includes('resource')) %} {%- set type = "article" %} {%- else %} {%-
+    set type = "website" %} {%- endif %}
     <meta property="og:type" content="{{ type }}" />
     <meta property="article:author" content="{{ site.author.name }}" />
 
@@ -78,77 +56,162 @@
     <meta name="twitter:creator" content="{{ site.author.twitter }}" />
     <meta name="twitter:title" content="{{ pageTitle }}" />
     <meta name="twitter:description" content="{{ description }}" />
-    <meta name="twitter:url" content="{{ site.url }}{{ page.url | replace('.html', '') }}" />
+    <meta
+        name="twitter:url"
+        content="{{ site.url }}{{ page.url | replace('.html', '') }}"
+    />
     <meta name="twitter:image" content="{{ cardImage }}" />
     <meta name="twitter:image:alt" content="{{ imageAlt }}" />
 
-    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
+    <meta
+        name="viewport"
+        content="initial-scale=1, width=device-width, viewport-fit=cover"
+    />
     <meta name="disabled-adaptations" content="watch" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="color-scheme" content="dark light" />
 
-    <link href="https://mastodon.social/@tempertemper" rel="me">
+    <link href="https://mastodon.social/@tempertemper" rel="me" />
 
-    {%- if pagination and pagination.pageNumber > 0 %}
-        {%- set resource = page.url.startsWith('/resources/') -%}
-        {%- set blog = page.url.startsWith('/blog/') -%}
-        {%- if resource -%}
-            {%- set typeOfThing = 'resources' %}
-        {%- elif blog -%}
-            {%- set typeOfThing = 'blog' %}
-        {%- endif -%}
-        <meta name="robots" content="noindex,follow">
-        <link rel="canonical" href="{{ site.url }}/{{ typeOfThing }}/">
-        {%- if pagination and pagination.previousPageHref -%}
-            <link rel="prev" href="{{ pagination.previousPageHref | replace('.html','') }}">
-        {%- endif -%}
-        {%- if pagination and pagination.nextPageHref -%}
-            <link rel="next" href="{{ pagination.nextPageHref | replace('.html','') }}">
-        {%- endif -%}
+    {%- if pagination and pagination.pageNumber > 0 %} {%- set resource =
+    page.url.startsWith('/resources/') -%} {%- set blog =
+    page.url.startsWith('/blog/') -%} {%- if resource -%} {%- set typeOfThing =
+    'resources' %} {%- elif blog -%} {%- set typeOfThing = 'blog' %} {%- endif
+    -%}
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href="{{ site.url }}/{{ typeOfThing }}/" />
+    {%- if pagination and pagination.previousPageHref -%}
+    <link
+        rel="prev"
+        href="{{ pagination.previousPageHref | replace('.html','') }}"
+    />
+    {%- endif -%} {%- if pagination and pagination.nextPageHref -%}
+    <link
+        rel="next"
+        href="{{ pagination.nextPageHref | replace('.html','') }}"
+    />
+    {%- endif -%} {%- else %}
+    <link
+        rel="canonical"
+        href="{{ site.url }}{{ page.url | replace('.html', '') }}"
+    />
+    {%- endif %} {%- if site.env == 'development' %}
+    <link rel="icon" href="/favicon--dev.ico" />
+    <link
+        rel="icon"
+        href="/assets/img/icons/favicon--dev.svg"
+        type="image/svg+xml"
+    />
     {%- else %}
-        <link rel="canonical" href="{{ site.url }}{{ page.url | replace('.html', '') }}" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+        rel="icon"
+        href="/assets/img/icons/favicon.svg"
+        type="image/svg+xml"
+    />
     {%- endif %}
+    <link
+        rel="apple-touch-icon"
+        href="/assets/img/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta
+        name="theme-color"
+        content="#ffffff"
+        media="(prefers-color-scheme: light)"
+    />
+    <meta
+        name="theme-color"
+        content="#262626"
+        media="(prefers-color-scheme: dark)"
+    />
 
-    {%- if site.env == 'development' %}
-        <link rel="icon" href="/favicon--dev.ico" />
-        <link rel="icon" href="/assets/img/icons/favicon--dev.svg" type="image/svg+xml" />
-    {%- else %}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" href="/assets/img/icons/favicon.svg" type="image/svg+xml" />
-    {%- endif %}
-    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#262626" media="(prefers-color-scheme: dark)" />
+    <link
+        rel="preload"
+        href="/assets/fonts/FSMeWeb-Regular.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin
+        fetchpriority="high"
+    />
+    <link
+        rel="preload"
+        href="/assets/fonts/FSMeWeb-Bold.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin
+        fetchpriority="high"
+    />
+    <link
+        rel="preload"
+        href="/assets/fonts/FSMeWeb-Italic.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin
+    />
 
-    <link rel="preload" href="/assets/fonts/FSMeWeb-Regular.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
-    <link rel="preload" href="/assets/fonts/FSMeWeb-Bold.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
-    <link rel="preload" href="/assets/fonts/FSMeWeb-Italic.woff2" as="font" type="font/woff2" crossorigin />
-
-    {%- if page.fileSlug == 'search' -%}
-        {%- set hint = 'preload' -%}
-    {%- else -%}
-        {%- set hint = 'prefetch' -%}
-    {%- endif -%}
-    <link rel="{{ hint }}" href="/pagefind/pagefind.js" as="script" crossorigin="anonymous">
-    <link rel="{{ hint }}" href="/pagefind/pagefind-entry.json" as="fetch" type="application/json" crossorigin="anonymous">
-    <link rel="{{ hint }}" href="/pagefind/wasm/index.pagefind" as="fetch" type="application/wasm" crossorigin="anonymous">
+    {%- if page.fileSlug == 'search' -%} {%- set hint = 'preload' -%} {%- else
+    -%} {%- set hint = 'prefetch' -%} {%- endif -%}
+    <link
+        rel="{{ hint }}"
+        href="/pagefind/pagefind.js"
+        as="script"
+        crossorigin="anonymous"
+    />
+    <link
+        rel="{{ hint }}"
+        href="/pagefind/pagefind-entry.json"
+        as="fetch"
+        type="application/json"
+        crossorigin="anonymous"
+    />
+    <!-- <link rel="{{ hint }}" href="/pagefind/wasm/index.pagefind" as="fetch" type="application/wasm" crossorigin="anonymous"> -->
+    <link
+        rel="{{ hint }}"
+        href="/pagefind/wasm.en.pagefind"
+        as="fetch"
+        type="application/wasm"
+        crossorigin="anonymous"
+    />
 
     {%- set css %}{%- include "critical.css" %}{% endset %}
-    <style>{{- css | safe | replace("", "") -}}</style>
-    <link rel="preload" href="/assets/css/non-critical.css?v={{ site.version }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="/assets/css/non-critical.css?v={{ site.version }}" /></noscript>
-    <link rel="stylesheet" media="print" href="/assets/css/print.css?v={{ site.version }}" />
+    <style>
+        {{- css | safe | replace("", "") -}}
+    </style>
+    <link
+        rel="preload"
+        href="/assets/css/non-critical.css?v={{ site.version }}"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+        ><link
+            rel="stylesheet"
+            href="/assets/css/non-critical.css?v={{ site.version }}"
+    /></noscript>
+    <link
+        rel="stylesheet"
+        media="print"
+        href="/assets/css/print.css?v={{ site.version }}"
+    />
     <script type="application/ld+json">
         {
-            "@context" : "https://schema.org",
-            "@type" : "WebSite",
-            "name" : "{{ site.title }}",
-            "alternateName" : "{{ site.company }}",
-            "url" : "{{ site.url }}"
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "{{ site.title }}",
+            "alternateName": "{{ site.company }}",
+            "url": "{{ site.url }}"
         }
     </script>
-    <link rel="alternate" type="application/atom+xml" href="{{ site.url }}/feeds/main.xml" />
-    <link rel="alternate" type="application/json" href="{{ site.url }}/feeds/main.json" />
+    <link
+        rel="alternate"
+        type="application/atom+xml"
+        href="{{ site.url }}/feeds/main.xml"
+    />
+    <link
+        rel="alternate"
+        type="application/json"
+        href="{{ site.url }}/feeds/main.json"
+    />
     <link rel="author" href="{{ site.url }}/humans.txt" />
 </head>
