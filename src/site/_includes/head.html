@@ -131,8 +131,8 @@
         {%- set hint = 'prefetch' -%}
     {%- endif -%}
     <link rel="{{ hint }}" href="/pagefind/pagefind.js" as="script" crossorigin="anonymous">
-    <link rel="{{ hint }}" href="/pagefind/pagefind-entry.json" as="fetch" crossorigin="anonymous">
-    <link rel="{{ hint }}" href="/pagefind/wasm.en.pagefind" as="fetch" crossorigin="anonymous">
+    <link rel="{{ hint }}" href="/pagefind/pagefind-entry.json" as="fetch" type="application/json" crossorigin="anonymous">
+    <link rel="{{ hint }}" href="/pagefind/wasm/index.pagefind" as="fetch" type="application/wasm" crossorigin="anonymous">
 
     {%- set css %}{%- include "critical.css" %}{% endset %}
     <style>{{- css | safe | replace("", "") -}}</style>
