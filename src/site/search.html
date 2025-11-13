@@ -4,229 +4,213 @@ intro: Search the site for articles, case studies, and resources on accessibilit
 layout: default
 permalink: search.html
 ---
+
 <script src="/pagefind/pagefind.js" type="text/javascript"></script>
 
 <form id="search-form" role="search">
-  <label class="visually-hidden" for="search">Enter search term</label>
-  <input id="search" name="search" type="search" autocomplete="off" />
-  <button type="submit">Search</button>
+    <label class="visually-hidden" for="search">Enter search term</label>
+    <input id="search" name="search" type="search" autocomplete="off" />
+    <button type="submit">Search</button>
 </form>
 
 <div id="status" role="status" aria-live="polite"></div>
 <div id="results" class="results"></div>
 
 <script type="module">
-  // Absolute bundle path for current origin
-  const bp = new URL("/pagefind/", location.origin).href;
-  window.__pagefind__bundlePath = bp;
+    const bp = new URL("/pagefind/", location.origin).href;
+    window.__pagefind__bundlePath = bp;
 
-  const statusEl = document.getElementById("status");
-  const form = document.getElementById("search-form");
-  const input = document.getElementById("search");
-  const resultsEl = document.getElementById("results");
-  let ranInitial = false;
+    const statusEl = document.getElementById("status");
+    const form = document.getElementById("search-form");
+    const input = document.getElementById("search");
+    const resultsEl = document.getElementById("results");
+    let ranInitial = false;
 
-  const normalise = (s) => (s||"").toLowerCase().normalize("NFKD").replace(/[^\p{L}\p{N}_]+/gu,"");
-  const escapeHTML = (s) => (s||"").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-  const fallbackExcerpt = (content, query, len = 180) => {
-    const c = content || "";
-    const q = query.trim();
-    if (!c || !q) return "";
-    const idx = c.toLowerCase().indexOf(q.toLowerCase());
-    if (idx === -1) return escapeHTML(c.slice(0, len));
-    const start = Math.max(0, idx - Math.floor(len/2));
-    const slice = c.slice(start, start + len);
-    return escapeHTML(slice);
-  };
-  const cleanExcerpt = (html) => {
-    if (!html) return "";
-    const tmp = document.createElement("div");
-    tmp.innerHTML = html;
+    // Helpers
+    const normalise = (s) =>
+        (s || "")
+            .toLowerCase()
+            .normalize("NFKD")
+            .replace(/[^\p{L}\p{N}_]+/gu, "");
+    const escapeHTML = (s) =>
+        (s || "").replace(
+            /[&<>"']/g,
+            (m) =>
+                ({
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#39;",
+                }[m])
+        );
+    const addEllipses = (s) => (s ? `…${s}…` : "");
 
-    // Remove code blocks
-    tmp.querySelectorAll("pre, code").forEach(n => n.remove());
+    // Clean a snippet from HTML
+    const cleanExcerpt = (html) => {
+        if (!html) return "";
+        const tmp = document.createElement("div");
+        tmp.innerHTML = html;
+        tmp.querySelectorAll("pre, code").forEach((n) => n.remove());
+        tmp.querySelectorAll("*").forEach((el) => {
+            if (el.tagName.toLowerCase() !== "mark") {
+                const parent = el.parentNode;
+                while (el.firstChild)
+                    parent.insertBefore(el.firstChild, parent);
+                el.remove();
+            }
+        });
+        return tmp.innerHTML
+            .replace(/\s+/g, " ")
+            .trim()
+            .replace(/\.{3}/g, "…")
+            .replace(/ ?… ?/g, "…")
+            .replace(/^…+|…+$/g, "");
+    };
 
-    // Unwrap everything except <mark>
-    tmp.querySelectorAll("*").forEach(el => {
-      if (el.tagName.toLowerCase() !== "mark") {
-        const parent = el.parentNode;
-        while (el.firstChild) parent.insertBefore(el.firstChild, el);
-        el.remove();
-      }
+    // Fallback excerpt from raw content
+    const fallbackExcerpt = (content, query, len = 180) => {
+        if (!content || !query) return "";
+        const idx = content.toLowerCase().indexOf(query.toLowerCase());
+        const start = idx === -1 ? 0 : Math.max(0, idx - Math.floor(len / 2));
+        return escapeHTML(content.slice(start, start + len));
+    };
+
+    // Check index exists
+    try {
+        const ok = await fetch(bp + "pagefind-entry.json", {
+            method: "HEAD",
+            cache: "no-store",
+        }).then((r) => r.ok);
+        if (!ok) throw new Error("Missing " + bp + "pagefind-entry.json");
+    } catch (e) {
+        statusEl.textContent = "Search unavailable.";
+        console.error(e);
+        throw e;
+    }
+
+    // Load Pagefind
+    let pagefind;
+    try {
+        const mod = await import(bp + "pagefind.js");
+        pagefind = mod?.default ?? mod;
+    } catch (e) {
+        statusEl.textContent = "Search unavailable.";
+        console.error(e);
+        throw e;
+    }
+
+    // Warm WASM
+    if ("requestIdleCallback" in window)
+        requestIdleCallback(() => pagefind.search("\uE000"), { timeout: 2000 });
+    else setTimeout(() => pagefind.search("\uE000").catch(() => {}), 0);
+
+    // Core search function
+    async function performSearch(query, updateUrl = true) {
+        resultsEl.innerHTML = "";
+        statusEl.textContent = "";
+        if (!query) return;
+
+        statusEl.textContent = "Searching…";
+        if (updateUrl) {
+            const url = new URL(location.href);
+            url.searchParams.set("q", query);
+            history.replaceState({}, "", url);
+        }
+
+        let searchResults;
+        try {
+            searchResults = await pagefind.search(query);
+        } catch (err) {
+            statusEl.textContent = "Search failed.";
+            console.error(err);
+            return;
+        }
+
+        if (!searchResults?.results?.length) {
+            statusEl.textContent = `No results for “${query}”.`;
+            return;
+        }
+
+        const normQ = normalise(query);
+        const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const contentRe = !/[^\w]/u.test(query)
+            ? new RegExp(`\\b${safeQuery}\\w*`, "iu")
+            : new RegExp(safeQuery, "iu");
+        const urlRe = new RegExp(safeQuery, "iu");
+
+        // Fetch all data in parallel
+        const dataArray = await Promise.all(
+            searchResults.results.map((r) => r.data())
+        );
+
+        // Build HTML in one shot
+        const itemsHtml = dataArray
+            .map((data) => {
+                const matches =
+                    contentRe.test(data.meta?.title || "") ||
+                    urlRe.test(data.url || "") ||
+                    contentRe.test(data.content || "") ||
+                    normalise(data.meta?.title).includes(normQ) ||
+                    normalise(data.content).includes(normQ);
+                if (!matches) return "";
+
+                const ex = cleanExcerpt(
+                    fallbackExcerpt(data.content, query, 180)
+                );
+                return `<li>
+      <h2><a href="${data.url}">${data.meta?.title || data.url}</a></h2>
+      ${ex ? `<p>${addEllipses(ex)}</p>` : ""}
+    </li>`;
+            })
+            .filter(Boolean)
+            .join("");
+
+        resultsEl.innerHTML = `<ul class='index-list'>${itemsHtml}</ul>`;
+        const items = document.querySelectorAll(".index-list li").length;
+        statusEl.textContent = items
+            ? `${items} result${items > 1 ? "s" : ""} for “${query}”.`
+            : `No results for “${query}”.`;
+    }
+
+    // Init from URL
+    (function initFromUrl() {
+        const q = new URLSearchParams(location.search).get("q");
+        if (q && !ranInitial) {
+            input.value = q;
+            ranInitial = true;
+            performSearch(q, false);
+        }
+    })();
+
+    // BFCache restore
+    window.addEventListener("pageshow", (e) => {
+        if (!e.persisted) return;
+        const q = new URLSearchParams(location.search).get("q");
+        if (q) (input.value = q), performSearch(q, false);
     });
 
-    let s = tmp.innerHTML;
-
-    // Collapse whitespace
-    s = s.replace(/\s+/g, " ").trim();
-
-    // Normalise ellipses
-    s = s.replace(/\.{3}/g, "…");                   // ... -> …
-    s = s.replace(/ ?… ?/g, "…");                   // trim spaces around …
-    s = s.replace(/^…+/, "").replace(/…+$/, "");    // strip edge …
-
-    return s;
-  };
-  const addEllipses = (s) => (s ? `…${s}…` : "");
-
-  // Quick readiness check so failures are obvious
-  try {
-    const ok = await fetch(bp + "pagefind-entry.json", { method:"HEAD", cache:"no-store" }).then(r => r.ok);
-    if (!ok) throw new Error("Missing " + bp + "pagefind-entry.json");
-  } catch (e) {
-    statusEl.textContent = "Search unavailable.";
-    console.error(e);
-    throw e;
-  }
-
-  // Load Pagefind from the same base
-  let pagefind;
-  try {
-    const mod = await import(bp + "pagefind.js");
-    pagefind = mod?.default ?? mod;
-  } catch (e) {
-    statusEl.textContent = "Search unavailable.";
-    console.error("Failed to load Pagefind module:", e);
-    throw e;
-  }
-
-  // Warm the worker/WASM (no hits) to reduce first-search latency
-  const warm = () => pagefind.search("\uE000").catch(() => {});
-  if ("requestIdleCallback" in window) {
-    requestIdleCallback(warm, { timeout: 2000 });
-  } else {
-    setTimeout(warm, 0);
-  }
-
-  async function performSearch(query, updateUrl = true) {
-    resultsEl.innerHTML = "";
-    statusEl.textContent = "";
-    if (!query) return;
-    statusEl.textContent = "Searching…";
-
-    if (updateUrl) {
-      const url = new URL(location.href);
-      url.searchParams.set("q", query);
-      history.replaceState({}, "", url);
-    }
-
-    let searchResults;
-    try {
-      searchResults = await pagefind.search(query);
-    } catch (err) {
-      statusEl.textContent = "Search failed. See console.";
-      console.error("[Pagefind] search error:", err);
-      return;
-    }
-
-    if (!searchResults?.results?.length) {
-      statusEl.textContent = `No results for “${query}”.`;
-      return;
-    }
-
-    const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const isWordOnly = !/[^\w]/u.test(query);
-    const contentRe = isWordOnly ? new RegExp(`\\b${safeQuery}\\w*`, "iu") : new RegExp(safeQuery, "iu");
-    const urlRe = new RegExp(safeQuery, "iu");
-    const normQ = normalise(query);
-
-    const list = document.createElement("ul");
-    list.className = "index-list";
-
-    // Efficient: fetch data, filter, then only compute excerpt for matches
-    for (const r of searchResults.results) {
-      const data = await r.data();
-
-      const matchesLiteral =
-        contentRe.test(data.meta?.title || "") ||
-        urlRe.test(data.url || "") ||
-        contentRe.test(data.content || "");
-
-      const matchesNormalised =
-        normalise(data.meta?.title).includes(normQ) ||
-        normalise(data.content).includes(normQ);
-
-      if (!matchesLiteral && !matchesNormalised) continue;
-
-      // Excerpt with cleanup and fallback
-      let ex = "";
-      try {
-        const res = await r.excerpt({ length: 180 });
-        ex = cleanExcerpt(res?.excerpt || "");
-      } catch {}
-      if (!ex) ex = cleanExcerpt(fallbackExcerpt(data.content, query, 180));
-
-      // Render item
-      const li = document.createElement("li");
-
-      const h2 = document.createElement("h2");
-      const a = document.createElement("a");
-      a.href = data.url;
-      a.textContent = data.meta?.title || data.url;
-      h2.appendChild(a);
-      li.appendChild(h2);
-
-      if (ex) {
-        const p = document.createElement("p");
-        p.innerHTML = addEllipses(ex);
-        li.appendChild(p);
-      }
-
-      list.appendChild(li);
-    }
-
-    resultsEl.appendChild(list);
-
-    const items = list.children.length;
-    statusEl.textContent = items
-      ? `${items} result${items > 1 ? "s" : ""} for “${query}”.`
-      : `No results for “${query}”.`;
-  }
-
-  // Init from URL
-  (function initFromUrl() {
-    const q = new URLSearchParams(location.search).get("q");
-    if (q && !ranInitial) {
-      input.value = q;
-      ranInitial = true;
-      performSearch(q, false);
-    }
-  })();
-
-  // BFCache restore
-  window.addEventListener("pageshow", (e) => {
-    if (!e.persisted) return;
-    const q = new URLSearchParams(location.search).get("q");
-    if (q) { input.value = q; performSearch(q, false); }
-  });
-
-  let pending = false;
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (pending) return;
-    pending = true;
-    try {
-      await performSearch(input.value.trim(), true);
-    } finally {
-      pending = false;
-    }
-  });
-
+    // Form submit
+    let pending = false;
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (pending) return;
+        pending = true;
+        try {
+            await performSearch(input.value.trim(), true);
+        } finally {
+            pending = false;
+        }
+    });
 </script>
 
 <script>
-  document.addEventListener("keydown", (event) => {
-    const modifierPressed = event.metaKey || event.ctrlKey;
-    if (modifierPressed && event.key.toLowerCase() === "f") {
-      event.preventDefault();
-      const input = document.getElementById("search");
-      if (input) input.focus();
-    }
-  });
-</script>
-
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    new PagefindUI({ element: "#search" });
-  });
+    document.addEventListener("keydown", (event) => {
+        const modifierPressed = event.metaKey || event.ctrlKey;
+        if (modifierPressed && event.key.toLowerCase() === "f") {
+            event.preventDefault();
+            const input = document.getElementById("search");
+            if (input) input.focus();
+        }
+    });
 </script>
