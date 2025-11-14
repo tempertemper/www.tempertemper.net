@@ -125,11 +125,16 @@
     <link rel="preload" href="/assets/fonts/FSMeWeb-Bold.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
     <link rel="preload" href="/assets/fonts/FSMeWeb-Italic.woff2" as="font" type="font/woff2" crossorigin />
 
-    <script src="/pagefind/pagefind.js" defer></script>
-    <link rel="preload" href="/pagefind/pagefind.js" as="script" crossorigin="anonymous">
-    <link rel="preload" href="/pagefind/pagefind-entry.json" as="fetch" type="application/json" crossorigin="anonymous">
-    <link rel="preload" href="/pagefind/wasm.en.pagefind" as="fetch" type="application/wasm" crossorigin="anonymous">
-
+    {%- if page.url.startsWith('/search') -%}
+        <link rel="preload" href="/pagefind/pagefind.js" as="script" crossorigin="anonymous">
+        <script src="/pagefind/pagefind.js" defer></script>
+        {%- set hint = 'preload' -%}
+    {%- else -%}
+        <link rel="prefetch" href="/pagefind/pagefind.js" as="script" crossorigin="anonymous">
+        {%- set hint = 'prefetch' -%}
+    {%- endif -%}
+    <link rel="{{ hint }}" href="/pagefind/pagefind-entry.json" as="fetch" type="application/json" crossorigin="anonymous">
+    <link rel="{{ hint }}" href="/pagefind/wasm.en.pagefind" as="fetch" type="application/wasm" crossorigin="anonymous">
 
     {%- set css %}{%- include "critical.css" %}{% endset %}
     <style>{{- css | safe | replace("", "") -}}</style>
