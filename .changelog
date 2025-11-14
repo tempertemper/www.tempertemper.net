@@ -11,9 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-- Search page head script conditionals
 
 ----------
+
+
+## [6.8.2] - 2025-11-14
+
+### Changes
+- Search page head script conditionals
 
 
 ## [6.8.1] - 2025-11-10
