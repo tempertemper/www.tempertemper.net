@@ -3,16 +3,12 @@
 .pagination {
   margin-top: variables.$section-spacing;
 
-  nav {
-    display: flex;
-    flex-direction: row;
-    column-gap: .75em;
-    flex-wrap: wrap;
+  a {
+    display: inline-block;
+    min-height: 48px;
 
-    a {
-      min-height: 48px;
-      display: inline-flex;
-      align-items: center;
+    + a {
+      margin-left: .75em;
     }
   }
 }
