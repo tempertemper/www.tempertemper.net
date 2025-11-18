@@ -11,7 +11,15 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+- Adds page number to title when relevant
+
 ----------
+
+
+## [6.8.3] - 2025-11-18
+
+### Changes
+- Brings page number into pagination nav element
 
 
 ## [6.8.2] - 2025-11-14

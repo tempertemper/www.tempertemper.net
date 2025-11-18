@@ -8,7 +8,12 @@
     {%- else %}
         {%- set pageTitle = heading | smart | safe %}
     {%- endif %}
-    <title>{{ pageTitle }} – tempertemper</title>
+    {%- if pagination and pagination.pageNumber > 0 %}
+        <title>{{ pageTitle }} – Page {{ pagination.pageNumber + 1 }} – tempertemper</title>
+    {%- else -%}
+        <title>{{ pageTitle }} – tempertemper</title>
+    {%- endif -%}
+
     {%- if description %}
         {%- set description = description | smart | safe %}
     {%- elif intro %}
@@ -21,6 +26,7 @@
         {%- endif %}
     {%- endif %}
     <meta name="description" content="{{ description }}" />
+
     {%- set imageType = 'image/png' %}
     {%- if summaryImage %}
         {%- set cardType = "summary_large_image" %}
