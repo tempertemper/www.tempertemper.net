@@ -20,10 +20,11 @@ layout: base.html
 {%- if isAbout -%}
     <article data-pagefind-body>
 {%- endif %}
-{%- if intro and not hideIntro %}
+{%- if pagination and pagination.pageNumber > 0 %}
+    <p>This is page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}.</p>
+{%- elif intro and not hideIntro %}
     {{- intro | markdown | safe }}
-{%- endif %}
-{{ content | safe }}
+{%- endif -%}{{ content | safe }}
 {%- if isAbout -%}
     </article>
 {%- endif %}

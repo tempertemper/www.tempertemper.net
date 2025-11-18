@@ -1,9 +1,12 @@
 ---
 title: Resources for website owners
-intro: Do you have a website? Not the technical type? Read on to receive free tips, useful to anyone looking to get the most out of their website.
+description: Do you have a website? Not the technical type? Read on to receive free tips, useful to anyone looking to get the most out of their website.
+intro: |
+    I tend not to write much here anymore. For articles on design, frontend development, and accessibility, [head to my blog](/blog/).
 layout: default
 resources: true
 noCta: true
+hideIntro: false
 override:tags: false
 permalink: "resources/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}.html{% else %}index.html{% endif %}"
 pagination:
@@ -13,8 +16,6 @@ pagination:
     reverse: true
     generatePageOnEmptyData: true
 ---
-
-I tend not to write much here anymore. For articles on design, frontend development, and accessibility, [head to my blog](/blog/).
 
 <ol class="hfeed index-list" reversed>
     {%- for post in resources %}
