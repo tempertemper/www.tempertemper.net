@@ -30,7 +30,7 @@ Pretty straightforward, and Karl's example uses one of the most common patterns 
 3. A link to the next page
 
 
-## How I decided to it
+## How I decided to do it
 
 I've always found the standard pagination pattern a bit too minimal. The information is all there implicitly, but you have to go through the whole component to work out where you currently sit in relation to all the pages. I decided to go with something a bit more verbose:
 
