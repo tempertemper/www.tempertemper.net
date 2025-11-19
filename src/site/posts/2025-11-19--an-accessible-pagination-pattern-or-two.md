@@ -1,6 +1,6 @@
 ---
 title: An accessible pagination pattern (or two)
-intro: adsf
+intro: A couple of weeks ago I added pagination to my blog, and it was an interesting delve into the various designs and markup patterns that can be used.
 date: 2025-11-19
 tags:
     - HTML
