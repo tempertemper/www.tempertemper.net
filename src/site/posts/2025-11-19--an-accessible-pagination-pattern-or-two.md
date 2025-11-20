@@ -7,7 +7,7 @@ tags:
     - Accessibility
 ---
 
-A couple of weeks ago, I added pagination to my blog. Well, my pal Damien Robson got the ball rolling by raising a pull request on my [GitHub repo](https://github.com/tempertemper/www.tempertemper.net) with the [core functionality](https://www.11ty.dev/docs/pagination/), and I took it from there.
+At the time of writing my blog contains nearly 300 posts… As the list has grown, the footer has moved further and further out of reach, so I have finally added pagination! My pal Damien Robson got the ball rolling by raising a pull request on my [GitHub repo](https://github.com/tempertemper/www.tempertemper.net) with the [core functionality](https://www.11ty.dev/docs/pagination/), and I took it from there.
 
 It was an interesting delve into the various designs and markup patterns for pagination. At its simplest, pagination requires that the user:
 
