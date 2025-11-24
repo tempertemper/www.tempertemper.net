@@ -2,7 +2,7 @@
 title: Training and workshops
 customURL: training
 intro: Practical training and workshops that grow capability and confidence, helping your teams deliver more accessible digital products.
-order: 2
+order: 3
 featured: true
 ---
 

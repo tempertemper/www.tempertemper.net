@@ -2,7 +2,7 @@
 title: Talks and presentations
 customURL: talks
 intro: Talks on accessibility that raise awareness, share real-world insight, and inspire teams to design and build more inclusively.
-order: 3
+order: 4
 ---
 
 I give talks that raise awareness of accessibility and inspire people to think differently about how they design and build digital products. These might be at conferences, company events, or in-house sessions such as [Global Accessibility Awareness Day](https://accessibility.day).

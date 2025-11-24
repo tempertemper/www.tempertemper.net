@@ -2,7 +2,7 @@
 title: Strategy and guidance
 customURL: strategy
 intro: Strategic support to help you shape accessibility policies, programmes, and processes that last.
-order: 7
+order: 8
 featured: true
 ---
 

@@ -2,7 +2,7 @@
 title: Coaching and mentoring
 customURL: coaching
 intro: Ongoing one-to-one or small-group support to build confidence, answer questions, and embed accessibility into everyday practice.
-order: 4
+order: 5
 ---
 
 Coaching and mentoring give people the space and support to grow their accessibility skills over time. Unlike one-off [training sessions or workshops](/services/training), mentoring is about ongoing guidance: answering questions, reviewing real work, and helping people build confidence as they apply accessibility in their day-to-day.

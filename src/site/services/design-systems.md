@@ -2,7 +2,7 @@
 title: Design systems
 customURL: design-systems
 intro: Embed accessibility into your design system so accessible design and development are the default.
-order: 6
+order: 7
 ---
 
 A well-governed design system helps teams build consistent, accessible products at scale. I help organisations make sure their design systems support, rather than hinder, accessibility.

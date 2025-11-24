@@ -2,7 +2,7 @@
 title: Culture and community
 customURL: culture
 intro: Support to build a culture of accessibility through champions, community, and everyday practice.
-order: 5
+order: 6
 ---
 
 Accessibility lasts when it becomes part of an organisation's culture. I help you create the structures, networks, and shared practices that make accessibility a natural part of everyday work.
