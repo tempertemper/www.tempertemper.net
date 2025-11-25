@@ -2,8 +2,7 @@
 title: Training and workshops
 customURL: training
 intro: Practical training and workshops that grow capability and confidence, helping your teams deliver more accessible digital products.
-order: 2
-featured: true
+order: 3
 ---
 
 Training and workshops help your teams build the skills and confidence they need to make digital products more accessible. Sessions are practical, collaborative, and made specifically for your organisation.
