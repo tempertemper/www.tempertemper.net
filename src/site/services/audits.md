@@ -3,7 +3,6 @@ title: Accessibility audits
 customURL: audits
 intro: In-depth audits that provide a detailed, structured understanding of your product's accessibility so you can plan improvements with confidence.
 order: 2
-featured: true
 ---
 
 An accessibility audit gives you a detailed view of where your product stands against recognised accessibility standards such as the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/wcag/). You get a clear, practical report with:

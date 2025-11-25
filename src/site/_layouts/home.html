@@ -22,21 +22,28 @@ layout: base.html
     <h2 id="expertise">How I can help</h2>
     <p>Whether you need help building accessibility into your team, support delivering a digital service, or a new website built from scratch, I can help.</p>
     <div class="highlight-boxes">
-        <ul>
-        {%- set services = collections.service | ordered -%}
-        {%- set shown = 0 -%}
-        {%- for service in services %}
-            {%- if service.data.featured and shown < 3 %}
-                {%- set shown = shown + 1 -%}
-                <li>
-                    <h2>
-                        <a href="{{ service.url | replace('.html', '') }}">{{ service.data.title }}</a>
-                    </h2>
-                    {{ service.data.intro | smart | safe }}
-                </li>
-            {%- endif %}
+    <ul>
+        {%- set featuredServiceKeys = [
+            "strategy",
+            "audits",
+            "reviews",
+            "training"
+        ] -%}
+        {%- for key in featuredServiceKeys %}
+            {%- for service in collections.service %}
+                {%- if service.data.customURL == key %}
+                    <li>
+                        <h2>
+                            <a href="{{ service.url | replace('.html', '') }}">
+                                {{ service.data.title }}
+                            </a>
+                        </h2>
+                        {{ service.data.intro | smart | safe }}
+                    </li>
+                {%- endif %}
+            {%- endfor %}
         {%- endfor %}
-        </ul>
+    </ul>
     </div>
     <a href="/services/">View all services</a>
 </section>

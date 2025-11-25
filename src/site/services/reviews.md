@@ -3,7 +3,6 @@ title: Accessibility reviews
 customURL: reviews
 intro: Fast, focused, and lightweight; accessibility reviews highlight risks, quick wins, and the changes that will make the biggest difference.
 order: 1
-featured: true
 ---
 
 Accessibility reviews are a lighter alternative to a [full audit](/services/audits). They are fast, focused, and designed to give teams immediate clarity without a large engagement. They concentrate on a specific journey, components, or features so you get quick feedback without the depth or formality of an audit.

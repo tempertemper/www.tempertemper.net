@@ -1,9 +1,8 @@
 ---
 title: Strategy and guidance
 customURL: strategy
-intro: Strategic support to help you shape accessibility policies, programmes, and processes that last.
+intro: Strategic support to shape the policies, programmes, and processes needed for long term, sustainable accessibility across your organisation.
 order: 8
-featured: true
 ---
 
 Sometimes organisations need more than [audits](/services/audits) or [training](/services/training); they need clear direction. Without a strategy, accessibility work can end up patchy, dependent on individuals, and hard to sustain. A well-defined approach gives your organisation structure, accountability, and a way to measure progress.
