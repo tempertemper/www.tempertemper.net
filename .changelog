@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.8.6] - 2025-11-26
+
+### Fixes
+- Updates Netlify newsletter submission function code for Buttondown
+
+
 ## [6.8.5] - 2025-11-25
 
 ### Adds
