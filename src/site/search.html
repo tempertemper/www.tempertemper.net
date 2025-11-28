@@ -159,9 +159,9 @@ permalink: search.html
                     fallbackExcerpt(data.content, query, 180)
                 );
                 return `<li>
-      <h2><a href="${data.url}">${data.meta?.title || data.url}</a></h2>
-      ${ex ? `<p>${addEllipses(ex)}</p>` : ""}
-    </li>`;
+                <h2><a href="${data.url.replace(/\.html$/, "")}">${data.meta?.title || data.url}</a></h2>
+                ${ex ? `<p>${addEllipses(ex)}</p>` : ""}
+                </li>`;
             })
             .filter(Boolean)
             .join("");
