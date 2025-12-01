@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 - Adds form validation to newsletter signup
+- Adds validation to search form
 - Increases form label font weight
 
 ----------

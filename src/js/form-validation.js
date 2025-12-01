@@ -1,16 +1,44 @@
 (function () {
-  const form = document.querySelector('form[name="newsletter"]');
-  if (!form) return;
-
   const ERROR_CLASS = 'form-error';
   const ERROR_TEXT_CLASS = 'error-text';
 
-  // Validation rules
-  const fields = [
-    { id: 'email', required: 'Enter your email address' }
-  ];
+  // Basic validators
 
-  function clearErrors() {
+  function required(message) {
+    return function (value) {
+      if (!value.trim()) {
+        return message;
+      }
+      return '';
+    };
+  }
+
+  function emailFormat(message) {
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    return function (value) {
+      const trimmed = value.trim();
+      if (!trimmed) {
+        return '';
+      }
+      if (!emailPattern.test(trimmed)) {
+        return message;
+      }
+      return '';
+    };
+  }
+
+  function maxLength(limit, message) {
+    return function (value) {
+      if (value.trim().length > limit) {
+        return message;
+      }
+      return '';
+    };
+  }
+
+  // Shared helpers
+
+  function clearErrors(fields) {
     fields.forEach(field => {
       const el = document.getElementById(field.id);
       if (!el) return;
@@ -26,8 +54,8 @@
     });
   }
 
-  function addInlineError(field, message) {
-    const el = document.getElementById(field.id);
+  function addInlineError(fieldId, message) {
+    const el = document.getElementById(fieldId);
     if (!el) return;
 
     const group = el.closest('.input-group');
@@ -36,7 +64,7 @@
     group.classList.add(ERROR_CLASS);
 
     const error = document.createElement('p');
-    error.id = field.id + '-error';
+    error.id = fieldId + '-error';
     error.className = ERROR_TEXT_CLASS;
     error.textContent = message;
 
@@ -47,44 +75,72 @@
     el.setAttribute('aria-describedby', error.id);
   }
 
-  form.addEventListener('submit', event => {
-    clearErrors();
+  function attachFormValidation({ formSelector, fields }) {
+    const form = document.querySelector(formSelector);
+    if (!form) return;
 
-    const errors = [];
+    form.addEventListener('submit', event => {
+      clearErrors(fields);
 
-    fields.forEach(field => {
-      const el = document.getElementById(field.id);
-      if (!el) return;
+      const errors = [];
 
-      const value = (el.value || '').trim();
+      fields.forEach(field => {
+        const el = document.getElementById(field.id);
+        if (!el) return;
 
-      if (!value) {
-        errors.push({ id: field.id, message: field.required });
-        return;
-      }
+        const value = el.value || '';
 
-      if (field.id === 'email') {
-        const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-
-        if (!emailPattern.test(value)) {
-          errors.push({
-            id: field.id,
-            message: 'Enter an email address in the correct format'
-          });
+        if (Array.isArray(field.validators)) {
+          for (const validate of field.validators) {
+            const message = validate(value, el);
+            if (message) {
+              errors.push({ id: field.id, message });
+              break;
+            }
+          }
         }
+      });
+
+      if (errors.length) {
+        event.preventDefault();
+
+        const first = errors[0];
+        addInlineError(first.id, first.message);
+
+        const firstEl = document.getElementById(first.id);
+        if (firstEl) firstEl.focus();
       }
     });
+  }
 
-    if (errors.length) {
-      event.preventDefault();
+  // Newsletter form
 
-      const first = errors[0];
-      const field = fields.find(f => f.id === first.id);
-
-      if (field) {
-        addInlineError(field, first.message);
-        document.getElementById(field.id).focus();
+  attachFormValidation({
+    formSelector: 'form[name="newsletter"]',
+    fields: [
+      {
+        id: 'email',
+        validators: [
+          required('Enter your email address'),
+          emailFormat('Enter an email address in the correct format')
+        ]
       }
-    }
+    ]
   });
+
+  // Search form
+
+  attachFormValidation({
+    formSelector: '#search-form',
+    fields: [
+      {
+        id: 'search',
+        validators: [
+          required('Enter a search term'),
+          maxLength(100, 'Search term must be 100 characters or fewer')
+        ]
+      }
+    ]
+  });
+
 })();
