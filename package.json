@@ -6,11 +6,9 @@
   "scripts": {
     "clear": "rm -rf dist",
     "build:site": "npx @11ty/eleventy --quiet",
-    "build:search": "npx pagefind --site dist --glob \"**/*.html\"",
-    "build": "npm run clear && npm run build:site && npm run build:search",
-    "postbuild": "pagefind --site dist >/dev/null 2>&1",
+    "build": "npm run clear && npm run build:site",
     "serve": "npx @11ty/eleventy --serve --quiet",
-    "start": "npm run build && npm run serve",
+    "start": "npm run clear && npm run serve",
 
     "staging": "npm run build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
     "version": "node scripts/sync-site-version.js",
