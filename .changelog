@@ -13,6 +13,10 @@ All notable changes to this project will be documented in this file. The format 
 
 - Moves JavaScript build to Eleventy config
 - Stops search form searching if validation is triggered
+- Removes unnecessary node-fetch package,
+- Removes unnecessary require-dir package
+- Builds Critical CSS with Eleventy
+- Builds non-Critical CSS with eleventy
 
 ----------
 

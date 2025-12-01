@@ -10,12 +10,14 @@ export default function(config) {
 
   // Watch JS for inline bundle rebuild
   config.addWatchTarget('src/js');
+  config.addWatchTarget('src/scss');
 
   // Live reload when generated inline JS changes
   config.setServerOptions({
     port: 3000,
     files: [
-      'src/site/_includes/scripts.js'
+      'src/site/_includes/scripts.js',
+      'src/site/_includes/critical.css'
     ]
   });
 
