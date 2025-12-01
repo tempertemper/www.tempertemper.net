@@ -7,18 +7,17 @@
     "clear": "rm -rf dist",
     "scss": "sass --style=compressed --no-source-map src/scss/critical.scss src/site/_includes/critical.css && sass --style=compressed --no-source-map src/scss/non-critical.scss dist/assets/css/non-critical.css",
     "styles": "npm run scss",
-    "js": "cat src/js/* > src/site/_includes/scripts.js && uglifyjs src/site/_includes/scripts.js -m -o src/site/_includes/scripts.js",
-    "build:assets": "npm run styles && npm run js",
+    "build:assets": "npm run styles",
     "build:site": "npx @11ty/eleventy --quiet",
     "build": "npm run clear && npm run build:assets && npm run build:site && npm run build:search",
     "build:search": "npx pagefind --site dist --glob \"**/*.html\"",
     "postbuild": "pagefind --site dist >/dev/null 2>&1",
     "serve": "npx @11ty/eleventy --serve --quiet",
     "watch:css": "onchange 'src/scss' -- npm run styles",
-    "watch:js": "onchange 'src/js' -- npm run js",
-    "watch": "run-p watch:css watch:js",
+    "watch": "run-p watch:css",
     "start": "npm run build && run-p serve watch",
     "staging": "npm run build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
+
     "version": "node scripts/sync-site-version.js",
     "_bump:commit": "git add package*.json src/site/_data/site.js && git commit -m \"Bumps version number to $npm_package_version\"",
     "bump:patch": "npm version patch --no-git-tag-version && npm run _bump:commit",
@@ -39,6 +38,7 @@
     "@11ty/eleventy-plugin-rss": "^2.0.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "dotenv": "^17.2.3",
+    "esbuild": "^0.27.0",
     "markdown-it-anchor": "^9.2.0",
     "node-fetch": "^3.3.2",
     "npm-run-all": "^4.1.5",
@@ -46,7 +46,6 @@
     "pagefind": "^1.4.0",
     "require-dir": "^1.2.0",
     "sass": "^1.94.2",
-    "uglify-js": "^3.19.3",
     "uslug": "^1.0.4"
   }
 }
