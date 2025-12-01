@@ -113,10 +113,25 @@
     });
   }
 
-  // Newsletter form
+  // Newsletter subscribe form
 
   attachFormValidation({
     formSelector: 'form[name="newsletter"]',
+    fields: [
+      {
+        id: 'email',
+        validators: [
+          required('Enter your email address'),
+          emailFormat('Enter an email address in the correct format')
+        ]
+      }
+    ]
+  });
+
+  // Newsletter unsubscribe form
+
+  attachFormValidation({
+    formSelector: 'form[name="unsubscribe"]',
     fields: [
       {
         id: 'email',
