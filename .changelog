@@ -28,6 +28,9 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Tries to stop Safari from capitalising the first letter of an email address
 
+### Removes
+- Removes unused AutoPrefixer package
+
 
 ## [6.8.8] - 2025-11-28
 
