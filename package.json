@@ -1,6 +1,6 @@
 {
   "name": "tempertemper",
-  "version": "6.8.9",
+  "version": "6.9.0",
   "description": "tempertemper's website",
   "type": "module",
   "scripts": {
@@ -9,7 +9,6 @@
     "build": "npm run clear && npm run build:site",
     "serve": "npx @11ty/eleventy --serve --quiet",
     "start": "npm run clear && npm run serve",
-
     "staging": "npm run build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
     "version": "node scripts/sync-site-version.js",
     "_bump:commit": "git add package*.json src/site/_data/site.js && git commit -m \"Bumps version number to $npm_package_version\"",
