@@ -9,7 +9,8 @@ form {
 
 label {
   font-weight: bold;
-  @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-white);
+  color: variables.$colour-primary;
+  @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
 }
 
 input {

@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 - Adds form validation to newsletter signup
 - Adds validation to search form
-- Increases form label font weight
+- Increases form label font weight and changes colour to blue
 - Tries to stop Safari from capitalising the first letter of an email address
 
 ----------
