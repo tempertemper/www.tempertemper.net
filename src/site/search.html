@@ -200,15 +200,25 @@ permalink: search.html
 
     // Form submit
     let pending = false;
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        if (pending) return;
-        pending = true;
-        try {
-            await performSearch(input.value.trim(), true);
-        } finally {
-            pending = false;
-        }
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+
+      // If validation has added any errors, do nothing
+      if (form.querySelector('.error-text')) {
+        // Optionally clear any previous results / status here
+        statusEl.textContent = '';
+        resultsEl.innerHTML = '';
+        return;
+      }
+
+      if (pending) return;
+      pending = true;
+
+      try {
+        await performSearch(input.value.trim(), true);
+      } finally {
+        pending = false;
+      }
     });
 </script>
 

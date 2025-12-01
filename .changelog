@@ -11,7 +11,8 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-- Moves JavaScript built to Eleventy config
+- Moves JavaScript build to Eleventy config
+- Stops search form searching if validation is triggered
 
 ----------
 
