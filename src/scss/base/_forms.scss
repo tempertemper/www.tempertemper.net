@@ -8,7 +8,9 @@ form {
 }
 
 label {
-  @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-white);
+  font-weight: bold;
+  color: variables.$colour-primary;
+  @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
 }
 
 input {
@@ -38,4 +40,17 @@ input {
   font-size: inherit;
   line-height: 1.2;
   @include buttonsMixins.button;
+}
+
+
+.form-error  {
+  border-left: .15em solid variables.$colour-red;
+  padding: .25em 0 .25em .85em;
+
+  input {
+    border-color: variables.$colour-red;
+    @include modeMixins.dark-mode() {
+      border-color: variables.$colour-red;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "tempertemper",
-  "version": "6.8.8",
+  "version": "6.8.9",
   "description": "tempertemper's website",
   "type": "module",
   "scripts": {
@@ -37,16 +37,15 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-plugin-rss": "^2.0.3",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "autoprefixer": "^10.4.21",
-    "dotenv": "^16.4.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "dotenv": "^17.2.3",
     "markdown-it-anchor": "^9.2.0",
     "node-fetch": "^3.3.2",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
     "pagefind": "^1.4.0",
     "require-dir": "^1.2.0",
-    "sass": "^1.86.0",
+    "sass": "^1.94.2",
     "uglify-js": "^3.19.3",
     "uslug": "^1.0.4"
   }

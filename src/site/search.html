@@ -1,6 +1,7 @@
 ---
 title: Looking for something?
-intro: Search the site for articles, case studies, and resources on accessibility, design, and frontend development.
+description: Search the site for articles, case studies, and resources on accessibility, design, and frontend development.
+intro: Search the site's articles, case studies, and resources.
 layout: default
 permalink: search.html
 ---
@@ -8,8 +9,15 @@ permalink: search.html
 <script src="/pagefind/pagefind.js" type="text/javascript"></script>
 
 <form id="search-form" role="search">
-    <label class="visually-hidden" for="search">Enter search term</label>
-    <input id="search" name="search" type="search" autocomplete="off" />
+    <div class="input-group">
+        <label class="visually-hidden" for="search">Enter search term</label>
+        <input
+            id="search"
+            name="search"
+            type="search"
+            autocomplete="off"
+        />
+    </div>
     <button type="submit">Search</button>
 </form>
 
