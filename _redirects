@@ -225,6 +225,7 @@
 /blog/json                /feeds/main.json                  301!
 /feeds/blog/feed.json     /feeds/main.json                  301!
 /feeds/main.json          /.netlify/functions/feed-json     200
+/feeds/main.xml           /.netlify/functions/feed-atom     200
 
 # Images and icons
 /cms/resources/blog/internet-explorer-icon.png     /assets/img/summary.png 301!

@@ -1,5 +1,5 @@
 ---
-permalink: /feeds/main.xml
+permalink: /feeds/main-source.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
@@ -7,10 +7,10 @@ eleventyExcludeFromCollections: true
   <title>{{ title }}</title>
   <subtitle>{{ description }}</subtitle>
 
-  <link href="{{ page.url | absoluteUrl(site.url) }}" rel="self" />
+  <link href="{{ (site.url + '/feeds/main.xml') }}" rel="self" />
   <link href="{{ site.url }}" rel="alternate" type="text/html" />
 
-  <id>{{ page.url | absoluteUrl(site.url) }}</id>
+  <id>{{ (site.url + '/feeds/main.xml') }}</id>
 
   <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 
