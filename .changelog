@@ -18,6 +18,9 @@ All notable changes to this project will be documented in this file. The format 
 - Removes CV
 - Removes dev favicons
 
+### Fixes
+- Ensures hidden inputs aren't tabbable
+
 ----------
 
 
