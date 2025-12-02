@@ -17,7 +17,7 @@ layout: default
     data-netlify="true"
     netlify-honeypot="bot-field"
 >
-    <input type="hidden" name="form-name" value="unsubscribe">
+    <input type="hidden" name="form-name" value="unsubscribe" tabindex="-1" />
     <div hidden>
         <label>
             Don’t fill this out if you’re human:

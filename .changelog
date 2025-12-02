@@ -14,6 +14,27 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.9.2] - 2025-12-02
+
+### Changes
+- Updates colophon with details of JavaScript usage
+- Moves .ico and .webmanifest files to passthroughs
+- Passes through print.css rather than whole CSS file
+- Moves search page link to header
+- Hard codes search page link and adds noscript to Search page
+
+### Removes
+- Removes CV
+- Removes dev favicons
+- Removes duplicate Eleventy server config
+- Removes an unnecessary clear fix
+- Removes stray pattern library file
+
+### Fixes
+- Ensures hidden inputs aren't tabbable
+- Makes header nav items a bit less ugly on wrap
+
+
 ## [6.9.1] - 2025-12-01
 
 ### Adds

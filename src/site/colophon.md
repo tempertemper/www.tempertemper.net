@@ -1,7 +1,7 @@
 ---
 title: Colophon
 intro: |
-    tempertemper was build using Eleventy, Gulp, SCSS and carefully considered HTML.
+    tempertemper was build using Eleventy, SCSS, and carefully considered HTML.
 hideIntro: true
 layout: default
 permalink: colophon.html
@@ -26,10 +26,11 @@ The styling is written in [SCSS](https://sass-lang.com) and that's about it!
 
 ## Scripts
 
-There is only a tiny amount of JavaScript on this website; used to enhance some keyboard behaviour for:
+There's a small amount of JavaScript on this website; none of it for core behaviour, so the site works perfectly well without it. I use it for things like:
 
-- [links that look like buttons](/blog/when-design-breaks-semantics)
-- [data tables that are wider than their container](/blog/an-enhancement-to-accessible-responsive-tables)
-- codeblocks that are wider than their container
+- [Links that look like buttons](/blog/when-design-breaks-semantics)
+- [Data tables that are wider than their container](/blog/an-enhancement-to-accessible-responsive-tables)
+- Codeblocks that are wider than their container
+- Form validation
 
 Analytics are taken care of on the server-side by [Netlify Analytics](/blog/ditching-google-analytics-in-favour-of-netlify-analytics), so there's nothing running in the browser; just plain old HTML and CSS.

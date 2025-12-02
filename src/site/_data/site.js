@@ -1,7 +1,7 @@
 export default {
   title: 'tempertemper',
   company: 'tempertemper Web Design Ltd',
-  version: '6.9.1',
+  version: '6.9.2',
   url: 'https://www.tempertemper.net',
   baseurl: '',
   repo: 'https://github.com/tempertemper/tempertemper-website',

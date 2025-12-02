@@ -42,12 +42,6 @@
   li + li {
     margin-left: .5em;
   }
-
-  a {
-    display: inline-flex;
-    min-height: 48px;
-    align-items: center;
-  }
 }
 
 @mixin highlight-box {
