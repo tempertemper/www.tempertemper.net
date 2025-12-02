@@ -5,6 +5,7 @@ nav {
     min-width: 48px;
     display: inline-flex;
     align-items: flex-start;
+    justify-content: center;
 
     @media (pointer: coarse) {
       padding-block: 12px;
