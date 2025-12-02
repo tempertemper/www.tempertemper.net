@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.9.2] - 2025-12-02
+
 ### Changes
 - Updates colophon with details of JavaScript usage
 - Moves .ico and .webmanifest files to passthroughs
@@ -28,8 +33,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Ensures hidden inputs aren't tabbable
 - Makes header nav items a bit less ugly on wrap
-
-----------
 
 
 ## [6.9.1] - 2025-12-01
