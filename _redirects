@@ -219,11 +219,12 @@
 /assets/css/style.css                        /404                                        301!
 
 # Feeds
-/blog/rss                 /feeds/main.xml      301!
-/feeds/blog/rss.xml       /feeds/main.xml      301!
-/feeds/blog/feed.xml      /feeds/main.xml      301!
-/blog/json                /feeds/main.json     301!
-/feeds/blog/feed.json     /feeds/main.json     301!
+/blog/rss                 /feeds/main.xml                   301!
+/feeds/blog/rss.xml       /feeds/main.xml                   301!
+/feeds/blog/feed.xml      /feeds/main.xml                   301!
+/blog/json                /feeds/main.json                  301!
+/feeds/blog/feed.json     /feeds/main.json                  301!
+/feeds/main.json          /.netlify/functions/feed-json     200
 
 # Images and icons
 /cms/resources/blog/internet-explorer-icon.png     /assets/img/summary.png 301!

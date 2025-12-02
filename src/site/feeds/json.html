@@ -1,12 +1,12 @@
 ---
-permalink: /feeds/main.json
+permalink: /feeds/main-source.json
 eleventyExcludeFromCollections: true
 ---
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": {{ title | dump | safe }},
   "home_page_url": {{ site.url | dump | safe }},
-  "feed_url": {{ page.url | absoluteUrl(site.url) | dump | safe }},
+  "feed_url": {{ (site.url + "/feeds/main.json") | dump | safe }},
   "description": {{ description | dump | safe }},
   "authors": [
     {
