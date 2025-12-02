@@ -1,4 +1,3 @@
-import "./add-search-link.js"
 import "./codeblock-focus-removal.js"
 import "./double-button-trigger.js"
 import "./form-validation.js"

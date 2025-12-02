@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 - Moves .ico and .webmanifest files to passthroughs
 - Passes through print.css rather than whole CSS file
 - Moves search page link to header
+- Hard codes search page link and adds noscript to Search page
 
 ### Removes
 - Removes CV
