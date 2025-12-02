@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Removes
 - Removes CV
 - Removes dev favicons
+- Removes duplicate Eleventy server config
 
 ### Fixes
 - Ensures hidden inputs aren't tabbable

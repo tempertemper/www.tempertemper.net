@@ -2,7 +2,6 @@ import registerFilters from './filters.js';
 import registerMarkdown from './markdown.js';
 import registerPlugins from './plugins.js';
 import registerTransforms from './transforms.js';
-import registerServer from './server.js';
 import registerBuild from './build.js';
 import returns from './returns.js';
 
