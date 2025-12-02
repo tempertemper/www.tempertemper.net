@@ -1,0 +1,15 @@
+nav {
+
+  a {
+    min-height: 24px;
+    min-width: 48px;
+    display: inline-flex;
+    align-items: flex-start;
+
+    @media (pointer: coarse) {
+      padding-block: 12px;
+      margin-block: -12px;
+      outline-offset: 4px;
+    }
+  }
+}

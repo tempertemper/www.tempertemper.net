@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Ensures hidden inputs aren't tabbable
+- Makes header nav items a bit less ugly on wrap
 
 ----------
 
