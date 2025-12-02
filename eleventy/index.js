@@ -25,7 +25,6 @@ export default function(config) {
   registerMarkdown(config);
   registerPlugins(config);
   registerTransforms(config);
-  registerServer(config);
   registerBuild(config);
 
   // Directory + template config

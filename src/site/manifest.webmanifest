@@ -1,6 +1,11 @@
 {
-  "background_color": "#0097db",
+  "name": "tempertemper Web Design",
+  "short_name": "tempertemper",
+  "start_url": "https://www.tempertemper.net/",
   "display": "minimal-ui",
+  "lang": "en-GB",
+  "background_color": "#0097db",
+  "theme_color": "#0097db",
   "icons": [
     {
       "src": "/assets/img/icons/icon-192.png",
@@ -13,9 +18,5 @@
       "sizes": "512x512",
       "purpose": "maskable"
     }
-  ],
-  "lang": "en-GB",
-  "name": "tempertemper",
-  "start_url": "https://www.tempertemper.net/",
-  "theme_color": "#0097db"
+  ]
 }

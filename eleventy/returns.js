@@ -9,9 +9,7 @@ export default {
     'njk',
     'html',
     'md',
-    'txt',
-    'webmanifest',
-    'ico'
+    'txt'
   ],
   htmlTemplateEngine: 'njk',
   markdownTemplateEngine: 'njk',

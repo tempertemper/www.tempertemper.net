@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Updates colophon with details of JavaScript usage
+- Moves .ico and .webmanifest files to passthroughs
 
 ### Removes
 - Removes CV
