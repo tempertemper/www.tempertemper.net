@@ -24,8 +24,8 @@ export default function(config) {
     console.log("✓ JS bundled → src/site/_includes/scripts.js");
 
     // CSS (Critical)
-    const result = sass.compile("src/scss/critical.scss", {
-      loadPaths: ["src/scss"],
+    const result = sass.compile("src/css/critical.scss", {
+      loadPaths: ["src/css"],
       style: "compressed"
     });
     fs.writeFileSync("src/site/_includes/critical.css", result.css);
@@ -34,8 +34,8 @@ export default function(config) {
 
   // Build non-Critical CSS and search index
   config.on("eleventy.after", async () => {
-    const result = sass.compile("src/scss/non-critical.scss", {
-      loadPaths: ["src/scss"],
+    const result = sass.compile("src/css/non-critical.scss", {
+      loadPaths: ["src/css"],
       style: "compressed"
     });
     fs.mkdirSync("dist/assets/css", { recursive: true });
