@@ -4,7 +4,6 @@
 @use '../admin/mixins--modes' as  modeMixins;
 
 .footer {
-  clear: both;
   padding-bottom: 1em;
   margin-top: variables.$section-spacing;
 
