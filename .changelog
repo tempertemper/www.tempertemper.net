@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes dev favicons
 - Removes duplicate Eleventy server config
 - Removes an unnecessary clear fix
+- Removes stray pattern library file
 
 ### Fixes
 - Ensures hidden inputs aren't tabbable
