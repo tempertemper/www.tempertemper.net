@@ -5,7 +5,7 @@ export default function(config) {
   // Passthroughs
   config.addPassthroughCopy({ 'src/img': 'assets/img' });
   config.addPassthroughCopy({ 'src/fonts': 'assets/fonts' });
-  config.addPassthroughCopy({ 'src/css': 'assets/css' });
+  config.addPassthroughCopy({ 'src/css/print.css': 'assets/css/print.css' });
   config.addPassthroughCopy({ 'src/site/favicon.ico': 'favicon.ico' });
   config.addPassthroughCopy({ 'src/site/manifest.webmanifest': 'manifest.webmanifest' });
   config.addPassthroughCopy('_redirects');
