@@ -1,4 +1,3 @@
-// eleventy/filters.js
 import slugifyLib from 'slugify';
 import dates from '../lib/filters/dates.js';
 import isoDate from '../lib/filters/isoDate.js';
@@ -89,5 +88,14 @@ export default function(config) {
     const d = new Date(date);
     d.setSeconds(d.getSeconds() + (seconds || 0));
     return d;
+  });
+
+  // Strip emojis
+  config.addFilter('stripEmojis', value => {
+      if (!value) return value;
+      return value.replace(
+          /[\p{Emoji_Presentation}\p{Emoji}\uFE0F]/gu,
+          ''
+      );
   });
 }

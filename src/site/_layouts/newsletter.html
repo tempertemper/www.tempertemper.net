@@ -6,9 +6,23 @@ layout: base.html
     <h1>{{ title | smart | safe }}</h1>
     {{ content | safe }}
 </article>
-<br />
-<p><a href="/newsletter/archive"><span aria-hidden="true">←</span> Back to newsletter archive</a></p>
+
+{%- set previous = collections.newsletter | getPreviousCollectionItem(page) %}
+{%- set next = collections.newsletter | getNextCollectionItem(page) %}
+<nav class="pagination" aria-label="pagination">
+    <p>I've written <a href="/newsletter/archive">{{ collections.newsletter.length }} newsletters</a>. Go to:</p>
+    {%- if next %}
+        <a href="{{ next.url | replace('.html', '') }}">
+            <span aria-hidden="true">←</span>
+            {{ next.data.title | stripEmojis | smart | safe }}
+        </a>
+    {%- endif %}
+    {%- if previous %}
+        <a href="{{ previous.url | replace('.html', '') }}">
+            {{ previous.data.title | stripEmojis | smart | safe }}
+            <span aria-hidden="true">→</span>
+        </a>
+    {%- endif %}
+</nav>
 
 {% include "call-to-action.html" %}
-
-

@@ -9,7 +9,7 @@ export default function(config) {
 
   // Watch JS for inline bundle rebuild
   config.addWatchTarget('src/js');
-  config.addWatchTarget('src/scss');
+  config.addWatchTarget('src/css');
 
   // Live reload when generated inline JS changes
   config.setServerOptions({
