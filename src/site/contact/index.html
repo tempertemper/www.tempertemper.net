@@ -1,0 +1,74 @@
+---
+title: Contact Martin at tempertemper
+heading: Say hello
+intro: Want someone to make your organisation more accessible? I'd love to hear from you! Email me and I'll get back to you as soon as I can.
+hideIntro: true
+layout: default
+contact: true
+permalink: contact.html
+cta: true
+---
+
+If you're looking for <a href="/approaches/consultancy">someone to make your organisation more accessible</a> I'd love to hear from you!
+
+<form
+    name="contact"
+    method="post"
+    action="/thanks"
+    data-netlify="true"
+    netlify-honeypot="website"
+>
+    {# Netlify form name #}
+    <input type="hidden" name="form-name" value="contact" tabindex="-1" />
+
+    {# Honeypot field for spam bots #}
+    <p hidden>
+        <label for="website">Leave this field blank</label>
+        <input id="website" name="website" autocomplete="off" tabindex="-1" />
+    </p>
+    <div>
+        <label for="name">Name</label>
+        <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            aria-required="true"
+        >
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input
+            id="email"
+            name="email"
+            type="text"
+            inputmode="email"
+            autocomplete="email"
+            autocapitalize="none"
+            autocorrect="off"
+            spellcheck="false"
+            aria-required="true"
+        >
+    </div>
+    <div>
+        <label for="phone">Phone (optional)</label>
+        <input
+            id="phone"
+            name="phone"
+            inputmode="tel"
+            autocomplete="tel"
+        >
+    </div>
+    <div>
+        <label for="message">Message</label>
+        <div id="message-hint">Maximum 1000 characters.</div>
+        <textarea
+            id="message"
+            name="message"
+            aria-describedby="message-hint"
+            rows="6"
+            aria-required="true"
+        ></textarea>
+    </div>
+    <button type="submit">Send message</button>
+</form>

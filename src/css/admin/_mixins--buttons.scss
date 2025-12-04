@@ -5,14 +5,14 @@
 @mixin button {
   background-color: variables.$colour-primary;
   border-radius: variables.$border-radius-default;
-  border-bottom: solid 3px variables.$colour-primary-dark;
+  box-shadow: 0 3px 0 variables.$colour-primary-dark;
   color: variables.$colour-white;
   font-weight: 700;
   margin-top: 1em;
   padding: calc(.5em + 3px) 1em .5em;
   width: auto;
   @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-main) {
-    border-bottom: solid 3px variables.$colour-dark-mode-primary-dark;
+    box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
   }
   @include modeMixins.high-contrast(variables.$colour-dark-mode-primary-light, variables.$colour-high-contrast-main);
 
@@ -43,6 +43,7 @@
 
   &:hover {
     background-color: variables.$colour-primary-dark;
+    box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
     @include modeMixins.dark-mode($background: variables.$colour-dark-mode-primary-light);
     @include modeMixins.high-contrast($background: variables.$colour-high-contrast-primary-light);
   }
@@ -50,7 +51,6 @@
   &:active {
     position: relative;
     top: 3px;
-    border-bottom: none;
-    margin-bottom: 3px;
+    box-shadow: none;
   }
 }

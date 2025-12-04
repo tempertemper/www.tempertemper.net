@@ -4,16 +4,17 @@
 
 form {
   margin-bottom: 1em;
-  margin-top: 1em;
 }
 
 label {
   font-weight: bold;
-  color: variables.$colour-primary;
+  margin-top: 1em;
+  display: inline-block;
   @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
 }
 
-input {
+input,
+textarea {
   background-color: variables.$colour-main;
   border: 3px solid variables.$colour-primary;
   border-radius: variables.$border-radius-default;
