@@ -14,6 +14,17 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.9.4] - 2025-12-04
+
+### Adds
+- Adds filter to remove emojis
+- Adds previous/next pagination to newsletters
+
+### Changes
+- Adds spacing between arrow icons and text in pagination
+- Includes back-to-archive link in newsletter pagination
+
+
 ## [6.9.3] - 2025-12-02
 
 ### Adds
