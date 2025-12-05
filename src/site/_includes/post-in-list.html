@@ -1,4 +1,5 @@
-{%- if (tags.length >= 1 and (blogPost or resource or 'case-study')) or home %}
+{%- set caseStudy = tags and tags.includes('case-study') %}
+{%- if (tags.length >= 1 and (blogPost or resource or caseStudy)) or home %}
     {%- set briefPostInList = true %}
 {%- endif -%}
 <li>
