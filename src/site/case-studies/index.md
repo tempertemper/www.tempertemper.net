@@ -9,7 +9,7 @@ override:tags: false
 ---
 
 <ol class="index-list" reversed>
-    {%- for post in collections['case-study'] | reverse %}
+    {%- for post in collections['caseStudy'] | reverse %}
         {%- include "post-in-list.html" %}
     {%- endfor %}
 </ol>

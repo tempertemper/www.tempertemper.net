@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file. The format 
 - Refactors navigation
 - Scopes Year pages to blog posts
 - Fixes pagination output at top of blog Year page
+- Fixes issue case study collection name
 
 ----------
 
