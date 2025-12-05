@@ -17,6 +17,8 @@ All notable changes to this project will be documented in this file. The format 
 - Puts LinkedIn link above Mastodon in footer
 - Removes CTA divider line on homepage
 - Refactors navigation
+- Scopes Year pages to blog posts
+- Fixes pagination output at top of blog Year page
 
 ----------
 

@@ -20,8 +20,12 @@ layout: base.html
 {%- if isAbout -%}
     <article data-pagefind-body>
 {%- endif %}
-{%- if pagination and pagination.pageNumber > 0 %}
+{%- if pagination and pagination.pageNumber > 0 and not year %}
     <p>This is page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}.</p>
+{%- elif year %}
+    {%- set yearList = collections.post | filterByYear(year | int) %}
+    {%- set currentYear = "" | getCurrentYear %}
+    <p>There {% if (year | int) == (currentYear | int) %}have been{% else %}were{% endif %} {{ yearList | length }} posts in {{ year }}.</p>
 {%- elif intro and not hideIntro %}
     {{- intro | markdown | safe }}
 {%- endif -%}{{ content | safe }}
