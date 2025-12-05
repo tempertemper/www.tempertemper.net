@@ -1,20 +1,18 @@
 ---
 title: Contact Martin at tempertemper
 heading: Say hello
-intro: Want someone to make your organisation more accessible? I'd love to hear from you! Email me and I'll get back to you as soon as I can.
-hideIntro: true
+intro: |
+    Looking for someone to [support your accessibility journey](/approaches/consultancy)? I’d love to hear from you!
+hideIntro: false
 layout: default
 contact: true
 permalink: contact.html
-cta: true
 ---
-
-If you're looking for <a href="/approaches/consultancy">someone to make your organisation more accessible</a> I'd love to hear from you!
 
 <form
     name="contact"
     method="post"
-    action="/thanks"
+    action="/contact/thanks"
     data-netlify="true"
     netlify-honeypot="website"
 >
@@ -26,7 +24,7 @@ If you're looking for <a href="/approaches/consultancy">someone to make your org
         <label for="website">Leave this field blank</label>
         <input id="website" name="website" autocomplete="off" tabindex="-1" />
     </p>
-    <div>
+    <div class="input-group">
         <label for="name">Name</label>
         <input
             id="name"
@@ -36,7 +34,7 @@ If you're looking for <a href="/approaches/consultancy">someone to make your org
             aria-required="true"
         >
     </div>
-    <div>
+    <div class="input-group">
         <label for="email">Email</label>
         <input
             id="email"
@@ -50,7 +48,7 @@ If you're looking for <a href="/approaches/consultancy">someone to make your org
             aria-required="true"
         >
     </div>
-    <div>
+    <div class="input-group">
         <label for="phone">Phone (optional)</label>
         <input
             id="phone"
@@ -59,9 +57,8 @@ If you're looking for <a href="/approaches/consultancy">someone to make your org
             autocomplete="tel"
         >
     </div>
-    <div>
+    <div class="input-group">
         <label for="message">Message</label>
-        <div id="message-hint">Maximum 1000 characters.</div>
         <textarea
             id="message"
             name="message"
