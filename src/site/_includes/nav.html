@@ -1,0 +1,9 @@
+<nav class="navigation" aria-label="{{ navLabel }}">
+    <ul>
+        {%- for item in nav %}
+        <li>
+            <a href="{{ item.url | url }}" {%- if item.url == page.url | replace(".html", "") %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        </li>
+        {%- endfor %}
+    </ul>
+</nav>

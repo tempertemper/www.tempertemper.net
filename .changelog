@@ -11,10 +11,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-- Adds contact form and submission page to contact page
+- Adds contact form to contact page
+- New 'thanks' page for form submissions
 - Changes button styling to prevent page jank
 - Puts LinkedIn link above Mastodon in footer
 - Removes CTA divider line on homepage
+- Refactors navigation
 
 ----------
 

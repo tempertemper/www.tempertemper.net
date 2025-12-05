@@ -4,5 +4,5 @@ intro: Thanks for getting in touch; I’ve received your message and will reply 
 hideIntro: false
 layout: default
 permalink: contact/thanks.html
-cta: true
+cta: false
 ---

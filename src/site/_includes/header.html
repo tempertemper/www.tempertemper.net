@@ -2,7 +2,14 @@
     <a href="/" class="logo">
         {% include "svg/tempertemper-logo.svg" %}
     </a>
-    <nav class="navigation" aria-label="primary">
-        {% include "navigation-primary.html" %}
-    </nav>
+    {%- set nav = [
+        { title: 'Blog', url: '/blog/' },
+        { title: 'About', url: '/about' },
+        { title: 'Services', url: '/services/' },
+        { title: 'Portfolio', url: '/portfolio/' },
+        { title: 'Search', url: '/search' },
+        { title: 'Contact', url: '/contact' }
+    ] %}
+    {% set navLabel = "Main" %}
+    {% include "nav.html" %}
 </header>
