@@ -2,20 +2,35 @@
     <nav aria-label="footer">
         <ul class="social">
             <li>
-                <a href="https://mastodon.social/{{ site.author.mastodon | replace('@mastodon.social','')}}">
-                    {%- include "svg/mastodon.svg" -%}
-                    Follow me on Mastodon
-                </a>
-            </li>
-            <li>
                 <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">
                     {%- include "svg/linkedin.svg" -%}
                     View my LinkedIn profile
                 </a>
             </li>
+            <li>
+                <a href="https://mastodon.social/{{ site.author.mastodon | replace('@mastodon.social','')}}">
+                    {%- include "svg/mastodon.svg" -%}
+                    Follow me on Mastodon
+                </a>
+            </li>
         </ul>
-        {% include "navigation-primary.html" %}
-        {% include "navigation-secondary.html" %}
+        {%- set nav = [
+            { title: 'Blog', url: '/blog/' },
+            { title: 'About', url: '/about' },
+            { title: 'Portfolio', url: '/portfolio/' },
+            { title: 'Search', url: '/search' },
+            { title: 'Contact', url: '/contact' }
+        ] %}
+        {% set navLabel = "Footer" %}
+        {% include "nav.html" %}
+        {% set nav = [
+            { title: 'Services', url: '/services/' },
+            { title: 'Approaches', url: '/approaches/' },
+            { title: 'Skills', url: '/skills/' },
+            { title: 'Testimonials', url: '/testimonials' }
+        ] %}
+        {% set navLabel = "More info" %}
+        {% include "nav.html" %}
     </nav>
     <p class="copyright">&copy;&nbsp;copyright 2009&nbsp;to&nbsp;{{ "" | getCurrentYear }}</p>
     <address class="adr">

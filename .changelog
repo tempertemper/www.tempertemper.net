@@ -14,6 +14,24 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.10.0] - 2025-12-05
+
+### Adds
+- Adds contact form to contact page
+- New 'thanks' page for form submissions
+
+### Changes
+- Changes button styling to prevent page jank
+- Puts LinkedIn link above Mastodon in footer
+- Removes CTA divider line on homepage
+- Refactors navigation
+- Scopes Year pages to blog posts
+
+### Fixes
+- Fixes pagination output at top of blog Year page
+- Fixes issue case study collection name
+
+
 ## [6.9.4] - 2025-12-04
 
 ### Adds

@@ -1,19 +1,29 @@
 @use '../admin/variables';
 @use '../admin/mixins--buttons' as buttonsMixins;
+@use '../admin/mixins--general' as generalMixins;
 @use '../admin/mixins--modes' as modeMixins;
 
 form {
+  margin-top: 1em;
   margin-bottom: 1em;
+}
+
+[name="contact"] {
+  @include generalMixins.boxout;
+}
+
+.input-group + .input-group {
   margin-top: 1em;
 }
 
 label {
   font-weight: bold;
-  color: variables.$colour-primary;
+  display: inline-block;
   @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
 }
 
-input {
+input,
+textarea {
   background-color: variables.$colour-main;
   border: 3px solid variables.$colour-primary;
   border-radius: variables.$border-radius-default;
@@ -42,15 +52,56 @@ input {
   @include buttonsMixins.button;
 }
 
-
 .form-error  {
   border-left: .15em solid variables.$colour-red;
-  padding: .25em 0 .25em .85em;
+  padding: .1em 0 .45em .85em;
 
-  input {
+  input,
+  textarea {
     border-color: variables.$colour-red;
     @include modeMixins.dark-mode() {
       border-color: variables.$colour-red;
     }
+  }
+
+  :target {
+    scroll-margin-block-start: 3.5em;
+  }
+
+  [id$="hint"] ~ :target {
+    scroll-margin-block-start: 5em;
+  }
+}
+
+.error-summary {
+  scroll-margin-block-start: 1.5em;
+  margin-bottom: 2em;
+
+  h2 {
+    margin-top: .25em;
+  }
+
+  ul {
+    padding-left: 1em;
+  }
+
+  a {
+
+    &:link,
+    &:visited {
+      color: variables.$colour-dark-mode-primary-light;
+    }
+
+    &:hover {
+      color: variables.$colour-high-contrast-primary-light;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  li::marker {
+    color: variables.$colour-red;
   }
 }

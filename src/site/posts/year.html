@@ -1,13 +1,13 @@
 ---js
 {
+  eleventyExcludeFromCollections: true,
   pagination: {
-    data: "collections.all",
+    data: "collections.post",
     size: 1,
     alias: "year",
     before: function(data) {
-      const dates = data.map(post => post.date.getFullYear());
-      const uniqueYears = [...new Set(dates)];
-      return uniqueYears;
+      const dates = data.map(post => post.date.getFullYear())
+      return [...new Set(dates)]
     }
   },
   layout: "default",
