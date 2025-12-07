@@ -13,7 +13,7 @@
 
   @media (min-width: variables.$l) {
     flex-direction: row;
-    align-items: center;
+    align-items: start;
   }
 
   nav ul {
@@ -22,13 +22,14 @@
     @include typographyMixins.remove-list-styling;
     @include generalMixins.inline-nav;
   }
-}
-
-.logo {
 
   svg {
     display: block;
     color: variables.$colour-black;
+
+    @media (min-width: variables.$l) {
+      margin-top: .1em;
+    }
 
     @include modeMixins.dark-mode() {
       color: variables.$colour-dark-mode-white;

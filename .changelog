@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+- Adds 'by Martin Underhill' to site logo
+- Logo alt text via HTML rather than inside SVG
+- Adds Bluesky link to footer
+
 ----------
 
 
