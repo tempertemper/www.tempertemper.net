@@ -14,6 +14,16 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.10.3] - 2025-12-07
+
+### Changes
+- Limits output of feed posts to 50
+
+### Fixes
+- Makes author details backwards compatible with JSON feed 1.0
+- Removes sponsorship link from footer
+
+
 ## [6.10.2] - 2025-12-07
 
 ### Changes

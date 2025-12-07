@@ -23,8 +23,7 @@ eleventyExcludeFromCollections: true
     <email>{{ site.author.email }}</email>
     <uri>https://mastodon.social/{{ site.author.mastodon | replace('@mastodon.social','')}}</uri>
   </author>
-
-  {%- for post in collections.post | reverse %}
+  {%- for post in collections.post | reverse | limit(outputNumber) %}
   <entry>
     <title>{{ post.data.title | smart | safe | replace("&nbsp;", " ") | replace("&shy;", "") }}</title>
     <link href="{{ site.url }}{{ post.url | replace ('.html', '') }}" />
