@@ -11,14 +11,14 @@ eleventyExcludeFromCollections: true
   "authors": [
     {
       "name": {{ site.author.name | dump | safe }},
-      "url": {{ "https://mastodon.social/@tempertemper" | dump | safe }},
+      "url": {{ ("https://mastodon.social/" + (site.author.mastodon | replace('@mastodon.social',''))) | dump | safe }},
       "avatar": {{ (site.url + "/assets/img/martin-underhill-tempertemper--square-512x512.jpg") | dump | safe }}
     }
   ],
   "icon": {{ (site.url + "/assets/img/tempertemper-feed.png") | dump | safe }},
   "favicon": {{ (site.url + "/assets/img/icons/favicon.png") | dump | safe }},
   "items": [
-  {%- for post in collections.post | reverse %}
+  {%- for post in collections.post | reverse | limit(outputNumber) %}
     {%- set idx = loop.index0 -%}
     {%- set postUrl = (post.url | replace('.html','')) | absoluteUrl(site.url) -%}
     {%- set postTitle = post.data.title | smart | replace("&nbsp;"," ") | replace("&shy;","") | trim -%}
@@ -37,13 +37,17 @@ eleventyExcludeFromCollections: true
       {%- endif %}
       "date_published": {{ post.date | dateToRfc3339 | dump | safe }},
       "date_modified": {{ ((post.data.updated or post.date) | bumpSeconds(idx)) | dateToRfc3339 | dump | safe }},
+      "author": {
+        "name": {{ site.author.name | dump | safe }},
+        "url": {{ ("https://mastodon.social/" + (site.author.mastodon | replace('@mastodon.social',''))) | dump | safe }}
+        },
       "authors": [
-          {
-            "name": {{ site.author.name | dump | safe }},
-            "url": {{ ("https://mastodon.social/" + (site.author.mastodon | replace('@mastodon.social',''))) | dump | safe }},
-            "avatar": {{ (site.url + "/assets/img/martin-underhill-tempertemper--square-512x512.jpg") | dump | safe }}
-          }
-        ],
+        {
+          "name": {{ site.author.name | dump | safe }},
+          "url": {{ ("https://mastodon.social/" + (site.author.mastodon | replace('@mastodon.social',''))) | dump | safe }},
+          "avatar": {{ (site.url + "/assets/img/martin-underhill-tempertemper--square-512x512.jpg") | dump | safe }}
+        }
+      ],
       "content_html": {{ html | renderTransforms(post.data.page, site.url) | dump | safe }}
     }{% if not loop.last %},{% endif %}
   {%- endfor %}
