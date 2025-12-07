@@ -1,7 +1,7 @@
 export default {
   title: 'tempertemper',
   company: 'tempertemper Web Design Ltd',
-  version: '6.10.0',
+  version: '6.10.1',
   url: 'https://www.tempertemper.net',
   baseurl: '',
   repo: 'https://github.com/tempertemper/tempertemper-website',
@@ -11,7 +11,7 @@ export default {
     twitter: '@tempertemper',
     mastodon: '@tempertemper@mastodon.social',
     linkedin: 'tempertemper',
-    blusky: 'tempertemper.bsky.social',
+    blusky: '@tempertemper.bsky.social',
     email: 'hello+website@tempertemper.net',
   },
   env: process.env.ELEVENTY_ENV || 'not_development',

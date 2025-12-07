@@ -13,6 +13,12 @@
                     Follow me on Mastodon
                 </a>
             </li>
+            <li>
+                <a href="https://bsky.app/profile/{{ site.author.blusky | replace('@','')}}">
+                    {%- include "svg/bluesky.svg" -%}
+                    Follow me on Bluesky
+                </a>
+            </li>
         </ul>
         {%- set nav = [
             { title: 'Blog', url: '/blog/' },
@@ -43,6 +49,7 @@
     <p class="company-details">Company number 07742506</p>
     <p class="company-details">VAT&nbsp;registration number&nbsp;219&nbsp;5624&nbsp;96</p>
     <ul class="utility">
+        <li><a href="/sponsors">Sponsorship</a></li>
         <li><a href="/privacy-policy">Privacy policy</a></li>
         <li><a href="/accessibility-statement">Accessibility statement</a></li>
         <li><a href="/terms">Terms&nbsp;of&nbsp;business</a></li>
