@@ -37,6 +37,13 @@ eleventyExcludeFromCollections: true
       {%- endif %}
       "date_published": {{ post.date | dateToRfc3339 | dump | safe }},
       "date_modified": {{ ((post.data.updated or post.date) | bumpSeconds(idx)) | dateToRfc3339 | dump | safe }},
+      "authors": [
+          {
+            "name": {{ site.author.name | dump | safe }},
+            "url": {{ ("https://mastodon.social/" + (site.author.mastodon | replace('@mastodon.social',''))) | dump | safe }},
+            "avatar": {{ (site.url + "/assets/img/martin-underhill-tempertemper--square-512x512.jpg") | dump | safe }}
+          }
+        ],
       "content_html": {{ html | renderTransforms(post.data.page, site.url) | dump | safe }}
     }{% if not loop.last %},{% endif %}
   {%- endfor %}

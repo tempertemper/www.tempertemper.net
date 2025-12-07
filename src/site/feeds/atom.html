@@ -21,7 +21,7 @@ eleventyExcludeFromCollections: true
   <author>
     <name>{{ site.author.name }}</name>
     <email>{{ site.author.email }}</email>
-    <uri>https://mastodon.social/@tempertemper</uri>
+    <uri>https://mastodon.social/{{ site.author.mastodon | replace('@mastodon.social','')}}</uri>
   </author>
 
   {%- for post in collections.post | reverse %}

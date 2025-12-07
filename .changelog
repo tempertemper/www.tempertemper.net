@@ -14,6 +14,19 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.10.2] - 2025-12-07
+
+### Changes
+- Takes feed Mastodon links from site data file
+- Updates 512px avatar
+
+### Adds
+- Adds author details to JSON feed
+
+### Fixes
+- Removes Year and Years pages from blog feed
+
+
 ## [6.10.1] - 2025-12-07
 
 ### Adds
