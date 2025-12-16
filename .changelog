@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.10.5] - 2025-12-16
+
+### Fixes
+- Fixes VS Code syntax highlighting config
+
+
 ## [6.10.4] - 2025-12-09
 
 ### Changes
