@@ -14,6 +14,29 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.11.0] - 2025-12-23
+
+### Adds
+- Adds speaking page
+- Adds copy-to-clipboard buttons to speaking page
+- New CTA wording for speaking pages
+- Includes speaking page in footer nav
+- Image thumbnail styling
+- Attaches button styling to button element
+
+### Changes
+- Uses a timestamp for CSS cache busting rather than the version number
+- Enhances summary element styling
+
+### Removes
+- Removes scripts to update eleventy site data file with version number
+
+### Fixes
+- Moves visually hidden utility styling into critical CSS
+- Fixes Sublime Text project files
+- Fixes site reloading on change
+
+
 ## [6.10.5] - 2025-12-16
 
 ### Fixes
