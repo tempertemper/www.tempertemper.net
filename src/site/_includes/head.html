@@ -139,9 +139,9 @@
 
     {%- set css %}{%- include "critical.css" %}{% endset %}
     <style>{{- css | safe | replace("", "") -}}</style>
-    <link rel="preload" href="/assets/css/non-critical.css?v={{ site.version }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="/assets/css/non-critical.css?v={{ site.version }}" /></noscript>
-    <link rel="stylesheet" media="print" href="/assets/css/print.css?v={{ site.version }}" />
+    <link rel="preload" href="/assets/css/non-critical.css?v={{ build.timestamp }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/assets/css/non-critical.css?v={{ build.timestamp }}" /></noscript>
+    <link rel="stylesheet" media="print" href="/assets/css/print.css?v={{ build.timestamp }}" />
     <script type="application/ld+json">
         {
             "@context" : "https://schema.org",
