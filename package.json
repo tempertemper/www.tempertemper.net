@@ -1,6 +1,6 @@
 {
   "name": "tempertemper",
-  "version": "6.10.4",
+  "version": "6.11.0",
   "description": "tempertemper's website",
   "type": "module",
   "scripts": {
@@ -10,8 +10,7 @@
     "serve": "npx @11ty/eleventy --serve --quiet",
     "start": "npm run clear && npm run serve",
     "staging": "npm run build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
-    "version": "node scripts/sync-site-version.js",
-    "_bump:commit": "git add package*.json src/site/_data/site.js && git commit -m \"Bumps version number to $npm_package_version\"",
+    "_bump:commit": "git add package*.json && git commit -m \"Bumps version number to $npm_package_version\"",
     "bump:patch": "npm version patch --no-git-tag-version && npm run _bump:commit",
     "bump:minor": "npm version minor --no-git-tag-version && npm run _bump:commit",
     "bump:major": "npm version major --no-git-tag-version && npm run _bump:commit"

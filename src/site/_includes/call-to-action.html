@@ -10,9 +10,11 @@
     {%- set caseStudy = true %}
 {%- elif tags.length >= 1 and tags.includes('newsletter') %}
     {%- set newsletter = true %}
+{%- elif tags.length >= 1 and tags.includes('speaking') %}
+    {%- set speaking = true %}
 {%- endif %}
 
-{% set other = not (home or post or contact or newsletter) %}
+{%- set other = not (home or post or contact or newsletter or speaking) %}
 <section aria-labelledby="ctaLabel" class="call-to-action{% if other %} highlight{% endif %}">
     {% if home or post or contact or newsletter %}
         <h2 id="ctaLabel">Accessibility in your inbox</h2>
@@ -28,6 +30,9 @@
             <p>If you enjoyed reading that newsletter, why not sign up for more?</p>
             {% include "newsletter-signup.html" %}
         {% endif %}
+    {% elif speaking %}
+        <h2 id="ctaLabel">Looking for a speaker?</h2>
+        <p>If you’d like me to speak at your conference or meetup, let’s chat! <a href="/contact">Get in touch</a> or drop me a message on <a href="https://www.linkedin.com/in/tempertemper/">LinkedIn</a>.</p>
     {% else %}
         <h2 id="ctaLabel">Let’s chat!</h2>
         <p>If you’re looking for ongoing accessibility support or a longer-term partnership to meet legal requirements like the Equality Act and the European Accessibility Act, I’d love to hear from you.</p>

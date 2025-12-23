@@ -15,7 +15,7 @@ I should have anticipated how difficult the renovations would be with two childr
 
 I should have been more wary of redundancy when the talk of the possibility of the company I worked for's biggest client not renew their contract presented itself the previous October. But I had been employed for nearly a year and my freelancer’s wiliness had begun to soften.
 
-I should have listened to my wife when she told me that Frontend NE was taking up too much of my time and I was [burning out](/blog/leaving-the-frontend-ne-meet-up).
+I should have listened to my wife when she told me that Frontend NE was taking up too much of my time and I was [burning out](/blog/leaving-the-frontend-ne-meetup).
 
 All those things hit me hard.
 
@@ -57,8 +57,8 @@ I have some other ideas but I'm wary of overcommitting, so writing is the only t
 
 If you're interested, here are some of the other things I'm looking at doing more of in 2019.
 
-Towards the end of 2018, I enjoyed getting back into speaking and gave an ever-evolving talk on accessible design patterns three times at work and twice at local meet-ups. I'm giving the talk at work again in a week or so and am already giving thought to my next subject.
+Towards the end of 2018, I enjoyed getting back into speaking and gave an ever-evolving talk on accessible design patterns three times at work and twice at local meetups. I'm giving the talk at work again in a week or so and am already giving thought to my next subject.
 
-I tried recording the talk at each of the meet-ups but neither turned out all that great, so I plan to record it especially for YouTube. Producing video content has been at the front of my mind for a while now so subscribe to my [YouTube channel](https://www.youtube.com/tempertemper) to be notified when I post my next video.
+I tried recording the talk at each of the meetups but neither turned out all that great, so I plan to record it especially for YouTube. Producing video content has been at the front of my mind for a while now so subscribe to my [YouTube channel](https://www.youtube.com/tempertemper) to be notified when I post my next video.
 
 See you here again next Wednesday morning!

@@ -9,6 +9,7 @@
   {
     "\\.changelog$": ["MarkdownEditing", "Markdown (Standard)"],
     "\\.sublime-project$": ["JavaScript", "JSON"],
-    "\\.html$": ["nunjucks-extended", "Syntaxes", "Nunjucks"]
+    "\\.html$": ["Nunjucks", "Syntaxes", "Nunjucks"],
+    "\\.njk$": ["Nunjucks", "Syntaxes", "Nunjucks"]
   }
 }

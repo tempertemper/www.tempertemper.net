@@ -3,8 +3,13 @@
 @use '../admin/mixins--links' as linksMixins;
 
 summary {
+  margin-top: 1em;
   color: variables.$colour-primary-darker;
   @include linksMixins.text-link;
   @include modeMixins.dark-mode($colour: variables.$colour-primary);
   @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
+
+  &::marker {
+    font-size: .7em;
+  }
 }
