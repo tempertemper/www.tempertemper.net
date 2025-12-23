@@ -45,10 +45,8 @@ textarea {
   }
 }
 
-[type="submit"] {
-  display: block;
-  font-size: inherit;
-  line-height: 1.2;
+[type="submit"],
+button {
   @include buttonsMixins.button;
 }
 
