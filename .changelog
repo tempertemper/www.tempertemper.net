@@ -27,6 +27,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Changes
 - Uses a timestamp for CSS cache busting rather than the version number
 - Enhances summary element styling
+- Changes 'meet-up' to 'meetup'
 
 ### Removes
 - Removes scripts to update eleventy site data file with version number

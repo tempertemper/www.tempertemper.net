@@ -5,11 +5,11 @@ intro: |
 date: 2019-04-10
 ---
 
-Last week marked the culmination of nearly a year's hard work: [2019's Frontend NE conference](https://2019.frontendne.co.uk/). Although I [stepped back from the meet-up](/blog/leaving-the-frontend-ne-meet-up) in November last year, it was business as usual on the conference front, and what a conference it was!
+Last week marked the culmination of nearly a year's hard work: [2019's Frontend NE conference](https://2019.frontendne.co.uk/). Although I [stepped back from the meetup](/blog/leaving-the-frontend-ne-meetup) in November last year, it was business as usual on the conference front, and what a conference it was!
 
 In the days that followed the conference, I found myself in a weird state of exhaustion and rudderlessness. Although there were a few administrative bits and bobs still to do, there was a sudden gulf where the conference had been.
 
-After the last conference, I still had the meet-up. In fact, this time last year we had to move meet-up venues, which proved very time consuming indeed.
+After the last conference, I still had the meetup. In fact, this time last year we had to move meetup venues, which proved very time consuming indeed.
 
 But this time, I have different plans. Things I've been wanting to give my attention to for the longest time:
 

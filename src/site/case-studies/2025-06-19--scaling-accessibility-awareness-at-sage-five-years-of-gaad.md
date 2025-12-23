@@ -10,7 +10,7 @@ Awareness is one of the fundamentals when creating an accessibility culture, so 
 
 Sage is an international company of nearly 11,000 people across 23 countries, and my mission has been to grow the community to as many of those people as possible; GAAD has proved a great way to do that.
 
-Having organised a [meet-up that ran for more than five years, as well as two conferences](/blog/frontend-ne-draws-to-a-close) I fell into familiar territory with GAAD.
+Having organised a [meetup that ran for more than five years, as well as two conferences](/blog/frontend-ne-draws-to-a-close) I fell into familiar territory with GAAD.
 
 
 ## Year one (2021)

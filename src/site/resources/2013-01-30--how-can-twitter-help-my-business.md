@@ -92,7 +92,7 @@ If you're not people might begin to smell a spambot rat!
 
 ### Hashtags
 
-Hashtags are a great way of tying tweets together. Pop a hashtag on your tweet and it will automatically link to anyone else using the same hashtag. This can be for running jokes like [#firstworldproblems](https://twitter.com/search?q=%23firstworldproblems&src=tyah), group commentaries on events or TV shows, community [meet-ups](https://twitter.com/search?q=%23northeasthour&src=typd).
+Hashtags are a great way of tying tweets together. Pop a hashtag on your tweet and it will automatically link to anyone else using the same hashtag. This can be for running jokes like [#firstworldproblems](https://twitter.com/search?q=%23firstworldproblems&src=tyah), group commentaries on events or TV shows, community [meetups](https://twitter.com/search?q=%23northeasthour&src=typd).
 
 You can watch these conversations by searching for the hashtag and keeping an eye on the tweets that keep come through. You can then tweet with the hashtag and be a part of that conversation.
 

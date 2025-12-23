@@ -1,6 +1,6 @@
 ---
 title: Speaking
-intro: I'm a UK-based accessibility consultant and speaker, available for conferences and meet-ups, both in person and remotely.
+intro: I'm a UK-based accessibility consultant and speaker, available for conferences and meetups, both in person and remotely.
 permalink: speaking/index.html
 ---
 
