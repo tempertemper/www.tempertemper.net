@@ -1,9 +1,5 @@
 @use '../admin/mixins--general' as generalMixins;
 
-.visually-hidden {
-  @include generalMixins.visually-hidden;
-}
-
 img,
 video {
 

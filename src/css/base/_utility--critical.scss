@@ -1,4 +1,9 @@
+@use '../admin/mixins--general' as generalMixins;
 @use '../admin/mixins--typography' as typographyMixins;
+
+.visually-hidden {
+  @include generalMixins.visually-hidden;
+}
 
 .index-list {
   @include typographyMixins.remove-list-styling;
