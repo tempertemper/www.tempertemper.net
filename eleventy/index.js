@@ -26,10 +26,7 @@ export default function(config) {
   // Live reload when generated inline JS changes
   config.setServerOptions({
     port: 3000,
-    files: [
-      'src/site/_includes/scripts.js',
-      'src/site/_includes/critical.css'
-    ]
+    domDiff: false
   });
 
   // Module registrations
