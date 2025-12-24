@@ -18,10 +18,17 @@ Training sessions give your teams a clear grounding in accessibility. They can c
 Workshops are more interactive than training. They focus on applying accessibility principles to real projects and challenges, so people leave with practical experience as well as knowledge. A workshop might involve reviewing a live product, tackling a specific design challenge, or working through a user journey together. They can be run for a single discipline or as a cross-functional group, building a shared understanding of accessibility.
 
 
+## Empathy labs
+
+Empathy labs are hands-on sessions that help teams better understand how disabled people experience digital products. Participants use assistive technologies and temporary constraints to work through predefined tasks, with facilitation that links those experiences back to design, development, and delivery decisions.
+
+Labs can be run [in person](/portfolio/scaling-accessibility-awareness-at-sage-five-years-of-gaad#empathy-labs) or [remotely](/portfolio/scaling-accessibility-awareness-at-sage-five-years-of-gaad#year-two-2022). In-person sessions use shared devices and physical setups; remote labs use screen sharing and guided exercises, and work well for distributed teams.
+
+
 ## Format
 
-Sessions can be as short as an hour or run as a half-day or full-day. Workshops often need more time, sometimes a half or full day. For bigger topics or broader groups, training can be delivered as a series of linked sessions, each focused on a different area or role.
+Like empathy labs, training sessions and workshops can be delivered remotely or in person, depending on what works best for your teams; my style is informal and friendly, making them approachable and engaging for groups of any size.
 
-All sessions can be delivered remotely or in person, depending on what works best for your teams; my style is informal and friendly, making them approachable and engaging for groups of any size.
+Sessions can be as short as an hour or run as a half-day or full-day. Workshops often need more time, sometimes a half or full day. For bigger topics or broader groups, training can be delivered as a series of linked sessions, each focused on a different area or role.
 
 With [coaching and mentoring](/services/coaching) for individuals or small groups, teams can keep building confidence as they apply what they’ve learned.
