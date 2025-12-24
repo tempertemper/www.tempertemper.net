@@ -30,7 +30,7 @@ Your sponsor slot includes:
 - 1,000+ newsletter subscribers
 - Around 1,200 RSS feed subscribers
 
-Readers include designers, developers, accessibility specialists, product teams, and digital leaders.
+Readers include designers, developers, testers, accessibility specialists, product managers, and digital leaders.
 
 
 ## Pricing
@@ -39,8 +39,3 @@ Readers include designers, developers, accessibility specialists, product teams,
 - 3 months at £540 per month (10% discount)
 - 6 months at £510 per month (15% discount)
 - 12 months at £480 per month (20% discount)
-
-
-## Get in touch
-
-I run a single-sponsor model, with bookings on a first-come basis. If you'd like to sponsor an upcoming month, [send me a message](/contact) with the details you'd like to include.

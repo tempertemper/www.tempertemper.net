@@ -13,6 +13,7 @@
 {%- elif tags.length >= 1 and tags.includes('speaking') %}
     {%- set speaking = true %}
 {%- endif %}
+{%- set sponsorship = page.url == '/sponsors.html' %}
 
 {%- set other = not (home or post or contact or newsletter) %}
 <section aria-labelledby="ctaLabel" class="call-to-action{% if other %} highlight{% endif %}">
@@ -34,9 +35,13 @@
         <h2 id="ctaLabel">Let’s chat!</h2>
         {% if speaking %}
             <p>If you’d like me to speak at your conference or meetup, I’d love to hear from you.</p>
+        {% elif sponsorship %}
+            I run a single-sponsor model, with bookings on a first-come basis. If you'd like to sponsor an upcoming month, <a href="/contact">get in touch</a> with the details you'd like to include.
         {% else %}
             <p>If you’re looking for ongoing accessibility support or a longer-term partnership to meet legal requirements like the Equality Act and the European Accessibility Act, I’d love to hear from you.</p>
         {% endif %}
-        <p><a href="/contact">Get in touch</a> or drop me a message on <a href="https://www.linkedin.com/in/tempertemper/">LinkedIn</a>.</p>
+        {% if not sponsorship %}
+            <p><a href="/contact">Get in touch</a> or drop me a message on <a href="https://www.linkedin.com/in/tempertemper/">LinkedIn</a>.</p>
+        {% endif %}
     {% endif %}
 </section>
