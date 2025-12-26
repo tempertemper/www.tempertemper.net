@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.12.0] - 2025-12-26
+
 ### Adds
 - New sponsorship page
 - Adds sponsorship CTA to CTA include
@@ -20,8 +25,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Removes Contact page from main nav
-
-----------
 
 
 ## [6.11.1] - 2025-12-24
