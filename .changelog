@@ -15,6 +15,9 @@ All notable changes to this project will be documented in this file. The format 
 - New sponsorship page
 - Adds sponsorship CTA to CTA include
 
+### Fixes
+- Prevents some internal tags/categories outputting to Categories page
+
 ----------
 
 

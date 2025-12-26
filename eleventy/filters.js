@@ -24,20 +24,23 @@ export default function(config) {
     })
   );
 
+  // Internal tags to hide
+  const notRenderedTags = [
+    'all','post','resource','testimonial','newsletter','skill','service','speaking','caseStudy','approach'
+  ];
+
   // List all tags (hide internal)
   config.addFilter('tags', (collection) => {
-    const notRendered = [
-      'all','post','resource','testimonial','case-study','newsletter','skill','service',
-    ];
-    return Object.keys(collection).filter((d) => !notRendered.includes(d)).sort();
+    return Object.keys(collection)
+      .filter((d) => !notRenderedTags.includes(d))
+      .sort();
   });
 
   // Tags on page (hide internal)
   config.addFilter('tagsOnPage', (tags) => {
-    const notRendered = [
-      'all','post','resource','testimonial','case-study','newsletter','skills',
-    ];
-    return tags.filter((d) => !notRendered.includes(d)).sort();
+    return tags
+      .filter((d) => !notRenderedTags.includes(d))
+      .sort();
   });
 
   // Sort by front matter order
