@@ -18,6 +18,9 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Prevents some internal tags/categories outputting to Categories page
 
+### Changes
+- Removes Contact page from main nav
+
 ----------
 
 
