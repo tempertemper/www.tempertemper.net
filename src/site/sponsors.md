@@ -35,7 +35,9 @@ Readers include designers, developers, testers, accessibility specialists, produ
 
 ## Pricing
 
-- £600 per month + VAT
-- 3 months at £540 per month (10% discount)
-- 6 months at £510 per month (15% discount)
-- 12 months at £480 per month (20% discount)
+{%- set sponsorshipAmount = 600 %}
+
+- £{{ sponsorshipAmount }} per month + VAT
+- 3 months at £{{ sponsorshipAmount * 0.9 }} per month (10% discount)
+- 6 months at £{{ sponsorshipAmount * 0.85 }} per month (15% discount)
+- 12 months at £{{ sponsorshipAmount * 0.8 }} per month (20% discount)
