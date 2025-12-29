@@ -1,13 +1,13 @@
 ---
 title: The final nail in the HTML5 document outline coffin
-intro: All the main browsers have finally dropped visual support for the HTML5 document outline algorithm. Here's why that's good news.
+intro: All the main web browsers have finally dropped visual support for the HTML5 document outline algorithm. Here's why that's good news.
 date: 2025-12-29
 tags:
     - HTML
     - Accessibility
 ---
 
-I've written about the [document outline](/blog/using-the-html-document-outline) before, including a reference to how HTML5 introduced the HTML5 document outline algorithm, which was never fully supported.
+I've written about the [document outline](/blog/using-the-html-document-outline) before, including a reference to how HTML5 introduced a new algorithm for creating a document outline which was never fully supported.
 
 First, a reminder; what was the idea? Well, it was to allow content to be truly modular, so that each chunk could be included in a document wherever the author wanted without any friction:
 
@@ -37,10 +37,10 @@ No fiddly logic with the HTML5 document outline algorithm; the browser would tak
 
 ## Never fully supported
 
-Strangely (or maybe not so strangely?) browsers added *some* support for the HTML5 document outline algorithm. This fancy HTML5 method was never finished:
+Strangely (or maybe not so strangely?) browsers added *some* support for the HTML5 document outline algorithm, but never quite finished the job:
 
 - It worked *visually*, as browsers changed their default styling to match the algorithm
-- Non-visually, it did nothing; the accessibility tree just included lots of level one headings, as per the markup, and screen reader users would have been left wondering what was going on
+- Non-visually, it did nothing; the accessibility tree just included lots of level one headings, as per the markup, so screen reader users would have been left wondering what was going on
 
 Since human beings have a tendency to view the world from their own perspective, and the majority of designers and developers are sighted, the visual conformance with the HTML5 technique was seen by many as a green light. *I* certainly saw it like that before I began to dig into accessibility and realised the problems I was causing.
 
