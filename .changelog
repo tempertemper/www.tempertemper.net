@@ -14,6 +14,30 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.12.1] - 2025-12-30
+
+### Adds
+- Adds styling for sponsors section in blog post
+- Adds conditional sponsor section to articles, blog index, and resources index
+- Adds conditional sponsor section to JSON and ATOM/RSS feeds
+- Adds conditional sponsor section to Newsletters
+
+### Changes
+- Adds link to blog post years page to blog pagination
+- Moves category listings page link from main blog page to individual category pages
+- Outdents details/summary marker on larger screens
+- Adds top margin to paragraphs that follow a details/summary
+- Uses `<br />` at end of JSON and ATOM/RSS feeds
+- Updates Sponsorship page with lots of detail on the value
+
+### Removes
+- Removes version number from site data file
+
+### Fixes
+- Increases larger headings' line height slightly on smaller screens to stop descenders and ascenders overlapping
+- Stops pagination page number appearing on category pages
+
+
 ## [6.12.0] - 2025-12-26
 
 ### Adds
