@@ -9,6 +9,10 @@ summary {
   @include modeMixins.dark-mode($colour: variables.$colour-primary);
   @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
 
+  @media (min-width: variables.$l) {
+    text-indent: -.8em;
+  }
+
   &::marker {
     font-size: .7em;
   }
