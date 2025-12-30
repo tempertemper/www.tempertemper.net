@@ -137,7 +137,12 @@
     <link rel="{{ hint }}" href="/pagefind/pagefind-entry.json" as="fetch" type="application/json" crossorigin="anonymous">
     <link rel="{{ hint }}" href="/pagefind/wasm.en.pagefind" as="fetch" type="application/wasm" crossorigin="anonymous">
 
-    {%- set css %}{%- include "critical.css" %}{% endset %}
+    {%- set css %}
+        {%- include "critical.css" %}
+        {%- if site.sponsor and site.sponsor.display %}
+            {%- include "sponsor.css" %}
+        {%- endif %}
+    {%- endset %}
     <style>{{- css | safe | replace("", "") -}}</style>
     <link rel="preload" href="/assets/css/non-critical.css?v={{ build.timestamp }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="/assets/css/non-critical.css?v={{ build.timestamp }}" /></noscript>

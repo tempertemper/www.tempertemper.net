@@ -1,0 +1,9 @@
+<section aria-label="Sponsor" class="sponsor">
+    <a rel="sponsored" href="{{ site.sponsor.url }}" tabindex="-1" aria-hidden="true">
+        <img height="256" width="256" class="thumbnail" src="/assets/img/sponsors/{{ site.sponsor.logo }}" alt="" />
+    </a>
+    <div class="content">
+        <h2>Sponsored by <a rel="sponsored" href="{{ site.sponsor.url }}">{{ site.sponsor.name }}</a></h2>
+        <p>{{ site.sponsor.message | smart | safe }}</p>
+    </div>
+</section>

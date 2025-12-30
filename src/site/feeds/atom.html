@@ -49,6 +49,13 @@ eleventyExcludeFromCollections: true
 
     <content type="html" xml:lang="en"><![CDATA[
       {{ post.templateContent | safe }}
+      {%- if site.sponsor and site.sponsor.display %}
+        <hr />
+        <h2>Sponsored by <a rel="sponsored" href="{{ site.sponsor.url }}">{{ site.sponsor.name }}</a></h2>
+        <p>{{ site.sponsor.message | smart | escape }}</p>
+        <p><a rel="sponsored" href="{{ site.sponsor.url }}"><img height="256" width="256" src="{{ site.url }}/assets/img/sponsors/{{ site.sponsor.logo }}" alt="" /></a></p>
+      {%- endif %}
+      <hr />
       <p>The article <a rel="nofollow" href="{{ site.url }}{{ post.url | replace('.html', '') }}">{{ post.data.title | smart | safe | replace("&nbsp;", " ") | replace("&shy;", "") }}</a> appeared first on <a rel="nofollow" href="{{ site.url }}">www.tempertemper.net</a>.</p>
     ]]></content>
   </entry>

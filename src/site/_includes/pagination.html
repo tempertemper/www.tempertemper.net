@@ -8,7 +8,7 @@
     {%- set quantity = collections.post.length %}
 {%- endif -%}
 <nav aria-label="pagination" class="pagination">
-    <p>I've written {{ quantity }} {{ typeOfThing }}; this is page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}. Go to:</p>
+    <p>I've written {{ quantity }} {{ typeOfThing }}{% if blog %} <a href="/blog/years">over the years</a>{% endif %}; this is page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}. Go to:</p>
     {%- set hrefs = pagination.hrefs %}
     {%- set isFirst = pagination.pageNumber == 0 %}
     {%- set isLast  = pagination.pageNumber == (hrefs.length - 1) %}

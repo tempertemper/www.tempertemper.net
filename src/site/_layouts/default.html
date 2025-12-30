@@ -20,7 +20,7 @@ layout: base.html
 {%- if isAbout -%}
     <article data-pagefind-body>
 {%- endif %}
-{%- if pagination and pagination.pageNumber > 0 and not year %}
+{%- if pagination and pagination.pageNumber > 0 and not year and not category %}
     <p>This is page {{ pagination.pageNumber + 1 }} of {{ pagination.hrefs.length }}.</p>
 {%- elif year %}
     {%- set yearList = collections.post | filterByYear(year | int) %}

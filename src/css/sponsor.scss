@@ -1,0 +1,71 @@
+@use './admin/variables' as variables;
+@use './admin/mixins--general' as generalMixins;
+@use './admin/mixins--typography' as typographyMixins;
+
+.sponsor {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  @include generalMixins.highlight-box;
+
+  h2 {
+    margin-top: 0;
+    @include typographyMixins.heading-m;
+  }
+
+  img {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  @media (min-width: variables.$xs) {
+    display: block;
+    padding-bottom: 0;
+
+    img {
+      float: right;
+      width: calc(50% - .5em);
+      margin-left: 1em;
+      margin-bottom: 1em;
+    }
+
+    .content {
+      margin-bottom: 1em;
+    }
+
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+
+  @media (min-width: variables.$m) {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1em;
+    padding-bottom: 1em;
+    grid-auto-flow: dense;
+
+    &::after {
+      display: none;
+    }
+
+    .content {
+      margin-bottom: 0;
+      grid-column: 1;
+    }
+
+    > a {
+      grid-column: 2;
+    }
+
+    img {
+      float: none;
+      width: auto;
+      margin: 0;
+    }
+  }
+}
