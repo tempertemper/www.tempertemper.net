@@ -5,6 +5,13 @@ layout: base.html
 <article>
     <h1>{{ title | smart | safe }}</h1>
     {{ content | safe }}
+    {%- if sponsor and sponsor.display %}
+        <h2>Brought to you by <a rel="sponsored" href="{{ sponsor.url }}">{{ sponsor.name }}</a></h2>
+        <p>{{ sponsor.message }}</p>
+        <a rel="sponsored" href="{{ sponsor.url }}" tabindex="-1" aria-hidden="true">
+            <img height="256" width="256" class="thumbnail" src="/assets/img/sponsors/{{ sponsor.logo }}" alt="" loading="lazy" decoding="async" />
+        </a>
+    {%- endif %}
 </article>
 
 {%- set previous = collections.newsletter | getPreviousCollectionItem(page) %}

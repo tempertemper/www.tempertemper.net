@@ -25,8 +25,18 @@ eleventyExcludeFromCollections: true
     {%- set postSummary = post.data.intro | markdown | striptags | trim -%}
     {%- set postTags = post.data.tags | tagsOnPage -%}
     {%- set body = post.templateContent -%}
-    {%- set footer = '<p>The article <a rel="nofollow" href="' + postUrl + '">' + postTitle + '</a> appeared first on <a rel="nofollow" href="' + site.url + '">www.tempertemper.net</a>.</p>\n' -%}
-    {%- set html = body + footer -%}
+    {%- set sponsor = '' -%}
+    {%- if site.sponsor and site.sponsor.display %}
+      {%- set sponsor = '<hr />\n' +
+        '<h2>Sponsored by <a rel="sponsored" href="' + site.sponsor.url + '">' + site.sponsor.name + '</a></h2>\n' +
+        '<p>' + (site.sponsor.message | smart | escape) + '</p>\n' +
+        '<p><a rel="sponsored" href="' + site.sponsor.url + '"><img height="256" width="256" src="' + site.url + '/assets/img/sponsors/' + site.sponsor.logo + '" alt="" /></a></p>\n'
+      -%}
+    {%- endif %}
+    {%- set footer = '<hr />\n' +
+      '<p>The article <a rel="nofollow" href="' + postUrl + '">' + postTitle + '</a> appeared first on <a rel="nofollow" href="' + site.url + '">www.tempertemper.net</a>.</p>\n'
+    -%}
+    {%- set html = body + sponsor + footer -%}
     {
       "id": {{ postUrl | dump | safe }},
       "url": {{ postUrl | dump | safe }},
