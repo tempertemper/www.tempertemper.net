@@ -17,3 +17,10 @@ summary {
     font-size: .7em;
   }
 }
+
+details {
+
+  + p {
+    margin-top: 1em;
+  }
+}
