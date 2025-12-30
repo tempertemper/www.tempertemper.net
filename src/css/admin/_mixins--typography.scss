@@ -15,7 +15,11 @@
 @mixin heading-line-height-large {
 
   & {
-    line-height: 1.025;
+    line-height: 1.1;
+
+    @media (min-width: variables.$m) {
+      line-height: 1.025;
+    }
   }
 }
 
