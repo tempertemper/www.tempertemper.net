@@ -30,7 +30,16 @@ export default function(config) {
     });
     fs.writeFileSync("src/site/_includes/critical.css", result.css);
     console.log("✓ Critical CSS → src/site/_includes/critical.css");
+
+    // CSS (Sponsor)
+    const sponsorResult = sass.compile("src/css/sponsor.scss", {
+      loadPaths: ["src/css"],
+      style: "compressed"
+    });
+    fs.writeFileSync("src/site/_includes/sponsor.css", sponsorResult.css);
+    console.log("✓ Sponsor CSS → src/site/_includes/sponsor.css");
   });
+
 
   // Build non-Critical CSS and search index
   config.on("eleventy.after", async () => {
