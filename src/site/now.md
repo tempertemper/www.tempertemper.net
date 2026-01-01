@@ -2,17 +2,17 @@
 title: The things I'm up to right now
 intro: |
     You've seen my [blog](/blog/) and [about page](/about) so you know what I'm interested in and how I ended up doing what I do, but what am I up to *right now*?
-updated: 2025-06-04
+updated: 2025-12-31
 layout: default
 permalink: now.html
 ---
 
-- Setting myself up as an [accessibility consultant](/approaches/consultancy), and ready to start a new project now
-- Enjoying our new [cat pals](https://mastodon.social/@tempertemper/115124787170284297)
-- Settling into our new house; we've been here 4 months now and it now feels like home (and [that view…](https://mastodon.social/@tempertemper/115175810602017803))
-- Tackling the brambles; our new garden is big and very overgrown, so we've made a start on pulling out the bramble bushes (not before picking the blackberries!)
-- Feeling refreshed after a week with my whole family in the Lake District
-- Relieved the kids are back at school; summer holidays are long and brutal
-- Enjoying that the new football season has begun
+- Happily contracting as an interaction designer in UK government again, after 3 months out post-Sage (I *really* needed that time); it feels good to get back into the nitty gritty of design
+- Enjoying our [new feline friends](https://mastodon.social/@tempertemper/115124787170284297), Stevie and Milo
+- Loving our new house and [its view…](https://mastodon.social/@tempertemper/115175810602017803); it's a decent size, so we (successfully!) hosted a Hogmanay party of 20-ish people to test it out
+- Helping my wife set up [her business as a psychodynamic counsellor](https://www.bearodriguez.com)
+- Excited for what 2026 has in store! My two themes are looking like health and broadcasting:
+    - I've been running again; only every few days, but it's feeling good to start finding my rhythm
+    - A burst of LinkedIn Live broadcasts have inspired me, and I'm looking forward to more, plus I have some plans for [my YouTube channel](https://www.youtube.com/tempertemper) too
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
