@@ -1,34 +1,27 @@
 <footer class="footer">
-    <nav aria-label="footer">
-        <ul class="social">
-            <li>
-                <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">
-                    {%- include "svg/linkedin.svg" -%}
-                    View my LinkedIn profile
-                </a>
-            </li>
-            <li>
-                <a href="https://mastodon.social/{{ site.author.mastodon | replace('@mastodon.social','')}}">
-                    {%- include "svg/mastodon.svg" -%}
-                    Follow me on Mastodon
-                </a>
-            </li>
-            <li>
-                <a href="https://bsky.app/profile/{{ site.author.blusky | replace('@','')}}">
-                    {%- include "svg/bluesky.svg" -%}
-                    Follow me on Bluesky
-                </a>
-            </li>
-        </ul>
+    <div class="links">
+        {%- set nav = [
+            { title: 'View my LinkedIn profile', url: 'https://www.linkedin.com/in/tempertemper/', icon: 'linkedin' },
+            { title: 'Get the newsletter', url: '/newsletter/', icon: 'envelope' },
+            { title: 'Follow me on Mastodon', url: 'https://mastodon.social/@tempertemper', icon: 'mastodon' },
+            { title: 'Subscribe on YouTube', url: 'https://www.youtube.com/tempertemper', icon: 'youtube' },
+            { title: 'Follow me on Bluesky', url: 'https://bsky.app/profile/tempertemper.bsky.social', icon: 'bluesky' }
+
+        ] %}
+        {%- set navLabel = "Social" %}
+        {% include "nav.html" %}
+
         {%- set nav = [
             { title: 'Blog', url: '/blog/' },
             { title: 'About', url: '/about' },
             { title: 'Portfolio', url: '/portfolio/' },
             { title: 'Search', url: '/search' },
-            { title: 'Contact', url: '/contact' }
+            { title: 'Contact', url: '/contact' },
+            { title: 'Sponsorship', url: '/sponsors' }
         ] %}
-        {% set navLabel = "Footer" %}
+        {%- set navLabel = "Footer" %}
         {% include "nav.html" %}
+
         {% set nav = [
             { title: 'Services', url: '/services/' },
             { title: 'Approaches', url: '/approaches/' },
@@ -36,9 +29,9 @@
             { title: 'Speaking', url: '/speaking/' },
             { title: 'Testimonials', url: '/testimonials' }
         ] %}
-        {% set navLabel = "More info" %}
+        {%- set navLabel = "More info" %}
         {% include "nav.html" %}
-    </nav>
+    </div>
     <p class="copyright">&copy;&nbsp;copyright 2009&nbsp;to&nbsp;{{ "" | getCurrentYear }}</p>
     <address class="adr">
         <span class="org">tempertemper Web Design Ltd</span>
@@ -49,11 +42,22 @@
     </address>
     <p class="company-details">Company number 07742506</p>
     <p class="company-details">VAT&nbsp;registration number&nbsp;219&nbsp;5624&nbsp;96</p>
-    <ul class="utility">
-        <li><a href="/sponsors">Sponsorship</a></li>
-        <li><a href="/privacy-policy">Privacy policy</a></li>
-        <li><a href="/accessibility-statement">Accessibility statement</a></li>
-        <li><a href="/terms">Terms&nbsp;of&nbsp;business</a></li>
-        <li><a href="https://github.com/tempertemper/tempertemper.net/blob/master/{{ page.inputPath }}">Edit this page on GitHub</a></li>
-    </ul>
+    <div class="utility">
+        {%- set githubEditLink = "https://github.com/tempertemper/tempertemper.net/blob/master/" ~ page.inputPath %}
+        {%- set nav = [
+            { title: 'Atom (RSS) feed', url: '/feeds/main.xml', icon: 'rss' },
+            { title: 'JSON feed', url: '/feeds/main.json', icon: 'json-feed' },
+            { title: 'Edit this page on GitHub', url: githubEditLink, icon: 'github' }
+        ] %}
+        {%- set navLabel = "Utility" %}
+        {% include "nav.html" %}
+
+        {% set nav = [
+            { title: 'Privacy policy', url: '/privacy-policy' },
+            { title: 'Accessibility statement', url: '/accessibility-statement' },
+            { title: 'Terms of business', url: '/terms' }
+        ] %}
+        {% set navLabel = "Legal" %}
+        {% include "nav.html" %}
+    </div>
 </footer>

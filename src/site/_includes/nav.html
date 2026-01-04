@@ -2,7 +2,12 @@
     <ul>
         {%- for item in nav %}
         <li>
-            <a href="{{ item.url | url }}" {%- if item.url == page.url | replace(".html", "") %} aria-current="page"{% endif %}>{{ item.title }}</a>
+            <a href="{{ item.url | url }}" {%- if item.url == page.url | replace(".html", "") %} aria-current="page"{% endif %}>
+                {%- if item.icon %}
+                    {%- include "svg/" ~ item.icon ~ ".svg" -%}
+                {% endif %}
+                {{ item.title }}
+            </a>
         </li>
         {%- endfor %}
     </ul>

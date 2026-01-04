@@ -20,7 +20,7 @@
     display: block;
   }
 
-  nav {
+  .links {
 
     ul {
       margin-top: 0;
@@ -32,32 +32,40 @@
       grid-template-rows: auto auto;
       column-gap: 1em;
 
-      & > ul:nth-child(1) { grid-column: 1 / -1; }
+      & > :nth-child(1) { grid-column: 1 / -1; }
     }
 
     @media (min-width: variables.$m) {
       grid-template-columns: repeat(4, 1fr);
 
-      & > ul:nth-child(1) { grid-column: 1 / span 2; }
-      & > ul:nth-child(2) { grid-column: 3; }
-      & > ul:nth-child(3) { grid-column: 4; }
+      & > :nth-child(1) { grid-column: 1 / span 2; }
+      & > :nth-child(2) { grid-column: 3; }
+      & > :nth-child(3) { grid-column: 4; }
+    }
+  }
+
+  .utility {
+    @media (min-width: variables.$xs) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 1em;
     }
   }
 
   ul {
     @include typographyMixins.remove-list-styling;
   }
-}
 
-.social {
+  li:has(svg) {
+    display: flex;
+  }
 
   svg {
-    $icon-width: 1.5em;
-    width: $icon-width;
-    height: auto;
-    flex: 0 0 $icon-width;
-    align-self: flex-start;
-    display: block;
+    $width: 1.2em;
+    width: $width;
+    height: $width;
     margin-right: .5em;
+    margin-top: .15em;
   }
 }
