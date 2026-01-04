@@ -14,6 +14,25 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.12.2] - 2026-01-04
+
+### Adds
+- Adds link to newsletter signup page in footer
+- Adds link to YouTube channel in footer
+- Adds RSS and JSON Feed links to footer
+- Adds newsletter, YouTube, RSS, JSON Feed, and GitHub icons
+
+### Changes
+- Tweaks wording of Newsletter signup page
+- Refactors nav template to include icons
+- Uses nav template for all footer link groups
+- Uses regular SVG canvas size for all icons
+- Makes footer links with icons the same height as other footer links
+
+### Removes
+- Removes 'Keep in touch' page
+
+
 ## [6.12.1] - 2025-12-30
 
 ### Adds
