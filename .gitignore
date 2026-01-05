@@ -10,3 +10,4 @@
 /src/site/_includes/sponsor.css
 /src/site/_includes/scripts.js
 tmp/
+.cache/

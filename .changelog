@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 - Removes AVIF and WEBP files from blog and case studies in src
 - Adds Eleventy Image to generate AVIF and WEBP files for blog, resources, and case studies
+- Only builds WEBP and AVIF images on first build or when an image is changed
 
 ----------
 
