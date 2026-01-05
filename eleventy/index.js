@@ -13,6 +13,9 @@ export default function(config) {
   // Watch JS for inline bundle rebuild
   config.addWatchTarget('src/js');
   config.addWatchTarget('src/css');
+  config.addWatchTarget('src/img/blog');
+  config.addWatchTarget('src/img/case-studies');
+  config.addWatchTarget('src/img/resources');
 
   // Build timestamp for cache‑busting
   config.on('eleventy.before', () => {
