@@ -17,7 +17,7 @@ My original branding was ok… I used the friendly-looking [Museo Sans](https://
 <picture>
     <source srcset="/assets/img/blog/tempertemper-logo--v1.0.avif" type="image/avif" />
     <source srcset="/assets/img/blog/tempertemper-logo--v1.0.webp" type="image/webp" />
-    <img src="/assets/img/blog/tempertemper-logo--v1.0.png" alt="The original tempertemper logo, using OCR-A in white against a blue background" width="800" height="450" decoding="async" />
+    <img src="/assets/img/blog/tempertemper-logo--v1.0.png" alt="The original tempertemper logo, using OCR-A in white against a blue background" width="800" height="450" decoding="async"  loading="lazy" />
 </picture>
 
 It served me well for the first few years, but it was always something I was looking to overhaul. I set five rules for a re-brand:

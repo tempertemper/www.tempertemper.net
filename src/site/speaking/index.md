@@ -45,7 +45,7 @@ Copy and paste your preferred bio for event websites and programmes:
 
 This image is free to use for event promotion.
 
-<img class="thumbnail" src="/assets/img/martin-underhill-tempertemper--square-1024x1024.jpg" alt="Picture of Martin Underhill" />
+<img class="thumbnail" src="/assets/img/martin-underhill-tempertemper--square-1024x1024.jpg" alt="Picture of Martin Underhill"  loading="lazy" />
 
 <ul>
     <li>

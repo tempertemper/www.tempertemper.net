@@ -21,7 +21,7 @@ By May 2012, after more than a year of trading, my business establishing nicely.
 <picture>
     <source srcset="/assets/img/blog/homepage-snapshot-2012-05.avif" type="image/avif" />
     <source srcset="/assets/img/blog/homepage-snapshot-2012-05.webp" type="image/webp" />
-    <img src="/assets/img/blog/homepage-snapshot-2012-05.jpg" alt="May 2012, with a gradient background in the header, lots of drop shadows and heavy use of the Courier New typewriter font" width="800" height="450" decoding="async" />
+    <img src="/assets/img/blog/homepage-snapshot-2012-05.jpg" alt="May 2012, with a gradient background in the header, lots of drop shadows and heavy use of the Courier New typewriter font" width="800" height="450" decoding="async"  loading="lazy" />
 </picture>
 
 

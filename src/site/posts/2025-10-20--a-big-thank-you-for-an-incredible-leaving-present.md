@@ -27,7 +27,7 @@ So added a wee bit to the pot and bought the set in time for my birthday, opened
 <picture>
     <source srcset="/assets/img/blog/millennium-falcon.avif" type="image/avif" />
     <source srcset="/assets/img/blog/millennium-falcon.webp" type="image/webp" />
-    <img src="/assets/img/blog/millennium-falcon.jpg" alt="The LEGO Millennium Falcon with the round radar dish, on a rustic wooden table; Han Solo and Chewbacca are in the cockpit." width="800" height="450" decoding="async" />
+    <img src="/assets/img/blog/millennium-falcon.jpg" alt="The LEGO Millennium Falcon with the round radar dish, on a rustic wooden table; Han Solo and Chewbacca are in the cockpit." width="800" height="450" decoding="async"  loading="lazy" />
 </picture>
 
 So thanks once again to Hannah for organising, and to *everyone* who threw a few quid in the pot. You've made this big kid very happy.
