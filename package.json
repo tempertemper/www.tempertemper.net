@@ -7,6 +7,7 @@
     "clear": "rm -rf dist",
     "build:site": "npx @11ty/eleventy --quiet",
     "build": "npm run clear && npm run build:site",
+    "build:image-preview": "npm run build && npx serve dist --no-clipboard",
     "serve": "npx @11ty/eleventy --serve --quiet",
     "start": "npm run clear && npm run serve",
     "staging": "npm run build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
