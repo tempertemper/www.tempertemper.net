@@ -4,7 +4,7 @@
   "description": "tempertemper's website",
   "type": "module",
   "scripts": {
-    "clear": "rm -rf dist .cache/eleventy-img-manifest.json",
+    "clear": "rm -rf dist",
     "build:site": "npx @11ty/eleventy --quiet",
     "build": "npm run clear && npm run build:site",
     "serve": "npx @11ty/eleventy --serve --quiet",
