@@ -24,10 +24,6 @@ One person had replied to my thank-you message with this, which summed it up bea
 
 So added a wee bit to the pot and bought the set in time for my birthday, opened it on the day, and set to work with my youngest, who loves LEGO too. We built about half of it together, which was a lot of fun, and I did the other half on my own while he was at school, which was a great way to unwind. It took just under a week to finish and it looks incredible!
 
-<picture>
-    <source srcset="/assets/img/blog/millennium-falcon.avif" type="image/avif" />
-    <source srcset="/assets/img/blog/millennium-falcon.webp" type="image/webp" />
-    <img src="/assets/img/blog/millennium-falcon.jpg" alt="The LEGO Millennium Falcon with the round radar dish, on a rustic wooden table; Han Solo and Chewbacca are in the cockpit." width="800" height="450" decoding="async"  loading="lazy" />
-</picture>
+<img src="/assets/img/blog/millennium-falcon.jpg" alt="The LEGO Millennium Falcon with the round radar dish, on a rustic wooden table; Han Solo and Chewbacca are in the cockpit." width="800" height="450" />
 
 So thanks once again to Hannah for organising, and to *everyone* who threw a few quid in the pot. You've made this big kid very happy.

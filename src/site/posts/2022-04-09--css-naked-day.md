@@ -30,8 +30,4 @@ If your site becomes unusable in any way, you’ll know you’ve got some work t
 
 Update: here's how this post looked on CSS Naked Day:
 
-<picture>
-    <source srcset="/assets/img/blog/css-naked-day.avif" type="image/avif" />
-    <source srcset="/assets/img/blog/css-naked-day.webp" type="image/webp" />
-    <img src="/assets/img/blog/css-naked-day.png" alt="A screenshot of this page as it looked on CSS Naked Day without any styling, showing sensibly ordered, semantic, readable content" width="800" height="450" loading="lazy" decoding="async" />
-</picture>
+<img src="/assets/img/blog/css-naked-day.png" alt="A screenshot of this page as it looked on CSS Naked Day without any styling, showing sensibly ordered, semantic, readable content" width="800" height="450" />

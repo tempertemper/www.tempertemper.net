@@ -83,7 +83,7 @@ The [typeface I use for headings](/blog/tempertempers-typefaces#fs-me) on my web
 - the `p` has a spur at the top-left
 - the `q` is a 180º rotation of the `b`, but descender leans very slightly to the right
 
-<img src="/assets/img/blog/fs-me.png" alt="Lowercase d, b, p, and q in the FS-Me typeface, showing how each is distinct, followed by their uppercase equivalents." width="800" height="450" decoding="async"  loading="lazy" />
+<img src="/assets/img/blog/fs-me.png" alt="Lowercase d, b, p, and q in the FS-Me typeface, showing how each is distinct, followed by their uppercase equivalents." width="800" height="450" />
 
 So I'm happy that each letter in FS-Me is distinct enough to use sentence case, which also means my headings are easier to scan.
 

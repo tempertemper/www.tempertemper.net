@@ -22,11 +22,7 @@ But this isn't a story about how I use a pattern, it's about how I contributed t
 
 When I first started work on the service, the hub page was causing problems. I'm laying no blame here at all as it pre-dated the now more established [GOV.UK Design System's Task List pattern](https://design-system.service.gov.uk/patterns/task-list-pages/).
 
-<picture>
-    <source srcset="/assets/img/case-studies/task-list--old.avif" type="image/avif" />
-    <source srcset="/assets/img/case-studies/task-list--old.webp" type="image/webp" />
-    <img src="/assets/img/case-studies/task-list--old.png" alt="The inherited task list pattern" width="800" height="640" loading="lazy" decoding="async" />
-</picture>
+<img src="/assets/img/case-studies/task-list--old.png" alt="The inherited task list pattern" width="800" height="640" />
 
 It's worth mentioning that the task list works in conjunction with the 'Submit application' section of the page, which provides the path forward, once all the business information sections have been completed.
 
@@ -36,11 +32,7 @@ We needed an incomplete state, so immediately I was deviating from the prescribe
 
 Our first iteration was to reverse the off-the-peg pattern's colours for a third state to make it more visually identifiable.
 
-<picture>
-    <source srcset="/assets/img/case-studies/task-list--incomplete-state.avif" type="image/avif" />
-    <source srcset="/assets/img/case-studies/task-list--incomplete-state.webp" type="image/webp" />
-    <img src="/assets/img/case-studies/task-list--incomplete-state.png" alt="The task list pattern with blank for 'not started', white text on a blue background for 'complete', and with a third state for 'incomplete' which has blue text on a white/transparent background" width="800" height="389" loading="lazy" decoding="async" />
-</picture>
+<img src="/assets/img/case-studies/task-list--incomplete-state.png" alt="The task list pattern with blank for 'not started', white text on a blue background for 'complete', and with a third state for 'incomplete' which has blue text on a white/transparent background" width="800" height="389" />
 
 We found a few issues here:
 
@@ -50,11 +42,7 @@ We found a few issues here:
 
 So we iterated by changing the colours to a more subdued and not-clickable-looking black and adding a more explicit 'Not started' status.
 
-<picture>
-    <source srcset="/assets/img/case-studies/task-list--black-no-blanks.avif" type="image/avif" />
-    <source srcset="/assets/img/case-studies/task-list--black-no-blanks.webp" type="image/webp" />
-    <img src="/assets/img/case-studies/task-list--black-no-blanks.png" alt="The task list pattern with black instead of blue, and 'Not started' instead of a blank space when the user hasn't stared a section" width="800" height="389" loading="lazy" decoding="async" />
-</picture>
+<img src="/assets/img/case-studies/task-list--black-no-blanks.png" alt="The task list pattern with black instead of blue, and 'Not started' instead of a blank space when the user hasn't stared a section" width="800" height="389" />
 
 After testing with both blank and the 'not started' tags, we were reassured that users found the ‘not started’ tag easier to use. We also observed no attempts to click the status tags. Success! Or was it…
 
@@ -69,11 +57,7 @@ Those with the background colour were stronger and therefore seen as more import
 
 The final round of testing we carried out was to strip the design back completely to remove any hierarchy.
 
-<picture>
-    <source srcset="/assets/img/case-studies/task-list--plain-text.avif" type="image/avif" />
-    <source srcset="/assets/img/case-studies/task-list--plain-text.webp" type="image/webp" />
-    <img src="/assets/img/case-studies/task-list--plain-text.png" alt="The task list pattern plain text for all statuses and no blanks" width="800" height="389" loading="lazy" decoding="async" />
-</picture>
+<img src="/assets/img/case-studies/task-list--plain-text.png" alt="The task list pattern plain text for all statuses and no blanks" width="800" height="389" />
 
 We had overwhelmingly positive results from usability testing with the text-only status tags. Users understood exactly what was required of them:
 

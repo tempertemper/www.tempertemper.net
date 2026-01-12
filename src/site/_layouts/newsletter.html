@@ -9,7 +9,7 @@ layout: base.html
         <h2>Brought to you by <a rel="sponsored" href="{{ sponsor.url }}">{{ sponsor.name }}</a></h2>
         <p>{{ sponsor.message }}</p>
         <a rel="sponsored" href="{{ sponsor.url }}" tabindex="-1" aria-hidden="true">
-            <img height="256" width="256" class="thumbnail" src="/assets/img/sponsors/{{ sponsor.logo }}" alt="" loading="lazy" decoding="async" />
+            <img height="256" width="256" class="thumbnail" src="/assets/img/sponsors/{{ sponsor.logo }}" alt="" />
         </a>
     {%- endif %}
 </article>

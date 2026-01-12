@@ -25,7 +25,7 @@ So I converted the image on my [About page](/about) to WebP, taking Geoff Graham
 ```html
 <picture>
     <source srcset="/assets/img/martin-underhill-tempertemper.webp" type="image/webp" />
-    <img src="/assets/img/martin-underhill-tempertemper.jpg" alt="Martin Underhill of tempertemper Web Design, holding a cup of tea and looking to his left, smiling." width="800" height="450" />
+<img src="/assets/img/martin-underhill-tempertemper.jpg" alt="Martin Underhill of tempertemper Web Design, holding a cup of tea and looking to his left, smiling." width="800" height="450" />
 </picture>
 ```
 
@@ -38,15 +38,15 @@ But if I'm going to give you some examples, we need some kind of control here, s
 
 Here's the JPEG:
 
-<img src="/assets/img/blog/webp--martin-underhill.jpg" alt="An image of Martin Underhill at around 50 kilobytes in JPEG format" width="800" height="450" loading="lazy" decoding="async" />
+<img src="/assets/img/blog/webp--martin-underhill.jpg" alt="An image of Martin Underhill at around 50 kilobytes in JPEG format" width="800" height="450" loading="lazy" decoding="async" eleventy:ignore />
 
 And here's the WebP:
 
-<img src="/assets/img/blog/webp--martin-underhill.webp" alt="An image of Martin Underhill at around 50 kilobytes in WebP format" width="800" height="450" loading="lazy" decoding="async" />
+<img src="/assets/img/blog/webp--martin-underhill.webp" alt="An image of Martin Underhill at around 50 kilobytes in WebP format" width="800" height="450" loading="lazy" decoding="async" eleventy:ignore />
 
 Not a *huge* difference, but let's take a closer look, first at the gradient where the light hits the solid-colour wall behind me:
 
-<img src="/assets/img/blog/webp--gradient.png" alt="The gradient from the wall behind me in my About page picture, first showing how it compresses as a JPEG and then with WebP. The WebP gradient is much smoother, subtler and less blocky." width="800" height="450" loading="lazy" decoding="async" />
+<img src="/assets/img/blog/webp--gradient.png" alt="The gradient from the wall behind me in my About page picture, first showing how it compresses as a JPEG and then with WebP. The WebP gradient is much smoother, subtler and less blocky." width="800" height="450" loading="lazy" decoding="async" eleventy:ignore />
 
 To highlight the gradient, I've used greyscale and darkened it; the JPEG gradient is blocky, where the WebP gradient is much more gradual and subtle.
 
@@ -55,7 +55,7 @@ Next, let's have a look at how each format compresses a face. I'd like to apolog
 - In order to show how a JPEG compares to a WebP, I've had to use a PNG, so the image isn't small: it weighs in at 353K, which is the sort of image size I'd normally avoid like the plague
 - The example uses my [About page](/about) picture again, so you're going to have to look at my ugly mug…
 
-<img src="/assets/img/blog/webp--face.png" alt="Two zoomed-in crops of my face, first the JPEG which shows more detail, then the WebP which shows slightly less detail." width="800" height="450" loading="lazy" decoding="async" />
+<img src="/assets/img/blog/webp--face.png" alt="Two zoomed-in crops of my face, first the JPEG which shows more detail, then the WebP which shows slightly less detail." width="800" height="450" loading="lazy" decoding="async" eleventy:ignore />
 
 The JPEG image is more defined, showing more detail, where the WebP (mercifully!) smooths over some freckles and wrinkles.
 

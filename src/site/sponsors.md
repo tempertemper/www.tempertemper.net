@@ -38,29 +38,17 @@ Your sponsor banner includes:
 
 Your brand name, logo, and message are presented in a banner at the top of <b>each blog post</b>. The banner is mobile responsive, of course, so it's presented smartly on all screen sizes:
 
-<picture>
-    <source srcset="/assets/img/sponsors/preview--blog-post.avif" type="image/avif" />
-    <source srcset="/assets/img/sponsors/preview--blog-post.webp" type="image/webp" />
-    <img src="/assets/img/sponsors/preview--blog-post.png" alt="asdf." width="1024" height="576" loading="lazy" decoding="async" />
-</picture>
+<img src="/assets/img/sponsors/preview--blog-post.png" alt="asdf." width="1024" height="576" />
 
 The same banner also appears at the top of the <b>blog listing page</b>, shown here in Dark Mode:
 
-<picture>
-    <source srcset="/assets/img/sponsors/preview--blog-list.avif" type="image/avif" />
-    <source srcset="/assets/img/sponsors/preview--blog-list.webp" type="image/webp" />
-    <img src="/assets/img/sponsors/preview--blog-list.png" alt="asdf." width="1024" height="576" loading="lazy" decoding="async" />
-</picture>
+<img src="/assets/img/sponsors/preview--blog-list.png" alt="asdf." width="1024" height="576" />
 
 <b>RSS and JSON feed subscribers</b> get the same 'Sponsored by…' message at the bottom of each post.
 
 <b>Newsletter subscribers</b> finish their read with a 'Brought to you by…' message:
 
-<picture>
-    <source srcset="/assets/img/sponsors/preview--email.avif" type="image/avif" />
-    <source srcset="/assets/img/sponsors/preview--email.webp" type="image/webp" />
-    <img src="/assets/img/sponsors/preview--email.png" alt="asdf." width="1024" height="576" loading="lazy" decoding="async" />
-</picture>
+<img src="/assets/img/sponsors/preview--email.png" alt="asdf." width="1024" height="576" />
 
 </details>
 
