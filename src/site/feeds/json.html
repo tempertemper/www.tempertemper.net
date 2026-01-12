@@ -30,7 +30,7 @@ eleventyExcludeFromCollections: true
       {%- set sponsor = '<hr />\n' +
         '<h2>Sponsored by <a rel="sponsored" href="' + site.sponsor.url + '">' + site.sponsor.name + '</a></h2>\n' +
         '<p>' + (site.sponsor.message | smart | escape) + '</p>\n' +
-        '<p><a rel="sponsored" href="' + site.sponsor.url + '"><img height="256" width="256" src="' + site.url + '/assets/img/sponsors/' + site.sponsor.logo + '" alt="" /></a></p>\n'
+        '<p><a rel="sponsored" href="' + site.sponsor.url + '"><img height="256" width="256" src="' + site.url + '/assets/img/sponsors/' + site.sponsor.logo + '" alt="" eleventy:ignore /></a></p>\n'
       -%}
     {%- endif %}
     {%- set footer = '<hr />\n' +
