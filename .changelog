@@ -11,11 +11,18 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-- Removes AVIF and WEBP files from blog and case studies in src
-- Adds Eleventy Image to generate AVIF and WEBP files for blog, resources, and case studies
-- Only builds WEBP and AVIF images on first build or when an image is changed
-
 ----------
+
+
+## [6.13.0] - 2026-01-13
+
+### Changes
+- Adds Eleventy Image and Eleventy Image Transform to generate AVIF and WEBP files, with some exclusions
+- Removes AVIF and WEBP files that were duplicates of a JPG or PNG
+- Strips picture element and some img element attributes that Eleventy Image adds
+
+### Adds
+- Adds local image preview script to package.json
 
 
 ## [6.12.2] - 2026-01-04
