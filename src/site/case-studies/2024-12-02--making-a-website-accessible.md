@@ -44,20 +44,12 @@ This was a long-standing issue, but tweaking the blue would have meant other bra
 Ant was happy to darken the blue very slightly from `#01a0e4` to `#019ddf`, which meant it would [hit the mark when used in headings](https://webaim.org/resources/contrastchecker/?fcolor=019DDF&bcolor=FFFFFF) and other large text. We also removed any use of it for smaller UI (user interface) elements like buttons.
 
 <figure>
-    <picture>
-        <source srcset="/assets/img/case-studies/gusto-research--colour-contrast--before.avif" type="image/avif" />
-        <source srcset="/assets/img/case-studies/gusto-research--colour-contrast--before.webp" type="image/webp" />
-        <img src="/assets/img/case-studies/gusto-research--colour-contrast--before.jpg" alt="The Gusto website's homepage header area, which uses white heading text and white all-caps navigation text against a bright blue background." width="1024" height="576" loading="lazy" decoding="async" />
-    </picture>
+    <img src="/assets/img/case-studies/gusto-research--colour-contrast--before.jpg" alt="The Gusto website's homepage header area, which uses white heading text and white all-caps navigation text against a bright blue background." width="1024" height="576" />
     <figcaption>The old website design used <code>#01a0e4</code> with white, a 2.93:1 contrast ratio, which was just short of the 3:1 required for large text, but a long way off the 4.5:1 required for smaller text such as the navigation links.</figcaption>
 </figure>
 
 <figure>
-    <picture>
-        <source srcset="/assets/img/case-studies/gusto-research--colour-contrast--after.avif" type="image/avif" />
-        <source srcset="/assets/img/case-studies/gusto-research--colour-contrast--after.webp" type="image/webp" />
-        <img src="/assets/img/case-studies/gusto-research--colour-contrast--after.jpg" alt="The Gusto website's homepage header area, which uses bright blue heading text against a white background, and very dark blue for other text on white." width="1024" height="576" loading="lazy" decoding="async" />
-    </picture>
+    <img src="/assets/img/case-studies/gusto-research--colour-contrast--after.jpg" alt="The Gusto website's homepage header area, which uses bright blue heading text against a white background, and very dark blue for other text on white." width="1024" height="576" />
     <figcaption>The lighter blue was darkened slightly to <code>#019ddf</code> to provide a 3.04:1 contrast ratio, meaning large text met the required threshold. Smaller text uses a much darker colour, usually <code>#0e2c5c</code>.</figcaption>
 </figure>
 

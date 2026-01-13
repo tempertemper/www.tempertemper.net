@@ -36,6 +36,8 @@ summaryImageAlt: Martin Underhill of tempertemper Web Design
         alt="Martin Underhill, a friendly white man with a bald head, short brown beard, and glasses. He’s wearing a casual dark blue shirt and is leaning against a grey stone wall, nursing a cup of tea."
         width="800"
         height="450"
+        eleventy:ignore
+        loading="eager"
         decoding="async" />
 </picture>
 

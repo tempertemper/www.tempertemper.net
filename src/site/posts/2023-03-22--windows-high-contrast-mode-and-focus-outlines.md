@@ -29,19 +29,11 @@ The focus outlines on my website are a thick black (in Light Mode) or white (in 
 
 Safari's `outline` styling has sharp-edged, which felt out of character on my website; there are weird diagonal hair-lines at each corner, like a picture frame:
 
-<picture>
-    <source srcset="/assets/img/blog/safari-outline-corners.avif" type="image/avif" />
-    <source srcset="/assets/img/blog/safari-outline-corners.webp" type="image/webp" />
-    <img src="/assets/img/blog/safari-outline-corners.png" alt="An up-close screenshot of a link on my website that has keyboard focus, showing a square-edged white outline with hair's-breadth diagonal lines in each corner." width="800" height="450" loading="lazy" decoding="async" />
-</picture>
+<img src="/assets/img/blog/safari-outline-corners.png" alt="An up-close screenshot of a link on my website that has keyboard focus, showing a square-edged white outline with hair's-breadth diagonal lines in each corner." width="800" height="450" />
 
 And it looks a bit gnarly when a [link wraps from one line to another](/blog/cleaner-focus-outlines-with-box-decoration-break):
 
-<picture>
-    <source srcset="/assets/img/blog/safari-outline-wrap.avif" type="image/avif" />
-    <source srcset="/assets/img/blog/safari-outline-wrap.webp" type="image/webp" />
-    <img src="/assets/img/blog/safari-outline-wrap.png" alt="An up-close screenshot of a link on my website that wraps onto two lines has keyboard focus, showing gaps in the white outline between each line of text." width="800" height="450" loading="lazy" decoding="async" />
-</picture>
+<img src="/assets/img/blog/safari-outline-wrap.png" alt="An up-close screenshot of a link on my website that wraps onto two lines has keyboard focus, showing gaps in the white outline between each line of text." width="800" height="450" />
 
 I would almost certainly have used `outline` if:
 

@@ -38,6 +38,7 @@ export default function(config) {
     });
     fs.writeFileSync("src/site/_includes/sponsor.css", sponsorResult.css);
     console.log("✓ Sponsor CSS → src/site/_includes/sponsor.css");
+
   });
 
 

@@ -80,11 +80,7 @@ By giving visitors to my website who require increased contrast the 'enhanced' l
 
 Here's how the website looks in Light, Dark, and Increased Contrast Modes:
 
-<picture>
-    <source srcset="/assets/img/blog/light-dark-contrast.avif" type="image/avif" />
-    <source srcset="/assets/img/blog/light-dark-contrast.webp" type="image/webp" />
-    <img src="/assets/img/blog/light-dark-contrast.jpg" alt="Three screenshots of the tempertemper.net homepage, showing Light Mode, Dark Mode, and the Increased Contrast version with white text on a black background." width="800" height="450" decoding="async" />
-</picture>
+<img src="/assets/img/blog/light-dark-contrast.jpg" alt="Three screenshots of the tempertemper.net homepage, showing Light Mode, Dark Mode, and the Increased Contrast version with white text on a black background." width="800" height="450" />
 
 I've also made a few other changes in order to reduce complexity further:
 

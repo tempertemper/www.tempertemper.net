@@ -14,11 +14,7 @@ I spotted [a tweet from Sarah Blahovec](https://twitter.com/Sblahov/status/15244
 
 > I can't believe I'm sitting in an ADA compliance webinar where this was just given as an example of compliant and accessible design.
 >
-> <picture>
->     <source srcset="/assets/img/blog/robson-square-steps-vancouver.avif" type="image/avif" />
->     <source srcset="/assets/img/blog/robson-square-steps-vancouver.webp" type="image/webp" />
->     <img class="natural-dimensions" src="/assets/img/blog/robson-square-steps-vancouver.jpg" alt="A set of stairs that has a ramp zigzagging back and forth cutting down the steps. The steps are frequently interrupted by the ramp and there are no handrails except for at the side of the stairs." width="400" height="300" loading="lazy" decoding="async" />
-> </picture>
+> <img class="natural-dimensions" src="/assets/img/blog/robson-square-steps-vancouver.jpg" alt="A set of stairs that has a ramp zigzagging back and forth cutting down the steps. The steps are frequently interrupted by the ramp and there are no handrails except for at the side of the stairs." width="400" height="300" />
 
 The most interesting reply to the tweet [highlighted the legal compliance](https://twitter.com/MurphyJ/status/1524503940699758592) of the ramp:
 
