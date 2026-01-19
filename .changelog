@@ -14,6 +14,15 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.13.1] - 2026-01-19
+
+### Changes
+- Uses blue colour for scrollbars
+
+### Fixes
+- Fixes missing table borders in light mode
+
+
 ## [6.13.0] - 2026-01-13
 
 ### Changes

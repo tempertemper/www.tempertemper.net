@@ -71,7 +71,7 @@ export default function(config) {
       return content;
     }
 
-    // Remove width descriptors so width/height attributes control layout.
+    // Remove width descriptors on srcset attributes so img width/height attributes control layout
     return content.replace(/srcset="([^"]+)"/g, (_, value) => {
       const cleaned = value
         .split(',')

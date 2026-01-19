@@ -59,6 +59,13 @@ td {
   padding: .25em .75em;
   vertical-align: text-top;
   border: 1px solid white;
+  border: 2px solid variables.$colour-black;
+  @include modeMixins.dark-mode() {
+    border: 1px solid variables.$colour-white;
+  }
+  @include modeMixins.high-contrast() {
+    border: 1px solid variables.$colour-white;
+  }
 
   &:first-of-type {
     border-left: none;
@@ -77,7 +84,6 @@ th {
 
 td {
   font-weight: 400;
-  border: 1px solid white;
 }
 
 tr {
