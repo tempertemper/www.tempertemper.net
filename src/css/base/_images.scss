@@ -20,6 +20,13 @@ figcaption {
 }
 
 figure {
+  margin-left: 0;
+  margin-right: 0;
+
+  @media (min-width: variables.$s) {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
 
   @media (min-width: variables.$l) {
     @include generalMixins.overspill;
