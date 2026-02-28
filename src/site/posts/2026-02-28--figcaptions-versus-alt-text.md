@@ -68,7 +68,6 @@ Now let's imagine the same image appeared on a longer page which referenced a fe
 ```html
 <figure>
     <img src="/assets/img/martin-underhill-tempertemper.jpg" alt="A friendly white man with a bald head, short brown beard, and glasses. He's wearing a casual dark blue shirt and is leaning against a grey stone wall, nursing a cup of tea." />
-
     <figcaption>Martin Underhill of tempertemper</figcaption>
 </figure>
 ```
@@ -80,7 +79,6 @@ This pattern works well for other articles, for example an article about footbal
 ```html
 <figure>
     <img src="a-tackle.jpg" alt="Two footballers aggressively challenging for the ball in the air; the player in black and white has reached the ball with his head before the one in light blue" />
-
     <figcaption>Newcastle United's Dan Burn kept Manchester City's Erling Haaland quiet for most of the game</figcaption>
 </figure>
 ```
@@ -96,7 +94,6 @@ One image and a bulleted list for each occurrence usually does the job here, but
     <img src="issue1a.png" alt="A text link that has keyboard focus but no visible focus state" />
     <img src="issue1b.png" alt="A button that has keyboard focus but no visible focus state" />
     <img src="issue1c.png" alt="A checkbox that has keyboard focus but no visible focus state" />
-
     <figcaption>Keyboard focus states are not present</figcaption>
 </figure>
 ```
@@ -110,7 +107,6 @@ Again when auditing, I sometimes have the opposite situation, where one image wo
 ```html
 <figure>
     <img src="figure1.png" alt="A list of icons, each representing a different service that is on offer." />
-
     <figcaption>Figure 1: Icons are used instead of visible text for navigation to each service.</figcaption>
 </figure>
 ```
@@ -129,7 +125,6 @@ If the image is a photo, screen grab, illustration, the JPG or PNG format is fin
         </title>
         <!-- SVG paths -->
     </svg>
-
     <figcaption>Newsletter subscribers continue to increase over time</figcaption>
 </figure>
 ```
