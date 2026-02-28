@@ -14,6 +14,18 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.13.3] - 2026-02-28
+
+### Fixes
+- Updates a few packages to fix minimatch security issue
+
+
+## [6.13.2] - 2026-01-23
+
+### Fixes
+- Removes `<figure>` margin on small screens to give image more space
+
+
 ## [6.13.1] - 2026-01-19
 
 ### Changes
