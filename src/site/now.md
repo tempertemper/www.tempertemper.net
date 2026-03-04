@@ -11,7 +11,7 @@ permalink: now.html
 - Enjoying our [new feline friends](https://mastodon.social/@tempertemper/115124787170284297), Stevie and Milo
 - Loving our new house and [its view…](https://mastodon.social/@tempertemper/115175810602017803); it's a decent size, so we (successfully!) hosted a Hogmanay party of 20-ish people to test it out
 - Helping my wife set up [her business as a psychodynamic counsellor](https://www.bearodriguez.com)
-- Playing The Legend of Zelda: Ocarina of Time with my son on his new Switch; I last played it when I was first released and I remember almost nothing, so it's great to be solving all the puzzles together!
+- Playing The Legend of Zelda: Ocarina of Time with my son on his new Switch; I last played it when it was first released and I remember almost nothing, so it's great to be solving all the puzzles together!
 - Starting a habit of 50 press-ups and 50 squats every morning
 - Still struggling to get into a rhythm with the running; I'll get there, but it's tougher than it has been in the past
 
