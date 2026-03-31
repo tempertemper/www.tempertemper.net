@@ -1,6 +1,6 @@
 ---
 title: A bugbear about aria-label
-intro: asdf
+intro: Labels are labels and names are names, except `aria-label` which is a name…
 date: 2026-03-31
 tags:
     - Accessibility
