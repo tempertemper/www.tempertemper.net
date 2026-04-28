@@ -115,7 +115,7 @@ I might then reference 'Figure 1' in a number of separate-but-related accessibil
 
 ### Interesting formats
 
-If the image is a photo, screen grab, illustration, the JPG or PNG format is fine (or something similar like [WEBP](/blog/using-webp-images) or [AVIF](/blog/avif-image-compression-is-incredible)), but sometimes a diagram or chart might be best as an SVG. You can reference the SVG from an `<img />` element, of course, but you can also embed the SVG directly on the page:
+If the image is a photo, screen grab, illustration, the JPG or PNG format is fine (or something similar like [WebP](/blog/using-webp-images) or [AVIF](/blog/avif-image-compression-is-incredible)), but sometimes a diagram or chart might be best as an SVG. You can reference the SVG from an `<img />` element, of course, but you can also embed the SVG directly on the page:
 
 ```html
 <figure>
