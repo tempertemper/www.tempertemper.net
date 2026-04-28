@@ -2,21 +2,19 @@
 layout: base.html
 ---
 
-<article>
-    <h1>
-        {%- if heading %}
-            {{- heading | smart | safe }}
-        {%- elif category %}
-            {{- category | smart | safe }}
-        {%- else %}
-            {{- title | smart | safe }}
-        {%- endif %}
-    </h1>
-    {%- if intro and not hideIntro %}
-        {{- intro | markdown | safe }}
+<h1>
+    {%- if heading %}
+        {{- heading | smart | safe }}
+    {%- elif category %}
+        {{- category | smart | safe }}
+    {%- else %}
+        {{- title | smart | safe }}
     {%- endif %}
-    {{- content | safe }}
-</article>
+</h1>
+{%- if intro and not hideIntro %}
+    {{- intro | markdown | safe }}
+{%- endif %}
+{{- content | safe }}
 
 <section aria-labelledby="expertise" class="teaser">
     <h2 id="expertise">How I can help</h2>
