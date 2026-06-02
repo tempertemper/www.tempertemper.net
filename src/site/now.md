@@ -2,15 +2,15 @@
 title: The things I'm up to right now
 intro: |
     You've seen my [blog](/blog/) and [about page](/about) so you know what I'm interested in and how I ended up doing what I do, but what am I up to *right now*?
-updated: 2026-05-01
+updated: 2026-06-02
 layout: default
 permalink: now.html
 ---
 
-- Finished playing The Legend of Zelda: Ocarina of Time with my son on his new Switch! Majora's Mask next, but we'll wait until later in the year when the nights get dark again
-- Decided to renovate one of my guitars; [I've dismantled it](https://mastodon.social/@tempertemper/116421436772490923), sanded it down, and the next step is a respray
+- [Renovating a guitar](https://mastodon.social/@tempertemper/116421436772490923); it's a long process and I didn't grain-fill as well as I should've so I may need to start again
+- Wrestling with the garden, now that the warm weather is here and it has burst back into life; we've been to the tip with 10 1m³ rubble bags so far and are praying to the garden bin gods every fortnight
+- Not enjoying the wildlife the cats have started bringing in again; yesterday it was a young starling, but we've had a wood pigeon, a baby blackbird, and two shrews already this year
+- Watching as the finishing line for my wife's phsychotherapy course comes into view! A couple of weekend intensives left in her last year of study, then it's the monster final assignment
 - Starting a habit of 50 press-ups and 50 squats every morning
-- Still struggling to get into a rhythm with the running; I'll get there, but it's tougher than it has been in the past
-- Just renewed my contract in UK government for 12 months; still really enjoying the nitty gritty of interaction design again after so long in accessibility
 
 <i>This page was inspired by [Derek Sivers' nownownow.com](https://nownownow.com/about).</i>
