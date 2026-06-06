@@ -4,6 +4,16 @@ intro: I'm a UK-based accessibility consultant and speaker, available for confer
 permalink: speaking/index.html
 ---
 
+<figure>
+    <img
+        src="/assets/img/speaking/access-given.jpg"
+        alt="A profile shot of Martin Underhill on stage, gesturing towards the slide projected behind him with his open left hand. The slide reads ‘Beyond components: building accessible experiences'."
+        width="800"
+        height="450"
+        loading="eager" />
+    <figcaption>Martin on stage at <a href="https://accessgiven.co.uk">Access:Given</a> in Newcastle upon Tyne, 2026</figcaption>
+</figure>
+
 I deliver talks, workshops, and hands-on labs focused on practical accessibility. My work focuses on how accessibility fits into product development, with content tailored to designers, developers, testers, and product managers. I aim to build capability, confidence, and a shared responsibility, covering topics such as:
 
 - Making sense of WCAG without losing sight of users
@@ -12,8 +22,16 @@ I deliver talks, workshops, and hands-on labs focused on practical accessibility
 - Accessibility testing in practice, beyond automated tools
 - Navigating accessibility trade-offs in real products
 
-I’m also happy to tailor the topic to whatever accessibility-related area you’d like me to speak about.
+I'm also happy to tailor the topic to whatever accessibility-related area you'd like me to speak about.
 
+<figure>
+    <img
+        src="/assets/img/speaking/natter.jpg"
+        alt="Martin Underhill on stage in front of a presentation slide reading “Creating a culture of accessibility”; he is smiling and gesturing, and the visible audience members are smiling too."
+        width="800"
+        height="450" />
+    <figcaption>Martin presenting ‘Creating a culture of accessibility' at <a href="https://www.natter.community">Natter</a> in Manchester, 2024</figcaption>
+</figure>
 
 ## Bio
 
@@ -58,7 +76,7 @@ This image is free to use for event promotion.
 
 ### Alt/descriptive text
 
-Martin Underhill, a friendly white man with a bald head, short brown beard, and glasses. He’s wearing a casual dark blue shirt and is leaning against a grey stone wall.
+Martin Underhill, a friendly white man with a bald head, short brown beard, and glasses. He's wearing a casual dark blue shirt and is leaning against a grey stone wall.
 
 
 <script>
