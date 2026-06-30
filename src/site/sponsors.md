@@ -64,8 +64,8 @@ The same banner also appears at the top of the <b>blog listing page</b>, shown h
 
 ## Audience
 
-- 35,000+ unique visitors each month
-- 140,000+ monthly pageviews
+- 50,000+ unique visitors each month
+- 150,000+ monthly pageviews
 - 1,000+ newsletter subscribers
 - Around 1,200 RSS feed subscribers
 
