@@ -15,22 +15,32 @@ summaryImageAlt: Martin Underhill of tempertemper Web Design
     <source
         srcset="/assets/img/martin-underhill-tempertemper-square.avif"
         type="image/avif"
-        media="(max-width: 600px)" />
+        media="(max-width: 600px)"
+        width="450"
+        height="450" />
     <source
         srcset="/assets/img/martin-underhill-tempertemper-square.webp"
         type="image/webp"
-        media="(max-width: 600px)" />
+        media="(max-width: 600px)"
+        width="450"
+        height="450" />
     <source
         srcset="/assets/img/martin-underhill-tempertemper-square.jpg"
         type="image/jpeg"
-        media="(max-width: 600px)" />
+        media="(max-width: 600px)"
+        width="450"
+        height="450" />
     <!-- Default 16:9 -->
     <source
         srcset="/assets/img/martin-underhill-tempertemper.avif"
-        type="image/avif" />
+        type="image/avif"
+        width="800"
+        height="450" />
     <source
         srcset="/assets/img/martin-underhill-tempertemper.webp"
-        type="image/webp" />
+        type="image/webp"
+        width="800"
+        height="450" />
     <img
         src="/assets/img/martin-underhill-tempertemper.jpg"
         alt="Martin Underhill, a friendly white man with a bald head, short brown beard, and glasses. He’s wearing a casual dark blue shirt and is leaning against a grey stone wall, nursing a cup of tea."
