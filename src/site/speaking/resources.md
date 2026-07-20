@@ -11,7 +11,7 @@ intro: |
 Copy and paste your preferred bio for event websites and programmes:
 
 <p id="bio-short">
-    Martin Underhill is an accessibility consultant with over a decade of experience working on accessible digital products. He has been writing and obsessing over semantic markup since 2002, and takes a pragmatic, real-world approach to accessibility shaped by years working on live products. Martin works closely with designers and developers, helping teams understand not just what to do, but why it matters.
+    Martin Underhill is an accessibility consultant with over a decade of experience working on accessible digital products. He has been writing and obsessing over semantic markup since 2002, and takes a pragmatic approach to accessibility. Martin works closely with designers and developers, helping teams understand not just what to do, but why it matters.
 </p>
 
 <button type="button" data-copy-target="bio-short">
@@ -21,10 +21,10 @@ Copy and paste your preferred bio for event websites and programmes:
 <details>
     <summary>Long bio</summary>
     <div id="bio-long">
-        <p>Martin Underhill is an accessibility consultant with over a decade of experience working on accessible digital products. He has been writing and obsessing over semantic markup since 2002, and takes a pragmatic, real-world approach to accessibility shaped by years working on live products. Martin works closely with designers and developers, helping teams understand not just what to do, but why it matters.</p>
-        <p>Until recently, Martin was Accessibility Lead at Sage, a FTSE 100 software company, responsible for accessibility across more than 40 products used in 23 countries. His work focused on embedding accessibility into everyday practice; building organisational capability, establishing governance, and supporting teams to deliver accessible outcomes in real-world product environments.</p>
-        <p>Martin now works independently advising organisations on accessibility strategy, regulatory alignment, and sustainable implementation. His work spans WCAG and EN 301 549 conformance, compliance with accessibility legislation such as the European Accessibility Act, and guiding teams beyond audit-driven approaches towards long-term, embedded accessibility.</p>
-        <p>A long-time community organiser and speaker, Martin co-founded Frontend NE and has spoken at conferences and events across the UK. His talks are practical and experience-led, often incorporating hands-on labs and real examples, and focus on helping teams apply accessibility confidently in everyday product work.</p>
+        <p>Martin Underhill is an accessibility consultant with over a decade of experience working on accessible digital products. He has been writing and obsessing over semantic markup since 2002, and takes a pragmatic approach to accessibility. Martin works closely with designers and developers, helping teams understand not just what to do, but why it matters.</p>
+        <p>For five years, Martin was Accessibility Lead at Sage, a FTSE 100 software company, responsible for accessibility across more than 40 products used in 23 countries. He focused on embedding accessibility into everyday practice by building organisational capability, establishing governance, and helping teams deliver more accessible products.</p>
+        <p>Martin now works independently, helping organisations make sense of complex accessibility requirements and turn them into practical, sustainable ways of working. He advises on accessibility strategy, standards and legislation, and supports teams moving beyond one-off audits towards accessibility that is embedded throughout product development.</p>
+        <p>A long-time community organiser and speaker, Martin co-founded Frontend NE and has spoken at conferences and events across the UK. His talks make accessibility approachable through clear explanations and examples drawn from years of product work, helping teams apply accessibility confidently in their everyday work.</p>
     </div>
     <button type="button" data-copy-target="bio-long">
         Copy long bio text
