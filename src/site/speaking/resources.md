@@ -84,7 +84,13 @@ Martin Underhill, a friendly-looking man with a bald head, short brown beard, an
             textarea.select();
 
             try {
-                document.execCommand('copy');
+                const copied = document.execCommand('copy');
+
+                if (!copied) {
+                    return Promise.reject();
+                }
+
+                return Promise.resolve();
             } finally {
                 document.body.removeChild(textarea);
             }
