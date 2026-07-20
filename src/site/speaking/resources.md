@@ -59,7 +59,17 @@ Martin Underhill, a friendly-looking man with a bald head, short brown beard, an
 <script>
     (function () {
         function copyTextFromElement(element) {
-            const text = element.innerText.trim();
+            const paragraphs = Array.from(element.children);
+            const containsOnlyParagraphs =
+                paragraphs.length > 0 &&
+                paragraphs.every(function (child) {
+                    return child.tagName === 'P';
+                });
+            const text = containsOnlyParagraphs
+                ? paragraphs.map(function (paragraph) {
+                    return paragraph.innerText.trim();
+                }).join('\n\n')
+                : element.innerText.trim();
 
             if (navigator.clipboard && window.isSecureContext) {
                 return navigator.clipboard.writeText(text);
