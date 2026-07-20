@@ -1,5 +1,5 @@
 {
   "layout": "default.html",
-  "cta": true,
-  "tags" : ["speaking"]
+  "permalink": "speaking/{{ customURL if customURL else title | slugify | safe }}.html",
+  "cta": true
 }
