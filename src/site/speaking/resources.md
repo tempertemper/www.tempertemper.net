@@ -47,9 +47,13 @@ This image is free to use for event promotion.
     </li>
 </ul>
 
+No photo credit is required.
+
 ### Alt/descriptive text
 
 Martin Underhill, a friendly white man with a bald head, short brown beard, and glasses. He's wearing a casual dark blue shirt and is leaning against a grey stone wall.
+
+
 
 
 <script>
