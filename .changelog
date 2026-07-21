@@ -11,6 +11,26 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds speaking events page
+- Adds photo credit details to speaker resources
+- New filter to group dated list items by year
+
+### Changees
+- Moves speaker resources to a separate page
+- Outputs Markdown-style double line break for multi-paragraph speaker bio
+- Reworks long speaker bio slightly
+- Allows omission of year in date filter
+- Makes text 'Copy' buttons progressive enhancement rather than graceful degradation
+- Changes JavaScript scripts builds to allow scripts that apply to  individual pages
+- Moves copy-buttons JavaScript out of the page and into the central scripts directory
+
+### Fixes
+- Fix clipboard fallback on speaker resources page
+
+### Removes
+- Removes mention of my ethnicity from the image alt text
+
 ----------
 
 
