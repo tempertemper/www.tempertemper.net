@@ -29,9 +29,6 @@
 
   &:focus:not(:focus-visible) {
     outline: none;
-    @include modeMixins.dark-mode() {
-      outline: none;
-    }
   }
 
   &:focus-visible {
