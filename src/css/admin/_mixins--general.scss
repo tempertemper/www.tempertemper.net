@@ -55,27 +55,6 @@
   @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
   @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
 
-  a {
-
-    &:focus {
-      background-color: variables.$colour-highlight;
-      @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
-      @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
-    }
-
-    &:focus:not(:focus-visible) {
-      background-color: transparent;
-      @include modeMixins.dark-mode($background: transparent);
-      @include modeMixins.high-contrast($background: transparent);
-    }
-
-    &:focus-visible {
-      background-color: variables.$colour-highlight;
-      @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
-      @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
-    }
-  }
-
   > h2,
   > h3 {
     margin-top: .25em;

@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes redundant mode styles from links
 - Uses current colour for table borders
 - Uses current colour for focus outlines
+- Removes unnecessary link focus backgrounds
 
 ----------
 

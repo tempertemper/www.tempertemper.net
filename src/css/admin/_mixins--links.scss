@@ -24,39 +24,28 @@
   }
 
   &:focus {
-    background-color: variables.$colour-white;
     outline: 3px solid variables.$colour-black;
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @include modeMixins.dark-mode($background: variables.$colour-dark-mode-main) {
-      outline: 3px solid variables.$colour-white;
-      outline-offset: 1px;
-    }
-    @include modeMixins.high-contrast($background: variables.$colour-high-contrast-main) {
+    @include modeMixins.dark-mode() {
       outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
   }
 
   &:focus:not(:focus-visible) {
-    background-color: transparent;
     outline: none;
     -webkit-box-decoration-break: slice;
     box-decoration-break: slice;
   }
 
   &:focus-visible {
-    background-color: variables.$colour-white;
     outline: 3px solid variables.$colour-black;
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @include modeMixins.dark-mode($background: variables.$colour-dark-mode-main) {
-      outline: 3px solid variables.$colour-white;
-      outline-offset: 1px;
-    }
-    @include modeMixins.high-contrast($background: variables.$colour-high-contrast-main) {
+    @include modeMixins.dark-mode() {
       outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
