@@ -24,4 +24,4 @@ I deliver talks, workshops, and hands-on labs focused on practical accessibility
 
 I'm also happy to tailor the topic to whatever accessibility-related area you'd like me to speak about.
 
-For my bio and photo, check out my [speaker resources page](/speaking/resources).
+See [where I've spoken](/speaking/events), with recordings where available. For my bio and photo, check out my [speaker resources page](/speaking/resources).

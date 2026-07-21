@@ -101,4 +101,24 @@ export default function(config) {
           ''
       );
   });
+
+  // Group dated items by year
+  config.addFilter('groupByYear', (items) => {
+    const groups = new Map();
+
+    items.forEach((item) => {
+      const year = item.date.slice(0, 4);
+
+      if (!groups.has(year)) {
+        groups.set(year, []);
+      }
+
+      groups.get(year).push(item);
+    });
+
+    return Array.from(groups, ([year, items]) => ({
+      year,
+      items,
+    }));
+  });
 }
