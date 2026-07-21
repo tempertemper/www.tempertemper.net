@@ -44,11 +44,7 @@ th,
 td {
   padding: .25em .75em;
   vertical-align: text-top;
-  border: 1px solid white;
-  border: 2px solid variables.$colour-black;
-  @include modeMixins.dark-mode() {
-    border: 1px solid variables.$colour-white;
-  }
+  border: 1px solid currentColor;
 
   &:first-of-type {
     border-left: none;
