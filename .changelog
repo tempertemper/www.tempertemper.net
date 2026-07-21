@@ -26,6 +26,7 @@ All notable changes to this project will be documented in this file. The format 
 - Changes JavaScript scripts builds to allow scripts that apply to  individual pages
 - Moves copy-buttons JavaScript out of the page and into the central scripts directory
 - Links to speaking archive page from About page
+- Changes speaking section in footer nav groupings
 
 ### Fixes
 - Fix clipboard fallback on speaker resources page
