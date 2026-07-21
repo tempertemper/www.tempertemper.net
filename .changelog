@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes redundant button focus style
 - Removes unused footer imports
 - Removes explicity declared default navigation flex direction
+- Removes redundant root box sizing
 
 ----------
 
