@@ -44,12 +44,6 @@
     outline: none;
     -webkit-box-decoration-break: slice;
     box-decoration-break: slice;
-    @include modeMixins.dark-mode($background: transparent) {
-      outline: none;
-    }
-    @include modeMixins.high-contrast($background: transparent) {
-      outline: none;
-    }
   }
 
   &:focus-visible {

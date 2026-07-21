@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 - Removes unnecessary dark mode variant for error border colour
 - Removes redundant mode styles from tables
+- Removes redundant mode styles from links
 
 ----------
 
