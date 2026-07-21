@@ -16,29 +16,15 @@
       outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
-    @include modeMixins.high-contrast() {
-      outline: 3px solid variables.$colour-white;
-      outline-offset: 1px;
-    }
   }
 
   &:focus:not(:focus-visible) {
     outline: none;
-    @include modeMixins.dark-mode() {
-      outline: none;
-    }
-    @include modeMixins.high-contrast() {
-      outline: none;
-    }
   }
 
   &:focus-visible {
     box-shadow: 0 0 0 4px variables.$colour-black;
     @include modeMixins.dark-mode() {
-      outline: 3px solid variables.$colour-white;
-      outline-offset: 1px;
-    }
-    @include modeMixins.high-contrast() {
       outline: 3px solid variables.$colour-white;
       outline-offset: 1px;
     }
@@ -61,9 +47,6 @@ td {
   border: 1px solid white;
   border: 2px solid variables.$colour-black;
   @include modeMixins.dark-mode() {
-    border: 1px solid variables.$colour-white;
-  }
-  @include modeMixins.high-contrast() {
     border: 1px solid variables.$colour-white;
   }
 
