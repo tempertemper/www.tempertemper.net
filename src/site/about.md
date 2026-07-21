@@ -99,7 +99,7 @@ In 2015 I co-founded Frontend NE, a monthly frontend web development meetup and 
 
 ### Speaking
 
-Although I'm an [introvert](https://www.ted.com/talks/susan_cain_the_power_of_introverts?language=en), I'm certainly not shy! In fact, I really enjoy presenting ideas to audiences, and do so regularly as [part of my day-to-day work](/services/talks), as well externally at [tech meetups](https://youtu.be/rMFoX0gzLfA).
+Although I'm an [introvert](https://www.ted.com/talks/susan_cain_the_power_of_introverts?language=en), I'm certainly not shy! In fact, I really enjoy presenting ideas to audiences, and do so regularly as [part of my day-to-day work](/services/talks), as well externally at [conferences and tech meetups](/speaking/events).
 
 ### Training and coaching
 

@@ -24,6 +24,7 @@ All notable changes to this project will be documented in this file. The format 
 - Makes text 'Copy' buttons progressive enhancement rather than graceful degradation
 - Changes JavaScript scripts builds to allow scripts that apply to  individual pages
 - Moves copy-buttons JavaScript out of the page and into the central scripts directory
+- Links to speaking archive page from About page
 
 ### Fixes
 - Fix clipboard fallback on speaker resources page
