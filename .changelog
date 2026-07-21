@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes unnecessary link focus backgrounds
 - Removes redundant button focus style
 - Removes unused footer imports
+- Removes explicity declared default navigation flex direction
 
 ----------
 
