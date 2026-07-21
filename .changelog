@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file. The format 
 - Adds speaking events page
 - Adds photo credit details to speaker resources
 - New filter to group dated list items by year
+- Links to speaking section from talks services page, and vice versa
 
 ### Changees
 - Moves speaker resources to a separate page

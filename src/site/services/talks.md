@@ -5,16 +5,16 @@ intro: Talks on accessibility that raise awareness, share real-world insight, an
 order: 4
 ---
 
-I give talks that raise awareness of accessibility and inspire people to think differently about how they design and build digital products. These might be at conferences, company events, or in-house sessions such as [Global Accessibility Awareness Day](https://accessibility.day).
+I give talks that raise awareness of accessibility and inspire people to think differently about how they design and build digital products. These can form part of company events, internal learning programmes, or awareness initiatives such as [Global Accessibility Awareness Day](https://accessibility.day).
 
 Talks work well when you want to spark interest, start a conversation, or motivate people who are new to accessibility. They are less about hands-on skills and more about showing why accessibility matters and what it looks like in practice. Talks can also play a part in [building culture and community](/services/culture), for example as part of awareness days or ongoing learning groups.
+
 
 ## Format
 
 Talks can be short, around 20 to 30 minutes, or run for up to an hour with time for questions and discussion. They can be delivered remotely or in person, depending on what works best for your audience.
 
-My style is informal and engaging, making sessions accessible and relevant for groups large and small; a recent example is my talk [Creating a Culture of Accessibility](https://www.youtube.com/watch?v=rMFoX0gzLfA) at Natter in Manchester.
-
+My style is informal and engaging, making sessions accessible and relevant for groups large and small; a nice example is my talk [Creating a Culture of Accessibility](https://www.youtube.com/watch?v=rMFoX0gzLfA) at Natter in Manchester, and I also have a [full list of events I've spoken at](/speaking/events).
 
 ## Topics
 
