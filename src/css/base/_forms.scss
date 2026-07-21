@@ -37,11 +37,8 @@ textarea {
   }
 
   &:focus {
-    outline: solid 3px variables.$colour-black;
+    outline: solid 3px currentColor;
     outline-offset: 0px;
-    @include modeMixins.dark-mode() {
-      outline: solid 3px variables.$colour-white;
-    }
   }
 }
 
