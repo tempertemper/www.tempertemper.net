@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.15.0] - 2026-07-21
+
 ### Adds
 - Adds speaking events page
 - Adds photo credit details to speaker resources
@@ -34,10 +39,8 @@ All notable changes to this project will be documented in this file. The format 
 ### Removes
 - Removes mention of my ethnicity from the image alt text
 
-----------
 
-
-## [6.13.5] - 2026-06-30
+## [6.14.0] - 2026-06-30
 
 ### Adds
 - Adds photos to Speaking page
