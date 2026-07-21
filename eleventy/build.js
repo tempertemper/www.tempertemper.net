@@ -13,15 +13,18 @@ export default function(config) {
 
     // Javascript
     await esbuild.build({
-      entryPoints: ["src/js/scripts.js"],
+      entryPoints: {
+        scripts: "src/js/scripts.js",
+        "copy-buttons": "src/js/copy-buttons.js"
+      },
       bundle: true,
       minify: true,
       sourcemap: false,
-      outfile: "src/site/_includes/scripts.js",
+      outdir: "src/site/_includes",
       format: "iife",
       logLevel: "silent"
     });
-    console.log("✓ JS bundled → src/site/_includes/scripts.js");
+    console.log("✓ JS bundled → src/site/_includes");
 
     // CSS (Critical)
     const result = sass.compile("src/css/critical.scss", {
