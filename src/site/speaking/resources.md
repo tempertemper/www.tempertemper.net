@@ -10,25 +10,18 @@ intro: |
 
 Copy and paste your preferred bio for event websites and programmes:
 
-<p id="bio-short">
+<p id="bio-short" data-copy-button-label="Copy bio text">
     Martin Underhill is an accessibility consultant with over a decade of experience working on accessible digital products. He has been writing and obsessing over semantic markup since 2002, and takes a pragmatic approach to accessibility. Martin works closely with designers and developers, helping teams understand not just what to do, but why it matters.
 </p>
 
-<button type="button" data-copy-target="bio-short">
-    Copy bio text
-</button>
-
 <details>
     <summary>Long bio</summary>
-    <div id="bio-long">
+    <div id="bio-long" data-copy-button-label="Copy long bio text">
         <p>Martin Underhill is an accessibility consultant with over a decade of experience working on accessible digital products. He has been writing and obsessing over semantic markup since 2002, and takes a pragmatic approach to accessibility. Martin works closely with designers and developers, helping teams understand not just what to do, but why it matters.</p>
         <p>For five years, Martin was Accessibility Lead at Sage, a FTSE 100 software company, responsible for accessibility across more than 40 products used in 23 countries. He focused on embedding accessibility into everyday practice by building organisational capability, establishing governance, and helping teams deliver more accessible products.</p>
         <p>Martin now works independently, helping organisations make sense of complex accessibility requirements and turn them into practical, sustainable ways of working. He advises on accessibility strategy, standards and legislation, and supports teams moving beyond one-off audits towards accessibility that is embedded throughout product development.</p>
         <p>A long-time community organiser and speaker, Martin co-founded Frontend NE and has spoken at conferences and events across the UK. His talks make accessibility approachable through clear explanations and examples drawn from years of product work, helping teams apply accessibility confidently in their everyday work.</p>
     </div>
-    <button type="button" data-copy-target="bio-long">
-        Copy long bio text
-    </button>
 </details>
 
 
@@ -56,6 +49,18 @@ Martin Underhill, a friendly-looking man with a bald head, short brown beard, an
 
 <script>
     (function () {
+        if (!navigator.clipboard || !window.isSecureContext) return;
+
+        document.querySelectorAll('[data-copy-button-label]').forEach(function (target) {
+            const button = document.createElement('button');
+
+            button.type = 'button';
+            button.setAttribute('data-copy-target', target.id);
+            button.textContent = target.getAttribute('data-copy-button-label');
+
+            target.insertAdjacentElement('afterend', button);
+        });
+
         function copyTextFromElement(element) {
             const paragraphs = Array.from(element.children);
             const containsOnlyParagraphs =
@@ -69,29 +74,7 @@ Martin Underhill, a friendly-looking man with a bald head, short brown beard, an
                 }).join('\n\n')
                 : element.innerText.trim();
 
-            if (navigator.clipboard && window.isSecureContext) {
-                return navigator.clipboard.writeText(text);
-            }
-
-            // Fallback for older browsers
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            textarea.style.position = 'fixed';
-            textarea.style.left = '-9999px';
-            document.body.appendChild(textarea);
-            textarea.select();
-
-            try {
-                const copied = document.execCommand('copy');
-
-                if (!copied) {
-                    return Promise.reject();
-                }
-
-                return Promise.resolve();
-            } finally {
-                document.body.removeChild(textarea);
-            }
+            return navigator.clipboard.writeText(text);
         }
 
         document.addEventListener('click', function (event) {
