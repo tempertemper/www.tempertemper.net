@@ -19,20 +19,23 @@ function checkCodeOverflow() {
     // Compare the scrollWidth (total content width) of `pre` to the clientWidth (visible width) of `pre`
     const isOverflowing = preElement.scrollWidth > preElement.clientWidth;
 
-    // If the pre element is overflowing, set the tabindex to 0
-    preElement.setAttribute("tabindex", isOverflowing ? 0 : -1);
+    // If the pre element is overflowing, include it in the page's tab order
+    if (isOverflowing) {
+      preElement.setAttribute("tabindex", "0");
+    } else {
+      preElement.removeAttribute("tabindex");
+    }
   });
 }
 
 // Run on page load
 document.addEventListener("DOMContentLoaded", checkCodeOverflow);
-// document.addEventListener("load", checkCodeOverflow());
 
 // Also run on window resize
-let resizeTimer;
+let resizeTimerCode;
 window.addEventListener("resize", () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
+  clearTimeout(resizeTimerCode);
+  resizeTimerCode = setTimeout(() => {
     checkCodeOverflow();
   }, 250);
 });

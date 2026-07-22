@@ -1,19 +1,17 @@
 function tableOverflow() {
-  // Grab each of the table elements on the page
-  const tables = document.querySelectorAll("table");
+  // Grab each of the table wrappers on the page
+  const tableWrappers = document.querySelectorAll(".table-wrapper");
 
-  // Cycle through each table in turn
-  tables.forEach((tableInstance) => {
+  // Cycle through each table wrapper in turn
+  tableWrappers.forEach((tableWrapper) => {
+    // Compare the scrollWidth (total content width) to the clientWidth (visible width)
+    const isOverflowing = tableWrapper.scrollWidth > tableWrapper.clientWidth;
 
-    // Get the table's container and its width
-    const containerWidth = tableInstance.parentElement.offsetWidth;
-
-    // Get the table's width
-    const tableWidth = tableInstance.offsetWidth;
-
-    // If the table is the same size or smaller than its container, remove the tabindex attribute
-    if (tableWidth <= containerWidth) {
-      tableInstance.parentElement.removeAttribute("tabindex");
+    // If the table wrapper is overflowing, include it in the page's tab order
+    if (isOverflowing) {
+      tableWrapper.setAttribute("tabindex", "0");
+    } else {
+      tableWrapper.removeAttribute("tabindex");
     }
   });
 }
@@ -25,7 +23,7 @@ document.addEventListener("DOMContentLoaded", tableOverflow);
 let resizeTimerTables;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimerTables);
-  resizeTimer = setTimeout(() => {
+  resizeTimerTables = setTimeout(() => {
     tableOverflow();
   }, 250);
 });

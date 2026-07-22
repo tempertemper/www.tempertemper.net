@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 - Fixes table horizontal overflow issue
 - Adds shared focus styles for scrollable content
+- Codeblock and table focus removal script fixes
 
 ----------
 
