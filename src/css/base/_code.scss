@@ -14,7 +14,7 @@ code {
   margin-right: .1em; // For when immediately followed by punctuation
   background-color: variables.$colour-code-background;
   @include modeMixins.dark-mode(variables.$colour-dark-mode-code-background);
-  @include modeMixins.high-contrast(variables.$colour-high-contrast-code-background,);
+  @include modeMixins.high-contrast(variables.$colour-high-contrast-code-background);
 }
 
 kbd {
