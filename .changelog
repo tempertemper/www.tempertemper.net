@@ -11,10 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.15.2] - 2026-07-22
+
 - Updates site build dependencies
 - Updates Eleventy RSS plugin
-
-----------
 
 
 ## [6.15.1] - 2026-07-22
