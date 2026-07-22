@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes explicity declared default navigation flex direction
 - Removes stray mixin argument comma
 - Simplifies overspill margins
+- Removes unit from zero outline offset
 
 ----------
 
