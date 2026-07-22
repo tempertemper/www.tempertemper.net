@@ -107,10 +107,6 @@
   @media (max-width: variables.$xxs) {
     font-size: variables.$major-third-minus-1;
   }
-
-  @media (min-width: variables.$m) {
-    font-size: 1em;
-  }
 }
 
 @mixin remove-list-styling {
