@@ -11,23 +11,19 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-- Removes unnecessary dark mode variant for error border colour
-- Removes redundant dark-mode link offsets
-- Removes redundant mode styles from tables and links
-- Uses current colour for table borders
-- Uses current colour for focus outlines
-- Removes unnecessary link focus backgrounds
-- Removes redundant button focus style
-- Removes unused footer and button imports
-- Removes explicity declared default navigation flex direction
-- Removes stray mixin argument comma
-- Simplifies overspill margins
-- Removes unit from zero outline offset
-- Removes redundant heading font size
-- Removes redundant table focus offset
-- Removes inapplicable summary link styles
-
 ----------
+
+
+## [6.15.1] - 2026-07-22
+
+### Changes
+- Simplifies table borders, focus outlines, overspill margins and zero values
+
+### Removes
+- Removes redundant colour-mode, link-focus, navigation, heading and table styles
+- Removes inapplicable `<summary>` link styles
+- Removes some unused SCSS imports
+- Cleans up a stray mixin argument comma
 
 
 ## [6.15.0] - 2026-07-21
@@ -38,7 +34,7 @@ All notable changes to this project will be documented in this file. The format 
 - New filter to group dated list items by year
 - Links to speaking section from talks services page, and vice versa
 
-### Changees
+### Changes
 - Moves speaker resources to a separate page
 - Outputs Markdown-style double line break for multi-paragraph speaker bio
 - Reworks long speaker bio slightly
