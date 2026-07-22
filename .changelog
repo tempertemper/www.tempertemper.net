@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes unused footer and button imports
 - Removes explicity declared default navigation flex direction
 - Removes stray mixin argument comma
+- Simplifies overspill margins
 
 ----------
 
