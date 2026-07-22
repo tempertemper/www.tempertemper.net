@@ -3,6 +3,7 @@
 @use '../admin/mixins--typography' as typographyMixins;
 
 .table-wrapper {
+  contain: paint;
   overflow: auto;
   border-radius: variables.$border-radius-small;
   margin-top: 1em;
