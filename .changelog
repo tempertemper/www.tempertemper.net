@@ -24,6 +24,7 @@ All notable changes to this project will be documented in this file. The format 
 - Simplifies overspill margins
 - Removes unit from zero outline offset
 - Removes redundant heading font size
+- Removes redundant table focus offset
 
 ----------
 
