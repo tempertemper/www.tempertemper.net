@@ -1,29 +1,15 @@
 @use '../admin/variables';
-@use '../admin/mixins--modes' as modeMixins;
+@use '../admin/mixins--focus' as focusMixins;
 @use '../admin/mixins--typography' as typographyMixins;
 
 .table-wrapper {
+  contain: paint;
   overflow: auto;
   border-radius: variables.$border-radius-small;
   margin-top: 1em;
   margin-bottom: 1em;
   @include typographyMixins.heading-style;
-
-  &:focus {
-    outline: 3px solid currentColor;
-    outline-offset: 1px;
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
-  &:focus-visible {
-    box-shadow: 0 0 0 4px variables.$colour-black;
-    @include modeMixins.dark-mode() {
-      outline: 3px solid variables.$colour-white;
-    }
-  }
+  @include focusMixins.scroll-container;
 }
 
 table {

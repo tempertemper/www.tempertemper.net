@@ -1,4 +1,5 @@
 @use '../admin/variables';
+@use '../admin/mixins--focus' as focusMixins;
 @use '../admin/mixins--general' as generalMixins;
 @use '../admin/mixins--modes' as modeMixins;
 
@@ -55,6 +56,7 @@ pre {
   overflow: auto;
   @include modeMixins.dark-mode($background: variables.$colour-dark-mode-code-background);
   @include modeMixins.high-contrast($background: variables.$colour-high-contrast-code-background);
+  @include focusMixins.scroll-container;
 
   @media (min-width: variables.$l) {
     @include generalMixins.overspill;
