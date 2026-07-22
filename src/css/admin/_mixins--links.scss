@@ -30,7 +30,6 @@
     box-decoration-break: clone;
     @include modeMixins.dark-mode() {
       outline: 3px solid variables.$colour-white;
-      outline-offset: 1px;
     }
   }
 
@@ -47,7 +46,6 @@
     box-decoration-break: clone;
     @include modeMixins.dark-mode() {
       outline: 3px solid variables.$colour-white;
-      outline-offset: 1px;
     }
   }
 }
