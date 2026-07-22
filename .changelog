@@ -11,12 +11,18 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.15.1] - 2026-07-22
+
+### Changes
+- Combines scroll container focus handling
+
+### Fixes
 - Fixes table horizontal overflow issue
 - Adds shared focus styles for scrollable content
 - Codeblock and table focus removal script fixes
-- Combines scroll container focus handling
-
-----------
 
 
 ## [6.15.2] - 2026-07-22
