@@ -1,6 +1,5 @@
-import "./codeblock-focus-removal.js"
 import "./double-button-trigger.js"
 import "./form-validation.js"
 import "./link-buttons.js"
-import "./table-focus-removal.js"
+import "./scroll-container-focus.js"
 import "./skip-link-focus.js"
