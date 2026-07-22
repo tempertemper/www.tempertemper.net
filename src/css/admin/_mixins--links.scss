@@ -2,15 +2,8 @@
 @use './mixins--modes' as modeMixins;
 
 
-@mixin text-link {
+@mixin text-interaction {
   border-radius:variables.$border-radius-small;
-
-  &:link,
-  &:visited {
-    color: variables.$colour-primary-darker;
-    @include modeMixins.dark-mode($colour: variables.$colour-primary);
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
-  }
 
   &:hover {
     color: variables.$colour-primary-dark;
@@ -48,4 +41,16 @@
       outline: 3px solid variables.$colour-white;
     }
   }
+}
+
+@mixin text-link {
+
+  &:link,
+  &:visited {
+    color: variables.$colour-primary-darker;
+    @include modeMixins.dark-mode($colour: variables.$colour-primary);
+    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
+  }
+
+  @include text-interaction;
 }

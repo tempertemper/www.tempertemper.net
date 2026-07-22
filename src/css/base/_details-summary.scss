@@ -5,7 +5,7 @@
 summary {
   margin-top: 1em;
   color: variables.$colour-primary-darker;
-  @include linksMixins.text-link;
+  @include linksMixins.text-interaction;
   @include modeMixins.dark-mode($colour: variables.$colour-primary);
   @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
 

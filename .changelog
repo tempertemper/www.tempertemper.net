@@ -25,6 +25,7 @@ All notable changes to this project will be documented in this file. The format 
 - Removes unit from zero outline offset
 - Removes redundant heading font size
 - Removes redundant table focus offset
+- Removes inapplicable summary link styles
 
 ----------
 
