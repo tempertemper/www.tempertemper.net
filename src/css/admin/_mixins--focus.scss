@@ -1,0 +1,23 @@
+@use './variables';
+@use './mixins--modes' as modeMixins;
+
+@mixin scroll-container {
+
+  &:focus {
+    outline: 3px solid currentColor;
+    outline-offset: 1px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 1px;
+
+    @include modeMixins.dark-mode() {
+      outline-color: variables.$colour-white;
+    }
+  }
+}

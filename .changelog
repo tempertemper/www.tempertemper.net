@@ -12,12 +12,14 @@ All notable changes to this project will be documented in this file. The format 
 ## [Unreleased]
 
 - Fixes table horizontal overflow issue
+- Adds shared focus styles for scrollable content
 
 ----------
 
 
 ## [6.15.2] - 2026-07-22
 
+### Changes
 - Updates site build dependencies
 - Updates Eleventy RSS plugin
 
