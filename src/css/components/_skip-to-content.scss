@@ -13,12 +13,14 @@
     height: auto;
     width: auto;
     margin: 0;
+    background-color: variables.$colour-white;
     box-shadow: 0 0 0 3px variables.$colour-black, 0 0 .4em .0em variables.$colour-dark-mode-black;
     padding: 0.5em .5em;
 
-    @include modeMixins.dark-mode() {
+    @include modeMixins.dark-mode($background: variables.$colour-dark-mode-main) {
       box-shadow: 0 0 0 3px variables.$colour-white, .2em .2em .4em .1em variables.$colour-dark-mode-black;
     }
+    @include modeMixins.high-contrast($background: variables.$colour-high-contrast-main);
   }
 }
 

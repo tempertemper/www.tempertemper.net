@@ -1,5 +1,4 @@
 @use '../admin/variables';
-@use '../admin/mixins--general' as generalMixins;
 @use '../admin/mixins--modes' as modeMixins;
 
 @mixin button {
@@ -29,9 +28,6 @@
 
   &:focus:not(:focus-visible) {
     outline: none;
-    @include modeMixins.dark-mode() {
-      outline: none;
-    }
   }
 
   &:focus-visible {

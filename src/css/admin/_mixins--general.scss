@@ -35,7 +35,6 @@
 
   & {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
   }
 
@@ -55,27 +54,6 @@
   @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
   @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
 
-  a {
-
-    &:focus {
-      background-color: variables.$colour-highlight;
-      @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
-      @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
-    }
-
-    &:focus:not(:focus-visible) {
-      background-color: transparent;
-      @include modeMixins.dark-mode($background: transparent);
-      @include modeMixins.high-contrast($background: transparent);
-    }
-
-    &:focus-visible {
-      background-color: variables.$colour-highlight;
-      @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
-      @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
-    }
-  }
-
   > h2,
   > h3 {
     margin-top: .25em;
@@ -83,8 +61,8 @@
 }
 
 @mixin overspill {
-  margin-left: calc(-1em);
-  margin-right: calc(-1em);
+  margin-left: -1em;
+  margin-right: -1em;
 }
 
 @mixin overspill-reset {

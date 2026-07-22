@@ -37,11 +37,8 @@ textarea {
   }
 
   &:focus {
-    outline: solid 3px variables.$colour-black;
-    outline-offset: 0px;
-    @include modeMixins.dark-mode() {
-      outline: solid 3px variables.$colour-white;
-    }
+    outline: solid 3px currentColor;
+    outline-offset: 0;
   }
 }
 
@@ -57,9 +54,6 @@ button {
   input,
   textarea {
     border-color: variables.$colour-red;
-    @include modeMixins.dark-mode() {
-      border-color: variables.$colour-red;
-    }
   }
 
   :target {

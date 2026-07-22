@@ -14,6 +14,18 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.15.1] - 2026-07-22
+
+### Changes
+- Simplifies table borders, focus outlines, overspill margins and zero values
+
+### Removes
+- Removes redundant colour-mode, link-focus, navigation, heading and table styles
+- Removes inapplicable `<summary>` link styles
+- Removes some unused SCSS imports
+- Cleans up a stray mixin argument comma
+
+
 ## [6.15.0] - 2026-07-21
 
 ### Adds
@@ -22,7 +34,7 @@ All notable changes to this project will be documented in this file. The format 
 - New filter to group dated list items by year
 - Links to speaking section from talks services page, and vice versa
 
-### Changees
+### Changes
 - Moves speaker resources to a separate page
 - Outputs Markdown-style double line break for multi-paragraph speaker bio
 - Reworks long speaker bio slightly
