@@ -1,5 +1,4 @@
 @use '../admin/variables';
-@use '../admin/mixins--general' as generalMixins;
 @use '../admin/mixins--modes' as modeMixins;
 
 @mixin button {
