@@ -16,6 +16,16 @@ Talks can be short, around 20 to 30 minutes, or run for up to an hour with time 
 
 My style is informal and engaging, making sessions accessible and relevant for groups large and small; a nice example is my talk [Creating a Culture of Accessibility](https://www.youtube.com/watch?v=rMFoX0gzLfA) at Natter in Manchester, and I also have a [full list of events I've spoken at](/speaking/events).
 
+<figure>
+    <img
+        src="/assets/img/speaking/natter.jpg"
+        alt="Martin Underhill on stage in front of a presentation slide reading “Creating a culture of accessibility”; he is smiling and gesturing, and the visible audience members are smiling too."
+        width="800"
+        height="450" />
+    <figcaption>Martin presenting ‘Creating a culture of accessibility' at <a href="https://www.natter.community">Natter</a> in Manchester, 2024</figcaption>
+</figure>
+
+
 ## Topics
 
 I cover a wide range of themes, from the basics of universal design to the legal and commercial drivers behind accessibility. Talks draw on my experience leading accessibility programmes, my work advising teams on processes, and my background in hands-on design and development.
