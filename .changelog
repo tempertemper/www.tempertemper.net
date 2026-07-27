@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.15.2] - 2026-07-27
+
+### Fixes
+- Fixes ES module compatibility in Netlify functions
+
+
 ## [6.15.1] - 2026-07-22
 
 ### Changes
