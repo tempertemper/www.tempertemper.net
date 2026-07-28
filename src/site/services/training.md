@@ -22,6 +22,15 @@ Workshops are more interactive than training. They focus on applying accessibili
 
 Empathy labs are hands-on sessions that help teams better understand how disabled people experience digital products. Participants use assistive technologies and temporary constraints to work through predefined tasks, with facilitation that links those experiences back to design, development, and delivery decisions.
 
+<figure>
+    <img
+        src="/assets/img/case-studies/empathy-lab.jpg"
+        alt="Martin Underhill directing a small accessibility empathy lab, working with a man who has visual impairment goggles on, while a woman next to them puts on motor impairment gloves."
+        width="800"
+        height="450" />
+    <figcaption>Martin leading an accessibility empathy lab at Sage</figcaption>
+</figure>
+
 Labs can be run [in person](/portfolio/scaling-accessibility-awareness-at-sage-five-years-of-gaad#empathy-labs) or [remotely](/portfolio/scaling-accessibility-awareness-at-sage-five-years-of-gaad#year-two-2022). In-person sessions use shared devices and physical setups; remote labs use screen sharing and guided exercises, and work well for distributed teams.
 
 

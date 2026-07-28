@@ -11,16 +11,18 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+- Adds Natter presentation image back in on Talks page
+
 ----------
 
 
-## [6.15.2] - 2026-07-27
+## [6.15.4] - 2026-07-27
 
 ### Fixes
 - Fixes ES module compatibility in Netlify functions
 
 
-## [6.15.1] - 2026-07-22
+## [6.15.3] - 2026-07-22
 
 ### Changes
 - Combines scroll container focus handling
