@@ -18,7 +18,7 @@ At the time, The Big Breakfast felt incredibly fresh and exciting, but watching 
 
 That mixture of nostalgia and discomfort felt familiar.
 
-The further I go on my accessibility journey, the more I learn, and the more I cringe at some of my earlier practices, from the markup I wrote to the design patterns I used.
+The further I go on my accessibility journey, the more I learn, and the more I cringe at [some of my earlier practices](/blog/its-good-to-make-mistakes), from the markup I wrote to the design patterns I used.
 
 That's an unavoidable but perfectly natural part of the process of maturing as designers and developers; in fact, it's a good way to gauge progress! But it still stings knowing we've created hurdles and barriers for real people.
 
