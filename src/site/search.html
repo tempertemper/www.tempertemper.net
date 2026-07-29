@@ -6,8 +6,6 @@ layout: default
 permalink: search.html
 ---
 
-<script src="/pagefind/pagefind.js" type="text/javascript"></script>
-
 <form id="search-form" role="search">
     <div class="input-group">
         <label class="visually-hidden" for="search">Enter search term</label>
@@ -35,11 +33,6 @@ permalink: search.html
     let ranInitial = false;
 
     // Helpers
-    const normalise = (s) =>
-        (s || "")
-            .toLowerCase()
-            .normalize("NFKD")
-            .replace(/[^\p{L}\p{N}_]+/gu, "");
     const escapeHTML = (s) =>
         (s || "").replace(
             /[&<>"']/g,
@@ -84,19 +77,6 @@ permalink: search.html
         return escapeHTML(content.slice(start, start + len));
     };
 
-    // Check index exists
-    try {
-        const ok = await fetch(bp + "pagefind-entry.json", {
-            method: "HEAD",
-            cache: "no-store",
-        }).then((r) => r.ok);
-        if (!ok) throw new Error("Missing " + bp + "pagefind-entry.json");
-    } catch (e) {
-        statusEl.textContent = "Search unavailable.";
-        console.error(e);
-        throw e;
-    }
-
     // Load Pagefind
     let pagefind;
     try {
@@ -110,7 +90,10 @@ permalink: search.html
 
     // Warm WASM
     if ("requestIdleCallback" in window)
-        requestIdleCallback(() => pagefind.search("\uE000"), { timeout: 2000 });
+        requestIdleCallback(
+            () => pagefind.search("\uE000").catch(() => {}),
+            { timeout: 2000 }
+        );
     else setTimeout(() => pagefind.search("\uE000").catch(() => {}), 0);
 
     // Core search function
@@ -140,13 +123,6 @@ permalink: search.html
             return;
         }
 
-        const normQ = normalise(query);
-        const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-        const contentRe = !/[^\w]/u.test(query)
-            ? new RegExp(`\\b${safeQuery}\\w*`, "iu")
-            : new RegExp(safeQuery, "iu");
-        const urlRe = new RegExp(safeQuery, "iu");
-
         // Fetch all data in parallel
         const dataArray = await Promise.all(
             searchResults.results.map((r) => r.data())
@@ -155,27 +131,19 @@ permalink: search.html
         // Build HTML in one shot
         const itemsHtml = dataArray
             .map((data) => {
-                const matches =
-                    contentRe.test(data.meta?.title || "") ||
-                    urlRe.test(data.url || "") ||
-                    contentRe.test(data.content || "") ||
-                    normalise(data.meta?.title).includes(normQ) ||
-                    normalise(data.content).includes(normQ);
-                if (!matches) return "";
-
                 const ex = cleanExcerpt(
-                    fallbackExcerpt(data.content, query, 180)
+                    data.excerpt ||
+                        fallbackExcerpt(data.content, query, 180)
                 );
                 return `<li>
                 <h2><a href="${data.url.replace(/\.html$/, "")}">${data.meta?.title || data.url}</a></h2>
                 ${ex ? `<p>${addEllipses(ex)}</p>` : ""}
                 </li>`;
             })
-            .filter(Boolean)
             .join("");
 
         resultsEl.innerHTML = `<ul class='index-list'>${itemsHtml}</ul>`;
-        const items = document.querySelectorAll(".index-list li").length;
+        const items = dataArray.length;
         statusEl.textContent = items
             ? `${items} result${items > 1 ? "s" : ""} for “${query}”.`
             : `No results for “${query}”.`;

@@ -128,14 +128,9 @@
 
     {%- if page.url.startsWith('/search') -%}
         <link rel="preload" href="/pagefind/pagefind.js" as="script" crossorigin="anonymous">
-        <script src="/pagefind/pagefind.js" defer></script>
-        {%- set hint = 'preload' -%}
-    {%- else -%}
-        <link rel="prefetch" href="/pagefind/pagefind.js" as="script" crossorigin="anonymous">
-        {%- set hint = 'prefetch' -%}
+        <link rel="preload" href="/pagefind/pagefind-entry.json" as="fetch" type="application/json" crossorigin="anonymous">
+        <link rel="preload" href="/pagefind/wasm.en.pagefind" as="fetch" type="application/wasm" crossorigin="anonymous">
     {%- endif -%}
-    <link rel="{{ hint }}" href="/pagefind/pagefind-entry.json" as="fetch" type="application/json" crossorigin="anonymous">
-    <link rel="{{ hint }}" href="/pagefind/wasm.en.pagefind" as="fetch" type="application/wasm" crossorigin="anonymous">
 
     {%- set css %}
         {%- include "critical.css" %}

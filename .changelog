@@ -11,9 +11,19 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-- Adds Natter presentation image back in on Talks page
 
 ----------
+
+
+## [6.15.5] - 2026-07-29
+
+### Changes
+- Removes Pagefind prefetching from pages other than Search
+- Adds caching for Pagefind metadata and index files
+
+### Fixes
+- Speeds up site search by removing duplicate Pagefind loading and a redundant index availability request
+- Uses Pagefind's prepared matches and excerpts instead of reprocessing every matching article
 
 
 ## [6.15.4] - 2026-07-27
