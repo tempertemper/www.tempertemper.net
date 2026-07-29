@@ -30,6 +30,21 @@
 
 ## Search stuff
 [[headers]]
+  for = "/pagefind/pagefind-entry.json"
+  [headers.values]
+  Cache-Control = "public, max-age=300"
+
+[[headers]]
+  for = "/pagefind/*.pf_meta"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/pagefind/*.pf_index"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
   for = "/pagefind/index/*"
   [headers.values]
   Cache-Control = "public, max-age=31536000, immutable"
