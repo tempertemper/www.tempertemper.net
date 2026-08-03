@@ -14,7 +14,7 @@ code {
   font-feature-settings: "liga" 0;
   margin-right: .1em; // For when immediately followed by punctuation
   background-color: variables.$colour-code-background;
-  @include modeMixins.dark-mode(variables.$colour-dark-mode-code-background);
+  background-color: light-dark(variables.$colour-code-background, variables.$colour-dark-mode-code-background);
   @include modeMixins.high-contrast(variables.$colour-high-contrast-code-background);
 }
 
@@ -23,7 +23,8 @@ kbd {
   margin-right: .2em;
   margin-left: .2em;
   box-shadow: 0 0 0 1px variables.$colour-grey, 0 2px 0 1px variables.$colour-grey;
-  @include modeMixins.dark-mode() {
+  box-shadow: 0 0 0 1px light-dark(variables.$colour-grey, variables.$colour-dark-mode-grey), 0 2px 0 1px light-dark(variables.$colour-grey, variables.$colour-dark-mode-grey);
+  @include modeMixins.high-contrast() {
     box-shadow: 0 0 0 1px variables.$colour-dark-mode-grey, 0 2px 0 1px variables.$colour-dark-mode-grey;
   }
 }
@@ -37,11 +38,13 @@ code {
 pre code,
 pre {
   color: variables.$colour-black;
-  @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-white);
+  color: light-dark(variables.$colour-black, variables.$colour-dark-mode-white);
+  @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-white);
 }
 
 pre {
   background-color: variables.$colour-code-background;
+  background-color: light-dark(variables.$colour-code-background, variables.$colour-dark-mode-code-background);
   padding: 1em;
   white-space: pre-wrap;
   word-spacing: normal;
@@ -54,7 +57,6 @@ pre {
   margin-top: 1em;
   margin-bottom: 1em;
   overflow: auto;
-  @include modeMixins.dark-mode($background: variables.$colour-dark-mode-code-background);
   @include modeMixins.high-contrast($background: variables.$colour-high-contrast-code-background);
   @include focusMixins.scroll-container;
 

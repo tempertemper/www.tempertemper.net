@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
+- Uses `light-dark()` CSS function for dark mode
+- Uses lightmode fallback colours for when `light-dark()` isn't supported
 
 ----------
 
