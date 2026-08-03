@@ -13,7 +13,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Changes
 - Uses `light-dark()` CSS function for dark mode
-- Uses lightmode fallback colours for when `light-dark()` isn't supported
+- Uses lightmod
+
+### Removes
+- Removes now-unused dark mode mixin
+- Removes unused `$colour-dark-mode-primary` variable
 
 ----------
 
