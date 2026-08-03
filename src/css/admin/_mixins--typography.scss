@@ -1,5 +1,4 @@
 @use './variables' as variables;
-@use './mixins--modes' as modeMixins;
 
 @mixin heading-style {
 
@@ -30,7 +29,7 @@
     line-height: 1.5;
   }
 
-  @include modeMixins.dark-mode() {
+  @media screen and (prefers-color-scheme: dark), screen and (prefers-contrast: more) {
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

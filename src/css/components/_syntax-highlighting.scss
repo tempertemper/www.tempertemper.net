@@ -13,12 +13,20 @@
   &.cdata,
   &.url {
     color: variables.$colour-code-grey;
-    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-grey);
+    color: light-dark(
+      variables.$colour-code-grey,
+      variables.$colour-dark-mode-code-grey
+    );
+    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-code-grey);
   }
 
   &.punctuation {
     color: variables.$colour-code-grey;
-    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-grey);
+    color: light-dark(
+      variables.$colour-code-grey,
+      variables.$colour-dark-mode-code-grey
+    );
+    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-code-grey);
   }
 
   &.property,
@@ -28,14 +36,20 @@
   &.deleted,
   &.keyword {
     color: variables.$colour-code-magenta;
-    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-magenta);
+    color: light-dark(
+      variables.$colour-code-magenta,
+      variables.$colour-dark-mode-code-magenta
+    );
     @include modeMixins.high-contrast($colour: variables.$colour-high-contrast-code-magenta);
   }
 
   &.boolean,
   &.number {
     color: variables.$colour-code-purple;
-    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-purple);
+    color: light-dark(
+      variables.$colour-code-purple,
+      variables.$colour-dark-mode-code-purple
+    );
     @include modeMixins.high-contrast($colour: variables.$colour-high-contrast-code-purple);
   }
 
@@ -52,7 +66,11 @@
   .style &.string,
   &.variable {
     color: variables.$colour-code-cyan;
-    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-cyan);
+    color: light-dark(
+      variables.$colour-code-cyan,
+      variables.$colour-dark-mode-code-cyan
+    );
+    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-code-cyan);
   }
 
   &.atrule,
@@ -61,7 +79,11 @@
   &.regex,
   &.important {
     color: variables.$colour-code-yellow;
-    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-code-yellow);
+    color: light-dark(
+      variables.$colour-code-yellow,
+      variables.$colour-dark-mode-code-yellow
+    );
+    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-code-yellow);
   }
 
   &.important,
@@ -79,6 +101,10 @@
 
   &.url .content {
     color: variables.$colour-black;
-    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-white);
+    color: light-dark(
+      variables.$colour-black,
+      variables.$colour-dark-mode-white
+    );
+    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-white);
   }
 }

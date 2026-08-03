@@ -4,8 +4,11 @@
 ::selection {
   background: variables.$colour-primary;
   color: variables.$colour-white;
-  @include modeMixins.dark-mode($colour: variables.$colour-black);
-  @include modeMixins.high-contrast($background: variables.$colour-dark-mode-primary-light);
+  color: light-dark(
+    variables.$colour-white,
+    variables.$colour-black
+  );
+  @include modeMixins.high-contrast($background: variables.$colour-dark-mode-primary-light, $colour: variables.$colour-black);
 }
 
 blockquote {
@@ -97,15 +100,17 @@ small {
 
 mark {
   background-color: variables.$colour-primary;
-  // color: variables.$colour-white;
-  @include modeMixins.dark-mode(
-    $colour: variables.$colour-white,
-    $background: variables.$colour-dark-mode-primary-darker
+  background-color: light-dark(
+    variables.$colour-primary,
+    variables.$colour-dark-mode-primary-darker
+  );
+  color: variables.$colour-black;
+  color: light-dark(
+    variables.$colour-black,
+    variables.$colour-white
   );
   @include modeMixins.high-contrast(
     $colour: variables.$colour-black,
     $background: variables.$colour-dark-mode-primary-light
   );
-
-  // background-color: variables.$colour-dark-mode-primary;
 }

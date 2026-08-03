@@ -7,22 +7,33 @@
 
   &:hover {
     color: variables.$colour-primary-dark;
-    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-primary-light);
+    color: light-dark(
+      variables.$colour-primary-dark,
+      variables.$colour-dark-mode-primary-light
+    );
     @include modeMixins.high-contrast($colour: variables.$colour-high-contrast-primary-light);
   }
 
   &:active {
     color: variables.$colour-black;
-    @include modeMixins.dark-mode($colour: variables.$colour-dark-mode-white);
+    color: light-dark(
+      variables.$colour-black,
+      variables.$colour-dark-mode-white
+    );
+    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-white);
   }
 
   &:focus {
     outline: 3px solid variables.$colour-black;
+    outline-color: light-dark(
+      variables.$colour-black,
+      variables.$colour-white
+    );
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @include modeMixins.dark-mode() {
-      outline: 3px solid variables.$colour-white;
+    @include modeMixins.high-contrast() {
+      outline-color: variables.$colour-white;
     }
   }
 
@@ -34,11 +45,15 @@
 
   &:focus-visible {
     outline: 3px solid variables.$colour-black;
+    outline-color: light-dark(
+      variables.$colour-black,
+      variables.$colour-white
+    );
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @include modeMixins.dark-mode() {
-      outline: 3px solid variables.$colour-white;
+    @include modeMixins.high-contrast() {
+      outline-color: variables.$colour-white;
     }
   }
 }
@@ -48,7 +63,10 @@
   &:link,
   &:visited {
     color: variables.$colour-primary-darker;
-    @include modeMixins.dark-mode($colour: variables.$colour-primary);
+    color: light-dark(
+      variables.$colour-primary-darker,
+      variables.$colour-primary
+    );
     @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
   }
 

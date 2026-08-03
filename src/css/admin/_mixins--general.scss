@@ -47,11 +47,14 @@
 
   & {
     background-color: variables.$colour-highlight;
+    background-color: light-dark(
+      variables.$colour-highlight,
+      variables.$colour-dark-mode-highlight
+    );
     border-radius: variables.$border-radius-default;
     padding: 1em;
   }
 
-  @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
   @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
 
   > h2,
@@ -115,22 +118,28 @@
 @mixin embedded-media {
   border-radius: variables.$border-radius-default;
   background-color: variables.$colour-highlight;
+  background-color: light-dark(
+    variables.$colour-highlight,
+    variables.$colour-dark-mode-highlight
+  );
   display: block;
   box-shadow: 0 0 .25em variables.$colour-grey;
+  box-shadow: 0 0 .25em light-dark(
+    variables.$colour-grey,
+    variables.$colour-black
+  );
   margin-bottom: 1em;
   margin-top: 1em;
   height: auto;
   width: 100%;
-  @include modeMixins.dark-mode($background: variables.$colour-dark-mode-highlight);
-  @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
+  @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight) {
+    box-shadow: 0 0 .25em variables.$colour-black;
+  }
 
   @media (min-width: variables.$l) {
     @include overspill;
   }
 
-  @include modeMixins.dark-mode() {
-    box-shadow: 0 0 .25em variables.$colour-black;
-  }
 }
 
 @mixin divider {
