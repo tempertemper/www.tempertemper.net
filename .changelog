@@ -11,9 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.15.6] - 2026-08-03
+
 ### Changes
 - Uses `light-dark()` CSS function for dark mode
-- Uses lightmod
+- Uses light mode as the fallback for browser that don't support `light-dark()`
 
 ### Removes
 - Removes now-unused dark mode mixin
@@ -21,8 +26,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixes
 - Fixes double focus outline issue on skip link
-
-----------
 
 
 ## [6.15.5] - 2026-07-29
