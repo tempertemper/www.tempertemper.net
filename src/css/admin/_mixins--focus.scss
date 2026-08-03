@@ -1,5 +1,4 @@
 @use './variables';
-@use './mixins--modes' as modeMixins;
 
 @mixin scroll-container {
 
@@ -20,7 +19,7 @@
     );
     outline-offset: 1px;
 
-    @include modeMixins.high-contrast() {
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
       outline-color: variables.$colour-white;
     }
   }

@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+- Separates dark mode high contrast theme to make way for a new, separate, light mode high contrast theme
+- Removes high contrast mode mixin
+
 ----------
 
 

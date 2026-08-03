@@ -1,5 +1,4 @@
 @use '../../admin/variables' as variables;
-@use '../../admin/mixins--modes' as modeMixins;
 
 ::selection {
   background: variables.$colour-primary;
@@ -8,7 +7,10 @@
     variables.$colour-white,
     variables.$colour-black
   );
-  @include modeMixins.high-contrast($background: variables.$colour-dark-mode-primary-light, $colour: variables.$colour-black);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-dark-mode-primary-light;
+    color: variables.$colour-black;
+  }
 }
 
 blockquote {
@@ -25,7 +27,7 @@ blockquote {
     }
   }
 
-  @include modeMixins.high-contrast() {
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
     border-left-color: variables.$colour-dark-mode-primary-light;
   }
 
@@ -71,7 +73,9 @@ li {
 
   &::marker {
     color: variables.$colour-primary;
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-dark-mode-primary-light;
+    }
   }
 
   ul &::marker {
@@ -109,8 +113,8 @@ mark {
     variables.$colour-black,
     variables.$colour-white
   );
-  @include modeMixins.high-contrast(
-    $colour: variables.$colour-black,
-    $background: variables.$colour-dark-mode-primary-light
-  );
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-dark-mode-primary-light;
+    color: variables.$colour-black;
+  }
 }

@@ -1,7 +1,6 @@
 @use '../admin/variables';
 @use '../admin/mixins--focus' as focusMixins;
 @use '../admin/mixins--general' as generalMixins;
-@use '../admin/mixins--modes' as modeMixins;
 
 code,
 kbd {
@@ -18,7 +17,9 @@ code {
     variables.$colour-code-background,
     variables.$colour-dark-mode-code-background
   );
-  @include modeMixins.high-contrast(variables.$colour-high-contrast-code-background);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-high-contrast-code-background;
+  }
 }
 
 kbd {
@@ -33,7 +34,7 @@ kbd {
     variables.$colour-grey,
     variables.$colour-dark-mode-grey
   );
-  @include modeMixins.high-contrast() {
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
     box-shadow: 0 0 0 1px variables.$colour-dark-mode-grey, 0 2px 0 1px variables.$colour-dark-mode-grey;
   }
 }
@@ -51,7 +52,9 @@ pre {
     variables.$colour-black,
     variables.$colour-dark-mode-white
   );
-  @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-white);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    color: variables.$colour-dark-mode-white;
+  }
 }
 
 pre {
@@ -72,7 +75,9 @@ pre {
   margin-top: 1em;
   margin-bottom: 1em;
   overflow: auto;
-  @include modeMixins.high-contrast($background: variables.$colour-high-contrast-code-background);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-high-contrast-code-background;
+  }
   @include focusMixins.scroll-container;
 
   @media (min-width: variables.$l) {

@@ -1,6 +1,5 @@
 @use './variables' as variables;
 @use './mixins--typography' as typographyMixins;
-@use './mixins--modes' as modeMixins;
 
 @mixin container {
   max-width: 40em;
@@ -55,7 +54,9 @@
     padding: 1em;
   }
 
-  @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-high-contrast-highlight;
+  }
 
   > h2,
   > h3 {
@@ -132,7 +133,8 @@
   margin-top: 1em;
   height: auto;
   width: 100%;
-  @include modeMixins.high-contrast($background: variables.$colour-high-contrast-highlight) {
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-high-contrast-highlight;
     box-shadow: 0 0 .25em variables.$colour-black;
   }
 

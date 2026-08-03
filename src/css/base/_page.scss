@@ -1,5 +1,4 @@
 @use '../admin/variables';
-@use '../admin/mixins--modes' as modeMixins;
 @use '../admin/mixins--general' as generalMixins;
 
 body {
@@ -13,7 +12,10 @@ body {
     variables.$colour-black,
     variables.$colour-dark-mode-white
   );
-  @include modeMixins.high-contrast(variables.$colour-high-contrast-main, variables.$colour-dark-mode-white);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-high-contrast-main;
+    color: variables.$colour-dark-mode-white;
+  }
 }
 
 .wrapper {

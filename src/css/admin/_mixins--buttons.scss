@@ -1,5 +1,4 @@
 @use '../admin/variables';
-@use '../admin/mixins--modes' as modeMixins;
 
 @mixin button {
   background-color: variables.$colour-primary;
@@ -18,7 +17,9 @@
   margin-top: 1em;
   padding: calc(.5em + 3px) 1em .5em;
   width: auto;
-  @include modeMixins.high-contrast(variables.$colour-dark-mode-primary-light, variables.$colour-high-contrast-main) {
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-dark-mode-primary-light;
+    color: variables.$colour-high-contrast-main;
     box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
   }
 
@@ -32,7 +33,7 @@
       variables.$colour-black,
       variables.$colour-white
     );
-    @include modeMixins.high-contrast() {
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
       outline-color: variables.$colour-white;
     }
   }
@@ -47,7 +48,7 @@
       variables.$colour-black,
       variables.$colour-white
     );
-    @include modeMixins.high-contrast() {
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
       outline-color: variables.$colour-white;
     }
   }
@@ -59,7 +60,9 @@
       variables.$colour-dark-mode-primary-light
     );
     box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
-    @include modeMixins.high-contrast($background: variables.$colour-high-contrast-primary-light);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      background-color: variables.$colour-high-contrast-primary-light;
+    }
   }
 
   &:active {

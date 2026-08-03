@@ -1,7 +1,6 @@
 @use '../admin/variables';
 @use '../admin/mixins--buttons' as buttonsMixins;
 @use '../admin/mixins--general' as generalMixins;
-@use '../admin/mixins--modes' as modeMixins;
 
 form {
   margin-top: 1em;
@@ -19,7 +18,9 @@ form {
 label {
   font-weight: bold;
   display: inline-block;
-  @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    color: variables.$colour-dark-mode-primary-light;
+  }
 }
 
 input,
@@ -40,7 +41,9 @@ textarea {
     variables.$colour-black,
     variables.$colour-dark-mode-white
   );
-  @include modeMixins.high-contrast(variables.$colour-high-contrast-main, variables.$colour-dark-mode-white) {
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-high-contrast-main;
+    color: variables.$colour-dark-mode-white;
     border-color: variables.$colour-dark-mode-primary-light;
   }
 

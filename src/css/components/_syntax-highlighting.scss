@@ -1,5 +1,4 @@
 @use '../admin/variables';
-@use '../admin/mixins--modes' as modeMixins;
 
 .token {
 
@@ -17,7 +16,9 @@
       variables.$colour-code-grey,
       variables.$colour-dark-mode-code-grey
     );
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-code-grey);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-dark-mode-code-grey;
+    }
   }
 
   &.punctuation {
@@ -26,7 +27,9 @@
       variables.$colour-code-grey,
       variables.$colour-dark-mode-code-grey
     );
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-code-grey);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-dark-mode-code-grey;
+    }
   }
 
   &.property,
@@ -40,7 +43,9 @@
       variables.$colour-code-magenta,
       variables.$colour-dark-mode-code-magenta
     );
-    @include modeMixins.high-contrast($colour: variables.$colour-high-contrast-code-magenta);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-high-contrast-code-magenta;
+    }
   }
 
   &.boolean,
@@ -50,7 +55,9 @@
       variables.$colour-code-purple,
       variables.$colour-dark-mode-code-purple
     );
-    @include modeMixins.high-contrast($colour: variables.$colour-high-contrast-code-purple);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-high-contrast-code-purple;
+    }
   }
 
   &.selector,
@@ -70,7 +77,9 @@
       variables.$colour-code-cyan,
       variables.$colour-dark-mode-code-cyan
     );
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-code-cyan);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-dark-mode-code-cyan;
+    }
   }
 
   &.atrule,
@@ -83,7 +92,9 @@
       variables.$colour-code-yellow,
       variables.$colour-dark-mode-code-yellow
     );
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-code-yellow);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-dark-mode-code-yellow;
+    }
   }
 
   &.important,
@@ -105,6 +116,8 @@
       variables.$colour-black,
       variables.$colour-dark-mode-white
     );
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-white);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-dark-mode-white;
+    }
   }
 }

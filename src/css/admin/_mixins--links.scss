@@ -1,5 +1,4 @@
 @use './variables' as variables;
-@use './mixins--modes' as modeMixins;
 
 
 @mixin text-interaction {
@@ -11,7 +10,9 @@
       variables.$colour-primary-dark,
       variables.$colour-dark-mode-primary-light
     );
-    @include modeMixins.high-contrast($colour: variables.$colour-high-contrast-primary-light);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-high-contrast-primary-light;
+    }
   }
 
   &:active {
@@ -20,7 +21,9 @@
       variables.$colour-black,
       variables.$colour-dark-mode-white
     );
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-white);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-dark-mode-white;
+    }
   }
 
   &:focus {
@@ -32,7 +35,7 @@
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @include modeMixins.high-contrast() {
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
       outline-color: variables.$colour-white;
     }
   }
@@ -52,7 +55,7 @@
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @include modeMixins.high-contrast() {
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
       outline-color: variables.$colour-white;
     }
   }
@@ -67,7 +70,9 @@
       variables.$colour-primary-darker,
       variables.$colour-primary
     );
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      color: variables.$colour-dark-mode-primary-light;
+    }
   }
 
   @include text-interaction;

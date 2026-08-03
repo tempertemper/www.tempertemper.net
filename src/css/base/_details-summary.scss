@@ -1,5 +1,4 @@
 @use '../admin/variables';
-@use '../admin/mixins--modes' as modeMixins;
 @use '../admin/mixins--links' as linksMixins;
 
 summary {
@@ -10,7 +9,9 @@ summary {
     variables.$colour-primary
   );
   @include linksMixins.text-interaction;
-  @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    color: variables.$colour-dark-mode-primary-light;
+  }
 
   @media (min-width: variables.$l) {
     text-indent: -.8em;
