@@ -55,7 +55,7 @@
   }
 
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-high-contrast-highlight;
+    background-color: variables.$colour-dark-mode-high-contrast-highlight;
   }
 
   > h2,
@@ -134,7 +134,7 @@
   height: auto;
   width: 100%;
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-high-contrast-highlight;
+    background-color: variables.$colour-dark-mode-high-contrast-highlight;
     box-shadow: 0 0 .25em variables.$colour-black;
   }
 

@@ -11,7 +11,7 @@
       variables.$colour-dark-mode-primary-light
     );
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-high-contrast-primary-light;
+      color: variables.$colour-dark-mode-high-contrast-primary-light;
     }
   }
 

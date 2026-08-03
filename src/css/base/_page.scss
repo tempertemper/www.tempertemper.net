@@ -13,7 +13,7 @@ body {
     variables.$colour-dark-mode-white
   );
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-high-contrast-main;
+    background-color: variables.$colour-dark-mode-high-contrast-main;
     color: variables.$colour-dark-mode-white;
   }
 }

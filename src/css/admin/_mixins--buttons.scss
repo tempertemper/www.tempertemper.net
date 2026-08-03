@@ -19,7 +19,7 @@
   width: auto;
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
     background-color: variables.$colour-dark-mode-primary-light;
-    color: variables.$colour-high-contrast-main;
+    color: variables.$colour-dark-mode-high-contrast-main;
     box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
   }
 
@@ -61,7 +61,7 @@
     );
     box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      background-color: variables.$colour-high-contrast-primary-light;
+      background-color: variables.$colour-dark-mode-high-contrast-primary-light;
     }
   }
 

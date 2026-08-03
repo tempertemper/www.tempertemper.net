@@ -44,7 +44,7 @@
       variables.$colour-dark-mode-code-magenta
     );
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-high-contrast-code-magenta;
+      color: variables.$colour-dark-mode-high-contrast-code-magenta;
     }
   }
 
@@ -56,7 +56,7 @@
       variables.$colour-dark-mode-code-purple
     );
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-high-contrast-code-purple;
+      color: variables.$colour-dark-mode-high-contrast-code-purple;
     }
   }
 

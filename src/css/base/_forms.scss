@@ -42,7 +42,7 @@ textarea {
     variables.$colour-dark-mode-white
   );
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-high-contrast-main;
+    background-color: variables.$colour-dark-mode-high-contrast-main;
     color: variables.$colour-dark-mode-white;
     border-color: variables.$colour-dark-mode-primary-light;
   }
@@ -96,7 +96,7 @@ button {
     }
 
     &:hover {
-      color: variables.$colour-high-contrast-primary-light;
+      color: variables.$colour-dark-mode-high-contrast-primary-light;
     }
   }
 

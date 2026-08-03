@@ -24,7 +24,7 @@
       box-shadow: .2em .2em .4em .1em variables.$colour-dark-mode-black;
     }
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      background-color: variables.$colour-high-contrast-main;
+      background-color: variables.$colour-dark-mode-high-contrast-main;
     }
   }
 }

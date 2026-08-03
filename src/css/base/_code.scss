@@ -18,7 +18,7 @@ code {
     variables.$colour-dark-mode-code-background
   );
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-high-contrast-code-background;
+    background-color: variables.$colour-dark-mode-high-contrast-code-background;
   }
 }
 
@@ -76,7 +76,7 @@ pre {
   margin-bottom: 1em;
   overflow: auto;
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-high-contrast-code-background;
+    background-color: variables.$colour-dark-mode-high-contrast-code-background;
   }
   @include focusMixins.scroll-container;
 
