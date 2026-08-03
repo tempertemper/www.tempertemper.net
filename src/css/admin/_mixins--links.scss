@@ -7,19 +7,28 @@
 
   &:hover {
     color: variables.$colour-primary-dark;
-    color: light-dark(variables.$colour-primary-dark, variables.$colour-dark-mode-primary-light);
+    color: light-dark(
+      variables.$colour-primary-dark,
+      variables.$colour-dark-mode-primary-light
+    );
     @include modeMixins.high-contrast($colour: variables.$colour-high-contrast-primary-light);
   }
 
   &:active {
     color: variables.$colour-black;
-    color: light-dark(variables.$colour-black, variables.$colour-dark-mode-white);
+    color: light-dark(
+      variables.$colour-black,
+      variables.$colour-dark-mode-white
+    );
     @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-white);
   }
 
   &:focus {
     outline: 3px solid variables.$colour-black;
-    outline-color: light-dark(variables.$colour-black, variables.$colour-white);
+    outline-color: light-dark(
+      variables.$colour-black,
+      variables.$colour-white
+    );
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
@@ -36,7 +45,10 @@
 
   &:focus-visible {
     outline: 3px solid variables.$colour-black;
-    outline-color: light-dark(variables.$colour-black, variables.$colour-white);
+    outline-color: light-dark(
+      variables.$colour-black,
+      variables.$colour-white
+    );
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
@@ -51,7 +63,10 @@
   &:link,
   &:visited {
     color: variables.$colour-primary-darker;
-    color: light-dark(variables.$colour-primary-darker, variables.$colour-primary);
+    color: light-dark(
+      variables.$colour-primary-darker,
+      variables.$colour-primary
+    );
     @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
   }
 

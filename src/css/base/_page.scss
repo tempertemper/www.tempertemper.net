@@ -4,9 +4,15 @@
 
 body {
   background-color: variables.$colour-main;
-  background-color: light-dark(variables.$colour-main, variables.$colour-dark-mode-main);
+  background-color: light-dark(
+    variables.$colour-main,
+    variables.$colour-dark-mode-main
+  );
   color: variables.$colour-black;
-  color: light-dark(variables.$colour-black, variables.$colour-dark-mode-white);
+  color: light-dark(
+    variables.$colour-black,
+    variables.$colour-dark-mode-white
+  );
   @include modeMixins.high-contrast(variables.$colour-high-contrast-main, variables.$colour-dark-mode-white);
 }
 
@@ -16,5 +22,11 @@ body {
 }
 
 html {
-  scrollbar-color: light-dark(variables.$colour-primary, variables.$colour-dark-mode-primary-light) light-dark(variables.$colour-main, variables.$colour-dark-mode-main);
+  scrollbar-color: light-dark(
+    variables.$colour-primary,
+    variables.$colour-dark-mode-primary-light
+  ) light-dark(
+    variables.$colour-main,
+    variables.$colour-dark-mode-main
+  );
 }

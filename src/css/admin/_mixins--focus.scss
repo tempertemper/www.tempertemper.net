@@ -14,7 +14,10 @@
 
   &:focus-visible {
     outline: 3px solid currentColor;
-    outline-color: light-dark(currentColor, variables.$colour-white);
+    outline-color: light-dark(
+      currentColor,
+      variables.$colour-white
+    );
     outline-offset: 1px;
 
     @include modeMixins.high-contrast() {

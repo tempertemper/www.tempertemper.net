@@ -5,9 +5,15 @@
   background-color: variables.$colour-primary;
   border-radius: variables.$border-radius-default;
   box-shadow: 0 3px 0 variables.$colour-primary-dark;
-  box-shadow: 0 3px 0 light-dark(variables.$colour-primary-dark, variables.$colour-dark-mode-primary-dark);
+  box-shadow: 0 3px 0 light-dark(
+    variables.$colour-primary-dark,
+    variables.$colour-dark-mode-primary-dark
+  );
   color: variables.$colour-white;
-  color: light-dark(variables.$colour-white, variables.$colour-dark-mode-main);
+  color: light-dark(
+    variables.$colour-white,
+    variables.$colour-dark-mode-main
+  );
   font-weight: 700;
   margin-top: 1em;
   padding: calc(.5em + 3px) 1em .5em;
@@ -22,7 +28,10 @@
 
   &:focus {
     outline: 3px solid variables.$colour-black;
-    outline-color: light-dark(variables.$colour-black, variables.$colour-white);
+    outline-color: light-dark(
+      variables.$colour-black,
+      variables.$colour-white
+    );
     @include modeMixins.high-contrast() {
       outline-color: variables.$colour-white;
     }
@@ -34,7 +43,10 @@
 
   &:focus-visible {
     outline: 3px solid variables.$colour-black;
-    outline-color: light-dark(variables.$colour-black, variables.$colour-white);
+    outline-color: light-dark(
+      variables.$colour-black,
+      variables.$colour-white
+    );
     @include modeMixins.high-contrast() {
       outline-color: variables.$colour-white;
     }
@@ -42,7 +54,10 @@
 
   &:hover {
     background-color: variables.$colour-primary-dark;
-    background-color: light-dark(variables.$colour-primary-dark, variables.$colour-dark-mode-primary-light);
+    background-color: light-dark(
+      variables.$colour-primary-dark,
+      variables.$colour-dark-mode-primary-light
+    );
     box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
     @include modeMixins.high-contrast($background: variables.$colour-high-contrast-primary-light);
   }
