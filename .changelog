@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.16.0] - 2026-08-04
+
 ### Adds
 - Adds a light mode high contrast theme
 - Adds a light mode high contrast theme for code highlighting
@@ -31,8 +36,6 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Removes
 - Gets rid of redundant syntax highlighting overrides in high contrast theme
-
-----------
 
 
 ## [6.15.6] - 2026-08-03
