@@ -1,5 +1,4 @@
 @use './variables';
-@use './mixins--modes' as modeMixins;
 
 @mixin scroll-container {
 
@@ -16,12 +15,12 @@
     outline: 3px solid currentColor;
     outline-color: light-dark(
       currentColor,
-      variables.$colour-white
+      variables.$colour-dark-mode-foreground
     );
     outline-offset: 1px;
 
-    @include modeMixins.high-contrast() {
-      outline-color: variables.$colour-white;
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      outline-color: variables.$colour-dark-mode-high-contrast-focus;
     }
   }
 }

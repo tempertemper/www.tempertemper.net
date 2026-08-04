@@ -1,5 +1,4 @@
 @use '../admin/variables';
-@use '../admin/mixins--modes' as modeMixins;
 @use '../admin/mixins--general' as generalMixins;
 
 .skip-to-content {
@@ -13,18 +12,26 @@
     height: auto;
     width: auto;
     margin: 0;
-    background-color: variables.$colour-white;
+    background-color: variables.$colour-light-mode-background;
     background-color: light-dark(
-      variables.$colour-white,
-      variables.$colour-dark-mode-main
+      variables.$colour-light-mode-background,
+      variables.$colour-dark-mode-background
     );
-    box-shadow: 0 0 .4em 0 variables.$colour-dark-mode-black;
+    box-shadow: 0 0 .4em 0 variables.$colour-light-mode-neutral;
+    box-shadow: 0 0 .4em 0 light-dark(
+      variables.$colour-light-mode-neutral,
+      variables.$colour-dark-mode-background
+    );
+    outline-offset: 0;
     padding: 0.5em .5em;
 
-    @media screen and (prefers-color-scheme: dark), screen and (prefers-contrast: more) {
-      box-shadow: .2em .2em .4em .1em variables.$colour-dark-mode-black;
+    @media screen and (prefers-color-scheme: dark) {
+      box-shadow: .2em .2em .4em .1em variables.$colour-dark-mode-background;
     }
-    @include modeMixins.high-contrast($background: variables.$colour-high-contrast-main);
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      background-color: variables.$colour-dark-mode-high-contrast-background;
+      box-shadow: .2em .2em .4em .1em variables.$colour-dark-mode-high-contrast-background;
+    }
   }
 }
 

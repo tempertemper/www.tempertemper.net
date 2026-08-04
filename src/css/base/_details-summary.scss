@@ -1,16 +1,21 @@
 @use '../admin/variables';
-@use '../admin/mixins--modes' as modeMixins;
 @use '../admin/mixins--links' as linksMixins;
 
 summary {
   margin-top: 1em;
-  color: variables.$colour-primary-darker;
+  color: variables.$colour-light-mode-accent-text;
   color: light-dark(
-    variables.$colour-primary-darker,
-    variables.$colour-primary
+    variables.$colour-light-mode-accent-text,
+    variables.$colour-dark-mode-accent-text
   );
   @include linksMixins.text-interaction;
-  @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
+  @media screen and (prefers-contrast: more) {
+    color: variables.$colour-light-mode-high-contrast-accent-text;
+    color: light-dark(
+      variables.$colour-light-mode-high-contrast-accent-text,
+      variables.$colour-dark-mode-high-contrast-accent-text
+    );
+  }
 
   @media (min-width: variables.$l) {
     text-indent: -.8em;

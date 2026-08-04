@@ -29,7 +29,7 @@
     line-height: 1.5;
   }
 
-  @media screen and (prefers-color-scheme: dark), screen and (prefers-contrast: more) {
+  @media screen and (prefers-color-scheme: dark) {
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

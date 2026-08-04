@@ -14,6 +14,30 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.16.0] - 2026-08-04
+
+### Adds
+- Adds a light mode high contrast theme
+- Adds a light mode high contrast theme for code highlighting
+
+### Changes
+- Revamps colour variables for light, dark and dark high contrast modes using semantic palettes
+- Makes existing high contrast theme dark mode only
+- Removes high contrast mode mixin in favour of using media queries directly
+- Redesigns skip link shadow slightly
+- Refines accent colours for graphical elements in dark mode
+- Uses the foreground colour for focus outlines in dark mode
+- Aligns marked/selected text colours across light and dark modes
+
+### Fixes
+- Fixes outline offset on skip link
+- Lightens error red slightly so it passes AA in dark mode
+- Darkens error summary links in light mode, so that they pass AA
+
+### Removes
+- Gets rid of redundant syntax highlighting overrides in high contrast theme
+
+
 ## [6.15.6] - 2026-08-03
 
 ### Changes

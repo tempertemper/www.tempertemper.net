@@ -1,25 +1,42 @@
 @use '../admin/variables';
-@use '../admin/mixins--modes' as modeMixins;
 
 @mixin button {
-  background-color: variables.$colour-primary;
-  border-radius: variables.$border-radius-default;
-  box-shadow: 0 3px 0 variables.$colour-primary-dark;
-  box-shadow: 0 3px 0 light-dark(
-    variables.$colour-primary-dark,
-    variables.$colour-dark-mode-primary-dark
+  background-color: variables.$colour-light-mode-accent;
+  background-color: light-dark(
+    variables.$colour-light-mode-accent,
+    variables.$colour-dark-mode-accent
   );
-  color: variables.$colour-white;
+  border-radius: variables.$border-radius-default;
+  box-shadow: 0 3px 0 variables.$colour-light-mode-accent-shadow;
+  box-shadow: 0 3px 0 light-dark(
+    variables.$colour-light-mode-accent-shadow,
+    variables.$colour-dark-mode-accent-shadow
+  );
+  color: variables.$colour-light-mode-accent-foreground;
   color: light-dark(
-    variables.$colour-white,
-    variables.$colour-dark-mode-main
+    variables.$colour-light-mode-accent-foreground,
+    variables.$colour-dark-mode-accent-foreground
   );
   font-weight: 700;
   margin-top: 1em;
   padding: calc(.5em + 3px) 1em .5em;
   width: auto;
-  @include modeMixins.high-contrast(variables.$colour-dark-mode-primary-light, variables.$colour-high-contrast-main) {
-    box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
+  @media screen and (prefers-contrast: more) {
+    background-color: variables.$colour-light-mode-high-contrast-accent;
+    background-color: light-dark(
+      variables.$colour-light-mode-high-contrast-accent,
+      variables.$colour-dark-mode-high-contrast-accent
+    );
+    box-shadow: 0 3px 0 variables.$colour-light-mode-high-contrast-accent-shadow;
+    box-shadow: 0 3px 0 light-dark(
+      variables.$colour-light-mode-high-contrast-accent-shadow,
+      variables.$colour-dark-mode-accent-shadow
+    );
+    color: variables.$colour-light-mode-accent-foreground;
+    color: light-dark(
+      variables.$colour-light-mode-accent-foreground,
+      variables.$colour-dark-mode-high-contrast-accent-foreground
+    );
   }
 
   @media (max-width: variables.$xs) {
@@ -27,13 +44,13 @@
   }
 
   &:focus {
-    outline: 3px solid variables.$colour-black;
+    outline: 3px solid variables.$colour-light-mode-foreground;
     outline-color: light-dark(
-      variables.$colour-black,
-      variables.$colour-white
+      variables.$colour-light-mode-foreground,
+      variables.$colour-dark-mode-foreground
     );
-    @include modeMixins.high-contrast() {
-      outline-color: variables.$colour-white;
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      outline-color: variables.$colour-dark-mode-high-contrast-focus;
     }
   }
 
@@ -42,24 +59,35 @@
   }
 
   &:focus-visible {
-    outline: 3px solid variables.$colour-black;
+    outline: 3px solid variables.$colour-light-mode-foreground;
     outline-color: light-dark(
-      variables.$colour-black,
-      variables.$colour-white
+      variables.$colour-light-mode-foreground,
+      variables.$colour-dark-mode-foreground
     );
-    @include modeMixins.high-contrast() {
-      outline-color: variables.$colour-white;
+    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+      outline-color: variables.$colour-dark-mode-high-contrast-focus;
     }
   }
 
   &:hover {
-    background-color: variables.$colour-primary-dark;
+    background-color: variables.$colour-light-mode-accent-strong;
     background-color: light-dark(
-      variables.$colour-primary-dark,
-      variables.$colour-dark-mode-primary-light
+      variables.$colour-light-mode-accent-strong,
+      variables.$colour-dark-mode-accent-strong
     );
-    box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
-    @include modeMixins.high-contrast($background: variables.$colour-high-contrast-primary-light);
+    box-shadow: 0 3px 0 variables.$colour-dark-mode-accent-shadow;
+    @media screen and (prefers-contrast: more) {
+      background-color: variables.$colour-light-mode-high-contrast-accent-strong;
+      background-color: light-dark(
+        variables.$colour-light-mode-high-contrast-accent-strong,
+        variables.$colour-dark-mode-high-contrast-accent-strong
+      );
+      box-shadow: 0 3px 0 variables.$colour-light-mode-high-contrast-accent-shadow;
+      box-shadow: 0 3px 0 light-dark(
+        variables.$colour-light-mode-high-contrast-accent-shadow,
+        variables.$colour-dark-mode-accent-shadow
+      );
+    }
   }
 
   &:active {

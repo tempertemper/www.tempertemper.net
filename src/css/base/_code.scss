@@ -1,7 +1,6 @@
 @use '../admin/variables';
 @use '../admin/mixins--focus' as focusMixins;
 @use '../admin/mixins--general' as generalMixins;
-@use '../admin/mixins--modes' as modeMixins;
 
 code,
 kbd {
@@ -18,24 +17,23 @@ code {
     variables.$colour-code-background,
     variables.$colour-dark-mode-code-background
   );
-  @include modeMixins.high-contrast(variables.$colour-high-contrast-code-background);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-dark-mode-high-contrast-code-background;
+  }
 }
 
 kbd {
   font-family: system-ui, sans-serif;
   margin-right: .2em;
   margin-left: .2em;
-  box-shadow: 0 0 0 1px variables.$colour-grey, 0 2px 0 1px variables.$colour-grey;
+  box-shadow: 0 0 0 1px variables.$colour-light-mode-neutral, 0 2px 0 1px variables.$colour-light-mode-neutral;
   box-shadow: 0 0 0 1px light-dark(
-    variables.$colour-grey,
-    variables.$colour-dark-mode-grey
+    variables.$colour-light-mode-neutral,
+    variables.$colour-dark-mode-neutral
   ), 0 2px 0 1px light-dark(
-    variables.$colour-grey,
-    variables.$colour-dark-mode-grey
+    variables.$colour-light-mode-neutral,
+    variables.$colour-dark-mode-neutral
   );
-  @include modeMixins.high-contrast() {
-    box-shadow: 0 0 0 1px variables.$colour-dark-mode-grey, 0 2px 0 1px variables.$colour-dark-mode-grey;
-  }
 }
 
 code {
@@ -46,12 +44,11 @@ code {
 
 pre code,
 pre {
-  color: variables.$colour-black;
+  color: variables.$colour-light-mode-foreground;
   color: light-dark(
-    variables.$colour-black,
-    variables.$colour-dark-mode-white
+    variables.$colour-light-mode-foreground,
+    variables.$colour-dark-mode-foreground
   );
-  @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-white);
 }
 
 pre {
@@ -72,7 +69,9 @@ pre {
   margin-top: 1em;
   margin-bottom: 1em;
   overflow: auto;
-  @include modeMixins.high-contrast($background: variables.$colour-high-contrast-code-background);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-dark-mode-high-contrast-code-background;
+  }
   @include focusMixins.scroll-container;
 
   @media (min-width: variables.$l) {

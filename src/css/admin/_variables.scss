@@ -3,30 +3,61 @@
 //
 
 // Light mode colours
-$colour-primary: #0097db;
-$colour-primary-darker: #0077b3;
-$colour-primary-dark: #0073ab;
-$colour-black: #0b0c0c;
-$colour-white: #fff;
-$colour-grey: #949494;
-$colour-highlight: #ebf8ff;
-$colour-main: $colour-white;
-$colour-red: #eb4b37;
+$colour-light-mode-background: #fff;
+$colour-light-mode-foreground: #0b0c0c;
+
+$colour-light-mode-accent: #0097db;
+$colour-light-mode-accent-foreground: $colour-light-mode-background;
+$colour-light-mode-accent-text: #0077b3;
+$colour-light-mode-accent-strong: #0073ab;
+$colour-light-mode-accent-shadow: $colour-light-mode-accent-strong;
+
+$colour-light-mode-neutral: #949494;
+$colour-light-mode-highlight: #ebf8ff;
+$colour-light-mode-error: #f0523e;
+
+$colour-light-mode-text-highlight-background: $colour-light-mode-accent;
+$colour-light-mode-text-highlight-foreground: $colour-light-mode-foreground;
+
+// Light mode high contrast colours
+$colour-light-mode-high-contrast-accent: #00547a;
+$colour-light-mode-high-contrast-accent-text: #00517a;
+$colour-light-mode-high-contrast-accent-strong: #004d73;
+$colour-light-mode-high-contrast-accent-shadow: #002f47;
+
+$colour-light-mode-high-contrast-text-highlight-background: $colour-light-mode-high-contrast-accent;
+$colour-light-mode-high-contrast-text-highlight-foreground: $colour-light-mode-background;
 
 // Dark mode colours
-$colour-dark-mode-primary-light: #19b3ff;
-$colour-dark-mode-primary-darker: #007DB8;
-$colour-dark-mode-primary-dark: #006394;
-$colour-dark-mode-black: #1f1f22;
-$colour-dark-mode-white: #f2f2f2;
-$colour-dark-mode-grey: #777;
-$colour-dark-mode-highlight: #3d3d3d;
-$colour-dark-mode-main: #262626;
+$colour-dark-mode-background: #262626;
+$colour-dark-mode-foreground: #f2f2f2;
 
-// High contrast colours
-$colour-high-contrast-primary-light: #4dc4ff;
-$colour-high-contrast-highlight: #171717;
-$colour-high-contrast-main: #000;
+$colour-dark-mode-accent: #0092d6;
+$colour-dark-mode-accent-foreground: $colour-dark-mode-background;
+$colour-dark-mode-accent-text: $colour-light-mode-accent;
+$colour-dark-mode-accent-strong: #19b3ff;
+$colour-dark-mode-accent-shadow: #006394;
+
+$colour-dark-mode-neutral: #777;
+$colour-dark-mode-highlight: #3d3d3d;
+
+$colour-dark-mode-text-highlight-background: $colour-light-mode-accent-text;
+$colour-dark-mode-text-highlight-foreground: $colour-light-mode-background;
+
+// Dark mode high contrast colours
+$colour-dark-mode-high-contrast-background: #000;
+
+$colour-dark-mode-high-contrast-focus: $colour-light-mode-background;
+
+$colour-dark-mode-high-contrast-accent: $colour-dark-mode-accent-strong;
+$colour-dark-mode-high-contrast-accent-foreground: $colour-dark-mode-high-contrast-background;
+$colour-dark-mode-high-contrast-accent-text: $colour-dark-mode-high-contrast-accent;
+$colour-dark-mode-high-contrast-accent-strong: #4dc4ff;
+
+$colour-dark-mode-high-contrast-highlight: #171717;
+
+$colour-dark-mode-high-contrast-text-highlight-background: $colour-dark-mode-high-contrast-accent;
+$colour-dark-mode-high-contrast-text-highlight-foreground: $colour-light-mode-foreground;
 
 // Code colours
 $colour-code-background: #f2f2f2;
@@ -36,6 +67,12 @@ $colour-code-purple: #6d5ad8;
 $colour-code-cyan: #147685;
 $colour-code-yellow: #7c6c04;
 
+// Light mode high contrast code colours
+$colour-light-mode-high-contrast-code-magenta: #a10252;
+$colour-light-mode-high-contrast-code-purple: #4a32cf;
+$colour-light-mode-high-contrast-code-cyan: #0f5965;
+$colour-light-mode-high-contrast-code-yellow: #5e5103;
+
 // Dark mode code colours
 $colour-dark-mode-code-background: #1a1a1c;
 $colour-dark-mode-code-grey: #adacaf;
@@ -44,10 +81,10 @@ $colour-dark-mode-code-purple: #9786e9;
 $colour-dark-mode-code-cyan: #00d7e9;
 $colour-dark-mode-code-yellow: #ffe648;
 
-// High contrast code colours
-$colour-high-contrast-code-background: $colour-high-contrast-highlight;
-$colour-high-contrast-code-magenta: #ff75a5;
-$colour-high-contrast-code-purple: #a498ec;
+// Dark mode high contrast code colours
+$colour-dark-mode-high-contrast-code-background: $colour-dark-mode-high-contrast-highlight;
+$colour-dark-mode-high-contrast-code-magenta: #ff75a5;
+$colour-dark-mode-high-contrast-code-purple: #a498ec;
 
 
 //

@@ -1,7 +1,6 @@
 @use '../admin/variables';
 @use '../admin/mixins--typography' as typographyMixins;
 @use '../admin/mixins--general' as generalMixins;
-@use '../admin/mixins--modes' as modeMixins;
 
 .header {
   padding-top: 1em;
@@ -25,16 +24,14 @@
 
   svg {
     display: block;
-    color: variables.$colour-black;
+    color: variables.$colour-light-mode-foreground;
     color: light-dark(
-      variables.$colour-black,
-      variables.$colour-dark-mode-white
+      variables.$colour-light-mode-foreground,
+      variables.$colour-dark-mode-foreground
     );
 
     @media (min-width: variables.$l) {
       margin-top: .1em;
     }
-
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-white);
   }
 }

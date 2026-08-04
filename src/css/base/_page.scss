@@ -1,19 +1,20 @@
 @use '../admin/variables';
-@use '../admin/mixins--modes' as modeMixins;
 @use '../admin/mixins--general' as generalMixins;
 
 body {
-  background-color: variables.$colour-main;
+  background-color: variables.$colour-light-mode-background;
   background-color: light-dark(
-    variables.$colour-main,
-    variables.$colour-dark-mode-main
+    variables.$colour-light-mode-background,
+    variables.$colour-dark-mode-background
   );
-  color: variables.$colour-black;
+  color: variables.$colour-light-mode-foreground;
   color: light-dark(
-    variables.$colour-black,
-    variables.$colour-dark-mode-white
+    variables.$colour-light-mode-foreground,
+    variables.$colour-dark-mode-foreground
   );
-  @include modeMixins.high-contrast(variables.$colour-high-contrast-main, variables.$colour-dark-mode-white);
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    background-color: variables.$colour-dark-mode-high-contrast-background;
+  }
 }
 
 .wrapper {
@@ -23,10 +24,15 @@ body {
 
 html {
   scrollbar-color: light-dark(
-    variables.$colour-primary,
-    variables.$colour-dark-mode-primary-light
+    variables.$colour-light-mode-accent,
+    variables.$colour-dark-mode-accent-strong
   ) light-dark(
-    variables.$colour-main,
-    variables.$colour-dark-mode-main
+    variables.$colour-light-mode-background,
+    variables.$colour-dark-mode-background
   );
+  @media screen and (prefers-color-scheme: light) and (prefers-contrast: more) {
+    scrollbar-color:
+      variables.$colour-light-mode-high-contrast-accent
+      variables.$colour-light-mode-background;
+  }
 }

@@ -1,18 +1,36 @@
 @use '../../admin/variables' as variables;
-@use '../../admin/mixins--modes' as modeMixins;
 
 ::selection {
-  background: variables.$colour-primary;
-  color: variables.$colour-white;
-  color: light-dark(
-    variables.$colour-white,
-    variables.$colour-black
+  background-color: variables.$colour-light-mode-text-highlight-background;
+  background-color: light-dark(
+    variables.$colour-light-mode-text-highlight-background,
+    variables.$colour-dark-mode-text-highlight-background
   );
-  @include modeMixins.high-contrast($background: variables.$colour-dark-mode-primary-light, $colour: variables.$colour-black);
+  color: variables.$colour-light-mode-text-highlight-foreground;
+  color: light-dark(
+    variables.$colour-light-mode-text-highlight-foreground,
+    variables.$colour-dark-mode-text-highlight-foreground
+  );
+  @media screen and (prefers-contrast: more) {
+    background-color: variables.$colour-light-mode-high-contrast-text-highlight-background;
+    background-color: light-dark(
+      variables.$colour-light-mode-high-contrast-text-highlight-background,
+      variables.$colour-dark-mode-high-contrast-text-highlight-background
+    );
+    color: variables.$colour-light-mode-high-contrast-text-highlight-foreground;
+    color: light-dark(
+      variables.$colour-light-mode-high-contrast-text-highlight-foreground,
+      variables.$colour-dark-mode-high-contrast-text-highlight-foreground
+    );
+  }
 }
 
 blockquote {
-  border-left: .15em solid variables.$colour-primary;
+  border-left: .15em solid variables.$colour-light-mode-accent;
+  border-left-color: light-dark(
+    variables.$colour-light-mode-accent,
+    variables.$colour-dark-mode-accent
+  );
   margin-left: 0;
   margin-right: 0;
   padding: .25em 0 .25em .85em;
@@ -25,8 +43,12 @@ blockquote {
     }
   }
 
-  @include modeMixins.high-contrast() {
-    border-left-color: variables.$colour-dark-mode-primary-light;
+  @media screen and (prefers-contrast: more) {
+    border-left-color: variables.$colour-light-mode-high-contrast-accent;
+    border-left-color: light-dark(
+      variables.$colour-light-mode-high-contrast-accent,
+      variables.$colour-dark-mode-high-contrast-accent
+    );
   }
 
   ul,
@@ -70,8 +92,18 @@ ol {
 li {
 
   &::marker {
-    color: variables.$colour-primary;
-    @include modeMixins.high-contrast($colour: variables.$colour-dark-mode-primary-light);
+    color: variables.$colour-light-mode-accent;
+    color: light-dark(
+      variables.$colour-light-mode-accent,
+      variables.$colour-dark-mode-accent
+    );
+    @media screen and (prefers-contrast: more) {
+      color: variables.$colour-light-mode-high-contrast-accent;
+      color: light-dark(
+        variables.$colour-light-mode-high-contrast-accent,
+        variables.$colour-dark-mode-high-contrast-accent
+      );
+    }
   }
 
   ul &::marker {
@@ -99,18 +131,26 @@ small {
 }
 
 mark {
-  background-color: variables.$colour-primary;
+  background-color: variables.$colour-light-mode-text-highlight-background;
   background-color: light-dark(
-    variables.$colour-primary,
-    variables.$colour-dark-mode-primary-darker
+    variables.$colour-light-mode-text-highlight-background,
+    variables.$colour-dark-mode-text-highlight-background
   );
-  color: variables.$colour-black;
+  color: variables.$colour-light-mode-text-highlight-foreground;
   color: light-dark(
-    variables.$colour-black,
-    variables.$colour-white
+    variables.$colour-light-mode-text-highlight-foreground,
+    variables.$colour-dark-mode-text-highlight-foreground
   );
-  @include modeMixins.high-contrast(
-    $colour: variables.$colour-black,
-    $background: variables.$colour-dark-mode-primary-light
-  );
+  @media screen and (prefers-contrast: more) {
+    background-color: variables.$colour-light-mode-high-contrast-text-highlight-background;
+    background-color: light-dark(
+      variables.$colour-light-mode-high-contrast-text-highlight-background,
+      variables.$colour-dark-mode-high-contrast-text-highlight-background
+    );
+    color: variables.$colour-light-mode-high-contrast-text-highlight-foreground;
+    color: light-dark(
+      variables.$colour-light-mode-high-contrast-text-highlight-foreground,
+      variables.$colour-dark-mode-high-contrast-text-highlight-foreground
+    );
+  }
 }
