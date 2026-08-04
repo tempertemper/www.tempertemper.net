@@ -16,9 +16,6 @@
       variables.$colour-code-grey,
       variables.$colour-dark-mode-code-grey
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-code-grey;
-    }
   }
 
   &.punctuation {
@@ -27,9 +24,6 @@
       variables.$colour-code-grey,
       variables.$colour-dark-mode-code-grey
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-code-grey;
-    }
   }
 
   &.property,
@@ -77,9 +71,6 @@
       variables.$colour-code-cyan,
       variables.$colour-dark-mode-code-cyan
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-code-cyan;
-    }
   }
 
   &.atrule,
@@ -92,9 +83,6 @@
       variables.$colour-code-yellow,
       variables.$colour-dark-mode-code-yellow
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-code-yellow;
-    }
   }
 
   &.important,
