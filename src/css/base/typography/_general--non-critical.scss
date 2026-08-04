@@ -43,8 +43,12 @@ blockquote {
     }
   }
 
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    border-left-color: variables.$colour-dark-mode-high-contrast-accent;
+  @media screen and (prefers-contrast: more) {
+    border-left-color: variables.$colour-light-mode-high-contrast-accent;
+    border-left-color: light-dark(
+      variables.$colour-light-mode-high-contrast-accent,
+      variables.$colour-dark-mode-high-contrast-accent
+    );
   }
 
   ul,
@@ -93,8 +97,12 @@ li {
       variables.$colour-light-mode-accent,
       variables.$colour-dark-mode-accent
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-high-contrast-accent;
+    @media screen and (prefers-contrast: more) {
+      color: variables.$colour-light-mode-high-contrast-accent;
+      color: light-dark(
+        variables.$colour-light-mode-high-contrast-accent,
+        variables.$colour-dark-mode-high-contrast-accent
+      );
     }
   }
 

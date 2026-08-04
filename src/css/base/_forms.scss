@@ -45,6 +45,9 @@ textarea {
     variables.$colour-light-mode-foreground,
     variables.$colour-dark-mode-foreground
   );
+  @media screen and (prefers-color-scheme: light) and (prefers-contrast: more) {
+    border-color: variables.$colour-light-mode-high-contrast-accent;
+  }
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
     background-color: variables.$colour-dark-mode-high-contrast-background;
     border-color: variables.$colour-dark-mode-high-contrast-accent;

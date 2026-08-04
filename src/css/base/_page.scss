@@ -30,4 +30,9 @@ html {
     variables.$colour-light-mode-background,
     variables.$colour-dark-mode-background
   );
+  @media screen and (prefers-color-scheme: light) and (prefers-contrast: more) {
+    scrollbar-color:
+      variables.$colour-light-mode-high-contrast-accent
+      variables.$colour-light-mode-background;
+  }
 }

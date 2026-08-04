@@ -144,7 +144,11 @@
     variables.$colour-light-mode-accent,
     variables.$colour-dark-mode-accent
   );
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    border-top-color: variables.$colour-light-mode-accent;
+  @media screen and (prefers-contrast: more) {
+    border-top-color: variables.$colour-light-mode-high-contrast-accent;
+    border-top-color: light-dark(
+      variables.$colour-light-mode-high-contrast-accent,
+      variables.$colour-light-mode-accent
+    );
   }
 }
