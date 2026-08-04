@@ -11,9 +11,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Changes
 - Separates dark mode high contrast theme to make way for a new, separate, light mode high contrast theme
 - Removes high contrast mode mixin
-- Fixes outline offset on skip link
 - Redesigns skip link shadow slightly
 - Revamps colour variables for light, dark and dark high contrast modes using semantic palettes
 - Replaces legacy general colour variable references throughout the styling, leaving the dedicated syntax-highlighting palette unchanged
@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. The format 
 - Aligns marked/selected text colours across light and dark modes
 
 ### Fixes
+- Fixes outline offset on skip link
 - Lightens error red slightly so it passes AA in dark mode
 - Darkens error summary links in light mode, so that they pass AA
 

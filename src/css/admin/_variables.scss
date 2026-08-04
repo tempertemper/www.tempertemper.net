@@ -31,14 +31,12 @@ $colour-dark-mode-accent-shadow: #006394;
 
 $colour-dark-mode-neutral: #777;
 $colour-dark-mode-highlight: #3d3d3d;
-$colour-dark-mode-error: $colour-light-mode-error;
 
 $colour-dark-mode-text-highlight-background: $colour-light-mode-accent-text;
 $colour-dark-mode-text-highlight-foreground: $colour-light-mode-background;
 
 // Dark mode high contrast colours
 $colour-dark-mode-high-contrast-background: #000;
-$colour-dark-mode-high-contrast-foreground: $colour-dark-mode-foreground;
 
 $colour-dark-mode-high-contrast-focus: $colour-light-mode-background;
 
@@ -46,11 +44,8 @@ $colour-dark-mode-high-contrast-accent: $colour-dark-mode-accent-strong;
 $colour-dark-mode-high-contrast-accent-foreground: $colour-dark-mode-high-contrast-background;
 $colour-dark-mode-high-contrast-accent-text: $colour-dark-mode-high-contrast-accent;
 $colour-dark-mode-high-contrast-accent-strong: #4dc4ff;
-$colour-dark-mode-high-contrast-accent-shadow: $colour-dark-mode-accent-shadow;
 
-$colour-dark-mode-high-contrast-neutral: $colour-dark-mode-neutral;
 $colour-dark-mode-high-contrast-highlight: #171717;
-$colour-dark-mode-high-contrast-error: $colour-dark-mode-error;
 
 $colour-dark-mode-high-contrast-text-highlight-background: $colour-dark-mode-high-contrast-accent;
 $colour-dark-mode-high-contrast-text-highlight-foreground: $colour-light-mode-foreground;

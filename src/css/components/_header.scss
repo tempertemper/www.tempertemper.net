@@ -33,9 +33,5 @@
     @media (min-width: variables.$l) {
       margin-top: .1em;
     }
-
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-high-contrast-foreground;
-    }
   }
 }

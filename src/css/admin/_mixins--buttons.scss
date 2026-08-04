@@ -24,7 +24,6 @@
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
     background-color: variables.$colour-dark-mode-high-contrast-accent;
     color: variables.$colour-dark-mode-high-contrast-accent-foreground;
-    box-shadow: 0 3px 0 variables.$colour-dark-mode-high-contrast-accent-shadow;
   }
 
   @media (max-width: variables.$xs) {

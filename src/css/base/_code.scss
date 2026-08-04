@@ -34,9 +34,6 @@ kbd {
     variables.$colour-light-mode-neutral,
     variables.$colour-dark-mode-neutral
   );
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    box-shadow: 0 0 0 1px variables.$colour-dark-mode-high-contrast-neutral, 0 2px 0 1px variables.$colour-dark-mode-high-contrast-neutral;
-  }
 }
 
 code {
@@ -52,9 +49,6 @@ pre {
     variables.$colour-light-mode-foreground,
     variables.$colour-dark-mode-foreground
   );
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    color: variables.$colour-dark-mode-high-contrast-foreground;
-  }
 }
 
 pre {
