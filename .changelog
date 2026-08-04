@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Adds
 - Adds a light mode high contrast theme
+- Adds a light mode high contrast theme for code highlighting
 
 ### Changes
 - Revamps colour variables for light, dark and dark high contrast modes using semantic palettes

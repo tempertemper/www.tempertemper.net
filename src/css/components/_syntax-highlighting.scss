@@ -37,8 +37,12 @@
       variables.$colour-code-magenta,
       variables.$colour-dark-mode-code-magenta
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-high-contrast-code-magenta;
+    @media screen and (prefers-contrast: more) {
+      color: variables.$colour-light-mode-high-contrast-code-magenta;
+      color: light-dark(
+        variables.$colour-light-mode-high-contrast-code-magenta,
+        variables.$colour-dark-mode-high-contrast-code-magenta
+      );
     }
   }
 
@@ -49,8 +53,12 @@
       variables.$colour-code-purple,
       variables.$colour-dark-mode-code-purple
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-high-contrast-code-purple;
+    @media screen and (prefers-contrast: more) {
+      color: variables.$colour-light-mode-high-contrast-code-purple;
+      color: light-dark(
+        variables.$colour-light-mode-high-contrast-code-purple,
+        variables.$colour-dark-mode-high-contrast-code-purple
+      );
     }
   }
 
@@ -71,6 +79,9 @@
       variables.$colour-code-cyan,
       variables.$colour-dark-mode-code-cyan
     );
+    @media screen and (prefers-color-scheme: light) and (prefers-contrast: more) {
+      color: variables.$colour-light-mode-high-contrast-code-cyan;
+    }
   }
 
   &.atrule,
@@ -83,6 +94,9 @@
       variables.$colour-code-yellow,
       variables.$colour-dark-mode-code-yellow
     );
+    @media screen and (prefers-color-scheme: light) and (prefers-contrast: more) {
+      color: variables.$colour-light-mode-high-contrast-code-yellow;
+    }
   }
 
   &.important,
