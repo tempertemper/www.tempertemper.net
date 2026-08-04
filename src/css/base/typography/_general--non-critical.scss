@@ -11,9 +11,17 @@
     variables.$colour-light-mode-text-highlight-foreground,
     variables.$colour-dark-mode-text-highlight-foreground
   );
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-high-contrast-text-highlight-background;
-    color: variables.$colour-dark-mode-high-contrast-text-highlight-foreground;
+  @media screen and (prefers-contrast: more) {
+    background-color: variables.$colour-light-mode-high-contrast-text-highlight-background;
+    background-color: light-dark(
+      variables.$colour-light-mode-high-contrast-text-highlight-background,
+      variables.$colour-dark-mode-high-contrast-text-highlight-background
+    );
+    color: variables.$colour-light-mode-high-contrast-text-highlight-foreground;
+    color: light-dark(
+      variables.$colour-light-mode-high-contrast-text-highlight-foreground,
+      variables.$colour-dark-mode-high-contrast-text-highlight-foreground
+    );
   }
 }
 
@@ -125,8 +133,16 @@ mark {
     variables.$colour-light-mode-text-highlight-foreground,
     variables.$colour-dark-mode-text-highlight-foreground
   );
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-high-contrast-text-highlight-background;
-    color: variables.$colour-dark-mode-high-contrast-text-highlight-foreground;
+  @media screen and (prefers-contrast: more) {
+    background-color: variables.$colour-light-mode-high-contrast-text-highlight-background;
+    background-color: light-dark(
+      variables.$colour-light-mode-high-contrast-text-highlight-background,
+      variables.$colour-dark-mode-high-contrast-text-highlight-background
+    );
+    color: variables.$colour-light-mode-high-contrast-text-highlight-foreground;
+    color: light-dark(
+      variables.$colour-light-mode-high-contrast-text-highlight-foreground,
+      variables.$colour-dark-mode-high-contrast-text-highlight-foreground
+    );
   }
 }

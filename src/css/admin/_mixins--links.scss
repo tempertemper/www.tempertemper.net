@@ -10,8 +10,12 @@
       variables.$colour-light-mode-accent-strong,
       variables.$colour-dark-mode-accent-strong
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-high-contrast-accent-strong;
+    @media screen and (prefers-contrast: more) {
+      color: variables.$colour-light-mode-high-contrast-accent-strong;
+      color: light-dark(
+        variables.$colour-light-mode-high-contrast-accent-strong,
+        variables.$colour-dark-mode-high-contrast-accent-strong
+      );
     }
   }
 
@@ -67,8 +71,12 @@
       variables.$colour-light-mode-accent-text,
       variables.$colour-dark-mode-accent-text
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-high-contrast-accent-text;
+    @media screen and (prefers-contrast: more) {
+      color: variables.$colour-light-mode-high-contrast-accent-text;
+      color: light-dark(
+        variables.$colour-light-mode-high-contrast-accent-text,
+        variables.$colour-dark-mode-high-contrast-accent-text
+      );
     }
   }
 

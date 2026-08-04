@@ -19,6 +19,15 @@ $colour-light-mode-error: #f0523e;
 $colour-light-mode-text-highlight-background: $colour-light-mode-accent;
 $colour-light-mode-text-highlight-foreground: $colour-light-mode-foreground;
 
+// Light mode high contrast colours
+$colour-light-mode-high-contrast-accent: #00547a;
+$colour-light-mode-high-contrast-accent-text: #00517a;
+$colour-light-mode-high-contrast-accent-strong: #004d73;
+$colour-light-mode-high-contrast-accent-shadow: #003e5c;
+
+$colour-light-mode-high-contrast-text-highlight-background: $colour-light-mode-high-contrast-accent;
+$colour-light-mode-high-contrast-text-highlight-foreground: $colour-light-mode-background;
+
 // Dark mode colours
 $colour-dark-mode-background: #262626;
 $colour-dark-mode-foreground: #f2f2f2;

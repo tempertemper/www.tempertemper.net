@@ -9,8 +9,12 @@ summary {
     variables.$colour-dark-mode-accent-text
   );
   @include linksMixins.text-interaction;
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    color: variables.$colour-dark-mode-high-contrast-accent-text;
+  @media screen and (prefers-contrast: more) {
+    color: variables.$colour-light-mode-high-contrast-accent-text;
+    color: light-dark(
+      variables.$colour-light-mode-high-contrast-accent-text,
+      variables.$colour-dark-mode-high-contrast-accent-text
+    );
   }
 
   @media (min-width: variables.$l) {

@@ -11,12 +11,14 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Adds
+- Adds a light mode high contrast theme
+
 ### Changes
-- Separates dark mode high contrast theme to make way for a new, separate, light mode high contrast theme
-- Removes high contrast mode mixin
-- Redesigns skip link shadow slightly
 - Revamps colour variables for light, dark and dark high contrast modes using semantic palettes
-- Replaces legacy general colour variable references throughout the styling, leaving the dedicated syntax-highlighting palette unchanged
+- Makes existing high contrast theme dark mode only
+- Removes high contrast mode mixin in favour of using media queries directly
+- Redesigns skip link shadow slightly
 - Refines accent colours for graphical elements in dark mode
 - Uses the foreground colour for focus outlines in dark mode
 - Aligns marked/selected text colours across light and dark modes

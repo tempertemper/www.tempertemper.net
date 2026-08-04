@@ -21,9 +21,22 @@
   margin-top: 1em;
   padding: calc(.5em + 3px) 1em .5em;
   width: auto;
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-high-contrast-accent;
-    color: variables.$colour-dark-mode-high-contrast-accent-foreground;
+  @media screen and (prefers-contrast: more) {
+    background-color: variables.$colour-light-mode-high-contrast-accent;
+    background-color: light-dark(
+      variables.$colour-light-mode-high-contrast-accent,
+      variables.$colour-dark-mode-high-contrast-accent
+    );
+    box-shadow: 0 3px 0 variables.$colour-light-mode-high-contrast-accent-shadow;
+    box-shadow: 0 3px 0 light-dark(
+      variables.$colour-light-mode-high-contrast-accent-shadow,
+      variables.$colour-dark-mode-accent-shadow
+    );
+    color: variables.$colour-light-mode-accent-foreground;
+    color: light-dark(
+      variables.$colour-light-mode-accent-foreground,
+      variables.$colour-dark-mode-high-contrast-accent-foreground
+    );
   }
 
   @media (max-width: variables.$xs) {
@@ -63,8 +76,17 @@
       variables.$colour-dark-mode-accent-strong
     );
     box-shadow: 0 3px 0 variables.$colour-dark-mode-accent-shadow;
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      background-color: variables.$colour-dark-mode-high-contrast-accent-strong;
+    @media screen and (prefers-contrast: more) {
+      background-color: variables.$colour-light-mode-high-contrast-accent-strong;
+      background-color: light-dark(
+        variables.$colour-light-mode-high-contrast-accent-strong,
+        variables.$colour-dark-mode-high-contrast-accent-strong
+      );
+      box-shadow: 0 3px 0 variables.$colour-light-mode-high-contrast-accent-shadow;
+      box-shadow: 0 3px 0 light-dark(
+        variables.$colour-light-mode-high-contrast-accent-shadow,
+        variables.$colour-dark-mode-accent-shadow
+      );
     }
   }
 
