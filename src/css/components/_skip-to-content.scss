@@ -17,15 +17,20 @@
       variables.$colour-white,
       variables.$colour-dark-mode-main
     );
-    box-shadow: 0 0 .4em 0 variables.$colour-dark-mode-black;
+    box-shadow: 0 0 .4em 0 variables.$colour-grey;
+    box-shadow: 0 0 .4em 0 light-dark(
+      variables.$colour-grey,
+      variables.$colour-dark-mode-main
+    );
     outline-offset: 0;
     padding: 0.5em .5em;
 
     @media screen and (prefers-color-scheme: dark) {
-      box-shadow: .2em .2em .4em .1em variables.$colour-dark-mode-black;
+      box-shadow: .2em .2em .4em .1em variables.$colour-dark-mode-main;
     }
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
       background-color: variables.$colour-dark-mode-high-contrast-main;
+      box-shadow: .2em .2em .4em .1em variables.$colour-dark-mode-high-contrast-main;
     }
   }
 }
