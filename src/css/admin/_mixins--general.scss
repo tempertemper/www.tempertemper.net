@@ -124,18 +124,12 @@
     variables.$colour-dark-mode-highlight
   );
   display: block;
-  box-shadow: 0 0 .25em variables.$colour-grey;
-  box-shadow: 0 0 .25em light-dark(
-    variables.$colour-grey,
-    variables.$colour-black
-  );
   margin-bottom: 1em;
   margin-top: 1em;
   height: auto;
   width: 100%;
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
     background-color: variables.$colour-dark-mode-high-contrast-highlight;
-    box-shadow: 0 0 .25em variables.$colour-black;
   }
 
   @media (min-width: variables.$l) {
