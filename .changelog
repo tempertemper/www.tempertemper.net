@@ -17,6 +17,9 @@ All notable changes to this project will be documented in this file. The format 
 - Redesigns skip link shadow slightly
 - Revamps colour variables for light, dark and dark high contrast modes using semantic palettes
 - Replaces legacy general colour variable references throughout the styling, leaving the dedicated syntax-highlighting palette unchanged
+- Refines accent colours for graphical elements in dark mode
+- Uses the foreground colour for focus outlines in dark mode
+- Aligns marked/selected text colours across light and dark modes
 
 ----------
 

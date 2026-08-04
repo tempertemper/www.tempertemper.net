@@ -2,6 +2,10 @@
 
 @mixin button {
   background-color: variables.$colour-light-mode-accent;
+  background-color: light-dark(
+    variables.$colour-light-mode-accent,
+    variables.$colour-dark-mode-accent
+  );
   border-radius: variables.$border-radius-default;
   box-shadow: 0 3px 0 variables.$colour-light-mode-accent-shadow;
   box-shadow: 0 3px 0 light-dark(
@@ -28,10 +32,10 @@
   }
 
   &:focus {
-    outline: 3px solid variables.$colour-light-mode-focus;
+    outline: 3px solid variables.$colour-light-mode-foreground;
     outline-color: light-dark(
-      variables.$colour-light-mode-focus,
-      variables.$colour-dark-mode-focus
+      variables.$colour-light-mode-foreground,
+      variables.$colour-dark-mode-foreground
     );
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
       outline-color: variables.$colour-dark-mode-high-contrast-focus;
@@ -43,10 +47,10 @@
   }
 
   &:focus-visible {
-    outline: 3px solid variables.$colour-light-mode-focus;
+    outline: 3px solid variables.$colour-light-mode-foreground;
     outline-color: light-dark(
-      variables.$colour-light-mode-focus,
-      variables.$colour-dark-mode-focus
+      variables.$colour-light-mode-foreground,
+      variables.$colour-dark-mode-foreground
     );
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
       outline-color: variables.$colour-dark-mode-high-contrast-focus;

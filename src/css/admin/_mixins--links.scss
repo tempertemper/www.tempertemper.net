@@ -27,10 +27,10 @@
   }
 
   &:focus {
-    outline: 3px solid variables.$colour-light-mode-focus;
+    outline: 3px solid variables.$colour-light-mode-foreground;
     outline-color: light-dark(
-      variables.$colour-light-mode-focus,
-      variables.$colour-dark-mode-focus
+      variables.$colour-light-mode-foreground,
+      variables.$colour-dark-mode-foreground
     );
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
@@ -47,10 +47,10 @@
   }
 
   &:focus-visible {
-    outline: 3px solid variables.$colour-light-mode-focus;
+    outline: 3px solid variables.$colour-light-mode-foreground;
     outline-color: light-dark(
-      variables.$colour-light-mode-focus,
-      variables.$colour-dark-mode-focus
+      variables.$colour-light-mode-foreground,
+      variables.$colour-dark-mode-foreground
     );
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;

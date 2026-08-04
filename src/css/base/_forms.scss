@@ -31,6 +31,10 @@ textarea {
     variables.$colour-dark-mode-background
   );
   border: 3px solid variables.$colour-light-mode-accent;
+  border-color: light-dark(
+    variables.$colour-light-mode-accent,
+    variables.$colour-dark-mode-accent
+  );
   border-radius: variables.$border-radius-default;
   display: block;
   padding: .5em .75em;

@@ -15,7 +15,7 @@
     outline: 3px solid currentColor;
     outline-color: light-dark(
       currentColor,
-      variables.$colour-dark-mode-focus
+      variables.$colour-dark-mode-foreground
     );
     outline-offset: 1px;
 

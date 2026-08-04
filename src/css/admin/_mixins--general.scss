@@ -140,4 +140,11 @@
 
 @mixin divider {
   border-top: 2px solid variables.$colour-light-mode-accent;
+  border-top-color: light-dark(
+    variables.$colour-light-mode-accent,
+    variables.$colour-dark-mode-accent
+  );
+  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    border-top-color: variables.$colour-light-mode-accent;
+  }
 }

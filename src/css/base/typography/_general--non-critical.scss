@@ -1,11 +1,15 @@
 @use '../../admin/variables' as variables;
 
 ::selection {
-  background: variables.$colour-light-mode-accent;
-  color: variables.$colour-light-mode-accent-foreground;
+  background-color: variables.$colour-light-mode-text-highlight-background;
+  background-color: light-dark(
+    variables.$colour-light-mode-text-highlight-background,
+    variables.$colour-dark-mode-text-highlight-background
+  );
+  color: variables.$colour-light-mode-text-highlight-foreground;
   color: light-dark(
-    variables.$colour-light-mode-accent-foreground,
-    variables.$colour-light-mode-foreground
+    variables.$colour-light-mode-text-highlight-foreground,
+    variables.$colour-dark-mode-text-highlight-foreground
   );
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
     background-color: variables.$colour-dark-mode-high-contrast-text-highlight-background;
@@ -15,6 +19,10 @@
 
 blockquote {
   border-left: .15em solid variables.$colour-light-mode-accent;
+  border-left-color: light-dark(
+    variables.$colour-light-mode-accent,
+    variables.$colour-dark-mode-accent
+  );
   margin-left: 0;
   margin-right: 0;
   padding: .25em 0 .25em .85em;
@@ -73,6 +81,10 @@ li {
 
   &::marker {
     color: variables.$colour-light-mode-accent;
+    color: light-dark(
+      variables.$colour-light-mode-accent,
+      variables.$colour-dark-mode-accent
+    );
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
       color: variables.$colour-dark-mode-high-contrast-accent;
     }
