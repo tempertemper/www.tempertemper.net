@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file. The format 
 - Refines accent colours for graphical elements in dark mode
 - Uses the foreground colour for focus outlines in dark mode
 - Aligns marked/selected text colours across light and dark modes
+- Lightens error red slightly so it passes AA in dark mode
 
 ----------
 
