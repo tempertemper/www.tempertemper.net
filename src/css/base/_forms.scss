@@ -19,32 +19,32 @@ label {
   font-weight: bold;
   display: inline-block;
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    color: variables.$colour-dark-mode-primary-light;
+    color: variables.$colour-dark-mode-high-contrast-accent-text;
   }
 }
 
 input,
 textarea {
-  background-color: variables.$colour-main;
+  background-color: variables.$colour-light-mode-background;
   background-color: light-dark(
-    variables.$colour-main,
-    variables.$colour-dark-mode-main
+    variables.$colour-light-mode-background,
+    variables.$colour-dark-mode-background
   );
-  border: 3px solid variables.$colour-primary;
+  border: 3px solid variables.$colour-light-mode-accent;
   border-radius: variables.$border-radius-default;
   display: block;
   padding: .5em .75em;
   width: 100%;
   line-height: 1.2;
-  color: variables.$colour-black;
+  color: variables.$colour-light-mode-foreground;
   color: light-dark(
-    variables.$colour-black,
-    variables.$colour-dark-mode-white
+    variables.$colour-light-mode-foreground,
+    variables.$colour-dark-mode-foreground
   );
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-high-contrast-main;
-    color: variables.$colour-dark-mode-white;
-    border-color: variables.$colour-dark-mode-primary-light;
+    background-color: variables.$colour-dark-mode-high-contrast-background;
+    color: variables.$colour-dark-mode-high-contrast-foreground;
+    border-color: variables.$colour-dark-mode-high-contrast-accent;
   }
 
   &:focus {
@@ -59,12 +59,12 @@ button {
 }
 
 .form-error  {
-  border-left: .15em solid variables.$colour-red;
+  border-left: .15em solid variables.$colour-light-mode-error;
   padding: .1em 0 .45em .85em;
 
   input,
   textarea {
-    border-color: variables.$colour-red;
+    border-color: variables.$colour-light-mode-error;
   }
 
   :target {
@@ -92,11 +92,11 @@ button {
 
     &:link,
     &:visited {
-      color: variables.$colour-dark-mode-primary-light;
+      color: variables.$colour-dark-mode-high-contrast-accent-text;
     }
 
     &:hover {
-      color: variables.$colour-dark-mode-high-contrast-primary-light;
+      color: variables.$colour-dark-mode-high-contrast-accent-strong;
     }
   }
 
@@ -105,6 +105,6 @@ button {
   }
 
   li::marker {
-    color: variables.$colour-red;
+    color: variables.$colour-light-mode-error;
   }
 }

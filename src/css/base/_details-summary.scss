@@ -3,14 +3,14 @@
 
 summary {
   margin-top: 1em;
-  color: variables.$colour-primary-darker;
+  color: variables.$colour-light-mode-accent-text;
   color: light-dark(
-    variables.$colour-primary-darker,
-    variables.$colour-primary
+    variables.$colour-light-mode-accent-text,
+    variables.$colour-dark-mode-accent-text
   );
   @include linksMixins.text-interaction;
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    color: variables.$colour-dark-mode-primary-light;
+    color: variables.$colour-dark-mode-high-contrast-accent-text;
   }
 
   @media (min-width: variables.$l) {

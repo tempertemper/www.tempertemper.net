@@ -15,12 +15,12 @@
     outline: 3px solid currentColor;
     outline-color: light-dark(
       currentColor,
-      variables.$colour-white
+      variables.$colour-dark-mode-focus
     );
     outline-offset: 1px;
 
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      outline-color: variables.$colour-white;
+      outline-color: variables.$colour-dark-mode-high-contrast-focus;
     }
   }
 }

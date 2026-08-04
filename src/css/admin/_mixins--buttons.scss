@@ -1,26 +1,26 @@
 @use '../admin/variables';
 
 @mixin button {
-  background-color: variables.$colour-primary;
+  background-color: variables.$colour-light-mode-accent;
   border-radius: variables.$border-radius-default;
-  box-shadow: 0 3px 0 variables.$colour-primary-dark;
+  box-shadow: 0 3px 0 variables.$colour-light-mode-accent-shadow;
   box-shadow: 0 3px 0 light-dark(
-    variables.$colour-primary-dark,
-    variables.$colour-dark-mode-primary-dark
+    variables.$colour-light-mode-accent-shadow,
+    variables.$colour-dark-mode-accent-shadow
   );
-  color: variables.$colour-white;
+  color: variables.$colour-light-mode-accent-foreground;
   color: light-dark(
-    variables.$colour-white,
-    variables.$colour-dark-mode-main
+    variables.$colour-light-mode-accent-foreground,
+    variables.$colour-dark-mode-accent-foreground
   );
   font-weight: 700;
   margin-top: 1em;
   padding: calc(.5em + 3px) 1em .5em;
   width: auto;
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-primary-light;
-    color: variables.$colour-dark-mode-high-contrast-main;
-    box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
+    background-color: variables.$colour-dark-mode-high-contrast-accent;
+    color: variables.$colour-dark-mode-high-contrast-accent-foreground;
+    box-shadow: 0 3px 0 variables.$colour-dark-mode-high-contrast-accent-shadow;
   }
 
   @media (max-width: variables.$xs) {
@@ -28,13 +28,13 @@
   }
 
   &:focus {
-    outline: 3px solid variables.$colour-black;
+    outline: 3px solid variables.$colour-light-mode-focus;
     outline-color: light-dark(
-      variables.$colour-black,
-      variables.$colour-white
+      variables.$colour-light-mode-focus,
+      variables.$colour-dark-mode-focus
     );
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      outline-color: variables.$colour-white;
+      outline-color: variables.$colour-dark-mode-high-contrast-focus;
     }
   }
 
@@ -43,25 +43,25 @@
   }
 
   &:focus-visible {
-    outline: 3px solid variables.$colour-black;
+    outline: 3px solid variables.$colour-light-mode-focus;
     outline-color: light-dark(
-      variables.$colour-black,
-      variables.$colour-white
+      variables.$colour-light-mode-focus,
+      variables.$colour-dark-mode-focus
     );
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      outline-color: variables.$colour-white;
+      outline-color: variables.$colour-dark-mode-high-contrast-focus;
     }
   }
 
   &:hover {
-    background-color: variables.$colour-primary-dark;
+    background-color: variables.$colour-light-mode-accent-strong;
     background-color: light-dark(
-      variables.$colour-primary-dark,
-      variables.$colour-dark-mode-primary-light
+      variables.$colour-light-mode-accent-strong,
+      variables.$colour-dark-mode-accent-strong
     );
-    box-shadow: 0 3px 0 variables.$colour-dark-mode-primary-dark;
+    box-shadow: 0 3px 0 variables.$colour-dark-mode-accent-shadow;
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      background-color: variables.$colour-dark-mode-high-contrast-primary-light;
+      background-color: variables.$colour-dark-mode-high-contrast-accent-strong;
     }
   }
 

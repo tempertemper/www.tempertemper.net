@@ -45,9 +45,9 @@
 @mixin highlight-box {
 
   & {
-    background-color: variables.$colour-highlight;
+    background-color: variables.$colour-light-mode-highlight;
     background-color: light-dark(
-      variables.$colour-highlight,
+      variables.$colour-light-mode-highlight,
       variables.$colour-dark-mode-highlight
     );
     border-radius: variables.$border-radius-default;
@@ -118,9 +118,9 @@
 
 @mixin embedded-media {
   border-radius: variables.$border-radius-default;
-  background-color: variables.$colour-highlight;
+  background-color: variables.$colour-light-mode-highlight;
   background-color: light-dark(
-    variables.$colour-highlight,
+    variables.$colour-light-mode-highlight,
     variables.$colour-dark-mode-highlight
   );
   display: block;
@@ -139,5 +139,5 @@
 }
 
 @mixin divider {
-  border-top: 2px solid variables.$colour-primary;
+  border-top: 2px solid variables.$colour-light-mode-accent;
 }

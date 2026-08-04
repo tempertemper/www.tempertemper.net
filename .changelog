@@ -15,6 +15,8 @@ All notable changes to this project will be documented in this file. The format 
 - Removes high contrast mode mixin
 - Fixes outline offset on skip link
 - Redesigns skip link shadow slightly
+- Revamps colour variables for light, dark and dark high contrast modes using semantic palettes
+- Replaces legacy general colour variable references throughout the styling, leaving the dedicated syntax-highlighting palette unchanged
 
 ----------
 

@@ -24,10 +24,10 @@
 
   svg {
     display: block;
-    color: variables.$colour-black;
+    color: variables.$colour-light-mode-foreground;
     color: light-dark(
-      variables.$colour-black,
-      variables.$colour-dark-mode-white
+      variables.$colour-light-mode-foreground,
+      variables.$colour-dark-mode-foreground
     );
 
     @media (min-width: variables.$l) {
@@ -35,7 +35,7 @@
     }
 
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      color: variables.$colour-dark-mode-white;
+      color: variables.$colour-dark-mode-high-contrast-foreground;
     }
   }
 }

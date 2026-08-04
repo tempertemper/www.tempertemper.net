@@ -26,16 +26,16 @@ kbd {
   font-family: system-ui, sans-serif;
   margin-right: .2em;
   margin-left: .2em;
-  box-shadow: 0 0 0 1px variables.$colour-grey, 0 2px 0 1px variables.$colour-grey;
+  box-shadow: 0 0 0 1px variables.$colour-light-mode-neutral, 0 2px 0 1px variables.$colour-light-mode-neutral;
   box-shadow: 0 0 0 1px light-dark(
-    variables.$colour-grey,
-    variables.$colour-dark-mode-grey
+    variables.$colour-light-mode-neutral,
+    variables.$colour-dark-mode-neutral
   ), 0 2px 0 1px light-dark(
-    variables.$colour-grey,
-    variables.$colour-dark-mode-grey
+    variables.$colour-light-mode-neutral,
+    variables.$colour-dark-mode-neutral
   );
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    box-shadow: 0 0 0 1px variables.$colour-dark-mode-grey, 0 2px 0 1px variables.$colour-dark-mode-grey;
+    box-shadow: 0 0 0 1px variables.$colour-dark-mode-high-contrast-neutral, 0 2px 0 1px variables.$colour-dark-mode-high-contrast-neutral;
   }
 }
 
@@ -47,13 +47,13 @@ code {
 
 pre code,
 pre {
-  color: variables.$colour-black;
+  color: variables.$colour-light-mode-foreground;
   color: light-dark(
-    variables.$colour-black,
-    variables.$colour-dark-mode-white
+    variables.$colour-light-mode-foreground,
+    variables.$colour-dark-mode-foreground
   );
   @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    color: variables.$colour-dark-mode-white;
+    color: variables.$colour-dark-mode-high-contrast-foreground;
   }
 }
 
