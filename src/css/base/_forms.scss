@@ -96,11 +96,19 @@ button {
 
     &:link,
     &:visited {
-      color: variables.$colour-dark-mode-high-contrast-accent-text;
+      color: variables.$colour-light-mode-accent-text;
+      color: light-dark(
+        variables.$colour-light-mode-accent-text,
+        variables.$colour-dark-mode-high-contrast-accent-text
+      );
     }
 
     &:hover {
-      color: variables.$colour-dark-mode-high-contrast-accent-strong;
+      color: variables.$colour-light-mode-accent-strong;
+      color: light-dark(
+        variables.$colour-light-mode-accent-strong,
+        variables.$colour-dark-mode-high-contrast-accent-strong
+      );
     }
   }
 
