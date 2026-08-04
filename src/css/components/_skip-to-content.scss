@@ -18,6 +18,7 @@
       variables.$colour-dark-mode-main
     );
     box-shadow: 0 0 .4em 0 variables.$colour-dark-mode-black;
+    outline-offset: 0;
     padding: 0.5em .5em;
 
     @media screen and (prefers-color-scheme: dark) {
