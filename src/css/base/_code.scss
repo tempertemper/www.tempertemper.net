@@ -17,8 +17,11 @@ code {
     variables.$colour-code-background,
     variables.$colour-dark-mode-code-background
   );
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-high-contrast-code-background;
+  @media (prefers-contrast: more) {
+    background-color: light-dark(
+      variables.$colour-code-background,
+      variables.$colour-dark-mode-high-contrast-code-background
+    );
   }
 }
 
@@ -69,8 +72,11 @@ pre {
   margin-top: 1em;
   margin-bottom: 1em;
   overflow: auto;
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-high-contrast-code-background;
+  @media (prefers-contrast: more) {
+    background-color: light-dark(
+      variables.$colour-code-background,
+      variables.$colour-dark-mode-high-contrast-code-background
+    );
   }
   @include focusMixins.scroll-container;
 

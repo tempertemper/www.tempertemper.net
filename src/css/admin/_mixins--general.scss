@@ -54,8 +54,11 @@
     padding: 1em;
   }
 
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-high-contrast-highlight;
+  @media (prefers-contrast: more) {
+    background-color: light-dark(
+      variables.$colour-light-mode-highlight,
+      variables.$colour-dark-mode-high-contrast-highlight
+    );
   }
 
   > h2,
@@ -128,8 +131,11 @@
   margin-top: 1em;
   height: auto;
   width: 100%;
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-high-contrast-highlight;
+  @media (prefers-contrast: more) {
+    background-color: light-dark(
+      variables.$colour-light-mode-highlight,
+      variables.$colour-dark-mode-high-contrast-highlight
+    );
   }
 
   @media (min-width: variables.$l) {

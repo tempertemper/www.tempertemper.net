@@ -18,8 +18,11 @@ form {
 label {
   font-weight: bold;
   display: inline-block;
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    color: variables.$colour-dark-mode-high-contrast-accent-text;
+  @media (prefers-contrast: more) {
+    color: light-dark(
+      variables.$colour-light-mode-foreground,
+      variables.$colour-dark-mode-high-contrast-accent-text
+    );
   }
 }
 
@@ -45,12 +48,16 @@ textarea {
     variables.$colour-light-mode-foreground,
     variables.$colour-dark-mode-foreground
   );
-  @media screen and (prefers-color-scheme: light) and (prefers-contrast: more) {
+  @media (prefers-contrast: more) {
+    background-color: light-dark(
+      variables.$colour-light-mode-background,
+      variables.$colour-dark-mode-high-contrast-background
+    );
     border-color: variables.$colour-light-mode-high-contrast-accent;
-  }
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-high-contrast-background;
-    border-color: variables.$colour-dark-mode-high-contrast-accent;
+    border-color: light-dark(
+      variables.$colour-light-mode-high-contrast-accent,
+      variables.$colour-dark-mode-high-contrast-accent
+    );
   }
 
   &:focus {

@@ -12,8 +12,11 @@ body {
     variables.$colour-light-mode-foreground,
     variables.$colour-dark-mode-foreground
   );
-  @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-    background-color: variables.$colour-dark-mode-high-contrast-background;
+  @media (prefers-contrast: more) {
+    background-color: light-dark(
+      variables.$colour-light-mode-background,
+      variables.$colour-dark-mode-high-contrast-background
+    );
   }
 }
 

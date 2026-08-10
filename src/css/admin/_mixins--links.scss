@@ -36,8 +36,11 @@
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      outline-color: variables.$colour-dark-mode-high-contrast-focus;
+    @media (prefers-contrast: more) {
+      outline-color: light-dark(
+        variables.$colour-light-mode-foreground,
+        variables.$colour-dark-mode-high-contrast-focus
+      );
     }
   }
 
@@ -56,8 +59,11 @@
     outline-offset: 1px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      outline-color: variables.$colour-dark-mode-high-contrast-focus;
+    @media (prefers-contrast: more) {
+      outline-color: light-dark(
+        variables.$colour-light-mode-foreground,
+        variables.$colour-dark-mode-high-contrast-focus
+      );
     }
   }
 }
