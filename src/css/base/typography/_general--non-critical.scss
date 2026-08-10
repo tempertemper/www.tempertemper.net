@@ -1,12 +1,10 @@
 @use '../../admin/variables' as variables;
 
 ::selection {
-  background-color: variables.$colour-light-mode-text-highlight-background;
   background-color: light-dark(
     variables.$colour-light-mode-text-highlight-background,
     variables.$colour-dark-mode-text-highlight-background
   );
-  color: variables.$colour-light-mode-text-highlight-foreground;
   color: light-dark(
     variables.$colour-light-mode-text-highlight-foreground,
     variables.$colour-dark-mode-text-highlight-foreground
@@ -92,7 +90,6 @@ ol {
 li {
 
   &::marker {
-    color: variables.$colour-light-mode-accent;
     color: light-dark(
       variables.$colour-light-mode-accent,
       variables.$colour-dark-mode-accent

@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+- Removes light-dark fallbacks where it's safe to do so
+
 ----------
 
 
