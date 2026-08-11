@@ -49,8 +49,11 @@
       variables.$colour-light-mode-foreground,
       variables.$colour-dark-mode-foreground
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      outline-color: variables.$colour-dark-mode-high-contrast-focus;
+    @media (prefers-contrast: more) {
+      outline-color: light-dark(
+        variables.$colour-light-mode-foreground,
+        variables.$colour-dark-mode-high-contrast-focus
+      );
     }
   }
 
@@ -64,8 +67,11 @@
       variables.$colour-light-mode-foreground,
       variables.$colour-dark-mode-foreground
     );
-    @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      outline-color: variables.$colour-dark-mode-high-contrast-focus;
+    @media (prefers-contrast: more) {
+      outline-color: light-dark(
+        variables.$colour-light-mode-foreground,
+        variables.$colour-dark-mode-high-contrast-focus
+      );
     }
   }
 

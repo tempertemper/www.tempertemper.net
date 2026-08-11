@@ -11,7 +11,6 @@
   &.doctype,
   &.cdata,
   &.url {
-    color: variables.$colour-code-grey;
     color: light-dark(
       variables.$colour-code-grey,
       variables.$colour-dark-mode-code-grey
@@ -19,7 +18,6 @@
   }
 
   &.punctuation {
-    color: variables.$colour-code-grey;
     color: light-dark(
       variables.$colour-code-grey,
       variables.$colour-dark-mode-code-grey
@@ -32,7 +30,6 @@
   &.symbol,
   &.deleted,
   &.keyword {
-    color: variables.$colour-code-magenta;
     color: light-dark(
       variables.$colour-code-magenta,
       variables.$colour-dark-mode-code-magenta
@@ -48,7 +45,6 @@
 
   &.boolean,
   &.number {
-    color: variables.$colour-code-purple;
     color: light-dark(
       variables.$colour-code-purple,
       variables.$colour-dark-mode-code-purple
@@ -74,7 +70,6 @@
   .language-css &.string,
   .style &.string,
   &.variable {
-    color: variables.$colour-code-cyan;
     color: light-dark(
       variables.$colour-code-cyan,
       variables.$colour-dark-mode-code-cyan
@@ -89,7 +84,6 @@
   &.function,
   &.regex,
   &.important {
-    color: variables.$colour-code-yellow;
     color: light-dark(
       variables.$colour-code-yellow,
       variables.$colour-dark-mode-code-yellow
@@ -113,7 +107,6 @@
   }
 
   &.url .content {
-    color: variables.$colour-light-mode-foreground;
     color: light-dark(
       variables.$colour-light-mode-foreground,
       variables.$colour-dark-mode-foreground

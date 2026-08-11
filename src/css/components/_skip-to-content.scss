@@ -28,8 +28,13 @@
     @media screen and (prefers-color-scheme: dark) {
       box-shadow: .2em .2em .4em .1em variables.$colour-dark-mode-background;
     }
+    @media (prefers-contrast: more) {
+      background-color: light-dark(
+        variables.$colour-light-mode-background,
+        variables.$colour-dark-mode-high-contrast-background
+      );
+    }
     @media screen and (prefers-color-scheme: dark) and (prefers-contrast: more) {
-      background-color: variables.$colour-dark-mode-high-contrast-background;
       box-shadow: .2em .2em .4em .1em variables.$colour-dark-mode-high-contrast-background;
     }
   }
