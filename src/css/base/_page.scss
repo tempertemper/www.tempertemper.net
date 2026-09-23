@@ -29,13 +29,10 @@ html {
   scrollbar-color: light-dark(
     variables.$colour-light-mode-accent,
     variables.$colour-dark-mode-accent-strong
-  ) light-dark(
-    variables.$colour-light-mode-background,
-    variables.$colour-dark-mode-background
-  );
+  ) transparent;
   @media screen and (prefers-color-scheme: light) and (prefers-contrast: more) {
     scrollbar-color:
       variables.$colour-light-mode-high-contrast-accent
-      variables.$colour-light-mode-background;
+      transparent;
   }
 }
