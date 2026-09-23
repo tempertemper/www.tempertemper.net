@@ -7,6 +7,12 @@ intro: |
 
 {% set talks = [
     {
+        date: "2026-09-16",
+        event: "A11y North, Leeds",
+        title: "Beyond components: creating accessible experiences",
+        url: "https://www.linkedin.com/posts/our-second-talk-last-night-prompted-some-ugcPost-7506397401914621952-Mbxp/"
+    },
+    {
         date: "2026-07-01",
         event: "GOV.UK Design, Services Week",
         title: "Beyond components: creating accessible experiences"
