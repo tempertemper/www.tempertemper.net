@@ -1,7 +1,7 @@
 ---
 title: Respecting your users’ preferences
 date: 2026-09-26
-intro: Our users have already chosen how they want their devices to behave. Here's how we can respect those preferences on the web.
+intro: Our users have already chosen how they want their devices to behave; here's how we can respect those preferences on the web.
 tags:
     - CSS
     - Accessibility
