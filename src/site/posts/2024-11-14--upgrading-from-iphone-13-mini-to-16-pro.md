@@ -1,5 +1,5 @@
 ---
-title: Upgrading from iPhone 13 mini to 16 Pro
+title: Upgrading from iPhone 13 Mini to 16 Pro
 intro: I get a new phone every 3-ish years, give mine to my wife, and now she gives hers to our daughter. I got a 16 Pro this year! Here's the skinny.
 date: 2024-11-14
 tags:
