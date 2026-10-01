@@ -1,6 +1,7 @@
 ---
 title: Using light-dark() without getting caught out
 date: 2026-09-28
+updated: 2026-10-01
 intro: The `light-dark()` CSS function makes defining colour schemes tidier, but older browsers need some care. Here's how I've handled the fallbacks.
 tags:
     - CSS
@@ -31,6 +32,8 @@ color: light-dark(black, white);
 background-color: light-dark(white, black);
 ```
 
+In Light Mode, the browser takes the first value; in Dark Mode, the second. So Light Mode uses `black` as the text colour and `white` as the background colour; Dark Mode uses `white` text on a `black` background.
+
 
 ## First things first
 
@@ -59,22 +62,7 @@ With the media query approach, if the browser doesn't support `prefers-color-sch
 
 The [browser support for `light-dark()`](https://caniuse.com/wf-light-dark) is pretty good, sitting at just under 90% at the time of writing. But it's not quite close enough to 100% for me to feel comfortable using it without a fallback.
 
-My hope-against-hope was that if the browser didn't understand `light-dark()` it would:
-
-1. Read the values inside the function
-2. Apply the first
-3. Override it with the second
-
-Let's have another look at that earlier example:
-
-```css
-color: light-dark(black, white);
-background-color: light-dark(white, black);
-```
-
-In my head, this would have produced white text on a black background, since `white` and `black` were the latter values in `color` and `background-color` respectively, but CSS functions don't work like that.
-
-The browser skips the function altogether if it doesn't understand it, so in our example the browser would fail to define values for `color` and `background-color` and just use its default text and background colours.
+I'd hoped an older browser might still pick out a colour from inside `light-dark()`, even if it didn't understand the function itself. Unfortunately, it ignores the entire declaration, so we need to consider what colours will be used instead.
 
 ### Defining a fallback
 
