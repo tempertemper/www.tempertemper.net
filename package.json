@@ -30,9 +30,9 @@
     "@11ty/eleventy-img": "^7.0.0",
     "@11ty/eleventy-plugin-rss": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "dotenv": "^17.4.2",
+    "dotenv": "^18.0.5",
     "esbuild": "^0.28.1",
-    "markdown-it-anchor": "^9.2.1",
+    "markdown-it-anchor": "^10.0.0",
     "pagefind": "^1.5.2",
     "sass": "^1.101.3",
     "uslug": "^1.0.4"
