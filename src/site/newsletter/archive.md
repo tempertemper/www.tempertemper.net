@@ -8,8 +8,13 @@ override:tags: false
 layout: default
 ---
 
+{%- set years = collections.newsletter | getYears %}
+{%- for year in years | reverse %}
+<h2>{{ year }}</h2>
 <ol class="index-list" reversed>
-    {%- for newsletter in collections.newsletter | reverse %}
+    {%- set yearList = collections.newsletter | filterByYear(year) %}
+    {%- for newsletter in yearList | reverse %}
     <li><a href="/newsletter/{{ newsletter.page.fileSlug }}">{{ newsletter.data.title }}</a></li>
     {%- endfor %}
 </ol>
+{%- endfor %}
