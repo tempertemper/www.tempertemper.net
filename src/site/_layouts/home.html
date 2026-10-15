@@ -48,12 +48,15 @@ layout: base.html
 
 <section aria-labelledby="writing" class="teaser">
     <h2 id="writing">Writing</h2>
-    <p>I write a <em>lot</em>! You can dive straight to <a href="/blog/">my blog here</a>, but here are a couple of hand-picked articles to get you started:</p>
+    <p>I write a <em>lot</em>! You can head straight to <a href="/blog/">my blog</a>, or get started with one of my latest articles from the <a href="/category/accessibility">accessibility category</a>:</p>
+
     <ul class="index-list" reversed>
         {%- set posts = collections.post | reverse %}
+        {%- set postCount = 0 %}
         {%- for post in posts %}
-            {%- if post.data.featured === true %}
+            {%- if post.data.tags.includes('Accessibility') and postCount < 2 %}
                 {%- include "post-in-list.html" -%}
+                {%- set postCount = postCount + 1 %}
             {%- endif %}
         {%- endfor %}
     </ul>
