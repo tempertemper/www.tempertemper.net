@@ -11,9 +11,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-- Extends striptags in titles to category and heading fallbacks, and explicit descriptions
-
 ----------
+
+
+## [6.17.1] - 2026-10-17
+
+- Extends striptags in titles to category and heading fallbacks, and explicit descriptions
+- Some homepage wording tweaks
 
 
 ## [6.17.0] - 2026-10-17
