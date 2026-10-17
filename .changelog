@@ -18,6 +18,9 @@ All notable changes to this project will be documented in this file. The format 
 - Applies smart punctuation to featured service titles on the homepage
 - Uses the generic CTA on hompage, rather than newsletter signup
 
+### Fixes
+- Ensures speaking CTA is output to pages in speaking section
+
 ----------
 
 

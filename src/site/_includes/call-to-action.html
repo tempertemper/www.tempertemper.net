@@ -10,8 +10,6 @@
     {%- set caseStudy = true %}
 {%- elif tags.length >= 1 and tags.includes('newsletter') %}
     {%- set newsletter = true %}
-{%- elif tags.length >= 1 and tags.includes('speaking') %}
-    {%- set speaking = true %}
 {%- endif %}
 {%- set sponsorship = page.url == '/sponsors.html' %}
 
