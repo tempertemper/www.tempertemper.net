@@ -2,7 +2,7 @@
 title: Build a culture of accessibility
 heading: Culture and community
 customURL: culture
-intro: Support to build a culture of accessibility through champions, community, and everyday practice.
+intro: Support to build a culture of accessibility through communication, community, and everyday practice.
 order: 6
 ---
 
