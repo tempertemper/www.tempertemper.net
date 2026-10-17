@@ -13,11 +13,11 @@
 {%- endif %}
 {%- set sponsorship = page.url == '/sponsors.html' %}
 
-{%- set other = not (home or post or contact or newsletter) %}
+{%- set other = not (home or post or resource or contact or newsletter) %}
 <section aria-labelledby="ctaLabel" class="call-to-action{% if other %} highlight{% endif %}">
-    {% if post or contact or newsletter %}
+    {% if post or resource or contact or newsletter %}
         <h2 id="ctaLabel">Accessibility in your inbox</h2>
-        {% if post or contact %}
+        {% if post or resource or contact %}
             <p>I send an accessibility-centric newsletter on the last day of every month, containing:</p>
             <ul>
                 <li>A roundup of the articles I’ve posted</li>
