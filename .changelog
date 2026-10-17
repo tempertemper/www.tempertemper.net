@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+----------
+
+
+## [6.17.0] - 2026-10-17
+
 ### Adds
 - Adds a paragraph to homepage talking about my experience
 - Adds Now page to footer nav
@@ -31,8 +36,6 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixes
 - Ensures speaking CTA is output to pages in speaking section
 - Strips HTML from meta titles
-
-----------
 
 
 ## [6.16.5] - 2026-10-15
