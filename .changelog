@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. The format 
 - Changes the homepage services heading to 'I can help' to introduce the benefit-led titles
 - Applies smart punctuation to featured service titles on the homepage
 - Uses the generic CTA on hompage, rather than newsletter signup
+- Rewrites generic CTA wording
 
 ### Fixes
 - Ensures speaking CTA is output to pages in speaking section
