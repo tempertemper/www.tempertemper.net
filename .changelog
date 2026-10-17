@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. The format 
 - Reframes service titles around visitor benefits while retaining service names as page headings and on the Services page
 - Changes the homepage services heading to 'I can help' to introduce the benefit-led titles
 - Applies smart punctuation to featured service titles on the homepage
+- Uses the generic CTA on hompage, rather than newsletter signup
 
 ----------
 
