@@ -1,7 +1,7 @@
 ---
-title: Design and build accessible
+title: Making accessibility <br />make sense
 intro: |
-    I'm Martin, an [accessibility consultant](/approaches/consultancy) helping companies produce digital products that everyone can use, from strategic guidance to practical support.
+    I'm Martin, an [accessibility consultant](/approaches/consultancy). Through education and cultural change, I help people understand accessibility, grow their confidence, and put what they learn into practice.
 layout: home
 home: true
 cta: true

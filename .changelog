@@ -26,9 +26,11 @@ All notable changes to this project will be documented in this file. The format 
 - Uses the generic CTA on hompage, rather than newsletter signup
 - Rewrites generic CTA wording
 - Uses newsletter CTA on Resource pages
+- New homepage h1 and intro
 
 ### Fixes
 - Ensures speaking CTA is output to pages in speaking section
+- Strips HTML from meta titles
 
 ----------
 
