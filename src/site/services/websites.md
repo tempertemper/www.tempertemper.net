@@ -1,5 +1,6 @@
 ---
-title: Website design and build
+title: Give you confidence that anyone can use your website
+heading: Website design and build
 customURL: websites
 intro: Accessible websites that are fast, easy to use, and built to last; thoughtfully designed to be both clear and delightful.
 order: 9

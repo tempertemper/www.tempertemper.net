@@ -14,6 +14,30 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.17.0] - 2026-10-17
+
+### Adds
+- Adds a paragraph to homepage talking about my experience
+- Adds Now page to footer nav
+
+### Removes
+- Takes About and Now links out of the homepage intro
+
+### Changes
+- Focuses the homepage's featured services on training and culture
+- Reframes service titles around visitor benefits while retaining service names as page headings and on the Services page
+- Changes the homepage services heading to 'I can help' to introduce the benefit-led titles
+- Applies smart punctuation to featured service titles on the homepage
+- Uses the generic CTA on hompage, rather than newsletter signup
+- Rewrites generic CTA wording
+- Uses newsletter CTA on Resource pages
+- New homepage h1 and intro
+
+### Fixes
+- Ensures speaking CTA is output to pages in speaking section
+- Strips HTML from meta titles
+
+
 ## [6.16.5] - 2026-10-15
 
 ### Changes

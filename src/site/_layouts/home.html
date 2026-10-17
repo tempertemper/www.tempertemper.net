@@ -17,15 +17,13 @@ layout: base.html
 {{- content | safe }}
 
 <section aria-labelledby="expertise" class="teaser">
-    <h2 id="expertise">How I can help</h2>
-    <p>Whether you need help building accessibility into your team, support delivering a digital service, or a new website built from scratch, I can help.</p>
+    <h2 id="expertise">I can help</h2>
+    <p>I work with people to develop the skills, confidence, and shared commitment to make accessibility part of everyday work. There are <a href="/services/">lots of ways I can help</a>, but I believe these are the best places to start:</p>
     <div class="highlight-boxes">
     <ul>
         {%- set featuredServiceKeys = [
-            "strategy",
-            "audits",
-            "reviews",
-            "training"
+            "training",
+            "culture"
         ] -%}
         {%- for key in featuredServiceKeys %}
             {%- for service in collections.service %}
@@ -33,7 +31,7 @@ layout: base.html
                     <li>
                         <h2>
                             <a href="{{ service.url | replace('.html', '') }}">
-                                {{ service.data.title }}
+                                {{ service.data.title | smart }}
                             </a>
                         </h2>
                         {{ service.data.intro | smart | safe }}
@@ -43,7 +41,6 @@ layout: base.html
         {%- endfor %}
     </ul>
     </div>
-    <a href="/services/">View all services</a>
 </section>
 
 <section aria-labelledby="writing" class="teaser">

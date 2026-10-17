@@ -1,5 +1,6 @@
 ---
-title: Design systems
+title: Integrate accessibility into your design system
+heading: Design systems
 customURL: design-systems
 intro: Embed accessibility into your design system so accessible design and development are the default.
 order: 7

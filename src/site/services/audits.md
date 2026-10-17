@@ -1,5 +1,6 @@
 ---
-title: Accessibility audits
+title: Understand your product's accessibility in depth
+heading: Accessibility audits
 customURL: audits
 intro: In-depth audits that provide a detailed, structured understanding of your product's accessibility so you can plan improvements with confidence.
 order: 2
