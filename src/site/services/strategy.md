@@ -1,5 +1,6 @@
 ---
-title: Strategy and guidance
+title: Set the direction for accessibility across your organisation
+heading: Strategy and guidance
 customURL: strategy
 intro: Strategic support to shape the policies, programmes, and processes needed for long term, sustainable accessibility across your organisation.
 order: 8

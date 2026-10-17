@@ -1,5 +1,6 @@
 ---
-title: Accessibility reviews
+title: Identify stand-out accessibility problems quickly
+heading: Accessibility reviews
 customURL: reviews
 intro: Fast, focused, and lightweight; accessibility reviews highlight risks, quick wins, and the changes that will make the biggest difference.
 order: 1

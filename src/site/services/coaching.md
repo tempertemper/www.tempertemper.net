@@ -1,5 +1,6 @@
 ---
-title: Coaching and mentoring
+title: Grow your confidence in accessibility
+heading: Coaching and mentoring
 customURL: coaching
 intro: Ongoing one-to-one or small-group support to build confidence, answer questions, and embed accessibility into everyday practice.
 order: 5

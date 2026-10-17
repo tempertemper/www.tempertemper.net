@@ -1,5 +1,6 @@
 ---
-title: Talks and presentations
+title: Raise accessibility awareness across your organisation
+heading: Talks and presentations
 customURL: talks
 intro: Talks on accessibility that raise awareness, share real-world insight, and inspire teams to design and build more inclusively.
 order: 4

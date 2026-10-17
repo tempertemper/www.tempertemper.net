@@ -1,5 +1,6 @@
 ---
 title: How I can help
+heading: How I can help
 intro: Accessibility and design services for teams that care about inclusive, user-friendly digital products; from strategic support to hands-on help.
 permalink: services/index.html
 override:tags: false
@@ -16,7 +17,7 @@ The services I offer cover a range of needs:
         <li>
             <h2>
                 <a href="{{ service.url  | replace(".html", "") }}">
-                    {{- service.data.title -}}
+                    {{- service.data.heading -}}
                 </a>
             </h2>
             {{ service.data.intro | smart | safe }}

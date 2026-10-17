@@ -1,5 +1,6 @@
 ---
-title: Training and workshops
+title: Develop your team's accessibility capability
+heading: Training and workshops
 customURL: training
 intro: Practical training and workshops that grow capability and confidence, helping your teams deliver more accessible digital products.
 order: 3
