@@ -10,7 +10,7 @@ tags:
 
 For years and years, developers have had to come up with all sorts of creative workarounds to style `<select>` dropdown menus.
 
-I covered this a good while ago in [Form styling limitations are an accessibility issue](/blog/form-styling-limitations-are-an-accessibility-issue), and I can't tell you how excited I was when [Safari 27](https://webkit.org/blog/18325/webkit-features-for-safari-27-0/) included 'Customisable Select', joining the bandwagon that Chrome kicked off early last year.
+I covered this a good while ago in [Form styling limitations are an accessibility issue](/blog/form-styling-limitations-are-an-accessibility-issue), and I can't tell you how excited I was when [Safari 27](https://webkit.org/blog/18325/webkit-features-for-safari-27-0/) included 'Customisable Select', following Chrome's lead from early last year.
 
 
 ## A false start
@@ -22,9 +22,9 @@ The approach we've ended up with builds on `<select>` instead, which makes thing
 
 ## Now we can do it properly
 
-If you're already using `<select>`, there's just some CSS to rewrite. Browsers that support the new styling get your custom design; those that don't show their default `<select>`. A bit ugly, perhaps, but entirely usable.
+If you're already using `<select>` and have styled it as far as browsers allowed, there's just some CSS to rewrite. Now, browsers that support the new styling get your custom design; those that don't show their default `<select>`. A bit ugly, perhaps, but entirely usable.
 
-Of course, developers who've needed fully custom-styled selects have long reached for `<div>`s, `<span>`s, JavaScript, and ARIA instead. If that's what you're working with, there's still some replacement work to do to swap the hand-built component for a `<select>`, then add your styles.
+Of course, developers who've needed fully custom-styled selects have long reached for `<div>`s, `<span>`s, JavaScript, and ARIA instead. If that's what you're working with, there's still some replacement work to do, just as there would have been with `<selectmenu>`. You'll need to swap the hand-built component for a `<select>`, then add your styles.
 
 Either way, we now have a native HTML element we can style properly, with a fallback built in.
 
@@ -53,17 +53,17 @@ select,
 
 This gives us a more neutral starting point:
 
-- inherited fonts
-- simple borders
-- a downward-pointing chevron/arrow on the button
-- the picker positioned underneath the button
+- Inherited fonts
+- Simple borders
+- A downward-pointing chevron/arrow on the button
+- The picker positioned underneath the button
 
 Some things look slightly different between browsers, but the good news is we can now override those styles easily.
 
 
 ### Styling the button
 
-This is easy peasy. Just use whatever styles you like, for example:
+This is super straightforward. Just use whatever styles you like, for example:
 
 ```css
 select {
@@ -103,7 +103,7 @@ And the picker is just as easy to style:
 
 Now it matches its button! We can use `margin-top` to put a bit of distance between it and its trigger, add animations; whatever we like!
 
-We can style the options using `option {}`, and target the checkmark with `::checkmark`:
+We can style the options using `option {}`, and target the checkmark with the `::checkmark` pseudo-element:
 
 ```css
 option::checkmark {
@@ -124,11 +124,11 @@ You can go further by adding images and other markup to your options, and use [`
 
 ## Browser support
 
-The features we've used to customise our selects ([`appearance: base-select`](https://caniuse.com/mdn-css_properties_appearance_base-select), [`::picker-icon`](https://caniuse.com/mdn-css_selectors_picker-icon), and [`::picker(select)`](https://caniuse.com/mdn-css_selectors_picker)) aren't supported in Firefox yet, but work in Chrome and Chromium-based browsers like Edge and Opera, as well as Safari 27.
+The features we've used to customise our `<select>`s ([`appearance: base-select`](https://caniuse.com/mdn-css_properties_appearance_base-select), [`::picker-icon`](https://caniuse.com/mdn-css_selectors_picker-icon), and [`::picker(select)`](https://caniuse.com/mdn-css_selectors_picker)) aren't supported in Firefox yet, but work in Chrome and Chromium-based browsers like Edge and Opera, as well as Safari 27.
 
-At the time of writing, that covers around 72% of global browser usage. Safari 27 is still new, so there's plenty of room for that to grow as people update; Apple appears to be [rolling out iOS 27 more slowly than usual](https://daringfireball.net/linked/2026/10/08/apple-is-slow-rolling-ios-27-adoption-so-far).
+At the time of writing, that covers around 72% of global browser usage. Safari 27 is still new, so there's plenty of room for that to grow as people update to the latest operating system; Apple appears to be [rolling out iOS 27 more slowly than usual](https://daringfireball.net/linked/2026/10/08/apple-is-slow-rolling-ios-27-adoption-so-far).
 
-But we don't need to wait for every browser to catch up. Browsers that don't support the new styling show their usual `<select>`, so people can still choose an option and complete the form.
+But we don't need to wait for every browser to catch up. Those that don't support the new styling show the unstyled `<select>`, so people can still choose an option and complete the form.
 
 
 ## Will I be using it?
