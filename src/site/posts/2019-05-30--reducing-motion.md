@@ -14,7 +14,7 @@ There has never been a lot of animation on my website, and that was a very delib
 That said, I do have some animation on my website. No parallax scrolling or items flying into view as you scroll down the page; certainly not! But I've taken steps to reduce it by:
 
 1. Removing animation entirely where it didn't really serve any purpose or add any character, for example links used to have a very slight animation to smooth the colour change on hover
-2. Stopping animation completely when someone has their operating system set to reduce motion (on a Mac it's in System Preferences → Accessibility → Display → Reduce motion)
+2. Stopping animation completely when someone has their operating system set to reduce motion (on a Mac it's in System Settings → Accessibility → Vision → Motion → Reduce motion)
 
 There are only a handful of moving parts left on my site, now that number 1 has been taken care of:
 

@@ -10,7 +10,7 @@ tags:
 
 Although I've done a fair bit of testing using Voice Control on macOS over the past year or so, I'm far from an every day user, so something that comes in very handy is my cheatsheet.
 
-This is basically copy of the commands in Preferences → Accessibility → Voice Control → Commands…, but has the advantage of being text/HTML, so it's searchable. So if you ever need to remind yourself of any Voice Control commands, feel free to `⌘` + `f` your way through this page!
+This is basically copy of the commands in System Settings → Accessibility → Physical and Motor → Voice Control → Commands…, but has the advantage of being text/HTML, so it's searchable. So if you ever need to remind yourself of any Voice Control commands, feel free to `⌘` + `f` your way through this page!
 
 
 ## Basic Navigation

@@ -12,7 +12,7 @@ I've just been setting up a new Mac and there's a setting I turn on every time b
 
 I find using the keyboard, or a combination of mouse (or trackpad) and keyboard, to get around my operating system and apps is much quicker and more efficient than a mouse alone. It's also a good way to build empathy with people who, due to motor or visual impairment, are unable to use a mouse/trackpad/stylus or identify a pointer on a screen: folk who have *no choice* but to use their keyboard to get around.
 
-By default, keyboard navigation on macOS is a bit limited, but luckily there's a way to make all controls in pop-up dialogs and Preferences windows focusable with the keyboard tab key (<kbd>⇥</kbd>). The controls you'll have access to with the keyboard will then be:
+By default, keyboard navigation on macOS is a bit limited, but luckily there's a way to make all controls in pop-up dialogs and Settings windows focusable with the keyboard tab key (<kbd>⇥</kbd>). The controls you'll have access to with the keyboard will then be:
 
 - Text input boxes (including search boxes)
 - Dropdown menus
@@ -21,8 +21,8 @@ By default, keyboard navigation on macOS is a bit limited, but luckily there's a
 - Checkboxes
 - Number increase/decrease steppers
 - Tab bar buttons
-- Icon-style buttons (found in System Preferences and across the top of many apps' Preferences window)
-- Text-only buttons (for example 'Cancel' in dialogs, or the help question mark icon in many apps' Preferences)
+- Icon-style buttons (found in System Settings and across the top of many apps' Settings window)
+- Text-only buttons (for example 'Cancel' in dialogs, or the help question mark icon in many apps' Settings)
 - Fully coloured buttons (like 'Save' in document save dialogs)
 
 The way you interact with each of these elements once it has focus is worth taking some time to get used to:
@@ -42,10 +42,9 @@ The way you interact with each of these elements once it has focus is worth taki
 
 To turn on full keyboard navigation on macOS, go to:
 
-1. System Preferences
+1. System Settings
 2. Keyboard
-3. Shortcuts
-4. "Use keyboard navigation to move focus between controls" checkbox
+3. Keyboard Navigation
 
 The extra text on the checkbox label is useful too:
 
