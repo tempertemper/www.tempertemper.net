@@ -11,7 +11,7 @@ related:
 
 One of the best starting points when testing a web page's accessibility is to put your mouse to one side and use your keyboard to get around.
 
-Unlike Firefox, Chrome, Opera and Edge, navigating a web page with the keyboard alone isn't all that great an experience on Safari for macOS, but the good news is you can put it right in Preferences.
+Unlike Firefox, Chrome, Opera and Edge, navigating a web page with the keyboard alone isn't all that great an experience on Safari for macOS, but the good news is you can put it right in Settings.
 
 Without the setting turned on, the tab key only cycles through the text inputs (`<textarea>` and `<input type="text">`, including other text input types, like `password`, `email`, `search`, etc.) and `<select>`s on a page. So:
 
@@ -27,10 +27,10 @@ Interacting with links and *all* form inputs on a page is much more useful, and 
 
 To turn on full keyboard navigation in Safari, go to:
 
-1. Preferences (<kbd>⌘</kbd> + <kbd>,</kbd>)
-2. Advanced (the last tab)
+1. Settings (<kbd>⌘</kbd> + <kbd>,</kbd>)
+2. Advanced
 3. Accessibility
-4. "Press tab to highlight each item on a webpage" checkbox
+4. 'Press Tab to highlight each item on a webpage'
 
 The way to use the keyboard once this setting is activated is covered in [Using the keyboard to navigate on macOS](/blog/using-the-keyboard-to-navigate-on-macos), so it's worth checking that out and getting used to how interact with each element.
 

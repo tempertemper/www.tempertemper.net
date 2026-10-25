@@ -18,7 +18,7 @@ And with that new found scrutiny, I realised I could get the majority of the fun
 If you're not sure what Text Replacement is, head to:
 
 - Settings → General → Keyboard → Text Replacement (iOS)
-- System Preferences → Keyboard → Text (macOS)
+- System Settings → Keyboard → Text Input → Text Replacements… (macOS)
 
 I've used Text Replacement on my iPhone for a long time, where TextExpander wasn't available system-wide. I had tried the [TextExpander Custom Keyboard](https://www.imore.com/best-custom-keyboards-ios-8) but it didn't run well on the iPhone 6 I was using at the time, and the colour scheme and goofy TextExpander [logo on the keyboard](https://textexpander.com/blog/textexpander-tip-try-our-ios-keyboard-and-one-tap-text-snippet-keys) didn't help. So I used Text Replacement on my phone and TextExpander on my Mac.
 

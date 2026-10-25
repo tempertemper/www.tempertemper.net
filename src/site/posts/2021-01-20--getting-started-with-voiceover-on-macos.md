@@ -85,9 +85,9 @@ Once you've got VoiceOver configured you need to turn it on. The default keyboar
 
 ### Remapping the VoiceOver shortcut
 
-To remap the VoiceOver shortcut, head to System Preferences → Keyboard → Shortcuts → Accessibility → Turn VoiceOver on or off.  I change the shortcut to <kbd>⌘</kbd> + <kbd>§</kbd>.
+To remap the VoiceOver shortcut, head to System Settings → Keyboard → Keyboard Shortcuts… → Accessibility → Turn VoiceOver on or off.  I change the shortcut to <kbd>⌘</kbd> + <kbd>§</kbd>.
 
-Alternatively, you can forget the keyboard shortcut and navigate to System Preferences → Accessibility → VoiceOver → Enable VoiceOver any time you want to use it.
+Alternatively, you can forget the keyboard shortcut and navigate to System Settings → Accessibility → VoiceOver → Enable VoiceOver any time you want to use it.
 
 The same method you used to turn VoiceOver on will turn it off.
 

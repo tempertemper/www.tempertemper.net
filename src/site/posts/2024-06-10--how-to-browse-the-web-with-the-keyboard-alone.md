@@ -2,6 +2,7 @@
 title: How to browse the web with the keyboard alone
 intro: Some people use the keyboard to get around their computer. Knowing how to do this is important for accessibility testing and to inform design.
 date: 2024-06-10
+updated: 2026-10-25
 tags:
     - Accessibility
 summaryImage: keyboard.png
@@ -20,7 +21,7 @@ The good news in that there are very few keys you need to use:
 - <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> (the up, down, left, and right arrow keys)
 - <kbd>⇧</kbd> (Shift)
 
-<i>Note: In this article I'm going to focus on using the keyboard to get around a web page, rather than the whole operating system (which is a bit more complex and can be activated via Settings → Accessibility → Motor → Keyboard → toggle Full keyboard access).</i>
+<i>Note: In this article I'm going to focus on using the keyboard to get around a web page, rather than the whole operating system (which is a bit more complex and can be activated via Settings → Accessibility → Physical and Motor → Keyboard → Full keyboard access).</i>
 
 Page contents:
 
@@ -95,22 +96,23 @@ Tabbing backwards onto a radio group where no items have been selected highlight
 `<select>`s behave differently on macOS and Windows. Once you've tabbed onto the parent 'button', open the menu by pressing <kbd>Space</kbd> and close it with <kbd>Esc</kbd>. Beyond that, things get interesting:
 
 #### macOS
-On macOS you can also use <kbd>↑</kbd> or <kbd>↓</kbd> to open the menu. If an option hasn't already been selected it will focus on the top option, otherwise it'll highlight the previously selected option.
+On macOS you can also use <kbd>↑</kbd> or <kbd>↓</kbd> to open the menu. If an option hasn't already been selected, no items will have focus. <kbd>↓</kbd> as the first press puts focus on the first option, and <kbd>↑</kbd> as the first press puts focus on the last option.
 
-Further presses of the <kbd>↑</kbd> or <kbd>↓</kbd> keys move focus up and down the options until you hit the last (or come back up to the first) option, at which point it will stop.
+Further presses of the <kbd>↑</kbd> or <kbd>↓</kbd> keys move focus up or down the options until you hit the last, or come back up to the first, option, at which point it will stop.
 
-Moving from option to option only *highlights* that option, it doesn't *select* it. To select the option you must press <kbd>Space</kbd> or <kbd>⏎</kbd>, at which point the menu closes and the value of the parent button changes to the selected option. If you re-open the menu the selected option will have a tick next to it.
+Moving from option to option only *highlights* that option, it doesn't *select* it. To select the option you must press <kbd>Space</kbd> or <kbd>⏎</kbd>, at which point the menu closes and the value of the parent button changes to the selected option.
+
+If you re-open the menu the selected option will be focused and selected (shown with a tick).
 
 #### Windows
-On Windows, instead of pressing <kbd>Space</kbd>, you can use any of the arrow keys to change an option:
+On Windows, focusing/highlighting an option *also selects it*. <kbd>Space</kbd> and <kbd>⏎</kbd>, therefore, only open/close the menu, since selection is not a separate action. <kbd>Esc</kbd> closes the menu when it's open.
+
+Selecting an option can be done with the menu open or closed. When the button has focus or when the menu is open, any of the arrow keys to change an option:
 
 - <kbd>↓</kbd> and <kbd>→</kbd> move to the next option until you hit the last one, at which point it'll stop
 - <kbd>↑</kbd> and <kbd>←</kbd> move to the previous option until you hit the first one, where it'll stop
 
-When doing this, the menu remains closed and the label of the button changes. You can also open the menu first so that you can see the whole list of options; just press <kbd>Space</kbd> before using the arrow keys.
-
-The big thing here is that highlighting an option *also selects it*; these are not separate steps like they are on macOS. This means that <kbd>Space</kbd> and <kbd>⏎</kbd> only have the effect of closing the menu, the same thing as pressing the <kbd>Esc</kbd> key.
-
+Re-opening the menu focuses on the selected option (there's no tick; just the focus indicator together with the value of the focused/selected item in the button).
 
 ## Moving around items in a group
 
@@ -121,10 +123,3 @@ You'll encounter other 'groups' of things, for example:
 - menu items in a menubar
 
 None of these patterns are native HTML so there's no 'default' behaviour to refer to. There is some commonality though: like a radio group, the group of tabs/buttons/menu items should be a single tab stop, and the arrow keys are the mechanism to move focus from one tab/button/menu item to the next. Each item is essentially a button, so the expected keyboard behaviour would be that each button is pressed in the normal way (<kbd>⏎</kbd> or <kbd>Space</kbd>).
-
-
-
-
-
-
-

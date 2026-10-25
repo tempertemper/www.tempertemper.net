@@ -37,7 +37,7 @@ Earlier this year, Apple [added the `prefers-contrast: more` media query to Safa
 
 On Mac and iOS, respectively, the Increased Contrast Mode setting can be found in:
 
-- System Preferences → Accessibility → Display → Increase contrast
+- System Settings → Accessibility → Display → Increase contrast
 - Settings → Accessibility → Display &amp; Text Size → Increase Contrast
 
 

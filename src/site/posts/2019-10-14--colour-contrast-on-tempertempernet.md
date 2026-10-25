@@ -49,7 +49,7 @@ I spent a long time trying colour after colour but anything that satisfied two o
 
 Designing for the web is an exercise in letting go of things looking exactly the same everywhere -- we have different screen sizes, operating systems, browsers, screen resolutions; the list goes on. Colour is one of the most wildly variable things, even when you look at higher-end displays where a 2015 MacBook Pro has a very different feel to a brand new MacBook Pro with True Tone.
 
-Is it easy to tell the difference between the blue I'm using with a dark background and the blue I'm using with a light background? Maybe. One's brighter and the other's duller. But they'll always *be used in isolation*. Just as no *normal* user resizes the screen to see how a site might adjust for mobile, nobody (except the likes of me) is opening their System Preferences window over a website and toggling between light and dark modes.
+Is it easy to tell the difference between the blue I'm using with a dark background and the blue I'm using with a light background? Maybe. One's brighter and the other's duller. But they'll always *be used in isolation*. Just as no *normal* user resizes the screen to see how a site might adjust for mobile, nobody (except the likes of me) is opening their System Settings window over a website and toggling between light and dark modes.
 
 
 ## Loosening up

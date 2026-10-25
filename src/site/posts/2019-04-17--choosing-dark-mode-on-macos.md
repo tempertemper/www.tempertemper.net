@@ -20,12 +20,12 @@ Yosemite introduced the dark menu bar and I've always preferred it. Mainly becau
 
 I've since found out there's a way to [run the light theme with a dark menu bar](//osxdaily.com/2018/10/15/dark-menu-dock-light-theme-macos/):
 
-1. Go to System Preferences → General → Appearance
+1. Go to System Settings → Appearance
 2. Choose 'Light'
 3. Go to Terminal and run `defaults write -g NSRequiresAquaSystemAppearance -bool Yes`
 2. Log out of your user account
 3. Log back into your user account
-4. Go to System Preferences → General → Appearance
+4. Go to System Settings → Appearance
 5. Choose 'Dark'
 
 But I'm glad I didn't know about that hack. I don't have the distinction between the menu bar and the apps I'm running, but I quickly got used to Dark Mode and, as more and more third party apps and even [websites](/blog/dark-mode-websites-on-macos-mojave) add support, adding more consistency, it feels good to have a choice!
