@@ -93,7 +93,7 @@ Tabbing backwards onto a radio group where no items have been selected highlight
 
 ### Select dropdowns
 
-`<select>`s behave differently on macOS and Windows. Once you've tabbed onto the parent 'button', open the menu by pressing <kbd>Space</kbd> and close it with <kbd>Esc</kbd>. Beyond that, things get interesting:
+`<select>`s behave differently on macOS and Windows. Once you've tabbed onto the parent 'button', open the menu by pressing <kbd>Space</kbd> or <kbd>⏎</kbd> and close it with <kbd>Esc</kbd>. Beyond that, things get interesting:
 
 #### macOS
 On macOS you can also use <kbd>↑</kbd> or <kbd>↓</kbd> to open the menu. If an option hasn't already been selected, no items will have focus. <kbd>↓</kbd> as the first press puts focus on the first option, and <kbd>↑</kbd> as the first press puts focus on the last option.
@@ -113,6 +113,23 @@ Selecting an option can be done with the menu open or closed. When the button ha
 - <kbd>↑</kbd> and <kbd>←</kbd> move to the previous option until you hit the first one, where it'll stop
 
 Re-opening the menu focuses on the selected option (there's no tick; just the focus indicator together with the value of the focused/selected item in the button).
+
+#### And a new way
+
+The [styling limitations of `<select>` have recently been overcome](/blog/fully-customise-your-select-elements), and, with them, the behavioural inconsistencies have also been addressed. With `appearance: base-select` the keyboard navigation has been brought in line.
+
+First, the menu must be open before an option can be selected. When focus is on the button, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>Space</kbd>, or <kbd>⏎</kbd> open the menu, and no items are focused.
+
+- <kbd>←</kbd> and <kbd>→</kbd> do nothing
+- <kbd>↓</kbd> as the first press puts focus on the first option
+- <kbd>↑</kbd> as the first press does nothing
+- <kbd>↓</kbd> moves focus down, stopping on the last option
+- <kbd>↑</kbd> moves focus up, stopping on the first option
+
+Moving from option to option only highlights that option, it doesn’t select it; <kbd>Space</kbd> or <kbd>⏎</kbd> do that job, and once pressed the menu closes and the selected option is shown in the button.
+
+Re-opening the menu places focus on the selected option and shows a tick next to it.
+
 
 ## Moving around items in a group
 
