@@ -1,6 +1,6 @@
 @use '../admin/mixins--general' as generalMixins;
 
-.subscribe {
+.subscribe:not(.call-to-action .subscribe) {
   @include generalMixins.boxout;
 }
 
