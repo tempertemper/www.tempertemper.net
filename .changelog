@@ -14,6 +14,17 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.17.5] - 2026-11-03
+
+### Changes
+- Uses cards to link to other pages in speaking section
+- Removes CTA highlighting after cards and teaser sections
+- Highlights the whole newsletter CTA instead of its form
+- Uses search page paragaraph as form label
+- Highlights search and unsubscribe forms
+- Lightens form label font weight
+
+
 ## [6.17.4] - 2026-10-25
 
 ### Fixes
