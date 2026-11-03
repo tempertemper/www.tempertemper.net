@@ -26,4 +26,15 @@ I'm also happy to tailor the topic to whatever accessibility-related area you'd 
 
 I also deliver [talks and presentations for organisations](/services/talks), including company events, internal learning programmes, and accessibility awareness initiatives.
 
-See [where I've spoken](/speaking/events), with recordings where available. For my bio and photo, check out my [speaker resources page](/speaking/resources).
+<div class="highlight-boxes">
+    <ul>
+        <li>
+            <h2><a href="/speaking/events">Where I’ve spoken publicly</a></h2>
+            <p>Check out my past talks, workshops, and appearances, with recordings where available.</p>
+        </li>
+        <li>
+            <h2><a href="/speaking/resources">My speaker resources</a></h2>
+            <p>Grab my speaker bio and photos for your event website, programme, and promotional materials.</p>
+        </li>
+    </ul>
+</div>

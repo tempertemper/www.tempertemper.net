@@ -3,11 +3,12 @@
 .call-to-action {
   margin: 2em 0;
 
-  &:not(.highlight):not(.teaser + &) {
-    @include generalMixins.divider;
-  }
-}
+  &:not(:is(.highlight-boxes, .teaser) + &) {
+    @include generalMixins.boxout;
 
-.highlight {
-  @include generalMixins.boxout;
+    ul,
+    ol {
+      padding-left: 1.5em;
+    }
+  }
 }
