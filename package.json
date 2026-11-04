@@ -1,6 +1,6 @@
 {
   "name": "tempertemper",
-  "version": "6.17.5",
+  "version": "6.17.6",
   "description": "tempertemper's website",
   "type": "module",
   "scripts": {
@@ -26,15 +26,15 @@
     "url": "https://github.com/tempertemper/tempertemper.net/issues"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.6",
-    "@11ty/eleventy-img": "^7.0.0",
+    "@11ty/eleventy": "^3.1.8",
+    "@11ty/eleventy-img": "^7.1.1",
     "@11ty/eleventy-plugin-rss": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "dotenv": "^18.0.5",
+    "dotenv": "^18.0.9",
     "esbuild": "^0.28.1",
     "markdown-it-anchor": "^10.0.0",
-    "pagefind": "^1.5.2",
-    "sass": "^1.101.3",
+    "pagefind": "^1.6.0",
+    "sass": "^1.107.1",
     "uslug": "^1.0.4"
   }
 }
