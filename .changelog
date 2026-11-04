@@ -14,6 +14,16 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.17.6] - 2026-11-04
+
+### Changes
+- Updates Eleventy to 3.1.8
+- Updates Eleventy Image to 7.1.1
+- Updates dotenv to 18.0.9
+- Updates Pagefind to 1.6.0
+- Updates Sass to 1.107.1
+
+
 ## [6.17.5] - 2026-11-03
 
 ### Changes
