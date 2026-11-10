@@ -1,7 +1,7 @@
 ---
 title: How to dismiss a popover or dialog
 intro: There are a bunch of ways to dismiss popovers and dialogs. Here's what they are, how they work, and where you might use them.
-date: 2026-11-09
+date: 2026-11-10
 tags:
     - Accessibility
     - HTML
