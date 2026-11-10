@@ -2,6 +2,7 @@
 title: A better way to handle select behaviour
 intro: "Building your own select means lots of code and difficult decisions about behaviour. Good news though: there's a new way that makes things much simpler!"
 date: 2026-10-29
+updated: 2026-11-09
 tags:
     - Accessibility
     - HTML
@@ -24,9 +25,7 @@ How different can they be? Surely they're just a button that triggers a menu whe
 - The menu must be open to choose an option (sounds obvious, but wait until we get to Windows…)
 - The button is covered when the menu is open
 - The focused/highlighted option in the menu is not the selected option; selecting an option requires an explicit button press or click
-- They're modal, so the page behind is inert until the menu is dismissed
-
-<i>Note: the modal is 'light dismissed', so clicking/tapping outside the menu closes it and makes the page active again.</i>
+- They're modal, so the page behind is inert; they are also [light dismissed](/blog/how-to-dismiss-a-popover-or-dialog#light-dismiss) with a click/tap outside
 
 Addressing those same four points, here's how it works on Windows:
 
@@ -58,7 +57,7 @@ I do find it weird that CSS affects how something behaves like this; especially 
 - The menu must be open to choose an option (Mac)
 - The button remains visible when the menu is open (Windows)
 - The highlighted option is not the selected option; selecting an option requires an explicit button press (Mac)
-- Non-modal (Windows)
+- Non-modal, with light dismiss (Windows)
 
 This matches the way I've always thought `<select>` elements should work, and gives me some reassurance that the design choices I've made with developers over the years have been good ones.
 
