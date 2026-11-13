@@ -22,7 +22,7 @@ permalink: search.html
 <div id="results" class="results"></div>
 
 <script type="module">
-    const bp = new URL("/pagefind/", location.origin).href;
+    const bp = new URL("{{ pagefindPath }}", location.origin).href;
     window.__pagefind__bundlePath = bp;
 
     const statusEl = document.getElementById("status");

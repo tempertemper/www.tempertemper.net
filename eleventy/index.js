@@ -2,7 +2,7 @@ import registerFilters from './filters.js';
 import registerMarkdown from './markdown.js';
 import registerPlugins from './plugins.js';
 import registerTransforms from './transforms.js';
-import registerBuild from './build.js';
+import registerBuild, { pagefindPath } from './build.js';
 import returns from './returns.js';
 
 // In-memory build timestamp for cache-busting
@@ -25,6 +25,7 @@ export default function(config) {
   config.addGlobalData('build', () => ({
     timestamp: buildTimestamp
   }));
+  config.addGlobalData('pagefindPath', pagefindPath);
 
   // Live reload when generated inline JS changes
   config.setServerOptions({

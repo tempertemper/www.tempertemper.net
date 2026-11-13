@@ -5,6 +5,8 @@ import { exec as _exec } from "node:child_process";
 import { promisify } from "node:util";
 
 const exec = promisify(_exec);
+const pagefindPackage = JSON.parse(fs.readFileSync(new URL('../node_modules/pagefind/package.json', import.meta.url), 'utf8'));
+export const pagefindPath = `/pagefind/${pagefindPackage.version}/`;
 
 export default function(config) {
 
@@ -59,7 +61,7 @@ export default function(config) {
     console.log("✓ Non-critical CSS → dist/assets/css/non-critical.css");
 
     // Build search index
-    await exec('npx pagefind --site dist --glob "**/*.html"');
-    console.log("✓ Search index → dist/pagefind");
+    await exec(`npx pagefind --site dist --glob "**/*.html" --output-subdir "${pagefindPath.slice(1, -1)}"`);
+    console.log(`✓ Search index → dist${pagefindPath}`);
   });
 }
