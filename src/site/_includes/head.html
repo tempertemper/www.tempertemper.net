@@ -127,9 +127,9 @@
     <link rel="preload" href="/assets/fonts/FSMeWeb-Italic.woff2" as="font" type="font/woff2" crossorigin />
 
     {%- if page.url.startsWith('/search') -%}
-        <link rel="preload" href="/pagefind/pagefind.js" as="script" crossorigin="anonymous">
-        <link rel="preload" href="/pagefind/pagefind-entry.json" as="fetch" type="application/json" crossorigin="anonymous">
-        <link rel="preload" href="/pagefind/wasm.en.pagefind" as="fetch" type="application/wasm" crossorigin="anonymous">
+        <link rel="preload" href="{{ pagefindPath }}pagefind.js" as="script" crossorigin="anonymous">
+        <link rel="preload" href="{{ pagefindPath }}pagefind-entry.json" as="fetch" type="application/json" crossorigin="anonymous">
+        <link rel="preload" href="{{ pagefindPath }}wasm.en.pagefind" as="fetch" type="application/wasm" crossorigin="anonymous">
     {%- endif -%}
 
     {%- set css %}

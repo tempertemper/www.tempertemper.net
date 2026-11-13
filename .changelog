@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file. The format 
 ----------
 
 
+## [6.17.7] - 2026-11-13
+
+### Fixes
+- Versions Pagefind asset URLs to prevent cached files from causing search failures after upgrades
+
+
 ## [6.17.6] - 2026-11-04
 
 ### Changes
