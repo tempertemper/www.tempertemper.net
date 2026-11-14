@@ -69,11 +69,11 @@ Then the redundant:
 
 > You are currently on a heading level 1
 
-To turn the extra hints off open VoiceOver Utility → Verbosity → Hints → de-check Speak instructions for using the item in the VoiceOver cursor.
+To turn the extra hints off open VoiceOver Utility → Verbosity → Hints → de-check 'Speak instructions for using the item in the VoiceOver cursor'.
 
 ### Prevent automatic reading
 
-By default, when you land on a new page VoiceOver starts reading the page until you stop it by moving the cursor. This can get annoying very quickly. To turn it off go to the VoiceOver Utility app → Web → General → de-check Automatically speak the web page.
+By default, when you land on a new page VoiceOver starts reading the page until you stop it by moving the cursor. This can get annoying very quickly. To turn it off go to the VoiceOver Utility app → Web → General → de-check 'Automatically speak the web page'.
 
 
 ## Activate VoiceOver
