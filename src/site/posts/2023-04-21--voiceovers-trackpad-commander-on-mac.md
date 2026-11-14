@@ -2,7 +2,7 @@
 title: VoiceOver's Trackpad Commander on Mac
 intro: Did you know there's a way to make VoiceOver on a Mac behave like VoiceOver on an iPhone or iPad? No? Let me introduce you to Trackpad Commander!
 date: 2023-04-21
-updated: 2023-04-29
+updated: 2026-11-14
 tags:
     - Accessibility
     - Apple
@@ -15,9 +15,8 @@ If you like the idea of swiping around an interface using VoiceOver rather than 
 Essentially, by turning on the Trackpad Commander you're switching from a purely keyboard-driven experience to a touch-driven one. To turn it on:
 
 1. Open VoiceOver Utility
-2. Choose 'Commanders' in the sidebar
-3. Ensure you're on the 'Trackpad' tab
-4. Check 'Enable Trackpad Commander'
+2. Choose 'Commands' in the sidebar
+3. In 'Also control VoiceOver with:', choose 'Trackpad'
 
 Sensibly, the gestures are all the same as on iOS/iPadOS. So if you're already used to using VoiceOver on an iPhone or iPad, you'll be fine.
 
